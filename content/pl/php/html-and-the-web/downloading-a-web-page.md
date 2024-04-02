@@ -9,9 +9,8 @@ summary: "(Po co i dlaczego?) Pobieranie strony internetowej to proces \u015Bci\
   gania jej zawarto\u015Bci, by przetworzy\u0107 je lokalnie. Programi\u015Bci robi\u0105\
   \ to, aby odczyta\u0107\u2026"
 title: Pobieranie strony internetowej
+weight: 42
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 (Po co i dlaczego?)

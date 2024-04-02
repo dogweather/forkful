@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Arrays associativos em Dart, conhecidos como Maps, s\xE3o estruturas de\
   \ dados que armazenam dados em pares de chave-valor. Eles permitem que os programadores\u2026"
 title: Usando arrays associativos
+weight: 15
 ---
-
-{{< edit_this_page >}}
 
 ## O Quê & Por Quê?
 

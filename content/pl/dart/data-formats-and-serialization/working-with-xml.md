@@ -11,9 +11,8 @@ summary: "Praca z XML w Dart polega na analizowaniu, kwerendowaniu i modyfikowan
   \ dokument\xF3w XML, co jest kluczowe dla aplikacji wchodz\u0105cych w interakcje\
   \ z\u2026"
 title: Praca z XML
+weight: 40
 ---
-
-{{< edit_this_page >}}
 
 ## Co i dlaczego?
 

@@ -9,9 +9,8 @@ summary: "Descargar una p\xE1gina web es traer su contenido, usualmente HTML, a 
   \ disco local. Los programadores necesitan hacer esto para an\xE1lisis de datos,\
   \ pruebas\u2026"
 title: "Descargando una p\xE1gina web"
+weight: 42
 ---
-
-{{< edit_this_page >}}
 
 ## ¿Qué y Por Qué?
 Descargar una página web es traer su contenido, usualmente HTML, a tu disco local. Los programadores necesitan hacer esto para análisis de datos, pruebas de aplicaciones web o simplemente para guardar una copia.

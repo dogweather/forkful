@@ -7,9 +7,8 @@ model: gpt-4-1106-preview
 summary: "Loggning \xE4r processen att registrera applikationsbeteenden, fel och annan\
   \ viktig information till ett best\xE4ndigt medium, som en fil eller databas.\u2026"
 title: Loggning
+weight: 17
 ---
-
-{{< edit_this_page >}}
 
 ## Vad & Varför?
 Loggning är processen att registrera applikationsbeteenden, fel och annan viktig information till ett beständigt medium, som en fil eller databas. Programmerare gör detta för att spåra sina applikationers hälsa och prestanda, för att felsöka problem och för att hålla ett öga på vad som händer under huven i produktionsmiljöer.

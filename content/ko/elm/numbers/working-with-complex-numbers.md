@@ -15,9 +15,8 @@ summary: "\uBCF5\uC18C\uC218\uB294 \uC2E4\uC218\uC640 \uD5C8\uC218\uC758 \uC870\
   \uD559\uACFC \uBB3C\uB9AC\uD559 \uB4F1\uC758 \uBD84\uC57C\uC5D0\uC11C \uC911\uC694\
   \uD55C \uC5ED\uD560\uC744 \uD569\uB2C8\uB2E4."
 title: "\uBCF5\uC18C\uC218 \uB2E4\uB8E8\uAE30"
+weight: 14
 ---
-
-{{< edit_this_page >}}
 
 ## 무엇 & 왜?
 복소수는 실수와 허수의 조합인데, `a + bi` 처럼 `i`는 -1의 제곱근입니다. 복소수는 일반 숫자로 해결할 수 없는 문제를 해결하기 위해 공학과 물리학 등의 분야에서 중요한 역할을 합니다.

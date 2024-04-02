@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "YAML is een gebruiksvriendelijk data serialisatieformaat. Programmeurs gebruiken\
   \ het voor configuratiebestanden, gegevensuitwisseling tussen talen en\u2026"
 title: Werken met YAML
+weight: 41
 ---
-
-{{< edit_this_page >}}
 
 ## Wat & Waarom?
 YAML is een gebruiksvriendelijk data serialisatieformaat. Programmeurs gebruiken het voor configuratiebestanden, gegevensuitwisseling tussen talen en omdat het gemakkelijker te lezen en te schrijven is in vergelijking met XML of JSON.

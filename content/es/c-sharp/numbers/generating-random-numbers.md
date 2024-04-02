@@ -9,9 +9,8 @@ summary: "Generar n\xFAmeros aleatorios en C# implica la creaci\xF3n de valores 
   ricos impredecibles dentro de un rango especificado. Los programadores utilizan\
   \ estos\u2026"
 title: "Generaci\xF3n de n\xFAmeros aleatorios"
+weight: 12
 ---
-
-{{< edit_this_page >}}
 
 ## Qué y Por Qué?
 

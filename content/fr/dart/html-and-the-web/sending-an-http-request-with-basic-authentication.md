@@ -10,9 +10,8 @@ model: gpt-4-0125-preview
 summary: "Envoyer une requ\xEAte HTTP avec une authentification de base implique l'ajout\
   \ d'un nom d'utilisateur et d'un mot de passe \xE0 une requ\xEAte pour v\xE9rifier\u2026"
 title: "Envoyer une requ\xEAte HTTP avec une authentification de base"
+weight: 45
 ---
-
-{{< edit_this_page >}}
 
 ## Quoi & Pourquoi ?
 

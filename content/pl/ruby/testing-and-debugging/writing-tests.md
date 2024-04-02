@@ -11,9 +11,8 @@ summary: "Testowanie w Ruby polega na weryfikacji, czy Tw\xF3j kod zachowuje si\
   \ zgodnie z oczekiwaniami w r\xF3\u017Cnych warunkach. Programi\u015Bci pisz\u0105\
   \ testy, aby zapewni\u0107\u2026"
 title: "Pisanie test\xF3w"
+weight: 36
 ---
-
-{{< edit_this_page >}}
 
 ## Co i dlaczego?
 Testowanie w Ruby polega na weryfikacji, czy Twój kod zachowuje się zgodnie z oczekiwaniami w różnych warunkach. Programiści piszą testy, aby zapewnić poprawność, zapobiegać regresji i ułatwić refaktoryzację, dążąc do stworzenia solidnych i łatwych w utrzymaniu aplikacji.

@@ -7,9 +7,8 @@ model: gpt-4-0125-preview
 summary: "Redondear n\xFAmeros significa eliminar los decimales hasta una precisi\xF3\
   n determinada, a menudo hasta n\xFAmeros enteros. Los programadores redondean para\u2026"
 title: "Redondeo de n\xFAmeros"
+weight: 13
 ---
-
-{{< edit_this_page >}}
 
 ## ¿Qué y por qué?
 Redondear números significa eliminar los decimales hasta una precisión determinada, a menudo hasta números enteros. Los programadores redondean para simplificar cálculos, mejorar el rendimiento o hacer que las salidas sean amigables para el usuario.

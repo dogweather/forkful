@@ -11,9 +11,8 @@ summary: "Att tolka ett datum fr\xE5n en str\xE4ng inneb\xE4r att konvertera tex
   \ till ett Datum-objekt. Denna operation \xE4r grundl\xE4ggande f\xF6r applikationer\
   \ som interagerar\u2026"
 title: "Analysera ett datum fr\xE5n en str\xE4ng"
+weight: 30
 ---
-
-{{< edit_this_page >}}
 
 ## Vad & Varför?
 Att tolka ett datum från en sträng innebär att konvertera text till ett Datum-objekt. Denna operation är grundläggande för applikationer som interagerar med datum som användare matar in eller som hämtas från externa datasamlingar, vilket möjliggör enkel manipulering och formatering enligt behov.

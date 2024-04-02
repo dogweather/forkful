@@ -9,9 +9,8 @@ summary: "Crear un archivo temporal significa hacer un fichero que se usa durant
   \ una sesi\xF3n y luego se descarta o elimina autom\xE1ticamente. Los programadores\
   \ hacen\u2026"
 title: Creando un archivo temporal
+weight: 21
 ---
-
-{{< edit_this_page >}}
 
 ## ¿Qué y Por Qué?
 Crear un archivo temporal significa hacer un fichero que se usa durante una sesión y luego se descarta o elimina automáticamente. Los programadores hacen esto para gestionar datos que son importantes temporalmente, como caché, o para evitar el uso excesivo de recursos de memoria.

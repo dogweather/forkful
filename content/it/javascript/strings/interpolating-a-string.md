@@ -8,9 +8,8 @@ model: gpt-4-1106-preview
 summary: "L\u2019interpolazione di stringhe in JavaScript consente di inserire espressioni\
   \ all\u2019interno di una stringa, rendendone la composizione dinamica e flessibile.\u2026"
 title: Interpolazione di una stringa
+weight: 8
 ---
-
-{{< edit_this_page >}}
 
 ## Cosa & Perché?
 L’interpolazione di stringhe in JavaScript consente di inserire espressioni all’interno di una stringa, rendendone la composizione dinamica e flessibile. È utile perché semplifica la concatenazione di stringhe e variabili, migliorando la leggibilità del codice.

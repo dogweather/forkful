@@ -9,9 +9,8 @@ summary: "Mik\xE4 & Miksi? Ohjelmoinnissa debug-tulostus tarkoittaa tilap\xE4ist
   \ viestien tulostamista koodin suorituksen seuraamiseksi. K\xE4yt\xE4mme t\xE4t\xE4\
   \ selvitt\xE4\xE4ksemme\u2026"
 title: "Virheenj\xE4ljitystulosteiden tulostaminen"
+weight: 33
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 Mikä & Miksi?

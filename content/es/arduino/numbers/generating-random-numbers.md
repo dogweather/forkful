@@ -7,9 +7,8 @@ model: gpt-4-0125-preview
 summary: "Generar n\xFAmeros aleatorios en proyectos de Arduino involucra producir\
   \ valores que son impredecibles por dise\xF1o, crucial para aplicaciones como juegos,\u2026"
 title: "Generaci\xF3n de n\xFAmeros aleatorios"
+weight: 12
 ---
-
-{{< edit_this_page >}}
 
 ## ¿Qué y Por Qué?
 Generar números aleatorios en proyectos de Arduino involucra producir valores que son impredecibles por diseño, crucial para aplicaciones como juegos, simulaciones y sistemas de seguridad. Los programadores utilizan esta técnica para introducir variabilidad o tomar decisiones que no deberían ser deterministas.

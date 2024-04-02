@@ -9,9 +9,8 @@ summary: "Tratar erros \xE9 a forma como o seu c\xF3digo lida com problemas que 
   \ durante a execu\xE7\xE3o\u2014como lidar com uma bola curva sem deix\xE1-la cair.\
   \ Os\u2026"
 title: Tratamento de erros
+weight: 16
 ---
-
-{{< edit_this_page >}}
 
 ## O Que & Porquê?
 Tratar erros é a forma como o seu código lida com problemas que surgem durante a execução—como lidar com uma bola curva sem deixá-la cair. Os programadores fazem isso para evitar falhas e proporcionar aos usuários uma experiência suave.

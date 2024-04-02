@@ -25,9 +25,8 @@ summary: "Logging (\u05EA\u05D9\u05E2\u05D5\u05D3) \u05D1\u05EA\u05DB\u05E0\u05D
   \u05E8 \u05E8\u05D9\u05E9\u05D5\u05DD \u05E9\u05DC \u05E0\u05EA\u05D5\u05E0\u05D9\
   \u05DD\u2026"
 title: "\u05E8\u05D9\u05E9\u05D5\u05DD"
+weight: 17
 ---
-
-{{< edit_this_page >}}
 
 ## מה ולמה?
 

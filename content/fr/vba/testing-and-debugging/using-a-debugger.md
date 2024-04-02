@@ -2,15 +2,16 @@
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 22:04:20.480102-07:00
-description: "Utiliser un d\xE9bogueur dans Visual Basic pour Applications (VBA) consiste\
-  \ \xE0 ex\xE9cuter votre code pas \xE0 pas pour inspecter son flux d'ex\xE9cution\
-  \ et l'\xE9tat de\u2026"
+description: "Dans VBA, le d\xE9bogueur est int\xE9gr\xE9 \xE0 l'\xE9diteur Visual\
+  \ Basic (VBE). Voici comment vous pouvez l'utiliser : 1. **D\xE9finir des points\
+  \ d'arr\xEAt** : Cliquez dans\u2026"
 lastmod: '2024-03-13T22:44:57.584028-06:00'
 model: gpt-4-0125-preview
-summary: "Utiliser un d\xE9bogueur dans Visual Basic pour Applications (VBA) consiste\
-  \ \xE0 ex\xE9cuter votre code pas \xE0 pas pour inspecter son flux d'ex\xE9cution\
-  \ et l'\xE9tat de\u2026"
+summary: "Dans VBA, le d\xE9bogueur est int\xE9gr\xE9 \xE0 l'\xE9diteur Visual Basic\
+  \ (VBE). Voici comment vous pouvez l'utiliser : 1. **D\xE9finir des points d'arr\xEA\
+  t** : Cliquez dans\u2026"
 title: "Utiliser un d\xE9bogueur"
+weight: 35
 ---
 
 ## Comment faire :

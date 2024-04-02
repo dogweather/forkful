@@ -7,9 +7,8 @@ model: gpt-4-0125-preview
 summary: "Working with JSON (JavaScript Object Notation) involves parsing, generating,\
   \ and querying JSON data, making it a critical skill for modern programming.\u2026"
 title: Working with JSON
+weight: 38
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 

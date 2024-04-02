@@ -7,9 +7,8 @@ model: unknown
 summary: "Parsing HTML means tearing apart a chuck of HTML code to grasp its structure\
   \ and content. Programmers do it to extract data, manipulate content, or\u2026"
 title: Parsing HTML
+weight: 43
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 Parsing HTML means tearing apart a chuck of HTML code to grasp its structure and content. Programmers do it to extract data, manipulate content, or migrate info between formats and systems.

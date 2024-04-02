@@ -11,9 +11,8 @@ summary: "Att ber\xE4kna ett datum i framtiden eller f\xF6rflutet i Go inneb\xE4
   \ att man hanterar datum- och tidsv\xE4rden f\xF6r att best\xE4mma en specifik punkt\
   \ relativt till ett\u2026"
 title: "Ber\xE4kna ett datum i framtiden eller f\xF6rflutet"
+weight: 26
 ---
-
-{{< edit_this_page >}}
 
 ## Vad & Varför?
 

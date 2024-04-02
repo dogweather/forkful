@@ -10,9 +10,8 @@ model: gpt-4-0125-preview
 summary: "Debugoutput afdrukken is in wezen de manier waarop een programmeur een kijkje\
   \ neemt naar wat er in real-time in hun code gebeurt. Het is cruciaal voor het\u2026"
 title: Debug-output afdrukken
+weight: 33
 ---
-
-{{< edit_this_page >}}
 
 ## Wat & Waarom?
 Debugoutput afdrukken is in wezen de manier waarop een programmeur een kijkje neemt naar wat er in real-time in hun code gebeurt. Het is cruciaal voor het opsporen van bugs en het begrijpen van de codeflow zonder formele debuggingtools of -sessies op te zetten.

@@ -10,9 +10,8 @@ model: gpt-4-0125-preview
 summary: "Ler argumentos de linha de comando em Dart permite que programadores insiram\
   \ dados diretamente no console ao executar um programa Dart, aumentando sua\u2026"
 title: Lendo argumentos de linha de comando
+weight: 23
 ---
-
-{{< edit_this_page >}}
 
 ## O Que & Por Que?
 

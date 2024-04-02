@@ -13,9 +13,8 @@ summary: "X\u1EED l\xFD l\u1ED7i l\xE0 c\xE1ch m\xE3 c\u1EE7a b\u1EA1n \u0111\u1
   \ tr\xECnh th\u1EF1c thi - gi\u1ED1ng nh\u01B0 vi\u1EC7c x\u1EED l\xFD m\u1ED9t\
   \ t\xECnh hu\u1ED1ng b\u1EA5t ng\u1EDD m\xE0 kh\xF4ng l\xE0m r\u01A1i\u2026"
 title: "X\u1EED l\xFD l\u1ED7i"
+weight: 16
 ---
-
-{{< edit_this_page >}}
 
 ## Cái gì & Tại sao?
 Xử lý lỗi là cách mã của bạn đối diện với những vấn đề phát sinh trong quá trình thực thi - giống như việc xử lý một tình huống bất ngờ mà không làm rơi nó. Lập trình viên làm việc này để ngăn chặn sự cố và mang lại trải nghiệm mượt mà cho người dùng.

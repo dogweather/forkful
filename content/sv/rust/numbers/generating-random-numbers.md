@@ -9,9 +9,8 @@ summary: "Att generera slumpm\xE4ssiga nummer i Rust inneb\xE4r att anv\xE4nda b
   \ f\xF6r att producera of\xF6ruts\xE4gbara numeriska v\xE4rden, vilket \xE4r oumb\xE4\
   rligt f\xF6r uppgifter\u2026"
 title: Generera slumptal
+weight: 12
 ---
-
-{{< edit_this_page >}}
 
 ## Vad & Varför?
 

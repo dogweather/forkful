@@ -1,14 +1,15 @@
 ---
 date: 2024-01-26 03:50:22.616368-07:00
-description: "Korzystanie z debugera oznacza si\u0119gni\u0119cie po specjalistyczne\
-  \ narz\u0119dzia, kt\xF3re pozwalaj\u0105 zajrze\u0107 pod mask\u0119 kodu, obserwuj\u0105\
-  c jego dzia\u0142anie krok po kroku.\u2026"
+description: "Oto fragment kodu JavaScript, kt\xF3ry nie dzia\u0142a zgodnie z oczekiwaniami:\
+  \ ```javascript function buggyMultiply(a, b) { return a + b; // Ups! To powinna\
+  \ by\u0107\u2026"
 lastmod: '2024-03-13T22:44:35.801149-06:00'
 model: gpt-4-0125-preview
-summary: "Korzystanie z debugera oznacza si\u0119gni\u0119cie po specjalistyczne narz\u0119\
-  dzia, kt\xF3re pozwalaj\u0105 zajrze\u0107 pod mask\u0119 kodu, obserwuj\u0105c\
-  \ jego dzia\u0142anie krok po kroku.\u2026"
+summary: "Oto fragment kodu JavaScript, kt\xF3ry nie dzia\u0142a zgodnie z oczekiwaniami:\
+  \ ```javascript function buggyMultiply(a, b) { return a + b; // Ups! To powinna\
+  \ by\u0107\u2026"
 title: Korzystanie z debugera
+weight: 35
 ---
 
 ## Jak to zrobić:

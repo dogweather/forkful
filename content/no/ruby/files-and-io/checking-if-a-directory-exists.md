@@ -11,9 +11,8 @@ summary: "\xC5 sjekke om en mappe eksisterer i Ruby gj\xF8r det mulig for progra
   \ \xE5 bekrefte tilstedev\xE6relsen av en mappe f\xF8r de utf\xF8rer operasjoner\
   \ som \xE5 lese\u2026"
 title: Sjekker om en mappe eksisterer
+weight: 20
 ---
-
-{{< edit_this_page >}}
 
 ## Hva & Hvorfor?
 Å sjekke om en mappe eksisterer i Ruby gjør det mulig for programmerere å bekrefte tilstedeværelsen av en mappe før de utfører operasjoner som å lese filer eller opprette nye mapper. Dette er avgjørende for å unngå feil i filhåndtering og sikre påliteligheten av filsystemmanipulasjoner.

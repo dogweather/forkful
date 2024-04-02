@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Werken met JSON betekent het verwerken en genereren van JSON (JavaScript\
   \ Object Notation) data in uw applicaties. Programmeurs doen dit omdat JSON een\u2026"
 title: Werken met JSON
+weight: 38
 ---
-
-{{< edit_this_page >}}
 
 ## Wat & Waarom?
 

@@ -13,9 +13,8 @@ summary: "T\u1ED5 ch\u1EE9c code th\xE0nh c\xE1c h\xE0m l\xE0 vi\u1EC7c ph\xE2n 
   ng v\u1EDBi m\u1EE5c \u0111\xEDch x\xE1c \u0111\u1ECBnh. Ch\xFAng ta l\xE0m \u0111\
   i\u1EC1u n\xE0y \u0111\u1EC3 gi\u1EEF m\u1ECDi th\u1EE9 g\u1ECDn\u2026"
 title: "S\u1EAFp x\u1EBFp m\xE3 th\xE0nh c\xE1c h\xE0m"
+weight: 18
 ---
-
-{{< edit_this_page >}}
 
 ## Cái gì & Tại sao?
 Tổ chức code thành các hàm là việc phân chia mã lệnh của bạn thành các khối tái sử dụng với mục đích xác định. Chúng ta làm điều này để giữ mọi thứ gọn gàng, tránh lặp lại và làm cho việc gỡ lỗi trở nên dễ dàng.

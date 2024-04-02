@@ -8,9 +8,8 @@ model: gpt-4-0125-preview
 summary: "Zahlen runden bedeutet, einen Wert auf die n\xE4chste ganze Zahl oder eine\
   \ angegebene Genauigkeit anzupassen. Entwickler tun dies, um zu vereinfachen, sich\u2026"
 title: Zahlen runden
+weight: 13
 ---
-
-{{< edit_this_page >}}
 
 ## Was & Warum?
 Zahlen runden bedeutet, einen Wert auf die nächste ganze Zahl oder eine angegebene Genauigkeit anzupassen. Entwickler tun dies, um zu vereinfachen, sich an reale Beschränkungen anzupassen oder die Leistung durch Verwerfen überschüssiger Genauigkeit zu verbessern.

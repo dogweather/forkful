@@ -11,9 +11,8 @@ summary: "Att skicka en HTTP-beg\xE4ran i Visual Basic for Applications (VBA) in
   r att man programmatiskt tillg\xE5r webbresurser eller webbtj\xE4nster genom att\
   \ g\xF6ra\u2026"
 title: "Skicka en HTTP-f\xF6rfr\xE5gan"
+weight: 44
 ---
-
-{{< edit_this_page >}}
 
 ## Vad & Varför?
 

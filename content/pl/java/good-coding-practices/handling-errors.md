@@ -9,9 +9,8 @@ summary: "Obs\u0142uga b\u0142\u0119d\xF3w polega na pisaniu kodu, kt\xF3ry prze
   \ b\u0142\u0119dne sytuacje i radzi sobie z nimi. Programi\u015Bci robi\u0105 to,\
   \ aby oprogramowanie by\u0142o bardziej\u2026"
 title: "Obs\u0142uga b\u0142\u0119d\xF3w"
+weight: 16
 ---
-
-{{< edit_this_page >}}
 
 ## Co i dlaczego?
 

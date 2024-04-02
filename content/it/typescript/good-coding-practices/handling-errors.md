@@ -8,9 +8,8 @@ model: gpt-4-1106-preview
 summary: "Gestire gli errori significa aspettarsi l'inaspettato; \xE8 il modo in cui\
   \ ci comportiamo quando le cose vanno male nel nostro codice. Lo facciamo per\u2026"
 title: Gestione degli errori
+weight: 16
 ---
-
-{{< edit_this_page >}}
 
 ## Cosa e perché?
 Gestire gli errori significa aspettarsi l'inaspettato; è il modo in cui ci comportiamo quando le cose vanno male nel nostro codice. Lo facciamo per evitare crash e per dare agli utenti un'esperienza fluida, anche quando si verifica l'inaspettato.

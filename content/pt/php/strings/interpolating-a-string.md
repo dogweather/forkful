@@ -9,9 +9,8 @@ summary: "Interpola\xE7\xE3o de strings permite inserir valores de vari\xE1veis 
   \ numa string sem concatena\xE7\xE3o expl\xEDcita. Programadores usam isso para\
   \ simplificar\u2026"
 title: Interpolando uma string
+weight: 8
 ---
-
-{{< edit_this_page >}}
 
 ## O Que é & Porquê?
 Interpolação de strings permite inserir valores de variáveis diretamente numa string sem concatenação explícita. Programadores usam isso para simplificar a construção de strings e tornar o código mais legível e eficiente.

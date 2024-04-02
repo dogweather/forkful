@@ -11,9 +11,8 @@ summary: "Organizar el c\xF3digo en funciones en Visual Basic para Aplicaciones 
   \ implica desglosar un programa en piezas m\xE1s peque\xF1as y manejables conocidas\
   \ como\u2026"
 title: "Organizando c\xF3digo en funciones"
+weight: 18
 ---
-
-{{< edit_this_page >}}
 
 ## ¿Qué y por qué?
 

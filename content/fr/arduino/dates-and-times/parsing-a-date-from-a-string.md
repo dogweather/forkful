@@ -11,9 +11,8 @@ summary: "L'analyse (parsing) d'une date \xE0 partir d'une cha\xEEne de caract\x
   res dans Arduino consiste \xE0 extraire et \xE0 convertir les composants de la date\
   \ (ann\xE9e, mois,\u2026"
 title: "Analyser une date depuis une cha\xEEne de caract\xE8res"
+weight: 30
 ---
-
-{{< edit_this_page >}}
 
 ## Quoi & Pourquoi ?
 

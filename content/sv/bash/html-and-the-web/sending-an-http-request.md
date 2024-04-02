@@ -9,9 +9,8 @@ summary: "Att skicka en HTTP-f\xF6rfr\xE5gan handlar om att be om data fr\xE5n e
   \ webbserver. Programmerare g\xF6r detta f\xF6r att interagera med webbaserade tj\xE4\
   nster eller h\xE4mta\u2026"
 title: "Skicka en http-f\xF6rfr\xE5gan"
+weight: 44
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 Att skicka en HTTP-förfrågan handlar om att be om data från en webbserver. Programmerare gör detta för att interagera med webbaserade tjänster eller hämta information automatiserat.

@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "\xC5 parse en dato fra en streng lar programmerere konvertere tekstlige\
   \ datorepresentasjoner til JavaScript `Date`-objekter. Dette letter manipulering,\u2026"
 title: Analysering av en dato fra en streng
+weight: 30
 ---
-
-{{< edit_this_page >}}
 
 ## Hva & Hvorfor?
 Å parse en dato fra en streng lar programmerere konvertere tekstlige datorepresentasjoner til JavaScript `Date`-objekter. Dette letter manipulering, sammenligning og formattering av datoer. Prosessen er essensiell for håndtering av brukerinput, bearbeiding av data fra databaser eller arbeid med APIer som kommuniserer datoer i strengformater.

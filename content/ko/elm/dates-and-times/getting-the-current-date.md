@@ -16,9 +16,8 @@ summary: "\uD604\uC7AC \uB0A0\uC9DC \uC54C\uC544\uB0B4\uAE30\uB780 \uB2E8\uC21C\
   \uC120 \uB4F1 \uC5EC\uB7EC \uC774\uC720\uB85C \uC774 \uC815\uBCF4\uB97C \uC0AC\uC6A9\
   \uD569\uB2C8\uB2E4."
 title: "\uD604\uC7AC \uB0A0\uC9DC \uAC00\uC838\uC624\uAE30"
+weight: 29
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why? (무엇과 왜?)
 현재 날짜 알아내기란 단순히 오늘 날짜와 시간을 알아내는 것입니다. 프로그래머들은 로깅, 날짜 기반 기능 구현, 사용자 경험 개선 등 여러 이유로 이 정보를 사용합니다.

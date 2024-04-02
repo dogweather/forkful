@@ -7,9 +7,8 @@ model: gpt-4-1106-preview
 summary: "Reading command line arguments lets your Python script play nice with user\
   \ inputs from the terminal. Why? Well, because flexibility is key; users can\u2026"
 title: Reading command line arguments
+weight: 23
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 

@@ -9,9 +9,8 @@ summary: "\"Mit\xE4 ja miksi?\" Muuttaa merkkijonon isot kirjaimet pieniksi. T\x
   m\xE4 on hy\xF6dyllist\xE4 kun halutaan vertailla tekstej\xE4 v\xE4litt\xE4m\xE4\
   tt\xE4 kirjainkoosta, kuten\u2026"
 title: Merkkijonon muuntaminen pieniksi kirjaimiksi
+weight: 4
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 "Mitä ja miksi?"

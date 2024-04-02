@@ -7,9 +7,8 @@ model: gpt-4-1106-preview
 summary: "Concatenare stringhe significa unirle in una sola. \xC8 utile per costruire\
   \ messaggi, comandi, o lavorare con percorsi di file."
 title: Concatenazione di stringhe
+weight: 3
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 Concatenare stringhe significa unirle in una sola. È utile per costruire messaggi, comandi, o lavorare con percorsi di file.

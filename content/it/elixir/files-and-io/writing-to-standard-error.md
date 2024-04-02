@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Scrivere su standard error (stderr) in Elixir \xE8 un metodo per indirizzare\
   \ messaggi di errore e diagnostica separatamente dall'output principale (stdout).\u2026"
 title: Scrivere sull'errore standard
+weight: 25
 ---
-
-{{< edit_this_page >}}
 
 ## Cosa & Perché?
 

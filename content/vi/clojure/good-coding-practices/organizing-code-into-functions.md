@@ -13,9 +13,8 @@ summary: "Chia code th\xE0nh c\xE1c h\xE0m l\xE0 v\u1EC1 vi\u1EC7c \u0111\xF3ng 
   \ c\u1EE5 th\u1EC3. L\xE0m nh\u01B0 v\u1EADy gi\xFAp code c\u1EE7a b\u1EA1n s\u1EA1\
   ch s\u1EBD, d\u1EC5 b\u1EA3o tr\xEC h\u01A1n v\xE0 d\u1EC5\u2026"
 title: "S\u1EAFp x\u1EBFp m\xE3 th\xE0nh c\xE1c h\xE0m"
+weight: 18
 ---
-
-{{< edit_this_page >}}
 
 ## Cái gì & Tại sao?
 

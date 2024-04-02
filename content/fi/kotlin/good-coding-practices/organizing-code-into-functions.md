@@ -9,9 +9,8 @@ summary: "Koodin organisointi funktioihin tarkoittaa ohjelmasi pilkkomista uudel
   ytett\xE4viin osiin, joista jokainen k\xE4sittelee tietty\xE4 teht\xE4v\xE4\xE4\
   . T\xE4m\xE4 tehd\xE4\xE4n\u2026"
 title: "Koodin j\xE4rjest\xE4minen funktioihin"
+weight: 18
 ---
-
-{{< edit_this_page >}}
 
 ## Mikä & Miksi?
 Koodin organisointi funktioihin tarkoittaa ohjelmasi pilkkomista uudelleenkäytettäviin osiin, joista jokainen käsittelee tiettyä tehtävää. Tämä tehdään koodin luettavuuden, virheenkorjauksen ja päivittämisen helpottamiseksi. Ajattele koodiasi kuin ruokakomerotasi: haluat kaiken leivontatarvikkeista säilykkeisiin ryhmiteltynä, jotta löytäisit tarvitsemasi vaivattomasti.

@@ -13,9 +13,8 @@ summary: "T\xE1i c\u1EA5u tr\xFAc l\xE0 qu\xE1 tr\xECnh c\u1EA3i t\u1ED5 m\xE3 m
   i c\u1EE7a n\xF3. L\u1EADp tr\xECnh vi\xEAn t\xE1i c\u1EA5u tr\xFAc \u0111\u1EC3\
   \ c\u1EA3i thi\u1EC7n c\xE1c thu\u1ED9c t\xEDnh\u2026"
 title: "T\xE1i c\u1EA5u tr\xFAc m\xE3"
+weight: 19
 ---
-
-{{< edit_this_page >}}
 
 ## Là gì & Tại sao?
 

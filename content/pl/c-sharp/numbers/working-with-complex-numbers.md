@@ -9,9 +9,8 @@ summary: "Liczby zespolone poszerzaj\u0105 nasz system liczbowy o liczby urojone
   \ umo\u017Cliwiaj\u0105c rozwi\u0105zywanie r\xF3wna\u0144, kt\xF3re nie maj\u0105\
   \ rzeczywistych rozwi\u0105za\u0144. Programi\u015Bci\u2026"
 title: Praca z liczbami zespolonymi
+weight: 14
 ---
-
-{{< edit_this_page >}}
 
 ## Co i dlaczego?
 Liczby zespolone poszerzają nasz system liczbowy o liczby urojone, umożliwiając rozwiązywanie równań, które nie mają rzeczywistych rozwiązań. Programiści pracują z nimi w dziedzinach takich jak inżynieria, fizyka i przetwarzanie sygnałów, gdzie te liczby są niezbędne do modelowania i rozwiązywania problemów.

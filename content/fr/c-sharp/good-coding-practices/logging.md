@@ -9,9 +9,8 @@ summary: "En C#, vous pouvez utiliser l'espace de noms int\xE9gr\xE9 `System.Dia
   \ ou des biblioth\xE8ques tierces comme NLog ou log4net. Voici un exemple rapide\
   \ en\u2026"
 title: Journalisation
+weight: 17
 ---
-
-{{< edit_this_page >}}
 
 # Quoi & Pourquoi ?
 La journalisation est le processus d'enregistrement des événements d'une application et des sorties de données pendant l'exécution. Les programmeurs créent des journaux pour diagnostiquer les bogues, surveiller la performance du logiciel, suivre les actions des utilisateurs et maintenir la conformité avec les normes de sécurité et commerciales.

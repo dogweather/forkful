@@ -11,9 +11,8 @@ summary: "CSV-filer (Comma-Separated Values) \xE4r ett vanligt datautbytesformat
   \ representerar tabul\xE4r data i ren text, genom att anv\xE4nda kommatecken f\xF6\
   r att\u2026"
 title: Arbeta med CSV
+weight: 37
 ---
-
-{{< edit_this_page >}}
 
 ## Vad och varför?
 CSV-filer (Comma-Separated Values) är ett vanligt datautbytesformat som representerar tabulär data i ren text, genom att använda kommatecken för att separera enskilda värden. Programmerare arbetar med CSV-filer för att importera, exportera och manipulera data enkelt över olika applikationer och tjänster, eftersom det är ett enkelt, brett stöttat format som är kompatibelt med kalkylapplikationer, databaser och programmeringsspråk.

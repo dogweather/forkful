@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Analisar uma data a partir de uma string envolve converter a representa\xE7\
   \xE3o textual de uma data e hora em um objeto `Date` ou em um objeto `LocalDateTime`\u2026"
 title: Analisando uma data a partir de uma string
+weight: 30
 ---
-
-{{< edit_this_page >}}
 
 ## O Que & Por Que?
 Analisar uma data a partir de uma string envolve converter a representação textual de uma data e hora em um objeto `Date` ou em um objeto `LocalDateTime` mais moderno. Programadores fazem isso para manipular, formatar, comparar ou armazenar datas em um formato padronizado, o que é crucial para aplicações que requerem cálculos de datas, validação ou internacionalização consistente.

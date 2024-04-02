@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Foutafhandeling in PHP gaat over het beheren van en reageren op situaties\
   \ die de normale gang van een programma verstoren, zoals ontbrekende bestanden of\u2026"
 title: Fouten afhandelen
+weight: 16
 ---
-
-{{< edit_this_page >}}
 
 ## Wat & Waarom?
 Foutafhandeling in PHP gaat over het beheren van en reageren op situaties die de normale gang van een programma verstoren, zoals ontbrekende bestanden of slechte data-invoer. Programmeurs verwerken fouten om crashes te voorkomen en gebruikers een soepelere ervaring te bieden.

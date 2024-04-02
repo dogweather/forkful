@@ -9,9 +9,8 @@ summary: "Registros (logging) no desenvolvimento de software \xE9 a t\xE9cnica d
   \ registrar eventos que ocorrem enquanto um programa est\xE1 em execu\xE7\xE3o,\
   \ tipicamente em um\u2026"
 title: Registro de Logs
+weight: 17
 ---
-
-{{< edit_this_page >}}
 
 ## O Que & Porquê?
 Registros (logging) no desenvolvimento de software é a técnica de registrar eventos que ocorrem enquanto um programa está em execução, tipicamente em um arquivo ou sistema externo. Os programadores fazem isso para obter insights sobre o comportamento do software, solucionar problemas e manter um registro do histórico operacional, que é crucial para depuração e monitoramento da saúde das aplicações.

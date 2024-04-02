@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Analizar una fecha de una cadena en Elm implica convertir informaci\xF3\
   n textual que representa fechas y horas en un formato que Elm pueda entender y\u2026"
 title: Analizando una fecha a partir de una cadena de texto
+weight: 30
 ---
-
-{{< edit_this_page >}}
 
 ## Qué y Por Qué?
 Analizar una fecha de una cadena en Elm implica convertir información textual que representa fechas y horas en un formato que Elm pueda entender y manipular, específicamente en el tipo `Date`. Este proceso es crucial para manejar la entrada del usuario, mostrar fechas correctamente localizadas y realizar cálculos relacionados con fechas, asegurando que tus aplicaciones en Elm puedan procesar datos temporales de manera inteligente.

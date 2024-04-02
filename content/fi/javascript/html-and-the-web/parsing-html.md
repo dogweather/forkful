@@ -12,9 +12,8 @@ summary: "HTML:n j\xE4sennys tarkoittaa tietojen purkamista HTML-dokumenteista. 
   \ tekev\xE4t sit\xE4 voidakseen vuorovaikuttaa tai manipuloida web-sis\xE4lt\xF6\
   \xE4,\u2026"
 title: "HTML:n j\xE4sent\xE4minen"
+weight: 43
 ---
-
-{{< edit_this_page >}}
 
 ## Mikä & Miksi?
 HTML:n jäsennys tarkoittaa tietojen purkamista HTML-dokumenteista. Ohjelmoijat tekevät sitä voidakseen vuorovaikuttaa tai manipuloida web-sisältöä, automatisoida tietojen poimimista tai varten web-kaapimista.

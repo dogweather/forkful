@@ -11,9 +11,8 @@ summary: "Criar um arquivo tempor\xE1rio em Google Apps Script envolve gerar um 
   \ destinado ao uso de curto prazo, tipicamente para processamento intermedi\xE1\
   rio\u2026"
 title: "Criando um arquivo tempor\xE1rio"
+weight: 21
 ---
-
-{{< edit_this_page >}}
 
 ## O Que & Por Que?
 

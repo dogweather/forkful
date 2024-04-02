@@ -9,9 +9,8 @@ summary: "\xC5 starte et nytt prosjekt er som \xE5 lage en bl\xE5kopi fra scratc
   \ \u2013 det legger grunnlaget for hva som skal bygges. Programmerere gj\xF8r dette\
   \ for \xE5 bringe nye\u2026"
 title: "\xC5 starte et nytt prosjekt"
+weight: 1
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 Å starte et nytt prosjekt er som å lage en blåkopi fra scratch – det legger grunnlaget for hva som skal bygges. Programmerere gjør dette for å bringe nye ideer til live, løse problemer, eller skape noe personlig eller for kunder.

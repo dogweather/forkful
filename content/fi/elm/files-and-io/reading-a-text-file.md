@@ -9,9 +9,8 @@ summary: "Tekstitiedoston lukeminen tarkoittaa tiedoston sis\xE4lt\xE4m\xE4n tek
   \ tuomista ohjelman k\xE4ytt\xF6\xF6n. Ohjelmoijat tekev\xE4t t\xE4m\xE4n, koska\
   \ tiedostojen\u2026"
 title: Tekstitiedoston lukeminen
+weight: 22
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 Tekstitiedoston lukeminen tarkoittaa tiedoston sisältämän tekstimateriaalin tuomista ohjelman käyttöön. Ohjelmoijat tekevät tämän, koska tiedostojen kautta voidaan käsitellä ja hyödyntää ulkoista dataa.

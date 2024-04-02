@@ -20,9 +20,8 @@ summary: "Command line arguments \u0935\u094B \u091A\u0940\u091C\u0947\u0902 \u0
   \u0915\u0930\u094D\u0924\u093E\u2026"
 title: "\u0915\u092E\u093E\u0902\u0921 \u0932\u093E\u0907\u0928 \u0906\u0930\u094D\
   \u0917\u0941\u092E\u0947\u0902\u091F\u094D\u0938 \u092A\u0922\u093C\u0928\u093E"
+weight: 23
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why? (क्या और क्यों?)
 Command line arguments वो चीजें होती हैं जो हम अपने प्रोग्राम को रन करते समय console में दे सकते हैं। Programmers इन्हें इसलिए पढ़ते हैं ताकि उपयोगकर्ता ऐप को कस्टमाइज करने के लिए inputs वक्त पर दे सकें।

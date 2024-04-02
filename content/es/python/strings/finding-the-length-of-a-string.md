@@ -7,9 +7,8 @@ model: gpt-4-1106-preview
 summary: "Contar los caracteres en una cadena permite saber su longitud. Es fundamental,\
   \ por ejemplo, para validar entradas de usuario, limitar textos de un tweet o\u2026"
 title: Calculando la longitud de una cadena
+weight: 7
 ---
-
-{{< edit_this_page >}}
 
 ## Qué y Por Qué?
 Contar los caracteres en una cadena permite saber su longitud. Es fundamental, por ejemplo, para validar entradas de usuario, limitar textos de un tweet o simplemente para procesar datos de texto.

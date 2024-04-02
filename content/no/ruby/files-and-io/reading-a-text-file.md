@@ -9,9 +9,8 @@ summary: "Lese en tekstfil i Ruby betyr \xE5 hente data fra en fil som er lagret
   \ disken. Programmerere gj\xF8r dette for \xE5 behandle informasjon som er bevart\
   \ over tid,\u2026"
 title: Lese en tekstfil
+weight: 22
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 Lese en tekstfil i Ruby betyr å hente data fra en fil som er lagret på disken. Programmerere gjør dette for å behandle informasjon som er bevart over tid, utenfor et program.

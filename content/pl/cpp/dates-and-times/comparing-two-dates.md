@@ -9,9 +9,8 @@ summary: "Por\xF3wnywanie dw\xF3ch dat to sprawdzenie, kt\xF3ra jest wcze\u015Bn
   \ czy p\xF3\u017Aniejsza, albo czy s\u0105 identyczne. Programi\u015Bci robi\u0105\
   \ to, aby zarz\u0105dza\u0107 terminami,\u2026"
 title: "Por\xF3wnywanie dw\xF3ch dat"
+weight: 27
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why? (Co i dlaczego?)
 Porównywanie dwóch dat to sprawdzenie, która jest wcześniejsza, czy późniejsza, albo czy są identyczne. Programiści robią to, aby zarządzać terminami, sortować wydarzenia, czy też kontrolować czas trwania operacji.

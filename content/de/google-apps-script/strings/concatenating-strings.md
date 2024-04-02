@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Das Verketten von Zeichenketten beinhaltet das Kombinieren von zwei oder\
   \ mehreren Zeichenketten zu einer einzelnen Zeichenkette. Programmierer machen\u2026"
 title: Strings verketten
+weight: 3
 ---
-
-{{< edit_this_page >}}
 
 ## Was & Warum?
 

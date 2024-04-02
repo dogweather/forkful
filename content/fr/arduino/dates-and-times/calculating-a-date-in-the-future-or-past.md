@@ -9,9 +9,8 @@ summary: "Calculer une date dans le futur ou le pass\xE9 revient \xE0 trouver un
   \ date en ajoutant ou soustrayant des jours \xE0 partir d'aujourd'hui. Les programmeurs\
   \ le\u2026"
 title: "Calcul d'une date future ou pass\xE9e"
+weight: 26
 ---
-
-{{< edit_this_page >}}
 
 ## Quoi & Pourquoi ?
 Calculer une date dans le futur ou le passé revient à trouver une date en ajoutant ou soustrayant des jours à partir d'aujourd'hui. Les programmeurs le font pour des rappels, des délais, et la planification d’événements.

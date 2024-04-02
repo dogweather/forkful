@@ -8,9 +8,8 @@ model: gpt-4-1106-preview
 summary: "Calculating a future or past date involves manipulating dates to find out\
   \ what day it was or will be. Programmers do this for scheduling, reminders, or\u2026"
 title: Calculating a date in the future or past
+weight: 26
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 Calculating a future or past date involves manipulating dates to find out what day it was or will be. Programmers do this for scheduling, reminders, or determining durations and deadlines.

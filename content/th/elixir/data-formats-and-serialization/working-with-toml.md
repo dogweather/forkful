@@ -16,9 +16,8 @@ summary: "\u0E01\u0E32\u0E23\u0E17\u0E33\u0E07\u0E32\u0E19\u0E01\u0E31\u0E1A TOM
   \ TOML (Tom's Obvious, Minimal Language) \u0E42\u0E14\u0E22\u0E43\u0E0A\u0E49 Elixir\u2026"
 title: "\u0E01\u0E32\u0E23\u0E17\u0E33\u0E07\u0E32\u0E19\u0E23\u0E48\u0E27\u0E21\u0E01\
   \u0E31\u0E1A TOML"
+weight: 39
 ---
-
-{{< edit_this_page >}}
 
 ## อะไร & ทำไม?
 การทำงานกับ TOML หมายถึงการแยกวิเคราะห์ (parsing) และการสร้างข้อมูล TOML (Tom's Obvious, Minimal Language) โดยใช้ Elixir โปรแกรมเมอร์ใช้มันในการจัดการไฟล์การกำหนดค่า เพราะว่า TOML นั้นอ่านง่าย, สามารถแยกวิเคราะห์ได้ง่าย และมีการจับคู่กับโครงสร้างข้อมูลแบบแฮช(haša)ได้ดี

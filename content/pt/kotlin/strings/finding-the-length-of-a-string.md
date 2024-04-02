@@ -7,9 +7,8 @@ model: gpt-4-1106-preview
 summary: "Medir o tamanho de uma string \xE9 descobrir quantos caracteres ela tem.\
   \ Programadores fazem isso para validar entradas, manipular textos ou simplesmente\u2026"
 title: Descobrindo o comprimento de uma string
+weight: 7
 ---
-
-{{< edit_this_page >}}
 
 ## O Que & Porquê?
 Medir o tamanho de uma string é descobrir quantos caracteres ela tem. Programadores fazem isso para validar entradas, manipular textos ou simplesmente porque o comprimento de uma string é crucial para a lógica do código.

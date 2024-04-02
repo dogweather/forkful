@@ -9,9 +9,8 @@ summary: "Stringien interpolointi tarkoittaa muuttujien ja lausekkeiden upottami
   \ suoraan merkkijonoihin. Ohjelmoijat k\xE4ytt\xE4v\xE4t sit\xE4 koodin selkeytt\xE4\
   miseen ja\u2026"
 title: Merkkijonon interpolointi
+weight: 8
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why? (Mitä & Miksi?)
 Stringien interpolointi tarkoittaa muuttujien ja lausekkeiden upottamista suoraan merkkijonoihin. Ohjelmoijat käyttävät sitä koodin selkeyttämiseen ja dynaamisten tekstisisältöjen luomiseen.

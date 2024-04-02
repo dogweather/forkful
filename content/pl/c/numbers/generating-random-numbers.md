@@ -11,9 +11,8 @@ summary: "Generowanie losowych liczb w j\u0119zyku C polega na tworzeniu warto\u
   ci, kt\xF3re s\u0105 nieprzewidywalne i pod\u0105\u017Caj\u0105 za okre\u015Blonym\
   \ rozk\u0142adem, takim jak jednostajny\u2026"
 title: Generowanie liczb losowych
+weight: 12
 ---
-
-{{< edit_this_page >}}
 
 ## Co i dlaczego?
 

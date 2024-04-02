@@ -13,9 +13,8 @@ summary: "L\xE0m vi\u1EC7c v\u1EDBi YAML c\xF3 ngh\u0129a l\xE0 ph\xE2n t\xEDch 
   n Ng\u1EEF \u0110\xE1nh D\u1EA5u Kh\xE1c) trong Python. L\u1EADp tr\xECnh vi\xEA\
   n\u2026"
 title: "L\xE0m vi\u1EC7c v\u1EDBi YAML"
+weight: 41
 ---
-
-{{< edit_this_page >}}
 
 ## Gì và Tại sao?
 Làm việc với YAML có nghĩa là phân tích và tạo ra các tài liệu YAML (Yet Another Markup Language - Ngôn Ngữ Đánh Dấu Khác) trong Python. Lập trình viên thực hiện điều này để quản lý các tệp cấu hình, cài đặt ứng dụng, hoặc việc chuỗi hóa dữ liệu dễ đọc và viết cho con người.

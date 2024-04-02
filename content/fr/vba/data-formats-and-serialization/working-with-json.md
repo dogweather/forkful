@@ -11,9 +11,8 @@ summary: "JSON (JavaScript Object Notation) est un format l\xE9ger d'\xE9change 
   \ donn\xE9es facile \xE0 lire et \xE0 \xE9crire pour les humains, ainsi qu'\xE0\
   \ parser et \xE0 g\xE9n\xE9rer pour\u2026"
 title: Travailler avec JSON
+weight: 38
 ---
-
-{{< edit_this_page >}}
 
 ## Quoi et Pourquoi ?
 

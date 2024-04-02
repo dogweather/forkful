@@ -7,9 +7,8 @@ model: gpt-4-0125-preview
 summary: "Il refactoring \xE8 il processo di ristrutturazione del codice esistente\
   \ senza modificarne il comportamento esterno, mirato a migliorare attributi non\u2026"
 title: Rifattorizzazione
+weight: 19
 ---
-
-{{< edit_this_page >}}
 
 ## Cosa & Perché?
 Il refactoring è il processo di ristrutturazione del codice esistente senza modificarne il comportamento esterno, mirato a migliorare attributi non funzionali come leggibilità e manutenibilità. I programmatori lo fanno per rendere il codice più pulito, più facile da comprendere e più efficiente, facilitando gli aggiornamenti futuri e riducendo il rischio di bug.

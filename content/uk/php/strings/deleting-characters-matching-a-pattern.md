@@ -10,9 +10,8 @@ summary: "Deleting characters matching a pattern means we\u2019re getting rid of
 title: "\u0412\u0438\u0434\u0430\u043B\u0435\u043D\u043D\u044F \u0441\u0438\u043C\u0432\
   \u043E\u043B\u0456\u0432 \u0437\u0430 \u0432\u0456\u0437\u0435\u0440\u0443\u043D\
   \u043A\u043E\u043C"
+weight: 5
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why? (Що та Чому?)
 Deleting characters matching a pattern means we’re getting rid of specific letters or symbols based on rules—like tossing out all vowels from a sentence. Programmers do this to clean data, shape inputs for databases, or simplify text for processing.

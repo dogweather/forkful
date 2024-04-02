@@ -11,9 +11,8 @@ summary: "Assosiatiiviset taulukot, tunnetaan muissa kieli\xE4 karttoina tai san
   \ ovat avain-arvo-pareja, joita k\xE4ytet\xE4\xE4n tehokkaaseen datan etsint\xE4\
   \xE4n ja\u2026"
 title: "Assosiatiivisten taulukoiden k\xE4ytt\xF6"
+weight: 15
 ---
-
-{{< edit_this_page >}}
 
 ## Mikä & Miksi?
 

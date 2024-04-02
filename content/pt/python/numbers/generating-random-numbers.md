@@ -9,9 +9,8 @@ summary: "Gerar n\xFAmeros aleat\xF3rios envolve criar n\xFAmeros que n\xE3o pod
   \ ser previstos de maneira razo\xE1vel melhor do que por acaso, o que \xE9 essencial\
   \ para o\u2026"
 title: "Gera\xE7\xE3o de n\xFAmeros aleat\xF3rios"
+weight: 12
 ---
-
-{{< edit_this_page >}}
 
 ## O Que e Por Quê?
 

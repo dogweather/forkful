@@ -10,9 +10,8 @@ model: gpt-4-0125-preview
 summary: "Concatenar strings na programa\xE7\xE3o envolve combinar duas ou mais strings\
   \ em uma. Os programadores fazem isso para manipular dados de texto com facilidade,\u2026"
 title: Concatenando strings
+weight: 3
 ---
-
-{{< edit_this_page >}}
 
 ## O que & Por quê?
 Concatenar strings na programação envolve combinar duas ou mais strings em uma. Os programadores fazem isso para manipular dados de texto com facilidade, construir mensagens ou montar partes de uma interface de usuário de forma dinâmica.

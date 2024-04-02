@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "YAML ain't Markup Language, of YAML, is een gebruiksvriendelijke standaard\
   \ voor gegevensserialisatie voor alle programmeertalen. Programmeurs werken met\u2026"
 title: Werken met YAML
+weight: 41
 ---
-
-{{< edit_this_page >}}
 
 ## Wat & Waarom?
 YAML ain't Markup Language, of YAML, is een gebruiksvriendelijke standaard voor gegevensserialisatie voor alle programmeertalen. Programmeurs werken met YAML omdat het gemakkelijk te lezen en te schrijven is, vaak gebruikt wordt voor configuratiebestanden, en voor gegevensuitwisseling tussen talen of diensten.

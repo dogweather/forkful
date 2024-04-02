@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Associatieve arrays in Dart, doorgaans bekend als Maps, zijn datastructuren\
   \ die gegevens opslaan in sleutel-waardeparen. Ze stellen programmeurs in staat\u2026"
 title: Gebruik makend van associatieve arrays
+weight: 15
 ---
-
-{{< edit_this_page >}}
 
 ## Wat & Waarom?
 

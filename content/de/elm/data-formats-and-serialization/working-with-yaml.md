@@ -9,9 +9,8 @@ summary: "YAML ist ein datenorientiertes Format zum Speichern und \xDCbertragen 
   \ Informationen, \xE4hnlich wie JSON, aber menschenlesbarer. Programmierer verwenden\
   \ es\u2026"
 title: Arbeiten mit YAML
+weight: 41
 ---
-
-{{< edit_this_page >}}
 
 ## Was & Warum?
 YAML ist ein datenorientiertes Format zum Speichern und Übertragen von Informationen, ähnlich wie JSON, aber menschenlesbarer. Programmierer verwenden es für Konfigurationen, Datenimport/-export und weil es einfach zu lesen und zu schreiben ist.

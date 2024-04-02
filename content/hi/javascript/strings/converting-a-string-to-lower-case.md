@@ -19,9 +19,8 @@ summary: "JavaScript \u092E\u0947\u0902 \u0915\u093F\u0938\u0940 string \u0915\u
 title: "\u0938\u094D\u091F\u094D\u0930\u093F\u0902\u0917 \u0915\u094B \u091B\u094B\
   \u091F\u0947 \u0905\u0915\u094D\u0937\u0930\u094B\u0902 \u092E\u0947\u0902 \u092A\
   \u0930\u093F\u0935\u0930\u094D\u0924\u093F\u0924 \u0915\u0930\u0928\u093E"
+weight: 4
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why? (क्या और क्यों?)
 JavaScript में किसी string को lower case में बदलना मतलब उस string के सभी अक्षरों को छोटे (small letters) में परिवर्तित करना है। ऐसा तब किया जाता है जब हमें case sensitivity से बचना होता है, जैसे यूजर इनपुट को सामान्यीकृत करना या डेटा की comparison और sorting करते समय।

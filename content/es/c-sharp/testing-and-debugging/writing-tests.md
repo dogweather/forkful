@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Escribir pruebas en C# implica crear scripts automatizados para validar\
   \ la funcionalidad de tu c\xF3digo, asegurando que se comporte como se espera. Los\u2026"
 title: Escribiendo pruebas
+weight: 36
 ---
-
-{{< edit_this_page >}}
 
 ## Qué y Por Qué?
 

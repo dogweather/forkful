@@ -8,9 +8,8 @@ model: gpt-4-1106-preview
 summary: "Creating a temporary file means making a file that's only needed for a short\
   \ time, then deleted. Programmers do it for intermediate storage, like when you\u2026"
 title: Creating a temporary file
+weight: 21
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 

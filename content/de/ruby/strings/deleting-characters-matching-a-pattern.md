@@ -9,9 +9,8 @@ summary: "Mit Ruby kannst du leicht Zeichen, die einem bestimmten Muster entspre
   \ aus einem String entfernen. Wir machen das, um unerw\xFCnschte Daten zu s\xE4\
   ubern\u2026"
 title: "L\xF6schen von Zeichen, die einem Muster entsprechen"
+weight: 5
 ---
-
-{{< edit_this_page >}}
 
 ## Was & Warum?
 Mit Ruby kannst du leicht Zeichen, die einem bestimmten Muster entsprechen, aus einem String entfernen. Wir machen das, um unerwünschte Daten zu säubern oder um die Eingabe zu formatieren.

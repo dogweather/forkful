@@ -10,9 +10,8 @@ model: gpt-4-0125-preview
 summary: "Recuperar la fecha actual en Rust es una tarea com\xFAn para acciones como\
   \ registrar, operaciones basadas en tiempo o simplemente mostrar la fecha. A\u2026"
 title: Obteniendo la fecha actual
+weight: 29
 ---
-
-{{< edit_this_page >}}
 
 ## ¿Qué y por qué?
 

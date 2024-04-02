@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Das Vergleichen zweier Daten in C beinhaltet die Bestimmung der chronologischen\
   \ Beziehung zwischen ihnen \u2013 ob ein Datum dem anderen vorausgeht oder ob sie\u2026"
 title: Zwei Daten vergleichen
+weight: 27
 ---
-
-{{< edit_this_page >}}
 
 ## Was & Warum?
 

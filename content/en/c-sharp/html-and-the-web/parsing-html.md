@@ -7,9 +7,8 @@ model: gpt-4-0125-preview
 summary: "Parsing HTML in programming involves analyzing the structure of an HTML\
   \ document, allowing you to extract, manipulate, and interact with its content\u2026"
 title: Parsing HTML
+weight: 43
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 

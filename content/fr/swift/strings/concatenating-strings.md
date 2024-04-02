@@ -9,9 +9,8 @@ summary: "Concat\xE9ner des cha\xEEnes, c'est les joindre bout \xE0 bout. On fai
   \ \xE7a pour cr\xE9er des phrases, des messages d'erreur, ou assembler des bouts\
   \ de texte de\u2026"
 title: "Concat\xE9nation de cha\xEEnes de caract\xE8res"
+weight: 3
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why? (Quoi et Pourquoi ?)
 Concaténer des chaînes, c'est les joindre bout à bout. On fait ça pour créer des phrases, des messages d'erreur, ou assembler des bouts de texte de différentes sources.

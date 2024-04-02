@@ -8,9 +8,8 @@ model: gpt-4-1106-preview
 summary: "Extrair substrings significa pegar peda\xE7os espec\xEDficos de uma string.\
   \ Programadores fazem isso para manipular, analisar dados ou simplesmente para\u2026"
 title: Extraindo substrings
+weight: 6
 ---
-
-{{< edit_this_page >}}
 
 ## O Que & Por Quê?
 Extrair substrings significa pegar pedaços específicos de uma string. Programadores fazem isso para manipular, analisar dados ou simplesmente para destacar informações importantes dentro de um texto maior.

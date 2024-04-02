@@ -11,9 +11,8 @@ summary: "Regul\xE6re uttrykk (regex) i Ruby er m\xF8nstre som brukes til \xE5 m
   \ tegnkombinasjoner i strenger, noe som gj\xF8r det mulig for utviklere \xE5 s\xF8\
   ke etter, matche\u2026"
 title: "Bruke regul\xE6re uttrykk"
+weight: 11
 ---
-
-{{< edit_this_page >}}
 
 ## Hva & Hvorfor?
 Regulære uttrykk (regex) i Ruby er mønstre som brukes til å matche tegnkombinasjoner i strenger, noe som gjør det mulig for utviklere å søke etter, matche og manipulere tekst effektivt. Programmerere bruker regex for oppgaver som validering, parsing og strengmanipulasjon, noe som gjør det til et uunnværlig verktøy for tekstbehandling.

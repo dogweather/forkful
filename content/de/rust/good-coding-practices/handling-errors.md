@@ -7,9 +7,8 @@ model: gpt-4-1106-preview
 summary: "Fehlerbehandlung dreht sich darum, sich zu k\xFCmmern, wenn die Dinge schiefgehen.\
   \ Entwickler machen das, um das Unerwartete zu handhaben, und um\u2026"
 title: Fehlerbehandlung
+weight: 16
 ---
-
-{{< edit_this_page >}}
 
 ## Was & Warum?
 

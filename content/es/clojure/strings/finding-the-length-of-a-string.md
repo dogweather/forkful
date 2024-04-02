@@ -7,9 +7,8 @@ model: gpt-4-1106-preview
 summary: "Contar caracteres de un texto es \xFAtil para validar entradas y manejar\
   \ datos precisamente. Los programadores lo hacen todo el tiempo para delimitar,\u2026"
 title: Calculando la longitud de una cadena
+weight: 7
 ---
-
-{{< edit_this_page >}}
 
 ## ¿Qué & Por Qué?
 Contar caracteres de un texto es útil para validar entradas y manejar datos precisamente. Los programadores lo hacen todo el tiempo para delimitar, formatear y procesar texto eficientemente.

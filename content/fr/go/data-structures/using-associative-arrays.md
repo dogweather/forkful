@@ -11,9 +11,8 @@ summary: "Les tableaux associatifs, connus sous le nom de maps en Go, vous perme
   \ de stocker des paires cl\xE9-valeur o\xF9 chaque cl\xE9 unique est associ\xE9\
   e \xE0 une\u2026"
 title: Utilisation des tableaux associatifs
+weight: 15
 ---
-
-{{< edit_this_page >}}
 
 ## Quoi & Pourquoi ?
 

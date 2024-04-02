@@ -7,9 +7,8 @@ model: gpt-4-1106-preview
 summary: "Refactoring is the process of restructuring existing computer code without\
   \ changing its external behavior. Programmers refactor to improve nonfunctional\u2026"
 title: Refactoring
+weight: 19
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 Refactoring is the process of restructuring existing computer code without changing its external behavior. Programmers refactor to improve nonfunctional attributes of the software, making the code cleaner, more efficient, and easier to maintain.

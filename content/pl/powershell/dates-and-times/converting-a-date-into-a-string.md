@@ -9,9 +9,8 @@ summary: "Co to jest konwersja daty na \u0142a\u0144cuch znak\xF3w? To proces zm
   \ formatu daty z jej wbudowanego typu w PowerShell do postaci tekstowej, czyli stringa.\
   \ Po co\u2026"
 title: "Konwersja daty na \u0142a\u0144cuch znak\xF3w"
+weight: 28
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 Co to jest konwersja daty na łańcuch znaków? To proces zmiany formatu daty z jej wbudowanego typu w PowerShell do postaci tekstowej, czyli stringa. Po co programiści to robią? Aby ułatwić wyświetlanie, zapisywanie lub manipulowanie datami w interfejsach użytkownika, plikach, lub systemach nieobsługujących typów dat.

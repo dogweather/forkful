@@ -9,9 +9,8 @@ summary: "La g\xE9n\xE9ration de nombres al\xE9atoires consiste \xE0 produire de
   \ s\xE9quences ou des valeurs uniques impr\xE9visibles dans une plage d\xE9finie.\
   \ Les programmeurs\u2026"
 title: "G\xE9n\xE9ration de nombres al\xE9atoires"
+weight: 12
 ---
-
-{{< edit_this_page >}}
 
 ## Quoi et pourquoi ?
 

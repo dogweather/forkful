@@ -15,9 +15,8 @@ summary: "\u0110\u1ECDc c\xE1c \u0111\u1ED1i s\u1ED1 d\xF2ng l\u1EC7nh c\xF3 ngh
   p tr\xECnh vi\xEAn c\u1EA7n \u0111i\u1EC1u n\xE0y \u0111\u1EC3 cho ph\xE9p ng\u01B0\
   \u1EDDi\u2026"
 title: "\u0110\u1ECDc c\xE1c \u0111\u1ED1i s\u1ED1 d\xF2ng l\u1EC7nh"
+weight: 23
 ---
-
-{{< edit_this_page >}}
 
 ## Gì và Tại sao?
 Đọc các đối số dòng lệnh có nghĩa là lấy dữ liệu được truyền tới chương trình của bạn khi nó khởi động. Các lập trình viên cần điều này để cho phép người dùng tùy chỉnh hành vi của chương trình mà không cần thay đổi mã.

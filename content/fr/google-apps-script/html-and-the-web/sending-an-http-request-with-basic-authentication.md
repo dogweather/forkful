@@ -11,9 +11,8 @@ summary: "L'envoi d'une requ\xEAte HTTP avec une authentification de base consis
   \ \xE0 coder un nom d'utilisateur et un mot de passe dans un en-t\xEAte de requ\xEA\
   te pour\u2026"
 title: "Envoyer une requ\xEAte HTTP avec une authentification de base"
+weight: 45
 ---
-
-{{< edit_this_page >}}
 
 ## Quoi & Pourquoi ?
 

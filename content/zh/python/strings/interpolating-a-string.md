@@ -16,9 +16,8 @@ summary: "\u5B57\u7B26\u4E32\u5185\u63D2\u662F\u4E00\u79CD\u5728\u5B57\u7B26\u4E
   \u7B26\u4E32\u4E2D\uFF0C\u8FD9\u4F7F\u5F97\u4EE3\u7801\u6BD4\u4F20\u7EDF\u7684\u5B57\
   \u7B26\u4E32\u8FDE\u63A5\u66F4\u52A0\u6613\u8BFB\u548C\u6E05\u6D01\u3002"
 title: "\u5B57\u7B26\u4E32\u63D2\u503C"
+weight: 8
 ---
-
-{{< edit_this_page >}}
 
 ## 什么和为什么？
 字符串内插是一种在字符串常量中嵌入表达式的方法。程序员使用它来动态地将值插入到字符串中，这使得代码比传统的字符串连接更加易读和清洁。

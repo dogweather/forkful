@@ -7,9 +7,8 @@ model: gpt-4-0125-preview
 summary: "Att arbeta med TOML inneb\xE4r att tolka och generera TOML-data (Tom's Obvious,\
   \ Minimal Language) med Lua. Programmerare anv\xE4nder TOML f\xF6r\u2026"
 title: Att arbeta med TOML
+weight: 39
 ---
-
-{{< edit_this_page >}}
 
 ## Vad & Varför?
 Att arbeta med TOML innebär att tolka och generera TOML-data (Tom's Obvious, Minimal Language) med Lua. Programmerare använder TOML för konfigurationsfiler på grund av dess läsbarhet och enkla syntax som enkelt översätts till en datastruktur.

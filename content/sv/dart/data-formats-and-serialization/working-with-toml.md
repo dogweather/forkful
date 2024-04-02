@@ -11,9 +11,8 @@ summary: "TOML, eller Toms Uppenbara, Minimala Spr\xE5k, \xE4r ett konfiguration
   \ som \xE4r l\xE4tt att l\xE4sa p\xE5 grund av sin tydliga semantik. Programmerare\
   \ anv\xE4nder\u2026"
 title: Att Arbeta med TOML
+weight: 39
 ---
-
-{{< edit_this_page >}}
 
 ## Vad & Varför?
 

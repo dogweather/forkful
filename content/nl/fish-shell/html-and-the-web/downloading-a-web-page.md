@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Een webpagina downloaden haalt de inhoud ervan van het web naar je lokale\
   \ machine. Programmeurs doen dit voor automatisering, data scraping, offline\u2026"
 title: Een webpagina downloaden
+weight: 42
 ---
-
-{{< edit_this_page >}}
 
 ## Wat & Waarom?
 Een webpagina downloaden haalt de inhoud ervan van het web naar je lokale machine. Programmeurs doen dit voor automatisering, data scraping, offline toegang of testen.

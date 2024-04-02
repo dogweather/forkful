@@ -9,9 +9,8 @@ summary: "Uuden projektin aloittaminen on tyhj\xE4lt\xE4 p\xF6yd\xE4lt\xE4 alkam
   \ uusi hakemisto, uusi Git-repo, uudet tiedostot. Koodarit aloittavat projekteja\
   \ testatakseen\u2026"
 title: Uuden projektin aloittaminen
+weight: 1
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why? - Mikä & Miksi?
 Uuden projektin aloittaminen on tyhjältä pöydältä alkaminen: uusi hakemisto, uusi Git-repo, uudet tiedostot. Koodarit aloittavat projekteja testatakseen ideoita, ratkaistakseen ongelmia tai vain opetellakseen jotain uutta.

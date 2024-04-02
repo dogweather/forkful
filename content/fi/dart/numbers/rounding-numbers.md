@@ -11,9 +11,8 @@ summary: "Numeroiden py\xF6rist\xE4minen on prosessi, jossa numero s\xE4\xE4det\
   \xE4n l\xE4himp\xE4\xE4n kokonaislukuun tai m\xE4\xE4riteltyyn m\xE4\xE4r\xE4\xE4\
   n desimaalipaikkoja. Ohjelmoijat py\xF6rist\xE4v\xE4t\u2026"
 title: "Lukujen py\xF6rist\xE4minen"
+weight: 13
 ---
-
-{{< edit_this_page >}}
 
 ## Mikä ja miksi?
 

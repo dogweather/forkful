@@ -9,9 +9,8 @@ summary: "Organizar o c\xF3digo em fun\xE7\xF5es segmenta tarefas em peda\xE7os 
   veis, tornando o c\xF3digo mais limpo e f\xE1cil de manter. Fazemos isso para reduzir\
   \ a\u2026"
 title: "Organizando o c\xF3digo em fun\xE7\xF5es"
+weight: 18
 ---
-
-{{< edit_this_page >}}
 
 ## O Que & Por Quê?
 Organizar o código em funções segmenta tarefas em pedaços reutilizáveis, tornando o código mais limpo e fácil de manter. Fazemos isso para reduzir a redundância, facilitar o teste e melhorar a legibilidade.

@@ -11,9 +11,8 @@ summary: "\xC5 skrive en tekstfil i C# involverer \xE5 programmert skape eller e
   \ tekstfiler p\xE5 filsystemet - en grunnleggende oppgave for mange applikasjoner,\
   \ slik\u2026"
 title: Skrive en tekstfil
+weight: 24
 ---
-
-{{< edit_this_page >}}
 
 ## Hva & Hvorfor?
 Å skrive en tekstfil i C# involverer å programmert skape eller endre tekstfiler på filsystemet - en grunnleggende oppgave for mange applikasjoner, slik som logging, dataeksport, eller konfigurasjonsstyring. Programmerere utfører denne operasjonen for å bevare data mellom økter, dele informasjon på tvers av systemer, eller lagre lettleselige utdata.

@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Verificar se um diret\xF3rio existe em Elixir trata de confirmar a presen\xE7\
   a de um diret\xF3rio em um caminho especificado no sistema de arquivos. Programadores\u2026"
 title: "Verificando se um diret\xF3rio existe"
+weight: 20
 ---
-
-{{< edit_this_page >}}
 
 ## O Que & Por Que?
 Verificar se um diretório existe em Elixir trata de confirmar a presença de um diretório em um caminho especificado no sistema de arquivos. Programadores fazem isso para garantir que eles possam ler, escrever ou realizar operações no diretório com segurança, sem encontrar erros devido à sua ausência.

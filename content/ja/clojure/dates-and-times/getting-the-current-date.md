@@ -23,9 +23,8 @@ summary: "\u30D7\u30ED\u30B0\u30E9\u30E0\u306B\u304A\u3044\u3066\u73FE\u5728\u30
   \u904B\u7528\u80FD\u529B\u3092\u6D3B\u7528\u3057\u3066\u304A\u308A\u3001\u8C4A\u5BCC\
   \u306AJava Date-Time\u2026"
 title: "\u73FE\u5728\u306E\u65E5\u4ED8\u306E\u53D6\u5F97"
+weight: 29
 ---
-
-{{< edit_this_page >}}
 
 ## 何となぜ？
 プログラムにおいて現在の日付を取得することは、ログ取り、イベントのタイムスタンプ記録、タスクのスケジュール設定を含め、様々な理由から極めて重要です。JVM上のLisp方言であるClojureでは、このタスクはJavaの相互運用能力を活用しており、豊富なJava Date-Time APIへの直接アクセスを可能にしています。

@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Le espressioni regolari (regex) sono modelli utilizzati per individuare\
   \ combinazioni di caratteri nelle stringhe. I programmatori le utilizzano per\u2026"
 title: Utilizzo delle espressioni regolari
+weight: 11
 ---
-
-{{< edit_this_page >}}
 
 ## Cos'è e perché?
 Le espressioni regolari (regex) sono modelli utilizzati per individuare combinazioni di caratteri nelle stringhe. I programmatori le utilizzano per cercare, modificare o manipolare testo basandosi su schemi definiti, rendendole indispensabili per compiti come la validazione dei dati, l'analisi sintattica o la trasformazione.

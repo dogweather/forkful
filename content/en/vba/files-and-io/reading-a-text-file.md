@@ -8,9 +8,8 @@ model: gpt-4-0125-preview
 summary: "Reading a text file in Visual Basic for Applications (VBA) involves programmatically\
   \ accessing and extracting the contents of a text file from within an\u2026"
 title: Reading a text file
+weight: 22
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 

@@ -11,9 +11,8 @@ summary: "Uuden projektin aloittaminen Visual Basic for Applications (VBA) -ohje
   \ sis\xE4lt\xE4\xE4 ymp\xE4rist\xF6n pystytt\xE4misen is\xE4nt\xE4sovelluksen, kuten\
   \ Excelin, sis\xE4ll\xE4\u2026"
 title: Uuden projektin aloittaminen
+weight: 1
 ---
-
-{{< edit_this_page >}}
 
 ## Mikä ja miksi?
 

@@ -10,9 +10,8 @@ model: gpt-4-0125-preview
 summary: "Escribir un archivo de texto en PHP implica crear o abrir un archivo e insertar\
   \ contenido en \xE9l. Los programadores hacen esto para persistir datos, como\u2026"
 title: Escribiendo un archivo de texto
+weight: 24
 ---
-
-{{< edit_this_page >}}
 
 ## ¿Qué y Por Qué?
 Escribir un archivo de texto en PHP implica crear o abrir un archivo e insertar contenido en él. Los programadores hacen esto para persistir datos, como contenido generado por usuarios o registros, más allá del ciclo de vida del programa.

@@ -11,9 +11,8 @@ summary: "Parsear HTML en Elixir implica extraer informaci\xF3n de documentos HT
   \ Los programadores hacen esto para interactuar program\xE1ticamente con p\xE1ginas\
   \ web,\u2026"
 title: Analizando HTML
+weight: 43
 ---
-
-{{< edit_this_page >}}
 
 ## Qué y Por Qué?
 

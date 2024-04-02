@@ -8,9 +8,8 @@ model: gpt-4-1106-preview
 summary: "Logging is basically akin to keeping a diary for your code; it's the act\
   \ of recording events, errors, and other significant data points that happen when\u2026"
 title: Logging
+weight: 17
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 

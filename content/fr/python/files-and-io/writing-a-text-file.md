@@ -11,9 +11,8 @@ summary: "\xC9crire dans un fichier texte avec Python est une t\xE2che fondament
   \ qui implique de cr\xE9er ou d'ouvrir un fichier, puis d'y ajouter du texte ou\
   \ de le\u2026"
 title: "R\xE9diger un fichier texte"
+weight: 24
 ---
-
-{{< edit_this_page >}}
 
 ## Quoi et pourquoi ?
 Écrire dans un fichier texte avec Python est une tâche fondamentale qui implique de créer ou d'ouvrir un fichier, puis d'y ajouter du texte ou de le remplacer. Cette fonctionnalité est cruciale pour l'enregistrement de données, la gestion de configuration, et le stockage des résultats générés par des programmes, ce qui en fait un outil de base mais essentiel dans l'arsenal d'un programmeur.

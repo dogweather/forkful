@@ -11,9 +11,8 @@ summary: "Obter a data atual em Go \xE9 uma tarefa fundamental para programadore
   \ semelhante ao \"Ol\xE1, Mundo!\" em sua onipresen\xE7a. \xC9 essencial para tarefas\
   \ que v\xE3o\u2026"
 title: Obtendo a data atual
+weight: 29
 ---
-
-{{< edit_this_page >}}
 
 ## O Que & Por Quê?
 

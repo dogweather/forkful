@@ -12,9 +12,8 @@ summary: "\uB0A0\uC9DC\uB97C \uBE44\uAD50\uD55C\uB2E4\uB294 \uAC74 \uD2B9\uC815 
   \ \uAD00\uB9AC, \uB370\uC774\uD130 \uC815\uB82C, \uC720\uD6A8 \uAE30\uAC04 \uD655\
   \uC778 \uAC19\uC740 \uACBD\uC6B0\uC5D0 \uC4F0\uC5EC\uC694."
 title: "\uB450 \uB0A0\uC9DC \uBE44\uAD50\uD558\uAE30"
+weight: 27
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why? (무엇과 왜?)
 날짜를 비교한다는 건 특정 두 시점을 대조하는 것입니다. 일정 관리, 데이터 정렬, 유효 기간 확인 같은 경우에 쓰여요.

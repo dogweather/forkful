@@ -7,9 +7,8 @@ model: gpt-4-0125-preview
 summary: "Code in Funktionen zu organisieren, bedeutet, Ihren Code in wiederverwendbare,\
   \ modulare Bl\xF6cke zu unterteilen. Wir tun dies, um Dinge DRY (Don't Repeat\u2026"
 title: Code in Funktionen organisieren
+weight: 18
 ---
-
-{{< edit_this_page >}}
 
 ## Was & Warum?
 Code in Funktionen zu organisieren, bedeutet, Ihren Code in wiederverwendbare, modulare Blöcke zu unterteilen. Wir tun dies, um Dinge DRY (Don't Repeat Yourself - Wiederhole dich nicht) zu halten, was den Code sauberer, leichter lesbar und einfacher zu debuggen macht.

@@ -9,9 +9,8 @@ summary: "Att j\xE4mf\xF6ra tv\xE5 datum inneb\xE4r att fastst\xE4lla om de \xE4
   \ lika, vilket \xE4r tidigare, eller vilket \xE4r senare. Programmerare g\xF6r detta\
   \ f\xF6r att hantera\u2026"
 title: "J\xE4mf\xF6ra tv\xE5 datum"
+weight: 27
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 Att jämföra två datum innebär att fastställa om de är lika, vilket är tidigare, eller vilket är senare. Programmerare gör detta för att hantera tidsbaserade händelser, giltighetsperioder, schemaläggning eller uppgifter som är beroende av tid och datum.

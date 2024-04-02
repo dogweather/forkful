@@ -8,9 +8,8 @@ model: gpt-4-0125-preview
 summary: "Associative arrays are like secret handshakes for data in Lua\u2014instead\
   \ of just numbers lining up dutifully by index, your keys can be whatever you want,\u2026"
 title: Using associative arrays
+weight: 15
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 

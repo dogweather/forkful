@@ -15,9 +15,8 @@ summary: "\u89E3\u6790HTML\u610F\u5473\u7740\u62C6\u5206\u4E00\u5927\u5757HTML\u
   \u5BB9\u6216\u5728\u683C\u5F0F\u548C\u7CFB\u7EDF\u4E4B\u95F4\u8FC1\u79FB\u4FE1\u606F\
   \u3002"
 title: "\u89E3\u6790HTML"
+weight: 43
 ---
-
-{{< edit_this_page >}}
 
 ## 什么 & 为什么？
 解析HTML意味着拆分一大块HTML代码以掌握其结构和内容。程序员这样做是为了提取数据、操纵内容或在格式和系统之间迁移信息。

@@ -9,9 +9,8 @@ summary: "Att generera slumpm\xE4ssiga tal inneb\xE4r att skapa tal som inte rim
   \ kan f\xF6ruts\xE4gas b\xE4ttre \xE4n genom slumpen, vilket \xE4r avg\xF6rande\
   \ f\xF6r utvecklingen av\u2026"
 title: Generera slumptal
+weight: 12
 ---
-
-{{< edit_this_page >}}
 
 ## Vad & Varför?
 

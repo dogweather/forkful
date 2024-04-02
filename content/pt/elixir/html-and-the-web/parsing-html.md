@@ -9,9 +9,8 @@ summary: "Parsear HTML \xE9 o processo de ler e entender o c\xF3digo HTML, tipic
   \ para extrair informa\xE7\xF5es dele. Programadores fazem isso para interagir com\
   \ dados de\u2026"
 title: "An\xE1lise de HTML"
+weight: 43
 ---
-
-{{< edit_this_page >}}
 
 ## O Que é & Por Que?
 

@@ -7,9 +7,8 @@ model: gpt-4-1106-preview
 summary: "Comparer deux dates permet de d\xE9terminer laquelle est ant\xE9rieure,\
   \ post\xE9rieure ou si elles sont identiques. Les programmeurs utilisent cette comparaison\u2026"
 title: Comparer deux dates
+weight: 27
 ---
-
-{{< edit_this_page >}}
 
 ## Quoi et Pourquoi ?
 Comparer deux dates permet de déterminer laquelle est antérieure, postérieure ou si elles sont identiques. Les programmeurs utilisent cette comparaison pour trier des événements, gérer des délais ou valider des périodes.

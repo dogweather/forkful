@@ -11,9 +11,8 @@ summary: "L'analisi dell'HTML significa setacciare la struttura e il contenuto d
   \ un file HTML per estrarre informazioni. I programmatori lo fanno per accedere\
   \ ai\u2026"
 title: Analisi del HTML
+weight: 43
 ---
-
-{{< edit_this_page >}}
 
 ## Cosa e Perché?
 

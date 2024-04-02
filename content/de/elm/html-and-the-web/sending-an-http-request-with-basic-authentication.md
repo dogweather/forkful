@@ -9,9 +9,8 @@ summary: "Das Senden einer HTTP-Anfrage mit Basisauthentifizierung hei\xDFt, das
   \ du deine Anmeldedaten in einer sicheren, codierten Form mitschickst, um Zugriff\
   \ auf\u2026"
 title: HTTP-Anfragen mit Basisauthentifizierung senden
+weight: 45
 ---
-
-{{< edit_this_page >}}
 
 ## Was & Warum?
 

@@ -13,9 +13,8 @@ summary: "TOML l\xE0 vi\u1EBFt t\u1EAFt c\u1EE7a Tom's Obvious, Minimal Language
   p tin c\u1EA5u h\xECnh v\xEC n\xF3 d\u1EC5 \u0111\u1ECDc v\xE0 vi\u1EBFt \u0111\u1ED1\
   i v\u1EDBi con ng\u01B0\u1EDDi, \u0111\u1ED3ng th\u1EDDi\u2026"
 title: "L\xE0m vi\u1EC7c v\u1EDBi TOML"
+weight: 39
 ---
-
-{{< edit_this_page >}}
 
 ## Là gì và Tại sao?
 TOML là viết tắt của Tom's Obvious, Minimal Language. Ngôn ngữ này được sử dụng cho các tập tin cấu hình vì nó dễ đọc và viết đối với con người, đồng thời vẫn dễ dàng để phân tích đối với máy móc. Các nhà phát triển thường sử dụng TOML để tránh sự lộn xộn của XML và sự tế nhị của JSON khi thiết lập cấu hình.

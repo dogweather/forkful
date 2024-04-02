@@ -11,9 +11,8 @@ summary: "\xC5 skrive en tekstfil i C inneb\xE6rer \xE5 opprette eller \xE5pne e
   \ fil i skrivemodus og deretter bruke Cs fil-I/O-funksjoner for \xE5 lagre tekstdata\
   \ i den.\u2026"
 title: Skrive en tekstfil
+weight: 24
 ---
-
-{{< edit_this_page >}}
 
 ## Hva & Hvorfor?
 

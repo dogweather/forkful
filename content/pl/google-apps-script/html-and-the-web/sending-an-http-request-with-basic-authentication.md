@@ -11,9 +11,8 @@ summary: "Wysy\u0142anie \u017C\u0105dania HTTP z uwierzytelnianiem podstawowym 
   \ na zakodowaniu nazwy u\u017Cytkownika i has\u0142a w nag\u0142\xF3wku \u017C\u0105\
   dania, aby uzyska\u0107 dost\u0119p do\u2026"
 title: "Wysy\u0142anie \u017C\u0105dania HTTP z podstawowym uwierzytelnianiem"
+weight: 45
 ---
-
-{{< edit_this_page >}}
 
 ## Co i dlaczego?
 

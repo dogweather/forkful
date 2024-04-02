@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Das Schreiben auf den Standardfehler (stderr) in der Arduino-Programmierung\
   \ bedeutet, Fehlermeldungen und Diagnosen in einen separaten Kanal zu leiten, um\u2026"
 title: Schreiben auf Standardfehler
+weight: 25
 ---
-
-{{< edit_this_page >}}
 
 ## Was & Warum?
 

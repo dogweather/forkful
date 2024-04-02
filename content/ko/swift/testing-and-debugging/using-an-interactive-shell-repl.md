@@ -15,9 +15,8 @@ summary: "\uB300\uD654\uD615 \uC178, \uB610\uB294 Read-Eval-Print Loop(REPL)\uC7
   \uAC01\uC744 \uBE60\uB974\uAC8C \uD14C\uC2A4\uD2B8\uD558\uAC70\uB098, \uB514\uBC84\
   \uAE45\uD558\uAC70\uB098, \uC5B8\uC5B4\uB97C \uD559\uC2B5\uD569\uB2C8\uB2E4."
 title: "\uC778\uD130\uB799\uD2F0\uBE0C \uC178 (REPL) \uC0AC\uC6A9\uD558\uAE30"
+weight: 34
 ---
-
-{{< edit_this_page >}}
 
 ## 무엇인가 & 왜 사용하는가?
 대화형 셸, 또는 Read-Eval-Print Loop(REPL)을 사용하면 상호 작용적으로 코드를 작성할 수 있습니다. 프로그래머들은 이를 사용하여 Swift 코드 조각을 빠르게 테스트하거나, 디버깅하거나, 언어를 학습합니다.

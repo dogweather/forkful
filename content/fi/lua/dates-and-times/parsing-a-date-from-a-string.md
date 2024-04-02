@@ -11,9 +11,8 @@ summary: "P\xE4iv\xE4m\xE4\xE4r\xE4n j\xE4sent\xE4minen merkkijonosta merkitsee 
   \ muuntamista p\xE4iv\xE4m\xE4\xE4rist\xE4 ja ajoista sellaiseen formaattiin, jota\
   \ on helppo k\xE4sitell\xE4,\u2026"
 title: "P\xE4iv\xE4m\xE4\xE4r\xE4n j\xE4sennys merkkijonosta"
+weight: 30
 ---
-
-{{< edit_this_page >}}
 
 ## Mikä & Miksi?
 Päivämäärän jäsentäminen merkkijonosta merkitsee tekstiesitysten muuntamista päivämääristä ja ajoista sellaiseen formaattiin, jota on helppo käsitellä, tallentaa tai verrata Lua-ohjelmassa. Ohjelmoijat suorittavat tämän tehtävän helpottaakseen toimintoja, kuten aikataulutusta, lokitusta tai mitä tahansa aikaa koskevia laskelmia, ja siltana ihmisen luettavien päivämääräformaatien ja tietokoneen tehokkaasti käsittelemien rakenteellisten datatyyppien välillä.

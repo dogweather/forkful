@@ -11,9 +11,8 @@ summary: "TOML, co oznacza Tom's Obvious, Minimal Language, to format serializac
   \ danych g\u0142\xF3wnie stosowany w plikach konfiguracyjnych. Programi\u015Bci\
   \ wykorzystuj\u0105\u2026"
 title: Praca z TOML
+weight: 39
 ---
-
-{{< edit_this_page >}}
 
 ## Co i dlaczego?
 

@@ -10,9 +10,8 @@ model: gpt-4-0125-preview
 summary: "Tests in Haskell zu schreiben, dient dazu, sicherzustellen, dass Ihre Funktionen\
   \ wie erwartet durch automatisierte \xDCberpr\xFCfungen arbeiten. Entwickler tun\u2026"
 title: Tests Schreiben
+weight: 36
 ---
-
-{{< edit_this_page >}}
 
 ## Was & Warum?
 

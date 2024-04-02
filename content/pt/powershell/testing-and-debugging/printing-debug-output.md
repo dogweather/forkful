@@ -9,9 +9,8 @@ summary: "Depurar \xE9 como procurar uma agulha no palheiro: voc\xEA precisa ver
   \ que seu c\xF3digo est\xE1 realmente fazendo. Programadores imprimem mensagens\
   \ de depura\xE7\xE3o\u2026"
 title: "Exibindo sa\xEDdas de depura\xE7\xE3o"
+weight: 33
 ---
-
-{{< edit_this_page >}}
 
 ## O Que é e Por Que?
 

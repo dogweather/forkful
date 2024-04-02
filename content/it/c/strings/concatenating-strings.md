@@ -10,9 +10,8 @@ model: gpt-4-0125-preview
 summary: "La concatenazione di stringhe in C consiste nell'unire due o pi\xF9 stringhe\
   \ da capo a coda per formare una nuova stringa. I programmatori eseguono questa\u2026"
 title: Concatenazione di stringhe
+weight: 3
 ---
-
-{{< edit_this_page >}}
 
 ## Cosa e Perché?
 

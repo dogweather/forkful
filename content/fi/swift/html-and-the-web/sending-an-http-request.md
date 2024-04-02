@@ -9,9 +9,8 @@ summary: "HTTP-pyynt\xF6jen l\xE4hett\xE4minen on tapa kommunikoida verkkopalvel
   \ kanssa. Ohjelmoijat k\xE4ytt\xE4v\xE4t niit\xE4 haalimaan dataa tai l\xE4hett\xE4\
   m\xE4\xE4n sit\xE4 palvelimelle."
 title: "HTTP-pyynn\xF6n l\xE4hett\xE4minen"
+weight: 44
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 HTTP-pyyntöjen lähettäminen on tapa kommunikoida verkkopalveluiden kanssa. Ohjelmoijat käyttävät niitä haalimaan dataa tai lähettämään sitä palvelimelle.

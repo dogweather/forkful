@@ -9,9 +9,8 @@ summary: "Deleting characters that match a certain pattern is about stripping aw
   \ unwanted bits from your strings \u2014 think cleaning up data or parsing text\
   \ files.\u2026"
 title: Deleting characters matching a pattern
+weight: 5
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 Deleting characters that match a certain pattern is about stripping away unwanted bits from your strings — think cleaning up data or parsing text files. Programmers do this to extract meaningful info, ensure data consistency, or prepare data for processing.

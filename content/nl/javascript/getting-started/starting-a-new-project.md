@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Een nieuw project starten betekent het opzetten van een verse codebasis\
   \ voor je briljante idee\xEBn. Programmeurs doen dit om concepten om te zetten in\u2026"
 title: Een nieuw project starten
+weight: 1
 ---
-
-{{< edit_this_page >}}
 
 ## Wat & Waarom?
 

@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Escribir pruebas en Bash implica crear scripts de casos de prueba para validar\
   \ la funcionalidad de tus scripts de Bash. Los programadores realizan pruebas\u2026"
 title: Escribiendo pruebas
+weight: 36
 ---
-
-{{< edit_this_page >}}
 
 ## Qué y Por Qué?
 Escribir pruebas en Bash implica crear scripts de casos de prueba para validar la funcionalidad de tus scripts de Bash. Los programadores realizan pruebas para asegurarse de que sus scripts funcionen como se espera bajo varias condiciones, detectando errores y bugs antes del despliegue.

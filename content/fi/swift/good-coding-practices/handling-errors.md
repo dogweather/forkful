@@ -7,9 +7,8 @@ model: gpt-4-1106-preview
 summary: "Virheenk\xE4sittely Swiftiss\xE4 tarkoittaa ongelmien ennakointia ja ratkaisemista,\
   \ jotka ilmaantuvat koodisi ajon aikana. Teemme niin kaaoksen\u2026"
 title: "Virheiden k\xE4sittely"
+weight: 16
 ---
-
-{{< edit_this_page >}}
 
 ## Mikä ja Miksi?
 Virheenkäsittely Swiftissä tarkoittaa ongelmien ennakointia ja ratkaisemista, jotka ilmaantuvat koodisi ajon aikana. Teemme niin kaaoksen hallitsemiseksi—pitäen sovellukset kaatumattomina ja tarjoten käyttäjälle sujuvan kokemuksen.

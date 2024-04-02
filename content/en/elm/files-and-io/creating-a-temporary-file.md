@@ -5,9 +5,8 @@ lastmod: '2024-03-13T22:45:00.028025-06:00'
 model: gpt-4-1106-preview
 summary: null
 title: Creating a temporary file
+weight: 21
 ---
-
-{{< edit_this_page >}}
 
 # What & Why?
 

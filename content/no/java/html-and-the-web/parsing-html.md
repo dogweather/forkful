@@ -9,9 +9,8 @@ summary: "Parsing av HTML betyr \xE5 tolke og organisere HTML-kode slik at data 
   \ leses og h\xE5ndteres av et program. Programm\xF8rer parser HTML for \xE5 hente\
   \ ut\u2026"
 title: Analyse av HTML
+weight: 43
 ---
-
-{{< edit_this_page >}}
 
 ## Hva & Hvorfor?
 Parsing av HTML betyr å tolke og organisere HTML-kode slik at data kan leses og håndteres av et program. Programmører parser HTML for å hente ut informasjon, manipulere innhold eller integrere webdata i applikasjoner.

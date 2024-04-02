@@ -13,9 +13,8 @@ summary: "T\u1EA3i xu\u1ED1ng m\u1ED9t trang web c\xF3 ngh\u0129a l\xE0 l\u1EA5y
   i\u1EC1u n\xE0y \u0111\u1EC3 thu th\u1EADp d\u1EEF li\u1EC7u web, xem ngo\u1EA1\
   i tuy\u1EBFn, ho\u1EB7c t\u1EF1 \u0111\u1ED9ng\u2026"
 title: "T\u1EA3i trang web"
+weight: 42
 ---
-
-{{< edit_this_page >}}
 
 ## Cái gì & Tại sao?
 Tải xuống một trang web có nghĩa là lấy nội dung của nó qua mạng. Các lập trình viên làm điều này để thu thập dữ liệu web, xem ngoại tuyến, hoặc tự động hóa các tương tác với trang web.

@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Tekstitiedoston kirjoittaminen C-kieless\xE4 sis\xE4lt\xE4\xE4 tiedoston\
   \ luomisen tai avaamisen kirjoitustilassa ja sen j\xE4lkeen C:n tiedosto I/O -funktioiden\u2026"
 title: Tekstitiedoston kirjoittaminen
+weight: 24
 ---
-
-{{< edit_this_page >}}
 
 ## Mikä & Miksi?
 

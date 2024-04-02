@@ -7,9 +7,8 @@ model: gpt-4-1106-preview
 summary: "Dumping all your code into one big pile? Bad idea. Breaking it up into functions?\
   \ Good idea. It keeps your Elm code clean, reusable, and easier to test.\u2026"
 title: Organizing code into functions
+weight: 18
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 Dumping all your code into one big pile? Bad idea. Breaking it up into functions? Good idea. It keeps your Elm code clean, reusable, and easier to test. By organizing your code into functions, you group code that performs specific tasks together, which makes your application more maintainable and understandable.

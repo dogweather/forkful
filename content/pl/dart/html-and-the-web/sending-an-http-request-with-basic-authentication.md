@@ -11,9 +11,8 @@ summary: "Wysy\u0142anie \u017C\u0105dania HTTP z podstawow\u0105 autentykacj\u0
   \ polega na do\u0142\u0105czeniu nazwy u\u017Cytkownika i has\u0142a do \u017C\u0105\
   dania, w celu weryfikacji to\u017Csamo\u015Bci u\u017Cytkownika.\u2026"
 title: "Wysy\u0142anie \u017C\u0105dania HTTP z podstawowym uwierzytelnieniem"
+weight: 45
 ---
-
-{{< edit_this_page >}}
 
 ## Co i dlaczego?
 

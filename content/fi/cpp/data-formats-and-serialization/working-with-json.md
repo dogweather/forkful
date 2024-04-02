@@ -11,9 +11,8 @@ summary: "JSON (JavaScript Object Notation) on kevyt muoto datan tallentamiseen 
   \ siirt\xE4miseen, mik\xE4 tekee siit\xE4 erinomaisen v\xE4lineen datan vaihtoon\
   \ palvelimien ja\u2026"
 title: "Ty\xF6skentely JSON:n kanssa"
+weight: 38
 ---
-
-{{< edit_this_page >}}
 
 ## Mikä & Miksi?
 

@@ -9,9 +9,8 @@ summary: "Die L\xE4nge eines Strings zu bestimmen bedeutet, die Anzahl der Zeich
   \ zu z\xE4hlen, die er enth\xE4lt. Das ist n\xFCtzlich, um Text zu verarbeiten,\
   \ Grenzen zu\u2026"
 title: "Ermittlung der Zeichenkettenl\xE4nge"
+weight: 7
 ---
-
-{{< edit_this_page >}}
 
 ## Was & Warum?
 Die Länge eines Strings zu bestimmen bedeutet, die Anzahl der Zeichen zu zählen, die er enthält. Das ist nützlich, um Text zu verarbeiten, Grenzen zu überprüfen oder Daten validieren zu können.

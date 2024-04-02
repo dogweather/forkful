@@ -9,9 +9,8 @@ summary: "J\xE4mf\xF6ra tv\xE5 datum inneb\xE4r att best\xE4mma deras relation -
   r ett tidigare, senare eller samma dag. Programmerare g\xF6r detta f\xF6r att hantera\
   \ tidsbaserade\u2026"
 title: "J\xE4mf\xF6ra tv\xE5 datum"
+weight: 27
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why? - "Vad & Varför?"
 Jämföra två datum innebär att bestämma deras relation - är ett tidigare, senare eller samma dag. Programmerare gör detta för att hantera tidsbaserade händelser, som utgångsdatum, schemaläggning eller att beräkna tidsintervaller.

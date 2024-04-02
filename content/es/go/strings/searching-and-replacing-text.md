@@ -11,9 +11,8 @@ summary: "Buscar y reemplazar texto en programaci\xF3n facilita la modificaci\xF
   n y gesti\xF3n de cadenas, que es una tarea fundamental en la manipulaci\xF3n de\
   \ datos y el\u2026"
 title: Buscando y reemplazando texto
+weight: 10
 ---
-
-{{< edit_this_page >}}
 
 ## Qué y por qué?
 

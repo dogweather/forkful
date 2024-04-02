@@ -12,9 +12,8 @@ summary: "\u6BD4\u8F83\u4E24\u4E2A\u65E5\u671F\u5C31\u662F\u786E\u5B9A\u54EA\u4E
   \u4E48\u505A\u4E3B\u8981\u662F\u4E3A\u4E86\u5904\u7406\u65F6\u95F4\u7EBF\u3001\u6709\
   \u6548\u671F\u3001\u65E5\u7A0B\u5B89\u6392\u7B49\u529F\u80FD\u3002"
 title: "\u6BD4\u8F83\u4E24\u4E2A\u65E5\u671F"
+weight: 27
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why? (是什么以及为什么?)
 比较两个日期就是确定哪个日期在先，哪个在后。程序员这么做主要是为了处理时间线、有效期、日程安排等功能。

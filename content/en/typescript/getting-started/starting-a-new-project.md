@@ -7,9 +7,8 @@ model: gpt-4-1106-preview
 summary: "Starting a new project in TypeScript is all about setting up a solid foundation\
   \ to code on. Programmers initiate new projects to turn fresh ideas into\u2026"
 title: Starting a new project
+weight: 1
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 Starting a new project in TypeScript is all about setting up a solid foundation to code on. Programmers initiate new projects to turn fresh ideas into working software, test out concepts, or learn new things.

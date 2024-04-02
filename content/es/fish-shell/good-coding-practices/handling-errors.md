@@ -7,9 +7,8 @@ model: gpt-4-1106-preview
 summary: "El manejo de errores permite que tu script trate lo inesperado de manera\
   \ elegante. Lo hacemos para gestionar fallos sin hacer que el pelo de nuestros\u2026"
 title: Manejo de errores
+weight: 16
 ---
-
-{{< edit_this_page >}}
 
 ## ¿Qué y Por Qué?
 El manejo de errores permite que tu script trate lo inesperado de manera elegante. Lo hacemos para gestionar fallos sin hacer que el pelo de nuestros usuarios se vuelva gris.

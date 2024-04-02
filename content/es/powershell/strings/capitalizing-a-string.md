@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Capitalizar una cadena en PowerShell implica transformar el primer car\xE1\
   cter de una cadena dada a may\xFAscula, mientras que el resto de la cadena permanece\u2026"
 title: Capitalizando una cadena de texto
+weight: 2
 ---
-
-{{< edit_this_page >}}
 
 ## ¿Qué y por qué?
 Capitalizar una cadena en PowerShell implica transformar el primer carácter de una cadena dada a mayúscula, mientras que el resto de la cadena permanece sin cambios. Los programadores a menudo realizan esta tarea con fines de formato, como preparar texto para su visualización en interfaces de usuario o seguir reglas gramaticales en documentos generados.

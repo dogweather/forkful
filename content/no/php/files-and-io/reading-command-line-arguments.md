@@ -9,9 +9,8 @@ summary: "Kommandolinjeargumenter lar deg kj\xF8re PHP-skript med spesifikke par
   \ for ulike oppgaver. \xC5 bruke disse er n\xF8dvendig for \xE5 lage fleksible skript\
   \ som\u2026"
 title: Lese kommandolinjeargumenter
+weight: 23
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 Kommandolinjeargumenter lar deg kjøre PHP-skript med spesifikke parametere for ulike oppgaver. Å bruke disse er nødvendig for å lage fleksible skript som kan håndtere ulike inngangsdata dynamisk.

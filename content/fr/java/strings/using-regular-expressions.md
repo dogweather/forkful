@@ -11,9 +11,8 @@ summary: "Les expressions r\xE9guli\xE8res (regex) en Java vous permettent de d\
   finir des motifs sp\xE9cifiques pour rechercher, manipuler ou valider des cha\xEE\
   nes de\u2026"
 title: "Utilisation des expressions r\xE9guli\xE8res"
+weight: 11
 ---
-
-{{< edit_this_page >}}
 
 ## Quoi & Pourquoi ?
 

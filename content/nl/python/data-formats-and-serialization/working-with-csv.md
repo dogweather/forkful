@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Werken met CSV (Comma-Separated Values) bestanden betekent het lezen van\
   \ en schrijven naar platte tekstbestanden waarbij elke rij een datagegeven is.\u2026"
 title: Werken met CSV
+weight: 37
 ---
-
-{{< edit_this_page >}}
 
 ## Wat & Waarom?
 Werken met CSV (Comma-Separated Values) bestanden betekent het lezen van en schrijven naar platte tekstbestanden waarbij elke rij een datagegeven is. Programmeurs zijn dol op CSV's omdat ze licht, leesbaar voor mensen en compatibel met vrijwel elk gegevensverwerkingshulpmiddel zijn.

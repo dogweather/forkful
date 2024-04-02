@@ -9,9 +9,8 @@ summary: "Trasformare una data in stringa significa convertire il formato data i
   \ testo leggibile. I programmatori lo fanno per mostrare date in formati diversi\
   \ o\u2026"
 title: Conversione di una data in una stringa
+weight: 28
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 Trasformare una data in stringa significa convertire il formato data in testo leggibile. I programmatori lo fanno per mostrare date in formati diversi o per salvare su database non supportanti il tipo data.

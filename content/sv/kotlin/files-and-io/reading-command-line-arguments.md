@@ -9,9 +9,8 @@ summary: "Kommandoradsargument l\xE5ter program veta vad anv\xE4ndaren vill dire
   \ vid start. De anv\xE4nds f\xF6r att skr\xE4ddarsy programk\xF6rningen utan en\
   \ massa fr\xE5gor efter\u2026"
 title: "L\xE4sa in kommandoradsargument"
+weight: 23
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 Kommandoradsargument låter program veta vad användaren vill direkt vid start. De används för att skräddarsy programkörningen utan en massa frågor efter att programmet startats.

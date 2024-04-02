@@ -10,9 +10,8 @@ model: gpt-4-0125-preview
 summary: "Att skicka en HTTP-f\xF6rfr\xE5gan i Google Apps Script handlar om att programmatiskt\
   \ g\xF6ra ett anrop till en extern webbserver eller API. Programmerare g\xF6r\u2026"
 title: "Skicka en HTTP-f\xF6rfr\xE5gan"
+weight: 44
 ---
-
-{{< edit_this_page >}}
 
 ## Vad och varför?
 

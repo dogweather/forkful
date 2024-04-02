@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "CSV:n (pilkuilla erotetut arvot) k\xE4sittely JavaScriptill\xE4 tarkoittaa\
   \ CSV-tiedostojen j\xE4sent\xE4mist\xE4 tai luomista, jotta voidaan joko ottaa vastaan\u2026"
 title: "Ty\xF6skentely CSV:n kanssa"
+weight: 37
 ---
-
-{{< edit_this_page >}}
 
 ## Mikä ja miksi?
 CSV:n (pilkuilla erotetut arvot) käsittely JavaScriptillä tarkoittaa CSV-tiedostojen jäsentämistä tai luomista, jotta voidaan joko ottaa vastaan taulukkomuotoista dataa ulkoisista lähteistä tai viedä dataa käytettäväksi muissa ohjelmissa. Ohjelmoijat tekevät näin, koska se mahdollistaa helpon ja kevyen datan vaihdon sovellusten, tietokantojen ja järjestelmien välillä, joissa monimutkaisemmat formaatit kuten JSON voivat olla liioittelua.

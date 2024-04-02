@@ -9,9 +9,8 @@ summary: "Podzielenie kodu na funkcje polega na rozk\u0142adaniu skrypt\xF3w na 
   \ wielokrotnie u\u017Cywalne bloki, kt\xF3re realizuj\u0105 okre\u015Blone zadania.\
   \ Sprawia to, \u017Ce kod\u2026"
 title: Organizacja kodu w funkcje
+weight: 18
 ---
-
-{{< edit_this_page >}}
 
 ## Co i dlaczego?
 Podzielenie kodu na funkcje polega na rozkładaniu skryptów na mniejsze, wielokrotnie używalne bloki, które realizują określone zadania. Sprawia to, że kod jest czytelniejszy, łatwiejszy do zrozumienia i debugowania.

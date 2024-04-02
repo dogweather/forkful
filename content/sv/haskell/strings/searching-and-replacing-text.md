@@ -8,9 +8,8 @@ model: gpt-4-1106-preview
 summary: "S\xF6k och ers\xE4tt i text l\xE5ter dig automatiskt byta ut specifika teckenstr\xE4\
   ngar mot andra. Programmerare anv\xE4nder detta f\xF6r att effektivisera kodmodifiering,\u2026"
 title: "S\xF6kning och ers\xE4ttning av text"
+weight: 10
 ---
-
-{{< edit_this_page >}}
 
 ## Vad & Varför?
 

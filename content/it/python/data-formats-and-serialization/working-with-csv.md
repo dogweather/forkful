@@ -10,9 +10,8 @@ model: gpt-4-0125-preview
 summary: "Lavorare con i CSV (Valori Separati da Virgola) comporta la lettura da e\
   \ la scrittura su file CSV, un formato comune per memorizzare dati tabellari. I\u2026"
 title: Lavorare con i CSV
+weight: 37
 ---
-
-{{< edit_this_page >}}
 
 ## Cosa & Perché?
 Lavorare con i CSV (Valori Separati da Virgola) comporta la lettura da e la scrittura su file CSV, un formato comune per memorizzare dati tabellari. I programmatori lo fanno per scambiare e memorizzare facilmente dati in un formato basato su testo semplice, ampiamente supportato su diverse piattaforme e linguaggi.

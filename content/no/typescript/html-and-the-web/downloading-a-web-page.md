@@ -9,9 +9,8 @@ summary: "\xC5 laste ned en nettside betyr \xE5 hente dens data for \xE5 kunne v
   \ eller behandles lokalt. Programmerere gj\xF8r dette for \xE5 analysere innhold,\
   \ sjekke\u2026"
 title: Nedlasting av en nettside
+weight: 42
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why? (Hva & Hvorfor?)
 Å laste ned en nettside betyr å hente dens data for å kunne vises eller behandles lokalt. Programmerere gjør dette for å analysere innhold, sjekke tilgjengelighet, eller integrere data i egne applikasjoner.

@@ -9,9 +9,8 @@ summary: "Ladda ner en webbsida inneb\xE4r att h\xE4mta HTML-data fr\xE5n en ser
   \ till din Arduino. Programmerare g\xF6r det f\xF6r att interagera med webben, samla\
   \ data eller\u2026"
 title: "H\xE4mta en webbsida"
+weight: 42
 ---
-
-{{< edit_this_page >}}
 
 ## Vad & Varför?
 Ladda ner en webbsida innebär att hämta HTML-data från en server till din Arduino. Programmerare gör det för att interagera med webben, samla data eller styra enheter fjärran.

@@ -1,14 +1,15 @@
 ---
 date: 2024-01-26 03:48:23.152351-07:00
-description: "Usar um depurador em Elixir envolve percorrer seu c\xF3digo, inspecionar\
-  \ vari\xE1veis e rastrear fluxos para eliminar bugs. Os programadores fazem isso\
-  \ para\u2026"
+description: "O Elixir vem com um depurador gr\xE1fico embutido chamado `:debugger`.\
+  \ Para us\xE1-lo, voc\xEA precisar\xE1 inici\xE1-lo e anex\xE1-lo ao seu processo\
+  \ em execu\xE7\xE3o.\u2026"
 lastmod: '2024-03-13T22:44:46.242652-06:00'
 model: gpt-4-0125-preview
-summary: "Usar um depurador em Elixir envolve percorrer seu c\xF3digo, inspecionar\
-  \ vari\xE1veis e rastrear fluxos para eliminar bugs. Os programadores fazem isso\
-  \ para\u2026"
+summary: "O Elixir vem com um depurador gr\xE1fico embutido chamado `:debugger`. Para\
+  \ us\xE1-lo, voc\xEA precisar\xE1 inici\xE1-lo e anex\xE1-lo ao seu processo em\
+  \ execu\xE7\xE3o.\u2026"
 title: Usando um depurador
+weight: 35
 ---
 
 ## Como usar:

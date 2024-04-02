@@ -9,9 +9,8 @@ summary: "Muuttamalla merkkijonon pieniksi kirjaimiksi varmistetaan, ett\xE4 tek
   \ on yhdenmukainen ja vertailukelpoinen. T\xE4m\xE4 on hy\xF6dyllist\xE4 erityisesti\
   \ tietojen\u2026"
 title: Merkkijonon muuntaminen pieniksi kirjaimiksi
+weight: 4
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why? - Mitä & Miksi?
 Muuttamalla merkkijonon pieniksi kirjaimiksi varmistetaan, että teksti on yhdenmukainen ja vertailukelpoinen. Tämä on hyödyllistä erityisesti tietojen syöttämisen ja hakutoimintojen yhteydessä.

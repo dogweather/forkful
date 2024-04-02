@@ -10,9 +10,8 @@ model: gpt-4-0125-preview
 summary: "\xC5 skrive ut debug-output i Dart handler om \xE5 vise informasjon til\
   \ konsollen under kj\xF8retiden, noe som gj\xF8r det mulig for utviklere \xE5 spore\u2026"
 title: "Utskrift av feils\xF8kingsresultat"
+weight: 33
 ---
-
-{{< edit_this_page >}}
 
 ## Hva og hvorfor?
 

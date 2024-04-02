@@ -9,9 +9,8 @@ summary: "Calculating a date in the future or past to znalezienie konkretnej dat
   \ przed lub po wyznaczonej liczbie dni. Programi\u015Bci robi\u0105 to, aby obs\u0142\
   ugiwa\u0107\u2026"
 title: "Obliczanie daty w przysz\u0142o\u015Bci lub przesz\u0142o\u015Bci"
+weight: 26
 ---
-
-{{< edit_this_page >}}
 
 ## Co i Dlaczego?
 Calculating a date in the future or past to znalezienie konkretnej daty przed lub po wyznaczonej liczbie dni. Programiści robią to, aby obsługiwać rezerwacje, terminy płatności, przypomnienia i inne funkcje związane z czasem.

@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Generare numeri casuali in Dart comporta la creazione di valori numerici\
   \ imprevedibili e diversi ad ogni esecuzione. I programmatori sfruttano questa\u2026"
 title: Generare numeri casuali
+weight: 12
 ---
-
-{{< edit_this_page >}}
 
 ## Cosa & Perché?
 Generare numeri casuali in Dart comporta la creazione di valori numerici imprevedibili e diversi ad ogni esecuzione. I programmatori sfruttano questa funzionalità per vari motivi, dalla simulazione di scenari del mondo reale in ambienti di test, all'abilitazione di meccaniche di gioco e alla garanzia della sicurezza attraverso la casualità nelle operazioni crittografiche.

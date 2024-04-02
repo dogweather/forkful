@@ -9,9 +9,8 @@ summary: "En el \xE1mbito de la programaci\xF3n, especialmente cuando se trata d
   \ entornos Linux o Unix, manipular archivos directamente desde la interfaz de l\xED\
   nea de\u2026"
 title: "Manipulando archivos con comandos de l\xEDnea de una sola l\xEDnea"
+weight: 31
 ---
-
-{{< edit_this_page >}}
 
 ## Qué y Por Qué?
 

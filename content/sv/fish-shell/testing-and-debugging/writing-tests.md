@@ -11,9 +11,8 @@ summary: "Att skriva tester i Fish Shell inneb\xE4r att skapa skript som automat
   \ k\xF6r din kod f\xF6r att validera dess beteende mot f\xF6rv\xE4ntade resultat.\
   \ Denna praxis\u2026"
 title: Skriva tester
+weight: 36
 ---
-
-{{< edit_this_page >}}
 
 ## Vad & Varför?
 

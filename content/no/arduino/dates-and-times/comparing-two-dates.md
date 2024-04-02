@@ -9,9 +9,8 @@ summary: "\xC5 sammenligne to datoer inneb\xE6rer \xE5 se p\xE5 om de er like, h
   \ som kommer f\xF8r eller tiden mellom dem. Programmerere gj\xF8r dette for \xE5\
   \ h\xE5ndtere frister,\u2026"
 title: Sammenlikning av to datoer
+weight: 27
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why? (Hva og Hvorfor?)
 Å sammenligne to datoer innebærer å se på om de er like, hvilken som kommer før eller tiden mellom dem. Programmerere gjør dette for å håndtere frister, tidslinjer og for å synkronisere hendelser.

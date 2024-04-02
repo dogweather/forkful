@@ -20,9 +20,8 @@ summary: "\uBB38\uC790\uC5F4\uC744 \uC18C\uBB38\uC790\uB85C \uBCC0\uD658\uD558\u
   \ \uBB38\uC790\uC5F4\uC744 \uC18C\uBB38\uC790\uB85C \uBCC0\uD658\uD569\uB2C8\uB2E4\
   ."
 title: "\uBB38\uC790\uC5F4\uC744 \uC18C\uBB38\uC790\uB85C \uBCC0\uD658\uD558\uAE30"
+weight: 4
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why? (무엇과 왜?)
 문자열을 소문자로 변환하는 것은 대소문자를 구분하지 않고 비교하거나 정렬할 때 유용합니다. 프로그래머들은 데이터를 일관되게 처리하고 사용자 입력의 대소문자 오류를 방지하기 위해 문자열을 소문자로 변환합니다.

@@ -10,9 +10,8 @@ model: gpt-4-0125-preview
 summary: "YAML, een voor mensen begrijpelijke data-serialisatiestandaard, wordt gebruikt\
   \ voor configuratiebestanden en gegevensuitwisseling. Programmeurs zijn er\u2026"
 title: Werken met YAML
+weight: 41
 ---
-
-{{< edit_this_page >}}
 
 ## Wat & Waarom?
 

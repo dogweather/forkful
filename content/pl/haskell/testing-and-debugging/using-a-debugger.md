@@ -1,14 +1,15 @@
 ---
 date: 2024-01-26 03:49:52.159715-07:00
-description: "Korzystanie z debugera oznacza zag\u0142\u0119bianie si\u0119 w Tw\xF3\
-  j kod przy u\u017Cyciu narz\u0119dzi zaprojektowanych do inspekcji, wstrzymywania\
-  \ i manipulowania programem w\u2026"
+description: "Wybierzmy si\u0119 na spacer z GHCi, interaktywnym \u015Brodowiskiem\
+  \ Haskella, kt\xF3re mo\u017Ce pe\u0142ni\u0107 funkcj\u0119 podstawowego debugera.\
+  \ Wystartuj go ze swoim kodem Haskell\u2026"
 lastmod: '2024-03-13T22:44:35.456465-06:00'
 model: gpt-4-0125-preview
-summary: "Korzystanie z debugera oznacza zag\u0142\u0119bianie si\u0119 w Tw\xF3j\
-  \ kod przy u\u017Cyciu narz\u0119dzi zaprojektowanych do inspekcji, wstrzymywania\
-  \ i manipulowania programem w\u2026"
+summary: "Wybierzmy si\u0119 na spacer z GHCi, interaktywnym \u015Brodowiskiem Haskella,\
+  \ kt\xF3re mo\u017Ce pe\u0142ni\u0107 funkcj\u0119 podstawowego debugera. Wystartuj\
+  \ go ze swoim kodem Haskell\u2026"
 title: Korzystanie z debugera
+weight: 35
 ---
 
 ## Jak to zrobić:

@@ -9,9 +9,8 @@ summary: "\xC5 trekke ut substrings (\"delstrenger\" p\xE5 norsk) betyr \xE5 hen
   \ spesifikke deler av en tekststreng. Programutviklere gj\xF8r dette for \xE5 manipulere\
   \ og\u2026"
 title: Uthenting av delstrenger
+weight: 6
 ---
-
-{{< edit_this_page >}}
 
 ## Hva & Hvorfor?
 Å trekke ut substrings ("delstrenger" på norsk) betyr å hente spesifikke deler av en tekststreng. Programutviklere gjør dette for å manipulere og analysere tekst, for eksempel for å hente brukernavn fra e-postadresser eller domenenavn fra URL-er.

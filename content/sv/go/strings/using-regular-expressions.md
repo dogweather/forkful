@@ -11,9 +11,8 @@ summary: "Regulj\xE4ra uttryck (regex) i programmering anv\xE4nds f\xF6r att s\x
   ka, matcha och manipulera str\xE4ngar baserat p\xE5 specifika m\xF6nster. Programmerare\
   \ anv\xE4nder dem\u2026"
 title: "Anv\xE4nda regulj\xE4ra uttryck"
+weight: 11
 ---
-
-{{< edit_this_page >}}
 
 ## Vad & Varför?
 

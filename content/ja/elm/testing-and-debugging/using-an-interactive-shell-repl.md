@@ -20,9 +20,8 @@ summary: "Read-Eval-Print Loop\uFF08REPL\uFF09\u306F\u3001\u30E6\u30FC\u30B6\u30
   \u3044\u307E\u3059\u3002"
 title: "\u30A4\u30F3\u30BF\u30E9\u30AF\u30C6\u30A3\u30D6\u30B7\u30A7\u30EB\uFF08REPL\uFF09\
   \u306E\u4F7F\u7528"
+weight: 34
 ---
-
-{{< edit_this_page >}}
 
 ## 何となぜ？
 Read-Eval-Print Loop（REPL）は、ユーザーの単一の入力を取り、評価し、結果をユーザーに返すシンプルなインタラクティブプログラミング環境です。Elmプログラマーは、REPLを使って簡単な実験、デバッグ、または言語の学習を行います。

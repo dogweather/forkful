@@ -10,9 +10,8 @@ model: gpt-4-0125-preview
 summary: "S\xE4\xE4nn\xF6lliset lausekkeet, tai regex, ovat merkkijonoja, jotka muodostavat\
   \ haun kaavan ja joita k\xE4ytet\xE4\xE4n usein merkkijonojen etsimiseen tai manipulointiin.\u2026"
 title: "S\xE4\xE4nn\xF6llisten lausekkeiden k\xE4ytt\xF6"
+weight: 11
 ---
-
-{{< edit_this_page >}}
 
 ## Mikä & Miksi?
 Säännölliset lausekkeet, tai regex, ovat merkkijonoja, jotka muodostavat haun kaavan ja joita käytetään usein merkkijonojen etsimiseen tai manipulointiin. Ohjelmoijat käyttävät niitä kaikkeen tiedon validoinnista ja jäsentämisestä muunnoksiin, tehden niistä korvaamattoman työkalun tekstinkäsittely- ja manipulointitehtävissä eri ohjelmointikielillä, mukaan lukien Swift.

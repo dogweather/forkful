@@ -15,9 +15,8 @@ summary: "X\u1EED l\xFD l\u1ED7i l\xE0 vi\u1EBFt m\xE3 l\u1EADp tr\xECnh nh\u1EB
   \ ph\u1EA7n m\u1EC1m m\u1EA1nh m\u1EBD h\u01A1n, ng\u0103n ch\u1EB7n s\u1EF1 c\u1ED1\
   \ v\xE0\u2026"
 title: "X\u1EED l\xFD l\u1ED7i"
+weight: 16
 ---
-
-{{< edit_this_page >}}
 
 ## Cái gì & Tại sao?
 

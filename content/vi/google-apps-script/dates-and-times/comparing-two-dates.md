@@ -13,9 +13,8 @@ summary: "So s\xE1nh hai ng\xE0y trong Google Apps Script, m\u1ED9t phi\xEAn b\u
   \ \u1EE9ng d\u1EE5ng c\u1EE7a Google, l\xE0 m\u1ED9t nhi\u1EC7m v\u1EE5 quan tr\u1ECD\
   ng \u0111\u1ED1i v\u1EDBi\u2026"
 title: "So s\xE1nh hai ng\xE0y"
+weight: 27
 ---
-
-{{< edit_this_page >}}
 
 ## Cái gì & Tại sao?
 So sánh hai ngày trong Google Apps Script, một phiên bản được tùy chỉnh của JavaScript dành cho bộ ứng dụng của Google, là một nhiệm vụ quan trọng đối với các nhà phát triển khi xử lý lịch trình, dòng thời gian, hoặc bất kỳ dữ liệu nào liên quan đến ngày tháng. Hiểu cách so sánh các ngày một cách chính xác giúp lập trình viên thực hiện các tính năng như hạn chót, lên kế hoạch sự kiện, hoặc lên lịch nội dung một cách hiệu quả.

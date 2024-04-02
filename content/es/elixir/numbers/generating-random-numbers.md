@@ -9,9 +9,8 @@ summary: "Generar n\xFAmeros aleatorios en Elixir es una tarea de programaci\xF3
   \ fundamental, vital para aplicaciones que necesitan resultados impredecibles como\
   \ en la\u2026"
 title: "Generaci\xF3n de n\xFAmeros aleatorios"
+weight: 12
 ---
-
-{{< edit_this_page >}}
 
 ## Qué y Por Qué?
 

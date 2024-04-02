@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Obter a data atual em PHP \xE9 uma tarefa fundamental que permite recuperar\
   \ e manipular a data e a hora do sistema. Isso \xE9 crucial para fun\xE7\xF5es como\u2026"
 title: Obtendo a data atual
+weight: 29
 ---
-
-{{< edit_this_page >}}
 
 ## O que & Por quê?
 Obter a data atual em PHP é uma tarefa fundamental que permite recuperar e manipular a data e a hora do sistema. Isso é crucial para funções como registrar logs, marcar posts com data e hora, agendar eventos ou executar operações sensíveis ao tempo em suas aplicações.

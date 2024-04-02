@@ -9,9 +9,8 @@ summary: "Estrarre le sottostringhe significa selezionare parti specifiche di un
   \ stringa. Lo facciamo per validazione, manipolazione dei dati, o semplicemente\
   \ per\u2026"
 title: Estrazione di sottostringhe
+weight: 6
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 Estrarre le sottostringhe significa selezionare parti specifiche di una stringa. Lo facciamo per validazione, manipolazione dei dati, o semplicemente per ottenerne una porzione rilevante.

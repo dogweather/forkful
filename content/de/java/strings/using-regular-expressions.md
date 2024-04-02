@@ -11,9 +11,8 @@ summary: "Regul\xE4re Ausdr\xFCcke (regex) in Java erm\xF6glichen es Ihnen, spez
   \ Muster zu definieren, um Strings in Ihrem Code zu suchen, zu manipulieren oder\
   \ zu\u2026"
 title: "Regul\xE4re Ausdr\xFCcke verwenden"
+weight: 11
 ---
-
-{{< edit_this_page >}}
 
 ## Was & Warum?
 

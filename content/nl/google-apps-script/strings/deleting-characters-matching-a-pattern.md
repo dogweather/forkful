@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Karakters verwijderen die overeenkomen met een specifiek patroon is een\
   \ techniek die wordt gebruikt om strings op te schonen of te formatteren in\u2026"
 title: Karakters Verwijderen die Overeenkomen met een Patroon
+weight: 5
 ---
-
-{{< edit_this_page >}}
 
 ## Wat & Waarom?
 

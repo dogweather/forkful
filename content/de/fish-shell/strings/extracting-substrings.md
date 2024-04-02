@@ -9,9 +9,8 @@ summary: "Das Extrahieren von Teilstrings ist das Herausl\xF6sen bestimmter Zeic
   \ oder Zeichenfolgen aus einem l\xE4ngeren String. Programmierer machen das h\xE4\
   ufig, um\u2026"
 title: Teilstrings extrahieren
+weight: 6
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 Das Extrahieren von Teilstrings ist das Herauslösen bestimmter Zeichen oder Zeichenfolgen aus einem längeren String. Programmierer machen das häufig, um Daten zu parsen, zu validieren oder einfach spezifische Informationen zu isolieren.

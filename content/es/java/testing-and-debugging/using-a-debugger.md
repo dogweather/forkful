@@ -1,14 +1,15 @@
 ---
 date: 2024-01-26 03:49:31.983594-07:00
-description: "Usar un depurador significa emplear una herramienta para probar y corregir\
-  \ errores en tu c\xF3digo. Los programadores lo hacen para entender el flujo de\
-  \ sus\u2026"
+description: "Digamos que tienes un programa Java sencillo que est\xE1 actuando de\
+  \ manera extra\xF1a, y no puedes descubrir por qu\xE9. As\xED es c\xF3mo iniciar\xED\
+  as un depurador\u2026"
 lastmod: '2024-03-13T22:44:58.942004-06:00'
 model: gpt-4-0125-preview
-summary: "Usar un depurador significa emplear una herramienta para probar y corregir\
-  \ errores en tu c\xF3digo. Los programadores lo hacen para entender el flujo de\
-  \ sus\u2026"
+summary: "Digamos que tienes un programa Java sencillo que est\xE1 actuando de manera\
+  \ extra\xF1a, y no puedes descubrir por qu\xE9. As\xED es c\xF3mo iniciar\xEDas\
+  \ un depurador\u2026"
 title: Usando un depurador
+weight: 35
 ---
 
 ## Cómo hacerlo:

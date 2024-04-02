@@ -18,9 +18,8 @@ summary: "\uB514\uB809\uD1A0\uB9AC \uC874\uC7AC \uC5EC\uBD80\uB97C \uD655\uC778\
   \ \uBC29\uC9C0\uD558\uACE0, \uC791\uC5C5 \uD750\uB984\uC744 \uC81C\uC5B4\uD558\uAE30\
   \ \uC704\uD574 \uC774\uB97C \uC218\uD589\uD569\uB2C8\uB2E4."
 title: "\uB514\uB809\uD1A0\uB9AC \uC874\uC7AC \uC5EC\uBD80 \uD655\uC778\uD558\uAE30"
+weight: 20
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why? (무엇이며, 왜?)
 디렉토리 존재 여부를 확인하는 것은 특정 경로에 폴더가 있는지 없는지를 확인하는 것입니다. 프로그래머들은 파일 시스템에서 데이터를 읽거나 쓸 때 오류를 방지하고, 작업 흐름을 제어하기 위해 이를 수행합니다.

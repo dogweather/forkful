@@ -11,9 +11,8 @@ summary: "Scrivere su standard error (stderr) in JavaScript riguarda l'indirizza
   \ messaggi di errore o qualsiasi informazione critica verso un flusso specifico\
   \ e\u2026"
 title: Scrivere sull'errore standard
+weight: 25
 ---
-
-{{< edit_this_page >}}
 
 ## Cosa & Perché?
 Scrivere su standard error (stderr) in JavaScript riguarda l'indirizzare messaggi di errore o qualsiasi informazione critica verso un flusso specifico e separato, il che è particolarmente utile negli ambienti simili a Unix per fini di registrazione e debugging. I programmatori fanno ciò per differenziare l'output normale del programma dai messaggi di errore, permettendo così una gestione più pulita dell'output e un monitoraggio degli errori più semplice.

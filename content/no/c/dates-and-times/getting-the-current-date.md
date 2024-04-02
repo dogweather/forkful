@@ -11,9 +11,8 @@ summary: "\xC5 hente den n\xE5v\xE6rende datoen i C inneb\xE6rer \xE5 benytte se
   \ av det standard C-biblioteket for \xE5 hente og formatere systemets n\xE5v\xE6\
   rende dato og tid.\u2026"
 title: "F\xE5 dagens dato"
+weight: 29
 ---
-
-{{< edit_this_page >}}
 
 ## Hva & Hvorfor?
 

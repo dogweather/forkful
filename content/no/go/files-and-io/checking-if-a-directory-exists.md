@@ -11,9 +11,8 @@ summary: "\xC5 sjekke om en katalog eksisterer i Go er kritisk for applikasjoner
   \ samhandler med filsystemet for \xE5 unng\xE5 feil n\xE5r man fors\xF8ker \xE5\
   \ f\xE5 tilgang til\u2026"
 title: Sjekke om en mappe eksisterer
+weight: 20
 ---
-
-{{< edit_this_page >}}
 
 ## Hva & Hvorfor?
 

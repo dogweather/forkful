@@ -7,9 +7,8 @@ model: gpt-4-0125-preview
 summary: "Writing a text file in Clojure involves creating or modifying files to save\
   \ data outside your application, enabling persistence, configuration, logging,\u2026"
 title: Writing a text file
+weight: 24
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 

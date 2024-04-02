@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "S\xE4\xE4nn\xF6lliset lausekkeet (regex) Bashissa mahdollistavat merkkijonojen\
   \ ja tiedostojen etsimisen, manipuloinnin ja k\xE4sittelyn tiettyjen mallien perusteella.\u2026"
 title: "S\xE4\xE4nn\xF6llisten lausekkeiden k\xE4ytt\xF6"
+weight: 11
 ---
-
-{{< edit_this_page >}}
 
 ## Mikä & Miksi?
 

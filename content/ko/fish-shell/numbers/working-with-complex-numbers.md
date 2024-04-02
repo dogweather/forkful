@@ -17,9 +17,8 @@ summary: "\uBCF5\uC18C\uC218\uB294 1\uCC28\uC6D0 \uC22B\uC790 \uC120\uC744 2\uCC
   \uC18C\uAC00 \uD544\uC694\uD55C \uACC4\uC0B0\uC744 \uC704\uD574 \uBCF5\uC18C\uC218\
   \uB97C \uC0AC\uC6A9\uD569\uB2C8\uB2E4."
 title: "\uBCF5\uC18C\uC218 \uB2E4\uB8E8\uAE30"
+weight: 14
 ---
-
-{{< edit_this_page >}}
 
 ## 무엇 & 왜?
 복소수는 1차원 숫자 선을 2차원 복소 평면으로 확장하는 개념입니다. 프로그래머들은 공학, 물리학, 그래픽과 같은 분야에서 신호나 회전과 같이 두 가지 구성 요소가 필요한 계산을 위해 복소수를 사용합니다.

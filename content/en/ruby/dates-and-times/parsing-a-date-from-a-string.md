@@ -9,9 +9,8 @@ summary: "Parsing a date from a string is about converting text representing a d
   \ into a `Date` or `DateTime` object that Ruby understands. Programmers do this\
   \ to\u2026"
 title: Parsing a date from a string
+weight: 30
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 Parsing a date from a string is about converting text representing a date into a `Date` or `DateTime` object that Ruby understands. Programmers do this to perform operations like comparisons, calculations, or formatting on dates, which are common tasks in applications dealing with scheduling, analytics, or data processing.

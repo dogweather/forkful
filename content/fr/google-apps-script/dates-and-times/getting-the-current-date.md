@@ -11,9 +11,8 @@ summary: "Obtenir la date actuelle avec Google Apps Script consiste \xE0 r\xE9cu
   rer la date et l'heure en direct, une t\xE2che courante pour l'automatisation des\
   \ t\xE2ches,\u2026"
 title: Obtenir la date actuelle
+weight: 29
 ---
-
-{{< edit_this_page >}}
 
 ## Quoi et Pourquoi ?
 

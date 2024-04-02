@@ -25,9 +25,8 @@ summary: "\u041F\u0430\u0440\u0441\u0438\u043D\u0433 HTML \u0443 Clojure \u043F\
   \ \u043C\u043E\u043D\u0456\u0442\u043E\u0440\u0438\u043D\u0433\u0443 \u0432\u0435\
   \u0431-\u2026"
 title: "\u0410\u043D\u0430\u043B\u0456\u0437 HTML"
+weight: 43
 ---
-
-{{< edit_this_page >}}
 
 ## Що і чому?
 

@@ -10,9 +10,8 @@ model: gpt-4-0125-preview
 summary: "Debug-output printen in Ruby is als broodkruimels achterlaten in je code\
   \ om variabele waarden en programmaduur bij te houden. Programmeurs doen dit om\u2026"
 title: Debug-output afdrukken
+weight: 33
 ---
-
-{{< edit_this_page >}}
 
 ## Wat & Waarom?
 Debug-output printen in Ruby is als broodkruimels achterlaten in je code om variabele waarden en programmaduur bij te houden. Programmeurs doen dit om bugs te vangen door te controleren wat hun code op verschillende momenten doet.

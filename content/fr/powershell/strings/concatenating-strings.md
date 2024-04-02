@@ -9,9 +9,8 @@ summary: "Concat\xE9ner des cha\xEEnes de caract\xE8res, \xE7a veut dire les col
   \ bout \xE0 bout. Les devs le font tout le temps pour assembler des messages, des\
   \ chemins de\u2026"
 title: "Concat\xE9nation de cha\xEEnes de caract\xE8res"
+weight: 3
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why? (Quoi et Pourquoi ?)
 Concaténer des chaînes de caractères, ça veut dire les coller bout à bout. Les devs le font tout le temps pour assembler des messages, des chemins de fichiers, ou pour tout simplement formatter du texte.

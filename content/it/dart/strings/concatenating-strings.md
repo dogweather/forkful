@@ -10,9 +10,8 @@ model: gpt-4-0125-preview
 summary: "La concatenazione di stringhe nella programmazione implica l'unione di due\
   \ o pi\xF9 stringhe in una sola. I programmatori fanno ci\xF2 per manipolare facilmente\u2026"
 title: Concatenazione di stringhe
+weight: 3
 ---
-
-{{< edit_this_page >}}
 
 ## Cosa e Perché?
 La concatenazione di stringhe nella programmazione implica l'unione di due o più stringhe in una sola. I programmatori fanno ciò per manipolare facilmente i dati testuali, costruire messaggi o assemblare dinamicamente parti di un'interfaccia utente.

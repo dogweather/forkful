@@ -7,9 +7,8 @@ model: gpt-4-1106-preview
 summary: "Leggere un file di testo in Ruby significa accedere al contenuto di un file\
   \ salvato sul disco. I programmatori lo fanno per manipolare dati, configurare\u2026"
 title: Lettura di un file di testo
+weight: 22
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 Leggere un file di testo in Ruby significa accedere al contenuto di un file salvato sul disco. I programmatori lo fanno per manipolare dati, configurare programmi, o semplicemente per salvare e leggere informazioni.

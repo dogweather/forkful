@@ -9,9 +9,8 @@ summary: "Travailler avec XML implique de manipuler et d'acc\xE9der \xE0 des don
   es structur\xE9es en langage XML (eXtensible Markup Language). Les programmeurs\
   \ travaillent\u2026"
 title: Travailler avec XML
+weight: 40
 ---
-
-{{< edit_this_page >}}
 
 ## Quoi & Pourquoi ?
 Travailler avec XML implique de manipuler et d'accéder à des données structurées en langage XML (eXtensible Markup Language). Les programmeurs travaillent avec XML pour permettre l'interopérabilité avec d'autres systèmes ou pour lire et écrire des fichiers de configuration, des flux de données et d'autres documents structurés courants dans les services web.

@@ -11,9 +11,8 @@ summary: "Complexe getallen, bestaande uit een re\xEBel en een imaginair deel, z
   \ essentieel in verschillende computationele velden zoals engineering, natuurkunde\
   \ en\u2026"
 title: Werken met complexe getallen
+weight: 14
 ---
-
-{{< edit_this_page >}}
 
 ## Wat & Waarom?
 

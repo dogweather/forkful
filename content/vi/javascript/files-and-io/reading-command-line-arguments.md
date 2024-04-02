@@ -13,9 +13,8 @@ summary: "\u0110\u1ECDc c\xE1c \u0111\u1ED1i s\u1ED1 d\xF2ng l\u1EC7nh c\xF3 ngh
   o c\xE1c l\u1EC7nh khi h\u1ECD ch\u1EA1y script c\u1EE7a b\u1EA1n. L\u1EADp tr\xEC\
   nh vi\xEAn l\xE0m \u0111i\u1EC1u n\xE0y \u0111\u1EC3 cho ph\xE9p\u2026"
 title: "\u0110\u1ECDc c\xE1c \u0111\u1ED1i s\u1ED1 d\xF2ng l\u1EC7nh"
+weight: 23
 ---
-
-{{< edit_this_page >}}
 
 ## Cái gì & Tại sao?
 Đọc các đối số dòng lệnh có nghĩa là lấy các bổ sung mà người dùng thêm vào các lệnh khi họ chạy script của bạn. Lập trình viên làm điều này để cho phép người dùng tùy chỉnh hành vi mà không cần thay đổi mã.

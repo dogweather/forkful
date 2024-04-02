@@ -10,9 +10,8 @@ model: gpt-4-0125-preview
 summary: "\xC5 skrive tester i Elm involverer \xE5 lage testtilfeller for \xE5 verifisere\
   \ korrektheten av Elm-koden din, og sikre at den oppf\xF8rer seg som forventet.\u2026"
 title: Skrive tester
+weight: 36
 ---
-
-{{< edit_this_page >}}
 
 ## Hva & hvorfor?
 

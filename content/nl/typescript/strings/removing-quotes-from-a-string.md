@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Het verwijderen van aanhalingstekens uit een tekenreeks betekent het weghalen\
   \ van de omringende enkele (`'`) of dubbele (`\"`) aanhalingstekens die\u2026"
 title: Quotes verwijderen uit een string
+weight: 9
 ---
-
-{{< edit_this_page >}}
 
 ## Wat & Waarom?
 Het verwijderen van aanhalingstekens uit een tekenreeks betekent het weghalen van de omringende enkele (`'`) of dubbele (`"`) aanhalingstekens die tekenreeksliteralen in code definiëren. Programmeurs doen dit om verschillende redenen, zoals het formatteren van de uitvoer, het saniteren van gebruikersinvoer, of het voorbereiden van tekenreeksen voor parsing of opslag waarbij de aanhalingstekens onnodig zijn of fouten kunnen veroorzaken.

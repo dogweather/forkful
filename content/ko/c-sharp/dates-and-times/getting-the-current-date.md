@@ -23,9 +23,8 @@ summary: "C#\uC5D0\uC11C \uD604\uC7AC \uB0A0\uC9DC\uB97C \uAC00\uC838\uC624\uB29
   \uC744 \uC608\uC57D\uD558\uACE0, \uD589\uB3D9\uC774 \uC815\uD655\uD558\uAC8C \uC2DC\
   \uAC04\uC744 \uB9DE\uCD94\uACE0 \uB370\uC774\uD130\uAC00\u2026"
 title: "\uD604\uC7AC \uB0A0\uC9DC \uAC00\uC838\uC624\uAE30"
+weight: 29
 ---
-
-{{< edit_this_page >}}
 
 ## 무엇 & 왜?
 C#에서 현재 날짜를 가져오는 것은 시스템에서 현재 날짜와 시간 세부 정보를 가져오는 것을 포함합니다. 프로그래머들은 종종 이 정보에 액세스해야 할 필요가 있는데, 이는 로깅, 타임스탬프 작업 또는 애플리케이션 내 작업을 예약하고, 행동이 정확하게 시간을 맞추고 데이터가 정확한 타임스탬프를 가지도록 보장하기 위함입니다.

@@ -8,9 +8,8 @@ model: unknown
 summary: "Le espressioni regolari consentono di analizzare le stringhe di testo per\
   \ cercare modelli. I programmatori le utilizzano per validare l\u2019input, estrarre\u2026"
 title: Utilizzo delle espressioni regolari
+weight: 11
 ---
-
-{{< edit_this_page >}}
 
 ## Cosa e Perché?
 

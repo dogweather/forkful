@@ -16,9 +16,8 @@ summary: "\uB0A0\uC9DC\uB97C \uBB38\uC790\uC5F4\uB85C \uBCC0\uD658\uD558\uB294 \
   \ \uB2E4\uB978 \uC2DC\uC2A4\uD15C\uACFC\uC758 \uB0A0\uC9DC \uB370\uC774\uD130 \uAD50\
   \uD658\uC744 \uC704\uD574 \uC8FC\uB85C \uC0AC\uC6A9\uB429\uB2C8\uB2E4."
 title: "\uB0A0\uC9DC\uB97C \uBB38\uC790\uC5F4\uB85C \uBCC0\uD658\uD558\uAE30"
+weight: 28
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why? (무엇인가? 그리고 왜?)
 날짜를 문자열로 변환하는 것은 일정한 형식의 문자열로 날짜를 표현하는 작업입니다. 이는 로깅, 사용자 인터페이스 표시 또는 다른 시스템과의 날짜 데이터 교환을 위해 주로 사용됩니다.

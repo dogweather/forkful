@@ -7,9 +7,8 @@ model: gpt-4-1106-preview
 summary: "Eliminar caracteres que coinciden con un patr\xF3n es simplemente buscar\
   \ ciertos caracteres en un texto y quitarlos. Los programadores lo hacen para limpiar\u2026"
 title: "Eliminando caracteres que coinciden con un patr\xF3n"
+weight: 5
 ---
-
-{{< edit_this_page >}}
 
 ## ¿Qué y Por Qué?
 Eliminar caracteres que coinciden con un patrón es simplemente buscar ciertos caracteres en un texto y quitarlos. Los programadores lo hacen para limpiar cadenas, validar entradas o preparar textos para procesamientos más complejos.

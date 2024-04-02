@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Het vergelijken van data gaat over het uitvogelen welke van twee data vroeger,\
   \ later is, of dat ze hetzelfde zijn. Programmeurs doen dit voor het\u2026"
 title: Twee datums vergelijken
+weight: 27
 ---
-
-{{< edit_this_page >}}
 
 ## Wat & Waarom?
 Het vergelijken van data gaat over het uitvogelen welke van twee data vroeger, later is, of dat ze hetzelfde zijn. Programmeurs doen dit voor het organiseren van evenementen, het laten verlopen van promoties, planning, herinneringen - in principe alles met een tijdcomponent.

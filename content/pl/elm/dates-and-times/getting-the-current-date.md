@@ -11,9 +11,8 @@ summary: "Uzyskanie bie\u017C\u0105cej daty w Elm oznacza pobranie bie\u017C\u01
   cej daty kalendarzowej z systemu. Robimy to, aby oznacza\u0107 czas wydarze\u0144\
   , planowa\u0107 zadania lub \u015Bledzi\u0107\u2026"
 title: Pobieranie aktualnej daty
+weight: 29
 ---
-
-{{< edit_this_page >}}
 
 ## Co i dlaczego?
 Uzyskanie bieżącej daty w Elm oznacza pobranie bieżącej daty kalendarzowej z systemu. Robimy to, aby oznaczać czas wydarzeń, planować zadania lub śledzić okresy czasu.

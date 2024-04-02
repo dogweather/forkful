@@ -10,9 +10,8 @@ model: gpt-4-0125-preview
 summary: "Associerande arrayer, eller ordb\xF6cker, i Haskell handlar om att mappa\
   \ nycklar till v\xE4rden f\xF6r snabb uppslagning och effektiv datahantering. Programmerare\u2026"
 title: "Att anv\xE4nda associativa arrayer"
+weight: 15
 ---
-
-{{< edit_this_page >}}
 
 ## Vad & Varför?
 

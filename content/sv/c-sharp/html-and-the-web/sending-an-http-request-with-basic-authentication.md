@@ -9,9 +9,8 @@ summary: "I C# skickar vi HTTP-beg\xE4ran med grundl\xE4ggande autentisering f\x
   r att s\xE4kert \xF6verf\xF6ra anv\xE4ndarnamn och l\xF6senord till servern. Detta\
   \ anv\xE4nds f\xF6r att bevisa\u2026"
 title: "Skicka en HTTP-f\xF6rfr\xE5gan med Basic-autentisering"
+weight: 45
 ---
-
-{{< edit_this_page >}}
 
 ## Vad & Varför?
 I C# skickar vi HTTP-begäran med grundläggande autentisering för att säkert överföra användarnamn och lösenord till servern. Detta används för att bevisa användarens identitet och få tillgång till skyddade resurser.

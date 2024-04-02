@@ -9,9 +9,8 @@ summary: "Extraer subcadenas es como recortar una parte de una cadena para usarl
   \ en tu c\xF3digo. Los programadores lo hacen para manipular y trabajar con datos\
   \ de\u2026"
 title: "Extracci\xF3n de subcadenas"
+weight: 6
 ---
-
-{{< edit_this_page >}}
 
 ## Qué y Por Qué?
 Extraer subcadenas es como recortar una parte de una cadena para usarla en tu código. Los programadores lo hacen para manipular y trabajar con datos de texto de manera más eficaz, como validar entradas, buscar patrones o simplemente mostrar partes específicas al usuario.

@@ -10,9 +10,8 @@ model: gpt-4-0125-preview
 summary: "Att arbeta med XML i Google Apps Script l\xE5ter programmerare tolka, manipulera\
   \ och generera XML-data, vilket \xE4r avg\xF6rande f\xF6r webbtj\xE4nster och\u2026"
 title: Arbeta med XML
+weight: 40
 ---
-
-{{< edit_this_page >}}
 
 ## Vad & Varför?
 

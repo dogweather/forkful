@@ -9,9 +9,8 @@ summary: "Mik\xE4 ja miksi? Ladataan web-sivu, eli haetaan tiedot internetiss\xE
   \ olevasta osoitteesta. Koodarit tekev\xE4t t\xE4m\xE4n, kun tarvitsevat p\xE4ivitt\xE4\
   \xE4 laitteen dataa\u2026"
 title: Verkkosivun lataaminen
+weight: 42
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 Mikä ja miksi? Ladataan web-sivu, eli haetaan tiedot internetissä olevasta osoitteesta. Koodarit tekevät tämän, kun tarvitsevat päivittää laitteen dataa tai käyttää etärajapintoja.

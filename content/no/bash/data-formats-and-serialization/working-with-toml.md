@@ -9,9 +9,8 @@ summary: "TOML, som st\xE5r for Toms \xE5penbare, minimale spr\xE5k, er et forma
   \ for dataserialisering. Programmerere digger det for dets enkelhet og lesbarhet;\
   \ det er\u2026"
 title: Jobbe med TOML
+weight: 39
 ---
-
-{{< edit_this_page >}}
 
 ## Hva & Hvorfor?
 TOML, som står for Toms åpenbare, minimale språk, er et format for dataserialisering. Programmerere digger det for dets enkelhet og lesbarhet; det er prikke for konfigurasjonsfiler, lignende vibes som YAML, men mindre klønete enn JSON for et menneske.

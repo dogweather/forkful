@@ -9,9 +9,8 @@ summary: "Elm does not have built-in support for YAML, a data serialization form
   \ often used for configuration files or data sharing, due to its strong emphasis\
   \ on\u2026"
 title: Working with YAML
+weight: 41
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 Elm does not have built-in support for YAML, a data serialization format often used for configuration files or data sharing, due to its strong emphasis on type safety and predictable outcomes. However, programmers frequently encounter YAML when dealing with APIs or configurations in web development, necessitating reliable methods to parse YAML data into Elm's strictly typed ecosystem for seamless integration and manipulation.

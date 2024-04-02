@@ -8,9 +8,8 @@ model: gpt-4-1106-preview
 summary: Command line arguments let users pass data to a program when they run it.
   Programmers use them to customize a program's behavior without changing the code.
 title: Reading command line arguments
+weight: 23
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 Command line arguments let users pass data to a program when they run it. Programmers use them to customize a program's behavior without changing the code.

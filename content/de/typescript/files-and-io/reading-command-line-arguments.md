@@ -8,9 +8,8 @@ model: gpt-4-1106-preview
 summary: "Kommandozeilenargumente sind die Parameter, die einem Programm \xFCbergeben\
   \ werden, wenn es gestartet wird. Programmierer nutzen sie, um das Verhalten ihrer\u2026"
 title: Lesen von Kommandozeilenargumenten
+weight: 23
 ---
-
-{{< edit_this_page >}}
 
 ## Was & Warum?
 Kommandozeilenargumente sind die Parameter, die einem Programm übergeben werden, wenn es gestartet wird. Programmierer nutzen sie, um das Verhalten ihrer Anwendung dynamisch zu steuern, ohne den Code ändern zu müssen.

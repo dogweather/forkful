@@ -13,9 +13,8 @@ summary: "L\xE0m vi\u1EC7c v\u1EDBi XML bao g\u1ED3m vi\u1EC7c thao t\xE1c v\xE0
   \ ng\u1EEF \u0110\xE1nh d\u1EA5u M\u1EDF r\u1ED9ng (eXtensible Markup Language).\
   \ C\xE1c l\u1EADp tr\xECnh vi\xEAn\u2026"
 title: "L\xE0m vi\u1EC7c v\u1EDBi XML"
+weight: 40
 ---
-
-{{< edit_this_page >}}
 
 ## Cái gì & Tại sao?
 Làm việc với XML bao gồm việc thao tác và truy cập dữ liệu được cấu trúc trong Ngôn ngữ Đánh dấu Mở rộng (eXtensible Markup Language). Các lập trình viên làm việc với XML để bật khả năng tương tác với các hệ thống khác hoặc để đọc và viết các tệp cấu hình, nguồn dữ liệu, và các tài liệu cấu trúc khác thường gặp trong dịch vụ web.

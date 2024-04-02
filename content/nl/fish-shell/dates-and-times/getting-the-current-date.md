@@ -10,9 +10,8 @@ model: gpt-4-0125-preview
 summary: "De huidige datum verkrijgen betekent de huidige kalenderdatum van je systeem\
   \ ophalen. Programmeurs doen dit om gebeurtenissen te timestampen, taken te\u2026"
 title: Het huidige datum ophalen
+weight: 29
 ---
-
-{{< edit_this_page >}}
 
 ## Wat & Waarom?
 

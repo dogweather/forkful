@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "TOML (Tom's Obvious, Minimal Language) es un formato de archivo de configuraci\xF3\
   n que es f\xE1cil de leer debido a su sintaxis simple. Los programadores usan\u2026"
 title: Trabajando con TOML
+weight: 39
 ---
-
-{{< edit_this_page >}}
 
 ## ¿Qué y Por Qué?
 

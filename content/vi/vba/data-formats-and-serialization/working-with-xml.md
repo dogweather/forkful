@@ -13,9 +13,8 @@ summary: "Vi\u1EC7c l\xE0m vi\u1EC7c v\u1EDBi XML trong Visual Basic for Applica
   a \u0111\u1ED5i c\xE1c t\xE0i li\u1EC7u XML trong b\u1ED1i c\u1EA3nh c\u1EE7a c\xE1\
   c \u1EE9ng\u2026"
 title: "L\xE0m vi\u1EC7c v\u1EDBi XML"
+weight: 40
 ---
-
-{{< edit_this_page >}}
 
 ## Cái gì & Tại sao?
 

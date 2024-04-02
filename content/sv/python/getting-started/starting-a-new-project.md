@@ -12,9 +12,8 @@ summary: "Att starta ett nytt projekt i Python handlar om att fr\xE5n b\xF6rjan 
   tta upp en strukturerad, underh\xE5llbar ram. Programmerare g\xF6r detta f\xF6r\
   \ att s\xE4kerst\xE4lla\u2026"
 title: Att starta ett nytt projekt
+weight: 1
 ---
-
-{{< edit_this_page >}}
 
 ## Vad & Varför?
 

@@ -19,9 +19,8 @@ summary: "\u5728 Python \u4E2D\u68C0\u67E5\u76EE\u5F55\u662F\u5426\u5B58\u5728\u
   \u5E94\u7528\u7A0B\u5E8F\u5728\u5C1D\u8BD5\u4E0E\u76EE\u5F55\u4EA4\u4E92\u65F6\u80FD\
   \u53EF\u9760\u5730\u8FD0\u884C\uFF0C\u800C\u4E0D\u4F1A\u5D29\u6E83\u3002"
 title: "\u68C0\u67E5\u76EE\u5F55\u662F\u5426\u5B58\u5728"
+weight: 20
 ---
-
-{{< edit_this_page >}}
 
 ## 什么和为什么？
 在 Python 中检查目录是否存在是指在执行读取或写入文件等操作之前，验证文件系统中文件夹的存在性。程序员这样做是为了避免诸如`FileNotFoundError`这样的错误，确保应用程序在尝试与目录交互时能可靠地运行，而不会崩溃。

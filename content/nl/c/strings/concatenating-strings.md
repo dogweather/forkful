@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Stringconcatenatie in C omvat het samenvoegen van twee of meer strings achter\
   \ elkaar om een nieuwe string te vormen. Programmeurs voeren deze bewerking\u2026"
 title: Strings samenvoegen
+weight: 3
 ---
-
-{{< edit_this_page >}}
 
 ## Wat & Waarom?
 

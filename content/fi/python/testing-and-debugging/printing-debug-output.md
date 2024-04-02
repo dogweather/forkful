@@ -7,9 +7,8 @@ model: gpt-4-1106-preview
 summary: "Debug-tulostus auttaa ymm\xE4rt\xE4m\xE4\xE4n ohjelman toimintaa. Koodareita\
   \ se auttaa paikkaamaan bugeja ja varmistamaan koodin toimivuuden."
 title: "Virheenj\xE4ljitystulosteiden tulostaminen"
+weight: 33
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why? (Mikä & Miksi?)
 Debug-tulostus auttaa ymmärtämään ohjelman toimintaa. Koodareita se auttaa paikkaamaan bugeja ja varmistamaan koodin toimivuuden.

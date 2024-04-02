@@ -9,9 +9,8 @@ summary: "Zamiana daty na napis (string) pozwala na \u0142atwe wy\u015Bwietlenie
   \ zapisanie daty w czytelnej formie tekstowej. Programi\u015Bci korzystaj\u0105\
   \ z tej konwersji, by\u2026"
 title: "Konwersja daty na \u0142a\u0144cuch znak\xF3w"
+weight: 28
 ---
-
-{{< edit_this_page >}}
 
 ## Co i Dlaczego?
 Zamiana daty na napis (string) pozwala na łatwe wyświetlenie i zapisanie daty w czytelnej formie tekstowej. Programiści korzystają z tej konwersji, by manipulować datami i łatwo je przedstawiać użytkownikom.

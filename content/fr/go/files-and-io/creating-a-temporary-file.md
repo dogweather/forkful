@@ -11,9 +11,8 @@ summary: "La cr\xE9ation d'un fichier temporaire en Go permet la g\xE9n\xE9ratio
   \ d'un fichier non persistant destin\xE9 \xE0 une utilisation \xE0 court terme,\
   \ principalement pour\u2026"
 title: "Cr\xE9ation d'un fichier temporaire"
+weight: 21
 ---
-
-{{< edit_this_page >}}
 
 ## Quoi & Pourquoi ?
 

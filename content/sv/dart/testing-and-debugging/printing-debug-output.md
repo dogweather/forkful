@@ -11,9 +11,8 @@ summary: "Att skriva ut fels\xF6kningsutdata i Dart handlar om att visa informat
   \ i konsolen under k\xF6rning, vilket till\xE5ter utvecklare att f\xF6lja exekveringsfl\xF6\
   det,\u2026"
 title: "Skriva ut fels\xF6kningsdata"
+weight: 33
 ---
-
-{{< edit_this_page >}}
 
 ## Vad & Varför?
 

@@ -9,9 +9,8 @@ summary: "\xC5 starte et nytt prosjekt betyr \xE5 initialisere strukturen du tre
   \ for \xE5 bygge noe fra scratch i Rust. Programmerere gj\xF8r dette for \xE5 skape\
   \ et rent\u2026"
 title: "\xC5 starte et nytt prosjekt"
+weight: 1
 ---
-
-{{< edit_this_page >}}
 
 ## Hva & Hvorfor?
 Å starte et nytt prosjekt betyr å initialisere strukturen du trenger for å bygge noe fra scratch i Rust. Programmerere gjør dette for å skape et rent arbeidsområde med alle nødvendige verktøy og biblioteker.

@@ -9,9 +9,8 @@ summary: "Baixar uma p\xE1gina web significa puxar o seu conte\xFAdo diretamente
   \ Internet para processamento local. Programadores fazem isso para an\xE1lise de\
   \ dados,\u2026"
 title: "Baixando uma p\xE1gina da web"
+weight: 42
 ---
-
-{{< edit_this_page >}}
 
 ## O Que & Por Que?
 Baixar uma página web significa puxar o seu conteúdo diretamente via Internet para processamento local. Programadores fazem isso para análise de dados, monitoramento de sites ou integração com outros serviços.

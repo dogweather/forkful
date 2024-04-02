@@ -9,9 +9,8 @@ summary: "Texts\xF6kning och ers\xE4ttning inneb\xE4r att hitta specifika str\xE
   ngar och byta ut dem mot andra. Programmerare g\xF6r det f\xF6r att effektivt modifiera\
   \ data eller\u2026"
 title: "S\xF6kning och ers\xE4ttning av text"
+weight: 10
 ---
-
-{{< edit_this_page >}}
 
 ## Vad & Varför?
 Textsökning och ersättning innebär att hitta specifika strängar och byta ut dem mot andra. Programmerare gör det för att effektivt modifiera data eller kod, ofta för att fixa fel, uppdatera information eller automatisera uppgifter.

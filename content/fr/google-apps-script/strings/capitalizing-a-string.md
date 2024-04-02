@@ -11,9 +11,8 @@ summary: "Mettre en majuscule une cha\xEEne consiste \xE0 modifier l'entr\xE9e d
   \ mani\xE8re que le premier caract\xE8re soit en majuscule tandis que les suivants\
   \ restent en\u2026"
 title: "Mettre une cha\xEEne en majuscules"
+weight: 2
 ---
-
-{{< edit_this_page >}}
 
 ## Quoi et pourquoi ?
 

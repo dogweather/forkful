@@ -19,9 +19,8 @@ summary: "\uB9AC\uD329\uD130\uB9C1\uC740 \uAE30\uC874 \uCEF4\uD4E8\uD130 \uCF54\
   \uC5D0\uAC8C \uC774\uD574\uD558\uAE30 \uC27D\uAC8C \uD558\uAE30 \uC704\uD574 \uC774\
   \ \uC791\uC5C5\uC744 \uD569\uB2C8\uB2E4."
 title: "\uB9AC\uD329\uD1A0\uB9C1"
+weight: 19
 ---
-
-{{< edit_this_page >}}
 
 ## 무엇 & 왜?
 리팩터링은 기존 컴퓨터 코드의 구조를 바꾸는 과정이며, 외부 동작을 변경하지 않습니다. 프로그래머는 코드를 더 깨끗하게 하고, 유지보수하기 쉽게 만들며, 복잡성을 줄여서 새로 파고드는 이에게 이해하기 쉽게 하기 위해 이 작업을 합니다.

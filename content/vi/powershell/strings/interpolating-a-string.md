@@ -13,9 +13,8 @@ summary: "N\u1ED9i suy chu\u1ED7i cho ph\xE9p ch\xE8n gi\xE1 tr\u1ECB v\xE0o m\u
   t c\xE2u \u0111\u1ED1, khi\u1EBFn chu\u1ED7i tr\u1EDF n\xEAn \u0111\u1ED9ng v\xE0\
   \ m\xE3 s\u1EA1ch h\u01A1n. L\u1EADp tr\xECnh vi\xEAn s\u1EED\u2026"
 title: "N\u1ED9i suy chu\u1ED7i k\xFD t\u1EF1"
+weight: 8
 ---
-
-{{< edit_this_page >}}
 
 ## Gì và Tại Sao?
 Nội suy chuỗi cho phép chèn giá trị vào một mẫu chuỗi giống như từng mảnh ghép của một câu đố, khiến chuỗi trở nên động và mã sạch hơn. Lập trình viên sử dụng nó để chèn biến, biểu thức, và định dạng trực tiếp trong chuỗi, giảm bớt lượng công việc nối chuỗi.

@@ -11,9 +11,8 @@ summary: "Tablice asocjacyjne w Dart, znane r\xF3wnie\u017C jako Mapy, to strukt
   \ danych, kt\xF3re przechowuj\u0105 dane w parach klucz-warto\u015B\u0107. Umo\u017C\
   liwiaj\u0105 programistom dost\u0119p\u2026"
 title: Korzystanie z tablic asocjacyjnych
+weight: 15
 ---
-
-{{< edit_this_page >}}
 
 ## Co i dlaczego?
 

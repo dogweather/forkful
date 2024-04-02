@@ -9,9 +9,8 @@ summary: "Organiser le code en fonctions dans Haskell signifie d\xE9composer vot
   \ code en blocs nomm\xE9s r\xE9utilisables. Pourquoi ? Cela permet de garder votre\
   \ code DRY\u2026"
 title: Organisation du code en fonctions
+weight: 18
 ---
-
-{{< edit_this_page >}}
 
 ## Quoi & Pourquoi ?
 Organiser le code en fonctions dans Haskell signifie décomposer votre code en blocs nommés réutilisables. Pourquoi ? Cela permet de garder votre code DRY (Don't Repeat Yourself, Ne vous Répétez Pas), le rend lisible et plus facile à déboguer.

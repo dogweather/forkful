@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "L'analisi di una data da una stringa riguarda la conversione di testo che\
   \ rappresenta una data in un oggetto `Date` o `DateTime` che Ruby pu\xF2 comprendere.\u2026"
 title: Analisi di una data da una stringa
+weight: 30
 ---
-
-{{< edit_this_page >}}
 
 ## Cosa e perché?
 L'analisi di una data da una stringa riguarda la conversione di testo che rappresenta una data in un oggetto `Date` o `DateTime` che Ruby può comprendere. I programmatori fanno ciò per eseguire operazioni come confronti, calcoli o formattazioni sulle date, che sono compiti comuni in applicazioni che trattano di pianificazione, analisi o elaborazione dati.

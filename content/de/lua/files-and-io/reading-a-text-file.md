@@ -9,9 +9,8 @@ summary: "Lesen einer Textdatei bedeutet, den Inhalt dieser Datei in ein Program
   \ zu laden. Programmierer machen das, um Daten zu manipulieren, Konfigurationen\
   \ zu\u2026"
 title: Textdatei einlesen
+weight: 22
 ---
-
-{{< edit_this_page >}}
 
 # Textdateien in Lua lesen: Ein unkomplizierter Leitfaden
 

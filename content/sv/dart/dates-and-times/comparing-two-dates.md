@@ -11,9 +11,8 @@ summary: "Att j\xE4mf\xF6ra tv\xE5 datum i Dart inneb\xE4r att utv\xE4rdera den 
   \ skillnaden eller ordningen mellan dem, en v\xE4sentlig funktion i applikationer\
   \ som hanterar\u2026"
 title: "J\xE4mf\xF6ra tv\xE5 datum"
+weight: 27
 ---
-
-{{< edit_this_page >}}
 
 ## Vad & Varför?
 Att jämföra två datum i Dart innebär att utvärdera den temporala skillnaden eller ordningen mellan dem, en väsentlig funktion i applikationer som hanterar händelser, deadlines eller alla tidskänsliga data. Programmerare behöver ofta detta för att styra logikflödet, validera eller sortera data baserat på tidsvillkor.

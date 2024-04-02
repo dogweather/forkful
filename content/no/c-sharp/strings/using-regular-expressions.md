@@ -11,9 +11,8 @@ summary: "Regul\xE6re uttrykk (regex) i C# er et kraftig verkt\xF8y for m\xF8nst
   king i strenger, som lar programmerere s\xF8ke etter, erstatte, splitte eller trekke\
   \ ut data\u2026"
 title: "Bruke regul\xE6re uttrykk"
+weight: 11
 ---
-
-{{< edit_this_page >}}
 
 ## Hva & Hvorfor?
 Regulære uttrykk (regex) i C# er et kraftig verktøy for mønstersøking i strenger, som lar programmerere søke etter, erstatte, splitte eller trekke ut data effektivt. Programmerere bruker regex for oppgaver som strekker seg fra enkle valideringer, som sjekking av e-postformat, til komplekse tekstbehandlingsoppgaver på grunn av dets fleksibilitet og ytelse.

@@ -13,9 +13,8 @@ summary: "L\xE0m vi\u1EC7c v\u1EDBi JSON (JavaScript Object Notation) trong Go \
   \ li\u1EC7u gi\u1EEFa c\xE1c c\u1EA5u tr\xFAc d\u1EEF li\u1EC7u c\u1EE7a Go v\xE0\
   \ \u0111\u1ECBnh d\u1EA1ng JSON. C\xF4ng\u2026"
 title: "L\xE0m vi\u1EC7c v\u1EDBi JSON"
+weight: 38
 ---
-
-{{< edit_this_page >}}
 
 ## Gì và Tại sao?
 

@@ -9,9 +9,8 @@ summary: "N\xFAmeros complexos, consistindo de uma parte real e uma parte imagin
   ria (normalmente escritos como a + bi), possibilitam c\xE1lculos que s\xE3o impratic\xE1\
   veis ou\u2026"
 title: "Trabalhando com n\xFAmeros complexos"
+weight: 14
 ---
-
-{{< edit_this_page >}}
 
 ## O Quê & Por Quê?
 Números complexos, consistindo de uma parte real e uma parte imaginária (normalmente escritos como a + bi), possibilitam cálculos que são impraticáveis ou impossíveis apenas com os reais. Programadores os utilizam em campos como processamento de sinal, computação quântica e matemática aplicada, onde representações de números em duas dimensões são essenciais.

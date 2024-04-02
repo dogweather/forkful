@@ -7,9 +7,8 @@ model: gpt-4-0125-preview
 summary: "Um shell interativo, ou REPL (Leia-Avalie-Imprima Loop), permite experimentar\
   \ trechos de c\xF3digo em tempo real. Programadores Elixir utilizam o REPL,\u2026"
 title: Usando um shell interativo (REPL)
+weight: 34
 ---
-
-{{< edit_this_page >}}
 
 ## O Que e Por Que?
 Um shell interativo, ou REPL (Leia-Avalie-Imprima Loop), permite experimentar trechos de código em tempo real. Programadores Elixir utilizam o REPL, chamado IEx (Elixir Interativo), para experimentar, depurar, e aprender a linguagem.

@@ -15,9 +15,8 @@ summary: "N\u1ED1i chu\u1ED7i l\xE0 vi\u1EC7c k\u1EBFt h\u1EE3p hai ho\u1EB7c nh
   p v\u0103n b\u1EA3n \u0111\u1EC3 t\u1EA1o tin nh\u1EAFn cho ng\u01B0\u1EDDi d\xF9\
   ng,\u2026"
 title: "N\u1ED1i chu\u1ED7i k\xFD t\u1EF1"
+weight: 3
 ---
-
-{{< edit_this_page >}}
 
 ## Gì và Tại sao?
 Nối chuỗi là việc kết hợp hai hoặc nhiều chuỗi lại với nhau để tạo thành một đoạn văn bản đơn. Bạn có thể cần ghép văn bản để tạo tin nhắn cho người dùng, tạo đường dẫn tệp, hoặc cho quá trình chuẩn hóa dữ liệu. Đây là một thao tác cơ bản trong bất kỳ ngôn ngữ lập trình nào, bao gồm Elixir, giúp các nhà phát triển có thể dễ dàng xây dựng chuỗi động.

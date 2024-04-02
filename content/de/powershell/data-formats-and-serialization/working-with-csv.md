@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Das Arbeiten mit CSV-Dateien (Comma-Separated Values, also durch Kommas\
   \ getrennte Werte) ist eine g\xE4ngige Aufgabe beim Verwalten und Manipulieren von\u2026"
 title: Arbeiten mit CSV
+weight: 37
 ---
-
-{{< edit_this_page >}}
 
 ## Was & Warum?
 

@@ -12,9 +12,8 @@ summary: "\u53D1\u9001 HTTP \u8BF7\u6C42\u5C31\u662F\u8BA9\u4F60\u7684\u7A0B\u5E
   \u3002\u7A0B\u5E8F\u5458\u8FD9\u4E48\u505A\u4E3A\u4E86\u4EA4\u6362\u6570\u636E\u3001\
   \u83B7\u53D6\u66F4\u65B0\u6216\u64CD\u7EB5\u8FDC\u7A0B\u8D44\u6E90\u3002"
 title: "\u53D1\u51FA HTTP \u8BF7\u6C42"
+weight: 44
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why? (什么 & 为什么？)
 发送 HTTP 请求就是让你的程序向网站或Web服务请求数据或动作。程序员这么做为了交换数据、获取更新或操纵远程资源。

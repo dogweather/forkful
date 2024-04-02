@@ -2,13 +2,14 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:09:10.174448-07:00
-description: "Een debugger gebruiken betekent het inzetten van gespecialiseerde tools\
-  \ om je code te testen en te inspecteren terwijl deze draait. Het is een belangrijke\u2026"
+description: "Om de debugger in Xcode (de IDE voor Swift) te gebruiken, kun je breakpoints\
+  \ instellen, variabelen inspecteren en expressies volgen. Hier is een\u2026"
 lastmod: '2024-03-13T22:44:51.161567-06:00'
 model: gpt-4-0125-preview
-summary: "Een debugger gebruiken betekent het inzetten van gespecialiseerde tools\
-  \ om je code te testen en te inspecteren terwijl deze draait. Het is een belangrijke\u2026"
+summary: "Om de debugger in Xcode (de IDE voor Swift) te gebruiken, kun je breakpoints\
+  \ instellen, variabelen inspecteren en expressies volgen. Hier is een\u2026"
 title: Een debugger gebruiken
+weight: 35
 ---
 
 ## Hoe te:

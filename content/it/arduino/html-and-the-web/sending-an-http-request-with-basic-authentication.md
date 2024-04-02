@@ -7,9 +7,8 @@ model: gpt-4-1106-preview
 summary: "Inviare una richiesta HTTP con autenticazione di base significa inviare\
   \ al server dati che necessitano di un username e password per accedere a contenuti\u2026"
 title: Inviare una richiesta http con autenticazione di base
+weight: 45
 ---
-
-{{< edit_this_page >}}
 
 ## Che Cosa & Perché?
 Inviare una richiesta HTTP con autenticazione di base significa inviare al server dati che necessitano di un username e password per accedere a contenuti protetti. I programmatori fanno questo per interagire con servizi web sicuri direttamente dai loro progetti Arduino.

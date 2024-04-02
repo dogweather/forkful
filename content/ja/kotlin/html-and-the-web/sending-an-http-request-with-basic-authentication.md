@@ -17,9 +17,8 @@ summary: "HTTP\u30EA\u30AF\u30A8\u30B9\u30C8\u306B\u57FA\u672C\u8A8D\u8A3C\u3092
   \u306B\u542B\u3081\u307E\u3059\u3002"
 title: "\u57FA\u672C\u8A8D\u8A3C\u3092\u4F7F\u7528\u3057\u305FHTTP\u30EA\u30AF\u30A8\
   \u30B9\u30C8\u306E\u9001\u4FE1"
+weight: 45
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?（何となぜ？）
 HTTPリクエストに基本認証を付けて送ることは、サーバに「自分は誰だ」って教えるためです。安全性を高めるため、プログラマーは認証情報をリクエストに含めます。

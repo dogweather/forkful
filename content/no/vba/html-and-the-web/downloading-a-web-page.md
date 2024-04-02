@@ -11,9 +11,8 @@ summary: "\xC5 laste ned en nettside i Visual Basic for Applications (VBA) inneb
   rer \xE5 hente HTML-innholdet p\xE5 en nettside fra Internett. Programmerere utf\xF8\
   rer ofte\u2026"
 title: Nedlasting av en nettside
+weight: 42
 ---
-
-{{< edit_this_page >}}
 
 ## Hva og hvorfor?
 

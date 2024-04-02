@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Pesquisar e substituir texto em C envolve identificar substrings espec\xED\
   ficas dentro de uma string maior e substitu\xED-las por diferentes substrings.\u2026"
 title: Pesquisando e substituindo texto
+weight: 10
 ---
-
-{{< edit_this_page >}}
 
 ## O Quê & Porquê?
 

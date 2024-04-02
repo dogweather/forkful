@@ -9,9 +9,8 @@ summary: "Transformer une cha\xEEne en minuscules, c'est passer tous ses caract\
   res en minuscules. Les d\xE9veloppeurs le font pour standardiser les entr\xE9es\
   \ et faciliter\u2026"
 title: "Conversion d'une cha\xEEne de caract\xE8res en minuscules"
+weight: 4
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why? (Quoi et Pourquoi ?)
 Transformer une chaîne en minuscules, c'est passer tous ses caractères en minuscules. Les développeurs le font pour standardiser les entrées et faciliter les comparaisons de texte insensibles à la casse.

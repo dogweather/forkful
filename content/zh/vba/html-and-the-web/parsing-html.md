@@ -19,9 +19,8 @@ summary: "\u5728 Visual Basic for Applications (VBA) \u4E2D\u89E3\u6790 HTML \u6
   \u63D0\u4EA4\u548C\u6570\u636E\u68C0\u7D22\uFF0C\u4EE5\u53CA\u5728\u652F\u6301 VBA\
   \ \u7684\u5E94\u7528\u7A0B\u5E8F\u4E2D\u4F7F\u7528\uFF0C\u5982 Microsoft Excel\u2026"
 title: "\u89E3\u6790HTML"
+weight: 43
 ---
-
-{{< edit_this_page >}}
 
 ## 什么 & 为什么？
 

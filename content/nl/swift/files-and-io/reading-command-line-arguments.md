@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Het lezen van commandoregelargumenten stelt je Swift-programma in staat\
   \ om extra details te grijpen wanneer gebruikers het uitvoeren. Dit is belangrijk\u2026"
 title: Commandoregelargumenten lezen
+weight: 23
 ---
-
-{{< edit_this_page >}}
 
 ## Wat & Waarom?
 

@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Enviar una solicitud HTTP involucra iniciar una llamada desde tu aplicaci\xF3\
   n Go a un servidor web, API o cualquier otro servicio basado en HTTP. Los\u2026"
 title: Enviando una solicitud HTTP
+weight: 44
 ---
-
-{{< edit_this_page >}}
 
 ## ¿Qué y por qué?
 

@@ -20,9 +20,8 @@ summary: "TOML (Tom's Obvious, Minimal Language) \u0E40\u0E1B\u0E47\u0E19\u0E23\
   \u0E40\u0E21\u0E2D\u0E23\u0E4C\u0E43\u0E0A\u0E49 TOML\u2026"
 title: "\u0E01\u0E32\u0E23\u0E17\u0E33\u0E07\u0E32\u0E19\u0E23\u0E48\u0E27\u0E21\u0E01\
   \u0E31\u0E1A TOML"
+weight: 39
 ---
-
-{{< edit_this_page >}}
 
 ## อะไร & ทำไม?
 TOML (Tom's Obvious, Minimal Language) เป็นรูปแบบการซีเรียลไลซ์ข้อมูลที่อ่านง่ายเนื่องจากมีความหมายที่ชัดเจน โปรแกรมเมอร์ใช้ TOML สำหรับไฟล์การกำหนดค่าเนื่องจากมันสร้างสมดุลระหว่างความสามารถในการอ่านของมนุษย์และการวิเคราะห์ของเครื่อง

@@ -7,9 +7,8 @@ model: gpt-4-1106-preview
 summary: "Organizing code into functions is about wrapping up chunks of code that\
   \ perform specific tasks and giving them a name. It's done to make code reusable,\u2026"
 title: Organizing code into functions
+weight: 18
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 Organizing code into functions is about wrapping up chunks of code that perform specific tasks and giving them a name. It's done to make code reusable, readable, and maintainable. Instead of rewriting the same code, call a function. Want to troubleshoot or upgrade? Tweak the function without sifting through piles of script.

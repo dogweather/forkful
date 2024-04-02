@@ -11,9 +11,8 @@ summary: "Das Parsen von HTML in Google Apps Script beinhaltet das Extrahieren v
   \ Daten aus HTML-Inhalten, was besonders n\xFCtzlich ist, wenn man mit Webseiten\
   \ oder\u2026"
 title: HTML analysieren
+weight: 43
 ---
-
-{{< edit_this_page >}}
 
 ## Was & Warum?
 Das Parsen von HTML in Google Apps Script beinhaltet das Extrahieren von Daten aus HTML-Inhalten, was besonders nützlich ist, wenn man mit Webseiten oder webbasierten Datenquellen interagiert. Programmierer tun dies, um die Datensammlung zu automatisieren, Webinhalte zu manipulieren oder Webfunktionalitäten mit Google Apps wie Sheets und Docs zu integrieren.

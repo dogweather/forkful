@@ -9,9 +9,8 @@ summary: "Zaokr\u0105glanie liczb oznacza dostosowanie warto\u015Bci do najbli\u
   szej liczby ca\u0142kowitej lub okre\u015Blonej precyzji. Programi\u015Bci robi\u0105\
   \ to, aby upraszcza\u0107,\u2026"
 title: "Zaokr\u0105glanie liczb"
+weight: 13
 ---
-
-{{< edit_this_page >}}
 
 ## Co i dlaczego?
 Zaokrąglanie liczb oznacza dostosowanie wartości do najbliższej liczby całkowitej lub określonej precyzji. Programiści robią to, aby upraszczać, dostosowywać do realiów świata rzeczywistego lub poprawiać wydajność poprzez pozbywanie się nadmiernej precyzji.

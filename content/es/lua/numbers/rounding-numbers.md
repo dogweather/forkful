@@ -9,9 +9,8 @@ summary: "Redondear n\xFAmeros significa ajustarlos al entero m\xE1s cercano o a
   \ lugar decimal especificado. Es un pilar en la programaci\xF3n para reducir la\
   \ complejidad,\u2026"
 title: "Redondeo de n\xFAmeros"
+weight: 13
 ---
-
-{{< edit_this_page >}}
 
 ## ¿Qué y Por Qué?
 Redondear números significa ajustarlos al entero más cercano o al lugar decimal especificado. Es un pilar en la programación para reducir la complejidad, mejorar el rendimiento y para momentos en que la precisión más allá de un cierto punto no agrega valor.

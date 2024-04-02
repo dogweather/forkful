@@ -9,9 +9,8 @@ summary: "Refaktorisering \xE4r processen att omstrukturera befintlig datorprogr
   \ utan att \xE4ndra dess externa beteende. Programmerare g\xF6r det f\xF6r att st\xE4\
   da upp i\u2026"
 title: Refaktorisering
+weight: 19
 ---
-
-{{< edit_this_page >}}
 
 ## Vad & Varför?
 Refaktorisering är processen att omstrukturera befintlig datorprogramkod utan att ändra dess externa beteende. Programmerare gör det för att städa upp i kodbasen, förbättra läsbarheten, underhållbarheten och bana väg för framtida funktioner med minimal teknisk skuld.

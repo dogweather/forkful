@@ -9,9 +9,8 @@ summary: "Procurar e substituir texto \xE9 uma tarefa comum na programa\xE7\xE3o
   \ significa encontrar sequ\xEAncias de caracteres e troc\xE1-las por outras. Fazemos\
   \ isso para\u2026"
 title: Pesquisando e substituindo texto
+weight: 10
 ---
-
-{{< edit_this_page >}}
 
 ## O Que & Porquê?
 Procurar e substituir texto é uma tarefa comum na programação: significa encontrar sequências de caracteres e trocá-las por outras. Fazemos isso para corrigir erros, atualizar dados ou modificar código de maneira eficiente.

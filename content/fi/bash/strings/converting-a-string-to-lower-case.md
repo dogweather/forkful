@@ -7,9 +7,8 @@ model: gpt-4-1106-preview
 summary: "Muuttaa kirjaimet pieniksi tekstiss\xE4. Auttaa vertailemaan sis\xE4lt\xF6\
   \xE4 huomiottaen kirjainkoon."
 title: Merkkijonon muuntaminen pieniksi kirjaimiksi
+weight: 4
 ---
-
-{{< edit_this_page >}}
 
 ## Mitä & Miksi?
 Muuttaa kirjaimet pieniksi tekstissä. Auttaa vertailemaan sisältöä huomiottaen kirjainkoon.

@@ -9,9 +9,8 @@ summary: "Interpolacja napis\xF3w to wstawianie warto\u015Bci wyra\u017Ce\u0144 
   \ napisu. Programi\u015Bci u\u017Cywaj\u0105 tego, aby tworzy\u0107 tekst z dynamicznie\
   \ zmieniaj\u0105cymi si\u0119 danymi, co\u2026"
 title: "Interpolacja \u0142a\u0144cuch\xF3w znak\xF3w"
+weight: 8
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why? (Co i Dlaczego?)
 Interpolacja napisów to wstawianie wartości wyrażeń do napisu. Programiści używają tego, aby tworzyć tekst z dynamicznie zmieniającymi się danymi, co ułatwia czytelność i utrzymanie kodu.

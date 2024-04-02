@@ -11,9 +11,8 @@ summary: "Encontrar la longitud de una cadena (String) en Dart se trata de deter
   \ el n\xFAmero de unidades de c\xF3digo (esencialmente, el n\xFAmero de caracteres\
   \ si se\u2026"
 title: Encontrando la longitud de una cadena
+weight: 7
 ---
-
-{{< edit_this_page >}}
 
 ## Qué y por qué?
 Encontrar la longitud de una cadena (String) en Dart se trata de determinar el número de unidades de código (esencialmente, el número de caracteres si se piensa de manera simplista) en una cadena dada. Los programadores hacen esto para manipular cadenas más precisamente, como validar la entrada, truncar el texto de visualización o procesar formatos de datos donde la longitud importa (por ejemplo, protocolos con mensajes prefijados por longitud).

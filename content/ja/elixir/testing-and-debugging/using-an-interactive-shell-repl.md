@@ -20,9 +20,8 @@ summary: "\u30A4\u30F3\u30BF\u30E9\u30AF\u30C6\u30A3\u30D6\u30B7\u30A7\u30EB\u30
   \u3057\u307E\u3059\u3002"
 title: "\u30A4\u30F3\u30BF\u30E9\u30AF\u30C6\u30A3\u30D6\u30B7\u30A7\u30EB\uFF08REPL\uFF09\
   \u306E\u4F7F\u7528"
+weight: 34
 ---
-
-{{< edit_this_page >}}
 
 ## 何となぜ？
 インタラクティブシェル、またはREPL（Read-Eval-Print Loop）を利用すると、リアルタイムでコードスニペットを試すことができます。Elixirプログラマーは、IEx（Interactive Elixir）と呼ばれるREPLを実験、デバッグ、そして言語学習のために使用します。

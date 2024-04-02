@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Das Schreiben auf den Standardfehler (stderr) bezieht sich darauf, Fehlermeldungen\
   \ und Diagnosen an den stderr-Stream zu leiten, getrennt von der\u2026"
 title: Schreiben auf Standardfehler
+weight: 25
 ---
-
-{{< edit_this_page >}}
 
 ## Was & Warum?
 Das Schreiben auf den Standardfehler (stderr) bezieht sich darauf, Fehlermeldungen und Diagnosen an den stderr-Stream zu leiten, getrennt von der Standardausgabe (stdout). Programmierer tun dies, um die reguläre Programmausgabe von Fehlermeldungen zu unterscheiden, was ein effektiveres Debugging und Protokollieren ermöglicht.

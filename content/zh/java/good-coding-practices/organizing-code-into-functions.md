@@ -13,9 +13,8 @@ summary: "\u51FD\u6570\u5F0F\u7EC4\u7EC7\u4EE3\u7801\u610F\u5473\u7740\u5C06\u5E
   \u5458\u8FD9\u6837\u505A\u662F\u4E3A\u4E86\u4F7F\u4EE3\u7801\u53EF\u8BFB\u3001\u53EF\
   \u590D\u7528\u548C\u53EF\u7EF4\u62A4\u3002"
 title: "\u5C06\u4EE3\u7801\u7EC4\u7EC7\u6210\u51FD\u6570"
+weight: 18
 ---
-
-{{< edit_this_page >}}
 
 ## 何为函数式组织代码？以及为什么？
 函数式组织代码意味着将庞大的程序分解成可管理的块，每个块执行一个明确的任务。程序员这样做是为了使代码可读、可复用和可维护。

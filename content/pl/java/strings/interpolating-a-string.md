@@ -9,9 +9,8 @@ summary: "Interpolacja \u0142a\u0144cuch\xF3w to proces wstawiania warto\u015Bci
   \ do ci\u0105gu znak\xF3w. Programi\u015Bci u\u017Cywaj\u0105 jej dla dynamizmu\
   \ kodu i uproszczenia generowania\u2026"
 title: "Interpolacja \u0142a\u0144cuch\xF3w znak\xF3w"
+weight: 8
 ---
-
-{{< edit_this_page >}}
 
 ## Co i dlaczego?
 

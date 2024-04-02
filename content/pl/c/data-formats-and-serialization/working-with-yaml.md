@@ -11,9 +11,8 @@ summary: "YAML, kt\xF3ry oznacza \"YAML Ain't Markup Language\" (YAML nie jest j
   zykiem znacznik\xF3w), to standard serializacji danych czytelnych dla cz\u0142owieka,\
   \ kt\xF3ry mo\u017Ce\u2026"
 title: Praca z YAML
+weight: 41
 ---
-
-{{< edit_this_page >}}
 
 ## Co i dlaczego?
 

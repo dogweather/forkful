@@ -11,9 +11,8 @@ summary: "Analisar uma data a partir de uma string envolve converter texto em um
   \ Date. Esta opera\xE7\xE3o \xE9 fundamental para aplica\xE7\xF5es que interagem\
   \ com datas\u2026"
 title: Analisando uma data a partir de uma string
+weight: 30
 ---
-
-{{< edit_this_page >}}
 
 ## O Quê e Por Quê?
 Analisar uma data a partir de uma string envolve converter texto em um objeto Date. Esta operação é fundamental para aplicações que interagem com datas inseridas pelos usuários ou obtidas de conjuntos de dados externos, permitindo fácil manipulação e formatação de acordo com as necessidades.

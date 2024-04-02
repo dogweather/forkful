@@ -10,9 +10,8 @@ model: gpt-4-0125-preview
 summary: "HTML parsen is het proces van HTML-code nemen en informatie daaruit extraheren,\
   \ een beetje zoals het vinden van naalden in een hooiberg \u2013 als de hooiberg\u2026"
 title: HTML Parsen
+weight: 43
 ---
-
-{{< edit_this_page >}}
 
 ## Wat & Waarom?
 

@@ -7,9 +7,8 @@ model: gpt-4-1106-preview
 summary: "Sammenligning av to datoer sjekker hvilken dato som kommer f\xF8r eller\
   \ etter en annen. Programmerere gj\xF8r det for \xE5 h\xE5ndtere tidsfrister, organisere\u2026"
 title: Sammenlikning av to datoer
+weight: 27
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why? (Hva & Hvorfor?)
 Sammenligning av to datoer sjekker hvilken dato som kommer før eller etter en annen. Programmerere gjør det for å håndtere tidsfrister, organisere hendelser, eller spore tidslinjer.

@@ -8,9 +8,8 @@ model: gpt-4-1106-preview
 summary: "Imprimir sa\xEDdas de debug \xE9 escrever no console aquilo que o seu c\xF3\
   digo est\xE1 fazendo, para que voc\xEA possa entender melhor e corrigir o comportamento.\u2026"
 title: "Exibindo sa\xEDdas de depura\xE7\xE3o"
+weight: 33
 ---
-
-{{< edit_this_page >}}
 
 ## O Que é & Porquê?
 Imprimir saídas de debug é escrever no console aquilo que o seu código está fazendo, para que você possa entender melhor e corrigir o comportamento. Programadores fazem isso para verificar o fluxo do programa, valores de variáveis e encontrar bugs mais rapidamente.

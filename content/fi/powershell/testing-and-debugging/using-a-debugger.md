@@ -1,14 +1,15 @@
 ---
 date: 2024-01-26 04:09:01.050958-07:00
-description: "Debuggerin k\xE4ytt\xF6 tarkoittaa katkaisukohtien asettamista, koodin\
-  \ l\xE4pik\xE4ynti\xE4 askel askeleelta, muuttujien tarkkailua ja ohjelman tilan\
-  \ tarkastelua sen\u2026"
+description: "PowerShellissa voit debugata skriptej\xE4 k\xE4ytt\xE4m\xE4ll\xE4 sis\xE4\
+  \xE4nrakennettua PowerShell Integrated Scripting Environment (ISE) -ymp\xE4rist\xF6\
+  \xE4 tai Visual Studio Code\u2026"
 lastmod: '2024-03-13T22:44:56.786931-06:00'
 model: gpt-4-0125-preview
-summary: "Debuggerin k\xE4ytt\xF6 tarkoittaa katkaisukohtien asettamista, koodin l\xE4\
-  pik\xE4ynti\xE4 askel askeleelta, muuttujien tarkkailua ja ohjelman tilan tarkastelua\
-  \ sen\u2026"
+summary: "PowerShellissa voit debugata skriptej\xE4 k\xE4ytt\xE4m\xE4ll\xE4 sis\xE4\
+  \xE4nrakennettua PowerShell Integrated Scripting Environment (ISE) -ymp\xE4rist\xF6\
+  \xE4 tai Visual Studio Code\u2026"
 title: "Debuggerin k\xE4ytt\xF6"
+weight: 35
 ---
 
 ## Kuinka:

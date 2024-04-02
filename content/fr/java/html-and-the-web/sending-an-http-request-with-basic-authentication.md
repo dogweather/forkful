@@ -9,9 +9,8 @@ summary: "Envoyer une requ\xEAte HTTP avec une authentification de base, c'est c
   \ donner un mot de passe pour acc\xE9der \xE0 un site s\xE9curis\xE9. On fait \xE7\
   a pour prot\xE9ger\u2026"
 title: "Envoi d'une requ\xEAte HTTP avec authentification de base"
+weight: 45
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why? (Quoi et Pourquoi ?)
 Envoyer une requête HTTP avec une authentification de base, c'est comme donner un mot de passe pour accéder à un site sécurisé. On fait ça pour protéger les infos sensibles et pour s'assurer que seul les utilisateurs autorisés y accèdent.

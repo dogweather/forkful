@@ -11,9 +11,8 @@ summary: "Associativa arrayer, k\xE4nda i andra spr\xE5k som kartor eller ordb\x
   cker, \xE4r nyckel-v\xE4rde-par som anv\xE4nds f\xF6r effektiv datauppslagning och\
   \ manipulation. Till\u2026"
 title: "Anv\xE4nda associativa arrayer"
+weight: 15
 ---
-
-{{< edit_this_page >}}
 
 ## Vad & Varför?
 

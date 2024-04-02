@@ -8,9 +8,8 @@ model: gpt-4-1106-preview
 summary: "Organizar o c\xF3digo em fun\xE7\xF5es significa dividir a fera de um programa\
   \ em peda\xE7os gerenci\xE1veis, cada um realizando uma tarefa distinta. Os programadores\u2026"
 title: "Organizando o c\xF3digo em fun\xE7\xF5es"
+weight: 18
 ---
-
-{{< edit_this_page >}}
 
 ## O Que & Porquê?
 Organizar o código em funções significa dividir a fera de um programa em pedaços gerenciáveis, cada um realizando uma tarefa distinta. Os programadores fazem isso para tornar o código legível, reutilizável e mantível.

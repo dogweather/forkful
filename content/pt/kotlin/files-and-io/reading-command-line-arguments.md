@@ -8,9 +8,8 @@ model: gpt-4-1106-preview
 summary: "Ler argumentos da linha de comando significa acessar os dados que os usu\xE1\
   rios inserem ao executar seu programa. Programadores fazem isso para tornar os\u2026"
 title: Lendo argumentos da linha de comando
+weight: 23
 ---
-
-{{< edit_this_page >}}
 
 ## O quê e Por quê?
 Ler argumentos da linha de comando significa acessar os dados que os usuários inserem ao executar seu programa. Programadores fazem isso para tornar os aplicativos flexíveis e interativos, permitindo diferentes comportamentos com base em inputs variados.

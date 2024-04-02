@@ -7,9 +7,8 @@ model: gpt-4-0125-preview
 summary: "REPL, eller Les-Evaluer-Skriv-L\xF8kke, er et interaktivt programmeringsmilj\xF8\
   \ som tar enkelt brukerinput, utf\xF8rer dem, og returnerer resultatet.\u2026"
 title: Bruke et interaktivt skall (REPL)
+weight: 34
 ---
-
-{{< edit_this_page >}}
 
 ## Hva & Hvorfor?
 REPL, eller Les-Evaluer-Skriv-Løkke, er et interaktivt programmeringsmiljø som tar enkelt brukerinput, utfører dem, og returnerer resultatet. Programmerere bruker det for umiddelbar tilbakemelding, feilsøking, og rask eksperimentering med programmeringskonsepter uten overheaden av å kompilere og kjøre et fullstendig program.

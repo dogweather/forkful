@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Assosiatiiviset taulukot, tai sanakirjat C#:ssa, antavat sinun tallentaa\
   \ ja hallita avain-arvo -pareja. Ne ovat sinun valintasi, kun tarvitset nopeasti\u2026"
 title: "Assosiatiivisten taulukoiden k\xE4ytt\xF6"
+weight: 15
 ---
-
-{{< edit_this_page >}}
 
 ## Mitä & Miksi?
 

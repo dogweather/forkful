@@ -11,9 +11,8 @@ summary: "HTML parsen betekent het filteren door de soep van code van een websit
   \ om nuttige brokjes te vinden \u2014 tekst, links, afbeeldingen, etc. Programmeurs\
   \ doen\u2026"
 title: HTML Parsen
+weight: 43
 ---
-
-{{< edit_this_page >}}
 
 ## Wat & Waarom?
 

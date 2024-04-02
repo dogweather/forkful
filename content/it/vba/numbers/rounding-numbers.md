@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Nella programmazione, l'arrotondamento dei numeri riguarda l'approssimazione\
   \ di un numero al suo intero pi\xF9 vicino o a un certo numero di cifre decimali.\u2026"
 title: Arrotondamento dei numeri
+weight: 13
 ---
-
-{{< edit_this_page >}}
 
 ## Cosa & Perché?
 

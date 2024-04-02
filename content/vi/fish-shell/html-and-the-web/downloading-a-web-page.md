@@ -13,9 +13,8 @@ summary: "T\u1EA3i m\u1ED9t trang web v\u1EC1 m\xE1y \u0111\u1ED3ng ngh\u0129a v
   \ v\u1EC1 m\xE1y c\u1EE5c b\u1ED9 c\u1EE7a m\xECnh. L\u1EADp tr\xECnh vi\xEAn th\u1EF1\
   c hi\u1EC7n \u0111i\u1EC1u n\xE0y cho c\xE1c m\u1EE5c\u2026"
 title: "T\u1EA3i trang web"
+weight: 42
 ---
-
-{{< edit_this_page >}}
 
 ## Gì và Tại sao?
 Tải một trang web về máy đồng nghĩa với việc bạn kéo nội dung của trang đó từ web về máy cục bộ của mình. Lập trình viên thực hiện điều này cho các mục đích tự động hóa, thu thập dữ liệu, truy cập ngoại tuyến hoặc kiểm thử.

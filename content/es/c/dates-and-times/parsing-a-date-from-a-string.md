@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Analizar una fecha desde una cadena en C implica convertir representaciones\
   \ textuales de fechas en un formato que los programas pueden manipular y\u2026"
 title: Interpretando una fecha de una cadena de texto
+weight: 30
 ---
-
-{{< edit_this_page >}}
 
 ## ¿Qué y Por Qué?
 

@@ -9,9 +9,8 @@ summary: "S\xF6kning och ers\xE4ttning av text hanterar automatisk \xE4ndring av
   ngar i filer. Programmerare anv\xE4nder det f\xF6r att effektivisera uppdateringar,\
   \ korrigera\u2026"
 title: "S\xF6kning och ers\xE4ttning av text"
+weight: 10
 ---
-
-{{< edit_this_page >}}
 
 ## Vad & Varför?
 Sökning och ersättning av text hanterar automatisk ändring av strängar i filer. Programmerare använder det för att effektivisera uppdateringar, korrigera fel eller ändra kod snabbt.

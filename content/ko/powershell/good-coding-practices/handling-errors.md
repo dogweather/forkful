@@ -17,9 +17,8 @@ summary: "PowerShell\uC5D0\uC11C \uC624\uB958\uB97C \uCC98\uB9AC\uD55C\uB2E4\uB2
   \ \uC0AC\uC6A9\uC790\uC5D0\uAC8C \uC720\uC6A9\uD55C \uD53C\uB4DC\uBC31\uC744 \uC81C\
   \uACF5\uD569\uB2C8\uB2E4."
 title: "\uC5D0\uB7EC \uCC98\uB9AC\uD558\uAE30"
+weight: 16
 ---
-
-{{< edit_this_page >}}
 
 ## 무엇 & 왜?
 PowerShell에서 오류를 처리한다는 것은 예기치 않은 오류를 예측하고 원활하게 관리하는 것을 의미합니다. 프로그래머들은 이 작업을 통해 시스템 충돌을 방지하고 사용자에게 유용한 피드백을 제공합니다.

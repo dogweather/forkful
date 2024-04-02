@@ -9,9 +9,8 @@ summary: "Crear archivos temporales es el proceso de generar ficheros que s\xF3l
   \ se necesitan durante la ejecuci\xF3n de un programa. Los programadores los utilizan\
   \ para\u2026"
 title: Creando un archivo temporal
+weight: 21
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 Crear archivos temporales es el proceso de generar ficheros que sólo se necesitan durante la ejecución de un programa. Los programadores los utilizan para almacenar datos transitorios sin afectar la estructura permanente del sistema de archivos. 

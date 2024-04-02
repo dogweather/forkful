@@ -7,9 +7,8 @@ model: gpt-4-1106-preview
 summary: "Complex numbers have a real part and an imaginary part (like `3 + 4i`).\
   \ They're used in engineering, physics, and certain computing problems. Programmers\u2026"
 title: Working with complex numbers
+weight: 14
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 Complex numbers have a real part and an imaginary part (like `3 + 4i`). They're used in engineering, physics, and certain computing problems. Programmers work with them for simulations, signal processing, and solving certain types of math problems efficiently.

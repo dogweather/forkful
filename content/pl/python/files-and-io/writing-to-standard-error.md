@@ -11,9 +11,8 @@ summary: "Pisanie do standardowego b\u0142\u0119du w Pythonie dotyczy przekierow
   \ komunikat\xF3w o b\u0142\u0119dach lub diagnostyki programu do strumienia b\u0142\
   \u0119d\xF3w (`stderr`),\u2026"
 title: "Pisanie do standardowego b\u0142\u0119du"
+weight: 25
 ---
-
-{{< edit_this_page >}}
 
 ## Co i dlaczego?
 Pisanie do standardowego błędu w Pythonie dotyczy przekierowania komunikatów o błędach lub diagnostyki programu do strumienia błędów (`stderr`), oddzielnie od standardowego wyjścia (`stdout`). Programiści robią to, aby odróżnić normalne wyjścia programu od komunikatów o błędach, ułatwiając debugowanie i analizę logów.

@@ -11,9 +11,8 @@ summary: "Es ist unerl\xE4sslich zu \xFCberpr\xFCfen, ob ein Verzeichnis im Date
   \ existiert, um Dateistrukturen innerhalb Ihrer Swift-Anwendungen zu verwalten.\
   \ Diese\u2026"
 title: "\xDCberpr\xFCfung, ob ein Verzeichnis existiert"
+weight: 20
 ---
-
-{{< edit_this_page >}}
 
 ## Was & Warum?
 Es ist unerlässlich zu überprüfen, ob ein Verzeichnis im Dateisystem existiert, um Dateistrukturen innerhalb Ihrer Swift-Anwendungen zu verwalten. Diese Aufgabe ermöglicht es Entwicklern, die Präsenz von Verzeichnissen zu überprüfen, bevor sie versuchen, aus diesen zu lesen oder in diese zu schreiben, und somit mögliche Laufzeitfehler zu vermeiden.

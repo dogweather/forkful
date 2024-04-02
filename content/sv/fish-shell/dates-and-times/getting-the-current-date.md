@@ -11,9 +11,8 @@ summary: "Att h\xE4mta det aktuella datumet i programmering \xE4r en grundl\xE4g
   \ uppgift som m\xF6jligg\xF6r att h\xE4mta och manipulera systemets datum- och tidsdata.\
   \ I\u2026"
 title: "F\xE5 det aktuella datumet"
+weight: 29
 ---
-
-{{< edit_this_page >}}
 
 ## Vad & Varför?
 Att hämta det aktuella datumet i programmering är en grundläggande uppgift som möjliggör att hämta och manipulera systemets datum- och tidsdata. I skriptning och automatiseringsuppgifter är det väsentligt för att generera tidsstämplar, schemalägga uppgifter och skapa loggar.

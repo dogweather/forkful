@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Het verwijderen van karakters die overeenkomen met een patroon betekent\
   \ het wegdoen van specifieke volgordes van karakters uit strings\u2014denk aan het\u2026"
 title: Karakters verwijderen die overeenkomen met een patroon
+weight: 5
 ---
-
-{{< edit_this_page >}}
 
 ## Wat & Waarom?
 

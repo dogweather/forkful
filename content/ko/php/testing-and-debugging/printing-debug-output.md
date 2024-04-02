@@ -16,9 +16,8 @@ summary: "\uB514\uBC84\uADF8 \uCD9C\uB825\uC740 \uCF54\uB4DC\uAC00 \uC5B4\uB5BB\
   \uACE0, \uC2E4\uD589 \uD750\uB984\uC744 \uCD94\uC801\uD558\uAE30 \uC704\uD574 \uC774\
   \uB97C \uC0AC\uC6A9\uD569\uB2C8\uB2E4."
 title: "\uB514\uBC84\uADF8 \uCD9C\uB825\uC744 \uCC0D\uC5B4\uBCF4\uAE30"
+weight: 33
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why? (무엇이며 왜 사용하는가?)
 디버그 출력은 코드가 어떻게 동작하는지 이해하려고 할 때 쓰는 메시지입니다. 개발자들은 버그를 찾고, 변수의 상태를 확인하고, 실행 흐름을 추적하기 위해 이를 사용합니다.

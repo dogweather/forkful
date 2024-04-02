@@ -13,9 +13,8 @@ summary: "In th\xF4ng tin g\u1EE1 l\u1ED7i l\xE0 v\u1EC1 vi\u1EC7c xu\u1EA5t th\
   \ \u0111ang di\u1EC5n ra b\xEAn d\u01B0\u1EDBi c\u1EE7a m\xE3 l\u1EC7nh. C\xE1c\
   \ l\u1EADp tr\xECnh vi\xEAn l\xE0m \u0111i\u1EC1u n\xE0y \u0111\u1EC3 theo\u2026"
 title: "In ra th\xF4ng tin g\u1EE1 l\u1ED7i"
+weight: 33
 ---
-
-{{< edit_this_page >}}
 
 ## Cái gì & Tại sao?
 In thông tin gỡ lỗi là về việc xuất thông tin quan trọng để hiểu được những gì đang diễn ra bên dưới của mã lệnh. Các lập trình viên làm điều này để theo dõi giá trị của biến, dòng chảy của quá trình thực thi, và dò tìm lỗi—giống như một dấu vết trong một khu rừng số hóa.

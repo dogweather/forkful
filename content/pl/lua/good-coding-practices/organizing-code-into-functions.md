@@ -9,9 +9,8 @@ summary: "Organizowanie kodu w funkcje polega na podziale skryptowania na mniejs
   \ kawa\u0142ki\u2014my\u015Bl o nich jak o funkcjonalnych klockach LEGO. Robimy\
   \ to dla\u2026"
 title: Organizacja kodu w funkcje
+weight: 18
 ---
-
-{{< edit_this_page >}}
 
 ## Co i dlaczego?
 Organizowanie kodu w funkcje polega na podziale skryptowania na mniejsze kawałki—myśl o nich jak o funkcjonalnych klockach LEGO. Robimy to dla przejrzystości, możliwości wielokrotnego użycia i zdrowia umysłowego. Sprawia to, że nasz kod jest schludny, czytelny i łatwy w utrzymaniu.

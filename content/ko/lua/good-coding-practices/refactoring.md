@@ -21,9 +21,8 @@ summary: "\uB9AC\uD329\uD130\uB9C1\uC740 \uAE30\uC874 \uCF54\uB4DC\uB97C \uC218\
   \uAE30 \uC804 \uC900\uBE44 \uB2E8\uACC4\uB85C \uC790\uC8FC \uC218\uD589\uD569\uB2C8\
   \uB2E4."
 title: "\uB9AC\uD329\uD130\uB9C1"
+weight: 19
 ---
-
-{{< edit_this_page >}}
 
 ## 무엇 & 왜?
 리팩터링은 기존 코드를 수정하여 구조, 가독성, 효율성을 개선하면서 외부 동작을 변경하지 않는 기술입니다. 프로그래머들은 코드를 더 유지보수하기 쉽게 만들고, 복잡성을 줄이며, 새로운 기능을 추가하거나 버그를 수정하기 전 준비 단계로 자주 수행합니다.

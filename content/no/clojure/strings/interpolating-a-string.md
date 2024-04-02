@@ -9,9 +9,8 @@ summary: "Interpolering av en streng lar deg putte variabler eller uttrykk direk
   \ inn i en streng. Programmerere gj\xF8r dette for \xE5 dynamisk bygge strenger,\
   \ som gj\xF8r\u2026"
 title: Interpolering av en streng
+weight: 8
 ---
-
-{{< edit_this_page >}}
 
 ## Hva & Hvorfor?
 Interpolering av en streng lar deg putte variabler eller uttrykk direkte inn i en streng. Programmerere gjør dette for å dynamisk bygge strenger, som gjør koden mer leselig og hendig.

@@ -8,9 +8,8 @@ model: gpt-4-1106-preview
 summary: "Confrontare due date significa stabilire qual \xE8 la pi\xF9 recente o se\
   \ sono uguali. I programmatori fanno ci\xF2 per validare scadenze, calcolare differenze\u2026"
 title: Confronto tra due date
+weight: 27
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why? (Cosa e Perché?)
 Confrontare due date significa stabilire qual è la più recente o se sono uguali. I programmatori fanno ciò per validare scadenze, calcolare differenze temporali o ordinare eventi.

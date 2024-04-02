@@ -9,9 +9,8 @@ summary: "Beregning av fremtidige eller tidligere datoer handler om \xE5 legge t
   \ eller trekke fra tid fra en spesifikk dato. Programmerere gj\xF8r dette for \xE5\
   \ h\xE5ndtere\u2026"
 title: Beregning av en dato i fremtiden eller fortiden
+weight: 26
 ---
-
-{{< edit_this_page >}}
 
 ## Hva & Hvorfor?
 Beregning av fremtidige eller tidligere datoer handler om å legge til eller trekke fra tid fra en spesifikk dato. Programmerere gjør dette for å håndtere hendelser, frister, abonnementer, og lignende dato-sensitive funksjoner.

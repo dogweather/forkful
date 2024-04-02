@@ -10,9 +10,8 @@ model: gpt-4-0125-preview
 summary: "\xC5 sette stor forbokstav i en streng i PowerShell inneb\xE6rer \xE5 transformere\
   \ det f\xF8rste tegnet i en gitt streng til stor bokstav mens resten av strengen\u2026"
 title: Sette stor bokstav i en streng
+weight: 2
 ---
-
-{{< edit_this_page >}}
 
 ## Hva og hvorfor?
 Å sette stor forbokstav i en streng i PowerShell innebærer å transformere det første tegnet i en gitt streng til stor bokstav mens resten av strengen forblir uendret. Programmerere utfører ofte denne oppgaven for formateringsformål, slik som å forberede tekst for visning i brukergrensesnitt eller å følge grammatikalske regler i genererte dokumenter.

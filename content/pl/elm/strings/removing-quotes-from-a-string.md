@@ -9,9 +9,8 @@ summary: "Usuwanie cudzys\u0142ow\xF3w z ci\u0105gu znak\xF3w oznacza usuni\u011
   cie tych dodatkowych podw\xF3jnych lub pojedynczych znak\xF3w cytatu, kt\xF3re faktycznie\
   \ nie s\u0105 potrzebne w\u2026"
 title: "Usuwanie cudzys\u0142ow\xF3w z ci\u0105gu znak\xF3w"
+weight: 9
 ---
-
-{{< edit_this_page >}}
 
 ## Co i dlaczego?
 Usuwanie cudzysłowów z ciągu znaków oznacza usunięcie tych dodatkowych podwójnych lub pojedynczych znaków cytatu, które faktycznie nie są potrzebne w przetwarzanym tekście. Programiści robią to, aby sanować dane wejściowe, przygotować dane do przechowywania lub uczynić wyjście bardziej czytelnym dla człowieka, kiedy cytaty nie są konieczne w danym kontekście.

@@ -16,9 +16,8 @@ summary: "\uBB38\uC790\uC5F4\uC5D0\uC11C \uD328\uD134\uACFC \uC77C\uCE58\uD558\u
   \ \uD558\uACE0 \uD504\uB85C\uADF8\uB7A8\uC758 \uD6A8\uC728\uC131\uC744 \uB192\uC774\
   \uAE30 \uC704\uD574 \uC0AC\uC6A9\uB429\uB2C8\uB2E4."
 title: "\uD328\uD134\uC5D0 \uC77C\uCE58\uD558\uB294 \uBB38\uC790 \uC0AD\uC81C"
+weight: 5
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why? (무엇이며 왜?)
 문자열에서 패턴과 일치하는 문자를 제거하는 것은 데이터 정제의 한 형태입니다. 필요 없는 데이터를 걸러내어 정보를 명확히 하고 프로그램의 효율성을 높이기 위해 사용됩니다.

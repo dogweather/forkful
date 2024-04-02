@@ -11,9 +11,8 @@ summary: "Pobieranie bie\u017C\u0105cej daty w JavaScript jest podstawowym zadan
   \ obejmuj\u0105cym pobieranie i ewentualnie manipulowanie dzisiejsz\u0105 dat\u0105\
   \ i czasem. Programi\u015Bci\u2026"
 title: Pobieranie aktualnej daty
+weight: 29
 ---
-
-{{< edit_this_page >}}
 
 ## Co i dlaczego?
 Pobieranie bieżącej daty w JavaScript jest podstawowym zadaniem, obejmującym pobieranie i ewentualnie manipulowanie dzisiejszą datą i czasem. Programiści wykonują to, aby wyświetlać daty na stronach internetowych, w aplikacjach, śledzić interakcje użytkowników lub obsługiwać dane wrażliwe czasowo.

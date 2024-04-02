@@ -9,9 +9,8 @@ summary: "Comparer deux dates, c'est mettre c\xF4te \xE0 c\xF4te deux moments di
   \ pour voir lequel vient avant ou apr\xE8s, ou s'ils sont identiques. En programmation,\
   \ on\u2026"
 title: Comparer deux dates
+weight: 27
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 Comparer deux dates, c'est mettre côte à côte deux moments distincts pour voir lequel vient avant ou après, ou s'ils sont identiques. En programmation, on fait cela pour gérer des échéances, trier des événements, ou pour la logique de flux de temps.

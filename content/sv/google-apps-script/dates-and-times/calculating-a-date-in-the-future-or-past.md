@@ -10,9 +10,8 @@ model: gpt-4-0125-preview
 summary: "Att ber\xE4kna ett datum i framtiden eller det f\xF6rflutna handlar om att\
   \ manipulera datumobjekt f\xF6r att hitta datum bortom eller f\xF6re nuvarande datum,\u2026"
 title: "Ber\xE4kning av ett datum i framtiden eller f\xF6rflutet"
+weight: 26
 ---
-
-{{< edit_this_page >}}
 
 ## Vad & Varför?
 

@@ -11,9 +11,8 @@ summary: "Parsowanie HTML w C polega na analizowaniu dokument\xF3w HTML w celu e
   \ wydobycia danych, struktury lub konkretnych cz\u0119\u015Bci, cz\u0119sto jako\
   \ preludium do\u2026"
 title: "Analiza sk\u0142adniowa HTML"
+weight: 43
 ---
-
-{{< edit_this_page >}}
 
 ## Co i dlaczego?
 

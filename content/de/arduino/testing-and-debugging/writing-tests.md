@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Tests im Arduino-Umfeld zu schreiben, bezieht sich auf den Prozess des Erstellens\
   \ von automatisierten Tests, die die Funktionalit\xE4t Ihres Codes auf\u2026"
 title: Tests Schreiben
+weight: 36
 ---
-
-{{< edit_this_page >}}
 
 ## Was & Warum?
 

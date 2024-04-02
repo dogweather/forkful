@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Testien kirjoittaminen Fish Shelliss\xE4 tarkoittaa skriptien luomista,\
   \ jotka automaattisesti suorittavat koodisi varmistaakseen sen toimivan odotetulla\u2026"
 title: Testien kirjoittaminen
+weight: 36
 ---
-
-{{< edit_this_page >}}
 
 ## Mikä ja miksi?
 

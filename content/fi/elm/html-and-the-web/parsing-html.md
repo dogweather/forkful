@@ -11,9 +11,8 @@ summary: "HTML:n j\xE4sent\xE4minen Elm-kieless\xE4 tarkoittaa tietojen poimimis
   \ HTML-dokumenteista. Ohjelmoijat tekev\xE4t n\xE4in, jotta he voivat k\xE4ytt\xE4\
   \xE4 web-sis\xE4lt\xF6\xE4 tai\u2026"
 title: "HTML:n j\xE4sennys"
+weight: 43
 ---
-
-{{< edit_this_page >}}
 
 ## Mikä ja miksi?
 HTML:n jäsentäminen Elm-kielessä tarkoittaa tietojen poimimista HTML-dokumenteista. Ohjelmoijat tekevät näin, jotta he voivat käyttää web-sisältöä tai käyttöliittymiä, jotka palauttavat HTML-muotoista tietoa. Tämä mahdollistaa interaktiivisempien ja dynaamisempien web-sovellusten luomisen.

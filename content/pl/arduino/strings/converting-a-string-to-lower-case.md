@@ -9,9 +9,8 @@ summary: "Konwersja \u0142a\u0144cucha znak\xF3w na ma\u0142e litery oznacza zmi
   \ wszystkich wielkich liter w tek\u015Bcie na ich ma\u0142e odpowiedniki. Robimy\
   \ to, by ujednolici\u0107 dane przed\u2026"
 title: "Konwersja ci\u0105gu znak\xF3w na ma\u0142e litery"
+weight: 4
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why? (Co i dlaczego?)
 Konwersja łańcucha znaków na małe litery oznacza zmianę wszystkich wielkich liter w tekście na ich małe odpowiedniki. Robimy to, by ujednolicić dane przed ich porównaniem lub przetworzeniem, zwłaszcza gdy wielkość liter nie ma znaczenia.

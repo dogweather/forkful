@@ -8,9 +8,8 @@ model: gpt-4-0125-preview
 summary: "Lainausmerkkien poistaminen merkkijonosta PowerShelliss\xE4 poistaa yksitt\xE4\
   iset (`'`) tai kaksinkertaiset (`\"`) lainausmerkit tekstin ymp\xE4rilt\xE4. Ohjelmoijat\u2026"
 title: Merkkijonosta lainausmerkkien poistaminen
+weight: 9
 ---
-
-{{< edit_this_page >}}
 
 ## Mitä ja miksi?
 Lainausmerkkien poistaminen merkkijonosta PowerShellissä poistaa yksittäiset (`'`) tai kaksinkertaiset (`"`) lainausmerkit tekstin ympäriltä. Ohjelmoijat tarvitsevat usein puhdistaa merkkijonoja käsittelyä, vertailua tai tulostusta varten, erityisesti käsiteltäessä käyttäjän syötettä tai tiedoston jäsentämistä.

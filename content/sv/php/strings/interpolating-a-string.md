@@ -9,9 +9,8 @@ summary: "Interpolera en str\xE4ng inneb\xE4r att infoga variabelv\xE4rden direk
   \ i str\xE4ngen. Programmerare g\xF6r detta f\xF6r att smidigt kunna bygga dynamiska\
   \ texter utan att\u2026"
 title: "Interpolera en str\xE4ng"
+weight: 8
 ---
-
-{{< edit_this_page >}}
 
 ## Vad & Varför?
 Interpolera en sträng innebär att infoga variabelvärden direkt i strängen. Programmerare gör detta för att smidigt kunna bygga dynamiska texter utan att behöva bryta upp strängen.

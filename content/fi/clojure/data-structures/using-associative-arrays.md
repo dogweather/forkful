@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Assosiatiiviset taulukot eli hajautustaulut Clojuressa mahdollistavat tietojen\
   \ tallentamisen ja hakemisen avain-arvo -pareina. Ne ovat avainratkaisu\u2026"
 title: "Assosiatiivisten taulukoiden k\xE4ytt\xF6"
+weight: 15
 ---
-
-{{< edit_this_page >}}
 
 ## Mikä & Miksi?
 

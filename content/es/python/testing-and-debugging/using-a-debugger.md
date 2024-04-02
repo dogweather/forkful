@@ -1,13 +1,13 @@
 ---
 date: 2024-01-26 03:50:57.351341-07:00
-description: "\"Usar un depurador\" se trata de avanzar paso a paso por tu c\xF3digo\
-  \ Python para descubrir errores y entender el comportamiento. Lo hacemos porque\
-  \ es mucho\u2026"
+description: "Desglosemos el uso de `pdb`, el depurador integrado de Python. Imagina\
+  \ un archivo, `buggy.py`, con un error dif\xEDcil de encontrar: ```Python def\u2026"
 lastmod: '2024-03-13T22:44:58.616981-06:00'
 model: gpt-4-0125-preview
-summary: "\"Usar un depurador\" se trata de avanzar paso a paso por tu c\xF3digo Python\
-  \ para descubrir errores y entender el comportamiento. Lo hacemos porque es mucho\u2026"
+summary: "Desglosemos el uso de `pdb`, el depurador integrado de Python. Imagina un\
+  \ archivo, `buggy.py`, con un error dif\xEDcil de encontrar: ```Python def\u2026"
 title: Usando un depurador
+weight: 35
 ---
 
 ## Cómo hacerlo:

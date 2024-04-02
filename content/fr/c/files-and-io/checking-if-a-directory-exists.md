@@ -11,9 +11,8 @@ summary: "V\xE9rifier si un r\xE9pertoire existe en C implique d'interroger le s
   me de fichiers pour v\xE9rifier si un chemin sp\xE9cifique m\xE8ne \xE0 un r\xE9\
   pertoire. Les\u2026"
 title: "V\xE9rifier si un r\xE9pertoire existe"
+weight: 20
 ---
-
-{{< edit_this_page >}}
 
 ## Quoi & Pourquoi ?
 

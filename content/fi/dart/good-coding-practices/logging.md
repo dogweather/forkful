@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Dartissa lokitus viittaa ohjelman suorituksen aikana tapahtuvaan eri tasojen\
   \ tiedon tallentamiseen. Ohjelmoijat tekev\xE4t sen seuratakseen ohjelmiston\u2026"
 title: "Lokitiedostojen k\xE4sittely"
+weight: 17
 ---
-
-{{< edit_this_page >}}
 
 ## Mikä ja miksi?
 

@@ -9,9 +9,8 @@ summary: "Wysy\u0142anie zapytania HTTP z podstawow\u0105 autentykacj\u0105 to p
   \ uwierzytelniania u\u017Cytkownika przez serwer przy u\u017Cyciu loginu i has\u0142\
   a zakodowanych w base64.\u2026"
 title: "Wysy\u0142anie zapytania http z podstawow\u0105 autoryzacj\u0105"
+weight: 45
 ---
-
-{{< edit_this_page >}}
 
 ## Co i dlaczego?
 Wysyłanie zapytania HTTP z podstawową autentykacją to proces uwierzytelniania użytkownika przez serwer przy użyciu loginu i hasła zakodowanych w base64. Programiści stosują tę metodę, by zapewnić bezpieczny dostęp do API lub zasobów webowych.

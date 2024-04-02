@@ -7,9 +7,8 @@ model: gpt-4-0125-preview
 summary: "I numeri complessi hanno una parte reale e una immaginaria, tipicamente\
   \ scritti come `a + bi`. Sono vitali per alcuni progetti Arduino pesanti dal punto\u2026"
 title: Lavorare con i numeri complessi
+weight: 14
 ---
-
-{{< edit_this_page >}}
 
 ## Cosa & Perché?
 I numeri complessi hanno una parte reale e una immaginaria, tipicamente scritti come `a + bi`. Sono vitali per alcuni progetti Arduino pesanti dal punto di vista matematico che coinvolgono l'elaborazione di segnali, l'ingegneria elettrica, o qualsiasi altro dominio dove i fenomeni sono meglio modellati in un piano.

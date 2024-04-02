@@ -13,9 +13,8 @@ summary: "X\u1EED l\xFD l\u1ED7i c\xF3 ngh\u0129a l\xE0 l\xEAn k\u1EBF ho\u1EA1c
   \u1EE3i. \u0110i\u1EC1u n\xE0y quan tr\u1ECDng v\xEC n\xF3 gi\xFAp tr\xE1nh g\xE2\
   y s\u1EADp ch\u01B0\u01A1ng tr\xECnh v\xE0 l\xE0m cho\u2026"
 title: "X\u1EED l\xFD l\u1ED7i"
+weight: 16
 ---
-
-{{< edit_this_page >}}
 
 ## Cái gì & Tại sao?
 Xử lý lỗi có nghĩa là lên kế hoạch cho những khi mọi thứ diễn ra không như mong đợi. Điều này quan trọng vì nó giúp tránh gây sập chương trình và làm cho phần mềm của bạn robust và thân thiện với người dùng.

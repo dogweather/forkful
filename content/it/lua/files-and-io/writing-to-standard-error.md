@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Scrivere su standard error (stderr) consiste nel dirigere messaggi di errore\
   \ e output diagnostici su un canale separato, distinto dallo standard output\u2026"
 title: Scrivere sull'errore standard
+weight: 25
 ---
-
-{{< edit_this_page >}}
 
 ## Cosa e Perché?
 Scrivere su standard error (stderr) consiste nel dirigere messaggi di errore e output diagnostici su un canale separato, distinto dallo standard output (stdout). I programmatori fanno ciò per differenziare i risultati regolari del programma dalle informazioni di errore, razionalizzando i processi di debug e registrazione.

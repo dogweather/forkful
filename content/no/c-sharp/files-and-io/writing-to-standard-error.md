@@ -10,9 +10,8 @@ model: gpt-4-0125-preview
 summary: "\xC5 skrive til standardfeil (stderr) i C# inneb\xE6rer \xE5 dirigere feilmeldinger\
   \ og diagnostikk separat fra vanlig utdata (stdout) for \xE5 hjelpe brukere og\u2026"
 title: Skriving til standardfeil
+weight: 25
 ---
-
-{{< edit_this_page >}}
 
 ## Hva & Hvorfor?
 Å skrive til standardfeil (stderr) i C# innebærer å dirigere feilmeldinger og diagnostikk separat fra vanlig utdata (stdout) for å hjelpe brukere og utviklere til å skille mellom normalt programutdata og feilnotifikasjoner. Programmerere gjør dette for å gjøre feilsøking og logging mer effektivt, noe som tillater en jevnere drift og vedlikehold av applikasjoner.

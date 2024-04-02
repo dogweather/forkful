@@ -13,9 +13,8 @@ summary: "X\u1EED l\xFD l\u1ED7i trong Visual Basic cho \u1EE8ng d\u1EE5ng (VBA)
   t l\u1ED7i l\u1EADp tr\xECnh, \u1EE9ng d\u1EE5ng ho\u1EB7c giao ti\u1EBFp. Vi\u1EC7\
   c tri\u1EC3n khai x\u1EED\u2026"
 title: "X\u1EED l\xFD l\u1ED7i"
+weight: 16
 ---
-
-{{< edit_this_page >}}
 
 ## Cái gì & Tại sao?
 

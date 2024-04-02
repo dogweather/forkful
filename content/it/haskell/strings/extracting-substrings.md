@@ -7,9 +7,8 @@ model: gpt-4-1106-preview
 summary: "Estrarre sottosequenze (o sottostringhe) significa prendere parti specifiche\
   \ di una stringa. Questo \xE8 utile per analisi, manipolazioni, e controllo di\u2026"
 title: Estrazione di sottostringhe
+weight: 6
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 Estrarre sottosequenze (o sottostringhe) significa prendere parti specifiche di una stringa. Questo è utile per analisi, manipolazioni, e controllo di dati testuali.

@@ -11,9 +11,8 @@ summary: "Pobieranie bie\u017C\u0105cej daty w Rust jest powszechnym zadaniem w 
   \ takich jak logowanie, operacje czasowe, czy po prostu wy\u015Bwietlanie daty.\
   \ W\u2026"
 title: Pobieranie aktualnej daty
+weight: 29
 ---
-
-{{< edit_this_page >}}
 
 ## Co i dlaczego?
 

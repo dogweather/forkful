@@ -11,9 +11,8 @@ summary: "W rozwoju oprogramowania cz\u0119sto potrzebne jest sprawdzenie, czy k
   \ istnieje, aby unika\u0107 b\u0142\u0119d\xF3w podczas pr\xF3b dost\u0119pu, odczytu\
   \ lub zapisu plik\xF3w. Rust,\u2026"
 title: Sprawdzanie, czy katalog istnieje
+weight: 20
 ---
-
-{{< edit_this_page >}}
 
 ## Co i dlaczego?
 W rozwoju oprogramowania często potrzebne jest sprawdzenie, czy katalog istnieje, aby unikać błędów podczas prób dostępu, odczytu lub zapisu plików. Rust, będący językiem programowania systemowego, zapewnia solidne metody wykonania tego zadania, gwarantując, że Twój program może bezpiecznie i efektywnie obsługiwać pliki i katalogi.

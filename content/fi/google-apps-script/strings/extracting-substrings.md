@@ -11,9 +11,8 @@ summary: "Merkkijonojen osien poiminta tarkoittaa osan merkkijonosta ottamista -
   yt\xE4nn\xF6ss\xE4 uuden merkkijonon luomista olemassa olevan osasta. Ohjelmoijat\
   \ tekev\xE4t\u2026"
 title: Alimerkkijonojen erottaminen
+weight: 6
 ---
-
-{{< edit_this_page >}}
 
 ## Mitä & Miksi?
 

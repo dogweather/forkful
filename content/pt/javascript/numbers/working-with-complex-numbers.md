@@ -9,9 +9,8 @@ summary: "N\xFAmeros complexos s\xE3o n\xFAmeros com uma parte real e uma parte 
   ria (como 3 + 4i). Eles aparecem em v\xE1rios problemas de programa\xE7\xE3o, especialmente\
   \ no\u2026"
 title: "Trabalhando com n\xFAmeros complexos"
+weight: 14
 ---
-
-{{< edit_this_page >}}
 
 ## O Quê & Por Quê?
 Números complexos são números com uma parte real e uma parte imaginária (como 3 + 4i). Eles aparecem em vários problemas de programação, especialmente no processamento de sinais, computação quântica e na resolução de equações polinomiais. Programadores os manipulam para efetivamente resolver esses tipos de tarefas.

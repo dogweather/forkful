@@ -7,9 +7,8 @@ model: gpt-4-0125-preview
 summary: "Un shell interactif, ou REPL (Read-Eval-Print Loop), vous permet d'essayer\
   \ des extraits de code en temps r\xE9el. Les programmeurs Elixir utilisent le REPL,\u2026"
 title: Utilisation d'une console interactive (REPL)
+weight: 34
 ---
-
-{{< edit_this_page >}}
 
 ## Quoi et pourquoi ?
 Un shell interactif, ou REPL (Read-Eval-Print Loop), vous permet d'essayer des extraits de code en temps réel. Les programmeurs Elixir utilisent le REPL, appelé IEx (Interactive Elixir), pour expérimenter, déboguer, et apprendre le langage.

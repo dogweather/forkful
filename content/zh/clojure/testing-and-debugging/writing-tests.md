@@ -17,9 +17,8 @@ summary: "\u5728 Clojure \u4E2D\u7F16\u5199\u6D4B\u8BD5\uFF0C\u5982\u540C\u5728\
   \u7801\u7684\u6B63\u786E\u6027\uFF0C\u6709\u5229\u4E8E\u91CD\u6784\uFF0C\u4EE5\u53CA\
   \u589E\u5F3A\u4EE3\u7801\u7684\u7A33\u5B9A\u6027\u3002"
 title: "\u7F16\u5199\u6D4B\u8BD5"
+weight: 36
 ---
-
-{{< edit_this_page >}}
 
 ## 什么和为什么？
 在 Clojure 中编写测试，如同在其他编程语言中一样，涉及创建专门的代码来验证你的主代码库是否按预期工作。它有助于确保代码的正确性，有利于重构，以及增强代码的稳定性。

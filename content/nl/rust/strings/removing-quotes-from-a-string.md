@@ -10,9 +10,8 @@ model: gpt-4-0125-preview
 summary: "Quotes verwijderen uit een string in Rust gaat over het wegstrippen van\
   \ onnodige extra aanhalingstekens die mogelijk om je tekstdata heen gewikkeld zijn.\u2026"
 title: Quotes verwijderen uit een string
+weight: 9
 ---
-
-{{< edit_this_page >}}
 
 ## Wat & Waarom?
 

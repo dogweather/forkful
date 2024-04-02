@@ -11,9 +11,8 @@ summary: "Interaktywna pow\u0142oka, czyli p\u0119tla czytaj-wykonaj-wypisz (REP
   \ pozwala eksperymentowa\u0107 z kodem Go w czasie rzeczywistym, wykonuj\u0105c\
   \ komendy i otrzymuj\u0105c\u2026"
 title: "Korzystanie z interaktywnej pow\u0142oki (REPL)"
+weight: 34
 ---
-
-{{< edit_this_page >}}
 
 ## Co i dlaczego?
 

@@ -23,9 +23,8 @@ summary: "Dart\uC5D0\uC11C \uC624\uB958 \uCC98\uB9AC\uB294 \uD504\uB85C\uADF8\uB
   \ \uC560\uD50C\uB9AC\uCF00\uC774\uC158 \uACBD\uD5D8\uC744 \uBCF4\uC7A5\uD558\uAE30\
   \ \uC704\uD574 \uC624\uB958 \uCC98\uB9AC\uB97C \uAD6C\uD604\uD569\uB2C8\uB2E4."
 title: "\uC624\uB958 \uCC98\uB9AC"
+weight: 16
 ---
-
-{{< edit_this_page >}}
 
 ## 무엇인가 & 왜인가?
 Dart에서 오류 처리는 프로그램 실행 중 발생하는 예외를 예상하고 관리하여 신뢰성과 사용성을 향상시키는 것에 관한 것입니다. 프로그래머들은 충돌을 방지하고 사용자에게 의미 있는 피드백을 제공하여 더 매끄럽고 안전한 애플리케이션 경험을 보장하기 위해 오류 처리를 구현합니다.

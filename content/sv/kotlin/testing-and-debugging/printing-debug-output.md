@@ -9,9 +9,8 @@ summary: "Debug-utskrifter anv\xE4nds f\xF6r att sp\xE5ra vad som h\xE4nder i di
   \ kod p\xE5 ett enkelt s\xE4tt. Programmerare anv\xE4nder det f\xF6r att snabbt\
   \ fels\xF6ka och f\xF6lja\u2026"
 title: "Skriva ut fels\xF6kningsdata"
+weight: 33
 ---
-
-{{< edit_this_page >}}
 
 ## Vad & Varför?
 Debug-utskrifter används för att spåra vad som händer i din kod på ett enkelt sätt. Programmerare använder det för att snabbt felsöka och följa programmets flöde utan att behöva en full debugger.

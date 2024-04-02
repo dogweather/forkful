@@ -9,9 +9,8 @@ summary: "Obs\u0142uga b\u0142\u0119d\xF3w polega na radzeniu sobie z sytuacjami
   \ kiedy co\u015B p\xF3jdzie nie tak. Programi\u015Bci robi\u0105 to, aby radzi\u0107\
   \ sobie z niespodziewanym, zapewniaj\u0105c, \u017Ce\u2026"
 title: "Obs\u0142uga b\u0142\u0119d\xF3w"
+weight: 16
 ---
-
-{{< edit_this_page >}}
 
 ## Co i dlaczego?
 

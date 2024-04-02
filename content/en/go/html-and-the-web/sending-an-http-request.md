@@ -7,9 +7,8 @@ model: gpt-4-0125-preview
 summary: "Sending an HTTP request involves initiating a call from your Go application\
   \ to a web server, API, or any other HTTP-based service. Programmers do this to\u2026"
 title: Sending an HTTP request
+weight: 44
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 

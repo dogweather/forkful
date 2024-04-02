@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "La gestione degli errori in Dart riguarda l'anticipazione e la gestione\
   \ delle eccezioni che si verificano durante l'esecuzione del programma per\u2026"
 title: Gestione degli errori
+weight: 16
 ---
-
-{{< edit_this_page >}}
 
 ## Cosa & Perché?
 La gestione degli errori in Dart riguarda l'anticipazione e la gestione delle eccezioni che si verificano durante l'esecuzione del programma per migliorarne l'affidabilità e l'usabilità. I programmatori implementano la gestione degli errori per prevenire crash e fornire un feedback significativo agli utenti, garantendo un'esperienza applicativa più fluida e sicura.

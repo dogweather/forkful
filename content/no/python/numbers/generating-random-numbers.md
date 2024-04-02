@@ -9,9 +9,8 @@ summary: "Generering av tilfeldige tall inneb\xE6rer \xE5 skape tall som ikke ka
   \ forutsies med rimelighet bedre enn ved sjansen, noe som er essensielt for utviklingen\
   \ av\u2026"
 title: Generering av tilfeldige tall
+weight: 12
 ---
-
-{{< edit_this_page >}}
 
 ## Hva & Hvorfor?
 

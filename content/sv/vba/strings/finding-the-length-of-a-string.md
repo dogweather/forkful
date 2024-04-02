@@ -11,9 +11,8 @@ summary: "Att hitta l\xE4ngden p\xE5 en str\xE4ng i Visual Basic for Application
   \ (VBA) handlar om att best\xE4mma antalet tecken den inneh\xE5ller. Programmerare\
   \ utf\xF6r ofta denna\u2026"
 title: "Att hitta l\xE4ngden p\xE5 en str\xE4ng"
+weight: 7
 ---
-
-{{< edit_this_page >}}
 
 ## Vad & Varför?
 

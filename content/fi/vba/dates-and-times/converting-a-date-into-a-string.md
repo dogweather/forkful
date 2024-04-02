@@ -11,9 +11,8 @@ summary: "P\xE4iv\xE4m\xE4\xE4r\xE4n muuntaminen merkkijonoksi Visual Basic for 
   \ (VBA) -ohjelmointikieless\xE4 on prosessi, jossa p\xE4iv\xE4m\xE4\xE4r\xE4n datatyyppi\
   \ muutetaan\u2026"
 title: "P\xE4iv\xE4m\xE4\xE4r\xE4n muuntaminen merkkijonoksi"
+weight: 28
 ---
-
-{{< edit_this_page >}}
 
 ## Mikä & Miksi?
 

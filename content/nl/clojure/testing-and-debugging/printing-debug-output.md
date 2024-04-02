@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Debug-output afdrukken is als het achterlaten van broodkruimels in je code:\
   \ het toont het spoor van gegevens en logische stroom tijdens de uitvoering.\u2026"
 title: Debug-output afdrukken
+weight: 33
 ---
-
-{{< edit_this_page >}}
 
 ## Wat & Waarom?
 Debug-output afdrukken is als het achterlaten van broodkruimels in je code: het toont het spoor van gegevens en logische stroom tijdens de uitvoering. Programmeurs gebruiken het om lastige bugs op te sporen en om te begrijpen of hun code zich gedraagt zoals verwacht.

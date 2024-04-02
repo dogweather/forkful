@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Loggen is in feite een broodkruimelspoor achterlaten door je code - het\
   \ is hoe je bijhoudt wat er gebeurt wanneer je script in het wild draait.\u2026"
 title: Logboekregistratie
+weight: 17
 ---
-
-{{< edit_this_page >}}
 
 ## Wat & Waarom?
 Loggen is in feite een broodkruimelspoor achterlaten door je code - het is hoe je bijhoudt wat er gebeurt wanneer je script in het wild draait. Programmeurs loggen om te debuggen, om app-gedrag te volgen, om de prestaties te monitoren en om uit te kijken voor eventuele ongein.

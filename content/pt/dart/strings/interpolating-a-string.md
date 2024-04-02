@@ -10,9 +10,8 @@ model: gpt-4-0125-preview
 summary: "A interpola\xE7\xE3o de strings \xE9 o processo de injetar valores de vari\xE1\
   veis diretamente em strings, muitas vezes para criar mensagens significativas sem\u2026"
 title: Interpolando uma string
+weight: 8
 ---
-
-{{< edit_this_page >}}
 
 ## O Que e Por Quê?
 

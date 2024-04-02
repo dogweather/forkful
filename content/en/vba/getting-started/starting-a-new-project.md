@@ -7,9 +7,8 @@ model: gpt-4-0125-preview
 summary: "Starting a new project in Visual Basic for Applications (VBA) involves setting\
   \ up an environment within a host application, like Excel, to automate tasks\u2026"
 title: Starting a new project
+weight: 1
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 

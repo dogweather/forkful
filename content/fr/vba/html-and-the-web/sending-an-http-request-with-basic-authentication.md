@@ -11,9 +11,8 @@ summary: "Envoyer une requ\xEAte HTTP avec authentification de base dans Visual 
   \ pour Applications (VBA) consiste \xE0 acc\xE9der aux ressources web prot\xE9g\xE9\
   es par des\u2026"
 title: "Envoyer une requ\xEAte HTTP avec une authentification de base"
+weight: 45
 ---
-
-{{< edit_this_page >}}
 
 ## Quoi & Pourquoi ?
 

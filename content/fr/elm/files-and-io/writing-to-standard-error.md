@@ -11,9 +11,8 @@ summary: "\xC9crire dans l'erreur standard (stderr) consiste \xE0 rediriger les 
   \ d'erreur et les diagnostics s\xE9par\xE9ment du r\xE9sultat principal du programme,\
   \ qui va\u2026"
 title: "\xC9crire sur l'erreur standard"
+weight: 25
 ---
-
-{{< edit_this_page >}}
 
 ## Quoi & Pourquoi ?
 

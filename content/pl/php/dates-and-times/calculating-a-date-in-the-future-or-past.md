@@ -9,9 +9,8 @@ summary: "Obliczanie daty w przysz\u0142o\u015Bci lub przesz\u0142o\u015Bci to s
   b na ustalenie, jaki dzie\u0144 b\u0119dzie za X dni, lub jaki by\u0142 Y dni temu.\
   \ Programi\u015Bci robi\u0105 to, by\u2026"
 title: "Obliczanie daty w przysz\u0142o\u015Bci lub przesz\u0142o\u015Bci"
+weight: 26
 ---
-
-{{< edit_this_page >}}
 
 ## Co i Dlaczego?
 

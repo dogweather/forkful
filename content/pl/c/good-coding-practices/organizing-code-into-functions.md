@@ -11,9 +11,8 @@ summary: "Organizowanie kodu w funkcje w j\u0119zyku C polega na dzieleniu z\u01
   o\u017Conych zada\u0144 na mniejsze, wielokrotnie wykorzystywane bloki kodu. Praktyka\
   \ ta poprawia\u2026"
 title: Organizowanie kodu w funkcje
+weight: 18
 ---
-
-{{< edit_this_page >}}
 
 ## Co i dlaczego?
 

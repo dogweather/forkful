@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Att hitta l\xE4ngden p\xE5 en str\xE4ng i Google Apps Script, ett JavaScript-baserat\
   \ molnskriptspr\xE5k som l\xE5ter dig automatisera uppgifter \xF6ver Googles produkter,\u2026"
 title: "Att hitta l\xE4ngden p\xE5 en str\xE4ng"
+weight: 7
 ---
-
-{{< edit_this_page >}}
 
 ## Vad & Varför?
 Att hitta längden på en sträng i Google Apps Script, ett JavaScript-baserat molnskriptspråk som låter dig automatisera uppgifter över Googles produkter, handlar om att bestämma antalet tecken en sträng innehåller. Programmerare utför ofta denna operation för att verifiera inmatning, loopa igenom tecken, eller manipulera strängar för olika automatiseringsuppgifter inom Google Apps.

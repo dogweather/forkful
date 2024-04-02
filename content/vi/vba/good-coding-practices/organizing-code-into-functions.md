@@ -13,9 +13,8 @@ summary: "Vi\u1EC7c t\u1ED5 ch\u1EE9c m\xE3 l\u1EC7nh th\xE0nh c\xE1c h\xE0m tro
   \ ch\u01B0\u01A1ng tr\xECnh th\xE0nh c\xE1c ph\u1EA7n nh\u1ECF h\u01A1n, d\u1EC5\
   \ qu\u1EA3n l\xFD h\u01A1n \u0111\u01B0\u1EE3c\u2026"
 title: "S\u1EAFp x\u1EBFp m\xE3 l\u1EADp tr\xECnh v\xE0o h\xE0m s\u1ED1"
+weight: 18
 ---
-
-{{< edit_this_page >}}
 
 ## Cái gì và Tại sao?
 

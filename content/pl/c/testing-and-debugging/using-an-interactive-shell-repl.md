@@ -11,9 +11,8 @@ summary: "Interaktywna pow\u0142oka, znana r\xF3wnie\u017C jako p\u0119tla czyta
   \ (REPL), pozwala programistom wpisywa\u0107 wyra\u017Cenia lub kod i natychmiast\
   \ widzie\u0107 wyniki,\u2026"
 title: "Korzystanie z interaktywnej pow\u0142oki (REPL)"
+weight: 34
 ---
-
-{{< edit_this_page >}}
 
 ## Co i dlaczego?
 

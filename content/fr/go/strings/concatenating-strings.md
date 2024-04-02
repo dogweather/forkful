@@ -11,9 +11,8 @@ summary: "La concat\xE9nation de cha\xEEnes implique de joindre deux cha\xEEnes 
   \ plus bout \xE0 bout pour former une nouvelle cha\xEEne. Les programmeurs font\
   \ cela pour g\xE9n\xE9rer\u2026"
 title: "Concat\xE9nation de cha\xEEnes"
+weight: 3
 ---
-
-{{< edit_this_page >}}
 
 ## Quoi & Pourquoi ?
 

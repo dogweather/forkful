@@ -7,9 +7,8 @@ model: gpt-4-0125-preview
 summary: "In the context of Arduino programming, checking if a directory exists on\
   \ an SD card or similar storage module allows you to read or write files without\u2026"
 title: Checking if a directory exists
+weight: 20
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 In the context of Arduino programming, checking if a directory exists on an SD card or similar storage module allows you to read or write files without errors. This operation is essential for data logging, configuration management, or any task that requires structured file storage, ensuring reliability and fluid performance in your applications.

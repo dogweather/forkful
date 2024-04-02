@@ -11,9 +11,8 @@ summary: "\xC5 generere tilfeldige tall i C inneb\xE6rer \xE5 skape verdier som 
   \ uforutsigbare og f\xF8lger en spesifikk fordeling, som uniform eller normal. Denne\
   \ evnen er\u2026"
 title: Genererer tilfeldige tall
+weight: 12
 ---
-
-{{< edit_this_page >}}
 
 ## Hva & Hvorfor?
 

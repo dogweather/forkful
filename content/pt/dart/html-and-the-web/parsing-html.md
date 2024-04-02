@@ -11,9 +11,8 @@ summary: "Analisar (ou \"parsear\") HTML na programa\xE7\xE3o envolve extrair da
   \ de documentos HTML. Os programadores fazem isso para interagir com ou raspar conte\xFA\
   do da\u2026"
 title: Analisando HTML
+weight: 43
 ---
-
-{{< edit_this_page >}}
 
 ## O Que & Por Quê?
 Analisar (ou "parsear") HTML na programação envolve extrair dados de documentos HTML. Os programadores fazem isso para interagir com ou raspar conteúdo da web para extração de informações, testes ou propósitos de automação, mesmo quando APIs oficiais não estão disponíveis.

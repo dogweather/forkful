@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Een interactieve shell, of Read-Eval-Print Loop (REPL), stelt gebruikers\
   \ in staat om commando's in te voeren, uit te voeren en de resultaten in real-time\u2026"
 title: Gebruik van een interactieve shell (REPL)
+weight: 34
 ---
-
-{{< edit_this_page >}}
 
 ## Wat & Waarom?
 

@@ -7,9 +7,8 @@ model: gpt-4-0125-preview
 summary: "Capitalizing a string in Swift modifies the given string so that its first\
   \ character is uppercase, and the remaining characters are lowercase. Programmers\u2026"
 title: Capitalizing a string
+weight: 2
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 

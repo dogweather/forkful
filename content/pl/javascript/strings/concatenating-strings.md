@@ -9,9 +9,8 @@ summary: "\u0141\u0105czenie ci\u0105g\xF3w znak\xF3w, czyli \"concatenating str
   , pozwala sklei\u0107 ze sob\u0105 dwie lub wi\u0119cej r\xF3\u017Cnych cz\u0119\
   \u015Bci tekstu. Programi\u015Bci robi\u0105 to, aby tworzy\u0107\u2026"
 title: "\u0141\u0105czenie \u0142a\u0144cuch\xF3w znak\xF3w"
+weight: 3
 ---
-
-{{< edit_this_page >}}
 
 ## Co i dlaczego?
 Łączenie ciągów znaków, czyli "concatenating strings", pozwala skleić ze sobą dwie lub więcej różnych części tekstu. Programiści robią to, aby tworzyć zdania, wiadomości lub dynamicznie konstruować treść wyświetlaną użytkownikowi.

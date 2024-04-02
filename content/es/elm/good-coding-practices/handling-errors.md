@@ -7,9 +7,8 @@ model: gpt-4-1106-preview
 summary: "Manejar errores significa escribir c\xF3digo que pueda anticipar y lidiar\
   \ con situaciones problem\xE1ticas. Los programadores lo hacen para prevenir fallas,\u2026"
 title: Manejo de errores
+weight: 16
 ---
-
-{{< edit_this_page >}}
 
 ## ¿Qué y Por Qué?
 Manejar errores significa escribir código que pueda anticipar y lidiar con situaciones problemáticas. Los programadores lo hacen para prevenir fallas, proteger la integridad de los datos y proporcionar a los usuarios alternativas elegantes ante fallos.

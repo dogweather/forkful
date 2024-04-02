@@ -7,9 +7,8 @@ model: gpt-4-0125-preview
 summary: "TOML es un lenguaje de serializaci\xF3n de datos legible por humanos, a\
   \ menudo utilizado para configuraciones. Los programadores usan TOML por su simplicidad\u2026"
 title: Trabajando con TOML
+weight: 39
 ---
-
-{{< edit_this_page >}}
 
 ## ¿Qué y por qué?
 TOML es un lenguaje de serialización de datos legible por humanos, a menudo utilizado para configuraciones. Los programadores usan TOML por su simplicidad y claridad, traduciéndose fácilmente a un mapa hash en Rust.

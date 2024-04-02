@@ -9,9 +9,8 @@ summary: "L'impression de d\xE9bogage, c'est \xE9crire des r\xE9sultats temporai
   \ pour voir ce qui se passe dans votre code. Les d\xE9veloppeurs le font pour identifier\
   \ les\u2026"
 title: "Affichage des sorties de d\xE9bogage"
+weight: 33
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why? (Quoi & Pourquoi ?)
 L'impression de débogage, c'est écrire des résultats temporaires pour voir ce qui se passe dans votre code. Les développeurs le font pour identifier les bugs ou vérifier le flux d'exécution.

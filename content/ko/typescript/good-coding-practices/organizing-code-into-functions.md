@@ -19,9 +19,8 @@ summary: "\uCF54\uB4DC\uB97C \uD568\uC218\uB85C \uAD6C\uC131\uD55C\uB2E4\uB294 \
   \ \uB514\uBC84\uADF8\uD558\uAE30 \uC27D\uAC8C \uB9CC\uB4E4\uAE30 \uC704\uD574\uC11C\
   \ \uD569\uB2C8\uB2E4."
 title: "\uCF54\uB4DC\uB97C \uD568\uC218\uB85C \uAD6C\uC131\uD558\uAE30"
+weight: 18
 ---
-
-{{< edit_this_page >}}
 
 ## 무엇과 왜?
 코드를 함수로 구성한다는 것은 코드를 재사용 가능하고 모듈화된 블록으로 나누는 것을 의미합니다. 우리는 이것을 DRY(Don't Repeat Yourself, 반복하지 마라)를 유지하기 위해, 코드를 더 깨끗하고 읽기 쉽게, 디버그하기 쉽게 만들기 위해서 합니다.

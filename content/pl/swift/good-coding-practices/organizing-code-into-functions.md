@@ -9,9 +9,8 @@ summary: "Grupowanie kodu w funkcje polega na dzieleniu zada\u0144 na wielokrotn
   \ u\u017Cywalne fragmenty. Sprawia to, \u017Ce kod jest czytelny, mniej podatny\
   \ na b\u0142\u0119dy i\u2026"
 title: Organizowanie kodu w funkcje
+weight: 18
 ---
-
-{{< edit_this_page >}}
 
 ## Co i dlaczego?
 Grupowanie kodu w funkcje polega na dzieleniu zadań na wielokrotnie używalne fragmenty. Sprawia to, że kod jest czytelny, mniej podatny na błędy i łatwiejszy w debugowaniu lub refaktoryzacji.

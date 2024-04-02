@@ -7,9 +7,8 @@ model: gpt-4-0125-preview
 summary: "La refactorisation est le processus de restructuration du code existant\
   \ sans changer son comportement externe afin d'am\xE9liorer les attributs non\u2026"
 title: Refactoring
+weight: 19
 ---
-
-{{< edit_this_page >}}
 
 ## Quoi & Pourquoi ?
 La refactorisation est le processus de restructuration du code existant sans changer son comportement externe afin d'améliorer les attributs non fonctionnels. Les programmeurs le font pour rendre le code plus lisible, réduire la complexité, améliorer la maintenabilité, et faciliter l'évolution ou la modification ultérieure.

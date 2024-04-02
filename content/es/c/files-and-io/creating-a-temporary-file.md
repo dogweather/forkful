@@ -10,9 +10,8 @@ model: gpt-4-0125-preview
 summary: "Crear un archivo temporal en C implica generar un archivo que est\xE1 destinado\
   \ a ser utilizado por un corto per\xEDodo, generalmente como espacio de trabajo\u2026"
 title: Creando un archivo temporal
+weight: 21
 ---
-
-{{< edit_this_page >}}
 
 ## Qué y Por Qué
 Crear un archivo temporal en C implica generar un archivo que está destinado a ser utilizado por un corto período, generalmente como espacio de trabajo para el procesamiento o almacenamiento de datos. Los programadores lo hacen para manejar datos temporales sin afectar el almacenamiento permanente del programa o para asegurar que los datos sensibles se borren después de su uso.

@@ -2,14 +2,14 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 18:09:52.101052-07:00
-description: "Depuradores em C s\xE3o ferramentas especializadas que permitem aos\
-  \ desenvolvedores acompanhar o passo a passo do seu c\xF3digo, inspecionar vari\xE1\
-  veis e\u2026"
+description: "GDB (GNU Debugger) \xE9 o depurador mais comumente usado para a programa\xE7\
+  \xE3o em C. Aqui est\xE1 um guia breve sobre como usar o GDB para depurar um programa\u2026"
 lastmod: '2024-03-13T22:44:47.055160-06:00'
 model: gpt-4-0125-preview
-summary: "Depuradores em C s\xE3o ferramentas especializadas que permitem aos desenvolvedores\
-  \ acompanhar o passo a passo do seu c\xF3digo, inspecionar vari\xE1veis e\u2026"
+summary: "GDB (GNU Debugger) \xE9 o depurador mais comumente usado para a programa\xE7\
+  \xE3o em C. Aqui est\xE1 um guia breve sobre como usar o GDB para depurar um programa\u2026"
 title: Usando um depurador
+weight: 35
 ---
 
 ## Como fazer:

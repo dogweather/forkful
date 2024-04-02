@@ -11,9 +11,8 @@ summary: "Usuwanie znak\xF3w pasuj\u0105cych do okre\u015Blonego wzorca to techn
   \ u\u017Cywana do oczyszczania lub formatowania ci\u0105g\xF3w znak\xF3w w programowaniu.\
   \ W kontek\u015Bcie Google\u2026"
 title: "Usuwanie znak\xF3w pasuj\u0105cych do wzorca"
+weight: 5
 ---
-
-{{< edit_this_page >}}
 
 ## Co i dlaczego?
 

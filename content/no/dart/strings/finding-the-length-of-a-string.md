@@ -11,9 +11,8 @@ summary: "\xC5 finne lengden p\xE5 en String i Dart handler om \xE5 bestemme ant
   \ kodeenheter (i hovedsak antallet tegn hvis man tenker p\xE5 det p\xE5 en forenklet\
   \ m\xE5te) i en\u2026"
 title: "Finne lengden p\xE5 en streng"
+weight: 7
 ---
-
-{{< edit_this_page >}}
 
 ## Hva & Hvorfor?
 Å finne lengden på en String i Dart handler om å bestemme antallet kodeenheter (i hovedsak antallet tegn hvis man tenker på det på en forenklet måte) i en gitt String. Programmerere gjør dette for å manipulere strenger mer nøyaktig, som for eksempel å validere inndata, trunkere visningstekst, eller behandle dataformater hvor lengden er viktig (f.eks., protokoller med lengde-prefikserte meldinger).

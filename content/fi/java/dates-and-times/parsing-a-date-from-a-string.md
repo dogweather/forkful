@@ -10,9 +10,8 @@ model: gpt-4-0125-preview
 summary: "P\xE4iv\xE4m\xE4\xE4r\xE4n j\xE4sennys merkkijonosta tarkoittaa p\xE4iv\xE4\
   m\xE4\xE4r\xE4n ja ajan tekstiesityksen muuntamista `Date`-objektiksi tai modernimmaksi\u2026"
 title: "P\xE4iv\xE4m\xE4\xE4r\xE4n j\xE4sennys merkkijonosta"
+weight: 30
 ---
-
-{{< edit_this_page >}}
 
 ## Mikä & Miksi?
 Päivämäärän jäsennys merkkijonosta tarkoittaa päivämäärän ja ajan tekstiesityksen muuntamista `Date`-objektiksi tai modernimmaksi `LocalDateTime`-objektiksi. Ohjelmoijat tekevät tämän manipuloidakseen, muotoillakseen, verratakseen tai tallentaakseen päivämääriä standardoidussa muodossa, mikä on ratkaisevan tärkeää sovelluksille, jotka vaativat päivämäärälaskelmia, validointia tai yhtenäistä kansainvälistämistä.

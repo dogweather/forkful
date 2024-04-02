@@ -17,9 +17,8 @@ summary: "REPL\uC774\uB780 Read-Eval-Print Loop\uC758 \uC57D\uC790\uB85C, C# \uC
   \ \uD559\uC2B5\uD558\uB294 \uB370\uC5D0 REPL\uC744 \uC0AC\uC6A9\uD569\uB2C8\uB2E4\
   ."
 title: "\uC778\uD130\uB799\uD2F0\uBE0C \uC178 (REPL) \uC0AC\uC6A9\uD558\uAE30"
+weight: 34
 ---
-
-{{< edit_this_page >}}
 
 ## 무엇이며 왜인가?
 REPL이란 Read-Eval-Print Loop의 약자로, C# 코드를 입력하여 상호작용하며 실행할 수 있게 합니다. 프로그래머들은 복잡한 프로젝트 구성 없이 C#를 빠르게 실험, 디버깅하거나 학습하는 데에 REPL을 사용합니다.

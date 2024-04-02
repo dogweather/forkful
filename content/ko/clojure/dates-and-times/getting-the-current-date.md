@@ -20,9 +20,8 @@ summary: "\uD504\uB85C\uADF8\uB798\uBC0D\uC5D0\uC11C \uD604\uC7AC \uB0A0\uC9DC\u
   \uC744 \uD65C\uC6A9\uD558\uC5EC \uD48D\uBD80\uD55C Java Date-Time API\uC5D0 \uB300\
   \uD55C \uAC04\uD3B8\uD55C \uC811\uADFC\uC744 \uAC00\uB2A5\uD558\uAC8C\u2026"
 title: "\uD604\uC7AC \uB0A0\uC9DC \uAC00\uC838\uC624\uAE30"
+weight: 29
 ---
-
-{{< edit_this_page >}}
 
 ## 무엇 & 왜?
 프로그래밍에서 현재 날짜를 얻는 것은 로깅, 이벤트 타임스탬핑, 작업 스케줄링 등 다양한 이유로 중요합니다. JVM상의 Lisp 방언인 Clojure에서, 이 작업은 Java 상호 운용성 기능을 활용하여 풍부한 Java Date-Time API에 대한 간편한 접근을 가능하게 합니다.

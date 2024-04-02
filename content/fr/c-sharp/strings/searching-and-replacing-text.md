@@ -9,9 +9,8 @@ summary: "Chercher et remplacer du texte, c'est modifier des bouts de cha\xEEnes
   \ d'autres. Les d\xE9veloppeurs l'utilisent pour corriger des donn\xE9es, formatter\
   \ ou\u2026"
 title: Recherche et remplacement de texte
+weight: 10
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why? (Quoi et Pourquoi?)
 Chercher et remplacer du texte, c'est modifier des bouts de chaînes par d'autres. Les développeurs l'utilisent pour corriger des données, formatter ou manipuler des strings rapidement.

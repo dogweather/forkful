@@ -11,9 +11,8 @@ summary: "Capitalizacja ci\u0105gu polega na modyfikacji wej\u015Bcia tak, aby p
   \ litera by\u0142a wielk\u0105 liter\u0105, a reszta ma\u0142ymi literami, co jest\
   \ powszechnie stosowane do\u2026"
 title: "Zamiana liter w ci\u0105gu na wielkie"
+weight: 2
 ---
-
-{{< edit_this_page >}}
 
 ## Co i dlaczego?
 

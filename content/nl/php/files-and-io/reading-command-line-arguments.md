@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Het lezen van opdrachtregelargumenten in PHP betekent het binnenhalen van\
   \ invoer die aan je script wordt doorgegeven wanneer het in de console wordt\u2026"
 title: Commandoregelargumenten lezen
+weight: 23
 ---
-
-{{< edit_this_page >}}
 
 ## Wat & Waarom?
 Het lezen van opdrachtregelargumenten in PHP betekent het binnenhalen van invoer die aan je script wordt doorgegeven wanneer het in de console wordt uitgevoerd. Programmeurs doen dit om hun scripts interactief en configureerbaar te maken zonder waarden hard te coderen.

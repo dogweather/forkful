@@ -22,9 +22,8 @@ summary: "\uB8E8\uBE44\uC5D0\uC11C \uB514\uB809\uD1A0\uB9AC\uC758 \uC874\uC7AC \
   \uD558\uB294 \uB370 \uC911\uC694\uD569\uB2C8\uB2E4."
 title: "\uB514\uB809\uD1A0\uB9AC\uAC00 \uC874\uC7AC\uD558\uB294\uC9C0 \uD655\uC778\
   \uD558\uAE30"
+weight: 20
 ---
-
-{{< edit_this_page >}}
 
 ## 무엇 & 왜?
 루비에서 디렉토리의 존재 여부를 확인하는 것은 프로그래머가 파일을 읽거나 새 디렉토리를 생성하기 전에 디렉토리의 존재를 검증할 수 있도록 해줍니다. 이는 파일 처리 시 오류를 피하고 파일 시스템 조작의 신뢰성을 보장하는 데 중요합니다.

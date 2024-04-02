@@ -7,9 +7,8 @@ model: gpt-4-1106-preview
 summary: "String-Konkatenation ist das Zusammenf\xFCgen von zwei oder mehreren Zeichenketten\
   \ (Strings) zu einer neuen Zeichenkette. Wir brauchen das, um dynamische\u2026"
 title: "Zeichenketten verkn\xFCpfen"
+weight: 3
 ---
-
-{{< edit_this_page >}}
 
 ## Was & Warum?
 

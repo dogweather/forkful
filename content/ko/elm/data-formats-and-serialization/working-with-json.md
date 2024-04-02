@@ -21,9 +21,8 @@ summary: "Elm\uC5D0\uC11C JSON\uC744 \uB2E4\uB8E8\uB294 \uAC83\uC740 JSON \uB370
   \uC801\uC774\uBA70, \uD074\uB77C\uC774\uC5B8\uD2B8(Elm)\uC640 \uC11C\uBC84 \uD639\
   \uC740 \uB2E4\uB978\u2026"
 title: "JSON\uACFC \uD568\uAED8 \uC77C\uD558\uAE30"
+weight: 38
 ---
-
-{{< edit_this_page >}}
 
 ## 무엇 & 왜?
 Elm에서 JSON을 다루는 것은 JSON 데이터를 Elm 유형으로 디코딩하고, Elm 값들을 다시 JSON으로 인코딩하는 과정을 포함합니다. 이 과정은 웹 애플리케이션들이 API 및 외부 데이터 소스와 상호 작용하기 위해 필수적이며, 클라이언트(Elm)와 서버 혹은 다른 서비스들 간의 데이터 교환이 원활하게 이루어지게 합니다.

@@ -12,9 +12,8 @@ summary: "\u8BFB\u53D6\u6587\u672C\u6587\u4EF6\u5C31\u662F\u5C06\u6587\u4EF6\u51
   \u7528\u4E8E\u6570\u636E\u5904\u7406\u3001\u914D\u7F6E\u8BFB\u53D6\u6216\u8005\u4EC5\
   \u4EC5\u662F\u663E\u793A\u6587\u4EF6\u5185\u5BB9\u3002"
 title: "\u9605\u8BFB\u6587\u672C\u6587\u4EF6"
+weight: 22
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why? 什么 & 为什么？
 读取文本文件就是将文件内容载入程序。程序员这么做主要用于数据处理、配置读取或者仅仅是显示文件内容。

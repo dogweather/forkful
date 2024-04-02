@@ -12,9 +12,8 @@ summary: "\u8BFB\u53D6\u6587\u672C\u6587\u4EF6\u5C31\u662F\u628A\u5B58\u50A8\u57
   \u5E8F\u5458\u8FD9\u4E48\u505A\u4E3B\u8981\u662F\u4E3A\u4E86\u5904\u7406\u6216\u8005\
   \u5206\u6790\u8FD9\u4E9B\u6570\u636E\u3002"
 title: "\u9605\u8BFB\u6587\u672C\u6587\u4EF6"
+weight: 22
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why? 什么和为什么？
 读取文本文件就是把存储在文件中的数据加载到程序里。程序员这么做主要是为了处理或者分析这些数据。

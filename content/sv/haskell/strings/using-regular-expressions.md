@@ -11,9 +11,8 @@ summary: "Regulj\xE4ra uttryck i programmering \xE4r sekvenser av tecken som def
   \ ett s\xF6km\xF6nster, typiskt anv\xE4nda f\xF6r att s\xF6ka och manipulera str\xE4\
   ngar. Haskell-\u2026"
 title: "Att anv\xE4nda regulj\xE4ra uttryck"
+weight: 11
 ---
-
-{{< edit_this_page >}}
 
 ## Vad & Varför?
 Reguljära uttryck i programmering är sekvenser av tecken som definierar ett sökmönster, typiskt använda för att söka och manipulera strängar. Haskell-programmerare använder reguljära uttryck för uppgifter som sträcker sig från enkel strängmatchning till komplex textbearbetning, och utnyttjar deras effektivitet och mångsidighet när det gäller hantering av textdata.

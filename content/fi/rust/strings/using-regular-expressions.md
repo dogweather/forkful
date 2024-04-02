@@ -11,9 +11,8 @@ summary: "S\xE4\xE4nn\xF6lliset lausekkeet eli regex mahdollistavat kehitt\xE4ji
   \ merkkijonojen haun, vastaavuuden tarkistuksen ja manipuloinnin edistyneill\xE4\
   \u2026"
 title: "S\xE4\xE4nn\xF6llisten lausekkeiden k\xE4ytt\xF6"
+weight: 11
 ---
-
-{{< edit_this_page >}}
 
 ## Mitä & Miksi?
 

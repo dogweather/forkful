@@ -9,9 +9,8 @@ summary: "D\xE9marrer un nouveau projet, c'est mettre la premi\xE8re pierre \xE0
   \ \xE9difice num\xE9rique. Les programmeurs le font pour concr\xE9tiser une id\xE9\
   e, apprendre une\u2026"
 title: Lancement d'un nouveau projet
+weight: 1
 ---
-
-{{< edit_this_page >}}
 
 ## Quoi et pourquoi ?
 Démarrer un nouveau projet, c'est mettre la première pierre à votre édifice numérique. Les programmeurs le font pour concrétiser une idée, apprendre une technologie ou simplement pour le plaisir de créer quelque chose de neuf.

@@ -7,9 +7,8 @@ model: gpt-4-0125-preview
 summary: "TOML, som st\xE5r for Tom's Obvious, Minimal Language, er et data serialiseringsformat\
   \ likt JSON eller YAML. Programm\xF8rer bruker det p\xE5 grunn av dets\u2026"
 title: Jobbe med TOML
+weight: 39
 ---
-
-{{< edit_this_page >}}
 
 ## Hva & Hvorfor?
 TOML, som står for Tom's Obvious, Minimal Language, er et data serialiseringsformat likt JSON eller YAML. Programmører bruker det på grunn av dets menneskelesbarhet og enkle kartlegging til datatyper, noe som gjør det til et førstevalg for konfigurasjonsfiler og datautveksling.

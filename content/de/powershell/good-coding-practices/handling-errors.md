@@ -7,9 +7,8 @@ model: gpt-4-1106-preview
 summary: "Fehler in PowerShell zu behandeln bedeutet, Missgeschicke zu antizipieren\
   \ und sie reibungslos zu verwalten. Programmierer machen dies, um Abst\xFCrze zu\u2026"
 title: Fehlerbehandlung
+weight: 16
 ---
-
-{{< edit_this_page >}}
 
 ## Was & Warum?
 Fehler in PowerShell zu behandeln bedeutet, Missgeschicke zu antizipieren und sie reibungslos zu verwalten. Programmierer machen dies, um Abstürze zu verhindern und den Nutzern hilfreiches Feedback zu geben.

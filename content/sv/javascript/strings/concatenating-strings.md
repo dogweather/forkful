@@ -8,9 +8,8 @@ model: gpt-4-1106-preview
 summary: "Sammanfogning av str\xE4ngar handlar om att klistra ihop textstycken i JavaScript.\
   \ Vi g\xF6r det f\xF6r att dynamiskt bygga text, som anv\xE4ndarnamn eller\u2026"
 title: "Sammanslagning av str\xE4ngar"
+weight: 3
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why? (Vad & Varför?)
 Sammanfogning av strängar handlar om att klistra ihop textstycken i JavaScript. Vi gör det för att dynamiskt bygga text, som användarnamn eller meddelanden.

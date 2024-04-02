@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Das Schreiben einer Textdatei in JavaScript bezieht sich oft auf das Erstellen\
   \ und Speichern von Daten in einem einfachen, lesbaren Format f\xFCr\u2026"
 title: Eine Textdatei schreiben
+weight: 24
 ---
-
-{{< edit_this_page >}}
 
 ## Was & Warum?
 Das Schreiben einer Textdatei in JavaScript bezieht sich oft auf das Erstellen und Speichern von Daten in einem einfachen, lesbaren Format für Protokollierungszwecke, das Exportieren von Benutzereingaben oder zu Konfigurationszwecken. Diese Funktionalität ist entscheidend für Anwendungen, die Daten über die Lebensdauer des Anwendungsprozesses hinaus persistent machen müssen, indem sie eine Möglichkeit bieten, Informationen zu speichern und später wieder abzurufen oder zu teilen.

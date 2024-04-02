@@ -9,9 +9,8 @@ summary: "\xC5 starte et nytt prosjekt inneb\xE6rer \xE5 opprette en grunnleggen
   \ ramme for kode du skal skrive. Programmerere gj\xF8r dette for \xE5 organisere\
   \ og strukturere\u2026"
 title: "\xC5 starte et nytt prosjekt"
+weight: 1
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 Å starte et nytt prosjekt innebærer å opprette en grunnleggende ramme for kode du skal skrive. Programmerere gjør dette for å organisere og strukturere arbeidet sitt fra starten, noe som gjør det enklere å utvide og vedlikeholde koden.

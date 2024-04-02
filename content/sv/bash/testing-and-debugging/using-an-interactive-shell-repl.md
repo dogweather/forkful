@@ -7,9 +7,8 @@ model: gpt-4-0125-preview
 summary: "REPL st\xE5r f\xF6r Read-Eval-Print Loop, en enkel, interaktiv programmeringsmilj\xF6\
   . Programmerare anv\xE4nder den f\xF6r att snabbt skriva och testa kod,\u2026"
 title: "Anv\xE4nda en interaktiv skal (REPL)"
+weight: 34
 ---
-
-{{< edit_this_page >}}
 
 ## Vad & Varför?
 REPL står för Read-Eval-Print Loop, en enkel, interaktiv programmeringsmiljö. Programmerare använder den för att snabbt skriva och testa kod, experimentera med syntax och lära sig programmeringskoncept utan overheaden av att skapa och köra hela applikationer.

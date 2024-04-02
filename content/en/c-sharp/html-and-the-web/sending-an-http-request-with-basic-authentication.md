@@ -8,9 +8,8 @@ model: gpt-4-1106-preview
 summary: "We send an HTTP request with basic authentication to access protected resources\
   \ by including user credentials in the request header. Programmers use it\u2026"
 title: Sending an HTTP request with basic authentication
+weight: 45
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 We send an HTTP request with basic authentication to access protected resources by including user credentials in the request header. Programmers use it for simple auth systems, mainly where a quick and straightforward solution is suitable.

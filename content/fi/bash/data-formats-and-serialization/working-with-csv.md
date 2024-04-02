@@ -10,9 +10,8 @@ model: gpt-4-0125-preview
 summary: "CSV-tiedostojen (pilkuin erotetut arvot) k\xE4sittely Bashissa koskee tekstimuodossa\
   \ tallennettujen taulukkomuotoisten tietojen k\xE4sittely\xE4 ja manipulointia.\u2026"
 title: "Ty\xF6skentely CSV:n kanssa"
+weight: 37
 ---
-
-{{< edit_this_page >}}
 
 ## Mikä ja miksi?
 CSV-tiedostojen (pilkuin erotetut arvot) käsittely Bashissa koskee tekstimuodossa tallennettujen taulukkomuotoisten tietojen käsittelyä ja manipulointia. Tämä on olennaista ohjelmoijille, koska se mahdollistaa datan muuntamisen, analysoinnin ja integroinnin tehtävien automatisoinnin suoraan komentoriviltä, ilman tarvetta raskaammille työkaluille tai ohjelmointiympäristöille.

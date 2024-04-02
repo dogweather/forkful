@@ -7,9 +7,8 @@ model: gpt-4-1106-preview
 summary: "Complex numbers have a real part and an imaginary part and are crucial in\
   \ various fields such as engineering, physics, and computer graphics. Programmers\u2026"
 title: Working with complex numbers
+weight: 14
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 Complex numbers have a real part and an imaginary part and are crucial in various fields such as engineering, physics, and computer graphics. Programmers use them to solve equations that ordinary real numbers can't handle.

@@ -8,9 +8,8 @@ model: gpt-4-0125-preview
 summary: "In computer programming, \"Printing debug output\" involves producing detailed\
   \ informational messages that help developers understand the execution flow of\u2026"
 title: Printing debug output
+weight: 33
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 

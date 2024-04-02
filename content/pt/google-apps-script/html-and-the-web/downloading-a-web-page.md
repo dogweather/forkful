@@ -11,9 +11,8 @@ summary: "Baixar uma p\xE1gina web no Google Apps Script envolve buscar o conte\
   do de uma p\xE1gina web via HTML para v\xE1rios prop\xF3sitos, como web scraping,\
   \ extra\xE7\xE3o de\u2026"
 title: "Baixando uma p\xE1gina da web"
+weight: 42
 ---
-
-{{< edit_this_page >}}
 
 ## O que & Por quê?
 

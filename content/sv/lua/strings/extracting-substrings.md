@@ -9,9 +9,8 @@ summary: "Att extrahera delstr\xE4ngar inneb\xE4r att plocka ut specifika, mindr
   \ delar fr\xE5n en l\xE4ngre textstr\xE4ng. Vi g\xF6r det f\xF6r att bearbeta, analysera\
   \ eller manipulera\u2026"
 title: "Extrahera delstr\xE4ngar"
+weight: 6
 ---
-
-{{< edit_this_page >}}
 
 ## Vad & Varför?
 Att extrahera delsträngar innebär att plocka ut specifika, mindre delar från en längre textsträng. Vi gör det för att bearbeta, analysera eller manipulera data på mer detaljerad nivå.

@@ -10,9 +10,8 @@ model: gpt-4-0125-preview
 summary: "Foutafhandeling stelt je script in staat om elegant om te gaan met het onverwachte.\
   \ We doen dit om falen te beheren zonder onze gebruiker grijs haar te\u2026"
 title: Fouten afhandelen
+weight: 16
 ---
-
-{{< edit_this_page >}}
 
 ## Wat & Waarom?
 Foutafhandeling stelt je script in staat om elegant om te gaan met het onverwachte. We doen dit om falen te beheren zonder onze gebruiker grijs haar te bezorgen.

@@ -22,9 +22,8 @@ summary: "TOML \u0E22\u0E48\u0E2D\u0E21\u0E32\u0E08\u0E32\u0E01 Tom's Obvious, M
   \u0E22\u2026"
 title: "\u0E01\u0E32\u0E23\u0E17\u0E33\u0E07\u0E32\u0E19\u0E23\u0E48\u0E27\u0E21\u0E01\
   \u0E31\u0E1A TOML"
+weight: 39
 ---
-
-{{< edit_this_page >}}
 
 ## อะไรและทำไม?
 TOML ย่อมาจาก Tom's Obvious, Minimal Language, กำหนดวิธีการจัดโครงสร้างไฟล์การตั้งค่า โปรแกรมเมอร์ใช้งาน TOML เพราะมันอ่านง่าย, เขียนง่าย และสามารถจับคู่ได้เป็นตารางแฮช ทำให้เป็นตัวเลือกสำหรับการกำหนดค่า

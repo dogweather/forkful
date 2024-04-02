@@ -13,9 +13,8 @@ summary: "TOML\u4EE3\u8868Tom\u7684\u660E\u663E\u7684\u3001\u6700\u5C0F\u5316\u7
   \u4F7F\u7528\u5B83\uFF0C\u662F\u56E0\u4E3A\u5B83\u6613\u4E8E\u8BFB\u5199\uFF0C\u5E76\
   \u4E14\u80FD\u591F\u5F88\u597D\u5730\u6620\u5C04\u5230\u54C8\u5E0C\u8868\u4E0A\u3002"
 title: "\u4F7F\u7528TOML"
+weight: 39
 ---
-
-{{< edit_this_page >}}
 
 ## 什么 & 为什么？
 TOML代表Tom的明显的、最小化的语言。它是一种用于配置文件的数据序列化格式。程序员之所以使用它，是因为它易于读写，并且能够很好地映射到哈希表上。

@@ -11,9 +11,8 @@ summary: "Das Gro\xDFschreiben eines Strings beinhaltet die Modifizierung der Ei
   \ so dass der erste Buchstabe gro\xDFgeschrieben wird, w\xE4hrend der Rest klein\
   \ bleibt.\u2026"
 title: "Einen String gro\xDFschreiben"
+weight: 2
 ---
-
-{{< edit_this_page >}}
 
 ## Was & Warum?
 

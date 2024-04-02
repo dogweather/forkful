@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Los archivos CSV (Valores Separados por Comas) son un formato com\xFAn de\
   \ intercambio de datos que representa datos tabulares en texto plano, utilizando\u2026"
 title: Trabajando con CSV
+weight: 37
 ---
-
-{{< edit_this_page >}}
 
 ## Qué y Por Qué?
 Los archivos CSV (Valores Separados por Comas) son un formato común de intercambio de datos que representa datos tabulares en texto plano, utilizando comas para separar los valores individuales. Los programadores trabajan con archivos CSV para importar, exportar y manipular datos con facilidad a través de varias aplicaciones y servicios, ya que es un formato simple, ampliamente soportado y compatible con aplicaciones de hojas de cálculo, bases de datos y lenguajes de programación.

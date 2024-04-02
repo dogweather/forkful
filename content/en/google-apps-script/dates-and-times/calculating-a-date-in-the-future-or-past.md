@@ -7,9 +7,8 @@ model: gpt-4-0125-preview
 summary: "Calculating a date in the future or the past is about manipulating date\
   \ objects to find dates beyond or before the present date, respectively. Programmers\u2026"
 title: Calculating a date in the future or past
+weight: 26
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 

@@ -9,9 +9,8 @@ summary: "\xC5 starte et nytt prosjekt er \xE5 sette opp alt du trenger for \xE5
   \ noe nytt fra bunnen av. Programmerere gj\xF8r det for \xE5 bringe ideer til liv,\
   \ l\xF8se\u2026"
 title: "\xC5 starte et nytt prosjekt"
+weight: 1
 ---
-
-{{< edit_this_page >}}
 
 ## Hva & Hvorfor?
 Å starte et nytt prosjekt er å sette opp alt du trenger for å bygge noe nytt fra bunnen av. Programmerere gjør det for å bringe ideer til liv, løse problemer eller utforske nye teknologier.

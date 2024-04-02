@@ -19,9 +19,8 @@ summary: "\u5728 C \u4E2D\u89E3\u6790 HTML \u6D89\u53CA\u5206\u6790 HTML \u6587\
   \u5904\u7406\u6216\u91CD\u65B0\u5229\u7528\u7F51\u9875\u5185\u5BB9\u6210\u4E3A\u53EF\
   \u80FD\u3002"
 title: "\u89E3\u6790HTML"
+weight: 43
 ---
-
-{{< edit_this_page >}}
 
 ## 什么 & 为什么？
 

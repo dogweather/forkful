@@ -11,9 +11,8 @@ summary: "Det \xE5 kapitalisere en streng inneb\xE6rer \xE5 transformere den f\x
   rste bokstaven i en gitt streng til stor bokstav mens resten av bokstavene forblir\
   \ sm\xE5.\u2026"
 title: Sette stor bokstav i en streng
+weight: 2
 ---
-
-{{< edit_this_page >}}
 
 ## Hva & hvorfor?
 Det å kapitalisere en streng innebærer å transformere den første bokstaven i en gitt streng til stor bokstav mens resten av bokstavene forblir små. Programmerere gjør dette for å formatere utdata, overholde grammatisk korrekthet i tekster eller forbedre lesbarheten til genererte data.

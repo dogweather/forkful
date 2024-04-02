@@ -8,9 +8,8 @@ model: gpt-4-0125-preview
 summary: "Generowanie losowych liczb w PHP dotyczy produkcji nieprzewidywalnych warto\u015B\
   ci w okre\u015Blonym zakresie, co jest niezb\u0119dne do zada\u0144 takich jak tworzenie\u2026"
 title: Generowanie liczb losowych
+weight: 12
 ---
-
-{{< edit_this_page >}}
 
 ## Co i dlaczego?
 

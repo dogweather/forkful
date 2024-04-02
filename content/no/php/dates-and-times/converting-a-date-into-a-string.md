@@ -9,9 +9,8 @@ summary: "\xC5 konvertere en dato til en streng i PHP betyr \xE5 endre et datoob
   \ til et leselig format. Programmerere gj\xF8r det for \xE5 vise datoer p\xE5 en\
   \ forst\xE5elig m\xE5te\u2026"
 title: Konvertere en dato til en streng
+weight: 28
 ---
-
-{{< edit_this_page >}}
 
 ## Hva & Hvorfor?
 Å konvertere en dato til en streng i PHP betyr å endre et datoobjekt til et leselig format. Programmerere gjør det for å vise datoer på en forståelig måte for brukere eller for å formatere før lagring i databaser.

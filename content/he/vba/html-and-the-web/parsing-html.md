@@ -21,9 +21,8 @@ summary: "\u05E4\u05E2\u05E0\u05D5\u05D7 HTML \u05D1-Visual Basic for Applicatio
   \ \u05D5\u05D4\u05EA\u05DE\u05D5\u05D3\u05D3\u05D5\u05EA \u05E2\u05DD \u05E0\u05EA\
   \u05D5\u05E0\u05D9\u05DD\u2026"
 title: "\u05E4\u05D9\u05E2\u05E0\u05D5\u05D7 HTML"
+weight: 43
 ---
-
-{{< edit_this_page >}}
 
 ## מה ולמה?
 

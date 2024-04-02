@@ -1,14 +1,15 @@
 ---
 date: 2024-01-26 04:11:28.219967-07:00
-description: "Debugger to narz\u0119dzie, kt\xF3re pozwala bada\u0107 i modyfikowa\u0107\
-  \ wewn\u0119trzne dzia\u0142anie kodu podczas jego wykonywania. Programi\u015Bci\
-  \ u\u017Cywaj\u0105 go do znajdowania i\u2026"
+description: "Aby zacz\u0105\u0107 prac\u0119 z debuggerem w TypeScript, wszystko,\
+  \ czego potrzebujesz to obs\u0142ugiwane IDE (takie jak Visual Studio Code) i konfiguracja\
+  \ `launch.json`.\u2026"
 lastmod: '2024-03-13T22:44:35.143625-06:00'
 model: gpt-4-0125-preview
-summary: "Debugger to narz\u0119dzie, kt\xF3re pozwala bada\u0107 i modyfikowa\u0107\
-  \ wewn\u0119trzne dzia\u0142anie kodu podczas jego wykonywania. Programi\u015Bci\
-  \ u\u017Cywaj\u0105 go do znajdowania i\u2026"
+summary: "Aby zacz\u0105\u0107 prac\u0119 z debuggerem w TypeScript, wszystko, czego\
+  \ potrzebujesz to obs\u0142ugiwane IDE (takie jak Visual Studio Code) i konfiguracja\
+  \ `launch.json`.\u2026"
 title: Korzystanie z debugera
+weight: 35
 ---
 
 ## Jak korzystać:

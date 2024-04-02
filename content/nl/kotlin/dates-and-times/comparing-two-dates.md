@@ -11,9 +11,8 @@ summary: "Twee data vergelijken betekent controleren of de ene v\xF3\xF3r of na 
   \ andere komt, of dat ze op hetzelfde moment zijn. Programmeurs doen dit voor taken\
   \ zoals\u2026"
 title: Twee datums vergelijken
+weight: 27
 ---
-
-{{< edit_this_page >}}
 
 ## Wat & Waarom?
 

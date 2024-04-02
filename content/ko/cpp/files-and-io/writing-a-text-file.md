@@ -23,9 +23,8 @@ summary: "C++\uC5D0\uC11C \uD14D\uC2A4\uD2B8 \uD30C\uC77C\uC5D0 \uC4F0\uAE30\uB2
   \uB798\uBA38\uB4E4\uC740 \uD504\uB85C\uADF8\uB7A8 \uC2E4\uD589 \uC911\uC5D0 \uC0DD\
   \uC131\uB41C \uB370\uC774\uD130\uB97C \uC800\uC7A5\uD558\uAC70\uB098\u2026"
 title: "\uD14D\uC2A4\uD2B8 \uD30C\uC77C \uC4F0\uAE30"
+weight: 24
 ---
-
-{{< edit_this_page >}}
 
 ## 무엇 & 왜?
 C++에서 텍스트 파일에 쓰기는 파일을 생성하거나 열고 거기에 데이터를 작성하는 것을 포함합니다. 이것은 로그, 사용자 생성 콘텐츠 또는 설정값과 같이 데이터를 유지해야 하는 응용 프로그램에 필수적인 작업입니다. 프로그래머들은 프로그램 실행 중에 생성된 데이터를 저장하거나 다른 프로그램이나 사용자가 사용할 데이터를 내보내기 위해서 이 작업을 합니다.

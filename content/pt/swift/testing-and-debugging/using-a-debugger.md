@@ -1,13 +1,15 @@
 ---
 date: 2024-01-26 04:10:45.849699-07:00
-description: "Usar um depurador significa utilizar ferramentas especializadas para\
-  \ testar e inspecionar seu c\xF3digo \xE0 medida que ele \xE9 executado. Isso \xE9\
-  \ importante\u2026"
+description: "Para usar o depurador no Xcode (o IDE para Swift), voc\xEA pode definir\
+  \ pontos de interrup\xE7\xE3o, inspecionar vari\xE1veis e observar express\xF5es.\
+  \ Veja um exemplo:\u2026"
 lastmod: '2024-03-13T22:44:46.924905-06:00'
 model: gpt-4-0125-preview
-summary: "Usar um depurador significa utilizar ferramentas especializadas para testar\
-  \ e inspecionar seu c\xF3digo \xE0 medida que ele \xE9 executado. Isso \xE9 importante\u2026"
+summary: "Para usar o depurador no Xcode (o IDE para Swift), voc\xEA pode definir\
+  \ pontos de interrup\xE7\xE3o, inspecionar vari\xE1veis e observar express\xF5es.\
+  \ Veja um exemplo:\u2026"
 title: Usando um depurador
+weight: 35
 ---
 
 ## Como fazer:

@@ -9,9 +9,8 @@ summary: "Chercher et remplacer du texte, c'est un peu comme jouer \xE0 cache-ca
   \ avec des mots pour les changer en un clin d'\u0153il. Les programmeurs s'y collent\
   \ pour\u2026"
 title: Recherche et remplacement de texte
+weight: 10
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 Chercher et remplacer du texte, c'est un peu comme jouer à cache-cache avec des mots pour les changer en un clin d'œil. Les programmeurs s'y collent pour corriger des erreurs, mettre à jour du code ou manier des données sans se prendre la tête.

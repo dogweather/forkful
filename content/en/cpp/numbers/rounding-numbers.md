@@ -7,9 +7,8 @@ model: gpt-4-1106-preview
 summary: "Rounding numbers means tweaking a value to its nearest integer or specified\
   \ precision. Devs do it to simplify, conform to real-world constraints, or\u2026"
 title: Rounding numbers
+weight: 13
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 Rounding numbers means tweaking a value to its nearest integer or specified precision. Devs do it to simplify, conform to real-world constraints, or improve performance by ditching excess precision.

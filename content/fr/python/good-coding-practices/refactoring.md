@@ -9,9 +9,8 @@ summary: "Le remaniement est le processus de restructuration du code informatiqu
   \ existant\u2014changer le factoring\u2014sans modifier son comportement externe.\
   \ Les\u2026"
 title: Remaniement de code
+weight: 19
 ---
-
-{{< edit_this_page >}}
 
 ## Quoi & Pourquoi ?
 Le remaniement est le processus de restructuration du code informatique existant—changer le factoring—sans modifier son comportement externe. Les programmeurs le font pour nettoyer le code, améliorer la lisibilité, et le rendre plus facile à maintenir et à étendre, tout cela sans ajouter de nouvelles fonctionnalités.

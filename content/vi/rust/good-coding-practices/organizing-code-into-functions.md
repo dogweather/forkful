@@ -13,9 +13,8 @@ summary: "T\u1ED5 ch\u1EE9c m\xE3 l\u1EC7nh th\xE0nh c\xE1c h\xE0m l\xE0 v\u1EC1
   i c\xF3 th\u1EC3 t\xE1i s\u1EED d\u1EE5ng, m\xF4-\u0111un \u0111\u01B0\u1EE3c x\xE1\
   c \u0111\u1ECBnh b\u1EDFi m\u1ED9t t\xEAn. Ch\xFAng ta l\xE0m\u2026"
 title: "S\u1EAFp x\u1EBFp m\xE3 th\xE0nh c\xE1c h\xE0m"
+weight: 18
 ---
-
-{{< edit_this_page >}}
 
 ## Cái gì & Tại sao?
 Tổ chức mã lệnh thành các hàm là về việc phân chia chương trình của bạn thành các khối có thể tái sử dụng, mô-đun được xác định bởi một tên. Chúng ta làm điều này để làm cho mã lệnh của chúng ta sạch sẽ hơn, dễ đọc hơn và dễ gỡ lỗi hơn. Đó là về việc không lặp lại bản thân và tối ưu hóa các bản cập nhật.

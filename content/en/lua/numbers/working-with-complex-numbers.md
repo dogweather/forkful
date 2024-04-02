@@ -7,9 +7,8 @@ model: gpt-4-1106-preview
 summary: "Complex numbers extend the idea of the one-dimensional number line into\
   \ the two-dimensional plane by including a perpendicular imaginary axis. Programmers\u2026"
 title: Working with complex numbers
+weight: 14
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 Complex numbers extend the idea of the one-dimensional number line into the two-dimensional plane by including a perpendicular imaginary axis. Programmers work with them in fields like signal processing, fluid dynamics, and electrical engineering, where they're essential for representing oscillations and other phenomena.

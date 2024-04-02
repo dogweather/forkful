@@ -9,9 +9,8 @@ summary: "Interpolacja ci\u0105gu znak\xF3w polega na wstawianiu warto\u015Bci z
   \ bezpo\u015Brednio w stringu. Programi\u015Bci robi\u0105 to, aby generowa\u0107\
   \ dynamiczne teksty z danych,\u2026"
 title: "Interpolacja \u0142a\u0144cuch\xF3w znak\xF3w"
+weight: 8
 ---
-
-{{< edit_this_page >}}
 
 ## Co i dlaczego?
 Interpolacja ciągu znaków polega na wstawianiu wartości zmiennych bezpośrednio w stringu. Programiści robią to, aby generować dynamiczne teksty z danych, łatwiej formatować wyjścia i ogólnie uprościć pisanie kodu.

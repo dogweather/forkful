@@ -12,9 +12,8 @@ summary: "Analyser une date \xE0 partir d'une cha\xEEne de caract\xE8res consist
   \ \xE0 prendre un texte, comme \"2023-04-05\", et \xE0 le convertir en un format\
   \ de date que votre\u2026"
 title: "Analyser une date \xE0 partir d'une cha\xEEne de caract\xE8res"
+weight: 30
 ---
-
-{{< edit_this_page >}}
 
 ## Quoi & Pourquoi ?
 

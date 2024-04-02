@@ -11,9 +11,8 @@ summary: "S\xE4\xE4nn\xF6lliset lausekkeet (regex) tarjoavat tavan etsi\xE4, vas
   \ ja manipuloida merkkijonoja k\xE4ytt\xE4en m\xE4\xE4riteltyj\xE4 kaavoja. Ohjelmoijat\
   \ k\xE4ytt\xE4v\xE4t niit\xE4\u2026"
 title: "S\xE4\xE4nn\xF6llisten lausekkeiden k\xE4ytt\xF6"
+weight: 11
 ---
-
-{{< edit_this_page >}}
 
 ## Mitä ja miksi?
 

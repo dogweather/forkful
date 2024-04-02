@@ -11,9 +11,8 @@ summary: "Verificare se una directory esiste in Java \xE8 un'operazione fondamen
   \ che comporta la verifica della presenza di una directory nel file system prima\
   \ di\u2026"
 title: Verifica se una directory esiste
+weight: 20
 ---
-
-{{< edit_this_page >}}
 
 ## Cosa & Perché?
 Verificare se una directory esiste in Java è un'operazione fondamentale che comporta la verifica della presenza di una directory nel file system prima di leggerla, scriverci o eseguire qualsiasi operazione che richieda la sua esistenza. Questo è cruciale per evitare errori o eccezioni nei programmi che interagiscono con il file system, garantendo un'esecuzione più fluida e una migliore esperienza utente.

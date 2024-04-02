@@ -9,9 +9,8 @@ summary: "Merkkijonojen yhdist\xE4minen tarkoittaa kahden tai useamman tekstinp\
   tk\xE4n liitt\xE4mist\xE4 yhteen. Se on handy tapa rakentaa dynaamisia tekstej\xE4\
   , kuten viestej\xE4\u2026"
 title: "Merkkijonojen yhdist\xE4minen"
+weight: 3
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why? (Mitä ja Miksi?)
 

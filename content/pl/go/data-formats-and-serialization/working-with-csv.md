@@ -11,9 +11,8 @@ summary: "Format warto\u015Bci rozdzielanych przecinkami (CSV) jest wszechobecny
   \ wymianie danych ze wzgl\u0119du na swoj\u0105 prostot\u0119 i \u0142atwo\u015B\
   \u0107 integracji z wi\u0119kszo\u015Bci\u0105\u2026"
 title: Praca z plikami CSV
+weight: 37
 ---
-
-{{< edit_this_page >}}
 
 ## Co i dlaczego?
 

@@ -7,9 +7,8 @@ model: gpt-4-0125-preview
 summary: "TOML (Tom's Offensichtliche, Minimale Sprache) ist ein Daten-Serialisierungsformat,\
   \ das dank seiner klaren Semantik leicht zu lesen ist. Programmierer\u2026"
 title: Arbeiten mit TOML
+weight: 39
 ---
-
-{{< edit_this_page >}}
 
 ## Was & Warum?
 TOML (Tom's Offensichtliche, Minimale Sprache) ist ein Daten-Serialisierungsformat, das dank seiner klaren Semantik leicht zu lesen ist. Programmierer verwenden TOML für Konfigurationsdateien, bei denen die Lesbarkeit durch Menschen und einfaches Parsen durch Maschinen Schlüsselrollen spielen.

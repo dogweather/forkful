@@ -8,9 +8,8 @@ model: gpt-4-0125-preview
 summary: "La refactorizaci\xF3n es el proceso de reestructurar el c\xF3digo de computadora\
   \ existente sin cambiar su comportamiento externo. Los programadores refactorizan\u2026"
 title: "Refactorizaci\xF3n"
+weight: 19
 ---
-
-{{< edit_this_page >}}
 
 ## ¿Qué y Por Qué?
 

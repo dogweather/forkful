@@ -8,9 +8,8 @@ model: gpt-4-0125-preview
 summary: "XML, som st\xE5r f\xF6r eXtensible Markup Language, \xE4r som JSON:s ordrika\
   \ kusin. Du kommer att brottas med XML n\xE4r du hanterar legacysystem, f\xF6retagsprogramvara\u2026"
 title: Att arbeta med XML
+weight: 40
 ---
-
-{{< edit_this_page >}}
 
 ## Vad & Varför?
 XML, som står för eXtensible Markup Language, är som JSON:s ordrika kusin. Du kommer att brottas med XML när du hanterar legacysystem, företagsprogramvara eller API:er som hoppade över JSON-vagnen. Det är avgörande för datautbyte där XML står stadigt.

@@ -16,9 +16,8 @@ summary: "PHP\uC5D0\uC11C \uC784\uC2DC \uD30C\uC77C\uC744 \uB9CC\uB4DC\uB294 \uA
   \uB7C9 \uCC98\uB9AC\uC5D0\uC11C \uD30C\uC77C\uC758 \uC2E4\uC81C \uACBD\uB85C\uB97C\
   \ \uC228\uAE38 \uB54C \uC720\uC6A9\uD569\uB2C8\uB2E4."
 title: "\uC784\uC2DC \uD30C\uC77C \uC0DD\uC131\uD558\uAE30"
+weight: 21
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why? (무엇이며 왜?)
 PHP에서 임시 파일을 만드는 것은 데이터를 일시적으로 저장하는 곳이 필요할 때 사용합니다. 이것은 보안, 데이터 분석, 또는 대용량 처리에서 파일의 실제 경로를 숨길 때 유용합니다.

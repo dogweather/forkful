@@ -11,9 +11,8 @@ summary: "Numeroiden py\xF6rist\xE4minen on prosessi, jossa numeron numerot s\xE
   det\xE4\xE4n v\xE4hemm\xE4n tarkoiksi tietyin s\xE4\xE4nn\xF6in, joko l\xE4himp\xE4\
   \xE4n kokonaislukuun tai m\xE4\xE4ritettyyn\u2026"
 title: "Lukujen py\xF6rist\xE4minen"
+weight: 13
 ---
-
-{{< edit_this_page >}}
 
 ## Mikä & Miksi?
 

@@ -8,9 +8,8 @@ model: gpt-4-0125-preview
 summary: "\xC5 generere tilfeldige tall i JavaScript er en teknikk som brukes for\
   \ \xE5 skape uforutsigbarhet i applikasjoner, fra spill som trenger tilfeldig fiendeadferd\u2026"
 title: Generering av tilfeldige tall
+weight: 12
 ---
-
-{{< edit_this_page >}}
 
 ## Hva & Hvorfor?
 

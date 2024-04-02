@@ -11,9 +11,8 @@ summary: "Att ber\xE4kna ett datum i framtiden eller f\xF6rflutet \xE4r en vanli
   \ uppgift f\xF6r programmerare som hanterar schemal\xE4ggning, p\xE5minnelser eller\
   \ n\xE5gon funktion som\u2026"
 title: "Ber\xE4kna ett datum i framtiden eller f\xF6rflutna"
+weight: 26
 ---
-
-{{< edit_this_page >}}
 
 ## Vad & Varför?
 Att beräkna ett datum i framtiden eller förflutet är en vanlig uppgift för programmerare som hanterar schemaläggning, påminnelser eller någon funktion som beror på datumberäkningar. Att förstå hur man manipulerar datum är avgörande för backend-system, användargränssnitt och dataanalys, särskilt för dem som övergår till Dart och vill implementera tidslogik effektivt.

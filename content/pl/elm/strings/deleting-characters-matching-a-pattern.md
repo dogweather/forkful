@@ -9,9 +9,8 @@ summary: "Usuwanie znak\xF3w pasuj\u0105cych do wzorca to proces filtrowania tek
   \ tak, by usun\u0105\u0107 specyficzne sekwencje znak\xF3w. Programi\u015Bci robi\u0105\
   \ to, aby czy\u015Bci\u0107 dane,\u2026"
 title: "Usuwanie znak\xF3w pasuj\u0105cych do wzorca"
+weight: 5
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why? (Co i Dlaczego?)
 Usuwanie znaków pasujących do wzorca to proces filtrowania tekstu tak, by usunąć specyficzne sekwencje znaków. Programiści robią to, aby czyścić dane, weryfikować format lub przygotować tekst do dalszej obróbki.

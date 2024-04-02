@@ -9,9 +9,8 @@ summary: "Imprimir sa\xEDdas de debug \xE9 basicamente escrever informa\xE7\xF5e
   \ sobre o que est\xE1 acontecendo dentro do c\xF3digo enquanto ele \xE9 executado.\
   \ Programadores fazem\u2026"
 title: "Exibindo sa\xEDdas de depura\xE7\xE3o"
+weight: 33
 ---
-
-{{< edit_this_page >}}
 
 ## O Que é & Por Que?
 

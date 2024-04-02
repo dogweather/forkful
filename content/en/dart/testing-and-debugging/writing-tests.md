@@ -8,9 +8,8 @@ model: gpt-4-0125-preview
 summary: "Writing tests in Dart involves creating test cases to automatically verify\
   \ that different parts of your program work as expected. Programmers do this to\u2026"
 title: Writing tests
+weight: 36
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 

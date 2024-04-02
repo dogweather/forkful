@@ -11,9 +11,8 @@ summary: "Parsear HTML implica analizar el c\xF3digo HTML de una p\xE1gina web p
   \ extraer informaci\xF3n o elementos espec\xEDficos, una tarea com\xFAn para el\
   \ web scraping, la\u2026"
 title: Analizando HTML
+weight: 43
 ---
-
-{{< edit_this_page >}}
 
 ## ¿Qué y Por Qué?
 Parsear HTML implica analizar el código HTML de una página web para extraer información o elementos específicos, una tarea común para el web scraping, la minería de datos o la automatización de interacciones con sitios web. Los programadores lo hacen para interactuar programáticamente con sitios web o extraer datos de ellos, automatizar tareas o probar aplicaciones web.

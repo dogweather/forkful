@@ -11,9 +11,8 @@ summary: "Att generera slumpm\xE4ssiga nummer \xE4r en grundl\xE4ggande uppgift 
   \ programmering som anv\xE4nds f\xF6r en m\xE4ngd olika till\xE4mpningar, s\xE5\
   som simuleringar, spel och\u2026"
 title: "Generera slumpm\xE4ssiga nummer"
+weight: 12
 ---
-
-{{< edit_this_page >}}
 
 ## Vad och varför?
 

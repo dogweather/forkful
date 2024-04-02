@@ -16,9 +16,8 @@ summary: "\uB0A0\uC9DC\uB97C \uBB38\uC790\uC5F4\uB85C \uBC14\uAFB8\uB294 \uAC83\
   \uAE30 \uC26C\uC6B4 \uD615\uD0DC\uB85C \uB0A0\uC9DC\uB97C \uBCF4\uC5EC\uC8FC\uAE30\
   \ \uC704\uD574 \uD544\uC694\uD569\uB2C8\uB2E4."
 title: "\uB0A0\uC9DC\uB97C \uBB38\uC790\uC5F4\uB85C \uBCC0\uD658\uD558\uAE30"
+weight: 28
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why? (무엇 & 왜?)
 날짜를 문자열로 바꾸는 것은 프로그래밍에서 일반적으로 사용되는 기능입니다. 이는 자료를 저장하거나 사용자들이 이해하기 쉬운 형태로 날짜를 보여주기 위해 필요합니다.

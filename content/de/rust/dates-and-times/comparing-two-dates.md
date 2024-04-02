@@ -8,9 +8,8 @@ model: gpt-4-1106-preview
 summary: "Vergleichen zwei Daten hei\xDFt, ihre chronologische Reihenfolge zu bestimmen.\
   \ Programmierer machen das, um Zeitabl\xE4ufe zu handhaben, Ereignisse zu sortieren\u2026"
 title: Vergleich von zwei Daten
+weight: 27
 ---
-
-{{< edit_this_page >}}
 
 ## Was & Warum?
 Vergleichen zwei Daten heißt, ihre chronologische Reihenfolge zu bestimmen. Programmierer machen das, um Zeitabläufe zu handhaben, Ereignisse zu sortieren oder Fristen zu überprüfen.

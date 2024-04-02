@@ -9,9 +9,8 @@ summary: "Usuwanie znak\xF3w odpowiadaj\u0105cych okre\u015Blonemu wzorcowi to p
   \ prostu filtrowanie tekstu. Programi\u015Bci robi\u0105 to, by oczy\u015Bci\u0107\
   \ dane, usun\u0105\u0107 niepotrzebne\u2026"
 title: "Usuwanie znak\xF3w pasuj\u0105cych do wzorca"
+weight: 5
 ---
-
-{{< edit_this_page >}}
 
 ## Co i dlaczego?
 Usuwanie znaków odpowiadających określonemu wzorcowi to po prostu filtrowanie tekstu. Programiści robią to, by oczyścić dane, usunąć niepotrzebne elementy, lub przygotować tekst do dalszej obróbki.

@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Das Abrufen des aktuellen Datums in PowerShell handelt davon, das aktuelle\
   \ Datum und die Zeit des Systems zu ermitteln. Diese Operation ist grundlegend\u2026"
 title: Den aktuellen Datum abrufen
+weight: 29
 ---
-
-{{< edit_this_page >}}
 
 ## Was & Warum?
 

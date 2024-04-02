@@ -13,9 +13,8 @@ summary: "Lo\u1EA1i b\u1ECF d\u1EA5u ngo\u1EB7c kh\u1ECFi m\u1ED9t chu\u1ED7i c\
   o bao quanh n\u1ED9i dung. Ch\xFAng ta l\xE0m \u0111i\u1EC1u n\xE0y \u0111\u1EC3\
   \ l\xE0m s\u1EA1ch d\u1EEF li\u1EC7u \u0111\u1EA7u v\xE0o, chu\u1EA9n\u2026"
 title: "Lo\u1EA1i b\u1ECF d\u1EA5u ngo\u1EB7c k\xE9p kh\u1ECFi chu\u1ED7i"
+weight: 9
 ---
-
-{{< edit_this_page >}}
 
 ## Gì và Tại Sao?
 

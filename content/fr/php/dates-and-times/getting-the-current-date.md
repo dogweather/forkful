@@ -11,9 +11,8 @@ summary: "Obtenir la date actuelle en PHP est une t\xE2che fondamentale qui vous
   \ de r\xE9cup\xE9rer et de manipuler la date et l'heure du syst\xE8me. Cela est\
   \ crucial\u2026"
 title: Obtenir la date actuelle
+weight: 29
 ---
-
-{{< edit_this_page >}}
 
 ## Quoi & Pourquoi ?
 Obtenir la date actuelle en PHP est une tâche fondamentale qui vous permet de récupérer et de manipuler la date et l'heure du système. Cela est crucial pour des fonctions telles que la journalisation, le marquage temporel des publications, la planification d'événements ou l'exécution d'opérations sensibles au temps dans vos applications.

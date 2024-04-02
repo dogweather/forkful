@@ -11,9 +11,8 @@ summary: "Comparar duas datas na programa\xE7\xE3o \xE9 uma tarefa fundamental q
   \ permite aos desenvolvedores avaliar a rela\xE7\xE3o cronol\xF3gica entre datas.\
   \ Tais compara\xE7\xF5es\u2026"
 title: Comparando duas datas
+weight: 27
 ---
-
-{{< edit_this_page >}}
 
 ## O que & Por quê?
 

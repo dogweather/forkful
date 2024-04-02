@@ -11,9 +11,8 @@ summary: "Parsing av HTML handler om \xE5 trekke ut data eller informasjon fra H
   \ en vanlig oppgave n\xE5r man h\xE5ndterer webdata. Programmerere gj\xF8r dette\
   \ for\u2026"
 title: Analysering av HTML
+weight: 43
 ---
-
-{{< edit_this_page >}}
 
 ## Hva og hvorfor?
 

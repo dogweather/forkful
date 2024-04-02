@@ -10,9 +10,8 @@ model: gpt-4-0125-preview
 summary: "La creazione di un file temporaneo in Go consente la generazione di un file\
   \ non persistente progettato per un uso a breve termine, principalmente per\u2026"
 title: Creazione di un file temporaneo
+weight: 21
 ---
-
-{{< edit_this_page >}}
 
 ## Cosa e Perché?
 

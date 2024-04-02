@@ -11,9 +11,8 @@ summary: "Parsowanie daty z ci\u0105gu znak\xF3w to cz\u0119ste zadanie podczas 
   \ z danymi wprowadzanymi przez u\u017Cytkownika lub odczytywaniem danych z plik\xF3\
   w. Polega to na\u2026"
 title: "Analiza sk\u0142adniowa daty z \u0142a\u0144cucha znak\xF3w"
+weight: 30
 ---
-
-{{< edit_this_page >}}
 
 ## Co i dlaczego?
 

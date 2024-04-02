@@ -7,9 +7,8 @@ model: gpt-4-0125-preview
 summary: "Les nombres complexes, compos\xE9s d'une partie r\xE9elle et d'une partie\
   \ imaginaire (comme 3+4i), sont un pilier dans l'ing\xE9nierie et la physique. Les\u2026"
 title: Manipulation des nombres complexes
+weight: 14
 ---
-
-{{< edit_this_page >}}
 
 ## Quoi & Pourquoi ?
 Les nombres complexes, composés d'une partie réelle et d'une partie imaginaire (comme 3+4i), sont un pilier dans l'ingénierie et la physique. Les programmeurs les utilisent dans des simulations, le traitement de signal et la résolution d'équations qui ne fonctionnent pas bien avec seulement des nombres réels.

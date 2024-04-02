@@ -11,9 +11,8 @@ summary: "Regul\xE6re uttrykk (regex) i JavaScript er m\xF8nstre som brukes for 
   \ samsvare med tegnkombinasjoner i strenger. Programmerere bruker dem til \xE5 s\xF8\
   ke, utvinne\u2026"
 title: "Bruke regul\xE6re uttrykk"
+weight: 11
 ---
-
-{{< edit_this_page >}}
 
 ## Hva og hvorfor?
 

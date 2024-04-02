@@ -9,9 +9,8 @@ summary: "Kompleksiluvut, jotka koostuvat reaali- ja imaginaariosasta (kuten 3+4
   \ ovat vakiovaruste insin\xF6\xF6reill\xE4 ja fyysikoilla. Ohjelmoijat ty\xF6skentelev\xE4\
   t\u2026"
 title: "Kompleksilukujen k\xE4sittely"
+weight: 14
 ---
-
-{{< edit_this_page >}}
 
 ## Mikä & Miksi?
 Kompleksiluvut, jotka koostuvat reaali- ja imaginaariosasta (kuten 3+4i), ovat vakiovaruste insinööreillä ja fyysikoilla. Ohjelmoijat työskentelevät niiden kanssa simulaatioissa, signaalinkäsittelyssä ja yhtälöiden ratkaisemisessa, jotka eivät toimi pelkästään reaalilukujen kanssa.

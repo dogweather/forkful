@@ -13,9 +13,8 @@ summary: "G\u1EEDi m\u1ED9t y\xEAu c\u1EA7u HTTP gi\u1ED1ng nh\u01B0 y\xEAu c\u1
   \ ho\u1EB7c cung c\u1EA5p cho b\u1EA1n th\u1EE9 g\xEC \u0111\xF3. C\xE1c l\u1EAD\
   p tr\xECnh vi\xEAn th\u1EF1c hi\u1EC7n vi\u1EC7c n\xE0y \u0111\u1EC3\u2026"
 title: "G\u1EEDi m\u1ED9t y\xEAu c\u1EA7u HTTP"
+weight: 44
 ---
-
-{{< edit_this_page >}}
 
 ## Gì & Tại sao?
 

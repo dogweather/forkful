@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "De huidige datum in bash pakken gaat over het verkrijgen van de datum en\
   \ tijd van het systeem. Programmeurs hebben dit nodig voor logboekregistratie,\u2026"
 title: Het huidige datum ophalen
+weight: 29
 ---
-
-{{< edit_this_page >}}
 
 ## Wat & Waarom?
 De huidige datum in bash pakken gaat over het verkrijgen van de datum en tijd van het systeem. Programmeurs hebben dit nodig voor logboekregistratie, tijdstempeling of het plannen van taken.

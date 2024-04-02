@@ -8,9 +8,8 @@ model: gpt-4-0125-preview
 summary: "Satunnaislukujen tuottaminen tarkoittaa sellaisten lukujen luomista, joita\
   \ ei voida kohtuullisesti ennakoida paremmin kuin sattuman kautta, mik\xE4 on\u2026"
 title: Satunnaislukujen generointi
+weight: 12
 ---
-
-{{< edit_this_page >}}
 
 ## Mikä & Miksi?
 

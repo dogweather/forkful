@@ -9,9 +9,8 @@ summary: "Remover aspas de uma string em C# significa que voc\xEA est\xE1 elimin
   \ aqueles inc\xF4modos caracteres de aspas duplas (`\"`) ou simples (`'`) que envolvem\
   \ seu\u2026"
 title: Removendo aspas de uma string
+weight: 9
 ---
-
-{{< edit_this_page >}}
 
 ## O Que & Por Quê?
 Remover aspas de uma string em C# significa que você está eliminando aqueles incômodos caracteres de aspas duplas (`"`) ou simples (`'`) que envolvem seu texto. Programadores fazem isso para limpar dados, preparar para entrada em banco de dados ou tornar as strings seguras para mais processamentos, evitando que as coisas deem errado quando uma aspa perdida aparece.

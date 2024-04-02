@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "TOML oder Toms offensichtliche, minimale Sprache, ist ein Konfigurationsdateiformat,\
   \ das aufgrund seiner klaren Semantik leicht zu lesen ist.\u2026"
 title: Arbeiten mit TOML
+weight: 39
 ---
-
-{{< edit_this_page >}}
 
 ## Was & Warum?
 

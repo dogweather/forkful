@@ -11,9 +11,8 @@ summary: "\xC5 sjekke om en mappe eksisterer i TypeScript er essensielt for filh
   ndteringsoppgaver, slik som \xE5 lese fra eller skrive data til filer, og sikre\
   \ at\u2026"
 title: Sjekker om en mappe eksisterer
+weight: 20
 ---
-
-{{< edit_this_page >}}
 
 ## Hva og hvorfor?
 Å sjekke om en mappe eksisterer i TypeScript er essensielt for filhåndteringsoppgaver, slik som å lese fra eller skrive data til filer, og sikre at operasjoner kun utføres på gyldige mapper. Denne operasjonen er avgjørende for å unngå feil som oppstår fra å forsøke å få tilgang til eller manipulere ikke-eksisterende mapper.

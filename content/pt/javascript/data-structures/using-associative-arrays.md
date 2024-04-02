@@ -10,9 +10,8 @@ model: gpt-4-0125-preview
 summary: "Arrays associativos, ou como s\xE3o mais precisamente conhecidos em JavaScript,\
   \ objetos, permitem mapear chaves a valores. Isso \xE9 extremamente \xFAtil quando\u2026"
 title: Usando arrays associativos
+weight: 15
 ---
-
-{{< edit_this_page >}}
 
 ## O Que & Por Quê?
 

@@ -23,9 +23,8 @@ summary: "Elm\uC5D0\uC11C \uD14D\uC2A4\uD2B8 \uD30C\uC77C\uC744 \uC791\uC131\uD5
   \uB41C \uD14D\uC2A4\uD2B8 \uD615\uC2DD(e.g., JSON, CSV)\uC758 \uB370\uC774\uD130\
   \uB97C\u2026"
 title: "\uD14D\uC2A4\uD2B8 \uD30C\uC77C \uC4F0\uAE30"
+weight: 24
 ---
-
-{{< edit_this_page >}}
 
 ## 무엇과 왜?
 

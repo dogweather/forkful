@@ -11,9 +11,8 @@ summary: "In Visual Basic for Applications (VBA) ist das Abrufen des aktuellen D
   \ eine g\xE4ngige Aufgabe, die es Programmierern erm\xF6glicht, dynamisch mit Daten\
   \ in\u2026"
 title: Das aktuelle Datum abrufen
+weight: 29
 ---
-
-{{< edit_this_page >}}
 
 ## Was & Warum?
 

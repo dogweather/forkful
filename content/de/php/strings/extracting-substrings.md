@@ -7,9 +7,8 @@ model: gpt-4-1106-preview
 summary: "Substring-Extraktion bedeutet, gezielt Teile eines Strings herauszuschneiden.\
   \ Programmierer nutzen das, um Daten zu manipulieren, Inhalte zu analysieren\u2026"
 title: Teilstrings extrahieren
+weight: 6
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why? (Was & Warum?)
 Substring-Extraktion bedeutet, gezielt Teile eines Strings herauszuschneiden. Programmierer nutzen das, um Daten zu manipulieren, Inhalte zu analysieren oder einfach String-Daten aufzubereiten.

@@ -10,9 +10,8 @@ model: gpt-4-0125-preview
 summary: "Een tijdelijk bestand in C cre\xEBren betekent het genereren van een bestand\
   \ dat bedoeld is om voor een korte duur gebruikt te worden, meestal als kladruimte\u2026"
 title: Een tijdelijk bestand aanmaken
+weight: 21
 ---
-
-{{< edit_this_page >}}
 
 ## Wat & Waarom?
 Een tijdelijk bestand in C creëren betekent het genereren van een bestand dat bedoeld is om voor een korte duur gebruikt te worden, meestal als kladruimte voor gegevensverwerking of opslag. Programmeurs doen dit om tijdelijke gegevens te beheren zonder de permanente opslag van het programma te beïnvloeden of om ervoor te zorgen dat gevoelige gegevens worden gewist na gebruik.

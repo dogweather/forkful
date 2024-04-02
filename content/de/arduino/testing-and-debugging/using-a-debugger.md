@@ -1,13 +1,15 @@
 ---
 date: 2024-01-26 03:47:18.044249-07:00
-description: "Ein Debugger ist ein Werkzeug, das dabei hilft, Fehler in Ihrem Code\
-  \ zu finden und zu beheben, indem es Ihnen erlaubt, anzuhalten, herumzust\xF6bern\
-  \ und\u2026"
+description: "Mit der Arduino-IDE k\xF6nnen Sie Serial-Prints zum Debuggen verwenden,\
+  \ aber das ist ein bisschen so, als w\xFCrde man eine Taschenlampe benutzen, um\
+  \ eine H\xF6hle\u2026"
 lastmod: '2024-03-13T22:44:54.148135-06:00'
 model: gpt-4-0125-preview
-summary: "Ein Debugger ist ein Werkzeug, das dabei hilft, Fehler in Ihrem Code zu\
-  \ finden und zu beheben, indem es Ihnen erlaubt, anzuhalten, herumzust\xF6bern und\u2026"
+summary: "Mit der Arduino-IDE k\xF6nnen Sie Serial-Prints zum Debuggen verwenden,\
+  \ aber das ist ein bisschen so, als w\xFCrde man eine Taschenlampe benutzen, um\
+  \ eine H\xF6hle\u2026"
 title: Einsatz eines Debuggers
+weight: 35
 ---
 
 ## Wie:

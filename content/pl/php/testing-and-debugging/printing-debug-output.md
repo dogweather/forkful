@@ -9,9 +9,8 @@ summary: "Drukowanie informacji debugowych w PHP to wy\u015Bwietlanie danych, kt
   re pomagaj\u0105 nam zrozumie\u0107, co si\u0119 dzieje w naszym skrypcie. Robimy\
   \ to, \u017Ceby szybko\u2026"
 title: "Drukowanie komunikat\xF3w debugowania"
+weight: 33
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why? (Co i Dlaczego?)
 Drukowanie informacji debugowych w PHP to wyświetlanie danych, które pomagają nam zrozumieć, co się dzieje w naszym skrypcie. Robimy to, żeby szybko znaleźć i rozwiązać problemy, czyli debugować.

@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Das Schreiben von Tests in Java besteht darin, zu \xFCberpr\xFCfen, ob Ihr\
   \ Code sich unter verschiedenen Bedingungen wie erwartet verh\xE4lt. Programmierer\u2026"
 title: Tests Schreiben
+weight: 36
 ---
-
-{{< edit_this_page >}}
 
 ## Was & Warum?
 Das Schreiben von Tests in Java besteht darin, zu überprüfen, ob Ihr Code sich unter verschiedenen Bedingungen wie erwartet verhält. Programmierer schreiben Tests, um Fehler zu vermeiden, die Funktionalität nach Änderungen korrekt zu halten und gute Software-Designprinzipien zu fördern.

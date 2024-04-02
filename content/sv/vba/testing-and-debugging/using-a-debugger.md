@@ -2,15 +2,16 @@
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 22:04:06.162324-07:00
-description: "Att anv\xE4nda en fels\xF6kare i Visual Basic for Applications (VBA)\
-  \ inneb\xE4r att k\xF6ra din kod steg f\xF6r steg f\xF6r att inspektera dess exekveringsfl\xF6\
-  de och\u2026"
+description: "I VBA \xE4r fels\xF6karen en integrerad del av Visual Basic Editorn\
+  \ (VBE). S\xE5 h\xE4r kan du utnyttja den: 1. **Att s\xE4tta brytpunkter**: Klicka\
+  \ i v\xE4nstermarginalen\u2026"
 lastmod: '2024-03-13T22:44:37.748064-06:00'
 model: gpt-4-0125-preview
-summary: "Att anv\xE4nda en fels\xF6kare i Visual Basic for Applications (VBA) inneb\xE4\
-  r att k\xF6ra din kod steg f\xF6r steg f\xF6r att inspektera dess exekveringsfl\xF6\
-  de och\u2026"
+summary: "I VBA \xE4r fels\xF6karen en integrerad del av Visual Basic Editorn (VBE).\
+  \ S\xE5 h\xE4r kan du utnyttja den: 1. **Att s\xE4tta brytpunkter**: Klicka i v\xE4\
+  nstermarginalen\u2026"
 title: "Att anv\xE4nda en debugger"
+weight: 35
 ---
 
 ## Hur man gör:

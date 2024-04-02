@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Das Kapitalisieren eines Strings bedeutet, ihn so zu modifizieren, dass\
   \ der erste Buchstabe gro\xDFgeschrieben und der Rest des Strings kleingeschrieben\u2026"
 title: "Einen String gro\xDFschreiben"
+weight: 2
 ---
-
-{{< edit_this_page >}}
 
 ## Was & Warum?
 

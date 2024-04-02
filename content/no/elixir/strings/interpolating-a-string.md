@@ -7,9 +7,8 @@ model: gpt-4-1106-preview
 summary: "Strenginterpolering lar oss sette variabler eller beregnede verdier inn\
   \ i tekst. Vi bruker det for \xE5 bygge dynamiske strenger enkelt."
 title: Interpolering av en streng
+weight: 8
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 Strenginterpolering lar oss sette variabler eller beregnede verdier inn i tekst. Vi bruker det for å bygge dynamiske strenger enkelt.

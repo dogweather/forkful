@@ -7,9 +7,8 @@ model: gpt-4-0125-preview
 summary: "Comma-Separated Values (CSV) format is ubiquitous for data exchange due\
   \ to its simplicity and ease of integration with most programming languages,\u2026"
 title: Working with CSV
+weight: 37
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 

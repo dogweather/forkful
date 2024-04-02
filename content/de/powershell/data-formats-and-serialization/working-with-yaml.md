@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "YAML, oder \"YAML Ain't Markup Language\", ist eine f\xFCr Menschen lesbare\
   \ Datenserialisierungssprache. Programmierer verwenden sie oft f\xFCr\u2026"
 title: Arbeiten mit YAML
+weight: 41
 ---
-
-{{< edit_this_page >}}
 
 ## Was & Warum?
 YAML, oder "YAML Ain't Markup Language", ist eine für Menschen lesbare Datenserialisierungssprache. Programmierer verwenden sie oft für Konfigurationsdateien und den Datenaustausch zwischen Sprachen. Ihre Einfachheit und Lesbarkeit machen sie besonders beliebt für Aufgaben, die das Einrichten von Umgebungen, Anwendungen oder Diensten betreffen, bei denen Konfigurationen entscheidend sind und leicht verstanden und bearbeitet werden sollten.

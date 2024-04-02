@@ -9,9 +9,8 @@ summary: "Praca z XML obejmuje parsowanie, kwerendowanie i manipulowanie dokumen
   \ XML za pomoc\u0105 Javy. Programi\u015Bci robi\u0105 to dla wymiany danych, zarz\u0105\
   dzania\u2026"
 title: Praca z XML
+weight: 40
 ---
-
-{{< edit_this_page >}}
 
 ## Co i Dlaczego?
 Praca z XML obejmuje parsowanie, kwerendowanie i manipulowanie dokumentami XML za pomocą Javy. Programiści robią to dla wymiany danych, zarządzania konfiguracją i ponieważ wiele systemów dziedzicznych oraz API komunikuje się przy użyciu XML.

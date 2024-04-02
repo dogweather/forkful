@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Att tolka HTML med PHP inneb\xE4r att extrahera specifik information fr\xE5\
   n HTML-dokument. Programmerare utf\xF6r denna uppgift f\xF6r att automatisera\u2026"
 title: Tolka HTML
+weight: 43
 ---
-
-{{< edit_this_page >}}
 
 ## Vad & Varför?
 Att tolka HTML med PHP innebär att extrahera specifik information från HTML-dokument. Programmerare utför denna uppgift för att automatisera dataextrahering, webskrapning eller för att integrera innehåll från olika webbsidor inom sina applikationer, vilket förbättrar funktionaliteten utan manuella ingripanden.

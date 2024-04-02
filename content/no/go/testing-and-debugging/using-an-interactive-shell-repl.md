@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "En interaktiv shell, eller Read-Eval-Print Loop (REPL), lar deg eksperimentere\
   \ med Go-kode i sanntid, kj\xF8re kommandoer og f\xE5 umiddelbar tilbakemelding.\u2026"
 title: Bruk av interaktiv shell (REPL)
+weight: 34
 ---
-
-{{< edit_this_page >}}
 
 ## Hva & Hvorfor?
 

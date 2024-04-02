@@ -9,9 +9,8 @@ summary: "Cr\xE9er un fichier temporaire permet de stocker des donn\xE9es qui ne
   \ n\xE9cessaires que bri\xE8vement. Les programmeurs le font pour g\xE9rer l'espace\
   \ de stockage\u2026"
 title: "Cr\xE9ation d'un fichier temporaire"
+weight: 21
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 Créer un fichier temporaire permet de stocker des données qui ne sont nécessaires que brièvement. Les programmeurs le font pour gérer l'espace de stockage efficacement et garder des données volatiles sans encombrer la mémoire permanente.

@@ -11,9 +11,8 @@ summary: "Regulj\xE4ra uttryck, ett kraftfullt verktyg f\xF6r m\xF6nsterigenk\xE
   nning och datahantering, \xE4r essentiella i textbehandlingsuppgifter s\xE5som att\
   \ validera\u2026"
 title: "Att anv\xE4nda regulj\xE4ra uttryck"
+weight: 11
 ---
-
-{{< edit_this_page >}}
 
 ## Vad & Varför?
 Reguljära uttryck, ett kraftfullt verktyg för mönsterigenkänning och datahantering, är essentiella i textbehandlingsuppgifter såsom att validera inmatning, söka och ersätta text. Programmerare använder dem omfattande för att hantera komplex strängtolkning och datavalidering effektivt och koncist.

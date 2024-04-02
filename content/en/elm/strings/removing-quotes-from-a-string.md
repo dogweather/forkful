@@ -7,9 +7,8 @@ model: gpt-4-1106-preview
 summary: "Removing quotes from a string means stripping away those extra double or\
   \ single quotation marks that you don't actually need in the processed text.\u2026"
 title: Removing quotes from a string
+weight: 9
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 Removing quotes from a string means stripping away those extra double or single quotation marks that you don't actually need in the processed text. Programmers do this to sanitize input, prepare data for storage, or make the output more human-readable when quotes are not necessary for the given context.

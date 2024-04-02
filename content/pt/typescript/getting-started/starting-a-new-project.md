@@ -8,9 +8,8 @@ model: gpt-4-1106-preview
 summary: "Come\xE7ar um novo projeto \xE9 como abrir um livro em branco para um programador:\
   \ \xE9 uma oportunidade de criar algo do zero. Programadores come\xE7am novos\u2026"
 title: Iniciando um novo projeto
+weight: 1
 ---
-
-{{< edit_this_page >}}
 
 ## O que é & Por que?
 Começar um novo projeto é como abrir um livro em branco para um programador: é uma oportunidade de criar algo do zero. Programadores começam novos projetos para resolver problemas, explorar tecnologias novas, ou simplesmente por diversão.

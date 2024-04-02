@@ -9,9 +9,8 @@ summary: "Arrondir des nombres consiste \xE0 r\xE9duire un d\xE9cimal \xE0 sa va
   \ enti\xE8re la plus proche ou \xE0 un nombre d\xE9fini de d\xE9cimales. Les programmeurs\
   \ arrondissent\u2026"
 title: Arrondir les nombres
+weight: 13
 ---
-
-{{< edit_this_page >}}
 
 ## Quoi & Pourquoi ?
 Arrondir des nombres consiste à réduire un décimal à sa valeur entière la plus proche ou à un nombre défini de décimales. Les programmeurs arrondissent les nombres pour les rendre plus faciles à lire et à manipuler, en particulier lorsque la précision au-delà d'un certain point n'est pas nécessaire ou pourrait entraîner des erreurs.

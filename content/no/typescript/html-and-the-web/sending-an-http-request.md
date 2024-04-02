@@ -9,9 +9,8 @@ summary: "\xC5 sende en HTTP-foresp\xF8rsel er m\xE5ten nettlesere og servere sn
   \ med hverandre p\xE5; du sp\xF8r etter data, den returnerer data. Programmerere\
   \ gj\xF8r dette for\u2026"
 title: "\xC5 sende en HTTP-foresp\xF8rsel"
+weight: 44
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why? (Hva & Hvorfor?)
 Å sende en HTTP-forespørsel er måten nettlesere og servere snakker med hverandre på; du spør etter data, den returnerer data. Programmerere gjør dette for å hente eller sende informasjon fra servere, altså kommunisere med back-end og tredjepartstjenester.

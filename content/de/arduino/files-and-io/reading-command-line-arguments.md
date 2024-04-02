@@ -8,9 +8,8 @@ model: gpt-4-1106-preview
 summary: "Beim Lesen von Befehlszeilenargumenten geht es darum, Parameter an ein Programm\
   \ zu \xFCbergeben, wenn es gestartet wird. Programmierer nutzen das, um die\u2026"
 title: Lesen von Kommandozeilenargumenten
+weight: 23
 ---
-
-{{< edit_this_page >}}
 
 ## Was & Warum?
 Beim Lesen von Befehlszeilenargumenten geht es darum, Parameter an ein Programm zu übergeben, wenn es gestartet wird. Programmierer nutzen das, um die Flexibilität ihrer Sketche zu erhöhen und Benutzereingaben zu ermöglichen, ohne den Code zu ändern.

@@ -9,9 +9,8 @@ summary: "Searching and replacing text in Java scribbles over original strings w
   \ new characters - think of it as digital white-out. Programmers often use this\
   \ to\u2026"
 title: Searching and replacing text
+weight: 10
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 

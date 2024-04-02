@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Komennoriviparametrien lukeminen Go:ssa tarkoittaa ohjelmalle sen k\xE4\
   ynnistyksen yhteydess\xE4 terminaalista tai komentokehotteesta annettujen argumenttien\u2026"
 title: Komentorivin argumenttien lukeminen
+weight: 23
 ---
-
-{{< edit_this_page >}}
 
 ## Mitä & Miksi?
 

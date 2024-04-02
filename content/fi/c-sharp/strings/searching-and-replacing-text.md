@@ -7,9 +7,8 @@ model: gpt-4-1106-preview
 summary: "Ohjelmoinnissa tekstinhaku ja -korvaus tarkoittaa merkkijonon etsimist\xE4\
   \ ja sen korvaamista toisella. Sit\xE4 k\xE4ytet\xE4\xE4n tiedon muokkaukseen ja\u2026"
 title: Tekstin etsiminen ja korvaaminen
+weight: 10
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why? (Mitä & Miksi?)
 Ohjelmoinnissa tekstinhaku ja -korvaus tarkoittaa merkkijonon etsimistä ja sen korvaamista toisella. Sitä käytetään tiedon muokkaukseen ja automatisointiin, esimerkiksi korjattaessa bugeja tai päivitettäessä tietoja.

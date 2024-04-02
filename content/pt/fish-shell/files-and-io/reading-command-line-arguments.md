@@ -9,9 +9,8 @@ summary: "Ler argumentos da linha de comandos \xE9 pegar as informa\xE7\xF5es qu
   \ um usu\xE1rio digita quando executa seu script. Programadores fazem isso para\
   \ permitir que os\u2026"
 title: Lendo argumentos da linha de comando
+weight: 23
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 Ler argumentos da linha de comandos é pegar as informações que um usuário digita quando executa seu script. Programadores fazem isso para permitir que os scripts sejam mais flexíveis e interativos.

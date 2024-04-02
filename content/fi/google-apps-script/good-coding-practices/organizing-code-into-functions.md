@@ -11,9 +11,8 @@ summary: "Koodin j\xE4rjest\xE4minen funktioihin tarkoittaa Google Apps Script -
   \ rakenteen j\xE4rjest\xE4mist\xE4 erottamalla loogiset osat toisistaan selv\xE4\
   sti erottuviksi\u2026"
 title: "Koodin j\xE4rjest\xE4minen funktioihin"
+weight: 18
 ---
-
-{{< edit_this_page >}}
 
 ## Mikä & Miksi?
 

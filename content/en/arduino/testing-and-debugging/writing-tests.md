@@ -7,9 +7,8 @@ model: gpt-4-0125-preview
 summary: "Writing tests in the Arduino environment refers to the process of creating\
   \ automated tests that validate the functionality of your code on Arduino\u2026"
 title: Writing tests
+weight: 36
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 

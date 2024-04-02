@@ -11,9 +11,8 @@ summary: "Regul\xE6re uttrykk (regex) gir en m\xE5te \xE5 s\xF8ke, matche og man
   \ strenger ved hjelp av definerte m\xF8nstre. Programmerere bruker dem omfattende\
   \ for\u2026"
 title: "Bruke regul\xE6re uttrykk"
+weight: 11
 ---
-
-{{< edit_this_page >}}
 
 ## Hva & Hvorfor?
 

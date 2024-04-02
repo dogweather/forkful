@@ -7,9 +7,8 @@ model: gpt-4-1106-preview
 summary: "Printing debug output is like leaving breadcrumbs in your code: it shows\
   \ the trail of data and logic flow during execution. Programmers use it to track\u2026"
 title: Printing debug output
+weight: 33
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 Printing debug output is like leaving breadcrumbs in your code: it shows the trail of data and logic flow during execution. Programmers use it to track down pesky bugs and to understand whether their code is behaving as expected.

@@ -7,9 +7,8 @@ model: gpt-4-1106-preview
 summary: "Eliminare caratteri corrispondenti a un modello (pattern) significa togliere\
   \ da una stringa tutti i caratteri che coincidono con un criterio specifico.\u2026"
 title: Eliminazione di caratteri che corrispondono a un pattern
+weight: 5
 ---
-
-{{< edit_this_page >}}
 
 ## Cosa & Perché?
 Eliminare caratteri corrispondenti a un modello (pattern) significa togliere da una stringa tutti i caratteri che coincidono con un criterio specifico. Programmatori lo fanno per pulire i dati, facilitare il parsing o per mettere a punto il formato del testo.

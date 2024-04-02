@@ -7,9 +7,8 @@ model: gpt-4-1106-preview
 summary: "Iniciar un nuevo proyecto es como poner la primera piedra de tu construcci\xF3\
   n digital; es el punto de partida para cualquier aplicaci\xF3n que planees\u2026"
 title: Iniciando un nuevo proyecto
+weight: 1
 ---
-
-{{< edit_this_page >}}
 
 ## ¿Qué & Por Qué?
 

@@ -9,9 +9,8 @@ summary: "Eliminar caracteres seg\xFAn un patr\xF3n es filtrar ciertos caractere
   \ de una cadena de texto, dejando solo los que necesitamos. Los programadores lo\
   \ hacen\u2026"
 title: "Eliminando caracteres que coinciden con un patr\xF3n"
+weight: 5
 ---
-
-{{< edit_this_page >}}
 
 ## Qué y Por Qué?
 Eliminar caracteres según un patrón es filtrar ciertos caracteres de una cadena de texto, dejando solo los que necesitamos. Los programadores lo hacen para limpiar y preparar datos, como quitar espacios o caracteres especiales antes de procesarlos.

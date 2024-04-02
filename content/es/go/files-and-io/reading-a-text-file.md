@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Leer un archivo de texto en Go implica acceder y recuperar contenido de\
   \ un archivo almacenado en disco para su procesamiento o an\xE1lisis. Los programadores\u2026"
 title: Leyendo un archivo de texto
+weight: 22
 ---
-
-{{< edit_this_page >}}
 
 ## ¿Qué y Por Qué?
 

@@ -9,9 +9,8 @@ summary: "Avrunding av tall inneb\xE6rer \xE5 justere dem til n\xE6rmeste hele t
   \ eller til en spesifisert grad av presisjon. Programmerere gj\xF8r dette for \xE5\
   \ forbedre\u2026"
 title: Avrunding av tall
+weight: 13
 ---
-
-{{< edit_this_page >}}
 
 ## Hva & Hvorfor?
 

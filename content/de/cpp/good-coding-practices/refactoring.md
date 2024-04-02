@@ -9,9 +9,8 @@ summary: "Refactoring ist der Prozess, die interne Struktur eines Computerprogra
   \ zu ver\xE4ndern, ohne sein externes Verhalten zu \xE4ndern. Programmierer nehmen\
   \ dies\u2026"
 title: Refactoring
+weight: 19
 ---
-
-{{< edit_this_page >}}
 
 ## Was & Warum?
 

@@ -8,9 +8,8 @@ model: gpt-4-1106-preview
 summary: "Lesing av tekstfil betyr \xE5 hente tekstdata fra en fil p\xE5 disket. Programmerere\
   \ gj\xF8r dette for \xE5 bearbeide data, konfigurere apper eller bare for \xE5 vise\u2026"
 title: Lese en tekstfil
+weight: 22
 ---
-
-{{< edit_this_page >}}
 
 ## Hva & Hvorfor?
 Lesing av tekstfil betyr å hente tekstdata fra en fil på disket. Programmerere gjør dette for å bearbeide data, konfigurere apper eller bare for å vise innholdet.

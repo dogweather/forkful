@@ -11,9 +11,8 @@ summary: "Przetwarzanie daty z ci\u0105gu znak\xF3w polega na konwertowaniu teks
   \ reprezentacji dat i czasu na format, kt\xF3ry mo\u017Cna \u0142atwo manipulowa\u0107\
   , przechowywa\u0107 lub\u2026"
 title: "Analiza sk\u0142adniowa daty z \u0142a\u0144cucha znak\xF3w"
+weight: 30
 ---
-
-{{< edit_this_page >}}
 
 ## Co i dlaczego?
 Przetwarzanie daty z ciągu znaków polega na konwertowaniu tekstowych reprezentacji dat i czasu na format, który można łatwo manipulować, przechowywać lub porównywać w programie Lua. Programiści wykonują to zadanie, aby ułatwić operacje takie jak planowanie, logowanie lub jakiekolwiek obliczenia czasowe oraz aby zniwelować różnicę między czytelnymi dla człowieka formatami dat a strukturalnymi typami danych, które komputer może efektywnie przetwarzać.

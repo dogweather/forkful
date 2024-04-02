@@ -11,9 +11,8 @@ summary: "Det \xE5 sette stor bokstav i en streng inneb\xE6rer \xE5 endre den f\
   rste bokstaven i hvert ord i strengen til stor bokstav, mens man s\xF8rger for at\
   \ resten forblir\u2026"
 title: Sette stor bokstav i en streng
+weight: 2
 ---
-
-{{< edit_this_page >}}
 
 ## Hva & Hvorfor?
 Det å sette stor bokstav i en streng innebærer å endre den første bokstaven i hvert ord i strengen til stor bokstav, mens man sørger for at resten forblir små bokstaver. Denne vanlige manipulasjonen av strenger er nyttig for formatering av tekst i applikasjoner, slik som forberedelse av brukernavn eller titler for visning i henhold til konvensjon eller grammatikal korrekthet.

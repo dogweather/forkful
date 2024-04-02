@@ -9,9 +9,8 @@ summary: "Logowanie jest jak prowadzenie dziennika dla twojej aplikacji; to prak
   \ rejestrowania zdarze\u0144, b\u0142\u0119d\xF3w i innych istotnych danych podczas\
   \ dzia\u0142ania\u2026"
 title: "Rejestrowanie zdarze\u0144"
+weight: 17
 ---
-
-{{< edit_this_page >}}
 
 ## Co i dlaczego?
 

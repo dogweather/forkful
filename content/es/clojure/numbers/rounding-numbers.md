@@ -9,9 +9,8 @@ summary: "Redondear n\xFAmeros trata de ajustar un n\xFAmero al entero m\xE1s ce
   \ o a una cierta precisi\xF3n decimal. Redondeamos los n\xFAmeros para simplificarlos\
   \ para la\u2026"
 title: "Redondeo de n\xFAmeros"
+weight: 13
 ---
-
-{{< edit_this_page >}}
 
 ## Qué y Por Qué?
 Redondear números trata de ajustar un número al entero más cercano, o a una cierta precisión decimal. Redondeamos los números para simplificarlos para la legibilidad humana, reducir la carga computacional o cumplir con requisitos numéricos específicos.

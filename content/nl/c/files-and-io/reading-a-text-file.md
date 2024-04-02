@@ -10,9 +10,8 @@ model: gpt-4-0125-preview
 summary: "Een tekstbestand lezen in C houdt in dat je een bestand op je systeem opent\
   \ om informatie te extraheren en deze naar behoefte te manipuleren of weer te\u2026"
 title: Een tekstbestand lezen
+weight: 22
 ---
-
-{{< edit_this_page >}}
 
 ## Wat & Waarom?
 

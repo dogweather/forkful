@@ -11,9 +11,8 @@ summary: "S\xE4\xE4nn\xF6lliset lausekkeet (regex) Javassa mahdollistavat tietty
   \ mallien m\xE4\xE4ritt\xE4misen haettavaksi, manipuloitavaksi tai merkkijonojen\
   \ validointiin\u2026"
 title: "S\xE4\xE4nn\xF6llisten lausekkeiden k\xE4ytt\xF6"
+weight: 11
 ---
-
-{{< edit_this_page >}}
 
 ## Mikä & Miksi?
 

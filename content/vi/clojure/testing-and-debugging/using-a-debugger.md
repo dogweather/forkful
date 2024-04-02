@@ -2,17 +2,18 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:08:49.513048-07:00
-description: "S\u1EED d\u1EE5ng m\u1ED9t tr\xECnh g\u1EE1 l\u1ED7i c\xF3 ngh\u0129\
-  a l\xE0 b\u1EA1n \u0111\xE3 trang b\u1ECB cho m\xECnh m\u1ED9t chi\u1EBFc k\xED\
-  nh l\xFAp \u0111\u1EC3 xem x\xE9t m\xE3 c\u1EE7a m\xECnh. C\xE1c l\u1EADp tr\xEC\
-  nh vi\xEAn l\xE0m \u0111i\u1EC1u n\xE0y \u0111\u1EC3 lo\u1EA1i b\u1ECF l\u1ED7i,\u2026"
+description: "Clojure d\u1EF1a v\xE0o M\xE1y \u1EA3o Java (JVM), v\xEC v\u1EADy nhi\u1EC1\
+  u vi\u1EC7c g\u1EE1 l\u1ED7i \u0111\u01B0\u1EE3c th\u1EF1c hi\u1EC7n v\u1EDBi c\xE1\
+  c c\xF4ng c\u1EE5 Java. M\u1ED9t c\xF4ng c\u1EE5 nh\u01B0 th\u1EBF l\xE0 `CIDER`,\
+  \ m\u1ED9t g\xF3i m\u1EA1nh m\u1EBD cho ph\xE1t\u2026"
 lastmod: '2024-03-13T22:44:36.159230-06:00'
 model: gpt-4-0125-preview
-summary: "S\u1EED d\u1EE5ng m\u1ED9t tr\xECnh g\u1EE1 l\u1ED7i c\xF3 ngh\u0129a l\xE0\
-  \ b\u1EA1n \u0111\xE3 trang b\u1ECB cho m\xECnh m\u1ED9t chi\u1EBFc k\xEDnh l\xFA\
-  p \u0111\u1EC3 xem x\xE9t m\xE3 c\u1EE7a m\xECnh. C\xE1c l\u1EADp tr\xECnh vi\xEA\
-  n l\xE0m \u0111i\u1EC1u n\xE0y \u0111\u1EC3 lo\u1EA1i b\u1ECF l\u1ED7i,\u2026"
+summary: "Clojure d\u1EF1a v\xE0o M\xE1y \u1EA3o Java (JVM), v\xEC v\u1EADy nhi\u1EC1\
+  u vi\u1EC7c g\u1EE1 l\u1ED7i \u0111\u01B0\u1EE3c th\u1EF1c hi\u1EC7n v\u1EDBi c\xE1\
+  c c\xF4ng c\u1EE5 Java. M\u1ED9t c\xF4ng c\u1EE5 nh\u01B0 th\u1EBF l\xE0 `CIDER`,\
+  \ m\u1ED9t g\xF3i m\u1EA1nh m\u1EBD cho ph\xE1t\u2026"
 title: "S\u1EED d\u1EE5ng b\u1ED9 g\u1EE1 l\u1ED7i"
+weight: 35
 ---
 
 ## Làm thế nào:

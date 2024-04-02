@@ -13,9 +13,8 @@ summary: "Chuy\u1EC3n \u0111\u1ED5i m\u1ED9t chu\u1ED7i sang ch\u1EEF th\u01B0\u
   n b\u1EA3n th\xE0nh c\xE1c ch\u1EEF c\xE1i in th\u01B0\u1EDDng t\u01B0\u01A1ng \u1EE9\
   ng c\u1EE7a ch\xFAng. C\xE1c l\u1EADp tr\xECnh vi\xEAn\u2026"
 title: "Chuy\u1EC3n \u0111\u1ED5i chu\u1ED7i th\xE0nh ch\u1EEF th\u01B0\u1EDDng"
+weight: 4
 ---
-
-{{< edit_this_page >}}
 
 ## Cái gì & Tại sao?
 Chuyển đổi một chuỗi sang chữ thường thay đổi tất cả các chữ cái in hoa trong văn bản thành các chữ cái in thường tương ứng của chúng. Các lập trình viên thực hiện điều này để đảm bảo tính nhất quán, đặc biệt là khi so sánh các chuỗi hoặc chuẩn hóa dữ liệu đầu vào.

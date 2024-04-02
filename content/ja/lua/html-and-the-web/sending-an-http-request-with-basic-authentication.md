@@ -19,9 +19,8 @@ summary: "HTTP\u30EA\u30AF\u30A8\u30B9\u30C8\u3092\u57FA\u672C\u8A8D\u8A3C\u3067
   \u3059\u308B\u305F\u3081\u306B\u3088\u304F\u4F7F\u308F\u308C\u307E\u3059\u3002"
 title: "\u57FA\u672C\u8A8D\u8A3C\u3092\u4F7F\u7528\u3057\u305FHTTP\u30EA\u30AF\u30A8\
   \u30B9\u30C8\u306E\u9001\u4FE1"
+weight: 45
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why? (なに？ どうして？)
 HTTPリクエストを基本認証で送るのは、サーバーに安全にデータを送ったり取ったりする方法です。これはウェブサービスと通信するときに、ユーザー名とパスワードを使って身元を確認するためによく使われます。

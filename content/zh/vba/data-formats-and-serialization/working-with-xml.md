@@ -17,9 +17,8 @@ summary: "\u5728 Visual Basic for Applications (VBA) \u4E2D\u5904\u7406 XML \u6D
   \u4E3A\u4ED6\u4EEC\u5E0C\u671B\u5C06 Office \u5E94\u7528\u7A0B\u5E8F\u4E0E\u53D1\
   \u51FA XML\u2026"
 title: "\u5904\u7406XML"
+weight: 40
 ---
-
-{{< edit_this_page >}}
 
 ## 是什么 & 为什么？
 

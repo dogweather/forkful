@@ -11,9 +11,8 @@ summary: "Tekstitiedoston lukeminen Go-kielell\xE4 sis\xE4lt\xE4\xE4 sis\xE4ll\x
   n hakemisen ja noutamisen levylt\xE4 tallennetusta tiedostosta k\xE4sittely\xE4\
   \ tai analysointia varten.\u2026"
 title: Tekstitiedoston lukeminen
+weight: 22
 ---
-
-{{< edit_this_page >}}
 
 ## Mikä & Miksi?
 

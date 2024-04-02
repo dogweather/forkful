@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Code opsplitsen in functies betekent scripts onderverdelen in kleinere,\
   \ herbruikbare blokken die specifieke taken uitvoeren. Het maakt de code netter,\u2026"
 title: Code organiseren in functies
+weight: 18
 ---
-
-{{< edit_this_page >}}
 
 ## Wat & Waarom?
 Code opsplitsen in functies betekent scripts onderverdelen in kleinere, herbruikbare blokken die specifieke taken uitvoeren. Het maakt de code netter, begrijpelijker en gemakkelijker om te debuggen.

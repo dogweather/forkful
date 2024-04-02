@@ -15,9 +15,8 @@ summary: "\u0110\u1ECDc m\u1ED9t t\u1EC7p v\u0103n b\u1EA3n c\xF3 ngh\u0129a l\x
   \ l\xFD, ph\xE2n t\xEDch, ho\u1EB7c hi\u1EC3n th\u1ECB d\u1EEF li\u1EC7u \u0111\xE3\
   \u2026"
 title: "\u0110\u1ECDc m\u1ED9t t\u1EC7p v\u0103n b\u1EA3n"
+weight: 22
 ---
-
-{{< edit_this_page >}}
 
 ## Gì & Tại Sao?
 

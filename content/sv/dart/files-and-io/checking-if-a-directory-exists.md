@@ -11,9 +11,8 @@ summary: "Att kontrollera om en katalog finns i Dart handlar om att verifiera n\
   rvaron av en katalog p\xE5 en angiven s\xF6kv\xE4g i filsystemet innan man utf\xF6\
   r operationer\u2026"
 title: Kontrollera om en katalog existerar
+weight: 20
 ---
-
-{{< edit_this_page >}}
 
 ## Vad & Varför?
 

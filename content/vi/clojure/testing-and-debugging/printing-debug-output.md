@@ -13,9 +13,8 @@ summary: "Vi\u1EC7c in ra \u0111\u1EA7u ra \u0111\u1EC3 g\u1EE1 l\u1ED7i gi\u1ED
   \ m\xE3 l\u1EC7nh c\u1EE7a b\u1EA1n: n\xF3 hi\u1EC3n th\u1ECB l\u1ED9 tr\xECnh c\u1EE7\
   a d\u1EEF li\u1EC7u v\xE0 lu\u1ED3ng l\xF4gic trong qu\xE1 tr\xECnh\u2026"
 title: "In ra th\xF4ng tin g\u1EE1 l\u1ED7i"
+weight: 33
 ---
-
-{{< edit_this_page >}}
 
 ## Gì và Tại Sao?
 Việc in ra đầu ra để gỡ lỗi giống như việc để lại những mẩu bánh mì trong mã lệnh của bạn: nó hiển thị lộ trình của dữ liệu và luồng lôgic trong quá trình thực thi. Lập trình viên sử dụng nó để truy tìm những lỗi khó chịu và để hiểu liệu mã của họ có đang hoạt động như mong đợi hay không.

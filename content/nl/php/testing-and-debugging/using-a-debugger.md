@@ -2,13 +2,14 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:09:10.457969-07:00
-description: "Een debugger is een hulpmiddel dat programmeurs helpt te begrijpen wat\
-  \ hun code daadwerkelijk doet terwijl deze wordt uitgevoerd. Het is de vergrootglas\u2026"
+description: "PHP wordt geleverd met een interactieve debugger genaamd Xdebug. Zo\
+  \ gebruik je het. Eerst, zorg ervoor dat je Xdebug hebt ge\xEFnstalleerd en geconfigureerd\u2026"
 lastmod: '2024-03-13T22:44:50.899950-06:00'
 model: gpt-4-0125-preview
-summary: "Een debugger is een hulpmiddel dat programmeurs helpt te begrijpen wat hun\
-  \ code daadwerkelijk doet terwijl deze wordt uitgevoerd. Het is de vergrootglas\u2026"
+summary: "PHP wordt geleverd met een interactieve debugger genaamd Xdebug. Zo gebruik\
+  \ je het. Eerst, zorg ervoor dat je Xdebug hebt ge\xEFnstalleerd en geconfigureerd\u2026"
 title: Een debugger gebruiken
+weight: 35
 ---
 
 ## Hoe te gebruiken:

@@ -11,9 +11,8 @@ summary: "Scrivere un file di testo in Go comporta la creazione e la scrittura d
   \ stringhe di dati in un file di testo nuovo o esistente. I programmatori fanno\
   \ ci\xF2\u2026"
 title: Scrivere un file di testo
+weight: 24
 ---
-
-{{< edit_this_page >}}
 
 ## Cosa e perché?
 

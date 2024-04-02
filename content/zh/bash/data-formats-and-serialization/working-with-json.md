@@ -19,9 +19,8 @@ summary: "\u5728Bash\u7F16\u7A0B\u4E2D\u5904\u7406JSON\u6D89\u53CA\u5230\u4ECE\u
   \u672C\u5728\u4E00\u4E2A\u91CD\u5EA6\u4F9D\u8D56JSON\u7684\u751F\u6001\u7CFB\u7EDF\
   \u4E2D\u66F4\u52A0\u5F3A\u5927\u548C\u76F8\u5173\u3002"
 title: "\u4F7F\u7528JSON\u8FDB\u884C\u7F16\u7A0B"
+weight: 38
 ---
-
-{{< edit_this_page >}}
 
 ## 什么 & 为什么？
 在Bash编程中处理JSON涉及到从命令行直接解析、提取和操作JSON数据。程序员经常这样做是为了无缝地将shell脚本与网络API和现代数据交换格式整合在一起，使得Bash脚本在一个重度依赖JSON的生态系统中更加强大和相关。

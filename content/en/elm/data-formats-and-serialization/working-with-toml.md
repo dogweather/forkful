@@ -7,9 +7,8 @@ model: gpt-4-1106-preview
 summary: "TOML, short for Tom's Obvious, Minimal Language, is a data serialization\
   \ language. Elm programmers use it to manage configuration data because it's human-\u2026"
 title: Working with TOML
+weight: 39
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 TOML, short for Tom's Obvious, Minimal Language, is a data serialization language. Elm programmers use it to manage configuration data because it's human-readable and maps neatly to key-value pairs needed in applications.

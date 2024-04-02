@@ -9,9 +9,8 @@ summary: "Convertir une cha\xEEne en minuscules, c'est transformer tous les cara
   res d'une cha\xEEne de texte en leur \xE9quivalent minuscule. Les programmeurs font\
   \ cela\u2026"
 title: "Conversion d'une cha\xEEne de caract\xE8res en minuscules"
+weight: 4
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 Convertir une chaîne en minuscules, c'est transformer tous les caractères d'une chaîne de texte en leur équivalent minuscule. Les programmeurs font cela pour uniformiser les données, facilitant ainsi les comparaisons et recherches de texte.

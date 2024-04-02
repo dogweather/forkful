@@ -11,9 +11,8 @@ summary: "Nykyisen p\xE4iv\xE4m\xE4\xE4r\xE4n hakeminen on olennainen teht\xE4v\
   \ l\xE4hes miss\xE4 tahansa ohjelmointiprojektissa, oli kyse sitten toimintojen\
   \ lokituksesta sovelluksessa\u2026"
 title: "Nykyisen p\xE4iv\xE4m\xE4\xE4r\xE4n hankkiminen"
+weight: 29
 ---
-
-{{< edit_this_page >}}
 
 ## Mikä & Miksi?
 Nykyisen päivämäärän hakeminen on olennainen tehtävä lähes missä tahansa ohjelmointiprojektissa, oli kyse sitten toimintojen lokituksesta sovelluksessa tai päiväleimoilla varustettujen raporttien tuottamisesta. Rubyssa tämä on helposti saavutettavissa käyttämällä standardikirjastoa, mikä yksinkertaistaa päivämääriä sisältäviä operaatioita.

@@ -9,9 +9,8 @@ summary: "O tratamento de erros \xE9 sobre esperar o inesperado no c\xF3digo \u2
   \ gerenciar erros e problemas de forma graciosa sem falhar. Os programadores fazem\
   \ isso para\u2026"
 title: Tratamento de erros
+weight: 16
 ---
-
-{{< edit_this_page >}}
 
 ## O Que & Por Quê?
 

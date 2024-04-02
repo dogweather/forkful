@@ -11,9 +11,8 @@ summary: "Att arbeta med JSON (JavaScript Object Notation) i Clojure inneb\xE4r 
   \ tolka JSON-str\xE4ngar till Clojure-datastrukturer (kartor, vektorer) och tv\xE4\
   rtom.\u2026"
 title: Arbeta med JSON
+weight: 38
 ---
-
-{{< edit_this_page >}}
 
 ## Vad & Varför?
 Att arbeta med JSON (JavaScript Object Notation) i Clojure innebär att tolka JSON-strängar till Clojure-datastrukturer (kartor, vektorer) och tvärtom. Denna uppgift är grundläggande för webbtjänster, API:er och applikationer som behöver kommunicera data i ett strukturerat, textbaserat format eftersom JSON är universellt erkänt och stöds över olika programmeringsmiljöer.

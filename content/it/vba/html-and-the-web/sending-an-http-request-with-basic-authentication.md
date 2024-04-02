@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Inviare una richiesta HTTP con autenticazione di base in Visual Basic for\
   \ Applications (VBA) si riferisce all'accesso a risorse web protette da\u2026"
 title: Inviare una richiesta HTTP con autenticazione di base
+weight: 45
 ---
-
-{{< edit_this_page >}}
 
 ## Cosa & Perché?
 

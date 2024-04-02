@@ -7,9 +7,8 @@ model: gpt-4-1106-preview
 summary: "La ricerca e la sostituzione di testo \xE8 una manipolazione di stringhe\
   \ in cui troviamo certo contenuto e lo rimpiazziamo con altro. I programmatori lo\u2026"
 title: Ricerca e sostituzione del testo
+weight: 10
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 La ricerca e la sostituzione di testo è una manipolazione di stringhe in cui troviamo certo contenuto e lo rimpiazziamo con altro. I programmatori lo fanno per aggiornare i dati, correggere errori, o modificare codice in modo rapido.

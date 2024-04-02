@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Das Vergleichen von zwei Daten in der Programmierung ist eine grundlegende\
   \ Aufgabe, die Entwicklern erm\xF6glicht, die chronologische Beziehung zwischen\u2026"
 title: Zwei Daten vergleichen
+weight: 27
 ---
-
-{{< edit_this_page >}}
 
 ## Was & Warum?
 

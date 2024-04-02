@@ -9,9 +9,8 @@ summary: "TOML sta per Tom's Obvious, Minimal Language (Linguaggio Minimo e Ovvi
   \ di Tom). Viene utilizzato per i file di configurazione perch\xE9 \xE8 facile da\
   \ leggere\u2026"
 title: Lavorare con TOML
+weight: 39
 ---
-
-{{< edit_this_page >}}
 
 ## Cosa & Perché?
 TOML sta per Tom's Obvious, Minimal Language (Linguaggio Minimo e Ovvio di Tom). Viene utilizzato per i file di configurazione perché è facile da leggere e scrivere per gli umani, pur essendo facile da analizzare per le macchine. Gli sviluppatori optano per TOML per evitare l'ingombro di XML e le complessità di JSON quando manipolano le configurazioni.

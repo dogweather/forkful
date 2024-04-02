@@ -11,9 +11,8 @@ summary: "C-ohjelmoinnissa komentoriviparametrien lukeminen mahdollistaa sy\xF6t
   \ vastaanottamisen suoraan terminaalista, mik\xE4 lis\xE4\xE4 ohjelmien joustavuutta\
   \ ja\u2026"
 title: Komentorivin argumenttien lukeminen
+weight: 23
 ---
-
-{{< edit_this_page >}}
 
 ## Mikä & Miksi?
 

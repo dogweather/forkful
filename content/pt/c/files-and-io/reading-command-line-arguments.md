@@ -10,9 +10,8 @@ model: gpt-4-0125-preview
 summary: "Na programa\xE7\xE3o em C, a leitura de argumentos da linha de comando permite\
   \ que os programas aceitem entradas diretamente do terminal, aumentando a\u2026"
 title: Lendo argumentos da linha de comando
+weight: 23
 ---
-
-{{< edit_this_page >}}
 
 ## O Quê & Porquê?
 

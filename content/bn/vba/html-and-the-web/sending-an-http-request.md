@@ -26,9 +26,8 @@ summary: "\u09AD\u09BF\u099C\u09CD\u09AF\u09C1\u09AF\u09BC\u09BE\u09B2 \u09AC\u0
   \u0964\u2026"
 title: "HTTP \u0985\u09A8\u09C1\u09B0\u09CB\u09A7 \u09AA\u09CD\u09B0\u09C7\u09B0\u09A3\
   \ \u0995\u09B0\u09BE"
+weight: 44
 ---
-
-{{< edit_this_page >}}
 
 ## কি এবং কেন?
 

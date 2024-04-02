@@ -17,9 +17,8 @@ summary: "XML\uC744 \uB2E4\uB8EC\uB2E4\uB294 \uAC83\uC740 \uD504\uB85C\uADF8\uB7
   \ \uD639\uC740 XML\uC5D0 \uC758\uC874\uD558\uB294 SOAP\uACFC \uAC19\uC740 \uD45C\
   \uC900\uC744 \uB2E4\uB8F0 \uB54C XML\uC744 \uCC98\uB9AC\uD569\uB2C8\uB2E4."
 title: "XML \uB2E4\uB8E8\uAE30"
+weight: 40
 ---
-
-{{< edit_this_page >}}
 
 ## 무엇 & 왜?
 XML을 다룬다는 것은 프로그래밍을 사용해 XML 데이터를 파싱, 조작, 및 작성하는 것을 의미합니다. 프로그래머들은 서로 다른 시스템 간의 데이터 교환, 구성 파일, 혹은 XML에 의존하는 SOAP과 같은 표준을 다룰 때 XML을 처리합니다.

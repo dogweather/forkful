@@ -13,9 +13,8 @@ summary: "So s\xE1nh hai ng\xE0y trong PowerShell c\xF3 ngh\u0129a l\xE0 x\xE1c 
   c mu\u1ED9n h\u01A1n ng\xE0y kia hay kh\xF4ng. C\xE1c l\u1EADp tr\xECnh vi\xEAn\
   \ th\u01B0\u1EDDng\u2026"
 title: "So s\xE1nh hai ng\xE0y"
+weight: 27
 ---
-
-{{< edit_this_page >}}
 
 ## Cái gì & Tại sao?
 

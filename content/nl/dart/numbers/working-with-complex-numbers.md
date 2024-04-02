@@ -10,9 +10,8 @@ model: gpt-4-0125-preview
 summary: "Complexe getallen, bestaande uit een re\xEBel en een imaginair deel (gewoonlijk\
   \ aangeduid als a + bi), breiden het concept van de dimensieloze getallen uit\u2026"
 title: Werken met complexe getallen
+weight: 14
 ---
-
-{{< edit_this_page >}}
 
 ## Wat & Waarom?
 

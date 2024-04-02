@@ -9,9 +9,8 @@ summary: "\xC5 laste ned en nettside betyr \xE5 hente HTML-koden fra en webserve
   \ for \xE5 lagre eller behandle den lokalt. Programmerere gj\xF8r dette for \xE5\
   \ skrape data, teste\u2026"
 title: Nedlasting av en nettside
+weight: 42
 ---
-
-{{< edit_this_page >}}
 
 ## Hva & Hvorfor?
 

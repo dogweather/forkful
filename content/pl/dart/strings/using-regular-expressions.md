@@ -11,9 +11,8 @@ summary: "Wyra\u017Cenia regularne (regex) w Dart oferuj\u0105 pot\u0119\u017Cny
   b na wyszukiwanie i manipulowanie ci\u0105gami znak\xF3w, umo\u017Cliwiaj\u0105\
   c programistom wykonywanie\u2026"
 title: "Korzystanie z wyra\u017Ce\u0144 regularnych"
+weight: 11
 ---
-
-{{< edit_this_page >}}
 
 ## Co i dlaczego?
 Wyrażenia regularne (regex) w Dart oferują potężny sposób na wyszukiwanie i manipulowanie ciągami znaków, umożliwiając programistom wykonywanie skomplikowanych zadań przetwarzania tekstu w sposób wydajny. Rozumiejąc regex, deweloperzy mogą szybko wykonywać walidacje tekstu, szukać wzorców oraz przekształcać tekst, co jest niezbędne do przetwarzania formularzy, analizy danych oraz ogólnej manipulacji ciągami znaków w nowoczesnych aplikacjach.

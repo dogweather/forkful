@@ -11,9 +11,8 @@ summary: "\xC5 jobbe med JSON (JavaScript Object Notation) i C inneb\xE6rer \xE5
   \ generere og manipulere JSON datastrukturer. Programmerere gj\xF8r dette for \xE5\
   \u2026"
 title: Arbeide med JSON
+weight: 38
 ---
-
-{{< edit_this_page >}}
 
 ## Hva & Hvorfor?
 

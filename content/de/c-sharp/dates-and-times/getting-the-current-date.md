@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Das Abrufen des aktuellen Datums in C# beinhaltet das Abrufen der aktuellen\
   \ Datums- und Uhrzeitangaben vom System. Programmierer m\xFCssen oft auf diese\u2026"
 title: Den aktuellen Datum abrufen
+weight: 29
 ---
-
-{{< edit_this_page >}}
 
 ## Was & Warum?
 Das Abrufen des aktuellen Datums in C# beinhaltet das Abrufen der aktuellen Datums- und Uhrzeitangaben vom System. Programmierer müssen oft auf diese Informationen zugreifen, um Vorgänge zu protokollieren, Aktionen zu zeitstempeln oder Aufgaben innerhalb von Anwendungen zu planen, um sicherzustellen, dass Handlungen genau getimt und Daten mit präzisen Zeitstempeln versehen werden.

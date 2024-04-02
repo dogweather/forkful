@@ -9,9 +9,8 @@ summary: "String-interpolaatio sallii muuttujien arvojen sis\xE4llytt\xE4misen m
   \ suoraan. Koodarit k\xE4ytt\xE4v\xE4t sit\xE4 dynaamisen tekstin luomiseen ilman\
   \ tarvetta\u2026"
 title: Merkkijonon interpolointi
+weight: 8
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why? (Mitä & Miksi?)
 String-interpolaatio sallii muuttujien arvojen sisällyttämisen merkkijonoihin suoraan. Koodarit käyttävät sitä dynaamisen tekstin luomiseen ilman tarvetta monimutkaisille konkatenoinneille.

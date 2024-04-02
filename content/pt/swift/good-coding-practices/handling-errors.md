@@ -9,9 +9,8 @@ summary: "Tratar erros em Swift significa antecipar e responder a problemas que 
   \ quando seu c\xF3digo \xE9 executado. Fazemos isso para controlar o caos\u2014\
   evitando\u2026"
 title: Tratamento de erros
+weight: 16
 ---
-
-{{< edit_this_page >}}
 
 ## O Que & Porquê?
 Tratar erros em Swift significa antecipar e responder a problemas que surgem quando seu código é executado. Fazemos isso para controlar o caos—evitando que aplicativos travem e proporcionando uma experiência suave ao usuário.

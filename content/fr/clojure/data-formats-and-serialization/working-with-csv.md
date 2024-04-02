@@ -11,9 +11,8 @@ summary: "Travailler avec des fichiers CSV (Valeurs S\xE9par\xE9es par des Virgu
   \ implique l'analyse et la g\xE9n\xE9ration de donn\xE9es textuelles structur\xE9\
   es sous forme de\u2026"
 title: Travailler avec CSV
+weight: 37
 ---
-
-{{< edit_this_page >}}
 
 ## Quoi & Pourquoi ?
 

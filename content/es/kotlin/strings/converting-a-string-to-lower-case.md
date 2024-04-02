@@ -8,9 +8,8 @@ model: gpt-4-1106-preview
 summary: "Convertir una cadena a min\xFAsculas transforma todos los caracteres alfab\xE9\
   ticos en su equivalente en min\xFAsculas. Esto es \xFAtil para uniformizar datos,\u2026"
 title: "Conversi\xF3n de una cadena de texto a min\xFAsculas"
+weight: 4
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 Convertir una cadena a minúsculas transforma todos los caracteres alfabéticos en su equivalente en minúsculas. Esto es útil para uniformizar datos, realizar comparaciones insensibles a mayúsculas y simplificar la entrada de texto del usuario.

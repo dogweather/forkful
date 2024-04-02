@@ -7,9 +7,8 @@ model: gpt-4-1106-preview
 summary: "An interactive shell, or REPL (Read-Eval-Print Loop), lets you test code\
   \ in real time. Programmers use it to experiment, debug, and learn Ruby's nuances\u2026"
 title: Using an interactive shell (REPL)
+weight: 34
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 An interactive shell, or REPL (Read-Eval-Print Loop), lets you test code in real time. Programmers use it to experiment, debug, and learn Ruby's nuances without creating full-blown scripts.

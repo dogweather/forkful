@@ -13,9 +13,8 @@ summary: "CSV, vi\u1EBFt t\u1EAFt c\u1EE7a Comma-Separated Values (Gi\xE1 tr\u1E
   t \u0111\u1ECBnh d\u1EA1ng t\u1EC7p ph\u1ED5 bi\u1EBFn \u0111\u1EC3 l\u01B0u tr\u1EEF\
   \ d\u1EEF li\u1EC7u b\u1EA3ng. L\u1EADp tr\xECnh vi\xEAn s\u1EED\u2026"
 title: "L\xE0m vi\u1EC7c v\u1EDBi CSV"
+weight: 37
 ---
-
-{{< edit_this_page >}}
 
 ## Cái gì & Tại sao?
 CSV, viết tắt của Comma-Separated Values (Giá trị được phân tách bởi dấu phẩy), là một định dạng tệp phổ biến để lưu trữ dữ liệu bảng. Lập trình viên sử dụng nó bởi vì nó đơn giản, được hỗ trợ rộng rãi, và có thể dễ dàng đọc và viết bởi cả máy tính và con người.

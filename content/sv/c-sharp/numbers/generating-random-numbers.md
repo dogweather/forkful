@@ -9,9 +9,8 @@ summary: "Att generera slumptal i C# inneb\xE4r skapandet av of\xF6ruts\xE4gbara
   \ v\xE4rden inom ett angivet intervall. Programmerare anv\xE4nder dessa metoder\
   \ f\xF6r att\u2026"
 title: Generera slumptal
+weight: 12
 ---
-
-{{< edit_this_page >}}
 
 ## Vad & Varför?
 

@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Ottenere la data corrente in C# implica il recupero dei dettagli della data\
   \ e dell'ora correnti dal sistema. I programmatori spesso hanno bisogno di\u2026"
 title: Ottenere la data corrente
+weight: 29
 ---
-
-{{< edit_this_page >}}
 
 ## Cosa & Perché?
 Ottenere la data corrente in C# implica il recupero dei dettagli della data e dell'ora correnti dal sistema. I programmatori spesso hanno bisogno di accedere a queste informazioni per eseguire operazioni di registrazione, timestamping o pianificazione delle attività all'interno delle applicazioni, assicurando che le azioni siano temporizzate con precisione e i dati siano contrassegnati con timestamp precisi.

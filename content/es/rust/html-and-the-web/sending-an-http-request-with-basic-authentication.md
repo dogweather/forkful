@@ -7,9 +7,8 @@ model: gpt-4-1106-preview
 summary: "Enviar una solicitud HTTP con autenticaci\xF3n b\xE1sica es el proceso de\
   \ comunicarse con un servidor web usando credenciales codificadas en Base64\u2026"
 title: "Enviando una solicitud http con autenticaci\xF3n b\xE1sica"
+weight: 45
 ---
-
-{{< edit_this_page >}}
 
 ## Qué & Por Qué?
 

@@ -9,9 +9,8 @@ summary: "Zamiana tekstu na ma\u0142e litery to proces przekszta\u0142cania wszy
   \ znak\xF3w w \u0142a\u0144cuchu na ich odpowiedniki w dolnym rejestrowie. Programi\u015B\
   ci robi\u0105 to dla\u2026"
 title: "Konwersja ci\u0105gu znak\xF3w na ma\u0142e litery"
+weight: 4
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why? / Co i dlaczego?
 Zamiana tekstu na małe litery to proces przekształcania wszystkich znaków w łańcuchu na ich odpowiedniki w dolnym rejestrowie. Programiści robią to dla ujednolicenia danych, ułatwienia porównywania stringów oraz obsługi wyszukiwania bez wielkości liter.

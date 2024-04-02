@@ -9,9 +9,8 @@ summary: "Enlever les guillemets d'une cha\xEEne signifie retirer les caract\xE8
   \ de guillemets simples (`'`) ou doubles (`\"`) qui d\xE9finissent les litt\xE9\
   raux de cha\xEEne\u2026"
 title: "Retirer les guillemets d'une cha\xEEne"
+weight: 9
 ---
-
-{{< edit_this_page >}}
 
 ## Quoi & Pourquoi ?
 Enlever les guillemets d'une chaîne signifie retirer les caractères de guillemets simples (`'`) ou doubles (`"`) qui définissent les littéraux de chaîne dans le code. Les programmeurs font cela pour plusieurs raisons, telles que le formatage de sortie, la désinfection de l'entrée utilisateur, ou la préparation des chaînes pour l'analyse ou le stockage où les guillemets sont inutiles ou pourraient provoquer des erreurs.

@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Ooit moeten zoeken naar een datum in het verleden of toekomst? Programmatisch\
   \ berekenen we vaak datums voor deadlines, herinneringen of evenementen. Weten\u2026"
 title: Een datum in de toekomst of het verleden berekenen
+weight: 26
 ---
-
-{{< edit_this_page >}}
 
 ## Wat & Waarom?
 Ooit moeten zoeken naar een datum in het verleden of toekomst? Programmatisch berekenen we vaak datums voor deadlines, herinneringen of evenementen. Weten hoe neemt het giswerk weg en laat je app tijdgevoelige taken accuraat afhandelen.

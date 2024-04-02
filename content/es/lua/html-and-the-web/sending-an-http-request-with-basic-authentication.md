@@ -8,9 +8,8 @@ model: gpt-4-1106-preview
 summary: "Enviar una solicitud HTTP con autenticaci\xF3n b\xE1sica es incluir tus\
   \ credenciales en una solicitud web para acceder a recursos protegidos. Los programadores\u2026"
 title: "Enviando una solicitud http con autenticaci\xF3n b\xE1sica"
+weight: 45
 ---
-
-{{< edit_this_page >}}
 
 ## ¿Qué y Por Qué?
 Enviar una solicitud HTTP con autenticación básica es incluir tus credenciales en una solicitud web para acceder a recursos protegidos. Los programadores lo hacen para interactuar con APIs o servicios web que requieren autenticización.

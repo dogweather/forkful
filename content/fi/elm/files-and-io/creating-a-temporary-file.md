@@ -9,9 +9,8 @@ summary: "Luodaan v\xE4liaikainen tiedosto: se on tilap\xE4inen s\xE4ilytyspaikk
   \ datalle. K\xE4yt\xE4mme sit\xE4, kun haluamme k\xE4sitell\xE4 tietoa, jota ei\
   \ tarvitse s\xE4ilytt\xE4\xE4\u2026"
 title: "V\xE4liaikaistiedoston luominen"
+weight: 21
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why? (Mikä ja Miksi?)
 Luodaan väliaikainen tiedosto: se on tilapäinen säilytyspaikka datalle. Käytämme sitä, kun haluamme käsitellä tietoa, jota ei tarvitse säilyttää pysyvästi, tai kun teemme operaatioita, jotka saattavat kaatua, kuten tiedostojen latauksia.

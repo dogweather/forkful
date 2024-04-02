@@ -8,9 +8,8 @@ model: gpt-4-1106-preview
 summary: "Att skicka en HTTP-f\xF6rfr\xE5gan med grundl\xE4ggande autentisering inneb\xE4\
   r att man inkluderar anv\xE4ndarnamn och l\xF6senord kodat i bas64-format i requestens\u2026"
 title: "Skicka en HTTP-f\xF6rfr\xE5gan med Basic-autentisering"
+weight: 45
 ---
-
-{{< edit_this_page >}}
 
 ## Vad & Varför?
 

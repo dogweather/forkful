@@ -9,9 +9,8 @@ summary: "Lainausmerkkien poistaminen merkkijonosta tarkoittaa n\xE4iden kiusall
   \ lainausmerkkien h\xE4vitt\xE4mist\xE4, jotka voivat sotkea koodiasi, erityisesti\
   \ kun olet\u2026"
 title: Merkkijonosta lainausmerkkien poistaminen
+weight: 9
 ---
-
-{{< edit_this_page >}}
 
 ## Mikä & Miksi?
 Lainausmerkkien poistaminen merkkijonosta tarkoittaa näiden kiusallisten lainausmerkkien hävittämistä, jotka voivat sotkea koodiasi, erityisesti kun olet jäsentämässä dataa tai muodostamassa JSON-objekteja. Ohjelmoijat tekevät sen puhdistaakseen syötteitä, välttääkseen syntaksivirheitä ja saadakseen merkkijonot toimimaan paremmin muiden koodinsa osien kanssa.

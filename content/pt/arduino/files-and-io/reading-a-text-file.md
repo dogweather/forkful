@@ -7,9 +7,8 @@ model: gpt-4-1106-preview
 summary: "Ler um arquivo de texto consiste em acessar e interpretar os dados contidos\
   \ em um arquivo no formato texto. Programadores fazem isso para manipular e\u2026"
 title: Lendo um arquivo de texto
+weight: 22
 ---
-
-{{< edit_this_page >}}
 
 ## O Que & Porquê?
 

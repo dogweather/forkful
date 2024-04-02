@@ -9,9 +9,8 @@ summary: "La impresi\xF3n de salida de depuraci\xF3n es mostrar mensajes en la c
   \ para entender qu\xE9 est\xE1 pasando en el programa. Los programadores lo hacen\
   \ para\u2026"
 title: "Imprimiendo salida de depuraci\xF3n"
+weight: 33
 ---
-
-{{< edit_this_page >}}
 
 ## Qué y Por Qué?
 La impresión de salida de depuración es mostrar mensajes en la consola para entender qué está pasando en el programa. Los programadores lo hacen para seguir el flujo del código y detectar errores.

@@ -11,9 +11,8 @@ summary: "W TypeScript piszemy do standardowego b\u0142\u0119du (stderr) w celu 
   ania komunikat\xF3w b\u0142\u0119d\xF3w lub rejestracji bezpo\u015Brednio do strumienia\
   \ wyj\u015Bciowego b\u0142\u0119d\xF3w\u2026"
 title: "Pisanie do standardowego b\u0142\u0119du"
+weight: 25
 ---
-
-{{< edit_this_page >}}
 
 ## Co i dlaczego?
 W TypeScript piszemy do standardowego błędu (stderr) w celu wysyłania komunikatów błędów lub rejestracji bezpośrednio do strumienia wyjściowego błędów środowiska (np. konsoli w node.js lub przeglądarce internetowej). Jest to niezbędne do diagnozowania problemów bez ingerencji w standardowe wyjście (stdout), które jest zwykle używane dla danych programu, zapewniając, że obsługa błędów oraz rejestrowanie są zarządzane w sposób efektywny i spójny.

@@ -7,9 +7,8 @@ model: gpt-4-1106-preview
 summary: "Reading command line arguments lets your Swift program grab extra details\
   \ when users run it. This matters because it adds customizability and control\u2026"
 title: Reading command line arguments
+weight: 23
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 

@@ -23,9 +23,8 @@ summary: "Rust\uC5D0\uC11C \uD45C\uC900 \uC624\uB958(stderr)\uB85C \uC4F0\uAE30\
   \uADF8\uB098 \uD30C\uC77C\uB85C \uB9AC\uB2E4\uC774\uB809\uD2B8\uD558\uAE30 \uC27D\
   \uAC8C\u2026"
 title: "\uD45C\uC900 \uC5D0\uB7EC\uC5D0 \uC4F0\uAE30"
+weight: 25
 ---
-
-{{< edit_this_page >}}
 
 ## 무엇이며 왜인가?
 Rust에서 표준 오류(stderr)로 쓰기는 표준 출력(stdout)과 별개로 오류 메시지와 진단을 콘솔에 전달하는 것을 말합니다. 프로그래머들은 이를 통해 정상 프로그램 출력과 오류 메시지를 구분하여 오류를 적절히 처리하거나 실행 중에 로그나 파일로 리다이렉트하기 쉽게 만듭니다.

@@ -11,9 +11,8 @@ summary: "La suppression de caract\xE8res correspondant \xE0 un motif sp\xE9cifi
   \ est une technique utilis\xE9e pour nettoyer ou formater des cha\xEEnes de caract\xE8\
   res en\u2026"
 title: "Supprimer des caract\xE8res correspondant \xE0 un motif"
+weight: 5
 ---
-
-{{< edit_this_page >}}
 
 ## Quoi et Pourquoi ?
 

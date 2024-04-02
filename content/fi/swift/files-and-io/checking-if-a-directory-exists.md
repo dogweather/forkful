@@ -11,9 +11,8 @@ summary: "Hakemiston olemassaolon tarkistaminen tiedostoj\xE4rjestelm\xE4ss\xE4 
   \ oleellista, kun hallinnoit tiedostorakenteita Swift-sovelluksistasi k\xE4sin.\
   \ T\xE4m\xE4 teht\xE4v\xE4\u2026"
 title: Tarkistetaan, onko hakemisto olemassa
+weight: 20
 ---
-
-{{< edit_this_page >}}
 
 ## Mikä ja miksi?
 Hakemiston olemassaolon tarkistaminen tiedostojärjestelmässä on oleellista, kun hallinnoit tiedostorakenteita Swift-sovelluksistasi käsin. Tämä tehtävä mahdollistaa kehittäjille hakemistojen läsnäolon varmistamisen ennen niistä lukemista tai niihin kirjoittamista, välttäen näin mahdolliset suoritusaikaiset virheet.

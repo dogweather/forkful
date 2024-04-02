@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Virheiden kirjoittaminen standardivirheeseen (stderr) Elixiriss\xE4 on menetelm\xE4\
   \ virheilmoitusten ja diagnostiikkatietojen ohjaamiseksi erilleen\u2026"
 title: Kirjoittaminen standardivirheeseen
+weight: 25
 ---
-
-{{< edit_this_page >}}
 
 ## Mikä & Miksi?
 

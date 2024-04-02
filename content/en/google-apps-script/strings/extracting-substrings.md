@@ -7,9 +7,8 @@ model: gpt-4-0125-preview
 summary: "Extracting substrings involves taking a portion of a string - essentially\
   \ creating a new string from part of an existing one. Programmers do this for a\u2026"
 title: Extracting substrings
+weight: 6
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 

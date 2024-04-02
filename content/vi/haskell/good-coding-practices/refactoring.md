@@ -13,9 +13,8 @@ summary: "T\xE1i c\u1EA5u tr\xFAc l\xE0 qu\xE1 tr\xECnh ch\u1EC9nh s\u1EEDa m\xE
   n ngo\xE0i c\u1EE7a n\xF3. \u0110\xF3 t\u1EA5t c\u1EA3 l\xE0 v\u1EC1 vi\u1EC7c d\u1ECD\
   n d\u1EB9p v\xE0 t\u1ED5 ch\u1EE9c l\u1EA1i c\xF4ng vi\u1EC7c c\u1EE7a\u2026"
 title: "T\xE1i c\u1EA5u tr\xFAc m\xE3"
+weight: 19
 ---
-
-{{< edit_this_page >}}
 
 ## Cái gì và Tại sao?
 Tái cấu trúc là quá trình chỉnh sửa mã nguồn của bạn mà không thay đổi hành vi bên ngoài của nó. Đó tất cả là về việc dọn dẹp và tổ chức lại công việc của bạn để làm cho mã nguồn dễ đọc, bảo trì và mở rộng hơn. Nó cũng có thể giúp loại bỏ lỗi và cải thiện hiệu suất.

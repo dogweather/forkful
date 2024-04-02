@@ -9,9 +9,8 @@ summary: "Parsing HTML to proces analizy kodu HTML, by zrozumie\u0107 jego struk
   \ i wyodr\u0119bni\u0107 z niego dane. Programi\u015Bci robi\u0105 to, \u017Ceby\
   \ manipulowa\u0107 tym kodem lub\u2026"
 title: Przetwarzanie HTML
+weight: 43
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why? (Co i Dlaczego?)
 Parsing HTML to proces analizy kodu HTML, by zrozumieć jego strukturę i wyodrębnić z niego dane. Programiści robią to, żeby manipulować tym kodem lub pobierać informacje z dokumentów HTML, które można wykorzystać w różnych aplikacjach.

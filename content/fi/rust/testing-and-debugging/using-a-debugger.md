@@ -1,14 +1,15 @@
 ---
 date: 2024-01-26 04:10:11.665004-07:00
-description: "Debuggerin k\xE4ytt\xE4minen on kuin antaisi itsellesi r\xF6ntgenn\xE4\
-  \xF6n kurkistaa koodisi suoritukseen. Ohjelmoijat tekev\xE4t sen bongatakseen bugeja,\
-  \ ymm\xE4rt\xE4\xE4kseen\u2026"
+description: "Rust tukee useita debuggereita, mutta yleinen on `gdb` GNU/Linuxille\
+  \ tai `lldb` macOS:lle. Saatat my\xF6s k\xE4ytt\xE4\xE4 `rust-gdb`:t\xE4 tai `rust-lldb`:t\xE4\
+  , jotka\u2026"
 lastmod: '2024-03-13T22:44:56.361159-06:00'
 model: gpt-4-0125-preview
-summary: "Debuggerin k\xE4ytt\xE4minen on kuin antaisi itsellesi r\xF6ntgenn\xE4\xF6\
-  n kurkistaa koodisi suoritukseen. Ohjelmoijat tekev\xE4t sen bongatakseen bugeja,\
-  \ ymm\xE4rt\xE4\xE4kseen\u2026"
+summary: "Rust tukee useita debuggereita, mutta yleinen on `gdb` GNU/Linuxille tai\
+  \ `lldb` macOS:lle. Saatat my\xF6s k\xE4ytt\xE4\xE4 `rust-gdb`:t\xE4 tai `rust-lldb`:t\xE4\
+  , jotka\u2026"
 title: "Debuggerin k\xE4ytt\xF6"
+weight: 35
 ---
 
 ## Kuinka:

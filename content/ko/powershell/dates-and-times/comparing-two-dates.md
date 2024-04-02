@@ -16,9 +16,8 @@ summary: "\uB0A0\uC9DC \uBE44\uAD50\uB294 \uB450 \uB0A0\uC9DC\uAC00 \uAC19\uC740
   \uC545, \uC2DC\uAC04 \uAC04\uACA9 \uCE21\uC815 \uB4F1\uC744 \uC704\uD574 \uB0A0\uC9DC\
   \uB97C \uBE44\uAD50\uD569\uB2C8\uB2E4."
 title: "\uB450 \uB0A0\uC9DC \uBE44\uAD50\uD558\uAE30"
+weight: 27
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why? (무엇과 왜?)
 날짜 비교는 두 날짜가 같은지, 어느 것이 더 이전이나 더 최신인지를 판단하는 것입니다. 프로그래머는 기한 검사, 이벤트 순서 파악, 시간 간격 측정 등을 위해 날짜를 비교합니다.

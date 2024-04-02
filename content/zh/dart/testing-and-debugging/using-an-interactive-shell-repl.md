@@ -21,9 +21,8 @@ summary: "\u4E3A Dart \u8BBE\u8BA1\u7684\u4EA4\u4E92\u5F0F shell\uFF08REPL - \u8
   \u6D4B\u8BD5\u6765\u8C03\u8BD5\u6765\u8BF4\uFF0C\u90FD\u662F\u6781\u5176\u5B9D\u8D35\
   \u7684\u3002"
 title: "\u4F7F\u7528\u4EA4\u4E92\u5F0FShell\uFF08REPL\uFF09"
+weight: 34
 ---
-
-{{< edit_this_page >}}
 
 ## 什么 & 为什么？
 

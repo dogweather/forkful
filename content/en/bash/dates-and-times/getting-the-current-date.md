@@ -7,9 +7,8 @@ model: gpt-4-0125-preview
 summary: "Retrieving the current date in Bash involves using built-in commands to\
   \ display the date and time in various formats. Programmers use this functionality\u2026"
 title: Getting the current date
+weight: 29
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 Retrieving the current date in Bash involves using built-in commands to display the date and time in various formats. Programmers use this functionality for tasks such as timestamping logs, scheduling tasks, or just as part of their system information scripts to track when actions were performed.

@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Tekst zoeken en vervangen in C omvat het identificeren van specifieke substrings\
   \ binnen een grotere string en deze vervangen door andere substrings.\u2026"
 title: Tekst zoeken en vervangen
+weight: 10
 ---
-
-{{< edit_this_page >}}
 
 ## Wat & Waarom?
 

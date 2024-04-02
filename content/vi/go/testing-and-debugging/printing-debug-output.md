@@ -13,9 +13,8 @@ summary: "Trong l\u1EADp tr\xECnh m\xE1y t\xEDnh, \"In th\xF4ng \u0111i\u1EC7p g
   p th\xF4ng tin chi ti\u1EBFt gi\xFAp c\xE1c nh\xE0 ph\xE1t tri\u1EC3n hi\u1EC3u\
   \ \u0111\u01B0\u1EE3c lu\u1ED3ng th\u1EF1c hi\u1EC7n\u2026"
 title: "In \u0111\u1EA7u ra debug"
+weight: 33
 ---
-
-{{< edit_this_page >}}
 
 ## Gì & Tại Sao?
 

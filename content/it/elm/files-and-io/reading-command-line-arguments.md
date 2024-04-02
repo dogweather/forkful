@@ -9,9 +9,8 @@ summary: "La lettura degli argomenti da riga di comando consente al tuo programm
   \ di accettare input dall'utente esterno al tuo codice. I programmatori lo usano\
   \ per\u2026"
 title: Lettura degli argomenti della riga di comando
+weight: 23
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 La lettura degli argomenti da riga di comando consente al tuo programma di accettare input dall'utente esterno al tuo codice. I programmatori lo usano per rendere i loro applicativi più flessibili e interattivi.

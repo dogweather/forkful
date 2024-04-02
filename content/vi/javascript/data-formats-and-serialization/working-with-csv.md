@@ -13,9 +13,8 @@ summary: "L\xE0m vi\u1EC7c v\u1EDBi CSV (Comma-Separated Values - Gi\xE1 tr\u1EC
   \ ngh\u0129a l\xE0 ph\xE2n t\xEDch v\xE0 t\u1EA1o d\u1EEF li\u1EC7u v\u0103n b\u1EA3\
   n cho b\u1EA3ng t\xEDnh\u2026"
 title: "L\xE0m vi\u1EC7c v\u1EDBi CSV"
+weight: 37
 ---
-
-{{< edit_this_page >}}
 
 ## Cái gì và Tại sao?
 Làm việc với CSV (Comma-Separated Values - Giá trị tách bằng dấu phẩy) trong JavaScript thường có nghĩa là phân tích và tạo dữ liệu văn bản cho bảng tính hoặc truyền dữ liệu. Lập trình viên làm điều này bởi vì CSV rất phổ biến, nhẹ và dễ đọc hoặc tạo.

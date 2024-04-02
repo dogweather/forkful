@@ -7,9 +7,8 @@ model: gpt-4-1106-preview
 summary: "Entasser tout votre code dans un grand tas ? Mauvaise id\xE9e. Le d\xE9\
   couper en fonctions ? Bonne id\xE9e. Cela permet de garder votre code Elm propre,\u2026"
 title: Organisation du code en fonctions
+weight: 18
 ---
-
-{{< edit_this_page >}}
 
 ## Quoi et Pourquoi ?
 Entasser tout votre code dans un grand tas ? Mauvaise idée. Le découper en fonctions ? Bonne idée. Cela permet de garder votre code Elm propre, réutilisable et plus facile à tester. En organisant votre code en fonctions, vous regroupez le code qui effectue des tâches spécifiques ensemble, ce qui rend votre application plus maintenable et compréhensible.

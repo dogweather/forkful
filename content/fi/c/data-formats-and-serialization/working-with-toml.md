@@ -11,9 +11,8 @@ summary: "TOML (Tom's Obvious, Minimal Language) on konfiguraatiotiedostomuoto, 
   \ on helppolukuinen selkeiden semantiikkojensa ansiosta. Ohjelmoijat k\xE4ytt\xE4\
   v\xE4t\u2026"
 title: "TOML:n kanssa ty\xF6skentely"
+weight: 39
 ---
-
-{{< edit_this_page >}}
 
 ## Mikä & Miksi?
 

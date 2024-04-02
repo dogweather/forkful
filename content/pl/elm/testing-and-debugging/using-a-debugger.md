@@ -1,14 +1,15 @@
 ---
 date: 2024-01-26 03:49:16.521767-07:00
-description: "Debugowanie w Elm polega na identyfikacji i usuwaniu b\u0142\u0119d\xF3\
-  w z kodu. Programi\u015Bci robi\u0105 to, aby zapewni\u0107 poprawne dzia\u0142\
-  anie swoich aplikacji i poprawi\u0107\u2026"
+description: "Elm nie posiada wbudowanego debugera w tradycyjnym sensie, w jaki ma\
+  \ to miejsce np. w JavaScript z narz\u0119dziami deweloperskimi przegl\u0105darki.\
+  \ Jednak\u017Ce\u2026"
 lastmod: '2024-03-13T22:44:35.326244-06:00'
 model: gpt-4-0125-preview
-summary: "Debugowanie w Elm polega na identyfikacji i usuwaniu b\u0142\u0119d\xF3\
-  w z kodu. Programi\u015Bci robi\u0105 to, aby zapewni\u0107 poprawne dzia\u0142\
-  anie swoich aplikacji i poprawi\u0107\u2026"
+summary: "Elm nie posiada wbudowanego debugera w tradycyjnym sensie, w jaki ma to\
+  \ miejsce np. w JavaScript z narz\u0119dziami deweloperskimi przegl\u0105darki.\
+  \ Jednak\u017Ce\u2026"
 title: Korzystanie z debugera
+weight: 35
 ---
 
 ## Jak to zrobić:

@@ -11,9 +11,8 @@ summary: "\xC5 jobbe med CSV (kommaseparerte verdier) i JavaScript inneb\xE6rer 
   \ eller generering av CSV-filer for enten \xE5 ta inn tabul\xE6re data fra eksterne\
   \ kilder\u2026"
 title: Arbeide med CSV
+weight: 37
 ---
-
-{{< edit_this_page >}}
 
 ## Hva & Hvorfor?
 Å jobbe med CSV (kommaseparerte verdier) i JavaScript innebærer parsing eller generering av CSV-filer for enten å ta inn tabulære data fra eksterne kilder eller eksportere data for bruk i andre programmer. Programmerere gjør dette fordi det muliggjør enkel, lettvekts datautveksling mellom applikasjoner, databaser og systemer der mer komplekse formater som JSON kan være overkill.

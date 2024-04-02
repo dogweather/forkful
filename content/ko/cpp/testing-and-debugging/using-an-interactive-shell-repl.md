@@ -17,9 +17,8 @@ summary: "REPL(\uC77D\uAE30-\uD3C9\uAC00-\uCD9C\uB825-\uBC18\uBCF5)\uC740 \uAC04
   \uBC84\uD5E4\uB4DC \uC5C6\uC774 \uC0C8\uB85C\uC6B4 \uAC1C\uB150\uC744 \uC774\uD574\
   \uD558\uAE30 \uC704\uD574 \uC774\uB97C \uC0AC\uC6A9\uD569\uB2C8\uB2E4."
 title: "\uC778\uD130\uB799\uD2F0\uBE0C \uC178 (REPL) \uC0AC\uC6A9\uD558\uAE30"
+weight: 34
 ---
-
-{{< edit_this_page >}}
 
 ## 무엇인가 & 왜인가?
 REPL(읽기-평가-출력-반복)은 간단한 인터랙티브 프로그래밍 환경입니다. 프로그래머들은 실시간 언어 실험, 간단한 작업 또는 전체 애플리케이션을 생성하는 오버헤드 없이 새로운 개념을 이해하기 위해 이를 사용합니다.

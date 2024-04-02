@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "\xC5 fjerne anf\xF8rselstegn fra en streng i Go handler om \xE5 eliminere\
   \ de ledende og avsluttende anf\xF8rselstegnene (`\"` eller `'`) fra en gitt streng.\u2026"
 title: "Fjerner anf\xF8rselstegn fra en streng"
+weight: 9
 ---
-
-{{< edit_this_page >}}
 
 ## Hva & Hvorfor?
 

@@ -9,9 +9,8 @@ summary: "Szukanie i zamiana tekstu to zamiana jednego ci\u0105gu znak\xF3w na i
   \ Programi\u015Bci wykorzystuj\u0105 t\u0119 technik\u0119, by automatycznie korygowa\u0107\
   \ b\u0142\u0119dy, aktualizowa\u0107\u2026"
 title: Wyszukiwanie i zamiana tekstu
+weight: 10
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why? (Co i Dlaczego?)
 Szukanie i zamiana tekstu to zamiana jednego ciągu znaków na inny. Programiści wykorzystują tę technikę, by automatycznie korygować błędy, aktualizować dane lub modyfikować kod.

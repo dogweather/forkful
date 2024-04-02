@@ -9,9 +9,8 @@ summary: "Att generera slumpm\xE4ssiga nummer i Ruby inneb\xE4r att skapa nummer
   \ inte kan f\xF6ruts\xE4gas logiskt, vilket \xE4r avg\xF6rande f\xF6r scenarier\
   \ som simuleringar,\u2026"
 title: Generera slumptal
+weight: 12
 ---
-
-{{< edit_this_page >}}
 
 ## Vad & Varför?
 

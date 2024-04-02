@@ -7,9 +7,8 @@ model: gpt-4-0125-preview
 summary: "Error handling in Google Apps Script is about predicting, catching, and\
   \ responding to exceptions or errors that occur during script execution. Programmers\u2026"
 title: Handling errors
+weight: 16
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 

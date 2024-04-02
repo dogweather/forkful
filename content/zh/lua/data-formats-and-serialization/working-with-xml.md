@@ -13,9 +13,8 @@ summary: "\u4F7F\u7528 XML \u6D89\u53CA\u4F7F\u7528\u4EE3\u7801\u89E3\u6790\u548
   \u53D6\u3001\u5199\u5165\u548C\u4FEE\u6539\u6570\u636E\uFF0C\u8FD9\u79CD\u683C\u5F0F\
   \u5E7F\u6CDB\u7528\u4E8E\u6570\u636E\u4EA4\u6362\u548C\u5B58\u50A8\u3002"
 title: "\u5904\u7406XML"
+weight: 40
 ---
-
-{{< edit_this_page >}}
 
 ## 什么和为什么？
 使用 XML 涉及使用代码解析和操作 XML 文档。程序员这样做是为了以一种结构化、可移植的格式读取、写入和修改数据，这种格式广泛用于数据交换和存储。

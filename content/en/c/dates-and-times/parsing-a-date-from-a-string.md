@@ -7,9 +7,8 @@ model: gpt-4-0125-preview
 summary: "Parsing a date from a string in C involves converting textual representations\
   \ of dates into a format that programs can more effectively manipulate and\u2026"
 title: Parsing a date from a string
+weight: 30
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 

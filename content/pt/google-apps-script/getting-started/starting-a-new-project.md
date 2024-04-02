@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Iniciar um novo projeto no Google Apps Script (GAS) envolve a inicializa\xE7\
   \xE3o de um arquivo de script dentro do ecossistema do Google (Google Drive, Docs,\u2026"
 title: Iniciando um novo projeto
+weight: 1
 ---
-
-{{< edit_this_page >}}
 
 ## O Que & Por Quê?
 

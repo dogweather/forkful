@@ -15,9 +15,8 @@ summary: "\u0110\u1ED5 t\u1EA5t c\u1EA3 m\xE3 c\u1EE7a b\u1EA1n v\xE0o m\u1ED9t 
   a b\u1EA1n \u0111\u01B0\u1EE3c s\u1EA1ch s\u1EBD, c\xF3 th\u1EC3 t\xE1i s\u1EED\
   \ d\u1EE5ng\u2026"
 title: "S\u1EAFp x\u1EBFp m\xE3 th\xE0nh c\xE1c h\xE0m"
+weight: 18
 ---
-
-{{< edit_this_page >}}
 
 ## Cái gì và Tại sao?
 Đổ tất cả mã của bạn vào một đống lớn? Ý tưởng tồi. Chia nó thành các hàm? Ý tưởng tốt. Việc này giữ cho mã Elm của bạn được sạch sẽ, có thể tái sử dụng và dễ kiểm thử hơn. Bằng cách tổ chức mã của bạn thành các hàm, bạn nhóm các đoạn mã thực hiện các tác vụ cụ thể lại với nhau, làm cho ứng dụng của bạn dễ bảo trì và dễ hiểu hơn.

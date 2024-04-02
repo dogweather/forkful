@@ -9,9 +9,8 @@ summary: "Interaktiva skal, eller REPL (Read-Eval-Print Loop), l\xE5ter dig k\xF
   ra kod p\xE5 flyget, testa funktioner, algoritmer eller pilla med id\xE9er. De \xE4\
   r kodningens\u2026"
 title: "Anv\xE4nda en interaktiv skal (REPL)"
+weight: 34
 ---
-
-{{< edit_this_page >}}
 
 ## Vad & Varför?
 Interaktiva skal, eller REPL (Read-Eval-Print Loop), låter dig köra kod på flyget, testa funktioner, algoritmer eller pilla med idéer. De är kodningens klotterplank, snabba och smutsiga, utan att behöva sätta upp en hel utvecklingsmiljö.

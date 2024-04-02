@@ -11,9 +11,8 @@ summary: "PowerShellissa hakemiston olemassaolon tarkistaminen on yleinen teht\x
   v\xE4, joka auttaa skriptej\xE4 tekem\xE4\xE4n p\xE4\xE4t\xF6ksi\xE4 tiedostoj\xE4\
   rjestelm\xE4n rakenteeseen\u2026"
 title: Tarkistetaan, onko hakemisto olemassa
+weight: 20
 ---
-
-{{< edit_this_page >}}
 
 ## Mikä & Miksi?
 PowerShellissa hakemiston olemassaolon tarkistaminen on yleinen tehtävä, joka auttaa skriptejä tekemään päätöksiä tiedostojärjestelmän rakenteeseen perustuen—kuten välttämään virheitä vahvistamalla, että kohdehakemisto on paikallaan ennen luku- tai kirjoitusyritystä. Se on olennaista varmistaaksesi, että skriptisi toimii luotettavasti monenlaisissa ympäristöissä.

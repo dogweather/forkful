@@ -7,9 +7,8 @@ model: gpt-4-0125-preview
 summary: "Obtaining the current date in Java is a fundamental operation that allows\
   \ programmers to manipulate date objects for operations such as logging, date\u2026"
 title: Getting the current date
+weight: 29
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 Obtaining the current date in Java is a fundamental operation that allows programmers to manipulate date objects for operations such as logging, date calculations, and time-based conditions. It's vital in applications where tracking, scheduling, and temporal data analysis are crucial.

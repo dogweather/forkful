@@ -21,9 +21,8 @@ summary: "Google Apps Script\uC5D0\uC11C HTTP \uC694\uCCAD\uC744 \uBCF4\uB0B4\uB
   \uBC94\uC704\uD55C \uC6F9 \uC790\uC6D0 \uBC0F \uAE30\uB2A5\uC744 \uC9C1\uC811 Google\
   \ Apps\u2026"
 title: "HTTP \uC694\uCCAD \uBCF4\uB0B4\uAE30"
+weight: 44
 ---
-
-{{< edit_this_page >}}
 
 ## 무엇 & 왜?
 

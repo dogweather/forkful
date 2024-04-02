@@ -24,9 +24,8 @@ summary: "\uAE30\uBCF8 \uC778\uC99D\uC744 \uC0AC\uC6A9\uD558\uC5EC HTTP \uC694\u
   \uD569\uB2C8\uB2E4."
 title: "\uAE30\uBCF8 \uC778\uC99D\uC744 \uC774\uC6A9\uD55C HTTP \uC694\uCCAD \uC804\
   \uC1A1\uD558\uAE30"
+weight: 45
 ---
-
-{{< edit_this_page >}}
 
 ## 무엇 & 왜?
 

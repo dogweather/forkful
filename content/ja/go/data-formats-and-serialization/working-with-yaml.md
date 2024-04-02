@@ -11,9 +11,8 @@ summary: "Go\u3067\u306EYAML\u306E\u53D6\u308A\u6271\u3044\u306B\u306F\u3001\u4E
   \u9593\u306B\u3084\u3055\u3057\u3044\u30C7\u30FC\u30BF\u76F4\u5217\u5316\u6A19\u6E96\
   \u3067\u3042\u308BYAML\uFF08YAML Ain't Markup\u2026"
 title: "YAML\u3068\u306E\u4F5C\u696D"
+weight: 41
 ---
-
-{{< edit_this_page >}}
 
 ## 何となぜ？
 

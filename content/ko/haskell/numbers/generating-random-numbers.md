@@ -21,9 +21,8 @@ summary: "Haskell\uC5D0\uC11C \uB09C\uC218\uB97C \uC0DD\uC131\uD55C\uB2E4\uB294 
   \uAE4C\uC9C0 \uB2E4\uC591\uD55C \uC2DC\uB098\uB9AC\uC624\uC5D0\uC11C \uC911\uC694\
   \uD569\uB2C8\uB2E4."
 title: "\uB09C\uC218 \uC0DD\uC131"
+weight: 12
 ---
-
-{{< edit_this_page >}}
 
 ## 무엇 & 왜?
 

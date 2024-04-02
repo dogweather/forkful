@@ -9,9 +9,8 @@ summary: "TOML er et konfigurasjonsfilformat som er lett \xE5 lese p\xE5 grunn a
   \ sine klare semantikker. Programmerere bruker TOML for \xE5 h\xE5ndtere app-konfigurasjoner\
   \ og\u2026"
 title: Jobbe med TOML
+weight: 39
 ---
-
-{{< edit_this_page >}}
 
 ## Hva & Hvorfor?
 

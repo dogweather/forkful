@@ -9,9 +9,8 @@ summary: "Buscar y reemplazar texto es b\xE1sicamente encontrar una cadena de ca
   \ y sustituirla por otra diferente. Programadores lo hacen para modificar c\xF3\
   digo\u2026"
 title: Buscando y reemplazando texto
+weight: 10
 ---
-
-{{< edit_this_page >}}
 
 ## Qué y Por Qué?
 

@@ -9,9 +9,8 @@ summary: "Komentoriviparametrit ovat tietoja, jotka siirtyv\xE4t ohjelmaasi k\xE
   ynnistyksen yhteydess\xE4. Niit\xE4 k\xE4ytet\xE4\xE4n muokkaamaan ohjelman toimintaa\
   \ lennosta ja\u2026"
 title: Komennoriviparametrien lukeminen
+weight: 23
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why? (Mitä & Miksi?)
 Komentoriviparametrit ovat tietoja, jotka siirtyvät ohjelmaasi käynnistyksen yhteydessä. Niitä käytetään muokkaamaan ohjelman toimintaa lennosta ja antamaan tarvittava sisältö ilman kovakoodausta.

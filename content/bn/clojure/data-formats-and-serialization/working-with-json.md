@@ -22,9 +22,8 @@ summary: "Clojure \u098F JSON (JavaScript Object Notation) \u098F\u09B0 \u09B8\u
   \u2026"
 title: "JSON \u098F\u09B0 \u09B8\u09BE\u09A5\u09C7 \u0995\u09BE\u099C \u0995\u09B0\
   \u09BE"
+weight: 38
 ---
-
-{{< edit_this_page >}}
 
 ## কি ও কেন?
 Clojure এ JSON (JavaScript Object Notation) এর সাথে কাজ করা মানে JSON স্ট্রিংগুলিকে Clojure ডেটা স্ট্রাকচারগুলিতে (ম্যাপ, ভেক্টর) পার্স করা এবং উল্টোভাবে তা করা। ওয়েব সার্ভিস, API এবং অ্যাপ্লিকেশনগুলির জন্য এই কাজটি মৌলিক যা structured, টেক্সট-ভিত্তিক ফর্ম্যাটে ডেটা যোগাযোগের প্রয়োজন পূরণ করে, কারণ JSON সর্বজনীনভাবে স্বীকৃত এবং বিভিন্ন প্রোগ্রামিং পরিবেশে সমর্থিত।

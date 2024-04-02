@@ -9,9 +9,8 @@ summary: "Strenglengde handler om \xE5 telle antall tegn i en tekst. Vi gj\xF8r 
   \ for \xE5 validere inndata, bearbeide tekst, og for \xE5 limitere lengden p\xE5\
   \ en output."
 title: "Finn lengden p\xE5 en streng"
+weight: 7
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 Strenglengde handler om å telle antall tegn i en tekst. Vi gjør dette for å validere inndata, bearbeide tekst, og for å limitere lengden på en output.

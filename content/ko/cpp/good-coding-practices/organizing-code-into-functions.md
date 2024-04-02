@@ -21,9 +21,8 @@ summary: "\uCF54\uB4DC\uB97C \uD568\uC218\uB85C \uBD84\uD560\uD55C\uB2E4\uB294 \
   \ \uACF5\uC720\uD560 \uC900\uBE44\uAC00 \uB41C, \uAE54\uB054\uD558\uAC8C \uB77C\uBCA8\
   \uC774 \uBD99\uC740 \uB3C4\uAD6C \uC0C1\uC790\uB97C \uAC00\uC9C4\u2026"
 title: "\uCF54\uB4DC\uB97C \uD568\uC218\uB85C \uAD6C\uC131\uD558\uAE30"
+weight: 18
 ---
-
-{{< edit_this_page >}}
 
 ## 무엇 & 왜?
 코드를 함수로 분할한다는 것은 코드를 작고 재사용 가능한 조각으로 나누는 것을 의미합니다. 우리는 반복을 피하고, 코드의 가독성을 높이며, 디버깅과 테스팅을 단순화하기 위해 이렇게 합니다. 잘 조직된 함수들은 사용하고 공유할 준비가 된, 깔끔하게 라벨이 붙은 도구 상자를 가진 것과 같을 수 있습니다.

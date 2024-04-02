@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Travailler avec des nombres complexes en programmation implique de manipuler\
   \ des nombres qui ont \xE0 la fois une partie r\xE9elle et une partie imaginaire,\u2026"
 title: Travailler avec des nombres complexes
+weight: 14
 ---
-
-{{< edit_this_page >}}
 
 ## Quoi & Pourquoi ?
 

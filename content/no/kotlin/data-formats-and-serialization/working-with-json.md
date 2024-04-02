@@ -11,9 +11,8 @@ summary: "Arbeid med JSON (JavaScript Object Notation) i Kotlin involverer parsi
   \ og generering av JSON-data. Programmerere gj\xF8r dette for \xE5 enkelt utveksle\
   \ data\u2026"
 title: Arbeider med JSON
+weight: 38
 ---
-
-{{< edit_this_page >}}
 
 ## Hva og hvorfor?
 Arbeid med JSON (JavaScript Object Notation) i Kotlin involverer parsing og generering av JSON-data. Programmerere gjør dette for å enkelt utveksle data mellom ulike lag i en applikasjon, eller for å kommunisere med webtjenester, på grunn av JSONs lette og menneskelesbare format.

@@ -7,9 +7,8 @@ model: gpt-4-1106-preview
 summary: "Working with XML entails parsing, querying, and manipulating XML documents\
   \ with Java. Programmers do it for data interchange, configuration management,\u2026"
 title: Working with XML
+weight: 40
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 Working with XML entails parsing, querying, and manipulating XML documents with Java. Programmers do it for data interchange, configuration management, and because many legacy systems and APIs communicate using XML.

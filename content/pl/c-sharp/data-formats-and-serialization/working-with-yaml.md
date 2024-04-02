@@ -11,9 +11,8 @@ summary: "YAML, co oznacza \"YAML Ain't Markup Language\" (YAML nie jest j\u0119
   \ znacznik\xF3w), to format serializacji danych zrozumia\u0142y dla cz\u0142owieka.\
   \ Programi\u015Bci\u2026"
 title: Praca z YAML
+weight: 41
 ---
-
-{{< edit_this_page >}}
 
 ## Co i dlaczego?
 YAML, co oznacza "YAML Ain't Markup Language" (YAML nie jest językiem znaczników), to format serializacji danych zrozumiały dla człowieka. Programiści często używają go do plików konfiguracyjnych, komunikacji międzyprocesowej oraz przechowywania danych ze względu na jego prostotę i czytelność w porównaniu z innymi formatami danych, takimi jak XML czy JSON.

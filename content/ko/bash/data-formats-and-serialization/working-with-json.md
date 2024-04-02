@@ -21,9 +21,8 @@ summary: "Bash \uD504\uB85C\uADF8\uB798\uBC0D\uC5D0\uC11C JSON\uC744 \uB2E4\uB8E
   \uD558\uAC8C \uD1B5\uD569\uD558\uAE30 \uC704\uD574 \uC774\uB97C \uC218\uD589\uD558\
   \uBA70, \uC774\uB294 Bash \uC2A4\uD06C\uB9BD\uD305\uC744\u2026"
 title: "JSON\uACFC \uD568\uAED8 \uC77C\uD558\uAE30"
+weight: 38
 ---
-
-{{< edit_this_page >}}
 
 ## 무엇인가 & 왜?
 Bash 프로그래밍에서 JSON을 다루는 것은 커맨드 라인에서 직접 JSON 데이터를 파싱하고, 추출하며, 조작하는 것을 포함합니다. 프로그래머들은 종종 웹 API 및 현대 데이터 교환 포맷과 쉘 스크립트를 원활하게 통합하기 위해 이를 수행하며, 이는 Bash 스크립팅을 JSON이 많은 에코시스템에서 더 강력하고 관련 있게 만듭니다.

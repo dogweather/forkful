@@ -13,9 +13,8 @@ summary: "Vi\u1EC7c ghi v\xE0o l\u1ED7i chu\u1EA9n (`stderr`) l\xE0 vi\u1EC7c xu
   a d\u1EEF li\u1EC7u ch\xEDnh c\u1EE7a ch\u01B0\u01A1ng tr\xECnh nh\u01B0ng ch\u1EC9\
   \ ra l\u1ED7i ho\u1EB7c ch\u1EA9n \u0111o\xE1n. C\xE1c\u2026"
 title: "Ghi v\xE0o l\u1ED7i chu\u1EA9n"
+weight: 25
 ---
-
-{{< edit_this_page >}}
 
 ## Gì và Tại sao?
 

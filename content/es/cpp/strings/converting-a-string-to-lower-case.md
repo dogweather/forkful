@@ -9,9 +9,8 @@ summary: "Convertir una cadena de texto a min\xFAsculas significa pasar cada let
   \ may\xFAscula de un string a su equivalente en min\xFAscula. Los programadores\
   \ hacen esto\u2026"
 title: "Conversi\xF3n de una cadena de texto a min\xFAsculas"
+weight: 4
 ---
-
-{{< edit_this_page >}}
 
 ## ¿Qué & Por Qué?
 

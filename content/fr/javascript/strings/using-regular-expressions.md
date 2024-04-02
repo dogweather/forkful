@@ -10,9 +10,8 @@ model: gpt-4-0125-preview
 summary: "Les expressions r\xE9guli\xE8res (regex) en JavaScript sont des motifs utilis\xE9\
   s pour correspondre \xE0 des combinaisons de caract\xE8res dans des cha\xEEnes de\u2026"
 title: "Utilisation des expressions r\xE9guli\xE8res"
+weight: 11
 ---
-
-{{< edit_this_page >}}
 
 ## Quoi et pourquoi ?
 

@@ -10,9 +10,8 @@ model: gpt-4-0125-preview
 summary: "Lavorare con JSON implica analizzare le stringhe formattate JSON in strutture\
   \ dati che Elixir pu\xF2 manipolare e serializzare le strutture dati di Elixir di\u2026"
 title: Lavorare con JSON
+weight: 38
 ---
-
-{{< edit_this_page >}}
 
 ## Cosa & Perché?
 

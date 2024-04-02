@@ -7,9 +7,8 @@ model: gpt-4-0125-preview
 summary: "Parsing a date from a string involves converting textual representations\
   \ of dates and times into a format that can be easily manipulated, stored, or\u2026"
 title: Parsing a date from a string
+weight: 30
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 Parsing a date from a string involves converting textual representations of dates and times into a format that can be easily manipulated, stored, or compared within a Lua program. Programmers perform this task to facilitate operations such as scheduling, logging, or any temporal calculations and to bridge the gap between human-readable date formats and structured data types that a computer can efficiently process.

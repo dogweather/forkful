@@ -9,9 +9,8 @@ summary: "Arrondir les nombres consiste \xE0 ajuster un nombre au plus proche en
   \ ou \xE0 une certaine pr\xE9cision d\xE9cimale. Nous arrondissons les nombres pour\
   \ les\u2026"
 title: Arrondir les nombres
+weight: 13
 ---
-
-{{< edit_this_page >}}
 
 ## Quoi & Pourquoi ?
 Arrondir les nombres consiste à ajuster un nombre au plus proche entier ou à une certaine précision décimale. Nous arrondissons les nombres pour les simplifier pour la lisibilité humaine, réduire la charge de calcul ou répondre à des exigences numériques spécifiques.

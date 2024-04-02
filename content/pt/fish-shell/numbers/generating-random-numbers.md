@@ -9,9 +9,8 @@ summary: "Gerar n\xFAmeros aleat\xF3rios \xE9 uma tarefa fundamental em programa
   \xE3o, usada para tudo desde amostragem de dados at\xE9 o desenvolvimento de jogos.\
   \ No Fish Shell,\u2026"
 title: "Gera\xE7\xE3o de n\xFAmeros aleat\xF3rios"
+weight: 12
 ---
-
-{{< edit_this_page >}}
 
 ## O Que & Por Que?
 

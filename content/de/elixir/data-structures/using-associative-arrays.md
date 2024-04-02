@@ -11,9 +11,8 @@ summary: "In Elixir sind assoziative Arrays, genannt Maps, Sammlungen von Schl\x
   ssel-Wert-Paaren, bei denen ein einzigartiger Schl\xFCssel auf einen Wert zeigt.\
   \ Sie\u2026"
 title: Verwendung von assoziativen Arrays
+weight: 15
 ---
-
-{{< edit_this_page >}}
 
 ## Was & Warum?
 

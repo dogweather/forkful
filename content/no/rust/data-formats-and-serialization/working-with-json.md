@@ -11,9 +11,8 @@ summary: "\xC5 jobbe med JSON (JavaScript Object Notation) i Rust handler om \xE
   \ parse JSON-data til Rusts datastrukturer og serialisere Rusts datastrukturer tilbake\
   \ til\u2026"
 title: Arbeider med JSON
+weight: 38
 ---
-
-{{< edit_this_page >}}
 
 ## Hva & Hvorfor?
 

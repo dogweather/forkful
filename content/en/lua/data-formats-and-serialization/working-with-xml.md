@@ -7,9 +7,8 @@ model: gpt-4-1106-preview
 summary: "Working with XML involves parsing and manipulating XML documents using code.\
   \ Programmers do this to read, write, and modify data in a structured, portable\u2026"
 title: Working with XML
+weight: 40
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 Working with XML involves parsing and manipulating XML documents using code. Programmers do this to read, write, and modify data in a structured, portable format that’s widely used for data exchange and storage.

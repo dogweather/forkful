@@ -9,9 +9,8 @@ summary: "Fehler zu behandeln bedeutet, Code zu schreiben, der damit umgehen kan
   \ wenn etwas schiefgeht. Programmierer tun das, um Abst\xFCrze zu verhindern und\
   \ um\u2026"
 title: Fehlerbehandlung
+weight: 16
 ---
-
-{{< edit_this_page >}}
 
 ## Was & Warum?
 

@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Reguliere expressies (regex) bieden een manier om te zoeken, overeenkomsten\
   \ te vinden en strings te manipuleren met behulp van gedefinieerde patronen.\u2026"
 title: Reguliere expressies gebruiken
+weight: 11
 ---
-
-{{< edit_this_page >}}
 
 ## Wat & Waarom?
 

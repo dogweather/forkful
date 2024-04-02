@@ -11,9 +11,8 @@ summary: "\xC5 skrive en tekstfil i Google Apps Script lar utviklere lagre data 
   \ en vedvarende m\xE5te, noe som gj\xF8r det tilgjengelig for fremtidig bruk eller\
   \ analyse.\u2026"
 title: Skrive en tekstfil
+weight: 24
 ---
-
-{{< edit_this_page >}}
 
 ## Hva & Hvorfor?
 

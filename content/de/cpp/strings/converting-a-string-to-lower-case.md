@@ -7,9 +7,8 @@ model: gpt-4-1106-preview
 summary: "Das Umwandeln einer Zeichenfolge in Kleinbuchstaben bedeutet, alle Gro\xDF\
   buchstaben darin in ihre entsprechenden Kleinbuchstaben zu konvertieren.\u2026"
 title: Umformung eines Strings in Kleinbuchstaben
+weight: 4
 ---
-
-{{< edit_this_page >}}
 
 ## Was & Warum?
 Das Umwandeln einer Zeichenfolge in Kleinbuchstaben bedeutet, alle Großbuchstaben darin in ihre entsprechenden Kleinbuchstaben zu konvertieren. Programmierer verwenden diese Methode oft, um die Benutzereingabe zu normalisieren oder Vergleiche ohne Berücksichtigung von Groß- und Kleinschreibung durchzuführen.

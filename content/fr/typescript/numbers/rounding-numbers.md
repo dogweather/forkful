@@ -9,9 +9,8 @@ summary: "Arrondir les nombres consiste \xE0 r\xE9duire un chiffre \xE0 une pr\x
   cision sp\xE9cifique. Les programmeurs le font pour contr\xF4ler la sortie num\xE9\
   rique afin\u2026"
 title: Arrondir les nombres
+weight: 13
 ---
-
-{{< edit_this_page >}}
 
 ## Quoi & Pourquoi ?
 Arrondir les nombres consiste à réduire un chiffre à une précision spécifique. Les programmeurs le font pour contrôler la sortie numérique afin d'améliorer la lisibilité, les besoins d'affichage ou lorsque une précision spécifique est requise après des opérations qui produisent des résultats à virgule flottante.

@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Le espressioni regolari (regex) in PHP sono modelli usati per corrispondere\
   \ combinazioni di caratteri nelle stringhe, consentendo operazioni sofisticate\u2026"
 title: Utilizzo delle espressioni regolari
+weight: 11
 ---
-
-{{< edit_this_page >}}
 
 ## Cosa e Perché?
 

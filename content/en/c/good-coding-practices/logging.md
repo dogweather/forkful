@@ -7,9 +7,8 @@ model: gpt-4-0125-preview
 summary: "Logging in C involves recording the flow and notable events of a program\
   \ during its runtime, providing a tangible review of its behavior and performance.\u2026"
 title: Logging
+weight: 17
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 

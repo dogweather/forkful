@@ -10,9 +10,8 @@ model: gpt-4-0125-preview
 summary: "Att organisera kod i funktioner i C inneb\xE4r att bryta ner komplexa uppgifter\
   \ i mindre, \xE5teranv\xE4ndbara kodblock. Denna praxis f\xF6rb\xE4ttrar l\xE4sbarheten,\u2026"
 title: Organisering av kod i funktioner
+weight: 18
 ---
-
-{{< edit_this_page >}}
 
 ## Vad & Varför?
 

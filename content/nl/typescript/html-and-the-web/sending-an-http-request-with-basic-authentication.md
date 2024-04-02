@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "In TypeScript betekent het verzenden van een HTTP-verzoek met basisauthenticatie\
   \ het over het web schieten van data met een eenvoudige\u2026"
 title: Een HTTP-verzoek verzenden met basisauthenticatie
+weight: 45
 ---
-
-{{< edit_this_page >}}
 
 ## Wat & Waarom?
 

@@ -19,9 +19,8 @@ summary: "\u5728 PowerShell \u4E2D\uFF0C\u68C0\u67E5\u76EE\u5F55\u662F\u5426\u5B
   \u8BEF\u3002\u8FD9\u5BF9\u4E8E\u786E\u4FDD\u60A8\u7684\u811A\u672C\u5728\u4E0D\u540C\
   \u73AF\u5883\u4E2D\u53EF\u9760\u8FD0\u884C\u81F3\u5173\u91CD\u8981\u3002"
 title: "\u68C0\u67E5\u76EE\u5F55\u662F\u5426\u5B58\u5728"
+weight: 20
 ---
-
-{{< edit_this_page >}}
 
 ## 什么与为什么？
 在 PowerShell 中，检查目录是否存在是一个常见的任务，它帮助脚本根据文件系统结构做出决策——例如，在尝试读取或写入之前确认目标目录是否就绪以避免错误。这对于确保您的脚本在不同环境中可靠运行至关重要。

@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Att skapa en tempor\xE4r fil i Visual Basic for Applications (VBA) inneb\xE4\
   r att man programmeringsm\xE4ssigt genererar en fil f\xF6r kortvarig anv\xE4ndning,\u2026"
 title: "Skapa en tillf\xE4llig fil"
+weight: 21
 ---
-
-{{< edit_this_page >}}
 
 ## Vad & Varför?
 

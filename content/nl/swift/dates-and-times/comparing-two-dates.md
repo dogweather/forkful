@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Twee datums vergelijken is als vragen, \"Wie was er eerst, de kip of het\
   \ ei?\" maar dan met kalenderdatums. Programmeurs doen dit om evenementen te\u2026"
 title: Twee datums vergelijken
+weight: 27
 ---
-
-{{< edit_this_page >}}
 
 ## Wat & Waarom?
 Twee datums vergelijken is als vragen, "Wie was er eerst, de kip of het ei?" maar dan met kalenderdatums. Programmeurs doen dit om evenementen te sorteren, acties te triggeren en periodes te beoordelen.

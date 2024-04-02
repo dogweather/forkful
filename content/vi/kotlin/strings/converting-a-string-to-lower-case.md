@@ -13,9 +13,8 @@ summary: "Chuy\u1EC3n \u0111\u1ED5i m\u1ED9t chu\u1ED7i th\xE0nh ch\u1EEF th\u01
   i th\xE0nh ch\u1EEF th\u01B0\u1EDDng. C\xE1c l\u1EADp tr\xECnh vi\xEAn l\xE0m \u0111\
   i\u1EC1u n\xE0y \u0111\u1EC3 \u0111\u1EA3m b\u1EA3o t\xEDnh nh\u1EA5t qu\xE1n\u2026"
 title: "Chuy\u1EC3n \u0111\u1ED5i chu\u1ED7i th\xE0nh ch\u1EEF th\u01B0\u1EDDng"
+weight: 4
 ---
-
-{{< edit_this_page >}}
 
 ## Mục đích & Lý do
 Chuyển đổi một chuỗi thành chữ thường có nghĩa là biến mọi ký tự trong chuỗi thành chữ thường. Các lập trình viên làm điều này để đảm bảo tính nhất quán khi so sánh, sắp xếp hoặc lưu trữ văn bản.

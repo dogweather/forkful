@@ -9,9 +9,8 @@ summary: "Py\xF6rist\xE4minen on desimaalin s\xE4\xE4t\xE4mist\xE4 l\xE4himp\xE4
   n kokonaisarvoon tai tiettyyn m\xE4\xE4r\xE4\xE4n desimaalilukuja. Ohjelmoijat py\xF6\
   rist\xE4v\xE4t v\xE4hent\xE4\xE4kseen\u2026"
 title: "Numerojen py\xF6rist\xE4minen"
+weight: 13
 ---
-
-{{< edit_this_page >}}
 
 ## Mikä & Miksi?
 

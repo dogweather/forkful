@@ -11,9 +11,8 @@ summary: "Het berekenen van een datum in de toekomst of het verleden gaat over h
   \ manipuleren van datumobjecten om data te vinden die verder liggen dan of voor\
   \ de\u2026"
 title: Een datum in de toekomst of het verleden berekenen
+weight: 26
 ---
-
-{{< edit_this_page >}}
 
 ## Wat & Waarom?
 

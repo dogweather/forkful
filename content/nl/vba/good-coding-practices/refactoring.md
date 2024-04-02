@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Refactoring in programmeren houdt in dat je de structuur van code wijzigt\
   \ zonder het gedrag ervan te veranderen, om aspecten zoals leesbaarheid,\u2026"
 title: Refactoring
+weight: 19
 ---
-
-{{< edit_this_page >}}
 
 ## Wat & Waarom?
 

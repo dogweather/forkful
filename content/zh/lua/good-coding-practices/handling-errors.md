@@ -11,9 +11,8 @@ summary: "\u7F16\u7A0B\u4E2D\u7684\u9519\u8BEF\u5904\u7406\u662F\u6307\u9884\u65
   \u4E4E\u610F\u6599\u65F6\u7684\u89C4\u5212\u827A\u672F\uFF0C\u53EF\u4EE5\u8BA9\u4F60\
   \u7684\u7A0B\u5E8F\u5E73\u7A33\u8FD0\u884C\u3002"
 title: "\u5904\u7406\u9519\u8BEF"
+weight: 16
 ---
-
-{{< edit_this_page >}}
 
 ## 什么 & 为什么?
 编程中的错误处理是指预料到意外情况。这是一门当事情出乎意料时的规划艺术，可以让你的程序平稳运行。

@@ -11,9 +11,8 @@ summary: "\xC5 laste ned en nettside i C inneb\xE6rer \xE5 programmert f\xE5 til
   \ til innholdet p\xE5 en nettside over internett og lagre det lokalt for behandling\
   \ eller\u2026"
 title: Laste ned en nettside
+weight: 42
 ---
-
-{{< edit_this_page >}}
 
 ## Hva & Hvorfor?
 

@@ -8,9 +8,8 @@ model: gpt-4-1106-preview
 summary: "Procurar e substituir texto \xE9 reescrever partes espec\xEDficas de um\
   \ documento sem alterar o resto. Programadores fazem isso para corrigir erros, atualizar\u2026"
 title: Pesquisando e substituindo texto
+weight: 10
 ---
-
-{{< edit_this_page >}}
 
 ## O Que é & Porquê?
 Procurar e substituir texto é reescrever partes específicas de um documento sem alterar o resto. Programadores fazem isso para corrigir erros, atualizar informações ou alterar a configuração de forma eficiente em múltiplos arquivos.

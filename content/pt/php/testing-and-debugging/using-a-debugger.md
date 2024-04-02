@@ -1,14 +1,15 @@
 ---
 date: 2024-01-26 03:50:31.380799-07:00
-description: "Um depurador \xE9 uma ferramenta que ajuda os programadores a entender\
-  \ o que seu c\xF3digo est\xE1 realmente fazendo enquanto \xE9 executado. \xC9 a\
-  \ lupa que nos permite\u2026"
+description: "O PHP vem com um depurador interativo chamado Xdebug. Aqui est\xE1 como\
+  \ us\xE1-lo. Primeiro, verifique se voc\xEA tem o Xdebug instalado e configurado\
+  \ no seu\u2026"
 lastmod: '2024-03-13T22:44:46.671922-06:00'
 model: gpt-4-0125-preview
-summary: "Um depurador \xE9 uma ferramenta que ajuda os programadores a entender o\
-  \ que seu c\xF3digo est\xE1 realmente fazendo enquanto \xE9 executado. \xC9 a lupa\
-  \ que nos permite\u2026"
+summary: "O PHP vem com um depurador interativo chamado Xdebug. Aqui est\xE1 como\
+  \ us\xE1-lo. Primeiro, verifique se voc\xEA tem o Xdebug instalado e configurado\
+  \ no seu\u2026"
 title: Usando um depurador
+weight: 35
 ---
 
 ## Como fazer:

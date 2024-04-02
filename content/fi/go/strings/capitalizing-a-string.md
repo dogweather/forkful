@@ -10,9 +10,8 @@ model: gpt-4-0125-preview
 summary: "Merkkijonon alkukirjaimen muuttaminen suuraakkoseksi k\xE4sitt\xE4\xE4 annetun\
   \ merkkijonon ensimm\xE4isen merkin muuttamisen suuraakkoseksi, jos se on pienaakkonen,\u2026"
 title: Merkkijonon suuraakkostaminen
+weight: 2
 ---
-
-{{< edit_this_page >}}
 
 ## Mitä & Miksi?
 

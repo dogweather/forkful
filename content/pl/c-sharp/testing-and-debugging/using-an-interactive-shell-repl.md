@@ -9,9 +9,8 @@ summary: "REPL, czyli p\u0119tla Czytaj-Wykonaj-Wypisz, pozwala wpisywa\u0107 i 
   \ uruchamia\u0107 kod w C#. Programi\u015Bci u\u017Cywaj\u0105 go do szybkich eksperyment\xF3\
   w,\u2026"
 title: Korzystanie z interaktywnego shella (REPL)
+weight: 34
 ---
-
-{{< edit_this_page >}}
 
 ## Co i dlaczego?
 REPL, czyli pętla Czytaj-Wykonaj-Wypisz, pozwala wpisywać i interaktywnie uruchamiać kod w C#. Programiści używają go do szybkich eksperymentów, debugowania lub nauki C#, bez konieczności konfigurowania pełnych projektów.

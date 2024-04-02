@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Das Schreiben auf Standardfehler in Visual Basic for Applications (VBA)\
   \ bedeutet, Fehlermeldungen oder Diagnostiken getrennt von der Standardausgabe zu\u2026"
 title: Ausgabe auf Standardfehler
+weight: 25
 ---
-
-{{< edit_this_page >}}
 
 ## Was & Warum?
 

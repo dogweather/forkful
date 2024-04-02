@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Bestanden ter plaatse bewerken met CLI (Command Line Interface) one-liners\
   \ in Ruby stelt je in staat om bestanden rechtstreeks vanuit je terminal te\u2026"
 title: Bestanden ter plekke bewerken met CLI one-liners
+weight: 32
 ---
-
-{{< edit_this_page >}}
 
 ## Wat & Waarom?
 

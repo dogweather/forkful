@@ -8,9 +8,8 @@ model: gpt-4-0125-preview
 summary: "XML, abbreviazione di eXtensible Markup Language, \xE8 come il cugino prolisso\
   \ di JSON. Ti troverai a lottare con l'XML quando avrai a che fare con sistemi\u2026"
 title: Lavorare con XML
+weight: 40
 ---
-
-{{< edit_this_page >}}
 
 ## Cosa & Perché?
 XML, abbreviazione di eXtensible Markup Language, è come il cugino prolisso di JSON. Ti troverai a lottare con l'XML quando avrai a che fare con sistemi legacy, software enterprise o API che hanno saltato il carrozzone JSON. È essenziale per lo scambio di dati dove l'XML mantiene la sua posizione.

@@ -11,9 +11,8 @@ model: gpt-4-0125-preview
 summary: "Analisar uma data de uma string trata-se de pegar um texto, como \"2023-04-05\"\
   , e convert\xEA-lo em um formato de data que seu programa possa entender e\u2026"
 title: Analisando uma data a partir de uma string
+weight: 30
 ---
-
-{{< edit_this_page >}}
 
 ## O que e por quê?
 

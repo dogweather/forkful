@@ -8,9 +8,8 @@ model: gpt-4-0125-preview
 summary: "Una shell interattiva, o REPL (Read-Eval-Print Loop), ti permette di scrivere\
   \ ed eseguire codice PHP al volo. \xC8 ideale per la sperimentazione, il debug o\u2026"
 title: Utilizzo di un interprete interattivo (REPL)
+weight: 34
 ---
-
-{{< edit_this_page >}}
 
 ## Cos'è e perché?
 Una shell interattiva, o REPL (Read-Eval-Print Loop), ti permette di scrivere ed eseguire codice PHP al volo. È ideale per la sperimentazione, il debug o l'apprendimento, dato che puoi testare frammenti di codice senza l'onere di creare uno script completo.

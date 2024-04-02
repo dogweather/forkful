@@ -9,9 +9,8 @@ summary: "Virheiden k\xE4sittely tarkoittaa sellaisen koodin kirjoittamista, jok
   \ ennakoi ja k\xE4sittelee virhetilanteita. Ohjelmoijat tekev\xE4t sit\xE4 tehd\xE4\
   kseen\u2026"
 title: "Virheiden k\xE4sittely"
+weight: 16
 ---
-
-{{< edit_this_page >}}
 
 ## Mikä & Miksi?
 

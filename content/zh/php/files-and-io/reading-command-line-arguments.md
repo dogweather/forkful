@@ -14,9 +14,8 @@ summary: "\u5728 PHP \u4E2D\u8BFB\u53D6\u547D\u4EE4\u884C\u53C2\u6570\u4F7F\u621
   \u548C\u4EA4\u4E92\u6027\uFF0C\u8BA9\u7A0B\u5E8F\u53EF\u4EE5\u66F4\u5177\u6709\u9002\
   \u5E94\u6027\u3002"
 title: "\u8BFB\u53D6\u547D\u4EE4\u884C\u53C2\u6570"
+weight: 23
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why? 什么 & 为什么？
 在 PHP 中读取命令行参数使我们能在脚本执行时接受用户输入。程序员这么做是为了提高灵活性和交互性，让程序可以更具有适应性。

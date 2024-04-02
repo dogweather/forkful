@@ -13,9 +13,8 @@ summary: "\u4F7F\u7528Java\u5904\u7406XML\u6D89\u53CA\u5230\u89E3\u6790\u3001\u6
   \u7BA1\u7406\uFF0C\u4EE5\u53CA\u8BB8\u591A\u9057\u7559\u7CFB\u7EDF\u548CAPI\u4F7F\
   \u7528XML\u8FDB\u884C\u901A\u4FE1\u3002"
 title: "\u5904\u7406XML"
+weight: 40
 ---
-
-{{< edit_this_page >}}
 
 ## 什么与为什么？
 使用Java处理XML涉及到解析、查询和操作XML文档。程序员之所以这样做，是为了数据交换、配置管理，以及许多遗留系统和API使用XML进行通信。

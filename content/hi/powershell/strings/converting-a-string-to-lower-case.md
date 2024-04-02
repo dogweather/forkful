@@ -21,9 +21,8 @@ summary: "String \u0915\u094B lower case \u092E\u0947\u0902 \u092C\u0926\u0932\u
 title: "\u0938\u094D\u091F\u094D\u0930\u093F\u0902\u0917 \u0915\u094B \u091B\u094B\
   \u091F\u0947 \u0905\u0915\u094D\u0937\u0930\u094B\u0902 \u092E\u0947\u0902 \u092A\
   \u0930\u093F\u0935\u0930\u094D\u0924\u093F\u0924 \u0915\u0930\u0928\u093E"
+weight: 4
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why? (क्या और क्यों?)
 String को lower case में बदलना मतलब अक्षरों को छोटा करना। Programmers इसे तब करते हैं जब case sensitivity महत्वपूर्ण हो, जैसे यूजर इनपुट को साफ करना या डेटा की consistency बनाए रखना।

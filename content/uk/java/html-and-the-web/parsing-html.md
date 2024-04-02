@@ -7,9 +7,8 @@ model: unknown
 summary: Parsing HTML means extracting data from HTML files. Programmers do this to
   interact with web content, automate tasks, or scrape data.
 title: "\u041F\u0430\u0440\u0441\u0438\u043D\u0433 HTML"
+weight: 43
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why? (Що та Чому?)
 Parsing HTML means extracting data from HTML files. Programmers do this to interact with web content, automate tasks, or scrape data.

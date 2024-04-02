@@ -8,9 +8,8 @@ model: gpt-4-1106-preview
 summary: "L\xE4het\xE4mme HTTP-pyynt\xF6j\xE4 kommunikoidaksemme web-palvelimien kanssa.\
   \ Koodarit tekev\xE4t sen hakeakseen tietoa, l\xE4hett\xE4\xE4kseen dataa ja interaktoidakseen\u2026"
 title: "HTTP-pyynn\xF6n l\xE4hett\xE4minen"
+weight: 44
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why? (Mitä & Miksi?)
 Lähetämme HTTP-pyyntöjä kommunikoidaksemme web-palvelimien kanssa. Koodarit tekevät sen hakeakseen tietoa, lähettääkseen dataa ja interaktoidakseen verkkopalveluiden kanssa.

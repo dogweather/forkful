@@ -9,9 +9,8 @@ summary: "Wycinanie podci\u0105g\xF3w to odizolowanie wybranych cz\u0119\u015Bci
   \ wi\u0119kszego ci\u0105gu znak\xF3w. Robimy to, by manipulowa\u0107 danymi, wyci\u0105\
   ga\u0107 istotne informacje, czy\u2026"
 title: "Wycinanie pod\u0142a\u0144cuch\xF3w"
+weight: 6
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why? (Co i dlaczego?)
 Wycinanie podciągów to odizolowanie wybranych części z większego ciągu znaków. Robimy to, by manipulować danymi, wyciągać istotne informacje, czy sprawdzić strukturę tekstu.

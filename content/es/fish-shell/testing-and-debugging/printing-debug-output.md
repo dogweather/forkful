@@ -9,9 +9,8 @@ summary: "Imprimir datos de depuraci\xF3n significa mostrar informaci\xF3n \xFAt
   \ para entender qu\xE9 hace tu c\xF3digo. Los programadores lo hacen para rastrear\
   \ errores y\u2026"
 title: "Imprimiendo salida de depuraci\xF3n"
+weight: 33
 ---
-
-{{< edit_this_page >}}
 
 ## ¿Qué y Por Qué?
 Imprimir datos de depuración significa mostrar información útil para entender qué hace tu código. Los programadores lo hacen para rastrear errores y verificar el flujo de la ejecución.

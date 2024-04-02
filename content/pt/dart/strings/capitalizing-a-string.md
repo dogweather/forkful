@@ -10,9 +10,8 @@ model: gpt-4-0125-preview
 summary: "Colocar em mai\xFAscula uma string envolve modificar a primeira letra de\
   \ uma palavra ou de uma frase inteira para mai\xFAscula, mantendo o resto dos caracteres\u2026"
 title: Capitalizando uma string
+weight: 2
 ---
-
-{{< edit_this_page >}}
 
 ## O Quê & Porquê?
 

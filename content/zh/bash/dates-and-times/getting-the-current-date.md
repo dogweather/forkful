@@ -19,9 +19,8 @@ summary: "\u5728 Bash \u4E2D\u83B7\u53D6\u5F53\u524D\u65E5\u671F\u6D89\u53CA\u4F
   \u7CFB\u7EDF\u4FE1\u606F\u811A\u672C\u7684\u4E00\u90E8\u5206\uFF0C\u4EE5\u8DDF\u8E2A\
   \u4F55\u65F6\u6267\u884C\u4E86\u64CD\u4F5C\u3002"
 title: "\u83B7\u53D6\u5F53\u524D\u65E5\u671F"
+weight: 29
 ---
-
-{{< edit_this_page >}}
 
 ## 什么 & 为什么？
 在 Bash 中获取当前日期涉及使用内置命令以各种格式显示日期和时间。程序员使用这个功能来执行任务，例如给日志打时间戳、安排任务，或者只是作为他们系统信息脚本的一部分，以跟踪何时执行了操作。

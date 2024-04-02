@@ -11,9 +11,8 @@ summary: "\xC5 skrive en tekstfil i Rust inneb\xE6rer \xE5 opprette, skrive til 
   \ potensielt legge til data i en fil p\xE5 filsystemet. Programmerere utf\xF8rer\
   \ denne operasjonen\u2026"
 title: Skrive en tekstfil
+weight: 24
 ---
-
-{{< edit_this_page >}}
 
 ## Hva & Hvorfor?
 Å skrive en tekstfil i Rust innebærer å opprette, skrive til og potensielt legge til data i en fil på filsystemet. Programmerere utfører denne operasjonen for å bevare data, som applikasjonslogger, konfigurasjon eller brukergenerert innhold, og sikre dataenes varighet utover programmets kjøretid.

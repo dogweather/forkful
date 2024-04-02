@@ -9,9 +9,8 @@ summary: "Kun poistetaan merkkej\xE4 kuvion mukaisesti, k\xE4sitell\xE4\xE4n tek
   \ tai merkkijonoja niin, ett\xE4 tietyt osat saadaan poistettua. Ohjelmoijat tekev\xE4\
   t\u2026"
 title: Merkkien poistaminen hakemalla osumia kaavaan
+weight: 5
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why? (Mikä & Miksi?)
 Kun poistetaan merkkejä kuvion mukaisesti, käsitellään tekstitiedostoja tai merkkijonoja niin, että tietyt osat saadaan poistettua. Ohjelmoijat tekevät tämän datan siistimiseksi, muotoilun korjaamiseksi tai tarpeettoman tiedon karsimiseksi.

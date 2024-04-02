@@ -9,9 +9,8 @@ summary: "Perusautentikoinnilla varustetun HTTP-pyynn\xF6n l\xE4hett\xE4minen on
   \ jossa k\xE4ytt\xE4j\xE4tunnus ja salasana l\xE4hetet\xE4\xE4n HTTP-otsikoissa\
   \ palvelimelle. K\xE4yt\xE4mme\u2026"
 title: "HTTP-pyynn\xF6n l\xE4hett\xE4minen perusautentikoinnilla"
+weight: 45
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why? | Mikä & Miksi?
 Perusautentikoinnilla varustetun HTTP-pyynnön lähettäminen on prosessi, jossa käyttäjätunnus ja salasana lähetetään HTTP-otsikoissa palvelimelle. Käytämme tätä menetelmää, koska se on yksinkertainen tapa varmistaa käyttäjän identiteetti ennen palvelun käyttöoikeuksien myöntämistä.

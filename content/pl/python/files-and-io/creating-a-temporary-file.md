@@ -9,9 +9,8 @@ summary: "Tworzenie tymczasowych plik\xF3w to kwestia zapisywania danych, kt\xF3
   \ nie musz\u0105 pozosta\u0107 w systemie na sta\u0142e. Programi\u015Bci wykorzystuj\u0105\
   \ je, aby przechowywa\u0107\u2026"
 title: Tworzenie pliku tymczasowego
+weight: 21
 ---
-
-{{< edit_this_page >}}
 
 ## Co i dlaczego?
 

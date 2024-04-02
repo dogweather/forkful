@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Standaardfout (stderr) is een stroom waar een programma zijn foutberichten\
   \ naar schrijft. Programmeurs gebruiken het om foutlogboeken te scheiden van\u2026"
 title: Schrijven naar standaardfout
+weight: 25
 ---
-
-{{< edit_this_page >}}
 
 ## Wat & Waarom?
 Standaardfout (stderr) is een stroom waar een programma zijn foutberichten naar schrijft. Programmeurs gebruiken het om foutlogboeken te scheiden van standaarduitvoer (stdout) om efficiënter te debuggen en logboekregistratie te stroomlijnen.

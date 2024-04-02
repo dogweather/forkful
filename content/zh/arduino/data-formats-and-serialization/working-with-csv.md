@@ -21,9 +21,8 @@ summary: "\u5728Arduino\u4E2D\u5904\u7406CSV\uFF08\u9017\u53F7\u5206\u9694\u503C
   \u7EDF\u63A5\u53E3\uFF0C\u56E0\u4E3A\u5B83\u7684\u7B80\u5355\u6027\u4EE5\u53CA\u8DE8\
   \u5E73\u53F0\u7684\u5E7F\u6CDB\u91C7\u7528\u3002"
 title: "\u5904\u7406CSV\u6587\u4EF6"
+weight: 37
 ---
-
-{{< edit_this_page >}}
 
 ## 什么 & 为什么？
 在Arduino中处理CSV（逗号分隔值）文件，涉及从SD卡上通常存储的CSV文件中读取和写入，使数据记录、配置设置等成为可能。程序员常常处理CSV用于传感器数据收集、配置参数存储，或与其他系统接口，因为它的简单性以及跨平台的广泛采用。

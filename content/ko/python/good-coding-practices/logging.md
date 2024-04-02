@@ -21,9 +21,8 @@ summary: "\uB85C\uADF8\uB294 \uD504\uB85C\uADF8\uB7A8\uC774 \uC2E4\uD589\uB418\u
   \ \uC704\uD55C \uC0AC\uC6A9\uC790\uC758 \uD589\uB3D9 \uCD94\uC801\uC5D0 \uB3C4\uC6C0\
   \uC744 \uBC1B\uAE30 \uB54C\uBB38\uC5D0 \uC0AC\uC6A9\uD569\uB2C8\uB2E4."
 title: "\uB85C\uAE45"
+weight: 17
 ---
-
-{{< edit_this_page >}}
 
 ## 무엇 & 왜?
 로그는 프로그램이 실행되는 동안 애플리케이션 이벤트를 기록하는 과정으로, 사후 분석 및 실시간 모니터링을 위한 정보의 흔적을 제공합니다. 프로그래머들은 이러한 로깅을 통해 문제 해결, 성능 모니터링, 보안 및 분석을 위한 사용자의 행동 추적에 도움을 받기 때문에 사용합니다.

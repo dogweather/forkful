@@ -18,9 +18,8 @@ summary: "\uD504\uB85C\uC81D\uD2B8\uB97C \uC2DC\uC791\uD55C\uB2E4\uB294 \uAC74, 
   \uC774\uB514\uC5B4\uB97C \uC2E4\uD604\uD558\uBA70, \uB2A5\uB825\uC744 \uD0A4\uC6B0\
   \uAE30 \uC704\uD574\uC11C\uC8E0."
 title: "\uC0C8 \uD504\uB85C\uC81D\uD2B8 \uC2DC\uC791\uD558\uAE30"
+weight: 1
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why? (무엇 & 왜?)
 프로젝트를 시작한다는 건, 빈 문서에서부터 코드를 차곡차곡 쌓아감을 의미합니다. 프로그래머들이 새로운 프로젝트를 시작하는 이유는 문제를 해결하고, 아이디어를 실현하며, 능력을 키우기 위해서죠.

@@ -9,9 +9,8 @@ summary: "Concat\xE9ner des cha\xEEnes, c'est les coller bout \xE0 bout. Les pro
   \ le font pour assembler des textes dynamiques, comme cr\xE9er des messages ou g\xE9\
   rer des\u2026"
 title: "Concat\xE9nation de cha\xEEnes de caract\xE8res"
+weight: 3
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why? (Quoi et Pourquoi ?)
 Concaténer des chaînes, c'est les coller bout à bout. Les programmeurs le font pour assembler des textes dynamiques, comme créer des messages ou gérer des chemins de fichiers.

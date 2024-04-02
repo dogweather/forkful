@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Assoziative Arrays in Dart, allgemein bekannt als Maps, sind Datenstrukturen,\
   \ die Daten in Schl\xFCssel-Wert-Paaren speichern. Sie erm\xF6glichen es\u2026"
 title: Verwendung von assoziativen Arrays
+weight: 15
 ---
-
-{{< edit_this_page >}}
 
 ## Was & Warum?
 

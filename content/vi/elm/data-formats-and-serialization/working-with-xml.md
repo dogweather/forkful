@@ -13,9 +13,8 @@ summary: "L\xE0m vi\u1EC7c v\u1EDBi XML bao g\u1ED3m vi\u1EC7c ph\xE2n t\xEDch c
   \ trong Elm. Vi\u1EC7c n\xE0y \u0111\u01B0\u1EE3c th\u1EF1c hi\u1EC7n \u0111\u1EC3\
   \ t\u01B0\u01A1ng t\xE1c v\u1EDBi nhi\u1EC1u d\u1ECBch v\u1EE5\u2026"
 title: "L\xE0m vi\u1EC7c v\u1EDBi XML"
+weight: 40
 ---
-
-{{< edit_this_page >}}
 
 ## Gì và Tại sao?
 Làm việc với XML bao gồm việc phân tích cú pháp, biến đổi, và tạo ra các tài liệu XML trong Elm. Việc này được thực hiện để tương tác với nhiều dịch vụ web và hệ thống cũ dùng XML làm định dạng dữ liệu của họ.

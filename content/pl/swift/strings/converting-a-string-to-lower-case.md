@@ -9,9 +9,8 @@ summary: "Zmiana stringa na ma\u0142e litery to prosty proces, gdzie wszystkie l
   \ w napisie s\u0105 konwertowane na ich ma\u0142e odpowiedniki. Programi\u015Bci\
   \ robi\u0105 to, by\u2026"
 title: "Konwersja ci\u0105gu znak\xF3w na ma\u0142e litery"
+weight: 4
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why? (Co i dlaczego?)
 Zmiana stringa na małe litery to prosty proces, gdzie wszystkie litery w napisie są konwertowane na ich małe odpowiedniki. Programiści robią to, by ujednolicić dane - przydatne, gdy porównujesz napisy czy sortujesz dane.

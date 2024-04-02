@@ -11,9 +11,8 @@ summary: "Ohjelmoinnissa kompleksilukujen k\xE4sitteleminen sis\xE4lt\xE4\xE4 lu
   \ manipulointia, joilla on sek\xE4 reaaliosa ett\xE4 imaginaariosa, tyypillisesti\
   \ ilmaistuna\u2026"
 title: "Ty\xF6skenteleminen kompleksilukujen kanssa"
+weight: 14
 ---
-
-{{< edit_this_page >}}
 
 ## Mikä & Miksi?
 

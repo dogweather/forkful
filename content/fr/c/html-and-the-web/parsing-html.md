@@ -10,9 +10,8 @@ model: gpt-4-0125-preview
 summary: "Analyser le HTML en C implique d'examiner les documents HTML pour en extraire\
   \ efficacement des donn\xE9es, une structure ou des parties sp\xE9cifiques, souvent\u2026"
 title: Analyse Syntaxique de HTML
+weight: 43
 ---
-
-{{< edit_this_page >}}
 
 ## Quoi & Pourquoi ?
 

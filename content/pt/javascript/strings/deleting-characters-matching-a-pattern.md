@@ -9,9 +9,8 @@ summary: "Apagar caracteres que seguem um padr\xE3o espec\xEDfico ajuda a limpar
   \ formatar strings para os requisitos do seu aplicativo. Programadores fazem isso\
   \ para\u2026"
 title: "Excluindo caracteres que correspondem a um padr\xE3o"
+weight: 5
 ---
-
-{{< edit_this_page >}}
 
 ## O Quê e Por Quê?
 Apagar caracteres que seguem um padrão específico ajuda a limpar e formatar strings para os requisitos do seu aplicativo. Programadores fazem isso para validar entradas, remover dados desnecessários ou preparar textos para processamento.

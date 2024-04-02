@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Stringinterpolation in Visual Basic f\xFCr Applikationen (VBA) bezieht sich\
   \ auf den Prozess, Variablen oder Ausdr\xFCcke in einem String-Literal einzubetten,\u2026"
 title: Interpolation einer Zeichenkette
+weight: 8
 ---
-
-{{< edit_this_page >}}
 
 ## Was & Warum?
 

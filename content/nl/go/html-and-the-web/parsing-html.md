@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "HTML parsen in Go houdt in dat je de inhoud van HTML-bestanden analyseert\
   \ om gegevens te extraheren, de structuur te manipuleren of HTML naar andere\u2026"
 title: HTML Parsen
+weight: 43
 ---
-
-{{< edit_this_page >}}
 
 ## Wat & Waarom?
 

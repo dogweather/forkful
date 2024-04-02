@@ -11,9 +11,8 @@ summary: "Scrivere test in PowerShell comporta la creazione di script che valida
   \ automaticamente la funzionalit\xE0 del vostro codice PowerShell, garantendo che\
   \ si\u2026"
 title: Scrivere test
+weight: 36
 ---
-
-{{< edit_this_page >}}
 
 ## Cosa & Perché?
 

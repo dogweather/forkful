@@ -9,9 +9,8 @@ summary: "I numeri complessi ampliano il nostro sistema numerico per includere l
   \ radici quadrate dei numeri negativi, dove l'unit\xE0 'immaginaria' i equivale\
   \ alla\u2026"
 title: Lavorare con i numeri complessi
+weight: 14
 ---
-
-{{< edit_this_page >}}
 
 ## Cosa e Perché?
 I numeri complessi ampliano il nostro sistema numerico per includere le radici quadrate dei numeri negativi, dove l'unità 'immaginaria' i equivale alla radice quadrata di -1. I programmatori li usano in campi come l'ingegneria, la fisica e l'elaborazione dei segnali, perché sono ottimi per modellare onde, oscillazioni e tutto ciò che ruota.

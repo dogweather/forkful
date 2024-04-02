@@ -17,9 +17,8 @@ summary: "\uCF54\uB4DC\uB97C \uD568\uC218\uB85C \uAD6C\uC131\uD558\uB294 \uAC83\
   \uB370\uC774\uD2B8\uD558\uAE30 \uC27D\uAC8C \uB9CC\uB4E4\uAE30 \uC704\uD574 \uC774\
   \ \uC791\uC5C5\uC744 \uD569\uB2C8\uB2E4."
 title: "\uCF54\uB4DC\uB97C \uD568\uC218\uB85C \uAD6C\uC131\uD558\uAE30"
+weight: 18
 ---
-
-{{< edit_this_page >}}
 
 ## 무엇 & 왜?
 코드를 함수로 구성하는 것은 코드를 특정 목적을 가진 재사용 가능한 조각으로 나누는 것에 관한 것입니다. 우리는 코드를 더 깨끗하게, 읽기 쉽게, 디버그하고 업데이트하기 쉽게 만들기 위해 이 작업을 합니다.

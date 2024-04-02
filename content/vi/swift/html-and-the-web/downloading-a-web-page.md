@@ -13,9 +13,8 @@ summary: "T\u1EA3i m\u1ED9t trang web xu\u1ED1ng c\xF3 ngh\u0129a l\xE0 l\u1EA5y
   a b\u1EA1n. L\u1EADp tr\xECnh vi\xEAn th\u1EF1c hi\u1EC7n vi\u1EC7c n\xE0y \u0111\
   \u1EC3 t\xECm n\u1ED9i dung, t\u01B0\u01A1ng t\xE1c v\u1EDBi\u2026"
 title: "T\u1EA3i trang web"
+weight: 42
 ---
-
-{{< edit_this_page >}}
 
 ## Cái gì & Tại sao?
 Tải một trang web xuống có nghĩa là lấy dữ liệu từ web và đưa nó vào ứng dụng của bạn. Lập trình viên thực hiện việc này để tìm nội dung, tương tác với dịch vụ trực tuyến hoặc thu thập dữ liệu.

@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Wypisywanie informacji debugowych w Visual Basic for Applications (VBA)\
   \ polega na strategicznym umieszczaniu instrukcji wypisywania w kodzie, aby\u2026"
 title: "Drukowanie informacji wyj\u015Bciowych debugowania"
+weight: 33
 ---
-
-{{< edit_this_page >}}
 
 ## Co i dlaczego?
 Wypisywanie informacji debugowych w Visual Basic for Applications (VBA) polega na strategicznym umieszczaniu instrukcji wypisywania w kodzie, aby wyświetlać wartości zmiennych, przebieg wykonania lub niestandardowe komunikaty debugowe. Ta technika jest niezbędna do debugowania, umożliwiając programistom zrozumienie zachowania ich kodu podczas wykonania i identyfikację wszelkich nieoczekiwanych zachowań lub błędów.

@@ -13,9 +13,8 @@ summary: "Vi\u1EC7c b\u1EAFt \u0111\u1EA7u m\u1ED9t d\u1EF1 \xE1n m\u1EDBi trong
   t m\xF4i tr\u01B0\u1EDDng trong m\u1ED9t \u1EE9ng d\u1EE5ng ch\u1EE7 nh\u01B0 Excel\
   \ \u0111\u1EC3 t\u1EF1 \u0111\u1ED9ng h\xF3a\u2026"
 title: "Kh\u1EDFi \u0111\u1EA7u m\u1ED9t d\u1EF1 \xE1n m\u1EDBi"
+weight: 1
 ---
-
-{{< edit_this_page >}}
 
 ## Cái Gì & Tại Sao?
 

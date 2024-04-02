@@ -9,9 +9,8 @@ summary: "Datum till str\xE4ng-omvandling \xE4r processen d\xE4r du f\xF6rvandla
   \ ett datumobjekt till en textstr\xE4ng. Det \xE4r anv\xE4ndbart f\xF6r att formatera\
   \ datum p\xE5 l\xE4sbara s\xE4tt\u2026"
 title: "Omvandla ett datum till en str\xE4ng"
+weight: 28
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 Datum till sträng-omvandling är processen där du förvandlar ett datumobjekt till en textsträng. Det är användbart för att formatera datum på läsbara sätt och för att lagra eller överföra datumdata som text.

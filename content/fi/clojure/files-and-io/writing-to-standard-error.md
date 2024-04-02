@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Kirjoittaminen vakiovirheeseen (stderr) tarkoittaa virheviestien ja diagnostiikkatietojen\
   \ ohjaamista stderr-virtaan, erotettuna vakiotulosteesta (stdout).\u2026"
 title: Kirjoittaminen standardivirheeseen
+weight: 25
 ---
-
-{{< edit_this_page >}}
 
 ## Mitä & Miksi?
 Kirjoittaminen vakiovirheeseen (stderr) tarkoittaa virheviestien ja diagnostiikkatietojen ohjaamista stderr-virtaan, erotettuna vakiotulosteesta (stdout). Ohjelmoijat tekevät näin erottaakseen tavallisen ohjelman tulosteen virheviesteistä, mikä mahdollistaa tehokkaamman debuggauksen ja lokituksen.

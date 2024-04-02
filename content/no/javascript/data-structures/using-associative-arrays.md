@@ -11,9 +11,8 @@ summary: "Assosiative arrays, eller som de mer n\xF8yaktig er kjent som i JavaSc
   \ objekter, lar deg knytte n\xF8kler til verdier. Dette er super praktisk for n\xE5\
   r du\u2026"
 title: Bruke associative tabeller
+weight: 15
 ---
-
-{{< edit_this_page >}}
 
 ## Hva & Hvorfor?
 

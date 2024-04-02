@@ -9,9 +9,8 @@ summary: "\xC5 sammenk\xE6de strenger (strings) betyr \xE5 sette dem sammen i \x
   n. Vi gj\xF8r det for \xE5 bygge tekstbasert data, som meldinger eller kode, p\xE5\
   \ en dynamisk og\u2026"
 title: "Sammensl\xE5ing av strenger"
+weight: 3
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why? (Hva & Hvorfor?)
 Å sammenkæde strenger (strings) betyr å sette dem sammen i én. Vi gjør det for å bygge tekstbasert data, som meldinger eller kode, på en dynamisk og fleksibel måte.

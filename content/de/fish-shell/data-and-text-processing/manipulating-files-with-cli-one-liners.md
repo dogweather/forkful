@@ -7,9 +7,8 @@ model: gpt-4-0125-preview
 summary: "Im Bereich der Programmierung, insbesondere beim Umgang mit Linux- oder\
   \ Unix-Umgebungen, ist die Manipulation von Dateien direkt \xFCber die\u2026"
 title: Dateimanipulation mit CLI-One-Linern
+weight: 31
 ---
-
-{{< edit_this_page >}}
 
 ## Was & Warum?
 

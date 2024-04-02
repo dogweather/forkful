@@ -11,9 +11,8 @@ summary: "Obter a data atual em programa\xE7\xE3o \xE9 uma tarefa fundamental qu
   \ permite recuperar e manipular os dados de data e hora do sistema. Em tarefas de\
   \ scripting e\u2026"
 title: Obtendo a data atual
+weight: 29
 ---
-
-{{< edit_this_page >}}
 
 ## O Que & Por Que?
 Obter a data atual em programação é uma tarefa fundamental que permite recuperar e manipular os dados de data e hora do sistema. Em tarefas de scripting e automação, é essencial para gerar timestamps, agendar tarefas e criar logs.

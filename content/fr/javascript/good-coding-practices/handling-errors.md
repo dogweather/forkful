@@ -9,9 +9,8 @@ summary: "La gestion des erreurs consiste \xE0 g\xE9rer les situations o\xF9 vot
   \ code ne se comporte pas comme pr\xE9vu. C'est crucial car cela permet \xE0 vos\
   \ programmes de se\u2026"
 title: Gestion des erreurs
+weight: 16
 ---
-
-{{< edit_this_page >}}
 
 ## Quoi et Pourquoi ?
 

@@ -11,9 +11,8 @@ summary: "Rozpocz\u0119cie nowego projektu w Dart wymaga przygotowania \u015Brod
   \ sprzyjaj\u0105cego efektywnej pracy, testowaniu i wdra\u017Caniu. Programi\u015B\
   ci inicjuj\u0105 nowe\u2026"
 title: "Rozpocz\u0119cie nowego projektu"
+weight: 1
 ---
-
-{{< edit_this_page >}}
 
 ## Co i dlaczego?
 

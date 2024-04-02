@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Das Abrufen des aktuellen Datums in Bash erfordert die Verwendung von integrierten\
   \ Befehlen, um das Datum und die Uhrzeit in verschiedenen Formaten\u2026"
 title: Den aktuellen Datum abrufen
+weight: 29
 ---
-
-{{< edit_this_page >}}
 
 ## Was & Warum?
 Das Abrufen des aktuellen Datums in Bash erfordert die Verwendung von integrierten Befehlen, um das Datum und die Uhrzeit in verschiedenen Formaten anzuzeigen. Programmierer nutzen diese Funktionalität für Aufgaben wie das Zeitstempeln von Logs, das Planen von Aufgaben oder einfach als Teil ihrer Systeminformations-Skripte, um nachzuverfolgen, wann Aktionen durchgeführt wurden.

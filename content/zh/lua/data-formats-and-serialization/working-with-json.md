@@ -21,9 +21,8 @@ summary: "\u5728Lua\u4E2D\u5904\u7406JSON\u6D89\u53CA\u5230\u5C06JSON\u683C\u5F0
   \u6570\u636E\u5B58\u50A8\u3001\u914D\u7F6E\u6216API\u901A\u4FE1\u7684\u6548\u7387\
   \u3002"
 title: "\u4F7F\u7528JSON\u8FDB\u884C\u7F16\u7A0B"
+weight: 38
 ---
-
-{{< edit_this_page >}}
 
 ## 什么和为什么？
 在Lua中处理JSON涉及到将JSON格式化的字符串解析成Lua表格，反之亦然，这使得在Lua应用程序和Web服务或外部API之间的数据交换变得简单。程序员这样做是为了利用JSON轻量级和易于解析的格式，以实现数据存储、配置或API通信的效率。

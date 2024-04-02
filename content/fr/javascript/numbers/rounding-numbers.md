@@ -9,9 +9,8 @@ summary: "L'arrondi consiste \xE0 couper le bruit apr\xE8s un certain point dans
   \ nombre. Les programmeurs arrondissent pour contr\xF4ler la pr\xE9cision, g\xE9\
   rer la m\xE9moire,\u2026"
 title: Arrondir les nombres
+weight: 13
 ---
-
-{{< edit_this_page >}}
 
 ## Quoi & Pourquoi ?
 L'arrondi consiste à couper le bruit après un certain point dans un nombre. Les programmeurs arrondissent pour contrôler la précision, gérer la mémoire, ou rendre la sortie plus conviviale — comme transformer 2.998 en un net 3.

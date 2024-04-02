@@ -11,9 +11,8 @@ summary: "Wyra\u017Cenia regularne w programowaniu umo\u017Cliwiaj\u0105 dopasow
   \ wzorc\xF3w i manipulowanie ci\u0105gami znak\xF3w na podstawie okre\u015Blonych\
   \ wzor\xF3w. Programi\u015Bci u\u017Cywaj\u0105\u2026"
 title: "Korzystanie z wyra\u017Ce\u0144 regularnych"
+weight: 11
 ---
-
-{{< edit_this_page >}}
 
 ## Co i dlaczego?
 

@@ -15,9 +15,8 @@ summary: "\uBA85\uB839\uC904 \uC778\uC218\uB294 \uD504\uB85C\uADF8\uB7A8\uC5D0 \
   \uC801\uC73C\uB85C \uBC1B\uC544\uB4E4\uC5EC \uC720\uC5F0\uD55C \uB3C4\uAD6C\uB97C\
   \ \uB9CC\uB4E4\uAE30 \uC704\uD574 \uC774\uB97C \uC0AC\uC6A9\uD569\uB2C8\uB2E4."
 title: "\uBA85\uB839\uC904 \uC778\uC218 \uC77D\uAE30"
+weight: 23
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why? (무엇이며 왜?)
 명령줄 인수는 프로그램에 입력으로 넘겨주는 값들입니다. 프로그래머는 사용자의 요구를 동적으로 받아들여 유연한 도구를 만들기 위해 이를 사용합니다.

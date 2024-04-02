@@ -11,9 +11,8 @@ summary: "Lainausmerkkien poistaminen merkkijonosta VBA:ssa tarkoittaa yksitt\xE
   isten (`'`) tai kaksinkertaisten (`\"`) lainausmerkkien poistamista, jotka voivat\
   \ olla\u2026"
 title: Merkkijonosta lainausmerkkien poistaminen
+weight: 9
 ---
-
-{{< edit_this_page >}}
 
 ## Mitä & Miksi?
 

@@ -7,9 +7,8 @@ model: gpt-4-1106-preview
 summary: "Comparing two dates in PowerShell means figuring out if one is earlier,\
   \ the same, or later than the other. Programmers often do this to manage events,\u2026"
 title: Comparing two dates
+weight: 27
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 

@@ -11,9 +11,8 @@ summary: "Att tolka HTML i Google Apps Script inneb\xE4r att extrahera data fr\x
   n HTML-inneh\xE5ll, vilket \xE4r s\xE4rskilt anv\xE4ndbart n\xE4r man interagerar\
   \ med webbsidor eller\u2026"
 title: Att Tolka HTML
+weight: 43
 ---
-
-{{< edit_this_page >}}
 
 ## Vad & Varför?
 Att tolka HTML i Google Apps Script innebär att extrahera data från HTML-innehåll, vilket är särskilt användbart när man interagerar med webbsidor eller webbaserade datakällor. Programmerare gör detta för att automatisera datainsamling, manipulera webbinnehåll eller integrera webbfunktionalitet med Google Apps såsom Sheets och Docs.

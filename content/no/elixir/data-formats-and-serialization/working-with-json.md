@@ -11,9 +11,8 @@ summary: "\xC5 jobbe med JSON inneb\xE6rer \xE5 analysere JSON-formaterte streng
   \ til datastrukturer som Elixir kan manipulere, og serialisere Elixir-datastrukturer\
   \ tilbake\u2026"
 title: Arbeider med JSON
+weight: 38
 ---
-
-{{< edit_this_page >}}
 
 ## Hva & Hvorfor?
 

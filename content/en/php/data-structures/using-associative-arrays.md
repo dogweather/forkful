@@ -7,9 +7,8 @@ model: gpt-4-0125-preview
 summary: "Associative arrays in PHP are like super-charged lists where each element\
   \ can be accessed using a human-readable key instead of just numbers. Programmers\u2026"
 title: Using associative arrays
+weight: 15
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 

@@ -8,9 +8,8 @@ model: gpt-4-1106-preview
 summary: "Descargar una p\xE1gina web es obtener el contenido HTML de una URL espec\xED\
   fica. Los programadores hacen esto para analizar datos, probar aplicaciones y\u2026"
 title: "Descargando una p\xE1gina web"
+weight: 42
 ---
-
-{{< edit_this_page >}}
 
 ## ¿Qué & Por Qué?
 

@@ -11,9 +11,8 @@ summary: "Tworzenie tymczasowego pliku w Go pozwala na generowanie pliku nietrwa
   ego przeznaczonego do u\u017Cytku kr\xF3tkoterminowego, g\u0142\xF3wnie do zada\u0144\
   \ takich jak\u2026"
 title: Tworzenie tymczasowego pliku
+weight: 21
 ---
-
-{{< edit_this_page >}}
 
 ## Co i dlaczego?
 

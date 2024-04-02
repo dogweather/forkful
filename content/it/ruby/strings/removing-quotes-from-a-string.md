@@ -7,9 +7,8 @@ model: gpt-4-0125-preview
 summary: "Rimuovere le virgolette da una stringa significa togliere quei segni di\
   \ virgolette doppie o singole che circondano i valori di testo. Gli sviluppatori\u2026"
 title: Rimuovere le virgolette da una stringa
+weight: 9
 ---
-
-{{< edit_this_page >}}
 
 ## Cos'è & Perché?
 Rimuovere le virgolette da una stringa significa togliere quei segni di virgolette doppie o singole che circondano i valori di testo. Gli sviluppatori spesso fanno ciò per ripulire l'input degli utenti, per garantire coerenza nel processing dei dati o per preparare i dati per sistemi che potrebbero essere confusi da quei caratteri extra.

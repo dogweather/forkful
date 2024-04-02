@@ -8,9 +8,8 @@ model: gpt-4-1106-preview
 summary: "Kicking off a new PHP project means setting up a foundation to build your\
   \ web app or script. We do it to start fresh, structure our ideas into code, and\u2026"
 title: Starting a new project
+weight: 1
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 Kicking off a new PHP project means setting up a foundation to build your web app or script. We do it to start fresh, structure our ideas into code, and solve new problems.

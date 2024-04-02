@@ -11,9 +11,8 @@ summary: "Logging i Dart refererer til prosessen med \xE5 registrere ulike niv\x
   er av informasjon under utf\xF8relsen av et program. Programmerere gj\xF8r dette\
   \ for \xE5\u2026"
 title: Logging
+weight: 17
 ---
-
-{{< edit_this_page >}}
 
 ## Hva & Hvorfor?
 

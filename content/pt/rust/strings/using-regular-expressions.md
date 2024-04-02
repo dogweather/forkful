@@ -11,9 +11,8 @@ summary: "Express\xF5es regulares, ou regex, permitem que desenvolvedores procur
   \ combinem e manipulem strings com t\xE9cnicas avan\xE7adas de correspond\xEAncia\
   \ de padr\xF5es.\u2026"
 title: "Usando express\xF5es regulares"
+weight: 11
 ---
-
-{{< edit_this_page >}}
 
 ## O Que & Por Que?
 

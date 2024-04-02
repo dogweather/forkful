@@ -13,9 +13,8 @@ summary: "X\xF3a c\xE1c k\xFD t\u1EF1 kh\u1EDBp v\u1EDBi m\u1ED9t m\u1EABu trong
   p v\u1EDBi nhu c\u1EA7u c\u1EE7a m\xECnh - nh\u01B0 lo\u1EA1i b\u1ECF c\xE1c k\xFD\
   \ t\u1EF1 kh\xF4ng mong mu\u1ED1n ho\u1EB7c l\xE0m\u2026"
 title: "X\xF3a c\xE1c k\xFD t\u1EF1 ph\xF9 h\u1EE3p v\u1EDBi m\u1ED9t m\u1EABu"
+weight: 5
 ---
-
-{{< edit_this_page >}}
 
 ## Cái gì & Tại sao?
 Xóa các ký tự khớp với một mẫu trong Bash cho phép bạn thao tác với chuỗi để phù hợp với nhu cầu của mình - như loại bỏ các ký tự không mong muốn hoặc làm sạch đầu vào. Đó là cơ bản để dọn dẹp dữ liệu và chuẩn bị nó cho việc xử lý.

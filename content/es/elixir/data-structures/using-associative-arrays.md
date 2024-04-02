@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "En Elixir, los arreglos asociativos, llamados Mapas, son colecciones de\
   \ pares clave-valor donde una clave \xFAnica apunta a un valor. Son extremadamente\u2026"
 title: Uso de matrices asociativas
+weight: 15
 ---
-
-{{< edit_this_page >}}
 
 ## Qué y Por Qué?
 

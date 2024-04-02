@@ -9,9 +9,8 @@ summary: "Konkatenacja to fancy termin na \u0142\u0105czenie string\xF3w, tworze
   \ z nich d\u0142u\u017Cszego ci\u0105gu znak\xF3w. Programi\u015Bci to robi\u0105\
   , gdy potrzebuj\u0105 zbudowa\u0107 warto\u015Bci, takie\u2026"
 title: "\u0141\u0105czenie \u0142a\u0144cuch\xF3w znak\xF3w"
+weight: 3
 ---
-
-{{< edit_this_page >}}
 
 ## Co i dlaczego?
 Konkatenacja to fancy termin na łączenie stringów, tworzenie z nich dłuższego ciągu znaków. Programiści to robią, gdy potrzebują zbudować wartości, takie jak unikalne wiadomości, adresy URL, czy też po prostu wyświetlić coś ładnie dla użytkownika.

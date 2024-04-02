@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Il logging in Visual Basic for Applications (VBA) implica la registrazione\
   \ di informazioni sul comportamento a runtime di un programma in un file, console\u2026"
 title: Registrazione
+weight: 17
 ---
-
-{{< edit_this_page >}}
 
 ## Cosa e Perché?
 

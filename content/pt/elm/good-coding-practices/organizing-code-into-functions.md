@@ -9,9 +9,8 @@ summary: "Jogar todo o seu c\xF3digo em uma grande pilha? M\xE1 ideia. Dividi-lo
   \ fun\xE7\xF5es? Boa ideia. Isso mant\xE9m o seu c\xF3digo em Elm limpo, reutiliz\xE1\
   vel e mais f\xE1cil\u2026"
 title: "Organizando o c\xF3digo em fun\xE7\xF5es"
+weight: 18
 ---
-
-{{< edit_this_page >}}
 
 ## O Quê & Por Quê?
 Jogar todo o seu código em uma grande pilha? Má ideia. Dividi-lo em funções? Boa ideia. Isso mantém o seu código em Elm limpo, reutilizável e mais fácil de testar. Ao organizar seu código em funções, você agrupa o código que executa tarefas específicas juntas, o que torna sua aplicação mais fácil de manter e entender.

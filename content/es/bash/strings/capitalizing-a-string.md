@@ -10,9 +10,8 @@ model: gpt-4-0125-preview
 summary: "Capitalizar una cadena en Bash implica transformar el primer car\xE1cter\
   \ de la cadena a may\xFAscula mientras que el resto de la cadena permanece sin cambios.\u2026"
 title: Capitalizando una cadena de texto
+weight: 2
 ---
-
-{{< edit_this_page >}}
 
 ## Qué y por qué?
 Capitalizar una cadena en Bash implica transformar el primer carácter de la cadena a mayúscula mientras que el resto de la cadena permanece sin cambios. Esta técnica se utiliza comúnmente para formatear la salida o cumplir con convenciones de codificación que requieren que ciertas cadenas comiencen con una letra mayúscula por legibilidad o preferencias estilísticas.

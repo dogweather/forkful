@@ -7,9 +7,8 @@ model: gpt-4-1106-preview
 summary: "Lokitusta tarkoittaa sovelluksen tapahtumien tallentamista ohjelman suorituksen\
   \ aikana, tarjoten j\xE4ljityspolkua j\xE4lkianalyysiin ja reaaliaikaiseen\u2026"
 title: Lokitus
+weight: 17
 ---
-
-{{< edit_this_page >}}
 
 ## Mikä & Miksi?
 Lokitusta tarkoittaa sovelluksen tapahtumien tallentamista ohjelman suorituksen aikana, tarjoten jäljityspolkua jälkianalyysiin ja reaaliaikaiseen valvontaan. Ohjelmoijat tekevät sitä, koska se auttaa virheiden jäljityksessä, suorituskyvyn valvonnassa ja käyttäjien toimien seuraamisessa turvallisuuden ja analysoinnin kannalta.

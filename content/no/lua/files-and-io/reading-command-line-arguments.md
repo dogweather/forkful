@@ -7,9 +7,8 @@ model: gpt-4-1106-preview
 summary: Lesing av kommandolinjeargumenter lar oss ta imot data fra brukere utenfor
   et Lua-script. Slik kan programmer bli mer fleksible og brukertilpassede.
 title: Lese kommandolinjeargumenter
+weight: 23
 ---
-
-{{< edit_this_page >}}
 
 ## Hva & Hvorfor?
 Lesing av kommandolinjeargumenter lar oss ta imot data fra brukere utenfor et Lua-script. Slik kan programmer bli mer fleksible og brukertilpassede.

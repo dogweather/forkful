@@ -11,9 +11,8 @@ summary: "La gestion des erreurs dans Google Apps Script consiste \xE0 pr\xE9voi
   \ attraper et r\xE9pondre aux exceptions ou erreurs qui surviennent pendant l'ex\xE9\
   cution du\u2026"
 title: Gestion des erreurs
+weight: 16
 ---
-
-{{< edit_this_page >}}
 
 ## Quoi & Pourquoi ?
 

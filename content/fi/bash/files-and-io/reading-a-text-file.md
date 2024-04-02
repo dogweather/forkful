@@ -9,9 +9,8 @@ summary: "Luetaan tekstifailia, koska tarvitaan dataa siit\xE4. Se on olennaista
   \ kun k\xE4sitell\xE4\xE4n asetuksia, k\xE4ytt\xE4j\xE4n sis\xE4lt\xF6\xE4 tai skriptej\xE4\
   ."
 title: Tekstitiedoston lukeminen
+weight: 22
 ---
-
-{{< edit_this_page >}}
 
 ## Mitä & Miksi?
 Luetaan tekstifailia, koska tarvitaan dataa siitä. Se on olennaista, kun käsitellään asetuksia, käyttäjän sisältöä tai skriptejä.

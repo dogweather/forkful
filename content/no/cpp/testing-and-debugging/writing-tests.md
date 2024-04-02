@@ -11,9 +11,8 @@ summary: "\xC5 skrive tester i C++ inneb\xE6rer \xE5 lage sm\xE5, selvstendige p
   \ som automatisk verifiserer oppf\xF8rselen til deler av koden. Programmerere gj\xF8\
   r dette\u2026"
 title: Skrive tester
+weight: 36
 ---
-
-{{< edit_this_page >}}
 
 ## Hva & hvorfor?
 

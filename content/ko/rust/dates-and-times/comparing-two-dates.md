@@ -16,9 +16,8 @@ summary: "\uB450 \uB0A0\uC9DC\uB97C \uBE44\uAD50\uD558\uBA74 \uC5B4\uB290 \uAC83
   \uB9C1, \uB370\uC774\uD130 \uC815\uB82C \uB4F1\uC5D0 \uB450 \uB0A0\uC9DC\uB97C \uBE44\
   \uAD50\uD574\uC57C \uD558\uB294 \uC218\uC694\uAC00 \uC788\uC2B5\uB2C8\uB2E4."
 title: "\uB450 \uB0A0\uC9DC \uBE44\uAD50\uD558\uAE30"
+weight: 27
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why? (무엇과 왜?)
 두 날짜를 비교하면 어느 것이 더 이른지, 늦은지, 혹은 같은지를 확인할 수 있습니다. 프로그래머는 유효성 검사, 이벤트 트리거링, 데이터 정렬 등에 두 날짜를 비교해야 하는 수요가 있습니다.

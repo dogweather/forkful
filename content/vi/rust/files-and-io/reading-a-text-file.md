@@ -15,9 +15,8 @@ summary: "\u0110\u1ECDc m\u1ED9t t\u1EC7p v\u0103n b\u1EA3n l\xE0 vi\u1EC7c l\u1
   u n\xE0y \u0111\u1EC3 x\u1EED l\xFD d\u1EEF li\u1EC7u nh\u01B0 c\u1EA5u h\xECnh,\
   \ nh\u1EADp li\u1EC7u\u2026"
 title: "\u0110\u1ECDc m\u1ED9t t\u1EC7p v\u0103n b\u1EA3n"
+weight: 22
 ---
-
-{{< edit_this_page >}}
 
 ## Gì & Tại Sao?
 Đọc một tệp văn bản là việc lấy nội dung văn bản từ một tệp .txt trên ổ đĩa của bạn. Lập trình viên làm điều này để xử lý dữ liệu như cấu hình, nhập liệu của người dùng, hoặc để xử lý văn bản số lượng lớn.

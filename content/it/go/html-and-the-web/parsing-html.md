@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "L'analisi dell'HTML in Go comporta l'analisi del contenuto dei file HTML\
   \ per estrarre dati, manipolare la struttura o convertire l'HTML in altri formati.\u2026"
 title: Analisi del HTML
+weight: 43
 ---
-
-{{< edit_this_page >}}
 
 ## Cosa e Perché?
 

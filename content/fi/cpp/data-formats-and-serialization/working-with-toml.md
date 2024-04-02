@@ -9,9 +9,8 @@ summary: "TOML (Tom's Obvious, Minimal Language) on datan serialisointiformaatti
   \ joka on helppo lukea sen selke\xE4n semantiikan ansiosta. Ohjelmoijat k\xE4ytt\xE4\
   v\xE4t\u2026"
 title: "Ty\xF6skentely TOML:n kanssa"
+weight: 39
 ---
-
-{{< edit_this_page >}}
 
 ## Mikä & Miksi?
 TOML (Tom's Obvious, Minimal Language) on datan serialisointiformaatti, joka on helppo lukea sen selkeän semantiikan ansiosta. Ohjelmoijat käyttävät TOMLia konfiguraatiotiedostoissa, koska se tarjoaa tasapainon ihmisen luettavuuden ja koneen jäsentämisen välillä.

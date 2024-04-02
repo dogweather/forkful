@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Las expresiones regulares (regex) en programaci\xF3n son patrones utilizados\
   \ para emparejar combinaciones de caracteres en cadenas de texto. En Elm, al igual\u2026"
 title: Usando expresiones regulares
+weight: 11
 ---
-
-{{< edit_this_page >}}
 
 ## ¿Qué y por qué?
 Las expresiones regulares (regex) en programación son patrones utilizados para emparejar combinaciones de caracteres en cadenas de texto. En Elm, al igual que en otros lenguajes, los programadores utilizan regex para tareas como validar entrada, buscar y reemplazar texto dentro de cadenas debido a su flexibilidad y eficiencia.

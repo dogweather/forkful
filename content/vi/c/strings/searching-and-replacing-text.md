@@ -13,9 +13,8 @@ summary: "T\xECm ki\u1EBFm v\xE0 thay th\u1EBF v\u0103n b\u1EA3n trong ng\xF4n n
   i con c\u1EE5 th\u1EC3 trong m\u1ED9t chu\u1ED7i l\u1EDBn h\u01A1n v\xE0 thay th\u1EBF\
   \ ch\xFAng b\u1EB1ng c\xE1c chu\u1ED7i\u2026"
 title: "T\xECm ki\u1EBFm v\xE0 thay th\u1EBF v\u0103n b\u1EA3n"
+weight: 10
 ---
-
-{{< edit_this_page >}}
 
 ## Cái gì và Tại sao?
 

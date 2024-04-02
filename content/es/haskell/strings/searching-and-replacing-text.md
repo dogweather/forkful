@@ -7,9 +7,8 @@ model: gpt-4-1106-preview
 summary: "Buscar y reemplazar texto implica localizar ciertas cadenas de caracteres\
   \ y sustituirlas por otras diferentes. Los programadores lo hacen constantemente\u2026"
 title: Buscando y reemplazando texto
+weight: 10
 ---
-
-{{< edit_this_page >}}
 
 ## Qué y Por Qué?
 Buscar y reemplazar texto implica localizar ciertas cadenas de caracteres y sustituirlas por otras diferentes. Los programadores lo hacen constantemente para actualizar código, datos o simplemente corregir errores de forma rápida y eficaz.

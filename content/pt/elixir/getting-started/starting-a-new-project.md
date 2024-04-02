@@ -7,9 +7,8 @@ model: gpt-4-1106-preview
 summary: "Iniciar um novo projeto \xE9 como arrumar um terreno vazio para construir\
   \ algo do zero. Programadores fazem isso para transformar ideias em realidade, testar\u2026"
 title: Iniciando um novo projeto
+weight: 1
 ---
-
-{{< edit_this_page >}}
 
 ## O que é & Por quê?
 

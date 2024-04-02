@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Controleren of een map bestaat in Kotlin stelt je in staat te bevestigen\
   \ of een map aanwezig is voordat je probeert er bestanden te lezen of te schrijven.\u2026"
 title: Controleren of een directory bestaat
+weight: 20
 ---
-
-{{< edit_this_page >}}
 
 ## Wat & Waarom?
 

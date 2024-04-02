@@ -11,9 +11,8 @@ summary: "Pisanie test\xF3w w j\u0119zyku Swift polega na tworzeniu i wykonywani
   \ kodu, kt\xF3ry weryfikuje poprawno\u015B\u0107 innych jednostek kodu w aplikacji.\
   \ Programi\u015Bci robi\u0105 to,\u2026"
 title: "Pisanie test\xF3w"
+weight: 36
 ---
-
-{{< edit_this_page >}}
 
 ## Co i dlaczego?
 Pisanie testów w języku Swift polega na tworzeniu i wykonywaniu kodu, który weryfikuje poprawność innych jednostek kodu w aplikacji. Programiści robią to, aby zapewnić niezawodność, wykryć błędy na wczesnym etapie cyklu rozwoju oraz ułatwić przyszłe refaktoryzacje kodu bez niezamierzonych konsekwencji.

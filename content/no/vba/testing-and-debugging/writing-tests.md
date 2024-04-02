@@ -11,9 +11,8 @@ summary: "\xC5 skrive tester i programmering inneb\xE6rer \xE5 lage spesifikke p
   \ for \xE5 validere funksjonaliteten og ytelsen til kode-segmentene dine, for \xE5\
   \ sikre at\u2026"
 title: Skrive tester
+weight: 36
 ---
-
-{{< edit_this_page >}}
 
 ## Hva og Hvorfor?
 

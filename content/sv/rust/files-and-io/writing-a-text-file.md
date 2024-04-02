@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Att skriva en textfil i Rust inneb\xE4r att skapa, skriva till och potentiellt\
   \ l\xE4gga till data i en fil p\xE5 filsystemet. Programmerare utf\xF6r denna operation\u2026"
 title: Att skriva en textfil
+weight: 24
 ---
-
-{{< edit_this_page >}}
 
 ## Vad & Varför?
 Att skriva en textfil i Rust innebär att skapa, skriva till och potentiellt lägga till data i en fil på filsystemet. Programmerare utför denna operation för att bevara data, som till exempel applikationsloggar, konfiguration eller användargenererat innehåll, för att säkerställa datahållbarhet bortom programkörningens omfattning.

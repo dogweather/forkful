@@ -11,9 +11,8 @@ summary: "Express\xF5es regulares, ou regex, s\xE3o sequ\xEAncias de caracteres 
   \ formam um padr\xE3o de busca, frequentemente usadas para tarefas de correspond\xEA\
   ncia ou\u2026"
 title: "Usando express\xF5es regulares"
+weight: 11
 ---
-
-{{< edit_this_page >}}
 
 ## O Que & Por Que?
 Expressões regulares, ou regex, são sequências de caracteres que formam um padrão de busca, frequentemente usadas para tarefas de correspondência ou manipulação de strings. Programadores as utilizam para tudo, desde validação de dados e análise até transformações, tornando-as uma ferramenta indispensável no processamento e manipulação de texto em diversas linguagens de programação, incluindo Swift.

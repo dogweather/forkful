@@ -21,9 +21,8 @@ summary: "\uD45C\uC900 \uC624\uB958(stderr)\uC5D0 \uC4F0\uAE30\uB294 \uC624\uB95
   \uC778 \uB514\uBC84\uAE45\uACFC \uB85C\uAE45\uC744 \uAC00\uB2A5\uD558\uAC8C \uD569\
   \uB2C8\uB2E4."
 title: "\uD45C\uC900 \uC5D0\uB7EC\uC5D0 \uC4F0\uAE30"
+weight: 25
 ---
-
-{{< edit_this_page >}}
 
 ## 무엇 & 왜?
 표준 오류(stderr)에 쓰기는 오류 메시지와 진단을 표준 출력(stdout)과 별도로 stderr 스트림으로 보내는 것을 말합니다. 프로그래머들은 이를 통해 일반 프로그램 출력과 오류 메시지를 구별하여 더 효과적인 디버깅과 로깅을 가능하게 합니다.

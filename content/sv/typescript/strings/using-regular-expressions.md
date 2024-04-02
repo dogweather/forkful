@@ -11,9 +11,8 @@ summary: "Regulj\xE4ra uttryck, eller regex, \xE4r ett kraftfullt verktyg f\xF6r
   nstermatchning och s\xF6kning i programmering. Programmerare anv\xE4nder regex f\xF6\
   r uppgifter som\u2026"
 title: "Att anv\xE4nda regulj\xE4ra uttryck"
+weight: 11
 ---
-
-{{< edit_this_page >}}
 
 ## Vad & Varför?
 Reguljära uttryck, eller regex, är ett kraftfullt verktyg för mönstermatchning och sökning i programmering. Programmerare använder regex för uppgifter som att validera användarinmatning, söka i text eller manipulera strängar eftersom det är effektivt och mångsidigt.

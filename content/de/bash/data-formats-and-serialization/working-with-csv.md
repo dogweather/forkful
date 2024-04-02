@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Die Arbeit mit CSV-Dateien (Comma-Separated Values) in Bash dreht sich um\
   \ die Verarbeitung und Manipulation von tabellarischen Daten, die im\u2026"
 title: Arbeiten mit CSV
+weight: 37
 ---
-
-{{< edit_this_page >}}
 
 ## Was & Warum?
 Die Arbeit mit CSV-Dateien (Comma-Separated Values) in Bash dreht sich um die Verarbeitung und Manipulation von tabellarischen Daten, die im Klartextformat gespeichert sind. Dies ist für Programmierer wesentlich, da es die Automatisierung von Datenumwandlungs-, Analyse- und Integrationstasks direkt über die Befehlszeile ermöglicht, ohne dass schwerfälligere Tools oder Programmierumgebungen erforderlich sind.

@@ -7,9 +7,8 @@ model: gpt-4-0125-preview
 summary: "Reading command line arguments in Visual Basic for Applications (VBA) involves\
   \ accessing parameters passed to your program upon execution. This technique\u2026"
 title: Reading command line arguments
+weight: 23
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 

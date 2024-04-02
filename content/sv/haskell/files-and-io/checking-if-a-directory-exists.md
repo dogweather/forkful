@@ -11,9 +11,8 @@ summary: "Att kontrollera om en katalog finns \xE4r en grundl\xE4ggande operatio
   \ i m\xE5nga programmeringsuppgifter, som m\xF6jligg\xF6r villkorliga \xE5tg\xE4\
   rder baserat p\xE5 n\xE4rvaron\u2026"
 title: Kontrollera om en katalog existerar
+weight: 20
 ---
-
-{{< edit_this_page >}}
 
 ## Vad & Varför?
 Att kontrollera om en katalog finns är en grundläggande operation i många programmeringsuppgifter, som möjliggör villkorliga åtgärder baserat på närvaron eller frånvaron av katalogstrukturer. Det är avgörande för filmanipulering, automatiska skript och under inledningen av mjukvaruinstallation för att säkerställa att nödvändiga kataloger finns på plats eller för att undvika att duplicera kataloger.

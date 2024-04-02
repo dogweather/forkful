@@ -11,9 +11,8 @@ summary: "Capitalizar uma string em Rust envolve modificar a string de modo que 
   \ primeiro caractere seja mai\xFAsculo, caso seja uma letra, enquanto o restante\
   \ da\u2026"
 title: Capitalizando uma string
+weight: 2
 ---
-
-{{< edit_this_page >}}
 
 ## O que & Por quê?
 

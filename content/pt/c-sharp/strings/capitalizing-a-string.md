@@ -11,9 +11,8 @@ summary: "Capitalizar uma string em C# envolve converter o primeiro caractere de
   \ string para mai\xFAscula, caso ele j\xE1 n\xE3o seja. Essa altera\xE7\xE3o pode\
   \ ser crucial\u2026"
 title: Capitalizando uma string
+weight: 2
 ---
-
-{{< edit_this_page >}}
 
 ## O que & Por quê?
 Capitalizar uma string em C# envolve converter o primeiro caractere de uma string para maiúscula, caso ele já não seja. Essa alteração pode ser crucial para formatar saídas, impor padrões de codificação ou tornar textos de interface de usuário mais legíveis.

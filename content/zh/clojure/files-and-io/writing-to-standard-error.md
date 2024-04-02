@@ -17,9 +17,8 @@ summary: "\u5C06\u9519\u8BEF\u6D88\u606F\u548C\u8BCA\u65AD\u4FE1\u606F\u5199\u51
   \u5E38\u89C4\u7A0B\u5E8F\u8F93\u51FA\u548C\u9519\u8BEF\u6D88\u606F\uFF0C\u4ECE\u800C\
   \u5B9E\u73B0\u66F4\u6709\u6548\u7684\u8C03\u8BD5\u548C\u8BB0\u5F55\u3002"
 title: "\u5199\u5165\u6807\u51C6\u9519\u8BEF"
+weight: 25
 ---
-
-{{< edit_this_page >}}
 
 ## 什么 & 为什么？
 将错误消息和诊断信息写入标准错误（stderr）是指将这些信息定向到stderr流，与标准输出（stdout）分开。程序员这样做是为了区分常规程序输出和错误消息，从而实现更有效的调试和记录。

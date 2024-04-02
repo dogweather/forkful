@@ -8,9 +8,8 @@ model: gpt-4-1106-preview
 summary: "Beregning av en dato i fremtiden eller fortiden er prosessen med \xE5 legge\
   \ til eller trekke fra dager, m\xE5neder eller \xE5r fra en bestemt dato. Programmerere\u2026"
 title: Beregning av en dato i fremtiden eller fortiden
+weight: 26
 ---
-
-{{< edit_this_page >}}
 
 ## Hva & Hvorfor?
 Beregning av en dato i fremtiden eller fortiden er prosessen med å legge til eller trekke fra dager, måneder eller år fra en bestemt dato. Programmerere gjør dette for å håndtere funksjoner som utløpsdatoer, planlegging og tidslinjer.

@@ -7,9 +7,8 @@ model: gpt-4-1106-preview
 summary: Sending an HTTP request fetches data from a web server. Programmers do this
   to interact with web services, gather info, or communicate between systems.
 title: Sending an HTTP request
+weight: 44
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 Sending an HTTP request fetches data from a web server. Programmers do this to interact with web services, gather info, or communicate between systems.

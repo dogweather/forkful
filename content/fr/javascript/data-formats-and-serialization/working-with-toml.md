@@ -9,9 +9,8 @@ summary: "TOML, abr\xE9viation de Tom's Obvious, Minimal Language, d\xE9finit co
   \ structurer les fichiers de configuration. Les programmeurs travaillent avec TOML\
   \ car\u2026"
 title: Travailler avec TOML
+weight: 39
 ---
-
-{{< edit_this_page >}}
 
 ## Quoi et pourquoi ?
 TOML, abréviation de Tom's Obvious, Minimal Language, définit comment structurer les fichiers de configuration. Les programmeurs travaillent avec TOML car il est facile à lire, à écrire et se mappe bien à une table de hachage, ce qui en fait un choix privilégié pour les configurations.

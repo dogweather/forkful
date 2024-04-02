@@ -9,9 +9,8 @@ summary: "En un clin d'oeil: une requ\xEAte HTTP envoie de l'info vers ou en re\
   oit depuis un serveur web. Les programmeurs l'utilisent pour interagir avec des\
   \ API,\u2026"
 title: "Envoi d'une requ\xEAte HTTP"
+weight: 44
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 En un clin d'oeil: une requête HTTP envoie de l'info vers ou en reçoit depuis un serveur web. Les programmeurs l'utilisent pour interagir avec des API, collecter des données, automatiser des tâches web. 

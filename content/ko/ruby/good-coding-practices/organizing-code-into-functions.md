@@ -21,9 +21,8 @@ summary: "\uCF54\uB4DC\uB97C \uD568\uC218\uB85C \uC870\uC9C1\uD654\uD558\uB294 \
   \uACFC \uB2E8\uC704 \uD14C\uC2A4\uD2B8\uB97C \uB2E8\uC21C\uD654\uD558\uAE30 \uB54C\
   \uBB38\uC5D0 \uCD5C\uACE0\uC785\uB2C8\uB2E4."
 title: "\uCF54\uB4DC\uB97C \uD568\uC218\uB85C \uAD6C\uC131\uD558\uAE30"
+weight: 18
 ---
-
-{{< edit_this_page >}}
 
 ## 무엇과 왜?
 코드를 함수로 조직화하는 것은 스크립트를 재사용 가능한 덩어리로 분할합니다. 이것은 코드를 깨끗하고, 관리하기 쉽고, 버그가 적게 만들기 위한 모든 것입니다. 모듈식 코드는 시간을 절약하고, 정신 건강을 유지하며, 디버깅과 단위 테스트를 단순화하기 때문에 최고입니다.

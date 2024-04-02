@@ -11,9 +11,8 @@ summary: "Escrever no erro padr\xE3o (stderr) em C# envolve direcionar mensagens
   \ erro e diagn\xF3sticos separadamente da sa\xEDda regular (stdout) para ajudar\
   \ usu\xE1rios e\u2026"
 title: "Escrevendo para o erro padr\xE3o"
+weight: 25
 ---
-
-{{< edit_this_page >}}
 
 ## O Que & Porquê?
 Escrever no erro padrão (stderr) em C# envolve direcionar mensagens de erro e diagnósticos separadamente da saída regular (stdout) para ajudar usuários e desenvolvedores a distinguir entre a saída normal do programa e notificações de erro. Os programadores fazem isso para tornar a depuração e o registro mais eficientes, permitindo uma operação e manutenção mais suaves das aplicações.

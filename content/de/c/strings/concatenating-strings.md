@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Das Verketten von Strings in C bezieht sich auf das Zusammenf\xFChren von\
   \ zwei oder mehr Strings hintereinander, um einen neuen String zu bilden.\u2026"
 title: Strings verketten
+weight: 3
 ---
-
-{{< edit_this_page >}}
 
 ## Was & Warum?
 

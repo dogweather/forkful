@@ -24,9 +24,8 @@ summary: "\u0909\u092A\u0935\u093E\u091A\u094D\u092F (substring) \u090F\u0915 \u
   \ \u0915\u0947\u2026"
 title: "\u0938\u092C\u0938\u094D\u091F\u094D\u0930\u093F\u0902\u0917\u094D\u0938 \u0928\
   \u093F\u0915\u093E\u0932\u0928\u093E"
+weight: 6
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why? (क्या और क्यों?)
 

@@ -9,9 +9,8 @@ summary: "Komplekse tall, som best\xE5r av en reell del og en imagin\xE6r del (v
   \ skrevet som a + bi), \xE5pner for beregninger som er upraktiske eller umulige\
   \ med\u2026"
 title: "\xC5 jobbe med komplekse tall"
+weight: 14
 ---
-
-{{< edit_this_page >}}
 
 ## Hva & Hvorfor?
 Komplekse tall, som består av en reell del og en imaginær del (vanligvis skrevet som a + bi), åpner for beregninger som er upraktiske eller umulige med bare reelle tall. Programmerere bruker dem innen felter som signalbehandling, kvantedatabehandling og anvendt matematikk, der todimensjonale tallrepresentasjoner er essensielle.

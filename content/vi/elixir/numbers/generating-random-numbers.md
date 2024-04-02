@@ -13,9 +13,8 @@ summary: "Vi\u1EC7c sinh s\u1ED1 ng\u1EABu nhi\xEAn trong Elixir l\xE0 m\u1ED9t 
   ng d\u1EE5ng c\u1EA7n k\u1EBFt qu\u1EA3 kh\xF4ng d\u1EF1 \u0111o\xE1n tr\u01B0\u1EDB\
   c nh\u01B0 trong vi\u1EC7c t\u1EA1o\u2026"
 title: "Sinh s\u1ED1 ng\u1EABu nhi\xEAn"
+weight: 12
 ---
-
-{{< edit_this_page >}}
 
 ## Gì và Tại sao?
 

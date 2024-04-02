@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Praca z CSV (warto\u015Bci rozdzielone przecinkami) obejmuje odczytywanie\
   \ z i zapisywanie danych do plik\xF3w CSV, co jest powszechnym formatem przechowywania\u2026"
 title: Praca z plikami CSV
+weight: 37
 ---
-
-{{< edit_this_page >}}
 
 ## Co i dlaczego?
 

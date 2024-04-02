@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "De huidige datum ophalen in PowerShell is simpelweg het systeemidee van\
   \ de datum van vandaag verkrijgen. Programmeurs gebruiken dit om logboeken te\u2026"
 title: Het huidige datum ophalen
+weight: 29
 ---
-
-{{< edit_this_page >}}
 
 ## Wat & Waarom?
 

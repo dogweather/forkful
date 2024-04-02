@@ -10,9 +10,8 @@ model: gpt-4-0125-preview
 summary: "\xC5 konvertere en streng til sm\xE5 bokstaver i C inneb\xE6rer \xE5 transformere\
   \ alle store bokstaver i en gitt streng til deres tilsvarende sm\xE5 bokstaver.\u2026"
 title: "Konvertering av en streng til sm\xE5 bokstaver"
+weight: 4
 ---
-
-{{< edit_this_page >}}
 
 ## Hva & Hvorfor?
 

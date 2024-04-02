@@ -7,9 +7,8 @@ model: gpt-4-0125-preview
 summary: "Finding the length of a string in C involves determining the number of characters\
   \ before the null terminator `\\0`. Programmers do this to manipulate\u2026"
 title: Finding the length of a string
+weight: 7
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 Finding the length of a string in C involves determining the number of characters before the null terminator `\0`. Programmers do this to manipulate strings correctly without running into errors like buffer overflows, which can lead to security vulnerabilities or program crashes.

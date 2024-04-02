@@ -11,9 +11,8 @@ summary: "L'interpolazione delle stringhe \xE8 il processo di iniettare valori d
   \ variabili direttamente nelle stringhe, spesso per creare messaggi significativi\
   \ senza\u2026"
 title: Interpolazione di una stringa
+weight: 8
 ---
-
-{{< edit_this_page >}}
 
 ## Cos'è & Perché?
 

@@ -9,9 +9,8 @@ summary: "Envoyer une requ\xEAte HTTP permet \xE0 votre application PHP de commu
   \ avec d'autres services web. On le fait pour \xE9changer des donn\xE9es, r\xE9\
   cup\xE9rer du\u2026"
 title: "Envoi d'une requ\xEAte HTTP"
+weight: 44
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why? (Quoi et Pourquoi ?)
 

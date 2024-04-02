@@ -22,9 +22,8 @@ summary: "\uCF54\uB4DC\uB97C \uD568\uC218\uB85C \uAD6C\uC131\uD55C\uB2E4\uB294 \
   \uB4DC \uC2A4\uD30C\uAC8C\uD2F0\uC758 \uB2AA\uC744 \uD5E4\uCE58\uACE0 \uC2F6\uC5B4\
   \uD558\uC9C0 \uC54A\uC2B5\uB2C8\uB2E4."
 title: "\uCF54\uB4DC\uB97C \uD568\uC218\uB85C \uAD6C\uC131\uD558\uB294 \uBC29\uBC95"
+weight: 18
 ---
-
-{{< edit_this_page >}}
 
 ## 무엇 & 왜?
 코드를 함수로 구성한다는 것은 특정 작업을 수행하기 위해 스크립트의 일부를 묶는 것에 대해 이야기합니다. 코드를 더 쉽게 읽고, 테스트하며, 재사용할 수 있게 하기 위해서입니다 — 아무도 코드 스파게티의 늪을 헤치고 싶어하지 않습니다.

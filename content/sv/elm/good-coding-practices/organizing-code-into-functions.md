@@ -9,9 +9,8 @@ summary: "Dumpa all din kod i en stor h\xF6g? D\xE5lig id\xE9. Bryt upp den i fu
   \ Bra id\xE9. Det h\xE5ller din Elm-kod ren, \xE5teranv\xE4ndbar och l\xE4ttare\
   \ att testa. Genom att\u2026"
 title: Att organisera kod i funktioner
+weight: 18
 ---
-
-{{< edit_this_page >}}
 
 ## Vad & Varför?
 Dumpa all din kod i en stor hög? Dålig idé. Bryt upp den i funktioner? Bra idé. Det håller din Elm-kod ren, återanvändbar och lättare att testa. Genom att organisera din kod i funktioner grupperar du kod som utför specifika uppgifter tillsammans, vilket gör din applikation mer underhållbar och förståelig.

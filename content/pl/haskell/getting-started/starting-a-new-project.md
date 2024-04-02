@@ -9,9 +9,8 @@ summary: "Zaczynanie nowego projektu w Haskellu to stworzenie struktury i plik\x
   w startowych. Programi\u015Bci robi\u0105 to, by nakre\u015Bli\u0107 fundamenty\
   \ aplikacji i zorganizowa\u0107\u2026"
 title: Rozpoczynanie nowego projektu
+weight: 1
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why? (Co i dlaczego?)
 Zaczynanie nowego projektu w Haskellu to stworzenie struktury i plików startowych. Programiści robią to, by nakreślić fundamenty aplikacji i zorganizować kod od samego początku.

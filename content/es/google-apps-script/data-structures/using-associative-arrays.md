@@ -10,9 +10,8 @@ model: gpt-4-0125-preview
 summary: "Los arrays asociativos, conocidos como objetos en Google Apps Script (una\
   \ variante de JavaScript), permiten a los programadores crear colecciones de pares\u2026"
 title: Utilizando arreglos asociativos
+weight: 15
 ---
-
-{{< edit_this_page >}}
 
 ## ¿Qué y por qué?
 

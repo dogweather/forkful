@@ -17,9 +17,8 @@ summary: "JSON, \uC989 JavaScript Object Notation\uC740 \uC11C\uBC84\uC5D0\uC11C
   \uB798\uBA38\uB4E4\uC740 Google Apps Script\uC5D0\uC11C Google \uC11C\uBE44\uC2A4\
   (\uC608: Sheets, Docs,\u2026"
 title: "JSON\uACFC \uD568\uAED8 \uC791\uC5C5\uD558\uAE30"
+weight: 38
 ---
-
-{{< edit_this_page >}}
 
 ## 무엇 & 왜?
 

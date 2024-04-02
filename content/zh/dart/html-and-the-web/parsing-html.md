@@ -15,9 +15,8 @@ summary: "\u5728\u7F16\u7A0B\u4E2D\u89E3\u6790HTML\u6D89\u53CA\u4ECEHTML\u6587\u
   \u53D6\u3001\u6D4B\u8BD5\u6216\u81EA\u52A8\u5316\u76EE\u7684\u6293\u53D6\u7F51\u9875\
   \u5185\u5BB9\uFF0C\u5373\u4F7F\u6CA1\u6709\u5B98\u65B9API\u53EF\u7528\u3002"
 title: "\u89E3\u6790HTML"
+weight: 43
 ---
-
-{{< edit_this_page >}}
 
 ## 什么 & 为什么？
 在编程中解析HTML涉及从HTML文档中提取数据。程序员这样做是为了与网页内容互动或为了信息提取、测试或自动化目的抓取网页内容，即使没有官方API可用。

@@ -9,9 +9,8 @@ summary: "\xC5 sende en HTTP-foresp\xF8rsel med basisgodkjenning betyr \xE5 krev
   \ tilgang til en beskyttet ressurs p\xE5 nettet ved \xE5 inkludere brukernavn og\
   \ passord.\u2026"
 title: "\xC5 sende en HTTP-foresp\xF8rsel med grunnleggende autentisering"
+weight: 45
 ---
-
-{{< edit_this_page >}}
 
 ## Hva & Hvorfor?
 Å sende en HTTP-forespørsel med basisgodkjenning betyr å kreve tilgang til en beskyttet ressurs på nettet ved å inkludere brukernavn og passord. Programmerere gjør det for å sikre kommunikasjonen og bekrefte identiteten i nettbaserte applikasjoner.

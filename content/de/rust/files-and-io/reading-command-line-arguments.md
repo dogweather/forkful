@@ -9,9 +9,8 @@ summary: "Kommandozeilenargumente erlauben Nutzern, Programme durch zus\xE4tzlic
   \ Eingaben zu steuern. Programmierer nutzen sie, um flexiblere und anpassungsf\xE4\
   higere\u2026"
 title: Lesen von Kommandozeilenargumenten
+weight: 23
 ---
-
-{{< edit_this_page >}}
 
 ## Was & Warum?
 Kommandozeilenargumente erlauben Nutzern, Programme durch zusätzliche Eingaben zu steuern. Programmierer nutzen sie, um flexiblere und anpassungsfähigere Tools zu erstellen, die unter verschiedenen Bedingungen und mit unterschiedlichen Daten arbeiten können.

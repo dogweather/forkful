@@ -11,9 +11,8 @@ summary: "Refactoring in Dart is het proces van het herstructureren van bestaand
   \ code zonder het externe gedrag ervan te veranderen, gericht op het verbeteren\
   \ van\u2026"
 title: Refactoring
+weight: 19
 ---
-
-{{< edit_this_page >}}
 
 ## Wat & Waarom?
 

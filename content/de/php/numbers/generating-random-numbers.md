@@ -7,9 +7,8 @@ model: gpt-4-0125-preview
 summary: "Das Generieren von Zufallszahlen in PHP bedeutet, unvorhersehbare Werte\
   \ innerhalb eines festgelegten Bereichs zu erzeugen, was f\xFCr Aufgaben wie das\u2026"
 title: Generierung von Zufallszahlen
+weight: 12
 ---
-
-{{< edit_this_page >}}
 
 ## Was & Warum?
 

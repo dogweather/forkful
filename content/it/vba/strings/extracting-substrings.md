@@ -10,9 +10,8 @@ model: gpt-4-0125-preview
 summary: "L'estrazione di sottostringhe in Visual Basic for Applications (VBA) implica\
   \ l'isolamento di parti specifiche di una stringa in base a criteri dati. I\u2026"
 title: Estrazione di sottostringhe
+weight: 6
 ---
-
-{{< edit_this_page >}}
 
 ## Cosa & Perché?
 

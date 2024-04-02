@@ -9,9 +9,8 @@ summary: "Praca z JSON (JavaScript Object Notation) to podstawa dla wymiany dany
   \ w aplikacjach. Programi\u015Bci u\u017Cywaj\u0105 go, \u017Ceby \u0142atwo serwisy\
   \ mog\u0142y si\u0119 \"dogadywa\u0107\" z\u2026"
 title: Praca z JSON
+weight: 38
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 Praca z JSON (JavaScript Object Notation) to podstawa dla wymiany danych w aplikacjach. Programiści używają go, żeby łatwo serwisy mogły się "dogadywać" z różnymi platformami i językami.

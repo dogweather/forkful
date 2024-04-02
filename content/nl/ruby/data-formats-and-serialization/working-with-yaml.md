@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "YAML staat voor \"YAML Ain't Markup Language.\" Het is een voor mensen leesbare\
   \ gegevensserialisatieformaat. Programmeurs gebruiken het voor\u2026"
 title: Werken met YAML
+weight: 41
 ---
-
-{{< edit_this_page >}}
 
 ## Wat & Waarom?
 YAML staat voor "YAML Ain't Markup Language." Het is een voor mensen leesbare gegevensserialisatieformaat. Programmeurs gebruiken het voor configuratiebestanden, gegevensuitwisseling tussen talen, en omdat het leesbaarder is dan JSON of XML voor complexe gegevensstructuren.

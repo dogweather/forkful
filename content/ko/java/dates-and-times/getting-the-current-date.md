@@ -21,9 +21,8 @@ summary: "Java\uC5D0\uC11C \uD604\uC7AC \uB0A0\uC9DC\uB97C \uC5BB\uB294 \uAC83\u
   \ \uC751\uC6A9 \uD504\uB85C\uADF8\uB7A8\uC5D0\uC11C \uD544\uC218\uC801\uC785\uB2C8\
   \uB2E4."
 title: "\uD604\uC7AC \uB0A0\uC9DC \uAC00\uC838\uC624\uAE30"
+weight: 29
 ---
-
-{{< edit_this_page >}}
 
 ## 무엇 & 왜?
 Java에서 현재 날짜를 얻는 것은 프로그래머가 로깅, 날짜 계산, 시간 기반 조건 등의 작업에 날짜 객체를 조작할 수 있게 해주는 기본적인 작업입니다. 추적, 스케줄링 및 시간 데이터 분석이 중요한 응용 프로그램에서 필수적입니다.

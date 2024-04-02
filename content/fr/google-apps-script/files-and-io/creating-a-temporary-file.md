@@ -11,9 +11,8 @@ summary: "La cr\xE9ation d'un fichier temporaire dans Google Apps Script consist
   \ \xE0 g\xE9n\xE9rer un fichier destin\xE9 \xE0 un usage \xE0 court terme, typiquement\
   \ pour le traitement\u2026"
 title: "Cr\xE9ation d'un fichier temporaire"
+weight: 21
 ---
-
-{{< edit_this_page >}}
 
 ## Quoi & Pourquoi ?
 

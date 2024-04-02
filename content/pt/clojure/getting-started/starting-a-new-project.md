@@ -8,9 +8,8 @@ model: gpt-4-1106-preview
 summary: "Come\xE7ar um novo projeto \xE9 o processo de criar a base para seu c\xF3\
   digo em Clojure - \xE9 como preparar o terreno antes de construir uma casa. Programadores\u2026"
 title: Iniciando um novo projeto
+weight: 1
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 Começar um novo projeto é o processo de criar a base para seu código em Clojure - é como preparar o terreno antes de construir uma casa. Programadores iniciam projetos para organizar suas ideias, bibliotecas e configurações em um esqueleto funcional, pronto para ser desenvolvido e expandido.

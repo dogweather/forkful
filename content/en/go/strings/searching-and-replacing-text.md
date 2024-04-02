@@ -7,9 +7,8 @@ model: gpt-4-0125-preview
 summary: "Searching and replacing text in programming facilitates the modification\
   \ and management of strings, which is a fundamental task in data manipulation and\u2026"
 title: Searching and replacing text
+weight: 10
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 

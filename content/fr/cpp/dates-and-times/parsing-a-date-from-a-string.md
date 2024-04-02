@@ -11,9 +11,8 @@ summary: "Analyser une date \xE0 partir d'une cha\xEEne de caract\xE8res impliqu
   \ d'interpr\xE9ter le format de la cha\xEEne pour extraire les composants de la\
   \ date tels que le\u2026"
 title: "Analyser une date depuis une cha\xEEne de caract\xE8res"
+weight: 30
 ---
-
-{{< edit_this_page >}}
 
 ## Quoi & Pourquoi ?
 Analyser une date à partir d'une chaîne de caractères implique d'interpréter le format de la chaîne pour extraire les composants de la date tels que le jour, le mois et l'année. Les programmeurs font cela pour gérer les entrées utilisateur, lire des fichiers de données ou interagir avec des API qui communiquent les dates dans des formats de chaînes de caractères. C'est essentiel pour le traitement des données, la validation et l'exécution d'arithmétique sur les dates dans les applications.

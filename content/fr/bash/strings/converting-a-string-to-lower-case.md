@@ -9,9 +9,8 @@ summary: "Transformer une cha\xEEne de caract\xE8res en minuscules, c'est simple
   \ changer tous les caract\xE8res majuscules en leur \xE9quivalent minuscule. Les\
   \ programmeurs\u2026"
 title: "Conversion d'une cha\xEEne de caract\xE8res en minuscules"
+weight: 4
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 Transformer une chaîne de caractères en minuscules, c'est simplement changer tous les caractères majuscules en leur équivalent minuscule. Les programmeurs le font pour normaliser les entrées et permettre des comparaisons insensibles à la casse.

@@ -11,9 +11,8 @@ summary: "\xC5 skrive til standard error (stderr) i Haskell lar programmer skill
   \ utdataene sine mellom vanlige resultater og feilmeldinger. Dette er avgj\xF8rende\
   \ for \xE5\u2026"
 title: Skriving til standardfeil
+weight: 25
 ---
-
-{{< edit_this_page >}}
 
 ## Hva & Hvorfor?
 Å skrive til standard error (stderr) i Haskell lar programmer skille utdataene sine mellom vanlige resultater og feilmeldinger. Dette er avgjørende for å signalisere problemer og for feilsøking, uten å rotetil det standard utdata (stdout) som ofte bærer programmets primære data eller resultat.

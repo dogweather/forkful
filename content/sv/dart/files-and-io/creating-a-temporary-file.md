@@ -11,9 +11,8 @@ summary: "Att skapa en tempor\xE4r fil i Dart inneb\xE4r att man genererar en fi
   \ som \xE4r avsedd f\xF6r kortsiktig anv\xE4ndning, fr\xE4mst f\xF6r scenarier som\
   \ cachning av data,\u2026"
 title: "Skapa en tempor\xE4r fil"
+weight: 21
 ---
-
-{{< edit_this_page >}}
 
 ## Vad & Varför?
 Att skapa en temporär fil i Dart innebär att man genererar en fil som är avsedd för kortsiktig användning, främst för scenarier som cachning av data, tillfällig lagring för filbearbetning eller förvaring av information som är för känslig för att behålla länge. Programmerare gör detta för att hantera data som inte behöver permanent lagring, vilket på så sätt förbättrar prestanda och bibehåller datahygien.

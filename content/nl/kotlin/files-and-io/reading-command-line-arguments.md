@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Commandoregelargumenten lezen betekent data ophalen die aan je programma\
   \ wordt doorgegeven wanneer het start. Programmeurs hebben dit nodig om gebruikers\u2026"
 title: Commandoregelargumenten lezen
+weight: 23
 ---
-
-{{< edit_this_page >}}
 
 ## Wat & Waarom?
 Commandoregelargumenten lezen betekent data ophalen die aan je programma wordt doorgegeven wanneer het start. Programmeurs hebben dit nodig om gebruikers in staat te stellen het gedrag van een programma aan te passen zonder de code te wijzigen.

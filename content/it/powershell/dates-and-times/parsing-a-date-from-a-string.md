@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Analizzare una data da una stringa consiste nel riconoscere e convertire\
   \ date scritte in forma di testo in un tipo di dato data che PowerShell pu\xF2 capire\u2026"
 title: Analisi di una data da una stringa
+weight: 30
 ---
-
-{{< edit_this_page >}}
 
 ## Cosa e Perché?
 Analizzare una data da una stringa consiste nel riconoscere e convertire date scritte in forma di testo in un tipo di dato data che PowerShell può capire e con cui può lavorare. I programmatori fanno ciò per manipolare, formattare, confrontare o calcolare date, che sono compiti comuni negli script che gestiscono file di log, input dell'utente o elaborazione dei dati.

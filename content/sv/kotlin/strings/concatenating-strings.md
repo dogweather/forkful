@@ -9,9 +9,8 @@ summary: "Stringkonkatenering inneb\xE4r att s\xE4tta ihop textstr\xE4ngar till 
   \ ny, l\xE4ngre str\xE4ng. Vi g\xF6r det f\xF6r att bygga meddelanden, skapa dynamiska\
   \ texter, eller\u2026"
 title: "Sammanslagning av str\xE4ngar"
+weight: 3
 ---
-
-{{< edit_this_page >}}
 
 ## Vad & Varför?
 Stringkonkatenering innebär att sätta ihop textsträngar till en ny, längre sträng. Vi gör det för att bygga meddelanden, skapa dynamiska texter, eller helt enkelt kombinera data för visning.

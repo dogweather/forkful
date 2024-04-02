@@ -8,9 +8,8 @@ model: gpt-4-0125-preview
 summary: "XML, abr\xE9viation de eXtensible Markup Language, est comme le cousin verbeux\
   \ de JSON. Vous aurez \xE0 vous d\xE9battre avec XML lors de la manipulation de\u2026"
 title: Travailler avec XML
+weight: 40
 ---
-
-{{< edit_this_page >}}
 
 ## Quoi et pourquoi ?
 XML, abréviation de eXtensible Markup Language, est comme le cousin verbeux de JSON. Vous aurez à vous débattre avec XML lors de la manipulation de systèmes hérités, de logiciels d'entreprise ou d'APIs qui ont fait l'impasse sur le wagon JSON. C'est essentiel pour l'échange de données où XML tient bon la barre.

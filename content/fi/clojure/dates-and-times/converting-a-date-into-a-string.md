@@ -9,9 +9,8 @@ summary: "Muuttaminen p\xE4iv\xE4m\xE4\xE4r\xE4st\xE4 merkkijonoksi tarkoittaa `
   \ objektin esitt\xE4mist\xE4 luettavassa muodossa. Ohjelmoijat tekev\xE4t t\xE4\
   m\xE4n jakamiseen,\u2026"
 title: "P\xE4iv\xE4m\xE4\xE4r\xE4n muuntaminen merkkijonoksi"
+weight: 28
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 Muuttaminen päivämäärästä merkkijonoksi tarkoittaa `java.util.Date` objektin esittämistä luettavassa muodossa. Ohjelmoijat tekevät tämän jakamiseen, tallentamiseen tai näytölle tulostamiseen.

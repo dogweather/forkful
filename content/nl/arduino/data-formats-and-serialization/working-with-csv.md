@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Werken met CSV (Comma-Separated Values) in Arduino stelt je in staat om\
   \ gegevens als tekst op te slaan en te beheren. Het is goedkoop, eenvoudig en\u2026"
 title: Werken met CSV
+weight: 37
 ---
-
-{{< edit_this_page >}}
 
 ## Wat & Waarom?
 Werken met CSV (Comma-Separated Values) in Arduino stelt je in staat om gegevens als tekst op te slaan en te beheren. Het is goedkoop, eenvoudig en universeel, waardoor het ideaal is voor gegevensregistratie, configuratiebestanden of communicatie met spreadsheets en databases.

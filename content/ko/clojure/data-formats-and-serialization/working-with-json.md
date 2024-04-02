@@ -17,9 +17,8 @@ summary: "Clojure\uC5D0\uC11C JSON(JavaScript Object Notation)\uC744 \uB2E4\uB8E
   \ \uC791\uC5C5\uC740 \uC6F9 \uC11C\uBE44\uC2A4, API, \uADF8\uB9AC\uACE0 \uAD6C\uC870\
   \uD654\uB41C \uD14D\uC2A4\uD2B8 \uAE30\uBC18 \uD3EC\uB9F7\uC73C\uB85C\u2026"
 title: "JSON\uACFC \uD568\uAED8 \uC77C\uD558\uAE30"
+weight: 38
 ---
-
-{{< edit_this_page >}}
 
 ## 무엇 & 왜?
 Clojure에서 JSON(JavaScript Object Notation)을 다루는 것은 JSON 문자열을 Clojure 데이터 구조체(맵, 벡터)로 파싱하고 그 반대로 변환하는 작업을 포함합니다. 이 작업은 웹 서비스, API, 그리고 구조화된 텍스트 기반 포맷으로 데이터를 소통해야 하는 애플리케이션에 있어 기본적인 것이다. 왜냐하면 JSON은 다양한 프로그래밍 환경에 걸쳐 보편적으로 인식되고 지원되기 때문입니다.

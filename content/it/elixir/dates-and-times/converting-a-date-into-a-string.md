@@ -9,9 +9,8 @@ summary: "Convertire una data in una stringa significa trasformare un oggetto ch
   \ rappresenta una data e/ora in una sequenza di caratteri leggibile da un umano.\
   \ I\u2026"
 title: Conversione di una data in una stringa
+weight: 28
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 Convertire una data in una stringa significa trasformare un oggetto che rappresenta una data e/ora in una sequenza di caratteri leggibile da un umano. I programmatori lo fanno per mostrare date in formati specifici o per inserirle in file e database che accettano solo testo.

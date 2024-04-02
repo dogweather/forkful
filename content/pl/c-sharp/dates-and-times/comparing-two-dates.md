@@ -9,9 +9,8 @@ summary: "Por\xF3wnywanie dw\xF3ch dat w C# to sprawdzanie, kt\xF3ra z dw\xF3ch 
   \ jest wcze\u015Bniejsza, p\xF3\u017Aniejsza lub czy s\u0105 identyczne. Programi\u015B\
   ci robi\u0105 to, aby obs\u0142ugiwa\u0107\u2026"
 title: "Por\xF3wnywanie dw\xF3ch dat"
+weight: 27
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why? (Co i dlaczego?)
 Porównywanie dwóch dat w C# to sprawdzanie, która z dwóch dat jest wcześniejsza, późniejsza lub czy są identyczne. Programiści robią to, aby obsługiwać harmonogramy, terminy płatności, logowanie działalności i inne zadania związane z czasem.

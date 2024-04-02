@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "String-Interpolation, in der Programmierung, beinhaltet den Aufbau von Zeichenketten,\
   \ indem Ausdr\xFCcke innerhalb von w\xF6rtlichen Zeichenketten eingebettet\u2026"
 title: Interpolation eines Strings
+weight: 8
 ---
-
-{{< edit_this_page >}}
 
 ## Was & Warum?
 

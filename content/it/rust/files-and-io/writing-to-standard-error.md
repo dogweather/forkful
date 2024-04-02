@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Scrivere su standard error (stderr) in Rust significa indirizzare messaggi\
   \ di errore e diagnostica alla console separatamente dall'output standard\u2026"
 title: Scrivere sull'errore standard
+weight: 25
 ---
-
-{{< edit_this_page >}}
 
 ## Cosa & Perché?
 Scrivere su standard error (stderr) in Rust significa indirizzare messaggi di errore e diagnostica alla console separatamente dall'output standard (stdout). I programmatori fanno ciò per differenziare l'output normale del programma dai messaggi di errore, rendendo più facile gestire adeguatamente gli errori o reindirizzarli a registri o file durante l'esecuzione.

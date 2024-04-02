@@ -7,9 +7,8 @@ model: gpt-4-0125-preview
 summary: "Komplexe Zahlen erweitern die reellen Zahlen um einen zus\xE4tzlichen Teil,\
   \ die imagin\xE4re Einheit 'i'. Programmierer verwenden sie in verschiedenen\u2026"
 title: Umgang mit komplexen Zahlen
+weight: 14
 ---
-
-{{< edit_this_page >}}
 
 ## Was & Warum?
 Komplexe Zahlen erweitern die reellen Zahlen um einen zusätzlichen Teil, die imaginäre Einheit 'i'. Programmierer verwenden sie in verschiedenen Bereichen, einschließlich Signalverarbeitung, Elektromagnetentheorie und Fraktalen, wo Berechnungen, die die Quadratwurzel einer negativen Zahl beinhalten, Routine sind.

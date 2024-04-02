@@ -11,9 +11,8 @@ summary: "Att s\xF6ka och ers\xE4tta text i Google Apps Script inneb\xE4r att ma
   \ programmeringsm\xE4ssigt identifierar specifika str\xE4ngar i ett dokument, kalkylblad\
   \ eller\u2026"
 title: "S\xF6ka och ers\xE4tta text"
+weight: 10
 ---
-
-{{< edit_this_page >}}
 
 ## Vad & Varför?
 

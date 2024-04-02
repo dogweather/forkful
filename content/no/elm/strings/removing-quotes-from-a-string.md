@@ -8,9 +8,8 @@ model: gpt-4-0125-preview
 summary: "\xC5 fjerne anf\xF8rselstegn fra en streng betyr \xE5 stripe bort de ekstra\
   \ doble eller enkle anf\xF8rselstegnene som du faktisk ikke trenger i den bearbeidede\u2026"
 title: "Fjerne anf\xF8rselstegn fra en streng"
+weight: 9
 ---
-
-{{< edit_this_page >}}
 
 ## Hva og hvorfor?
 Å fjerne anførselstegn fra en streng betyr å stripe bort de ekstra doble eller enkle anførselstegnene som du faktisk ikke trenger i den bearbeidede teksten. Programmerere gjør dette for å rense inndata, forberede data for lagring, eller gjøre utdata mer lesbart for mennesker når anførselstegn ikke er nødvendig i den gitte konteksten.

@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Das Parsen eines Datums aus einem String in C# beinhaltet das Umwandeln\
   \ von textuellen Darstellungen von Daten und Zeiten in ein `DateTime`-Objekt. Dies\u2026"
 title: Einen Datum aus einem String analysieren
+weight: 30
 ---
-
-{{< edit_this_page >}}
 
 ## Was & Warum?
 Das Parsen eines Datums aus einem String in C# beinhaltet das Umwandeln von textuellen Darstellungen von Daten und Zeiten in ein `DateTime`-Objekt. Dies ist essentiell für Anwendungen, die Daten und Zeiten in verschiedenen Formaten manipulieren, speichern oder anzeigen müssen, wie beispielsweise Planungs-Apps, Log-Verarbeitungen oder jegliches System, das Dateneingaben von Benutzern oder externen Quellen handhabt.

@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Fouten afhandelen in C houdt in dat je afwijkende omstandigheden detecteert\
   \ en daarop reageert tijdens de uitvoering van het programma. Programmeurs doen\u2026"
 title: Fouten afhandelen
+weight: 16
 ---
-
-{{< edit_this_page >}}
 
 ## Wat & Waarom?
 

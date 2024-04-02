@@ -18,9 +18,8 @@ summary: "\uB0A0\uC9DC\uB97C \uBBF8\uB798\uB098 \uACFC\uAC70\uB85C \uACC4\uC0B0\
   \uACFC \uAC19\uC740 \uAE30\uB2A5\uC5D0 \uC774\uB97C \uC0AC\uC6A9\uD569\uB2C8\uB2E4\
   ."
 title: "\uBBF8\uB798\uB098 \uACFC\uAC70\uC758 \uB0A0\uC9DC \uACC4\uC0B0\uD558\uAE30"
+weight: 26
 ---
-
-{{< edit_this_page >}}
 
 ## 무엇 & 왜?
 날짜를 미래나 과거로 계산하는 것은 특정 날짜로부터 일정 기간이 지난 날짜를 찾는 과정입니다. 프로그래머들은 예약 시스템, 리마인더, 역사적 이벤트 트래킹과 같은 기능에 이를 사용합니다.

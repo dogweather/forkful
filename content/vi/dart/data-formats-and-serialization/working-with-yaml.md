@@ -13,9 +13,8 @@ summary: "YAML, vi\u1EBFt t\u1EAFt c\u1EE7a YAML Ain't Markup Language, l\xE0 m\
   \u1ECDc cho con ng\u01B0\u1EDDi. L\u1EADp tr\xECnh vi\xEAn s\u1EED d\u1EE5ng n\xF3\
   \ cho c\xE1c t\u1EC7p c\u1EA5u h\xECnh,\u2026"
 title: "L\xE0m vi\u1EC7c v\u1EDBi YAML"
+weight: 41
 ---
-
-{{< edit_this_page >}}
 
 ## Gì và Tại sao?
 

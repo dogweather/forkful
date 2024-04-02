@@ -9,9 +9,8 @@ summary: "Att konvertera en str\xE4ng till sm\xE5 bokst\xE4ver inneb\xE4r att al
   \ versala (stora) tecken i str\xE4ngen omvandlas till gemena (sm\xE5) tecken. Programmerare\
   \ g\xF6r detta\u2026"
 title: "Konvertera en str\xE4ng till gemener"
+weight: 4
 ---
-
-{{< edit_this_page >}}
 
 ## Vad & Varför?
 Att konvertera en sträng till små bokstäver innebär att alla versala (stora) tecken i strängen omvandlas till gemena (små) tecken. Programmerare gör detta för att standardisera data, underlätta jämförelser och sökningar i text, och för att behandla användarinmatning på ett robust sätt.

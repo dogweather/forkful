@@ -13,9 +13,8 @@ summary: "Vi\u1EC7c t\u1EA1o s\u1ED1 ng\u1EABu nhi\xEAn trong PHP l\xE0 v\u1EC1 
   \u1EDBc trong m\u1ED9t d\u1EA3i gi\xE1 tr\u1ECB nh\u1EA5t \u0111\u1ECBnh, \u0111\
   i\u1EC1u n\xE0y r\u1EA5t quan tr\u1ECDng cho c\xE1c t\xE1c\u2026"
 title: "Sinh s\u1ED1 ng\u1EABu nhi\xEAn"
+weight: 12
 ---
-
-{{< edit_this_page >}}
 
 ## Cái gì & Tại sao?
 

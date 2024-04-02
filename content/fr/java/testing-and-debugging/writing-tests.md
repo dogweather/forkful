@@ -11,9 +11,8 @@ summary: "\xC9crire des tests en Java consiste \xE0 v\xE9rifier que votre code s
   \ comporte comme pr\xE9vu dans diverses conditions. Les programmeurs \xE9crivent\
   \ des tests pour\u2026"
 title: "R\xE9daction de tests"
+weight: 36
 ---
-
-{{< edit_this_page >}}
 
 ## Quoi & Pourquoi ?
 Écrire des tests en Java consiste à vérifier que votre code se comporte comme prévu dans diverses conditions. Les programmeurs écrivent des tests pour prévenir les bugs, garantir que la fonctionnalité reste correcte après des modifications et favoriser les principes de bonne conception logicielle.

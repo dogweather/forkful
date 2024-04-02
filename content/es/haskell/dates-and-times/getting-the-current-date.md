@@ -10,9 +10,8 @@ model: gpt-4-0125-preview
 summary: "Recuperar la fecha actual en Haskell implica obtener el tiempo actual del\
   \ sistema y transformarlo en un formato de fecha legible. Los programadores hacen\u2026"
 title: Obteniendo la fecha actual
+weight: 29
 ---
-
-{{< edit_this_page >}}
 
 ## ¿Qué y Por Qué?
 Recuperar la fecha actual en Haskell implica obtener el tiempo actual del sistema y transformarlo en un formato de fecha legible. Los programadores hacen esto para realizar operaciones basadas en la fecha, como registro de actividades, programación de tareas o estampado de tiempo en eventos en aplicaciones.

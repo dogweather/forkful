@@ -7,9 +7,8 @@ model: gpt-4-1106-preview
 summary: "Convertir una fecha a texto significa transformar datos de tiempo (como\
   \ `Date` en Kotlin) a una cadena de caracteres (`String`). Lo hacemos para mostrar\u2026"
 title: Convirtiendo una fecha en una cadena de texto
+weight: 28
 ---
-
-{{< edit_this_page >}}
 
 ## ¿Qué y por qué?
 Convertir una fecha a texto significa transformar datos de tiempo (como `Date` en Kotlin) a una cadena de caracteres (`String`). Lo hacemos para mostrar fechas en un formato legible para los humanos o para almacenar y transportar información de manera estandarizada.

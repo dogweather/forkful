@@ -10,9 +10,8 @@ model: gpt-4-0125-preview
 summary: "Een tijdelijk bestand cre\xEBren betekent het maken van een bestand dat\
   \ je weggooit na kort gebruik. Programmeurs doen dit voor tijdelijke opslag of wanneer\u2026"
 title: Een tijdelijk bestand aanmaken
+weight: 21
 ---
-
-{{< edit_this_page >}}
 
 ## Wat & Waarom?
 Een tijdelijk bestand creëren betekent het maken van een bestand dat je weggooit na kort gebruik. Programmeurs doen dit voor tijdelijke opslag of wanneer ze willen voorkomen dat een harde schijf verstopt raakt met gegevens die een zeer korte houdbaarheid hebben.

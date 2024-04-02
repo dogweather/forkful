@@ -13,9 +13,8 @@ summary: "C\xE1c m\u1EA3ng li\xEAn k\u1EBFt trong Lua gi\u1ED1ng nh\u01B0 nh\u1E
   \ l\xE0 nh\u1EEFng con s\u1ED1 x\u1EBFp h\xE0ng ng\u0103n n\u1EAFp theo ch\u1EC9\
   \ s\u1ED1, kh\xF3a c\u1EE7a b\u1EA1n c\xF3 th\u1EC3 l\xE0\u2026"
 title: "S\u1EED d\u1EE5ng m\u1EA3ng li\xEAn k\u1EBFt"
+weight: 15
 ---
-
-{{< edit_this_page >}}
 
 ## Cái gì & Tại sao?
 

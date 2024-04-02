@@ -22,9 +22,8 @@ summary: "\u05E9\u05DC\u05D9\u05D7\u05EA \u05D1\u05E7\u05E9\u05EA HTTP \u05E2\u0
   \u05E9\u05EA\u2026"
 title: "\u05E9\u05DC\u05D9\u05D7\u05EA \u05D1\u05E7\u05E9\u05EA HTTP \u05E2\u05DD\
   \ \u05D0\u05D9\u05DE\u05D5\u05EA \u05D1\u05E1\u05D9\u05E1\u05D9"
+weight: 45
 ---
-
-{{< edit_this_page >}}
 
 ## מה ולמה?
 שליחת בקשת HTTP עם אימות בסיסי היא תהליך שבו משתמש שולח שם משתמש וסיסמה בצורת קוד Base64 ב-header של בקשת HTTP. תוכניתנים עושים זאת כדי להבטיח את גישת המשתמש לרכיבי מערכת מוגנים.

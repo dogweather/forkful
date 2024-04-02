@@ -7,9 +7,8 @@ model: gpt-4-1106-preview
 summary: "String concatenation is like making a sandwich, but instead of bread and\
   \ fillings, you're stacking words together to form a sentence or a phrase.\u2026"
 title: Concatenating strings
+weight: 3
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 

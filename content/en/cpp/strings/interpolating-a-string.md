@@ -7,9 +7,8 @@ model: gpt-4-1106-preview
 summary: String interpolation is about inserting variables into strings. We do it
   to construct messages on the fly, personalize output, or build dynamic queries.
 title: Interpolating a string
+weight: 8
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 String interpolation is about inserting variables into strings. We do it to construct messages on the fly, personalize output, or build dynamic queries.

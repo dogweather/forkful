@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Een datum naar een string converteren gaat over het veranderen van de manier\
   \ waarop datum/tijd-gegevens worden weergegeven. Programmeurs doen dit voor\u2026"
 title: Een datum converteren naar een string
+weight: 28
 ---
-
-{{< edit_this_page >}}
 
 ## Wat & Waarom?
 Een datum naar een string converteren gaat over het veranderen van de manier waarop datum/tijd-gegevens worden weergegeven. Programmeurs doen dit voor leesbaarheid, lokalisatie of om consistentie in de opmaak over applicaties heen te bewerkstelligen.

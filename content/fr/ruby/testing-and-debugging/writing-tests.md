@@ -11,9 +11,8 @@ summary: "Le test en Ruby consiste \xE0 v\xE9rifier que votre code se comporte c
   \ pr\xE9vu dans diverses conditions. Les programmeurs \xE9crivent des tests pour\
   \ assurer la\u2026"
 title: "R\xE9daction de tests"
+weight: 36
 ---
-
-{{< edit_this_page >}}
 
 ## Quoi & Pourquoi ?
 Le test en Ruby consiste à vérifier que votre code se comporte comme prévu dans diverses conditions. Les programmeurs écrivent des tests pour assurer la correction, prévenir les régressions et faciliter le remaniement, visant des applications robustes et maintenables.

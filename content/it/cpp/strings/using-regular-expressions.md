@@ -8,9 +8,8 @@ model: unknown
 summary: "Le espressioni regolari (regexp) servono a trovare pattern di testo con\
   \ regole specifiche. I programmatori le usano per validazione dati, ricerca e\u2026"
 title: Utilizzo delle espressioni regolari
+weight: 11
 ---
-
-{{< edit_this_page >}}
 
 ## Che cosa e perché?
 Le espressioni regolari (regexp) servono a trovare pattern di testo con regole specifiche. I programmatori le usano per validazione dati, ricerca e sostituzione in stringhe, facilitando l'automazione di compiti complessi.

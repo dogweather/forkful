@@ -17,9 +17,8 @@ summary: "\u5728 Visual Basic for Applications (VBA) \u4E2D\u4F7F\u7528\u57FA\u6
   \u7684\u5E94\u7528\u7A0B\u5E8F\u4E2D\u7684\u5B89\u5168 API \u6216\u7F51\u7EDC\u670D\
   \u52A1\u8FDB\u884C\u4EA4\u4E92\uFF0C\u4F8B\u5982\u5728 Excel \u6216 Access\u2026"
 title: "\u4F7F\u7528\u57FA\u672C\u8BA4\u8BC1\u53D1\u9001HTTP\u8BF7\u6C42"
+weight: 45
 ---
-
-{{< edit_this_page >}}
 
 ## 是什么 & 为什么?
 

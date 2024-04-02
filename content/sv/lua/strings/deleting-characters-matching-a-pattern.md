@@ -7,9 +7,8 @@ model: gpt-4-1106-preview
 summary: "Att radera tecken som matchar ett m\xF6nster inneb\xE4r att man letar igenom\
   \ en textstr\xE4ng och tar bort specifika tecken eller sekvenser av tecken.\u2026"
 title: "Ta bort tecken som matchar ett m\xF6nster"
+weight: 5
 ---
-
-{{< edit_this_page >}}
 
 ## Vad & Varför?
 Att radera tecken som matchar ett mönster innebär att man letar igenom en textsträng och tar bort specifika tecken eller sekvenser av tecken. Programmerare gör det för att rensa upp i data, validera input, eller bearbeta information på ett korrekt sätt.

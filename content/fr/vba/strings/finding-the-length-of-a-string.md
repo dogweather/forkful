@@ -11,9 +11,8 @@ summary: "Trouver la longueur d'une cha\xEEne de caract\xE8res en Visual Basic p
   \ Applications (VBA) consiste \xE0 d\xE9terminer le nombre de caract\xE8res qu'elle\
   \ contient. Les\u2026"
 title: "Trouver la longueur d'une cha\xEEne"
+weight: 7
 ---
-
-{{< edit_this_page >}}
 
 ## Quoi & Pourquoi ?
 

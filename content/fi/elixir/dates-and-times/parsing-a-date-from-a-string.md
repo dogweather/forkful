@@ -12,9 +12,8 @@ summary: "P\xE4iv\xE4m\xE4\xE4r\xE4n j\xE4sennys merkkijonosta tarkoittaa teksti
   \ kuten \"2023-04-05\", muuntamista p\xE4iv\xE4m\xE4\xE4r\xE4muotoon, jonka ohjelmasi\
   \ voi ymm\xE4rt\xE4\xE4 ja k\xE4sitell\xE4.\u2026"
 title: "P\xE4iv\xE4m\xE4\xE4r\xE4n j\xE4sent\xE4minen merkkijonosta"
+weight: 30
 ---
-
-{{< edit_this_page >}}
 
 ## Mikä & Miksi?
 

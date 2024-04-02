@@ -8,9 +8,8 @@ model: gpt-4-0125-preview
 summary: "Refactorizar es el arte de ajustar c\xF3digo existente para mejorar su estructura,\
   \ legibilidad y eficiencia sin alterar su comportamiento externo. Los\u2026"
 title: "Refactorizaci\xF3n"
+weight: 19
 ---
-
-{{< edit_this_page >}}
 
 ## ¿Qué y Por Qué?
 Refactorizar es el arte de ajustar código existente para mejorar su estructura, legibilidad y eficiencia sin alterar su comportamiento externo. Los programadores lo hacen para hacer su código más mantenible, reducir la complejidad y, a menudo, como un paso preliminar antes de agregar nuevas características o corregir errores.

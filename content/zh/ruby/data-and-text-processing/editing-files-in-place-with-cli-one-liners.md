@@ -20,9 +20,8 @@ summary: "\u4F7F\u7528 Ruby \u7684 CLI\uFF08\u547D\u4EE4\u884C\u754C\u9762\uFF09
   \u548C\u7CBE\u529B\u3002"
 title: "\u4F7F\u7528\u547D\u4EE4\u884C\u4E00\u884C\u547D\u4EE4\u5C31\u5730\u7F16\u8F91\
   \u6587\u4EF6"
+weight: 32
 ---
-
-{{< edit_this_page >}}
 
 ## 什么 & 为什么？
 

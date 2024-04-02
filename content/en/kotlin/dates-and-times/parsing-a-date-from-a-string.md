@@ -7,9 +7,8 @@ model: gpt-4-0125-preview
 summary: "Parsing a date from a string involves converting text into a Date object.\
   \ This operation is fundamental for applications that interact with dates entered\u2026"
 title: Parsing a date from a string
+weight: 30
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 Parsing a date from a string involves converting text into a Date object. This operation is fundamental for applications that interact with dates entered by users or sourced from external datasets, allowing for easy manipulation and formatting according to needs.

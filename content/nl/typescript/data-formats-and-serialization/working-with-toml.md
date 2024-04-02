@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "TOML, een afkorting voor Tom's Obvious, Minimal Language, is een data-serialisatieformaat\
   \ vergelijkbaar met JSON of YAML. Programmeurs gebruiken het\u2026"
 title: Werken met TOML
+weight: 39
 ---
-
-{{< edit_this_page >}}
 
 ## Wat & Waarom?
 TOML, een afkorting voor Tom's Obvious, Minimal Language, is een data-serialisatieformaat vergelijkbaar met JSON of YAML. Programmeurs gebruiken het vanwege de menselijke leesbaarheid en de eenvoudige koppeling aan datatypes, waardoor het een voor de hand liggende keuze is voor configuratiebestanden en gegevensuitwisseling.

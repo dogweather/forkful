@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Tests in der Programmierung zu schreiben bedeutet, spezifische Verfahren\
   \ zu erstellen, um die Funktionalit\xE4t und Leistung Ihrer Codeabschnitte zu\u2026"
 title: Tests schreiben
+weight: 36
 ---
-
-{{< edit_this_page >}}
 
 ## Was & Warum?
 

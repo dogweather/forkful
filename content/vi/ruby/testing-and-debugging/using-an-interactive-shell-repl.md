@@ -13,9 +13,8 @@ summary: "M\u1ED9t shell t\u01B0\u01A1ng t\xE1c, hay REPL (Read-Eval-Print Loop)
   \ th\u1EF1c. C\xE1c l\u1EADp tr\xECnh vi\xEAn s\u1EED d\u1EE5ng n\xF3 \u0111\u1EC3\
   \ th\xED nghi\u1EC7m, g\u1EE1\u2026"
 title: "S\u1EED d\u1EE5ng v\u1ECF t\u01B0\u01A1ng t\xE1c (REPL)"
+weight: 34
 ---
-
-{{< edit_this_page >}}
 
 ## Gì và Tại sao?
 Một shell tương tác, hay REPL (Read-Eval-Print Loop), cho phép bạn thử nghiệm mã lệnh theo thời gian thực. Các lập trình viên sử dụng nó để thí nghiệm, gỡ lỗi và học những điều tinh tế của Ruby mà không cần tạo ra các kịch bản đầy đủ.

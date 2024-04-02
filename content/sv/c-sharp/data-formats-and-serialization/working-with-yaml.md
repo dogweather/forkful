@@ -11,9 +11,8 @@ summary: "YAML, som st\xE5r f\xF6r YAML Ain't Markup Language, \xE4r ett l\xE4sb
   \ data-serialiseringsformat. Programmerare anv\xE4nder det ofta f\xF6r konfigurationsfiler,\
   \ inter-\u2026"
 title: Att Arbeta med YAML
+weight: 41
 ---
-
-{{< edit_this_page >}}
 
 ## Vad & Varför?
 YAML, som står för YAML Ain't Markup Language, är ett läsbart data-serialiseringsformat. Programmerare använder det ofta för konfigurationsfiler, inter-processmeddelanden och datalagring på grund av dess enkelhet och läsbarhet jämfört med andra dataformat som XML eller JSON.

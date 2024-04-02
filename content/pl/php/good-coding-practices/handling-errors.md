@@ -9,9 +9,8 @@ summary: "Obs\u0142uga b\u0142\u0119d\xF3w w PHP dotyczy zarz\u0105dzania i reag
   \ na warunki, kt\xF3re zak\u0142\xF3caj\u0105 normalny przep\u0142yw programu, takie\
   \ jak brakuj\u0105ce pliki czy b\u0142\u0119dne dane\u2026"
 title: "Obs\u0142uga b\u0142\u0119d\xF3w"
+weight: 16
 ---
-
-{{< edit_this_page >}}
 
 ## Co i dlaczego?
 Obsługa błędów w PHP dotyczy zarządzania i reagowania na warunki, które zakłócają normalny przepływ programu, takie jak brakujące pliki czy błędne dane wejściowe. Programiści obsługują błędy, aby zapobiec awariom i zapewnić użytkownikom płynniejsze doświadczenie.

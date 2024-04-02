@@ -9,9 +9,8 @@ summary: "L\xE4nge eines Strings messen hei\xDFt, zu z\xE4hlen, wie viele Zeiche
   \ er enth\xE4lt. Das brauchen Programmierer, um Eingaben zu validieren, Textdaten\
   \ zu verarbeiten\u2026"
 title: "Ermittlung der Zeichenkettenl\xE4nge"
+weight: 7
 ---
-
-{{< edit_this_page >}}
 
 ## Was & Warum?
 Länge eines Strings messen heißt, zu zählen, wie viele Zeichen er enthält. Das brauchen Programmierer, um Eingaben zu validieren, Textdaten zu verarbeiten oder Speicherplatzbedarf abzuschätzen.

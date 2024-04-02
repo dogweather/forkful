@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Het vergelijken van twee datums in Google Apps Script, een afgeleide van\
   \ JavaScript, speciaal ontworpen voor de suite van Google-applicaties, is een\u2026"
 title: Twee datums vergelijken
+weight: 27
 ---
-
-{{< edit_this_page >}}
 
 ## Wat & Waarom?
 Het vergelijken van twee datums in Google Apps Script, een afgeleide van JavaScript, speciaal ontworpen voor de suite van Google-applicaties, is een essentiële taak voor ontwikkelaars die zich bezighouden met planning, tijdlijnen of enige datumgerelateerde gegevens. Begrijpen hoe je datums nauwkeurig kunt vergelijken stelt programmeurs in staat om functies zoals deadlines, evenementenplanning of inhoudsplanning effectief te implementeren.

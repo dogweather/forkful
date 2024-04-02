@@ -9,9 +9,8 @@ summary: "S\xF6ka och ers\xE4tta text \xE4r tekniken att hitta specifika textstr
   ngar och byta ut dem med n\xE5got annat. Programmerare g\xF6r detta f\xF6r att snabbt\
   \ uppdatera kod,\u2026"
 title: "S\xF6kning och ers\xE4ttning av text"
+weight: 10
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why? (Vad & Varför?)
 Söka och ersätta text är tekniken att hitta specifika textsträngar och byta ut dem med något annat. Programmerare gör detta för att snabbt uppdatera kod, korrigera fel eller manipulera data.

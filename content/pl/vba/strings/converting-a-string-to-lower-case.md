@@ -11,9 +11,8 @@ summary: "Konwertowanie ci\u0105gu znak\xF3w na ma\u0142e litery polega na przek
   ceniu wszystkich wielkich liter w ci\u0105gu na ich ma\u0142e odpowiedniki. Proces\
   \ ten jest niezb\u0119dny\u2026"
 title: "Konwersja \u0142a\u0144cucha znak\xF3w na ma\u0142e litery"
+weight: 4
 ---
-
-{{< edit_this_page >}}
 
 ## Co i dlaczego?
 

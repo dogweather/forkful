@@ -11,9 +11,8 @@ summary: "Los arrays asociativos, tambi\xE9n conocidos como tablas hash o diccio
   \ en PowerShell, te permiten almacenar datos en pares clave-valor, haciendo que\
   \ la\u2026"
 title: Uso de matrices asociativas
+weight: 15
 ---
-
-{{< edit_this_page >}}
 
 ## Qué y Por Qué?
 

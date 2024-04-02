@@ -11,9 +11,8 @@ summary: "Het parsen van een datum uit een string betekent het omzetten van teks
   \ die een datum vertegenwoordigt naar een formaat dat een programma kan begrijpen\
   \ en\u2026"
 title: Een datum uit een string parsen
+weight: 30
 ---
-
-{{< edit_this_page >}}
 
 ## Wat & Waarom?
 

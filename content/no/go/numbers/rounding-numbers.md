@@ -11,9 +11,8 @@ summary: "Avrunding av tall handler om \xE5 justere verdien av et tall til det n
   rmeste hele tallet eller til et spesifikt antall desimaler. Programmerere gj\xF8\
   r dette\u2026"
 title: Avrunding av tall
+weight: 13
 ---
-
-{{< edit_this_page >}}
 
 ## Hva & Hvorfor?
 

@@ -10,9 +10,8 @@ model: gpt-4-0125-preview
 summary: "\xC5 analysere en dato fra en tekststreng inneb\xE6rer \xE5 konvertere tekstlige\
   \ representasjoner av datoer og tider til et format som kan manipuleres og\u2026"
 title: Analysering av en dato fra en streng
+weight: 30
 ---
-
-{{< edit_this_page >}}
 
 ## Hva & Hvorfor?
 Å analysere en dato fra en tekststreng innebærer å konvertere tekstlige representasjoner av datoer og tider til et format som kan manipuleres og analyseres av programmet. Dette er en vanlig oppgave i programmering, da det tillater håndtering av brukerinndata, lagring av tidsstemplet data og interaksjoner med API-er, noe som gir mer funksjonelle og brukervennlige applikasjoner.

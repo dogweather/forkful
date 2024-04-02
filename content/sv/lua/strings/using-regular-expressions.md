@@ -11,9 +11,8 @@ summary: "Regulj\xE4ra uttryck i programmering m\xF6jligg\xF6r m\xF6nstermatchni
   \ och manipulation av str\xE4ngar baserat p\xE5 specifika m\xF6nster. Programmerare\
   \ anv\xE4nder dem f\xF6r\u2026"
 title: "Att anv\xE4nda regulj\xE4ra uttryck"
+weight: 11
 ---
-
-{{< edit_this_page >}}
 
 ## Vad & Varför?
 

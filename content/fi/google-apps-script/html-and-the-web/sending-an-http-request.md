@@ -11,9 +11,8 @@ summary: "HTTP-pyynn\xF6n l\xE4hett\xE4minen Google Apps Scriptill\xE4 tarkoitta
   \ ohjelmallisesti kutsun tekemist\xE4 ulkoiselle verkkopalvelimelle tai API:lle.\
   \ Ohjelmoijat\u2026"
 title: "HTTP-pyynn\xF6n l\xE4hett\xE4minen"
+weight: 44
 ---
-
-{{< edit_this_page >}}
 
 ## Mikä ja miksi?
 

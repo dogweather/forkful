@@ -8,9 +8,8 @@ model: gpt-4-1106-preview
 summary: "El registro de eventos (logging) es esencialmente el equivalente en software\
   \ de un diario de navegaci\xF3n; es una forma de registrar eventos que ocurren\u2026"
 title: "Registro de Actividades en Programaci\xF3n"
+weight: 17
 ---
-
-{{< edit_this_page >}}
 
 ## ¿Qué y por qué?
 El registro de eventos (logging) es esencialmente el equivalente en software de un diario de navegación; es una forma de registrar eventos que ocurren mientras una aplicación se está ejecutando. Los programadores lo hacen para mantener un seguimiento de estos eventos para la depuración, auditoría o para obtener información sobre el comportamiento de un sistema en producción.

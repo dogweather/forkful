@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Das Generieren von Zufallszahlen in Dart beinhaltet die Erstellung von numerischen\
   \ Werten, die unvorhersehbar sind und bei jeder Ausf\xFChrung variieren.\u2026"
 title: Zufallszahlen generieren
+weight: 12
 ---
-
-{{< edit_this_page >}}
 
 ## Was & Warum?
 Das Generieren von Zufallszahlen in Dart beinhaltet die Erstellung von numerischen Werten, die unvorhersehbar sind und bei jeder Ausführung variieren. Programmierer nutzen diese Funktionalität aus verschiedenen Gründen, von der Simulation realer Szenarien in Testumgebungen bis hin zur Aktivierung von Spielmechaniken und der Gewährleistung von Sicherheit durch Zufälligkeit in kryptografischen Operationen.

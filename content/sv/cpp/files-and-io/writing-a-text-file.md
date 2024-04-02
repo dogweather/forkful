@@ -11,9 +11,8 @@ summary: "Att skriva till en textfil i C++ inneb\xE4r att skapa eller \xF6ppna e
   \ fil och sedan skriva data till den, vilket \xE4r en grundl\xE4ggande uppgift f\xF6\
   r applikationer\u2026"
 title: Att skriva en textfil
+weight: 24
 ---
-
-{{< edit_this_page >}}
 
 ## Vad & Varför?
 Att skriva till en textfil i C++ innebär att skapa eller öppna en fil och sedan skriva data till den, vilket är en grundläggande uppgift för applikationer som behöver bevara data, såsom loggar, användargenererat innehåll eller konfigurationsinställningar. Programmerare gör detta för att spara data som genereras under programmets körning eller för att exportera data för användning av andra program eller användare.

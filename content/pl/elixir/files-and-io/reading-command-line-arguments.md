@@ -9,9 +9,8 @@ summary: "Czytanie argument\xF3w linii polece\u0144 pozwala na interakcj\u0119 z
   \ programem podczas jego uruchamiania. Programi\u015Bci u\u017Cywaj\u0105 tego,\
   \ by uczyni\u0107 aplikacje\u2026"
 title: "Odczytywanie argument\xF3w linii polece\u0144"
+weight: 23
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why? (Co i dlaczego?)
 Czytanie argumentów linii poleceń pozwala na interakcję z twoim programem podczas jego uruchamiania. Programiści używają tego, by uczynić aplikacje elastycznymi i dostosowywalnymi do potrzeb użytkownika.

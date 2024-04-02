@@ -13,9 +13,8 @@ summary: "Ph\xE2n t\xEDch c\xFA ph\xE1p m\u1ED9t ng\xE0y t\u1EEB m\u1ED9t chu\u1
   t \u0111\u1ED1i t\u01B0\u1EE3ng Ng\xE0y (Date). L\u1EADp tr\xECnh vi\xEAn l\xE0\
   m \u0111i\u1EC1u n\xE0y \u0111\u1EC3 thao t\xE1c v\xE0 s\u1EED d\u1EE5ng\u2026"
 title: "Ph\xE2n t\xEDch ng\xE0y t\u1EEB chu\u1ED7i k\xED t\u1EF1"
+weight: 30
 ---
-
-{{< edit_this_page >}}
 
 ## Tại sao & Lý do?
 Phân tích cú pháp một ngày từ một chuỗi nghĩa là chuyển đổi văn bản thành một đối tượng Ngày (Date). Lập trình viên làm điều này để thao tác và sử dụng ngày theo định dạng mà máy tính hiểu được.

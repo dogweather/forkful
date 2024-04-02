@@ -8,9 +8,8 @@ model: gpt-4-1106-preview
 summary: "Concatenar strings \xE9 o ato de juntar duas ou mais sequ\xEAncias de caracteres\
   \ para formar uma nova string. Programadores fazem isso para construir mensagens,\u2026"
 title: Concatenando strings
+weight: 3
 ---
-
-{{< edit_this_page >}}
 
 ## O Que & Porquê?
 

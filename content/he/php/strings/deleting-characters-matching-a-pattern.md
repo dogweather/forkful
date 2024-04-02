@@ -20,9 +20,8 @@ summary: "\u05E2\u05DD \u05E4\u05D5\u05E0\u05E7\u05E6\u05D9\u05D5\u05EA \u05DB\u
   \u05D8."
 title: "\u05DE\u05D7\u05D9\u05E7\u05EA \u05EA\u05D5\u05D5\u05D9\u05DD \u05D4\u05EA\
   \u05D5\u05D0\u05DE\u05D9\u05DD \u05DC\u05EA\u05D1\u05E0\u05D9\u05EA"
+weight: 5
 ---
-
-{{< edit_this_page >}}
 
 ## מה ולמה?
 עם פונקציות כמו `preg_replace`, אנחנו מוחקים תווים שמתאימים לתבנית מסוימת. זה שימושי לניקוי קלטים, אימות נתונים ועיבוד טקסט.

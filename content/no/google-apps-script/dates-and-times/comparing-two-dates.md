@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "\xC5 sammenligne to datoer i Google Apps Script, en avledning av JavaScript\
   \ tilpasset for Googles apppakke, er en vesentlig oppgave for utviklere som\u2026"
 title: Sammenligning av to datoer
+weight: 27
 ---
-
-{{< edit_this_page >}}
 
 ## Hva & Hvorfor?
 Å sammenligne to datoer i Google Apps Script, en avledning av JavaScript tilpasset for Googles apppakke, er en vesentlig oppgave for utviklere som håndterer planlegging, tidslinjer eller andre datorelaterte data. Å forstå hvordan man nøyaktig kan sammenligne datoer muliggjør for programmerere å implementere funksjoner som frister, arrangementplanlegging eller innholdsplanlegging effektivt.

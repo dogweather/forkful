@@ -11,9 +11,8 @@ summary: "Parsowanie daty ze stringa w j\u0119zyku C polega na konwersji tekstow
   \ reprezentacji dat na format, kt\xF3ry programy mog\u0105 bardziej efektywnie manipulowa\u0107\
   \ i\u2026"
 title: "Analiza sk\u0142adniowa daty z ci\u0105gu znak\xF3w"
+weight: 30
 ---
-
-{{< edit_this_page >}}
 
 ## Co i dlaczego?
 

@@ -13,9 +13,8 @@ summary: "Vi\u1EC7c ph\xE2n t\xEDch m\u1ED9t ng\xE0y t\u1EEB m\u1ED9t chu\u1ED7i
   n ng\xE0y th\xE0nh m\u1ED9t \u0111\u1ED1i t\u01B0\u1EE3ng ng\xE0y, gi\xFAp l\u1EAD\
   p tr\xECnh vi\xEAn th\u1EF1c hi\u1EC7n c\xE1c thao t\xE1c\u2026"
 title: "Ph\xE2n t\xEDch ng\xE0y t\u1EEB chu\u1ED7i k\xFD t\u1EF1"
+weight: 30
 ---
-
-{{< edit_this_page >}}
 
 ## Lý do
 

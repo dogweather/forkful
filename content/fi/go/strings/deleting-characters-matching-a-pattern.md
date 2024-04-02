@@ -11,9 +11,8 @@ summary: "Merkkien poistaminen, jotka t\xE4sm\xE4\xE4v\xE4t tiettyyn malliin, ta
   \ tiettyjen merkkien tai merkkijonojen poistamista merkkijonoista, s\xE4\xE4nt\xF6\
   jen perusteella,\u2026"
 title: Merkkien poistaminen vastaavan mallin mukaan
+weight: 5
 ---
-
-{{< edit_this_page >}}
 
 ## Mikä & Miksi?
 

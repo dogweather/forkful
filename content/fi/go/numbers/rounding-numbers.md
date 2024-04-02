@@ -11,9 +11,8 @@ summary: "Py\xF6rist\xE4minen tarkoittaa numeron arvon s\xE4\xE4t\xE4mist\xE4 l\
   himp\xE4\xE4n kokonaislukuun tai tiettyyn desimaalipaikkojen m\xE4\xE4r\xE4\xE4\
   n. Ohjelmoijat tekev\xE4t n\xE4in syist\xE4, kuten\u2026"
 title: "Lukujen py\xF6rist\xE4minen"
+weight: 13
 ---
-
-{{< edit_this_page >}}
 
 ## Mikä & Miksi?
 

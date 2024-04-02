@@ -10,9 +10,8 @@ model: gpt-4-0125-preview
 summary: "Das Parsen eines Datums aus einem String beinhaltet die Umwandlung von Text\
   \ in ein Date-Objekt. Diese Operation ist grundlegend f\xFCr Anwendungen, die mit\u2026"
 title: Einen Datum aus einem String analysieren
+weight: 30
 ---
-
-{{< edit_this_page >}}
 
 ## Was & Warum?
 Das Parsen eines Datums aus einem String beinhaltet die Umwandlung von Text in ein Date-Objekt. Diese Operation ist grundlegend für Anwendungen, die mit von Nutzern eingegebenen oder aus externen Datensätzen bezogenen Daten interagieren, da sie eine einfache Manipulation und Formatierung nach Bedarf ermöglicht.

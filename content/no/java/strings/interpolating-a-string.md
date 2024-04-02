@@ -7,9 +7,8 @@ model: gpt-4-1106-preview
 summary: "Interpolering i strenger lar oss sette inn variabler direkte i en tekst.\
   \ Programmerere gj\xF8r dette for \xE5 enkelt kunne bygge dynamiske meldinger."
 title: Interpolering av en streng
+weight: 8
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why? (Hva & Hvorfor?)
 Interpolering i strenger lar oss sette inn variabler direkte i en tekst. Programmerere gjør dette for å enkelt kunne bygge dynamiske meldinger.

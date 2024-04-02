@@ -10,9 +10,8 @@ model: gpt-4-0125-preview
 summary: "JSONin (JavaScript Object Notation) k\xE4sittely Rustissa tarkoittaa JSON-datan\
   \ j\xE4sent\xE4mist\xE4 Rustin datarakenteisiin ja Rustin datarakenteiden sarjoittamista\u2026"
 title: "Ty\xF6skentely JSON:n kanssa"
+weight: 38
 ---
-
-{{< edit_this_page >}}
 
 ## Mikä ja miksi?
 

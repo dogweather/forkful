@@ -2,14 +2,14 @@
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 22:04:24.294701-07:00
-description: "Een debugger gebruiken in Visual Basic for Applications (VBA) houdt\
-  \ in dat je je code stap voor stap uitvoert om de uitvoeringsstroom en de status\
-  \ van\u2026"
+description: "In VBA is de debugger een integraal onderdeel van de Visual Basic Editor\
+  \ (VBE). Zo kun je er gebruik van maken: 1. **Breekpunten instellen**: Klik in de\u2026"
 lastmod: '2024-03-13T22:44:50.641466-06:00'
 model: gpt-4-0125-preview
-summary: "Een debugger gebruiken in Visual Basic for Applications (VBA) houdt in dat\
-  \ je je code stap voor stap uitvoert om de uitvoeringsstroom en de status van\u2026"
+summary: "In VBA is de debugger een integraal onderdeel van de Visual Basic Editor\
+  \ (VBE). Zo kun je er gebruik van maken: 1. **Breekpunten instellen**: Klik in de\u2026"
 title: Een debugger gebruiken
+weight: 35
 ---
 
 ## Hoe te:

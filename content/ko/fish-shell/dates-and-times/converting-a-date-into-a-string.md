@@ -16,9 +16,8 @@ summary: "\uB0A0\uC9DC\uB97C \uBB38\uC790\uC5F4\uB85C \uBCC0\uD658\uD55C\uB2E4\u
   \uC2DC, \uB370\uC774\uD130 \uD3EC\uB9F7 \uC870\uC815 \uB4F1\uC744 \uC704\uD574 \uC774\
   \ \uC791\uC5C5\uC744 \uD569\uB2C8\uB2E4."
 title: "\uB0A0\uC9DC\uB97C \uBB38\uC790\uC5F4\uB85C \uBCC0\uD658\uD558\uAE30"
+weight: 28
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why? (무엇과 왜?)
 날짜를 문자열로 변환한다는 건 특정 날짜를 텍스트 형식으로 바꾸는 것입니다. 프로그래머들은 명확한 기록, 사용자 친화적 표시, 데이터 포맷 조정 등을 위해 이 작업을 합니다.

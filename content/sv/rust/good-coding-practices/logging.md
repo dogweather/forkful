@@ -9,9 +9,8 @@ summary: "Loggning \xE4r som att f\xF6ra en journal f\xF6r din applikation; det 
   r praxis att registrera h\xE4ndelser, fel och annan relevant data under k\xF6rning.\
   \ Utvecklare\u2026"
 title: Loggning
+weight: 17
 ---
-
-{{< edit_this_page >}}
 
 ## Vad & Varför?
 

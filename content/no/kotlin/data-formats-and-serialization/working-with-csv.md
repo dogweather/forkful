@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Arbeid med CSV (kommaseparerte verdier) inneb\xE6rer lesing fra og skriving\
   \ til CSV-filer, et vanlig format for lagring av tabul\xE6re data i ren tekst.\u2026"
 title: Arbeide med CSV
+weight: 37
 ---
-
-{{< edit_this_page >}}
 
 ## Hva & Hvorfor?
 

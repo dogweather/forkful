@@ -11,9 +11,8 @@ summary: "Sprawdzanie, czy katalog istnieje w systemie plik\xF3w, jest niezb\u01
   dne do zarz\u0105dzania strukturami plik\xF3w w aplikacjach Swift. To zadanie umo\u017C\
   liwia\u2026"
 title: Sprawdzanie, czy katalog istnieje
+weight: 20
 ---
-
-{{< edit_this_page >}}
 
 ## Co i dlaczego?
 Sprawdzanie, czy katalog istnieje w systemie plików, jest niezbędne do zarządzania strukturami plików w aplikacjach Swift. To zadanie umożliwia programistom weryfikację obecności katalogów przed próbą odczytu z nich lub zapisu do nich, co pozwala uniknąć możliwych błędów w czasie wykonania.

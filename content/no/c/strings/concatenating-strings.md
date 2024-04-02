@@ -11,9 +11,8 @@ summary: "Strengsammensetning i C inneb\xE6rer \xE5 sl\xE5 sammen to eller flere
   \ ende-til-ende for \xE5 danne en ny streng. Programmerere utf\xF8rer denne operasjonen\
   \ for\u2026"
 title: "Sammensl\xE5ing av strenger"
+weight: 3
 ---
-
-{{< edit_this_page >}}
 
 ## Hva & Hvorfor?
 

@@ -9,9 +9,8 @@ summary: "Czytanie pliku tekstowego to po prostu wczytywanie zawarto\u015Bci pli
   \ do pami\u0119ci komputera. Programi\u015Bci robi\u0105 to, by manipulowa\u0107\
   \ danymi, dokonywa\u0107 analiz\u2026"
 title: Odczytywanie pliku tekstowego
+weight: 22
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 Czytanie pliku tekstowego to po prostu wczytywanie zawartości pliku do pamięci komputera. Programiści robią to, by manipulować danymi, dokonywać analiz czy też wdrażać logikę konfiguracyjną aplikacji.

@@ -7,9 +7,8 @@ model: gpt-4-0125-preview
 summary: "Tiedostojen muokkaaminen paikan p\xE4\xE4ll\xE4 CLI:n (Command Line Interface)\
   \ yksirivikomennolla Rubyssa mahdollistaa tiedostojen suoran muokkaamisen\u2026"
 title: "Tiedostojen muokkaaminen paikan p\xE4\xE4ll\xE4 komentorivin yhden rivin komennoilla"
+weight: 32
 ---
-
-{{< edit_this_page >}}
 
 ## Mikä & Miksi?
 

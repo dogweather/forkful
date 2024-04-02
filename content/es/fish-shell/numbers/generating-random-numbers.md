@@ -7,9 +7,8 @@ model: gpt-4-0125-preview
 summary: "Generar n\xFAmeros aleatorios es una tarea fundamental en la programaci\xF3\
   n, utilizada para todo, desde muestreo de datos hasta desarrollo de juegos. En Fish\u2026"
 title: "Generaci\xF3n de n\xFAmeros aleatorios"
+weight: 12
 ---
-
-{{< edit_this_page >}}
 
 ## ¿Qué y Por Qué?
 

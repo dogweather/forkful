@@ -23,9 +23,8 @@ summary: "Dart\uC5D0\uC11C \uD568\uC218\uB85C \uCF54\uB4DC\uB97C \uC870\uC9C1\uD
   \uD574 \uCF54\uB4DC\uC758 \uAC00\uB3C5\uC131\uC744 \uB192\uC774\uACE0, \uC911\uBCF5\
   \uC744 \uC904\uC774\uBA70, \uC720\uC9C0 \uBCF4\uC218\uB97C\u2026"
 title: "\uCF54\uB4DC\uB97C \uD568\uC218\uB85C \uAD6C\uC131\uD558\uAE30"
+weight: 18
 ---
-
-{{< edit_this_page >}}
 
 ## 무엇을, 왜?
 Dart에서 함수로 코드를 조직화하는 것은 특정 작업을 수행하는 재사용 가능한 코드 블록을 정의하는 것과 관련이 있습니다. 일반적으로 입력을 받아, 데이터를 처리하고, 가능하다면 출력을 반환합니다. 프로그래머들은 이를 통해 코드의 가독성을 높이고, 중복을 줄이며, 유지 보수를 용이하게 하여, 결국 더 모듈화되고 관리하기 쉬운 코드베이스로 이어지게 합니다.

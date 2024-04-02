@@ -10,9 +10,8 @@ model: gpt-4-0125-preview
 summary: "Karakters die een patroon matchen verwijderen in een string betekent het\
   \ vinden en weghalen van specifieke reeksen tekens. Programmeurs doen dit om tekst\u2026"
 title: Karakters verwijderen die overeenkomen met een patroon
+weight: 5
 ---
-
-{{< edit_this_page >}}
 
 ## Wat & Waarom?
 

@@ -9,9 +9,8 @@ summary: "Czytanie pliku tekstowego to proces pobierania danych z pliku zapisane
   \ na karcie SD lub pami\u0119ci systemu. Programi\u015Bci robi\u0105 to, by za\u0142\
   adowa\u0107\u2026"
 title: Odczytywanie pliku tekstowego
+weight: 22
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why? (Co i dlaczego?)
 Czytanie pliku tekstowego to proces pobierania danych z pliku zapisanego na karcie SD lub pamięci systemu. Programiści robią to, by załadować konfiguracje, dane wejściowe lub po prostu wyświetlić informacje na ekran.

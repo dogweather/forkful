@@ -11,9 +11,8 @@ summary: "Escrever em um arquivo de texto em Lua envolve criar ou abrir um arqui
   \ no modo de escrita, e ent\xE3o usar opera\xE7\xF5es de arquivo para inserir texto.\
   \ Esta \xE9\u2026"
 title: Escrevendo um arquivo de texto
+weight: 24
 ---
-
-{{< edit_this_page >}}
 
 ## O Que & Por Quê?
 

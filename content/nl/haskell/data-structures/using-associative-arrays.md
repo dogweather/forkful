@@ -10,9 +10,8 @@ model: gpt-4-0125-preview
 summary: "Associatieve arrays, of woordenboeken, in Haskell gaan helemaal over het\
   \ koppelen van sleutels aan waarden voor snelle opzoekingen en effici\xEBnt\u2026"
 title: Gebruik van associatieve arrays
+weight: 15
 ---
-
-{{< edit_this_page >}}
 
 ## Wat & Waarom?
 

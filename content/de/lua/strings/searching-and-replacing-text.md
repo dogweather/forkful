@@ -7,9 +7,8 @@ model: gpt-4-1106-preview
 summary: "Suchen und Ersetzen sind Kernfunktionen in der Textbearbeitung: Man findet\
   \ spezifische Textmuster und ersetzt sie durch andere Inhalte. Programmierer\u2026"
 title: Suchen und Ersetzen von Text
+weight: 10
 ---
-
-{{< edit_this_page >}}
 
 ## Was & Warum?
 Suchen und Ersetzen sind Kernfunktionen in der Textbearbeitung: Man findet spezifische Textmuster und ersetzt sie durch andere Inhalte. Programmierer nutzen dies, um Code zu korrigieren, Daten zu bereinigen oder automatische Anpassungen vorzunehmen.

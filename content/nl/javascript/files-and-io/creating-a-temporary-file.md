@@ -10,9 +10,8 @@ model: gpt-4-0125-preview
 summary: "Het maken van een tijdelijk bestand stelt je app in staat om gegevens op\
   \ te slaan die het niet voor altijd nodig heeft. Het komt van pas wanneer je te\u2026"
 title: Een tijdelijk bestand aanmaken
+weight: 21
 ---
-
-{{< edit_this_page >}}
 
 ## Wat & Waarom?
 

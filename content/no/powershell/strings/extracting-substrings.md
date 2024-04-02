@@ -9,9 +9,8 @@ summary: "\xC5 trekke ut understrenger betyr \xE5 plukke bestemte deler ut av en
   \ Programmerere gj\xF8r dette for \xE5 analysere data, rense inndata eller jobbe\
   \ med\u2026"
 title: Uthenting av delstrenger
+weight: 6
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why? (Hva & Hvorfor?)
 Å trekke ut understrenger betyr å plukke bestemte deler ut av en tekststreng. Programmerere gjør dette for å analysere data, rense inndata eller jobbe med specifikke tekstsegmenter.

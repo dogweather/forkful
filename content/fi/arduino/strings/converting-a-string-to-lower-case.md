@@ -7,9 +7,8 @@ model: gpt-4-1106-preview
 summary: "Muuttaminen merkkijonosta pieniksi kirjaimiksi muuntaa kaikki kirjaimet\
   \ pieniksi. T\xE4m\xE4 auttaa vertailemaan ja k\xE4sittelem\xE4\xE4n merkkijonoja\u2026"
 title: Merkkijonon muuntaminen pieniksi kirjaimiksi
+weight: 4
 ---
-
-{{< edit_this_page >}}
 
 ## Mikä & Miksi?
 Muuttaminen merkkijonosta pieniksi kirjaimiksi muuntaa kaikki kirjaimet pieniksi. Tämä auttaa vertailemaan ja käsittelemään merkkijonoja tapausriippumattomasti.

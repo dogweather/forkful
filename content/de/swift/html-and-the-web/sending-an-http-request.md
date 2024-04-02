@@ -7,9 +7,8 @@ model: gpt-4-1106-preview
 summary: "HTTP-Anfragen erm\xF6glichen es, mit Webdiensten zu kommunizieren. Programmierer\
   \ nutzen sie, um Daten zu senden und zu empfangen, was f\xFCr moderne Anwendungen\u2026"
 title: Einen HTTP-Request senden
+weight: 44
 ---
-
-{{< edit_this_page >}}
 
 ## Was & Warum?
 HTTP-Anfragen ermöglichen es, mit Webdiensten zu kommunizieren. Programmierer nutzen sie, um Daten zu senden und zu empfangen, was für moderne Anwendungen unerlässlich ist.

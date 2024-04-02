@@ -9,9 +9,8 @@ summary: "Att ta bort tecken som matchar ett m\xF6nster \xE4r ett s\xE4tt att fi
   \ text genom att eliminera o\xF6nskade tecken eller textstr\xE4ngar. Programmerare\
   \ g\xF6r detta\u2026"
 title: "Ta bort tecken som matchar ett m\xF6nster"
+weight: 5
 ---
-
-{{< edit_this_page >}}
 
 ## Vad & Varför?
 Att ta bort tecken som matchar ett mönster är ett sätt att filtrera text genom att eliminera oönskade tecken eller textsträngar. Programmerare gör detta för att rensa data, för att forma om informationen på önskat sätt eller för att förbereda strängar för vidare bearbetning.

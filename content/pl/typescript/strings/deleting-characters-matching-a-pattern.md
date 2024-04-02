@@ -9,9 +9,8 @@ summary: "Usuwanie znak\xF3w zgodnych z wzorcem to filtracja ci\u0105gu tekstowe
   \ przez usuni\u0119cie okre\u015Blonych znak\xF3w. Programi\u015Bci robi\u0105 to,\
   \ aby oczy\u015Bci\u0107 dane wej\u015Bciowe,\u2026"
 title: "Usuwanie znak\xF3w pasuj\u0105cych do wzorca"
+weight: 5
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why? (Co i Dlaczego?)
 Usuwanie znaków zgodnych z wzorcem to filtracja ciągu tekstowego przez usunięcie określonych znaków. Programiści robią to, aby oczyścić dane wejściowe, przygotować tekst do analizy, czy też usunąć niechciane lub niebezpieczne treści.

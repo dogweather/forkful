@@ -10,9 +10,8 @@ model: gpt-4-0125-preview
 summary: "Het schrijven van tests in Dart omvat het cre\xEBren van testgevallen om\
   \ automatisch te verifi\xEBren dat verschillende delen van je programma werken zoals\u2026"
 title: Tests Schrijven
+weight: 36
 ---
-
-{{< edit_this_page >}}
 
 ## Wat & Waarom?
 

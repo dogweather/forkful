@@ -11,9 +11,8 @@ summary: "Een string kapitaliseren betekent het wijzigen van de eerste letter va
   \ elk woord naar een hoofdletter. Programmeurs doen dit voor opmaak, consistentie\
   \ en\u2026"
 title: Een string met hoofdletters maken
+weight: 2
 ---
-
-{{< edit_this_page >}}
 
 ## Wat & Waarom?
 

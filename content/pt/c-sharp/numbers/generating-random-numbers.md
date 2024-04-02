@@ -9,9 +9,8 @@ summary: "Gerar n\xFAmeros aleat\xF3rios em C# envolve a cria\xE7\xE3o de valore
   \ num\xE9ricos imprevis\xEDveis dentro de um intervalo especificado. Programadores\
   \ usam esses m\xE9todos\u2026"
 title: "Gera\xE7\xE3o de n\xFAmeros aleat\xF3rios"
+weight: 12
 ---
-
-{{< edit_this_page >}}
 
 ## O Que & Por Que?
 

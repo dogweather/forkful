@@ -11,9 +11,8 @@ summary: "Assosiatiiviset taulukot, tai kuten Elm kutsuu niit\xE4, Sanakirjat, k
   \ avaimet arvoihin tavalla, joka tekee arvojen hakemisesta, lis\xE4\xE4misest\xE4\
   \ ja\u2026"
 title: "Assosiatiivisten taulukoiden k\xE4ytt\xF6"
+weight: 15
 ---
-
-{{< edit_this_page >}}
 
 ## Mikä & Miksi?
 

@@ -9,9 +9,8 @@ summary: "TOML st\xE5r f\xF6r Toms Uppenbara, Minimala Spr\xE5k. Det anv\xE4nds 
   r konfigurationsfiler eftersom det \xE4r l\xE4tt att l\xE4sa och skriva f\xF6r m\xE4\
   nniskor, samtidigt som\u2026"
 title: Att arbeta med TOML
+weight: 39
 ---
-
-{{< edit_this_page >}}
 
 ## Vad & Varför?
 TOML står för Toms Uppenbara, Minimala Språk. Det används för konfigurationsfiler eftersom det är lätt att läsa och skriva för människor, samtidigt som det är lätt att tolka för maskiner. Utvecklare väljer TOML för att undvika röran med XML och knepigheten med JSON när de hanterar konfigurationer.

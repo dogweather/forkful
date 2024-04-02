@@ -8,9 +8,8 @@ model: gpt-4-0125-preview
 summary: "Concatenating strings involves combining two or more strings into a single\
   \ string. Programmers do this to dynamically construct messages, URLs, or any\u2026"
 title: Concatenating strings
+weight: 3
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 

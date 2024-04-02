@@ -9,9 +9,8 @@ summary: "Att hantera fel inneb\xE4r att man planerar f\xF6r n\xE4r saker och ti
   \ g\xE5r fel. Det \xE4r avg\xF6rande eftersom det hj\xE4lper till att undvika krascher\
   \ och g\xF6r din\u2026"
 title: Hantering av fel
+weight: 16
 ---
-
-{{< edit_this_page >}}
 
 ## Vad & Varför?
 Att hantera fel innebär att man planerar för när saker och ting går fel. Det är avgörande eftersom det hjälper till att undvika krascher och gör din mjukvara robust och användarvänlig.

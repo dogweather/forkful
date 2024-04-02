@@ -7,9 +7,8 @@ model: gpt-4-1106-preview
 summary: "La interpolaci\xF3n de strings nos permite insertar valores de variables\
   \ dentro de cadenas de texto. Lo hacemos para construir mensajes din\xE1micos sin\u2026"
 title: "Interpolaci\xF3n de cadenas de texto"
+weight: 8
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 La interpolación de strings nos permite insertar valores de variables dentro de cadenas de texto. Lo hacemos para construir mensajes dinámicos sin ensuciar el código con un montón de concatenaciones.

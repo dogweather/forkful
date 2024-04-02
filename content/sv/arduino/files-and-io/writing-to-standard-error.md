@@ -11,9 +11,8 @@ summary: "Att skriva till standardfel (stderr) i Arduino-programmering inneb\xE4
   \ att styra felmeddelanden och diagnostik till en separat kanal, f\xF6r att s\xE4\
   kerst\xE4lla\u2026"
 title: Skriva till standardfel
+weight: 25
 ---
-
-{{< edit_this_page >}}
 
 ## Vad & Varför?
 

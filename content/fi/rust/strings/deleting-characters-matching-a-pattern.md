@@ -9,9 +9,8 @@ summary: "Poistamme merkkej\xE4, jotka sopivat tiettyyn malliin, tehden merkkijo
   \ puhtaampia tai datasta relevantimpaa. Ohjelmoijat tekev\xE4t t\xE4m\xE4n siistimiseen\
   \ ja\u2026"
 title: Merkkien poistaminen hakemalla osumia kaavaan
+weight: 5
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why? (Mitä & Miksi?)
 Poistamme merkkejä, jotka sopivat tiettyyn malliin, tehden merkkijonoista puhtaampia tai datasta relevantimpaa. Ohjelmoijat tekevät tämän siistimiseen ja tarpeettoman datan karsimiseen.

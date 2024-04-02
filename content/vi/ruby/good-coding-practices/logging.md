@@ -13,9 +13,8 @@ summary: "Ghi ch\xE9p trong l\u1EADp tr\xECnh nh\u01B0 l\xE0 vi\u1EC7c gi\u1EEF 
   \ ghi ch\xE9p c\xF3 h\u1EC7 th\u1ED1ng c\xE1c s\u1EF1 ki\u1EC7n, th\xF4ng \u0111\
   i\u1EC7p v\xE0 \u0111i\u1EC3m d\u1EEF li\u1EC7u m\xE0 cho\u2026"
 title: Ghi log
+weight: 17
 ---
-
-{{< edit_this_page >}}
 
 ## Ghi chép và Lý do
 Ghi chép trong lập trình như là việc giữ một nhật ký cho ứng dụng của bạn. Đó là sự ghi chép có hệ thống các sự kiện, thông điệp và điểm dữ liệu mà cho bạn cái nhìn sâu sắc về những gì ứng dụng của bạn đang làm và cách nó hoạt động. Các lập trình viên ghi chép vì nó rất quan trọng để debug, giám sát sức khỏe ứng dụng, và nhận biết về những vấn đề tiềm ẩn trước khi chúng trở thành những vấn đề thực sự.

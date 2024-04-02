@@ -11,9 +11,8 @@ summary: "Het berekenen van toekomstige of verleden datums betreft het manipuler
   \ van datums om erachter te komen wat ze zullen zijn na een bepaalde periode of\
   \ wat\u2026"
 title: Een datum in de toekomst of het verleden berekenen
+weight: 26
 ---
-
-{{< edit_this_page >}}
 
 ## Wat & Waarom?
 

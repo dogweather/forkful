@@ -9,9 +9,8 @@ summary: "\xC5 fjerne anf\xF8rselstegn fra en streng betyr \xE5 skrelle bort de 
   \ eller enkle anf\xF8rselstegnene som omslutter tekstverdier. Programmerere gj\xF8\
   r dette ofte\u2026"
 title: "Fjerne anf\xF8rselstegn fra en streng"
+weight: 9
 ---
-
-{{< edit_this_page >}}
 
 ## Hva & Hvorfor?
 Å fjerne anførselstegn fra en streng betyr å skrelle bort de doble eller enkle anførselstegnene som omslutter tekstverdier. Programmerere gjør dette ofte for å rydde opp i brukerinndata, for å sikre konsistens i databehandling, eller for å forberede data for systemer som kan bli forvirret av de ekstra tegnene.

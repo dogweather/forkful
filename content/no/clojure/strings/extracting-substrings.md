@@ -7,9 +7,8 @@ model: gpt-4-1106-preview
 summary: "Substrenger lar oss hente spesifiserte deler av en streng. Nyttig for \xE5\
   \ analysere tekst, hente ut data, eller formatere utdata."
 title: Uthenting av delstrenger
+weight: 6
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 Substrenger lar oss hente spesifiserte deler av en streng. Nyttig for å analysere tekst, hente ut data, eller formatere utdata.

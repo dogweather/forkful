@@ -19,9 +19,8 @@ summary: "Haskell\uC5D0\uC11C XML\uC744 \uB2E4\uB8E8\uB294 \uAC83\uC740 XML \uAD
   \ \uC791\uC6A9\uD558\uAE30 \uC704\uD574 XML\uC744 \uCC98\uB9AC\uD569\uB2C8\uB2E4\
   ."
 title: "XML \uB2E4\uB8E8\uAE30"
+weight: 40
 ---
-
-{{< edit_this_page >}}
 
 ## 무엇 & 왜?
 

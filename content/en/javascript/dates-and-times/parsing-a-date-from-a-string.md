@@ -7,9 +7,8 @@ model: gpt-4-0125-preview
 summary: "Parsing a date from a string allows programmers to convert textual date\
   \ representations into JavaScript `Date` objects, facilitating date manipulations,\u2026"
 title: Parsing a date from a string
+weight: 30
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 Parsing a date from a string allows programmers to convert textual date representations into JavaScript `Date` objects, facilitating date manipulations, comparisons, and formatting operations. This process is essential for handling user input, processing data from databases, or working with APIs that communicate dates in string formats.

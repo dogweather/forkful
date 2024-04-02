@@ -8,9 +8,8 @@ model: gpt-4-1106-preview
 summary: "Enviar una solicitud HTTP con autenticaci\xF3n b\xE1sica permite a tu aplicaci\xF3\
   n comunicarse con servicios web que requieren usuario y contrase\xF1a. Los\u2026"
 title: "Enviando una solicitud http con autenticaci\xF3n b\xE1sica"
+weight: 45
 ---
-
-{{< edit_this_page >}}
 
 ## Qué y Por Qué
 Enviar una solicitud HTTP con autenticación básica permite a tu aplicación comunicarse con servicios web que requieren usuario y contraseña. Los programadores lo hacen para proteger recursos y asegurar que solo usuarios autorizados accedan a ciertos datos.

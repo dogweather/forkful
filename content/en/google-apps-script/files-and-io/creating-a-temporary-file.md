@@ -7,9 +7,8 @@ model: gpt-4-0125-preview
 summary: "Creating a temporary file in Google Apps Script involves generating a file\
   \ intended for short-term use, typically for intermediary data processing,\u2026"
 title: Creating a temporary file
+weight: 21
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 

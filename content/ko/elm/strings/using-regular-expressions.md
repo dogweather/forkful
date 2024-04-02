@@ -23,9 +23,8 @@ summary: "\uD504\uB85C\uADF8\uB798\uBC0D\uC5D0\uC11C \uC815\uADDC \uD45C\uD604\u
   \uD574 \uADF8 \uC720\uC5F0\uC131\uACFC \uD6A8\uC728\uC131 \uB54C\uBB38\uC5D0 regex\uB97C\
   \u2026"
 title: "\uC815\uADDC \uD45C\uD604\uC2DD \uC0AC\uC6A9\uD558\uAE30"
+weight: 11
 ---
-
-{{< edit_this_page >}}
 
 ## 무엇인가 & 왜인가?
 프로그래밍에서 정규 표현식(regex)은 문자열 내에서 문자 조합을 매칭하기 위해 사용되는 패턴입니다. Elm에서도 다른 언어와 마찬가지로, 프로그래머들은 입력 검증, 검색, 그리고 문자열 내의 텍스트 교체 같은 작업을 수행하기 위해 그 유연성과 효율성 때문에 regex를 사용합니다.

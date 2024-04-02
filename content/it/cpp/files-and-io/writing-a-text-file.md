@@ -11,9 +11,8 @@ summary: "Scrivere in un file di testo in C++ comporta la creazione o l'apertura
   \ un file e poi la scrittura di dati in esso, che \xE8 un compito fondamentale per\
   \ le\u2026"
 title: Scrivere un file di testo
+weight: 24
 ---
-
-{{< edit_this_page >}}
 
 ## Cosa e perché?
 Scrivere in un file di testo in C++ comporta la creazione o l'apertura di un file e poi la scrittura di dati in esso, che è un compito fondamentale per le applicazioni che hanno bisogno di mantenere dati, come log, contenuti generati dall'utente o impostazioni di configurazione. I programmatori lo fanno per salvare i dati generati durante l'esecuzione di un programma o per esportare dati per l'uso da parte di altri programmi o utenti.

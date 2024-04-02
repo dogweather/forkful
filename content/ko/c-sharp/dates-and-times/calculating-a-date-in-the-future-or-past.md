@@ -17,9 +17,8 @@ summary: "\uB0A0\uC9DC\uB97C \uACC4\uC0B0\uD55C\uB2E4\uB294 \uAC83\uC740 \uBBF8\
   \ \uC0AC\uC6A9\uD569\uB2C8\uB2E4."
 title: "\uBBF8\uB798 \uD639\uC740 \uACFC\uAC70\uC758 \uB0A0\uC9DC \uACC4\uC0B0\uD558\
   \uAE30"
+weight: 26
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why? (무엇 그리고 왜?)
 날짜를 계산한다는 것은 미래나 과거의 날짜를 찾는 작업입니다. 예정된 이벤트 날짜를 설정하거나 지나간 일자를 확인하기 위해 프로그래머는 이 방법을 자주 사용합니다.

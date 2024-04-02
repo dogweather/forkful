@@ -1,14 +1,15 @@
 ---
 date: 2024-01-26 03:48:42.513574-07:00
-description: "\xC5 bruke en debugger betyr at du utstyrer deg selv med et forst\xF8\
-  rrelsesglass for \xE5 granske koden din. Programmerere gj\xF8r dette for \xE5 knuse\
-  \ feil, forst\xE5\u2026"
+description: "Clojure st\xF8tter seg p\xE5 Java Virtual Machine (JVM), s\xE5 mye av\
+  \ feils\xF8kingen skjer med Java-verkt\xF8y. Et slikt verkt\xF8y er `CIDER`, en\
+  \ kraftpakkepakke for\u2026"
 lastmod: '2024-03-13T22:44:40.406720-06:00'
 model: gpt-4-0125-preview
-summary: "\xC5 bruke en debugger betyr at du utstyrer deg selv med et forst\xF8rrelsesglass\
-  \ for \xE5 granske koden din. Programmerere gj\xF8r dette for \xE5 knuse feil, forst\xE5\
-  \u2026"
+summary: "Clojure st\xF8tter seg p\xE5 Java Virtual Machine (JVM), s\xE5 mye av feils\xF8\
+  kingen skjer med Java-verkt\xF8y. Et slikt verkt\xF8y er `CIDER`, en kraftpakkepakke\
+  \ for\u2026"
 title: "\xC5 bruke en feils\xF8ker"
+weight: 35
 ---
 
 ## Hvordan:

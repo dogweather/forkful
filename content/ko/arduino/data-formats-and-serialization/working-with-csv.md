@@ -20,9 +20,8 @@ summary: "\uC544\uB450\uC774\uB178\uC5D0\uC11C CSV(Comma-Separated Values, \uC27
   \uB2E4. \uD504\uB85C\uADF8\uB798\uBA38\uB4E4\uC740 \uC13C\uC11C \uB370\uC774\uD130\
   \ \uC218\uC9D1, \uAD6C\uC131 \uB9E4\uAC1C\uBCC0\uC218 \uC800\uC7A5 \uB610\uB294\u2026"
 title: "CSV\uC640 \uD568\uAED8 \uC791\uC5C5\uD558\uAE30"
+weight: 37
 ---
-
-{{< edit_this_page >}}
 
 ## 무엇을, 왜?
 아두이노에서 CSV(Comma-Separated Values, 쉼표로 구분된 값) 파일을 다루는 것은 주로 SD 카드에 저장된 CSV 파일을 읽고 쓰는 것을 포함하여 데이터 로깅, 구성 설정 등을 가능하게 합니다. 프로그래머들은 센서 데이터 수집, 구성 매개변수 저장 또는 다른 시스템과의 인터페이싱을 위해 그것의 단순성과 플랫폼 간 널리 채택되어 있기 때문에 종종 CSV를 다룹니다.

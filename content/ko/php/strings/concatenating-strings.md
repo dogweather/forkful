@@ -14,9 +14,8 @@ summary: "\uBB38\uC790\uC5F4 \uC5F0\uACB0\uC740 \uC5EC\uB7EC \uBB38\uC790\uC5F4\
   \uC744 \uC8FC\uAE30 \uC704\uD574 \uD504\uB85C\uADF8\uB798\uBA38\uB4E4\uC740 \uC774\
   \ \uBC29\uBC95\uC744 \uC790\uC8FC \uC501\uB2C8\uB2E4."
 title: "\uBB38\uC790\uC5F4 \uC5F0\uACB0\uD558\uAE30"
+weight: 3
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why? (무엇과 왜?)
 문자열 연결은 여러 문자열을 하나로 붙이는 것입니다. 데이터를 표시하거나 저장할 때 유동성을 주기 위해 프로그래머들은 이 방법을 자주 씁니다.

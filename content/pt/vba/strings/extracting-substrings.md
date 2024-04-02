@@ -11,9 +11,8 @@ summary: "Extrair substrings em Visual Basic for Applications (VBA) envolve isol
   \ partes espec\xEDficas de uma string com base em crit\xE9rios dados. Programadores\
   \ fazem\u2026"
 title: Extraindo substrings
+weight: 6
 ---
-
-{{< edit_this_page >}}
 
 ## O Quê e Por Quê?
 

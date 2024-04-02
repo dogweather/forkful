@@ -10,9 +10,8 @@ model: gpt-4-0125-preview
 summary: "Un shell interactif (REPL - Read-Evaluate-Print Loop) pour Dart permet aux\
   \ programmeurs de taper et ex\xE9cuter dynamiquement du code Dart ligne par ligne\u2026"
 title: Utiliser un shell interactif (REPL)
+weight: 34
 ---
-
-{{< edit_this_page >}}
 
 ## Quoi & Pourquoi ?
 

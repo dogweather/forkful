@@ -9,9 +9,8 @@ summary: "Extraer subcadenas significa seleccionar partes espec\xEDficas de una 
   \ de texto. Programadores lo hacen para analizar, manipular o transformar datos\
   \ de\u2026"
 title: "Extracci\xF3n de subcadenas"
+weight: 6
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why? (¿Qué y Por Qué?)
 Extraer subcadenas significa seleccionar partes específicas de una cadena de texto. Programadores lo hacen para analizar, manipular o transformar datos de manera más eficiente.

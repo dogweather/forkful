@@ -11,9 +11,8 @@ summary: "Att kontrollera om en mapp finns i TypeScript \xE4r n\xF6dv\xE4ndigt f
   r filhanteringsuppgifter, s\xE5som att l\xE4sa fr\xE5n eller skriva data till filer,\
   \ f\xF6r att\u2026"
 title: Kontrollera om en katalog existerar
+weight: 20
 ---
-
-{{< edit_this_page >}}
 
 ## Vad & Varför?
 Att kontrollera om en mapp finns i TypeScript är nödvändigt för filhanteringsuppgifter, såsom att läsa från eller skriva data till filer, för att säkerställa att operationer endast utförs på giltiga mappar. Denna operation är avgörande för att undvika fel som uppstår vid försök att komma åt eller manipulera icke-existerande mappar.

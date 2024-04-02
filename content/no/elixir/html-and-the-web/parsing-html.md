@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Parsing av HTML i Elixir handler om \xE5 trekke ut informasjon fra HTML-dokumenter.\
   \ Programmerere gj\xF8r dette for \xE5 programmelt interagere med nettsider,\u2026"
 title: Analysering av HTML
+weight: 43
 ---
-
-{{< edit_this_page >}}
 
 ## Hva & Hvorfor?
 

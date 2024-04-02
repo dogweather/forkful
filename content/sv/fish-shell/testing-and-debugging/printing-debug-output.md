@@ -9,9 +9,8 @@ summary: "Debugutskrifter \xE4r sm\xE5 meddelanden kodare infogar f\xF6r att sp\
   ra vad ett program g\xF6r. De \xE4r superhj\xE4lpsamma f\xF6r att f\xF6rst\xE5 kodens\
   \ fl\xF6de och fixa buggar."
 title: "Skriva ut fels\xF6kningsdata"
+weight: 33
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 Debugutskrifter är små meddelanden kodare infogar för att spåra vad ett program gör. De är superhjälpsamma för att förstå kodens flöde och fixa buggar.

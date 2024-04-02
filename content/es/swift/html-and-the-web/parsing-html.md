@@ -11,9 +11,8 @@ summary: "El an\xE1lisis de HTML se refiere al proceso de descomponer e interpre
   \ la estructura del contenido HTML, t\xEDpicamente para extraer datos espec\xED\
   ficos o\u2026"
 title: Analizando HTML
+weight: 43
 ---
-
-{{< edit_this_page >}}
 
 ## ¿Qué y Por Qué?
 El análisis de HTML se refiere al proceso de descomponer e interpretar la estructura del contenido HTML, típicamente para extraer datos específicos o manipular este contenido de manera programática. Los programadores se involucran en el análisis de HTML para el web scraping, minería de datos, pruebas automatizadas y tareas de migración de contenido, permitiendo que las aplicaciones interactúen con y procesen documentos web de manera eficiente.

@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Het vinden van de lengte van een string in Visual Basic for Applications\
   \ (VBA) houdt in dat je bepaalt hoeveel karakters deze bevat. Programmeurs voeren\u2026"
 title: De lengte van een string vinden
+weight: 7
 ---
-
-{{< edit_this_page >}}
 
 ## Wat & Waarom?
 

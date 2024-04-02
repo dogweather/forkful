@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Das Schreiben in eine Textdatei mit Ruby ist eine grundlegende Operation,\
   \ die es Ihnen erm\xF6glicht, Ausgaben und Daten dauerhaft zu speichern. Dadurch\u2026"
 title: Eine Textdatei schreiben
+weight: 24
 ---
-
-{{< edit_this_page >}}
 
 ## Was & Warum?
 Das Schreiben in eine Textdatei mit Ruby ist eine grundlegende Operation, die es Ihnen ermöglicht, Ausgaben und Daten dauerhaft zu speichern. Dadurch können Daten später abgerufen oder geändert werden. Programmierer führen diese Aufgabe oft aus Gründen wie Protokollierung, Speichern von Konfigurationen oder Exportieren von Daten in einem für Menschen lesbaren Format durch.

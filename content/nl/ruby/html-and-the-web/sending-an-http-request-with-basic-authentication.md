@@ -10,9 +10,8 @@ model: gpt-4-0125-preview
 summary: "In Ruby, een HTTP-verzoek verzenden met basisverificatie houdt in dat je\
   \ een gebruikersnaam en wachtwoord aan je verzoekheader toevoegt. Programmeurs doen\u2026"
 title: Een HTTP-verzoek verzenden met basisauthenticatie
+weight: 45
 ---
-
-{{< edit_this_page >}}
 
 ## Wat & Waarom?
 

@@ -11,9 +11,8 @@ summary: "Obtenir la date actuelle en C n\xE9cessite de se connecter \xE0 la bib
   que standard C pour r\xE9cup\xE9rer et formater la date et l'heure actuelles du\
   \ syst\xE8me.\u2026"
 title: Obtenir la date actuelle
+weight: 29
 ---
-
-{{< edit_this_page >}}
 
 ## Quoi & Pourquoi ?
 

@@ -9,9 +9,8 @@ summary: "Co to jest i dlaczego? Rozpoczynanie nowego projektu to stworzenie pod
   \ dla Twojego kodu \u015Awift. Programi\u015Bci robi\u0105 to, aby zacz\u0105\u0107\
   \ czyst\u0105 kart\u0105, z\u2026"
 title: Rozpoczynanie nowego projektu
+weight: 1
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 Co to jest i dlaczego?

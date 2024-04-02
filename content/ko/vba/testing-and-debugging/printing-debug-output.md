@@ -21,9 +21,8 @@ summary: "Visual Basic for Applications(VBA)\uC5D0\uC11C \uB514\uBC84\uADF8 \uCD
   \uC801\uC774\uBA70, \uD504\uB85C\uADF8\uB798\uBA38\uAC00 \uB7F0\uD0C0\uC784\uC5D0\
   \uC11C \uC790\uC2E0\uC758\u2026"
 title: "\uB514\uBC84\uADF8 \uCD9C\uB825 \uCD9C\uB825\uD558\uAE30"
+weight: 33
 ---
-
-{{< edit_this_page >}}
 
 ## 무엇인가 & 왜인가?
 Visual Basic for Applications(VBA)에서 디버그 출력을 하는 것은 코드 내에 출력 문을 전략적으로 배치하여 변수 값, 실행 흐름 또는 사용자 정의 디버그 메시지를 표시하는 것을 포함합니다. 이 기술은 디버깅에 필수적이며, 프로그래머가 런타임에서 자신의 코드의 동작을 이해하고 예상치 못한 동작이나 버그를 식별할 수 있게 해줍니다.

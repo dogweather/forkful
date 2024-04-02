@@ -11,9 +11,8 @@ summary: "Escribir pruebas en Elm implica crear casos de prueba para verificar l
   \ correcci\xF3n de tu c\xF3digo Elm, asegurando que se comporte como se espera.\
   \ Los\u2026"
 title: Escribiendo pruebas
+weight: 36
 ---
-
-{{< edit_this_page >}}
 
 ## ¿Qué & Por qué?
 

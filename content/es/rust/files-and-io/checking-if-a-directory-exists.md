@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "En el desarrollo de software, a menudo es necesario verificar si un directorio\
   \ existe para evitar errores al intentar acceder, leer o escribir archivos.\u2026"
 title: Comprobando si un directorio existe
+weight: 20
 ---
-
-{{< edit_this_page >}}
 
 ## Qué y Por Qué?
 En el desarrollo de software, a menudo es necesario verificar si un directorio existe para evitar errores al intentar acceder, leer o escribir archivos. Rust, siendo un lenguaje de programación de sistemas, proporciona métodos robustos para realizar esta tarea, asegurando que tu programa pueda manejar archivos y directorios de manera segura y eficiente.

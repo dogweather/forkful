@@ -11,9 +11,8 @@ summary: "Pisanie do standardowego b\u0142\u0119du (stderr) w PHP polega na kier
   \ komunikat\xF3w b\u0142\u0119d\xF3w lub diagnozy oddzielnie od standardowego wyj\u015B\
   cia (stdout), co\u2026"
 title: "Pisanie do standardowego b\u0142\u0119du"
+weight: 25
 ---
-
-{{< edit_this_page >}}
 
 ## Co i dlaczego?
 

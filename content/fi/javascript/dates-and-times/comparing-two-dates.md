@@ -9,9 +9,8 @@ summary: "Vertaamme kahta p\xE4iv\xE4m\xE4\xE4r\xE4\xE4 selvitt\xE4\xE4ksemme ni
   \ v\xE4lisen suhteen. Ohjelmoijat tarvitsevat t\xE4t\xE4 toimintoa esimerkiksi aikarajojen\
   \ tarkistamiseen ja\u2026"
 title: "Kahden p\xE4iv\xE4m\xE4\xE4r\xE4n vertailu"
+weight: 27
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why? (Mitä & Miksi?)
 Vertaamme kahta päivämäärää selvittääksemme niiden välisen suhteen. Ohjelmoijat tarvitsevat tätä toimintoa esimerkiksi aikarajojen tarkistamiseen ja aikajanalla tapahtuvien tapahtumien järjestämiseen.

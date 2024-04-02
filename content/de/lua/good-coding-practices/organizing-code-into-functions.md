@@ -9,9 +9,8 @@ summary: "Code in Funktionen zu organisieren bedeutet, Ihr Skript in mundgerecht
   \ St\xFCcke zu zerlegen \u2013 denken Sie an funktionale LEGO-Bl\xF6cke. Wir machen\
   \ das f\xFCr\u2026"
 title: Code in Funktionen organisieren
+weight: 18
 ---
-
-{{< edit_this_page >}}
 
 ## Was & Warum?
 Code in Funktionen zu organisieren bedeutet, Ihr Skript in mundgerechte Stücke zu zerlegen – denken Sie an funktionale LEGO-Blöcke. Wir machen das für Klarheit, Wiederverwendbarkeit und geistige Gesundheit. Es macht unseren Code ordentlich, lesbar und wartbar.

@@ -11,9 +11,8 @@ summary: "Capitalizar uma string em C envolve converter o primeiro caractere de 
   \ palavra em uma dada string para mai\xFAsculo, caso seja uma letra min\xFAscula.\
   \ Os\u2026"
 title: Capitalizando uma string
+weight: 2
 ---
-
-{{< edit_this_page >}}
 
 ## O Que & Por Quê?
 

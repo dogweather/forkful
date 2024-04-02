@@ -9,9 +9,8 @@ summary: "Les nombres complexes ont une partie r\xE9elle et une partie imaginair
   \ g\xE9n\xE9ralement \xE9crits sous la forme `a + bi`. Ils sont cruciaux dans les\
   \ math\xE9matiques\u2026"
 title: Manipulation des nombres complexes
+weight: 14
 ---
-
-{{< edit_this_page >}}
 
 ## Quoi & Pourquoi ?
 Les nombres complexes ont une partie réelle et une partie imaginaire, généralement écrits sous la forme `a + bi`. Ils sont cruciaux dans les mathématiques avancées, la physique, l'ingénierie et certains algorithmes informatiques. Les programmeurs travaillent avec eux pour gérer les calculs impliquant des racines carrées de nombres négatifs et des fonctions oscillantes.

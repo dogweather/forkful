@@ -11,9 +11,8 @@ summary: "La capitalisation d'une cha\xEEne de caract\xE8res dans Visual Basic p
   \ Applications (VBA) consiste \xE0 convertir le premier caract\xE8re de chaque mot\
   \ en\u2026"
 title: "Mettre une cha\xEEne en majuscules"
+weight: 2
 ---
-
-{{< edit_this_page >}}
 
 ## Quoi & Pourquoi ?
 

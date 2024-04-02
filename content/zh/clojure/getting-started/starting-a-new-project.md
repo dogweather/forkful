@@ -12,9 +12,8 @@ summary: "\u521B\u5EFA\u65B0\u9879\u76EE\u662F\u6784\u5EFA\u5168\u65B0\u8F6F\u4E
   \u4E86\u89E3\u51B3\u95EE\u9898\u3001\u5B9E\u9A8C\u65B0\u60F3\u6CD5\u6216\u5F00\u53D1\
   \u521B\u65B0\u7684\u5DE5\u5177\u3002"
 title: "\u5F00\u59CB\u4E00\u4E2A\u65B0\u9879\u76EE"
+weight: 1
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why? (是什么 & 为什么?)
 创建新项目是构建全新软件程序的起点。程序员这么做是为了解决问题、实验新想法或开发创新的工具。

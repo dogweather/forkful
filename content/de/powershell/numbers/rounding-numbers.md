@@ -8,9 +8,8 @@ model: gpt-4-0125-preview
 summary: "Das Runden von Zahlen bedeutet, einen Wert auf die n\xE4chste ganze Zahl\
   \ oder die angegebene Dezimalstelle zu justieren. Programmierer runden Zahlen, um\u2026"
 title: Zahlen runden
+weight: 13
 ---
-
-{{< edit_this_page >}}
 
 ## Was & Warum?
 Das Runden von Zahlen bedeutet, einen Wert auf die nächste ganze Zahl oder die angegebene Dezimalstelle zu justieren. Programmierer runden Zahlen, um Daten zu vereinfachen, die Lesbarkeit zu verbessern oder bestimmten mathematischen Anforderungen während der Berechnungen gerecht zu werden.

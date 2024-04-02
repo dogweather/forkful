@@ -11,9 +11,8 @@ summary: "V\xE4liaikaistiedoston luominen C:ss\xE4 tarkoittaa tiedoston generoin
   \ joka on tarkoitettu lyhytaikaiseen k\xE4ytt\xF6\xF6n, yleens\xE4 datank\xE4sittelyn\
   \ tai s\xE4ilytyksen\u2026"
 title: "Tilap\xE4isen tiedoston luominen"
+weight: 21
 ---
-
-{{< edit_this_page >}}
 
 ## Mikä & Miksi?
 Väliaikaistiedoston luominen C:ssä tarkoittaa tiedoston generointia, joka on tarkoitettu lyhytaikaiseen käyttöön, yleensä datankäsittelyn tai säilytyksen väliaikaiseen tilaan. Ohjelmoijat tekevät sen hallitakseen väliaikaista dataa vaikuttamatta ohjelman pysyvään säilytykseen tai varmistaakseen, että arkaluonteinen data poistetaan käytön jälkeen.

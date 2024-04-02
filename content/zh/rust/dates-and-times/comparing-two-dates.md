@@ -16,9 +16,8 @@ summary: "\u6BD4\u8F83\u4E24\u4E2A\u65E5\u671F\u662F\u4EC0\u4E48\u610F\u601D\uFF
   \u6392\u5E8F\u3001\u68C0\u67E5\u6709\u6548\u6027\u6216\u8BA1\u7B97\u65F6\u95F4\u5DEE\
   \u3002"
 title: "\u6BD4\u8F83\u4E24\u4E2A\u65E5\u671F"
+weight: 27
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 比较两个日期是什么意思？就是看看第一个日期是否早于、晚于或与第二个日期相同。为什么程序员要这么做？通常是为了排序、检查有效性或计算时间差。

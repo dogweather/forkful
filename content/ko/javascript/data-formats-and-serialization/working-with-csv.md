@@ -23,9 +23,8 @@ summary: "\uC790\uBC14\uC2A4\uD06C\uB9BD\uD2B8\uC5D0\uC11C CSV(\uC27C\uD45C\uB85
   \ \uC774\uB97C \uC218\uD589\uD558\uB294 \uC774\uC720\uB294 \uC560\uD50C\uB9AC\uCF00\
   \uC774\uC158, \uB370\uC774\uD130\uBCA0\uC774\uC2A4, \uC2DC\uC2A4\uD15C\u2026"
 title: "CSV\uC640 \uD568\uAED8 \uC791\uC5C5\uD558\uAE30"
+weight: 37
 ---
-
-{{< edit_this_page >}}
 
 ## 무엇인가 & 왜인가?
 자바스크립트에서 CSV(쉼표로 구분된 값들)를 처리하는 것은 외부 소스로부터 표 형식 데이터를 가져오거나 다른 프로그램에서 사용할 데이터를 내보내기 위해 CSV 파일을 파싱하거나 생성하는 것을 말합니다. 프로그래머들이 이를 수행하는 이유는 애플리케이션, 데이터베이스, 시스템 간에 복잡한 형식인 JSON 보다는 간결하고 가벼운 데이터 교환을 가능하게 하기 때문입니다.

@@ -11,9 +11,8 @@ summary: "Assoziative Arrays sind wie geheime Handschl\xE4ge f\xFCr Daten in Lua
   anstatt dass sich nur Zahlen brav nach Index aufreihen, k\xF6nnen deine Schl\xFC\
   ssel alles\u2026"
 title: Verwendung von assoziativen Arrays
+weight: 15
 ---
-
-{{< edit_this_page >}}
 
 ## Was & Warum?
 

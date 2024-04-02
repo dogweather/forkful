@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Merkkijonon ensimm\xE4isen kirjaimen muuttaminen suuraakkoseksi Rustissa\
   \ tarkoittaa merkkijonon muokkaamista siten, ett\xE4 sen ensimm\xE4inen merkki muutetaan\u2026"
 title: Merkkijonon muuttaminen isoiksi kirjaimiksi
+weight: 2
 ---
-
-{{< edit_this_page >}}
 
 ## Mikä & Miksi?
 

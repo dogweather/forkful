@@ -13,9 +13,8 @@ summary: "T\xECm ki\u1EBFm v\xE0 thay th\u1EBF v\u0103n b\u1EA3n trong bash c\xF
   i ho\u1EB7c t\u1EC7p b\u1EB1ng th\u1EE9 g\xEC \u0111\xF3 kh\xE1c. \u0110\xE2y l\xE0\
   \ m\u1ED9t nhi\u1EC7m v\u1EE5 h\xE0ng ng\xE0y cho\u2026"
 title: "T\xECm ki\u1EBFm v\xE0 thay th\u1EBF v\u0103n b\u1EA3n"
+weight: 10
 ---
-
-{{< edit_this_page >}}
 
 ## Cái gì & Tại sao?
 Tìm kiếm và thay thế văn bản trong bash có nghĩa là thay thế từ hoặc mẫu trong một chuỗi hoặc tệp bằng thứ gì đó khác. Đây là một nhiệm vụ hàng ngày cho việc làm sạch dữ liệu, sửa chữa mã, hoặc tự động hóa các chỉnh sửa.

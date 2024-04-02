@@ -9,9 +9,8 @@ summary: "Comparar duas datas \xE9 o processo de verificar as diferen\xE7as entr
   \ elas, seja para encontrar qual \xE9 mais recente ou quantificar o intervalo de\
   \ tempo entre\u2026"
 title: Comparando duas datas
+weight: 27
 ---
-
-{{< edit_this_page >}}
 
 ## O Que & Porquê?
 

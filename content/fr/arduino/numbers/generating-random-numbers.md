@@ -9,9 +9,8 @@ summary: "G\xE9n\xE9rer des nombres al\xE9atoires dans les projets Arduino consi
   \ \xE0 produire des valeurs con\xE7ues pour \xEAtre impr\xE9visibles, ce qui est\
   \ crucial pour des\u2026"
 title: "G\xE9n\xE9ration de nombres al\xE9atoires"
+weight: 12
 ---
-
-{{< edit_this_page >}}
 
 ## Quoi et pourquoi ?
 Générer des nombres aléatoires dans les projets Arduino consiste à produire des valeurs conçues pour être imprévisibles, ce qui est crucial pour des applications telles que les jeux, les simulations et les systèmes de sécurité. Les programmeurs utilisent cette technique pour introduire de la variabilité ou prendre des décisions qui ne devraient pas être déterministes.

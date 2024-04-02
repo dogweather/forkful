@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "YAML, eller YAML Ain't Markup Language, er et menneskelesbart serialiseringsspr\xE5\
   k for data. Programmerere bruker det ofte for konfigurasjonsfiler og\u2026"
 title: Arbeider med YAML
+weight: 41
 ---
-
-{{< edit_this_page >}}
 
 ## Hva og hvorfor?
 YAML, eller YAML Ain't Markup Language, er et menneskelesbart serialiseringsspråk for data. Programmerere bruker det ofte for konfigurasjonsfiler og dataoverføring mellom språk. Dets enkelhet og lesbarhet gjør det spesielt populært for oppgaver som involverer oppsett av miljøer, applikasjoner eller tjenester der konfigurasjoner er avgjørende og bør være lett å forstå og redigere.

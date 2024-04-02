@@ -9,9 +9,8 @@ summary: "Concat\xE9ner des cha\xEEnes de caract\xE8res, c'est juste les coller 
   \ \xE0 bout. Les devs font \xE7a tout le temps pour construire des textes, comme\
   \ les messages\u2026"
 title: "Concat\xE9nation de cha\xEEnes de caract\xE8res"
+weight: 3
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why? (Quoi et Pourquoi ?)
 

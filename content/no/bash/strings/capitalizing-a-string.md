@@ -11,9 +11,8 @@ summary: "\xC5 sette stor forbokstav i en streng i Bash inneb\xE6rer \xE5 omdann
   \ det f\xF8rste tegnet i strengen til en stor bokstav, mens resten av strengen forblir\
   \ uendret.\u2026"
 title: Sette stor bokstav i en streng
+weight: 2
 ---
-
-{{< edit_this_page >}}
 
 ## Hva & Hvorfor?
 Å sette stor forbokstav i en streng i Bash innebærer å omdanne det første tegnet i strengen til en stor bokstav, mens resten av strengen forblir uendret. Denne teknikken brukes ofte for å formatere utdata eller for å overholde kodingskonvensjoner som krever at visse strenger starter med en stor bokstav for lesbarhet eller stilistiske preferanser.

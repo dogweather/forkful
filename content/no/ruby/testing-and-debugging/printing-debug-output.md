@@ -9,9 +9,8 @@ summary: "Utskrift for feils\xF8king lar deg vise data og programflyt i konsolle
   \ for \xE5 forst\xE5 hva programmet ditt faktisk gj\xF8r. Programmerere bruker dette\
   \ til \xE5 spore\u2026"
 title: "Skrive ut feils\xF8kingsdata"
+weight: 33
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 Utskrift for feilsøking lar deg vise data og programflyt i konsollen for å forstå hva programmet ditt faktisk gjør. Programmerere bruker dette til å spore feil og sikre at koden oppfører seg som forventet.

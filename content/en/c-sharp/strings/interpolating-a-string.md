@@ -7,9 +7,8 @@ model: gpt-4-0125-preview
 summary: "String interpolation in C# allows you to create a new string by including\
   \ expressions inside a string literal, making it easier to format and concatenate\u2026"
 title: Interpolating a string
+weight: 8
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 String interpolation in C# allows you to create a new string by including expressions inside a string literal, making it easier to format and concatenate strings. Programmers use this feature to improve code readability and maintainability, especially when dealing with dynamic string content.

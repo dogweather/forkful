@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "JSON (JavaScript Object Notation) \xE9 um formato leve de troca de dados,\
   \ prevalente em aplica\xE7\xF5es web para a troca de dados entre clientes e servidores.\u2026"
 title: Trabalhando com JSON
+weight: 38
 ---
-
-{{< edit_this_page >}}
 
 ## O Que e Por Quê?
 

@@ -9,9 +9,8 @@ summary: "Logging er prosessen med \xE5 registrere applikasjonshendelser og data
   \ under kj\xF8retid. Programmerere logger for \xE5 diagnostisere feil, overv\xE5\
   ke\u2026"
 title: "Loggf\xF8ring"
+weight: 17
 ---
-
-{{< edit_this_page >}}
 
 ## Hva & Hvorfor?
 Logging er prosessen med å registrere applikasjonshendelser og datautskrift under kjøretid. Programmerere logger for å diagnostisere feil, overvåke programvarens ytelse, spore brukerhandlinger og opprettholde samsvar med sikkerhets- og forretningsstandarder.

@@ -13,9 +13,8 @@ summary: "N\u1ED9i suy chu\u1ED7i trong Visual Basic cho \u1EE8ng d\u1EE5ng (VBA
   c bi\u1EC3u th\u1EE9c v\xE0o trong m\u1ED9t chu\u1ED7i k\xFD t\u1EF1, cho ph\xE9\
   p t\u1EA1o chu\u1ED7i \u0111\u1ED9ng. L\u1EADp\u2026"
 title: "N\u1ED9i suy chu\u1ED7i k\xFD t\u1EF1"
+weight: 8
 ---
-
-{{< edit_this_page >}}
 
 ## Gì & Tại sao?
 

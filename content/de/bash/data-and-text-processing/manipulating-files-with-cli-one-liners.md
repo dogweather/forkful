@@ -7,9 +7,8 @@ model: gpt-4-0125-preview
 summary: "Dateimanipulation mit CLI (Command Line Interface) One-Linern beinhaltet\
   \ die Verwendung von Bash-Skripten oder -Befehlen, um Aktionen an Dateien wie\u2026"
 title: Dateimanipulation mit CLI-One-Linern
+weight: 31
 ---
-
-{{< edit_this_page >}}
 
 ## Was & Warum?
 

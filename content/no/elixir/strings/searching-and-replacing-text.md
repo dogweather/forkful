@@ -9,9 +9,8 @@ summary: "S\xF8king og erstattning av tekst lar oss finne bestemte ord eller utt
   \ og bytte dem ut med noe annet. Programmerere gj\xF8r dette for \xE5 oppdatere\
   \ kode,\u2026"
 title: "S\xF8king og erstatting av tekst"
+weight: 10
 ---
-
-{{< edit_this_page >}}
 
 ## Hva & Hvorfor?
 Søking og erstattning av tekst lar oss finne bestemte ord eller uttrykk og bytte dem ut med noe annet. Programmerere gjør dette for å oppdatere kode, reparere feil, eller endre data effektivt.

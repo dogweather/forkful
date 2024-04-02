@@ -7,9 +7,8 @@ model: gpt-4-1106-preview
 summary: "Merkkijonon interpolointi tarkoittaa muuttujien, lausekkeiden tai arvojen\
   \ upottamista merkkijonoon. Se tekee koodista siistimp\xE4\xE4 ja helpottaa dynaamisten\u2026"
 title: Merkkijonon interpolointi
+weight: 8
 ---
-
-{{< edit_this_page >}}
 
 ## Mitä & Miksi?
 Merkkijonon interpolointi tarkoittaa muuttujien, lausekkeiden tai arvojen upottamista merkkijonoon. Se tekee koodista siistimpää ja helpottaa dynaamisten viestien luomista.

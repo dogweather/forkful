@@ -8,9 +8,8 @@ model: gpt-4-1106-preview
 summary: "Refactoring is the process of changing a computer program's internal structure\
   \ without altering its external behavior. Programmers do it to clean up their\u2026"
 title: Refactoring
+weight: 19
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 

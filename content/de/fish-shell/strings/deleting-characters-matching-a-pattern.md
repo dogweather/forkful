@@ -7,9 +7,8 @@ model: gpt-4-1106-preview
 summary: "Das L\xF6schen von Zeichen, die einem Muster entsprechen, ist ein Prozess,\
   \ bei dem bestimmte Zeichensequenzen aus einer Zeichenkette entfernt werden. Diese\u2026"
 title: "L\xF6schen von Zeichen, die einem Muster entsprechen"
+weight: 5
 ---
-
-{{< edit_this_page >}}
 
 ## Was & Warum?
 Das Löschen von Zeichen, die einem Muster entsprechen, ist ein Prozess, bei dem bestimmte Zeichensequenzen aus einer Zeichenkette entfernt werden. Diese Technik wird von Programmierern verwendet, um Daten zu säubern, Eingaben zu validieren oder einfach Strings zu bearbeiten.

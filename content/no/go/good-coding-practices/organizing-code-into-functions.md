@@ -11,9 +11,8 @@ summary: "\xC5 organisere kode i funksjoner i Go inneb\xE6rer \xE5 bryte ned kod
   \ i gjenbrukbare, modul\xE6re blokker som utf\xF8rer spesifikke oppgaver. Denne\
   \ tiln\xE6rmingen\u2026"
 title: Organisering av kode i funksjoner
+weight: 18
 ---
-
-{{< edit_this_page >}}
 
 ## Hva & Hvorfor?
 

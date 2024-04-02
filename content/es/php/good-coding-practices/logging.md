@@ -8,9 +8,8 @@ model: gpt-4-1106-preview
 summary: "El registro (logging) es b\xE1sicamente como mantener un diario para tu\
   \ c\xF3digo; es la acci\xF3n de registrar eventos, errores y otros puntos de datos\u2026"
 title: Registro de Actividades
+weight: 17
 ---
-
-{{< edit_this_page >}}
 
 ## ¿Qué y Por Qué?
 

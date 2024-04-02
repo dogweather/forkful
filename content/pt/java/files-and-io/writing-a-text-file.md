@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Escrever um arquivo de texto em Java envolve utilizar as capacidades da\
   \ linguagem para criar e escrever conte\xFAdo em arquivos no sistema de arquivos.\u2026"
 title: Escrevendo um arquivo de texto
+weight: 24
 ---
-
-{{< edit_this_page >}}
 
 ## O Que & Por Que?
 

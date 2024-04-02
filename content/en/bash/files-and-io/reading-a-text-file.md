@@ -7,9 +7,8 @@ model: gpt-4-1106-preview
 summary: "Reading a text file means getting the content from a file into your script.\
   \ Programmers do it to work with data, configuration, or to automate systems\u2026"
 title: Reading a text file
+weight: 22
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 Reading a text file means getting the content from a file into your script. Programmers do it to work with data, configuration, or to automate systems based on that text-file content.

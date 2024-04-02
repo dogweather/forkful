@@ -10,9 +10,8 @@ model: gpt-4-0125-preview
 summary: "Arrays associativos, ou como o Elm os chama, Dicion\xE1rios, mapeiam chaves\
   \ para valores de uma forma que torna a busca, inser\xE7\xE3o e exclus\xE3o de valores\u2026"
 title: Usando arrays associativos
+weight: 15
 ---
-
-{{< edit_this_page >}}
 
 ## O Que & Porquê?
 

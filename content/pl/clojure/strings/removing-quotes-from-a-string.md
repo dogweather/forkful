@@ -9,9 +9,8 @@ summary: "Usuwanie cudzys\u0142ow\xF3w ze \u0142a\u0144cucha znak\xF3w oznacza p
   \ si\u0119 tych uporczywych znak\xF3w podw\xF3jnych lub pojedynczych cudzys\u0142\
   ow\xF3w, kt\xF3re otaczaj\u0105 tw\xF3j tekst.\u2026"
 title: "Usuwanie cudzys\u0142ow\xF3w z ci\u0105gu znak\xF3w"
+weight: 9
 ---
-
-{{< edit_this_page >}}
 
 ## Co i dlaczego?
 Usuwanie cudzysłowów ze łańcucha znaków oznacza pozbycie się tych uporczywych znaków podwójnych lub pojedynczych cudzysłowów, które otaczają twój tekst. Programiści robią to, aby oczyścić dane, zapewnić jednolitość lub przygotować łańcuchy znaków do przetwarzania, gdzie cudzysłowy są niepożądane lub mogą powodować błędy.

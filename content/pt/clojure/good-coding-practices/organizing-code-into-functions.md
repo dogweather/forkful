@@ -9,9 +9,8 @@ summary: "Organizar c\xF3digo em fun\xE7\xF5es \xE9 sobre empacotar blocos de c\
   digo que realizam tarefas espec\xEDficas. Fazer isso torna seu c\xF3digo limpo,\
   \ mais f\xE1cil de manter e\u2026"
 title: "Organizando o c\xF3digo em fun\xE7\xF5es"
+weight: 18
 ---
-
-{{< edit_this_page >}}
 
 ## O Que & Por Que?
 

@@ -11,9 +11,8 @@ summary: "Escribir en el error est\xE1ndar (stderr) en Elixir es un m\xE9todo pa
   \ dirigir mensajes de error y diagn\xF3sticos por separado de la salida principal\
   \ (stdout).\u2026"
 title: "Escribiendo en el error est\xE1ndar"
+weight: 25
 ---
-
-{{< edit_this_page >}}
 
 ## ¿Qué y por qué?
 

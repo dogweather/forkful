@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Escrever para o erro padr\xE3o em Python trata-se de direcionar as mensagens\
   \ de erro ou diagn\xF3sticos do seu programa para o fluxo de erro (`stderr`),\u2026"
 title: "Escrevendo para o erro padr\xE3o"
+weight: 25
 ---
-
-{{< edit_this_page >}}
 
 ## O Quê & Por Quê?
 Escrever para o erro padrão em Python trata-se de direcionar as mensagens de erro ou diagnósticos do seu programa para o fluxo de erro (`stderr`), separado da saída padrão (`stdout`). Os programadores fazem isso para diferenciar as saídas normais do programa das mensagens de erro, facilitando a depuração e análise de logs.

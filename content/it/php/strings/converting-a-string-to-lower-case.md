@@ -7,9 +7,8 @@ model: gpt-4-1106-preview
 summary: "Convertire una stringa in minuscolo significa trasformare tutti i caratteri\
   \ alfabeticianche quelli accentati, nella loro forma minuscola. I programmatori\u2026"
 title: Conversione di una stringa in minuscolo
+weight: 4
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 Convertire una stringa in minuscolo significa trasformare tutti i caratteri alfabeticianche quelli accentati, nella loro forma minuscola. I programmatori lo fanno per uniformare i dati inseriti dagli utenti, per comparare stringhe in modo non case-sensitive, o semplicemente per adeguarsi alle regole di stile di un testo.

@@ -8,9 +8,8 @@ model: gpt-4-1106-preview
 summary: "Ein neues Projekt zu beginnen bedeutet, eine frische Arbeitsumgebung f\xFC\
   r eine bestimmte Aufgabe zu schaffen. Programmierer tun dies, um ihre Ideen zu\u2026"
 title: Einen neuen Projekt starten
+weight: 1
 ---
-
-{{< edit_this_page >}}
 
 ## Was & Warum?
 Ein neues Projekt zu beginnen bedeutet, eine frische Arbeitsumgebung für eine bestimmte Aufgabe zu schaffen. Programmierer tun dies, um ihre Ideen zu strukturieren, Abhängigkeiten zu verwalten und einen klaren Ausgangspunkt für die Entwicklung zu haben.

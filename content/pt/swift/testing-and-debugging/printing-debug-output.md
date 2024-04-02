@@ -9,9 +9,8 @@ summary: "Vamos falar sobre impress\xE3o de sa\xEDdas de depura\xE7\xE3o: \xE9 c
   \ na tela informa\xE7\xF5es do que est\xE1 rolando no seu c\xF3digo. Fazemos isso\
   \ para saber o que est\xE1\u2026"
 title: "Exibindo sa\xEDdas de depura\xE7\xE3o"
+weight: 33
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why? (O Quê & Por Quê?)
 Vamos falar sobre impressão de saídas de depuração: é colocar na tela informações do que está rolando no seu código. Fazemos isso para saber o que está acontecendo lá dentro durante a execução, achando erros ou otimizando processos.

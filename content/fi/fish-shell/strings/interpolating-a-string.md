@@ -9,9 +9,8 @@ summary: "Interpolointi yhdist\xE4\xE4 muuttujat ja teksti\xE4 yhdeksi merkkijon
   \ Koodarit hy\xF6dynt\xE4v\xE4t t\xE4t\xE4 luodakseen dynaamista dataa tai viestej\xE4\
   \ k\xE4ytt\xE4jille."
 title: Merkkijonon interpolointi
+weight: 8
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why? (Mikä & Miksi?)
 Interpolointi yhdistää muuttujat ja tekstiä yhdeksi merkkijonoksi. Koodarit hyödyntävät tätä luodakseen dynaamista dataa tai viestejä käyttäjille.

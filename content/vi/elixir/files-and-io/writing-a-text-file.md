@@ -15,9 +15,8 @@ summary: "Vi\u1EC7c vi\u1EBFt m\u1ED9t t\u1EADp tin v\u0103n b\u1EA3n li\xEAn qu
   c b\u1EDFi con ng\u01B0\u1EDDi. C\xE1c l\u1EADp tr\xECnh vi\xEAn th\u1EF1c hi\u1EC7\
   n\u2026"
 title: "Vi\u1EBFt m\u1ED9t t\u1EC7p v\u0103n b\u1EA3n"
+weight: 24
 ---
-
-{{< edit_this_page >}}
 
 ## Cái gì & Tại sao?
 Việc viết một tập tin văn bản liên quan đến việc lưu dữ liệu vào một tập tin theo định dạng có thể đọc được bởi con người. Các lập trình viên thực hiện điều này để duy trì thông tin như log, cài đặt, và kết quả dữ liệu.

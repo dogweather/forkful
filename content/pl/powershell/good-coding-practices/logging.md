@@ -9,9 +9,8 @@ summary: "Logowanie polega po prostu na pozostawianiu \u015Bladu w kodzie \u2013
   \ spos\xF3b na \u015Bledzenie tego, co si\u0119 dzieje, gdy skrypt jest uruchamiany\
   \ \"na \u017Cywo\".\u2026"
 title: "Rejestrowanie zdarze\u0144"
+weight: 17
 ---
-
-{{< edit_this_page >}}
 
 ## Co i dlaczego?
 Logowanie polega po prostu na pozostawianiu śladu w kodzie – to sposób na śledzenie tego, co się dzieje, gdy skrypt jest uruchamiany "na żywo". Programiści logują, aby debugować, śledzić zachowanie aplikacji, monitorować wydajność i mieć oko na wszelkie nieprawidłowości.

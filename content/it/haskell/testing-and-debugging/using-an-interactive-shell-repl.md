@@ -8,9 +8,8 @@ model: gpt-4-0125-preview
 summary: "Un guscio interattivo, o REPL (Read-Eval-Print Loop), in Haskell ti permette\
   \ di eseguire frammenti di codice dal vivo. \xC8 un campo di gioco per avere\u2026"
 title: Utilizzo di un interprete interattivo (REPL)
+weight: 34
 ---
-
-{{< edit_this_page >}}
 
 ## Cosa & Perché?
 Un guscio interattivo, o REPL (Read-Eval-Print Loop), in Haskell ti permette di eseguire frammenti di codice dal vivo. È un campo di gioco per avere feedback rapidi, testare funzioni e imparare il linguaggio.

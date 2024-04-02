@@ -8,9 +8,8 @@ model: gpt-4-1106-preview
 summary: "Beregning av fremtidig eller tidligere dato betyr \xE5 finne en dato f\xF8\
   r eller etter en spesifikk dag. Programmerere gj\xF8r dette for funksjonalitet som\u2026"
 title: Beregning av en dato i fremtiden eller fortiden
+weight: 26
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 Beregning av fremtidig eller tidligere dato betyr å finne en dato før eller etter en spesifikk dag. Programmerere gjør dette for funksjonalitet som påminnelser, utløpskontroller eller timeplanlegging.

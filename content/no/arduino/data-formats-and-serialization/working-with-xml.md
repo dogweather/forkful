@@ -9,9 +9,8 @@ summary: "Arbeid med XML p\xE5 Arduino inneb\xE6rer parsing og manipulering av X
   \ som vanligvis kommer fra web-APIer eller konfigurasjonsfiler. Programmerere gj\xF8\
   r\u2026"
 title: "\xC5 jobbe med XML"
+weight: 40
 ---
-
-{{< edit_this_page >}}
 
 ## Hva & Hvorfor?
 Arbeid med XML på Arduino innebærer parsing og manipulering av XML-data, som vanligvis kommer fra web-APIer eller konfigurasjonsfiler. Programmerere gjør dette for å integrere med tjenester som bruker XML for datautveksling eller for å lagre data i et strukturert, menneskelesbart format.

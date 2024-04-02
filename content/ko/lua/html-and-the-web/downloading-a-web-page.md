@@ -16,9 +16,8 @@ summary: "\uC6F9 \uD398\uC774\uC9C0\uB97C \uB2E4\uC6B4\uB85C\uB4DC\uD558\uB294 \
   \ \uBC31\uC5C5\uC744 \uC704\uD574 \uC774 \uC791\uC5C5\uC744 \uC218\uD589\uD569\uB2C8\
   \uB2E4."
 title: "\uC6F9 \uD398\uC774\uC9C0 \uB2E4\uC6B4\uB85C\uB4DC\uD558\uAE30"
+weight: 42
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why? (무엇이며 왜?)
 웹 페이지를 다운로드하는 것은 인터넷상의 문서를 로컬 컴퓨터로 가져오는 일입니다. 프로그래머들은 데이터 수집, 자동화 및 백업을 위해 이 작업을 수행합니다.

@@ -11,9 +11,8 @@ summary: "Los arreglos asociativos son como apretones de manos secretos para dat
   \ en Lua\u2014en vez de solo n\xFAmeros aline\xE1ndose obedientemente por \xEDndice,\
   \ tus llaves\u2026"
 title: Uso de matrices asociativas
+weight: 15
 ---
-
-{{< edit_this_page >}}
 
 ## Qué y Por Qué?
 

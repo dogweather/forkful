@@ -10,9 +10,8 @@ model: gpt-4-0125-preview
 summary: "Das Parsen eines Datums aus einem String besteht darin, Text, der ein Datum\
   \ repr\xE4sentiert, in ein `Date`- oder `DateTime`-Objekt umzuwandeln, das Ruby\u2026"
 title: Einen Datum aus einem String analysieren
+weight: 30
 ---
-
-{{< edit_this_page >}}
 
 ## Was & Warum?
 Das Parsen eines Datums aus einem String besteht darin, Text, der ein Datum repräsentiert, in ein `Date`- oder `DateTime`-Objekt umzuwandeln, das Ruby versteht. Programmierer tun dies, um Operationen wie Vergleiche, Berechnungen oder Formatierungen mit Datumsangaben durchzuführen, was bei Anwendungen, die sich mit Planung, Analytik oder Datenverarbeitung beschäftigen, häufig vorkommt.

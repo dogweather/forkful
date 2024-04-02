@@ -21,9 +21,8 @@ summary: "\uB85C\uADF8 \uAE30\uB85D\uC740 \uAE30\uBCF8\uC801\uC73C\uB85C \uC560\
   \ \uC704\uD574 \uB85C\uADF8\uB97C \uC0AC\uC6A9\uD569\uB2C8\uB2E4. \uC774\uB97C \uD1B5\
   \uD574 \uBB38\uC81C\uAC00 \uBC1C\uC0DD\uD558\uB294 \uAC83\uC744\u2026"
 title: "\uB85C\uAE45"
+weight: 17
 ---
-
-{{< edit_this_page >}}
 
 ## 무엇을, 왜 하는가?
 로그 기록은 기본적으로 애플리케이션이 무엇을 하는지에 대한 기록을 남기는 것입니다—마치 일기장처럼요, 하지만 코드용으로 말이죠. 프로그래머들은 상태 변화, 시스템 이벤트, 까다로운 버그 등 세세한 부분을 추적하기 위해 로그를 사용합니다. 이를 통해 문제가 발생하는 것을 간과하지 않고 확인할 수 있습니다.

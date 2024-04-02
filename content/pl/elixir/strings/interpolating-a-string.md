@@ -9,9 +9,8 @@ summary: "Interpolacja \u0142a\u0144cuch\xF3w znak\xF3w to wstawianie warto\u015
   ci zmiennych wewn\u0105trz stringa. Programi\u015Bci u\u017Cywaj\u0105 jej do tworzenia\
   \ elastycznych wiadomo\u015Bci i\u2026"
 title: "Interpolacja \u0142a\u0144cuch\xF3w znak\xF3w"
+weight: 8
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why? (Co i dlaczego?)
 Interpolacja łańcuchów znaków to wstawianie wartości zmiennych wewnątrz stringa. Programiści używają jej do tworzenia elastycznych wiadomości i dynamicznego kodu bez konieczności ciągłego łączenia ciągów znaków.

@@ -11,9 +11,8 @@ summary: "Assosiative tabeller i Dart, ofte kjent som Maps, er datastrukturer so
   \ lagrer data i n\xF8kkel-verdi-par. De gj\xF8r det mulig for programmerere \xE5\
   \ f\xE5 tilgang\u2026"
 title: Bruke assosiativ tabeller
+weight: 15
 ---
-
-{{< edit_this_page >}}
 
 ## Hva & Hvorfor?
 

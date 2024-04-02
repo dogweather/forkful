@@ -7,9 +7,8 @@ model: gpt-4-0125-preview
 summary: "In C programming, reading command line arguments allows programs to accept\
   \ inputs right from the terminal, enhancing flexibility and usability.\u2026"
 title: Reading command line arguments
+weight: 23
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 

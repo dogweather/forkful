@@ -7,9 +7,8 @@ model: gpt-4-0125-preview
 summary: "Editing files in-place with CLI one-liners in PowerShell is about making\
   \ direct modifications to files from the command line, without the need to open\u2026"
 title: Editing files in-place with CLI one-liners
+weight: 32
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 

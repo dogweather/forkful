@@ -1,14 +1,14 @@
 ---
 date: 2024-01-26 04:11:26.627248-07:00
-description: "En debugger er et verkt\xF8y som lar deg unders\xF8ke og endre det indre\
-  \ arbeidet i koden din mens den kj\xF8rer. Programmerere bruker den til \xE5 knuse\
-  \ feil ved \xE5\u2026"
+description: "For \xE5 komme i gang med en debugger i TypeScript, trenger du bare\
+  \ et st\xF8ttet IDE (som Visual Studio Code) og en `launch.json`-konfigurasjon.\
+  \ Her er et\u2026"
 lastmod: '2024-03-13T22:44:40.536908-06:00'
 model: gpt-4-0125-preview
-summary: "En debugger er et verkt\xF8y som lar deg unders\xF8ke og endre det indre\
-  \ arbeidet i koden din mens den kj\xF8rer. Programmerere bruker den til \xE5 knuse\
-  \ feil ved \xE5\u2026"
+summary: "For \xE5 komme i gang med en debugger i TypeScript, trenger du bare et st\xF8\
+  ttet IDE (som Visual Studio Code) og en `launch.json`-konfigurasjon. Her er et\u2026"
 title: "\xC5 bruke en debugger"
+weight: 35
 ---
 
 ## Hvordan:

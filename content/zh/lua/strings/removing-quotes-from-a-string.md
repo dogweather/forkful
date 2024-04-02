@@ -15,9 +15,8 @@ summary: "\u4ECE\u5B57\u7B26\u4E32\u4E2D\u5265\u53BB\u5F15\u53F7\u610F\u5473\u77
   \uFF0C\u6216\u662F\u4E3A\u4E86\u7EDF\u4E00\u53EF\u80FD\u5F15\u53F7\u4F7F\u7528\u4E0D\
   \u4E00\u81F4\u7684\u6570\u636E\u3002"
 title: "\u4ECE\u5B57\u7B26\u4E32\u4E2D\u79FB\u9664\u5F15\u53F7"
+weight: 9
 ---
-
-{{< edit_this_page >}}
 
 ## 什么和为什么？
 从字符串中剥去引号意味着将那些紧紧围绕你文本的双引号或单引号字符去除。编程人员这么做是为了清理输入、简化解析，或是为了统一可能引号使用不一致的数据。

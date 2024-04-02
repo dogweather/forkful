@@ -7,9 +7,8 @@ model: gpt-4-1106-preview
 summary: "Working with XML in Haskell involves parsing, manipulating, and generating\
   \ XML structures. Programmers handle XML to interact with numerous applications\u2026"
 title: Working with XML
+weight: 40
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 

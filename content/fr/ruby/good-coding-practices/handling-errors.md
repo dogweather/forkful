@@ -9,9 +9,8 @@ summary: "La gestion des erreurs consiste \xE0 anticiper l'inattendu dans le cod
   \ \u2014 \xE0 g\xE9rer les erreurs et les probl\xE8mes avec \xE9l\xE9gance sans\
   \ faire planter le programme.\u2026"
 title: Gestion des erreurs
+weight: 16
 ---
-
-{{< edit_this_page >}}
 
 ## Quoi et Pourquoi ?
 

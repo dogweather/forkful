@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Komplekse tall, som best\xE5r av en reell og en imagin\xE6r del (vanligvis\
   \ betegnet som a + bi), utvider konseptet av dimensjonsl\xF8se tall til et todimensjonalt\u2026"
 title: Arbeide med komplekse tall
+weight: 14
 ---
-
-{{< edit_this_page >}}
 
 ## Hva & Hvorfor?
 

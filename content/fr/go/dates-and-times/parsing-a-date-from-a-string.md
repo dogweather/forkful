@@ -10,9 +10,8 @@ model: gpt-4-0125-preview
 summary: "Analyser une date \xE0 partir d'une cha\xEEne de caract\xE8res en Go implique\
   \ de convertir la date repr\xE9sent\xE9e sous forme de texte en un format plus utilisable\u2026"
 title: "Analyser une date \xE0 partir d'une cha\xEEne de caract\xE8res"
+weight: 30
 ---
-
-{{< edit_this_page >}}
 
 ## Quoi et pourquoi ?
 

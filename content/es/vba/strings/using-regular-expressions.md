@@ -10,9 +10,8 @@ model: gpt-4-0125-preview
 summary: "Las expresiones regulares (regex) en Visual Basic para Aplicaciones (VBA)\
   \ ofrecen una manera poderosa de buscar, coincidir y manipular cadenas de texto.\u2026"
 title: Usando expresiones regulares
+weight: 11
 ---
-
-{{< edit_this_page >}}
 
 ## Qué y Por Qué?
 

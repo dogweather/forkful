@@ -11,9 +11,8 @@ summary: "JSON:n (JavaScript Object Notation) k\xE4sittely C-kieless\xE4 sis\xE4
   \xE4 JSON-tietorakenteiden j\xE4sent\xE4misen, luomisen ja manipuloinnin. Ohjelmoijat\
   \ tekev\xE4t n\xE4in\u2026"
 title: "Ty\xF6skentely JSONin kanssa"
+weight: 38
 ---
-
-{{< edit_this_page >}}
 
 ## Mikä ja miksi?
 

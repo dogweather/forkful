@@ -16,9 +16,8 @@ summary: "\uD14D\uC2A4\uD2B8 \uD30C\uC77C \uC77D\uAE30\uB294 \uD30C\uC77C \uB0B4
   \uBA70, \uD504\uB85C\uADF8\uB7A8 \uAC04 \uC815\uBCF4 \uAD50\uD658\uC744 \uD560 \uC218\
   \ \uC788\uC2B5\uB2C8\uB2E4."
 title: "\uD14D\uC2A4\uD2B8 \uD30C\uC77C \uC77D\uAE30"
+weight: 22
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why? (무엇과 왜?)
 텍스트 파일 읽기는 파일 내용을 프로그램으로 가져오는 과정입니다. 이를 통해 데이터를 처리하고, 사용자에게 정보를 제공하며, 프로그램 간 정보 교환을 할 수 있습니다.

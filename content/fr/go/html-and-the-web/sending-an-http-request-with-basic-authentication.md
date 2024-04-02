@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Envoyer une requ\xEAte HTTP avec authentification de base en Go implique\
   \ d'ajouter un en-t\xEAte d'autorisation \xE0 votre requ\xEAte qui comprend un nom\u2026"
 title: "Envoyer une requ\xEAte HTTP avec une authentification de base"
+weight: 45
 ---
-
-{{< edit_this_page >}}
 
 ## Quoi & Pourquoi ?
 

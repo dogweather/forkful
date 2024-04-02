@@ -13,9 +13,8 @@ summary: "Vi\u1EC7c vi\u1EBFt hoa m\u1ED9t chu\u1ED7i bao g\u1ED3m vi\u1EC7c ch\
   c c\u1EA3 c\xE2u th\xE0nh ch\u1EEF in hoa, trong khi gi\u1EEF nguy\xEAn c\xE1c k\xFD\
   \ t\u1EF1 c\xF2n l\u1EA1i. C\xE1c l\u1EADp\u2026"
 title: "Vi\u1EBFt hoa m\u1ED9t chu\u1ED7i k\xFD t\u1EF1"
+weight: 2
 ---
-
-{{< edit_this_page >}}
 
 ## Cái gì & Tại sao?
 

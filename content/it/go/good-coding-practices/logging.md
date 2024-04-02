@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Il logging nello sviluppo software \xE8 il processo di registrazione di\
   \ informazioni sull'esecuzione di un programma, progettato per tracciare il suo\u2026"
 title: Registro degli Eventi
+weight: 17
 ---
-
-{{< edit_this_page >}}
 
 ## Cosa e Perché?
 

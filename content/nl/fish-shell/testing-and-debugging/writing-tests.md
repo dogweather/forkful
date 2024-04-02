@@ -11,9 +11,8 @@ summary: "Tests schrijven is kleine controles cre\xEBren om ervoor te zorgen dat
   \ code zich gedraagt zoals verwacht. Programmeurs schrijven tests om bugs vroeg\
   \ te\u2026"
 title: Tests Schrijven
+weight: 36
 ---
-
-{{< edit_this_page >}}
 
 ## Wat & Waarom?
 Tests schrijven is kleine controles creëren om ervoor te zorgen dat je code zich gedraagt zoals verwacht. Programmeurs schrijven tests om bugs vroeg te vangen, tijd te besparen en code betrouwbaar te houden terwijl deze verandert.

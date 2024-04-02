@@ -11,9 +11,8 @@ summary: "L'analyse d'une date \xE0 partir d'une cha\xEEne de caract\xE8res impl
   \ d'extraire les informations de date encod\xE9es au sein de cha\xEEnes et de les\
   \ convertir en\u2026"
 title: "Analyser une date depuis une cha\xEEne de caract\xE8res"
+weight: 30
 ---
-
-{{< edit_this_page >}}
 
 ## Quoi & Pourquoi ?
 L'analyse d'une date à partir d'une chaîne de caractères implique d'extraire les informations de date encodées au sein de chaînes et de les convertir en un format structuré que les environnements de programmation peuvent reconnaître et manipuler. Les programmeurs font cela pour permettre des opérations telles que la comparaison de dates, l'arithmétique, le formatage et la localisation, qui sont essentielles pour gérer efficacement la planification, les horodatages et les données historiques dans les logiciels.

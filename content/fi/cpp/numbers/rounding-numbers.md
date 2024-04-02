@@ -9,9 +9,8 @@ summary: "Py\xF6rist\xE4minen tarkoittaa arvon s\xE4\xE4t\xE4mist\xE4 l\xE4himp\
   \xE4n kokonaislukuun tai m\xE4\xE4riteltyyn tarkkuuteen. Kehitt\xE4j\xE4t tekev\xE4\
   t n\xE4in yksinkertaistaakseen,\u2026"
 title: "Numerojen py\xF6rist\xE4minen"
+weight: 13
 ---
-
-{{< edit_this_page >}}
 
 ## Mikä & Miksi?
 Pyöristäminen tarkoittaa arvon säätämistä lähimpään kokonaislukuun tai määriteltyyn tarkkuuteen. Kehittäjät tekevät näin yksinkertaistaakseen, noudattaakseen todellisen maailman rajoituksia tai parantaakseen suorituskykyä hylkäämällä ylimääräisen tarkkuuden.

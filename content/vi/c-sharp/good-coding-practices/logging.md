@@ -13,9 +13,8 @@ summary: "Logging l\xE0 qu\xE1 tr\xECnh ghi ch\xE9p c\xE1c s\u1EF1 ki\u1EC7n v\x
   nh ch\u1EA1y. L\u1EADp tr\xECnh vi\xEAn th\u1EF1c hi\u1EC7n logging \u0111\u1EC3\
   \ ch\u1EA9n \u0111o\xE1n l\u1ED7i, theo d\xF5i\u2026"
 title: Ghi log
+weight: 17
 ---
-
-{{< edit_this_page >}}
 
 ## Gì và Tại sao?
 Logging là quá trình ghi chép các sự kiện và dữ liệu đầu ra của ứng dụng trong quá trình chạy. Lập trình viên thực hiện logging để chẩn đoán lỗi, theo dõi hiệu suất phần mềm, theo dõi hành động của người dùng, và duy trì tuân thủ với các tiêu chuẩn bảo mật và kinh doanh.

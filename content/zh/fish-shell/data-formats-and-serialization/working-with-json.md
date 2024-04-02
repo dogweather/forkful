@@ -21,9 +21,8 @@ summary: "\u5728 Fish Shell \u4E2D\u5904\u7406 JSON \u6D89\u53CA\u89E3\u6790\u54
   \u9AD8\u7A0B\u5E8F\u5458\u7684\u81EA\u52A8\u5316\u548C\u6570\u636E\u5904\u7406\u6548\
   \u7387\u3002"
 title: "\u4F7F\u7528JSON\u8FDB\u884C\u7F16\u7A0B"
+weight: 38
 ---
-
-{{< edit_this_page >}}
 
 ## 什么和为什么？
 

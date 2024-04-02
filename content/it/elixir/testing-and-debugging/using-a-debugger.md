@@ -1,13 +1,13 @@
 ---
 date: 2024-01-26 03:48:21.142169-07:00
-description: "L'uso di un debugger in Elixir comporta l'esecuzione passo passo del\
-  \ codice, l'ispezione delle variabili e il tracciamento dei flussi per eliminare\
-  \ gli\u2026"
+description: "Elixir viene fornito con un debugger grafico integrato chiamato `:debugger`.\
+  \ Per usarlo, \xE8 necessario avviarlo e collegarsi al processo in esecuzione.\u2026"
 lastmod: '2024-03-13T22:44:43.087889-06:00'
 model: gpt-4-0125-preview
-summary: "L'uso di un debugger in Elixir comporta l'esecuzione passo passo del codice,\
-  \ l'ispezione delle variabili e il tracciamento dei flussi per eliminare gli\u2026"
+summary: "Elixir viene fornito con un debugger grafico integrato chiamato `:debugger`.\
+  \ Per usarlo, \xE8 necessario avviarlo e collegarsi al processo in esecuzione.\u2026"
 title: Utilizzo di un debugger
+weight: 35
 ---
 
 ## Come fare:

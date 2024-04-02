@@ -7,9 +7,8 @@ model: gpt-4-0125-preview
 summary: "Trabalhar com XML envolve manipular e acessar dados estruturados na Linguagem\
   \ de Marca\xE7\xE3o Extens\xEDvel (eXtensible Markup Language). Os programadores\u2026"
 title: Trabalhando com XML
+weight: 40
 ---
-
-{{< edit_this_page >}}
 
 ## O Que & Por Que?
 Trabalhar com XML envolve manipular e acessar dados estruturados na Linguagem de Marcação Extensível (eXtensible Markup Language). Os programadores trabalham com XML para permitir a interoperabilidade com outros sistemas ou para ler e escrever arquivos de configuração, feeds de dados e outros documentos estruturados comuns em serviços web.

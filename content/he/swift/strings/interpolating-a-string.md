@@ -21,9 +21,8 @@ summary: "\u05E9\u05D9\u05DC\u05D5\u05D1 \u05D8\u05E7\u05E1\u05D8 \u05D1\u05DE\u
   \u05D9\u05DD \u05D3\u05D9\u05E0\u05DE\u05D9\u05D9\u05DD \u05D1\u05E7\u05DC\u05D5\
   \u05EA\u2026"
 title: "\u05E9\u05E8\u05D1\u05D5\u05D1 \u05DE\u05D7\u05E8\u05D5\u05D6\u05EA"
+weight: 8
 ---
-
-{{< edit_this_page >}}
 
 ## מה ולמה?
 שילוב טקסט במחרוזת (String interpolation) ב-Swift זה כשמכניסים משתנים וביטויים לתוך מחרוזת טקסט ישירות. זה מועיל למתכנתים לכתוב טקסטים דינמיים בקלות ובאופן קריא יותר.

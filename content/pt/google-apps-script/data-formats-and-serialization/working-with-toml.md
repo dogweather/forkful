@@ -11,9 +11,8 @@ summary: "TOML, que significa Tom's Obvious, Minimal Language (Linguagem M\xEDni
   \ e \xD3bvia do Tom), \xE9 um formato de arquivo de configura\xE7\xE3o f\xE1cil\
   \ de ler devido \xE0 sua\u2026"
 title: Trabalhando com TOML
+weight: 39
 ---
-
-{{< edit_this_page >}}
 
 ## O que é & Por quê?
 

@@ -9,9 +9,8 @@ summary: "Att hantera fel i PowerShell inneb\xE4r att f\xF6rutse miss\xF6den och
   \ dem smidigt. Programmerare g\xF6r detta f\xF6r att f\xF6rhindra krascher och f\xF6\
   rse anv\xE4ndare\u2026"
 title: Hantering av fel
+weight: 16
 ---
-
-{{< edit_this_page >}}
 
 ## Vad & Varför?
 Att hantera fel i PowerShell innebär att förutse missöden och hantera dem smidigt. Programmerare gör detta för att förhindra krascher och förse användare med användbar återkoppling.

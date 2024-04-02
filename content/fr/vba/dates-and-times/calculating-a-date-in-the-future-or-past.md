@@ -11,9 +11,8 @@ summary: "Calculer une date dans le futur ou le pass\xE9 implique de d\xE9termin
   \ une date qui se trouve \xE0 un nombre sp\xE9cifi\xE9 de jours, de mois ou d'ann\xE9\
   es d'une date\u2026"
 title: "Calculer une date dans le futur ou le pass\xE9"
+weight: 26
 ---
-
-{{< edit_this_page >}}
 
 ## Quoi & Pourquoi ?
 Calculer une date dans le futur ou le passé implique de déterminer une date qui se trouve à un nombre spécifié de jours, de mois ou d'années d'une date donnée. Les programmeurs ont souvent besoin de cette fonctionnalité pour automatiser des rappels, des abonnements, des dates d'expiration et des tâches de planification dans diverses applications.

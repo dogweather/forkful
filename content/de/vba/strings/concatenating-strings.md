@@ -10,9 +10,8 @@ model: gpt-4-0125-preview
 summary: "Die Verkettung in Visual Basic for Applications (VBA) beinhaltet das Zusammenf\xFC\
   gen von zwei oder mehr Zeichenketten zu einer einzigen Einheit. Dies ist\u2026"
 title: Strings verketten
+weight: 3
 ---
-
-{{< edit_this_page >}}
 
 ## Was & Warum?
 

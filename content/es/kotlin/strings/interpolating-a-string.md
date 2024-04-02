@@ -9,9 +9,8 @@ summary: "La interpolaci\xF3n de cadenas permite incrustar valores de variables 
   \ en una cadena de texto. Los programadores lo usan para hacer el c\xF3digo m\xE1\
   s\u2026"
 title: "Interpolaci\xF3n de cadenas de texto"
+weight: 8
 ---
-
-{{< edit_this_page >}}
 
 ## Qué es y por qué?
 La interpolación de cadenas permite incrustar valores de variables directamente en una cadena de texto. Los programadores lo usan para hacer el código más legible y evitar la tediosa concatenación de cadenas.

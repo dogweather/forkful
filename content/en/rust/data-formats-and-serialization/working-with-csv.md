@@ -7,9 +7,8 @@ model: gpt-4-0125-preview
 summary: "Working with CSV (Comma-Separated Values) files is about reading from and\
   \ writing to plain text files that store tabular data. Programmers do this to\u2026"
 title: Working with CSV
+weight: 37
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 Working with CSV (Comma-Separated Values) files is about reading from and writing to plain text files that store tabular data. Programmers do this to enable data sharing between different programs, systems, or for processing large data sets in an efficient, human-readable format.

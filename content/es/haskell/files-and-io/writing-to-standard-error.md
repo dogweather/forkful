@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Escribir en el error est\xE1ndar (stderr) en Haskell permite a los programas\
   \ diferenciar su salida entre resultados normales y mensajes de error. Esto es\u2026"
 title: "Escribiendo en el error est\xE1ndar"
+weight: 25
 ---
-
-{{< edit_this_page >}}
 
 ## ¿Qué y por qué?
 Escribir en el error estándar (stderr) en Haskell permite a los programas diferenciar su salida entre resultados normales y mensajes de error. Esto es crucial para señalar problemas y depurar, sin llenar la salida estándar (stdout) que a menudo lleva los datos principales del programa o el resultado.

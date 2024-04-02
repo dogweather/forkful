@@ -11,9 +11,8 @@ summary: "S\xE4\xE4nn\xF6lliset lausekkeet (regex) ovat malleja, joita k\xE4ytet
   \xE4n merkkiyhdistelmien etsimiseen merkkijonoista. Ohjelmoijat hy\xF6dynt\xE4v\xE4\
   t niit\xE4 tekstin ja datan\u2026"
 title: "S\xE4\xE4nn\xF6llisten lausekkeiden k\xE4ytt\xF6"
+weight: 11
 ---
-
-{{< edit_this_page >}}
 
 ## Mikä ja miksi?
 

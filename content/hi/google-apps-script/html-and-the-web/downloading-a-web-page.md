@@ -24,9 +24,8 @@ summary: "Google Apps Script \u092E\u0947\u0902 \u090F\u0915 \u0935\u0947\u092C 
   \u0947 \u092E\u093E\u0927\u094D\u092F\u092E\u2026"
 title: "\u0935\u0947\u092C \u092A\u0947\u091C \u0921\u093E\u0909\u0928\u0932\u094B\
   \u0921 \u0915\u0930\u0928\u093E"
+weight: 42
 ---
-
-{{< edit_this_page >}}
 
 ## क्या और क्यों?
 

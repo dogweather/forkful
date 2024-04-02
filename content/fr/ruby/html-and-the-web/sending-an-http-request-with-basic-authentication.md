@@ -9,9 +9,8 @@ summary: "Envoyer une requ\xEAte HTTP avec une authentification basique c\u2019e
   \ ins\xE9rer vos identifiants dans une requ\xEAte pour acc\xE9der \xE0 des ressources\
   \ prot\xE9g\xE9es. Les\u2026"
 title: "Envoi d'une requ\xEAte HTTP avec authentification de base"
+weight: 45
 ---
-
-{{< edit_this_page >}}
 
 ## Quoi & Pourquoi?
 Envoyer une requête HTTP avec une authentification basique c’est insérer vos identifiants dans une requête pour accéder à des ressources protégées. Les développeurs utilisent cela pour interagir avec des API qui exigent une preuve d'identité simple pour l'entrée.

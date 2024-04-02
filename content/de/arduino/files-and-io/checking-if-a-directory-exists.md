@@ -10,9 +10,8 @@ model: gpt-4-0125-preview
 summary: "Im Kontext der Arduino-Programmierung ist das \xDCberpr\xFCfen, ob ein Verzeichnis\
   \ auf einer SD-Karte oder einem \xE4hnlichen Speichermodul existiert, wichtig, um\u2026"
 title: "\xDCberpr\xFCfung, ob ein Verzeichnis existiert"
+weight: 20
 ---
-
-{{< edit_this_page >}}
 
 ## Was & Warum?
 Im Kontext der Arduino-Programmierung ist das Überprüfen, ob ein Verzeichnis auf einer SD-Karte oder einem ähnlichen Speichermodul existiert, wichtig, um Dateien ohne Fehler lesen oder schreiben zu können. Diese Operation ist essenziell für die Datenaufzeichnung, das Konfigurationsmanagement oder jede Aufgabe, die eine strukturierte Dateispeicherung erfordert, und garantiert Zuverlässigkeit sowie flüssige Performance in Ihren Anwendungen.

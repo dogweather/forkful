@@ -9,9 +9,8 @@ summary: "En programmation, supprimer des caract\xE8res selon un motif, c'est ch
   \ et enlever des s\xE9quences sp\xE9cifiques dans une cha\xEEne de texte. On fait\
   \ \xE7a\u2026"
 title: "Suppression de caract\xE8res correspondant \xE0 un motif"
+weight: 5
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 En programmation, supprimer des caractères selon un motif, c'est chercher et enlever des séquences spécifiques dans une chaîne de texte. On fait ça souvent pour nettoyer des données ou pour conformer des inputs à un format désiré.

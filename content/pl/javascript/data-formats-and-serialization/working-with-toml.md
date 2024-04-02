@@ -9,9 +9,8 @@ summary: "TOML, skr\xF3t od Tom's Obvious, Minimal Language, okre\u015Bla, jak s
   \ pliki konfiguracyjne. Programi\u015Bci korzystaj\u0105 z TOML, poniewa\u017C jest\
   \ \u0142atwy do\u2026"
 title: Praca z TOML
+weight: 39
 ---
-
-{{< edit_this_page >}}
 
 ## Co i dlaczego?
 TOML, skrót od Tom's Obvious, Minimal Language, określa, jak strukturować pliki konfiguracyjne. Programiści korzystają z TOML, ponieważ jest łatwy do odczytania, zapisu i dobrze mapuje się na tablicę mieszającą, co sprawia, że jest to preferowany wybór dla konfiguracji.

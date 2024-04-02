@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Associatieve arrays, bekend in andere talen als mappen of woordenboeken,\
   \ zijn sleutel-waarde paren die worden gebruikt voor effici\xEBnte gegevensopzoeking\u2026"
 title: Gebruik van associatieve arrays
+weight: 15
 ---
-
-{{< edit_this_page >}}
 
 ## Wat & Waarom?
 

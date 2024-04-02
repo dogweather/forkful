@@ -8,9 +8,8 @@ summary: "Searching and replacing text in programming means scanning strings for
   \ match and swapping found instances with new text. Programmers do this to update\u2026"
 title: "\u041F\u043E\u0448\u0443\u043A \u0442\u0430 \u0437\u0430\u043C\u0456\u043D\
   \u0430 \u0442\u0435\u043A\u0441\u0442\u0443"
+weight: 10
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why? (Що і чому?)
 Searching and replacing text in programming means scanning strings for a match and swapping found instances with new text. Programmers do this to update data, correct errors, or modify settings without manual drudgery.

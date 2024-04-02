@@ -9,9 +9,8 @@ summary: "Scaricare una pagina web significa prelevare il suo contenuto via HTTP
   \ HTTPS. I programmatori lo fanno per analizzare dati, verificare disponibilit\xE0\
   \ o\u2026"
 title: Scaricare una pagina web
+weight: 42
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why? (Cosa e Perché?)
 Scaricare una pagina web significa prelevare il suo contenuto via HTTP o HTTPS. I programmatori lo fanno per analizzare dati, verificare disponibilità o integrare informazioni in app.

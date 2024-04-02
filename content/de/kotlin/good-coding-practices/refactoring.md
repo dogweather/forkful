@@ -9,9 +9,8 @@ summary: "Refactoring ist der Prozess, bestehenden Code zu \xFCberarbeiten, um s
   \ Struktur, Lesbarkeit und Leistung zu verbessern, ohne sein externes Verhalten\
   \ zu\u2026"
 title: Refactoring
+weight: 19
 ---
-
-{{< edit_this_page >}}
 
 ## Was & Warum?
 Refactoring ist der Prozess, bestehenden Code zu überarbeiten, um seine Struktur, Lesbarkeit und Leistung zu verbessern, ohne sein externes Verhalten zu verändern. Programmierer führen ein Refactoring durch, um Code wartbarer zu machen, das Hinzufügen neuer Funktionen zu vereinfachen und Fehler leichter zu finden und zu beheben.

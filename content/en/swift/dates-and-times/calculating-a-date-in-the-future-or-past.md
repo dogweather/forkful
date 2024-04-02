@@ -8,9 +8,8 @@ model: gpt-4-1106-preview
 summary: "Ever needed to find a date in the past or future? Programmatically, we often\
   \ calculate dates for deadlines, reminders, or events. Knowing how takes the\u2026"
 title: Calculating a date in the future or past
+weight: 26
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 Ever needed to find a date in the past or future? Programmatically, we often calculate dates for deadlines, reminders, or events. Knowing how takes the guesswork out and lets your app handle time-sensitive tasks accurately.

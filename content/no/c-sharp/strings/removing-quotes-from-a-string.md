@@ -9,9 +9,8 @@ summary: "\xC5 fjerne anf\xF8rselstegn fra en streng i C# betyr at du tar bort d
   \ plagsomme doble (`\"`) eller enkle (`'`) anf\xF8rselstegnene som omslutter teksten\
   \ din.\u2026"
 title: "Fjerne anf\xF8rselstegn fra en streng"
+weight: 9
 ---
-
-{{< edit_this_page >}}
 
 ## Hva & Hvorfor?
 Å fjerne anførselstegn fra en streng i C# betyr at du tar bort de plagsomme doble (`"`) eller enkle (`'`) anførselstegnene som omslutter teksten din. Programmerere gjør dette for å rense data, forberede for databaseinnføring, eller gjøre strenger trygge for videre behandling så ting ikke går over styr når et tilfeldig anførselstegn dukker opp.

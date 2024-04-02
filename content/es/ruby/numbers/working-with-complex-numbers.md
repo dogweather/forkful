@@ -9,9 +9,8 @@ summary: "Los n\xFAmeros complejos, compuestos por una parte real y una imaginar
   \ (como 3+4i), son fundamentales en ingenier\xEDa y f\xEDsica. Los programadores\
   \ trabajan\u2026"
 title: "Trabajando con n\xFAmeros complejos"
+weight: 14
 ---
-
-{{< edit_this_page >}}
 
 ## Qué y Por Qué?
 Los números complejos, compuestos por una parte real y una imaginaria (como 3+4i), son fundamentales en ingeniería y física. Los programadores trabajan con ellos en simulaciones, procesamiento de señales y solución de ecuaciones que no se llevan bien solo con los números reales.

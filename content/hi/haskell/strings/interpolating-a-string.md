@@ -16,9 +16,8 @@ summary: "String interpolation \u092E\u0924\u0932\u092C \u0939\u0948 \u090F\u091
   \u0938\u093E\u0928 \u0939\u094B\u2026"
 title: "\u0938\u094D\u091F\u094D\u0930\u093F\u0902\u0917 \u0907\u0902\u091F\u0930\u092A\
   \u094B\u0932\u0947\u0936\u0928"
+weight: 8
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why? (क्या और क्यों?)
 String interpolation मतलब है एक string के अंदर variable की values को insert करना. Programmers इसे use करते हैं क्योंकि इससे dynamic strings बनाना आसान हो जाता है और अपने code को अधिक readable और maintainable बना सकते हैं.

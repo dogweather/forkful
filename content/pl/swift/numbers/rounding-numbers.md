@@ -9,9 +9,8 @@ summary: "Zaokr\u0105glanie liczb oznacza przybli\u017Cenie warto\u015Bci numery
   \ do okre\u015Blonej precyzji, zwykle w celu usuni\u0119cia niechcianych miejsc\
   \ po przecinku. Programi\u015Bci\u2026"
 title: "Zaokr\u0105glanie liczb"
+weight: 13
 ---
-
-{{< edit_this_page >}}
 
 ## Co i dlaczego?
 

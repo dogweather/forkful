@@ -15,9 +15,8 @@ summary: "HTTP \uC694\uCCAD \uC2DC \uAE30\uBCF8 \uC778\uC99D\uC744 \uC0AC\uC6A9\
   \uC774 \uC0AC\uC6A9\uD569\uB2C8\uB2E4."
 title: "\uAE30\uBCF8 \uC778\uC99D\uC744 \uC0AC\uC6A9\uD55C HTTP \uC694\uCCAD \uBCF4\
   \uB0B4\uAE30"
+weight: 45
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why? (무엇이며 왜 사용하나요?)
 HTTP 요청 시 기본 인증을 사용하면 서버에 사용자 자격 증명을 전달합니다. 이 방법은 API 사이의 간단한 인증을 위해 프로그래머들이 사용합니다.

@@ -9,9 +9,8 @@ summary: "TOML, skr\xF3t od Tom's Obvious, Minimal Language, to format serializa
   \ danych, kt\xF3ry jest \u0142atwy do odczytania dzi\u0119ki swojej jasnej semantyce.\
   \ Programi\u015Bci\u2026"
 title: Praca z TOML
+weight: 39
 ---
-
-{{< edit_this_page >}}
 
 ## Co i dlaczego?
 

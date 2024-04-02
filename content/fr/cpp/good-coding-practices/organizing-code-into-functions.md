@@ -9,9 +9,8 @@ summary: "D\xE9couper le code en fonctions signifie diviser votre code en morcea
   \ plus petits et r\xE9utilisables. Nous le faisons pour \xE9viter la r\xE9p\xE9\
   tition, pour rendre\u2026"
 title: Organisation du code en fonctions
+weight: 18
 ---
-
-{{< edit_this_page >}}
 
 ## Quoi et Pourquoi ?
 Découper le code en fonctions signifie diviser votre code en morceaux plus petits et réutilisables. Nous le faisons pour éviter la répétition, pour rendre notre code lisible et pour simplifier le débogage et les tests. Des fonctions bien organisées peuvent être comme avoir une boîte d'outils soigneusement étiquetés, prêts à l'emploi et à partager.

@@ -9,9 +9,8 @@ summary: "Co i Dlaczego? Wyliczanie d\u0142ugo\u015Bci ci\u0105gu znak\xF3w to s
   b, by dowiedzie\u0107 si\u0119, ile znak\xF3w zawiera dany tekst. Programi\u015B\
   ci robi\u0105 to, gdy potrzebuj\u0105 na\u2026"
 title: "Znalezienie d\u0142ugo\u015Bci ci\u0105gu znak\xF3w"
+weight: 7
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 Co i Dlaczego?

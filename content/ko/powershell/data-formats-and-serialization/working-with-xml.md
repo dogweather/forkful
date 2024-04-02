@@ -19,9 +19,8 @@ summary: "XML\uC744 \uC0AC\uC6A9\uD558\uB294 \uC791\uC5C5\uC740 eXtensible Marku
   \uC5D0\uC11C \uC77C\uBC18\uC801\uC778 \uB2E4\uB978 \uAD6C\uC870\uD654\uB41C \uBB38\
   \uC11C\uB97C \uC77D\uACE0 \uC4F0\uAE30 \uC704\uD574\u2026"
 title: "XML \uB2E4\uB8E8\uAE30"
+weight: 40
 ---
-
-{{< edit_this_page >}}
 
 ## 무엇 & 왜?
 XML을 사용하는 작업은 eXtensible Markup Language로 구성된 데이터를 조작하고 접근하는 것을 포함합니다. 프로그래머들은 다른 시스템과의 상호 운용성을 가능하게 하거나 구성 파일, 데이터 피드 및 웹 서비스에서 일반적인 다른 구조화된 문서를 읽고 쓰기 위해 XML을 사용합니다.

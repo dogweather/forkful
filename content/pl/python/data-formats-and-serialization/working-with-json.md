@@ -10,9 +10,8 @@ model: gpt-4-0125-preview
 summary: "Praca z JSON (JavaScript Object Notation) obejmuje parsowanie ci\u0105g\xF3\
   w sformatowanych w JSON na obiekty Pythona i odwrotnie. Jest to kluczowe dla rozwoju\u2026"
 title: Praca z JSON
+weight: 38
 ---
-
-{{< edit_this_page >}}
 
 ## Co i dlaczego?
 

@@ -11,9 +11,8 @@ summary: "Analisar HTML significa vasculhar a marca\xE7\xE3o para extrair dados 
   \ texto, links ou outros elementos. Fazemos isso para interagir com ou raspar conte\xFA\
   do\u2026"
 title: Analisando HTML
+weight: 43
 ---
-
-{{< edit_this_page >}}
 
 ## O Que & Porquê?
 

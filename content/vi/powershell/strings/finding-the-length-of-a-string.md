@@ -13,9 +13,8 @@ summary: "Trong PowerShell, vi\u1EC7c t\xECm \u0111\u1ED9 d\xE0i c\u1EE7a m\u1ED
   \ m\xE0 n\xF3 ch\u1EE9a. C\xE1c l\u1EADp tr\xECnh vi\xEAn th\u1EF1c hi\u1EC7n vi\u1EC7\
   c n\xE0y \u0111\u1EC3 x\xE1c nh\u1EADn \u0111\u1EA7u v\xE0o, thao\u2026"
 title: "T\xECm chi\u1EC1u d\xE0i c\u1EE7a m\u1ED9t chu\u1ED7i k\xFD t\u1EF1"
+weight: 7
 ---
-
-{{< edit_this_page >}}
 
 ## Cái gì & Tại sao?
 Trong PowerShell, việc tìm độ dài của một chuỗi nghĩa là đếm số lượng ký tự mà nó chứa. Các lập trình viên thực hiện việc này để xác nhận đầu vào, thao tác dữ liệu văn bản, và đảm bảo dữ liệu phù hợp với các tiêu chí hoặc định dạng nhất định.

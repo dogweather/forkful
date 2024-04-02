@@ -11,9 +11,8 @@ summary: "Att skriva tester i C# inneb\xE4r att skapa automatiserade skript f\xF
   r att validera din kods funktionalitet, s\xE4kerst\xE4lla att den beter sig som\
   \ f\xF6rv\xE4ntat.\u2026"
 title: Skriva tester
+weight: 36
 ---
-
-{{< edit_this_page >}}
 
 ## Vad & Varför?
 

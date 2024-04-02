@@ -11,9 +11,8 @@ summary: "W \u015Bwiecie Arduino, tablice asocjacyjne pozwalaj\u0105 na parowani
   \ kluczy z warto\u015Bciami, mniej wi\u0119cej jak dobieranie skarpetek w pary.\
   \ S\u0105 wyborem numer jeden,\u2026"
 title: Korzystanie z tablic asocjacyjnych
+weight: 15
 ---
-
-{{< edit_this_page >}}
 
 ## Co i dlaczego?
 W świecie Arduino, tablice asocjacyjne pozwalają na parowanie kluczy z wartościami, mniej więcej jak dobieranie skarpetek w pary. Są wyborem numer jeden, kiedy trzeba przechowywać i pobierać dane, używając opisowych nazw, co sprawia, że kod jest czystszy i znacznie bardziej zrozumiały.

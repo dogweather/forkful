@@ -23,9 +23,8 @@ summary: "C#\uC5D0\uC11C \uC815\uADDC \uD45C\uD604\uC2DD(regex)\uC740 \uBB38\uC7
   \ \uD14D\uC2A4\uD2B8 \uCC98\uB9AC \uC791\uC5C5\uC5D0 \uC774\uB974\uAE30\uAE4C\uC9C0\
   , \uADF8\u2026"
 title: "\uC815\uADDC \uD45C\uD604\uC2DD \uC0AC\uC6A9\uD558\uAE30"
+weight: 11
 ---
-
-{{< edit_this_page >}}
 
 ## 무엇이고 왜 쓰나요?
 C#에서 정규 표현식(regex)은 문자열 내에서 패턴 매칭을 위한 강력한 도구로, 프로그래머가 데이터를 효율적으로 검색, 대체, 분할 또는 추출할 수 있게 해줍니다. 프로그래머는 이메일 형식 검사와 같은 간단한 검증 작업부터 복잡한 텍스트 처리 작업에 이르기까지, 그 유연성과 성능 때문에 정규 표현식을 사용합니다.

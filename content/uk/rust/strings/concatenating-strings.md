@@ -9,9 +9,8 @@ summary: "String concatenation is sticking one string to another. We do this to 
   \ up messages, create paths, combine user-generated content, or to simply put\u2026"
 title: "\u041E\u0431'\u0454\u0434\u043D\u0430\u043D\u043D\u044F \u0440\u044F\u0434\
   \u043A\u0456\u0432"
+weight: 3
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why? (Що і Чому?)
 String concatenation is sticking one string to another. We do this to build up messages, create paths, combine user-generated content, or to simply put pieces of text together.

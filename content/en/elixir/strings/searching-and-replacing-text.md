@@ -7,9 +7,8 @@ model: gpt-4-1106-preview
 summary: "Searching and replacing text are bread-and-butter for programming; they're\
   \ essentially finding strings and swapping them out. Programmers do this all the\u2026"
 title: Searching and replacing text
+weight: 10
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 

@@ -9,9 +9,8 @@ summary: "XML, czyli eXtensible Markup Language, to jakby rozwlek\u0142y kuzyn J
   \ Z XML-em b\u0119dziesz si\u0119 zmaga\u0107, maj\u0105c do czynienia ze starszymi\
   \ systemami,\u2026"
 title: Praca z XML
+weight: 40
 ---
-
-{{< edit_this_page >}}
 
 ## Co i dlaczego?
 XML, czyli eXtensible Markup Language, to jakby rozwlekły kuzyn JSON-a. Z XML-em będziesz się zmagać, mając do czynienia ze starszymi systemami, oprogramowaniem dla przedsiębiorstw, lub API, które opuściły wagon JSON-a. Jest niezbędny do wymiany danych, gdzie XML utrzymuje swoją pozycję.

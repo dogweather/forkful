@@ -11,9 +11,8 @@ summary: "La suppression de caract\xE8res correspondant \xE0 un motif sp\xE9cifi
   \ dans les cha\xEEnes de caract\xE8res est crucial pour la validation des donn\xE9\
   es, leur\u2026"
 title: "Supprimer les caract\xE8res correspondant \xE0 un motif"
+weight: 5
 ---
-
-{{< edit_this_page >}}
 
 ## Quoi et pourquoi ?
 

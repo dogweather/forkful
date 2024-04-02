@@ -11,9 +11,8 @@ summary: "Obter a data atual em Java \xE9 uma opera\xE7\xE3o fundamental que per
   \ aos programadores manipular objetos de data para opera\xE7\xF5es como registro\
   \ (logging),\u2026"
 title: Obtendo a data atual
+weight: 29
 ---
-
-{{< edit_this_page >}}
 
 ## O Que & Por Que?
 Obter a data atual em Java é uma operação fundamental que permite aos programadores manipular objetos de data para operações como registro (logging), cálculos de data e condições baseadas em tempo. É vital em aplicações onde o rastreamento, agendamento e análise de dados temporais são cruciais.

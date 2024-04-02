@@ -11,9 +11,8 @@ summary: "Escrever no erro padr\xE3o (stderr) trata de direcionar as mensagens d
   \ erro ou diagn\xF3sticos do seu programa para uma sa\xEDda separada, distinta da\
   \ sa\xEDda\u2026"
 title: "Escrevendo para o erro padr\xE3o"
+weight: 25
 ---
-
-{{< edit_this_page >}}
 
 ## O Que & Por Quê?
 

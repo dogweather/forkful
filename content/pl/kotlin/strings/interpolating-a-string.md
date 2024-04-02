@@ -9,9 +9,8 @@ summary: "Interpolacja string\xF3w to proces wstawiania dynamicznie wyliczanych 
   ci do \u0142a\u0144cuch\xF3w znakowych. Programi\u015Bci u\u017Cywaj\u0105 tego,\
   \ aby u\u0142atwi\u0107 sobie budowanie\u2026"
 title: "Interpolacja \u0142a\u0144cuch\xF3w znak\xF3w"
+weight: 8
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 Interpolacja stringów to proces wstawiania dynamicznie wyliczanych wartości do łańcuchów znakowych. Programiści używają tego, aby ułatwić sobie budowanie dynamicznych tekstów bez potrzeby sklejania ich części.

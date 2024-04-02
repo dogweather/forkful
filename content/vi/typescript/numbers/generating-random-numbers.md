@@ -13,9 +13,8 @@ summary: "Vi\u1EC7c t\u1EA1o s\u1ED1 ng\u1EABu nhi\xEAn trong TypeScript li\xEAn
   \ \u0111o\xE1n tr\u01B0\u1EDBc trong m\u1ED9t ph\u1EA1m vi \u0111\xE3 x\xE1c \u0111\
   \u1ECBnh. L\u1EADp tr\xECnh vi\xEAn t\u1EADn\u2026"
 title: "Sinh s\u1ED1 ng\u1EABu nhi\xEAn"
+weight: 12
 ---
-
-{{< edit_this_page >}}
 
 ## Điều gì và Tại sao?
 

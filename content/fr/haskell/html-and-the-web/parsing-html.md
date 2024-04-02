@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Parser du HTML en Haskell vous permet d'extraire des donn\xE9es, de manipuler\
   \ le contenu HTML ou d'interagir avec des pages web de mani\xE8re programmatique.\u2026"
 title: Analyse Syntaxique du HTML
+weight: 43
 ---
-
-{{< edit_this_page >}}
 
 ## Quoi et Pourquoi ?
 

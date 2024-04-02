@@ -9,9 +9,8 @@ summary: "Att avrunda tal inneb\xE4r att justera dem till n\xE4rmaste heltal ell
   \ specificerad decimalsiffra. Det \xE4r en grundl\xE4ggande del i programmering\
   \ f\xF6r att minska\u2026"
 title: Avrundning av tal
+weight: 13
 ---
-
-{{< edit_this_page >}}
 
 ## Vad & Varför?
 Att avrunda tal innebär att justera dem till närmaste heltal eller specificerad decimalsiffra. Det är en grundläggande del i programmering för att minska komplexitet, förbättra prestanda och för situationer när noggrannhet utöver en viss punkt inte tillför värde.

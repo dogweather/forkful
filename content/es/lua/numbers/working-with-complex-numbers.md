@@ -8,9 +8,8 @@ model: gpt-4-0125-preview
 summary: "Los n\xFAmeros complejos extienden la idea de la l\xEDnea num\xE9rica unidimensional\
   \ al plano bidimensional incluyendo un eje imaginario perpendicular. Los\u2026"
 title: "Trabajando con n\xFAmeros complejos"
+weight: 14
 ---
-
-{{< edit_this_page >}}
 
 ## ¿Qué y por qué?
 Los números complejos extienden la idea de la línea numérica unidimensional al plano bidimensional incluyendo un eje imaginario perpendicular. Los programadores trabajan con ellos en campos como el procesamiento de señales, la dinámica de fluidos y la ingeniería eléctrica, donde son esenciales para representar oscilaciones y otros fenómenos.

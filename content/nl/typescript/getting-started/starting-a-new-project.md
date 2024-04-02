@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Het starten van een nieuw project in TypeScript draait allemaal om het opzetten\
   \ van een solide basis om op te coderen. Programmeurs starten nieuwe\u2026"
 title: Een nieuw project starten
+weight: 1
 ---
-
-{{< edit_this_page >}}
 
 ## Wat & Waarom?
 Het starten van een nieuw project in TypeScript draait allemaal om het opzetten van een solide basis om op te coderen. Programmeurs starten nieuwe projecten om verse ideeën om te zetten in werkende software, concepten uit te testen of nieuwe dingen te leren.

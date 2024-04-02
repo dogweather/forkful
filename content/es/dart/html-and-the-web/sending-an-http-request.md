@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Enviar una solicitud HTTP en Dart es el proceso de iniciar comunicaciones\
   \ con un servidor web o API desde una aplicaci\xF3n Dart. Los programadores lo hacen\u2026"
 title: Enviando una solicitud HTTP
+weight: 44
 ---
-
-{{< edit_this_page >}}
 
 ## ¿Qué y por qué?
 

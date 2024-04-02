@@ -9,9 +9,8 @@ summary: "Buscar y reemplazar texto en la programaci\xF3n de Arduino es esencial
   \ editar cadenas, como cambiar una palabra o frase por otra. Esta t\xE9cnica es\
   \ \xFAtil\u2026"
 title: Buscando y reemplazando texto
+weight: 10
 ---
-
-{{< edit_this_page >}}
 
 ## ¿Qué y por qué?
 

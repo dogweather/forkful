@@ -9,9 +9,8 @@ summary: "Mit\xE4 ja miksi? Kun poistetaan merkkej\xE4, jotka vastaavat tietty\x
   \ kaavaa, siivotaan merkkijonoja. T\xE4m\xE4 auttaa meit\xE4 p\xE4\xE4sem\xE4\xE4\
   n eroon ei-toivotuista\u2026"
 title: Merkkien poistaminen hakemalla osumia kaavaan
+weight: 5
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 Mitä ja miksi? Kun poistetaan merkkejä, jotka vastaavat tiettyä kaavaa, siivotaan merkkijonoja. Tämä auttaa meitä pääsemään eroon ei-toivotuista merkeistä, kuten ylimääräisistä välilyönneistä tai erikoismerkeistä, järkeistämään syötettä tai valmistelemaan dataa käsittelyyn.

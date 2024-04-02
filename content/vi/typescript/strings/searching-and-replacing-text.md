@@ -14,9 +14,8 @@ summary: "Vi\u1EC7c t\xECm ki\u1EBFm v\xE0 thay th\u1EBF v\u0103n b\u1EA3n trong
   \ th\u01B0\u1EDDng \u0111\u01B0\u1EE3c s\u1EED d\u1EE5ng \u0111\u1EC3 x\u1EED l\xFD\
   \ v\xE0 thao t\xE1c d\u1EEF li\u1EC7u. \u0110i\u1EC1u n\xE0y r\u1EA5t\u2026"
 title: "T\xECm ki\u1EBFm v\xE0 thay th\u1EBF v\u0103n b\u1EA3n"
+weight: 10
 ---
-
-{{< edit_this_page >}}
 
 ## Cái gì & Tại sao?
 

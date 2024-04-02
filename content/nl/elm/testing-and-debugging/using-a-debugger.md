@@ -2,15 +2,14 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:09:08.461977-07:00
-description: "Debuggen in Elm betreft het identificeren en verwijderen van fouten\
-  \ uit je code. Programmeurs doen dit om te zorgen dat hun applicaties correct werken\
-  \ en\u2026"
+description: "Elm heeft niet een ingebouwde debugger in de traditionele zin zoals\
+  \ JavaScript dat bijvoorbeeld heeft met browserontwikkelaarstools. Echter, de Elm-\u2026"
 lastmod: '2024-03-13T22:44:50.729484-06:00'
 model: gpt-4-0125-preview
-summary: "Debuggen in Elm betreft het identificeren en verwijderen van fouten uit\
-  \ je code. Programmeurs doen dit om te zorgen dat hun applicaties correct werken\
-  \ en\u2026"
+summary: "Elm heeft niet een ingebouwde debugger in de traditionele zin zoals JavaScript\
+  \ dat bijvoorbeeld heeft met browserontwikkelaarstools. Echter, de Elm-\u2026"
 title: Een debugger gebruiken
+weight: 35
 ---
 
 ## Hoe te:

@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "L'analyse du HTML implique de passer au crible la structure et le contenu\
   \ d'un fichier HTML pour en extraire des informations. Les programmeurs le font\u2026"
 title: Analyse Syntaxique du HTML
+weight: 43
 ---
-
-{{< edit_this_page >}}
 
 ## Quoi & Pourquoi ?
 

@@ -8,9 +8,8 @@ model: gpt-4-1106-preview
 summary: "Estrarre sottostringhe significa selezionare una parte specifica di una\
   \ stringa di testo. I programmatori lo fanno per manipolare e analizzare dati, per\u2026"
 title: Estrazione di sottostringhe
+weight: 6
 ---
-
-{{< edit_this_page >}}
 
 ## Cosa e Perché?
 Estrarre sottostringhe significa selezionare una parte specifica di una stringa di testo. I programmatori lo fanno per manipolare e analizzare dati, per esempio per estrarre nomi utente da indirizzi email o per elaborare formati di data e ora.

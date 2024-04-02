@@ -7,9 +7,8 @@ model: gpt-4-1106-preview
 summary: "In C# eliminare caratteri che corrispondono a un pattern significa usare\
   \ algoritmi per rimuovere sequenze specifiche di caratteri da una stringa. I\u2026"
 title: Eliminazione di caratteri che corrispondono a un pattern
+weight: 5
 ---
-
-{{< edit_this_page >}}
 
 ## Cosa & Perché?
 In C# eliminare caratteri che corrispondono a un pattern significa usare algoritmi per rimuovere sequenze specifiche di caratteri da una stringa. I programmatori lo fanno per normalizzare dati, validare input o pulire testo da caratteri non desiderati.

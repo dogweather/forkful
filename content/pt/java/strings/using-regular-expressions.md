@@ -11,9 +11,8 @@ summary: "Express\xF5es regulares (regex) em Java permitem definir padr\xF5es es
   ficos para pesquisar, manipular ou validar strings no seu c\xF3digo. Programadores\
   \ as\u2026"
 title: "Usando express\xF5es regulares"
+weight: 11
 ---
-
-{{< edit_this_page >}}
 
 ## O Que & Porquê?
 

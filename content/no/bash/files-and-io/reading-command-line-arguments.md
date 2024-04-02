@@ -9,9 +9,8 @@ summary: "\xC5 lese kommandolinjeargumenter betyr ganske enkelt at skriptet ditt
   \ opp informasjon direkte fra terminalen. Programmerere bruker dette til \xE5 gj\xF8\
   re\u2026"
 title: Lese kommandolinjeargumenter
+weight: 23
 ---
-
-{{< edit_this_page >}}
 
 ## Hva & Hvorfor?
 Å lese kommandolinjeargumenter betyr ganske enkelt at skriptet ditt plukker opp informasjon direkte fra terminalen. Programmerere bruker dette til å gjøre skriptene fleksible og tilpassbare for ulike oppgaver uten å endre på koden hver gang.

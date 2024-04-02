@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "HTTP-pyynn\xF6n l\xE4hett\xE4minen merkitsee puhelun aloittamista Go-sovelluksestasi\
   \ web-palvelimeen, API:in tai mihin tahansa muuhun HTTP-pohjaiseen palveluun.\u2026"
 title: "HTTP-pyynn\xF6n l\xE4hett\xE4minen"
+weight: 44
 ---
-
-{{< edit_this_page >}}
 
 ## Mikä ja miksi?
 

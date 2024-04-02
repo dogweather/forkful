@@ -11,9 +11,8 @@ summary: "Att arbeta med XML i C inneb\xE4r att tolka, f\xF6rfr\xE5ga och manipu
   \ XML-dokument med hj\xE4lp av olika bibliotek. Programmerare engagerar sig med\
   \ XML p\xE5 grund\u2026"
 title: Att arbeta med XML
+weight: 40
 ---
-
-{{< edit_this_page >}}
 
 ## Vad & Varför?
 

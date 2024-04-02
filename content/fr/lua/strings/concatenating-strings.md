@@ -9,9 +9,8 @@ summary: "Concat\xE9ner des chaines, c'est les coller bout \xE0 bout. On le fait
   \ assembler des morceaux de texte, comme les noms et adjectifs ou des donn\xE9es\
   \ avec du\u2026"
 title: "Concat\xE9nation de cha\xEEnes de caract\xE8res"
+weight: 3
 ---
-
-{{< edit_this_page >}}
 
 ## Quoi & Pourquoi ?
 Concaténer des chaines, c'est les coller bout à bout. On le fait pour assembler des morceaux de texte, comme les noms et adjectifs ou des données avec du texte.

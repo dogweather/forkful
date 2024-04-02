@@ -11,9 +11,8 @@ summary: "\xC5 f\xE5 den n\xE5v\xE6rende datoen i programmering er avgj\xF8rende
   \ en rekke grunner, inkludert logging, tidsstempel p\xE5 hendelser og planlegging\
   \ av oppgaver. I\u2026"
 title: "F\xE5 dagens dato"
+weight: 29
 ---
-
-{{< edit_this_page >}}
 
 ## Hva & Hvorfor?
 Å få den nåværende datoen i programmering er avgjørende av en rekke grunner, inkludert logging, tidsstempel på hendelser og planlegging av oppgaver. I Clojure, en Lisp-dialekt på JVM, utnytter denne oppgaven Java-interoperabilitetsmuligheter, som tillater enkel tilgang til det rike Java Date-Time API-et.

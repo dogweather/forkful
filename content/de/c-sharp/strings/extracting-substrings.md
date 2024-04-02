@@ -7,9 +7,8 @@ model: gpt-4-1106-preview
 summary: "Das Extrahieren von Teilzeichenketten greift bestimmte Abschnitte aus einer\
   \ l\xE4ngeren Zeichenkette heraus. Programmierer tun das, um Daten zu analysieren,\u2026"
 title: Teilstrings extrahieren
+weight: 6
 ---
-
-{{< edit_this_page >}}
 
 ## Was & Warum?
 

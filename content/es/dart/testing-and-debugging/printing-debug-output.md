@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Imprimir salida de depuraci\xF3n en Dart es acerca de mostrar informaci\xF3\
   n en la consola durante el tiempo de ejecuci\xF3n, permitiendo a los desarrolladores\u2026"
 title: "Imprimiendo salida de depuraci\xF3n"
+weight: 33
 ---
-
-{{< edit_this_page >}}
 
 ## ¿Qué y Por Qué?
 

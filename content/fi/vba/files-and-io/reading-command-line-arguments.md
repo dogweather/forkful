@@ -11,9 +11,8 @@ summary: "Komennoriviparametrien lukeminen Visual Basic for Applications (VBA):s
   \ liittyy parametrien k\xE4ytt\xF6\xF6n ohjelmasi suorituksen yhteydess\xE4. T\xE4\
   t\xE4 tekniikkaa\u2026"
 title: Komentoriviparametrien lukeminen
+weight: 23
 ---
-
-{{< edit_this_page >}}
 
 ## Mikä & Miksi?
 

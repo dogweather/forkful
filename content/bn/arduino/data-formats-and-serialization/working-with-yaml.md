@@ -24,9 +24,8 @@ summary: "YAML (YAML Ain't Markup Language) \u098F\u0995\u099F\u09BF \u09AE\u09B
   \u09AF\u2026"
 title: "\u0987\u09DF\u09BE\u09AE\u09C7\u09B2 \u09A8\u09BF\u09AF\u09BC\u09C7 \u0995\
   \u09BE\u099C \u0995\u09B0\u09BE"
+weight: 41
 ---
-
-{{< edit_this_page >}}
 
 ## কি এবং কেন?
 

@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Att tolka (parse:a) HTML handlar om att extrahera data eller information\
   \ fr\xE5n HTML-inneh\xE5ll, en vanlig uppgift n\xE4r man arbetar med webbdata. Programmerare\u2026"
 title: Tolka HTML
+weight: 43
 ---
-
-{{< edit_this_page >}}
 
 ## Vad & Varför?
 

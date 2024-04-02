@@ -21,9 +21,8 @@ summary: "JSON \uB610\uB294 JavaScript Object Notation\uC740 \uC0AC\uB78C\uC774 
   \uD130\uB97C \uAD50\uD658\uD558\uAE30 \uC704\uD574 \uC885\uC885 JSON\uC744 \uC0AC\
   \uC6A9\uD558\uBA70,\u2026"
 title: "JSON\uACFC \uD568\uAED8 \uC77C\uD558\uAE30"
+weight: 38
 ---
-
-{{< edit_this_page >}}
 
 ## 무엇이며 왜인가?
 JSON 또는 JavaScript Object Notation은 사람이 읽고 쓰기 쉽고, 기계가 파싱하고 생성하기 쉬운 경량의 데이터 교환 형식입니다. 프로그래머들은 그 간결함과 언어 독립성으로 인해 서버와 웹 애플리케이션 간 데이터를 교환하기 위해 종종 JSON을 사용하며, 이는 현대 웹 개발과 API에서 핵심적인 역할을 합니다.

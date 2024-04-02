@@ -7,9 +7,8 @@ model: gpt-4-1106-preview
 summary: "Converter uma data em uma string transforma o objeto `DateTime` em texto\
   \ leg\xEDvel. Fazemos isso para exibir datas de forma adequada em interfaces de\u2026"
 title: Convertendo uma data em uma string
+weight: 28
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 Converter uma data em uma string transforma o objeto `DateTime` em texto legível. Fazemos isso para exibir datas de forma adequada em interfaces de usuário ou para preparar dados para armazenamento e log.

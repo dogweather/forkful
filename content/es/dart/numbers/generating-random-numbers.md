@@ -11,9 +11,8 @@ summary: "Generar n\xFAmeros aleatorios en Dart implica crear valores num\xE9ric
   \ que son impredecibles y difieren en cada ejecuci\xF3n. Los programadores aprovechan\
   \ esta\u2026"
 title: "Generando n\xFAmeros aleatorios"
+weight: 12
 ---
-
-{{< edit_this_page >}}
 
 ## Qué & Por qué?
 Generar números aleatorios en Dart implica crear valores numéricos que son impredecibles y difieren en cada ejecución. Los programadores aprovechan esta funcionalidad por una variedad de razones, desde simular escenarios del mundo real en entornos de prueba hasta habilitar mecánicas de juego y asegurar la seguridad a través de la aleatoriedad en operaciones criptográficas.

@@ -9,9 +9,8 @@ summary: "Mittaaminen tarkoittaa merkkijonon pituuden selvitt\xE4mist\xE4. Ohjel
   \ tekev\xE4t sen, koska pituuden tiet\xE4minen on kriittist\xE4 kun k\xE4sitell\xE4\
   \xE4n tekstidataa \u2013\u2026"
 title: "Merkkijonon pituuden selvitt\xE4minen"
+weight: 7
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 Mittaaminen tarkoittaa merkkijonon pituuden selvittämistä. Ohjelmoijat tekevät sen, koska pituuden tietäminen on kriittistä kun käsitellään tekstidataa – esimerkiksi validointiin, rajaukseen ja iterointiin.

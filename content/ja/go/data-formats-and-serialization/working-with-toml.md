@@ -7,9 +7,8 @@ lastmod: '2024-03-13T22:44:41.419077-06:00'
 model: gpt-4-0125-preview
 summary: "TOML\uFF08Tom's Obvious, Minimal\u2026"
 title: "TOML\u3092\u64CD\u4F5C\u3059\u308B"
+weight: 39
 ---
-
-{{< edit_this_page >}}
 
 ## 何となく & なぜ？
 

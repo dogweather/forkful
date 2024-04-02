@@ -9,9 +9,8 @@ summary: "Att generera slumpm\xE4ssiga tal i PowerShell handlar om att skapa of\
   ruts\xE4gbara numeriska v\xE4rden inom ett angivet intervall. Programmerare anv\xE4\
   nder denna\u2026"
 title: Generera slumptal
+weight: 12
 ---
-
-{{< edit_this_page >}}
 
 ## Vad & Varför?
 Att generera slumpmässiga tal i PowerShell handlar om att skapa oförutsägbara numeriska värden inom ett angivet intervall. Programmerare använder denna förmåga av en mängd olika anledningar, inklusive testning, simulering och säkerhetssyften, där oförutsägbarhet eller efterliknande av verklig slumpmässighet är avgörande.

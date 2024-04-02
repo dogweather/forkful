@@ -9,9 +9,8 @@ summary: "Usuwanie cudzys\u0142ow\xF3w z \u0142a\u0144cucha znak\xF3w zazwyczaj 
   \ usuwanie zb\u0119dnych podw\xF3jnych (\") lub pojedynczych (') znak\xF3w cudzys\u0142\
   owu. Programi\u015Bci robi\u0105 to w\u2026"
 title: "Usuwanie cudzys\u0142ow\xF3w z ci\u0105gu znak\xF3w"
+weight: 9
 ---
-
-{{< edit_this_page >}}
 
 ## Co i dlaczego?
 Usuwanie cudzysłowów z łańcucha znaków zazwyczaj oznacza usuwanie zbędnych podwójnych (") lub pojedynczych (') znaków cudzysłowu. Programiści robią to w celu oczyszczenia danych wejściowych lub gdy cudzysłowy nie są potrzebne do dalszego przetwarzania—na przykład przy zapisywaniu tekstu do bazy danych lub przygotowywaniu go do wyświetlenia.

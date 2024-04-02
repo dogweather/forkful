@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Aanhalingstekens uit een string verwijderen betekent dat je afkomt van die\
   \ vervelende aanhalingstekens die je code in de war kunnen brengen, vooral\u2026"
 title: Quotes verwijderen uit een string
+weight: 9
 ---
-
-{{< edit_this_page >}}
 
 ## Wat & Waarom?
 Aanhalingstekens uit een string verwijderen betekent dat je afkomt van die vervelende aanhalingstekens die je code in de war kunnen brengen, vooral wanneer je gegevens aan het parsen bent of JSON-objecten construeert. Programmeurs doen dit om invoer te saneren, syntaxisfouten te vermijden en ervoor te zorgen dat strings goed samenwerken met andere delen van hun code.

@@ -13,9 +13,8 @@ summary: "Chuy\u1EC3n \u0111\u1ED5i m\u1ED9t chu\u1ED7i th\xE0nh ch\u1EEF th\u01
   nh ch\u1EEF c\xE1i nh\u1ECF. \u0110i\u1EC1u n\xE0y r\u1EA5t ti\u1EC7n l\u1EE3i cho\
   \ vi\u1EC7c so s\xE1nh kh\xF4ng ph\xE2n bi\u1EC7t ki\u1EC3u\u2026"
 title: "Chuy\u1EC3n \u0111\u1ED5i chu\u1ED7i th\xE0nh ch\u1EEF th\u01B0\u1EDDng"
+weight: 4
 ---
-
-{{< edit_this_page >}}
 
 ## Cái gì & Tại sao?
 Chuyển đổi một chuỗi thành chữ thường có nghĩa là biến mỗi chữ trong chuỗi thành chữ cái nhỏ. Điều này rất tiện lợi cho việc so sánh không phân biệt kiểu chữ hoặc chuẩn bị văn bản cho quá trình xử lý đồng nhất.

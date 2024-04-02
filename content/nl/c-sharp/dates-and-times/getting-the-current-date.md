@@ -10,9 +10,8 @@ model: gpt-4-0125-preview
 summary: "De huidige datum in C# krijgen betekent het hier-en-nu van de klok van je\
   \ systeem plukken. Het is handig voor tijdstempels, logs, of elke functie die een\u2026"
 title: Het huidige datum ophalen
+weight: 29
 ---
-
-{{< edit_this_page >}}
 
 ## Wat & Waarom?
 

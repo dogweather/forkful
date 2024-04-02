@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Het lezen van een tekstbestand in Dart omvat het toegang krijgen tot en\
   \ het ophalen van gegevens uit bestanden die zijn opgeslagen op het bestandssysteem.\u2026"
 title: Een tekstbestand lezen
+weight: 22
 ---
-
-{{< edit_this_page >}}
 
 ## Wat & Waarom?
 

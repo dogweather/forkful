@@ -11,9 +11,8 @@ summary: "\xC9crire des tests en C++ implique de cr\xE9er des programmes petits 
   \ autonomes qui v\xE9rifient automatiquement le comportement de sections de votre\
   \ base de\u2026"
 title: "R\xE9daction de tests"
+weight: 36
 ---
-
-{{< edit_this_page >}}
 
 ## Quoi & Pourquoi ?
 

@@ -9,9 +9,8 @@ summary: "Interpolar uma string \xE9 encaixar valores de vari\xE1veis dentro del
   \ Programadores usam isso para facilitar a montagem de mensagens din\xE2micas ou\
   \ para exibir\u2026"
 title: Interpolando uma string
+weight: 8
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 Interpolar uma string é encaixar valores de variáveis dentro dela. Programadores usam isso para facilitar a montagem de mensagens dinâmicas ou para exibir dados variáveis de forma legível.

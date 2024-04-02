@@ -9,9 +9,8 @@ summary: "Lokitus on k\xE4yt\xE4nt\xF6 tallentaa tapahtumia, virheit\xE4 ja muit
   \ merkitt\xE4vi\xE4 datapisteit\xE4, jotka ilmenev\xE4t ohjelmistosovelluksen elinkaaren\
   \ aikana. Ohjelmoijat\u2026"
 title: Lokitus
+weight: 17
 ---
-
-{{< edit_this_page >}}
 
 ## Mikä ja Miksi?
 

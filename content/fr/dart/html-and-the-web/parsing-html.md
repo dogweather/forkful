@@ -10,9 +10,8 @@ model: gpt-4-0125-preview
 summary: "L'analyse HTML en programmation consiste \xE0 extraire des donn\xE9es de\
   \ documents HTML. Les programmeurs font cela pour interagir avec ou gratter le contenu\u2026"
 title: Analyse Syntaxique de HTML
+weight: 43
 ---
-
-{{< edit_this_page >}}
 
 ## Quoi & Pourquoi ?
 L'analyse HTML en programmation consiste à extraire des données de documents HTML. Les programmeurs font cela pour interagir avec ou gratter le contenu web pour l'extraction d'informations, des tests ou des fins d'automatisation, même lorsque des API officielles ne sont pas disponibles.

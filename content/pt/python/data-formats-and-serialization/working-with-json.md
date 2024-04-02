@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Trabalhar com JSON (JavaScript Object Notation) envolve analisar strings\
   \ formatadas em JSON para objetos Python e vice-versa. Isso \xE9 crucial para o\u2026"
 title: Trabalhando com JSON
+weight: 38
 ---
-
-{{< edit_this_page >}}
 
 ## O quê & Por quê?
 

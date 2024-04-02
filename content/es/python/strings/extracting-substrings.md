@@ -9,9 +9,8 @@ summary: "Extraer subcadenas es el proceso de seleccionar y copiar un conjunto d
   \ caracteres espec\xEDficos de una cadena de texto m\xE1s grande. Los programadores\
   \ lo\u2026"
 title: "Extracci\xF3n de subcadenas"
+weight: 6
 ---
-
-{{< edit_this_page >}}
 
 ## Qué y Por Qué?
 Extraer subcadenas es el proceso de seleccionar y copiar un conjunto de caracteres específicos de una cadena de texto más grande. Los programadores lo hacen para analizar datos, procesar entradas de usuario, o simplemente para mostrar partes relevantes de la información.

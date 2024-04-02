@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Verificare se una directory esiste in Go \xE8 fondamentale per le applicazioni\
   \ che interagiscono con il file system, per evitare errori quando si tenta di\u2026"
 title: Verificare se una directory esiste
+weight: 20
 ---
-
-{{< edit_this_page >}}
 
 ## Cosa e perché?
 

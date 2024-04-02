@@ -9,9 +9,8 @@ summary: "Trabalhar com XML em Haskell envolve analisar, manipular e gerar estru
   \ XML. Programadores lidam com XML para interagir com in\xFAmeras aplica\xE7\xF5\
   es e\u2026"
 title: Trabalhando com XML
+weight: 40
 ---
-
-{{< edit_this_page >}}
 
 ## O Que & Por Que?
 

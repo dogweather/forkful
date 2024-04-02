@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Foutafhandeling is hoe je beheert wat er gebeurt wanneer er iets misgaat\
   \ in je code. Het is essentieel omdat het ervoor zorgt dat je programma's op een\u2026"
 title: Fouten afhandelen
+weight: 16
 ---
-
-{{< edit_this_page >}}
 
 ## Wat & Waarom?
 

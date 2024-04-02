@@ -11,9 +11,8 @@ summary: "I programutveckling \xE4r det ofta n\xF6dv\xE4ndigt att kontrollera om
   \ katalog existerar f\xF6r att undvika fel n\xE4r man f\xF6rs\xF6ker f\xE5 tillg\xE5\
   ng till, l\xE4sa eller\u2026"
 title: Kontrollera om en katalog existerar
+weight: 20
 ---
-
-{{< edit_this_page >}}
 
 ## Vad & Varför?
 I programutveckling är det ofta nödvändigt att kontrollera om en katalog existerar för att undvika fel när man försöker få tillgång till, läsa eller skriva filer. Rust, som är ett systemprogrammeringsspråk, erbjuder robusta metoder för att utföra denna uppgift, vilket säkerställer att ditt program kan hantera filer och kataloger på ett säkert och effektivt sätt.

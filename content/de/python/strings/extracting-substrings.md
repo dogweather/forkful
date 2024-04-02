@@ -7,9 +7,8 @@ model: gpt-4-1106-preview
 summary: "Das Herausziehen von Teilstrings (Substrings) hilft dabei, spezifische Daten\
   \ aus gr\xF6\xDFeren Textmengen zu gewinnen. Programmierer nutzen diese Technik\u2026"
 title: Teilstrings extrahieren
+weight: 6
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 Das Herausziehen von Teilstrings (Substrings) hilft dabei, spezifische Daten aus größeren Textmengen zu gewinnen. Programmierer nutzen diese Technik häufig für die Datenaufbereitung, Validierung oder um bestimmte Muster und Informationen zu isolieren.

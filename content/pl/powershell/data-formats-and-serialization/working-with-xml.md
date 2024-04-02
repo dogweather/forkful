@@ -9,9 +9,8 @@ summary: "Praca z XML polega na manipulowaniu i dost\u0119powi do danych zorgani
   \ w j\u0119zyku eXtensible Markup Language. Programi\u015Bci pracuj\u0105 z XML,\
   \ aby umo\u017Cliwi\u0107\u2026"
 title: Praca z XML
+weight: 40
 ---
-
-{{< edit_this_page >}}
 
 ## Co i Dlaczego?
 Praca z XML polega na manipulowaniu i dostępowi do danych zorganizowanych w języku eXtensible Markup Language. Programiści pracują z XML, aby umożliwić interoperacyjność z innymi systemami lub odczytywać i zapisywać pliki konfiguracyjne, kanały danych i inne strukturyzowane dokumenty powszechne w usługach internetowych.

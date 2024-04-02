@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Een string met hoofdletters maken betekent de eerste letter in hoofdletters\
   \ zetten en de rest van de letters in kleine letters. Programmeurs gebruiken dit\u2026"
 title: Een string met hoofdletters maken
+weight: 2
 ---
-
-{{< edit_this_page >}}
 
 ## Wat & Waarom?
 

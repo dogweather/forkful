@@ -8,9 +8,8 @@ model: gpt-4-1106-preview
 summary: "Fehlerbehandlung in Bash-Skripten bedeutet, vorherzusehen, wo Probleme auftreten\
   \ k\xF6nnten, und diese elegant zu behandeln. Warum? Nun, es h\xE4lt Ihr Skript\u2026"
 title: Fehlerbehandlung
+weight: 16
 ---
-
-{{< edit_this_page >}}
 
 ## Was & Warum?
 

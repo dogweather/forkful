@@ -11,9 +11,8 @@ summary: "I Visual Basic for Applications (VBA) er det \xE5 hente den gjeldende 
   \ en vanlig oppgave som gj\xF8r at programmerere kan jobbe dynamisk med datoer i\
   \ sine\u2026"
 title: "F\xE5 den gjeldende datoen"
+weight: 29
 ---
-
-{{< edit_this_page >}}
 
 ## Hva & Hvorfor?
 

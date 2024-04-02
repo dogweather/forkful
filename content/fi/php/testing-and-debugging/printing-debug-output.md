@@ -9,9 +9,8 @@ summary: "PHP-koodauksessa debug-tulostus auttaa l\xF6yt\xE4m\xE4\xE4n ja ymm\xE
   rt\xE4m\xE4\xE4n ongelmia. Koodarit k\xE4ytt\xE4v\xE4t sit\xE4, koska n\xE4kee suoraan,\
   \ mit\xE4 koodi tekee (tai ei tee)."
 title: "Virheenj\xE4ljitystulosteiden tulostaminen"
+weight: 33
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why? - Mitä & Miksi?
 

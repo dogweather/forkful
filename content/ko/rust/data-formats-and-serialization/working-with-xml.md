@@ -17,9 +17,8 @@ summary: "XML\uC740 eXtensible Markup Language\uC758 \uC57D\uC5B4\uB85C, JSON\uC
   \ \uB420 \uAC83\uC785\uB2C8\uB2E4. XML\uC740 \uB370\uC774\uD130 \uAD50\uD658\uC5D0\
   \uC11C \uC5EC\uC804\uD788 \uADF8\u2026"
 title: "XML \uB2E4\uB8E8\uAE30"
+weight: 40
 ---
-
-{{< edit_this_page >}}
 
 ## 무엇 & 왜?
 XML은 eXtensible Markup Language의 약어로, JSON의 장황한 사촌과 같습니다. 여러분은 레거시 시스템, 엔터프라이즈 소프트웨어 또는 JSON 대열에 오르지 않은 API를 다룰 때 XML과 씨름하게 될 것입니다. XML은 데이터 교환에서 여전히 그 가치를 지니고 있습니다.

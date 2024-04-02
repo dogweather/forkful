@@ -9,9 +9,8 @@ summary: "Att skicka en HTTP-f\xF6rfr\xE5gan med grundl\xE4ggande autentisering 
   \ att du f\xF6rmedlar anv\xE4ndarnamn och l\xF6senord s\xE4kert f\xF6r att f\xE5\
   \ tillg\xE5ng till en resurs\u2026"
 title: "Skicka en HTTP-f\xF6rfr\xE5gan med Basic-autentisering"
+weight: 45
 ---
-
-{{< edit_this_page >}}
 
 ## Vad & Varför?
 Att skicka en HTTP-förfrågan med grundläggande autentisering betyder att du förmedlar användarnamn och lösenord säkert för att få tillgång till en resurs på webben. Programmerare gör detta för att interagera med webbtjänster som kräver inloggning.

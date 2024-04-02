@@ -19,9 +19,8 @@ summary: "\uBC18\uC62C\uB9BC\uC740 \uC22B\uC790\uC758 \uD2B9\uC815 \uC9C0\uC810 
   \ \uB4E4\uC5B4 2.998\uC744 \uAE54\uB054\uD55C 3\uC73C\uB85C \uBCC0\uD658\uD558\uB294\
   \ \uAC83\uCC98\uB7FC."
 title: "\uC22B\uC790 \uBC18\uC62C\uB9BC\uD558\uAE30"
+weight: 13
 ---
-
-{{< edit_this_page >}}
 
 ## 무엇이며 왜 필요한가?
 반올림은 숫자의 특정 지점 이후의 잡음을 자르는 것입니다. 프로그래머들은 정밀도를 제어하거나, 메모리를 관리하거나, 출력을 사용자 친화적으로 만들기 위해 반올림을 사용합니다—예를 들어 2.998을 깔끔한 3으로 변환하는 것처럼.

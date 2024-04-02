@@ -7,9 +7,8 @@ model: gpt-4-0125-preview
 summary: "Das Runden von Zahlen ist das Anpassen einer Dezimalzahl auf ihren n\xE4\
   chsten ganzzahligen Wert oder auf eine bestimmte Anzahl von Nachkommastellen.\u2026"
 title: Zahlen runden
+weight: 13
 ---
-
-{{< edit_this_page >}}
 
 ## Was & Warum?
 

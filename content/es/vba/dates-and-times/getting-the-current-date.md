@@ -11,9 +11,8 @@ summary: "En Visual Basic para Aplicaciones (VBA), recuperar la fecha actual es 
   \ tarea com\xFAn que permite a los programadores trabajar din\xE1micamente con fechas\
   \ en\u2026"
 title: Obteniendo la fecha actual
+weight: 29
 ---
-
-{{< edit_this_page >}}
 
 ## Qué y Por Qué
 

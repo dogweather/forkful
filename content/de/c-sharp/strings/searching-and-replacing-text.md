@@ -7,9 +7,8 @@ model: gpt-4-1106-preview
 summary: "Textsuche und -ersatz sind im Kern das Auffinden und Ersetzen von Zeichenfolgen\
   \ in einer gr\xF6\xDFeren Textmenge. Programmierer nutzen diese Operation, um\u2026"
 title: Suchen und Ersetzen von Text
+weight: 10
 ---
-
-{{< edit_this_page >}}
 
 ## Was & Warum?
 

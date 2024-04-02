@@ -7,9 +7,8 @@ model: gpt-4-0125-preview
 summary: "Writing tests in Fish Shell involves creating scripts that automatically\
   \ run your code to validate its behavior against expected outcomes. This practice\u2026"
 title: Writing tests
+weight: 36
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 

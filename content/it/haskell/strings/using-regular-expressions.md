@@ -11,9 +11,8 @@ summary: "Le espressioni regolari nella programmazione sono sequenze di caratter
   \ che definiscono un modello di ricerca, tipicamente impiegate per la ricerca e\
   \ la\u2026"
 title: Utilizzo delle espressioni regolari
+weight: 11
 ---
-
-{{< edit_this_page >}}
 
 ## Cos'è e perché?
 Le espressioni regolari nella programmazione sono sequenze di caratteri che definiscono un modello di ricerca, tipicamente impiegate per la ricerca e la manipolazione di stringhe. I programmatori Haskell utilizzano le espressioni regolari per compiti che vanno dalla semplice corrispondenza di stringhe all'elaborazione complessa di testi, sfruttando la loro efficienza e versatilità nel trattare i dati testuali.

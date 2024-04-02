@@ -16,9 +16,8 @@ summary: "\u89E3\u6790 HTML \u6307\u7684\u662F\u4ECE HTML \u6587\u6863\u4E2D\u63
   \u3001\u81EA\u52A8\u5316\u6570\u636E\u63D0\u53D6\uFF0C\u6216\u8005\u7528\u4E8E\u7F51\
   \u7EDC\u6293\u53D6\u76EE\u7684\u3002"
 title: "\u89E3\u6790HTML"
+weight: 43
 ---
-
-{{< edit_this_page >}}
 
 ## 什么 & 为什么？
 解析 HTML 指的是从 HTML 文档中提取数据。程序员进行这一操作是为了与网页内容进行交互或操控、自动化数据提取，或者用于网络抓取目的。

@@ -7,9 +7,8 @@ model: gpt-4-0125-preview
 summary: "Writing a text file in Swift allows you to persistently store string data\
   \ on the filesystem, which is essential for tasks such as saving configuration\u2026"
 title: Writing a text file
+weight: 24
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 

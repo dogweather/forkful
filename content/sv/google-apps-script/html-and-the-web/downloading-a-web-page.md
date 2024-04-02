@@ -11,9 +11,8 @@ summary: "Att ladda ner en webbsida i Google Apps Script inneb\xE4r att h\xE4mta
   llet p\xE5 en webbsida via HTML f\xF6r olika \xE4ndam\xE5l, s\xE5som webbskrapning,\
   \ dataextraktion\u2026"
 title: "H\xE4mta en webbsida"
+weight: 42
 ---
-
-{{< edit_this_page >}}
 
 ## Vad och varför?
 

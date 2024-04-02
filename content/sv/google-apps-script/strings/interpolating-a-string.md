@@ -11,9 +11,8 @@ summary: "Str\xE4nginterpolering i Google Apps Script m\xF6jligg\xF6r dynamisk i
   ddning av uttryck inom str\xE4ngar, vilket underl\xE4ttar skapandet av mer l\xE4\
   sbar och\u2026"
 title: "Interpolering av en str\xE4ng"
+weight: 8
 ---
-
-{{< edit_this_page >}}
 
 ## Vad & Varför?
 

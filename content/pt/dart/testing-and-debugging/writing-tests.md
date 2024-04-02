@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Escrever testes em Dart envolve criar casos de teste para verificar automaticamente\
   \ que diferentes partes do seu programa funcionam como esperado.\u2026"
 title: Escrevendo testes
+weight: 36
 ---
-
-{{< edit_this_page >}}
 
 ## O Que & Por Que?
 

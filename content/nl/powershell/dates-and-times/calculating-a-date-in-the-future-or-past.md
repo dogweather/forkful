@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Een datum in de toekomst of het verleden berekenen betekent uitvogelen welke\
   \ datum het zal zijn na of voor een bepaalde tijdsperiode. Programmeurs doen\u2026"
 title: Een datum in de toekomst of het verleden berekenen
+weight: 26
 ---
-
-{{< edit_this_page >}}
 
 ## Wat & Waarom?
 Een datum in de toekomst of het verleden berekenen betekent uitvogelen welke datum het zal zijn na of voor een bepaalde tijdsperiode. Programmeurs doen dit om herinneringen te automatiseren, taken in te plannen of vervaldatums te beheren.

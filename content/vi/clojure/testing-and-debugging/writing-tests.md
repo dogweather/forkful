@@ -13,9 +13,8 @@ summary: "Vi\u1EBFt test c\xF3 ngh\u0129a l\xE0 t\u1EA1o ra m\xE3 l\u1EC7nh ki\u
   \u1EE3i hay kh\xF4ng. L\u1EADp tr\xECnh vi\xEAn l\xE0m v\u1EADy \u0111\u1EC3 b\u1EAF\
   t l\u1ED7i, \u0111\u1EA3m b\u1EA3o \u0111\u1ED9 tin c\u1EADy\u2026"
 title: "Vi\u1EBFt c\xE1c b\xE0i ki\u1EC3m tra"
+weight: 36
 ---
-
-{{< edit_this_page >}}
 
 ## Cái gì & Tại sao?
 Viết test có nghĩa là tạo ra mã lệnh kiểm tra xem mã lệnh khác có hoạt động như mong đợi hay không. Lập trình viên làm vậy để bắt lỗi, đảm bảo độ tin cậy và tránh nhức đầu sau này.

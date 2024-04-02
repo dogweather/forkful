@@ -7,9 +7,8 @@ model: unknown
 summary: "Il parsing di HTML consiste nell'analizzare il codice HTML per estrarne\
   \ dati o manipolarlo. I programmatori lo fanno perch\xE9 vogliono lavorare con il\u2026"
 title: Analisi dell'HTML
+weight: 43
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why? - Cosa e Perché?
 Il parsing di HTML consiste nell'analizzare il codice HTML per estrarne dati o manipolarlo. I programmatori lo fanno perché vogliono lavorare con il contenuto di pagine web: per esempio, per estrarre informazioni, automatizzare azioni o testare l'accessibilità.

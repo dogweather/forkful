@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Commandoregelargumenten lezen betekent het grijpen van de extra's die gebruikers\
   \ toevoegen aan commando's wanneer ze je script uitvoeren. Programmeurs\u2026"
 title: Commandoregelargumenten lezen
+weight: 23
 ---
-
-{{< edit_this_page >}}
 
 ## Wat & Waarom?
 Commandoregelargumenten lezen betekent het grijpen van de extra's die gebruikers toevoegen aan commando's wanneer ze je script uitvoeren. Programmeurs doen dit om gebruikers in staat te stellen gedrag aan te passen zonder code te wijzigen.

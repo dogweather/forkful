@@ -14,9 +14,8 @@ summary: "\u5728Lua\u4E2D\uFF0C\u5B57\u7B26\u4E32\u62FC\u63A5\u5C31\u662F\u5C06\
   \uFF0C\u7EC4\u7EC7\u6570\u636E\uFF0C\u6216\u6784\u5EFA\u7A0B\u5E8F\u8FD0\u884C\u65F6\
   \u624D\u80FD\u786E\u5B9A\u7684\u5B57\u7B26\u4E32\u3002"
 title: "\u5B57\u7B26\u4E32\u62FC\u63A5"
+weight: 3
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why? (什么以及为什么？)
 在Lua中，字符串拼接就是将两个或多个字符串合成一个。程序员拼接字符串为了创建动态消息，组织数据，或构建程序运行时才能确定的字符串。

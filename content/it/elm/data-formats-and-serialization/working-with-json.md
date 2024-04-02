@@ -11,9 +11,8 @@ summary: "Lavorare con JSON in Elm riguarda la decodifica dei dati JSON in tipi 
   \ e la codifica di valori Elm di nuovo in JSON. Questo processo \xE8 cruciale per\
   \ le\u2026"
 title: Lavorare con JSON
+weight: 38
 ---
-
-{{< edit_this_page >}}
 
 ## Cosa e Perché?
 Lavorare con JSON in Elm riguarda la decodifica dei dati JSON in tipi Elm e la codifica di valori Elm di nuovo in JSON. Questo processo è cruciale per le applicazioni web per interagire con API e fonti di dati esterne, consentendo uno scambio di dati senza soluzione di continuità tra il client (Elm) e server o altri servizi.

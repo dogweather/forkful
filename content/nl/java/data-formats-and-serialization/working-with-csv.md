@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Werken met CSV, wat staat voor Comma-Separated Values (komma-gescheiden\
   \ waarden), betekent het omgaan met gegevens in een eenvoudig tekstformaat waarbij\u2026"
 title: Werken met CSV
+weight: 37
 ---
-
-{{< edit_this_page >}}
 
 ## Wat & Waarom?
 

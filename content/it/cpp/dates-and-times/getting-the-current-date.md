@@ -10,9 +10,8 @@ model: gpt-4-0125-preview
 summary: "Recuperare la data corrente in C++ \xE8 un compito fondamentale per i programmi\
   \ che necessitano di elaborare o visualizzare date basate sull'orologio del\u2026"
 title: Ottenere la data corrente
+weight: 29
 ---
-
-{{< edit_this_page >}}
 
 ## Cosa & Perché?
 Recuperare la data corrente in C++ è un compito fondamentale per i programmi che necessitano di elaborare o visualizzare date basate sull'orologio del sistema. È essenziale per la registrazione degli eventi, l'apposizione di timestamp, la pianificazione delle attività e qualsiasi funzionalità che si basi su date e orari.

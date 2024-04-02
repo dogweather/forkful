@@ -23,9 +23,8 @@ summary: "\uC544\uB450\uC774\uB178 \uD504\uB85C\uC81D\uD2B8\uC5D0\uC11C \uD604\u
   \uC5D0\uC11C \uC2DC\uAC04\uC5D0 \uBBFC\uAC10\uD55C \uC791\uC5C5\uC744 \uC6A9\uC774\
   \uD558\uAC8C \uD558\uAE30 \uC704\uD574 \uC774 \uAE30\uB2A5\uC774\u2026"
 title: "\uD604\uC7AC \uB0A0\uC9DC \uAC00\uC838\uC624\uAE30"
+weight: 29
 ---
-
-{{< edit_this_page >}}
 
 ## 무엇을, 왜?
 아두이노 프로젝트에서 현재 날짜를 얻는 것은 로깅, 타임스탬핑 또는 스케줄링 작업에 중요한 실시간 정보를 얻는 것을 포함합니다. 프로그래머들은 종종 기능성을 강화하고, 데이터의 관련성을 보장하며, IoT 및 내장 프로젝트에서 시간에 민감한 작업을 용이하게 하기 위해 이 기능이 필요합니다.

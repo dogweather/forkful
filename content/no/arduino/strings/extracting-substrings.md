@@ -7,9 +7,8 @@ model: gpt-4-1106-preview
 summary: "\xC5 trekke ut substrings betyr \xE5 hente en spesiell del av en tekststreng.\
   \ Programmerere gj\xF8r dette for \xE5 behandle eller analysere spesifikke datapartier\u2026"
 title: Uthenting av delstrenger
+weight: 6
 ---
-
-{{< edit_this_page >}}
 
 ## Hva & Hvorfor?
 Å trekke ut substrings betyr å hente en spesiell del av en tekststreng. Programmerere gjør dette for å behandle eller analysere spesifikke datapartier innen en større tekst.

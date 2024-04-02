@@ -9,9 +9,8 @@ summary: "Att skicka en HTTP-beg\xE4ran inneb\xE4r att be en webbserver om data 
   \ att utf\xF6ra en \xE5tg\xE4rd. Programmerare g\xF6r detta f\xF6r att interagera\
   \ med webb-API:er,\u2026"
 title: "Skicka en http-f\xF6rfr\xE5gan"
+weight: 44
 ---
-
-{{< edit_this_page >}}
 
 ## Vad & Varför?
 Att skicka en HTTP-begäran innebär att be en webbserver om data eller att utföra en åtgärd. Programmerare gör detta för att interagera med webb-API:er, hämta information, skicka formulärdata eller automatisera webbprocesser.

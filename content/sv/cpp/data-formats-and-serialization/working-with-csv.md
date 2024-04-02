@@ -11,9 +11,8 @@ summary: "Att arbeta med CSV-filer (v\xE4rden separerade med kommatecken) handla
   \ om att bearbeta och manipulera data lagrad i ett enkelt textformat, d\xE4r varje\
   \ rad i\u2026"
 title: Arbeta med CSV
+weight: 37
 ---
-
-{{< edit_this_page >}}
 
 ## Vad & Varför?
 

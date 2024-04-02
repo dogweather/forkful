@@ -1,14 +1,14 @@
 ---
 date: 2024-01-26 03:49:24.935174-07:00
-description: "\xC5 bruke en feils\xF8ker betyr \xE5 dykke inn i koden din med verkt\xF8\
-  y designet for \xE5 inspisere, pause og manipulere et program midt i utf\xF8relsen.\
-  \ Programmerere\u2026"
+description: "La oss ta en tur med GHCi, Haskell sitt interaktive milj\xF8 som kan\
+  \ fungere som en grunnleggende feils\xF8ker. Du fyrer det opp med Haskell-koden\
+  \ din og\u2026"
 lastmod: '2024-03-13T22:44:40.846179-06:00'
 model: gpt-4-0125-preview
-summary: "\xC5 bruke en feils\xF8ker betyr \xE5 dykke inn i koden din med verkt\xF8\
-  y designet for \xE5 inspisere, pause og manipulere et program midt i utf\xF8relsen.\
-  \ Programmerere\u2026"
+summary: "La oss ta en tur med GHCi, Haskell sitt interaktive milj\xF8 som kan fungere\
+  \ som en grunnleggende feils\xF8ker. Du fyrer det opp med Haskell-koden din og\u2026"
 title: "\xC5 bruke en feils\xF8ker"
+weight: 35
 ---
 
 ## Hvordan:

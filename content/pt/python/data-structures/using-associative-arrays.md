@@ -11,9 +11,8 @@ summary: "Arrays associativos, conhecidos em Python como dicion\xE1rios, mapeiam
   \ para valores, facilitando a recupera\xE7\xE3o, modifica\xE7\xE3o ou rastreamento\
   \ de dados\u2026"
 title: Usando arrays associativos
+weight: 15
 ---
-
-{{< edit_this_page >}}
 
 ## O quê & Por quê?
 

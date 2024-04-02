@@ -11,9 +11,8 @@ summary: "Praca z CSV (Comma-Separated Values, czyli warto\u015Bciami oddzielony
   \ przecinkami) obejmuje odczytywanie z plik\xF3w CSV oraz zapisywanie do nich, co\
   \ jest\u2026"
 title: Praca z plikami CSV
+weight: 37
 ---
-
-{{< edit_this_page >}}
 
 ## Co i dlaczego?
 

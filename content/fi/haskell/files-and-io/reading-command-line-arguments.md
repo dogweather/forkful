@@ -9,9 +9,8 @@ summary: "Komennon rivin argumenttien lukeminen mahdollistaa parametrien antamis
   \ ohjelmalle sen k\xE4ynnistyess\xE4. Ohjelmistokehitt\xE4j\xE4t k\xE4ytt\xE4v\xE4\
   t t\xE4t\xE4 toimintoa\u2026"
 title: Komennoriviparametrien lukeminen
+weight: 23
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 Komennon rivin argumenttien lukeminen mahdollistaa parametrien antamisen ohjelmalle sen käynnistyessä. Ohjelmistokehittäjät käyttävät tätä toimintoa räätälöidäkseen ohjelman toimintaa helposti ja joustavasti.

@@ -9,9 +9,8 @@ summary: "Regrouper le code en fonctions, c'est comme trier des briques LEGO dan
   \ des bacs \u2013 cela facilite leur recherche et leur utilisation. Nous faisons\
   \ cela\u2026"
 title: Organisation du code en fonctions
+weight: 18
 ---
-
-{{< edit_this_page >}}
 
 ## Quoi et pourquoi ?
 Regrouper le code en fonctions, c'est comme trier des briques LEGO dans des bacs – cela facilite leur recherche et leur utilisation. Nous faisons cela pour éviter la répétition, pour simplifier la compréhension, et pour rendre la maintenance moins pénible.

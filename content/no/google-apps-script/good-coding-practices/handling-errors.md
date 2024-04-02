@@ -11,9 +11,8 @@ summary: "Feilh\xE5ndtering i Google Apps Script handler om \xE5 forutse, fange 
   \ og svare p\xE5 unntak eller feil som oppst\xE5r under kj\xF8ring av skriptet.\
   \ Programmerere\u2026"
 title: "H\xE5ndtering av feil"
+weight: 16
 ---
-
-{{< edit_this_page >}}
 
 ## Hva & Hvorfor?
 

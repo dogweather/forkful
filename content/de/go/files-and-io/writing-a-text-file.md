@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Das Schreiben einer Textdatei in Go umfasst das Erstellen und Schreiben\
   \ von Zeichenketten von Daten in eine neue oder vorhandene Textdatei. Programmierer\u2026"
 title: Eine Textdatei schreiben
+weight: 24
 ---
-
-{{< edit_this_page >}}
 
 ## Was & Warum?
 

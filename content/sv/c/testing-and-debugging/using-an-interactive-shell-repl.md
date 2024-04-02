@@ -11,9 +11,8 @@ summary: "En interaktiv skal, \xE4ven k\xE4nd som en Read-Eval-Print Loop (REPL)
   \ m\xF6jligg\xF6r f\xF6r programmerare att skriva in uttryck eller kod och omedelbart\
   \ se resultat,\u2026"
 title: "Att anv\xE4nda ett interaktivt skal (REPL)"
+weight: 34
 ---
-
-{{< edit_this_page >}}
 
 ## Vad & Varför?
 

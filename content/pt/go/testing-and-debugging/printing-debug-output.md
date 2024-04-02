@@ -11,9 +11,8 @@ summary: "Na programa\xE7\xE3o de computadores, \"Imprimir sa\xEDda de depura\xE
   o\" envolve produzir mensagens detalhadas de informa\xE7\xE3o que ajudam os desenvolvedores\
   \ a entender\u2026"
 title: "Imprimindo sa\xEDda de depura\xE7\xE3o"
+weight: 33
 ---
-
-{{< edit_this_page >}}
 
 ## O Quê & Porquê?
 

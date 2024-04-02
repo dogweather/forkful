@@ -11,9 +11,8 @@ summary: "Tests schrijven in Google Apps Script (GAS) betekent het cre\xEBren va
   \ geautomatiseerde scripts om het gedrag van je codes te verifi\xEBren, zodat ze\
   \ presteren\u2026"
 title: Tests Schrijven
+weight: 36
 ---
-
-{{< edit_this_page >}}
 
 ## Wat & Waarom?
 

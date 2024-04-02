@@ -9,9 +9,8 @@ summary: "Konkatenere strenger handler om \xE5 sette sammen to eller flere stren
   \ for \xE5 danne en enkelt tekstbit. Du kan trenge \xE5 sl\xE5 sammen tekst for\
   \ \xE5 generere\u2026"
 title: "Sammensl\xE5ing av strenger"
+weight: 3
 ---
-
-{{< edit_this_page >}}
 
 ## Hva & Hvorfor?
 Konkatenere strenger handler om å sette sammen to eller flere strenger for å danne en enkelt tekstbit. Du kan trenge å slå sammen tekst for å generere brukermeldinger, lage filstier eller for prosesser med dataserielisering. Det er en grunnleggende operasjon i ethvert programmeringsspråk, inkludert Elixir, som gjør det mulig for utviklere å konstruere dynamiske strenger med letthet.

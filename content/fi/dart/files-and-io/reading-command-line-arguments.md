@@ -11,9 +11,8 @@ summary: "Komentoriviargumenttien lukeminen Dartissa mahdollistaa ohjelmoijien s
   tt\xE4\xE4 tietoja suoraan konsoliin Dart-ohjelman suorittamisen aikana, parantaen\
   \ sen\u2026"
 title: Komentorivin argumenttien lukeminen
+weight: 23
 ---
-
-{{< edit_this_page >}}
 
 ## Mikä & Miksi?
 

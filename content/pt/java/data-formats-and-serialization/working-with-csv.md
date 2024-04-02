@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Trabalhar com arquivos CSV envolve ler e escrever dados para arquivos de\
   \ Valores Separados por V\xEDrgula (CSV), um formato popular para troca de dados\u2026"
 title: Trabalhando com CSV
+weight: 37
 ---
-
-{{< edit_this_page >}}
 
 ## O Quê & Porquê?
 

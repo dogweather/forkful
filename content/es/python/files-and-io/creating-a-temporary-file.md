@@ -9,9 +9,8 @@ summary: "Crear archivos temporales es pr\xE1ctica com\xFAn en programaci\xF3n p
   \ guardar datos que solo necesitas durante la ejecuci\xF3n de tu script. Se hace\
   \ para no dejar\u2026"
 title: Creando un archivo temporal
+weight: 21
 ---
-
-{{< edit_this_page >}}
 
 ## Qué y Por Qué?
 Crear archivos temporales es práctica común en programación para guardar datos que solo necesitas durante la ejecución de tu script. Se hace para no dejar huellas innecesarias en el disco duro y para manejar información sensible que no queremos que perdure.

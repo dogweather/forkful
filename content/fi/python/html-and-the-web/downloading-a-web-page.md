@@ -9,9 +9,8 @@ summary: "Ladataan web-sivu Pythonilla tarkoittaa sen sis\xE4ll\xF6n noutamista 
   . Koodarit tekev\xE4t t\xE4t\xE4 datan analysointiin, sis\xE4ll\xF6n ker\xE4\xE4\
   miseen tai\u2026"
 title: Verkkosivun lataaminen
+weight: 42
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why? (Mitä ja Miksi?)
 Ladataan web-sivu Pythonilla tarkoittaa sen sisällön noutamista internetistä. Koodarit tekevät tätä datan analysointiin, sisällön keräämiseen tai varmuuskopiointiin.

@@ -10,9 +10,8 @@ model: gpt-4-0125-preview
 summary: "\xC5 beregne en dato i fremtiden eller fortiden i Go inneb\xE6rer \xE5 manipulere\
   \ dato- og tidsverdier for \xE5 bestemme et spesifikt punkt i forhold til en gitt\u2026"
 title: Beregning av en dato i fremtiden eller fortiden
+weight: 26
 ---
-
-{{< edit_this_page >}}
 
 ## Hva & Hvorfor?
 

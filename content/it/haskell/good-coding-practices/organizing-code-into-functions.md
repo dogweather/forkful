@@ -8,9 +8,8 @@ model: gpt-4-1106-preview
 summary: "Organizzare il codice in funzioni in Haskell significa suddividere il tuo\
   \ codice in blocchi riutilizzabili e nominati. Perch\xE9? Mantenere il codice DRY\u2026"
 title: Organizzazione del codice in funzioni
+weight: 18
 ---
-
-{{< edit_this_page >}}
 
 ## Cosa & Perché?
 Organizzare il codice in funzioni in Haskell significa suddividere il tuo codice in blocchi riutilizzabili e nominati. Perché? Mantenere il codice DRY (Don't Repeat Yourself, ovvero Non Ripetere Te Stesso), lo rende leggibile e più facile da eseguire il debug.

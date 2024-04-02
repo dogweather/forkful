@@ -10,9 +10,8 @@ model: gpt-4-0125-preview
 summary: "En el mundo de Arduino, los arrays asociativos te permiten emparejar claves\
   \ con valores, algo as\xED como emparejar\xEDas calcetines con sus pares. Son una\u2026"
 title: Uso de matrices asociativas
+weight: 15
 ---
-
-{{< edit_this_page >}}
 
 ## ¿Qué y por qué?
 En el mundo de Arduino, los arrays asociativos te permiten emparejar claves con valores, algo así como emparejarías calcetines con sus pares. Son una opción a la que recurrir cuando necesitas almacenar y recuperar datos utilizando nombres descriptivos, haciendo que tu código sea más limpio y mucho más comprensible.

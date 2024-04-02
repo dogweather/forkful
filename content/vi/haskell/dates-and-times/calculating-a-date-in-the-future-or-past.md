@@ -13,9 +13,8 @@ summary: "T\xEDnh to\xE1n m\u1ED9t ng\xE0y trong t\u01B0\u01A1ng lai ho\u1EB7c q
   c sau m\u1ED9t s\u1ED1 ng\xE0y, th\xE1ng, ho\u1EB7c n\u0103m nh\u1EA5t \u0111\u1ECB\
   nh t\u1EEB m\u1ED9t \u0111i\u1EC3m xu\u1EA5t ph\xE1t c\u1EE5\u2026"
 title: "T\xEDnh to\xE1n ng\xE0y trong t\u01B0\u01A1ng lai ho\u1EB7c qu\xE1 kh\u1EE9"
+weight: 26
 ---
-
-{{< edit_this_page >}}
 
 ## Cái gì & Tại sao?
 

@@ -7,9 +7,8 @@ model: gpt-4-0125-preview
 summary: "Regular expressions, or regex, allow developers to search, match, and manipulate\
   \ strings with advanced pattern-matching techniques. In Rust, utilizing\u2026"
 title: Using regular expressions
+weight: 11
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 

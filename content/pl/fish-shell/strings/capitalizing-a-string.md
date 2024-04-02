@@ -11,9 +11,8 @@ summary: "Zmiana pierwszej litery \u0142a\u0144cucha na wielk\u0105, a reszty na
   e litery, oznacza modyfikacj\u0119 tekstu w taki spos\xF3b, by pierwsza litera by\u0142\
   a wielka, a pozosta\u0142a\u2026"
 title: "Zamiana liter na wielkie w \u0142a\u0144cuchu znak\xF3w"
+weight: 2
 ---
-
-{{< edit_this_page >}}
 
 ## Co i dlaczego?
 

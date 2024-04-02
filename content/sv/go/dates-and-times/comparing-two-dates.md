@@ -11,9 +11,8 @@ summary: "Att j\xE4mf\xF6ra tv\xE5 datum i programmering \xE4r en grundl\xE4ggan
   \ uppgift som l\xE5ter utvecklare utv\xE4rdera den kronologiska relationen mellan\
   \ datum. S\xE5dana\u2026"
 title: "J\xE4mf\xF6ra tv\xE5 datum"
+weight: 27
 ---
-
-{{< edit_this_page >}}
 
 ## Vad & Varför?
 

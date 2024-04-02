@@ -7,9 +7,8 @@ model: gpt-4-0125-preview
 summary: "Generare numeri casuali in Bash offre un modo per introdurre imprevedibilit\xE0\
   \ negli script, fondamentale per compiti come generare password sicure,\u2026"
 title: Generazione di numeri casuali
+weight: 12
 ---
-
-{{< edit_this_page >}}
 
 ## Cosa e perché?
 Generare numeri casuali in Bash offre un modo per introdurre imprevedibilità negli script, fondamentale per compiti come generare password sicure, simulare dati, o per la programmazione di giochi. I programmatori sfruttano questa capacità per aggiungere variabilità ai loro script o per testare i loro programmi in una varietà di condizioni generate casualmente.

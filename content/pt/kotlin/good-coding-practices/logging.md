@@ -9,9 +9,8 @@ summary: "O ato de registrar eventos e dados de uma aplica\xE7\xE3o de software 
   \ uma sa\xEDda externa, como um arquivo ou console, \xE9 conhecido como logging.\
   \ Programadores\u2026"
 title: Registro de Logs
+weight: 17
 ---
-
-{{< edit_this_page >}}
 
 ## O Quê & Por Quê?
 

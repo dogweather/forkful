@@ -9,9 +9,8 @@ summary: "PowerShell-skripteiss\xE4 komentoriviparametrien lukeminen mahdollista
   \ argumenttien vastaanottamisen suoraan k\xE4ytt\xE4j\xE4lt\xE4. T\xE4t\xE4 tehd\xE4\
   \xE4n sovelluksen\u2026"
 title: Komennoriviparametrien lukeminen
+weight: 23
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why? / Mikä & Miksi?
 PowerShell-skripteissä komentoriviparametrien lukeminen mahdollistaa argumenttien vastaanottamisen suoraan käyttäjältä. Tätä tehdään sovelluksen mukauttamiseksi eri tilanteisiin ilman skriptin muokkaamista.

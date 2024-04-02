@@ -7,9 +7,8 @@ model: gpt-4-0125-preview
 summary: "Downloading a web page in Google Apps Script involves fetching the content\
   \ of a web page via HTML for various purposes, such as web scraping, data\u2026"
 title: Downloading a web page
+weight: 42
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 

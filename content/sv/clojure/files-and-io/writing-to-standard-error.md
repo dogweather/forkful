@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Att skriva till standardfel (stderr) handlar om att dirigera felmeddelanden\
   \ och diagnostik till stderr-str\xF6mmen, separat fr\xE5n standardutdata (stdout).\u2026"
 title: Skriva till standardfel
+weight: 25
 ---
-
-{{< edit_this_page >}}
 
 ## Vad & Varför?
 Att skriva till standardfel (stderr) handlar om att dirigera felmeddelanden och diagnostik till stderr-strömmen, separat från standardutdata (stdout). Programmerare gör detta för att skilja vanlig programutdata från felmeddelanden, vilket möjliggör mer effektiv felsökning och loggning.

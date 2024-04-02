@@ -11,9 +11,8 @@ summary: "Regulj\xE4ra uttryck (regex) i C# \xE4r ett kraftfullt verktyg f\xF6r 
   nsterpassning inom str\xE4ngar, vilket m\xF6jligg\xF6r f\xF6r programmerare att\
   \ s\xF6ka, ers\xE4tta, dela upp\u2026"
 title: "Att anv\xE4nda regulj\xE4ra uttryck"
+weight: 11
 ---
-
-{{< edit_this_page >}}
 
 ## Vad & Varför?
 Reguljära uttryck (regex) i C# är ett kraftfullt verktyg för mönsterpassning inom strängar, vilket möjliggör för programmerare att söka, ersätta, dela upp eller extrahera data effektivt. Programmerare använder sig av regex för uppgifter som sträcker sig från enkla valideringar, som kontroll av e-postformat, till komplexa textbearbetningsuppgifter på grund av dess flexibilitet och prestanda.

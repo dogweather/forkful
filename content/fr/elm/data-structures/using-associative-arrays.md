@@ -11,9 +11,8 @@ summary: "Les tableaux associatifs, ou comme les appelle Elm, les Dictionnaires,
   \ des cl\xE9s \xE0 des valeurs de mani\xE8re \xE0 rendre la recherche, l'insertion\
   \ et\u2026"
 title: Utilisation des tableaux associatifs
+weight: 15
 ---
-
-{{< edit_this_page >}}
 
 ## Quoi & Pourquoi ?
 

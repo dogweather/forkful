@@ -10,9 +10,8 @@ model: gpt-4-0125-preview
 summary: "Escrever testes em TypeScript envolve criar scripts automatizados para verificar\
   \ a funcionalidade e corretude do seu c\xF3digo. Os programadores fazem isso\u2026"
 title: Escrevendo testes
+weight: 36
 ---
-
-{{< edit_this_page >}}
 
 ## O Que & Por Que?
 Escrever testes em TypeScript envolve criar scripts automatizados para verificar a funcionalidade e corretude do seu código. Os programadores fazem isso para garantir a confiabilidade, capturar rapidamente bugs e facilitar o crescimento do código de forma sustentável, já que a tipagem estática do TypeScript adiciona um nível de previsibilidade aos testes em JavaScript.

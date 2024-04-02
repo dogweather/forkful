@@ -8,9 +8,8 @@ model: gpt-4-1106-preview
 summary: "Calcular una fecha en el futuro o pasado es simplemente modificar una fecha\
   \ para obtener otra diferente, antes o despu\xE9s. Los programadores lo hacen para\u2026"
 title: Calcular una fecha en el futuro o pasado
+weight: 26
 ---
-
-{{< edit_this_page >}}
 
 ## Qué y Por Qué?
 Calcular una fecha en el futuro o pasado es simplemente modificar una fecha para obtener otra diferente, antes o después. Los programadores lo hacen para gestionar eventos, recordatorios, funcionalidades de expiración y cualquier cosa que dependa del tiempo.

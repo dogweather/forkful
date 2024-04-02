@@ -7,9 +7,8 @@ model: gpt-4-1106-preview
 summary: "Berechnungen von zuk\xFCnftigen oder vergangenen Daten erm\xF6glichen es,\
   \ Zeitintervalle zu bestimmen. Programmierer nutzen das, um Deadline-Management,\u2026"
 title: "Berechnung eines zuk\xFCnftigen oder vergangenen Datums"
+weight: 26
 ---
-
-{{< edit_this_page >}}
 
 ## Was & Warum?
 Berechnungen von zukünftigen oder vergangenen Daten ermöglichen es, Zeitintervalle zu bestimmen. Programmierer nutzen das, um Deadline-Management, Erinnerungsfunktionen oder Terminverfolgungen in Anwendungen zu implementieren.

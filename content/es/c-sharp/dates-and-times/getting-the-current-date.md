@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Obtener la fecha actual en C# implica obtener los detalles actuales de fecha\
   \ y hora del sistema. Los programadores a menudo necesitan acceder a esta\u2026"
 title: Obteniendo la fecha actual
+weight: 29
 ---
-
-{{< edit_this_page >}}
 
 ## ¿Qué y Por Qué?
 Obtener la fecha actual en C# implica obtener los detalles actuales de fecha y hora del sistema. Los programadores a menudo necesitan acceder a esta información para el registro, el sellado de tiempo de operaciones, o la programación de tareas dentro de aplicaciones, asegurando que las acciones estén sincronizadas con precisión y los datos estén marcados con sellos de tiempo precisos.

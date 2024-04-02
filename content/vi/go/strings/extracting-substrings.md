@@ -13,9 +13,8 @@ summary: "Vi\u1EC7c tr\xEDch xu\u1EA5t c\xE1c chu\u1ED7i con bao g\u1ED3m vi\u1E
   a tr\xEAn v\u1ECB tr\xED c\u1EE7a ch\xFAng. C\xE1c l\u1EADp tr\xECnh vi\xEAn th\u01B0\
   \u1EDDng xuy\xEAn th\u1EF1c hi\u1EC7n thao\u2026"
 title: "Tr\xEDch xu\u1EA5t chu\u1ED7i con"
+weight: 6
 ---
-
-{{< edit_this_page >}}
 
 ## Cái gì & Tại sao?
 

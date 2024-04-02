@@ -11,9 +11,8 @@ summary: "V\xE9rifier si un r\xE9pertoire existe dans le syst\xE8me de fichiers 
   \ essentiel pour g\xE9rer les structures de fichiers depuis vos applications Swift.\
   \ Cette\u2026"
 title: "V\xE9rifier si un r\xE9pertoire existe"
+weight: 20
 ---
-
-{{< edit_this_page >}}
 
 ## Quoi & Pourquoi ?
 Vérifier si un répertoire existe dans le système de fichiers est essentiel pour gérer les structures de fichiers depuis vos applications Swift. Cette tâche permet aux développeurs de vérifier la présence de répertoires avant de tenter de les lire ou d'écrire dedans, évitant ainsi d'éventuelles erreurs d'exécution.

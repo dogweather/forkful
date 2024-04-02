@@ -9,9 +9,8 @@ summary: "Virheenk\xE4sittely Pythonissa (tai miss\xE4 tahansa ohjelmointikieles
   ) on odottamatonta odottamista \u2013 se on taitoa hallita tilanteita sulavasti,\
   \ kun asiat\u2026"
 title: "Virheiden k\xE4sittely"
+weight: 16
 ---
-
-{{< edit_this_page >}}
 
 ## Mikä & Miksi?
 

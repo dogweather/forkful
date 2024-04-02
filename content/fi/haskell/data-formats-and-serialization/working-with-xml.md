@@ -9,9 +9,8 @@ summary: "XML:n k\xE4sittely Haskellissa k\xE4sitt\xE4\xE4 XML-rakenteiden j\xE4
   misen, muokkaamisen ja luomisen. Ohjelmoijat k\xE4sittelev\xE4t XML:\xE4\xE4 vuorovaikuttamaan\
   \ lukuisien\u2026"
 title: "XML:n k\xE4sittely"
+weight: 40
 ---
-
-{{< edit_this_page >}}
 
 ## Mikä & Miksi?
 

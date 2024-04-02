@@ -9,9 +9,8 @@ summary: "La concat\xE9nation de cha\xEEnes est le processus de raccordement de 
   \ cha\xEEnes de texte ou plus en une seule. Les programmeurs le font pour construire\
   \ des\u2026"
 title: "Concat\xE9nation de cha\xEEnes de caract\xE8res"
+weight: 3
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 La concaténation de chaînes est le processus de raccordement de deux chaînes de texte ou plus en une seule. Les programmeurs le font pour construire des messages dynamiques, des requêtes SQL, ou toute structure de données nécessitant du texte combiné.

@@ -7,9 +7,8 @@ model: gpt-4-1106-preview
 summary: "Fehlerbehandlung in Python (oder jeder anderen Programmiersprache) bedeutet,\
   \ mit dem Unerwarteten zu rechnen \u2013 es ist die Kunst, anmutig zu handhaben,\u2026"
 title: Fehlerbehandlung
+weight: 16
 ---
-
-{{< edit_this_page >}}
 
 ## Was & Warum?
 

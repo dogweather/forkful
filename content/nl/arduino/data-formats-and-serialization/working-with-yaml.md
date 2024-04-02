@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "YAML is geen opmaaktaal. Het is een door mensen gemakkelijk te begrijpen\
   \ gegevensserialisatiestandaard voor alle programmeertalen. Programmeurs gebruiken\u2026"
 title: Werken met YAML
+weight: 41
 ---
-
-{{< edit_this_page >}}
 
 ## Wat & Waarom?
 YAML is geen opmaaktaal. Het is een door mensen gemakkelijk te begrijpen gegevensserialisatiestandaard voor alle programmeertalen. Programmeurs gebruiken het voor configuratiebestanden, gegevensuitwisseling tussen talen, en het is makkelijker te begrijpen vergeleken met XML of JSON.

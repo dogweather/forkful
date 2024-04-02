@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Das Schreiben auf den Standardfehler (stderr) umfasst das Ausgeben von Fehlermeldungen\
   \ und Diagnosen auf die Konsole oder das Terminal. Programmierer\u2026"
 title: Schreiben auf Standardfehler
+weight: 25
 ---
-
-{{< edit_this_page >}}
 
 ## Was & Warum?
 Das Schreiben auf den Standardfehler (stderr) umfasst das Ausgeben von Fehlermeldungen und Diagnosen auf die Konsole oder das Terminal. Programmierer machen dies, um Fehlerinformationen von der Standardausgabe (stdout) zu trennen, was das Debuggen und die Log-Analyse erleichtert.

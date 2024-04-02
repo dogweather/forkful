@@ -7,9 +7,8 @@ model: gpt-4-0125-preview
 summary: "Writing a text file in Rust involves creating, writing to, and potentially\
   \ appending data to a file on the file system. Programmers perform this operation\u2026"
 title: Writing a text file
+weight: 24
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 Writing a text file in Rust involves creating, writing to, and potentially appending data to a file on the file system. Programmers perform this operation to persist data, like application logs, configuration, or user-generated content, ensuring data durability beyond the scope of the program execution.

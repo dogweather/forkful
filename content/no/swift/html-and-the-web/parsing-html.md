@@ -9,9 +9,8 @@ summary: "Hva er HTML-parsing, og hvorfor driver vi med det? Parsing av HTML bet
   \ \xE5 trekke ut data fra en webside sin kode. Programmerere gj\xF8r det for \xE5\
   \ kunne\u2026"
 title: Analyse av HTML
+weight: 43
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 Hva er HTML-parsing, og hvorfor driver vi med det? Parsing av HTML betyr å trekke ut data fra en webside sin kode. Programmerere gjør det for å kunne jobbe med, analysere, eller endre innhold dynamisk.

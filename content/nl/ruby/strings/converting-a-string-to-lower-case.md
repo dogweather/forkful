@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "In Ruby betekent het converteren van een string naar kleine letters dat\
   \ alle hoofdletters in de string worden veranderd in hun kleine letter tegenhangers.\u2026"
 title: Een string omzetten naar kleine letters
+weight: 4
 ---
-
-{{< edit_this_page >}}
 
 ## Wat & Waarom?
 

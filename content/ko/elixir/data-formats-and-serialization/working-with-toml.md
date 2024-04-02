@@ -17,9 +17,8 @@ summary: "TOML\uC744 \uC0AC\uC6A9\uD55C\uB2E4\uB294 \uAC83\uC740 Elixir\uB97C \u
   \uD130 \uAD6C\uC870\uC5D0 \uC798 \uB9E4\uD551\uB418\uAE30 \uB54C\uBB38\uC5D0 \uAD6C\
   \uC131 \uD30C\uC77C\uC744 \uB2E4\uB8E8\uAE30\u2026"
 title: "\uD504\uB85C\uADF8\uB798\uBA38\uB97C \uC704\uD55C TOML \uB2E4\uB8E8\uAE30"
+weight: 39
 ---
-
-{{< edit_this_page >}}
 
 ## 무엇 & 왜?
 TOML을 사용한다는 것은 Elixir를 사용하여 TOML(Tom's Obvious, Minimal Language) 데이터를 파싱하고 생성하는 것을 의미합니다. 프로그래머들은 TOML이 읽기 쉽고, 파싱하기 쉽고, 해시 데이터 구조에 잘 매핑되기 때문에 구성 파일을 다루기 위해 사용합니다.

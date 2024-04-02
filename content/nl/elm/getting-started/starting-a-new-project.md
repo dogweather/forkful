@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Een nieuw project starten in Elm betekent het opzetten van een schone lei\
   \ voor het bouwen van betrouwbare webapps. Programmeurs doen dit om te profiteren\u2026"
 title: Een nieuw project starten
+weight: 1
 ---
-
-{{< edit_this_page >}}
 
 ## Wat & Waarom?
 

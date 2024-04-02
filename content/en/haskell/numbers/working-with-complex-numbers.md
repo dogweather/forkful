@@ -7,9 +7,8 @@ model: gpt-4-1106-preview
 summary: "Complex numbers, consisting of a real and imaginary part, are essential\
   \ in various computational fields like engineering, physics, and signal processing.\u2026"
 title: Working with complex numbers
+weight: 14
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 

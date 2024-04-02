@@ -9,9 +9,8 @@ summary: "Arredondar n\xFAmeros \xE9 reduzir um n\xFAmero para uma precis\xE3o e
   fica. Programadores fazem isso para controlar a sa\xEDda num\xE9rica para leitura,\
   \ fins de\u2026"
 title: "Arredondamento de n\xFAmeros"
+weight: 13
 ---
-
-{{< edit_this_page >}}
 
 ## O Que & Por Quê?
 Arredondar números é reduzir um número para uma precisão específica. Programadores fazem isso para controlar a saída numérica para leitura, fins de exibição ou quando uma precisão específica é necessária após operações que produzem resultados de ponto flutuante.

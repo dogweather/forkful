@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Att skriva till standardfel (stderr) i Go inneb\xE4r att styra felmeddelanden\
   \ eller diagnostik som inte \xE4r avsedda f\xF6r huvudutdatastr\xF6mmen. Programmerare\u2026"
 title: Skriva till standardfel
+weight: 25
 ---
-
-{{< edit_this_page >}}
 
 ## Vad & Varför?
 

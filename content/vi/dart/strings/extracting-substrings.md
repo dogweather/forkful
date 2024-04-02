@@ -13,9 +13,8 @@ summary: "R\xFAt tr\xEDch c\xE1c chu\u1ED7i con l\xE0 vi\u1EC7c truy xu\u1EA5t c
   \ tr\xED ho\u1EB7c c\xE1c m\u1EABu. L\u1EADp tr\xECnh vi\xEAn th\u1EF1c hi\u1EC7\
   n \u0111i\u1EC1u n\xE0y cho c\xE1c nhi\u1EC7m v\u1EE5\u2026"
 title: "Tr\xEDch xu\u1EA5t chu\u1ED7i con"
+weight: 6
 ---
-
-{{< edit_this_page >}}
 
 ## Cái gì & Tại sao?
 Rút trích các chuỗi con là việc truy xuất các phần cụ thể của một chuỗi dựa trên vị trí hoặc các mẫu. Lập trình viên thực hiện điều này cho các nhiệm vụ như phân tích đầu vào của người dùng, thao tác dữ liệu, hoặc rút trích thông tin liên quan từ các nguồn văn bản lớn hơn.

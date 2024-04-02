@@ -9,9 +9,8 @@ summary: "D\xE9marrer un nouveau projet, c'est cr\xE9er un espace de travail vid
   \ pour vos id\xE9es de code. Les programmeurs font \xE7a pour organiser et isoler\
   \ le boulot sur\u2026"
 title: Lancement d'un nouveau projet
+weight: 1
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why? (Quoi et Pourquoi ?)
 Démarrer un nouveau projet, c'est créer un espace de travail vide pour vos idées de code. Les programmeurs font ça pour organiser et isoler le boulot sur une feature ou une app spécifique.

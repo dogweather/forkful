@@ -13,9 +13,8 @@ summary: "Vi\u1EC7c chuy\u1EC3n \u0111\u1ED5i m\u1ED9t chu\u1ED7i th\xE0nh ch\u1
   m b\u1EA3o s\u1EF1 th\u1ED1ng nh\u1EA5t v\xE0 nh\u1EA5t qu\xE1n trong x\u1EED l\xFD\
   \ v\u0103n b\u1EA3n, r\u1EA5t c\u1EA7n thi\u1EBFt cho c\xE1c t\xE1c\u2026"
 title: "Chuy\u1EC3n \u0111\u1ED5i chu\u1ED7i th\xE0nh ch\u1EEF th\u01B0\u1EDDng"
+weight: 4
 ---
-
-{{< edit_this_page >}}
 
 ## Gì & Tại Sao?
 

@@ -9,9 +9,8 @@ summary: "Zaczynanie nowego projektu oznacza stworzenie bazowej struktury katalo
   w i plik\xF3w potrzebnych do pracy. Programi\u015Bci robi\u0105 to, by szybko i\
   \ efektywnie\u2026"
 title: Rozpoczynanie nowego projektu
+weight: 1
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why? (Co i dlaczego?)
 Zaczynanie nowego projektu oznacza stworzenie bazowej struktury katalogów i plików potrzebnych do pracy. Programiści robią to, by szybko i efektywnie rozpocząć nowe zadanie, zachowując organizację i czystość kodu.

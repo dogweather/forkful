@@ -13,9 +13,8 @@ summary: "TOML \u662F\u4E00\u79CD\u4EBA\u7C7B\u53EF\u8BFB\u7684\u6570\u636E\u5E8
   \u7B80\u5355\u548C\u6E05\u6670\uFF0C\u80FD\u591F\u8F7B\u677E\u8F6C\u6362\u6210 Rust\
   \ \u4E2D\u7684\u54C8\u5E0C\u6620\u5C04\u3002"
 title: "\u4F7F\u7528TOML"
+weight: 39
 ---
-
-{{< edit_this_page >}}
 
 ## 什么 & 为什么？
 TOML 是一种人类可读的数据序列化语言，经常用于配置文件。程序员之所以使用 TOML，是因为它的简单和清晰，能够轻松转换成 Rust 中的哈希映射。

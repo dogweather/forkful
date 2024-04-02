@@ -12,9 +12,8 @@ summary: "Att organisera kod i funktioner handlar om att bunta ihop bitar av skr
   \ f\xF6r att g\xF6ra specifika uppgifter. Vi g\xF6r det eftersom det g\xF6r koden\
   \ enklare att\u2026"
 title: Organisera kod i funktioner
+weight: 18
 ---
-
-{{< edit_this_page >}}
 
 ## Vad & Varför?
 Att organisera kod i funktioner handlar om att bunta ihop bitar av skript för att göra specifika uppgifter. Vi gör det eftersom det gör koden enklare att läsa, testa och återanvända — ingen vill trassla igenom ett träsk av kodspaghetti.

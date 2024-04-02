@@ -11,9 +11,8 @@ summary: "\xC5 konkatere strenger involverer \xE5 sammenf\xF8ye to eller flere s
   \ ende-til-ende for \xE5 danne en ny streng. Programmerere gj\xF8r dette for \xE5\
   \ dynamisk\u2026"
 title: "Sammensl\xE5ing av strenger"
+weight: 3
 ---
-
-{{< edit_this_page >}}
 
 ## Hva & Hvorfor?
 

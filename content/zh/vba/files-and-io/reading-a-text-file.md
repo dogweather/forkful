@@ -19,9 +19,8 @@ summary: "\u5728 Visual Basic for Applications (VBA) \u4E2D\u8BFB\u53D6\u6587\u6
   \uFF0C\u4FBF\u4E8E\u5728 Office \u751F\u6001\u7CFB\u7EDF\u5185\u76F4\u63A5\u8FDB\
   \u884C\u81EA\u52A8\u5316\u548C\u6570\u636E\u64CD\u4F5C\u3002"
 title: "\u8BFB\u53D6\u6587\u672C\u6587\u4EF6"
+weight: 22
 ---
-
-{{< edit_this_page >}}
 
 ## 什么 & 为什么？
 

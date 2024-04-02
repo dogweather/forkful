@@ -7,9 +7,8 @@ model: gpt-4-1106-preview
 summary: "Logging ist die Praxis, Ereignisse, Fehler und andere bedeutsame Informationen\
   \ von laufenden Prozessen eines Programms in eine Datei oder einen\u2026"
 title: Protokollierung
+weight: 17
 ---
-
-{{< edit_this_page >}}
 
 ## Was & Warum?
 

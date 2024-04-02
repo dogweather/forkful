@@ -13,9 +13,8 @@ summary: "Vi\u1EC7c ki\u1EC3m tra xem m\u1ED9t th\u01B0 m\u1EE5c c\xF3 t\u1ED3n 
   \ m\u1ED9t th\u01B0 m\u1EE5c tr\xEAn b\u1ED9 nh\u1EDB c\u1EE7a b\u1EA1n tr\u01B0\
   \u1EDBc khi b\u1EA1n th\u1EF1c hi\u1EC7n m\u1ED9t s\u1ED1 thao\u2026"
 title: "Ki\u1EC3m tra xem th\u01B0 m\u1EE5c c\xF3 t\u1ED3n t\u1EA1i kh\xF4ng"
+weight: 20
 ---
-
-{{< edit_this_page >}}
 
 ## Cái gì và Tại sao?
 Việc kiểm tra xem một thư mục có tồn tại hay không là việc xác minh sự hiện diện của một thư mục trên bộ nhớ của bạn trước khi bạn thực hiện một số thao tác với nó. Các lập trình viên làm điều này để tránh lỗi, như cố gắng tạo một thư mục đã tồn tại, hoặc truy cập một thư mục không tồn tại.

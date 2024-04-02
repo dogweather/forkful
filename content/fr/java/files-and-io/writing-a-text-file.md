@@ -11,9 +11,8 @@ summary: "\xC9crire un fichier texte en Java consiste \xE0 utiliser les capacit\
   s du langage pour cr\xE9er et \xE9crire du contenu dans des fichiers sur le syst\xE8\
   me de fichiers.\u2026"
 title: "R\xE9diger un fichier texte"
+weight: 24
 ---
-
-{{< edit_this_page >}}
 
 ## Quoi & Pourquoi ?
 

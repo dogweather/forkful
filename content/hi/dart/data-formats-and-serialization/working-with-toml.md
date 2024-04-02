@@ -26,9 +26,8 @@ summary: "TOML, \u092F\u093E \u091F\u0949\u092E \u0915\u0940 \u0938\u094D\u092A\
   \u092F\u094B\u0917\u2026"
 title: "TOML \u0915\u0947 \u0938\u093E\u0925 \u0915\u093E\u092E \u0915\u0930\u0928\
   \u093E"
+weight: 39
 ---
-
-{{< edit_this_page >}}
 
 ## क्या और क्यों?
 

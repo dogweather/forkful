@@ -11,9 +11,8 @@ summary: "Trovare la lunghezza di una stringa in Google Apps Script, un linguagg
   \ di scripting cloud JavaScript che consente di automatizzare le attivit\xE0 per\
   \ i\u2026"
 title: Trovare la lunghezza di una stringa
+weight: 7
 ---
-
-{{< edit_this_page >}}
 
 ## Cosa & Perché?
 Trovare la lunghezza di una stringa in Google Apps Script, un linguaggio di scripting cloud JavaScript che consente di automatizzare le attività per i prodotti Google, consiste nel determinare il numero di caratteri che contiene una stringa. I programmatori eseguono frequentemente quest'operazione per verificare l'input, eseguire cicli sui caratteri o manipolare le stringhe per vari compiti di automazione all'interno delle App Google.

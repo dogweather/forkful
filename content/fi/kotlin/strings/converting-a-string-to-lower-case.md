@@ -9,9 +9,8 @@ summary: "\"Mit\xE4 & Miksi?\" Stringin muuttaminen pieniksi kirjaimiksi tarkoit
   \ alkuper\xE4isen merkkijonon muuntamista versioksi, jossa kaikki isot kirjaimet\
   \ ovat\u2026"
 title: Merkkijonon muuntaminen pieniksi kirjaimiksi
+weight: 4
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 "Mitä & Miksi?"

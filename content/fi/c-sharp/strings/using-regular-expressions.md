@@ -11,9 +11,8 @@ summary: "S\xE4\xE4nn\xF6lliset lausekkeet (regex) C#:ssa ovat tehokas ty\xF6kal
   \ merkkijonojen sis\xE4ll\xE4 tapahtuvaan mallin tunnistamiseen, jonka avulla ohjelmoijat\
   \ voivat\u2026"
 title: "S\xE4\xE4nn\xF6llisten lausekkeiden k\xE4ytt\xF6"
+weight: 11
 ---
-
-{{< edit_this_page >}}
 
 ## Mikä ja miksi?
 Säännölliset lausekkeet (regex) C#:ssa ovat tehokas työkalu merkkijonojen sisällä tapahtuvaan mallin tunnistamiseen, jonka avulla ohjelmoijat voivat tehokkaasti etsiä, korvata, jakaa tai poimia tietoja. Ohjelmoijat käyttävät regexiä tehtäviin, jotka vaihtelevat yksinkertaisista validoista, kuten sähköpostimuodon tarkistuksesta, monimutkaisiin tekstinkäsittelytehtäviin sen joustavuuden ja suorituskyvyn vuoksi.

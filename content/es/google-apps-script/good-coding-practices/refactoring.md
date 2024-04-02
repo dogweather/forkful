@@ -11,9 +11,8 @@ summary: "Refactorizar, en el l\xE9xico de programaci\xF3n, se refiere al proces
   \ de reestructurar el c\xF3digo de computadora existente\u2014cambiando la facturaci\xF3\
   n sin cambiar\u2026"
 title: "Refactorizaci\xF3n"
+weight: 19
 ---
-
-{{< edit_this_page >}}
 
 ## ¿Qué y Por Qué?
 

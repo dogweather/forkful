@@ -13,9 +13,8 @@ summary: "T\u1EA1o m\u1ED9t t\u1EADp tin t\u1EA1m th\u1EDDi trong Bash c\xF3 ngh
   \ b\u1EA1n c\xF3 th\u1EC3 s\u1EED d\u1EE5ng \u0111\u1EC3 l\u01B0u tr\u1EEF d\u1EEF\
   \ li\u1EC7u m\u1ED9t c\xE1ch ng\u1EAFn g\u1ECDn. L\u1EADp tr\xECnh\u2026"
 title: "T\u1EA1o m\u1ED9t t\u1EADp tin t\u1EA1m th\u1EDDi"
+weight: 21
 ---
-
-{{< edit_this_page >}}
 
 ## Cái gì & Tại sao?
 Tạo một tập tin tạm thời trong Bash có nghĩa là tạo một tập tin mà các kịch bản của bạn có thể sử dụng để lưu trữ dữ liệu một cách ngắn gọn. Lập trình viên làm điều này để lưu giữ các thông tin nhỏ trong khi thực hiện các nhiệm vụ phức tạp, tránh làm đầy ổ cứng, và để giảm thiểu xung đột giữa các quá trình khác nhau cố gắng sử dụng cùng một tập tin.

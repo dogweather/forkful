@@ -1,14 +1,15 @@
 ---
 date: 2024-01-26 03:47:23.601844-07:00
-description: "Usar un depurador en Bash significa aprovechar herramientas para probar\
-  \ y encontrar problemas en tus scripts, como atrapar errores que hacen que tu c\xF3\
-  digo\u2026"
+description: "Bash no viene con un depurador incorporado como algunos otros lenguajes,\
+  \ pero puedes usar comandos integrados como `set -x` para rastrear lo que est\xE1\
+  \u2026"
 lastmod: '2024-03-13T22:44:59.251057-06:00'
 model: gpt-4-0125-preview
-summary: "Usar un depurador en Bash significa aprovechar herramientas para probar\
-  \ y encontrar problemas en tus scripts, como atrapar errores que hacen que tu c\xF3\
-  digo\u2026"
+summary: "Bash no viene con un depurador incorporado como algunos otros lenguajes,\
+  \ pero puedes usar comandos integrados como `set -x` para rastrear lo que est\xE1\
+  \u2026"
 title: Usando un depurador
+weight: 35
 ---
 
 ## Cómo hacerlo:

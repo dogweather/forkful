@@ -9,9 +9,8 @@ summary: "En REPL (Read-Eval-Print Loop) er et enkelt, interaktivt programmering
   . Programmerere bruker det for raske kodingstester, teste kodebiter eller l\xE6\
   re\u2026"
 title: Bruke et interaktivt skall (REPL)
+weight: 34
 ---
-
-{{< edit_this_page >}}
 
 ## Hva & Hvorfor?
 En REPL (Read-Eval-Print Loop) er et enkelt, interaktivt programmeringsmiljø. Programmerere bruker det for raske kodingstester, teste kodebiter eller lære en programmeringsspråks syntaks uten å lage en fullstendig applikasjon.

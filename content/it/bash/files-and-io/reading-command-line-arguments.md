@@ -9,9 +9,8 @@ summary: "Leggere gli argomenti della riga di comando consente agli script Bash 
   \ ricevere parametri esterni, rendendoli pi\xF9 flessibili. I programmatori fanno\
   \ ci\xF2\u2026"
 title: Lettura degli argomenti della riga di comando
+weight: 23
 ---
-
-{{< edit_this_page >}}
 
 ## Cosa & Perché?
 Leggere gli argomenti della riga di comando consente agli script Bash di ricevere parametri esterni, rendendoli più flessibili. I programmatori fanno ciò per personalizzare l'esecuzione degli script in base agli input forniti dall'utente.

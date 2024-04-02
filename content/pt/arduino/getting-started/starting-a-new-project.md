@@ -9,9 +9,8 @@ summary: "Iniciar um novo projeto Arduino significa criar um esbo\xE7o (sketch) 
   \ zero, um c\xF3digo que vai dar vida \xE0 sua ideia. Programadores pegam essa rota\
   \ para\u2026"
 title: Iniciando um novo projeto
+weight: 1
 ---
-
-{{< edit_this_page >}}
 
 ## O Que & Por Quê?
 

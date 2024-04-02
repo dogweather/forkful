@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Die Arbeit mit JSON umfasst das Parsen von JSON-formatierten Strings in\
   \ Datenstrukturen, die Elixir manipulieren kann, und das Serialisieren von Elixir-\u2026"
 title: Arbeiten mit JSON
+weight: 38
 ---
-
-{{< edit_this_page >}}
 
 ## Was und Warum?
 

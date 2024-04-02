@@ -13,9 +13,8 @@ summary: "\u4F7F\u7528XML\u610F\u5473\u7740\u901A\u8FC7\u7F16\u7A0B\u89E3\u6790\
   \u7528\u4E8E\u914D\u7F6E\u6587\u4EF6\uFF0C\u6216\u8005\u5904\u7406\u4F9D\u8D56XML\u7684\
   \u6807\u51C6\uFF0C\u5982SOAP\u3002"
 title: "\u5904\u7406XML"
+weight: 40
 ---
-
-{{< edit_this_page >}}
 
 ## 什么 & 为什么?
 使用XML意味着通过编程解析、处理和编写XML数据。程序员处理XML是为了跨不同系统交换数据，用于配置文件，或者处理依赖XML的标准，如SOAP。

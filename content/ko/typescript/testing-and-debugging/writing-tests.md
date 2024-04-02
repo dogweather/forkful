@@ -23,9 +23,8 @@ summary: "TypeScript\uC5D0\uC11C \uD14C\uC2A4\uD2B8\uB97C \uC791\uC131\uD55C\uB2
   \uD558\uAC8C \uD558\uAE30 \uC704\uD574 \uC774 \uC791\uC5C5\uC744 \uD569\uB2C8\uB2E4\
   .\u2026"
 title: "\uD14C\uC2A4\uD2B8 \uC791\uC131\uD558\uAE30"
+weight: 36
 ---
-
-{{< edit_this_page >}}
 
 ## 무엇 & 왜?
 TypeScript에서 테스트를 작성한다는 것은 코드의 기능성과 정확성을 검증하기 위한 자동화된 스크립트를 만드는 것을 의미합니다. 프로그래머들은 신뢰성을 보장하고, 버그를 빠르게 발견하며, 유지보수 가능한 코드 성장을 용이하게 하기 위해 이 작업을 합니다. TypeScript의 정적 타이핑은 JavaScript 테스트에 예측 가능성을 추가해 줍니다.

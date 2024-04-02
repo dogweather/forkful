@@ -19,9 +19,8 @@ summary: "\u5728 Rust \u4E2D\u89E3\u6790 HTML \u610F\u5473\u7740\u4ECE HTML \u65
   \u5BB9\u6216\u5C06\u5185\u5BB9\u4ECE\u4E00\u4E2A\u5E73\u53F0\u8FC1\u79FB\u5230\u53E6\
   \u4E00\u4E2A\u5E73\u53F0\u3002"
 title: "\u89E3\u6790HTML"
+weight: 43
 ---
-
-{{< edit_this_page >}}
 
 ## 什么 & 为什么？
 

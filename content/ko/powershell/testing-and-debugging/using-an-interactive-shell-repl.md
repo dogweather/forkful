@@ -19,9 +19,8 @@ summary: "\uC778\uD130\uB799\uD2F0\uBE0C \uC178, \uB610\uB294 Read-Eval-Print Lo
   \uD2B8\uB97C \uC791\uC131\uD558\uC9C0 \uC54A\uACE0 \uC0C8 \uBA85\uB839\uC5B4\uB97C\
   \ \uD559\uC2B5\uD560\u2026"
 title: "\uC778\uD130\uB799\uD2F0\uBE0C \uC178 (REPL) \uC0AC\uC6A9\uD558\uAE30"
+weight: 34
 ---
-
-{{< edit_this_page >}}
 
 ## 무엇 & 왜?
 인터랙티브 셸, 또는 Read-Eval-Print Loop (REPL)은 PowerShell 명령어를 입력하고 즉각적인 피드백을 받을 수 있게 해줍니다. 프로그래머들은 이를 통해 코드 조각을 빠르게 테스트하거나, 디버깅하거나, 전체 스크립트를 작성하지 않고 새 명령어를 학습할 수 있습니다.

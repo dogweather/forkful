@@ -10,9 +10,8 @@ model: gpt-4-0125-preview
 summary: "JSON (Notaci\xF3n de Objetos de JavaScript) es un formato ligero de intercambio\
   \ de datos, prevalente en aplicaciones web para el intercambio de datos entre\u2026"
 title: Trabajando con JSON
+weight: 38
 ---
-
-{{< edit_this_page >}}
 
 ## Qué y Por Qué?
 

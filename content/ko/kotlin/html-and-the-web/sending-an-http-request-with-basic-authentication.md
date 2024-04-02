@@ -19,9 +19,8 @@ summary: "HTTP \uC694\uCCAD\uC5D0 \uAE30\uBCF8 \uC778\uC99D(Basic Authentication
   \ \uC218 \uC788\uC2B5\uB2C8\uB2E4."
 title: "\uAE30\uBCF8 \uC778\uC99D\uC744 \uC0AC\uC6A9\uD55C HTTP \uC694\uCCAD \uBCF4\
   \uB0B4\uAE30"
+weight: 45
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why? (무엇과 왜?)
 HTTP 요청에 기본 인증(Basic Authentication)을 추가하는 것은 사용자 이름과 비밀번호를 서버에 전송하여 인증을 요청하는 과정입니다. 프로그래머들은 이 방법을 사용하여 보안이 필요한 리소스에 액세스할 수 있습니다.

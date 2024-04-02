@@ -10,9 +10,8 @@ model: gpt-4-0125-preview
 summary: "Controllare se una directory esiste \xE8 un'operazione fondamentale in molti\
   \ compiti di programmazione, permettendo di eseguire azioni condizionali basate\u2026"
 title: Verifica se una directory esiste
+weight: 20
 ---
-
-{{< edit_this_page >}}
 
 ## Cosa & Perché?
 Controllare se una directory esiste è un'operazione fondamentale in molti compiti di programmazione, permettendo di eseguire azioni condizionali basate sulla presenza o assenza di strutture di directory. È cruciale per la manipolazione di file, script automatizzati e durante l'installazione iniziale del software per assicurarsi che le directory necessarie siano al loro posto, o per evitare la duplicazione delle directory.

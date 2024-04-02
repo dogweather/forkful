@@ -11,9 +11,8 @@ summary: "Capitaliser une cha\xEEne de caract\xE8res en Swift modifie la cha\xEE
   \ donn\xE9e de mani\xE8re que son premier caract\xE8re soit en majuscule et les\
   \ caract\xE8res restants\u2026"
 title: "Mettre en majuscule une cha\xEEne"
+weight: 2
 ---
-
-{{< edit_this_page >}}
 
 ## Quoi & Pourquoi ?
 

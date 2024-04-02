@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "La creazione di un file temporaneo in Visual Basic for Applications (VBA)\
   \ comporta la generazione programmata di un file per un uso a breve termine,\u2026"
 title: Creazione di un file temporaneo
+weight: 21
 ---
-
-{{< edit_this_page >}}
 
 ## Cosa & Perché?
 

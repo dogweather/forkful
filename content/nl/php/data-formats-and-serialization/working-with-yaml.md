@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "YAML is een door mensen leesbaar gegevensserialisatieformaat. Programmeurs\
   \ gebruiken het voor configuratiebestanden, gegevensuitwisseling en opslag\u2026"
 title: Werken met YAML
+weight: 41
 ---
-
-{{< edit_this_page >}}
 
 ## Wat & Waarom?
 

@@ -9,9 +9,8 @@ summary: "Baixar uma p\xE1gina da web significa fazer o download do conte\xFAdo 
   \ de um site para analisar ou processar de alguma forma. Programadores fazem isso\
   \ para\u2026"
 title: "Baixando uma p\xE1gina da web"
+weight: 42
 ---
-
-{{< edit_this_page >}}
 
 ## O Que & Porquê?
 

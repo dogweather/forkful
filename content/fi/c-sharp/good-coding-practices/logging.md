@@ -7,9 +7,8 @@ model: gpt-4-1106-preview
 summary: "Lokitus on sovelluksen tapahtumien ja tiedon tulostuksen tallentamista suoritusaikana.\
   \ Ohjelmoijat luovat lokeja vikojen diagnostiikkaa, ohjelmiston\u2026"
 title: Lokitus
+weight: 17
 ---
-
-{{< edit_this_page >}}
 
 ## Mikä & Miksi?
 Lokitus on sovelluksen tapahtumien ja tiedon tulostuksen tallentamista suoritusaikana. Ohjelmoijat luovat lokeja vikojen diagnostiikkaa, ohjelmiston suorituskyvyn valvontaa, käyttäjän toimien seurantaa ja turvallisuus- sekä liiketoimintastandardien noudattamisen ylläpitoa varten.

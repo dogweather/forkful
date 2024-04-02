@@ -8,9 +8,8 @@ model: gpt-4-1106-preview
 summary: "\xC5 sammenligne to datoer betyr enkelt og greit \xE5 finne ut hvilken som\
   \ er tidligst, senest eller om de er like. Det gj\xF8r programmerere for \xE5 kontrollere\u2026"
 title: Sammenlikning av to datoer
+weight: 27
 ---
-
-{{< edit_this_page >}}
 
 ## Hva & Hvorfor?
 Å sammenligne to datoer betyr enkelt og greit å finne ut hvilken som er tidligst, senest eller om de er like. Det gjør programmerere for å kontrollere tidsfrister, beregne varighet, og håndtere hendelser.

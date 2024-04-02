@@ -9,9 +9,8 @@ summary: "Cr\xE9er un fichier temporaire c'est comme griffonner sur un bout de p
   \ pour ne pas oublier quelque chose \u2013 c'est provisoire. Les programmeurs en\
   \ ont\u2026"
 title: "Cr\xE9ation d'un fichier temporaire"
+weight: 21
 ---
-
-{{< edit_this_page >}}
 
 ## Quoi & Pourquoi ?
 

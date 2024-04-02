@@ -8,9 +8,8 @@ model: gpt-4-0125-preview
 summary: "Les nombres complexes sont des nombres ayant une partie r\xE9elle et une\
   \ partie imaginaire (comme 3 + 4i). Ils apparaissent dans divers probl\xE8mes de\u2026"
 title: Manipulation des nombres complexes
+weight: 14
 ---
-
-{{< edit_this_page >}}
 
 ## Quoi & Pourquoi ?
 Les nombres complexes sont des nombres ayant une partie réelle et une partie imaginaire (comme 3 + 4i). Ils apparaissent dans divers problèmes de programmation, notamment dans le traitement des signaux, l'informatique quantique, et la résolution d'équations polynomiales. Les programmeurs les manipulent pour résoudre efficacement ce type de tâches.

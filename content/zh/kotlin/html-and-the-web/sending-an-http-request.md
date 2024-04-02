@@ -14,9 +14,8 @@ summary: "\u4EC0\u9EBC\u548C\u70BA\u4EC0\u9EBC\uFF1F \u53D1\u9001HTTP\u8BF7\u6C4
   \u4E3A\u4E86\u4E0E\u8FDC\u7A0B\u670D\u52A1\u4EA4\u4E92\uFF0C\u83B7\u53D6\u6570\u636E\
   \u6216\u8005\u89E6\u53D1\u7F51\u7EDC\u4E0A\u7684\u884C\u4E3A\u3002"
 title: "\u53D1\u51FA HTTP \u8BF7\u6C42"
+weight: 44
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 什麼和為什麼？ 发送HTTP请求就是向一个服务器发送一条消息并等待响应。程序员这么做主要是为了与远程服务交互，获取数据或者触发网络上的行为。

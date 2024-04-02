@@ -11,9 +11,8 @@ summary: "O formato Comma-Separated Values (CSV) \xE9 onipresente para a troca d
   \ dados devido \xE0 sua simplicidade e facilidade de integra\xE7\xE3o com a maioria\
   \ das\u2026"
 title: Trabalhando com CSV
+weight: 37
 ---
-
-{{< edit_this_page >}}
 
 ## O que & Por quê?
 

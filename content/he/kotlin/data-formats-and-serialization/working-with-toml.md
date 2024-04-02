@@ -19,9 +19,8 @@ summary: "TOML \u05D4\u05D5\u05D0 \u05E8\u05D0\u05E9\u05D9 \u05EA\u05D9\u05D1\u0
   \u05DD, \u05EA\u05D5\u05DA \u05DB\u05D3\u05D9 \u05E9\u05E0\u05D5\u05EA\u05E8 \u05E7\
   \u05DC \u05DC\u05E0\u05D9\u05EA\u05D5\u05D7\u2026"
 title: "\u05E2\u05D1\u05D5\u05D3\u05D4 \u05E2\u05DD TOML"
+weight: 39
 ---
-
-{{< edit_this_page >}}
 
 ## מה ולמה?
 TOML הוא ראשי תיבות של Tom's Obvious, Minimal Language. הוא משמש לקבצי קונפיגורציה מכיוון שהוא קל לקריאה ולכתיבה עבור בני אדם, תוך כדי שנותר קל לניתוח עבור מכונות. מפתחים נעזרים ב-TOML כדי להימנע מהבלאגן של XML ומהמכשולים של JSON בעת שליחת קונפיגורציות.

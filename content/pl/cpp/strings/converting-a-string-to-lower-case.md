@@ -9,9 +9,8 @@ summary: "Zmiana napis\xF3w na ma\u0142e litery oznacza przekszta\u0142cenie wsz
   \ liter w ci\u0105gu znak\xF3w na ich ma\u0142e odpowiedniki. Robimy to dla ujednolicenia\
   \ danych,\u2026"
 title: "Konwersja ci\u0105gu znak\xF3w na ma\u0142e litery"
+weight: 4
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why? (Co i Dlaczego?)
 Zmiana napisów na małe litery oznacza przekształcenie wszystkich liter w ciągu znaków na ich małe odpowiedniki. Robimy to dla ujednolicenia danych, łatwiejszego porównywania stringów, czy też przygotowania tekstu do wyszukiwań czy sortowań niezależnych od wielkości liter.

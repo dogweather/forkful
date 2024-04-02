@@ -7,9 +7,8 @@ model: gpt-4-1106-preview
 summary: "La creazione di un file temporaneo \xE8 il processo di generazione di un\
   \ file che si intende utilizzare per un breve periodo di tempo. In Rust, i\u2026"
 title: Creazione di un file temporaneo
+weight: 21
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 La creazione di un file temporaneo è il processo di generazione di un file che si intende utilizzare per un breve periodo di tempo. In Rust, i programmatori lo fanno per gestire dati temporanei senza preoccuparsi di possibili conflitti di nomi di file o della pulizia dei file dopo l'uso.

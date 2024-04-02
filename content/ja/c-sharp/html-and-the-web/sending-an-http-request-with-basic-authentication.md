@@ -19,9 +19,8 @@ summary: "HTTP\u30EA\u30AF\u30A8\u30B9\u30C8\u3092Basic\u8A8D\u8A3C\u3067\u9001\
   \u3057\u307E\u3059\u3002"
 title: "\u57FA\u672C\u8A8D\u8A3C\u3092\u4F7F\u7528\u3057\u305FHTTP\u30EA\u30AF\u30A8\
   \u30B9\u30C8\u306E\u9001\u4FE1"
+weight: 45
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why? (何となぜ？)
 HTTPリクエストをBasic認証で送るのは、サーバーへセキュアな方法でユーザー認証情報を伝えるプロセスです。プログラマーはこの方法を使い、認証が必要なAPIやリソースへ安全にアクセスします。

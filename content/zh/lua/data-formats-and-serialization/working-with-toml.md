@@ -13,9 +13,8 @@ summary: "\u4F7F\u7528TOML\u6D89\u53CA\u4F7F\u7528Lua\u89E3\u6790\u548C\u751F\u6
   \u4EF6\uFF0C\u7531\u4E8E\u5176\u53EF\u8BFB\u6027\u548C\u7B80\u5355\u7684\u8BED\u6CD5\
   \u5F88\u5BB9\u6613\u8F6C\u6362\u4E3A\u6570\u636E\u7ED3\u6784\u3002"
 title: "\u4F7F\u7528TOML"
+weight: 39
 ---
-
-{{< edit_this_page >}}
 
 ## 什么 & 为什么？
 使用TOML涉及使用Lua解析和生成TOML（Tom的显而易见的最简语言）数据。程序员使用TOML来编写配置文件，由于其可读性和简单的语法很容易转换为数据结构。

@@ -7,9 +7,8 @@ model: gpt-4-0125-preview
 summary: "Refactoring in Dart is the process of restructuring existing code without\
   \ changing its external behavior, aimed at improving its internal structure,\u2026"
 title: Refactoring
+weight: 19
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 

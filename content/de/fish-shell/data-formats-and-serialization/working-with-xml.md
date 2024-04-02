@@ -7,9 +7,8 @@ model: gpt-4-0125-preview
 summary: "Mit XML zu arbeiten bedeutet, Daten in einem weit verbreiteten, strukturierten\
   \ Format zu handhaben, das in Konfigurationen, Nachrichten\xFCbermittlungen und\u2026"
 title: Arbeiten mit XML
+weight: 40
 ---
-
-{{< edit_this_page >}}
 
 ## Was & Warum?
 Mit XML zu arbeiten bedeutet, Daten in einem weit verbreiteten, strukturierten Format zu handhaben, das in Konfigurationen, Nachrichtenübermittlungen und mehr verwendet wird. Programmierer manipulieren XML, um Daten zu lesen, zu schreiben, zu aktualisieren und abzufragen – entscheidend für die Interoperabilität in unzähligen Apps und Diensten.

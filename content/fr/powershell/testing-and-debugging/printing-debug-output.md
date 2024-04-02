@@ -9,9 +9,8 @@ summary: "L'impression de sorties de d\xE9bogage, c'est afficher les valeurs et 
   \ \xE9tats de votre script pendant son ex\xE9cution. On fait \xE7a pour comprendre\
   \ ce qui se\u2026"
 title: "Affichage des sorties de d\xE9bogage"
+weight: 33
 ---
-
-{{< edit_this_page >}}
 
 ## Quoi & Pourquoi ?
 L'impression de sorties de débogage, c'est afficher les valeurs et les états de votre script pendant son exécution. On fait ça pour comprendre ce qui se passe sous le capot et pour traquer les bugs.

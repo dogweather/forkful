@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Scrivere test in Bash comporta la creazione di script per casi di test al\
   \ fine di convalidare la funzionalit\xE0 dei vostri script Bash. I programmatori\u2026"
 title: Scrivere test
+weight: 36
 ---
-
-{{< edit_this_page >}}
 
 ## Cosa e perché?
 Scrivere test in Bash comporta la creazione di script per casi di test al fine di convalidare la funzionalità dei vostri script Bash. I programmatori conducono test per assicurarsi che i loro script funzionino come previsto in varie condizioni, intercettando errori e bug prima del rilascio.

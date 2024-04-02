@@ -11,9 +11,8 @@ summary: "\xC9crire des tests en Dart consiste \xE0 cr\xE9er des cas de test pou
   \ v\xE9rifier automatiquement que diff\xE9rentes parties de votre programme fonctionnent\
   \ comme\u2026"
 title: "R\xE9daction de tests"
+weight: 36
 ---
-
-{{< edit_this_page >}}
 
 ## Quoi & Pourquoi ?
 

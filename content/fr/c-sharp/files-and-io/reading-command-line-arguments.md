@@ -7,9 +7,8 @@ model: gpt-4-1106-preview
 summary: "Les arguments de ligne de commande sont les donn\xE9es que vous balancez\
   \ \xE0 votre programme au d\xE9marrage. Les programmeurs s'en servent pour customiser\u2026"
 title: Lecture des arguments de ligne de commande
+weight: 23
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 Les arguments de ligne de commande sont les données que vous balancez à votre programme au démarrage. Les programmeurs s'en servent pour customiser l'exécution sans recompilation – pratique pour les configs, les modes de debug, et tout ce qui est input variable.

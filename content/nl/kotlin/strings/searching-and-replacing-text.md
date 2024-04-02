@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Tekst zoeken en vervangen is als verstoppertje spelen met strings, om vervolgens\
   \ de verstopper te ruilen met iemand anders. Het is een veelvoorkomende\u2026"
 title: Tekst zoeken en vervangen
+weight: 10
 ---
-
-{{< edit_this_page >}}
 
 ## Wat & Waarom?
 Tekst zoeken en vervangen is als verstoppertje spelen met strings, om vervolgens de verstopper te ruilen met iemand anders. Het is een veelvoorkomende programmeertaak, essentieel voor taken zoals bulkbewerking, gegevenssanering en het automatiseren van saaie klusjes.

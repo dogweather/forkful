@@ -9,9 +9,8 @@ summary: "Das Vergleichen von zwei Daten bedeutet, zu \xFCberpr\xFCfen, welches 
   \ fr\xFCher ist, sp\xE4ter oder ob sie identisch sind. Programmierer machen das,\
   \ um Termine\u2026"
 title: Vergleich von zwei Daten
+weight: 27
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why? (Was & Warum?)
 Das Vergleichen von zwei Daten bedeutet, zu überprüfen, welches Datum früher ist, später oder ob sie identisch sind. Programmierer machen das, um Termine zu sortieren, Ereignisse zu planen oder Zeitspannen zu berechnen.

@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "\xC5 skrive en tekstfil i JavaScript handler ofte om \xE5 opprette og lagre\
   \ data i et enkelt, lesbart format for logging, eksport av brukerinndata eller\u2026"
 title: Skrive en tekstfil
+weight: 24
 ---
-
-{{< edit_this_page >}}
 
 ## Hva & Hvorfor?
 Å skrive en tekstfil i JavaScript handler ofte om å opprette og lagre data i et enkelt, lesbart format for logging, eksport av brukerinndata eller konfigurasjonsformål. Denne funksjonaliteten er avgjørende for applikasjoner som trenger å bevare data utover levetiden til applikasjonsprosessen, og tilbyr en måte å lagre og senere hente eller dele informasjon på.

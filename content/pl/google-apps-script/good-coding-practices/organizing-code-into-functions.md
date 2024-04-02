@@ -11,9 +11,8 @@ summary: "Organizacja kodu w funkcje polega na strukturyzowaniu kodu Google Apps
   \ poprzez oddzielanie logicznych segment\xF3w w odr\u0119bne bloki, z kt\xF3rych\
   \ ka\u017Cdy\u2026"
 title: Organizacja kodu w funkcje
+weight: 18
 ---
-
-{{< edit_this_page >}}
 
 ## Co & Dlaczego?
 

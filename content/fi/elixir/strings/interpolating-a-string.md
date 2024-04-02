@@ -9,9 +9,8 @@ summary: "Mik\xE4 on merkkijonointerpolointi, ja miksi sit\xE4 k\xE4ytet\xE4\xE4
   \ Elixiriss\xE4 merkkijonointerpolointi tarkoittaa muuttujan arvon \"liitt\xE4mist\xE4\
   \" merkkijonoon. Sit\xE4\u2026"
 title: Merkkijonon interpolointi
+weight: 8
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 Mikä on merkkijonointerpolointi, ja miksi sitä käytetään? Elixirissä merkkijonointerpolointi tarkoittaa muuttujan arvon "liittämistä" merkkijonoon. Sitä käytetään dynaamisen tekstin luontiin, mikä tekee koodista selkeämpää ja ylläpidettävämpää.

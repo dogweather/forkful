@@ -10,9 +10,8 @@ model: gpt-4-0125-preview
 summary: "PowerShellin integraatio JSONiin (JavaScript Object Notation) liittyy JSON-tietojen\
   \ j\xE4sent\xE4miseen (lukeminen) ja tuottamiseen (kirjoittaminen), mik\xE4 on\u2026"
 title: "Ty\xF6skentely JSON:n kanssa"
+weight: 38
 ---
-
-{{< edit_this_page >}}
 
 ## Mikä & Miksi?
 

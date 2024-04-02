@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Code groeperen in functies is het opsplitsen van taken in herbruikbare blokken.\
   \ Hierdoor wordt de code overzichtelijk, minder foutgevoelig en makkelijker\u2026"
 title: Code organiseren in functies
+weight: 18
 ---
-
-{{< edit_this_page >}}
 
 ## Wat & Waarom?
 Code groeperen in functies is het opsplitsen van taken in herbruikbare blokken. Hierdoor wordt de code overzichtelijk, minder foutgevoelig en makkelijker te debuggen of te refactoren.

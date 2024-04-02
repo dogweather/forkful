@@ -11,9 +11,8 @@ summary: "Pisanie pliku tekstowego w TypeScript jest kluczow\u0105 umiej\u0119tn
   ci\u0105 dla trwa\u0142o\u015Bci danych, konfiguracji lub generowania log\xF3w.\
   \ Programi\u015Bci cz\u0119sto wykonuj\u0105 to\u2026"
 title: Pisanie pliku tekstowego
+weight: 24
 ---
-
-{{< edit_this_page >}}
 
 ## Co i dlaczego?
 Pisanie pliku tekstowego w TypeScript jest kluczową umiejętnością dla trwałości danych, konfiguracji lub generowania logów. Programiści często wykonują to zadanie, aby przechowywać i manipulować danymi poza pamięcią aplikacji z powodów takich jak analiza danych, raportowanie lub po prostu zapisywanie ustawień użytkownika między sesjami.

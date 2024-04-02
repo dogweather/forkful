@@ -8,9 +8,8 @@ summary: Downloading a web page means grabbing the HTML content of a page via HT
   Programmers do it to interact with web data, scrape content, or automate tests.
 title: "\u0417\u0430\u0432\u0430\u043D\u0442\u0430\u0436\u0435\u043D\u043D\u044F \u0432\
   \u0435\u0431-\u0441\u0442\u043E\u0440\u0456\u043D\u043A\u0438"
+weight: 42
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why? (Що і Чому?)
 Downloading a web page means grabbing the HTML content of a page via HTTP. Programmers do it to interact with web data, scrape content, or automate tests.

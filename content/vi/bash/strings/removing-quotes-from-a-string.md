@@ -13,9 +13,8 @@ summary: "Lo\u1EA1i b\u1ECF d\u1EA5u ngo\u1EB7c kh\u1ECFi m\u1ED9t chu\u1ED7i ba
   \ chu\u1ED7i \u0111\xF3. C\xE1c l\u1EADp tr\xECnh vi\xEAn th\u01B0\u1EDDng mu\u1ED1\
   n l\xE0m \u0111i\u1EC1u n\xE0y \u0111\u1EC3 l\xE0m s\u1EA1ch d\u1EEF li\u1EC7u\u2026"
 title: "Lo\u1EA1i b\u1ECF d\u1EA5u ngo\u1EB7c k\xE9p kh\u1ECFi chu\u1ED7i"
+weight: 9
 ---
-
-{{< edit_this_page >}}
 
 ## Là gì & Tại sao?
 Loại bỏ dấu ngoặc khỏi một chuỗi bao gồm việc gỡ bỏ các dấu ngoặc kép bao quanh chuỗi đó. Các lập trình viên thường muốn làm điều này để làm sạch dữ liệu đầu vào, chuẩn bị dữ liệu cho mục đích so sánh, hoặc tuân thủ một định dạng dữ liệu cụ thể khi giao tiếp với các chương trình hoặc hệ thống khác.

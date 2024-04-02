@@ -9,9 +9,8 @@ summary: "String-L\xE4ngen messen, bedeutet, zu z\xE4hlen, wie viele Zeichen in 
   \ Zeichenkette stecken. Programmierer brauchen das, um Daten zu validieren, Slices\
   \ zu\u2026"
 title: "Ermittlung der Zeichenkettenl\xE4nge"
+weight: 7
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why? (Was & Warum?)
 String-Längen messen, bedeutet, zu zählen, wie viele Zeichen in einer Zeichenkette stecken. Programmierer brauchen das, um Daten zu validieren, Slices zu handhaben oder die Ausgabe zu formatieren.

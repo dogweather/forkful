@@ -10,9 +10,8 @@ model: gpt-4-0125-preview
 summary: "Het verwijderen van aanhalingstekens uit een string in Dart houdt in dat\
   \ je de dubbele (\") of enkele (') aanhalingstekens aan het begin en einde van een\u2026"
 title: Aanhalingstekens uit een tekenreeks verwijderen
+weight: 9
 ---
-
-{{< edit_this_page >}}
 
 ## Wat & Waarom?
 Het verwijderen van aanhalingstekens uit een string in Dart houdt in dat je de dubbele (") of enkele (') aanhalingstekens aan het begin en einde van een string wegneemt, wat nuttig is voor gegevensopruiming of het voorbereiden van strings voor verdere verwerking. Programmeurs doen dit om data-inputs te normaliseren, uniformiteit in gegevensopslag te verzekeren, of wanneer ze interface met API's die gegevens in geciteerde formaten kunnen teruggeven.

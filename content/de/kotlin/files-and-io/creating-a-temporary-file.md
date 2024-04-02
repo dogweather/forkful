@@ -8,9 +8,8 @@ model: gpt-4-1106-preview
 summary: "Tempor\xE4re Dateien sind fl\xFCchtige Speicherst\xFCcke, die Daten w\xE4\
   hrend der Ausf\xFChrung eines Programms aufnehmen. Sie werden oft genutzt, um Zwischenergebnisse\u2026"
 title: "Erstellung einer tempor\xE4ren Datei"
+weight: 21
 ---
-
-{{< edit_this_page >}}
 
 ## Was & Warum?
 Temporäre Dateien sind flüchtige Speicherstücke, die Daten während der Ausführung eines Programms aufnehmen. Sie werden oft genutzt, um Zwischenergebnisse zu speichern oder Daten zwischen verschiedenen Teilen eines Programms auszutauschen, ohne die Festplatte mit langfristig unnötigen Dateien zu belasten.

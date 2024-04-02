@@ -11,9 +11,8 @@ summary: "Analisar uma data a partir de uma string em C envolve a convers\xE3o d
   \ representa\xE7\xF5es textuais de datas em um formato que programas podem manipular\
   \ e\u2026"
 title: Analisando uma data a partir de uma string
+weight: 30
 ---
-
-{{< edit_this_page >}}
 
 ## O Que & Por Que?
 

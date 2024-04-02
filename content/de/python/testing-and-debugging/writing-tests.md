@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Das Schreiben von Tests in Python beinhaltet das Erstellen automatisierter\
   \ Skripte, um die Korrektheit Ihres Codes zu validieren. Programmierer tun dies,\u2026"
 title: Tests Schreiben
+weight: 36
 ---
-
-{{< edit_this_page >}}
 
 ## Was & Warum?
 Das Schreiben von Tests in Python beinhaltet das Erstellen automatisierter Skripte, um die Korrektheit Ihres Codes zu validieren. Programmierer tun dies, um sicherzustellen, dass ihre Funktionen oder Klassen unter verschiedenen Bedingungen wie erwartet funktionieren, was hilft, Fehler frühzeitig zu erkennen und die Wartung sowie das Refactoring zu erleichtern.

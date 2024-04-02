@@ -11,9 +11,8 @@ summary: "Nykyisen p\xE4iv\xE4m\xE4\xE4r\xE4n hankkiminen Javassa on perustoimin
   \ jonka avulla ohjelmoijat voivat k\xE4sitell\xE4 p\xE4iv\xE4m\xE4\xE4r\xE4objekteja\
   \ toiminnoissa, kuten lokitukset,\u2026"
 title: "Nykyisen p\xE4iv\xE4m\xE4\xE4r\xE4n hankkiminen"
+weight: 29
 ---
-
-{{< edit_this_page >}}
 
 ## Mikä & Miksi?
 Nykyisen päivämäärän hankkiminen Javassa on perustoiminto, jonka avulla ohjelmoijat voivat käsitellä päivämääräobjekteja toiminnoissa, kuten lokitukset, päivämäärälaskelmat ja aikaan perustuvat ehdot. Se on elintärkeää sovelluksissa, joissa seuranta, aikataulutus ja ajallinen datan analyysi ovat olennaisia.

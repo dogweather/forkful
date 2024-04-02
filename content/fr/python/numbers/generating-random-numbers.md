@@ -9,9 +9,8 @@ summary: "La g\xE9n\xE9ration de nombres al\xE9atoires consiste \xE0 cr\xE9er de
   \ nombres qui ne peuvent pas \xEAtre pr\xE9dits de mani\xE8re raisonnable autrement\
   \ que par hasard, ce qui\u2026"
 title: "G\xE9n\xE9ration de nombres al\xE9atoires"
+weight: 12
 ---
-
-{{< edit_this_page >}}
 
 ## Quoi & Pourquoi ?
 

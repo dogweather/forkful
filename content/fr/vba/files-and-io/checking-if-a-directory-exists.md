@@ -11,9 +11,8 @@ summary: "V\xE9rifier si un r\xE9pertoire existe en Visual Basic pour Applicatio
   \ (VBA) consiste \xE0 confirmer la pr\xE9sence d'un dossier dans le syst\xE8me de\
   \ fichiers avant\u2026"
 title: "V\xE9rifier si un r\xE9pertoire existe"
+weight: 20
 ---
-
-{{< edit_this_page >}}
 
 ## Quoi et pourquoi ?
 

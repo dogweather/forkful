@@ -7,9 +7,8 @@ model: gpt-4-1106-preview
 summary: "Descargar una p\xE1gina web significa guardar el contenido HTML en tu PC.\
   \ Los programadores lo hacen para procesar la info offline, testear o automatizar\u2026"
 title: "Descargando una p\xE1gina web"
+weight: 42
 ---
-
-{{< edit_this_page >}}
 
 ## Qué es y por qué?
 Descargar una página web significa guardar el contenido HTML en tu PC. Los programadores lo hacen para procesar la info offline, testear o automatizar tareas.

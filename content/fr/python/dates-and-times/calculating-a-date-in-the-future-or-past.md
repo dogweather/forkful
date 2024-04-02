@@ -9,9 +9,8 @@ summary: "Calculer une date dans le futur ou le pass\xE9, c'est manipuler des da
   \ pour en obtenir de nouvelles. Les programmeurs le font pour des raisons vari\xE9\
   es :\u2026"
 title: "Calcul d'une date future ou pass\xE9e"
+weight: 26
 ---
-
-{{< edit_this_page >}}
 
 ## Quoi et Pourquoi ?
 Calculer une date dans le futur ou le passé, c'est manipuler des dates pour en obtenir de nouvelles. Les programmeurs le font pour des raisons variées : planifications, rappels, ou suivis d'échéances.

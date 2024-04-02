@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Convertire una data in una stringa in Dart \xE8 un compito comune quando\
   \ si ha la necessit\xE0 di visualizzare informazioni di data e ora in un formato\u2026"
 title: Convertire una data in una stringa
+weight: 28
 ---
-
-{{< edit_this_page >}}
 
 ## Cosa e perché?
 

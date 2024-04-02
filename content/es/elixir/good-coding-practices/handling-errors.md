@@ -7,9 +7,8 @@ model: gpt-4-1106-preview
 summary: "Manejar errores significa escribir c\xF3digo que pueda lidiar con las cosas\
   \ cuando salen mal. Los programadores lo hacen para prevenir fallos y para\u2026"
 title: Manejo de errores
+weight: 16
 ---
-
-{{< edit_this_page >}}
 
 ## ¿Qué y por qué?
 

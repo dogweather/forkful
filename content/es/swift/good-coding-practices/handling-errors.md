@@ -9,9 +9,8 @@ summary: "Manejar errores en Swift significa anticipar y responder a problemas q
   \ surgen cuando tu c\xF3digo se ejecuta. Lo hacemos para controlar el caos\u2014\
   manteniendo\u2026"
 title: Manejo de errores
+weight: 16
 ---
-
-{{< edit_this_page >}}
 
 ## ¿Qué y por qué?
 Manejar errores en Swift significa anticipar y responder a problemas que surgen cuando tu código se ejecuta. Lo hacemos para controlar el caos—manteniendo las aplicaciones sin caídas y ofreciendo al usuario una experiencia fluida.

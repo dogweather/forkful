@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Analisar HTML em Go envolve examinar o conte\xFAdo de arquivos HTML para\
   \ extrair dados, manipular a estrutura ou converter o HTML em outros formatos.\u2026"
 title: Analisando HTML
+weight: 43
 ---
-
-{{< edit_this_page >}}
 
 ## O Que & Por Quê?
 

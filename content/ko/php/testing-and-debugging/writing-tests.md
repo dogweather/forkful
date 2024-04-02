@@ -24,9 +24,8 @@ summary: "\uD504\uB85C\uADF8\uB798\uBC0D\uC5D0\uC11C \uD14C\uC2A4\uD2B8\uB97C \u
   \uD329\uD1A0\uB9C1\uC744 \uC6A9\uC774\uD558\uAC8C \uD558\uC5EC \uAC74\uAC15\uD558\
   \uACE0, \uD655\uC7A5 \uAC00\uB2A5\uD558\uBA70, \uBC84\uADF8\uAC00 \uC5C6\uB294\u2026"
 title: "\uD14C\uC2A4\uD2B8 \uC791\uC131\uD558\uAE30"
+weight: 36
 ---
-
-{{< edit_this_page >}}
 
 ## 무엇을, 왜?
 프로그래밍에서 테스트를 작성하는 것은 다양한 조건에서 코드가 예상대로 동작하는지 확인하기 위해 스크립트를 만들고 실행하는 과정을 말합니다. 프로그래머들은 이를 통해 품질을 보장하고, 회귀를 방지하며, 안전한 리팩토링을 용이하게 하여 건강하고, 확장 가능하며, 버그가 없는 코드베이스를 유지하는 데 중요합니다.

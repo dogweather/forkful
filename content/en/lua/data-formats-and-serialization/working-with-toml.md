@@ -8,9 +8,8 @@ model: gpt-4-1106-preview
 summary: "Working with TOML involves parsing and generating TOML (Tom's Obvious, Minimal\
   \ Language) data with Lua. Programmers utilize TOML for config files due to\u2026"
 title: Working with TOML
+weight: 39
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 Working with TOML involves parsing and generating TOML (Tom's Obvious, Minimal Language) data with Lua. Programmers utilize TOML for config files due to its readability and simple syntax that easily translates to a data structure.

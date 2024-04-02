@@ -11,9 +11,8 @@ summary: "Basisauthenticatie slingert een gebruikersnaam:wachtwoord combinatie o
   \ een HTTP-verzoek. Ontwikkelaars gebruiken het als een snelle en vuile manier om\
   \ te\u2026"
 title: Een HTTP-verzoek verzenden met basisauthenticatie
+weight: 45
 ---
-
-{{< edit_this_page >}}
 
 ## Wat & Waarom?
 

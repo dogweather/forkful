@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Het genereren van willekeurige getallen in programmeren houdt in dat er\
   \ reeksen getallen worden gecre\xEBerd die geen voorspelbare volgorde of patroon\u2026"
 title: Willekeurige getallen genereren
+weight: 12
 ---
-
-{{< edit_this_page >}}
 
 ## Wat & Waarom?
 

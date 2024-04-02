@@ -14,9 +14,8 @@ summary: "\uBB38\uC790\uC5F4 \uBCF4\uAC04\uC740 \uBCC0\uC218\uC640 \uC0C1\uC218\
   \ \uC27D\uACE0 \uAC04\uACB0\uD558\uAC8C \uC0DD\uC131\uD560 \uC218 \uC788\uC2B5\uB2C8\
   \uB2E4."
 title: "\uBB38\uC790\uC5F4 \uBCF4\uAC04\uD558\uAE30"
+weight: 8
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why? (무엇이며, 왜 사용하는가?)
 문자열 보간은 변수와 상수를 문자열 안에 통합하는 과정입니다. 이를 사용해 동적인 문자열을 쉽고 간결하게 생성할 수 있습니다.

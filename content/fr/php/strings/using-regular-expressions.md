@@ -11,9 +11,8 @@ summary: "Les expressions r\xE9guli\xE8res (regex) en PHP sont des motifs utilis
   s pour rechercher des combinaisons de caract\xE8res dans des cha\xEEnes de texte,\
   \ permettant\u2026"
 title: "Utilisation des expressions r\xE9guli\xE8res"
+weight: 11
 ---
-
-{{< edit_this_page >}}
 
 ## Quoi & Pourquoi ?
 

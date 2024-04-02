@@ -11,9 +11,8 @@ summary: "Pisanie test\xF3w w programowaniu polega na tworzeniu i uruchamianiu s
   w, kt\xF3re weryfikuj\u0105, czy kod zachowuje si\u0119 zgodnie z oczekiwaniami\
   \ w r\xF3\u017Cnych\u2026"
 title: "Pisanie test\xF3w"
+weight: 36
 ---
-
-{{< edit_this_page >}}
 
 ## Co i dlaczego?
 Pisanie testów w programowaniu polega na tworzeniu i uruchamianiu skryptów, które weryfikują, czy kod zachowuje się zgodnie z oczekiwaniami w różnych warunkach. Programiści robią to, aby zapewnić jakość, zapobiec regresji i ułatwić bezpieczny refaktoring, co jest kluczowe dla utrzymania zdrowej, skalowalnej i wolnej od błędów bazy kodu.

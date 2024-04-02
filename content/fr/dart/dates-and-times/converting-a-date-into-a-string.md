@@ -11,9 +11,8 @@ summary: "Convertir une date en cha\xEEne de caract\xE8res dans Dart est une t\x
   che courante lorsque vous avez besoin d'afficher des informations de date et d'heure\
   \ dans\u2026"
 title: "Convertir une date en cha\xEEne de caract\xE8res"
+weight: 28
 ---
-
-{{< edit_this_page >}}
 
 ## Quoi & Pourquoi ?
 

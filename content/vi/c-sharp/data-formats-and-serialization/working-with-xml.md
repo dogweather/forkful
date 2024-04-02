@@ -13,9 +13,8 @@ summary: "XML (eXtensible Markup Language) chuy\xEAn v\u1EC1 vi\u1EC7c c\u1EA5u 
   \u1ECDc. C\xE1c l\u1EADp tr\xECnh vi\xEAn s\u1EED d\u1EE5ng XML cho c\u1EA5u h\xEC\
   nh, trao \u0111\u1ED5i d\u1EEF\u2026"
 title: "L\xE0m vi\u1EC7c v\u1EDBi XML"
+weight: 40
 ---
-
-{{< edit_this_page >}}
 
 ## Cái gì & Tại sao?
 XML (eXtensible Markup Language) chuyên về việc cấu trúc hóa dữ liệu theo một định dạng dễ đọc. Các lập trình viên sử dụng XML cho cấu hình, trao đổi dữ liệu giữa các ứng dụng, và trong các yêu cầu kỹ thuật—hãy nghĩ đến SOAP hoặc web APIs.

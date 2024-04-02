@@ -11,9 +11,8 @@ summary: "Escrever para o erro padr\xE3o (stderr) em Rust \xE9 sobre direcionar 
   \ de erro e diagn\xF3sticos para o console separadamente da sa\xEDda padr\xE3o (stdout).\
   \ Os\u2026"
 title: "Escrevendo para o erro padr\xE3o"
+weight: 25
 ---
-
-{{< edit_this_page >}}
 
 ## O Que & Por Que?
 Escrever para o erro padrão (stderr) em Rust é sobre direcionar mensagens de erro e diagnósticos para o console separadamente da saída padrão (stdout). Os programadores fazem isso para diferenciar a saída normal do programa das mensagens de erro, facilitando o tratamento adequado dos erros ou o redirecionamento deles para logs ou arquivos durante a execução.

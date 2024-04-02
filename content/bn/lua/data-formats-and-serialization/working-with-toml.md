@@ -20,9 +20,8 @@ summary: "TOML \u09A8\u09BF\u09AF\u09BC\u09C7 \u0995\u09BE\u099C \u0995\u09B0\u0
   \u09AF\u09A4\u09BE \u098F\u09AC\u0982 \u09B8\u09BE\u09A7\u09BE\u09B0\u09A3\u2026"
 title: "\u099F\u09AE\u09B2 \u09A8\u09BF\u09AF\u09BC\u09C7 \u0995\u09BE\u099C \u0995\
   \u09B0\u09BE"
+weight: 39
 ---
-
-{{< edit_this_page >}}
 
 ## কি এবং কেন?
 TOML নিয়ে কাজ করা মানে Lua এর সঙ্গে TOML (Tom's Obvious, Minimal Language) ডেটা পার্সিং এবং জেনারেট করা। প্রোগ্রামাররা এর পঠনযোগ্যতা এবং সাধারণ সিনট্যাক্সের কারণে কনফিগ ফাইলগুলির জন্য TOML ব্যবহার করে থাকেন, যা সহজেই একটি ডেটা স্ট্রাকচারে অনুবাদ করা যায়।

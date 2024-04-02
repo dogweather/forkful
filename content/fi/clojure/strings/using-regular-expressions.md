@@ -11,9 +11,8 @@ summary: "S\xE4\xE4nn\xF6lliset lausekkeet, tehokas ty\xF6kalu kuvioiden tunnist
   \ ja datan k\xE4sittelyyn, ovat olennaisia tekstink\xE4sittelyteht\xE4viss\xE4 kuten\
   \ sy\xF6tteen\u2026"
 title: "S\xE4\xE4nn\xF6llisten lausekkeiden k\xE4ytt\xF6"
+weight: 11
 ---
-
-{{< edit_this_page >}}
 
 ## Mikä & Miksi?
 Säännölliset lausekkeet, tehokas työkalu kuvioiden tunnistamiseen ja datan käsittelyyn, ovat olennaisia tekstinkäsittelytehtävissä kuten syötteen validoinnissa, tekstissä etsimisessä ja tekstin korvaamisessa. Ohjelmoijat käyttävät niitä laajasti monimutkaisten merkkijonojen jäsentämisen ja datan validoinnin tehtävissä tehokkaasti ja ytimekkäästi.

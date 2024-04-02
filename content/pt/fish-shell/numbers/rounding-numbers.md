@@ -9,9 +9,8 @@ summary: "Arredondar n\xFAmeros consiste em eliminar casas decimais para simplif
   \ seus dados ou adequ\xE1-los a formatos espec\xEDficos. Programadores fazem isso\
   \ para\u2026"
 title: "Arredondamento de n\xFAmeros"
+weight: 13
 ---
-
-{{< edit_this_page >}}
 
 ## O que & Por quê?
 Arredondar números consiste em eliminar casas decimais para simplificar seus dados ou adequá-los a formatos específicos. Programadores fazem isso para exibir dados de forma amigável ao usuário, armazenar de maneira eficiente, ou quando a precisão decimal não é um problema.

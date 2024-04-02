@@ -11,9 +11,8 @@ summary: "Pobieranie bie\u017C\u0105cej daty w C# polega na uzyskaniu obecnych i
   \ o dacie i czasie z systemu. Programi\u015Bci cz\u0119sto musz\u0105 uzyska\u0107\
   \ dost\u0119p do tych\u2026"
 title: Pobieranie aktualnej daty
+weight: 29
 ---
-
-{{< edit_this_page >}}
 
 ## Co i dlaczego?
 Pobieranie bieżącej daty w C# polega na uzyskaniu obecnych informacji o dacie i czasie z systemu. Programiści często muszą uzyskać dostęp do tych informacji w celu logowania, znakowania czasowego operacji lub planowania zadań w aplikacjach, zapewniając, że działania są wykonywane z odpowiednią dokładnością czasu i dane są oznaczone precyzyjnymi znacznikami czasu.

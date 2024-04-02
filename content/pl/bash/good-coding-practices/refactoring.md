@@ -7,9 +7,8 @@ model: gpt-4-0125-preview
 summary: "Refaktoryzacja to proces restrukturyzacji istniej\u0105cego kodu komputerowego\
   \ bez zmiany jego zewn\u0119trznego zachowania. Jest to kluczowa praktyka, aby\u2026"
 title: Refaktoryzacja
+weight: 19
 ---
-
-{{< edit_this_page >}}
 
 ## Co i dlaczego?
 Refaktoryzacja to proces restrukturyzacji istniejącego kodu komputerowego bez zmiany jego zewnętrznego zachowania. Jest to kluczowa praktyka, aby zmniejszyć złożoność, poprawić możliwość utrzymania kodu i zachować zdrową oraz łatwiejszą do zrozumienia bazę kodów dla obecnych i przyszłych programistów.

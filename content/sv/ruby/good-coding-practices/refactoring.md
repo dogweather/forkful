@@ -7,9 +7,8 @@ model: gpt-4-0125-preview
 summary: "Refaktorisering \xE4r processen att omstrukturera befintlig datorprogramkod\
   \ utan att \xE4ndra dess yttre beteende. Programmerare refaktoriserar f\xF6r att\u2026"
 title: Refaktorisering
+weight: 19
 ---
-
-{{< edit_this_page >}}
 
 ## Vad & Varför?
 

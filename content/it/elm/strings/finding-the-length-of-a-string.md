@@ -7,9 +7,8 @@ model: gpt-4-1106-preview
 summary: "(Find out the length) Capire la lunghezza di una stringa significa determinare\
   \ quanti caratteri contiene. I programmatori lo fanno per validare l'input,\u2026"
 title: Trovare la lunghezza di una stringa
+weight: 7
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 (Find out the length)

@@ -9,9 +9,8 @@ summary: "Tekstin hakeminen ja korvaaminen tarkoittaa merkkijonojen etsimist\xE4
   \ niiden muuttamista toisiksi merkkijonoiksi. Ohjelmoijat k\xE4ytt\xE4v\xE4t sit\xE4\
   \ datan\u2026"
 title: Tekstin etsiminen ja korvaaminen
+weight: 10
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 Tekstin hakeminen ja korvaaminen tarkoittaa merkkijonojen etsimistä ja niiden muuttamista toisiksi merkkijonoiksi. Ohjelmoijat käyttävät sitä datan puhdistukseen, muodon muuttamiseen ja automatisoituun tiedon korjaukseen.

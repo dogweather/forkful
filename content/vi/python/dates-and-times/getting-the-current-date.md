@@ -13,9 +13,8 @@ summary: "L\u1EA5y ng\xE0y hi\u1EC7n t\u1EA1i trong Python c\xF3 ngh\u0129a l\xE
   \ n\xF3 \u0111ang ch\u1EA1y. C\xE1c l\u1EADp tr\xECnh vi\xEAn l\xE0m \u0111i\u1EC1\
   u n\xE0y \u0111\u1EC3 ghi nh\u1EADt k\xFD, d\u1EA5u\u2026"
 title: "L\u1EA5y ng\xE0y hi\u1EC7n t\u1EA1i"
+weight: 29
 ---
-
-{{< edit_this_page >}}
 
 ## Cái gì & Tại sao?
 Lấy ngày hiện tại trong Python có nghĩa là truy cập ngày đang diễn ra từ hệ thống mà nó đang chạy. Các lập trình viên làm điều này để ghi nhật ký, dấu thời gian, hoặc bất kỳ khi nào cần ngày hôm nay cho giao diện người dùng hoặc báo cáo.

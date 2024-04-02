@@ -11,9 +11,8 @@ summary: "Czytanie pliku tekstowego w Go polega na dost\u0119pie i pobieraniu tr
   ci z pliku zapisanego na dysku w celu przetworzenia lub analizy. Programi\u015B\
   ci cz\u0119sto\u2026"
 title: Czytanie pliku tekstowego
+weight: 22
 ---
-
-{{< edit_this_page >}}
 
 ## Co i dlaczego?
 

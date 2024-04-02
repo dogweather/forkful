@@ -11,9 +11,8 @@ summary: "Uuden projektin aloittaminen Google Apps Scriptiss\xE4 (GAS) tarkoitta
   \ komentosarjatiedoston alustamista Google-ekosysteemiss\xE4 (Google Drive, Docs,\
   \ Sheets\u2026"
 title: Uuden projektin aloittaminen
+weight: 1
 ---
-
-{{< edit_this_page >}}
 
 ## Mikä & Miksi?
 

@@ -7,9 +7,8 @@ model: gpt-4-0125-preview
 summary: "Die Erzeugung von Zufallszahlen in der Programmierung geht darum, nicht\
   \ deterministische oder unvorhersehbare numerische Werte zu kreieren. Programmierer\u2026"
 title: Generierung von Zufallszahlen
+weight: 12
 ---
-
-{{< edit_this_page >}}
 
 ## Was & Warum?
 

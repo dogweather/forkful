@@ -21,9 +21,8 @@ summary: "Google Apps Script\uC5D0\uC11C \uD604\uC7AC \uB0A0\uC9DC\uB97C \uAC00\
   \ \uC774 \uAE30\uB2A5\uC744 \uB3D9\uC801 \uCF58\uD150\uCE20 \uC0DD\uC131, \uB9C8\
   \uAC10\uC77C \uCD94\uC801,\u2026"
 title: "\uD604\uC7AC \uB0A0\uC9DC \uC5BB\uAE30"
+weight: 29
 ---
-
-{{< edit_this_page >}}
 
 ## 무엇 & 왜?
 

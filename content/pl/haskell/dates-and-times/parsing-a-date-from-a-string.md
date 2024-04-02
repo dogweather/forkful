@@ -11,9 +11,8 @@ summary: "Przetwarzanie daty z ci\u0105gu znak\xF3w w Haskellu polega na przeksz
   ceniu tekstowych reprezentacji dat na strukturalny format, kt\xF3ry program mo\u017C\
   e\u2026"
 title: "Analiza sk\u0142adniowa daty z \u0142a\u0144cucha znak\xF3w"
+weight: 30
 ---
-
-{{< edit_this_page >}}
 
 ## Co i dlaczego?
 

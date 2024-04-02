@@ -10,9 +10,8 @@ model: gpt-4-0125-preview
 summary: "Verificar se um diret\xF3rio existe em TypeScript \xE9 essencial para tarefas\
   \ de gerenciamento de arquivos, como ler ou escrever dados em arquivos, garantindo\u2026"
 title: "Verificando se um diret\xF3rio existe"
+weight: 20
 ---
-
-{{< edit_this_page >}}
 
 ## O Que & Por Que?
 Verificar se um diretório existe em TypeScript é essencial para tarefas de gerenciamento de arquivos, como ler ou escrever dados em arquivos, garantindo que operações sejam realizadas apenas em diretórios válidos. Esta operação é crucial para evitar erros que surgem ao tentar acessar ou manipular diretórios inexistentes.

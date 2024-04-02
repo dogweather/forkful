@@ -7,9 +7,8 @@ lastmod: '2024-03-13T22:44:50.744430-06:00'
 model: gpt-4-0125-preview
 summary: null
 title: Een tijdelijk bestand aanmaken
+weight: 21
 ---
-
-{{< edit_this_page >}}
 
 # Wat & Waarom?
 

@@ -11,9 +11,8 @@ summary: "Escrever testes no Google Apps Script (GAS) refere-se \xE0 cria\xE7\xE
   o de scripts automatizados para verificar o comportamento de seus c\xF3digos, garantindo\
   \ que\u2026"
 title: Escrevendo testes
+weight: 36
 ---
-
-{{< edit_this_page >}}
 
 ## O Que & Por Que?
 

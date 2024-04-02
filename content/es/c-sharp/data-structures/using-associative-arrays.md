@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Los arrays asociativos, o diccionarios en C#, te permiten almacenar y administrar\
   \ pares de claves y valores. Son tu opci\xF3n predilecta cuando necesitas\u2026"
 title: Uso de matrices asociativas
+weight: 15
 ---
-
-{{< edit_this_page >}}
 
 ## ¿Qué y por qué?
 

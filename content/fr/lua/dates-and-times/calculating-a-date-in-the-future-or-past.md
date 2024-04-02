@@ -9,9 +9,8 @@ summary: "Calculer une date dans le futur ou le pass\xE9, c'est d\xE9terminer un
   \ date relative \xE0 aujourd'hui ou une autre date de r\xE9f\xE9rence. Les programmeurs\
   \ le font\u2026"
 title: "Calcul d'une date future ou pass\xE9e"
+weight: 26
 ---
-
-{{< edit_this_page >}}
 
 ## Quoi et Pourquoi ?
 

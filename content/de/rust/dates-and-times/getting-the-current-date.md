@@ -10,9 +10,8 @@ model: gpt-4-0125-preview
 summary: "Das Abrufen des aktuellen Datums in Rust ist eine g\xE4ngige Aufgabe f\xFC\
   r Dinge wie das Logging, zeitbasierte Operationen oder einfach nur, um das Datum\u2026"
 title: Den aktuellen Datum abrufen
+weight: 29
 ---
-
-{{< edit_this_page >}}
 
 ## Was & Warum?
 

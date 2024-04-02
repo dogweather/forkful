@@ -11,9 +11,8 @@ summary: "I C-programmering m\xF6jligg\xF6r l\xE4sning av kommandoradsargument a
   \ program accepterar indata direkt fr\xE5n terminalen, vilket \xF6kar flexibiliteten\
   \ och\u2026"
 title: "L\xE4ser in kommandoradsargument"
+weight: 23
 ---
-
-{{< edit_this_page >}}
 
 ## Vad & Varför?
 

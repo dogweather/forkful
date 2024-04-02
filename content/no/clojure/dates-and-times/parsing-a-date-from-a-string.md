@@ -10,9 +10,8 @@ model: gpt-4-0125-preview
 summary: "\xC5 parse en dato fra en streng i Clojure handler om \xE5 konvertere tekstlige\
   \ representasjoner av datoer og tider til en mer brukbar form (f.eks. Clojures\u2026"
 title: Analysering av en dato fra en streng
+weight: 30
 ---
-
-{{< edit_this_page >}}
 
 ## Hva & Hvorfor?
 Å parse en dato fra en streng i Clojure handler om å konvertere tekstlige representasjoner av datoer og tider til en mer brukbar form (f.eks. Clojures DateTime-objekt). Denne prosessen er grunnleggende for databehandling, logging, eller enhver applikasjon som manipulerer tidspunktsdata, og tillater programmerere å utføre operasjoner, sammenligninger, eller manipulasjoner på datoer effektivt.

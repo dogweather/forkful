@@ -7,9 +7,8 @@ model: gpt-4-1106-preview
 summary: "Iniziamo un nuovo progetto per creare qualcosa da zero e per risolvere problemi\
   \ specifici. I programmatori lo fanno per innovare, lavorare su idee\u2026"
 title: Avvio di un nuovo progetto
+weight: 1
 ---
-
-{{< edit_this_page >}}
 
 ## Cos'è & Perché?
 Iniziamo un nuovo progetto per creare qualcosa da zero e per risolvere problemi specifici. I programmatori lo fanno per innovare, lavorare su idee fresche, e per mettere in pratica ciò che hanno imparato.

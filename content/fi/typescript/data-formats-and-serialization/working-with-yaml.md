@@ -11,9 +11,8 @@ summary: "YAML, ihmisl\xE4heisesti suunniteltu tietojen serialisointikieli, on u
   \ k\xE4yt\xF6ss\xE4 konfiguraatiotiedostoissa, prosessien v\xE4lisess\xE4 viestinn\xE4\
   ss\xE4 ja tietojen\u2026"
 title: "Ty\xF6skentely YAML:n kanssa"
+weight: 41
 ---
-
-{{< edit_this_page >}}
 
 ## Mikä & Miksi?
 YAML, ihmisläheisesti suunniteltu tietojen serialisointikieli, on usein käytössä konfiguraatiotiedostoissa, prosessien välisessä viestinnässä ja tietojen tallennuksessa. Ohjelmoijat suosivat YAMLia sen luettavuuden ja helppokäyttöisyyden vuoksi, erityisesti käsiteltäessä monimutkaista rakenteistettua tietoa, mikä tekee siitä erinomaisen valinnan TypeScriptillä kehitettyihin sovelluksiin.

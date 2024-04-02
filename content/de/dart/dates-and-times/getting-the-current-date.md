@@ -11,9 +11,8 @@ summary: "Das Abrufen des aktuellen Datums in Dart beinhaltet eine Anfrage an da
   \ System nach dem aktuellen Datum und der Uhrzeit. Diese Funktionalit\xE4t wird\
   \ h\xE4ufig\u2026"
 title: Das aktuelle Datum abrufen
+weight: 29
 ---
-
-{{< edit_this_page >}}
 
 ## Was & Warum?
 Das Abrufen des aktuellen Datums in Dart beinhaltet eine Anfrage an das System nach dem aktuellen Datum und der Uhrzeit. Diese Funktionalität wird häufig in Anwendungen für Funktionen wie Zeitstempel für Ereignisse, Anzeige des aktuellen Datums für Benutzer oder Berechnung von Dauern verwendet. Zu wissen, wie man das aktuelle Datum effizient abruft und manipuliert, ist grundlegend für Planung, Protokollierung und zeitabhängige Funktionen.

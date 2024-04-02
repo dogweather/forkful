@@ -10,9 +10,8 @@ model: gpt-4-0125-preview
 summary: "Das Lesen von Befehlszeilenargumenten in Google Apps Script ist etwas irref\xFC\
   hrend, denn im Gegensatz zu traditionellen Befehlszeilenschnittstellen in\u2026"
 title: Lesen von Befehlszeilenargumenten
+weight: 23
 ---
-
-{{< edit_this_page >}}
 
 ## Was & Warum?
 

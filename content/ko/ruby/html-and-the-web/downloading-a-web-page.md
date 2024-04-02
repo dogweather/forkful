@@ -16,9 +16,8 @@ summary: "\uC6F9 \uD398\uC774\uC9C0 \uB2E4\uC6B4\uB85C\uB4DC\uB294 \uC778\uD130\
   \uD558\uAC70\uB098, \uC6F9 \uC2A4\uD06C\uB798\uD551\uC744 \uC218\uD589\uD558\uC5EC\
   \ \uC815\uBCF4\uB97C \uC218\uC9D1\uD569\uB2C8\uB2E4."
 title: "\uC6F9 \uD398\uC774\uC9C0 \uB2E4\uC6B4\uB85C\uB4DC\uD558\uAE30"
+weight: 42
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why? (무엇과 왜?)
 웹 페이지 다운로드는 인터넷 상의 웹 페이지를 로컬 컴퓨터에 저장하는 행위입니다. 프로그래머들은 이를 통해 데이터를 분석하거나, 웹 스크래핑을 수행하여 정보를 수집합니다.

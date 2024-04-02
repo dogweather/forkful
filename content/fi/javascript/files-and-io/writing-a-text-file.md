@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Tekstitiedoston kirjoittaminen JavaScriptill\xE4 liittyy usein datan luomiseen\
   \ ja tallentamiseen yksinkertaisessa, luettavassa muodossa lokitusta,\u2026"
 title: Tekstitiedoston kirjoittaminen
+weight: 24
 ---
-
-{{< edit_this_page >}}
 
 ## Mikä ja miksi?
 Tekstitiedoston kirjoittaminen JavaScriptillä liittyy usein datan luomiseen ja tallentamiseen yksinkertaisessa, luettavassa muodossa lokitusta, käyttäjäsyötteen viemistä tai konfiguraatiotarkoituksia varten. Tämä toiminnallisuus on kriittistä sovelluksille, jotka tarvitsevat säilyttää tietoa sovellusprosessin elinkaaren yli, tarjoten tavan varastoida ja myöhemmin noutaa tai jakaa tietoa.

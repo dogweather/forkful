@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "La ricerca e sostituzione di testo in Google Apps Script consiste nell'identificare\
   \ in modo programmato specifiche stringhe in un documento, foglio di\u2026"
 title: Ricerca e sostituzione del testo
+weight: 10
 ---
-
-{{< edit_this_page >}}
 
 ## Cosa e Perché?
 

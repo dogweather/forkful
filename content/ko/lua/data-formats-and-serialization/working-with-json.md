@@ -21,9 +21,8 @@ summary: "Lua\uC5D0\uC11C JSON\uC744 \uB2E4\uB8E8\uB294 \uAC83\uC740 JSON \uD615
   \uB798\uBA38\uB4E4\uC740 JSON\uC758 \uAC00\uBCBC\uC6C0\uACFC \uC27D\uAC8C \uD30C\
   \uC2F1\uD560 \uC218 \uC788\uB294 \uD615\uC2DD\uC744\u2026"
 title: "JSON\uACFC \uD568\uAED8 \uC77C\uD558\uAE30"
+weight: 38
 ---
-
-{{< edit_this_page >}}
 
 ## 무엇 & 왜?
 Lua에서 JSON을 다루는 것은 JSON 형식의 문자열을 Lua 테이블로 파싱하고 그 반대의 작업을 수행함을 포함하여, Lua 애플리케이션과 웹 서비스 또는 외부 API 간의 쉬운 데이터 교환이 가능하게 합니다. 프로그래머들은 JSON의 가벼움과 쉽게 파싱할 수 있는 형식을 이용하여 데이터 저장, 설정 또는 API 통신을 효율적으로 수행하기 위해 이 작업을 합니다.

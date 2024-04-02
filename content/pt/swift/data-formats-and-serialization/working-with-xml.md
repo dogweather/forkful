@@ -8,9 +8,8 @@ model: gpt-4-0125-preview
 summary: "Trabalhar com XML significa analisar e gerar dados XML em Swift. Os programadores\
   \ fazem isso para interc\xE2mbio de dados, especialmente quando se integram a\u2026"
 title: Trabalhando com XML
+weight: 40
 ---
-
-{{< edit_this_page >}}
 
 ## O Que & Por Quê?
 Trabalhar com XML significa analisar e gerar dados XML em Swift. Os programadores fazem isso para intercâmbio de dados, especialmente quando se integram a sistemas onde o XML é o formato padrão.

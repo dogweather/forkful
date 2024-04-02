@@ -7,9 +7,8 @@ model: gpt-4-0125-preview
 summary: "\xC5 organisere kode i funksjoner betyr \xE5 bryte opp koden din i gjenbrukbare,\
   \ modul\xE6re blokker. Vi gj\xF8r dette for \xE5 holde ting DRY (Don't Repeat Yourself),\u2026"
 title: Organisering av kode i funksjoner
+weight: 18
 ---
-
-{{< edit_this_page >}}
 
 ## Hva og hvorfor?
 Å organisere kode i funksjoner betyr å bryte opp koden din i gjenbrukbare, modulære blokker. Vi gjør dette for å holde ting DRY (Don't Repeat Yourself), noe som gjør koden renere, enklere å lese og en lek å feilsøke.

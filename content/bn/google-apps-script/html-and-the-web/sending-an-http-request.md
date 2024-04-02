@@ -24,9 +24,8 @@ summary: "Google Apps Script \u098F HTTP \u0985\u09A8\u09C1\u09B0\u09CB\u09A7 \u
   \u0997\u09C1\u09B2\u09BF \u09A5\u09C7\u0995\u09C7\u2026"
 title: "HTTP \u0985\u09A8\u09C1\u09B0\u09CB\u09A7 \u09AA\u09CD\u09B0\u09C7\u09B0\u09A3\
   \ \u0995\u09B0\u09BE"
+weight: 44
 ---
-
-{{< edit_this_page >}}
 
 ## কি এবং কেন?
 

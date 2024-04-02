@@ -19,9 +19,8 @@ summary: "CLI(Command Line Interface)\uB97C \uC0AC\uC6A9\uD55C \uD30C\uC77C \uC8
   , \uC790\uB3D9\uD654 \uBC0F \uD2B9\uD788 \uADF8\uB798\uD53D \uC778\uD130\uD398\uC774\
   \uC2A4\uAC00 \uC5C6\uB294\u2026"
 title: "CLI \uBA85\uB839\uC5B4\uB85C \uD30C\uC77C \uB2E4\uB8E8\uAE30"
+weight: 31
 ---
-
-{{< edit_this_page >}}
 
 ## 무엇 & 왜?
 

@@ -7,9 +7,8 @@ model: gpt-4-1106-preview
 summary: "El registro (logging) es el proceso de grabar eventos de aplicaciones y\
   \ salida de datos durante el tiempo de ejecuci\xF3n. Los programadores realizan\u2026"
 title: "Registro de Actividades en Programaci\xF3n"
+weight: 17
 ---
-
-{{< edit_this_page >}}
 
 ## ¿Qué es y por qué?
 El registro (logging) es el proceso de grabar eventos de aplicaciones y salida de datos durante el tiempo de ejecución. Los programadores realizan registros para diagnosticar errores, monitorear el rendimiento del software, rastrear acciones de los usuarios y mantener el cumplimiento de estándares de seguridad y empresariales.

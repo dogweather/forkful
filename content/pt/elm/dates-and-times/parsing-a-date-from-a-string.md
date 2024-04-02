@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Analisar uma data a partir de uma string em Elm envolve converter informa\xE7\
   \xF5es textuais que representam datas e hor\xE1rios em um formato que o Elm possa\u2026"
 title: Analisando uma data a partir de uma string
+weight: 30
 ---
-
-{{< edit_this_page >}}
 
 ## O Que & Por Quê?
 Analisar uma data a partir de uma string em Elm envolve converter informações textuais que representam datas e horários em um formato que o Elm possa entender e manipular, especificamente no tipo `Date`. Esse processo é crucial para lidar com a entrada do usuário, exibir datas corretamente localizadas e realizar cálculos relacionados a datas, garantindo que suas aplicações Elm possam processar dados temporais de maneira inteligente.

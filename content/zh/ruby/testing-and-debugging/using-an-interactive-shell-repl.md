@@ -13,9 +13,8 @@ summary: "\u4EA4\u4E92\u5F0Fshell\uFF0C\u6216REPL\uFF08\u8BFB\u53D6-\u6C42\u503C
   \u5E76\u5728\u4E0D\u521B\u5EFA\u5B8C\u6574\u811A\u672C\u7684\u60C5\u51B5\u4E0B\u5B66\
   \u4E60Ruby\u7684\u7EC6\u5FAE\u4E4B\u5904\u3002"
 title: "\u5728\u7F16\u7A0B\u4E2D\u4F7F\u7528\u4EA4\u4E92\u5F0FShell\uFF08REPL\uFF09"
+weight: 34
 ---
-
-{{< edit_this_page >}}
 
 ## 什么 & 为什么？
 交互式shell，或REPL（读取-求值-打印 循环），让你能实时测试代码。程序员使用它来实验、调试，并在不创建完整脚本的情况下学习Ruby的细微之处。

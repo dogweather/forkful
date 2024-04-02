@@ -11,9 +11,8 @@ summary: "CSV-tiedostojen (pilkuilla erotetut arvot) k\xE4sittely k\xE4sitt\xE4\
   \ teksti-tiedostojen j\xE4sennyksen ja luonnin, miss\xE4 jokainen rivi sis\xE4lt\xE4\
   \xE4 pilkuilla erotettuja\u2026"
 title: "Ty\xF6skentely CSV:n kanssa"
+weight: 37
 ---
-
-{{< edit_this_page >}}
 
 ## Mikä & Miksi?
 

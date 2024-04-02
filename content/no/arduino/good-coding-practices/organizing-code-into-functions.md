@@ -9,9 +9,8 @@ summary: "\xC5 organisere koden i funksjoner betyr \xE5 dele opp koden din i gje
   \ biter, hvor hver bit utf\xF8rer en spesifikk jobb. Programmerere gj\xF8r dette\
   \ for \xE5\u2026"
 title: Organisering av kode i funksjoner
+weight: 18
 ---
-
-{{< edit_this_page >}}
 
 ## Hva & Hvorfor?
 Å organisere koden i funksjoner betyr å dele opp koden din i gjenbrukbare biter, hvor hver bit utfører en spesifikk jobb. Programmerere gjør dette for å gjøre koden enklere å lese, feilsøke og gjenbruke. Det er som å sortere Lego i bokser - det sparer deg fra å rote gjennom en kaotisk haug hver gang du vil bygge noe.

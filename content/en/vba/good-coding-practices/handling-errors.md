@@ -7,9 +7,8 @@ model: gpt-4-0125-preview
 summary: "Error handling in Visual Basic for Applications (VBA) refers to the process\
   \ of anticipating, detecting, and resolving programming, application, or\u2026"
 title: Handling errors
+weight: 16
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 

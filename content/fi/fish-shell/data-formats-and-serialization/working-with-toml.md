@@ -9,9 +9,8 @@ summary: "TOML on konfiguraatiotiedostomuoto, joka on helppo ihmisille lukea ja 
   \ sek\xE4 helposti koneiden j\xE4sent\xE4m\xE4\xE4 ja luotavaa. Ohjelmoijat k\xE4\
   ytt\xE4v\xE4t\u2026"
 title: "Ty\xF6skentely TOML:n kanssa"
+weight: 39
 ---
-
-{{< edit_this_page >}}
 
 ## Mikä & Miksi?
 TOML on konfiguraatiotiedostomuoto, joka on helppo ihmisille lukea ja kirjoittaa, sekä helposti koneiden jäsentämää ja luotavaa. Ohjelmoijat käyttävät TOMLia selkeiden, hierarkkisten konfiguraatiotiedostojen kanssa projekteissa, joissa luettavuus on avainasemassa.

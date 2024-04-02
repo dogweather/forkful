@@ -8,9 +8,8 @@ model: gpt-4-1106-preview
 summary: "Wrzucenie ca\u0142ego twojego kodu do jednej wielkiej sterty? Z\u0142y pomys\u0142\
   . Podzielenie go na funkcje? Dobry pomys\u0142. Dzi\u0119ki temu kod Elm jest czysty,\u2026"
 title: Organizacja kodu w funkcje
+weight: 18
 ---
-
-{{< edit_this_page >}}
 
 ## Co i dlaczego?
 Wrzucenie całego twojego kodu do jednej wielkiej sterty? Zły pomysł. Podzielenie go na funkcje? Dobry pomysł. Dzięki temu kod Elm jest czysty, wielokrotnego użytku i łatwiejszy w testowaniu. Organizując swój kod w funkcje, grupujesz razem kod, który wykonuje określone zadania, co sprawia, że twoja aplikacja jest bardziej utrzymywalna i zrozumiała.

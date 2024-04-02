@@ -11,9 +11,8 @@ summary: "Att skriva med stor bokstav i en str\xE4ng i C# inneb\xE4r att omvandl
   \ det f\xF6rsta tecknet i en str\xE4ng till versal om det inte redan \xE4r det.\
   \ Denna \xE4ndring kan\u2026"
 title: "G\xF6r om en str\xE4ng till versaler"
+weight: 2
 ---
-
-{{< edit_this_page >}}
 
 ## Vad & Varför?
 Att skriva med stor bokstav i en sträng i C# innebär att omvandla det första tecknet i en sträng till versal om det inte redan är det. Denna ändring kan vara avgörande för att formatera utdata, genomdriva kodningsstandarder eller göra texter i användargränssnittet mer läsliga.

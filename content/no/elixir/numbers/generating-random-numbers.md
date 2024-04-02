@@ -7,9 +7,8 @@ model: gpt-4-0125-preview
 summary: "\xC5 generere tilfeldige tall i Elixir er en grunnleggende programmeringsoppgave,\
   \ vital for applikasjoner som trenger uforutsigbare resultater som i\u2026"
 title: Generering av tilfeldige tall
+weight: 12
 ---
-
-{{< edit_this_page >}}
 
 ## Hva & Hvorfor?
 

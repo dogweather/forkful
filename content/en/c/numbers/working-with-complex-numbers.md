@@ -7,9 +7,8 @@ model: gpt-4-0125-preview
 summary: "Complex numbers consist of a real part and an imaginary part, represented\
   \ as `a + bi` where `i` is the square root of `-1`. Programmers work with complex\u2026"
 title: Working with complex numbers
+weight: 14
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 

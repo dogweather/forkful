@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Das Berechnen eines Datums in der Zukunft oder Vergangenheit in Go beinhaltet\
   \ das Manipulieren von Datums- und Zeitwerten, um einen spezifischen Zeitpunkt\u2026"
 title: "Berechnung eines zuk\xFCnftigen oder vergangenen Datums"
+weight: 26
 ---
-
-{{< edit_this_page >}}
 
 ## Was & Warum?
 

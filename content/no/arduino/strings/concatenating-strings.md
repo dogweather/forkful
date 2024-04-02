@@ -8,9 +8,8 @@ model: gpt-4-1106-preview
 summary: "Konkatenering av strenger er prosessen med \xE5 sette sammen to eller flere\
   \ tekststrenger. Programmerere gj\xF8r dette for \xE5 bygge meldinger, lage dynamiske\u2026"
 title: "Sammensl\xE5ing av strenger"
+weight: 3
 ---
-
-{{< edit_this_page >}}
 
 ## Hva & Hvorfor?
 Konkatenering av strenger er prosessen med å sette sammen to eller flere tekststrenger. Programmerere gjør dette for å bygge meldinger, lage dynamiske variabler, og kombinere input fra brukere.

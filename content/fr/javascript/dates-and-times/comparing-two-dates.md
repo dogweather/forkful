@@ -9,9 +9,8 @@ summary: "Comparer deux dates, c'est \xE9valuer leur ordre chronologique. On le 
   \ pour trier des \xE9v\xE8nements, programmer des rappels, ou calculer des dur\xE9\
   es."
 title: Comparer deux dates
+weight: 27
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 Comparer deux dates, c'est évaluer leur ordre chronologique. On le fait pour trier des évènements, programmer des rappels, ou calculer des durées.

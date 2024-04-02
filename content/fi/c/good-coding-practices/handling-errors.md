@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Virheiden k\xE4sittely C:ss\xE4 tarkoittaa ohjelman suorituksen aikana esiintyvien\
   \ poikkeavien tilanteiden havaitsemista ja niihin vastaamista. Ohjelmoijat\u2026"
 title: "Virheiden k\xE4sittely"
+weight: 16
 ---
-
-{{< edit_this_page >}}
 
 ## Mikä & Miksi?
 

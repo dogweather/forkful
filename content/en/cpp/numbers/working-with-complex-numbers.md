@@ -7,9 +7,8 @@ model: gpt-4-1106-preview
 summary: "Complex numbers extend the real numbers by adding an imaginary unit, represented\
   \ as 'i', where i^2 = -1. Programmers use them for simulations, signal\u2026"
 title: Working with complex numbers
+weight: 14
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 Complex numbers extend the real numbers by adding an imaginary unit, represented as 'i', where i^2 = -1. Programmers use them for simulations, signal processing, and solving math problems that demand working in two dimensions.

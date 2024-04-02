@@ -7,9 +7,8 @@ model: gpt-4-1106-preview
 summary: "Logging in software development is the technique of recording events that\
   \ occur while a program is running, typically to a file or external system.\u2026"
 title: Logging
+weight: 17
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 Logging in software development is the technique of recording events that occur while a program is running, typically to a file or external system. Programmers do it to gain insights into the software's behavior, troubleshoot issues, and maintain a record of operational history which is crucial for debugging and monitoring the health of applications.

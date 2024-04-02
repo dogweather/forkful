@@ -11,9 +11,8 @@ summary: "HTTP-pyynn\xF6n l\xE4hett\xE4minen tarkoittaa pyynn\xF6n luomista ja l
   hett\xE4mist\xE4 verkkopalvelimelle tietojen noutamiseksi tai l\xE4hett\xE4miseksi.\
   \ Ohjelmoijat tekev\xE4t\u2026"
 title: "L\xE4hett\xE4minen HTTP-pyynt\xF6"
+weight: 44
 ---
-
-{{< edit_this_page >}}
 
 ## Mikä & Miksi?
 

@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "La r\xE9cup\xE9ration de la date actuelle en C++ est une t\xE2che fondamentale\
   \ pour les programmes qui doivent traiter ou afficher des dates bas\xE9es sur l'horloge\u2026"
 title: Obtenir la date actuelle
+weight: 29
 ---
-
-{{< edit_this_page >}}
 
 ## Quoi & Pourquoi ?
 La récupération de la date actuelle en C++ est une tâche fondamentale pour les programmes qui doivent traiter ou afficher des dates basées sur l'horloge du système. C'est essentiel pour la journalisation, la datation, la planification de tâches et toute fonctionnalité qui repose sur des dates et des heures.

@@ -7,9 +7,8 @@ model: gpt-4-1106-preview
 summary: "Concatenating strings means sticking two or more pieces of text together.\
   \ It's as basic and essential as using duct tape, allowing you to create new\u2026"
 title: Concatenating strings
+weight: 3
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 Concatenating strings means sticking two or more pieces of text together. It's as basic and essential as using duct tape, allowing you to create new strings on the fly for displaying messages, creating templates, and more.

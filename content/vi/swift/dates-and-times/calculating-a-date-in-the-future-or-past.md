@@ -13,9 +13,8 @@ summary: "B\u1EA1n \u0111\xE3 bao gi\u1EDD c\u1EA7n t\xECm m\u1ED9t ng\xE0y tron
   p tr\xECnh, ch\xFAng ta th\u01B0\u1EDDng t\xEDnh to\xE1n ng\xE0y cho c\xE1c h\u1EA1\
   n ch\xF3t, nh\u1EAFc nh\u1EDF, ho\u1EB7c s\u1EF1\u2026"
 title: "T\xEDnh to\xE1n ng\xE0y trong t\u01B0\u01A1ng lai ho\u1EB7c qu\xE1 kh\u1EE9"
+weight: 26
 ---
-
-{{< edit_this_page >}}
 
 ## Cái gì và Tại sao?
 Bạn đã bao giờ cần tìm một ngày trong quá khứ hoặc tương lai chưa? Về mặt lập trình, chúng ta thường tính toán ngày cho các hạn chót, nhắc nhở, hoặc sự kiện. Biết cách làm giúp loại bỏ sự đoán mò và cho phép ứng dụng của bạn xử lý các nhiệm vụ nhạy cảm với thời gian một cách chính xác.

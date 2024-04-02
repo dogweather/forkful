@@ -11,9 +11,8 @@ summary: "Analizzare una data da una stringa in Elm comporta la trasformazione d
   \ informazioni testuali che rappresentano date e orari in un formato che Elm pu\xF2\
   \u2026"
 title: Analisi di una data da una stringa
+weight: 30
 ---
-
-{{< edit_this_page >}}
 
 ## Che cosa & Perché?
 Analizzare una data da una stringa in Elm comporta la trasformazione delle informazioni testuali che rappresentano date e orari in un formato che Elm può capire e manipolare, specificamente nel tipo `Date`. Questo processo è fondamentale per gestire l'input dell'utente, visualizzare le date correttamente localizzate ed eseguire calcoli relativi alle date, garantendo che le tue applicazioni Elm possano elaborare intelligentemente i dati temporali.

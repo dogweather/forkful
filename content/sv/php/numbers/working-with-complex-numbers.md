@@ -9,9 +9,8 @@ summary: "Komplexa tal har en realdel och en imagin\xE4rdel, vanligtvis skrivna 
   \ `a + bi`. De \xE4r avg\xF6rande inom avancerad matematik, fysik, ingenj\xF6rsvetenskap\
   \ och\u2026"
 title: Att arbeta med komplexa tal
+weight: 14
 ---
-
-{{< edit_this_page >}}
 
 ## Vad & Varför?
 Komplexa tal har en realdel och en imaginärdel, vanligtvis skrivna som `a + bi`. De är avgörande inom avancerad matematik, fysik, ingenjörsvetenskap och vissa datavetenskapliga algoritmer. Programmerare arbetar med dem för att hantera beräkningar som involverar kvadratrötter av negativa tal och oscillerande funktioner.

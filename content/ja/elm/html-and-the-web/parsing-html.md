@@ -21,9 +21,8 @@ summary: "Elm\u3067HTML\u3092\u89E3\u6790\u3059\u308B\u3068\u306F\u3001HTML\u30C
   \u30DF\u30C3\u30AF\u306AWeb\u30A2\u30D7\u30EA\u30B1\u30FC\u30B7\u30E7\u30F3\u3092\
   \u4F5C\u6210\u3057\u307E\u3059\u3002"
 title: "HTML\u306E\u89E3\u6790"
+weight: 43
 ---
-
-{{< edit_this_page >}}
 
 ## 何となぜ？
 ElmでHTMLを解析するとは、HTMLドキュメントから情報を抽出することを指します。プログラマーは、HTMLを返すWebコンテンツやAPIと連携するためにこの作業を行い、よりインタラクティブでダイナミックなWebアプリケーションを作成します。

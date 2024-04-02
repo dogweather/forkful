@@ -10,9 +10,8 @@ model: gpt-4-0125-preview
 summary: "Obter a data atual em Haskell envolve obter o tempo atual do sistema e transform\xE1\
   -lo em um formato de data leg\xEDvel. Os programadores fazem isso para\u2026"
 title: Obtendo a data atual
+weight: 29
 ---
-
-{{< edit_this_page >}}
 
 ## O Que & Por Quê?
 Obter a data atual em Haskell envolve obter o tempo atual do sistema e transformá-lo em um formato de data legível. Os programadores fazem isso para realizar operações baseadas na data, como logging, agendar tarefas ou marcar eventos em aplicações com timestamp.

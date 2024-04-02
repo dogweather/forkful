@@ -9,9 +9,8 @@ summary: "Numeroiden py\xF6rist\xE4minen tarkoittaa niiden s\xE4\xE4t\xE4mist\xE
   \ tiettyyn tarkkuusasteeseen. Ohjelmoijat tekev\xE4t sen yksinkertaistaakseen numeroita\
   \ luettavuuden\u2026"
 title: "Numerojen py\xF6rist\xE4minen"
+weight: 13
 ---
-
-{{< edit_this_page >}}
 
 ## Mitä ja miksi?
 Numeroiden pyöristäminen tarkoittaa niiden säätämistä tiettyyn tarkkuusasteeseen. Ohjelmoijat tekevät sen yksinkertaistaakseen numeroita luettavuuden vuoksi, täyttääkseen tiettyjä vaatimuksia tai varmistaakseen, että laskelmat mahtuvat tiettyihin rajoituksiin, kuten välttääkseen tarkkuusvirheitä liukulukuaritmetiikassa.

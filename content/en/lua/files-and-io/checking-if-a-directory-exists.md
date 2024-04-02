@@ -8,9 +8,8 @@ model: gpt-4-0125-preview
 summary: "Checking if a directory exists is a fundamental operation when writing scripts\
   \ that interact with the filesystem, ensuring that your program operates on\u2026"
 title: Checking if a directory exists
+weight: 20
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 

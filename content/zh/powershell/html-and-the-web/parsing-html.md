@@ -19,9 +19,8 @@ summary: "\u5728 PowerShell \u4E2D\u89E3\u6790 HTML \u610F\u5473\u7740\u89E3\u67
   \u4ED6\u7F51\u7EDC\u4EA4\u4E92\uFF0C\u800C\u4E0D\u9700\u8981\u7F51\u7EDC\u6D4F\u89C8\
   \u5668\u3002"
 title: "\u89E3\u6790HTML"
+weight: 43
 ---
-
-{{< edit_this_page >}}
 
 ## 什么 & 为什么？
 在 PowerShell 中解析 HTML 意味着解析 HTML 内容以提取特定数据或自动化与网络相关的任务。程序员这样做是为了与网页交互、抓取网页内容，或者自动化表单提交和其他网络交互，而不需要网络浏览器。

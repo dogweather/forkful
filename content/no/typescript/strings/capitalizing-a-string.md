@@ -11,9 +11,8 @@ summary: "\xC5 sette stor forbokstav i en streng inneb\xE6rer \xE5 endre det f\x
   rste tegnet av en gitt streng til stor bokstav hvis den er i sm\xE5 bokstaver, ofte\
   \ uten \xE5 endre\u2026"
 title: Sette stor bokstav i en streng
+weight: 2
 ---
-
-{{< edit_this_page >}}
 
 ## Hva & Hvorfor?
 Å sette stor forbokstav i en streng innebærer å endre det første tegnet av en gitt streng til stor bokstav hvis den er i små bokstaver, ofte uten å endre resten av strengen. Denne operasjonen brukes typisk for å sikre at egennavn eller begynnelsen av setninger følger grammatikalske regler i tekstbehandling, noe som gjør output ser profesjonell og lesbar ut.

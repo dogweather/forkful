@@ -11,9 +11,8 @@ summary: "YAML, czyli YAML Ain't Markup Language, to j\u0119zyk seryalizacji dan
   \ czytelny dla cz\u0142owieka. Programi\u015Bci cz\u0119sto u\u017Cywaj\u0105 go\
   \ do plik\xF3w konfiguracyjnych i\u2026"
 title: Praca z YAML
+weight: 41
 ---
-
-{{< edit_this_page >}}
 
 ## Co i dlaczego?
 YAML, czyli YAML Ain't Markup Language, to język seryalizacji danych czytelny dla człowieka. Programiści często używają go do plików konfiguracyjnych i transmisji danych między językami. Jego prostota i czytelność sprawiają, że jest szczególnie popularny do zadań związanych z konfiguracją środowisk, aplikacji lub usług, gdzie konfiguracje są kluczowe i powinny być łatwo zrozumiałe i edytowalne.

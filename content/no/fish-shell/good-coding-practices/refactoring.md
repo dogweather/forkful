@@ -8,9 +8,8 @@ model: gpt-4-0125-preview
 summary: "Refaktorisering er prosessen med \xE5 restrukturere eksisterende kode uten\
   \ \xE5 endre dens eksterne oppf\xF8rsel for \xE5 forbedre ikke-funksjonelle attributter.\u2026"
 title: Refaktorering
+weight: 19
 ---
-
-{{< edit_this_page >}}
 
 ## Hva og hvorfor?
 Refaktorisering er prosessen med å restrukturere eksisterende kode uten å endre dens eksterne oppførsel for å forbedre ikke-funksjonelle attributter. Programmerere gjør dette for å gjøre koden mer lesbar, redusere kompleksitet, forbedre vedlikeholdbarhet og gjøre det enklere å skalere eller modifisere nedover veien.

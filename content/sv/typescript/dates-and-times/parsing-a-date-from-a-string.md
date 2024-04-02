@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Att tolka ett datum fr\xE5n en str\xE4ng inneb\xE4r att konvertera textuella\
   \ representationer av datum och tider till ett format som kan manipuleras och analyseras\u2026"
 title: "Analysera ett datum fr\xE5n en str\xE4ng"
+weight: 30
 ---
-
-{{< edit_this_page >}}
 
 ## Vad och varför?
 Att tolka ett datum från en sträng innebär att konvertera textuella representationer av datum och tider till ett format som kan manipuleras och analyseras av programmet. Detta är en vanlig uppgift i programmering eftersom det möjliggör hantering av användarinmatning, lagring av tidsstämplad data och interaktioner med API:er, vilket ger mer funktionella och användarvänliga applikationer.

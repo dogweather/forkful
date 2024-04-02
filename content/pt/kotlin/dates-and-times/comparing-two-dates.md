@@ -9,9 +9,8 @@ summary: "Comparar duas datas significa verificar a sua igualdade, anteced\xEAnc
   \ ou posterioridade em rela\xE7\xE3o uma \xE0 outra. Programadores fazem isso para\
   \ controle de\u2026"
 title: Comparando duas datas
+weight: 27
 ---
-
-{{< edit_this_page >}}
 
 ## O Que & Porquê?
 

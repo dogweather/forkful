@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "TOML is een voor mensen leesbare taal voor data-serialisatie, vaak gebruikt\
   \ voor configuraties. Programmeurs gebruiken TOML vanwege de eenvoud en\u2026"
 title: Werken met TOML
+weight: 39
 ---
-
-{{< edit_this_page >}}
 
 ## Wat & Waarom?
 TOML is een voor mensen leesbare taal voor data-serialisatie, vaak gebruikt voor configuraties. Programmeurs gebruiken TOML vanwege de eenvoud en duidelijkheid, wat gemakkelijk vertaalt naar een hash map in Rust.

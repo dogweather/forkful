@@ -9,9 +9,8 @@ summary: "Muuntaminen p\xE4iv\xE4m\xE4\xE4r\xE4st\xE4 merkkijonoksi tarkoittaa p
   iv\xE4m\xE4\xE4r\xE4-arvon esitt\xE4mist\xE4 tekstimuodossa. Ohjelmoijat tekev\xE4\
   t t\xE4m\xE4n esitt\xE4\xE4kseen p\xE4iv\xE4m\xE4\xE4r\xE4n\u2026"
 title: "P\xE4iv\xE4m\xE4\xE4r\xE4n muuntaminen merkkijonoksi"
+weight: 28
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 Muuntaminen päivämäärästä merkkijonoksi tarkoittaa päivämäärä-arvon esittämistä tekstimuodossa. Ohjelmoijat tekevät tämän esittääkseen päivämäärän ymmärrettävästi ihmisille tai siirtääkseen dataa formaateissa, jotka vaativat tekstiesitystä.

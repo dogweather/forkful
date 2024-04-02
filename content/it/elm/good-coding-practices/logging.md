@@ -8,9 +8,8 @@ model: gpt-4-1106-preview
 summary: "Il logging \xE8 essenzialmente il processo di registrazione di eventi e\
   \ output di dati da un software durante il suo funzionamento, pensalo come il diario\u2026"
 title: Registrazione Eventi (Logging)
+weight: 17
 ---
-
-{{< edit_this_page >}}
 
 ## Cosa & Perché?
 Il logging è essenzialmente il processo di registrazione di eventi e output di dati da un software durante il suo funzionamento, pensalo come il diario del software. I programmatori utilizzano il logging per tenere traccia di ciò che sta succedendo sotto il cofano - è inestimabile per il debugging dei problemi, il monitoraggio del comportamento del sistema in tempo reale e l'analisi delle attività passate per ottimizzazioni delle prestazioni o audit.

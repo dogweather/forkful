@@ -9,9 +9,8 @@ summary: "Imprimir mensajes de depuraci\xF3n nos permite echar un vistazo a lo q
   \ est\xE1 pasando en nuestro c\xF3digo en tiempo real. Es esencial para entender\
   \ bugs y\u2026"
 title: "Imprimiendo salida de depuraci\xF3n"
+weight: 33
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why? (Qué y Por Qué?)
 Imprimir mensajes de depuración nos permite echar un vistazo a lo que está pasando en nuestro código en tiempo real. Es esencial para entender bugs y verificar que todo fluye como esperamos.

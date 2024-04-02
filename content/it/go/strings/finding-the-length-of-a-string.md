@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Trovare la lunghezza di una stringa in Go riguarda il determinare il numero\
   \ di caratteri che contiene. I programmatori eseguono regolarmente questa\u2026"
 title: Trovare la lunghezza di una stringa
+weight: 7
 ---
-
-{{< edit_this_page >}}
 
 ## Cosa & Perché?
 Trovare la lunghezza di una stringa in Go riguarda il determinare il numero di caratteri che contiene. I programmatori eseguono regolarmente questa operazione per manipolare le stringhe in modo efficace, sia che si tratti di validazione, estrazione di sottostinghe, o semplicemente per imporre vincoli negli input degli utenti.

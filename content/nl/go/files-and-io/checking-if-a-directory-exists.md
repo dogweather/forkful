@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Controleren of een map bestaat in Go is cruciaal voor applicaties die interageren\
   \ met het bestandssysteem, om fouten te voorkomen bij het proberen te\u2026"
 title: Controleren of een directory bestaat
+weight: 20
 ---
-
-{{< edit_this_page >}}
 
 ## Wat & Waarom?
 

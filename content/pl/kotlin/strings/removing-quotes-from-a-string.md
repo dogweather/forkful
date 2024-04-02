@@ -9,9 +9,8 @@ summary: "Usuwanie cudzys\u0142ow\xF3w ze stringa oznacza wyci\u0119cie wszelkic
   \ instancji znak\xF3w cudzys\u0142owu, zar\xF3wno pojedynczych (' ') jak i podw\xF3\
   jnych (\" \"), z danych\u2026"
 title: "Usuwanie cudzys\u0142ow\xF3w z ci\u0105gu znak\xF3w"
+weight: 9
 ---
-
-{{< edit_this_page >}}
 
 ## Co i dlaczego?
 

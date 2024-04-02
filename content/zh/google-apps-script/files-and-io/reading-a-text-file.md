@@ -21,9 +21,8 @@ summary: "\u5728 Google Apps Script (GAS) \u4E2D\u8BFB\u53D6\u6587\u672C\u6587\u
   \u5B9E\u73B0\u81EA\u52A8\u5316\u5E76\u4E0E\u8C37\u6B4C\u7684\u4EA7\u54C1\u5957\u4EF6\
   \u96C6\u6210\u3002"
 title: "\u8BFB\u53D6\u6587\u672C\u6587\u4EF6"
+weight: 22
 ---
-
-{{< edit_this_page >}}
 
 ## 什么 & 为什么？
 

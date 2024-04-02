@@ -9,9 +9,8 @@ summary: "(Mesurer la longueur d'une cha\xEEne : Quoi et Pourquoi?) Calculer la 
   \ d'une cha\xEEne de caract\xE8res, c'est compter le nombre de ses \xE9l\xE9ments.\
   \ C'est\u2026"
 title: "Trouver la longueur d'une cha\xEEne de caract\xE8res"
+weight: 7
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 (Mesurer la longueur d'une chaîne : Quoi et Pourquoi?)

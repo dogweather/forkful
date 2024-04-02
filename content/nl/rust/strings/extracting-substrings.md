@@ -10,9 +10,8 @@ model: gpt-4-0125-preview
 summary: "Substrings extraheren betekent een kleiner stuk uit een grotere string halen\u2014\
   een beetje zoals het snijden van een cake om het stuk te krijgen dat je echt\u2026"
 title: Substrings extraheren
+weight: 6
 ---
-
-{{< edit_this_page >}}
 
 ## Wat & Waarom?
 

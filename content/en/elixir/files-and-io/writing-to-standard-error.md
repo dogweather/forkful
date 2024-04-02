@@ -7,9 +7,8 @@ model: gpt-4-0125-preview
 summary: "Writing to standard error (stderr) in Elixir is a method of directing error\
   \ messages and diagnostics separate from the main output (stdout). Programmers\u2026"
 title: Writing to standard error
+weight: 25
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 

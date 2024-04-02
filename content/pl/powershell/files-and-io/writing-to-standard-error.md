@@ -9,9 +9,8 @@ summary: "W PowerShellu zapis do strumienia b\u0142\u0119d\xF3w (standard error)
   \ odseparowa\u0107 normalne wyniki dzia\u0142ania skryptu od komunikat\xF3w o b\u0142\
   \u0119dach. Programi\u015Bci\u2026"
 title: "Pisanie do standardowego b\u0142\u0119du"
+weight: 25
 ---
-
-{{< edit_this_page >}}
 
 ## Co i dlaczego?
 

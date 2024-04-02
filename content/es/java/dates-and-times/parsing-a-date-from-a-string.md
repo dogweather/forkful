@@ -11,9 +11,8 @@ summary: "Convertir una fecha de una cadena implica convertir la representaci\xF
   n en texto de una fecha y hora en un objeto `Date` o en un objeto `LocalDateTime`\
   \ m\xE1s\u2026"
 title: Analizando una fecha a partir de una cadena de texto
+weight: 30
 ---
-
-{{< edit_this_page >}}
 
 ## Qué y Por Qué
 Convertir una fecha de una cadena implica convertir la representación en texto de una fecha y hora en un objeto `Date` o en un objeto `LocalDateTime` más moderno. Los programadores hacen esto para manipular, formatear, comparar o almacenar fechas en un formato estandarizado, lo cual es crucial para aplicaciones que requieren cálculos de fechas, validación o internacionalización consistente.

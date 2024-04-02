@@ -13,9 +13,8 @@ summary: "L\u1EA5y ng\xE0y hi\u1EC7n t\u1EA1i trong JavaScript l\xE0 vi\u1EC7c t
   p tr\xECnh vi\xEAn th\u1EF1c hi\u1EC7n \u0111i\u1EC1u n\xE0y cho c\xE1c m\u1EE5\
   c \u0111\xEDch nh\u01B0 d\u1EA5u th\u1EDDi\u2026"
 title: "L\u1EA5y ng\xE0y hi\u1EC7n t\u1EA1i"
+weight: 29
 ---
-
-{{< edit_this_page >}}
 
 ## Gì và Tại sao?
 Lấy ngày hiện tại trong JavaScript là việc thu thập ngày và thời gian của ngày hiện tại. Lập trình viên thực hiện điều này cho các mục đích như dấu thời gian, lịch trình, và logic dựa trên thời gian.

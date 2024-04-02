@@ -9,9 +9,8 @@ summary: "Arredondar n\xFAmeros significa cortar os decimais at\xE9 uma precis\x
   o definida, frequentemente para n\xFAmeros inteiros. Programadores arredondam para\
   \ simplificar\u2026"
 title: "Arredondamento de n\xFAmeros"
+weight: 13
 ---
-
-{{< edit_this_page >}}
 
 ## O Que & Por Que?
 Arredondar números significa cortar os decimais até uma precisão definida, frequentemente para números inteiros. Programadores arredondam para simplificar cálculos, melhorar o desempenho ou tornar as saídas amigáveis ao usuário.

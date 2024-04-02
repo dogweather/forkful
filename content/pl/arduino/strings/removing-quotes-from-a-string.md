@@ -9,9 +9,8 @@ summary: "Usuwanie cudzys\u0142ow\xF3w z ci\u0105gu znak\xF3w oznacza usuni\u011
   cie wszystkich wyst\u0105pie\u0144 pojedynczych (`'`) lub podw\xF3jnych (`\"`) znak\xF3\
   w cudzys\u0142owu otaczaj\u0105cych tekst.\u2026"
 title: "Usuwanie cudzys\u0142ow\xF3w z ci\u0105gu znak\xF3w"
+weight: 9
 ---
-
-{{< edit_this_page >}}
 
 ## Co i dlaczego?
 Usuwanie cudzysłowów z ciągu znaków oznacza usunięcie wszystkich wystąpień pojedynczych (`'`) lub podwójnych (`"`) znaków cudzysłowu otaczających tekst. Programiści często robią to, aby oczyścić dane wejściowe, przygotować ciągi znaków do porównania, lub przetworzyć dane tekstowe, które mogą przypadkowo zawierać cudzysłowy jako część zawartości ciągu.

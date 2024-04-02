@@ -9,9 +9,8 @@ summary: "Generowanie losowych liczb w Ruby polega na tworzeniu liczb, kt\xF3ryc
   \ nie mo\u017Cna logicznie przewidzie\u0107, co jest kluczowe w scenariuszach takich\
   \ jak\u2026"
 title: Generowanie liczb losowych
+weight: 12
 ---
-
-{{< edit_this_page >}}
 
 ## Co i dlaczego?
 

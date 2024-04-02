@@ -9,9 +9,8 @@ summary: "Lasketaan p\xE4iv\xE4m\xE4\xE4r\xE4 tulevaisuudessa tai menneisyydess\
   . Se on hy\xF6dyllist\xE4, kun halutaan aikatauluttaa tapahtumia, muistuttaa deadlineista\
   \ tai seurata\u2026"
 title: "Tulevan tai menneen p\xE4iv\xE4m\xE4\xE4r\xE4n laskeminen"
+weight: 26
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why? (Mitä ja miksi?)
 Lasketaan päivämäärä tulevaisuudessa tai menneisyydessä. Se on hyödyllistä, kun halutaan aikatauluttaa tapahtumia, muistuttaa deadlineista tai seurata aikavälitapahtumia.

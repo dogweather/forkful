@@ -9,9 +9,8 @@ summary: "\xC5 slette tegn som matcher et m\xF8nster inneb\xE6rer \xE5 finne og 
   \ spesifikke tegnsekvenser fra en streng. Programmerere gj\xF8r dette for \xE5 rense\
   \ data,\u2026"
 title: "Slette tegn som matcher et m\xF8nster"
+weight: 5
 ---
-
-{{< edit_this_page >}}
 
 ## Hva & Hvorfor?
 Å slette tegn som matcher et mønster innebærer å finne og fjerne spesifikke tegnsekvenser fra en streng. Programmerere gjør dette for å rense data, forenkle tekst eller forberede strenger for videre prosessering.

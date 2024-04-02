@@ -9,9 +9,8 @@ summary: "Stringinterpolation inneb\xE4r att blanda in variabler i en textstr\xE
   ng. Det g\xF6r kod l\xE4sbar och flexibel \u2013 vi slipper klumpigt plus-tecken\
   \ (+) f\xF6r att bygga\u2026"
 title: "Interpolera en str\xE4ng"
+weight: 8
 ---
-
-{{< edit_this_page >}}
 
 ## Vad & Varför?
 Stringinterpolation innebär att blanda in variabler i en textsträng. Det gör kod läsbar och flexibel – vi slipper klumpigt plus-tecken (+) för att bygga meddelanden.

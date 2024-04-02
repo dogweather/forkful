@@ -9,9 +9,8 @@ summary: "Wyci\u0105ganie podci\u0105g\xF3w to wydobywanie okre\u015Blonych cz\u
   \u015Bci z wi\u0119kszego ci\u0105gu tekstowego. Programi\u015Bci robi\u0105 to,\
   \ by manipulowa\u0107 danymi, weryfikowa\u0107 formaty, czy\u2026"
 title: "Wycinanie pod\u0142a\u0144cuch\xF3w"
+weight: 6
 ---
-
-{{< edit_this_page >}}
 
 ## Co i dlaczego?
 

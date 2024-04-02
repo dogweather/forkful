@@ -11,9 +11,8 @@ summary: "I Bash-programmering \xE4r det att kontrollera om en katalog finns en 
   sentlig kontrollmekanism som anv\xE4nds f\xF6r att verifiera n\xE4rvaron av en katalog\
   \ innan\u2026"
 title: Kontrollera om en katalog existerar
+weight: 20
 ---
-
-{{< edit_this_page >}}
 
 ## Vad & Varför?
 

@@ -7,9 +7,8 @@ model: gpt-4-1106-preview
 summary: "Los argumentos de la l\xEDnea de comandos son datos que pasas a tu aplicaci\xF3\
   n al iniciarla. Los programadores los usan para personalizar la ejecuci\xF3n del\u2026"
 title: "Lectura de argumentos de l\xEDnea de comandos"
+weight: 23
 ---
-
-{{< edit_this_page >}}
 
 ## ¿Qué y Por Qué?
 Los argumentos de la línea de comandos son datos que pasas a tu aplicación al iniciarla. Los programadores los usan para personalizar la ejecución del programa sin cambiar el código fuente.

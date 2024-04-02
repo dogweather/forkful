@@ -7,9 +7,8 @@ model: gpt-4-1106-preview
 summary: "Buscar y reemplazar texto permite modificar cadenas de caracteres f\xE1\
   cilmente, una herramienta esencial para corregir errores, actualizar datos o cambiar\u2026"
 title: Buscando y reemplazando texto
+weight: 10
 ---
-
-{{< edit_this_page >}}
 
 ## Qué y Por Qué?
 Buscar y reemplazar texto permite modificar cadenas de caracteres fácilmente, una herramienta esencial para corregir errores, actualizar datos o cambiar código. Los programadores usan esta técnica para ahorrar tiempo y evitar alterar manualmente largos bloques de texto.

@@ -11,9 +11,8 @@ summary: "Att h\xE4mta det aktuella datumet i Rust \xE4r en vanlig uppgift f\xF6
   \ s\xE5dana saker som loggning, tidsbaserade operationer eller helt enkelt f\xF6\
   r att visa datumet.\u2026"
 title: "F\xE5 det aktuella datumet"
+weight: 29
 ---
-
-{{< edit_this_page >}}
 
 ## Vad & Varför?
 

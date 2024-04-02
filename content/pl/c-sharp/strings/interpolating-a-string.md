@@ -11,9 +11,8 @@ summary: "Interpolacja ci\u0105g\xF3w w C# pozwala na tworzenie nowego ci\u0105g
   \ przez w\u0142\u0105czenie wyra\u017Ce\u0144 wewn\u0105trz litera\u0142u ci\u0105\
   gu, co u\u0142atwia formatowanie i \u0142\u0105czenie ci\u0105g\xF3w.\u2026"
 title: "Interpolacja \u0142a\u0144cucha znak\xF3w"
+weight: 8
 ---
-
-{{< edit_this_page >}}
 
 ## Co i dlaczego?
 Interpolacja ciągów w C# pozwala na tworzenie nowego ciągu przez włączenie wyrażeń wewnątrz literału ciągu, co ułatwia formatowanie i łączenie ciągów. Programiści używają tej funkcji, aby poprawić czytelność i możliwości utrzymania kodu, szczególnie przy pracy z dynamiczną zawartością ciągów.

@@ -7,9 +7,8 @@ model: gpt-4-1106-preview
 summary: "Enviar una petici\xF3n HTTP es el proceso de solicitar o enviar datos a\
   \ un servidor web. Los programadores lo hacen para interactuar con servicios web,\u2026"
 title: Enviando una solicitud http
+weight: 44
 ---
-
-{{< edit_this_page >}}
 
 ## Qué es y Por Qué?
 

@@ -8,9 +8,8 @@ model: gpt-4-1106-preview
 summary: "HTTP-Anfragen mit Basic Authentication erm\xF6glichen den Zugang zu gesch\xFC\
   tzten Ressourcen durch \xDCbermittlung von Benutzername und Passwort im Header.\u2026"
 title: HTTP-Anfragen mit Basisauthentifizierung senden
+weight: 45
 ---
-
-{{< edit_this_page >}}
 
 ## Was & Warum?
 HTTP-Anfragen mit Basic Authentication ermöglichen den Zugang zu geschützten Ressourcen durch Übermittlung von Benutzername und Passwort im Header. Programmierer nutzen dies, um sicher auf APIs und Webdienste zuzugreifen.

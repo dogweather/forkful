@@ -7,9 +7,8 @@ model: gpt-4-0125-preview
 summary: "REPL st\xE5r for Read-Eval-Print Loop, et enkelt, interaktivt dataprogrammeringsmilj\xF8\
   . Kodeutviklere bruker det til raskt \xE5 skrive og teste kode,\u2026"
 title: Bruke et interaktivt skall (REPL)
+weight: 34
 ---
-
-{{< edit_this_page >}}
 
 ## Hva & Hvorfor?
 REPL står for Read-Eval-Print Loop, et enkelt, interaktivt dataprogrammeringsmiljø. Kodeutviklere bruker det til raskt å skrive og teste kode, eksperimentere med syntaks og lære programmeringskonsepter uten overheaden av å opprette og kjøre hele applikasjoner.

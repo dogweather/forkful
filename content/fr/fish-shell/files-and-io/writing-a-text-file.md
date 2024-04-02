@@ -11,9 +11,8 @@ summary: "\xC9crire dans un fichier texte avec Fish Shell vous permet de stocker
   \ donn\xE9es de mani\xE8re persistante, facilitant ainsi la r\xE9cup\xE9ration ou\
   \ la\u2026"
 title: "R\xE9diger un fichier texte"
+weight: 24
 ---
-
-{{< edit_this_page >}}
 
 ## Quoi & Pourquoi ?
 

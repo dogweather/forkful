@@ -8,9 +8,8 @@ model: gpt-4-1106-preview
 summary: "Removing quotes from a string in PHP means stripping out those pesky double\
   \ (`\"`) or single (`'`) quote characters that can mess with your code logic or\u2026"
 title: Removing quotes from a string
+weight: 9
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 Removing quotes from a string in PHP means stripping out those pesky double (`"`) or single (`'`) quote characters that can mess with your code logic or database queries. Programmers do it to clean or sanitize input data, ensuring that strings are safely used or stored.

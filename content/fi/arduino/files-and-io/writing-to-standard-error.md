@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Standardivirheen (stderr) kirjoittaminen Arduinon ohjelmoinnissa tarkoittaa\
   \ virheilmoitusten ja diagnostiikkatietojen ohjaamista erilliselle kanavalle,\u2026"
 title: Kirjoittaminen standardivirheeseen
+weight: 25
 ---
-
-{{< edit_this_page >}}
 
 ## Mikä & Miksi?
 

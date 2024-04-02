@@ -9,9 +9,8 @@ summary: "Das Vergleichen zweier Daten bedeutet, ihre chronologische Reihenfolge
   \ bestimmen. Programmierer machen das, um Ereignisse zu organisieren, Deadlines\
   \ zu\u2026"
 title: Vergleich von zwei Daten
+weight: 27
 ---
-
-{{< edit_this_page >}}
 
 ## Was & Warum?
 Das Vergleichen zweier Daten bedeutet, ihre chronologische Reihenfolge zu bestimmen. Programmierer machen das, um Ereignisse zu organisieren, Deadlines zu verwalten oder Zeitspannen zu berechnen.

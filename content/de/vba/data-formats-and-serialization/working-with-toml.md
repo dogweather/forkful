@@ -10,9 +10,8 @@ model: gpt-4-0125-preview
 summary: "TOML, was f\xFCr Toms Offensichtliche, Minimale Sprache steht, ist ein Daten-Serialisierungsformat,\
   \ das haupts\xE4chlich f\xFCr Konfigurationsdateien verwendet\u2026"
 title: Arbeiten mit TOML
+weight: 39
 ---
-
-{{< edit_this_page >}}
 
 ## Was & Warum?
 

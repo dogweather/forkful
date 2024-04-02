@@ -15,9 +15,8 @@ summary: "\uBCF5\uC18C\uC218\uB294 \uC2E4\uC218 \uBD80\uBD84\uACFC \uD5C8\uC218 
   \uB808\uC774\uC158 \uB4F1\uC758 \uC791\uC5C5\uC5D0 \uBCF5\uC18C\uC218\uB97C \uC0AC\
   \uC6A9\uD569\uB2C8\uB2E4."
 title: "\uBCF5\uC18C\uC218 \uB2E4\uB8E8\uAE30"
+weight: 14
 ---
-
-{{< edit_this_page >}}
 
 ## 무엇인가 & 왜?
 복소수는 실수 부분과 허수 부분(예: 3 + 4i)을 가지고 있습니다. 프로그래머들은 Swift에서 신호 처리, 특정 수학 문제 해결, 물리 시뮬레이션 등의 작업에 복소수를 사용합니다.

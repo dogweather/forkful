@@ -11,9 +11,8 @@ summary: "YAML, abr\xE9viation de \"YAML Ain't Markup Language\" (YAML n'est pas
   \ langage de balisage), est une norme de s\xE9rialisation de donn\xE9es conviviale\
   \ pour les\u2026"
 title: Travailler avec YAML
+weight: 41
 ---
-
-{{< edit_this_page >}}
 
 ## Quoi & Pourquoi ?
 

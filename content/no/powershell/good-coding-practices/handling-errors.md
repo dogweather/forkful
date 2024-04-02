@@ -9,9 +9,8 @@ summary: "\xC5 h\xE5ndtere feil i PowerShell betyr \xE5 forutse uhell og h\xE5nd
   \ dem p\xE5 en smidig m\xE5te. Programmerere gj\xF8r dette for \xE5 forhindre krasjer\
   \ og gi brukere\u2026"
 title: "Feilh\xE5ndtering"
+weight: 16
 ---
-
-{{< edit_this_page >}}
 
 ## Hva & Hvorfor?
 Å håndtere feil i PowerShell betyr å forutse uhell og håndtere dem på en smidig måte. Programmerere gjør dette for å forhindre krasjer og gi brukere nyttig tilbakemelding.

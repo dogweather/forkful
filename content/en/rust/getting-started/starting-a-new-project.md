@@ -7,9 +7,8 @@ model: gpt-4-1106-preview
 summary: "Starting a new project in Rust means setting up a basic structure so your\
   \ code has a place to live. Programmers kick off new projects to solve problems,\u2026"
 title: Starting a new project
+weight: 1
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 

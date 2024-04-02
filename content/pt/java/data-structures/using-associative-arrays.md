@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Em Java, arrays associativos, ou mapas, permitem armazenar pares chave-valor\
   \ para uma busca e manipula\xE7\xE3o de dados eficiente. Programadores os utilizam\u2026"
 title: Usando arrays associativos
+weight: 15
 ---
-
-{{< edit_this_page >}}
 
 ## O Quê e Porquê?
 

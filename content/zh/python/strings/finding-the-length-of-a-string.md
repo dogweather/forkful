@@ -16,9 +16,8 @@ summary: "\u5728Python\u4E2D\uFF0C\u83B7\u53D6\u5B57\u7B26\u4E32\u957F\u5EA6\u76
   \u7ECF\u5E38\u9700\u8981\u77E5\u9053\u5B57\u7B26\u4E32\u7684\u5177\u4F53\u957F\u5EA6\
   \u3002"
 title: "\u83B7\u53D6\u5B57\u7B26\u4E32\u7684\u957F\u5EA6"
+weight: 7
 ---
-
-{{< edit_this_page >}}
 
 ## 什么与为什么？
 在Python中，获取字符串长度的操作就是确定字符串中字符的数目。为了判断用户输入的合法性、裁剪或格式化输出等，程序员经常需要知道字符串的具体长度。

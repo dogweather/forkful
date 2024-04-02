@@ -9,9 +9,8 @@ summary: "L\xE4hett\xE4ess\xE4si HTTP-pyynt\xF6\xE4 perusautentikoinnilla lis\xE
   t k\xE4ytt\xE4j\xE4tunnuksen ja salasanan pyynt\xF6\xF6si. Ohjelmoijat tekev\xE4\
   t t\xE4m\xE4n varmistaakseen k\xE4ytt\xF6oikeudet\u2026"
 title: "HTTP-pyynn\xF6n l\xE4hett\xE4minen perusautentikoinnilla"
+weight: 45
 ---
-
-{{< edit_this_page >}}
 
 ## Mitä & Miksi?
 Lähettäessäsi HTTP-pyyntöä perusautentikoinnilla lisäät käyttäjätunnuksen ja salasanan pyyntöösi. Ohjelmoijat tekevät tämän varmistaakseen käyttöoikeudet ennen tietojen vastaanottamista tai lähettämistä.

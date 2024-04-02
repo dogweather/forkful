@@ -8,9 +8,8 @@ model: gpt-4-1106-preview
 summary: "Laskemme tulevaisuuden tai menneisyyden p\xE4iv\xE4m\xE4\xE4ri\xE4 kun sovelluksemme\
   \ tarvitsevat aikaperusteisia toimintoja, kuten er\xE4p\xE4ivien hallintaa tai aikajana-\u2026"
 title: "Tulevan tai menneen p\xE4iv\xE4m\xE4\xE4r\xE4n laskeminen"
+weight: 26
 ---
-
-{{< edit_this_page >}}
 
 ## Mitä & Miksi?
 Laskemme tulevaisuuden tai menneisyyden päivämääriä kun sovelluksemme tarvitsevat aikaperusteisia toimintoja, kuten eräpäivien hallintaa tai aikajana-analyysiä. Se auttaa käyttäjiä suunnittelemaan ja ymmärtämään ajan kulumista.

@@ -23,9 +23,8 @@ summary: "\uB8E8\uBE44\uC5D0\uC11C \uD45C\uC900 \uC624\uB958(stderr)\uC5D0 \uC4F
   \uB2E8\uACFC \uB85C\uADF8 \uD30C\uC2F1\uC744 \uC6A9\uC774\uD558\uAC8C \uD569\uB2C8\
   \uB2E4."
 title: "\uD45C\uC900 \uC5D0\uB7EC\uC5D0 \uC4F0\uAE30"
+weight: 25
 ---
-
-{{< edit_this_page >}}
 
 ## 무엇 & 왜?
 루비에서 표준 오류(stderr)에 쓰는 것은 오류 메시지나 진단을 표준 출력(stdout)과 구별되는 별도의 출력 스트림으로 보내는 것에 관한 것입니다. 프로그래머들은 이를 통해 일반 프로그램 출력과 오류 및 디버깅 정보를 구분하여 문제 진단과 로그 파싱을 용이하게 합니다.

@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Las expresiones regulares (regex) son secuencias de caracteres que definen\
   \ patrones de b\xFAsqueda, principalmente utilizados para la coincidencia y\u2026"
 title: Usando expresiones regulares
+weight: 11
 ---
-
-{{< edit_this_page >}}
 
 ## ¿Qué y Por Qué?
 Las expresiones regulares (regex) son secuencias de caracteres que definen patrones de búsqueda, principalmente utilizados para la coincidencia y manipulación de cadenas de texto. Los programadores aprovechan regex en proyectos de Arduino para analizar entradas seriales, validar entradas de usuario o extraer datos de cadenas, mejorando la eficiencia y flexibilidad en el procesamiento de datos.

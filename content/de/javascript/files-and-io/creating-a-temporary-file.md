@@ -8,9 +8,8 @@ model: gpt-4-1106-preview
 summary: "Das Erstellen einer tempor\xE4ren Datei bedeutet, eine Datei f\xFCr kurzzeitige\
   \ Nutzung zu generieren, die typischerweise nach Gebrauch gel\xF6scht wird.\u2026"
 title: "Erstellung einer tempor\xE4ren Datei"
+weight: 21
 ---
-
-{{< edit_this_page >}}
 
 ## Was & Warum?
 Das Erstellen einer temporären Datei bedeutet, eine Datei für kurzzeitige Nutzung zu generieren, die typischerweise nach Gebrauch gelöscht wird. Programmierer nutzen solche Dateien für Datenverarbeitungen, bei denen weder eine dauerhafte Speicherung benötigt wird noch der Wunsch besteht, den permanenten Speicher zu belasten.

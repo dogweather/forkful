@@ -11,9 +11,8 @@ summary: "Tekstitiedoston kirjoittaminen Go:lla tarkoittaa tietorivien luomista 
   \ kirjoittamista uuteen tai olemassa olevaan tekstitiedostoon. Ohjelmoijat tekev\xE4\
   t\u2026"
 title: Tekstitiedoston kirjoittaminen
+weight: 24
 ---
-
-{{< edit_this_page >}}
 
 ## Mikä ja miksi?
 

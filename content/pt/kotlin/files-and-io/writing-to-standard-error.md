@@ -11,9 +11,8 @@ summary: "Escrever no erro padr\xE3o (stderr) trata de enviar mensagens de erro 
   \ diagn\xF3sticos para um fluxo separado, distinto da sa\xEDda padr\xE3o (stdout),\
   \ o que permite\u2026"
 title: "Escrevendo para o erro padr\xE3o"
+weight: 25
 ---
-
-{{< edit_this_page >}}
 
 ## O que & Por quê?
 

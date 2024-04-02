@@ -5,9 +5,8 @@ lastmod: '2024-03-13T22:44:56.694435-06:00'
 model: gpt-4-1106-preview
 summary: null
 title: "HTTP-pyynn\xF6n l\xE4hett\xE4minen"
+weight: 44
 ---
-
-{{< edit_this_page >}}
 
 # What & Why? - Mitä ja Miksi?
 HTTP-pyynnön lähettäminen on tapa siirtää tietoja palvelimen ja asiakkaan välillä verkossa. Ohjelmoijat lähettävät niitä tietojen noutamiseen tai lähettämiseen, kuten verkkosivun sisällön päivittämiseen tai datan hakemiseen API:sta.

@@ -8,9 +8,8 @@ model: gpt-4-1106-preview
 summary: "El manejo de errores es lidiar con las cosas cuando se tuercen. Los programadores\
   \ lo hacen para manejar lo inesperado, asegurando que sus programas en\u2026"
 title: Manejo de errores
+weight: 16
 ---
-
-{{< edit_this_page >}}
 
 ## ¿Qué y por qué?
 

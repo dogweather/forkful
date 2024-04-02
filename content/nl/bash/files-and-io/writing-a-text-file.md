@@ -10,9 +10,8 @@ model: gpt-4-0125-preview
 summary: "Een tekstbestand schrijven is het proces van het opslaan van gegevens in\
   \ een bestand in tekstformaat. Programmeurs doen dit om configuraties, logs, code\u2026"
 title: Een tekstbestand schrijven
+weight: 24
 ---
-
-{{< edit_this_page >}}
 
 ## Wat & Waarom?
 

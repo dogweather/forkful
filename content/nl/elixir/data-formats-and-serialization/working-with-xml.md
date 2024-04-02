@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Werken met XML in Elixir betekent het parseren, cre\xEBren en manipuleren\
   \ van XML-gegevens. Programmeurs pakken XML aan omdat het wijdverbreid is in\u2026"
 title: Werken met XML
+weight: 40
 ---
-
-{{< edit_this_page >}}
 
 ## Wat & Waarom?
 Werken met XML in Elixir betekent het parseren, creëren en manipuleren van XML-gegevens. Programmeurs pakken XML aan omdat het wijdverbreid is in webservices, configuratiebestanden en verouderde systemen.

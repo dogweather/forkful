@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Stel je voor dat je er net achter komt dat je een batch-update moet uitvoeren\
   \ op verschillende configuratiebestanden op je server. Je zou elk bestand\u2026"
 title: Bestanden ter plekke bewerken met CLI one-liners
+weight: 32
 ---
-
-{{< edit_this_page >}}
 
 ## Wat & Waarom?
 

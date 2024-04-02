@@ -9,9 +9,8 @@ summary: "L'interpolation de cha\xEEne permet d'ins\xE9rer des valeurs variables
   \ un texte fixe. Les programmeurs l'utilisent pour composer des messages personnalis\xE9\
   s\u2026"
 title: "Interpolation de cha\xEEnes de caract\xE8res"
+weight: 8
 ---
-
-{{< edit_this_page >}}
 
 ## Quoi & Pourquoi ?
 L'interpolation de chaîne permet d'insérer des valeurs variables dans un texte fixe. Les programmeurs l'utilisent pour composer des messages personnalisés ou afficher des données dynamiques.

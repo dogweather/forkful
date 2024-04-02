@@ -11,9 +11,8 @@ summary: "\xC9crire des tests en programmation implique de cr\xE9er et d'ex\xE9c
   \ des scripts qui v\xE9rifient que le code se comporte comme pr\xE9vu dans diverses\
   \ conditions.\u2026"
 title: "R\xE9daction de tests"
+weight: 36
 ---
-
-{{< edit_this_page >}}
 
 ## Quoi & Pourquoi ?
 Écrire des tests en programmation implique de créer et d'exécuter des scripts qui vérifient que le code se comporte comme prévu dans diverses conditions. Les programmeurs le font pour assurer la qualité, prévenir les régressions et faciliter le refactoring sûr, ce qui est crucial pour maintenir une base de code saine, évolutive et sans bugs.

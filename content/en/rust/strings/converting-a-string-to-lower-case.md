@@ -9,9 +9,8 @@ summary: "Converting a string to lowercase means making every letter in the stri
   \ a small letter. It's handy for case-insensitive comparisons or preparing text\
   \ for\u2026"
 title: Converting a string to lower case
+weight: 4
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 Converting a string to lowercase means making every letter in the string a small letter. It's handy for case-insensitive comparisons or preparing text for uniform processing.

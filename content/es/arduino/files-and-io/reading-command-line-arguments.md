@@ -8,9 +8,8 @@ model: gpt-4-1106-preview
 summary: "Leer argumentos de la l\xEDnea de comando permite que tus programas de Arduino\
   \ reactiven a la entrada del usuario cuando arrancan. Los programadores usan\u2026"
 title: "Lectura de argumentos de l\xEDnea de comandos"
+weight: 23
 ---
-
-{{< edit_this_page >}}
 
 ## Qué y Por Qué?
 Leer argumentos de la línea de comando permite que tus programas de Arduino reactiven a la entrada del usuario cuando arrancan. Los programadores usan esto para personalizar comportamientos sin tener que cambiar el código.

@@ -19,9 +19,8 @@ summary: "\u5728Arduino\u9879\u76EE\u4E2D\u83B7\u53D6\u5F53\u524D\u65E5\u671F\u6
   \u5E76\u5728\u4ED6\u4EEC\u7684IoT\u548C\u5D4C\u5165\u5F0F\u9879\u76EE\u4E2D\u4FC3\
   \u8FDB\u4E0E\u65F6\u95F4\u654F\u611F\u7684\u64CD\u4F5C\u3002"
 title: "\u83B7\u53D6\u5F53\u524D\u65E5\u671F"
+weight: 29
 ---
-
-{{< edit_this_page >}}
 
 ## 什么 & 为什么？
 在Arduino项目中获取当前日期涉及获取实时信息，这对于日志记录、时间戳或安排任务至关重要。程序员通常需要这个功能以增强功能性，确保数据的相关性，并在他们的IoT和嵌入式项目中促进与时间敏感的操作。

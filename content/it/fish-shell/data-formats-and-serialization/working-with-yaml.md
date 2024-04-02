@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Lavorare con YAML implica analizzare e manipolare file YAML (YAML Ain't\
   \ Markup Language), un formato di serializzazione dei dati utilizzato per file di\u2026"
 title: Lavorare con YAML
+weight: 41
 ---
-
-{{< edit_this_page >}}
 
 ## Cosa & Perché?
 Lavorare con YAML implica analizzare e manipolare file YAML (YAML Ain't Markup Language), un formato di serializzazione dei dati utilizzato per file di configurazione, in Fish Shell. I programmatori fanno ciò per automatizzare e configurare applicazioni o servizi in modo efficiente all'interno del contesto degli ambienti shell, facilitando compiti come la gestione delle configurazioni e il provisioning delle risorse.

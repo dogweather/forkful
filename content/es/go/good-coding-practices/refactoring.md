@@ -11,9 +11,8 @@ summary: "Refactorizar en la programaci\xF3n implica reestructurar el c\xF3digo 
   tico existente\u2014cambiando el factoreo\u2014sin alterar su comportamiento externo.\
   \ Los\u2026"
 title: "Refactorizaci\xF3n"
+weight: 19
 ---
-
-{{< edit_this_page >}}
 
 ## ¿Qué y Por Qué?
 

@@ -7,9 +7,8 @@ model: gpt-4-0125-preview
 summary: "Generare numeri casuali in Ruby comporta la creazione di numeri che non\
   \ possono essere previsti logicamente, fondamentale per scenari come le simulazioni,\u2026"
 title: Generazione di numeri casuali
+weight: 12
 ---
-
-{{< edit_this_page >}}
 
 ## Cosa & Perché?
 

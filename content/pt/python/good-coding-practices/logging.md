@@ -9,9 +9,8 @@ summary: "O logging \xE9 o processo de registrar eventos da aplica\xE7\xE3o enqu
   \ um programa est\xE1 em execu\xE7\xE3o, fornecendo um rastro de migalhas para an\xE1\
   lise post-mortem\u2026"
 title: Registro de Logs
+weight: 17
 ---
-
-{{< edit_this_page >}}
 
 ## O Que & Por Quê?
 O logging é o processo de registrar eventos da aplicação enquanto um programa está em execução, fornecendo um rastro de migalhas para análise post-mortem e monitoramento em tempo real. Os programadores fazem isso porque ajuda a depurar problemas, monitorar o desempenho e rastrear ações dos usuários para segurança e análise.

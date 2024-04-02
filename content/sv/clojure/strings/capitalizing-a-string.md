@@ -11,9 +11,8 @@ summary: "Att f\xF6rstora en str\xE4ng inneb\xE4r att \xE4ndra str\xE4ngen s\xE5
   \ dess f\xF6rsta tecken \xE4r en versal, medan resten av str\xE4ngen f\xF6rblir\
   \ of\xF6r\xE4ndrad. Programmerare utf\xF6r\u2026"
 title: "G\xF6r om en str\xE4ng till versaler"
+weight: 2
 ---
-
-{{< edit_this_page >}}
 
 ## Vad & Varför?
 Att förstora en sträng innebär att ändra strängen så att dess första tecken är en versal, medan resten av strängen förblir oförändrad. Programmerare utför ofta strängförstoring för att säkerställa datakonsekvens, särskilt för namn och platser eller för att följa grammatiska regler i användargränssnitt.

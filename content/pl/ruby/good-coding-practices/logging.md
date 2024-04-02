@@ -9,9 +9,8 @@ summary: "Logowanie w programowaniu jest jak prowadzenie dziennika dla Twojej ap
   \ Jest to systematyczne rejestrowanie zdarze\u0144, komunikat\xF3w i punkt\xF3w\
   \ danych,\u2026"
 title: "Rejestrowanie zdarze\u0144"
+weight: 17
 ---
-
-{{< edit_this_page >}}
 
 ## Co i dlaczego?
 Logowanie w programowaniu jest jak prowadzenie dziennika dla Twojej aplikacji. Jest to systematyczne rejestrowanie zdarzeń, komunikatów i punktów danych, które dają ci wgląd w to, co robi twoja aplikacja i jak się zachowuje. Programiści logują, ponieważ jest to kluczowe dla debugowania, monitorowania stanu aplikacji i zdobywania wskazówek o potencjalnych problemach, zanim te zamienią się w rzeczywiste kłopoty.

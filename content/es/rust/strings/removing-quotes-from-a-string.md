@@ -7,9 +7,8 @@ model: gpt-4-0125-preview
 summary: "Eliminar comillas de una cadena en Rust consiste en deshacerse de caracteres\
   \ de comillas innecesarios que podr\xEDan estar envolviendo tus datos de texto.\u2026"
 title: Eliminando comillas de una cadena
+weight: 9
 ---
-
-{{< edit_this_page >}}
 
 ## ¿Qué y Por Qué?
 

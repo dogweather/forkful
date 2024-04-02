@@ -11,9 +11,8 @@ summary: "Gerar n\xFAmeros aleat\xF3rios no Visual Basic for Applications (VBA) 
   \ que programas simulem processos com elementos de chance ou variabilidade, como\
   \ a\u2026"
 title: "Gerando n\xFAmeros aleat\xF3rios"
+weight: 12
 ---
-
-{{< edit_this_page >}}
 
 ## O Que & Por Quê?
 

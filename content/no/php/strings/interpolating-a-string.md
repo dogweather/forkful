@@ -9,9 +9,8 @@ summary: "Stringinterpolasjon i PHP betyr \xE5 plassere variabler direkte i en s
   \ for \xE5 bygge den. Vi gj\xF8r det fordi det er raskt og leselig n\xE5r vi vil\
   \ bytte ut\u2026"
 title: Interpolering av en streng
+weight: 8
 ---
-
-{{< edit_this_page >}}
 
 ## Hva & Hvorfor?
 Stringinterpolasjon i PHP betyr å plassere variabler direkte i en streng for å bygge den. Vi gjør det fordi det er raskt og leselig når vi vil bytte ut deler av en streng dynamisk.

@@ -2,13 +2,14 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 18:10:16.367454-07:00
-description: "Die Verwendung eines Debuggers in der Go-Programmierung beinhaltet den\
-  \ Einsatz von Tools oder Funktionen, um den Zustand eines laufenden Programms zu\u2026"
+description: "Go bietet eine integrierte Einrichtung f\xFCr das Debugging namens `delve`.\
+  \ Es ist ein voll ausgestattetes Debugging-Tool, das es Ihnen erm\xF6glicht, Go-\u2026"
 lastmod: '2024-03-13T22:44:53.292549-06:00'
 model: gpt-4-0125-preview
-summary: "Die Verwendung eines Debuggers in der Go-Programmierung beinhaltet den Einsatz\
-  \ von Tools oder Funktionen, um den Zustand eines laufenden Programms zu\u2026"
+summary: "Go bietet eine integrierte Einrichtung f\xFCr das Debugging namens `delve`.\
+  \ Es ist ein voll ausgestattetes Debugging-Tool, das es Ihnen erm\xF6glicht, Go-\u2026"
 title: Verwenden eines Debuggers
+weight: 35
 ---
 
 ## Wie:

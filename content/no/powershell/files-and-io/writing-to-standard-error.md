@@ -10,9 +10,8 @@ model: gpt-4-0125-preview
 summary: "\xC5 skrive til standardfeil (stderr) i PowerShell inneb\xE6rer \xE5 sende\
   \ feilmeldinger eller diagnostikk direkte til stderr-str\xF8mmen, forskjellig fra\u2026"
 title: Skriving til standardfeil
+weight: 25
 ---
-
-{{< edit_this_page >}}
 
 ## Hva & Hvorfor?
 

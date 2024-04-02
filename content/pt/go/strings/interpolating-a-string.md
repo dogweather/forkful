@@ -11,9 +11,8 @@ summary: "A interpola\xE7\xE3o de strings \xE9 um m\xE9todo para construir strin
   \ que incorporam vari\xE1veis, permitindo a cria\xE7\xE3o din\xE2mica de strings.\
   \ Programadores fazem isso\u2026"
 title: Interpolando uma String
+weight: 8
 ---
-
-{{< edit_this_page >}}
 
 ## O Quê & Porquê?
 

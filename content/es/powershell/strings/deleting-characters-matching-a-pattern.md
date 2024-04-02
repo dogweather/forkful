@@ -8,9 +8,8 @@ model: gpt-4-1106-preview
 summary: "Eliminar caracteres que coinciden con un patr\xF3n permite limpiar y normalizar\
   \ datos en tus scripts. Programadores lo hacen para simplificar el an\xE1lisis de\u2026"
 title: "Eliminando caracteres que coinciden con un patr\xF3n"
+weight: 5
 ---
-
-{{< edit_this_page >}}
 
 ## ¿Qué y Por Qué?
 Eliminar caracteres que coinciden con un patrón permite limpiar y normalizar datos en tus scripts. Programadores lo hacen para simplificar el análisis de datos o preparar strings para procesos adicionales.

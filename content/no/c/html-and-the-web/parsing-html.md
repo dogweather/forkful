@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Parsing av HTML i C inneb\xE6rer analyse av HTML-dokumenter for effektivt\
   \ \xE5 trekke ut data, struktur eller spesifikke deler, ofte som et forstadium til\u2026"
 title: Analysering av HTML
+weight: 43
 ---
-
-{{< edit_this_page >}}
 
 ## Hva & Hvorfor?
 

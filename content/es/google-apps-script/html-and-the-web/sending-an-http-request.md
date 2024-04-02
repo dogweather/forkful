@@ -10,9 +10,8 @@ model: gpt-4-0125-preview
 summary: "Enviar una solicitud HTTP en Google Apps Script se trata de hacer una llamada\
   \ program\xE1tica a un servidor web externo o API. Los programadores hacen esto\u2026"
 title: Enviando una solicitud HTTP
+weight: 44
 ---
-
-{{< edit_this_page >}}
 
 ## Qué y Por Qué?
 

@@ -9,9 +9,8 @@ summary: "Calcolare la lunghezza di una stringa significa contare quanti caratte
   \ contiene. I programmatori lo fanno per validare input, gestire formati di testo\
   \ o\u2026"
 title: Trovare la lunghezza di una stringa
+weight: 7
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 Calcolare la lunghezza di una stringa significa contare quanti caratteri contiene. I programmatori lo fanno per validare input, gestire formati di testo o per altre logiche specifiche.

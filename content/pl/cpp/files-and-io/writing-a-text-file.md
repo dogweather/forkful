@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Zapis do pliku tekstowego w C++ polega na tworzeniu lub otwieraniu pliku,\
   \ a nast\u0119pnie zapisywaniu w nim danych, co stanowi podstawowe zadanie dla\u2026"
 title: Pisanie pliku tekstowego
+weight: 24
 ---
-
-{{< edit_this_page >}}
 
 ## Co i dlaczego?
 Zapis do pliku tekstowego w C++ polega na tworzeniu lub otwieraniu pliku, a następnie zapisywaniu w nim danych, co stanowi podstawowe zadanie dla aplikacji potrzebujących zachować dane, takie jak logi, treści generowane przez użytkowników lub ustawienia konfiguracyjne. Programiści robią to, aby zapisać dane wygenerowane podczas wykonania programu lub aby eksportować dane do użytku przez inne programy lub użytkowników.

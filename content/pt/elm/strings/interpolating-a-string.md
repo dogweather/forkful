@@ -9,9 +9,8 @@ summary: "Interpolar uma string significa enfiar valores de vari\xE1veis dentro 
   \ uma string, criando assim uma nova string 'personalizada'. Programadores fazem\
   \ isso\u2026"
 title: Interpolando uma string
+weight: 8
 ---
-
-{{< edit_this_page >}}
 
 ## O Que & Porquê?
 

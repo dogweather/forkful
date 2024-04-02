@@ -11,9 +11,8 @@ summary: "V\xE9rifier si un r\xE9pertoire existe dans le Fish Shell permet aux s
   \ de prendre des d\xE9cisions bas\xE9es sur la pr\xE9sence ou l'absence de structures\
   \ de\u2026"
 title: "V\xE9rifier si un r\xE9pertoire existe"
+weight: 20
 ---
-
-{{< edit_this_page >}}
 
 ## Quoi et Pourquoi ?
 Vérifier si un répertoire existe dans le Fish Shell permet aux scripts de prendre des décisions basées sur la présence ou l'absence de structures de répertoires, facilitant des tâches comme les opérations conditionnelles sur les fichiers, les journaux d'activité ou la configuration de l'environnement. Cette technique est cruciale pour écrire des scripts robustes qui interagissent avec le système de fichiers de manière prévisible.

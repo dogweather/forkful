@@ -11,9 +11,8 @@ summary: "Ein neues Projekt in Google Apps Script (GAS) zu starten, bedeutet, ei
   \ Skriptdatei innerhalb des Google-\xD6kosystems (Google Drive, Docs, Sheets usw.)\
   \ zu\u2026"
 title: Einen neuen Projektstart
+weight: 1
 ---
-
-{{< edit_this_page >}}
 
 ## Was & Warum?
 

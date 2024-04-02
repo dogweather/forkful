@@ -10,9 +10,8 @@ model: gpt-4-0125-preview
 summary: "Att ta bort tecken som matchar ett specifikt m\xF6nster i Visual Basic for\
   \ Applications (VBA) inneb\xE4r att identifiera och d\xE4refter ta bort tecken eller\u2026"
 title: "Ta bort tecken som matchar ett m\xF6nster"
+weight: 5
 ---
-
-{{< edit_this_page >}}
 
 ## Vad & Varför?
 

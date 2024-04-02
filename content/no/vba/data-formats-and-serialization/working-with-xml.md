@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "\xC5 arbeide med XML i Visual Basic for Applications (VBA) involverer parsing,\
   \ oppretting og modifisering av XML-dokumenter innenfor konteksten av Microsoft\u2026"
 title: Arbeide med XML
+weight: 40
 ---
-
-{{< edit_this_page >}}
 
 ## Hva & Hvorfor?
 

@@ -9,9 +9,8 @@ summary: "Merkkijonosta lainausmerkkien poistaminen tarkoittaa niiden lainausmer
   \ karsimista, jotka sulkevat merkkijonon. Ohjelmoijat haluavat usein tehd\xE4 t\xE4\
   m\xE4n\u2026"
 title: Merkkijonosta lainausmerkkien poistaminen
+weight: 9
 ---
-
-{{< edit_this_page >}}
 
 ## Mikä & Miksi?
 Merkkijonosta lainausmerkkien poistaminen tarkoittaa niiden lainausmerkkien karsimista, jotka sulkevat merkkijonon. Ohjelmoijat haluavat usein tehdä tämän puhdistaakseen syötetietoja, valmistellakseen dataa vertailua varten tai noudattaakseen tiettyä dataformaattia kommunikoidessaan muiden ohjelmien tai järjestelmien kanssa.

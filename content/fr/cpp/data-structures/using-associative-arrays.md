@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Les tableaux associatifs, connus sous le nom de `std::map` ou `std::unordered_map`\
   \ en C++, comblent le foss\xE9 entre les indices de tableau et les donn\xE9es\u2026"
 title: Utilisation des tableaux associatifs
+weight: 15
 ---
-
-{{< edit_this_page >}}
 
 ## Quoi et pourquoi ?
 

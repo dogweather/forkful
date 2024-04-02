@@ -19,9 +19,8 @@ summary: "HTTP \uC694\uCCAD\uC740 \uC6F9 \uC11C\uBC84\uC640 \uD1B5\uC2E0\uC758 \
   \uB2C8\uB2E4."
 title: "\uAE30\uBCF8 \uC778\uC99D\uC744 \uC0AC\uC6A9\uD55C HTTP \uC694\uCCAD \uBCF4\
   \uB0B4\uAE30"
+weight: 45
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why? (무엇과 왜?)
 HTTP 요청은 웹 서버와 통신의 기본입니다. 기본 인증을 사용하여 보안 정보를 포함한 요청을 보낼 수 있습니다. 프로그래머는 이 방식을 종종 사용해 데이터를 안전하게 전송하고 API 서비스에 접근합니다.

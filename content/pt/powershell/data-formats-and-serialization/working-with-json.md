@@ -11,9 +11,8 @@ summary: "A integra\xE7\xE3o do PowerShell com JSON (JavaScript Object Notation)
   \ da an\xE1lise (leitura) e gera\xE7\xE3o (escrita) de dados JSON, um formato comum\
   \ para troca\u2026"
 title: Trabalhando com JSON
+weight: 38
 ---
-
-{{< edit_this_page >}}
 
 ## O Que & Por Quê?
 

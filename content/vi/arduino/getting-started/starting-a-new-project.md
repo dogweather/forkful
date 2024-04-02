@@ -13,9 +13,8 @@ summary: "B\u1EAFt \u0111\u1EA7u m\u1ED9t d\u1EF1 \xE1n m\u1EDBi tr\xEAn Arduino
   ng v\u1EBD cho m\xE3 c\u1EE7a b\u1EA1n. C\xE1c l\u1EADp tr\xECnh vi\xEAn l\xE0m\
   \ \u0111i\u1EC1u n\xE0y \u0111\u1EC3 th\u1ED5i h\u1ED3n v\xE0o c\xE1c\u2026"
 title: "B\u1EAFt \u0111\u1EA7u m\u1ED9t d\u1EF1 \xE1n m\u1EDBi"
+weight: 1
 ---
-
-{{< edit_this_page >}}
 
 ## Cái gì & Tại sao?
 

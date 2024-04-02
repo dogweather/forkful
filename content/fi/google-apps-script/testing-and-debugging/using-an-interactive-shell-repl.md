@@ -11,9 +11,8 @@ summary: "Interaktiivinen kuori, eli Read-Eval-Print Loop (REPL), on yksinkertai
   \ interaktiivinen ohjelmointiymp\xE4rist\xF6, joka ottaa vastaan yksitt\xE4isi\xE4\
   \ k\xE4ytt\xE4j\xE4n\u2026"
 title: "Interaktiivisen kuoren (REPL) k\xE4ytt\xF6"
+weight: 34
 ---
-
-{{< edit_this_page >}}
 
 ## Mikä & Miksi?
 

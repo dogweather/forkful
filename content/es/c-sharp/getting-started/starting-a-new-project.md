@@ -8,9 +8,8 @@ model: gpt-4-1106-preview
 summary: "Crear un nuevo proyecto en C# es como iniciar la construcci\xF3n de un edificio:\
   \ configuras la base y decides la estructura. Programadores lo hacen para\u2026"
 title: Iniciando un nuevo proyecto
+weight: 1
 ---
-
-{{< edit_this_page >}}
 
 ## ¿Qué y Por Qué?
 

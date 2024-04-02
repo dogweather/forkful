@@ -8,9 +8,8 @@ model: gpt-4-0125-preview
 summary: "Mit TOML zu arbeiten bedeutet, dass man Daten in einem Minimalformat \"\
   Tom's Obvious, Minimal Language\" handhabt, das f\xFCr Konfigurationsdateien wegen\u2026"
 title: Arbeiten mit TOML
+weight: 39
 ---
-
-{{< edit_this_page >}}
 
 ## Was & Warum?
 Mit TOML zu arbeiten bedeutet, dass man Daten in einem Minimalformat "Tom's Obvious, Minimal Language" handhabt, das für Konfigurationsdateien wegen seiner leichten Lesbarkeit beliebt ist. Programmierer verwenden es für eine unkomplizierte Konfigurationsverwaltung, die direkt aus dem Kasten heraus mit einer menschenfreundlichen Syntax funktioniert.

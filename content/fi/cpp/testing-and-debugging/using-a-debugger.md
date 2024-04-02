@@ -1,14 +1,15 @@
 ---
 date: 2024-01-26 03:48:00.348649-07:00
-description: "Debuggerin k\xE4ytt\xE4minen tarkoittaa ty\xF6kalun k\xE4ynnist\xE4\
-  mist\xE4, joka antaa sinun kurkistaa k\xE4ynniss\xE4 olevan ohjelmasi sis\xE4\xE4\
-  n ymm\xE4rt\xE4\xE4ksesi, mit\xE4 todella\u2026"
+description: "C++ integroituu debuggerien, kuten GDB:n tai Visual Studio debuggerin\
+  \ kanssa. T\xE4ss\xE4 on pieni esimerkki GDB:n k\xE4yt\xF6st\xE4: ```C++ #include\
+  \ <iostream> int\u2026"
 lastmod: '2024-03-13T22:44:56.869684-06:00'
 model: gpt-4-0125-preview
-summary: "Debuggerin k\xE4ytt\xE4minen tarkoittaa ty\xF6kalun k\xE4ynnist\xE4mist\xE4\
-  , joka antaa sinun kurkistaa k\xE4ynniss\xE4 olevan ohjelmasi sis\xE4\xE4n ymm\xE4\
-  rt\xE4\xE4ksesi, mit\xE4 todella\u2026"
+summary: "C++ integroituu debuggerien, kuten GDB:n tai Visual Studio debuggerin kanssa.\
+  \ T\xE4ss\xE4 on pieni esimerkki GDB:n k\xE4yt\xF6st\xE4: ```C++ #include <iostream>\
+  \ int\u2026"
 title: "Debuggerin k\xE4ytt\xF6"
+weight: 35
 ---
 
 ## Kuinka:

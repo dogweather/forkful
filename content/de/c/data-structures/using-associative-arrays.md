@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Assoziative Arrays, in anderen Sprachen auch als Maps oder W\xF6rterb\xFC\
   cher bekannt, sind Schl\xFCssel-Wert-Paare, die f\xFCr effiziente Datenabfrage und\u2026"
 title: Verwendung von assoziativen Arrays
+weight: 15
 ---
-
-{{< edit_this_page >}}
 
 ## Was & Warum?
 

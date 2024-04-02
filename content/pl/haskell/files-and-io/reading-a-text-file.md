@@ -9,9 +9,8 @@ summary: "Czytanie pliku tekstowego to proces pobierania danych z pliku przechow
   \ na dysku. Programi\u015Bci robi\u0105 to, by za\u0142adowa\u0107 i przetworzy\u0107\
   \ informacje,\u2026"
 title: Odczytywanie pliku tekstowego
+weight: 22
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 Czytanie pliku tekstowego to proces pobierania danych z pliku przechowywanego na dysku. Programiści robią to, by załadować i przetworzyć informacje, często konieczne do działania ich aplikacji.

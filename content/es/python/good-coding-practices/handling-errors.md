@@ -8,9 +8,8 @@ model: gpt-4-1106-preview
 summary: "Manejar errores en Python (o cualquier lenguaje de programaci\xF3n) es esperar\
   \ lo inesperado: es el arte de manejar con gracia cuando las cosas no van bien\u2026"
 title: Manejo de errores
+weight: 16
 ---
-
-{{< edit_this_page >}}
 
 ## ¿Qué y por qué?
 

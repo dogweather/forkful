@@ -11,9 +11,8 @@ summary: "El registro (logging) en programaci\xF3n implica grabar eventos, error
   \ u ocurrencias notables durante el tiempo de ejecuci\xF3n. Los programadores lo\
   \ hacen\u2026"
 title: "Registro de Informaci\xF3n"
+weight: 17
 ---
-
-{{< edit_this_page >}}
 
 ## ¿Qué y por qué?
 

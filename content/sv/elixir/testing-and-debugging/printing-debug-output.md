@@ -9,9 +9,8 @@ summary: "Att skriva ut debug-information i Elixir hj\xE4lper utvecklare att f\x
   rst\xE5 vad deras kod g\xF6r i realtid och varf\xF6r den beter sig p\xE5 ett visst\
   \ s\xE4tt. Det \xE4r en\u2026"
 title: "Skriva ut fels\xF6kningsdata"
+weight: 33
 ---
-
-{{< edit_this_page >}}
 
 ## Vad & Varför?
 Att skriva ut debug-information i Elixir hjälper utvecklare att förstå vad deras kod gör i realtid och varför den beter sig på ett visst sätt. Det är en ovärderlig teknik för att spåra och fixa buggar.

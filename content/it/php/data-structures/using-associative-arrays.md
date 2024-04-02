@@ -11,9 +11,8 @@ summary: "Gli array associativi in PHP sono come liste super-potenziati dove ogn
   \ elemento pu\xF2 essere accesso utilizzando una chiave leggibile dall'uomo invece\
   \ che\u2026"
 title: Utilizzo di array associativi
+weight: 15
 ---
-
-{{< edit_this_page >}}
 
 ## Cosa e Perché?
 

@@ -15,9 +15,8 @@ summary: "Vi\u1EC7c vi\u1EBFt m\u1ED9t t\u1EC7p v\u0103n b\u1EA3n trong PHP l\xE
   u n\xE0y \u0111\u1EC3 ghi nh\u1EADt k\xFD d\u1EEF li\u1EC7u, c\xE0i \u0111\u1EB7\
   t c\u1EA5u\u2026"
 title: "Vi\u1EBFt m\u1ED9t t\u1EC7p v\u0103n b\u1EA3n"
+weight: 24
 ---
-
-{{< edit_this_page >}}
 
 ## Cái gì & Tại sao?
 

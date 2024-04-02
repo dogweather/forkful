@@ -9,9 +9,8 @@ summary: "\xC5 lage en midlertidig fil er en m\xE5te \xE5 lagre data midlertidig
   \ kj\xF8ring av et program. Programmerere gj\xF8r dette for \xE5 behandle data uten\
   \ \xE5 p\xE5virke\u2026"
 title: Opprette en midlertidig fil
+weight: 21
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 Å lage en midlertidig fil er en måte å lagre data midlertidig under kjøring av et program. Programmerere gjør dette for å behandle data uten å påvirke permanente filer eller for å minimere bruk av minne.

@@ -9,9 +9,8 @@ summary: "Uudelleenj\xE4rjestely tarkoittaa olemassa olevan tietokonekoodin rake
   \ muuttamista\u2014muuttamalla faktorisointia\u2014muuttamatta sen ulkoista k\xE4\
   ytt\xE4ytymist\xE4.\u2026"
 title: "Koodin uudelleenj\xE4rjestely"
+weight: 19
 ---
-
-{{< edit_this_page >}}
 
 ## Mikä & Miksi?
 Uudelleenjärjestely tarkoittaa olemassa olevan tietokonekoodin rakenteen muuttamista—muuttamalla faktorisointia—muuttamatta sen ulkoista käyttäytymistä. Ohjelmoijat tekevät sen parantaakseen ohjelmiston ei-toiminnallisia attribuutteja, kuten parantamalla luettavuutta, vähentämällä monimutkaisuutta ja tekemällä koodista helpommin ylläpidettävää tulevaisuuden hankkeita varten.

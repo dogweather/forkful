@@ -8,9 +8,8 @@ model: gpt-4-1106-preview
 summary: "HTTP-Anfragen (Hypertext Transfer Protocol) sind die Basis des Webs. Programmierer\
   \ nutzen sie, um mit Webservern zu kommunizieren \u2013 Daten abfragen oder\u2026"
 title: Einen HTTP-Request senden
+weight: 44
 ---
-
-{{< edit_this_page >}}
 
 ## Was & Warum?
 HTTP-Anfragen (Hypertext Transfer Protocol) sind die Basis des Webs. Programmierer nutzen sie, um mit Webservern zu kommunizieren – Daten abfragen oder senden.

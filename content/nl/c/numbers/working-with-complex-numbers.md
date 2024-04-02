@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Complexe getallen bestaan uit een re\xEBel deel en een imaginair deel, voorgesteld\
   \ als `a + bi` waarbij `i` de vierkantswortel van `-1` is. Programmeurs\u2026"
 title: Werken met complexe getallen
+weight: 14
 ---
-
-{{< edit_this_page >}}
 
 ## Wat & Waarom?
 

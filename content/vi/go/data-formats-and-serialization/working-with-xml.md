@@ -13,9 +13,8 @@ summary: "L\xE0m vi\u1EC7c v\u1EDBi XML trong Go bao g\u1ED3m vi\u1EC7c ph\xE2n 
   u XML - m\u1ED9t \u0111\u1ECBnh d\u1EA1ng chu\u1EA9n cho giao ti\u1EBFp d\u1EEF\
   \ li\u1EC7u c\xF3 c\u1EA5u tr\xFAc. L\u1EADp\u2026"
 title: "L\xE0m vi\u1EC7c v\u1EDBi XML"
+weight: 40
 ---
-
-{{< edit_this_page >}}
 
 ## Làm thế nào & Tại sao?
 

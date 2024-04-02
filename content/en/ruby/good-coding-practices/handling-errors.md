@@ -11,9 +11,8 @@ summary: "Error handling is about expecting the unexpected in code \u2014 managi
   \ mistakes and problems gracefully without crashing. Programmers do it to control\
   \ the\u2026"
 title: Handling errors
+weight: 16
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 

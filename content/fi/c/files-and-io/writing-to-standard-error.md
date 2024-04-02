@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Virheiden kirjoittaminen standardivirheeseen C:ss\xE4 tarkoittaa virheilmoitusten\
   \ ja diagnostiikkatiedon ohjaamista erilliseen virtaan p\xE4\xE4ohjelman\u2026"
 title: Kirjoittaminen standardivirheeseen
+weight: 25
 ---
-
-{{< edit_this_page >}}
 
 ## Mikä & Miksi?
 

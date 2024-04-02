@@ -9,9 +9,8 @@ summary: "Ein String in Kleinbuchstaben umzuwandeln bedeutet, alle Gro\xDFbuchst
   \ in einem Text durch ihre kleingeschriebenen Gegenst\xFCcke zu ersetzen. Wir tun\
   \ dies,\u2026"
 title: Umformung eines Strings in Kleinbuchstaben
+weight: 4
 ---
-
-{{< edit_this_page >}}
 
 ## Was & Warum?
 

@@ -9,9 +9,8 @@ summary: "Mit\xE4 & Miksi? Luodaan v\xE4liaikainen tiedosto vastaanottamaan data
   \ joka ei tarvitse pysyv\xE4ist\xE4 tallennusta. K\xE4ytet\xE4\xE4n testauksessa,\
   \ v\xE4liaikaisessa datan\u2026"
 title: "V\xE4liaikaistiedoston luominen"
+weight: 21
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 Mitä & Miksi?

@@ -10,9 +10,8 @@ model: gpt-4-0125-preview
 summary: "Calcular una fecha en el futuro o pasado implica determinar una fecha espec\xED\
   fica al agregar o restar un cierto n\xFAmero de d\xEDas, meses o a\xF1os a una fecha\u2026"
 title: "C\xE1lculo de una fecha en el futuro o en el pasado"
+weight: 26
 ---
-
-{{< edit_this_page >}}
 
 ## Qué & Por qué?
 Calcular una fecha en el futuro o pasado implica determinar una fecha específica al agregar o restar un cierto número de días, meses o años a una fecha dada. Los programadores hacen esto para tareas como programar eventos, generar recordatorios o manejar fechas de vencimiento, lo que lo convierte en una funcionalidad esencial en varias aplicaciones, desde sistemas de calendario hasta software financiero.

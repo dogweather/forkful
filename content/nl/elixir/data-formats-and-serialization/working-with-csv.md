@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "CSV (Comma-Separated Values ofwel met komma's gescheiden waarden) is een\
   \ plat tekstformaat voor tabelgegevens. Programmeurs gebruiken CSV om gemakkelijk\u2026"
 title: Werken met CSV
+weight: 37
 ---
-
-{{< edit_this_page >}}
 
 ## Wat & Waarom?
 

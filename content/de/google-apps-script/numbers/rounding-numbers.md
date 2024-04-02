@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Das Runden von Zahlen, ein grundlegendes Konzept in der Computerprogrammierung,\
   \ beinhaltet die Anpassung einer Zahl auf die n\xE4chstgelegene ganze Zahl oder\u2026"
 title: Runden von Zahlen
+weight: 13
 ---
-
-{{< edit_this_page >}}
 
 ## Was & Warum?
 

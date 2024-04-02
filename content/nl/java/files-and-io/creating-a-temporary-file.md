@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Het maken van een tijdelijk bestand betekent het cre\xEBren van een bestand\
   \ dat slechts voor korte tijd nodig is en daarna wordt verwijderd. Programmeurs\u2026"
 title: Een tijdelijk bestand aanmaken
+weight: 21
 ---
-
-{{< edit_this_page >}}
 
 ## Wat & Waarom?
 

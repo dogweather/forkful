@@ -11,9 +11,8 @@ summary: "Leer argumentos de l\xEDnea de comando en Go implica extraer los argum
   \ proporcionados a un programa durante su invocaci\xF3n desde el terminal o la l\xED\
   nea\u2026"
 title: "Leyendo argumentos de l\xEDnea de comandos"
+weight: 23
 ---
-
-{{< edit_this_page >}}
 
 ## Qué y Por Qué?
 

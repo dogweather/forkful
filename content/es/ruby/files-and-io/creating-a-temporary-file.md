@@ -8,9 +8,8 @@ model: gpt-4-1106-preview
 summary: "Crear un archivo temporal es como abrir un cuaderno para apuntes r\xE1pidos\
   \ que sabes que no necesitar\xE1s despu\xE9s. Los programadores lo hacen para guardar\u2026"
 title: Creando un archivo temporal
+weight: 21
 ---
-
-{{< edit_this_page >}}
 
 ## Qué y Por Qué?
 Crear un archivo temporal es como abrir un cuaderno para apuntes rápidos que sabes que no necesitarás después. Los programadores lo hacen para guardar datos transitorios, como almacenamiento intermedio durante la ejecución de un programa, sin preocuparse por el manejo a largo plazo de ese archivo.

@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Die Arbeit mit JSON (JavaScript Object Notation) umfasst das Parsen von\
   \ JSON-Daten zu einem in TypeScript nutzbaren Format und umgekehrt. Programmierer\u2026"
 title: Arbeiten mit JSON
+weight: 38
 ---
-
-{{< edit_this_page >}}
 
 ## Was & Warum?
 

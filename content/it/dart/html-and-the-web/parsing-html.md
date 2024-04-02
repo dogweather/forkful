@@ -10,9 +10,8 @@ model: gpt-4-0125-preview
 summary: "L'analisi di HTML nella programmazione implica l'estrazione di dati da documenti\
   \ HTML. I programmatori fanno ci\xF2 per interagire o raschiare contenuti web\u2026"
 title: Analisi del HTML
+weight: 43
 ---
-
-{{< edit_this_page >}}
 
 ## Cosa & Perché?
 L'analisi di HTML nella programmazione implica l'estrazione di dati da documenti HTML. I programmatori fanno ciò per interagire o raschiare contenuti web per l'estrazione di informazioni, test o scopi di automazione, anche quando non sono disponibili API ufficiali.

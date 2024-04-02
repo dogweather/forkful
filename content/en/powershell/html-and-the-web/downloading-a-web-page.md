@@ -7,9 +7,8 @@ model: gpt-4-1106-preview
 summary: Downloading a web page means snagging its contents via the web. Coders do
   this for web scraping, offline viewing, or automating interactions with websites.
 title: Downloading a web page
+weight: 42
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 Downloading a web page means snagging its contents via the web. Coders do this for web scraping, offline viewing, or automating interactions with websites.

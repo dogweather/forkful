@@ -7,9 +7,8 @@ model: gpt-4-1106-preview
 summary: "Fehlerbehandlung in der Programmierung handelt davon, mit Unerwartetem umzugehen\u2014\
   Dinge, die schiefgehen k\xF6nnen. Programmierer machen dies, um\u2026"
 title: Fehlerbehandlung
+weight: 16
 ---
-
-{{< edit_this_page >}}
 
 ## Was & Warum?
 Fehlerbehandlung in der Programmierung handelt davon, mit Unerwartetem umzugehen—Dinge, die schiefgehen können. Programmierer machen dies, um sicherzustellen, dass ihre Programme diese Situationen anmutig bewältigen können, ohne abzustürzen oder falsche Ergebnisse zu liefern.

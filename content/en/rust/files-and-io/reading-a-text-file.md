@@ -7,9 +7,8 @@ model: gpt-4-1106-preview
 summary: "Reading a text file is grabbing text content from a .txt file on your disk.\
   \ Programmers do it to handle data like configuration, user input, or to process\u2026"
 title: Reading a text file
+weight: 22
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 Reading a text file is grabbing text content from a .txt file on your disk. Programmers do it to handle data like configuration, user input, or to process bulk text.

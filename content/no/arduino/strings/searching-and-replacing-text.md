@@ -8,9 +8,8 @@ model: gpt-4-1106-preview
 summary: "Teksts\xF8k og -erstattning lar deg finne spesifikke ord eller fraser og\
   \ endre dem til noe annet. Programmerere bruker dette for \xE5 oppdatere kode, korrigere\u2026"
 title: "S\xF8king og erstatting av tekst"
+weight: 10
 ---
-
-{{< edit_this_page >}}
 
 ## Hva & Hvorfor?
 Tekstsøk og -erstattning lar deg finne spesifikke ord eller fraser og endre dem til noe annet. Programmerere bruker dette for å oppdatere kode, korrigere feil eller endre data dynamisk.

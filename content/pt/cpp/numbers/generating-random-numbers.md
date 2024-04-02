@@ -9,9 +9,8 @@ summary: "A gera\xE7\xE3o de n\xFAmeros aleat\xF3rios na programa\xE7\xE3o envol
   \ criar sequ\xEAncias de n\xFAmeros que n\xE3o possuem uma ordem ou padr\xE3o previs\xED\
   veis. Os programadores\u2026"
 title: "Gera\xE7\xE3o de n\xFAmeros aleat\xF3rios"
+weight: 12
 ---
-
-{{< edit_this_page >}}
 
 ## O Quê & Por Quê?
 

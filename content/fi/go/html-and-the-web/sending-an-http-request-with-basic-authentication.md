@@ -11,9 +11,8 @@ summary: "HTTP-pyynn\xF6n l\xE4hett\xE4minen perusautentikoinnilla Go-kielell\xE
   \ sis\xE4lt\xE4\xE4 valtuutusotsikon lis\xE4\xE4misen pyynt\xF6\xF6si, joka sis\xE4\
   lt\xE4\xE4 k\xE4ytt\xE4j\xE4nimen ja salasanan\u2026"
 title: "L\xE4hett\xE4minen HTTP-pyynt\xF6 perustodennuksella"
+weight: 45
 ---
-
-{{< edit_this_page >}}
 
 ## Mikä & Miksi?
 

@@ -11,9 +11,8 @@ summary: "Verkkosivun lataaminen tarkoittaa web-sivun HTML-sis\xE4ll\xF6n noutam
   \ HTTP/HTTPS-protokollaa k\xE4ytt\xE4en. Ohjelmoijat tekev\xE4t t\xE4t\xE4 usein\
   \ web-scrapingin, datan\u2026"
 title: Web-sivun lataaminen
+weight: 42
 ---
-
-{{< edit_this_page >}}
 
 ## Mikä ja Miksi?
 

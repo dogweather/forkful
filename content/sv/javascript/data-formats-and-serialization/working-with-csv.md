@@ -11,9 +11,8 @@ summary: "Att arbeta med CSV (Comma-Separated Values, komma-separerade v\xE4rden
   \ i JavaScript inneb\xE4r att tolka eller generera CSV-filer f\xF6r att antingen\
   \ importera\u2026"
 title: Arbeta med CSV
+weight: 37
 ---
-
-{{< edit_this_page >}}
 
 ## Vad & Varför?
 Att arbeta med CSV (Comma-Separated Values, komma-separerade värden) i JavaScript innebär att tolka eller generera CSV-filer för att antingen importera tabelldata från externa källor eller exportera data för användning i andra program. Programmerare gör detta eftersom det möjliggör enkel, lättviktig datautbyte mellan applikationer, databaser och system där mer komplexa format som JSON kan vara överflödiga.

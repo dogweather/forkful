@@ -7,9 +7,8 @@ model: gpt-4-0125-preview
 summary: "Das Manipulieren von Dateien mit CLI-One-Linern in Ruby dreht sich darum,\
   \ g\xE4ngige Dateioperationen direkt aus Ihrem Terminal unter Verwendung von Ruby-\u2026"
 title: Dateimanipulation mit CLI-One-Linern
+weight: 31
 ---
-
-{{< edit_this_page >}}
 
 ## Was & Warum?
 

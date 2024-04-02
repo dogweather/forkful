@@ -7,9 +7,8 @@ model: gpt-4-0125-preview
 summary: "Printing debug output in Visual Basic for Applications (VBA) involves strategically\
   \ placing print statements within your code to display variable values,\u2026"
 title: Printing debug output
+weight: 33
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 Printing debug output in Visual Basic for Applications (VBA) involves strategically placing print statements within your code to display variable values, execution flow, or custom debug messages. This technique is essential for debugging, enabling programmers to understand their code's behavior at runtime and identify any unexpected behavior or bugs.

@@ -7,9 +7,8 @@ model: gpt-4-1106-preview
 summary: "Gestire gli errori significa scrivere codice che pu\xF2 affrontare situazioni\
   \ impreviste. I programmatori lo fanno per prevenire crash e per assicurarsi che\u2026"
 title: Gestione degli errori
+weight: 16
 ---
-
-{{< edit_this_page >}}
 
 ## Cosa & Perché?
 

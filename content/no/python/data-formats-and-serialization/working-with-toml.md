@@ -7,9 +7,8 @@ model: gpt-4-0125-preview
 summary: "TOML, som er kort for Toms Opplagte, Minimale Spr\xE5k, er et data serialiseringsformat\
   \ i slekt med JSON eller YAML, men har som m\xE5l \xE5 v\xE6re enkelt og\u2026"
 title: Jobbe med TOML
+weight: 39
 ---
-
-{{< edit_this_page >}}
 
 ## Hva & Hvorfor?
 TOML, som er kort for Toms Opplagte, Minimale Språk, er et data serialiseringsformat i slekt med JSON eller YAML, men har som mål å være enkelt og leselig. Programmerere bruker TOML for konfigurasjonsfiler fordi det er enkelt å skrive og forstå, og det kartlegger pent på datastrukturer i programmeringsspråk som Python.

@@ -11,9 +11,8 @@ summary: "Att tolka ett datum fr\xE5n en str\xE4ng i Bash inneb\xE4r att extrahe
   \ och konvertera datuminformation fr\xE5n textdata till ett format som Bash kan\
   \ manipulera\u2026"
 title: "Analysera ett datum fr\xE5n en str\xE4ng"
+weight: 30
 ---
-
-{{< edit_this_page >}}
 
 ## Vad & Varför?
 

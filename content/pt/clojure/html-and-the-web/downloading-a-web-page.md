@@ -7,9 +7,8 @@ model: gpt-4-1106-preview
 summary: "Baixar uma p\xE1gina da web \xE9 simplesmente trazer conte\xFAdo da internet\
   \ para o seu computador. Programadores fazem isso para coletar dados, automatizar\u2026"
 title: "Baixando uma p\xE1gina da web"
+weight: 42
 ---
-
-{{< edit_this_page >}}
 
 ## O Que & Por Quê?
 Baixar uma página da web é simplesmente trazer conteúdo da internet para o seu computador. Programadores fazem isso para coletar dados, automatizar testes, ou integrar serviços.

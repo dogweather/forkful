@@ -9,9 +9,8 @@ summary: "Konwersja ci\u0105gu znak\xF3w na ma\u0142e litery polega na zmianie w
   \ wielkich liter w napisie na ich ma\u0142e odpowiedniki. Programi\u015Bci robi\u0105\
   \ to, by ujednolici\u0107\u2026"
 title: "Konwersja ci\u0105gu znak\xF3w na ma\u0142e litery"
+weight: 4
 ---
-
-{{< edit_this_page >}}
 
 ## Co i Dlaczego?
 Konwersja ciągu znaków na małe litery polega na zmianie wszystkich wielkich liter w napisie na ich małe odpowiedniki. Programiści robią to, by ujednolicić dane, np. przy porównywaniu ciągów bez uwzględniania wielkości liter.

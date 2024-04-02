@@ -8,9 +8,8 @@ model: gpt-4-0125-preview
 summary: "Working with JSON (JavaScript Object Notation) involves parsing JSON formatted\
   \ strings into Python objects and vice versa. This is crucial for web and API\u2026"
 title: Working with JSON
+weight: 38
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 

@@ -9,9 +9,8 @@ summary: "TOML est un format de fichier de configuration qui est facile \xE0 lir
   \ gr\xE2ce \xE0 sa s\xE9mantique claire. Les programmeurs utilisent TOML pour g\xE9\
   rer les\u2026"
 title: Travailler avec TOML
+weight: 39
 ---
-
-{{< edit_this_page >}}
 
 ## Quoi et Pourquoi ?
 

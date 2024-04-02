@@ -15,9 +15,8 @@ summary: "REPL\uFF0C\u5373\u8BFB\u53D6-\u6C42\u503C-\u6253\u5370\u5FAA\u73AF\uFF
   \u901F\u5B9E\u9A8C\uFF0C\u65E0\u9700\u7F16\u8BD1\u6216\u8BBE\u7F6E\u5B8C\u6574\u7684\
   \u9879\u76EE\u73AF\u5883\u7684\u5F00\u9500\u3002"
 title: "\u5728\u7F16\u7A0B\u4E2D\u4F7F\u7528\u4EA4\u4E92\u5F0FShell\uFF08REPL\uFF09"
+weight: 34
 ---
-
-{{< edit_this_page >}}
 
 ## 什么 & 为什么？
 REPL，即读取-求值-打印循环，是一个用于动态测试Clojure代码的编程环境，逐块进行。编程人员使用它来立即反馈、迭代开发和快速实验，无需编译或设置完整的项目环境的开销。

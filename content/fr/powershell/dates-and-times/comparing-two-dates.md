@@ -9,9 +9,8 @@ summary: "Comparer deux dates permet simplement de dire si une date est plus r\x
   cente, plus ancienne ou identique \xE0 une autre. Les programmeurs en ont besoin\
   \ pour\u2026"
 title: Comparer deux dates
+weight: 27
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 Comparer deux dates permet simplement de dire si une date est plus récente, plus ancienne ou identique à une autre. Les programmeurs en ont besoin pour gérer des échéances, des logs, ou effectuer des actions basées sur le temps.

@@ -9,9 +9,8 @@ summary: "Ibland beh\xF6ver du bara en del av en str\xE4ng, antingen f\xF6r att 
   \ data eller f\xF6r att manipulera text. Att extrahera substr\xE4ngar l\xE5ter dig\
   \ snoppa av\u2026"
 title: "Extrahera delstr\xE4ngar"
+weight: 6
 ---
-
-{{< edit_this_page >}}
 
 ## Vad och varför?
 Ibland behöver du bara en del av en sträng, antingen för att analysera data eller för att manipulera text. Att extrahera substrängar låter dig snoppa av precis det du behöver.

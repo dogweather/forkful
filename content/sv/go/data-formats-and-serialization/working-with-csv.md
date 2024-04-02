@@ -10,9 +10,8 @@ model: gpt-4-0125-preview
 summary: "Comma-Separated Values (CSV) format \xE4r allest\xE4des n\xE4rvarande f\xF6\
   r datautbyte p\xE5 grund av dess enkelhet och l\xE4tthet att integrera med de flesta\u2026"
 title: Arbeta med CSV
+weight: 37
 ---
-
-{{< edit_this_page >}}
 
 ## Vad & Varför?
 

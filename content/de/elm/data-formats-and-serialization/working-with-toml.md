@@ -9,9 +9,8 @@ summary: "TOML, die Abk\xFCrzung f\xFCr Toms Offensichtliche, Minimale Sprache, 
   \ eine Daten-Serialisierungssprache. Elm-Programmierer verwenden sie zur Verwaltung\
   \ von\u2026"
 title: Arbeiten mit TOML
+weight: 39
 ---
-
-{{< edit_this_page >}}
 
 ## Was & Warum?
 TOML, die Abkürzung für Toms Offensichtliche, Minimale Sprache, ist eine Daten-Serialisierungssprache. Elm-Programmierer verwenden sie zur Verwaltung von Konfigurationsdaten, da sie menschenlesbar ist und sich sauber auf die für Anwendungen benötigten Schlüssel-Wert-Paare abbilden lässt.

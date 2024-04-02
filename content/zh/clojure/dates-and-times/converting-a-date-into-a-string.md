@@ -14,9 +14,8 @@ summary: "\u4EC0\u4E48\u4EE5\u53CA\u4E3A\u4EC0\u4E48\uFF1F: \u628A\u65E5\u671F\u
   \u505A\u6765\u663E\u793A\u3001\u5B58\u50A8\u6216\u8005\u5728\u7F51\u7EDC\u4E2D\u5206\
   \u4EAB\u65E5\u671F\u4FE1\u606F\u3002"
 title: "\u5C06\u65E5\u671F\u8F6C\u6362\u4E3A\u5B57\u7B26\u4E32"
+weight: 28
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 什么以及为什么？: 把日期转换成字符串就是把表示日期的数据变成文本格式。程序员常这么做来显示、存储或者在网络中分享日期信息。

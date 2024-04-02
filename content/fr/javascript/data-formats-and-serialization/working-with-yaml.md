@@ -11,9 +11,8 @@ summary: "YAML, abr\xE9viation de YAML Ain't Markup Language, est un format de s
   rialisation de donn\xE9es lisible par l'homme. Les programmeurs l'utilisent souvent\
   \ pour\u2026"
 title: Travailler avec YAML
+weight: 41
 ---
-
-{{< edit_this_page >}}
 
 ## Quoi & Pourquoi ?
 

@@ -14,9 +14,8 @@ summary: "\uBB38\uC790\uC5F4 \uB0B4\uC0BD\uC740 \uBCC0\uC218\uB098 \uD45C\uD604\
   \ \uBB38\uC790\uC5F4\uC744 \uAC31\uC2E0\uD558\uAE30 \uC704\uD574 \uC0AC\uC6A9\uD569\
   \uB2C8\uB2E4."
 title: "\uBB38\uC790\uC5F4 \uBCF4\uAC04\uD558\uAE30"
+weight: 8
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why? (무엇인가요? 왜 사용하나요?)
 문자열 내삽은 변수나 표현식의 값을 문자열에 집어넣는 것입니다. 값이 변할 때마다 자동으로 문자열을 갱신하기 위해 사용합니다.

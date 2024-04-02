@@ -9,9 +9,8 @@ summary: "Rejestrowanie (logging) to praktyka zapisywania zdarze\u0144, b\u0142\
   d\xF3w i innych istotnych punkt\xF3w danych, kt\xF3re wyst\u0119puj\u0105 w cyklu\
   \ \u017Cycia aplikacji oprogramowania.\u2026"
 title: "Rejestrowanie zdarze\u0144"
+weight: 17
 ---
-
-{{< edit_this_page >}}
 
 ## Co i dlaczego?
 

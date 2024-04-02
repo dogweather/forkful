@@ -9,9 +9,8 @@ summary: "Deletar caracteres que combinam com um padr\xE3o \xE9 basicamente filt
   \ a nossa string, tirando tudo que n\xE3o queremos. Programadores fazem isso pra\
   \ limpar\u2026"
 title: "Excluindo caracteres que correspondem a um padr\xE3o"
+weight: 5
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why? (O Que & Por Quê?)
 Deletar caracteres que combinam com um padrão é basicamente filtrar a nossa string, tirando tudo que não queremos. Programadores fazem isso pra limpar dados, validar inputs ou simplificar processamento de texto.

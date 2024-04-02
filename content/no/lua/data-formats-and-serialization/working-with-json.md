@@ -11,9 +11,8 @@ summary: "\xC5 jobbe med JSON i Lua inneb\xE6rer \xE5 tolke JSON-formaterte stre
   \ til Lua-tabeller og omvendt, noe som muliggj\xF8r enkel datautveksling mellom\
   \ Lua-\u2026"
 title: Arbeider med JSON
+weight: 38
 ---
-
-{{< edit_this_page >}}
 
 ## Hva & Hvorfor?
 Å jobbe med JSON i Lua innebærer å tolke JSON-formaterte strenger til Lua-tabeller og omvendt, noe som muliggjør enkel datautveksling mellom Lua-applikasjoner og webtjenester eller eksterne APIer. Programmerere gjør dette for å utnytte det lette og enkle-å-tolke formatet til JSON for effektiv datalagring, konfigurasjon eller API-kommunikasjon.

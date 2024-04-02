@@ -10,9 +10,8 @@ model: gpt-4-0125-preview
 summary: "CSV-tiedostojen (pilkuilla erotettujen arvojen) k\xE4sittelyyn kuuluu tietojen\
   \ lukemista ja kirjoittamista n\xE4ihin tiedostoihin, mik\xE4 on yleinen tarve\u2026"
 title: "Ty\xF6skentely CSV:n kanssa"
+weight: 37
 ---
-
-{{< edit_this_page >}}
 
 ## Mikä & Miksi?
 

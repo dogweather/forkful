@@ -7,9 +7,8 @@ model: gpt-4-1106-preview
 summary: "String interpolation slides values into a string template like pieces of\
   \ a puzzle, making strings dynamic and code cleaner. Programmers use it to insert\u2026"
 title: Interpolating a string
+weight: 8
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 String interpolation slides values into a string template like pieces of a puzzle, making strings dynamic and code cleaner. Programmers use it to insert variables, expressions, and formatting directly within strings, cutting down on concatenation clutter.

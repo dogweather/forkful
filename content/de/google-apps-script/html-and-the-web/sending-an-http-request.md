@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Das Senden einer HTTP-Anfrage in Google Apps Script bedeutet, programmgesteuert\
   \ eine Anfrage an einen externen Webserver oder eine API zu stellen.\u2026"
 title: Eine HTTP-Anfrage senden
+weight: 44
 ---
-
-{{< edit_this_page >}}
 
 ## Was & Warum?
 

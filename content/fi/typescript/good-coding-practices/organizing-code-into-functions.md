@@ -9,9 +9,8 @@ summary: "Koodin j\xE4rjest\xE4minen funktioiksi tarkoittaa koodisi pilkkomista 
   ytett\xE4viksi, modulaarisiksi lohkoiksi. T\xE4m\xE4 tehd\xE4\xE4n DRY (Don't Repeat\
   \ Yourself)\u2026"
 title: "Koodin j\xE4rjest\xE4minen funktioihin"
+weight: 18
 ---
-
-{{< edit_this_page >}}
 
 ## Mikä & Miksi?
 Koodin järjestäminen funktioiksi tarkoittaa koodisi pilkkomista uudelleenkäytettäviksi, modulaarisiksi lohkoiksi. Tämä tehdään DRY (Don't Repeat Yourself) periaatteen mukaisesti, mikä tekee koodista siistimpää, helpommalukuisempaa ja virheenkorjauksen tuulahduksen.

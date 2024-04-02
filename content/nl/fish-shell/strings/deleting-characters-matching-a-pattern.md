@@ -11,9 +11,8 @@ summary: "Karakters verwijderen die overeenkomen met een patroon is in principe 
   \ filteren van ongewenste karakters of sequenties uit strings of bestandsinhoud\
   \ op\u2026"
 title: Karakters verwijderen die overeenkomen met een patroon
+weight: 5
 ---
-
-{{< edit_this_page >}}
 
 ## Wat & Waarom?
 

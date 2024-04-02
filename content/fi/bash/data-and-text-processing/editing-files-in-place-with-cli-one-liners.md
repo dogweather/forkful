@@ -9,9 +9,8 @@ summary: "Kuvittele, ett\xE4 olet juuri saanut selville, ett\xE4 sinun tarvitsee
   \ er\xE4n p\xE4ivitys useisiin konfiguraatiotiedostoihin palvelimellasi. Voisit\
   \ avata\u2026"
 title: "Tiedostojen muokkaaminen paikan p\xE4\xE4ll\xE4 komentorivin yhden rivin komennoilla"
+weight: 32
 ---
-
-{{< edit_this_page >}}
 
 ## Mitä & Miksi?
 

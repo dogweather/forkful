@@ -9,9 +9,8 @@ summary: "Merkkijonosta lainausmerkkien poistaminen tarkoittaa sis\xE4lt\xF6\xE4
   r\xF6ivien lainausmerkkien poistamista. T\xE4m\xE4 tehd\xE4\xE4n sy\xF6tteiden puhdistamiseksi,\
   \ datan\u2026"
 title: Merkkijonosta lainausmerkkien poistaminen
+weight: 9
 ---
-
-{{< edit_this_page >}}
 
 ## Mikä ja miksi?
 

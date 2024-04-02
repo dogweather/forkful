@@ -23,9 +23,8 @@ summary: "\u5728 Google Apps \u811A\u672C\u4E2D\u6BD4\u8F83\u4E24\u4E2A\u65E5\u6
   \u8BF8\u5982\u622A\u6B62\u65E5\u671F\u3001\u4E8B\u4EF6\u8BA1\u5212\u6216\u5185\u5BB9\
   \u6392\u7A0B\u7B49\u529F\u80FD\u3002"
 title: "\u6BD4\u8F83\u4E24\u4E2A\u65E5\u671F"
+weight: 27
 ---
-
-{{< edit_this_page >}}
 
 ## 什么 & 为什么？
 在 Google Apps 脚本中比较两个日期，这是一个专为谷歌的应用程序套件量身定制的 JavaScript 衍生物，对于处理排程、时间线或任何与日期相关的数据的开发人员来说是一个基本任务。了解如何准确比较日期使程序员能够有效地实施诸如截止日期、事件计划或内容排程等功能。

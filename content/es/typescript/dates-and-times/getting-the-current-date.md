@@ -10,9 +10,8 @@ model: gpt-4-0125-preview
 summary: "Obtener la fecha actual en TypeScript, un lenguaje construido sobre JavaScript,\
   \ te permite acceder y manipular la informaci\xF3n de la fecha y hora actuales.\u2026"
 title: Obteniendo la fecha actual
+weight: 29
 ---
-
-{{< edit_this_page >}}
 
 ## ¿Qué y Por Qué?
 Obtener la fecha actual en TypeScript, un lenguaje construido sobre JavaScript, te permite acceder y manipular la información de la fecha y hora actuales. Los programadores a menudo necesitan esta funcionalidad para crear marcas de tiempo, programar y otras características sensibles al tiempo en sus aplicaciones.

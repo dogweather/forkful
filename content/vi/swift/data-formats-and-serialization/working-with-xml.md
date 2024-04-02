@@ -13,9 +13,8 @@ summary: "L\xE0m vi\u1EC7c v\u1EDBi XML c\xF3 ngh\u0129a l\xE0 ph\xE2n t\xEDch c
   nh vi\xEAn th\u1EF1c hi\u1EC7n \u0111i\u1EC1u n\xE0y cho vi\u1EC7c trao \u0111\u1ED5\
   i d\u1EEF li\u1EC7u, \u0111\u1EB7c\u2026"
 title: "L\xE0m vi\u1EC7c v\u1EDBi XML"
+weight: 40
 ---
-
-{{< edit_this_page >}}
 
 ## Làm gì & Tại sao?
 Làm việc với XML có nghĩa là phân tích cú pháp và tạo ra dữ liệu XML trong Swift. Các lập trình viên thực hiện điều này cho việc trao đổi dữ liệu, đặc biệt là khi tích hợp với các hệ thống mà XML là định dạng chuẩn.

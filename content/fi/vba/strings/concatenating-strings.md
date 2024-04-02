@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Merkkijonojen yhdist\xE4minen Visual Basic for Applications (VBA) -ohjelmointikieless\xE4\
   \ tarkoittaa kahden tai useamman merkkijonon liitt\xE4mist\xE4 yhdeksi\u2026"
 title: "Merkkijonojen yhdist\xE4minen"
+weight: 3
 ---
-
-{{< edit_this_page >}}
 
 ## Mikä & Miksi?
 

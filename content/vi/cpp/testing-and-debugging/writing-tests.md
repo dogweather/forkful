@@ -13,9 +13,8 @@ summary: "Vi\u1EBFt c\xE1c b\xE0i ki\u1EC3m tra gi\xFAp ki\u1EC3m tra xem m\xE3 
   \ kh\xF4ng, b\u1EAFt \u0111\u01B0\u1EE3c l\u1ED7i s\u1EDBm. C\xE1c l\u1EADp tr\xEC\
   nh vi\xEAn th\u1EF1c hi\u1EC7n ki\u1EC3m tra \u0111\u1EC3\u2026"
 title: "Vi\u1EBFt c\xE1c b\xE0i ki\u1EC3m tra"
+weight: 36
 ---
-
-{{< edit_this_page >}}
 
 ## Cái gì & Tại sao?
 Viết các bài kiểm tra giúp kiểm tra xem mã của bạn có thực hiện đúng như mong đợi hay không, bắt được lỗi sớm. Các lập trình viên thực hiện kiểm tra để tiết kiệm thời gian, giảm đau đầu và đảm bảo độ tin cậy.

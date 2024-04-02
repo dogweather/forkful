@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Een webpagina downloaden houdt in dat de inhoud van een webpagina via de\
   \ URL wordt opgehaald voor verwerking of opslag. Programmeurs doen dit om\u2026"
 title: Een webpagina downloaden
+weight: 42
 ---
-
-{{< edit_this_page >}}
 
 ## Wat & Waarom?
 

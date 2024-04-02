@@ -9,9 +9,8 @@ summary: "Zaokr\u0105glanie liczb polega na dostosowaniu warto\u015Bci do najbli
   szej liczby ca\u0142kowitej lub okre\u015Blonego miejsca dziesi\u0119tnego. Programi\u015B\
   ci zaokr\u0105glaj\u0105 liczby,\u2026"
 title: "Zaokr\u0105glanie liczb"
+weight: 13
 ---
-
-{{< edit_this_page >}}
 
 ## Co i dlaczego?
 Zaokrąglanie liczb polega na dostosowaniu wartości do najbliższej liczby całkowitej lub określonego miejsca dziesiętnego. Programiści zaokrąglają liczby, aby upraszczać dane, poprawiać czytelność lub spełniać pewne wymagania matematyczne podczas obliczeń.

@@ -19,9 +19,8 @@ summary: "\uB85C\uAE45\uC740 \uB7F0\uD0C0\uC784 \uB3D9\uC548 \uC560\uD50C\uB9AC\
   \uB2C8\uC2A4 \uD45C\uC900\uC744 \uC720\uC9C0\uD558\uAE30 \uC704\uD574 \uB85C\uAE45\
   \uC744 \uC0AC\uC6A9\uD569\uB2C8\uB2E4."
 title: "\uB85C\uAE45"
+weight: 17
 ---
-
-{{< edit_this_page >}}
 
 ## 무엇 & 왜?
 로깅은 런타임 동안 애플리케이션의 이벤트와 데이터 출력을 기록하는 과정입니다. 프로그래머들은 버그를 진단하고, 소프트웨어 성능을 모니터링하고, 사용자 행동을 추적하며, 보안 및 비즈니스 표준을 유지하기 위해 로깅을 사용합니다.

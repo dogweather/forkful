@@ -10,9 +10,8 @@ model: gpt-4-0125-preview
 summary: "Express\xF5es regulares (regex) s\xE3o uma ferramenta poderosa para o processamento\
   \ de texto, permitindo que programadores busquem, correspondam e manipulem\u2026"
 title: "Usando express\xF5es regulares"
+weight: 11
 ---
-
-{{< edit_this_page >}}
 
 ## O Que e Por Que?
 

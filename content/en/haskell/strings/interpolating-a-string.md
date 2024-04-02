@@ -9,9 +9,8 @@ summary: "String interpolation lets you embed variables directly in strings. It'
   \ done for convenience and readability\u2014no plus signs or function calls needed\
   \ to\u2026"
 title: Interpolating a string
+weight: 8
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 String interpolation lets you embed variables directly in strings. It's done for convenience and readability—no plus signs or function calls needed to construct your message.

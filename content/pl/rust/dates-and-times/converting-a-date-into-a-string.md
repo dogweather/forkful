@@ -9,9 +9,8 @@ summary: "Konwersja daty do ci\u0105gu znak\xF3w pozwala zaprezentowa\u0107 info
   \ o czasie w zrozumia\u0142ym formacie. Programi\u015Bci robi\u0105 to, by u\u0142\
   atwi\u0107 u\u017Cytkownikom odczytanie\u2026"
 title: "Konwersja daty na \u0142a\u0144cuch znak\xF3w"
+weight: 28
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why? (Co i Dlaczego?)
 Konwersja daty do ciągu znaków pozwala zaprezentować informacje o czasie w zrozumiałym formacie. Programiści robią to, by ułatwić użytkownikom odczytanie daty oraz umożliwić zapisanie daty w bazie danych czy pliku.

@@ -10,9 +10,8 @@ model: gpt-4-0125-preview
 summary: "Testing i Ruby handler om \xE5 verifisere at koden din oppf\xF8rer seg som\
   \ forventet under ulike forhold. Programmerere skriver tester for \xE5 sikre korrekthet,\u2026"
 title: Skrive tester
+weight: 36
 ---
-
-{{< edit_this_page >}}
 
 ## Hva & Hvorfor?
 Testing i Ruby handler om å verifisere at koden din oppfører seg som forventet under ulike forhold. Programmerere skriver tester for å sikre korrekthet, forhindre regresjoner, og lette refaktorering, med mål om robuste og vedlikeholdbare applikasjoner.

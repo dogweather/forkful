@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Verificare se una directory esiste in Clojure comporta la verifica della\
   \ presenza di una directory del sistema di file all'interno della tua applicazione\u2026"
 title: Verifica se una directory esiste
+weight: 20
 ---
-
-{{< edit_this_page >}}
 
 ## Cosa & Perché?
 Verificare se una directory esiste in Clojure comporta la verifica della presenza di una directory del sistema di file all'interno della tua applicazione Clojure. Questa operazione è fondamentale per le operazioni sui file, per prevenire errori durante la lettura o la scrittura in directory che potrebbero non essere presenti, garantendo un'esecuzione del codice robusta e senza errori.

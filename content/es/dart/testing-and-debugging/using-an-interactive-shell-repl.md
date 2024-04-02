@@ -10,9 +10,8 @@ model: gpt-4-0125-preview
 summary: "Un shell interactivo (REPL - Bucle Leer-Evaluar-Imprimir) para Dart permite\
   \ a los programadores escribir y ejecutar c\xF3digo Dart l\xEDnea por l\xEDnea sin\u2026"
 title: Usando un shell interactivo (REPL)
+weight: 34
 ---
-
-{{< edit_this_page >}}
 
 ## Qué y Por Qué?
 

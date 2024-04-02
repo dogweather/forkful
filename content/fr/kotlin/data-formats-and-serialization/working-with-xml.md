@@ -7,9 +7,8 @@ model: gpt-4-0125-preview
 summary: "Travailler avec XML implique l'analyse, la cr\xE9ation et la manipulation\
   \ de documents XML - un langage de balisage pour le stockage et le transfert de\u2026"
 title: Travailler avec XML
+weight: 40
 ---
-
-{{< edit_this_page >}}
 
 ## Quoi & Pourquoi ?
 Travailler avec XML implique l'analyse, la création et la manipulation de documents XML - un langage de balisage pour le stockage et le transfert de données. Les programmeurs le font parce que de nombreux systèmes échangent encore des données au format XML, et c'est nécessaire pour le support des systèmes existants et l'intégration avec les technologies existantes.

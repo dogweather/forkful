@@ -11,9 +11,8 @@ summary: "Tekstin etsiminen ja korvaaminen ohjelmoinnissa helpottaa merkkijonoje
   \ muokkausta ja hallintaa, mik\xE4 on perusteht\xE4v\xE4 datan k\xE4sittelyss\xE4\
   \ ja\u2026"
 title: Tekstin etsiminen ja korvaaminen
+weight: 10
 ---
-
-{{< edit_this_page >}}
 
 ## Mitä & Miksi?
 

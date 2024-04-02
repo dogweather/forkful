@@ -9,9 +9,8 @@ summary: "Zamiana \u0142a\u0144cucha znak\xF3w na ma\u0142e litery to proces, gd
   \ wszystkie wielkie litery w tek\u015Bcie staj\u0105 si\u0119 ma\u0142ymi. Programi\u015B\
   ci u\u017Cywaj\u0105 tej zmiany dla unifikacji\u2026"
 title: "Konwersja ci\u0105gu znak\xF3w na ma\u0142e litery"
+weight: 4
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why? (Co i Dlaczego?)
 Zamiana łańcucha znaków na małe litery to proces, gdzie wszystkie wielkie litery w tekście stają się małymi. Programiści używają tej zmiany dla unifikacji danych, porównywania łańcuchów bez uwzględnienia wielkości liter lub przygotowania tekstu do wyświetlenia w jednolitym formacie.

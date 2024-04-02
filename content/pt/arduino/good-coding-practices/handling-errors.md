@@ -9,9 +9,8 @@ summary: "O tratamento de erros em seus programas captura as coisas imprevistas 
   \ tentar\xE3o te atrapalhar. Voc\xEA faz isso para evitar que seu Arduino entre\
   \ em\u2026"
 title: Tratamento de Erros
+weight: 16
 ---
-
-{{< edit_this_page >}}
 
 ## O Que & Porquê?
 

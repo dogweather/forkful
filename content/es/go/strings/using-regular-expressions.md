@@ -10,9 +10,8 @@ model: gpt-4-0125-preview
 summary: "Las expresiones regulares (regex) en la programaci\xF3n se utilizan para\
   \ buscar, coincidir y manipular cadenas basadas en patrones espec\xEDficos. Los\u2026"
 title: Usando expresiones regulares
+weight: 11
 ---
-
-{{< edit_this_page >}}
 
 ## ¿Qué y por qué?
 

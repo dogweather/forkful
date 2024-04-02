@@ -23,9 +23,8 @@ summary: "\uC790\uBC14\uC2A4\uD06C\uB9BD\uD2B8\uC5D0\uC11C \uD45C\uC900 \uC624\u
   \uB958 \uBA54\uC2DC\uC9C0\uB97C \uAD6C\uBD84\uD568\uC73C\uB85C\uC368, \uCD9C\uB825\
   \ \uAD00\uB9AC\uB97C \uB354\u2026"
 title: "\uD45C\uC900 \uC5D0\uB7EC\uC5D0 \uC4F0\uAE30"
+weight: 25
 ---
-
-{{< edit_this_page >}}
 
 ## 무엇이며 왜인가?
 자바스크립트에서 표준 오류(stderr)로 작성하는 것은 오류 메시지나 중요한 정보를 로깅 및 디버깅 목적으로 특정 분리된 스트림에 지시하는 것입니다. 특히 Unix 계열 환경에서 유용합니다. 프로그래머들은 일반 프로그램 출력과 오류 메시지를 구분함으로써, 출력 관리를 더 깔끔하게 하고 오류 모니터링을 더 쉽게하기 위해 이를 수행합니다.

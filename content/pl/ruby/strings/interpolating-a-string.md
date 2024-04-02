@@ -9,9 +9,8 @@ summary: "String interpolation w Ruby pozwala wrzuca\u0107 zmienne lub wyra\u017
   enia do \u015Brodka tekstu. U\u017Cywamy tego, by \u0142atwo tworzy\u0107 dynamiczne\
   \ stringi."
 title: "Interpolacja \u0142a\u0144cuch\xF3w znak\xF3w"
+weight: 8
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why? (Co i Dlaczego?)
 String interpolation w Ruby pozwala wrzucać zmienne lub wyrażenia do środka tekstu. Używamy tego, by łatwo tworzyć dynamiczne stringi.

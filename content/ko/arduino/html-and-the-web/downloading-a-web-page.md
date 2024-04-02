@@ -16,9 +16,8 @@ summary: "\uC6F9\uD398\uC774\uC9C0\uB97C \uB2E4\uC6B4\uB85C\uB4DC\uD558\uB294 \u
   \uAC70\uB098 \uC6D0\uACA9\uC73C\uB85C \uC7A5\uCE58\uB97C \uC81C\uC5B4\uD558\uAE30\
   \ \uC704\uD574 \uC774 \uAE30\uB2A5\uC744 \uC0AC\uC6A9\uD569\uB2C8\uB2E4."
 title: "\uC6F9 \uD398\uC774\uC9C0 \uB2E4\uC6B4\uB85C\uB4DC\uD558\uAE30"
+weight: 42
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why? (무엇과 왜?)
 웹페이지를 다운로드하는 것은 그 내용을 인터넷에서 직접 받아오는 행위입니다. 프로그래머들은 자동으로 데이터를 수집하거나 원격으로 장치를 제어하기 위해 이 기능을 사용합니다.

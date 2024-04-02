@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Las expresiones regulares (regex) en Ruby son patrones utilizados para coincidir\
   \ con combinaciones de caracteres en cadenas, lo que permite a los\u2026"
 title: Usando expresiones regulares
+weight: 11
 ---
-
-{{< edit_this_page >}}
 
 ## ¿Qué y Por Qué?
 Las expresiones regulares (regex) en Ruby son patrones utilizados para coincidir con combinaciones de caracteres en cadenas, lo que permite a los desarrolladores buscar, coincidir y manipular texto de manera eficiente. Los programadores utilizan regex para tareas tales como validación, análisis y manipulación de cadenas, lo que lo hace una herramienta indispensable para el procesamiento de texto.

@@ -23,9 +23,8 @@ summary: "\uBB38\uC790\uC5F4\uC5D0\uC11C \uB0A0\uC9DC\uB97C \uD30C\uC2F1\uD55C\u
   \uACE0 \uC778\uAC04\uC774 \uC77D\uC744 \uC218 \uC788\uB294 \uB0A0\uC9DC \uD615\uC2DD\
   \uACFC \uCEF4\uD4E8\uD130\uAC00\u2026"
 title: "\uBB38\uC790\uC5F4\uC5D0\uC11C \uB0A0\uC9DC \uBD84\uC11D\uD558\uAE30"
+weight: 30
 ---
-
-{{< edit_this_page >}}
 
 ## 무엇인가 & 왜인가?
 문자열에서 날짜를 파싱한다는 것은 날짜와 시간의 텍스트 표현을 Lua 프로그램 내에서 쉽게 조작, 저장 또는 비교할 수 있는 형식으로 변환하는 것을 말합니다. 프로그래머들은 일정 관리, 로깅, 시간 계산 등의 작업을 용이하게 하고 인간이 읽을 수 있는 날짜 형식과 컴퓨터가 효율적으로 처리할 수 있는 구조화된 데이터 유형 간의 격차를 메우기 위해 이 작업을 수행합니다.

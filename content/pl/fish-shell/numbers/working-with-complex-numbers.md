@@ -9,9 +9,8 @@ summary: "Liczby zespolone rozszerzaj\u0105 pomys\u0142 jednowymiarowej linii li
   \ o dwuwymiarow\u0105 p\u0142aszczyzn\u0119 zespolon\u0105. Programi\u015Bci u\u017C\
   ywaj\u0105 ich w dziedzinach takich jak\u2026"
 title: Praca z liczbami zespolonymi
+weight: 14
 ---
-
-{{< edit_this_page >}}
 
 ## Co i dlaczego?
 Liczby zespolone rozszerzają pomysł jednowymiarowej linii liczbowej o dwuwymiarową płaszczyznę zespoloną. Programiści używają ich w dziedzinach takich jak inżynieria, fizyka i grafika do obliczeń wymagających dwóch komponentów, takich jak sygnały czy rotacje.

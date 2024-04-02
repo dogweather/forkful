@@ -8,9 +8,8 @@ model: gpt-4-0125-preview
 summary: "Shells interativos, ou REPLs (Read-Eval-Print Loops, ou La\xE7os de Ler-Avaliar-Imprimir),\
   \ permitem que voc\xEA execute c\xF3digo de forma instant\xE2nea, testando\u2026"
 title: Usando um shell interativo (REPL)
+weight: 34
 ---
-
-{{< edit_this_page >}}
 
 ## O Que & Por Quê?
 Shells interativos, ou REPLs (Read-Eval-Print Loops, ou Laços de Ler-Avaliar-Imprimir), permitem que você execute código de forma instantânea, testando funções, algoritmos ou brincando com ideias. Eles são os blocos de notas da programação, rápidos e diretos, sem necessidade de configurar um ambiente de desenvolvimento completo.

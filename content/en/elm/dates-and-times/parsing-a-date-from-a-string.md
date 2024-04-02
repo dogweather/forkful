@@ -7,9 +7,8 @@ model: gpt-4-0125-preview
 summary: "Parsing a date from a string in Elm involves converting textual information\
   \ representing dates and times into a format that Elm can understand and\u2026"
 title: Parsing a date from a string
+weight: 30
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 Parsing a date from a string in Elm involves converting textual information representing dates and times into a format that Elm can understand and manipulate, specifically into the `Date` type. This process is crucial for handling user input, displaying dates correctly localized, and performing date-related calculations, ensuring your Elm applications can intelligently process temporal data.

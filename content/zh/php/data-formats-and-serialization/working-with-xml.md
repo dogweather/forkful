@@ -13,9 +13,8 @@ summary: "XML\u662F\u4E00\u79CD\u7528\u4E8E\u5B58\u50A8\u548C\u4F20\u8F93\u6570\
   \u4F5C\u6027 - \u60F3\u8C61\u4E00\u4E0B\u6570\u636E\u4EA4\u6362\u548C\u914D\u7F6E\
   \u8BBE\u7F6E\u3002"
 title: "\u5904\u7406XML"
+weight: 40
 ---
-
-{{< edit_this_page >}}
 
 ## 是什么 & 为什么？
 XML是一种用于存储和传输数据的标记语言。程序员通过处理XML来实现应用程序和系统之间的互操作性 - 想象一下数据交换和配置设置。

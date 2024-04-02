@@ -7,9 +7,8 @@ model: gpt-4-0125-preview
 summary: "Gerar n\xFAmeros aleat\xF3rios no Bash oferece uma maneira de introduzir\
   \ imprevisibilidade nos scripts, o que \xE9 essencial para tarefas como gerar senhas\u2026"
 title: "Gera\xE7\xE3o de n\xFAmeros aleat\xF3rios"
+weight: 12
 ---
-
-{{< edit_this_page >}}
 
 ## O Quê & Porquê?
 Gerar números aleatórios no Bash oferece uma maneira de introduzir imprevisibilidade nos scripts, o que é essencial para tarefas como gerar senhas seguras, simular dados ou para programar jogos. Os programadores aproveitam essa capacidade para adicionar variabilidade aos seus scripts ou para testar seus programas sob uma variedade de condições geradas aleatoriamente.

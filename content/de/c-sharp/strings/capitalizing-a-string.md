@@ -10,9 +10,8 @@ model: gpt-4-0125-preview
 summary: "Das Kapitalisieren eines Strings in C# beinhaltet die Umwandlung des ersten\
   \ Zeichens eines Strings in Gro\xDFbuchstaben, falls dies nicht bereits der Fall\u2026"
 title: "Einen String gro\xDFschreiben"
+weight: 2
 ---
-
-{{< edit_this_page >}}
 
 ## Was & Warum?
 Das Kapitalisieren eines Strings in C# beinhaltet die Umwandlung des ersten Zeichens eines Strings in Großbuchstaben, falls dies nicht bereits der Fall ist. Diese Änderung kann für die Formatierung von Ausgaben, die Durchsetzung von Codierungsstandards oder die Verbesserung der Lesbarkeit von Benutzeroberflächentexten entscheidend sein.

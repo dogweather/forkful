@@ -9,9 +9,8 @@ summary: "Enviar uma solicita\xE7\xE3o HTTP \xE9 como fazer uma pergunta a um si
   \ e esperar uma resposta. Programadores fazem isso para interagir com APIs, coletar\
   \ dados ou\u2026"
 title: "Enviando uma requisi\xE7\xE3o HTTP"
+weight: 44
 ---
-
-{{< edit_this_page >}}
 
 ## O Quê e Por Quê?
 Enviar uma solicitação HTTP é como fazer uma pergunta a um site e esperar uma resposta. Programadores fazem isso para interagir com APIs, coletar dados ou comunicar com outros serviços web.

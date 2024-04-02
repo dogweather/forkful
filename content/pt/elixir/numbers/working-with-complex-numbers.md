@@ -9,9 +9,8 @@ summary: "N\xFAmeros complexos t\xEAm uma parte real e uma parte imagin\xE1ria (
   \ `3 + 4i`). Eles s\xE3o usados em engenharia, f\xEDsica e certos problemas de computa\xE7\
   \xE3o.\u2026"
 title: "Trabalhando com n\xFAmeros complexos"
+weight: 14
 ---
-
-{{< edit_this_page >}}
 
 ## O Que & Por Quê?
 Números complexos têm uma parte real e uma parte imaginária (como `3 + 4i`). Eles são usados em engenharia, física e certos problemas de computação. Programadores trabalham com eles para simulações, processamento de sinais e resolução eficiente de certos tipos de problemas matemáticos.

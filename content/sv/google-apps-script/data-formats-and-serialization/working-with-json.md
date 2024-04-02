@@ -11,9 +11,8 @@ summary: "JSON, eller JavaScript Object Notation, \xE4r ett l\xE4ttviktigt forma
   \ f\xF6r lagring och transport av data, idealiskt f\xF6r kommunikation server-till-klient\
   \ samt\u2026"
 title: Arbeta med JSON
+weight: 38
 ---
-
-{{< edit_this_page >}}
 
 ## Vad & Varför?
 

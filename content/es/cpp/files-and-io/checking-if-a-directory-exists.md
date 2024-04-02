@@ -10,9 +10,8 @@ model: gpt-4-0125-preview
 summary: "Comprobar si un directorio existe trata de determinar la presencia de un\
   \ directorio en una ruta especificada antes de realizar operaciones como leer o\u2026"
 title: Comprobando si un directorio existe
+weight: 20
 ---
-
-{{< edit_this_page >}}
 
 ## Qué y Por Qué?
 Comprobar si un directorio existe trata de determinar la presencia de un directorio en una ruta especificada antes de realizar operaciones como leer o escribir en archivos dentro de él. Los programadores lo hacen para evitar errores relacionados con las operaciones de archivo, asegurando una ejecución más suave y fiable de las tareas de manejo de archivos en sus aplicaciones.

@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Escribir un archivo de texto en Clojure implica crear o modificar archivos\
   \ para guardar datos fuera de tu aplicaci\xF3n, lo que permite la persistencia,\u2026"
 title: Escribiendo un archivo de texto
+weight: 24
 ---
-
-{{< edit_this_page >}}
 
 ## Qué y Por Qué?
 

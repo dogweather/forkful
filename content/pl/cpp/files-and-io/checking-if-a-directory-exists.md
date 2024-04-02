@@ -11,9 +11,8 @@ summary: "Sprawdzanie, czy katalog istnieje, polega na okre\u015Bleniu obecno\u0
   ci katalogu pod okre\u015Blon\u0105 \u015Bcie\u017Ck\u0105 przed wykonaniem operacji\
   \ takich jak czytanie z plik\xF3w\u2026"
 title: Sprawdzanie, czy katalog istnieje
+weight: 20
 ---
-
-{{< edit_this_page >}}
 
 ## Co i dlaczego?
 Sprawdzanie, czy katalog istnieje, polega na określeniu obecności katalogu pod określoną ścieżką przed wykonaniem operacji takich jak czytanie z plików lub zapisywanie do nich. Programiści robią to, aby uniknąć błędów związanych z operacjami na plikach, zapewniając płynniejsze i bardziej niezawodne wykonanie zadań związanych z obsługą plików w ich aplikacjach.

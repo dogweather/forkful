@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Scrivere sull'errore standard (stderr) in Ruby significa indirizzare messaggi\
   \ di errore o diagnostiche a un flusso di uscita separato, distinto\u2026"
 title: Scrivere sull'errore standard
+weight: 25
 ---
-
-{{< edit_this_page >}}
 
 ## Cosa & Perché?
 Scrivere sull'errore standard (stderr) in Ruby significa indirizzare messaggi di errore o diagnostiche a un flusso di uscita separato, distinto dall'output standard (stdout). I programmatori fanno ciò per differenziare l'output regolare del programma dagli errori e dalle informazioni di debug, facilitando così la diagnosi dei problemi e l'analisi dei log.

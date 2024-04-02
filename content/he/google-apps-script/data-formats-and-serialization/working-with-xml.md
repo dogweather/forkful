@@ -23,9 +23,8 @@ summary: "\u05E2\u05D1\u05D5\u05D3\u05D4 \u05E2\u05DD XML \u05D1-Google Apps Scr
   \ \u05DB\u05D3\u05D9 \u05DC\u05E9\u05DC\u05D1 \u05E2\u05DD \u05DE\u05E2\u05E8\u05DB\
   \u05D5\u05EA\u2026"
 title: "\u05E2\u05D1\u05D5\u05D3\u05D4 \u05E2\u05DD XML"
+weight: 40
 ---
-
-{{< edit_this_page >}}
 
 ## מה ולמה?
 

@@ -7,9 +7,8 @@ model: gpt-4-0125-preview
 summary: "Writing tests in Elixir involves creating automated scripts to validate\
   \ the behavior of your code. Programmers do this to assure quality, prevent\u2026"
 title: Writing tests
+weight: 36
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 Writing tests in Elixir involves creating automated scripts to validate the behavior of your code. Programmers do this to assure quality, prevent regressions, and facilitate code refactoring, making the development process more reliable and efficient.

@@ -11,9 +11,8 @@ summary: "Mettre en majuscule une cha\xEEne de caract\xE8res consiste \xE0 modif
   \ le premier caract\xE8re d'une cha\xEEne donn\xE9e en majuscule s'il est en minuscule,\
   \ laissant\u2026"
 title: "Mettre en majuscule une cha\xEEne"
+weight: 2
 ---
-
-{{< edit_this_page >}}
 
 ## Quoi & Pourquoi ?
 Mettre en majuscule une chaîne de caractères consiste à modifier le premier caractère d'une chaîne donnée en majuscule s'il est en minuscule, laissant souvent le reste de la chaîne inchangé. Cette opération est généralement utilisée pour garantir que les noms propres ou les débuts de phrases respectent les règles grammaticales dans le traitement de texte, rendant les sorties professionnelles et lisibles.

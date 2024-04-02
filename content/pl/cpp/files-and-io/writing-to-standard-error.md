@@ -11,9 +11,8 @@ summary: "Pisanie do standardowego b\u0142\u0119du (`stderr`) w C++ polega na wy
   \ komunikat\xF3w o b\u0142\u0119dach lub diagnostyki, kt\xF3re s\u0105 oddzielone\
   \ od g\u0142\xF3wnego wyniku\u2026"
 title: "Pisanie do standardowego b\u0142\u0119du"
+weight: 25
 ---
-
-{{< edit_this_page >}}
 
 ## Co i dlaczego?
 

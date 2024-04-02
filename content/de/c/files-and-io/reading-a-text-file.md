@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Das Lesen einer Textdatei in C beinhaltet das \xD6ffnen einer Datei auf\
   \ Ihrem System, um Informationen zu extrahieren und diese nach Bedarf zu manipulieren\u2026"
 title: Eine Textdatei lesen
+weight: 22
 ---
-
-{{< edit_this_page >}}
 
 ## Was & Warum?
 

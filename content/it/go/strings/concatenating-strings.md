@@ -11,9 +11,8 @@ summary: "La concatenazione di stringhe implica l'unione di due o pi\xF9 stringh
   \ da capo a fine per formare una nuova stringa. I programmatori fanno ci\xF2 per\
   \ generare\u2026"
 title: Concatenazione di stringhe
+weight: 3
 ---
-
-{{< edit_this_page >}}
 
 ## Cosa e perché?
 

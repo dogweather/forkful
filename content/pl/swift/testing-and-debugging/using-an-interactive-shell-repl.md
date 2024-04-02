@@ -9,9 +9,8 @@ summary: "Korzystanie z interaktywnej pow\u0142oki, czyli p\u0119tli czytaj-wyko
   \ (REPL), pozwala na interaktywne programowanie. Programi\u015Bci u\u017Cywaj\u0105\
   \ jej do szybkiego\u2026"
 title: Korzystanie z interaktywnego shella (REPL)
+weight: 34
 ---
-
-{{< edit_this_page >}}
 
 ## Co i dlaczego?
 Korzystanie z interaktywnej powłoki, czyli pętli czytaj-wykonaj-drukuj (REPL), pozwala na interaktywne programowanie. Programiści używają jej do szybkiego testowania fragmentów kodu Swift, debugowania lub nauki języka.

@@ -11,9 +11,8 @@ summary: "En interaktiv skal (REPL - Read-Evaluate-Print Loop) f\xF6r Dart g\xF6
   \ det m\xF6jligt f\xF6r programmerare att dynamiskt skriva och exekvera Dart-kod\
   \ rad f\xF6r rad\u2026"
 title: "Anv\xE4nda en interaktiv skal (REPL)"
+weight: 34
 ---
-
-{{< edit_this_page >}}
 
 ## Vad & Varför?
 

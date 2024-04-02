@@ -10,9 +10,8 @@ model: gpt-4-0125-preview
 summary: "Das Umwandeln eines Strings in Kleinbuchstaben ist eine grundlegende Operation,\
   \ die Einheitlichkeit und Konsistenz bei der Textverarbeitung erm\xF6glicht,\u2026"
 title: Konvertierung eines Strings in Kleinbuchstaben
+weight: 4
 ---
-
-{{< edit_this_page >}}
 
 ## Was & Warum?
 

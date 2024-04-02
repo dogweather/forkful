@@ -13,9 +13,8 @@ summary: "\u5904\u7406XML\u6D89\u53CA\u89E3\u6790\u3001\u63D0\u53D6\u548C\u64CD\
   \u662F\u56E0\u4E3A\u5B83\u662F\u4E00\u79CD\u5E7F\u6CDB\u4F7F\u7528\u7684\u6570\u636E\
   \u4EA4\u6362\u683C\u5F0F\uFF0C\u7528\u4E8E\u914D\u7F6E\u3001API\u7B49\u3002"
 title: "\u5904\u7406XML"
+weight: 40
 ---
-
-{{< edit_this_page >}}
 
 ## 什么及为什么？
 处理XML涉及解析、提取和操作可扩展标记语言（XML）格式的数据。编程人员之所以要处理XML，是因为它是一种广泛使用的数据交换格式，用于配置、API等。

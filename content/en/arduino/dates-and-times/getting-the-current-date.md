@@ -7,9 +7,8 @@ model: gpt-4-0125-preview
 summary: "Getting the current date in Arduino projects involves obtaining real-time\
   \ information that can be crucial for logging, timestamping, or scheduling tasks.\u2026"
 title: Getting the current date
+weight: 29
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 Getting the current date in Arduino projects involves obtaining real-time information that can be crucial for logging, timestamping, or scheduling tasks. Programmers often need this capability to enhance functionality, ensure data relevance, and facilitate time-sensitive operations in their IoT and embedded projects.

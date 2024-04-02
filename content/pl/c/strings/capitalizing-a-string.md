@@ -11,9 +11,8 @@ summary: "Zamiana ci\u0105gu na wielkie litery w j\u0119zyku C obejmuje przekszt
   cenie pierwszej litery ka\u017Cdego s\u0142owa w danym ci\u0105gu na wielk\u0105\
   \ liter\u0119, je\u015Bli jest to ma\u0142a\u2026"
 title: "Zamiana liter na wielkie w ci\u0105gu znak\xF3w"
+weight: 2
 ---
-
-{{< edit_this_page >}}
 
 ## Co i dlaczego?
 

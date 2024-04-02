@@ -7,9 +7,8 @@ model: gpt-4-1106-preview
 summary: "Slette tegn som matcher et m\xF8nster handler om \xE5 filtrere ut spesifikke\
   \ karakterer fra en streng. Programmerere gj\xF8r dette for \xE5 rense data, forberede\u2026"
 title: "Slette tegn som matcher et m\xF8nster"
+weight: 5
 ---
-
-{{< edit_this_page >}}
 
 ## Hva & Hvorfor?
 Slette tegn som matcher et mønster handler om å filtrere ut spesifikke karakterer fra en streng. Programmerere gjør dette for å rense data, forberede tekster for prosessering, eller for å formatere brukerinput.

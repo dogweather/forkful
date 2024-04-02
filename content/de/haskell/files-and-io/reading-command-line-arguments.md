@@ -7,9 +7,8 @@ model: gpt-4-1106-preview
 summary: "Beim Lesen von Kommandozeilenargumenten nimmt ein Programm Parameter von\
   \ au\xDFen auf, um sein Verhalten zu steuern oder Daten zu verarbeiten. Programmierer\u2026"
 title: Lesen von Kommandozeilenargumenten
+weight: 23
 ---
-
-{{< edit_this_page >}}
 
 ## Was & Warum?
 Beim Lesen von Kommandozeilenargumenten nimmt ein Programm Parameter von außen auf, um sein Verhalten zu steuern oder Daten zu verarbeiten. Programmierer nutzen dies, um ihre Programme flexibler und interaktiver zu gestalten.

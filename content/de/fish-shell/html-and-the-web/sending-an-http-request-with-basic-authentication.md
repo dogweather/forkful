@@ -7,9 +7,8 @@ model: gpt-4-1106-preview
 summary: "Ein HTTP-Request mit Basisauthentifizierung beinhaltet das Senden von Benutzername\
   \ und Passwort in kodierter Form zum Server, um Zugriff zu erhalten.\u2026"
 title: HTTP-Anfragen mit Basisauthentifizierung senden
+weight: 45
 ---
-
-{{< edit_this_page >}}
 
 ## Was & Warum?
 

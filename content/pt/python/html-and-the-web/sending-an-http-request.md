@@ -9,9 +9,8 @@ summary: "Enviar um pedido HTTP \xE9 como voc\xEA faz seu c\xF3digo conversar co
   \ a web. Programadores fazem isso para buscar dados, enviar informa\xE7\xF5es, interagir\
   \ com APIs \u2013\u2026"
 title: "Enviando uma requisi\xE7\xE3o HTTP"
+weight: 44
 ---
-
-{{< edit_this_page >}}
 
 ## O Que & Por Que?
 

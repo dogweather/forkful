@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Analisar uma data a partir de uma string envolve converter representa\xE7\
   \xF5es textuais de datas e hor\xE1rios em um formato que pode ser facilmente manipulado,\u2026"
 title: Analisando uma data a partir de uma string
+weight: 30
 ---
-
-{{< edit_this_page >}}
 
 ## O Que & Por Quê?
 Analisar uma data a partir de uma string envolve converter representações textuais de datas e horários em um formato que pode ser facilmente manipulado, armazenado ou comparado dentro de um programa Lua. Programadores realizam essa tarefa para facilitar operações como agendamento, registro em log ou quaisquer cálculos temporais e para fechar a lacuna entre formatos de data legíveis por humanos e tipos de dados estruturados que um computador pode processar de maneira eficiente.

@@ -9,9 +9,8 @@ summary: "Downloading a web page means grabbing the HTML from a URL so your prog
   \ can work with it. Programmers do it to scrape data, automate web interactions\
   \ or\u2026"
 title: Downloading a web page
+weight: 42
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 Downloading a web page means grabbing the HTML from a URL so your program can work with it. Programmers do it to scrape data, automate web interactions or check site status.

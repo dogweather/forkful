@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "\xC9crire des tests en PowerShell implique de cr\xE9er des scripts qui valident\
   \ automatiquement le fonctionnement de votre code PowerShell, en garantissant\u2026"
 title: "R\xE9daction de tests"
+weight: 36
 ---
-
-{{< edit_this_page >}}
 
 ## Quoi & Pourquoi ?
 

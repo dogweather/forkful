@@ -19,9 +19,8 @@ summary: "TOML\uC740 \uD1B0\uC758 \uBA85\uBC31\uD558\uACE0 \uCD5C\uC18C\uD55C\uC
   \uB3C5\uC131\uACFC \uAE30\uACC4\uC758 \uAD6C\uBB38 \uBD84\uC11D \uAC00\uB2A5\uC131\
   \ \uC0AC\uC774\uC758\u2026"
 title: "\uD504\uB85C\uADF8\uB798\uBA38\uB97C \uC704\uD55C TOML \uB2E4\uB8E8\uAE30"
+weight: 39
 ---
-
-{{< edit_this_page >}}
 
 ## 무엇 & 왜?
 TOML은 톰의 명백하고 최소한의 언어(Tom's Obvious, Minimal Language)를 위한 머릿글자로, 명확한 의미론 덕분에 쉽게 읽히는 설정 파일 형식입니다. 프로그래머들은 시스템간의 데이터 교환을 단순화하고 인간의 가독성과 기계의 구문 분석 가능성 사이의 균형을 이루기 때문에 이를 설정 파일용으로 사용합니다.

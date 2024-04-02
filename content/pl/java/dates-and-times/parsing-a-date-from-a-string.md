@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Parsowanie daty z ci\u0105gu polega na przekszta\u0142ceniu tekstowej reprezentacji\
   \ daty i czasu na obiekt `Date` lub nowocze\u015Bniejszy obiekt `LocalDateTime`.\u2026"
 title: "Analiza sk\u0142adniowa daty z \u0142a\u0144cucha znak\xF3w"
+weight: 30
 ---
-
-{{< edit_this_page >}}
 
 ## Co i Dlaczego?
 Parsowanie daty z ciągu polega na przekształceniu tekstowej reprezentacji daty i czasu na obiekt `Date` lub nowocześniejszy obiekt `LocalDateTime`. Programiści robią to, aby manipulować, formatować, porównywać lub przechowywać daty w ustandaryzowanym formacie, co jest kluczowe dla aplikacji wymagających obliczeń datowych, walidacji lub spójnej internacjonalizacji.

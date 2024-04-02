@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Das Ausgeben von Debug-Informationen in Dart bezieht sich darauf, Informationen\
   \ w\xE4hrend der Laufzeit in der Konsole anzuzeigen, was Entwicklern\u2026"
 title: Debug-Ausgabe drucken
+weight: 33
 ---
-
-{{< edit_this_page >}}
 
 ## Was & Warum?
 

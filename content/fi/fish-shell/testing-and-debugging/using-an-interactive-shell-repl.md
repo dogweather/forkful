@@ -9,9 +9,8 @@ summary: "REPL eli Read-Eval-Print Loop on interaktiivinen ohjelmointiymp\xE4ris
   , joka ottaa vastaan yksitt\xE4isi\xE4 k\xE4ytt\xE4j\xE4n sy\xF6tteit\xE4, suorittaa\
   \ ne ja palauttaa\u2026"
 title: "Interaktiivisen komentotulkin (REPL) k\xE4ytt\xF6"
+weight: 34
 ---
-
-{{< edit_this_page >}}
 
 ## Mikä ja Miksi?
 REPL eli Read-Eval-Print Loop on interaktiivinen ohjelmointiympäristö, joka ottaa vastaan yksittäisiä käyttäjän syötteitä, suorittaa ne ja palauttaa tuloksen. Ohjelmoijat käyttävät sitä saadakseen välitöntä palautetta, debuggaamiseen ja nopeatahtiseen kokeiluun koodauskonseptien kanssa ilman, että tarvitsee kääntää ja ajaa koko ohjelmaa.

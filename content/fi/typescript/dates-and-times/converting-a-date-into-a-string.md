@@ -9,9 +9,8 @@ summary: "\"Mik\xE4 ja Miksi?\" Muunnamme p\xE4iv\xE4m\xE4\xE4r\xE4n merkkijonok
   \ hallitaksemme sen esitysmuotoa. T\xE4m\xE4 tekee p\xE4iv\xE4m\xE4\xE4rien kanssa\
   \ ty\xF6skentelyst\xE4 helpompaa, kuten\u2026"
 title: "P\xE4iv\xE4m\xE4\xE4r\xE4n muuntaminen merkkijonoksi"
+weight: 28
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 "Mikä ja Miksi?"  

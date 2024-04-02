@@ -7,9 +7,8 @@ model: gpt-4-1106-preview
 summary: "Complex numbers expand our number system to include imaginary numbers, allowing\
   \ us to solve equations that don't have real solutions. Programmers work\u2026"
 title: Working with complex numbers
+weight: 14
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 Complex numbers expand our number system to include imaginary numbers, allowing us to solve equations that don't have real solutions. Programmers work with them in fields like engineering, physics, and signal processing where these numbers are essential for modeling and problem-solving.

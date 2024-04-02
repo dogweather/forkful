@@ -13,9 +13,8 @@ summary: "\u0110\u1ECDc m\u1ED9t t\u1EC7p v\u0103n b\u1EA3n trong Visual Basic f
   t n\u1ED9i dung c\u1EE7a t\u1EC7p v\u0103n b\u1EA3n m\u1ED9t c\xE1ch l\u1EADp tr\xEC\
   nh t\u1EEB b\xEAn trong\u2026"
 title: "\u0110\u1ECDc m\u1ED9t t\u1EC7p v\u0103n b\u1EA3n"
+weight: 22
 ---
-
-{{< edit_this_page >}}
 
 ## Gì & Tại sao?
 

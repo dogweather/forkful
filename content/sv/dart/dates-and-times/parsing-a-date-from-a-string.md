@@ -11,9 +11,8 @@ summary: "Att tolka ett datum fr\xE5n en str\xE4ng i Dart inneb\xE4r att konvert
   \ textrepresentation av datum och tider till ett `DateTime`-objekt. Denna operation\
   \ \xE4r\u2026"
 title: "Analys av ett datum fr\xE5n en str\xE4ng"
+weight: 30
 ---
-
-{{< edit_this_page >}}
 
 ## Vad & Varför?
 Att tolka ett datum från en sträng i Dart innebär att konvertera textrepresentation av datum och tider till ett `DateTime`-objekt. Denna operation är avgörande för applikationer som hanterar schemaläggning, dataanalys eller någon funktion som kräver datummanipulation, för att säkerställa att datumbaserade data förstås och bearbetas korrekt av programmet.

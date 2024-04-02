@@ -16,9 +16,8 @@ summary: "HTTP \uC694\uCCAD\uC744 \uBCF4\uB0B8\uB2E4\uB294 \uAC83\uC740 \uC6F9 \
   \uBC84\uC640 \uD1B5\uC2E0\uD558\uACE0 \uB370\uC774\uD130\uB97C \uC8FC\uACE0\uBC1B\
   \uAE30 \uC704\uD574 \uC774\uB97C \uC0AC\uC6A9\uD569\uB2C8\uB2E4."
 title: "HTTP \uC694\uCCAD \uBCF4\uB0B4\uAE30"
+weight: 44
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why? (무엇 그리고 왜?)
 HTTP 요청을 보낸다는 것은 웹 서버에 정보를 요청하거나 데이터를 전송하는 방법입니다. 프로그래머는 웹 애플리케이션에서 서버와 통신하고 데이터를 주고받기 위해 이를 사용합니다.

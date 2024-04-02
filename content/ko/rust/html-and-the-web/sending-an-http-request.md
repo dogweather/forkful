@@ -16,9 +16,8 @@ summary: "HTTP \uC694\uCCAD \uBCF4\uB0B4\uAE30\uB294 \uC11C\uBC84\uC5D0 \uC5B4\u
   \uC9D1, \uC6F9 \uC11C\uBE44\uC2A4\uC640 \uC0C1\uD638 \uC791\uC6A9\uD558\uAE30 \uC704\
   \uD574 \uC774 \uAE30\uB2A5\uC744 \uC0AC\uC6A9\uD569\uB2C8\uB2E4."
 title: "HTTP \uC694\uCCAD \uBCF4\uB0B4\uAE30"
+weight: 44
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why? (무엇인가요? 왜 사용하나요?)
 HTTP 요청 보내기는 서버에 어떤 데이터를 요청하거나 서버의 리소스를 조작할 때 사용합니다. 프로그래머들은 API 통신, 데이터 수집, 웹 서비스와 상호 작용하기 위해 이 기능을 사용합니다.

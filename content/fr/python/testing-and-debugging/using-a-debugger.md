@@ -1,14 +1,14 @@
 ---
 date: 2024-01-26 04:08:55.437362-07:00
-description: "\"Utiliser un d\xE9bogueur\" consiste \xE0 parcourir pas \xE0 pas votre\
-  \ code Python pour d\xE9couvrir des bugs et comprendre le comportement. Nous le\
-  \ faisons parce que\u2026"
+description: "D\xE9cortiquons l\u2019utilisation de `pdb`, le d\xE9bogueur int\xE9\
+  gr\xE9 de Python. Imaginez un fichier, `buggy.py`, avec un bug sournois : ```Python\
+  \ def\u2026"
 lastmod: '2024-03-13T22:44:57.241300-06:00'
 model: gpt-4-0125-preview
-summary: "\"Utiliser un d\xE9bogueur\" consiste \xE0 parcourir pas \xE0 pas votre\
-  \ code Python pour d\xE9couvrir des bugs et comprendre le comportement. Nous le\
-  \ faisons parce que\u2026"
+summary: "D\xE9cortiquons l\u2019utilisation de `pdb`, le d\xE9bogueur int\xE9gr\xE9\
+  \ de Python. Imaginez un fichier, `buggy.py`, avec un bug sournois : ```Python def\u2026"
 title: "Utilisation d'un d\xE9bogueur"
+weight: 35
 ---
 
 ## Comment faire :

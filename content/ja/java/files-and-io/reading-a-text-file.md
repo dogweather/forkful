@@ -16,9 +16,8 @@ summary: "\u30C6\u30AD\u30B9\u30C8\u30D5\u30A1\u30A4\u30EB\u306E\u8AAD\u307F\u8F
   \u3092\u6271\u3063\u305F\u308A\u3059\u308B\u305F\u3081\u306B\u30D7\u30ED\u30B0\u30E9\
   \u30DE\u30FC\u304C\u3088\u304F\u4F7F\u3044\u307E\u3059\u3002"
 title: "\u30C6\u30AD\u30B9\u30C8\u30D5\u30A1\u30A4\u30EB\u306E\u8AAD\u307F\u8FBC\u307F"
+weight: 22
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why? (なにとなぜ？)
 テキストファイルの読み込みは、その内容をプログラムで使うための操作です。なぜ必要か？情報を取得したり、データを扱ったりするためにプログラマーがよく使います。

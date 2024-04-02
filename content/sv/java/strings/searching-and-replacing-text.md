@@ -9,9 +9,8 @@ summary: "Att s\xF6ka och ers\xE4tta text inneb\xE4r att automatiskt hitta speci
   \ teckenstr\xE4ngar i en text och byta ut dem mot andra str\xE4ngar. Programmerare\
   \ g\xF6r detta f\xF6r\u2026"
 title: "S\xF6kning och ers\xE4ttning av text"
+weight: 10
 ---
-
-{{< edit_this_page >}}
 
 ## Vad & Varför?
 Att söka och ersätta text innebär att automatiskt hitta specifika teckensträngar i en text och byta ut dem mot andra strängar. Programmerare gör detta för att snabbt modifiera kod, korrigera stavfel eller uppdatera data.

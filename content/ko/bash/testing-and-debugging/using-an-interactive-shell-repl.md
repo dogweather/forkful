@@ -19,9 +19,8 @@ summary: "REPL\uC740 Read-Eval-Print Loop\uC758 \uC57D\uC790\uB85C, \uB2E8\uC21C
   \uC131\uD558\uACE0 \uC2E4\uD589\uD558\uB294 \uBC88\uAC70\uB85C\uC6C0 \uC5C6\uC774\
   \ \uD504\uB85C\uADF8\uB798\uBC0D \uAC1C\uB150\uC744 \uBC30\uC6B8 \uC218\u2026"
 title: "\uC778\uD130\uB799\uD2F0\uBE0C \uC178 (REPL) \uC0AC\uC6A9\uD558\uAE30"
+weight: 34
 ---
-
-{{< edit_this_page >}}
 
 ## 무엇이며 왜인가?
 REPL은 Read-Eval-Print Loop의 약자로, 단순하면서도 상호작용적인 컴퓨터 프로그래밍 환경입니다. 개발자들은 REPL을 사용하여 코드를 빠르게 작성하고 테스트하며, 문법을 실험하고, 전체 애플리케이션을 생성하고 실행하는 번거로움 없이 프로그래밍 개념을 배울 수 있습니다.

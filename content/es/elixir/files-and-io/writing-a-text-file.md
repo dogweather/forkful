@@ -11,9 +11,8 @@ summary: "Escribir en un archivo de texto en Elixir es una habilidad esencial pa
   \ los desarrolladores, permitiendo la persistencia de datos, registro o exportaci\xF3\
   n\u2026"
 title: Escribiendo un archivo de texto
+weight: 24
 ---
-
-{{< edit_this_page >}}
 
 ## Qué y Por Qué?
 

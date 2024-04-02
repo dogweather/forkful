@@ -22,9 +22,8 @@ summary: "JSON, \u092F\u093E JavaScript Object Notation, \u090F\u0915 \u0939\u09
   \u093F\u090F \u0906\u0926\u0930\u094D\u0936\u2026"
 title: "JSON \u0915\u0947 \u0938\u093E\u0925 \u0915\u093E\u092E \u0915\u0930\u0928\
   \u093E"
+weight: 38
 ---
-
-{{< edit_this_page >}}
 
 ## क्या और क्यों?
 

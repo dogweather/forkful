@@ -11,9 +11,8 @@ summary: "P\xE4iv\xE4m\xE4\xE4r\xE4n muuntaminen merkkijonoksi C:ss\xE4 tarkoitt
   \ p\xE4iv\xE4m\xE4\xE4r\xE4rakenteen tai aikaleiman k\xE4\xE4nt\xE4mist\xE4 ihmisen\
   \ luettavaan muotoon. Ohjelmoijat suorittavat\u2026"
 title: "P\xE4iv\xE4m\xE4\xE4r\xE4n muuttaminen merkkijonoksi"
+weight: 28
 ---
-
-{{< edit_this_page >}}
 
 ## Mitä ja Miksi?
 

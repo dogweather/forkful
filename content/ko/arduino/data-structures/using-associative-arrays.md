@@ -21,9 +21,8 @@ summary: "\uC544\uB450\uC774\uB178\uC758 \uC138\uACC4\uC5D0\uC11C \uC5F0\uAD00 \
   \uC11C, \uCF54\uB4DC\uB97C \uB354 \uAE54\uB054\uD558\uACE0 \uD6E8\uC52C \uC774\uD574\
   \uD558\uAE30 \uC27D\uAC8C \uB9CC\uB4E4\uC5B4\uC90D\uB2C8\uB2E4."
 title: "\uC5F0\uAD00 \uBC30\uC5F4 \uC0AC\uC6A9\uD558\uAE30"
+weight: 15
 ---
-
-{{< edit_this_page >}}
 
 ## 무엇인가 & 왜인가?
 아두이노의 세계에서 연관 배열은 값과 키를 짝지어주게 해주는데, 마치 양말을 짝지어주는 것처럼 말이죠. 설명적인 이름을 사용하여 데이터를 저장하고 검색할 필요가 있을 때 이용하기 좋아서, 코드를 더 깔끔하고 훨씬 이해하기 쉽게 만들어줍니다.

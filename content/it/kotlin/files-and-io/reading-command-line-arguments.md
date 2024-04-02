@@ -7,9 +7,8 @@ model: gpt-4-1106-preview
 summary: "Leggere gli argomenti della riga di comando in Kotlin significa prelevare\
   \ dati inseriti dall'utente al momento dell'esecuzione di un programma. \xC8 utile\u2026"
 title: Lettura degli argomenti della riga di comando
+weight: 23
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 Leggere gli argomenti della riga di comando in Kotlin significa prelevare dati inseriti dall'utente al momento dell'esecuzione di un programma. È utile perché permette ai programmi di essere flessibili e adattabili alle esigenze dell'utente.

@@ -11,9 +11,8 @@ summary: "Gerar n\xFAmeros aleat\xF3rios \xE9 uma tarefa fundamental na programa
   \xE3o que \xE9 usada para uma mir\xEDade de aplica\xE7\xF5es, como simula\xE7\xF5\
   es, jogos e sistemas de\u2026"
 title: "Gerando n\xFAmeros aleat\xF3rios"
+weight: 12
 ---
-
-{{< edit_this_page >}}
 
 ## O Que & Por Quê?
 

@@ -9,9 +9,8 @@ summary: "S\xF8k og erstatt i tekstbehandling lar deg finne strenger og bytte de
   \ ut med noe annet. Vi programmerere gj\xF8r det for \xE5 effektivisere kodeendringer,\
   \ rette\u2026"
 title: "S\xF8king og erstatting av tekst"
+weight: 10
 ---
-
-{{< edit_this_page >}}
 
 ## Hva & Hvorfor?
 Søk og erstatt i tekstbehandling lar deg finne strenger og bytte dem ut med noe annet. Vi programmerere gjør det for å effektivisere kodeendringer, rette feil, eller oppdatere data.

@@ -9,9 +9,8 @@ summary: "Das Ausgeben von Debug-Informationen hilft, Probleme zu erkennen, inde
   \ Abl\xE4ufe im Code erkl\xE4rt werden. Programmierer nutzen dies, um Funktionen\
   \ und ihre\u2026"
 title: Debug-Ausgaben drucken
+weight: 33
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why? (Was & Warum?)
 Das Ausgeben von Debug-Informationen hilft, Probleme zu erkennen, indem Abläufe im Code erklärt werden. Programmierer nutzen dies, um Funktionen und ihre Auswirkungen zu verstehen und Fehler schneller zu beheben.

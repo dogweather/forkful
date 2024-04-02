@@ -10,9 +10,8 @@ model: gpt-4-0125-preview
 summary: "Controllare se una directory esiste \xE8 un'operazione fondamentale quando\
   \ si scrivono script che interagiscono con il filesystem, garantendo che il proprio\u2026"
 title: Verifica se una directory esiste
+weight: 20
 ---
-
-{{< edit_this_page >}}
 
 ## Cosa & Perché?
 

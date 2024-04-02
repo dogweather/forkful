@@ -7,9 +7,8 @@ model: gpt-4-1106-preview
 summary: "String-Interpolation erm\xF6glicht es, Variablenwerte in einen String \"\
   einzubetten\". Das erleichtert die dynamische Erzeugung von Text und die Datenanzeige\u2026"
 title: Zeichenketten interpolieren
+weight: 8
 ---
-
-{{< edit_this_page >}}
 
 ## Was & Warum?
 String-Interpolation ermöglicht es, Variablenwerte in einen String "einzubetten". Das erleichtert die dynamische Erzeugung von Text und die Datenanzeige während des Programmablaufes.

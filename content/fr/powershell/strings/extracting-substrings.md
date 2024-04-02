@@ -9,9 +9,8 @@ summary: "Extraire des sous-cha\xEEnes, c'est comme couper un morceau de votre b
   \ pr\xE9f\xE9r\xE9e \u2013 vous prenez juste la partie que vous voulez. Les programmeurs\
   \ font\u2026"
 title: "Extraction de sous-cha\xEEnes"
+weight: 6
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why? (Quoi et Pourquoi ?)
 Extraire des sous-chaînes, c'est comme couper un morceau de votre baguette préférée – vous prenez juste la partie que vous voulez. Les programmeurs font ça pour isoler des données spécifiques d'une chaîne plus grande, souvent pour le traitement ou l'analyse.

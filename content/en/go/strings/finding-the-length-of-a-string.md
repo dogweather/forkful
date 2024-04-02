@@ -7,9 +7,8 @@ model: gpt-4-0125-preview
 summary: "Finding the length of a string in Go is about determining the number of\
   \ characters it contains. Programmers routinely perform this operation to manipulate\u2026"
 title: Finding the length of a string
+weight: 7
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 Finding the length of a string in Go is about determining the number of characters it contains. Programmers routinely perform this operation to manipulate strings effectively, be it for validation, substring extraction, or simply to enforce constraints in user inputs.

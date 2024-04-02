@@ -14,9 +14,8 @@ summary: "\u5728PHP\u4E2D\uFF0C\u641C\u7D22\u548C\u66FF\u6362\u6587\u672C\u8BA9\
   \u66F4\u65B0\u6570\u636E\u3001\u4FEE\u6B63\u9519\u8BEF\u6216\u8005\u53D8\u66F4\u4FE1\
   \u606F\u3002"
 title: "\u641C\u7D22\u548C\u66FF\u6362\u6587\u672C"
+weight: 10
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why? (什么和为什么？)
 在PHP中，搜索和替换文本让我们找到指定的字符串并用别的文本替换。程序员这么做是因为要更新数据、修正错误或者变更信息。

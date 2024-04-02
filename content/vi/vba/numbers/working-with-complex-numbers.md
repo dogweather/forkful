@@ -13,9 +13,8 @@ summary: "L\xE0m vi\u1EC7c v\u1EDBi s\u1ED1 ph\u1EE9c bao g\u1ED3m th\u1EF1c hi\
   \ ph\u1EA7n th\u1EF1c v\xE0 ph\u1EA7n \u1EA3o. C\xE1c l\u1EADp tr\xECnh vi\xEAn\
   \ th\u01B0\u1EDDng xuy\xEAn g\u1EB7p ph\u1EA3i s\u1ED1 ph\u1EE9c\u2026"
 title: "L\xE0m vi\u1EC7c v\u1EDBi s\u1ED1 ph\u1EE9c"
+weight: 14
 ---
-
-{{< edit_this_page >}}
 
 ## Gì và Tại sao?
 

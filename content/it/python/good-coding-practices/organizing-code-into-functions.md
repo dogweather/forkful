@@ -9,9 +9,8 @@ summary: "Organizzare il codice in funzioni consiste nel suddividere il codice i
   \ blocchi riutilizzabili con scopi specifici. Lo facciamo per rendere il codice\
   \ pi\xF9\u2026"
 title: Organizzare il codice in funzioni
+weight: 18
 ---
-
-{{< edit_this_page >}}
 
 ## Cosa e Perché?
 Organizzare il codice in funzioni consiste nel suddividere il codice in blocchi riutilizzabili con scopi specifici. Lo facciamo per rendere il codice più pulito, più facile da leggere, da debuggare e da aggiornare.

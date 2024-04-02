@@ -9,9 +9,8 @@ summary: "TOML (Toms Uppenbara, Minimala Spr\xE5k) \xE4r ett data-serialiserings
   \ som \xE4r l\xE4tt att l\xE4sa p\xE5 grund av dess klara semantik. Programmerare\
   \ anv\xE4nder TOML\u2026"
 title: Att arbeta med TOML
+weight: 39
 ---
-
-{{< edit_this_page >}}
 
 ## Vad & Varför?
 TOML (Toms Uppenbara, Minimala Språk) är ett data-serialiseringsformat som är lätt att läsa på grund av dess klara semantik. Programmerare använder TOML för konfigurationsfiler där läsbarhet för människor och enkel tolkning för maskiner är nyckeln.

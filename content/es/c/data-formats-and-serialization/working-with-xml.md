@@ -11,9 +11,8 @@ summary: "Trabajar con XML en C implica el an\xE1lisis, consulta y manipulaci\xF
   n de documentos XML utilizando varias bibliotecas. Los programadores trabajan con\
   \ XML\u2026"
 title: Trabajando con XML
+weight: 40
 ---
-
-{{< edit_this_page >}}
 
 ## ¿Qué y Por Qué?
 

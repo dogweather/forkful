@@ -10,9 +10,8 @@ model: gpt-4-0125-preview
 summary: "Pobieranie aktualnej daty w projektach Arduino polega na uzyskiwaniu informacji\
   \ w czasie rzeczywistym, co mo\u017Ce by\u0107 kluczowe do logowania, stemplowania\u2026"
 title: Pobieranie aktualnej daty
+weight: 29
 ---
-
-{{< edit_this_page >}}
 
 ## Co i dlaczego?
 Pobieranie aktualnej daty w projektach Arduino polega na uzyskiwaniu informacji w czasie rzeczywistym, co może być kluczowe do logowania, stemplowania czasowego czy planowania zadań. Programiści często potrzebują tej funkcjonalności, by zwiększyć użyteczność, zapewnić aktualność danych i ułatwić operacje zależne od czasu w ich projektach IoT i wbudowanych.

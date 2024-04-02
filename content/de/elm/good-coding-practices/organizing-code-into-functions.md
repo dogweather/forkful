@@ -7,9 +7,8 @@ model: gpt-4-1106-preview
 summary: "Den gesamten Code auf einen Haufen werfen? Schlechte Idee. Ihn in Funktionen\
   \ aufteilen? Gute Idee. Es h\xE4lt deinen Elm Code sauber, wiederverwendbar und\u2026"
 title: Code in Funktionen organisieren
+weight: 18
 ---
-
-{{< edit_this_page >}}
 
 ## Was & Warum?
 Den gesamten Code auf einen Haufen werfen? Schlechte Idee. Ihn in Funktionen aufteilen? Gute Idee. Es hält deinen Elm Code sauber, wiederverwendbar und einfacher zu testen. Indem du deinen Code in Funktionen organisierst, gruppierst du Code, der spezifische Aufgaben ausführt, was deine Anwendung wartbarer und verständlicher macht.

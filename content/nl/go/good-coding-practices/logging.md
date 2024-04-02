@@ -10,9 +10,8 @@ model: gpt-4-0125-preview
 summary: "Loggen in softwareontwikkeling is het proces van het vastleggen van informatie\
   \ over de uitvoering van een programma, ontworpen om zijn gedrag te volgen en\u2026"
 title: Loggen
+weight: 17
 ---
-
-{{< edit_this_page >}}
 
 ## Wat & Waarom?
 

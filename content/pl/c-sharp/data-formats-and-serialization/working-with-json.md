@@ -11,9 +11,8 @@ summary: "Praca z JSON (JavaScript Object Notation) obejmuje parsowanie, generow
   \ oraz zapytania o dane JSON, co czyni j\u0105 kluczow\u0105 umiej\u0119tno\u015B\
   ci\u0105 we wsp\xF3\u0142czesnym\u2026"
 title: Praca z JSON
+weight: 38
 ---
-
-{{< edit_this_page >}}
 
 ## Co i dlaczego?
 

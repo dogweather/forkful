@@ -8,9 +8,8 @@ model: gpt-4-1106-preview
 summary: "Debug-Ausgaben dienen dazu, den Programmfluss und Variablenwerte w\xE4hrend\
   \ der Laufzeit zu beobachten. Programmierer nutzen sie, um Fehler schneller zu\u2026"
 title: Debug-Ausgaben drucken
+weight: 33
 ---
-
-{{< edit_this_page >}}
 
 ## Was & Warum?
 Debug-Ausgaben dienen dazu, den Programmfluss und Variablenwerte während der Laufzeit zu beobachten. Programmierer nutzen sie, um Fehler schneller zu finden und ihre Software zu verstehen.

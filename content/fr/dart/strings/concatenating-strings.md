@@ -11,9 +11,8 @@ summary: "La concat\xE9nation de cha\xEEnes de caract\xE8res en programmation co
   \ \xE0 combiner deux cha\xEEnes ou plus en une seule. Les programmeurs font cela\
   \ pour\u2026"
 title: "Concat\xE9nation de cha\xEEnes de caract\xE8res"
+weight: 3
 ---
-
-{{< edit_this_page >}}
 
 ## Quoi & Pourquoi ?
 La concaténation de chaînes de caractères en programmation consiste à combiner deux chaînes ou plus en une seule. Les programmeurs font cela pour manipuler facilement les données textuelles, construire des messages ou assembler dynamiquement des parties d'une interface utilisateur.

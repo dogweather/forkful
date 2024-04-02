@@ -24,9 +24,8 @@ summary: "Elm\uC5D0\uC11C \uBB34\uC791\uC704 \uC218\uB97C \uC0DD\uC131\uD558\uB2
   \uC790\uAC00 \uC751\uC6A9 \uD504\uB85C\uADF8\uB7A8\uC5D0 \uC608\uCE21 \uBD88\uAC00\
   \uB2A5\uC131\uACFC\u2026"
 title: "\uB79C\uB364 \uC22B\uC790 \uC0DD\uC131\uD558\uAE30"
+weight: 12
 ---
-
-{{< edit_this_page >}}
 
 ## 무엇이고 왜인가?
 Elm에서 무작위 수를 생성하는 데는 `Random` 모듈을 사용하여 가짜 무작위 수를 생성하는 것이 포함되며, 이는 게임, 시뮬레이션, 그리고 확률 과정이 필요한 알고리즘의 일부로 사용되는 등 다양한 작업에 유용합니다. 이 기능은 개발자가 응용 프로그램에 예측 불가능성과 다양성을 추가할 수 있게 하여 사용자 경험 및 기능을 향상시킵니다.

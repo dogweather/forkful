@@ -11,9 +11,8 @@ summary: "HTTP-pyynn\xF6n l\xE4hett\xE4minen perusautentikoinnilla Visual Basic 
   \ Applications (VBA) -ohjelmassa liittyy verkkoresurssien k\xE4ytt\xE4miseen, jotka\
   \ on suojattu\u2026"
 title: "HTTP-pyynn\xF6n l\xE4hett\xE4minen perusautentikoinnilla"
+weight: 45
 ---
-
-{{< edit_this_page >}}
 
 ## Mikä ja Miksi?
 

@@ -19,9 +19,8 @@ summary: "\u5904\u7406 CSV\uFF08\u9017\u53F7\u5206\u9694\u503C\uFF09\u6587\u4EF6
   \u4E8E\u4EE5\u8F7B\u91CF\u7EA7\u3001\u53EF\u8BFB\u7684\u683C\u5F0F\u5B58\u50A8\u6570\
   \u636E\u3002"
 title: "\u64CD\u4F5CCSV"
+weight: 37
 ---
-
-{{< edit_this_page >}}
 
 ## 什么 & 为什么?
 

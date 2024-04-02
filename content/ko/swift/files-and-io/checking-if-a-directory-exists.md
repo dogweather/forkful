@@ -24,9 +24,8 @@ summary: "\uD30C\uC77C \uC2DC\uC2A4\uD15C\uC5D0\uC11C \uB514\uB809\uD1A0\uB9AC\u
   \uB2E4."
 title: "\uB514\uB809\uD1A0\uB9AC\uAC00 \uC874\uC7AC\uD558\uB294\uC9C0 \uD655\uC778\
   \uD558\uAE30"
+weight: 20
 ---
-
-{{< edit_this_page >}}
 
 ## 무엇 & 왜?
 파일 시스템에서 디렉토리가 존재하는지 확인하는 것은 Swift 애플리케이션 내에서 파일 구조를 관리하는 데 필수적입니다. 이 작업을 통해 개발자는 읽기 또는 쓰기를 시도하기 전에 디렉토리의 존재를 확인할 수 있으므로, 가능한 런타임 오류를 피할 수 있습니다.

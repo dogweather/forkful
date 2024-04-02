@@ -11,9 +11,8 @@ summary: "\xC5 hente den n\xE5v\xE6rende datoen i Swift inneb\xE6rer \xE5 bruke 
   \ for \xE5 f\xE5 tilgang til datoen og tiden appen blir kj\xF8rt. Programmerere\
   \ trenger \xE5 hente\u2026"
 title: "F\xE5 dagens dato"
+weight: 29
 ---
-
-{{< edit_this_page >}}
 
 ## Hva & Hvorfor?
 Å hente den nåværende datoen i Swift innebærer å bruke `Date`-klassen for å få tilgang til datoen og tiden appen blir kjørt. Programmerere trenger å hente den nåværende datoen av mange grunner, som strekker seg fra å tidsstemple hendelser, utføre datoberegninger, til å vise datoer og tider i et brukergrensesnitt.

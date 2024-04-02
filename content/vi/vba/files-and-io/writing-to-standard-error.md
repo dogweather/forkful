@@ -13,9 +13,8 @@ summary: "Ghi v\xE0o l\u1ED7i chu\u1EA9n trong Visual Basic for Applications (VB
   i ho\u1EB7c ch\u1EA9n \u0111o\xE1n ra kh\u1ECFi \u0111\u1EA7u ra chu\u1EA9n, th\u01B0\
   \u1EDDng l\xE0 t\u1EDBi\u2026"
 title: "Ghi v\xE0o l\u1ED7i chu\u1EA9n"
+weight: 25
 ---
-
-{{< edit_this_page >}}
 
 ## Cái gì và Tại sao?
 

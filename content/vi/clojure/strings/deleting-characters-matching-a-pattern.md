@@ -13,9 +13,8 @@ summary: "X\xF3a c\xE1c k\xFD t\u1EF1 ph\xF9 h\u1EE3p v\u1EDBi m\u1ED9t m\u1EABu
   \ chu\u1ED7i k\xFD t\u1EF1. L\u1EADp tr\xECnh vi\xEAn l\xE0m \u0111i\u1EC1u n\xE0\
   y \u0111\u1EC3 l\xE0m s\u1EA1ch d\u1EEF li\u1EC7u, th\u1EF1c thi c\xE1c\u2026"
 title: "X\xF3a c\xE1c k\xFD t\u1EF1 ph\xF9 h\u1EE3p v\u1EDBi m\u1ED9t m\u1EABu"
+weight: 5
 ---
-
-{{< edit_this_page >}}
 
 ## Gì & Tại Sao?
 Xóa các ký tự phù hợp với một mẫu nghĩa là loại bỏ các chuỗi cụ thể khỏi một chuỗi ký tự. Lập trình viên làm điều này để làm sạch dữ liệu, thực thi các định dạng, hoặc loại bỏ thông tin không mong muốn.

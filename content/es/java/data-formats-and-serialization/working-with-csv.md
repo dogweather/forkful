@@ -10,9 +10,8 @@ model: gpt-4-0125-preview
 summary: "Trabajar con archivos CSV implica leer y escribir datos en archivos de Valores\
   \ Separados por Comas (CSV), un formato popular para el intercambio de datos\u2026"
 title: Trabajando con CSV
+weight: 37
 ---
-
-{{< edit_this_page >}}
 
 ## Qué y Por qué?
 

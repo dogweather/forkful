@@ -15,9 +15,8 @@ summary: "L\xE0m tr\xF2n s\u1ED1 l\xE0 vi\u1EC7c lo\u1EA1i b\u1ECF c\xE1c ch\u1E
   \ th\u1EC3. L\u1EADp tr\xECnh vi\xEAn th\u1EF1c hi\u1EC7n vi\u1EC7c n\xE0y \u0111\
   \u1EC3 hi\u1EC3n\u2026"
 title: "L\xE0m tr\xF2n s\u1ED1"
+weight: 13
 ---
-
-{{< edit_this_page >}}
 
 ## Gì và Tại sao?
 Làm tròn số là việc loại bỏ các chữ số thập phân để đơn giản hóa dữ liệu hoặc phù hợp với các định dạng cụ thể. Lập trình viên thực hiện việc này để hiển thị thân thiện với người dùng, lưu trữ hiệu quả, hoặc khi độ chính xác của số thập phân không phải là vấn đề.

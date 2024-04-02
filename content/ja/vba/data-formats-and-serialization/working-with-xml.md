@@ -19,9 +19,8 @@ summary: "Visual Basic for Applications (VBA) \u3067 XML \u3092\u6271\u3046\u305
   \ \u30A2\u30D7\u30EA\u30B1\u30FC\u30B7\u30E7\u30F3\u3092 XML \u3092\u51FA\u529B\u3059\
   \u308B Web\u2026"
 title: "XML\u3068\u306E\u4F5C\u696D"
+weight: 40
 ---
-
-{{< edit_this_page >}}
 
 ## 何となぜ?
 

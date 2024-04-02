@@ -9,9 +9,8 @@ summary: "Wysy\u0142anie \u017C\u0105dania HTTP z podstawow\u0105 autentykacj\u0
   \ to metoda zabezpieczenia, dzi\u0119ki kt\xF3rej serwer mo\u017Ce zweryfikowa\u0107\
   \ to\u017Csamo\u015B\u0107 u\u017Cytkownika za pomoc\u0105 loginu i\u2026"
 title: "Wysy\u0142anie zapytania http z podstawow\u0105 autoryzacj\u0105"
+weight: 45
 ---
-
-{{< edit_this_page >}}
 
 ## Co i dlaczego?
 

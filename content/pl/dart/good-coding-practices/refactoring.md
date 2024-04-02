@@ -11,9 +11,8 @@ summary: "Refaktoryzacja w Dart to proces restrukturyzacji istniej\u0105cego kod
   \ bez zmiany jego zewn\u0119trznego zachowania, maj\u0105cy na celu popraw\u0119\
   \ jego wewn\u0119trznej\u2026"
 title: Refaktoryzacja
+weight: 19
 ---
-
-{{< edit_this_page >}}
 
 ## Co i dlaczego?
 

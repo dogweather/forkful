@@ -11,9 +11,8 @@ summary: "Lavorare con file CSV comporta la lettura da e la scrittura su file di
   \ Separati da Virgola (CSV), un formato popolare per lo scambio di dati perch\xE9\
   \u2026"
 title: Lavorare con i CSV
+weight: 37
 ---
-
-{{< edit_this_page >}}
 
 ## Cosa e Perché?
 

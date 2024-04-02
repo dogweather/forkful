@@ -7,9 +7,8 @@ model: gpt-4-1106-preview
 summary: "Reading command line arguments in PHP means grabbing inputs passed to your\
   \ script when it's run in the console. Programmers do it to make their scripts\u2026"
 title: Reading command line arguments
+weight: 23
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 Reading command line arguments in PHP means grabbing inputs passed to your script when it's run in the console. Programmers do it to make their scripts interactive and configurable without hard-coding values.

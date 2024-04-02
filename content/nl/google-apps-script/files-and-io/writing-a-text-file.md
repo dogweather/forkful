@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Het schrijven van een tekstbestand in Google Apps Script stelt ontwikkelaars\
   \ in staat om gegevens blijvend op te slaan, waardoor deze toegankelijk zijn\u2026"
 title: Een tekstbestand schrijven
+weight: 24
 ---
-
-{{< edit_this_page >}}
 
 ## Wat & Waarom?
 

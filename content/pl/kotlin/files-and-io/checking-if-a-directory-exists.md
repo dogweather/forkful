@@ -11,9 +11,8 @@ summary: "Sprawdzanie, czy katalog istnieje w Kotlinie, polega na weryfikacji ob
   ci katalogu pod okre\u015Blon\u0105 \u015Bcie\u017Ck\u0105. Programi\u015Bci wykonuj\u0105\
   \ to zadanie, aby\u2026"
 title: Sprawdzanie, czy katalog istnieje
+weight: 20
 ---
-
-{{< edit_this_page >}}
 
 ## Co i dlaczego?
 Sprawdzanie, czy katalog istnieje w Kotlinie, polega na weryfikacji obecności katalogu pod określoną ścieżką. Programiści wykonują to zadanie, aby zapobiec błędom, takim jak próba odczytu z katalogu, który nie istnieje, lub zapisu do niego, zapewniając płynniejszą obsługę plików i zarządzanie danymi w aplikacjach.

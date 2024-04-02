@@ -7,9 +7,8 @@ model: gpt-4-0125-preview
 summary: "XML on merkint\xE4kieli dokumenttien koodaamiseen tavalla, joka on sek\xE4\
   \ ihmis- ett\xE4 koneellisesti luettavissa. Se on avainasemassa verkkopalveluissa,\u2026"
 title: "XML:n k\xE4sittely"
+weight: 40
 ---
-
-{{< edit_this_page >}}
 
 ## Mikä & Miksi?
 XML on merkintäkieli dokumenttien koodaamiseen tavalla, joka on sekä ihmis- että koneellisesti luettavissa. Se on avainasemassa verkkopalveluissa, konfiguraatiotiedostoissa ja datan vaihdossa, koska se kuljettaa tietoa rakenteellisessa, hierarkisessa muodossa.

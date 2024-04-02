@@ -19,9 +19,8 @@ summary: "\u6B63\u5219\u8868\u8FBE\u5F0F\uFF08regex\uFF09\u662F\u5B9A\u4E49\u641
   \uFF0C\u63D0\u9AD8\u6570\u636E\u5904\u7406\u7684\u6548\u7387\u548C\u7075\u6D3B\u6027\
   \u3002"
 title: "\u4F7F\u7528\u6B63\u5219\u8868\u8FBE\u5F0F"
+weight: 11
 ---
-
-{{< edit_this_page >}}
 
 ## 什么及为什么？
 正则表达式（regex）是定义搜索模式的字符序列，主要用于字符串匹配和操作。程序员在Arduino项目中利用regex来解析串行输入、验证用户输入或从字符串中提取数据，提高数据处理的效率和灵活性。

@@ -7,9 +7,8 @@ model: gpt-4-1106-preview
 summary: "TOML, short for Tom's Obvious, Minimal Language, is a data serialization\
   \ format akin to JSON or YAML, but aims for simplicity and readability. Programmers\u2026"
 title: Working with TOML
+weight: 39
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 TOML, short for Tom's Obvious, Minimal Language, is a data serialization format akin to JSON or YAML, but aims for simplicity and readability. Programmers use TOML for configuration files because it's easy to write and understand, and it maps neatly onto data structures in programming languages like Python.

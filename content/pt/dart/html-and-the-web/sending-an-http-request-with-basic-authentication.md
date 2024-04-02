@@ -11,9 +11,8 @@ summary: "Enviar uma requisi\xE7\xE3o HTTP com autentica\xE7\xE3o b\xE1sica envo
   \ anexar um nome de usu\xE1rio e senha a uma requisi\xE7\xE3o para verificar a identidade\
   \ do usu\xE1rio.\u2026"
 title: "Enviando uma solicita\xE7\xE3o HTTP com autentica\xE7\xE3o b\xE1sica"
+weight: 45
 ---
-
-{{< edit_this_page >}}
 
 ## O Que & Por Quê?
 

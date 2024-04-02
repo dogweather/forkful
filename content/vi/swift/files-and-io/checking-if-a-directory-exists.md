@@ -13,9 +13,8 @@ summary: "Trong Swift, vi\u1EC7c ki\u1EC3m tra n\u1EBFu m\u1ED9t th\u01B0 m\u1EE
   a h\u1EC7 th\u1ED1ng t\u1EC7p tr\u01B0\u1EDBc khi b\u1EA1n \u0111\u1ECDc ho\u1EB7\
   c ghi d\u1EEF li\u1EC7u. L\u1EADp tr\xECnh vi\xEAn l\xE0m\u2026"
 title: "Ki\u1EC3m tra xem th\u01B0 m\u1EE5c c\xF3 t\u1ED3n t\u1EA1i kh\xF4ng"
+weight: 20
 ---
-
-{{< edit_this_page >}}
 
 ## Gì và Tại sao?
 Trong Swift, việc kiểm tra nếu một thư mục tồn tại giúp bạn xác nhận trạng thái của hệ thống tệp trước khi bạn đọc hoặc ghi dữ liệu. Lập trình viên làm điều này để tránh lỗi, như đọc từ một thư mục không tồn tại, có thể làm cho ứng dụng bị crash hoặc dẫn đến các hoạt động sai lầm.

@@ -13,9 +13,8 @@ summary: "Vi\u1EC7c in ra th\xF4ng tin g\u1EE1 l\u1ED7i trong Visual Basic for A
   u l\u1EC7nh in trong m\xE3 c\u1EE7a b\u1EA1n \u0111\u1EC3 hi\u1EC3n th\u1ECB gi\xE1\
   \ tr\u1ECB\u2026"
 title: "In ra th\xF4ng tin debug"
+weight: 33
 ---
-
-{{< edit_this_page >}}
 
 ## Gì và Tại sao?
 Việc in ra thông tin gỡ lỗi trong Visual Basic for Applications (VBA) bao gồm việc đặt chiến lược các câu lệnh in trong mã của bạn để hiển thị giá trị biến, luồng thực thi hoặc các thông báo gỡ lỗi tùy chỉnh. Kỹ thuật này rất cần thiết cho việc gỡ lỗi, giúp các lập trình viên hiểu được hành vi của mã của họ trong quá trình chạy và nhận diện bất kỳ hành vi không mong đợi hoặc lỗi nào.

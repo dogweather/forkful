@@ -11,9 +11,8 @@ summary: "Escribir en el error est\xE1ndar (stderr) en lenguajes de programaci\x
   n se trata de dirigir mensajes de error y diagn\xF3sticos a un flujo separado, aparte\
   \ de la\u2026"
 title: "Escribir en el error est\xE1ndar"
+weight: 25
 ---
-
-{{< edit_this_page >}}
 
 ## ¿Qué y Por Qué?
 

@@ -11,9 +11,8 @@ summary: "A interpola\xE7\xE3o de strings, na programa\xE7\xE3o, envolve a const
   \xE3o de strings atrav\xE9s da incorpora\xE7\xE3o de express\xF5es dentro de strings\
   \ literais. Programadores\u2026"
 title: Interpolando uma String
+weight: 8
 ---
-
-{{< edit_this_page >}}
 
 ## O Que & Por Quê?
 

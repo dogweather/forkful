@@ -9,9 +9,8 @@ summary: "Interpolacja string\xF3w pozwala nam wplata\u0107 warto\u015Bci zmienn
   \ w ci\u0105gi tekstowe, u\u0142atwiaj\u0105c dynamiczne tworzenie tre\u015Bci.\
   \ Programi\u015Bci u\u017Cywaj\u0105 interpolacji,\u2026"
 title: "Interpolacja \u0142a\u0144cuch\xF3w znak\xF3w"
+weight: 8
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 Interpolacja stringów pozwala nam wplatać wartości zmiennych w ciągi tekstowe, ułatwiając dynamiczne tworzenie treści. Programiści używają interpolacji, by kod był bardziej elastyczny i czytelny.

@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "L'eliminazione di caratteri che corrispondono a un pattern specifico in\
   \ Visual Basic for Applications (VBA) implica l'identificazione e successiva\u2026"
 title: Eliminare i caratteri corrispondenti a un modello
+weight: 5
 ---
-
-{{< edit_this_page >}}
 
 ## Cosa & Perché?
 

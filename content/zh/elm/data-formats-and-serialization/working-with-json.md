@@ -17,9 +17,8 @@ summary: "\u5728Elm\u4E2D\u5904\u7406JSON\u5173\u4E4E\u4E8E\u5C06JSON\u6570\u636
   \u5728\u5BA2\u6237\u7AEF\uFF08Elm\uFF09\u4E0E\u670D\u52A1\u5668\u6216\u5176\u4ED6\
   \u670D\u52A1\u4E4B\u95F4\u65E0\u7F1D\u5730\u4EA4\u6362\u6570\u636E\u3002"
 title: "\u4F7F\u7528JSON\u8FDB\u884C\u7F16\u7A0B"
+weight: 38
 ---
-
-{{< edit_this_page >}}
 
 ## 什么 & 为什么？
 在Elm中处理JSON关乎于将JSON数据解码为Elm类型以及将Elm值编码回JSON。这一过程对于网络应用程序与API和外部数据源交互至关重要，允许在客户端（Elm）与服务器或其他服务之间无缝地交换数据。

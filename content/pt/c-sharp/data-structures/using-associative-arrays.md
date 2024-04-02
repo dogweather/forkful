@@ -11,9 +11,8 @@ summary: "Arrays associativos, ou dicion\xE1rios em C#, permitem armazenar e ger
   \ pares de chaves e valores. Eles s\xE3o sua melhor op\xE7\xE3o quando voc\xEA precisa\
   \ buscar\u2026"
 title: Utilizando arrays associativos
+weight: 15
 ---
-
-{{< edit_this_page >}}
 
 ## O que & Por quê?
 

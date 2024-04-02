@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Capitalizzare una stringa in Swift modifica la stringa data in modo che\
   \ il suo primo carattere sia maiuscolo, e i caratteri rimanenti minuscoli. I\u2026"
 title: Capitalizzare una stringa
+weight: 2
 ---
-
-{{< edit_this_page >}}
 
 ## Cosa & Perché?
 

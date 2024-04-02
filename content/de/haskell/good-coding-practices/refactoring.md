@@ -9,9 +9,8 @@ summary: "Das Refactoring ist der Prozess des Feinjustierens Ihres Codes, ohne d
   \ externes Verhalten zu \xE4ndern. Es geht darum, Ihren Code aufzur\xE4umen und\
   \ zu\u2026"
 title: Refactoring
+weight: 19
 ---
-
-{{< edit_this_page >}}
 
 ## Was & Warum?
 Das Refactoring ist der Prozess des Feinjustierens Ihres Codes, ohne dessen externes Verhalten zu ändern. Es geht darum, Ihren Code aufzuräumen und zu organisieren, um ihn leichter lesbar, wartbar und erweiterbar zu machen. Es kann auch dabei helfen, Bugs zu beseitigen und die Leistung zu verbessern.

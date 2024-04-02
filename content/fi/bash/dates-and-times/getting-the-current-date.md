@@ -11,9 +11,8 @@ summary: "Nykyisen p\xE4iv\xE4m\xE4\xE4r\xE4n hakeminen Bashissa k\xE4sitt\xE4\x
   \ sis\xE4\xE4nrakennettujen komentojen k\xE4ytt\xE4misen p\xE4iv\xE4m\xE4\xE4r\xE4\
   n ja ajan n\xE4ytt\xE4miseen eri muodoissa. Ohjelmoijat\u2026"
 title: "Nykyisen p\xE4iv\xE4m\xE4\xE4r\xE4n hankkiminen"
+weight: 29
 ---
-
-{{< edit_this_page >}}
 
 ## Mikä ja miksi?
 Nykyisen päivämäärän hakeminen Bashissa käsittää sisäänrakennettujen komentojen käyttämisen päivämäärän ja ajan näyttämiseen eri muodoissa. Ohjelmoijat käyttävät tätä toiminnallisuutta tehtäviin, kuten lokitiedostojen aikaleimojen lisäämiseen, tehtävien aikatauluttamiseen tai vain osana järjestelmätietoskriptejään toimintojen suorittamisen ajankohdan seurantaan.

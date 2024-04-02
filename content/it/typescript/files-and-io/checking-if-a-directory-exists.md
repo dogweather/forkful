@@ -10,9 +10,8 @@ model: gpt-4-0125-preview
 summary: "Controllare se una directory esiste in TypeScript \xE8 essenziale per compiti\
   \ di gestione dei file, come leggere o scrivere dati su file, assicurando che le\u2026"
 title: Verifica se una directory esiste
+weight: 20
 ---
-
-{{< edit_this_page >}}
 
 ## Cosa & Perché?
 Controllare se una directory esiste in TypeScript è essenziale per compiti di gestione dei file, come leggere o scrivere dati su file, assicurando che le operazioni siano eseguite solo su directory valide. Questa operazione è cruciale per evitare errori che sorgono tentando di accedere o manipolare directory inesistenti.

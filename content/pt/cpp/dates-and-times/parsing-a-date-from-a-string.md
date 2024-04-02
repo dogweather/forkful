@@ -11,9 +11,8 @@ summary: "Analisar uma data a partir de uma string envolve interpretar o formato
   \ string para extrair componentes da data como dia, m\xEAs e ano. Programadores\
   \ fazem\u2026"
 title: Analisando uma data a partir de uma string
+weight: 30
 ---
-
-{{< edit_this_page >}}
 
 ## O Que & Por Que?
 Analisar uma data a partir de uma string envolve interpretar o formato da string para extrair componentes da data como dia, mês e ano. Programadores fazem isso para manipular entradas de usuários, ler arquivos de dados ou interagir com APIs que comunicam datas em formatos de strings. É essencial para processamento de dados, validação e execução de aritmética de datas em aplicações.

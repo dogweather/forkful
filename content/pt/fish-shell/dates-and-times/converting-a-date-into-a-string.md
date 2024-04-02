@@ -9,9 +9,8 @@ summary: "Converter uma data em uma string \xE9 transformar a representa\xE7\xE3
   \ de tempo (normalmente n\xFAmeros) em texto leg\xEDvel. Fazemos isso para facilitar\
   \ a leitura,\u2026"
 title: Convertendo uma data em uma string
+weight: 28
 ---
-
-{{< edit_this_page >}}
 
 ## O Que & Porquê?
 Converter uma data em uma string é transformar a representação de tempo (normalmente números) em texto legível. Fazemos isso para facilitar a leitura, armazenamento, ou uso em interfaces com usuários e outras funções dentro de programas.

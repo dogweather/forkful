@@ -1,13 +1,15 @@
 ---
 date: 2024-01-26 04:10:58.945322-07:00
-description: "Un depurador es una herramienta que le permite examinar y cambiar los\
-  \ entresijos de su c\xF3digo mientras se ejecuta. Los programadores lo utilizan\
-  \ para\u2026"
+description: "Para empezar con un depurador en TypeScript, todo lo que necesita es\
+  \ un IDE compatible (como Visual Studio Code) y una configuraci\xF3n `launch.json`.\
+  \ Aqu\xED\u2026"
 lastmod: '2024-03-13T22:44:58.805760-06:00'
 model: gpt-4-0125-preview
-summary: "Un depurador es una herramienta que le permite examinar y cambiar los entresijos\
-  \ de su c\xF3digo mientras se ejecuta. Los programadores lo utilizan para\u2026"
+summary: "Para empezar con un depurador en TypeScript, todo lo que necesita es un\
+  \ IDE compatible (como Visual Studio Code) y una configuraci\xF3n `launch.json`.\
+  \ Aqu\xED\u2026"
 title: Usando un depurador
+weight: 35
 ---
 
 ## Cómo hacerlo:

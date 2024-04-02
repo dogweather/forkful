@@ -20,9 +20,8 @@ summary: "CSV\uFF08Comma-Separated Values\uFF09\u306F\u30C7\u30FC\u30BF\u3092\u4
   \u3067\u4E92\u63DB\u6027\u3092\u6301\u305F\u305B\u308B\u305F\u3081\u306B\u4F7F\u3044\
   \u307E\u3059\u3002"
 title: "CSV\u30D5\u30A1\u30A4\u30EB\u306E\u64CD\u4F5C"
+weight: 37
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 CSV（Comma-Separated Values）はデータを保存するのによく使われるシンプルなフォーマットです。開発者はCSVを用いて、データのインポート、エクスポート、解析が簡単で、さまざまなプログラム間で互換性を持たせるために使います。

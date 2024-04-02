@@ -10,9 +10,8 @@ model: gpt-4-0125-preview
 summary: "Rimuovere le virgolette da una stringa in Google Apps Script riguarda l'eliminazione\
   \ di segni di punteggiatura non necessari che possono circondare i dati\u2026"
 title: Rimuovere le virgolette da una stringa
+weight: 9
 ---
-
-{{< edit_this_page >}}
 
 ## Cosa & Perché?
 

@@ -11,9 +11,8 @@ summary: "Analyser une date \xE0 partir d'une cha\xEEne de caract\xE8res en Cloj
   \ consiste \xE0 convertir des repr\xE9sentations textuelles de dates et d'heures\
   \ en une forme\u2026"
 title: "Analyser une date depuis une cha\xEEne de caract\xE8res"
+weight: 30
 ---
-
-{{< edit_this_page >}}
 
 ## Quoi et Pourquoi ?
 Analyser une date à partir d'une chaîne de caractères en Clojure consiste à convertir des représentations textuelles de dates et d'heures en une forme plus utilisable (par exemple, l'objet DateTime de Clojure). Ce processus est fondamental pour le traitement de données, la journalisation, ou toute application manipulant des données temporelles, permettant aux programmeurs d'effectuer des tâches d'opération, de comparaison ou de manipulation sur les dates de manière efficace.

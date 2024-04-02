@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Fehlerbehandlung in Visual Basic f\xFCr Anwendungen (VBA) bezieht sich auf\
   \ den Prozess der Vorwegnahme, Erkennung und Behebung von Programmier-, Anwendungs-\u2026"
 title: Fehlerbehandlung
+weight: 16
 ---
-
-{{< edit_this_page >}}
 
 ## Was & Warum?
 

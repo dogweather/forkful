@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Het vergelijken van twee datums in Visual Basic for Applications (VBA) behelst\
   \ het bepalen van hun chronologische relatie tot elkaar. Programmeurs doen\u2026"
 title: Twee datums vergelijken
+weight: 27
 ---
-
-{{< edit_this_page >}}
 
 ## Wat & Waarom?
 

@@ -8,9 +8,8 @@ model: gpt-4-0125-preview
 summary: "Arrotondare i numeri significa tagliare le cifre decimali fino a un valore\
   \ pi\xF9 semplice che sia sufficientemente buono per un determinato contesto. I\u2026"
 title: Arrotondamento dei numeri
+weight: 13
 ---
-
-{{< edit_this_page >}}
 
 ## Cosa e perché?
 

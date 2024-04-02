@@ -18,9 +18,8 @@ summary: "\uBA85\uB839\uC904 \uC778\uC218\uB97C \uC77D\uB294 \uAC83\uC740 \uD504
   \uB294 \uC720\uC5F0\uD55C \uD504\uB85C\uADF8\uB7A8\uC744 \uB9CC\uB4E4\uAE30 \uC704\
   \uD574 \uC774 \uAE30\uB2A5\uC744 \uC0AC\uC6A9\uD569\uB2C8\uB2E4."
 title: "\uBA85\uB839\uC904 \uC778\uC218 \uC77D\uAE30"
+weight: 23
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why? (무엇과 왜?)
 명령줄 인수를 읽는 것은 프로그램에게 터미널이나 커맨드 프롬프트에서 데이터를 전달하는 방법입니다. 프로그래머는 사용자의 입력에 따라 다르게 반응하는 유연한 프로그램을 만들기 위해 이 기능을 사용합니다.

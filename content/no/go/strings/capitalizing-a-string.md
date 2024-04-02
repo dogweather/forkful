@@ -11,9 +11,8 @@ summary: "\xC5 kapitalisere en streng inneb\xE6rer \xE5 omdanne det f\xF8rste te
   \ i en gitt streng til stor bokstav hvis det er i sm\xE5 bokstaver, for \xE5 s\xF8\
   rge for at strengen\u2026"
 title: Sette stor bokstav i en streng
+weight: 2
 ---
-
-{{< edit_this_page >}}
 
 ## Hva & Hvorfor?
 

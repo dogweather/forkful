@@ -23,9 +23,8 @@ summary: "HTTP \uC694\uCCAD\uC744 \uBCF4\uB0B4\uB294 \uAC83\uC740 Go \uC5B4\uD50
   \uD574 \uB2E4\uB978 \uC11C\uBE44\uC2A4\uC640 \uD1B5\uC2E0\uD558\uAE30 \uC704\uD574\
   \u2026"
 title: "HTTP \uC694\uCCAD \uBCF4\uB0B4\uAE30"
+weight: 44
 ---
-
-{{< edit_this_page >}}
 
 ## 무엇 & 왜?
 

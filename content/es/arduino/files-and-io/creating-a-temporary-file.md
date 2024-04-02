@@ -8,9 +8,8 @@ model: gpt-4-1106-preview
 summary: "Crear un archivo temporal en Arduino es cuesti\xF3n de trabajar con almacenamiento\
   \ temporal de datos durante la ejecuci\xF3n del programa. Programadores usan\u2026"
 title: Creando un archivo temporal
+weight: 21
 ---
-
-{{< edit_this_page >}}
 
 ## ¿Qué & Por Qué?
 

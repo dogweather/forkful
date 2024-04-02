@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "\xC5 lage en midlertidig fil i Go muliggj\xF8r genereringen av en ikke-persistent\
   \ fil designet for kortvarig bruk, hovedsakelig for oppgaver som \xE5 lagre\u2026"
 title: Oppretting av en midlertidig fil
+weight: 21
 ---
-
-{{< edit_this_page >}}
 
 ## Hva & Hvorfor?
 

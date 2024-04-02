@@ -17,9 +17,8 @@ summary: "\u5728\u7F16\u7A0B\u4E2D\uFF0C\u83B7\u53D6\u5F53\u524D\u65E5\u671F\u66
   \u4EF6\u5230\u57FA\u4E8E\u65E5\u671F\u7684\u8BA1\u7B97\uFF0C\u8FD9\u4E2A\u80FD\u529B\
   \u5BF9\u4E8E\u4EFB\u4F55\u4E8B\u60C5\u90FD\u662F\u81F3\u5173\u91CD\u8981\u7684\u3002"
 title: "\u83B7\u53D6\u5F53\u524D\u65E5\u671F"
+weight: 29
 ---
-
-{{< edit_this_page >}}
 
 ## 什么 & 为什么？
 在编程中，获取当前日期是一项基本任务，它使开发人员能够访问、显示或操作应用程序中的当前日期。从记录和时间戳事件到基于日期的计算，这个能力对于任何事情都是至关重要的。

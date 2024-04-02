@@ -9,9 +9,8 @@ summary: "Stringin pituuden selvitt\xE4minen tarkoittaa merkkijonon merkkien luk
   \xE4r\xE4n laskemista. Ohjelmoijat tekev\xE4t t\xE4m\xE4n, kun heid\xE4n t\xE4ytyy\
   \ k\xE4sitell\xE4 tekstin\u2026"
 title: "Merkkijonon pituuden selvitt\xE4minen"
+weight: 7
 ---
-
-{{< edit_this_page >}}
 
 ## Mikä & Miksi?
 Stringin pituuden selvittäminen tarkoittaa merkkijonon merkkien lukumäärän laskemista. Ohjelmoijat tekevät tämän, kun heidän täytyy käsitellä tekstin pituutta tai leikata ja vertailla merkkijonoja.

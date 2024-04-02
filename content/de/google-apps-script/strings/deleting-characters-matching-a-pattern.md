@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Das L\xF6schen von Zeichen, die einem bestimmten Muster entsprechen, ist\
   \ eine Technik, die verwendet wird, um Zeichenketten in der Programmierung zu\u2026"
 title: "Zeichen, die einem Muster entsprechen, l\xF6schen"
+weight: 5
 ---
-
-{{< edit_this_page >}}
 
 ## Was & Warum?
 

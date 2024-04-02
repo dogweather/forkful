@@ -8,9 +8,8 @@ model: gpt-4-1106-preview
 summary: "Organiser le code en fonctions divise les t\xE2ches en morceaux r\xE9utilisables,\
   \ rendant le code plus propre et plus facile \xE0 maintenir. Nous faisons cela pour\u2026"
 title: Organisation du code en fonctions
+weight: 18
 ---
-
-{{< edit_this_page >}}
 
 ## Quoi & Pourquoi ?
 Organiser le code en fonctions divise les tâches en morceaux réutilisables, rendant le code plus propre et plus facile à maintenir. Nous faisons cela pour réduire la redondance, faciliter les tests et améliorer la lisibilité.

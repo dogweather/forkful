@@ -22,9 +22,8 @@ summary: "Google Apps Script\uC5D0\uC11C \uB450 \uB0A0\uC9DC\uB97C \uBE44\uAD50\
   \uD68D, \uB610\uB294 \uCF58\uD150\uCE20 \uC2A4\uCF00\uC904\uB9C1\uACFC \uAC19\uC740\
   \ \uAE30\uB2A5\uC744 \uD6A8\uACFC\uC801\uC73C\uB85C \uAD6C\uD604\uD560 \uC218\u2026"
 title: "\uB450 \uB0A0\uC9DC \uBE44\uAD50\uD558\uAE30"
+weight: 27
 ---
-
-{{< edit_this_page >}}
 
 ## 무엇 & 왜?
 Google Apps Script에서 두 날짜를 비교하는 것은 스케줄링, 타임라인, 또는 날짜 관련 데이터를 다루는 개발자에게 필수적인 작업입니다. 날짜를 정확하게 비교하는 방법을 이해하는 것은 마감일, 이벤트 계획, 또는 콘텐츠 스케줄링과 같은 기능을 효과적으로 구현할 수 있게 해줍니다.

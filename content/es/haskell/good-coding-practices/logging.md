@@ -7,9 +7,8 @@ model: gpt-4-1106-preview
 summary: "El registro (logging) en programaci\xF3n es esencialmente dejar un rastro\
   \ de migajas de pan en forma de eventos o mensajes registrados, los cuales se pueden\u2026"
 title: "Registro de Actividades en Programaci\xF3n"
+weight: 17
 ---
-
-{{< edit_this_page >}}
 
 ## Qué y Por Qué?
 El registro (logging) en programación es esencialmente dejar un rastro de migajas de pan en forma de eventos o mensajes registrados, los cuales se pueden usar para rastrear lo que tu aplicación está haciendo en cualquier momento dado. Los programadores lo hacen para depurar problemas, monitorear el rendimiento del sistema y auditar el comportamiento por razones de seguridad y cumplimiento.

@@ -19,9 +19,8 @@ summary: "REPL, \uB610\uB294 \uC77D\uAE30-\uD3C9\uAC00-\uCD9C\uB825 \uB8E8\uD504
   \uD558\uB294 \uAC83 \uC5C6\uC774 \uBE60\uB974\uAC8C \uC2E4\uD5D8\uD558\uAE30 \uC704\
   \uD574 \uC774\uB97C \uC0AC\uC6A9\uD569\uB2C8\uB2E4."
 title: "\uC778\uD130\uB799\uD2F0\uBE0C \uC178 (REPL) \uC0AC\uC6A9\uD558\uAE30"
+weight: 34
 ---
-
-{{< edit_this_page >}}
 
 ## 무엇 & 왜?
 REPL, 또는 읽기-평가-출력 루프는 동적으로 Clojure 코드를 조각조각 테스트하는 프로그래밍 환경입니다. 코드 제작자는 즉각적인 피드백, 반복적 개발, 그리고 전체 프로젝트 환경을 구축하거나 컴파일하는 것 없이 빠르게 실험하기 위해 이를 사용합니다.

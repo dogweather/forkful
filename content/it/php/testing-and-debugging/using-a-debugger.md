@@ -1,13 +1,13 @@
 ---
 date: 2024-01-26 03:50:37.599592-07:00
-description: "Un debugger \xE8 uno strumento che aiuta i programmatori a capire cosa\
-  \ sta effettivamente facendo il loro codice mentre viene eseguito. \xC8 la lente\
-  \ di\u2026"
+description: "PHP include un debugger interattivo chiamato Xdebug. Ecco come usarlo.\
+  \ Prima, assicurati di avere Xdebug installato e configurato nel tuo file `php.ini`:\u2026"
 lastmod: '2024-03-13T22:44:43.521233-06:00'
 model: gpt-4-0125-preview
-summary: "Un debugger \xE8 uno strumento che aiuta i programmatori a capire cosa sta\
-  \ effettivamente facendo il loro codice mentre viene eseguito. \xC8 la lente di\u2026"
+summary: "PHP include un debugger interattivo chiamato Xdebug. Ecco come usarlo. Prima,\
+  \ assicurati di avere Xdebug installato e configurato nel tuo file `php.ini`:\u2026"
 title: Utilizzo di un debugger
+weight: 35
 ---
 
 ## Come fare:

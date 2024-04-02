@@ -11,9 +11,8 @@ summary: "Le remaniement (Refactoring) dans Dart est le processus de restructura
   \ du code existant sans en changer le comportement externe, visant \xE0 am\xE9liorer\
   \ sa\u2026"
 title: Refactorisation
+weight: 19
 ---
-
-{{< edit_this_page >}}
 
 ## Quoi et Pourquoi ?
 

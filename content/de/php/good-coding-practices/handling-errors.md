@@ -8,9 +8,8 @@ model: gpt-4-1106-preview
 summary: "Fehlerbehandlung in PHP bezieht sich auf das Verwalten und Reagieren auf\
   \ Bedingungen, die den normalen Ablauf eines Programms st\xF6ren, wie fehlende Dateien\u2026"
 title: Fehlerbehandlung
+weight: 16
 ---
-
-{{< edit_this_page >}}
 
 ## Was & Warum?
 Fehlerbehandlung in PHP bezieht sich auf das Verwalten und Reagieren auf Bedingungen, die den normalen Ablauf eines Programms stören, wie fehlende Dateien oder fehlerhafte Dateneingaben. Programmierer behandeln Fehler, um Abstürze zu verhindern und den Benutzern eine reibungslosere Erfahrung zu bieten.

@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Arrays associativos, conhecidos como dicion\xE1rios em Swift, permitem armazenar\
   \ e gerenciar dados em pares chave-valor. Programadores os usam para organizar\u2026"
 title: Usando arrays associativos
+weight: 15
 ---
-
-{{< edit_this_page >}}
 
 ## O Que & Por Quê?
 

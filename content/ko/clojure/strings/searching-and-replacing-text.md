@@ -16,9 +16,8 @@ summary: "\uD14D\uC2A4\uD2B8 \uAC80\uC0C9 \uBC0F \uAD50\uCCB4\uB294 \uBB38\uC790
   \uD654\uB41C \uC218\uC815 \uC791\uC5C5, \uCF54\uB4DC \uB9AC\uD329\uD1A0\uB9C1 \uB4F1\
   \uC5D0 \uC774\uB97C \uD65C\uC6A9\uD569\uB2C8\uB2E4."
 title: "\uD14D\uC2A4\uD2B8 \uAC80\uC0C9 \uBC0F \uAD50\uCCB4"
+weight: 10
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why? (무엇과 왜?)
 텍스트 검색 및 교체는 문자열에서 특정 단어나 패턴을 찾아 다른 것으로 바꾸는 과정입니다. 프로그래머들은 데이터 정리, 자동화된 수정 작업, 코드 리팩토링 등에 이를 활용합니다.

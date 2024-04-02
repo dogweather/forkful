@@ -11,9 +11,8 @@ summary: "Sprawdzanie, czy katalog istnieje w j\u0119zyku Dart, polega na weryfi
   \ obecno\u015Bci katalogu pod okre\u015Blon\u0105 \u015Bcie\u017Ck\u0105 w systemie\
   \ plik\xF3w przed wykonaniem\u2026"
 title: Sprawdzanie, czy katalog istnieje
+weight: 20
 ---
-
-{{< edit_this_page >}}
 
 ## Co i dlaczego?
 

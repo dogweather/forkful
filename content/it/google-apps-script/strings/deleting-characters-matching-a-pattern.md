@@ -10,9 +10,8 @@ model: gpt-4-0125-preview
 summary: "Eliminare caratteri che corrispondono a un specifico pattern \xE8 una tecnica\
   \ utilizzata per pulire o formattare stringhe nella programmazione. Nel contesto\u2026"
 title: Eliminare i caratteri corrispondenti a un modello
+weight: 5
 ---
-
-{{< edit_this_page >}}
 
 ## Cosa & Perché?
 

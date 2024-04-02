@@ -7,9 +7,8 @@ model: gpt-4-1106-preview
 summary: "Leggere un file di testo consiste nell'acquisire dati da un file salvato\
   \ sul tuo disco. I programmatori lo fanno per elaborare o analizzare contenuti,\u2026"
 title: Lettura di un file di testo
+weight: 22
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 Leggere un file di testo consiste nell'acquisire dati da un file salvato sul tuo disco. I programmatori lo fanno per elaborare o analizzare contenuti, configurazioni, log e più.

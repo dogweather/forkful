@@ -7,9 +7,8 @@ model: gpt-4-0125-preview
 summary: "Das Generieren von Zufallszahlen bezieht sich auf die Erzeugung von unvorhersehbaren\
   \ Sequenzen oder Einzelwerten innerhalb eines definierten Bereichs.\u2026"
 title: Generierung von Zufallszahlen
+weight: 12
 ---
-
-{{< edit_this_page >}}
 
 ## Was & Warum?
 

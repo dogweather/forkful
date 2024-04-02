@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "\"Loggen\" is het bijhouden van een register van gebeurtenissen, transacties\
   \ of activiteiten die over tijd plaatsvinden in een systeem. Programmeurs\u2026"
 title: Logboekregistratie
+weight: 17
 ---
-
-{{< edit_this_page >}}
 
 ## Wat & Waarom?
 "Loggen" is het bijhouden van een register van gebeurtenissen, transacties of activiteiten die over tijd plaatsvinden in een systeem. Programmeurs gebruiken het voor het debuggen, monitoren van de systeemgezondheid, verzamelen van statistieken, of zelfs voor het auditen van gebruik, wat het een onmisbare praktijk maakt voor het onderhouden en begrijpen van het gedrag van hun code onder verschillende omstandigheden.

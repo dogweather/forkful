@@ -9,9 +9,8 @@ summary: "Procurar e substituir texto \xE9 tipo fazer uma ca\xE7a ao tesouro e t
   \ o que voc\xEA encontrou. Programadores fazem isso para corrigir erros, atualizar\
   \ dados\u2026"
 title: Pesquisando e substituindo texto
+weight: 10
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 Procurar e substituir texto é tipo fazer uma caça ao tesouro e trocar o que você encontrou. Programadores fazem isso para corrigir erros, atualizar dados ou simplificar código, sem perder tempo.

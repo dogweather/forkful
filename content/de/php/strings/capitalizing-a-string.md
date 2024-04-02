@@ -11,9 +11,8 @@ summary: "Das Gro\xDFschreiben eines Strings beinhaltet die Modifikation des ers
   \ Zeichens eines gegebenen Textes in Gro\xDFbuchstaben, um sicherzustellen, dass\
   \ S\xE4tze,\u2026"
 title: "Einen String gro\xDFschreiben"
+weight: 2
 ---
-
-{{< edit_this_page >}}
 
 ## Was & Warum?
 Das Großschreiben eines Strings beinhaltet die Modifikation des ersten Zeichens eines gegebenen Textes in Großbuchstaben, um sicherzustellen, dass Sätze, Titel oder Eigennamen korrekt in einem Datensatz beginnen. Programmierer führen oft die Großschreibung von Strings durch, um die Datennormalisierung zu verbessern, die Lesbarkeit zu erhöhen oder die Konsistenz bei Benutzereingaben oder der Verarbeitung textueller Daten zu gewährleisten.

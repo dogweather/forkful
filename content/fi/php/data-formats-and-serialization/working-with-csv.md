@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Ty\xF6skentely CSV:n (pilkuilla erotetut arvot) parissa k\xE4sitt\xE4\xE4\
   \ datan lukemista ja kirjoittamista CSV-tiedostoihin, jotka ovat suosittu formaatti\u2026"
 title: "Ty\xF6skentely CSV:n kanssa"
+weight: 37
 ---
-
-{{< edit_this_page >}}
 
 ## Mikä & Miksi?
 

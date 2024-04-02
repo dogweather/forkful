@@ -10,9 +10,8 @@ model: gpt-4-0125-preview
 summary: "Travailler avec XML dans Visual Basic pour Applications (VBA) implique l'analyse,\
   \ la cr\xE9ation et la modification de documents XML dans le contexte des\u2026"
 title: Travailler avec XML
+weight: 40
 ---
-
-{{< edit_this_page >}}
 
 ## Quoi & Pourquoi ?
 

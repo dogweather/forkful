@@ -9,9 +9,8 @@ summary: "Avrundning av tal handlar om att justera ett tal till n\xE4rmaste hela
   \ eller till en viss decimalprecision. Vi avrundar tal f\xF6r att f\xF6renkla dem\
   \ f\xF6r\u2026"
 title: Avrundning av tal
+weight: 13
 ---
-
-{{< edit_this_page >}}
 
 ## Vad och Varför?
 Avrundning av tal handlar om att justera ett tal till närmaste hela tal eller till en viss decimalprecision. Vi avrundar tal för att förenkla dem för mänsklig läsbarhet, minska beräkningsbelastningen eller uppfylla specifika numeriska krav.

@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Afronden van getallen gaat over het afsnijden van decimalen om je gegevens\
   \ te vereenvoudigen of aan specifieke formaten te voldoen. Programmeurs doen dit\u2026"
 title: Afronden van getallen
+weight: 13
 ---
-
-{{< edit_this_page >}}
 
 ## Wat & Waarom?
 Afronden van getallen gaat over het afsnijden van decimalen om je gegevens te vereenvoudigen of aan specifieke formaten te voldoen. Programmeurs doen dit voor gebruikersvriendelijke weergave, efficiënte opslag, of wanneer decimale precisie geen issue is.

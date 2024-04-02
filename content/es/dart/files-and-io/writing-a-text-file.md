@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Escribir un archivo de texto en Dart implica crear o modificar archivos\
   \ en el disco para almacenar datos en un formato legible. Los programadores lo hacen\u2026"
 title: Escribiendo un archivo de texto
+weight: 24
 ---
-
-{{< edit_this_page >}}
 
 ## Qué y Por Qué?
 Escribir un archivo de texto en Dart implica crear o modificar archivos en el disco para almacenar datos en un formato legible. Los programadores lo hacen para guardar datos de aplicaciones, configuraciones, registros o cualquier información que deba persistir entre ejecuciones de aplicaciones o compartir datos con otras aplicaciones o usuarios.

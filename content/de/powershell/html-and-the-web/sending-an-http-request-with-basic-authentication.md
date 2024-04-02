@@ -9,9 +9,8 @@ summary: "HTTP-Anfragen mit Basis-Authentifizierung sind essentiell, wenn Dienst
   \ oder APIs einen Nutzernachweis erfordern. Entwickler verwenden sie, um Zugriff\
   \ auf\u2026"
 title: HTTP-Anfragen mit Basisauthentifizierung senden
+weight: 45
 ---
-
-{{< edit_this_page >}}
 
 ## Was & Warum?
 HTTP-Anfragen mit Basis-Authentifizierung sind essentiell, wenn Dienste oder APIs einen Nutzernachweis erfordern. Entwickler verwenden sie, um Zugriff auf geschützte Ressourcen zu erhalten, oftmals für Automatisierung oder Datenintegration.

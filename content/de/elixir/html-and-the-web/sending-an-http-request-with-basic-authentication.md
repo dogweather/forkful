@@ -7,9 +7,8 @@ model: gpt-4-1106-preview
 summary: "HTTP-Requests mit Basisauthentifizierung erm\xF6glichen gesicherte Zugriffe\
   \ auf Webressourcen, indem Benutzername und Passwort \xFCbermittelt werden.\u2026"
 title: HTTP-Anfragen mit Basisauthentifizierung senden
+weight: 45
 ---
-
-{{< edit_this_page >}}
 
 ## Was & Warum?
 HTTP-Requests mit Basisauthentifizierung ermöglichen gesicherte Zugriffe auf Webressourcen, indem Benutzername und Passwort übermittelt werden. Programmierer nutzen dies, um APIs oder Webdienste zu konsumieren, die eine solche Authentifizierungsform erfordern.

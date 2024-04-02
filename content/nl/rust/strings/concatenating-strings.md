@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Stringconcatenatie is het aan elkaar plakken van strings om een nieuwe te\
   \ maken. We doen dit om berichten te construeren, output te genereren of dynamisch\u2026"
 title: Samenvoegen van strings
+weight: 3
 ---
-
-{{< edit_this_page >}}
 
 ## Wat & Waarom?
 Stringconcatenatie is het aan elkaar plakken van strings om een nieuwe te maken. We doen dit om berichten te construeren, output te genereren of dynamisch met tekst te werken.

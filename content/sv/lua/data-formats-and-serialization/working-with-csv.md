@@ -11,9 +11,8 @@ summary: "Att arbeta med CSV (Comma-Separated Values) filer inneb\xE4r att tolka
   \ generera textdata organiserad i rader och kolumner, d\xE4r komman anv\xE4nds f\xF6\
   r att\u2026"
 title: Arbeta med CSV
+weight: 37
 ---
-
-{{< edit_this_page >}}
 
 ## Vad & Varför?
 

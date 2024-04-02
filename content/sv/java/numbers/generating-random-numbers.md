@@ -8,9 +8,8 @@ model: gpt-4-0125-preview
 summary: "Att generera slumpm\xE4ssiga nummer handlar om att producera of\xF6ruts\xE4\
   gbara sekvenser eller enskilda v\xE4rden inom ett definierat intervall. Programmerare\u2026"
 title: Generera slumptal
+weight: 12
 ---
-
-{{< edit_this_page >}}
 
 ## Vad & Varför?
 

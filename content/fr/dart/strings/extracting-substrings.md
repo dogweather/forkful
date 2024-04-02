@@ -11,9 +11,8 @@ summary: "Extraire des sous-cha\xEEnes consiste \xE0 r\xE9cup\xE9rer des portion
   \ sp\xE9cifiques d'une cha\xEEne de caract\xE8res bas\xE9es sur leurs positions\
   \ ou leurs motifs. Les\u2026"
 title: "Extraction de sous-cha\xEEnes"
+weight: 6
 ---
-
-{{< edit_this_page >}}
 
 ## Quoi & Pourquoi ?
 Extraire des sous-chaînes consiste à récupérer des portions spécifiques d'une chaîne de caractères basées sur leurs positions ou leurs motifs. Les programmeurs font cela pour des tâches telles que l'analyse de l'entrée utilisateur, la manipulation de données, ou l'extraction d'informations pertinentes à partir de sources de texte plus importantes.

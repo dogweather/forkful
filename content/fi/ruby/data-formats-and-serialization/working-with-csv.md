@@ -11,9 +11,8 @@ summary: "CSV-tiedostojen k\xE4sittely Rubyssa tarjoaa yksinkertaisen tavan k\xE
   sitell\xE4 taulukkomuotoista tietoa. Ohjelmoijat harjoittavat t\xE4t\xE4 k\xE4yt\xE4\
   nt\xF6\xE4 usein datan\u2026"
 title: "Ty\xF6skentely CSV:n kanssa"
+weight: 37
 ---
-
-{{< edit_this_page >}}
 
 ## Mikä ja miksi?
 

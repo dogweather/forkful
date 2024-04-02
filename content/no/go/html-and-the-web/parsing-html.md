@@ -11,9 +11,8 @@ summary: "Parsing av HTML i Go inneb\xE6rer \xE5 analysere innholdet i HTML-file
   \ for \xE5 ekstrahere data, manipulere strukturen, eller for \xE5 konvertere HTML\
   \ til andre\u2026"
 title: Analysering av HTML
+weight: 43
 ---
-
-{{< edit_this_page >}}
 
 ## Hva & Hvorfor?
 

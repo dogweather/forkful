@@ -11,9 +11,8 @@ summary: "Tekstitiedoston kirjoittaminen Swift-ohjelmointikielell\xE4 mahdollist
   \ merkkijonotietojen pysyv\xE4n tallentamisen tiedostoj\xE4rjestelm\xE4\xE4n, mik\xE4\
   \ on olennaista\u2026"
 title: Tekstitiedoston kirjoittaminen
+weight: 24
 ---
-
-{{< edit_this_page >}}
 
 ## Mikä ja miksi?
 

@@ -14,9 +14,8 @@ summary: "\u5728\u7F16\u7A0B\u4E2D\uFF0C\u5F97\u5230\u4E00\u4E2A\u5B57\u7B26\u4E
   \u3001\u9650\u5236\u6587\u5B57\u91CF\u6216\u8005\u4EC5\u4EC5\u662F\u4E3A\u4E86\u64CD\
   \u4F5C\u6570\u636E\u3002"
 title: "\u83B7\u53D6\u5B57\u7B26\u4E32\u7684\u957F\u5EA6"
+weight: 7
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why? (什么和为什么?)
 在编程中，得到一个字符串的长度就是知道它包含多少个字符。我们这么做是为了验证输入、限制文字量或者仅仅是为了操作数据。

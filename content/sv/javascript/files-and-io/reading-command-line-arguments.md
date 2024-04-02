@@ -9,9 +9,8 @@ summary: "L\xE4sning av kommandoradsargument handlar om att snappa upp de extra 
   \ som skickas till ditt program n\xE4r det k\xF6rs i terminalen. Programmerare g\xF6\
   r detta\u2026"
 title: "L\xE4sa in kommandoradsargument"
+weight: 23
 ---
-
-{{< edit_this_page >}}
 
 ## Vad & Varför?
 

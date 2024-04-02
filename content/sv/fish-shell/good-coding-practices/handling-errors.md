@@ -9,9 +9,8 @@ summary: "Felhantering l\xE5ter ditt skript hantera det ov\xE4ntade p\xE5 ett sm
   \ s\xE4tt. Vi g\xF6r det f\xF6r att hantera fel utan att v\xE5ra anv\xE4ndares h\xE5\
   r gr\xE5nar."
 title: Hantering av fel
+weight: 16
 ---
-
-{{< edit_this_page >}}
 
 ## Vad & Varför?
 Felhantering låter ditt skript hantera det oväntade på ett smidigt sätt. Vi gör det för att hantera fel utan att våra användares hår grånar.

@@ -11,9 +11,8 @@ summary: "Capitalizar una cadena implica transformar el primer car\xE1cter de un
   \ cadena dada a may\xFAsculas si est\xE1 en min\xFAsculas, asegurando que la cadena\
   \ destaque o\u2026"
 title: Capitalizando una cadena de caracteres
+weight: 2
 ---
-
-{{< edit_this_page >}}
 
 ## ¿Qué y por qué?
 

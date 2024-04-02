@@ -11,9 +11,8 @@ summary: "Att tolka HTML i Rust handlar om att extrahera data fr\xE5n HTML-dokum
   \ vilket \xE4r v\xE4sentligt f\xF6r webbskrapning, dataextraktion eller att bygga\
   \ webb-\u2026"
 title: Tolka HTML
+weight: 43
 ---
-
-{{< edit_this_page >}}
 
 ## Vad & Varför?
 

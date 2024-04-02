@@ -9,9 +9,8 @@ summary: "Praca z XML polega na analizie i manipulowaniu dokumentami XML za pomo
   \ kodu. Programi\u015Bci robi\u0105 to, aby czyta\u0107, pisa\u0107 i modyfikowa\u0107\
   \ dane w strukturalnym,\u2026"
 title: Praca z XML
+weight: 40
 ---
-
-{{< edit_this_page >}}
 
 ## Co i dlaczego?
 Praca z XML polega na analizie i manipulowaniu dokumentami XML za pomocą kodu. Programiści robią to, aby czytać, pisać i modyfikować dane w strukturalnym, przenośnym formacie, który jest szeroko stosowany do wymiany i przechowywania danych.

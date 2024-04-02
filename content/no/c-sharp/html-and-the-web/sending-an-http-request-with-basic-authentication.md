@@ -7,9 +7,8 @@ model: gpt-4-1106-preview
 summary: "\xC5 sende en HTTP-foresp\xF8rsel med grunnleggende autentisering betyr\
   \ at du legger til et brukernavn og passord i foresp\xF8rselen for tilgangskontroll.\u2026"
 title: "\xC5 sende en HTTP-foresp\xF8rsel med grunnleggende autentisering"
+weight: 45
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why? (Hva & Hvorfor?)
 Å sende en HTTP-forespørsel med grunnleggende autentisering betyr at du legger til et brukernavn og passord i forespørselen for tilgangskontroll. Programmerere gjør dette for å sikre trygg kommunikasjon med APIer som krever autentisering.

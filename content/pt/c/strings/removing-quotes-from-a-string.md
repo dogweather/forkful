@@ -10,9 +10,8 @@ model: gpt-4-0125-preview
 summary: "Remover aspas de uma string em C envolve extrair o conte\xFAdo textual sem\
   \ as aspas simples (' ') ou duplas (\" \") encapsulando. Esse processo \xE9 essencial\u2026"
 title: Removendo aspas de uma string
+weight: 9
 ---
-
-{{< edit_this_page >}}
 
 ## O Que & Porquê?
 

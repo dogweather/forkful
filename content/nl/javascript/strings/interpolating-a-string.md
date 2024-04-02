@@ -11,9 +11,8 @@ summary: "Stringinterpolatie is een manier om variabelen rechtstreeks in een str
   \ in te sluiten. Programmeurs gebruiken het om variabelen en strings effici\xEB\
   nt te\u2026"
 title: Een string interpoleren
+weight: 8
 ---
-
-{{< edit_this_page >}}
 
 ## Wat & Waarom?
 

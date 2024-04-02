@@ -9,9 +9,8 @@ summary: "Interpolering av str\xE4ngar inneb\xE4r att man blandar variabler och 
   ngar f\xF6r att skapa en ny, sammansatt str\xE4ng. Programmerare interpolerar str\xE4\
   ngar f\xF6r\u2026"
 title: "Interpolera en str\xE4ng"
+weight: 8
 ---
-
-{{< edit_this_page >}}
 
 ## Vad & Varför?
 Interpolering av strängar innebär att man blandar variabler och strängar för att skapa en ny, sammansatt sträng. Programmerare interpolerar strängar för att dynamiskt bygga text, vilket gör koden mer flexibel och läsbar.

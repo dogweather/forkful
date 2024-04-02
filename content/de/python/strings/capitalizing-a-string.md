@@ -10,9 +10,8 @@ model: gpt-4-0125-preview
 summary: "Das Gro\xDFschreiben eines Strings bedeutet, das erste Zeichen eines Strings\
   \ in Gro\xDFbuchstaben umzuwandeln und den Rest in Kleinbuchstaben. Diese Operation\u2026"
 title: "Einen String gro\xDFschreiben"
+weight: 2
 ---
-
-{{< edit_this_page >}}
 
 ## Was & Warum?
 Das Großschreiben eines Strings bedeutet, das erste Zeichen eines Strings in Großbuchstaben umzuwandeln und den Rest in Kleinbuchstaben. Diese Operation wird häufig in der Datenverarbeitung verwendet, um Eingaben zu normalisieren oder die Lesbarkeit für Titel, Namen und dergleichen zu verbessern.

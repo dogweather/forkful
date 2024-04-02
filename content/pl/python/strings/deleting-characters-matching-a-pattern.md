@@ -9,9 +9,8 @@ summary: "Usuwanie znak\xF3w pasuj\u0105cych do wzorca to proces filtrowania tek
   \ wed\u0142ug zdefiniowanych regu\u0142, na przyk\u0142ad za pomoc\u0105 wyra\u017C\
   e\u0144 regularnych. Robimy to, by\u2026"
 title: "Usuwanie znak\xF3w pasuj\u0105cych do wzorca"
+weight: 5
 ---
-
-{{< edit_this_page >}}
 
 ## Co i Dlaczego?
 Usuwanie znaków pasujących do wzorca to proces filtrowania tekstu według zdefiniowanych reguł, na przykład za pomocą wyrażeń regularnych. Robimy to, by usunąć niepożądane lub niepotrzebne informacje, zwiększając tym samym czytelność i poprawność danych.

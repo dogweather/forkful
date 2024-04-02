@@ -7,9 +7,8 @@ model: gpt-4-1106-preview
 summary: "Creare file temporanei significa generare file destinati a essere utilizzati\
   \ solo per la durata di una sessione o di una specifica operazione. I\u2026"
 title: Creazione di un file temporaneo
+weight: 21
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 Creare file temporanei significa generare file destinati a essere utilizzati solo per la durata di una sessione o di una specifica operazione. I programmatori li usano per immagazzinare dati volatili, come cache, log intermedi o come sandbox per processi che non devono intaccare dati permanenti.

@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "YAML, che sta per YAML Ain't Markup Language, \xE8 ampiamente utilizzato\
   \ in Ruby per file di configurazione e serializzazione dei dati grazie al suo formato\u2026"
 title: Lavorare con YAML
+weight: 41
 ---
-
-{{< edit_this_page >}}
 
 ## Cosa & Perché?
 YAML, che sta per YAML Ain't Markup Language, è ampiamente utilizzato in Ruby per file di configurazione e serializzazione dei dati grazie al suo formato facilmente leggibile. I programmatori si orientano verso YAML quando hanno bisogno di memorizzare o trasmettere oggetti dati in modo leggibile ma strutturato, semplificando compiti come la gestione della configurazione, lo stoccaggio dei dati e la condivisione di dati tra linguaggi differenti.

@@ -9,9 +9,8 @@ summary: "Organiser son code en fonctions signifie le d\xE9couper en blocs r\xE9
   \ chaque bloc ex\xE9cutant une t\xE2che sp\xE9cifique. Les programmeurs le font\
   \ pour\u2026"
 title: Organisation du code en fonctions
+weight: 18
 ---
-
-{{< edit_this_page >}}
 
 ## Quoi et pourquoi ?
 Organiser son code en fonctions signifie le découper en blocs réutilisables, chaque bloc exécutant une tâche spécifique. Les programmeurs le font pour rendre le code plus lisible, faciliter le débogage et la réutilisation. C'est comme trier des Legos dans des bacs – cela vous évite de fouiller dans un tas chaotique à chaque fois que vous voulez construire quelque chose.

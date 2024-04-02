@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Merkkijonojen osien erottelu liittyy tiettyjen merkkijonojen osien noutamiseen\
   \ niiden sijainnin tai mallien perusteella. Ohjelmoijat tekev\xE4t t\xE4m\xE4n\u2026"
 title: Alimerkkijonojen erottaminen
+weight: 6
 ---
-
-{{< edit_this_page >}}
 
 ## Mikä & Miksi?
 Merkkijonojen osien erottelu liittyy tiettyjen merkkijonojen osien noutamiseen niiden sijainnin tai mallien perusteella. Ohjelmoijat tekevät tämän tehtäviä varten kuten käyttäjäsyötteen jäsentäminen, datan käsittely tai oleellisen tiedon erottaminen suuremmista tekstilähteistä.

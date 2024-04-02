@@ -7,9 +7,8 @@ model: gpt-4-1106-preview
 summary: "Leggere un file di testo in Rust significa prendere una sequenza di caratteri\
   \ da un file e usarli nel programma. Lo facciamo principalmente per elaborare\u2026"
 title: Lettura di un file di testo
+weight: 22
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why? (Cosa & Perché?)
 Leggere un file di testo in Rust significa prendere una sequenza di caratteri da un file e usarli nel programma. Lo facciamo principalmente per elaborare dati, configurazioni e per l'input/output di applicazioni.

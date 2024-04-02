@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "YAML, un linguaggio di serializzazione dati progettato per essere amichevole\
   \ per l'utente, \xE8 spesso utilizzato per file di configurazione, messaggistica\u2026"
 title: Lavorare con YAML
+weight: 41
 ---
-
-{{< edit_this_page >}}
 
 ## Cosa e Perché?
 YAML, un linguaggio di serializzazione dati progettato per essere amichevole per l'utente, è spesso utilizzato per file di configurazione, messaggistica tra processi e memorizzazione dati. I programmatori si affidano a YAML per la sua leggibilità e facilità d'uso, specialmente quando si tratta di dati strutturati complessi, rendendolo una scelta eccellente per applicazioni sviluppate in TypeScript.

@@ -22,9 +22,8 @@ summary: "Text search \u0914\u0930 replace \u0915\u093E \u092E\u0924\u0932\u092C
   \u2026"
 title: "\u092A\u093E\u0920 \u0916\u094B\u091C\u0928\u093E \u0914\u0930 \u092C\u0926\
   \u0932\u0928\u093E"
+weight: 10
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why? (क्या और क्यों?)
 

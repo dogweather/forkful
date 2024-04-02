@@ -9,9 +9,8 @@ summary: "La refactorizaci\xF3n es el proceso de ajustar tu c\xF3digo sin cambia
   \ su comportamiento externo. Se trata de limpiar y organizar tu acto para hacer\
   \ el c\xF3digo\u2026"
 title: "Refactorizaci\xF3n"
+weight: 19
 ---
-
-{{< edit_this_page >}}
 
 ## ¿Qué & Por qué?
 La refactorización es el proceso de ajustar tu código sin cambiar su comportamiento externo. Se trata de limpiar y organizar tu acto para hacer el código más fácil de leer, mantener y extender. También puede ayudar a aplastar errores y mejorar el rendimiento.

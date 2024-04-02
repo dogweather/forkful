@@ -9,9 +9,8 @@ summary: "Vi pratar om `debug output` \u2013 textmeddelanden som hj\xE4lper utve
   \ att fels\xF6ka kod. Varf\xF6r? F\xF6r att sp\xE5ra vad koden g\xF6r och hitta\
   \ buggarna snabbt."
 title: "Skriva ut fels\xF6kningsdata"
+weight: 33
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 Vi pratar om `debug output` – textmeddelanden som hjälper utvecklare att felsöka kod. Varför? För att spåra vad koden gör och hitta buggarna snabbt.

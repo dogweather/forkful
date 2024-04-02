@@ -10,9 +10,8 @@ model: gpt-4-0125-preview
 summary: "Escribir en el error est\xE1ndar (stderr) en PowerShell implica enviar mensajes\
   \ de error o diagn\xF3sticos directamente al flujo de stderr, distinto del flujo\u2026"
 title: "Escribiendo en el error est\xE1ndar"
+weight: 25
 ---
-
-{{< edit_this_page >}}
 
 ## Qué y Por Qué?
 

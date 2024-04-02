@@ -15,9 +15,8 @@ summary: "L\xE0m tr\xF2n s\u1ED1 c\xF3 ngh\u0129a l\xE0 \u0111i\u1EC1u ch\u1EC9n
   p tr\xECnh vi\xEAn th\u1EF1c hi\u1EC7n vi\u1EC7c n\xE0y \u0111\u1EC3 c\u1EA3i thi\u1EC7\
   n\u2026"
 title: "L\xE0m tr\xF2n s\u1ED1"
+weight: 13
 ---
-
-{{< edit_this_page >}}
 
 ## Cái gì & Tại sao?
 

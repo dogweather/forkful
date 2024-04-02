@@ -7,9 +7,8 @@ model: gpt-4-0125-preview
 summary: "Writing a text file in PHP involves creating or opening a file and inserting\
   \ content into it. Programmers do this to persist data, like user-generated\u2026"
 title: Writing a text file
+weight: 24
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 Writing a text file in PHP involves creating or opening a file and inserting content into it. Programmers do this to persist data, like user-generated content or logs, beyond the lifecycle of the program.

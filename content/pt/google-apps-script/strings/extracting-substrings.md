@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "A extra\xE7\xE3o de substrings envolve pegar uma por\xE7\xE3o de uma string\
   \ - essencialmente, criar uma nova string a partir de uma parte de uma existente.\u2026"
 title: Extraindo substrings
+weight: 6
 ---
-
-{{< edit_this_page >}}
 
 ## O que & Por quê?
 

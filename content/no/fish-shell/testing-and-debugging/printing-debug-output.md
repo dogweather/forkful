@@ -9,9 +9,8 @@ summary: "Debugging-utskrifter er info vi skriver ut for \xE5 forst\xE5 hva kode
   \ v\xE5r egentlig gj\xF8r. Programmerere bruker dette for \xE5 finne bugs eller\
   \ forst\xE5 flyten\u2026"
 title: "Skrive ut feils\xF8kingsdata"
+weight: 33
 ---
-
-{{< edit_this_page >}}
 
 ## Hva & Hvorfor?
 Debugging-utskrifter er info vi skriver ut for å forstå hva koden vår egentlig gjør. Programmerere bruker dette for å finne bugs eller forstå flyten bedre, spesielt når ting ikke fungerer som de skal.

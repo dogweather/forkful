@@ -1,13 +1,15 @@
 ---
 date: 2024-01-26 03:48:51.660544-07:00
-description: "Depurar no Elm envolve identificar e remover erros do seu c\xF3digo.\
-  \ Programadores fazem isso para garantir que suas aplica\xE7\xF5es funcionem corretamente\
-  \ e para\u2026"
+description: "O Elm n\xE3o possui um depurador integrado no sentido tradicional, como,\
+  \ por exemplo, o JavaScript tem com as ferramentas de desenvolvedor do navegador.\
+  \ No\u2026"
 lastmod: '2024-03-13T22:44:46.504724-06:00'
 model: gpt-4-0125-preview
-summary: "Depurar no Elm envolve identificar e remover erros do seu c\xF3digo. Programadores\
-  \ fazem isso para garantir que suas aplica\xE7\xF5es funcionem corretamente e para\u2026"
+summary: "O Elm n\xE3o possui um depurador integrado no sentido tradicional, como,\
+  \ por exemplo, o JavaScript tem com as ferramentas de desenvolvedor do navegador.\
+  \ No\u2026"
 title: Usando um depurador
+weight: 35
 ---
 
 ## Como fazer:

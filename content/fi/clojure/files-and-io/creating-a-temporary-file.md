@@ -9,9 +9,8 @@ summary: "Luodaan v\xE4liaikainen tiedosto varastoimaan dataa, jota ei tarvita p
   sti. K\xE4ytet\xE4\xE4n v\xE4liaikaisia tiedostoja s\xE4ilytt\xE4m\xE4\xE4n ohjelman\
   \ suorituksen aikana\u2026"
 title: "V\xE4liaikaistiedoston luominen"
+weight: 21
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why? - Mikä & Miksi?
 Luodaan väliaikainen tiedosto varastoimaan dataa, jota ei tarvita pysyvästi. Käytetään väliaikaisia tiedostoja säilyttämään ohjelman suorituksen aikana syntyvää dataa ilman, että sekoitamme pysyvään tallennustilaan.

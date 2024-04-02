@@ -9,9 +9,8 @@ summary: "Refaktoryzacja to proces restrukturyzowania istniej\u0105cego kodu kom
   \ - zmiana faktoringu - bez zmiany jego zewn\u0119trznego zachowania. Programi\u015B\
   ci\u2026"
 title: Refaktoryzacja
+weight: 19
 ---
-
-{{< edit_this_page >}}
 
 ## Co i dlaczego?
 

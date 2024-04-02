@@ -9,9 +9,8 @@ summary: "Tworzenie tymczasowych plik\xF3w to proces generowania plik\xF3w, kt\x
   re istniej\u0105 tylko przez kr\xF3tki czas, zazwyczaj do przechowania danych mi\u0119\
   dzyoperacyjnych.\u2026"
 title: Tworzenie pliku tymczasowego
+weight: 21
 ---
-
-{{< edit_this_page >}}
 
 ## Co i Dlaczego?
 Tworzenie tymczasowych plików to proces generowania plików, które istnieją tylko przez krótki czas, zazwyczaj do przechowania danych międzyoperacyjnych. Programiści robią to, żeby bezpiecznie i efemerycznie manipulować danymi bez ryzyka konfliktu lub niepożądanego wpływu na stały system plików.

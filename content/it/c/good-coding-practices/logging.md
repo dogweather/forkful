@@ -10,9 +10,8 @@ model: gpt-4-0125-preview
 summary: "Il logging in C comporta la registrazione del flusso e degli eventi notevoli\
   \ di un programma durante il suo runtime, fornendo una revisione tangibile del\u2026"
 title: Registro degli Eventi
+weight: 17
 ---
-
-{{< edit_this_page >}}
 
 ## Cosa & Perché?
 

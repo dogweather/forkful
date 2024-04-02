@@ -7,9 +7,8 @@ model: gpt-4-1106-preview
 summary: "Nel contesto della programmazione, il logging \xE8 il processo di registrazione\
   \ di eventi, stati e informazioni in un file o in un altro mezzo di output. I\u2026"
 title: Registrazione Eventi (Logging)
+weight: 17
 ---
-
-{{< edit_this_page >}}
 
 ## Cosa e Perché?
 Nel contesto della programmazione, il logging è il processo di registrazione di eventi, stati e informazioni in un file o in un altro mezzo di output. I programmatori effettuano il logging per tenere traccia di ciò che sta succedendo nelle loro applicazioni, per debuggare problemi e per monitorare le prestazioni in vista di future analisi e ottimizzazioni.

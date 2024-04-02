@@ -7,9 +7,8 @@ model: gpt-4-1106-preview
 summary: "Dateien zu lesen bedeutet, den Inhalt von Textdateien zu erfassen und zu\
   \ verarbeiten. Programmierer machen das, um Daten zu analysieren, Konfigurationen\u2026"
 title: Textdatei einlesen
+weight: 22
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why? (Was und Warum?)
 Dateien zu lesen bedeutet, den Inhalt von Textdateien zu erfassen und zu verarbeiten. Programmierer machen das, um Daten zu analysieren, Konfigurationen zu laden oder Software Outputs zu verarbeiten.

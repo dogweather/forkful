@@ -14,9 +14,8 @@ summary: "Vi\u1EC7c t\u1EA1o s\u1ED1 ng\u1EABu nhi\xEAn trong JavaScript l\xE0 m
   o s\u1EF1 kh\xF4ng d\u1EF1 \u0111o\xE1n tr\u01B0\u1EDBc trong c\xE1c \u1EE9ng d\u1EE5\
   ng, t\u1EEB c\xE1c tr\xF2 ch\u01A1i c\u1EA7n h\xE0nh vi \u0111\u1ED1i th\u1EE7\u2026"
 title: "Sinh s\u1ED1 ng\u1EABu nhi\xEAn"
+weight: 12
 ---
-
-{{< edit_this_page >}}
 
 ## Gì và Tại sao?
 

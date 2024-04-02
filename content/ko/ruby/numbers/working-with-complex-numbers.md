@@ -17,9 +17,8 @@ summary: "\uBCF5\uC18C\uC218\uB294 \uC2E4\uC218\uBD80\uC640 \uD5C8\uC218\uBD80(\
   \ \uC54A\uB294 \uBC29\uC815\uC2DD\uC744 \uD478\uB294 \uB370 \uC774\uB97C \uD65C\uC6A9\
   \uD569\uB2C8\uB2E4."
 title: "\uBCF5\uC18C\uC218 \uB2E4\uB8E8\uAE30"
+weight: 14
 ---
-
-{{< edit_this_page >}}
 
 ## 무엇 & 왜?
 복소수는 실수부와 허수부(예: 3+4i)로 구성되며, 엔지니어링과 물리학에서 주요하게 사용됩니다. 프로그래머들은 시뮬레이션, 신호 처리, 실수만으로는 해결되지 않는 방정식을 푸는 데 이를 활용합니다.

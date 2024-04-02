@@ -11,9 +11,8 @@ summary: "S\xE4\xE4nn\xF6lliset lausekkeet (regex) Visual Basic for Applications
   \ (VBA) tarjoavat voimakkaan tavan etsi\xE4, vastata ja manipuloida merkkijonoja.\
   \ Ohjelmoijat\u2026"
 title: "S\xE4\xE4nn\xF6llisten lausekkeiden k\xE4ytt\xF6"
+weight: 11
 ---
-
-{{< edit_this_page >}}
 
 ## Mikä & Miksi?
 

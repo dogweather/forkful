@@ -10,9 +10,8 @@ model: gpt-4-0125-preview
 summary: "Een toekomstige of verleden datum berekenen gaat over het aanpassen van\
   \ een huidige datum om te zien welke dag het zal zijn, bijvoorbeeld over 10 dagen,\u2026"
 title: Een datum in de toekomst of het verleden berekenen
+weight: 26
 ---
-
-{{< edit_this_page >}}
 
 ## Wat & Waarom?
 

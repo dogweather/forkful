@@ -15,9 +15,8 @@ summary: "\u4EA4\u4E92\u5F0Fshell\uFF0C\u6216\u79F0\u4E3AREPL\uFF08\u8BFB\u53D6-
   \u53EF\u4EE5\u6D4B\u8BD5\u4EE3\u7801\u7247\u6BB5\u800C\u65E0\u9700\u521B\u5EFA\u5B8C\
   \u6574\u811A\u672C\u7684\u5F00\u9500\u3002"
 title: "\u5728\u7F16\u7A0B\u4E2D\u4F7F\u7528\u4EA4\u4E92\u5F0FShell\uFF08REPL\uFF09"
+weight: 34
 ---
-
-{{< edit_this_page >}}
 
 ## 什么 & 为什么？
 交互式shell，或称为REPL（读取-求值-打印循环），允许您即时编写和运行PHP代码。这对于实验、调试或学习来说是理想的，因为您可以测试代码片段而无需创建完整脚本的开销。

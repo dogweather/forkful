@@ -10,9 +10,8 @@ model: gpt-4-0125-preview
 summary: "Escribir en el error est\xE1ndar (stderr) en Ruby trata sobre dirigir mensajes\
   \ de error o diagn\xF3sticos a un flujo de salida separado, distinto de la salida\u2026"
 title: "Escribiendo en el error est\xE1ndar"
+weight: 25
 ---
-
-{{< edit_this_page >}}
 
 ## Qué y por qué?
 Escribir en el error estándar (stderr) en Ruby trata sobre dirigir mensajes de error o diagnósticos a un flujo de salida separado, distinto de la salida estándar (stdout). Los programadores hacen esto para diferenciar la salida regular del programa de los errores y la información de depuración, facilitando así el diagnóstico de problemas y el análisis de registros.

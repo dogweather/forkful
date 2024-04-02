@@ -9,9 +9,8 @@ summary: "Lokit ovat k\xE4yt\xE4nn\xF6ss\xE4 murupolkuja koodisi l\xE4pi - ne ke
   \ mit\xE4 skriptillesi tapahtuu, kun se on \"villiss\xE4 luonnossa\" suorituksessa.\
   \ Ohjelmoijat\u2026"
 title: Lokitus
+weight: 17
 ---
-
-{{< edit_this_page >}}
 
 ## Mikä ja miksi?
 Lokit ovat käytännössä murupolkuja koodisi läpi - ne kertovat, mitä skriptillesi tapahtuu, kun se on "villissä luonnossa" suorituksessa. Ohjelmoijat lokittavat vianetsintää, sovelluskäyttäytymisen seuraamista, suorituskyvyn monitorointia ja mahdollisten ongelmien tarkkailua varten.

@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Scrivere sull'errore standard (stderr) in Dart consiste nell'inviare messaggi\
   \ di errore e diagnostica a un flusso separato, distinto dall'output standard\u2026"
 title: Scrittura su errore standard
+weight: 25
 ---
-
-{{< edit_this_page >}}
 
 ## Cosa & Perché?
 

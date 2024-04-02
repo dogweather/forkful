@@ -11,9 +11,8 @@ summary: "I Java l\xE5ter associativa arrayer, eller map, dig lagra nyckel-v\xE4
   \ f\xF6r effektiv datauppslagning och manipulation. Programmerare anv\xE4nder dem\
   \ f\xF6r\u2026"
 title: "Att anv\xE4nda associativa arrayer"
+weight: 15
 ---
-
-{{< edit_this_page >}}
 
 ## Vad & Varför?
 

@@ -10,9 +10,8 @@ model: gpt-4-0125-preview
 summary: "\xC5 jobbe med CSV-filer (Comma-Separated Values) i Google Apps Script inneb\xE6\
   rer \xE5 lese, endre og skrive rene tekstfiler der hver linje representerer en\u2026"
 title: Arbeide med CSV
+weight: 37
 ---
-
-{{< edit_this_page >}}
 
 ## Hva & Hvorfor?
 

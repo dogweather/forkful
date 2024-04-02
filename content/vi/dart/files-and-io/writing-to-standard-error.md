@@ -13,9 +13,8 @@ summary: "Vi\u1EBFt v\xE0o l\u1ED7i chu\u1EA9n (stderr) trong Dart l\xE0 v\u1EC1
   n m\u1ED9t lu\u1ED3ng ri\xEAng bi\u1EC7t, kh\xE1c bi\u1EC7t so v\u1EDBi \u0111\u1EA7\
   u ra chu\u1EA9n (stdout). C\xE1c\u2026"
 title: "Ghi v\xE0o l\u1ED7i chu\u1EA9n"
+weight: 25
 ---
-
-{{< edit_this_page >}}
 
 ## Gì và Tại sao?
 

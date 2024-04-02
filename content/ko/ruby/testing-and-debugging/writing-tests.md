@@ -23,9 +23,8 @@ summary: "Ruby\uC5D0\uC11C \uD14C\uC2A4\uD305\uC740 \uB2E4\uC591\uD55C \uC870\uA
   \uB2A5\uD55C \uC560\uD50C\uB9AC\uCF00\uC774\uC158\uC744 \uBAA9\uD45C\uB85C \uD569\
   \uB2C8\uB2E4."
 title: "\uD14C\uC2A4\uD2B8 \uC791\uC131\uD558\uAE30"
+weight: 36
 ---
-
-{{< edit_this_page >}}
 
 ## 무엇 & 왜?
 Ruby에서 테스팅은 다양한 조건하에 코드가 예상대로 작동하는지를 검증하는 것입니다. 프로그래머는 정확성을 보장하고, 회귀를 방지하며, 리팩토링을 용이하게 하기 위해 테스트를 작성합니다. 이는 견고하고 유지보수가 가능한 애플리케이션을 목표로 합니다.

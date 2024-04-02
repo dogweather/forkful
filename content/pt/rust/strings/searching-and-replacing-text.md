@@ -7,9 +7,8 @@ model: gpt-4-1106-preview
 summary: "Substituir texto numa string \xE9 como trocar pe\xE7as de roupa; voc\xEA\
   \ pega uma palavra ou frase e troca por outra. Programadores fazem isso para atualizar\u2026"
 title: Pesquisando e substituindo texto
+weight: 10
 ---
-
-{{< edit_this_page >}}
 
 ## O Que & Porquê?
 

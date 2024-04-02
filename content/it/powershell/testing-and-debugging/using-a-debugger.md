@@ -1,12 +1,15 @@
 ---
 date: 2024-01-26 03:50:50.886434-07:00
-description: "Usare un debugger significa impostare dei breakpoint, eseguire passo\
-  \ dopo passo il proprio codice, osservare le variabili e ispezionare lo stato del\u2026"
+description: "In PowerShell, \xE8 possibile eseguire il debug degli script utilizzando\
+  \ l'ambiente di scripting integrato di PowerShell (ISE) integrato o Visual Studio\
+  \ Code\u2026"
 lastmod: '2024-03-13T22:44:43.647082-06:00'
 model: gpt-4-0125-preview
-summary: "Usare un debugger significa impostare dei breakpoint, eseguire passo dopo\
-  \ passo il proprio codice, osservare le variabili e ispezionare lo stato del\u2026"
+summary: "In PowerShell, \xE8 possibile eseguire il debug degli script utilizzando\
+  \ l'ambiente di scripting integrato di PowerShell (ISE) integrato o Visual Studio\
+  \ Code\u2026"
 title: Utilizzo di un debugger
+weight: 35
 ---
 
 ## Come fare:

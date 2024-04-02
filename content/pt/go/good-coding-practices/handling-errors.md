@@ -11,9 +11,8 @@ summary: "Tratar erros em Go envolve reconhecer e responder \xE0s condi\xE7\xF5e
   \ de erro no seu programa. Os programadores se envolvem no tratamento de erros para\
   \ garantir\u2026"
 title: Gerenciando erros
+weight: 16
 ---
-
-{{< edit_this_page >}}
 
 ## O Que & Por Que?
 

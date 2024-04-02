@@ -12,9 +12,8 @@ summary: "\u5B57\u7B26\u4E32\u63D2\u503C\u662FSwift\u7F16\u7A0B\u4E2D\u5C06\u53D
   \u5B57\u7B26\u4E32\u4E2D\u7684\u8FC7\u7A0B\u3002\u7A0B\u5E8F\u5458\u8FD9\u6837\u505A\
   \u662F\u4E3A\u4E86\u65B9\u4FBF\u5730\u6784\u9020\u5B57\u7B26\u4E32\u3002"
 title: "\u5B57\u7B26\u4E32\u63D2\u503C"
+weight: 8
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why? (是什么以及为什么？)
 字符串插值是Swift编程中将变量、常量、字面量或表达式插入到字符串中的过程。程序员这样做是为了方便地构造字符串。

@@ -22,9 +22,8 @@ summary: "TOML \u0E22\u0E48\u0E2D\u0E21\u0E32\u0E08\u0E32\u0E01 Tom's Obvious, M
   \u0E33\u0E2B\u0E23\u0E31\u0E1A\u0E44\u0E1F\u0E25\u0E4C\u2026"
 title: "\u0E01\u0E32\u0E23\u0E17\u0E33\u0E07\u0E32\u0E19\u0E23\u0E48\u0E27\u0E21\u0E01\
   \u0E31\u0E1A TOML"
+weight: 39
 ---
-
-{{< edit_this_page >}}
 
 ## อะไรและทำไม?
 TOML ย่อมาจาก Tom's Obvious, Minimal Language เป็นรูปแบบข้อมูลที่คล้ายกับ JSON หรือ YAML แต่อ่านง่ายสำหรับมนุษย์มากกว่า โปรแกรมเมอร์ใช้มันสำหรับไฟล์ config เพราะมันตรงไปตรงมาและแปลงเป็นโครงสร้างข้อมูลได้ดี

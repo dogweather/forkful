@@ -9,9 +9,8 @@ summary: "Konwersja daty na ci\u0105g znak\xF3w (string) to proces przekszta\u01
   cenia formatu daty na tekst, kt\xF3ry \u0142atwo przeczytamy lub wy\u015Bwietlimy.\
   \ Programi\u015Bci robi\u0105 to, by\u2026"
 title: "Konwersja daty na \u0142a\u0144cuch znak\xF3w"
+weight: 28
 ---
-
-{{< edit_this_page >}}
 
 ## Co & Dlaczego?
 Konwersja daty na ciąg znaków (string) to proces przekształcenia formatu daty na tekst, który łatwo przeczytamy lub wyświetlimy. Programiści robią to, by data była zrozumiała dla użytkowników i mogła być zapisana w logach lub dokumentach.

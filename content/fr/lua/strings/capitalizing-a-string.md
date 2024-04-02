@@ -11,9 +11,8 @@ summary: "Mettre en majuscule une cha\xEEne de caract\xE8res consiste \xE0 modif
   \ le premier caract\xE8re de chaque mot d'une phrase pour le mettre en majuscule,\
   \ tout en\u2026"
 title: "Mettre en majuscule une cha\xEEne"
+weight: 2
 ---
-
-{{< edit_this_page >}}
 
 ## Quoi et pourquoi ?
 Mettre en majuscule une chaîne de caractères consiste à modifier le premier caractère de chaque mot d'une phrase pour le mettre en majuscule, tout en s'assurant que les autres restent en minuscule. Cette technique est couramment utilisée pour formater le texte afin d'obtenir un rendu plus professionnel ou lisible, comme pour préparer des titres ou des saisies d'utilisateur pour l'affichage.

@@ -7,9 +7,8 @@ model: gpt-4-0125-preview
 summary: "Mit XML zu arbeiten bedeutet, XML-Inhalte mit Code zu parsen, zu manipulieren\
   \ und zu erzeugen. Programmierer tun dies, weil XML aufgrund seiner\u2026"
 title: Arbeiten mit XML
+weight: 40
 ---
-
-{{< edit_this_page >}}
 
 ## Was & Warum?
 Mit XML zu arbeiten bedeutet, XML-Inhalte mit Code zu parsen, zu manipulieren und zu erzeugen. Programmierer tun dies, weil XML aufgrund seiner menschenlesbaren und maschineninterpretierbaren Natur weit verbreitet für Konfigurationsdateien, Datenaustausch und Webdienste verwendet wird.

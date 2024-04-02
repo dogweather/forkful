@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Calculer une date dans le futur ou le pass\xE9 consiste \xE0 manipuler des\
   \ objets date pour trouver des dates au-del\xE0 ou avant la date actuelle, respectivement.\u2026"
 title: "Calculer une date dans le futur ou le pass\xE9"
+weight: 26
 ---
-
-{{< edit_this_page >}}
 
 ## Quoi & Pourquoi ?
 

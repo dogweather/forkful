@@ -11,9 +11,8 @@ summary: "\xC5 hente den gjeldende datoen i Rust er en vanlig oppgave for oppgav
   \ som logging, tidsbaserte operasjoner, eller rett og slett for \xE5 vise datoen.\
   \ I\u2026"
 title: "F\xE5 dagens dato"
+weight: 29
 ---
-
-{{< edit_this_page >}}
 
 ## Hva & Hvorfor?
 

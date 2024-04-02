@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Lavorare con CSV (Comma-Separated Values, ovvero valori separati da virgola)\
   \ comporta la lettura e la scrittura di dati su file CSV, un formato popolare\u2026"
 title: Lavorare con i CSV
+weight: 37
 ---
-
-{{< edit_this_page >}}
 
 ## Cosa & Perché?
 

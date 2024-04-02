@@ -11,9 +11,8 @@ summary: "Wyra\u017Cenia regularne (regex) to sekwencje znak\xF3w formuj\u0105ce
   \ wyszukiwania, g\u0142\xF3wnie u\u017Cywane do wyszukiwania ci\u0105g\xF3w znak\xF3\
   w i ich manipulacji.\u2026"
 title: "Korzystanie z wyra\u017Ce\u0144 regularnych"
+weight: 11
 ---
-
-{{< edit_this_page >}}
 
 ## Co i dlaczego?
 

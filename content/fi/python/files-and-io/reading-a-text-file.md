@@ -9,9 +9,8 @@ summary: "Lukeminen tarkoittaa tiedoston datan siirt\xE4mist\xE4 ohjelmasi k\xE4
   \xF6n. Ohjelmoijat lukevat tekstitiedostoja, koska niist\xE4 saa t\xE4rke\xE4\xE4\
   \ tietoa \u2013 asetukset,\u2026"
 title: Tekstitiedoston lukeminen
+weight: 22
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why? (Mitä & Miksi?)
 Lukeminen tarkoittaa tiedoston datan siirtämistä ohjelmasi käyttöön. Ohjelmoijat lukevat tekstitiedostoja, koska niistä saa tärkeää tietoa – asetukset, dataa, ohjeita.

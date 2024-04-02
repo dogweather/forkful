@@ -9,9 +9,8 @@ summary: "Wysy\u0142anie zapytania HTTP pozwala naszej aplikacji porozumiewa\u01
   \ si\u0119 z serwerem, wymieniaj\u0105c dane. Programi\u015Bci robi\u0105 to, by\
   \ pobra\u0107, stworzy\u0107, aktualizowa\u0107\u2026"
 title: "Wysy\u0142anie \u017C\u0105dania HTTP"
+weight: 44
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why? (Co i Dlaczego?)
 Wysyłanie zapytania HTTP pozwala naszej aplikacji porozumiewać się z serwerem, wymieniając dane. Programiści robią to, by pobrać, stworzyć, aktualizować lub usunąć zasoby - kluczowe operacje w aplikacjach internetowych.

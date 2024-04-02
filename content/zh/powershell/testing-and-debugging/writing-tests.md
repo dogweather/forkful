@@ -19,9 +19,8 @@ summary: "\u7528 PowerShell \u7F16\u5199\u6D4B\u8BD5\u5305\u62EC\u521B\u5EFA\u81
   \u4EE3\u7801\u4FEE\u6539\u4E0D\u4F1A\u65E0\u610F\u4E2D\u7834\u574F\u73B0\u6709\u529F\
   \u80FD\u3002"
 title: "\u7F16\u5199\u6D4B\u8BD5"
+weight: 36
 ---
-
-{{< edit_this_page >}}
 
 ## 什么 & 为什么？
 

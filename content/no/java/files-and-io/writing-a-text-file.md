@@ -11,9 +11,8 @@ summary: "\xC5 skrive en tekstfil i Java handler om \xE5 bruke spr\xE5kets kapab
   \ for \xE5 opprette og skrive innhold i filer p\xE5 filsystemet. Programmerere gj\xF8\
   r dette av\u2026"
 title: Skrive en tekstfil
+weight: 24
 ---
-
-{{< edit_this_page >}}
 
 ## Hva og hvorfor?
 

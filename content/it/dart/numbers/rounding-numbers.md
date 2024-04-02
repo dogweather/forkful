@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Arrotondare i numeri \xE8 il processo di aggiustamento di un numero al suo\
   \ numero intero pi\xF9 vicino o a un numero specifico di decimali. Gli sviluppatori\u2026"
 title: Arrotondamento dei numeri
+weight: 13
 ---
-
-{{< edit_this_page >}}
 
 ## Cosa e perché?
 

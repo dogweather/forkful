@@ -11,9 +11,8 @@ summary: "\xC5 trekke ut delstrenger i C inneb\xE6rer \xE5 skape en mindre stren
   \ (delstreng) fra en st\xF8rre etter angitte kriterier, som posisjon og lengde.\
   \ Programmerere\u2026"
 title: Utdrag av delstrenger
+weight: 6
 ---
-
-{{< edit_this_page >}}
 
 ## Hva & hvorfor?
 

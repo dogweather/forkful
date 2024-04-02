@@ -9,9 +9,8 @@ summary: "Hacer logging es como mantener un diario para tu aplicaci\xF3n; es la 
   ctica de registrar eventos, errores y otros datos pertinentes durante la ejecuci\xF3\
   n.\u2026"
 title: Registro de Actividades
+weight: 17
 ---
-
-{{< edit_this_page >}}
 
 ## ¿Qué y por qué?
 

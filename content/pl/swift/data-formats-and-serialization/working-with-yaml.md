@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "YAML, co oznacza \"YAML Ain't Markup Language\", jest przyjaznym dla cz\u0142\
   owieka standardem serializacji danych dla wszystkich j\u0119zyk\xF3w programowania.\u2026"
 title: Praca z YAML
+weight: 41
 ---
-
-{{< edit_this_page >}}
 
 ## Co i dlaczego?
 YAML, co oznacza "YAML Ain't Markup Language", jest przyjaznym dla człowieka standardem serializacji danych dla wszystkich języków programowania. Programiści używają go do plików konfiguracyjnych, komunikacji międzyprocesowej i przechowywania danych, ponieważ jego czytelność jest znacznie bliższa zwykłemu językowi angielskiemu w porównaniu z innymi formatami danych, takimi jak XML czy JSON, co sprawia, że jest prostszy do zrozumienia i napisania.

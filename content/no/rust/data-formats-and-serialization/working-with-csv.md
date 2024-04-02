@@ -11,9 +11,8 @@ summary: "\xC5 jobbe med CSV (Comma-Separated Values) filer handler om \xE5 lese
   \ og skrive til rene tekstfiler som lagrer tabul\xE6re data. Programmerere gj\xF8\
   r dette for\u2026"
 title: Arbeide med CSV
+weight: 37
 ---
-
-{{< edit_this_page >}}
 
 ## Hva & Hvorfor?
 Å jobbe med CSV (Comma-Separated Values) filer handler om å lese fra og skrive til rene tekstfiler som lagrer tabulære data. Programmerere gjør dette for å muliggjøre datadeling mellom ulike programmer, systemer, eller for å behandle store datamengder på en effektiv, menneskelesbar måte.

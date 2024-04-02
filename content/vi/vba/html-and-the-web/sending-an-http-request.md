@@ -13,9 +13,8 @@ summary: "Vi\u1EC7c g\u1EEDi m\u1ED9t y\xEAu c\u1EA7u HTTP trong Visual Basic fo
   n web ho\u1EB7c d\u1ECBch v\u1EE5 web m\u1ED9t c\xE1ch l\u1EADp tr\xECnh b\u1EB1\
   ng\u2026"
 title: "G\u1EEDi y\xEAu c\u1EA7u HTTP"
+weight: 44
 ---
-
-{{< edit_this_page >}}
 
 ## Cái gì & Tại sao?
 

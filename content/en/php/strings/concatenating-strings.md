@@ -9,9 +9,8 @@ summary: "Concatenating strings is basically just stringing words together. Thin
   \ of it like making a train out of words instead of carriages. Programmers do it\
   \ to\u2026"
 title: Concatenating strings
+weight: 3
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 

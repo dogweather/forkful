@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Obtenir la date actuelle dans les projets Arduino consiste \xE0 obtenir\
   \ des informations en temps r\xE9el qui peuvent \xEAtre cruciales pour la journalisation,\u2026"
 title: Obtenir la date actuelle
+weight: 29
 ---
-
-{{< edit_this_page >}}
 
 ## Quoi & Pourquoi ?
 Obtenir la date actuelle dans les projets Arduino consiste à obtenir des informations en temps réel qui peuvent être cruciales pour la journalisation, l'horodatage ou la planification des tâches. Les programmeurs ont souvent besoin de cette capacité pour améliorer la fonctionnalité, garantir la pertinence des données et faciliter les opérations sensibles au temps dans leurs projets IoT et embarqués.

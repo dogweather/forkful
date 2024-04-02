@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "String interpolatie betreft het mengen van variabelen met tekst. Programmeurs\
   \ doen dit om strings on-the-fly te bouwen, waardoor de output dynamisch en\u2026"
 title: Een string interpoleren
+weight: 8
 ---
-
-{{< edit_this_page >}}
 
 ## Wat & Waarom?
 

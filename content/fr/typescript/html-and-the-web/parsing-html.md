@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Parser du HTML signifie fouiller dans le code HTML pour trouver, extraire\
   \ ou manipuler des informations. Les programmeurs le font pour interagir avec le\u2026"
 title: Analyse Syntaxique du HTML
+weight: 43
 ---
-
-{{< edit_this_page >}}
 
 ## Quoi et pourquoi ?
 

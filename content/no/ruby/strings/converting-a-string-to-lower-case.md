@@ -9,9 +9,8 @@ summary: "\xC5 endre en streng til sm\xE5 bokstaver i Ruby betyr \xE5 konvertere
   \ bokstavene i strengen til deres minuskul versjoner. Programmerere gj\xF8r dette\
   \ for \xE5\u2026"
 title: "Konvertere en streng til sm\xE5 bokstaver"
+weight: 4
 ---
-
-{{< edit_this_page >}}
 
 ## Hva & Hvorfor?
 Å endre en streng til små bokstaver i Ruby betyr å konvertere alle bokstavene i strengen til deres minuskul versjoner. Programmerere gjør dette for å standardisere tekstinput og lette sammenligninger uten å bekymre seg for store/små bokstaver.

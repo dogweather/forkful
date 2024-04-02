@@ -9,9 +9,8 @@ summary: "Converter uma data em uma string \xE9 o processo de transforma\xE7\xE3
   \ de uma estrutura de data/hora em texto leg\xEDvel. Programadores fazem isso para\
   \ exibir datas\u2026"
 title: Convertendo uma data em uma string
+weight: 28
 ---
-
-{{< edit_this_page >}}
 
 ## O Que & Porquê?
 

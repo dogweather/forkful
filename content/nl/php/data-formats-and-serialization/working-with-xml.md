@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "XML is een opmaaktaal die wordt gebruikt voor het opslaan en transporteren\
   \ van gegevens. Programmeurs werken met XML om interoperabiliteit tussen\u2026"
 title: Werken met XML
+weight: 40
 ---
-
-{{< edit_this_page >}}
 
 ## Wat & Waarom?
 XML is een opmaaktaal die wordt gebruikt voor het opslaan en transporteren van gegevens. Programmeurs werken met XML om interoperabiliteit tussen applicaties en systemen mogelijk te maken - denk aan gegevensuitwisseling en configuratie-instellingen.

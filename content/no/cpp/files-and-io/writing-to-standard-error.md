@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "\xC5 skrive til standard feil (`stderr`) i C++ inneb\xE6rer \xE5 utgi feilmeldinger\
   \ eller diagnostikk som er adskilt fra hovedprogrammets utdata. Programmerere\u2026"
 title: Skriving til standardfeil
+weight: 25
 ---
-
-{{< edit_this_page >}}
 
 ## Hva & Hvorfor?
 

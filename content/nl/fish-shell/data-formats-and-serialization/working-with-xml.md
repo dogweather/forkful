@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Werken met XML betekent het omgaan met gegevens in een alomtegenwoordig,\
   \ gestructureerd formaat dat wordt gebruikt in configuraties, berichtgeving en\u2026"
 title: Werken met XML
+weight: 40
 ---
-
-{{< edit_this_page >}}
 
 ## Wat & Waarom?
 Werken met XML betekent het omgaan met gegevens in een alomtegenwoordig, gestructureerd formaat dat wordt gebruikt in configuraties, berichtgeving en meer. Programmeurs manipuleren XML om gegevens te lezen, schrijven, bijwerken en op te vragen - essentieel voor interoperabiliteit in tal van apps en diensten.

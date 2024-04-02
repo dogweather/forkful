@@ -13,9 +13,8 @@ summary: "Vi\u1EC7c in \u1EA5n th\xF4ng tin debug gi\u1ED1ng nh\u01B0 chi\u1EBFc
   n ph\xE1t hi\u1EC7n l\u1ED7i b\u1EB1ng c\xE1ch cho ph\xE9p b\u1EA1n nh\xECn th\u1EA5\
   u nh\u1EEFng g\xEC m\xE3 l\u1EC7nh\u2026"
 title: "In ra th\xF4ng tin g\u1EE1 l\u1ED7i"
+weight: 33
 ---
-
-{{< edit_this_page >}}
 
 ## Những gì & Tại sao?
 Việc in ấn thông tin debug giống như chiếc đèn pin trong ngõ tối của mã lệnh; nó giúp bạn phát hiện lỗi bằng cách cho phép bạn nhìn thấu những gì mã lệnh của mình đang thực hiện tại thời gian chạy. Các lập trình viên làm điều này vì, chà, chúng ta là con người và mã lệnh của mình không luôn hoàn hảo ngay từ lần thử đầu tiên.

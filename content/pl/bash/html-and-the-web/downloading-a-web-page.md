@@ -9,9 +9,8 @@ summary: "Pobieranie stron internetowych to proces zapisywania zawarto\u015Bci s
   \ na swoim komputerze. Programi\u015Bci robi\u0105 to, by analizowa\u0107 struktur\u0119\
   \ strony, scraowa\u0107\u2026"
 title: Pobieranie strony internetowej
+weight: 42
 ---
-
-{{< edit_this_page >}}
 
 ## Co & Dlaczego?
 Pobieranie stron internetowych to proces zapisywania zawartości strony na swoim komputerze. Programiści robią to, by analizować strukturę strony, scraować dane lub testować aplikacje.

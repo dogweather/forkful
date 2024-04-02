@@ -16,9 +16,8 @@ summary: "\uBB38\uC790\uC5F4\uC744 \uC18C\uBB38\uC790\uB85C \uBCC0\uD658\uD55C\u
   \uAD50\uD558\uAC70\uB098 \uC815\uB82C\uD558\uB294 \uB4F1\uC758 \uC791\uC5C5 \uC2DC\
   \ \uC77C\uAD00\uC131\uC744 \uC9C0\uD0AC \uC218 \uC788\uC2B5\uB2C8\uB2E4."
 title: "\uBB38\uC790\uC5F4\uC744 \uC18C\uBB38\uC790\uB85C \uBCC0\uD658\uD558\uAE30"
+weight: 4
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why? (무엇과 왜?)
 문자열을 소문자로 변환한다는 것은, 예를 들어 'HELLO'를 'hello'로 바꾸는 것을 말합니다. 이를 통해 대소문자를 무시하고 데이터를 비교하거나 정렬하는 등의 작업 시 일관성을 지킬 수 있습니다.

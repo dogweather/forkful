@@ -9,9 +9,8 @@ summary: "Parsear HTML es el proceso de convertir el c\xF3digo HTML en algo que 
   \ programa pueda entender y manipular. Los programadores lo hacen para interactuar\
   \ con\u2026"
 title: "An\xE1lisis de HTML"
+weight: 43
 ---
-
-{{< edit_this_page >}}
 
 ## ¿Qué y Por Qué?
 Parsear HTML es el proceso de convertir el código HTML en algo que tu programa pueda entender y manipular. Los programadores lo hacen para interactuar con páginas web, extrayendo información o modificándola dinámicamente.

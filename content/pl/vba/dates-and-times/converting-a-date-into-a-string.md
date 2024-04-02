@@ -11,9 +11,8 @@ summary: "Konwersja daty na \u0142a\u0144cuch znak\xF3w w Visual Basic for Appli
   \ (VBA) to proces zmiany typu danych daty na format \u0142a\u0144cucha znak\xF3\
   w. Programi\u015Bci cz\u0119sto\u2026"
 title: "Konwersja daty na ci\u0105g znak\xF3w"
+weight: 28
 ---
-
-{{< edit_this_page >}}
 
 ## Co i dlaczego?
 

@@ -11,9 +11,8 @@ summary: "Logging Visual Basic for Applications (VBA) -ymp\xE4rist\xF6ss\xE4 tar
   \ ohjelman suoritusk\xE4ytt\xE4ytymisen tallentamista tiedostoon, konsoliin tai\
   \ tietokantaan.\u2026"
 title: Lokiointi
+weight: 17
 ---
-
-{{< edit_this_page >}}
 
 ## Mikä ja miksi?
 

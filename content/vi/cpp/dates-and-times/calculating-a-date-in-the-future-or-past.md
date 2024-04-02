@@ -13,9 +13,8 @@ summary: "T\xEDnh to\xE1n m\u1ED9t ng\xE0y trong t\u01B0\u01A1ng lai ho\u1EB7c q
   \ s\u1EBD l\xE0 sau ho\u1EB7c tr\u01B0\u1EDBc m\u1ED9t kho\u1EA3ng th\u1EDDi gian\
   \ nh\u1EA5t \u0111\u1ECBnh. N\xF3 h\u1EEFu \xEDch cho vi\u1EC7c\u2026"
 title: "T\xEDnh to\xE1n ng\xE0y trong t\u01B0\u01A1ng lai ho\u1EB7c qu\xE1 kh\u1EE9"
+weight: 26
 ---
-
-{{< edit_this_page >}}
 
 ## Cái gì & Tại sao?
 Tính toán một ngày trong tương lai hoặc quá khứ có nghĩa là xác định ngày nào đó sẽ là sau hoặc trước một khoảng thời gian nhất định. Nó hữu ích cho việc tạo nhắc nhở, thiết lập ngày hết hạn, lên lịch sự kiện, hoặc đơn giản là ghi chép xem đã qua bao nhiêu thời gian.

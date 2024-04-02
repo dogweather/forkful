@@ -10,9 +10,8 @@ model: gpt-4-0125-preview
 summary: "Felhantering i Google Apps Script handlar om att f\xF6rutse, f\xE5nga och\
   \ svara p\xE5 undantag eller fel som uppst\xE5r under skriptets k\xF6rning. Programmerare\u2026"
 title: Hantera fel
+weight: 16
 ---
-
-{{< edit_this_page >}}
 
 ## Vad & Varför?
 

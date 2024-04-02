@@ -18,9 +18,8 @@ summary: "\uC2A4\uD2B8\uB9C1\uC744 \uC18C\uBB38\uC790\uB85C \uBCC0\uD658\uD558\u
   \uB098 \uC815\uB9AC\uD560 \uB54C \uC774 \uBC29\uBC95\uC744 \uC0AC\uC6A9\uD569\uB2C8\
   \uB2E4."
 title: "\uBB38\uC790\uC5F4\uC744 \uC18C\uBB38\uC790\uB85C \uBCC0\uD658\uD558\uAE30"
+weight: 4
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why? (무엇과 왜?)
 스트링을 소문자로 변환하는 것은, 문자열 내의 모든 대문자를 해당하는 소문자로 바꾸는 과정입니다. 프로그래머들은 대소문자 구분 없이 데이터를 비교하거나 정리할 때 이 방법을 사용합니다.

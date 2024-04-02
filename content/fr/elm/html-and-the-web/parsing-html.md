@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Parser du HTML en Elm consiste \xE0 extraire des informations de documents\
   \ HTML. Les programmeurs le font pour interagir avec le contenu web ou les API qui\u2026"
 title: Analyse Syntaxique du HTML
+weight: 43
 ---
-
-{{< edit_this_page >}}
 
 ## Quoi & Pourquoi ?
 Parser du HTML en Elm consiste à extraire des informations de documents HTML. Les programmeurs le font pour interagir avec le contenu web ou les API qui retournent du HTML, permettant la création d'applications web plus interactives et dynamiques.

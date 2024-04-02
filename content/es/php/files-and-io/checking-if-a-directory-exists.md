@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Comprobar si un directorio existe es una tarea fundamental en la programaci\xF3\
   n PHP, ya que te permite verificar la presencia de un directorio antes de\u2026"
 title: Comprobando si un directorio existe
+weight: 20
 ---
-
-{{< edit_this_page >}}
 
 ## Qué y Por Qué?
 

@@ -7,9 +7,8 @@ model: gpt-4-0125-preview
 summary: "I numeri complessi estendono i numeri reali aggiungendo un'unit\xE0 immaginaria,\
   \ rappresentata come 'i', dove i^2 = -1. I programmatori li usano per\u2026"
 title: Lavorare con i numeri complessi
+weight: 14
 ---
-
-{{< edit_this_page >}}
 
 ## Cosa & Perché?
 I numeri complessi estendono i numeri reali aggiungendo un'unità immaginaria, rappresentata come 'i', dove i^2 = -1. I programmatori li usano per simulazioni, elaborazione di segnali e risoluzione di problemi matematici che richiedono di lavorare in due dimensioni.

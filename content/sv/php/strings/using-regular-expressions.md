@@ -11,9 +11,8 @@ summary: "Regulj\xE4ra uttryck (regex) i PHP \xE4r m\xF6nster som anv\xE4nds f\x
   r att matcha teckenkombinationer i str\xE4ngar, vilket m\xF6jligg\xF6r avancerade\
   \ s\xF6k-och-ers\xE4tt-\u2026"
 title: "Att anv\xE4nda regulj\xE4ra uttryck"
+weight: 11
 ---
-
-{{< edit_this_page >}}
 
 ## Vad & Varför?
 

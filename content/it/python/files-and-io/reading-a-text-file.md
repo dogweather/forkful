@@ -7,9 +7,8 @@ model: gpt-4-1106-preview
 summary: "Leggere un file di testo in Python significa accedere al suo contenuto per\
   \ usarlo nel programma. I programmatori lo fanno per ottener dati, configurazioni\u2026"
 title: Lettura di un file di testo
+weight: 22
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why? (Cosa e Perché?)
 Leggere un file di testo in Python significa accedere al suo contenuto per usarlo nel programma. I programmatori lo fanno per ottener dati, configurazioni o per processare informazioni salvate in file.

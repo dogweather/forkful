@@ -9,9 +9,8 @@ summary: "Generowanie losowych liczb w TypeScript polega na tworzeniu nieprzewid
   \ warto\u015Bci numerycznych w okre\u015Blonym zakresie. Programi\u015Bci wykorzystuj\u0105\
   \ te\u2026"
 title: Generowanie liczb losowych
+weight: 12
 ---
-
-{{< edit_this_page >}}
 
 ## Co i dlaczego?
 

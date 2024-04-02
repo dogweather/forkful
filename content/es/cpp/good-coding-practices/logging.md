@@ -9,9 +9,8 @@ summary: "El registro (logging) en el contexto de la programaci\xF3n es el proce
   \ de grabar eventos, estados e informaci\xF3n en un archivo u otro medio de salida.\
   \ Los\u2026"
 title: "Registro de Actividades en Programaci\xF3n"
+weight: 17
 ---
-
-{{< edit_this_page >}}
 
 ## ¿Qué y por qué?
 El registro (logging) en el contexto de la programación es el proceso de grabar eventos, estados e información en un archivo u otro medio de salida. Los programadores realizan registros para seguir la pista de lo que está sucediendo en sus aplicaciones, para depurar problemas y para monitorear el rendimiento para análisis y optimización futuros.

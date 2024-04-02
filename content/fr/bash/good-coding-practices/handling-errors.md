@@ -9,9 +9,8 @@ summary: "G\xE9rer les erreurs dans les scripts Bash, c'est pr\xE9voir o\xF9 les
   \ pourraient mal tourner et y faire face avec \xE9l\xE9gance. Pourquoi ? Et bien,\
   \ cela assure\u2026"
 title: Gestion des erreurs
+weight: 16
 ---
-
-{{< edit_this_page >}}
 
 ## Quoi & Pourquoi ?
 

@@ -9,9 +9,8 @@ summary: "Por\xF3wnywanie dw\xF3ch dat pozwala zrozumie\u0107, kt\xF3ra z nich w
   pi\u0142a wcze\u015Bniej, czy s\u0105 identyczne, albo ile czasu min\u0119\u0142\
   o mi\u0119dzy nimi. Programi\u015Bci robi\u0105 to do\u2026"
 title: "Por\xF3wnywanie dw\xF3ch dat"
+weight: 27
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why? - Co i dlaczego?
 

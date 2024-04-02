@@ -11,9 +11,8 @@ summary: "Organizar el c\xF3digo en funciones en C implica descomponer tareas co
   \ en bloques de c\xF3digo m\xE1s peque\xF1os y reutilizables. Esta pr\xE1ctica mejora\
   \ la\u2026"
 title: "Organizando c\xF3digo en funciones"
+weight: 18
 ---
-
-{{< edit_this_page >}}
 
 ## Qué y Por Qué?
 

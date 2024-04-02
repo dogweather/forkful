@@ -11,9 +11,8 @@ summary: "Tablice asocjacyjne, znane w Swift jako s\u0142owniki, pozwalaj\u0105 
   \ i zarz\u0105dza\u0107 danymi w postaci par klucz-warto\u015B\u0107. Programi\u015B\
   ci u\u017Cywaj\u0105 ich do\u2026"
 title: Korzystanie z tablic asocjacyjnych
+weight: 15
 ---
-
-{{< edit_this_page >}}
 
 ## Co i dlaczego?
 

@@ -11,9 +11,8 @@ summary: "Verificar se um diret\xF3rio existe \xE9 uma opera\xE7\xE3o fundamenta
   \ em muitas tarefas de programa\xE7\xE3o, permitindo a\xE7\xF5es condicionais com\
   \ base na presen\xE7a ou\u2026"
 title: "Verificando se um diret\xF3rio existe"
+weight: 20
 ---
-
-{{< edit_this_page >}}
 
 ## O Que & Por Que?
 Verificar se um diretório existe é uma operação fundamental em muitas tarefas de programação, permitindo ações condicionais com base na presença ou ausência de estruturas de diretório. É crucial para a manipulação de arquivos, scripts automatizados e durante a configuração inicial de software para garantir que os diretórios necessários estejam no lugar, ou para evitar a duplicação de diretórios.

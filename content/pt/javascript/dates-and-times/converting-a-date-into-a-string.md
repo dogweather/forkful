@@ -8,9 +8,8 @@ model: gpt-4-1106-preview
 summary: "Converter uma data em uma string significa transformar um objeto de data\
   \ em uma sequ\xEAncia de caracteres leg\xEDveis. Programadores fazem isso para formatar\u2026"
 title: Convertendo uma data em uma string
+weight: 28
 ---
-
-{{< edit_this_page >}}
 
 ## O Que & Porquê?
 Converter uma data em uma string significa transformar um objeto de data em uma sequência de caracteres legíveis. Programadores fazem isso para formatar datas de modo a serem apresentadas aos usuários ou para interagir com APIs e bancos de dados que exigem datas em formato de texto.

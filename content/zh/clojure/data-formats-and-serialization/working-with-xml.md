@@ -13,9 +13,8 @@ summary: "XML \u662F\u4E00\u79CD\u6807\u8BB0\u8BED\u8A00\uFF0C\u7528\u6765\u4EE5
   \u6362\u4E2D\u81F3\u5173\u91CD\u8981\uFF0C\u56E0\u4E3A\u5B83\u4EE5\u7ED3\u6784\u5316\
   \u3001\u5C42\u6B21\u5316\u7684\u683C\u5F0F\u643A\u5E26\u6570\u636E\u3002"
 title: "\u5904\u7406XML"
+weight: 40
 ---
-
-{{< edit_this_page >}}
 
 ## 是什么 & 为什么？
 XML 是一种标记语言，用来以人和机器都可读的方式编码文档。它在 Web 服务、配置文件和数据交换中至关重要，因为它以结构化、层次化的格式携带数据。

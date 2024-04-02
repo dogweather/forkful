@@ -7,9 +7,8 @@ model: gpt-4-1106-preview
 summary: "Druckausgaben zum Debuggen sind so etwas wie Wegweiser beim Programmieren\
   \ - sie zeigen, wo die Daten entlanglaufen und wo sie sich verstecken.\u2026"
 title: Debug-Ausgaben drucken
+weight: 33
 ---
-
-{{< edit_this_page >}}
 
 ## Was & Warum?
 Druckausgaben zum Debuggen sind so etwas wie Wegweiser beim Programmieren - sie zeigen, wo die Daten entlanglaufen und wo sie sich verstecken. Programmierer nutzen sie, um den Überblick zu behalten, denken wir mal an Brotkrumen im Wald der Variablen und Funktionen.

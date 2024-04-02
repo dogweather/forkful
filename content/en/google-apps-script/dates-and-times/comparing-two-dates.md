@@ -7,9 +7,8 @@ model: gpt-4-0125-preview
 summary: "Comparing two dates in Google Apps Script, a derivative of JavaScript tailored\
   \ for Google's suite of apps, is an essential task for developers dealing\u2026"
 title: Comparing two dates
+weight: 27
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 Comparing two dates in Google Apps Script, a derivative of JavaScript tailored for Google's suite of apps, is an essential task for developers dealing with scheduling, timelines, or any date-related data. Understanding how to accurately compare dates enables programmers to implement features like deadlines, event planning, or content scheduling effectively.

@@ -7,9 +7,8 @@ model: gpt-4-1106-preview
 summary: "Loggning \xE4r praxisen att spela in h\xE4ndelser, fel och andra betydande\
   \ datapunkter som intr\xE4ffar inom livscykeln f\xF6r en mjukvaruapplikation. Programmerare\u2026"
 title: Loggning
+weight: 17
 ---
-
-{{< edit_this_page >}}
 
 ## Vad & Varför?
 

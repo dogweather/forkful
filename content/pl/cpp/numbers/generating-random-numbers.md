@@ -9,9 +9,8 @@ summary: "Generowanie liczb losowych w programowaniu polega na tworzeniu sekwenc
   \ liczb, kt\xF3re nie wykazuj\u0105 \u017Cadnego przewidywalnego porz\u0105dku lub\
   \ wzoru. Programi\u015Bci\u2026"
 title: Generowanie liczb losowych
+weight: 12
 ---
-
-{{< edit_this_page >}}
 
 ## Co i dlaczego?
 

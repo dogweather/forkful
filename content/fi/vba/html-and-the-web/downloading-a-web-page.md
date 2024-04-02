@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Web-sivun lataaminen Visual Basic for Applications (VBA) -ohjelmoinnilla\
   \ tarkoittaa web-sivun HTML-sis\xE4ll\xF6n noutamista Internetist\xE4. Ohjelmoijat\u2026"
 title: Verkkosivun lataaminen
+weight: 42
 ---
-
-{{< edit_this_page >}}
 
 ## Mikä ja miksi?
 

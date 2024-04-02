@@ -8,9 +8,8 @@ model: gpt-4-1106-preview
 summary: "Partire con un nuovo progetto JavaScript significa gettare le basi per un\u2019\
   applicazione. I programmatori lo fanno per trasformare idee in realt\xE0 digitale,\u2026"
 title: Avvio di un nuovo progetto
+weight: 1
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 Partire con un nuovo progetto JavaScript significa gettare le basi per un’applicazione. I programmatori lo fanno per trasformare idee in realtà digitale, cominciando da un ambiente pulito.

@@ -11,9 +11,8 @@ summary: "P\xE4iv\xE4m\xE4\xE4r\xE4n j\xE4sent\xE4minen merkkijonosta Go:ssa tar
   \ p\xE4iv\xE4m\xE4\xE4r\xE4n muuntamista tekstist\xE4 k\xE4ytt\xF6kelpoisempaan\
   \ muotoon (esim. `time.Time`). Ohjelmoijat\u2026"
 title: "P\xE4iv\xE4m\xE4\xE4r\xE4n j\xE4sennys merkkijonosta"
+weight: 30
 ---
-
-{{< edit_this_page >}}
 
 ## Mikä ja miksi?
 

@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Assosiative tabeller, ofte kjent som ordb\xF8ker i Visual Basic for Applications\
   \ (VBA), lar programmerere lage samlinger av n\xF8kkel-verdi-par. Denne\u2026"
 title: Bruke assosiative tabeller
+weight: 15
 ---
-
-{{< edit_this_page >}}
 
 ## Hva & Hvorfor?
 

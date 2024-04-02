@@ -12,9 +12,8 @@ summary: "\u4E0B\u8F7D\u7F51\u9875\u5C31\u662F\u4ECE\u4E92\u8054\u7F51\u4E0A\u83
   \u5E38\u662F\u4E3A\u4E86\u6570\u636E\u6293\u53D6\u3001\u4FE1\u606F\u68C0\u7D22\u6216\
   \u5185\u5BB9\u76D1\u63A7\u3002"
 title: "\u4E0B\u8F7D\u7F51\u9875"
+weight: 42
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why? (是什么 & 为什么?)
 下载网页就是从互联网上获取网页的内容。程序员这么做通常是为了数据抓取、信息检索或内容监控。

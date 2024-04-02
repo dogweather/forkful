@@ -13,9 +13,8 @@ summary: "Vi\u1EC7c vi\u1EBFt v\xE0o l\u1ED7i chu\u1EA9n (stderr) trong Go bao g
   n \u0111o\xE1n kh\xF4ng d\xE0nh cho d\xF2ng xu\u1EA5t ch\xEDnh. C\xE1c l\u1EADp\
   \ tr\xECnh vi\xEAn s\u1EED d\u1EE5ng\u2026"
 title: "Ghi v\xE0o l\u1ED7i chu\u1EA9n"
+weight: 25
 ---
-
-{{< edit_this_page >}}
 
 ## Cái gì & Tại sao?
 

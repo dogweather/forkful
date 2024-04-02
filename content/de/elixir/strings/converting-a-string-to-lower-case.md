@@ -9,9 +9,8 @@ summary: "Das Umwandeln eines Strings in Kleinbuchstaben bedeutet, jeden Gro\xDF
   \ in seinem \xC4quivalent in Kleinbuchstaben zu \xE4ndern. Es wird oft verwendet,\
   \ um\u2026"
 title: Umformung eines Strings in Kleinbuchstaben
+weight: 4
 ---
-
-{{< edit_this_page >}}
 
 ## Was & Warum?
 Das Umwandeln eines Strings in Kleinbuchstaben bedeutet, jeden Großbuchstaben in seinem Äquivalent in Kleinbuchstaben zu ändern. Es wird oft verwendet, um die Benutzereingabe zu normalisieren oder eine case-insensitive Suche zu ermöglichen.

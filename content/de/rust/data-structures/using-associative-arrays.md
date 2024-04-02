@@ -11,9 +11,8 @@ summary: "Assoziative Arrays oder, wie Rustaceaner sie nennen, \"Hash Maps\", si
   \ Sammlungen, die Daten in Schl\xFCssel-Wert-Paaren speichern. Programmierer nutzen\
   \ sie\u2026"
 title: Verwendung von assoziativen Arrays
+weight: 15
 ---
-
-{{< edit_this_page >}}
 
 ## Was & Warum?
 

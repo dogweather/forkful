@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Tests in PowerShell zu schreiben, umfasst das Erstellen von Skripten, die\
   \ automatisch die Funktionalit\xE4t Ihres PowerShell-Codes validieren und\u2026"
 title: Tests Schreiben
+weight: 36
 ---
-
-{{< edit_this_page >}}
 
 ## Was & Warum?
 

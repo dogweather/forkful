@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "HTML parsen betekent graven door de opmaak om gegevens zoals tekst, links\
   \ of andere elementen te extraheren. We doen dit om te interageren met of\u2026"
 title: HTML Parsen
+weight: 43
 ---
-
-{{< edit_this_page >}}
 
 ## Wat & Waarom?
 

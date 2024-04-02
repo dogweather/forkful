@@ -11,9 +11,8 @@ summary: "Capitalizar una cadena en C# implica convertir el primer car\xE1cter d
   \ una cadena a may\xFAsculas si ya no lo est\xE1. Esta alteraci\xF3n puede ser crucial\
   \ para\u2026"
 title: Capitalizando una cadena de texto
+weight: 2
 ---
-
-{{< edit_this_page >}}
 
 ## ¿Qué y Por Qué?
 Capitalizar una cadena en C# implica convertir el primer carácter de una cadena a mayúsculas si ya no lo está. Esta alteración puede ser crucial para formatear salidas, hacer cumplir estándares de codificación o hacer los textos de la interfaz de usuario más legibles.

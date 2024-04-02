@@ -18,9 +18,8 @@ summary: "\uBBF8\uB798\uB098 \uACFC\uAC70\uC758 \uB0A0\uC9DC\uB97C \uACC4\uC0B0\
   \uC77C \uCD94\uC801 \uB4F1\uC758 \uAE30\uB2A5\uC744 \uAD6C\uD604\uD558\uAE30 \uC704\
   \uD574 \uC774\uB97C \uC0AC\uC6A9\uD569\uB2C8\uB2E4."
 title: "\uBBF8\uB798\uB098 \uACFC\uAC70\uC758 \uB0A0\uC9DC \uACC4\uC0B0\uD558\uAE30"
+weight: 26
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why? (무엇과 왜?)
 미래나 과거의 날짜를 계산하는 것은 특정 기간 후의 시간을 알거나 이벤트가 언제 일어났는지를 찾는 과정입니다. 프로그래머는 마감일 관리, 예약 시스템, 기념일 추적 등의 기능을 구현하기 위해 이를 사용합니다.

@@ -9,9 +9,8 @@ summary: "Die Berechnung eines Datums in der Zukunft oder Vergangenheit bedeutet
   \ ein spezifisches Datum basierend auf einem anderen Datum und einer Zeitspanne\
   \ zu\u2026"
 title: "Berechnung eines zuk\xFCnftigen oder vergangenen Datums"
+weight: 26
 ---
-
-{{< edit_this_page >}}
 
 ## Was & Warum?
 Die Berechnung eines Datums in der Zukunft oder Vergangenheit bedeutet, ein spezifisches Datum basierend auf einem anderen Datum und einer Zeitspanne zu ermitteln. Programmierer nutzen das, um Ereignisse zu planen, Fristen zu berechnen oder Zeitabschnitte zu analysieren.

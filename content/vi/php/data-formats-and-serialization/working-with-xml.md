@@ -15,9 +15,8 @@ summary: "XML l\xE0 m\u1ED9t ng\xF4n ng\u1EEF \u0111\xE1nh d\u1EA5u \u0111\u01B0
   \ cho ph\xE9p t\xEDnh t\u01B0\u01A1ng th\xEDch gi\u1EEFa c\xE1c \u1EE9ng d\u1EE5\
   ng\u2026"
 title: "L\xE0m vi\u1EC7c v\u1EDBi XML"
+weight: 40
 ---
-
-{{< edit_this_page >}}
 
 ## Cái gì & Tại sao?
 XML là một ngôn ngữ đánh dấu được sử dụng để lưu trữ và vận chuyển dữ liệu. Lập trình viên làm việc với XML để cho phép tính tương thích giữa các ứng dụng và hệ thống - nghĩ về trao đổi dữ liệu và cài đặt cấu hình.

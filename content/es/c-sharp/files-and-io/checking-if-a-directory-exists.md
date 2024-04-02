@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Verificar si un directorio existe en C# implica comprobar la presencia de\
   \ una carpeta en una ruta especificada en el sistema de archivos. Los\u2026"
 title: Comprobando si un directorio existe
+weight: 20
 ---
-
-{{< edit_this_page >}}
 
 ## Qué y Por Qué?
 

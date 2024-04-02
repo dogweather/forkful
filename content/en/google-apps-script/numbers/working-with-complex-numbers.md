@@ -9,9 +9,8 @@ summary: "Complex numbers, represented as a combination of real and imaginary un
   \ (e.g., 3 + 4i), are fundamental in various computational problems, especially\
   \ in\u2026"
 title: Working with complex numbers
+weight: 14
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 Complex numbers, represented as a combination of real and imaginary units (e.g., 3 + 4i), are fundamental in various computational problems, especially in engineering, physics, and applied mathematics. Learning to manipulate these numbers in Google Apps Script allows programmers to extend their capabilities into scientific computing, signal processing, and beyond.

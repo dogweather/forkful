@@ -8,9 +8,8 @@ model: unknown
 summary: "L'interpretazione dell'HTML (parsing) serve a estrarre dati da pagine web.\
   \ I programmatori lo fanno per analizzare, manipolare o estrarre informazioni in\u2026"
 title: Analisi dell'HTML
+weight: 43
 ---
-
-{{< edit_this_page >}}
 
 ## Che Cosa & Perché?
 L'interpretazione dell'HTML (parsing) serve a estrarre dati da pagine web. I programmatori lo fanno per analizzare, manipolare o estrarre informazioni in modo programmatico.

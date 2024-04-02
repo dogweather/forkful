@@ -10,9 +10,8 @@ model: gpt-4-0125-preview
 summary: "Generare numeri casuali in Elm comporta l'utilizzo del modulo `Random` per\
   \ produrre numeri pseudo-casuali, i quali sono utili per una variet\xE0 di compiti\u2026"
 title: Generare numeri casuali
+weight: 12
 ---
-
-{{< edit_this_page >}}
 
 ## Cosa & Perché?
 Generare numeri casuali in Elm comporta l'utilizzo del modulo `Random` per produrre numeri pseudo-casuali, i quali sono utili per una varietà di compiti come giochi, simulazioni e perfino come parte di algoritmi che richiedono processi stocastici. Questa capacità consente agli sviluppatori di aggiungere imprevedibilità e varietà alle loro applicazioni, migliorando l'esperienza utente e la funzionalità.

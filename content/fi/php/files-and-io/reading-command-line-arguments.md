@@ -5,9 +5,8 @@ lastmod: '2024-03-13T22:44:56.671430-06:00'
 model: gpt-4-1106-preview
 summary: '`'
 title: Komennoriviparametrien lukeminen
+weight: 23
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 `## Mitä & Miksi?`

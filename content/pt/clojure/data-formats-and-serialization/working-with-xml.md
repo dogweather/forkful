@@ -9,9 +9,8 @@ summary: "XML \xE9 uma linguagem de marca\xE7\xE3o para codificar documentos de 
   \ que sejam leg\xEDveis por humanos e m\xE1quinas. \xC9 chave em servi\xE7os web,\
   \ arquivos de\u2026"
 title: Trabalhando com XML
+weight: 40
 ---
-
-{{< edit_this_page >}}
 
 ## O Quê & Porquê?
 XML é uma linguagem de marcação para codificar documentos de forma que sejam legíveis por humanos e máquinas. É chave em serviços web, arquivos de configuração e intercâmbio de dados porque carrega dados em um formato estruturado e hierárquico.

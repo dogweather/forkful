@@ -7,9 +7,8 @@ model: gpt-4-0125-preview
 summary: "Lavorare con XML su Arduino implica l'analisi e la manipolazione dei dati\
   \ XML, che di solito provengono da API web o file di configurazione. I\u2026"
 title: Lavorare con XML
+weight: 40
 ---
-
-{{< edit_this_page >}}
 
 ## Che cosa & Perché?
 Lavorare con XML su Arduino implica l'analisi e la manipolazione dei dati XML, che di solito provengono da API web o file di configurazione. I programmatori lo fanno per integrarsi con servizi che utilizzano XML per lo scambio di dati o per memorizzare dati in un formato strutturato e leggibile dall'uomo.

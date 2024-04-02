@@ -9,9 +9,8 @@ summary: "TOML, abrevia\xE7\xE3o de Tom's Obvious, Minimal Language, define como
   \ arquivos de configura\xE7\xE3o. Programadores trabalham com TOML porque \xE9 f\xE1\
   cil de\u2026"
 title: Trabalhando com TOML
+weight: 39
 ---
-
-{{< edit_this_page >}}
 
 ## O Que & Porquê?
 TOML, abreviação de Tom's Obvious, Minimal Language, define como estruturar arquivos de configuração. Programadores trabalham com TOML porque é fácil de ler, escrever e mapeia bem para uma tabela hash, tornando-se uma escolha primordial para configurações.

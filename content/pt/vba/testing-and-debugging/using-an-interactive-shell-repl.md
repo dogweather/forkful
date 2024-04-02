@@ -11,9 +11,8 @@ summary: "Um shell interativo, ou Loop de Leitura-Avalia\xE7\xE3o-Impress\xE3o (
   \ permite que os usu\xE1rios insiram comandos, executem-nos e vejam os resultados\
   \ em tempo\u2026"
 title: Usando uma shell interativa (REPL)
+weight: 34
 ---
-
-{{< edit_this_page >}}
 
 ## O Quê & Porquê?
 

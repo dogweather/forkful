@@ -9,9 +9,8 @@ summary: "Gerar n\xFAmeros aleat\xF3rios em PHP est\xE1 relacionado a produzir v
   \ imprevis\xEDveis dentro de uma faixa especificada, o que \xE9 essencial para tarefas\
   \ como\u2026"
 title: "Gera\xE7\xE3o de n\xFAmeros aleat\xF3rios"
+weight: 12
 ---
-
-{{< edit_this_page >}}
 
 ## O que & Por quê?
 

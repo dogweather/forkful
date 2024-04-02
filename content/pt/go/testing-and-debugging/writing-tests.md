@@ -10,9 +10,8 @@ model: gpt-4-0125-preview
 summary: "Escrever testes em Go envolve criar peda\xE7os de c\xF3digo pequenos e gerenci\xE1\
   veis que validam a funcionalidade e o comportamento da sua aplica\xE7\xE3o.\u2026"
 title: Escrevendo testes
+weight: 36
 ---
-
-{{< edit_this_page >}}
 
 ## O Quê & Por Quê?
 

@@ -9,9 +9,8 @@ summary: "Tempor\xE4re Dateien dienen zum vor\xFCbergehenden Speichern von Daten
   \ Sie werden verwendet, wenn man Daten w\xE4hrend der Ausf\xFChrung eines Programms\
   \ kurzzeitig\u2026"
 title: "Erstellung einer tempor\xE4ren Datei"
+weight: 21
 ---
-
-{{< edit_this_page >}}
 
 # Arduino Programmierung: Temporäre Dateien nutzen
 

@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Lavorare con numeri complessi nella programmazione implica la manipolazione\
   \ di numeri che hanno sia una parte reale che una immaginaria, tipicamente\u2026"
 title: Lavorare con i numeri complessi
+weight: 14
 ---
-
-{{< edit_this_page >}}
 
 ## Cosa e perché?
 

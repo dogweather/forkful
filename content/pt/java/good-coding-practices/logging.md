@@ -9,9 +9,8 @@ summary: "A log\xEDstica \xE9 essencialmente o processo de grava\xE7\xE3o de eve
   \ que ocorrem dentro de uma aplica\xE7\xE3o de software. Os programadores registram\
   \ esses eventos\u2026"
 title: Registro de Logs
+weight: 17
 ---
-
-{{< edit_this_page >}}
 
 ## O que é & Por quê?
 A logística é essencialmente o processo de gravação de eventos que ocorrem dentro de uma aplicação de software. Os programadores registram esses eventos para capturar informações de tempo de execução, depurar problemas, monitorar o comportamento do sistema e criar um registro de auditoria para fins de segurança e conformidade.

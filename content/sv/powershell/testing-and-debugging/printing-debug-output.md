@@ -9,9 +9,8 @@ summary: "Att skriva ut fels\xF6kningsdata inneb\xE4r att visa tempor\xE4r infor
   \ f\xF6r att f\xF6rst\xE5 vad koden g\xF6r. Programmerare g\xF6r detta f\xF6r att\
   \ snabbt hitta och \xE5tg\xE4rda\u2026"
 title: "Skriva ut fels\xF6kningsdata"
+weight: 33
 ---
-
-{{< edit_this_page >}}
 
 ## Vad & Varför?
 Att skriva ut felsökningsdata innebär att visa temporär information för att förstå vad koden gör. Programmerare gör detta för att snabbt hitta och åtgärda bugger eller för att övervaka programmets flöde.

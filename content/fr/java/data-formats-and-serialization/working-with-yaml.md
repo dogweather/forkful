@@ -10,9 +10,8 @@ model: gpt-4-0125-preview
 summary: "YAML, acronyme de \"YAML Ain't Markup Language\" (YAML n'est pas un langage\
   \ de balisage), est un standard de s\xE9rialisation de donn\xE9es lisible par l'humain\u2026"
 title: Travailler avec YAML
+weight: 41
 ---
-
-{{< edit_this_page >}}
 
 ## Quoi & Pourquoi ?
 YAML, acronyme de "YAML Ain't Markup Language" (YAML n'est pas un langage de balisage), est un standard de sérialisation de données lisible par l'humain que les programmeurs utilisent pour les fichiers de configuration, le vidage de données et la transmission de données entre langues. Il est populaire en raison de sa lisibilité et de sa facilité d'utilisation, ce qui en fait un choix courant pour la configuration d'applications et de services.

@@ -7,9 +7,8 @@ model: gpt-4-1106-preview
 summary: "Leer un archivo de texto significa acceder a su contenido usando un programa.\
   \ Los programadores lo hacen para procesar o analizar los datos,\u2026"
 title: Lectura de un archivo de texto
+weight: 22
 ---
-
-{{< edit_this_page >}}
 
 ## Qué y Por Qué?
 Leer un archivo de texto significa acceder a su contenido usando un programa. Los programadores lo hacen para procesar o analizar los datos, configuraciones o simplemente para mostrar la información al usuario.

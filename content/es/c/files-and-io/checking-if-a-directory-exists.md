@@ -10,9 +10,8 @@ model: gpt-4-0125-preview
 summary: "Verificar si un directorio existe en C implica consultar el sistema de archivos\
   \ para verificar si una ruta espec\xEDfica conduce a un directorio. Los\u2026"
 title: Verificando si un directorio existe
+weight: 20
 ---
-
-{{< edit_this_page >}}
 
 ## Qué & Por qué?
 

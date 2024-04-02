@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Calcolare una data nel futuro o nel passato in Go comporta la manipolazione\
   \ dei valori di data e ora per determinare un punto specifico relativo a una\u2026"
 title: Calcolo di una data nel futuro o nel passato
+weight: 26
 ---
-
-{{< edit_this_page >}}
 
 ## Cosa & Perché?
 

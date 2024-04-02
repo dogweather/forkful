@@ -11,9 +11,8 @@ summary: "Eine interaktive Shell oder Read-Eval-Print-Schleife (REPL) erm\xF6gli
   \ es Benutzern, Befehle einzugeben, auszuf\xFChren und die Ergebnisse in Echtzeit\
   \ zu\u2026"
 title: Verwendung einer interaktiven Shell (REPL)
+weight: 34
 ---
-
-{{< edit_this_page >}}
 
 ## Was & Warum?
 

@@ -10,9 +10,8 @@ model: gpt-4-0125-preview
 summary: "Ottenere la data corrente in Elixir implica l'accesso alle informazioni\
   \ di data e ora del sistema, un compito comune per log, marcature di dati o\u2026"
 title: Ottenere la data corrente
+weight: 29
 ---
-
-{{< edit_this_page >}}
 
 ## Cosa e perché?
 Ottenere la data corrente in Elixir implica l'accesso alle informazioni di data e ora del sistema, un compito comune per log, marcature di dati o qualsiasi funzionalità che richieda la conoscenza della data corrente. Questa operazione è essenziale per creare applicazioni sensibili al tempo e per compiti come la generazione di rapporti o timestamp in un'applicazione web.

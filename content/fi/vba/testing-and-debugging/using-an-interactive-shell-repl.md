@@ -11,9 +11,8 @@ summary: "Interaktiivinen kuori eli Lue-Eval-Tulosta -silmukka (REPL) mahdollist
   \ k\xE4ytt\xE4j\xE4n sy\xF6tt\xE4mien komentojen suorittamisen ja tulosten n\xE4\
   kemisen reaaliajassa.\u2026"
 title: "Interaktiivisen kuoren (REPL) k\xE4ytt\xF6"
+weight: 34
 ---
-
-{{< edit_this_page >}}
 
 ## Mikä ja miksi?
 

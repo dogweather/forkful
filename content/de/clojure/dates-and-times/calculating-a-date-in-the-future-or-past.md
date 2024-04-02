@@ -9,9 +9,8 @@ summary: "Das Berechnen eines zuk\xFCnftigen oder vergangenen Datums erm\xF6glic
   \ es, Zeitintervalle zu manipulieren. Entwickler nutzen diese M\xF6glichkeit, um\
   \ Funktionen\u2026"
 title: "Berechnung eines zuk\xFCnftigen oder vergangenen Datums"
+weight: 26
 ---
-
-{{< edit_this_page >}}
 
 ## Was & Warum?
 Das Berechnen eines zukünftigen oder vergangenen Datums ermöglicht es, Zeitintervalle zu manipulieren. Entwickler nutzen diese Möglichkeit, um Funktionen wie Erinnerungen, Terminplanungen oder Verfallsdaten-Berechnungen in ihren Anwendungen zu realisieren.

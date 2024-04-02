@@ -9,9 +9,8 @@ summary: "R\xE4kna ut ett framtida eller f\xF6rflutet datum handlar om att best\
   mma ett specifikt datum utifr\xE5n ett annat genom att addera eller subtrahera dagar,\
   \ m\xE5nader\u2026"
 title: "Ber\xE4kna ett datum i framtiden eller f\xF6rflutet"
+weight: 26
 ---
-
-{{< edit_this_page >}}
 
 ## Vad & Varför?
 Räkna ut ett framtida eller förflutet datum handlar om att bestämma ett specifikt datum utifrån ett annat genom att addera eller subtrahera dagar, månader eller år. Programmerare gör detta för att hantera deadlines, boka händelser, beräkna åldrar, eller för planeringsalgoritmer.

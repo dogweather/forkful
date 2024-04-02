@@ -8,9 +8,8 @@ model: gpt-4-0125-preview
 summary: "Generowanie losowych liczb w Bashu zapewnia spos\xF3b na wprowadzenie nieprzewidywalno\u015B\
   ci do skrypt\xF3w, co jest niezb\u0119dne do zada\u0144 takich jak generowanie\u2026"
 title: Generowanie liczb losowych
+weight: 12
 ---
-
-{{< edit_this_page >}}
 
 ## Co i dlaczego?
 Generowanie losowych liczb w Bashu zapewnia sposób na wprowadzenie nieprzewidywalności do skryptów, co jest niezbędne do zadań takich jak generowanie bezpiecznych haseł, symulowanie danych czy programowanie gier. Programiści wykorzystują tę możliwość, aby dodać zmienność do swoich skryptów lub testować swoje programy w różnorodnych, losowo generowanych warunkach.

@@ -18,9 +18,8 @@ summary: "\uB450 \uB0A0\uC9DC\uB97C \uBE44\uAD50\uD55C\uB2E4\uB294 \uAC83\uC740 
   \ \uC720\uD6A8\uC131 \uAC80\uC99D \uB4F1\uC744 \uD560 \uB54C \uB450 \uB0A0\uC9DC\
   \uB97C \uBE44\uAD50\uD569\uB2C8\uB2E4."
 title: "\uB450 \uB0A0\uC9DC \uBE44\uAD50\uD558\uAE30"
+weight: 27
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 두 날짜를 비교한다는 것은 캘린더 상에서 두 날짜가 어떻게 서로 관계되는지를 파악하는 것입니다. 프로그래머들은 기한 검사, 시간 차이 계산, 정렬 및 데이터 유효성 검증 등을 할 때 두 날짜를 비교합니다.

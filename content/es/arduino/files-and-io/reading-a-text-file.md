@@ -7,9 +7,8 @@ model: gpt-4-1106-preview
 summary: "Leer un archivo de texto implica acceder y extraer datos de un documento\
   \ almacenado, generalmente en una memoria SD o similar. Los programadores leen\u2026"
 title: Lectura de un archivo de texto
+weight: 22
 ---
-
-{{< edit_this_page >}}
 
 ## ¿Qué & Por Qué?
 Leer un archivo de texto implica acceder y extraer datos de un documento almacenado, generalmente en una memoria SD o similar. Los programadores leen archivos para obtener configuraciones, datos del usuario o cualquier información necesaria para sus proyectos.

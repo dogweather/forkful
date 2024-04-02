@@ -16,9 +16,8 @@ summary: "String \u0915\u0940 \u0932\u0902\u092C\u093E\u0908 (length) \u092A\u09
   \u0902, \u0924\u093E\u0915\u093F \u0935\u0947 data validation, UI\u2026"
 title: "\u0938\u094D\u091F\u094D\u0930\u093F\u0902\u0917 \u0915\u0940 \u0932\u0902\
   \u092C\u093E\u0908 \u091C\u094D\u091E\u093E\u0924 \u0915\u0930\u0928\u093E"
+weight: 7
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why? (क्या और क्यों?)
 String की लंबाई (length) पता लगाना मतलब है जानना कि string में कितने characters हैं। Programmers इसलिए लंबाई नापते हैं, ताकि वे data validation, UI display या फिर text processing को सही से कर सकें।

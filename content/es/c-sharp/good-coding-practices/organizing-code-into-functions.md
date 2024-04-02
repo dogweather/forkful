@@ -9,9 +9,8 @@ summary: "Organizar el c\xF3digo en funciones es como ordenar ladrillos de LEGO 
   \ cajas: facilita su b\xFAsqueda y utilizaci\xF3n. Hacemos esto para evitar la repetici\xF3\
   n,\u2026"
 title: "Organizando c\xF3digo en funciones"
+weight: 18
 ---
-
-{{< edit_this_page >}}
 
 ## ¿Qué y Por Qué?
 Organizar el código en funciones es como ordenar ladrillos de LEGO en cajas: facilita su búsqueda y utilización. Hacemos esto para evitar la repetición, para simplificar la comprensión y para que el mantenimiento sea menos problemático.

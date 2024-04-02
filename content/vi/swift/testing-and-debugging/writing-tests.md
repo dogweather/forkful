@@ -13,9 +13,8 @@ summary: "Vi\u1EBFt test l\xE0 vi\u1EC7c t\u1EA1o ra code \u0111\u1EC3 ki\u1EC3m
   \ \u0111\xE3 d\u1EF1 \u0111\u1ECBnh hay kh\xF4ng. L\u1EADp tr\xECnh vi\xEAn th\u1EF1\
   c hi\u1EC7n test \u0111\u1EC3 b\u1EAFt l\u1ED7i s\u1EDBm, \u0111\u1EA3m\u2026"
 title: "Vi\u1EBFt c\xE1c b\xE0i ki\u1EC3m tra"
+weight: 36
 ---
-
-{{< edit_this_page >}}
 
 ## Gì và Tại sao?
 Viết test là việc tạo ra code để kiểm tra xem phần mềm của bạn có hoạt động như đã dự định hay không. Lập trình viên thực hiện test để bắt lỗi sớm, đảm bảo chất lượng và đơn giản hóa việc bảo trì.

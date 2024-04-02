@@ -11,9 +11,8 @@ summary: "\xC5 h\xE5ndtere en streng inneb\xE6rer \xE5 endre inndata slik at det
   rste tegnet er stor bokstav mens resten er sm\xE5 bokstaver, ofte brukt for formatering\
   \ av navn\u2026"
 title: "\xC5 gj\xF8re om en streng til store bokstaver"
+weight: 2
 ---
-
-{{< edit_this_page >}}
 
 ## Hva & Hvorfor?
 

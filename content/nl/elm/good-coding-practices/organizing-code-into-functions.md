@@ -11,9 +11,8 @@ summary: "Al je code in \xE9\xE9n grote hoop gooien? Slecht idee. Het onderverde
   \ in functies? Goed idee. Het houdt je Elm-code netjes, herbruikbaar en eenvoudiger\
   \ om\u2026"
 title: Code organiseren in functies
+weight: 18
 ---
-
-{{< edit_this_page >}}
 
 ## Wat & Waarom?
 Al je code in één grote hoop gooien? Slecht idee. Het onderverdelen in functies? Goed idee. Het houdt je Elm-code netjes, herbruikbaar en eenvoudiger om te testen. Door je code in functies te organiseren, groepeer je code die specifieke taken uitvoert bij elkaar, wat je applicatie onderhoudbaarder en begrijpelijker maakt.

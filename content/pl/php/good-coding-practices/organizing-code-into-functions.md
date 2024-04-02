@@ -9,9 +9,8 @@ summary: "Organizowanie kodu w funkcje polega na dzieleniu go na ponownie u\u017
   ywalne bloki o okre\u015Blonych celach. Robimy to, aby utrzyma\u0107 porz\u0105\
   dek, zapobiega\u0107\u2026"
 title: Organizacja kodu w funkcje
+weight: 18
 ---
-
-{{< edit_this_page >}}
 
 ## Co i dlaczego?
 Organizowanie kodu w funkcje polega na dzieleniu go na ponownie używalne bloki o określonych celach. Robimy to, aby utrzymać porządek, zapobiegać redundancji i ułatwić debugowanie.

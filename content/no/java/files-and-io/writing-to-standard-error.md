@@ -11,9 +11,8 @@ summary: "\xC5 skrive til standard feil (stderr) inneb\xE6rer \xE5 sende ut feil
   \ og diagnostikk til konsollen eller terminalen. Programmerere gj\xF8r dette for\
   \ \xE5\u2026"
 title: Skriving til standardfeil
+weight: 25
 ---
-
-{{< edit_this_page >}}
 
 ## Hva & Hvorfor?
 Å skrive til standard feil (stderr) innebærer å sende ut feilmeldinger og diagnostikk til konsollen eller terminalen. Programmerere gjør dette for å skille feilinformasjon fra standard utgang (stdout), noe som letter feilsøking og logganalyse.

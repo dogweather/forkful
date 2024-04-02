@@ -16,9 +16,8 @@ summary: "\uBB38\uC790\uC5F4\uC758 \uAE38\uC774\uB97C \uCC3E\uB294 \uAC83\uC740 
   \uB7EC \uBAA9\uC801\uC73C\uB85C \uBB38\uC790\uC5F4 \uAE38\uC774\uB97C \uC54C\uC544\
   \uB0B4\uC57C \uD55C\uB2E4."
 title: "\uBB38\uC790\uC5F4\uC758 \uAE38\uC774 \uCC3E\uAE30"
+weight: 7
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why? (무엇과 왜?)
 문자열의 길이를 찾는 것은 문자의 수를 세는 과정이다. 프로그래머들은 데이터 검증, 입력 처리, UI 디자인 또는 성능 최적화 등 여러 목적으로 문자열 길이를 알아내야 한다.

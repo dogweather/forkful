@@ -9,9 +9,8 @@ summary: "Att generera slumpm\xE4ssiga tal \xE4r en grundl\xE4ggande uppgift i p
   \ anv\xE4nd f\xF6r allt fr\xE5n dataurval till spelutveckling. I Fish Shell m\xF6\
   jligg\xF6r\u2026"
 title: Generera slumptal
+weight: 12
 ---
-
-{{< edit_this_page >}}
 
 ## Vad & Varför?
 

@@ -9,9 +9,8 @@ summary: "Usuwanie znak\xF3w pasuj\u0105cych do wzorca to filtracja string\xF3w,
   eby pasowa\u0142y do naszych danych lub by\u0142y praktyczne. Robimy to, by oczy\u015B\
   ci\u0107 tekst z\u2026"
 title: "Usuwanie znak\xF3w pasuj\u0105cych do wzorca"
+weight: 5
 ---
-
-{{< edit_this_page >}}
 
 ## Co i Dlaczego?
 Usuwanie znaków pasujących do wzorca to filtracja stringów, żeby pasowały do naszych danych lub były praktyczne. Robimy to, by oczyścić tekst z niepotrzebnych treści, jak znaki specjalne czy białe znaki.

@@ -9,9 +9,8 @@ summary: "XML er et merkespr\xE5k brukt for lagring og transport av data. Progra
   \ arbeider med XML for \xE5 muliggj\xF8re interoperabilitet mellom applikasjoner\
   \ og\u2026"
 title: "\xC5 jobbe med XML"
+weight: 40
 ---
-
-{{< edit_this_page >}}
 
 ## Hva & Hvorfor?
 XML er et merkespråk brukt for lagring og transport av data. Programmerere arbeider med XML for å muliggjøre interoperabilitet mellom applikasjoner og systemer - tenk datautveksling og konfigurasjonsinnstillinger.

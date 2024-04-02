@@ -9,9 +9,8 @@ summary: "P\u0119tla Czytaj-Ewaluuj-Wypisz (REPL) to proste, interaktywne \u015B
   \ programistyczne, kt\xF3re pobiera pojedyncze dane wej\u015Bciowe od u\u017Cytkownika,\
   \ ocenia je i\u2026"
 title: Korzystanie z interaktywnego shella (REPL)
+weight: 34
 ---
-
-{{< edit_this_page >}}
 
 ## Co i dlaczego?
 Pętla Czytaj-Ewaluuj-Wypisz (REPL) to proste, interaktywne środowisko programistyczne, które pobiera pojedyncze dane wejściowe od użytkownika, ocenia je i zwraca wynik użytkownikowi. Programiści Elm wykorzystują REPL do szybkich eksperymentów, debugowania czy nauki języka.

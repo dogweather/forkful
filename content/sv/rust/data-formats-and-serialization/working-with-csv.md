@@ -11,9 +11,8 @@ summary: "Att arbeta med CSV-filer (kommaseparerade v\xE4rden) handlar om att l\
   sa fr\xE5n och skriva till vanliga textfiler som lagrar tabelldata. Programmerare\
   \ g\xF6r\u2026"
 title: Arbeta med CSV
+weight: 37
 ---
-
-{{< edit_this_page >}}
 
 ## Vad & Varför?
 Att arbeta med CSV-filer (kommaseparerade värden) handlar om att läsa från och skriva till vanliga textfiler som lagrar tabelldata. Programmerare gör detta för att möjliggöra datadelning mellan olika program, system eller för att bearbeta stora datamängder på ett effektivt, läsbart format.

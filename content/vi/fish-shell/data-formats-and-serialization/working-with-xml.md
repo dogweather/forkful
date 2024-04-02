@@ -13,9 +13,8 @@ summary: "L\xE0m vi\u1EC7c v\u1EDBi XML c\xF3 ngh\u0129a l\xE0 thao t\xE1c d\u1E
   \ bi\u1EBFn \u0111\u01B0\u1EE3c s\u1EED d\u1EE5ng trong c\u1EA5u h\xECnh, giao ti\u1EBF\
   p v\xE0 nhi\u1EC1u h\u01A1n n\u1EEFa. L\u1EADp tr\xECnh\u2026"
 title: "L\xE0m vi\u1EC7c v\u1EDBi XML"
+weight: 40
 ---
-
-{{< edit_this_page >}}
 
 ## Gì & Tại sao?
 Làm việc với XML có nghĩa là thao tác dữ liệu trong một định dạng có cấu trúc, phổ biến được sử dụng trong cấu hình, giao tiếp và nhiều hơn nữa. Lập trình viên thao tác XML để đọc, viết, cập nhật và truy vấn dữ liệu - quan trọng cho khả năng tương thích trong hàng tấn ứng dụng và dịch vụ.

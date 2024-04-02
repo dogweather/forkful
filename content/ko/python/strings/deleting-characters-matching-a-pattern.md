@@ -20,9 +20,8 @@ summary: "\uBB38\uC790\uC5F4\uC5D0\uC11C \uD2B9\uC815 \uD328\uD134\uC744 \uB9E4\
   \ \uC785\uB825\uD55C \uC815\uBCF4\uB97C \uCC98\uB9AC\uD560 \uB54C \uC774 \uAE30\uC220\
   \uC744 \uC0AC\uC6A9\uD569\uB2C8\uB2E4."
 title: "\uD328\uD134\uC5D0 \uC77C\uCE58\uD558\uB294 \uBB38\uC790 \uC0AD\uC81C"
+weight: 5
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why? (무엇 & 왜?)
 문자열에서 특정 패턴을 매칭하는 문자들을 삭제하는 것은 데이터를 정제하고 원하는 형태로 가공하기 위해 필요합니다. 프로그래머들은 잡음이 없는, 깨끗한 데이터를 분석하거나 사용자가 입력한 정보를 처리할 때 이 기술을 사용합니다.

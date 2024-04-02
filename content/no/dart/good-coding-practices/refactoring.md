@@ -11,9 +11,8 @@ summary: "Refaktorering i Dart er prosessen med \xE5 restrukturere eksisterende 
   \ uten \xE5 endre dens eksterne oppf\xF8rsel, med m\xE5l om \xE5 forbedre dens interne\
   \ struktur,\u2026"
 title: Refaktorering
+weight: 19
 ---
-
-{{< edit_this_page >}}
 
 ## Hva & Hvorfor?
 

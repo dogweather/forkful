@@ -10,9 +10,8 @@ model: gpt-4-0125-preview
 summary: "Complexe getallen, bestaande uit een re\xEBel en een imaginair deel (zoals\
   \ 3+4i), zijn een basiscomponent in engineering en fysica. Programmeurs werken ermee\u2026"
 title: Werken met complexe getallen
+weight: 14
 ---
-
-{{< edit_this_page >}}
 
 ## Wat & Waarom?
 Complexe getallen, bestaande uit een reëel en een imaginair deel (zoals 3+4i), zijn een basiscomponent in engineering en fysica. Programmeurs werken ermee in simulaties, signaalverwerking en bij het oplossen van vergelijkingen die niet goed overweg kunnen met enkel reële getallen.

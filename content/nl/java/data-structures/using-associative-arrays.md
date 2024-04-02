@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "In Java laten associatieve arrays, of maps, je sleutel-waardeparen opslaan\
   \ voor effici\xEBnte gegevensopzoeking en -manipulatie. Programmeurs gebruiken ze\u2026"
 title: Gebruik van associatieve arrays
+weight: 15
 ---
-
-{{< edit_this_page >}}
 
 ## Wat & Waarom?
 

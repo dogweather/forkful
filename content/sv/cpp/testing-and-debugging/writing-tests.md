@@ -11,9 +11,8 @@ summary: "Att skriva tester i C++ inneb\xE4r att skapa sm\xE5, sj\xE4lvst\xE4ndi
   \ program som automatiskt verifierar beteendet hos delar av din kodbas. Programmerare\
   \ g\xF6r detta\u2026"
 title: Skriva tester
+weight: 36
 ---
-
-{{< edit_this_page >}}
 
 ## Vad & Varför?
 

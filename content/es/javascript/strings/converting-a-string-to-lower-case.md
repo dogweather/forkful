@@ -7,9 +7,8 @@ model: gpt-4-1106-preview
 summary: "Convertir una cadena a min\xFAsculas es transformar todos los caracteres\
   \ alfab\xE9ticos en un texto para que no haya may\xFAsculas. Se hace para estandarizar\u2026"
 title: "Conversi\xF3n de una cadena de texto a min\xFAsculas"
+weight: 4
 ---
-
-{{< edit_this_page >}}
 
 ## ¿Qué y Por Qué?
 Convertir una cadena a minúsculas es transformar todos los caracteres alfabéticos en un texto para que no haya mayúsculas. Se hace para estandarizar datos, comparar strings sin importar el formato y mejorar la usabilidad de la entrada del usuario.

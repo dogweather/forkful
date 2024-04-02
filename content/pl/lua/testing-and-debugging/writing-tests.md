@@ -11,9 +11,8 @@ summary: "Pisanie test\xF3w w programowaniu polega na tworzeniu ma\u0142ych, odd
   \ kawa\u0142k\xF3w kodu, kt\xF3re automatycznie weryfikuj\u0105, czy r\xF3\u017C\
   ne cz\u0119\u015Bci aplikacji dzia\u0142aj\u0105\u2026"
 title: "Pisanie test\xF3w"
+weight: 36
 ---
-
-{{< edit_this_page >}}
 
 ## Co i dlaczego?
 

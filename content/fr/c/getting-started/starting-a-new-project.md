@@ -11,9 +11,8 @@ summary: "Commencer un nouveau projet en C n\xE9cessite la mise en place d'une s
   \ de code de base et d'un environnement pour g\xE9rer efficacement les t\xE2ches\
   \ de\u2026"
 title: "D\xE9marrer un nouveau projet"
+weight: 1
 ---
-
-{{< edit_this_page >}}
 
 ## Quoi & Pourquoi ?
 

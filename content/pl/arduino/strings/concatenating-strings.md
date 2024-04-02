@@ -9,9 +9,8 @@ summary: "\u0141\u0105czenie \u0142a\u0144cuch\xF3w znak\xF3w, czyli konkatenacj
   \ to proces tworzenia jednego \u0142a\u0144cucha z dw\xF3ch lub wi\u0119cej istniej\u0105\
   cych. Programi\u015Bci robi\u0105 to, by sk\u0142ada\u0107\u2026"
 title: "\u0141\u0105czenie \u0142a\u0144cuch\xF3w znak\xF3w"
+weight: 3
 ---
-
-{{< edit_this_page >}}
 
 ## Co i dlaczego?
 Łączenie łańcuchów znaków, czyli konkatenacja, to proces tworzenia jednego łańcucha z dwóch lub więcej istniejących. Programiści robią to, by składać wiadomości, generować dane wyjściowe lub pracować z tekstami w programach.

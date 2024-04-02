@@ -9,9 +9,8 @@ summary: "Imprimir sa\xEDdas de depura\xE7\xE3o \xE9 essencialmente escrever inf
   \xF5es dos seus programas para ajudar a entender o que est\xE1 a acontecer enquanto\
   \ o c\xF3digo\u2026"
 title: "Exibindo sa\xEDdas de depura\xE7\xE3o"
+weight: 33
 ---
-
-{{< edit_this_page >}}
 
 ## O Que é e Por Que Fazer?
 Imprimir saídas de depuração é essencialmente escrever informações dos seus programas para ajudar a entender o que está a acontecer enquanto o código corre. Programadores fazem isso para rastrear e resolver bugs mais rapidamente – é como ter uma conversa franca com o seu código.

@@ -9,9 +9,8 @@ summary: "Printing debug output means showing temporary messages in the console 
 title: "\u0412\u0438\u0432\u0435\u0434\u0435\u043D\u043D\u044F \u043D\u0430\u043B\u0430\
   \u0433\u043E\u0434\u0436\u0443\u0432\u0430\u043B\u044C\u043D\u043E\u0457 \u0456\u043D\
   \u0444\u043E\u0440\u043C\u0430\u0446\u0456\u0457"
+weight: 33
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why? (Що та Чому?)
 Printing debug output means showing temporary messages in the console to track what your code is doing. Programmers do this to catch bugs and make sure everything's running as expected.

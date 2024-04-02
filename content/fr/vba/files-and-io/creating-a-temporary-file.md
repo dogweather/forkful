@@ -10,9 +10,8 @@ model: gpt-4-0125-preview
 summary: "Cr\xE9er un fichier temporaire en Visual Basic pour Applications (VBA) consiste\
   \ \xE0 g\xE9n\xE9rer programmatiquement un fichier pour un usage \xE0 court terme,\u2026"
 title: "Cr\xE9ation d'un fichier temporaire"
+weight: 21
 ---
-
-{{< edit_this_page >}}
 
 ## Quoi & Pourquoi ?
 

@@ -7,9 +7,8 @@ model: gpt-4-1106-preview
 summary: "Lire les arguments de ligne de commande permet \xE0 vos programmes C++ d\u2019\
   agir sur des infos fournies au lancement. On le fait pour rendre les applis\u2026"
 title: Lecture des arguments de ligne de commande
+weight: 23
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why? (Quoi et Pourquoi ?)
 Lire les arguments de ligne de commande permet à vos programmes C++ d’agir sur des infos fournies au lancement. On le fait pour rendre les applis flexibles et adaptatives sans les modifier.

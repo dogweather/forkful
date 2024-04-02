@@ -11,9 +11,8 @@ summary: "Verificar se um diret\xF3rio existe \xE9 sobre determinar a presen\xE7
   \ de um diret\xF3rio em um caminho especificado antes de realizar opera\xE7\xF5\
   es como ler ou escrever\u2026"
 title: "Verificando se um diret\xF3rio existe"
+weight: 20
 ---
-
-{{< edit_this_page >}}
 
 ## O Que & Por Que?
 Verificar se um diretório existe é sobre determinar a presença de um diretório em um caminho especificado antes de realizar operações como ler ou escrever arquivos dentro dele. Os programadores fazem isso para evitar erros relacionados a operações de arquivo, garantindo uma execução mais suave e confiável das tarefas de manipulação de arquivos em suas aplicações.

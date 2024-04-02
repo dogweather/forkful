@@ -11,9 +11,8 @@ summary: "Es ist wesentlich in JavaScript zu \xFCberpr\xFCfen, ob ein Verzeichni
   \ existiert, um Aufgaben der Dateimanipulation durchzuf\xFChren. Dadurch k\xF6nnen\
   \ Skripte die\u2026"
 title: "\xDCberpr\xFCfung, ob ein Verzeichnis existiert"
+weight: 20
 ---
-
-{{< edit_this_page >}}
 
 ## Was & Warum?
 Es ist wesentlich in JavaScript zu überprüfen, ob ein Verzeichnis existiert, um Aufgaben der Dateimanipulation durchzuführen. Dadurch können Skripte die Anwesenheit eines Verzeichnisses bestätigen, bevor sie daraus lesen oder darauf schreiben. Diese Operation verhindert Fehler und gewährleistet einen reibungsloseren Programmablauf, insbesondere bei Anwendungen, die Dateien oder Verzeichnisse dynamisch basierend auf Benutzereingaben oder externen Datenquellen handhaben.

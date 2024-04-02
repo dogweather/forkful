@@ -10,9 +10,8 @@ model: gpt-4-0125-preview
 summary: "Att organisera kod i funktioner i Dart handlar om att definiera \xE5teranv\xE4\
   ndbara kodblock som utf\xF6r specifika uppgifter, typiskt genom att ta emot indata,\u2026"
 title: Organisera kod i funktioner
+weight: 18
 ---
-
-{{< edit_this_page >}}
 
 ## Vad & Varför?
 Att organisera kod i funktioner i Dart handlar om att definiera återanvändbara kodblock som utför specifika uppgifter, typiskt genom att ta emot indata, bearbeta data och möjligtvis returnera utdata. Programmerare gör detta för att förbättra kodläsbarhet, minska duplication och underlätta underhåll, vilket i slutändan leder till mer modulära och hanterbara kodbasar.

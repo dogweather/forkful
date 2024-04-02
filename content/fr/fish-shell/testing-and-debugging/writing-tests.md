@@ -10,9 +10,8 @@ model: gpt-4-0125-preview
 summary: "\xC9crire des tests en Fish Shell implique de cr\xE9er des scripts qui ex\xE9\
   cutent automatiquement votre code pour valider son comportement par rapport aux\u2026"
 title: "R\xE9daction de tests"
+weight: 36
 ---
-
-{{< edit_this_page >}}
 
 ## Quoi et Pourquoi ?
 

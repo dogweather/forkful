@@ -15,9 +15,8 @@ summary: "XML l\xE0 m\u1ED9t ng\xF4n ng\u1EEF \u0111\xE1nh d\u1EA5u \u0111\u01B0
   \u1EDDi v\xE0 m\xE1y m\xF3c. N\xF3 \u0111\xF3ng m\u1ED9t vai tr\xF2 ch\xEDnh trong\
   \ c\xE1c\u2026"
 title: "L\xE0m vi\u1EC7c v\u1EDBi XML"
+weight: 40
 ---
-
-{{< edit_this_page >}}
 
 ## Làm gì & Tại sao?
 XML là một ngôn ngữ đánh dấu được thiết kế để mã hóa tài liệu một cách có thể đọc được bởi cả con người và máy móc. Nó đóng một vai trò chính trong các dịch vụ web, tệp cấu hình, và trao đổi dữ liệu vì nó chuyên chở dữ liệu theo một định dạng có cấu trúc, phân cấp.

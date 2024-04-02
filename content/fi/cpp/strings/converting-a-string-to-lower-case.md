@@ -8,9 +8,8 @@ model: gpt-4-1106-preview
 summary: "Muuttaminen merkkijono pieniksi kirjaimiksi tarkoittaa kaikkien isojen kirjainten\
   \ muuntamista niiden pieniksi vastineiksi. Ohjelmoijat tekev\xE4t t\xE4m\xE4n\u2026"
 title: Merkkijonon muuntaminen pieniksi kirjaimiksi
+weight: 4
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why? (Mikä ja Miksi?)
 Muuttaminen merkkijono pieniksi kirjaimiksi tarkoittaa kaikkien isojen kirjainten muuntamista niiden pieniksi vastineiksi. Ohjelmoijat tekevät tämän yhdenmukaistaakseen dataa, helpottaakseen vertailua tai valmistellakseen tekstiä hakukoneille. 

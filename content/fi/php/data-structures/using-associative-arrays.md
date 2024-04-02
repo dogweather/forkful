@@ -10,9 +10,8 @@ model: gpt-4-0125-preview
 summary: "PHP:n assosiatiiviset taulukot ovat kuin tehostettuja listoja, joissa jokaista\
   \ alkiota voidaan k\xE4ytt\xE4\xE4 ihmisen luettavalla avaimella numeroiden sijaan.\u2026"
 title: "Assosiatiivisten taulukoiden k\xE4ytt\xF6"
+weight: 15
 ---
-
-{{< edit_this_page >}}
 
 ## Mikä & Miksi?
 

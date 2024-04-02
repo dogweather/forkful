@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Getallen afronden betekent ze aanpassen naar het dichtstbijzijnde geheel\
   \ getal of gespecificeerde decimale plaats. Het is een basisprincipe in\u2026"
 title: Afronden van getallen
+weight: 13
 ---
-
-{{< edit_this_page >}}
 
 ## Wat & Waarom?
 Getallen afronden betekent ze aanpassen naar het dichtstbijzijnde geheel getal of gespecificeerde decimale plaats. Het is een basisprincipe in programmeren om complexiteit te verminderen, prestaties te verhogen en voor momenten waarop precisie voorbij een bepaald punt geen waarde toevoegt.

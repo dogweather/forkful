@@ -9,9 +9,8 @@ summary: "Yhdist\xE4minen (\"string concatenation\") on useiden merkkijonojen li
   mist\xE4 yhteen. Koodarit tarvitsevat t\xE4t\xE4 toimintoa muodostaakseen yksitt\xE4\
   isist\xE4\u2026"
 title: "Merkkijonojen yhdist\xE4minen"
+weight: 3
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 Yhdistäminen ("string concatenation") on useiden merkkijonojen liittämistä yhteen. Koodarit tarvitsevat tätä toimintoa muodostaakseen yksittäisistä palasista tarpeellisia viestejä tai dataa.

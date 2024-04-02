@@ -11,9 +11,8 @@ summary: "\xC5 skrive tester i TypeScript inneb\xE6rer \xE5 lage automatiserte s
   \ for \xE5 verifisere funksjonaliteten og riktigheten av koden din. Programmerere\
   \ gj\xF8r dette\u2026"
 title: Skrive tester
+weight: 36
 ---
-
-{{< edit_this_page >}}
 
 ## Hva & Hvorfor?
 Å skrive tester i TypeScript innebærer å lage automatiserte skript for å verifisere funksjonaliteten og riktigheten av koden din. Programmerere gjør dette for å sikre pålitelighet, raskt oppdage feil og legge til rette for vedlikeholdbar kodevekst, siden TypeScript sin statiske typografi legger til et nivå av forutsigbarhet til JavaScript-testing.

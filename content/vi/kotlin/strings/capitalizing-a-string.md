@@ -15,9 +15,8 @@ summary: "Vi\u1EC7c vi\u1EBFt hoa m\u1ED9t chu\u1ED7i ngh\u0129a l\xE0 chuy\u1EC
   \ \u0111\u1EC3 \u0111\u1ECBnh d\u1EA1ng v\u0103n b\u1EA3n, \u0111\u1EA3m b\u1EA3\
   o\u2026"
 title: "Vi\u1EBFt hoa m\u1ED9t chu\u1ED7i"
+weight: 2
 ---
-
-{{< edit_this_page >}}
 
 ## Cái Gì và Tại Sao?
 

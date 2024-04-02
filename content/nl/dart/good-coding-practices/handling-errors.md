@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Fouten afhandelen in Dart gaat over het anticiperen op en beheren van uitzonderingen\
   \ die ontstaan tijdens de uitvoering van het programma om de\u2026"
 title: Fouten afhandelen
+weight: 16
 ---
-
-{{< edit_this_page >}}
 
 ## Wat & Waarom?
 Fouten afhandelen in Dart gaat over het anticiperen op en beheren van uitzonderingen die ontstaan tijdens de uitvoering van het programma om de betrouwbaarheid en bruikbaarheid te verbeteren. Programmeurs implementeren foutafhandeling om crashes te voorkomen en zinvolle feedback aan gebruikers te bieden, wat zorgt voor een soepelere, veiligere applicatie-ervaring.

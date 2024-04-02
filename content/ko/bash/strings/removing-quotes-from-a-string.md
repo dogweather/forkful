@@ -21,9 +21,8 @@ summary: "\uBB38\uC790\uC5F4\uC5D0\uC11C \uB530\uC634\uD45C\uB97C \uC81C\uAC70\u
   \ \uB370\uC774\uD130 \uD615\uC2DD\uC744 \uC900\uC218\uD558\uAE30 \uC704\uD574 \uC774\
   \ \uC791\uC5C5\uC744 \uC218\uD589\uD558\uACE0\uC790 \uD55C\uB2E4."
 title: "\uBB38\uC790\uC5F4\uC5D0\uC11C \uB530\uC634\uD45C \uC81C\uAC70\uD558\uAE30"
+weight: 9
 ---
-
-{{< edit_this_page >}}
 
 ## 무엇 & 왜?
 문자열에서 따옴표를 제거하는 것은 문자열을 둘러싼 따옴표를 없애는 작업을 의미한다. 프로그래머들은 종종 입력 데이터를 정화하거나, 데이터 비교를 위해 준비하거나, 다른 프로그램이나 시스템과의 인터페이싱 시 특정 데이터 형식을 준수하기 위해 이 작업을 수행하고자 한다.

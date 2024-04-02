@@ -11,9 +11,8 @@ summary: "L\xE0m vi\u1EC7c v\u1EDBi XML bao g\u1ED3m vi\u1EC7c ph\xE2n t\xEDch c
   \ ph\xE1p (parsing), truy v\u1EA5n (querying), v\xE0 thao t\xE1c (manipulating)\
   \ c\xE1c t\xE0i li\u1EC7u XML b\u1EB1ng Java. C\xE1c l\u1EADp tr\xECnh vi\xEAn\u2026"
 title: "L\xE0m vi\u1EC7c v\u1EDBi XML"
+weight: 40
 ---
-
-{{< edit_this_page >}}
 
 ## Cái gì & Tại sao?
 Làm việc với XML bao gồm việc phân tích cú pháp (parsing), truy vấn (querying), và thao tác (manipulating) các tài liệu XML bằng Java. Các lập trình viên thực hiện điều này để trao đổi dữ liệu, quản lý cấu hình và bởi vì nhiều hệ thống và API cũ sử dụng giao tiếp bằng XML.

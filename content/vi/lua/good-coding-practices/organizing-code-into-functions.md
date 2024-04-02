@@ -13,9 +13,8 @@ summary: "T\u1ED5 ch\u1EE9c m\xE3 l\u1EC7nh th\xE0nh c\xE1c h\xE0m l\xE0 vi\u1EC
   \ - h\xE3y ngh\u0129 \u0111\u1EBFn ch\xFAng nh\u01B0 c\xE1c kh\u1ED1i LEGO ch\u1EE9\
   c n\u0103ng. Ch\xFAng ta l\xE0m \u0111i\u1EC1u\u2026"
 title: "S\u1EAFp x\u1EBFp m\xE3 th\xE0nh c\xE1c h\xE0m"
+weight: 18
 ---
-
-{{< edit_this_page >}}
 
 ## Tại sao & Làm thế nào?
 Tổ chức mã lệnh thành các hàm là việc phân chia kịch bản của bạn thành các khối nhỏ - hãy nghĩ đến chúng như các khối LEGO chức năng. Chúng ta làm điều này để tăng cường tính rõ ràng, khả năng tái sử dụng và sự tỉnh táo. Điều này làm cho mã lệnh của chúng ta gọn gàng, dễ đọc và dễ bảo trì.

@@ -13,9 +13,8 @@ summary: "\u0110\u1ECDc m\u1ED9t t\u1EC7p v\u0103n b\u1EA3n c\xF3 ngh\u0129a l\x
   \u01A1ng tr\xECnh c\u1EE7a b\u1EA1n c\xF3 th\u1EC3 l\xE0m vi\u1EC7c v\u1EDBi. C\xE1\
   c l\u1EADp tr\xECnh vi\xEAn th\u1EF1c hi\u1EC7n vi\u1EC7c n\xE0y\u2026"
 title: "\u0110\u1ECDc m\u1ED9t t\u1EC7p v\u0103n b\u1EA3n"
+weight: 22
 ---
-
-{{< edit_this_page >}}
 
 ## Cái gì và Tại sao?
 Đọc một tệp văn bản có nghĩa là kéo nội dung của nó vào một hình thức mà chương trình của bạn có thể làm việc với. Các lập trình viên thực hiện việc này để xử lý dữ liệu, cấu hình, ghi nhật ký – bất cứ khi nào một tệp có thể đọc được bởi con người được liên quan.

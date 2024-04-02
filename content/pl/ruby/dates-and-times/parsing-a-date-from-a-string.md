@@ -11,9 +11,8 @@ summary: "Przetwarzanie daty z ci\u0105gu znak\xF3w polega na konwersji tekstu, 
   ry reprezentuje dat\u0119, na obiekt `Date` lub `DateTime`, kt\xF3ry jest zrozumia\u0142\
   y dla Ruby.\u2026"
 title: "Analiza sk\u0142adniowa daty z \u0142a\u0144cucha znak\xF3w"
+weight: 30
 ---
-
-{{< edit_this_page >}}
 
 ## Co i dlaczego?
 Przetwarzanie daty z ciągu znaków polega na konwersji tekstu, który reprezentuje datę, na obiekt `Date` lub `DateTime`, który jest zrozumiały dla Ruby. Programiści robią to, aby wykonywać operacje takie jak porównania, obliczenia czy formatowanie dat, co jest częstym zadaniem w aplikacjach zajmujących się planowaniem, analizą czy przetwarzaniem danych.

@@ -8,9 +8,8 @@ model: gpt-4-0125-preview
 summary: "Redondear n\xFAmeros es ajustar un decimal a su valor entero m\xE1s cercano\
   \ o a un n\xFAmero especificado de d\xEDgitos fraccionarios. Los programadores redondean\u2026"
 title: "Redondeo de n\xFAmeros"
+weight: 13
 ---
-
-{{< edit_this_page >}}
 
 ## ¿Qué y por qué?
 

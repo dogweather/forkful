@@ -13,9 +13,8 @@ summary: "L\u1EA5y ng\xE0y hi\u1EC7n t\u1EA1i tr\xEAn Arduino c\xF3 ngh\u0129a l
   c d\u1ECBch v\u1EE5 th\u1EDDi gian d\u1EF1a tr\xEAn internet \u0111\u1EC3 bi\u1EBF\
   t ng\xE0y hi\u1EC7n t\u1EA1i. T\u1EA1i\u2026"
 title: "L\u1EA5y ng\xE0y hi\u1EC7n t\u1EA1i"
+weight: 29
 ---
-
-{{< edit_this_page >}}
 
 ## Cái gì và Tại sao?
 Lấy ngày hiện tại trên Arduino có nghĩa là truy vấn một đồng hồ thời gian thực (RTC) hoặc dịch vụ thời gian dựa trên internet để biết ngày hiện tại. Tại sao lại làm điều này? Ghi lại các sự kiện, đánh dấu thời gian dữ liệu, hoặc lập lịch cho các hành động—việc biết ngày có thể rất quan trọng cho những công việc này.

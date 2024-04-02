@@ -14,9 +14,8 @@ summary: "\uB0A0\uC9DC \uACC4\uC0B0\uC740 \uBBF8\uB798\uB098 \uACFC\uAC70\uC758 
   , \uAE30\uD55C \uC124\uC815, \uC2DC\uAC04 \uAE30\uBC18 \uC54C\uB78C \uB4F1\uC744\
   \ \uC704\uD574 \uC774\uB97C \uC0AC\uC6A9\uD569\uB2C8\uB2E4."
 title: "\uBBF8\uB798\uB098 \uACFC\uAC70\uC758 \uB0A0\uC9DC \uACC4\uC0B0\uD558\uAE30"
+weight: 26
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why? (무엇과 왜?)
 날짜 계산은 미래나 과거의 특정 날짜를 결정하는 것입니다. 프로그래머들은 이벤트 스케줄링, 기한 설정, 시간 기반 알람 등을 위해 이를 사용합니다.

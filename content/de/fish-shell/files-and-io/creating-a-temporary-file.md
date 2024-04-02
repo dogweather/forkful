@@ -8,9 +8,8 @@ model: gpt-4-1106-preview
 summary: "Das Erstellen einer tempor\xE4ren Datei erm\xF6glicht es, kurzlebige Daten\
   \ zu speichern, ohne sich um manuelles Aufr\xE4umen k\xFCmmern zu m\xFCssen. Programmierer\u2026"
 title: "Erstellung einer tempor\xE4ren Datei"
+weight: 21
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why? (Was & Warum?)
 Das Erstellen einer temporären Datei ermöglicht es, kurzlebige Daten zu speichern, ohne sich um manuelles Aufräumen kümmern zu müssen. Programmierer nutzen dies für Daten, die nur während der Laufzeit eines Programms benötigt werden und danach irrelevant sind.

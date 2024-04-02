@@ -7,9 +7,8 @@ model: gpt-4-1106-preview
 summary: "Chunking code into functions is like sorting LEGO bricks into bins\u2014\
   it makes finding and using them easier. We do this to avoid repetition, to simplify\u2026"
 title: Organizing code into functions
+weight: 18
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 Chunking code into functions is like sorting LEGO bricks into bins—it makes finding and using them easier. We do this to avoid repetition, to simplify understanding, and to make maintenance less of a headache.

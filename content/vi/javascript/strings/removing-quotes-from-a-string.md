@@ -13,9 +13,8 @@ summary: "Lo\u1EA1i b\u1ECF d\u1EA5u ngo\u1EB7c k\xE9p kh\u1ECFi m\u1ED9t chu\u1
   n ph\u1EE9c c\xF3 th\u1EC3 l\xE0m r\u1ED1i tung code c\u1EE7a b\u1EA1n, \u0111\u1EB7\
   c bi\u1EC7t khi b\u1EA1n \u0111ang ph\xE2n t\xEDch d\u1EEF\u2026"
 title: "Lo\u1EA1i b\u1ECF d\u1EA5u ngo\u1EB7c k\xE9p kh\u1ECFi chu\u1ED7i"
+weight: 9
 ---
-
-{{< edit_this_page >}}
 
 ## Cái gì & Tại sao?
 Loại bỏ dấu ngoặc kép khỏi một chuỗi có nghĩa là bỏ đi những dấu ngoặc kép phiền phức có thể làm rối tung code của bạn, đặc biệt khi bạn đang phân tích dữ liệu hoặc xây dựng các đối tượng JSON. Các lập trình viên thực hiện điều này để làm sạch đầu vào, tránh lỗi cú pháp, và khiến cho chuỗi hợp tác tốt với các phần khác của code.

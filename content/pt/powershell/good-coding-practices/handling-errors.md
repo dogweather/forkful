@@ -9,9 +9,8 @@ summary: "Tratar erros no PowerShell significa prever os percal\xE7os e gerenci\
   -los de maneira suave. Programadores fazem isso para prevenir falhas e fornecer\
   \ aos\u2026"
 title: Tratamento de erros
+weight: 16
 ---
-
-{{< edit_this_page >}}
 
 ## O que e Por quê?
 Tratar erros no PowerShell significa prever os percalços e gerenciá-los de maneira suave. Programadores fazem isso para prevenir falhas e fornecer aos usuários um feedback útil.

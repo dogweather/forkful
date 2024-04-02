@@ -10,9 +10,8 @@ model: gpt-4-0125-preview
 summary: "Tekstitiedostoon kirjoittaminen Pythonissa on perusteht\xE4v\xE4, joka sis\xE4\
   lt\xE4\xE4 tiedoston luomisen tai avaamisen ja sitten tekstin lis\xE4\xE4misen tai\u2026"
 title: Tekstitiedoston kirjoittaminen
+weight: 24
 ---
-
-{{< edit_this_page >}}
 
 ## Mikä & Miksi?
 Tekstitiedostoon kirjoittaminen Pythonissa on perustehtävä, joka sisältää tiedoston luomisen tai avaamisen ja sitten tekstin lisäämisen tai ylikirjoittamisen. Tämä toiminnallisuus on ratkaisevan tärkeää datan kirjaamisessa, konfiguraation hallinnassa ja ohjelmien tuottaman tulosteen tallentamisessa, mikä tekee siitä perustavanlaatuisen, mutta olennaisen työkalun ohjelmoijan työkalupakissa.

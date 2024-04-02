@@ -14,9 +14,8 @@ summary: "\u521B\u5EFA\u4E34\u65F6\u6587\u4EF6\u5C31\u662F\u751F\u6210\u4E00\u4E
   \u6B63\u5F0F\u8FD0\u4F5C\u4E2D\u7684\u6570\u636E\uFF0C\u6216\u8005\u6D4B\u8BD5\u4EE3\
   \u7801\u65F6\u4E0D\u7834\u574F\u6301\u4E45\u6570\u636E\u3002"
 title: "\u521B\u5EFA\u4E34\u65F6\u6587\u4EF6"
+weight: 21
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why? (为什么以及为什么？)
 创建临时文件就是生成一个短暂存在，处理中间数据的文件。程序员这么做是为了避免干扰正式运作中的数据，或者测试代码时不破坏持久数据。

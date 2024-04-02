@@ -8,9 +8,8 @@ model: gpt-4-1106-preview
 summary: "La gestione degli errori nella programmazione riguarda l'anticipare l'inaspettato.\
   \ \xC8 l'arte di pianificare per quando le cose non vanno come previsto cos\xEC\u2026"
 title: Gestione degli errori
+weight: 16
 ---
-
-{{< edit_this_page >}}
 
 ## Cosa & Perché?
 La gestione degli errori nella programmazione riguarda l'anticipare l'inaspettato. È l'arte di pianificare per quando le cose non vanno come previsto così da poter mantenere il tuo programma funzionante in modo fluido.

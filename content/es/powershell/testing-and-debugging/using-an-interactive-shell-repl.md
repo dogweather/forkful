@@ -7,9 +7,8 @@ model: gpt-4-0125-preview
 summary: "La shell interactiva, o Bucle Leer-Evaluar-Imprimir (REPL, por sus siglas\
   \ en ingl\xE9s), te permite escribir comandos de PowerShell y obtener\u2026"
 title: Usando una shell interactiva (REPL)
+weight: 34
 ---
-
-{{< edit_this_page >}}
 
 ## ¿Qué y Por Qué?
 La shell interactiva, o Bucle Leer-Evaluar-Imprimir (REPL, por sus siglas en inglés), te permite escribir comandos de PowerShell y obtener retroalimentación inmediata. Los programadores la utilizan para probar rápidamente fragmentos de código, depurar o aprender nuevos comandos sin necesidad de escribir un script completo.

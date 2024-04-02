@@ -7,9 +7,8 @@ model: gpt-4-0125-preview
 summary: "Rimuovere le virgolette da una stringa significa eliminare ogni segno di\
   \ virgolettatura che racchiude il contenuto. Lo facciamo per sanificare gli input,\u2026"
 title: Rimuovere le virgolette da una stringa
+weight: 9
 ---
-
-{{< edit_this_page >}}
 
 ## Cosa & Perché?
 

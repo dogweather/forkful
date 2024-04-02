@@ -10,9 +10,8 @@ model: gpt-4-0125-preview
 summary: "L'invio di una richiesta HTTP in Google Apps Script consiste nel fare una\
   \ chiamata programmatica a un server web esterno o a un'API. I programmatori fanno\u2026"
 title: Inviare una richiesta HTTP
+weight: 44
 ---
-
-{{< edit_this_page >}}
 
 ## Cosa e Perché?
 

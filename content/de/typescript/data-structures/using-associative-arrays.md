@@ -11,9 +11,8 @@ summary: "Assoziative Arrays oder Objekte in TypeScript erm\xF6glichen es Ihnen,
   \ Strings (oder Schl\xFCsseln) auf Wertpaare zuzugreifen. Programmierer nutzen sie\
   \ f\xFCr\u2026"
 title: Verwendung von assoziativen Arrays
+weight: 15
 ---
-
-{{< edit_this_page >}}
 
 ## Was & Warum?
 

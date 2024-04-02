@@ -13,9 +13,8 @@ summary: "\u0110\u1ECDc c\xE1c \u0111\u1ED1i s\u1ED1 d\xF2ng l\u1EC7nh l\xE0 vi\
   \ gi\u1ED1ng nh\u01B0 nh\u1EEFng c\xE1i b\u1EAFt tay b\xED m\u1EADt \u0111\u1EC3\
   \ t\xF9y ch\u1EC9nh h\xE0nh vi c\u1EE7a script. L\u1EADp\u2026"
 title: "\u0110\u1ECDc c\xE1c \u0111\u1ED1i s\u1ED1 d\xF2ng l\u1EC7nh"
+weight: 23
 ---
-
-{{< edit_this_page >}}
 
 ## Cái gì & Tại sao?
 Đọc các đối số dòng lệnh là việc lấy những phần thêm bạn gõ sau tên của script, giống như những cái bắt tay bí mật để tùy chỉnh hành vi của script. Lập trình viên làm điều này để làm cho script linh hoạt và tương tác mà không cần rắc rối.

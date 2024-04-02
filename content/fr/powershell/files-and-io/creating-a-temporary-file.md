@@ -7,9 +7,8 @@ model: gpt-4-1106-preview
 summary: "Cr\xE9er un fichier temporaire, c'est faire un fichier qu'on utilisera juste\
   \ un court moment. Les programmeurs le font pour stocker des donn\xE9es provisoires\u2026"
 title: "Cr\xE9ation d'un fichier temporaire"
+weight: 21
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why? (Quoi et Pourquoi ?)
 Créer un fichier temporaire, c'est faire un fichier qu'on utilisera juste un court moment. Les programmeurs le font pour stocker des données provisoires sans encombrer le système.

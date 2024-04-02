@@ -7,9 +7,8 @@ model: gpt-4-0125-preview
 summary: "Sending an HTTP request with basic authentication in Visual Basic for Applications\
   \ (VBA) is about accessing web resources that are protected by username\u2026"
 title: Sending an HTTP request with basic authentication
+weight: 45
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 

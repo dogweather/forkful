@@ -10,9 +10,8 @@ summary: "\u4EC0\u4E48\u4EE5\u53CA\u4E3A\u4EC0\u4E48? Temporary files are those 
   \ to temporarily contain information while a program is running. Programmers create\
   \ them for tasks like\u2026"
 title: "\u521B\u5EFA\u4E34\u65F6\u6587\u4EF6"
+weight: 21
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 什么以及为什么?

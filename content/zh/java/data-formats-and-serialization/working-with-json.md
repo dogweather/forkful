@@ -19,9 +19,8 @@ summary: "\u4F7F\u7528 JSON (JavaScript \u5BF9\u8C61\u8868\u793A\u6CD5) \u610F\u
   \u636E\uFF0C\u56E0\u4E3A\u5B83\u6613\u4E8E\u4EBA\u7C7B\u9605\u8BFB\u548C\u8BED\u8A00\
   \u65E0\u5173\u3002"
 title: "\u4F7F\u7528JSON\u8FDB\u884C\u7F16\u7A0B"
+weight: 38
 ---
-
-{{< edit_this_page >}}
 
 ## 什么和为什么？
 使用 JSON (JavaScript 对象表示法) 意味着在 Java 应用程序中处理这种轻量级数据交换格式。程序员选择 JSON 来序列化和传输结构化数据，以及通过网络轻松配置和存储数据，因为它易于人类阅读和语言无关。

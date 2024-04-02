@@ -9,9 +9,8 @@ summary: "Att l\xE4sa kommandoradsargument inneb\xE4r att f\xE5nga text som skic
   \ till ett PHP-script fr\xE5n terminalen. Programmerare g\xF6r detta f\xF6r att\
   \ till\xE5ta interaktion\u2026"
 title: "L\xE4sa in kommandoradsargument"
+weight: 23
 ---
-
-{{< edit_this_page >}}
 
 ## Vad & Varför?
 Att läsa kommandoradsargument innebär att fånga text som skickas till ett PHP-script från terminalen. Programmerare gör detta för att tillåta interaktion och dynamiskt beteende i skripten.

@@ -7,9 +7,8 @@ model: gpt-4-1106-preview
 summary: "Working with XML means parsing, manipulating, and writing XML data using\
   \ programming. Programmers handle XML to exchange data across different systems,\u2026"
 title: Working with XML
+weight: 40
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 Working with XML means parsing, manipulating, and writing XML data using programming. Programmers handle XML to exchange data across different systems, for configuration files, or when working with standards like SOAP that rely on XML.

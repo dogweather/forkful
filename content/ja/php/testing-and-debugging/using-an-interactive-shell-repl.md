@@ -20,9 +20,8 @@ summary: "\u30A4\u30F3\u30BF\u30E9\u30AF\u30C6\u30A3\u30D6\u30B7\u30A7\u30EB\u30
   \u306F\u5B66\u7FD2\u306B\u7406\u60F3\u7684\u3067\u3059\u3002"
 title: "\u30A4\u30F3\u30BF\u30E9\u30AF\u30C6\u30A3\u30D6\u30B7\u30A7\u30EB\uFF08REPL\uFF09\
   \u306E\u4F7F\u7528"
+weight: 34
 ---
-
-{{< edit_this_page >}}
 
 ## 何となぜ？
 インタラクティブシェルまたはREPL（Read-Eval-Print Loop）を使用すると、PHPコードをその場で記述して実行できます。これは、フルスクリプトを作成する手間をかけずにスニペットをテストできるため、実験、デバッグ、もしくは学習に理想的です。

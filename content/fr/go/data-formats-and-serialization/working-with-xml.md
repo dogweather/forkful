@@ -11,9 +11,8 @@ summary: "Travailler avec XML en Go implique d'analyser (lire) et de g\xE9n\xE9r
   \ (\xE9crire) des documents XML \u2013 un format standard pour l'\xE9change de donn\xE9\
   es structur\xE9es.\u2026"
 title: Travailler avec XML
+weight: 40
 ---
-
-{{< edit_this_page >}}
 
 ## Quoi & Pourquoi ?
 

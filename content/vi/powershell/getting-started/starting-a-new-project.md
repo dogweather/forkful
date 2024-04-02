@@ -15,9 +15,8 @@ summary: "Vi\u1EC7c b\u1EAFt \u0111\u1EA7u m\u1ED9t d\u1EF1 \xE1n m\u1EDBi l\xE0
   i\u1EC1u n\xE0y \u0111\u1EC3 kh\u1EDFi \u0111\u1EA7u m\u1ED9t \xFD t\u01B0\u1EDF\
   ng m\u1EDBi\u2026"
 title: "B\u1EAFt \u0111\u1EA7u m\u1ED9t d\u1EF1 \xE1n m\u1EDBi"
+weight: 1
 ---
-
-{{< edit_this_page >}}
 
 ## Cái gì & Tại sao?
 Việc bắt đầu một dự án mới là việc đặt nền móng cho tác phẩm lập trình của bạn. Là những lập trình viên, chúng ta làm điều này để khởi đầu một ý tưởng mới hoặc triển khai các giải pháp một cách có tổ chức, dễ mở rộng.

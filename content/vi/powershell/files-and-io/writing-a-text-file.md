@@ -14,9 +14,8 @@ summary: "Vi\u1EBFt m\u1ED9t t\u1EC7p v\u0103n b\u1EA3n l\xE0 l\u01B0u tr\u1EEF 
   n \u0111\u0129a. L\u1EADp tr\xECnh vi\xEAn th\u1EF1c hi\u1EC7n vi\u1EC7c n\xE0y\
   \ cho m\u1EE5c \u0111\xEDch ghi nh\u1EADt k\xFD, c\u1EA5u h\xECnh, ho\u1EB7c\u2026"
 title: "Vi\u1EBFt m\u1ED9t t\u1EC7p v\u0103n b\u1EA3n"
+weight: 24
 ---
-
-{{< edit_this_page >}}
 
 ## Cái gì & Tại sao?
 Viết một tệp văn bản là lưu trữ dữ liệu dưới dạng văn bản thuần túy trên đĩa. Lập trình viên thực hiện việc này cho mục đích ghi nhật ký, cấu hình, hoặc lưu trữ dữ liệu người dùng. Đó là nền tảng nhưng cực kỳ quan trọng cho hầu hết các ứng dụng.

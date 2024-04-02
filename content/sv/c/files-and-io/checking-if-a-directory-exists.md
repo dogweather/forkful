@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Att kontrollera om en katalog existerar i C inneb\xE4r att man fr\xE5gar\
   \ filsystemet f\xF6r att verifiera om en specifik s\xF6kv\xE4g leder till en katalog.\u2026"
 title: Kontrollera om en katalog existerar
+weight: 20
 ---
-
-{{< edit_this_page >}}
 
 ## Vad och Varför?
 

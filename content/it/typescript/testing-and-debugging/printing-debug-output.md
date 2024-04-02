@@ -7,9 +7,8 @@ model: gpt-4-1106-preview
 summary: "Stampare l'output di debug \xE8 mostrare valori e messaggi nel terminale\
   \ per tracciare cosa succede nel tuo codice. I programmatori lo fanno per capire\u2026"
 title: Stampa dell'output di debug
+weight: 33
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 Stampare l'output di debug è mostrare valori e messaggi nel terminale per tracciare cosa succede nel tuo codice. I programmatori lo fanno per capire meglio i flussi logici e individuare errori (bugs).

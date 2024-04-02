@@ -11,9 +11,8 @@ summary: "Scrivere su un file di testo in Lua comporta la creazione o l'apertura
   \ un file in modalit\xE0 di scrittura, quindi utilizzare le operazioni sui file\
   \ per\u2026"
 title: Scrivere un file di testo
+weight: 24
 ---
-
-{{< edit_this_page >}}
 
 ## Cosa & Perché?
 

@@ -11,9 +11,8 @@ summary: "Escrever testes em programa\xE7\xE3o envolve criar pequenas pe\xE7as s
   \ de c\xF3digo para verificar automaticamente se diferentes partes da sua aplica\xE7\
   \xE3o\u2026"
 title: Escrevendo testes
+weight: 36
 ---
-
-{{< edit_this_page >}}
 
 ## O Que & Por Quê?
 

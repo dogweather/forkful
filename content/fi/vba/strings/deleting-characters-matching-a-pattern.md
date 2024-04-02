@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Merkkien poistaminen tietyll\xE4 kaavalla Visual Basic for Applications\
   \ (VBA) -ohjelmassa tarkoittaa tiettyjen ehtojen t\xE4ytt\xE4vien merkkien tai merkkijonojen\u2026"
 title: Mallin mukaisten merkkien poistaminen
+weight: 5
 ---
-
-{{< edit_this_page >}}
 
 ## Mikä & Miksi?
 

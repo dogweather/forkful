@@ -13,9 +13,8 @@ summary: "Vi\u1EC7c sinh s\u1ED1 ng\u1EABu nhi\xEAn l\xE0 m\u1ED9t nhi\u1EC7m v\
   ng cho m\u1ECDi th\u1EE9 t\u1EEB vi\u1EC7c l\u1EA5y m\u1EABu d\u1EEF li\u1EC7u \u0111\
   \u1EBFn ph\xE1t tri\u1EC3n tr\xF2 ch\u01A1i. Trong Fish\u2026"
 title: "Sinh s\u1ED1 ng\u1EABu nhi\xEAn"
+weight: 12
 ---
-
-{{< edit_this_page >}}
 
 ## Cái gì & Tại sao?
 

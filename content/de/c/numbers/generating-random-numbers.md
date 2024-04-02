@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Die Generierung von Zufallszahlen in C umfasst das Erstellen von Werten,\
   \ die unvorhersehbar sind und einer spezifischen Verteilung folgen, wie zum\u2026"
 title: Zufallszahlen generieren
+weight: 12
 ---
-
-{{< edit_this_page >}}
 
 ## Was & Warum?
 

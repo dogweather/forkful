@@ -11,9 +11,8 @@ summary: "Testien kirjoittaminen Bashissa k\xE4sitt\xE4\xE4 testitapausten skrip
   \ Bash-skriptien toiminnallisuuden varmistamiseksi. Ohjelmoijat suorittavat testej\xE4\
   \u2026"
 title: Testien kirjoittaminen
+weight: 36
 ---
-
-{{< edit_this_page >}}
 
 ## Mikä ja miksi?
 Testien kirjoittaminen Bashissa käsittää testitapausten skriptaamisen Bash-skriptien toiminnallisuuden varmistamiseksi. Ohjelmoijat suorittavat testejä varmistaakseen, että heidän skriptinsä toimivat odotetusti erilaisissa olosuhteissa, ja nappaamaan virheet ja bugit ennen käyttöönottoa.

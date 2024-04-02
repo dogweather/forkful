@@ -9,9 +9,8 @@ summary: "Convertir une date en cha\xEEne de caract\xE8res permet de la formater
   \ l'affichage ou le stockage. Les programmeurs font \xE7a pour la lisibilit\xE9\
   \ et pour\u2026"
 title: "Conversion d'une date en cha\xEEne de caract\xE8res"
+weight: 28
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 Convertir une date en chaîne de caractères permet de la formater pour l'affichage ou le stockage. Les programmeurs font ça pour la lisibilité et pour respecter les normes de formatage locales.

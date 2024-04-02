@@ -7,9 +7,8 @@ model: gpt-4-0125-preview
 summary: "Un shell interactif, ou REPL (Read-Eval-Print Loop, Boucle Lire-\xC9valuer-Imprimer),\
   \ vous permet de tester du code en temps r\xE9el. Les programmeurs\u2026"
 title: Utilisation d'une console interactive (REPL)
+weight: 34
 ---
-
-{{< edit_this_page >}}
 
 ## Quoi et Pourquoi ?
 Un shell interactif, ou REPL (Read-Eval-Print Loop, Boucle Lire-Évaluer-Imprimer), vous permet de tester du code en temps réel. Les programmeurs l'utilisent pour expérimenter, déboguer et apprendre les subtilités de Ruby sans créer de scripts complets.

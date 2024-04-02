@@ -7,9 +7,8 @@ model: gpt-4-1106-preview
 summary: "String-Konkatenierung ist das Zusammenf\xFCgen von zwei oder mehreren Textst\xFC\
   cken zu einem einzigen String. Programmierer nutzen das, um dynamische\u2026"
 title: "Zeichenketten verkn\xFCpfen"
+weight: 3
 ---
-
-{{< edit_this_page >}}
 
 ## Was & Warum?
 String-Konkatenierung ist das Zusammenfügen von zwei oder mehreren Textstücken zu einem einzigen String. Programmierer nutzen das, um dynamische Textinhalte zu erstellen oder bestehende Informationen zu erweitern.

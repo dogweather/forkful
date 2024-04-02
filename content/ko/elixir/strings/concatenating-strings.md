@@ -21,9 +21,8 @@ summary: "\uBB38\uC790\uC5F4 \uC5F0\uACB0\uC740 \uB450 \uAC1C \uC774\uC0C1\uC758
   \uB4E0 \uD504\uB85C\uADF8\uB798\uBC0D \uC5B8\uC5B4\uC5D0\uC11C \uAE30\uBCF8\uC801\
   \uC778 \uC791\uC5C5\uC73C\uB85C, \uAC1C\uBC1C\uC790\uAC00 \uB3D9\uC801\u2026"
 title: "\uBB38\uC790\uC5F4 \uC5F0\uACB0\uD558\uAE30"
+weight: 3
 ---
-
-{{< edit_this_page >}}
 
 ## 무엇 & 왜?
 문자열 연결은 두 개 이상의 문자열을 결합하여 단일 텍스트 조각을 형성하는 것입니다. 사용자 메시지 생성, 파일 경로 생성 또는 데이터 직렬화 프로세스를 위해 텍스트를 병합해야 할 수도 있습니다. 이는 엘릭서를 포함한 모든 프로그래밍 언어에서 기본적인 작업으로, 개발자가 동적 문자열을 쉽게 구성할 수 있도록 합니다.

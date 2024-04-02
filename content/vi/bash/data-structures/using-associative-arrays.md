@@ -13,9 +13,8 @@ summary: "M\u1EA3ng li\xEAn k\u1EBFt l\xE0 nh\u01B0 nh\u1EEFng m\u1EA3ng t\u0103
   \ m\u1EE5c thay v\xEC ch\u1EC9 c\xF3 s\u1ED1 nguy\xEAn. L\u1EADp tr\xECnh vi\xEA\
   n s\u1EED d\u1EE5ng ch\xFAng cho c\u1EA5u tr\xFAc d\u1EEF\u2026"
 title: "S\u1EED d\u1EE5ng m\u1EA3ng li\xEAn k\u1EBFt"
+weight: 15
 ---
-
-{{< edit_this_page >}}
 
 ## Cái gì & Tại sao?
 

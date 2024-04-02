@@ -7,9 +7,8 @@ model: unknown
 summary: "O parsing de HTML \xE9 o processo de converter strings de HTML em uma estrutura\
   \ que possa ser manipulada e acessada pelo seu programa Elm. Programadores\u2026"
 title: "An\xE1lise de HTML"
+weight: 43
 ---
-
-{{< edit_this_page >}}
 
 ## O Que é & Porquê?
 

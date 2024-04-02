@@ -9,9 +9,8 @@ summary: "Le remaniement (ou refactoring) est essentiellement le grand m\xE9nage
   \ votre base de code - il s'agit de restructurer le code existant sans en changer\
   \ le\u2026"
 title: Refactoring
+weight: 19
 ---
-
-{{< edit_this_page >}}
 
 ## Quoi et pourquoi ?
 Le remaniement (ou refactoring) est essentiellement le grand ménage de votre base de code - il s'agit de restructurer le code existant sans en changer le comportement externe. Les programmeurs le font pour rendre le code plus lisible, réduire la complexité, améliorer la maintenabilité, et faciliter son extension.

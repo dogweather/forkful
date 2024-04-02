@@ -16,9 +16,8 @@ summary: "\uBB38\uC790\uC5F4\uC758 \uAE38\uC774\uB97C \uCC3E\uB294 \uAC74 \uADF8
   \ UI \uBD80\uBD84\uC5D0\uC11C \uBB38\uC790 \uC81C\uD55C\uC744 \uC801\uC6A9\uD560\
   \ \uB54C \uC774\uB97C \uC0AC\uC6A9\uD569\uB2C8\uB2E4."
 title: "\uBB38\uC790\uC5F4\uC758 \uAE38\uC774 \uCC3E\uAE30"
+weight: 7
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why? (무엇과 왜?)
 문자열의 길이를 찾는 건 그 문자열이 몇 개의 문자를 포함하는지 세는 것입니다. 프로그래머들은 문자열 처리, 데이터 검증, 혹은 UI 부분에서 문자 제한을 적용할 때 이를 사용합니다.

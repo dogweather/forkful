@@ -19,9 +19,8 @@ summary: "\uD45C\uC900 \uC624\uB958(stderr)\uC5D0 \uAE30\uB85D\uD558\uAE30\uB294
   \uB9AC\uD558\uC5EC \uB514\uBC84\uAE45\uACFC \uB85C\uADF8 \uBD84\uC11D\uC744 \uC6A9\
   \uC774\uD558\uAC8C \uD569\uB2C8\uB2E4."
 title: "\uD45C\uC900 \uC5D0\uB7EC\uC5D0 \uC4F0\uAE30"
+weight: 25
 ---
-
-{{< edit_this_page >}}
 
 ## 무엇 & 왜?
 표준 오류(stderr)에 기록하기는 콘솔이나 터미널에 에러 메시지와 진단 정보를 출력하는 과정을 말합니다. 프로그래머들은 이를 통해 에러 정보를 표준 출력(stdout)과 분리하여 디버깅과 로그 분석을 용이하게 합니다.

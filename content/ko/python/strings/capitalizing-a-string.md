@@ -21,9 +21,8 @@ summary: "\uBB38\uC790\uC5F4\uC744 \uB300\uBB38\uC790\uD654\uD558\uB294 \uAC83\u
   \ \uB370\uC774\uD130 \uCC98\uB9AC\uC5D0\uC11C \uC77C\uBC18\uC801\uC73C\uB85C \uC0AC\
   \uC6A9\uB429\uB2C8\uB2E4."
 title: "\uBB38\uC790\uC5F4 \uB300\uBB38\uC790\uD654"
+weight: 2
 ---
-
-{{< edit_this_page >}}
 
 ## 무엇이며, 왜 그럴까?
 문자열을 대문자화하는 것은 문자열의 첫 글자를 대문자로 변환하고 나머지를 소문자로 변환하는 것을 의미합니다. 이 작업은 입력을 정규화하거나 제목, 이름 등의 가독성을 향상시키기 위해 데이터 처리에서 일반적으로 사용됩니다.

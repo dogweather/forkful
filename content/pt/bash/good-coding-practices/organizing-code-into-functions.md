@@ -9,9 +9,8 @@ summary: "Dividir c\xF3digo em fun\xE7\xF5es significa decompor scripts em bloco
   \ menores e reutiliz\xE1veis que realizam tarefas espec\xEDficas. Isso torna o c\xF3\
   digo mais limpo,\u2026"
 title: "Organizando o c\xF3digo em fun\xE7\xF5es"
+weight: 18
 ---
-
-{{< edit_this_page >}}
 
 ## O Quê & Porquê?
 Dividir código em funções significa decompor scripts em blocos menores e reutilizáveis que realizam tarefas específicas. Isso torna o código mais limpo, mais compreensível e mais fácil de depurar.

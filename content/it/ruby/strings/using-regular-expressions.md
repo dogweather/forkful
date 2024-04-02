@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Le espressioni regolari (regex) in Ruby sono schemi utilizzati per identificare\
   \ combinazioni di caratteri nelle stringhe, consentendo agli sviluppatori di\u2026"
 title: Utilizzo delle espressioni regolari
+weight: 11
 ---
-
-{{< edit_this_page >}}
 
 ## Cosa e Perché?
 Le espressioni regolari (regex) in Ruby sono schemi utilizzati per identificare combinazioni di caratteri nelle stringhe, consentendo agli sviluppatori di cercare, trovare corrispondenze e manipolare testi in modo efficiente. I programmatori utilizzano le regex per compiti come la validazione, l'analisi sintattica e la manipolazione delle stringhe, rendendole uno strumento indispensabile per l'elaborazione del testo.

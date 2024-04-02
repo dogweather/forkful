@@ -7,9 +7,8 @@ model: gpt-4-1106-preview
 summary: "Manejar errores en PowerShell significa prever los contratiempos y gestionarlos\
   \ de manera fluida. Los programadores hacen esto para evitar fallos y\u2026"
 title: Manejo de errores
+weight: 16
 ---
-
-{{< edit_this_page >}}
 
 ## ¿Qué y por qué?
 Manejar errores en PowerShell significa prever los contratiempos y gestionarlos de manera fluida. Los programadores hacen esto para evitar fallos y proporcionar a los usuarios retroalimentación útil.

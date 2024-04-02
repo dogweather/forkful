@@ -7,9 +7,8 @@ model: gpt-4-0125-preview
 summary: "String interpolation is the process of injecting variable values directly\
   \ into strings, often for creating meaningful messages without cumbersome\u2026"
 title: Interpolating a string
+weight: 8
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 

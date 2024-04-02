@@ -9,9 +9,8 @@ summary: "Lavorare con XML in Elixir significa analizzare, creare e manipolare d
   \ XML. I programmatori si occupano di XML perch\xE9 \xE8 diffuso nei servizi web,\
   \ nei\u2026"
 title: Lavorare con XML
+weight: 40
 ---
-
-{{< edit_this_page >}}
 
 ## Cosa & Perché?
 Lavorare con XML in Elixir significa analizzare, creare e manipolare dati XML. I programmatori si occupano di XML perché è diffuso nei servizi web, nei file di configurazione e nei sistemi legacy.

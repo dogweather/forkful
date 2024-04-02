@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "JSONin k\xE4sittelyyn kuuluu JSON-muotoiltujen merkkijonojen j\xE4sent\xE4\
   minen tietorakenteiksi, joita Elixir voi k\xE4sitell\xE4, ja Elixir-tietorakenteiden\u2026"
 title: "Ty\xF6skentely JSON:n kanssa"
+weight: 38
 ---
-
-{{< edit_this_page >}}
 
 ## Mikä ja miksi?
 

@@ -15,9 +15,8 @@ summary: "TOML\uC740 Tom's Obvious, Minimal Language\uB97C \uC758\uBBF8\uD569\uB
   \ \uC4F8 \uC218 \uC788\uC73C\uBA70, \uD574\uC2DC \uD14C\uC774\uBE14\uC5D0 \uC798\
   \ \uB9F5\uD551\uB418\uAE30 \uB54C\uBB38\uC5D0 \uC0AC\uC6A9\uD569\uB2C8\uB2E4."
 title: "\uD504\uB85C\uADF8\uB798\uBA38\uB97C \uC704\uD55C TOML \uB2E4\uB8E8\uAE30"
+weight: 39
 ---
-
-{{< edit_this_page >}}
 
 ## 무엇 & 왜?
 TOML은 Tom's Obvious, Minimal Language를 의미합니다. 이것은 구성 파일을 위해 사용되는 데이터 직렬화 형식입니다. 프로그래머들은 이를 쉽게 읽고 쓸 수 있으며, 해시 테이블에 잘 맵핑되기 때문에 사용합니다.

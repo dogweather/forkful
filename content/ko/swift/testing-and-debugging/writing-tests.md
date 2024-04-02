@@ -23,9 +23,8 @@ summary: "Swift\uB85C \uD14C\uC2A4\uD2B8 \uC791\uC131\uC740 \uC560\uD50C\uB9AC\u
   \uB4DC \uB9AC\uD329\uD1A0\uB9C1\uC744 \uC6A9\uC774\uD558\uAC8C \uD558\uAE30 \uC704\
   \uD574 \uC774 \uC791\uC5C5\uC744 \uD569\uB2C8\uB2E4."
 title: "\uD14C\uC2A4\uD2B8 \uC791\uC131\uD558\uAE30"
+weight: 36
 ---
-
-{{< edit_this_page >}}
 
 ## 무엇 & 왜?
 Swift로 테스트 작성은 애플리케이션의 다른 코드 단위의 정확성을 검증하는 코드를 생성하고 실행하는 것을 포함합니다. 프로그래머들은 신뢰성을 보장하고, 개발 주기 초기에 버그를 감지하며, 의도하지 않은 결과 없이 미래 코드 리팩토링을 용이하게 하기 위해 이 작업을 합니다.

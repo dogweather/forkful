@@ -11,9 +11,8 @@ summary: "Praca z JSON w Lua polega na parsowaniu \u0142a\u0144cuch\xF3w znak\xF
   w sformatowanych w JSON do tabel Lua i odwrotnie, co umo\u017Cliwia \u0142atw\u0105\
   \ wymian\u0119 danych mi\u0119dzy\u2026"
 title: Praca z JSON
+weight: 38
 ---
-
-{{< edit_this_page >}}
 
 ## Co i dlaczego?
 Praca z JSON w Lua polega na parsowaniu łańcuchów znaków sformatowanych w JSON do tabel Lua i odwrotnie, co umożliwia łatwą wymianę danych między aplikacjami Lua a usługami sieciowymi lub zewnętrznymi API. Programiści robią to, aby wykorzystać lekki i łatwy do parsowania format JSON dla efektywnego przechowywania danych, konfiguracji lub komunikacji z API.

@@ -11,9 +11,8 @@ summary: "Verificar se um diret\xF3rio existe em Python consiste em confirmar a 
   a de uma pasta no sistema de arquivos antes de realizar opera\xE7\xF5es como ler\
   \ ou\u2026"
 title: "Verificando se um diret\xF3rio existe"
+weight: 20
 ---
-
-{{< edit_this_page >}}
 
 ## O Que & Por Que?
 Verificar se um diretório existe em Python consiste em confirmar a presença de uma pasta no sistema de arquivos antes de realizar operações como ler ou escrever arquivos. Os programadores fazem isso para evitar erros como `FileNotFoundError`, garantindo que a aplicação se comporte de maneira confiável e não trave ao tentar interagir com diretórios.

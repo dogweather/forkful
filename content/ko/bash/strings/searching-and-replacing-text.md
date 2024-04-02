@@ -16,9 +16,8 @@ summary: "\uD14D\uC2A4\uD2B8 \uAC80\uC0C9\uACFC \uB300\uCCB4\uB294 \uAE30\uC874 
   \uACBD \uB4F1 \uB2E4\uC591\uD55C \uC774\uC720\uB85C \uC774 \uC791\uC5C5\uC744 \uD569\
   \uB2C8\uB2E4."
 title: "\uD14D\uC2A4\uD2B8 \uAC80\uC0C9 \uBC0F \uAD50\uCCB4"
+weight: 10
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why? (대체 무엇이며 왜 필요한가?)
 텍스트 검색과 대체는 기존 문자열을 찾아 다른 문자열로 바꾸는 작업입니다. 프로그래머들은 코드 수정, 데이터 정제, 설정 변경 등 다양한 이유로 이 작업을 합니다.

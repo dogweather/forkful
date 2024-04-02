@@ -11,9 +11,8 @@ summary: "Ty\xF6skentely JSONin (JavaScript Object Notation) kanssa sis\xE4lt\xE
   \ JSON-tietojen j\xE4sent\xE4misen merkkijonoista Dart-olioihin ja p\xE4invastoin,\
   \ mik\xE4 on yleinen\u2026"
 title: "Ty\xF6skentely JSON:n kanssa"
+weight: 38
 ---
-
-{{< edit_this_page >}}
 
 ## Mitä & Miksi?
 

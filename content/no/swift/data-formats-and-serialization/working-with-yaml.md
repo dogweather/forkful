@@ -11,9 +11,8 @@ summary: "YAML, som st\xE5r for YAML Ain't Markup Language, er en menneskevennli
   \ standard for dataserialisering for alle programmeringsspr\xE5k. Programmerere\
   \ bruker det\u2026"
 title: Arbeider med YAML
+weight: 41
 ---
-
-{{< edit_this_page >}}
 
 ## Hva & Hvorfor?
 YAML, som står for YAML Ain't Markup Language, er en menneskevennlig standard for dataserialisering for alle programmeringsspråk. Programmerere bruker det til konfigurasjonsfiler, interprosessmeldinger og datalagring fordi lesbarheten er mye nærmere vanlig engelsk sammenlignet med andre dataformater som XML eller JSON, noe som gjør det enklere å forstå og skrive.

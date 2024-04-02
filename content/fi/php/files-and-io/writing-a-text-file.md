@@ -11,9 +11,8 @@ summary: "Tekstitiedoston kirjoittaminen PHP:ss\xE4 sis\xE4lt\xE4\xE4 tiedoston 
   \ tai avaamisen ja sis\xE4ll\xF6n lis\xE4\xE4misen siihen. Ohjelmoijat tekev\xE4\
   t n\xE4in tallentaakseen\u2026"
 title: Tekstitiedoston kirjoittaminen
+weight: 24
 ---
-
-{{< edit_this_page >}}
 
 ## Mikä & Miksi?
 Tekstitiedoston kirjoittaminen PHP:ssä sisältää tiedoston luomisen tai avaamisen ja sisällön lisäämisen siihen. Ohjelmoijat tekevät näin tallentaakseen dataa, kuten käyttäjän tuottamaa sisältöä tai lokitietoja, ohjelman elinkaaren yli.

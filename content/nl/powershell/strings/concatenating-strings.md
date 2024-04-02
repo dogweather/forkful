@@ -10,9 +10,8 @@ model: gpt-4-0125-preview
 summary: "Het combineren van strings, of concatenatie, is zoals het maken van een\
   \ trein van woorden. We doen het om teksten samen te voegen, zinnen te vormen, of\u2026"
 title: Samenvoegen van strings
+weight: 3
 ---
-
-{{< edit_this_page >}}
 
 ## Wat & Waarom?
 Het combineren van strings, of concatenatie, is zoals het maken van een trein van woorden. We doen het om teksten samen te voegen, zinnen te vormen, of eender welke situatie waarin afzonderlijke strings maatjes moeten worden en één geheel vormen.

@@ -18,9 +18,8 @@ summary: "\uD14D\uC2A4\uD2B8\uB97C \uAC80\uC0C9\uD558\uACE0 \uAD50\uCCB4\uD558\u
   \uC5C5\uC744 \uC704\uD574 \uC774 \uAE30\uB2A5\uC744 \uC0AC\uC6A9\uD569\uB2C8\uB2E4\
   ."
 title: "\uD14D\uC2A4\uD2B8 \uAC80\uC0C9 \uBC0F \uAD50\uCCB4"
+weight: 10
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why? (무엇과 왜?)
 텍스트를 검색하고 교체하는 것은 문자열에서 특정 문자나 단어를 찾아 변경하는 과정입니다. 프로그래머는 데이터 정제, 패턴 매칭, 사용자 입력 변환 등의 작업을 위해 이 기능을 사용합니다.

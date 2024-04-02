@@ -9,9 +9,8 @@ summary: "Czytanie argument\xF3w z linii polece\u0144 to proces pobierania danyc
   \ od u\u017Cytkownika, kiedy uruchamia program. Programi\u015Bci robi\u0105 to,\
   \ aby ich aplikacje mog\u0142y by\u0107\u2026"
 title: "Odczytywanie argument\xF3w linii polece\u0144"
+weight: 23
 ---
-
-{{< edit_this_page >}}
 
 ## Co i dlaczego?
 Czytanie argumentów z linii poleceń to proces pobierania danych od użytkownika, kiedy uruchamia program. Programiści robią to, aby ich aplikacje mogły być bardziej elastyczne i dostosowywać się do potrzeb użytkownika bez konieczności modyfikowania kodu.

@@ -11,9 +11,8 @@ summary: "JSON (JavaScript Object Notation) to lekki format s\u0142u\u017C\u0105
   \ do przechowywania i transportowania danych, co czyni go doskona\u0142ym medium\
   \ do wymiany danych\u2026"
 title: Praca z JSON
+weight: 38
 ---
-
-{{< edit_this_page >}}
 
 ## Co i dlaczego?
 

@@ -11,9 +11,8 @@ summary: "Regul\xE6re uttrykk i programmering er sekvenser av tegn som definerer
   \ s\xF8kem\xF8nster, typisk brukt for s\xF8k i strenger og manipulering av disse.\
   \ Haskell-\u2026"
 title: "Bruke regul\xE6re uttrykk"
+weight: 11
 ---
-
-{{< edit_this_page >}}
 
 ## Hva & Hvorfor?
 Regulære uttrykk i programmering er sekvenser av tegn som definerer et søkemønster, typisk brukt for søk i strenger og manipulering av disse. Haskell-programmerere bruker regulære uttrykk til oppgaver som spenner fra enkel strengmatching til kompleks tekstbehandling, ved å utnytte deres effektivitet og allsidighet når det gjelder behandling av tekstdata.

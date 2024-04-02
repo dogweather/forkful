@@ -17,9 +17,8 @@ summary: "\u5728 Bash \u4E2D\u7F16\u5199\u6D4B\u8BD5\u6D89\u53CA\u5230\u811A\u67
   \u5DE5\u4F5C\uFF0C\u6355\u83B7\u9519\u8BEF\u548C\u7F3A\u9677\uFF0C\u4EE5\u4FBF\u5728\
   \u90E8\u7F72\u524D\u8FDB\u884C\u4FEE\u590D\u3002"
 title: "\u7F16\u5199\u6D4B\u8BD5"
+weight: 36
 ---
-
-{{< edit_this_page >}}
 
 ## 什么 & 为什么？
 在 Bash 中编写测试涉及到脚本化测试用例，以验证你的 Bash 脚本的功能。程序员进行测试以确保他们的脚本在各种条件下按预期工作，捕获错误和缺陷，以便在部署前进行修复。

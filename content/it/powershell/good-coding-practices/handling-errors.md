@@ -8,9 +8,8 @@ model: gpt-4-1106-preview
 summary: "Gestire gli errori in PowerShell significa prevedere gli imprevisti e gestirli\
   \ in modo fluido. I programmatori lo fanno per prevenire crash e fornire agli\u2026"
 title: Gestione degli errori
+weight: 16
 ---
-
-{{< edit_this_page >}}
 
 ## Cosa & Perché?
 Gestire gli errori in PowerShell significa prevedere gli imprevisti e gestirli in modo fluido. I programmatori lo fanno per prevenire crash e fornire agli utenti un feedback utile.

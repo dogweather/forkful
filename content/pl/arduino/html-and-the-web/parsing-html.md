@@ -11,9 +11,8 @@ summary: "Przetwarzanie HTML w projektach Arduino polega na ekstrakcji informacj
   \ ze stron internetowych. Programi\u015Bci robi\u0105 to, aby umo\u017Cliwi\u0107\
   \ ich urz\u0105dzeniom\u2026"
 title: "Analiza sk\u0142adniowa HTML"
+weight: 43
 ---
-
-{{< edit_this_page >}}
 
 ## Co i dlaczego?
 

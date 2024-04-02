@@ -10,9 +10,8 @@ model: gpt-4-0125-preview
 summary: "Tests in Elm zu schreiben, bedeutet, Testf\xE4lle zu erstellen, um die Korrektheit\
   \ Ihres Elm-Codes zu \xFCberpr\xFCfen und sicherzustellen, dass er sich wie\u2026"
 title: Tests Schreiben
+weight: 36
 ---
-
-{{< edit_this_page >}}
 
 ## Was & Warum?
 

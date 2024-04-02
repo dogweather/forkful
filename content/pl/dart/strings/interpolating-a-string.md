@@ -11,9 +11,8 @@ summary: "Interpolacja \u0142a\u0144cuch\xF3w znak\xF3w to proces wstrzykiwania 
   ci zmiennych bezpo\u015Brednio w \u0142a\u0144cuchy znak\xF3w, cz\u0119sto w celu\
   \ tworzenia znacz\u0105cych komunikat\xF3w\u2026"
 title: "Interpolacja ci\u0105gu znak\xF3w"
+weight: 8
 ---
-
-{{< edit_this_page >}}
 
 ## Co i dlaczego?
 

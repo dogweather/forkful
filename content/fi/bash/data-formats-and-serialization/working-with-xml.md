@@ -7,9 +7,8 @@ model: gpt-4-0125-preview
 summary: "XML:n k\xE4sittelyyn kuuluu j\xE4sennys, tietojen poiminta ja manipulointi\
   \ Laajennettavassa Merkint\xE4kieless\xE4 (Extensible Markup Language). Ohjelmoijat\u2026"
 title: "XML:n k\xE4sittely"
+weight: 40
 ---
-
-{{< edit_this_page >}}
 
 ## Mikä & Miksi?
 XML:n käsittelyyn kuuluu jäsennys, tietojen poiminta ja manipulointi Laajennettavassa Merkintäkielessä (Extensible Markup Language). Ohjelmoijat kamppailevat XML:n kanssa, koska se on laajalti käytetty tietojenvaihtoformaatti konfiguraatioille, API:lle ja muulle.

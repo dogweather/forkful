@@ -7,9 +7,8 @@ model: gpt-4-1106-preview
 summary: "Manejar errores en la programaci\xF3n es gestionar lo inesperado\u2014cosas\
   \ que pueden salir mal. Los programadores lo hacen para asegurar que sus programas\u2026"
 title: Manejo de errores
+weight: 16
 ---
-
-{{< edit_this_page >}}
 
 ## ¿Qué y Por Qué?
 Manejar errores en la programación es gestionar lo inesperado—cosas que pueden salir mal. Los programadores lo hacen para asegurar que sus programas puedan afrontar estas situaciones con gracia, sin colapsar o producir resultados incorrectos.

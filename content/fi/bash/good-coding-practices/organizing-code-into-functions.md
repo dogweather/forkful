@@ -9,9 +9,8 @@ summary: "Koodin jakaminen funktioihin tarkoittaa skriptien pilkkomista pienempi
   \ uudelleenk\xE4ytett\xE4viin lohkoihin, jotka suorittavat tiettyj\xE4 teht\xE4\
   vi\xE4. Se tekee\u2026"
 title: "Koodin j\xE4rjest\xE4minen funktioihin"
+weight: 18
 ---
-
-{{< edit_this_page >}}
 
 ## Mitä ja miksi?
 Koodin jakaminen funktioihin tarkoittaa skriptien pilkkomista pienempiin, uudelleenkäytettäviin lohkoihin, jotka suorittavat tiettyjä tehtäviä. Se tekee koodista selkeämmän, ymmärrettävämmän ja helpomman virheenjäljityksen kannalta.

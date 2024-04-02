@@ -9,9 +9,8 @@ summary: "Sammenkjeding av strenger handler om \xE5 sl\xE5 sammen tekster til \x
   n. Programmerere gj\xF8r dette for \xE5 bygge setninger, vise data og kombinere\
   \ brukerinput."
 title: "Sammensl\xE5ing av strenger"
+weight: 3
 ---
-
-{{< edit_this_page >}}
 
 ## Hva & Hvorfor?
 Sammenkjeding av strenger handler om å slå sammen tekster til én. Programmerere gjør dette for å bygge setninger, vise data og kombinere brukerinput.

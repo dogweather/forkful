@@ -11,9 +11,8 @@ summary: "Descargar una p\xE1gina web en C implica acceder program\xE1ticamente 
   \ contenido de una p\xE1gina web a trav\xE9s de internet y guardarla localmente\
   \ para su\u2026"
 title: "Descargando una p\xE1gina web"
+weight: 42
 ---
-
-{{< edit_this_page >}}
 
 ## Qué y Por Qué?
 

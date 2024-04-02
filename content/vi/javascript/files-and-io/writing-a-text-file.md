@@ -13,9 +13,8 @@ summary: "Vi\u1EC7c vi\u1EBFt m\u1ED9t t\u1EC7p v\u0103n b\u1EA3n trong JavaScri
   o m\u1ED9t t\u1EC7p \u1EDF \u0111\u1ECBnh d\u1EA1ng d\u1EC5 \u0111\u1ECDc cho con\
   \ ng\u01B0\u1EDDi. L\u1EADp tr\xECnh vi\xEAn th\u1EF1c hi\u1EC7n \u0111i\u1EC1u\u2026"
 title: "Vi\u1EBFt m\u1ED9t t\u1EC7p v\u0103n b\u1EA3n"
+weight: 24
 ---
-
-{{< edit_this_page >}}
 
 ## Cái gì & Tại sao?
 

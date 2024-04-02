@@ -11,9 +11,8 @@ summary: "Att g\xF6ra f\xF6rsta bokstaven i varje ord i en str\xE4ng till versal
   r att man modifierar f\xF6rsta bokstaven till att vara stor bokstav medan resten\
   \ g\xF6r man\u2026"
 title: "G\xF6r om en str\xE4ng till versaler"
+weight: 2
 ---
-
-{{< edit_this_page >}}
 
 ## Vad & Varför?
 Att göra första bokstaven i varje ord i en sträng till versal innebär att man modifierar första bokstaven till att vara stor bokstav medan resten gör man till gemener. Denna vanliga manipulering av strängar är användbar för att formatera text i applikationer, till exempel för att förbereda användarnamn eller titlar för visning enligt konvention eller grammatisk korrekthet.

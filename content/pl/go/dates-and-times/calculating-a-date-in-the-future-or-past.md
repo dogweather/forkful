@@ -11,9 +11,8 @@ summary: "Obliczanie daty w przysz\u0142o\u015Bci lub przesz\u0142o\u015Bci w Go
   \ na manipulowaniu warto\u015Bciami daty i czasu, aby okre\u015Bli\u0107 konkretny\
   \ punkt wzgl\u0119dem podanej daty.\u2026"
 title: "Obliczanie daty w przysz\u0142o\u015Bci lub przesz\u0142o\u015Bci"
+weight: 26
 ---
-
-{{< edit_this_page >}}
 
 ## Co i dlaczego?
 

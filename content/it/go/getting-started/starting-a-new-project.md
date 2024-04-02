@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Avviare un nuovo progetto in Go comporta l'impostazione di uno spazio di\
   \ lavoro e l'inizializzazione dello stesso con i moduli Go necessari. I\u2026"
 title: Iniziare un nuovo progetto
+weight: 1
 ---
-
-{{< edit_this_page >}}
 
 ## Cosa & Perché?
 

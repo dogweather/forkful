@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Komplekse tall, representert som en kombinasjon av reelle og imagin\xE6\
   re enheter (f.eks. 3 + 4i), er grunnleggende i ulike beregningsproblemer, spesielt\u2026"
 title: Arbeide med komplekse tall
+weight: 14
 ---
-
-{{< edit_this_page >}}
 
 ## Hva & Hvorfor?
 Komplekse tall, representert som en kombinasjon av reelle og imaginære enheter (f.eks. 3 + 4i), er grunnleggende i ulike beregningsproblemer, spesielt innen ingeniørvitenskap, fysikk og anvendt matematikk. Å lære å manipulere disse tallene i Google Apps Script gjør at programmerere kan utvide sine kapasiteter innen vitenskapelig databehandling, signalbehandling og videre.

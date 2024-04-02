@@ -13,9 +13,8 @@ summary: "So s\xE1nh hai ng\xE0y trong Dart bao g\u1ED3m vi\u1EC7c \u0111\xE1nh 
   a ch\xFAng, l\xE0 m\u1ED9t ch\u1EE9c n\u0103ng thi\u1EBFt y\u1EBFu trong c\xE1c\
   \ \u1EE9ng d\u1EE5ng qu\u1EA3n l\xFD\u2026"
 title: "So s\xE1nh hai ng\xE0y"
+weight: 27
 ---
-
-{{< edit_this_page >}}
 
 ## Cái gì & Tại sao?
 So sánh hai ngày trong Dart bao gồm việc đánh giá sự khác biệt về thời gian hoặc thứ tự giữa chúng, là một chức năng thiết yếu trong các ứng dụng quản lý sự kiện, hạn chót hoặc bất kỳ dữ liệu nhạy cảm với thời gian nào. Lập trình viên thường cần điều này để kiểm soát luồng logic, xác thực hoặc sắp xếp dữ liệu dựa trên điều kiện thời gian.

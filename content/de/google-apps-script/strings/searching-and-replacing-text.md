@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Das Suchen und Ersetzen von Text in Google Apps Script beinhaltet das programmatische\
   \ Identifizieren spezifischer Zeichenketten in einem Dokument, einer\u2026"
 title: Suchen und Ersetzen von Text
+weight: 10
 ---
-
-{{< edit_this_page >}}
 
 ## Was & Warum?
 

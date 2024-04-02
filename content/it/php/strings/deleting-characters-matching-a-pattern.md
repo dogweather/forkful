@@ -9,9 +9,8 @@ summary: "\"Che cosa e perch\xE9?\" Eliminare caratteri che corrispondono a un m
   \ specifico \xE8 come fare il pruning su un albero; togli i rami non necessari.\
   \ I\u2026"
 title: Eliminazione di caratteri che corrispondono a un pattern
+weight: 5
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 "Che cosa e perché?"

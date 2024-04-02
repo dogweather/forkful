@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Pilkuin erotetut arvot (CSV, Comma-Separated Values) ovat kaikkialla k\xE4\
   ytetty tietojen vaihdon muoto yksinkertaisuutensa ja helpon ohjelmointikielten,\u2026"
 title: "Ty\xF6skentely CSV:n kanssa"
+weight: 37
 ---
-
-{{< edit_this_page >}}
 
 ## Mikä ja miksi?
 

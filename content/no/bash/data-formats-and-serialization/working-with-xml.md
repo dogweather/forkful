@@ -9,9 +9,8 @@ summary: "\xC5 jobbe med XML inneb\xE6rer parsing, ekstrahering og manipulering 
   \ data i Extensible Markup Language-formatet. Programmere sliter med XML siden det\
   \ er et\u2026"
 title: "\xC5 jobbe med XML"
+weight: 40
 ---
-
-{{< edit_this_page >}}
 
 ## Hva & Hvorfor?
 Å jobbe med XML innebærer parsing, ekstrahering og manipulering av data i Extensible Markup Language-formatet. Programmere sliter med XML siden det er et utbredt datautvekslingsformat for konfigurasjoner, APIer og mer.

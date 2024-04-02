@@ -8,9 +8,8 @@ model: gpt-4-1106-preview
 summary: "\xC5 hente ut understrenger betyr \xE5 ta ut en spesifisert del av en streng.\
   \ Programmerere gj\xF8r dette for \xE5 bearbeide data, validere input eller simpelthen\u2026"
 title: Uthenting av delstrenger
+weight: 6
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 Å hente ut understrenger betyr å ta ut en spesifisert del av en streng. Programmerere gjør dette for å bearbeide data, validere input eller simpelthen skille ut relevant informasjon.

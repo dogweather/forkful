@@ -9,9 +9,8 @@ summary: "Calculating a date in the future or past involves determining a specif
   \ date by adding or subtracting a certain number of days, months, or years from\
   \ a\u2026"
 title: Calculating a date in the future or past
+weight: 26
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 Calculating a date in the future or past involves determining a specific date by adding or subtracting a certain number of days, months, or years from a given date. Programmers do this for tasks such as scheduling events, generating reminders, or handling expiration dates, making it an essential functionality in various applications, from calendaring systems to financial software.

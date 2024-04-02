@@ -9,9 +9,8 @@ summary: "Midlertidige filer er kortvarige datalagringselementer som skapes unde
   \ kj\xF8ring av programmer. Programmerere lager dem for \xE5 h\xE5ndtere store datastr\xF8\
   mmer,\u2026"
 title: Opprette en midlertidig fil
+weight: 21
 ---
-
-{{< edit_this_page >}}
 
 ## Hva & Hvorfor?
 Midlertidige filer er kortvarige datalagringselementer som skapes under kjøring av programmer. Programmerere lager dem for å håndtere store datastrømmer, mellomlagre informasjon som ikke trenger å bli bevart langsiktig, eller når de tester funksjonaliteter uten å påvirke den faktiske datalagringen.

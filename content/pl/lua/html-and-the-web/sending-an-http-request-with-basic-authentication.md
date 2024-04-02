@@ -9,9 +9,8 @@ summary: "Wysy\u0142anie \u017C\u0105dania HTTP z uwierzytelnianiem podstawowym 
   \ spos\xF3b na zapewnienie dost\u0119pu do zasob\xF3w wymagaj\u0105cych potwierdzenia\
   \ to\u017Csamo\u015Bci. Programi\u015Bci\u2026"
 title: "Wysy\u0142anie zapytania http z podstawow\u0105 autoryzacj\u0105"
+weight: 45
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why? (Co i dlaczego?)
 Wysyłanie żądania HTTP z uwierzytelnianiem podstawowym to sposób na zapewnienie dostępu do zasobów wymagających potwierdzenia tożsamości. Programiści wykorzystują to do komunikacji z zabezpieczonymi API, pozwalając aplikacjom na operacje wymagające autoryzacji.

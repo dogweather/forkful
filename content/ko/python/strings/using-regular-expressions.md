@@ -21,9 +21,8 @@ summary: "\uC815\uADDC \uD45C\uD604\uC2DD(regex)\uC740 \uBB38\uC790\uC5F4\uC5D0\
   , \uBCC0\uD658\uACFC \uAC19\uC740 \uC791\uC5C5\uC5D0 \uD544\uC218\uC801\uC785\uB2C8\
   \uB2E4."
 title: "\uC815\uADDC \uD45C\uD604\uC2DD \uC0AC\uC6A9\uD558\uAE30"
+weight: 11
 ---
-
-{{< edit_this_page >}}
 
 ## 무엇 & 왜?
 정규 표현식(regex)은 문자열에서 문자 조합을 일치시키는 데 사용되는 패턴입니다. 프로그래머들은 정의된 패턴을 기반으로 텍스트 검색, 편집, 또는 조작하는 데 이를 활용하여 데이터 검증, 파싱, 변환과 같은 작업에 필수적입니다.

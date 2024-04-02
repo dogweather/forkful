@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Trabalhar com JSON (JavaScript Object Notation) em Go envolve codificar\
   \ e decodificar dados entre estruturas de dados de Go e o formato JSON. Essa tarefa\u2026"
 title: Trabalhando com JSON
+weight: 38
 ---
-
-{{< edit_this_page >}}
 
 ## O Quê & Por Quê?
 

@@ -9,9 +9,8 @@ summary: "Arrondir les nombres signifie les ajuster \xE0 la valeur de place la p
   \ proche\u2014pensez \xE0 les simplifier. Les programmeurs arrondissent pour contr\xF4\
   ler la\u2026"
 title: Arrondir les nombres
+weight: 13
 ---
-
-{{< edit_this_page >}}
 
 ## Quoi & Pourquoi ?
 Arrondir les nombres signifie les ajuster à la valeur de place la plus proche—pensez à les simplifier. Les programmeurs arrondissent pour contrôler la précision, améliorer la performance ou lors de l'affichage de résultats conviviaux pour l'utilisateur—comme les prix qui n'ont pas besoin de trois décimales.

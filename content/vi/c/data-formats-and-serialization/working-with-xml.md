@@ -13,9 +13,8 @@ summary: "L\xE0m vi\u1EC7c v\u1EDBi XML trong C bao g\u1ED3m vi\u1EC7c ph\xE2n t
   u XML s\u1EED d\u1EE5ng c\xE1c th\u01B0 vi\u1EC7n kh\xE1c nhau. C\xE1c l\u1EADp\
   \ tr\xECnh vi\xEAn\u2026"
 title: "L\xE0m vi\u1EC7c v\u1EDBi XML"
+weight: 40
 ---
-
-{{< edit_this_page >}}
 
 ## Cái gì & Tại sao?
 

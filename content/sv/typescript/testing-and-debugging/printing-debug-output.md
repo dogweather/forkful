@@ -9,9 +9,8 @@ summary: "Utskrift f\xF6r fels\xF6kning (debugging) \xE4r n\xE4r du skriver ut d
   \ till konsolen f\xF6r att se vad som h\xE4nder i din kod. Programmerare g\xF6r\
   \ det f\xF6r att snabbt\u2026"
 title: "Skriva ut fels\xF6kningsdata"
+weight: 33
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 Utskrift för felsökning (debugging) är när du skriver ut data till konsolen för att se vad som händer i din kod. Programmerare gör det för att snabbt identifiera och rätta till buggar.

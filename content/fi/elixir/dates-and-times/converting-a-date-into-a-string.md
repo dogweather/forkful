@@ -9,9 +9,8 @@ summary: "Muuntaminen p\xE4iv\xE4m\xE4\xE4r\xE4st\xE4 merkkijonoksi tarkoittaa p
   iv\xE4m\xE4\xE4r\xE4-datan esitt\xE4mist\xE4 luettavassa muodossa. Kehitt\xE4j\xE4\
   t tekev\xE4t t\xE4t\xE4, koska ihmiset ymm\xE4rt\xE4v\xE4t\u2026"
 title: "P\xE4iv\xE4m\xE4\xE4r\xE4n muuntaminen merkkijonoksi"
+weight: 28
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 Muuntaminen päivämäärästä merkkijonoksi tarkoittaa päivämäärä-datan esittämistä luettavassa muodossa. Kehittäjät tekevät tätä, koska ihmiset ymmärtävät paremmin "1. maaliskuuta 2023" kuin puhdasta aikaleimadataa.

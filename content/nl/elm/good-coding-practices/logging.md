@@ -10,9 +10,8 @@ model: gpt-4-0125-preview
 summary: "Loggen is in wezen het proces van het vastleggen van gebeurtenissen en data-uitvoer\
   \ van een softwareprogramma tijdens het draaien, denk erover als het\u2026"
 title: Logboekregistratie
+weight: 17
 ---
-
-{{< edit_this_page >}}
 
 ## Wat & Waarom?
 Loggen is in wezen het proces van het vastleggen van gebeurtenissen en data-uitvoer van een softwareprogramma tijdens het draaien, denk erover als het dagboek van de software. Programmeurs gebruiken loggen om bij te houden wat er onder de motorkap gebeurt - het is van onschatbare waarde voor het debuggen van problemen, het in realtime monitoren van het systeemgedrag en het analyseren van eerdere activiteiten voor prestatieoptimalisaties of audits.

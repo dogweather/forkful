@@ -10,9 +10,8 @@ model: gpt-4-0125-preview
 summary: "Analisar uma data a partir de uma string no Arduino envolve extrair e converter\
   \ os componentes da data (ano, m\xEAs, dia) de uma representa\xE7\xE3o textual para\u2026"
 title: Analisando uma data a partir de uma string
+weight: 30
 ---
-
-{{< edit_this_page >}}
 
 ## O Que e Por Quê?
 

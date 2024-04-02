@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "YAML, jonka nimi tulee sanoista \"YAML Ain't Markup Language\", on ihmisen\
   \ luettavissa oleva datan serialisointiformaatti, jota k\xE4ytet\xE4\xE4n yleisesti\u2026"
 title: "Ty\xF6skentely YAML:n kanssa"
+weight: 41
 ---
-
-{{< edit_this_page >}}
 
 ## Mikä ja miksi?
 

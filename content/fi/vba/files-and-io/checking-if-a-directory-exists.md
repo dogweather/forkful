@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Hakemiston olemassaolon tarkistaminen Visual Basic for Applications -ohjelmointikieless\xE4\
   \ (VBA) liittyy kansion olemassaolon varmentamiseen\u2026"
 title: Tarkistetaan, onko hakemisto olemassa
+weight: 20
 ---
-
-{{< edit_this_page >}}
 
 ## Mikä & Miksi?
 

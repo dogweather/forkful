@@ -9,9 +9,8 @@ summary: "G\xE9n\xE9rer des nombres al\xE9atoires en C# implique la cr\xE9ation 
   \ valeurs num\xE9riques impr\xE9visibles dans une plage sp\xE9cifi\xE9e. Les programmeurs\
   \ utilisent ces\u2026"
 title: "G\xE9n\xE9ration de nombres al\xE9atoires"
+weight: 12
 ---
-
-{{< edit_this_page >}}
 
 ## Quoi & Pourquoi ?
 

@@ -8,9 +8,8 @@ model: gpt-4-1106-preview
 summary: "\xC5 beregne en dato i fremtiden eller fortiden betyr \xE5 finne ut n\xF8\
   yaktig hvilken dato det vil v\xE6re etter eller f\xF8r et visst tidsintervall. Programmerere\u2026"
 title: Beregning av en dato i fremtiden eller fortiden
+weight: 26
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 Å beregne en dato i fremtiden eller fortiden betyr å finne ut nøyaktig hvilken dato det vil være etter eller før et visst tidsintervall. Programmerere gjør dette for å håndtere funksjoner relatert til tidsfrister, hendelser og planlegging i applikasjonene sine.

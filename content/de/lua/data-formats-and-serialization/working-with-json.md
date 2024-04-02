@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Das Arbeiten mit JSON in Lua umfasst das Parsen von JSON-formatierten Strings\
   \ in Lua-Tabellen und umgekehrt, was einen einfachen Datenaustausch zwischen\u2026"
 title: Arbeiten mit JSON
+weight: 38
 ---
-
-{{< edit_this_page >}}
 
 ## Was & Warum?
 Das Arbeiten mit JSON in Lua umfasst das Parsen von JSON-formatierten Strings in Lua-Tabellen und umgekehrt, was einen einfachen Datenaustausch zwischen Lua-Anwendungen und Webdiensten oder externen APIs ermöglicht. Programmierer tun dies, um das leichte und einfach zu parsende Format von JSON für effiziente Datenspeicherung, Konfiguration oder API-Kommunikation zu nutzen.

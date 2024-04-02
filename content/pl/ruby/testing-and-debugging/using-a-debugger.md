@@ -1,14 +1,15 @@
 ---
 date: 2024-01-26 04:09:56.989343-07:00
-description: "U\u017Cywanie debugera w Ruby daje programistom supermoc, umo\u017C\
-  liwiaj\u0105c\u0105 zatrzymanie ich kodu, inspekcj\u0119 zmiennych oraz krok po\
-  \ kroku przegl\u0105danie ich kodu.\u2026"
+description: "Ruby jest wyposa\u017Cony w wbudowany debugger o nazwie `byebug`. Najpierw,\
+  \ do\u0142\u0105cz `byebug` do swojego Gemfile i uruchom `bundle install`. Nast\u0119\
+  pnie, umie\u015B\u0107\u2026"
 lastmod: '2024-03-13T22:44:35.936868-06:00'
 model: gpt-4-0125-preview
-summary: "U\u017Cywanie debugera w Ruby daje programistom supermoc, umo\u017Cliwiaj\u0105\
-  c\u0105 zatrzymanie ich kodu, inspekcj\u0119 zmiennych oraz krok po kroku przegl\u0105\
-  danie ich kodu.\u2026"
+summary: "Ruby jest wyposa\u017Cony w wbudowany debugger o nazwie `byebug`. Najpierw,\
+  \ do\u0142\u0105cz `byebug` do swojego Gemfile i uruchom `bundle install`. Nast\u0119\
+  pnie, umie\u015B\u0107\u2026"
 title: Korzystanie z debugera
+weight: 35
 ---
 
 ## Jak to zrobić:

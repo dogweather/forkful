@@ -11,9 +11,8 @@ summary: "La concat\xE9nation de cha\xEEnes en C consiste \xE0 joindre deux cha\
   nes ou plus bout \xE0 bout pour former une nouvelle cha\xEEne. Les programmeurs\
   \ effectuent cette\u2026"
 title: "Concat\xE9nation de cha\xEEnes"
+weight: 3
 ---
-
-{{< edit_this_page >}}
 
 ## Quoi & Pourquoi ?
 

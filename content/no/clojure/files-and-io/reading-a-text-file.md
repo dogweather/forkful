@@ -9,9 +9,8 @@ summary: "\xC5 lese en tekstfil betyr \xE5 hente data fra en fil lagret p\xE5 di
   \ for \xE5 bruke den i et program. Programmerere gj\xF8r dette fordi filer ofte\
   \ inneholder\u2026"
 title: Lese en tekstfil
+weight: 22
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 Å lese en tekstfil betyr å hente data fra en fil lagret på disken for å bruke den i et program. Programmerere gjør dette fordi filer ofte inneholder nyttig data som konfigurasjon, brukerdata eller annen tekst som skal behandles.

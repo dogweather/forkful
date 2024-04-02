@@ -9,9 +9,8 @@ summary: "XML:n kanssa ty\xF6skentelyn yhteydess\xE4 k\xE4sitell\xE4\xE4n XML-do
   \ koodin avulla. Ohjelmoijat tekev\xE4t t\xE4m\xE4n lukeakseen, kirjoittaakseen\
   \ ja muokatakseen\u2026"
 title: "XML:n k\xE4sittely"
+weight: 40
 ---
-
-{{< edit_this_page >}}
 
 ## Mikä & Miksi?
 XML:n kanssa työskentelyn yhteydessä käsitellään XML-dokumentteja koodin avulla. Ohjelmoijat tekevät tämän lukeakseen, kirjoittaakseen ja muokatakseen dataa rakenteellisessa, siirrettävässä muodossa, jota käytetään laajalti datan vaihdossa ja tallennuksessa.

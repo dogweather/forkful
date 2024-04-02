@@ -9,9 +9,8 @@ summary: "Vertailemme kahta p\xE4iv\xE4m\xE4\xE4r\xE4\xE4 selvitt\xE4\xE4ksemme 
   \ v\xE4lisen suhteen. Koodarit tekev\xE4t t\xE4t\xE4 esimerkiksi aikarajojen tarkistamiseen,\
   \ p\xE4iv\xE4m\xE4\xE4r\xE4laskentaan\u2026"
 title: "Kahden p\xE4iv\xE4m\xE4\xE4r\xE4n vertailu"
+weight: 27
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why? (Mitä ja Miksi?)
 Vertailemme kahta päivämäärää selvittääksemme niiden välisen suhteen. Koodarit tekevät tätä esimerkiksi aikarajojen tarkistamiseen, päivämäärälaskentaan tai aikasarjojen analysointiin.

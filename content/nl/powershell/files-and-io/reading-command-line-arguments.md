@@ -10,9 +10,8 @@ model: gpt-4-0125-preview
 summary: "Het lezen van command line argumenten stelt scripts in staat om zich anders\
   \ te gedragen op basis van invoer van buiten de code. Programmeurs gebruiken ze\u2026"
 title: Commandoregelargumenten lezen
+weight: 23
 ---
-
-{{< edit_this_page >}}
 
 ## Wat & Waarom?
 

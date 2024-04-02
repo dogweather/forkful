@@ -11,9 +11,8 @@ summary: "Visual Basic for Applications (VBA) -ohjelmoinnissa nykyisen p\xE4iv\x
   m\xE4\xE4r\xE4n noutaminen on yleinen teht\xE4v\xE4, joka mahdollistaa ohjelmoijien\
   \ dynaamisen\u2026"
 title: "Nykyisen p\xE4iv\xE4m\xE4\xE4r\xE4n hankkiminen"
+weight: 29
 ---
-
-{{< edit_this_page >}}
 
 ## Mitä & Miksi?
 

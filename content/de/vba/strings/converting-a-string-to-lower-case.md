@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Das Umwandeln eines Strings in Kleinbuchstaben beinhaltet die Transformation\
   \ aller Gro\xDFbuchstaben in einem String in ihre Kleinbuchstaben-\xC4quivalente.\u2026"
 title: Einen String in Kleinbuchstaben umwandeln
+weight: 4
 ---
-
-{{< edit_this_page >}}
 
 ## Was & Warum?
 

@@ -10,9 +10,8 @@ model: gpt-4-0125-preview
 summary: "Stringinterpolatie gaat over het invoegen van variabelen in strings. We\
   \ doen dit om ter plekke berichten samen te stellen, output te personaliseren of\u2026"
 title: Een string interpoleren
+weight: 8
 ---
-
-{{< edit_this_page >}}
 
 ## Wat & Waarom?
 Stringinterpolatie gaat over het invoegen van variabelen in strings. We doen dit om ter plekke berichten samen te stellen, output te personaliseren of dynamische queries op te bouwen.

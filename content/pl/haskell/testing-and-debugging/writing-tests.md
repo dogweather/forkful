@@ -11,9 +11,8 @@ summary: "Pisanie test\xF3w w Haskellu polega na zapewnieniu, \u017Ce twoje funk
   \ dzia\u0142aj\u0105 zgodnie z oczekiwaniami poprzez automatyczne kontrole. Programi\u015B\
   ci robi\u0105 to,\u2026"
 title: "Pisanie test\xF3w"
+weight: 36
 ---
-
-{{< edit_this_page >}}
 
 ## Co & Dlaczego?
 

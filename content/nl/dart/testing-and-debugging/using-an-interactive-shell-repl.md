@@ -11,9 +11,8 @@ summary: "Een interactieve shell (REPL - Read-Evaluate-Print Loop) voor Dart ste
   \ programmeurs in staat om Dart code regel voor regel dynamisch te typen en uit\
   \ te\u2026"
 title: Het Gebruik van een Interactieve Shell (REPL)
+weight: 34
 ---
-
-{{< edit_this_page >}}
 
 ## Wat & Waarom?
 

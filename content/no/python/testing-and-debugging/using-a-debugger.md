@@ -1,14 +1,15 @@
 ---
 date: 2024-01-26 04:08:56.813966-07:00
-description: "\"\xC5 bruke en feils\xF8ker\" handler om \xE5 steg-for-steg g\xE5 gjennom\
-  \ Python-koden din for \xE5 avdekke feil og forst\xE5 oppf\xF8rsel. Vi gj\xF8r det\
-  \ fordi det er mye enklere\u2026"
+description: "La oss bryte ned bruken av `pdb`, Pythons innebygde feils\xF8ker. Forestill\
+  \ deg en fil, `buggy.py`, med en lur feil: ```Python def add_one(number): result\
+  \ =\u2026"
 lastmod: '2024-03-13T22:44:40.365877-06:00'
 model: gpt-4-0125-preview
-summary: "\"\xC5 bruke en feils\xF8ker\" handler om \xE5 steg-for-steg g\xE5 gjennom\
-  \ Python-koden din for \xE5 avdekke feil og forst\xE5 oppf\xF8rsel. Vi gj\xF8r det\
-  \ fordi det er mye enklere\u2026"
+summary: "La oss bryte ned bruken av `pdb`, Pythons innebygde feils\xF8ker. Forestill\
+  \ deg en fil, `buggy.py`, med en lur feil: ```Python def add_one(number): result\
+  \ =\u2026"
 title: "\xC5 bruke en debugger"
+weight: 35
 ---
 
 ## Hvordan:

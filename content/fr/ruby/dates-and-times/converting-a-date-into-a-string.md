@@ -9,9 +9,8 @@ summary: "Transformer une date en cha\xEEne de caract\xE8res, c'est convertir un
   \ Date en une repr\xE9sentation textuelle. Les d\xE9veloppeurs le font pour l'affichage\
   \ \xE0\u2026"
 title: "Conversion d'une date en cha\xEEne de caract\xE8res"
+weight: 28
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 Transformer une date en chaîne de caractères, c'est convertir un objet Date en une représentation textuelle. Les développeurs le font pour l'affichage à l'utilisateur, la sauvegarde dans une base de données, ou l'interopérabilité avec d'autres systèmes.

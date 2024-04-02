@@ -1,14 +1,15 @@
 ---
 date: 2024-01-26 03:48:15.714827-07:00
-description: "U\u017Cywanie debugera oznacza korzystanie ze specjalistycznych narz\u0119\
-  dzi do testowania i diagnozowania kodu. Programi\u015Bci robi\u0105 to, aby wyeliminowa\u0107\
-  \ b\u0142\u0119dy,\u2026"
+description: "Wyobra\u017A sobie, \u017Ce masz ma\u0142y program, kt\xF3ry nie dzia\u0142\
+  a prawid\u0142owo: ```C# static void Main() { int result = Sum(1, 2); Console.WriteLine(result);\
+  \ } static\u2026"
 lastmod: '2024-03-13T22:44:35.412889-06:00'
 model: gpt-4-0125-preview
-summary: "U\u017Cywanie debugera oznacza korzystanie ze specjalistycznych narz\u0119\
-  dzi do testowania i diagnozowania kodu. Programi\u015Bci robi\u0105 to, aby wyeliminowa\u0107\
-  \ b\u0142\u0119dy,\u2026"
+summary: "Wyobra\u017A sobie, \u017Ce masz ma\u0142y program, kt\xF3ry nie dzia\u0142\
+  a prawid\u0142owo: ```C# static void Main() { int result = Sum(1, 2); Console.WriteLine(result);\
+  \ } static\u2026"
 title: Korzystanie z debugera
+weight: 35
 ---
 
 ## Jak to zrobić:

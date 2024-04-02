@@ -9,9 +9,8 @@ summary: "Remover aspas de uma string significa retirar quaisquer inst\xE2ncias 
   \ caracteres de aspas, seja simples (' ') ou duplas (\" \"), dos dados de texto\
   \ com os\u2026"
 title: Removendo aspas de uma string
+weight: 9
 ---
-
-{{< edit_this_page >}}
 
 ## O Que & Por Que?
 

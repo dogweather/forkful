@@ -13,9 +13,8 @@ summary: "X\u1EED l\xFD l\u1ED7i l\xE0 vi\u1EC7c gi\u1EA3i quy\u1EBFt c\xE1c v\u
   nh vi\xEAn th\u1EF1c hi\u1EC7n vi\u1EC7c n\xE0y \u0111\u1EC3 x\u1EED l\xFD nh\u1EEF\
   ng t\xECnh hu\u1ED1ng kh\xF4ng mong \u0111\u1EE3i, \u0111\u1EA3m b\u1EA3o\u2026"
 title: "X\u1EED l\xFD l\u1ED7i"
+weight: 16
 ---
-
-{{< edit_this_page >}}
 
 ## Cái gì & Tại sao?
 

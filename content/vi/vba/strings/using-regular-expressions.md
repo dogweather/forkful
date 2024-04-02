@@ -11,9 +11,8 @@ summary: "Bi\u1EC3u th\u1EE9c ch\xEDnh quy (regex) trong Visual Basic for Applic
   \ (VBA) cung c\u1EA5p m\u1ED9t c\xE1ch m\u1EA1nh m\u1EBD \u0111\u1EC3 t\xECm ki\u1EBF\
   m, so kh\u1EDBp v\xE0 thao t\xE1c v\u1EDBi chu\u1ED7i. C\xE1c l\u1EADp tr\xECnh\u2026"
 title: "S\u1EED d\u1EE5ng bi\u1EC3u th\u1EE9c ch\xEDnh quy"
+weight: 11
 ---
-
-{{< edit_this_page >}}
 
 ## Gì và Tại sao?
 

@@ -9,9 +9,8 @@ summary: "Lire un fichier texte, c'est r\xE9cup\xE9rer son contenu pour l'utilis
   \ ou le manipuler. Les programmeurs font \xE7a pour traiter des donn\xE9es, configurer\
   \ des\u2026"
 title: Lecture d'un fichier texte
+weight: 22
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 Lire un fichier texte, c'est récupérer son contenu pour l'utiliser ou le manipuler. Les programmeurs font ça pour traiter des données, configurer des applications ou analyser des logs.

@@ -11,9 +11,8 @@ summary: "Escrever no erro padr\xE3o (stderr) em PHP diz respeito a direcionar m
   \ de erro ou diagn\xF3sticos separadamente da sa\xEDda padr\xE3o (stdout), permitindo\
   \ que\u2026"
 title: "Escrevendo para o erro padr\xE3o"
+weight: 25
 ---
-
-{{< edit_this_page >}}
 
 ## O Que & Porquê?
 

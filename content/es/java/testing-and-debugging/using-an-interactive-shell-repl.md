@@ -8,9 +8,8 @@ model: gpt-4-0125-preview
 summary: "Un REPL (Bucle de Leer-Evaluar-Imprimir) es una consola interactiva que\
   \ procesa entradas individuales del usuario, ejecuta c\xF3digo y devuelve el resultado.\u2026"
 title: Usando una shell interactiva (REPL)
+weight: 34
 ---
-
-{{< edit_this_page >}}
 
 ## Qué y Por Qué?
 Un REPL (Bucle de Leer-Evaluar-Imprimir) es una consola interactiva que procesa entradas individuales del usuario, ejecuta código y devuelve el resultado. Los programadores lo utilizan para experimentos rápidos, depuración o aprendizaje, ya que permite obtener comentarios inmediatos e iterar.

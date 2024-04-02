@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "L'analisi di una data da una stringa comporta la conversione delle rappresentazioni\
   \ testuali di date e orari in un formato che pu\xF2 essere facilmente\u2026"
 title: Analisi di una data da una stringa
+weight: 30
 ---
-
-{{< edit_this_page >}}
 
 ## Cosa e perché?
 L'analisi di una data da una stringa comporta la conversione delle rappresentazioni testuali di date e orari in un formato che può essere facilmente manipolato, memorizzato o confrontato all'interno di un programma Lua. I programmatori svolgono questo compito per facilitare operazioni come la pianificazione, la registrazione o qualsiasi calcolo temporale e per colmare il divario tra i formati di data leggibili dall'uomo e i tipi di dati strutturati che un computer può elaborare efficientemente.

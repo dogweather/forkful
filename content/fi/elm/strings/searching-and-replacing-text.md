@@ -7,9 +7,8 @@ model: gpt-4-1106-preview
 summary: "Tekstin hakeminen ja korvaaminen tarkoittaa jonkin tekstin osan etsimist\xE4\
   \ ja sen vaihtamista toiseen tekstiin. Ohjelmoijat tekev\xE4t sit\xE4 tiedon\u2026"
 title: Tekstin etsiminen ja korvaaminen
+weight: 10
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 Tekstin hakeminen ja korvaaminen tarkoittaa jonkin tekstin osan etsimistä ja sen vaihtamista toiseen tekstiin. Ohjelmoijat tekevät sitä tiedon päivittämiseksi, formaatin muuttamiseksi tai virheiden korjaamiseksi.

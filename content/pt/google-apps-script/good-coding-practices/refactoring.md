@@ -11,9 +11,8 @@ summary: "Refatora\xE7\xE3o, no l\xE9xico de programa\xE7\xE3o, refere-se ao pro
   \ de reestruturar c\xF3digo de computador j\xE1 existente \u2014 mudando a fatora\xE7\
   \xE3o sem alterar seu\u2026"
 title: "Refatora\xE7\xE3o"
+weight: 19
 ---
-
-{{< edit_this_page >}}
 
 ## O Quê & Por Quê?
 

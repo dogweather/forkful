@@ -7,9 +7,8 @@ model: gpt-4-1106-preview
 summary: "Das L\xF6schen von Zeichen, die einem Muster entsprechen, ist ein Filterprozess:\
   \ Unn\xF6tiges oder st\xF6rendes Zeugs fliegt raus. Programmierer nutzen das, um\u2026"
 title: "L\xF6schen von Zeichen, die einem Muster entsprechen"
+weight: 5
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why? (Was & Warum?)
 Das Löschen von Zeichen, die einem Muster entsprechen, ist ein Filterprozess: Unnötiges oder störendes Zeugs fliegt raus. Programmierer nutzen das, um Daten zu bereinigen, zu validieren oder zu verarbeiten. Einfache Beispiele sind das Entfernen ungültiger Zeichen in einer Eingabe oder das Bereinigen von Textdateien.

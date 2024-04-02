@@ -7,9 +7,8 @@ model: gpt-4-0125-preview
 summary: "Les nombres complexes se composent d'une partie r\xE9elle et d'une partie\
   \ imaginaire. Les programmeurs les utilisent dans des domaines comme le traitement\u2026"
 title: Manipulation des nombres complexes
+weight: 14
 ---
-
-{{< edit_this_page >}}
 
 ## Quoi & Pourquoi ?
 Les nombres complexes se composent d'une partie réelle et d'une partie imaginaire. Les programmeurs les utilisent dans des domaines comme le traitement des signaux, la mécanique quantique, et chaque fois que le calcul les exige, parce que les nombres réels normaux ne suffisent tout simplement pas.

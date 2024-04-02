@@ -7,9 +7,8 @@ model: gpt-4-0125-preview
 summary: "Et Rust-interaktivt skall, eller REPL (Read-Eval-Print Loop), lar deg kj\xF8\
   re Rust-kode p\xE5 sparket, og se umiddelbare resultater, perfekt for\u2026"
 title: Bruke et interaktivt skall (REPL)
+weight: 34
 ---
-
-{{< edit_this_page >}}
 
 ## Hva & Hvorfor?
 Et Rust-interaktivt skall, eller REPL (Read-Eval-Print Loop), lar deg kjøre Rust-kode på sparket, og se umiddelbare resultater, perfekt for eksperimentering eller læring. Programmerere bruker det til å teste kodebiter, feilsøke, eller bare leke med språkfunksjoner uten overhead av å kompilere et helt prosjekt.

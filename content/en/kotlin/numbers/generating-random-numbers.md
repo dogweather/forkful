@@ -7,9 +7,8 @@ model: gpt-4-0125-preview
 summary: "Generating random numbers in programming is about creating numbers that\
   \ lack any predictable pattern. Programmers do this for various reasons, including\u2026"
 title: Generating random numbers
+weight: 12
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 

@@ -9,9 +9,8 @@ summary: "Obs\u0142uga b\u0142\u0119d\xF3w oznacza pisanie kodu, kt\xF3ry mo\u01
   e poradzi\u0107 sobie z sytuacjami, kiedy co\u015B p\xF3jdzie nie tak. Programi\u015B\
   ci robi\u0105 to, aby zapobiec awariom i aby\u2026"
 title: "Obs\u0142uga b\u0142\u0119d\xF3w"
+weight: 16
 ---
-
-{{< edit_this_page >}}
 
 ## Co i dlaczego?
 

@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "\xC5 hente den gjeldende datoen i JavaScript er en grunnleggende oppgave\
   \ som involverer \xE5 hente og muligens manipulere dagens dato og tid. Programmerere\u2026"
 title: "F\xE5 dagens dato"
+weight: 29
 ---
-
-{{< edit_this_page >}}
 
 ## Hva & Hvorfor?
 Å hente den gjeldende datoen i JavaScript er en grunnleggende oppgave som involverer å hente og muligens manipulere dagens dato og tid. Programmerere utfører dette for å vise datoer på nettsteder, i applikasjoner, for å spore brukerinteraksjoner eller for å håndtere tidsfølsomme data.

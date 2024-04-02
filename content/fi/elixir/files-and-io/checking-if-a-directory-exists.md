@@ -11,9 +11,8 @@ summary: "Hakemiston olemassaolon tarkistaminen Elixiriss\xE4 on hakemiston l\xE
   sn\xE4olon varmistamista m\xE4\xE4ritetyss\xE4 polussa tiedostoj\xE4rjestelm\xE4\
   ss\xE4. Ohjelmoijat tekev\xE4t\u2026"
 title: Tarkistetaan, onko hakemisto olemassa
+weight: 20
 ---
-
-{{< edit_this_page >}}
 
 ## Mikä ja miksi?
 Hakemiston olemassaolon tarkistaminen Elixirissä on hakemiston läsnäolon varmistamista määritetyssä polussa tiedostojärjestelmässä. Ohjelmoijat tekevät tämän varmistaakseen, että he voivat turvallisesti lukea, kirjoittaa tai suorittaa toimenpiteitä hakemistossa kohtaamatta virheitä sen puuttumisen vuoksi.

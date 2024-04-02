@@ -13,9 +13,8 @@ summary: "Chuy\u1EC3n \u0111\u1ED5i m\u1ED9t ng\xE0y th\xE0nh chu\u1ED7i ngh\u01
   nh v\u0103n b\u1EA3n d\u1EC5 \u0111\u1ECDc cho con ng\u01B0\u1EDDi. L\u1EADp tr\xEC\
   nh vi\xEAn l\xE0m \u0111i\u1EC1u n\xE0y \u0111\u1EC3 hi\u1EC3n th\u1ECB c\xE1c\u2026"
 title: "Chuy\u1EC3n \u0111\u1ED5i m\u1ED9t ng\xE0y th\xE0nh chu\u1ED7i"
+weight: 28
 ---
-
-{{< edit_this_page >}}
 
 ## Điều gì & Tại sao?
 Chuyển đổi một ngày thành chuỗi nghĩa là biến một đối tượng ngày tháng thành văn bản dễ đọc cho con người. Lập trình viên làm điều này để hiển thị các ngày tháng theo các định dạng dễ hiểu hoặc để tuần tự hóa chúng cho việc lưu trữ và truyền tải.

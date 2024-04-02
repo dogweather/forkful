@@ -13,9 +13,8 @@ summary: "T\u1EA3i m\u1ED9t trang web ngh\u0129a l\xE0 l\u1EA5y n\u1ED9i dung HT
   n l\xE0m \u0111i\u1EC1u n\xE0y \u0111\u1EC3 ph\xE2n t\xEDch n\u1ED9i dung web, t\u1EF1\
   \ \u0111\u1ED9ng h\xF3a c\xE1c\u2026"
 title: "T\u1EA3i trang web"
+weight: 42
 ---
-
-{{< edit_this_page >}}
 
 ## Cái gì & Tại sao?
 Tải một trang web nghĩa là lấy nội dung HTML từ internet thông qua URL của nó. Các lập trình viên làm điều này để phân tích nội dung web, tự động hóa các tác vụ, hoặc tích hợp dữ liệu vào ứng dụng của họ.

@@ -9,9 +9,8 @@ summary: "La impresi\xF3n de informaci\xF3n de depuraci\xF3n es simplemente most
   \ datos en la consola para entender qu\xE9 est\xE1 ocurriendo en el c\xF3digo. Los\
   \ programadores la\u2026"
 title: "Imprimiendo salida de depuraci\xF3n"
+weight: 33
 ---
-
-{{< edit_this_page >}}
 
 ## ¿Qué y Por Qué?
 La impresión de información de depuración es simplemente mostrar datos en la consola para entender qué está ocurriendo en el código. Los programadores la utilizan para seguir el flujo y el estado de la aplicación, facilitando la identificación y corrección de errores.

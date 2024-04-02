@@ -11,9 +11,8 @@ summary: "In de wereld van Arduino laten associatieve arrays je sleutels koppele
   \ aan waarden, een beetje zoals je sokken zou matchen met hun paren. Ze zijn een\
   \ go-\u2026"
 title: Gebruik van associatieve arrays
+weight: 15
 ---
-
-{{< edit_this_page >}}
 
 ## Wat & Waarom?
 In de wereld van Arduino laten associatieve arrays je sleutels koppelen aan waarden, een beetje zoals je sokken zou matchen met hun paren. Ze zijn een go-to wanneer je data moet opslaan en ophalen met behulp van beschrijvende namen, waardoor je code schoner en veel begrijpelijker wordt.

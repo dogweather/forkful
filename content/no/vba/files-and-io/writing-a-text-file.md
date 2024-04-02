@@ -11,9 +11,8 @@ summary: "\xC5 skrive en tekstfil i Visual Basic for Applications (VBA) involver
   \ \xE5 opprette, modifisere eller legge til tekstdata i filer, en grunnleggende\
   \ oppgave\u2026"
 title: Skrive en tekstfil
+weight: 24
 ---
-
-{{< edit_this_page >}}
 
 ## Hva & Hvorfor?
 

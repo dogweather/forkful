@@ -9,9 +9,8 @@ summary: "L\xE4het\xE4mme HTTP-pyynn\xF6n perusautentikoinnilla, kun haluamme p\
   \xE4st\xE4 k\xE4siksi suojattuun resurssiin verkkopalvelussa. Se on tapa todentaa\
   \ k\xE4ytt\xE4j\xE4n\u2026"
 title: "HTTP-pyynn\xF6n l\xE4hett\xE4minen perusautentikoinnilla"
+weight: 45
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 Lähetämme HTTP-pyynnön perusautentikoinnilla, kun haluamme päästä käsiksi suojattuun resurssiin verkkopalvelussa. Se on tapa todentaa käyttäjän henkilöllisyys, joka on tarpeen turvallisen sisällön saamiseksi.

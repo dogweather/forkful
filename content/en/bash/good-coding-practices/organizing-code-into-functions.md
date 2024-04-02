@@ -7,9 +7,8 @@ model: gpt-4-1106-preview
 summary: "Splitting code into functions means breaking down scripts into smaller,\
   \ reusable blocks that do specific tasks. It makes the code cleaner, more\u2026"
 title: Organizing code into functions
+weight: 18
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 Splitting code into functions means breaking down scripts into smaller, reusable blocks that do specific tasks. It makes the code cleaner, more understandable, and easier to debug.

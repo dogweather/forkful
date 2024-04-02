@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Het parsen van een datum uit een string in Go houdt in dat de als tekst\
   \ weergegeven datum wordt omgezet naar een bruikbaarder formaat (bijv. `time.Time`).\u2026"
 title: Een datum ontleden uit een string
+weight: 30
 ---
-
-{{< edit_this_page >}}
 
 ## Wat & Waarom?
 

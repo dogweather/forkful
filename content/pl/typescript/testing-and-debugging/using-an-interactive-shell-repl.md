@@ -9,9 +9,8 @@ summary: "Read-Eval-Print-Loop (REPL) to \u015Brodowisko programistyczne, kt\xF3
   \ przyjmuje pojedyncze wej\u015Bcia od u\u017Cytkownika, wykonuje je i zwraca wynik\
   \ u\u017Cytkownikowi.\u2026"
 title: Korzystanie z interaktywnego shella (REPL)
+weight: 34
 ---
-
-{{< edit_this_page >}}
 
 ## Co i dlaczego?
 Read-Eval-Print-Loop (REPL) to środowisko programistyczne, które przyjmuje pojedyncze wejścia od użytkownika, wykonuje je i zwraca wynik użytkownikowi. Programiści używają REPL do szybkiego eksperymentowania ze skrawkami kodu, debugowania i uczenia się nowych funkcji języka bez konieczności tworzenia pełnej aplikacji.

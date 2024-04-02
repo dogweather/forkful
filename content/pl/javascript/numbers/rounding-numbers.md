@@ -9,9 +9,8 @@ summary: "Zaokr\u0105glanie polega na odci\u0119ciu nadmiaru po okre\u015Blonym 
   \ w liczbie. Programi\u015Bci zaokr\u0105glaj\u0105 w celu kontrolowania dok\u0142\
   adno\u015Bci, zarz\u0105dzania pami\u0119ci\u0105\u2026"
 title: "Zaokr\u0105glanie liczb"
+weight: 13
 ---
-
-{{< edit_this_page >}}
 
 ## Co i dlaczego?
 Zaokrąglanie polega na odcięciu nadmiaru po określonym miejscu w liczbie. Programiści zaokrąglają w celu kontrolowania dokładności, zarządzania pamięcią lub uczynienia wyjścia przyjaznym dla użytkownika - jak zmienienie 2.998 w czyste 3.

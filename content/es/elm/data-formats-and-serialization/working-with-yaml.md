@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Elm no tiene soporte incorporado para YAML, un formato de serializaci\xF3\
   n de datos a menudo utilizado para archivos de configuraci\xF3n o compartir datos,\u2026"
 title: Trabajando con YAML
+weight: 41
 ---
-
-{{< edit_this_page >}}
 
 ## ¿Qué & Por qué?
 

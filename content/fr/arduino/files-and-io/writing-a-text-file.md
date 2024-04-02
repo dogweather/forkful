@@ -11,9 +11,8 @@ summary: "\xC9crire un fichier texte avec Arduino implique de sauvegarder des do
   es dans un fichier sur une carte SD ou un module de stockage similaire, souvent\
   \ dans\u2026"
 title: "R\xE9diger un fichier texte"
+weight: 24
 ---
-
-{{< edit_this_page >}}
 
 ## Quoi & Pourquoi ?
 Écrire un fichier texte avec Arduino implique de sauvegarder des données dans un fichier sur une carte SD ou un module de stockage similaire, souvent dans le but de consigner des données. Les programmeurs font cela pour enregistrer les lectures de capteurs, sauvegarder des configurations ou journaliser des événements d'application au fil du temps, cela étant crucial pour les projets nécessitant une analyse de données ou un suivi.

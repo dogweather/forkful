@@ -1,14 +1,15 @@
 ---
 date: 2024-01-26 03:47:31.783593-07:00
-description: "En debugger \xE4r ett verktyg som hj\xE4lper dig att krossa buggar i\
-  \ din kod genom att l\xE5ta dig pausa, rota runt och ta reda p\xE5 vad som verkligen\
-  \ p\xE5g\xE5r under\u2026"
+description: "Med Arduino IDE kan du anv\xE4nda Serial-utskrifter f\xF6r att debugga,\
+  \ men det \xE4r lite som att anv\xE4nda en ficklampa f\xF6r att utforska en grotta.\
+  \ F\xF6r riktig\u2026"
 lastmod: '2024-03-13T22:44:38.171689-06:00'
 model: gpt-4-0125-preview
-summary: "En debugger \xE4r ett verktyg som hj\xE4lper dig att krossa buggar i din\
-  \ kod genom att l\xE5ta dig pausa, rota runt och ta reda p\xE5 vad som verkligen\
-  \ p\xE5g\xE5r under\u2026"
+summary: "Med Arduino IDE kan du anv\xE4nda Serial-utskrifter f\xF6r att debugga,\
+  \ men det \xE4r lite som att anv\xE4nda en ficklampa f\xF6r att utforska en grotta.\
+  \ F\xF6r riktig\u2026"
 title: "Att anv\xE4nda en debugger"
+weight: 35
 ---
 
 ## Hur man gör:

@@ -9,9 +9,8 @@ summary: "D\u0142ugo\u015B\u0107 ci\u0105gu znak\xF3w to liczba znak\xF3w w dany
   \ tek\u015Bcie. Programi\u015Bci musz\u0105 to wiedzie\u0107, aby np. weryfikowa\u0107\
   \ czy dane wprowadzone przez u\u017Cytkownika pasuj\u0105 do\u2026"
 title: "Znalezienie d\u0142ugo\u015Bci ci\u0105gu znak\xF3w"
+weight: 7
 ---
-
-{{< edit_this_page >}}
 
 ## Co i dlaczego?
 Długość ciągu znaków to liczba znaków w danym tekście. Programiści muszą to wiedzieć, aby np. weryfikować czy dane wprowadzone przez użytkownika pasują do oczekiwanych formatów lub obsługiwać teksty zmiennej długości.

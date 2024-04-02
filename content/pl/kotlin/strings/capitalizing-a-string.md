@@ -11,9 +11,8 @@ summary: "Zamiana pierwszej litery ci\u0105gu znak\xF3w na wielk\u0105 (kapitali
   \ w programowaniu polega na konwersji pierwszego znaku ci\u0105gu na wielk\u0105\
   \ liter\u0119, je\u015Bli ju\u017C\u2026"
 title: "Zamiana liter na wielkie w \u0142a\u0144cuchu znak\xF3w"
+weight: 2
 ---
-
-{{< edit_this_page >}}
 
 ## Co i dlaczego?
 

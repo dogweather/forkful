@@ -9,9 +9,8 @@ summary: "Buscar y reemplazar texto es una t\xE9cnica para identificar cadenas d
   \ caracteres y sustituirlas por otras. Los programadores la usan para modificar\
   \ c\xF3digo,\u2026"
 title: Buscando y reemplazando texto
+weight: 10
 ---
-
-{{< edit_this_page >}}
 
 ## ¿Qué y Por Qué?
 Buscar y reemplazar texto es una técnica para identificar cadenas de caracteres y sustituirlas por otras. Los programadores la usan para modificar código, datos o simplemente para corregir errores de manera eficiente.

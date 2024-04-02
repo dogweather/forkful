@@ -10,9 +10,8 @@ model: gpt-4-0125-preview
 summary: "De huidige datum in Elm krijgen betekent het ophalen van de huidige kalenderdatum\
   \ van het systeem. We doen dit om gebeurtenissen te timestampen, taken te\u2026"
 title: Het huidige datum ophalen
+weight: 29
 ---
-
-{{< edit_this_page >}}
 
 ## Wat & Waarom?
 De huidige datum in Elm krijgen betekent het ophalen van de huidige kalenderdatum van het systeem. We doen dit om gebeurtenissen te timestampen, taken te plannen of duurtijden bij te houden.

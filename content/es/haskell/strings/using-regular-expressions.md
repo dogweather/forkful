@@ -11,9 +11,8 @@ summary: "Las expresiones regulares en programaci\xF3n son secuencias de caracte
   \ que definen un patr\xF3n de b\xFAsqueda, t\xEDpicamente empleadas para la b\xFA\
   squeda y\u2026"
 title: Usando expresiones regulares
+weight: 11
 ---
-
-{{< edit_this_page >}}
 
 ## ¿Qué y por qué?
 Las expresiones regulares en programación son secuencias de caracteres que definen un patrón de búsqueda, típicamente empleadas para la búsqueda y manipulación de cadenas de texto. Los programadores de Haskell utilizan expresiones regulares para tareas que van desde la coincidencia de cadenas sencillas hasta el procesamiento de texto complejo, aprovechando su eficiencia y versatilidad para tratar con datos de texto.

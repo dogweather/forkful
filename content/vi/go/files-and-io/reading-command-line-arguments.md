@@ -14,9 +14,8 @@ summary: "Vi\u1EC7c \u0111\u1ECDc c\xE1c \u0111\u1ED1i s\u1ED1 d\xF2ng l\u1EC7nh
   \u01B0\u1EE3c cung c\u1EA5p cho m\u1ED9t ch\u01B0\u01A1ng tr\xECnh trong qu\xE1\
   \ tr\xECnh \u0111\u01B0\u1EE3c g\u1ECDi t\u1EEB terminal ho\u1EB7c d\u1EA5u\u2026"
 title: "\u0110\u1ECDc c\xE1c tham s\u1ED1 d\xF2ng l\u1EC7nh"
+weight: 23
 ---
-
-{{< edit_this_page >}}
 
 ## Gì và Tại sao?
 

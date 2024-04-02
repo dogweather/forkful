@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Het downloaden van een webpagina gaat over het ophalen van de HTML-inhoud\
   \ van een webpagina via het HTTP/HTTPS-protocol. Programmeurs doen dit vaak voor\u2026"
 title: Een webpagina downloaden
+weight: 42
 ---
-
-{{< edit_this_page >}}
 
 ## Wat & Waarom?
 

@@ -11,9 +11,8 @@ summary: "Tworzenie pliku tekstowego w Google Apps Script pozwala deweloperom na
   e przechowywanie danych, umo\u017Cliwiaj\u0105c ich dost\u0119pno\u015B\u0107 na\
   \ przysz\u0142e u\u017Cycie lub\u2026"
 title: Pisanie pliku tekstowego
+weight: 24
 ---
-
-{{< edit_this_page >}}
 
 ## Co i dlaczego?
 

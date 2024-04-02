@@ -10,9 +10,8 @@ model: gpt-4-0125-preview
 summary: "JSON (JavaScript Object Notation) \xE8 un formato di interscambio dati leggero\
   \ che \xE8 facile da leggere e scrivere per gli esseri umani e per le macchine da\u2026"
 title: Lavorare con JSON
+weight: 38
 ---
-
-{{< edit_this_page >}}
 
 ## Cosa & Perché?
 

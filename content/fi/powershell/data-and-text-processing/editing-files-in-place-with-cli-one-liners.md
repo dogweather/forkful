@@ -9,9 +9,8 @@ summary: "Tiedostojen paikan p\xE4\xE4ll\xE4 muokkaaminen CLI-yhden komentorivin
   \ PowerShelliss\xE4 tarkoittaa suorien muutosten tekemist\xE4 tiedostoihin komentorivilt\xE4\
   \u2026"
 title: "Tiedostojen muokkaaminen paikan p\xE4\xE4ll\xE4 komentorivin yhden rivin komennoilla"
+weight: 32
 ---
-
-{{< edit_this_page >}}
 
 ## Mikä ja miksi?
 

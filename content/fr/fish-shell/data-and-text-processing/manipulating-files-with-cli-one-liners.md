@@ -7,9 +7,8 @@ model: gpt-4-0125-preview
 summary: "Dans le domaine de la programmation, surtout lorsqu'on travaille avec des\
   \ environnements Linux ou Unix, manipuler des fichiers directement depuis\u2026"
 title: Manipulation de fichiers avec des commandes en une ligne en CLI
+weight: 31
 ---
-
-{{< edit_this_page >}}
 
 ## Quoi & Pourquoi ?
 

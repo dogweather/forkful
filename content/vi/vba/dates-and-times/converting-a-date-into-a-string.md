@@ -13,9 +13,8 @@ summary: "Chuy\u1EC3n \u0111\u1ED5i m\u1ED9t ng\xE0y th\xE0nh chu\u1ED7i trong V
   \ d\u1EE5ng \u0111\u1EC3 thay \u0111\u1ED5i ki\u1EC3u d\u1EEF li\u1EC7u c\u1EE7\
   a m\u1ED9t ng\xE0y sang \u0111\u1ECBnh d\u1EA1ng\u2026"
 title: "Chuy\u1EC3n \u0111\u1ED5i m\u1ED9t ng\xE0y th\xE0nh chu\u1ED7i"
+weight: 28
 ---
-
-{{< edit_this_page >}}
 
 ## Gì và Tại sao?
 

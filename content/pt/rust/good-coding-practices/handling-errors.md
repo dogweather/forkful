@@ -7,9 +7,8 @@ model: gpt-4-1106-preview
 summary: "Tratamento de erros \xE9 sobre lidar com as coisas quando elas n\xE3o seguem\
   \ conforme o planejado. Programadores fazem isso para lidar com o inesperado,\u2026"
 title: Tratamento de erros
+weight: 16
 ---
-
-{{< edit_this_page >}}
 
 ## O Que & Por Quê?
 

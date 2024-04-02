@@ -9,9 +9,8 @@ summary: "Wysy\u0142anie zapytania HTTP z uwierzytelnianiem podstawowym to spos\
   b na dost\u0119p do zabezpieczonych zasob\xF3w sieciowych. Programi\u015Bci stosuj\u0105\
   \ t\u0119 technik\u0119, aby\u2026"
 title: "Wysy\u0142anie zapytania http z podstawow\u0105 autoryzacj\u0105"
+weight: 45
 ---
-
-{{< edit_this_page >}}
 
 ## Co i Dlaczego?
 

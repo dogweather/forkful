@@ -10,9 +10,8 @@ model: gpt-4-0125-preview
 summary: "\xC5 jobbe med YAML i Go inneb\xE6rer \xE5 analysere YAML (YAML Ain't Markup\
   \ Language) filer, en menneskevennlig standard for dataserielisering, inn i Go\u2026"
 title: "\xC5 Arbeide med YAML"
+weight: 41
 ---
-
-{{< edit_this_page >}}
 
 ## Hva & Hvorfor?
 

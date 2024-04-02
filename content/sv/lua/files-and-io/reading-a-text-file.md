@@ -7,9 +7,8 @@ model: gpt-4-1106-preview
 summary: "I Lua l\xE4ser du en textfil f\xF6r att h\xE4mta information. Programmerare\
   \ g\xF6r det f\xF6r att spara, \xE4ndra eller anv\xE4nda data."
 title: "L\xE4sa en textfil"
+weight: 22
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 I Lua läser du en textfil för att hämta information. Programmerare gör det för att spara, ändra eller använda data.

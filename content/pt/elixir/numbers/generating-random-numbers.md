@@ -9,9 +9,8 @@ summary: "Gerar n\xFAmeros aleat\xF3rios em Elixir \xE9 uma tarefa de programa\x
   \xE3o fundamental, vital para aplica\xE7\xF5es que necessitam de resultados imprevis\xED\
   veis, como na\u2026"
 title: "Gera\xE7\xE3o de n\xFAmeros aleat\xF3rios"
+weight: 12
 ---
-
-{{< edit_this_page >}}
 
 ## O Quê & Porquê?
 

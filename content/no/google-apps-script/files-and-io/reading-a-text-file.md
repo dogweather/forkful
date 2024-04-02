@@ -11,9 +11,8 @@ summary: "\xC5 lese en tekstfil i Google Apps Script (GAS) inneb\xE6rer \xE5 f\x
   \ tilgang til og trekke ut tekstdata fra filer lagret i Google Drive eller annen\
   \ tilgjengelig\u2026"
 title: Lese en tekstfil
+weight: 22
 ---
-
-{{< edit_this_page >}}
 
 ## Hva & Hvorfor?
 

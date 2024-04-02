@@ -9,9 +9,8 @@ summary: "Writing tests in C# involves creating automated scripts to validate th
   \ functionality of your code, ensuring it behaves as expected. Programmers do it\
   \ to\u2026"
 title: Writing tests
+weight: 36
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 

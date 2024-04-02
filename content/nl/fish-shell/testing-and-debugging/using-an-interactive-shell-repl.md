@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "REPL, of Read-Eval-Print Loop, is een interactieve programmeeromgeving die\
   \ individuele gebruikersinvoer neemt, deze uitvoert en het resultaat teruggeeft.\u2026"
 title: Het gebruik van een interactieve shell (REPL)
+weight: 34
 ---
-
-{{< edit_this_page >}}
 
 ## Wat & Waarom?
 REPL, of Read-Eval-Print Loop, is een interactieve programmeeromgeving die individuele gebruikersinvoer neemt, deze uitvoert en het resultaat teruggeeft. Programmeurs gebruiken het voor directe feedback, debugging en snelle experimenten met programmeerconcepten zonder de overhead van het compileren en uitvoeren van een volledig programma.

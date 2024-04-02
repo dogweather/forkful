@@ -8,9 +8,8 @@ model: gpt-4-0125-preview
 summary: "Tiedostojen k\xE4sittely Ruby-yksirivisill\xE4 CLI-komennoilla on kyse yleisten\
   \ tiedosto-operaatioiden suorittamisesta suoraan terminaalista k\xE4ytt\xE4en Ruby-\u2026"
 title: "Tiedostojen k\xE4sittely yhden rivin komentorivikomennoilla"
+weight: 31
 ---
-
-{{< edit_this_page >}}
 
 ## Mikä ja miksi?
 

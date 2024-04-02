@@ -11,9 +11,8 @@ summary: "JSON-tiedon k\xE4sittely Fish Shelliss\xE4 sis\xE4lt\xE4\xE4 JSON-data
   \ j\xE4sent\xE4misen ja luomisen, mik\xE4 on yleinen teht\xE4v\xE4 sovellusten konfiguroinnissa,\
   \ API-\u2026"
 title: "Ty\xF6skentely JSON:n kanssa"
+weight: 38
 ---
-
-{{< edit_this_page >}}
 
 ## Mikä & Miksi?
 

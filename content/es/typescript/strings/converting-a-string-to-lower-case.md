@@ -9,9 +9,8 @@ summary: "Convertir una cadena a min\xFAsculas significa cambiar todos los carac
   \ de texto dentro de dicha cadena para que est\xE9n en formato de min\xFAscula.\
   \ Los\u2026"
 title: "Conversi\xF3n de una cadena de texto a min\xFAsculas"
+weight: 4
 ---
-
-{{< edit_this_page >}}
 
 ## Qué y Por Qué?
 

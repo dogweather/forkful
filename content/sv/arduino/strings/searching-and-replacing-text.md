@@ -9,9 +9,8 @@ summary: "S\xF6kning och ers\xE4ttning av text inneb\xE4r att man automatiskt hi
   \ specifika str\xE4ngar och byter ut dem mot andra. Programmerare anv\xE4nder detta\
   \ f\xF6r att\u2026"
 title: "S\xF6kning och ers\xE4ttning av text"
+weight: 10
 ---
-
-{{< edit_this_page >}}
 
 ## Vad & Varför?
 Sökning och ersättning av text innebär att man automatiskt hittar specifika strängar och byter ut dem mot andra. Programmerare använder detta för att snabbt ändra kod, korrigera fel eller uppdatera information.

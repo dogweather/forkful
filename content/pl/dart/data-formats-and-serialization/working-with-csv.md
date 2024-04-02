@@ -10,9 +10,8 @@ model: gpt-4-0125-preview
 summary: "Praca z plikami CSV (Comma Separated Values - warto\u015Bci oddzielone przecinkami)\
   \ polega na przetwarzaniu i generowaniu plik\xF3w tekstowych, gdzie ka\u017Cda linia\u2026"
 title: Praca z CSV
+weight: 37
 ---
-
-{{< edit_this_page >}}
 
 ## Co i dlaczego?
 

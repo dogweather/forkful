@@ -9,9 +9,8 @@ summary: "(Quoi et Pourquoi ?) Cr\xE9er un fichier temporaire, c\u2019est comme 
   \ des notes sur un bout de papier qu\u2019on jette apr\xE8s usage. Les programmeurs\
   \ en ont\u2026"
 title: "Cr\xE9ation d'un fichier temporaire"
+weight: 21
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 (Quoi et Pourquoi ?)

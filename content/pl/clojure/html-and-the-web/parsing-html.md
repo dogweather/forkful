@@ -11,9 +11,8 @@ summary: "Parsowanie HTML w Clojure wi\u0105\u017Ce si\u0119 z programowym ekstr
   \ informacji z dokument\xF3w HTML. Programi\u015Bci robi\u0105 to, aby uzyska\u0107\
   \ dost\u0119p, manipulowa\u0107 lub\u2026"
 title: "Analiza sk\u0142adniowa HTML"
+weight: 43
 ---
-
-{{< edit_this_page >}}
 
 ## Co i dlaczego?
 

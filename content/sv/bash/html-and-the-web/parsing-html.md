@@ -11,9 +11,8 @@ summary: "Att parsa HTML inneb\xE4r att g\xE5 igenom strukturen och inneh\xE5lle
   \ i en HTML-fil f\xF6r att extrahera information. Programmerare g\xF6r det f\xF6\
   r att komma \xE5t data,\u2026"
 title: Tolka HTML
+weight: 43
 ---
-
-{{< edit_this_page >}}
 
 ## Vad & Varför?
 

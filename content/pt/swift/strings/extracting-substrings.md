@@ -9,9 +9,8 @@ summary: "Extrair substrings \xE9 o ato de pegar peda\xE7os espec\xEDficos de um
   \ string maior. Programadores fazem isso para manipular, analisar, e processar dados\
   \ de texto\u2026"
 title: Extraindo substrings
+weight: 6
 ---
-
-{{< edit_this_page >}}
 
 ## O Que & Porquê?
 

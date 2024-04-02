@@ -9,9 +9,8 @@ summary: "\xC5 sende en HTTP-foresp\xF8rsel g\xE5r ut p\xE5 \xE5 be om data elle
   \ handling fra en server. Programmerere gj\xF8r dette for \xE5 hente informasjon,\
   \ interagere med\u2026"
 title: "\xC5 sende en HTTP-foresp\xF8rsel"
+weight: 44
 ---
-
-{{< edit_this_page >}}
 
 ## Hva & Hvorfor?
 

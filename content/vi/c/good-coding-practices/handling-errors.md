@@ -13,9 +13,8 @@ summary: "Vi\u1EC7c x\u1EED l\xFD l\u1ED7i trong C bao g\u1ED3m vi\u1EC7c ph\xE1
   t th\u01B0\u1EDDng ph\xE1t sinh trong qu\xE1 tr\xECnh th\u1EF1c thi ch\u01B0\u01A1\
   ng tr\xECnh. L\u1EADp tr\xECnh vi\xEAn l\xE0m\u2026"
 title: "X\u1EED l\xFD l\u1ED7i"
+weight: 16
 ---
-
-{{< edit_this_page >}}
 
 ## Cái gì và Tại sao?
 

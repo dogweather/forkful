@@ -9,9 +9,8 @@ summary: "Arrotondare i numeri significa regolarli al numero intero pi\xF9 vicin
   \ o a una frazione con una certa precisione. I programmatori arrotondano i numeri\
   \ per\u2026"
 title: Arrotondamento dei numeri
+weight: 13
 ---
-
-{{< edit_this_page >}}
 
 ## Cosa e Perché?
 Arrotondare i numeri significa regolarli al numero intero più vicino o a una frazione con una certa precisione. I programmatori arrotondano i numeri per semplificare i valori per la leggibilità umana, per soddisfare i requisiti delle specifiche o per ridurre il sovraccarico computazionale nelle operazioni in virgola mobile.

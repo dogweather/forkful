@@ -7,9 +7,8 @@ model: gpt-4-1106-preview
 summary: "Textdateien auslesen hei\xDFt, ihren Inhalt programmatisch zu erfassen.\
   \ Programmierer tun dies, um Daten zu verarbeiten oder Konfigurationen zu laden."
 title: Textdatei einlesen
+weight: 22
 ---
-
-{{< edit_this_page >}}
 
 ## Was & Warum?
 Textdateien auslesen heißt, ihren Inhalt programmatisch zu erfassen. Programmierer tun dies, um Daten zu verarbeiten oder Konfigurationen zu laden.

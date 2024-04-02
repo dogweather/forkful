@@ -11,9 +11,8 @@ summary: "Escribir en el error est\xE1ndar (stderr) se trata de dirigir mensajes
   \ error y salidas de diagn\xF3stico a un canal separado, distinto de la salida est\xE1\
   ndar\u2026"
 title: "Escribiendo en el error est\xE1ndar"
+weight: 25
 ---
-
-{{< edit_this_page >}}
 
 ## ¿Qué y Por Qué?
 Escribir en el error estándar (stderr) se trata de dirigir mensajes de error y salidas de diagnóstico a un canal separado, distinto de la salida estándar (stdout). Los programadores hacen esto para diferenciar los resultados regulares del programa de la información de error, simplificando los procesos de depuración y registro.

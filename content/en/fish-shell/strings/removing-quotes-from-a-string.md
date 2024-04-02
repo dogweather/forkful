@@ -9,9 +9,8 @@ summary: "Removing quotes from a string is about stripping those pesky single ('
   \ or double (\" \") quotation marks off your text data. Programmers often do this\
   \ to\u2026"
 title: Removing quotes from a string
+weight: 9
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 

@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Het samenvoegen van strings in Bash betekent het aan elkaar plakken van\
   \ twee of meer tekststukken. Programmeurs doen dit om commando's op te bouwen,\u2026"
 title: Samenvoegen van strings
+weight: 3
 ---
-
-{{< edit_this_page >}}
 
 ## Wat & Waarom?
 

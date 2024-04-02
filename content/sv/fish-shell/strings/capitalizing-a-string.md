@@ -11,9 +11,8 @@ summary: "Att skriva med stor bokstav inneb\xE4r att man \xE4ndrar den s\xE5 att
   \ f\xF6rsta bokstaven \xE4r versal och resten av str\xE4ngen \xE4r gemener. Detta\
   \ \xE4r en vanlig uppgift\u2026"
 title: "G\xF6r om en str\xE4ng till versaler"
+weight: 2
 ---
-
-{{< edit_this_page >}}
 
 ## Vad & Varför?
 

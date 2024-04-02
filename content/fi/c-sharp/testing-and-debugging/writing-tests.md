@@ -10,9 +10,8 @@ model: gpt-4-0125-preview
 summary: "Testien kirjoittaminen C#:ssa tarkoittaa automatisoitujen skriptien luomista\
   \ koodisi toiminnallisuuden varmistamiseksi, jotta se k\xE4ytt\xE4ytyy odotetulla\u2026"
 title: Testien kirjoittaminen
+weight: 36
 ---
-
-{{< edit_this_page >}}
 
 ## Mikä ja miksi?
 

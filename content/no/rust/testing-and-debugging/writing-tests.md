@@ -11,9 +11,8 @@ summary: "\xC5 skrive tester i Rust inneb\xE6rer \xE5 lage automatiserte sjekker
   \ \xE5 sikre at koden din fungerer som forventet. Programmerere gj\xF8r dette for\
   \ \xE5 fange opp\u2026"
 title: Skrive tester
+weight: 36
 ---
-
-{{< edit_this_page >}}
 
 ## Hva & Hvorfor?
 

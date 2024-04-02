@@ -11,9 +11,8 @@ summary: "Analyser une date \xE0 partir d'une cha\xEEne de caract\xE8res permet 
   \ programmeurs de convertir les repr\xE9sentations textuelles des dates en objets\
   \ `Date`\u2026"
 title: "Analyser une date depuis une cha\xEEne de caract\xE8res"
+weight: 30
 ---
-
-{{< edit_this_page >}}
 
 ## Quoi & Pourquoi ?
 Analyser une date à partir d'une chaîne de caractères permet aux programmeurs de convertir les représentations textuelles des dates en objets `Date` JavaScript, facilitant les manipulations, comparaisons et opérations de formatage des dates. Ce processus est essentiel pour gérer les entrées des utilisateurs, traiter les données provenant des bases de données ou travailler avec des API qui communiquent des dates sous forme de chaînes de caractères.

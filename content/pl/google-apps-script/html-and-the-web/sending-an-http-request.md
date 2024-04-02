@@ -11,9 +11,8 @@ summary: "Wysy\u0142anie \u017C\u0105dania HTTP w Google Apps Script polega na p
   \ wywo\u0142aniu zewn\u0119trznego serwera internetowego lub API. Programi\u015B\
   ci robi\u0105 to, aby pobiera\u0107\u2026"
 title: "Wysy\u0142anie \u017C\u0105dania HTTP"
+weight: 44
 ---
-
-{{< edit_this_page >}}
 
 ## Co i dlaczego?
 

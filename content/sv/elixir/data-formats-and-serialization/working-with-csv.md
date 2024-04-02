@@ -11,9 +11,8 @@ summary: "Att arbeta med CSV (Comma-Separated Values)-filer inneb\xE4r att l\xE4
   \ fr\xE5n och skriva data till dessa filer, vilket \xE4r ett vanligt behov f\xF6\
   r uppgifter som\u2026"
 title: Arbeta med CSV
+weight: 37
 ---
-
-{{< edit_this_page >}}
 
 ## Vad & Varför?
 

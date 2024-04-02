@@ -11,9 +11,8 @@ summary: "Tarkistaminen, l\xF6ytyyk\xF6 hakemisto, tarkoittaa vahvistamista, onk
   \ tietty kansiov\xE4yl\xE4 olemassa tiedostoj\xE4rjestelm\xE4ss\xE4. Ohjelmoijat\
   \ tekev\xE4t niin\u2026"
 title: Tarkistetaan, onko hakemisto olemassa
+weight: 20
 ---
-
-{{< edit_this_page >}}
 
 ## Mikä & Miksi?
 Tarkistaminen, löytyykö hakemisto, tarkoittaa vahvistamista, onko tietty kansioväylä olemassa tiedostojärjestelmässä. Ohjelmoijat tekevät niin välttääkseen virheitä, kun päästään käsiksi tiedostoihin, luetaan niitä tai kirjoitetaan niihin.

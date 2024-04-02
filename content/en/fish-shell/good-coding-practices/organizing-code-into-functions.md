@@ -11,9 +11,8 @@ summary: "Organizing code into functions is about bundling up bits of script to 
   \ specific tasks. We do it because it makes code easier to read, test, and reuse\
   \ \u2014\u2026"
 title: Organizing code into functions
+weight: 18
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 Organizing code into functions is about bundling up bits of script to do specific tasks. We do it because it makes code easier to read, test, and reuse — no one wants to wade through a swamp of code spaghetti.

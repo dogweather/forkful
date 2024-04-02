@@ -9,9 +9,8 @@ summary: "Att generera slumpm\xE4ssiga nummer i PHP handlar om att producera of\
   ruts\xE4gbara v\xE4rden inom ett angivet intervall, vilket \xE4r v\xE4sentligt f\xF6\
   r uppgifter som\u2026"
 title: Generera slumptal
+weight: 12
 ---
-
-{{< edit_this_page >}}
 
 ## Vad & Varför?
 

@@ -7,9 +7,8 @@ model: gpt-4-0125-preview
 summary: "Generating random numbers in Visual Basic for Applications (VBA) allows\
   \ programs to simulate processes with elements of chance or variability, such as\u2026"
 title: Generating random numbers
+weight: 12
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 

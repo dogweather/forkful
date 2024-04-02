@@ -9,9 +9,8 @@ summary: "Komennoriviargumenttien lukeminen tarkoittaa k\xE4ytt\xE4j\xE4n antami
   \ sy\xF6tteiden noutamista komentorivilt\xE4 ohjelman suorituksen aikana. Ohjelmoijat\
   \ tekev\xE4t\u2026"
 title: Komennoriviparametrien lukeminen
+weight: 23
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 Komennoriviargumenttien lukeminen tarkoittaa käyttäjän antamien syötteiden noutamista komentoriviltä ohjelman suorituksen aikana. Ohjelmoijat tekevät tämän, jotta voivat muokata ohjelmansa toimintaa lennosta tai antaa input-arvoja ilman kovan koodauksen tarvetta.

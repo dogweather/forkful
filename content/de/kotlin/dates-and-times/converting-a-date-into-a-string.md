@@ -8,9 +8,8 @@ model: gpt-4-1106-preview
 summary: "Das Umwandeln eines Datums in einen String bedeutet, ein Datum so zu formatieren,\
   \ dass es als lesbare Zeichenkette dargestellt wird. Programmierer machen\u2026"
 title: Datum in einen String umwandeln
+weight: 28
 ---
-
-{{< edit_this_page >}}
 
 ## Was & Warum?
 Das Umwandeln eines Datums in einen String bedeutet, ein Datum so zu formatieren, dass es als lesbare Zeichenkette dargestellt wird. Programmierer machen das, um Daten benutzerfreundlich in Apps und Webseiten anzuzeigen oder sie in einem bestimmten Format zu speichern.

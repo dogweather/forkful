@@ -9,9 +9,8 @@ summary: "Das Entfernen von Anf\xFChrungszeichen aus einem String bedeutet, dies
   \ l\xE4stigen einfachen (' ') oder doppelten (\" \") Anf\xFChrungszeichen von Ihren\
   \ Textdaten\u2026"
 title: "Anf\xFChrungszeichen aus einem String entfernen"
+weight: 9
 ---
-
-{{< edit_this_page >}}
 
 ## Was & Warum?
 

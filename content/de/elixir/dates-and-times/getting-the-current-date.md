@@ -11,9 +11,8 @@ model: gpt-4-0125-preview
 summary: "Das Abrufen des aktuellen Datums in Elixir umfasst den Zugriff auf die Datums-\
   \ und Zeitinformationen des Systems, eine allgemeine Aufgabe f\xFCr das Logging,\u2026"
 title: Den aktuellen Datum abrufen
+weight: 29
 ---
-
-{{< edit_this_page >}}
 
 ## Was & Warum?
 Das Abrufen des aktuellen Datums in Elixir umfasst den Zugriff auf die Datums- und Zeitinformationen des Systems, eine allgemeine Aufgabe für das Logging, Datumsstempel oder jede Funktionalität, die Kenntnisse über das aktuelle Datum erfordert. Diese Operation ist wesentlich für die Erstellung zeitbewusster Anwendungen und für Aufgaben wie das Generieren von Berichten oder Zeitstempeln in einer Webanwendung.

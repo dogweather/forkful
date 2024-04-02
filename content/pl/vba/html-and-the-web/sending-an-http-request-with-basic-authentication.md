@@ -11,9 +11,8 @@ summary: "Wysy\u0142anie \u017C\u0105dania HTTP z podstawow\u0105 autoryzacj\u01
   \ w Visual Basic for Applications (VBA) dotyczy dost\u0119pu do zasob\xF3w sieciowych\
   \ chronionych przez dane\u2026"
 title: "Wysy\u0142anie \u017C\u0105dania HTTP z podstawowym uwierzytelnianiem"
+weight: 45
 ---
-
-{{< edit_this_page >}}
 
 ## Co i dlaczego?
 

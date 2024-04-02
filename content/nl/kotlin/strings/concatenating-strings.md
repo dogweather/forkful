@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Het samenvoegen van strings is als het maken van een sandwich, maar in plaats\
   \ van brood en vullingen, stapel je woorden op elkaar om een zin of een\u2026"
 title: Samenvoegen van strings
+weight: 3
 ---
-
-{{< edit_this_page >}}
 
 ## Wat & Waarom?
 

@@ -8,9 +8,8 @@ model: gpt-4-0125-preview
 summary: "Ty\xF6skentely XML:n parissa tarkoittaa XML-dokumenttien (eXtensible Markup\
   \ Language) j\xE4sent\xE4mist\xE4, luomista ja manipulointia koodin avulla. Ohjelmoijat\u2026"
 title: "XML:n k\xE4sittely"
+weight: 40
 ---
-
-{{< edit_this_page >}}
 
 ## Mikä ja miksi?
 Työskentely XML:n parissa tarkoittaa XML-dokumenttien (eXtensible Markup Language) jäsentämistä, luomista ja manipulointia koodin avulla. Ohjelmoijat tekevät niin kommunikoidakseen monien web-palvelujen, konfiguraatiotiedostojen ja datanvaihtoformaattien kanssa, joissa XML on lingua franca.

@@ -8,9 +8,8 @@ model: gpt-4-1106-preview
 summary: "Text suchen und ersetzen erm\xF6glicht es, bestimmte Zeichenketten in einem\
   \ Text zu finden und durch andere zu ersetzen. Programmierer tun das oft, um Fehler\u2026"
 title: Suchen und Ersetzen von Text
+weight: 10
 ---
-
-{{< edit_this_page >}}
 
 ## Was & Warum?
 Text suchen und ersetzen ermöglicht es, bestimmte Zeichenketten in einem Text zu finden und durch andere zu ersetzen. Programmierer tun das oft, um Fehler zu korrigieren, Daten zu aktualisieren oder Code refactoring zu betreiben.

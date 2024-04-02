@@ -9,9 +9,8 @@ summary: "Registrar \xE9 basicamente deixar um rastro de migalhas atrav\xE9s do 
   \ c\xF3digo - \xE9 como voc\xEA acompanha o que est\xE1 acontecendo quando o seu\
   \ script est\xE1 rodando\u2026"
 title: Registro de Logs
+weight: 17
 ---
-
-{{< edit_this_page >}}
 
 ## O Quê e Por Quê?
 Registrar é basicamente deixar um rastro de migalhas através do seu código - é como você acompanha o que está acontecendo quando o seu script está rodando solto. Programadores registram para depurar, para rastrear o comportamento do aplicativo, para monitorar o desempenho e para ficar de olho em qualquer travessura.

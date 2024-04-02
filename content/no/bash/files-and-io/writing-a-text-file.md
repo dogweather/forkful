@@ -10,9 +10,8 @@ model: gpt-4-0125-preview
 summary: "\xC5 skrive en tekstfil i Bash lar deg automatisere lagring av data, logging,\
   \ konfigurasjonsinnstillinger og mer. Det er en grunnleggende ferdighet for\u2026"
 title: Skrive en tekstfil
+weight: 24
 ---
-
-{{< edit_this_page >}}
 
 ## Hva & Hvorfor?
 

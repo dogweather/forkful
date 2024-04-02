@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Werken met JSON (JavaScript Object Notation) houdt in dat je gegevens manipuleert\
   \ die zijn gestructureerd in een lichtgewicht, op tekst gebaseerd formaat\u2026"
 title: Werken met JSON
+weight: 38
 ---
-
-{{< edit_this_page >}}
 
 ## Wat & Waarom?
 

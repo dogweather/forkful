@@ -16,9 +16,8 @@ summary: "\uBB38\uC790\uC5F4 \uC5F0\uACB0(concatenating strings)\uC740 \uC11C\uB
   \uB9F7\uD558\uAE30 \uC704\uD574 \uAC1C\uBC1C\uC790\uB4E4\uC774 \uC790\uC8FC \uC0AC\
   \uC6A9\uD569\uB2C8\uB2E4."
 title: "\uBB38\uC790\uC5F4 \uC5F0\uACB0\uD558\uAE30"
+weight: 3
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why? (무엇과 왜?)
 문자열 연결(concatenating strings)은 서로 다른 문자열을 붙여 하나로 만드는 것입니다. 데이터와 텍스트를 동적으로 조작하거나 출력을 포맷하기 위해 개발자들이 자주 사용합니다.

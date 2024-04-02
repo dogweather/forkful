@@ -11,9 +11,8 @@ summary: "\xC9crire des tests en Go consiste \xE0 cr\xE9er de petits morceaux de
   \ g\xE9rables qui valident la fonctionnalit\xE9 et le comportement de votre application.\
   \ Les\u2026"
 title: "R\xE9daction de tests"
+weight: 36
 ---
-
-{{< edit_this_page >}}
 
 ## Quoi & Pourquoi ?
 

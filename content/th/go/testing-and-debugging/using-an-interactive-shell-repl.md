@@ -20,9 +20,8 @@ summary: "Interactive shell \u0E2B\u0E23\u0E37\u0E2D Read-Eval-Print Loop (REPL)
   \u0E35\u2026"
 title: "\u0E01\u0E32\u0E23\u0E43\u0E0A\u0E49 Shell \u0E41\u0E1A\u0E1A\u0E42\u0E15\u0E49\
   \u0E15\u0E2D\u0E1A (REPL)"
+weight: 34
 ---
-
-{{< edit_this_page >}}
 
 ## อะไร & ทำไม?
 

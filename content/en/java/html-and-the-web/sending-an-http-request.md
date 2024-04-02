@@ -7,9 +7,8 @@ model: gpt-4-1106-preview
 summary: "Sending an HTTP request means asking a server for data or action, like pulling\
   \ up a webpage or sending a form. Programmers do it to interact with web\u2026"
 title: Sending an HTTP request
+weight: 44
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 

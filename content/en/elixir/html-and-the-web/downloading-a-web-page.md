@@ -7,9 +7,8 @@ model: gpt-4-1106-preview
 summary: "Downloading a web page means fetching its contents over the internet\u2014\
   essentially, what your browser does. Programmers do this to automate data extraction,\u2026"
 title: Downloading a web page
+weight: 42
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 Downloading a web page means fetching its contents over the internet—essentially, what your browser does. Programmers do this to automate data extraction, testing, or to interact with web services without a GUI.

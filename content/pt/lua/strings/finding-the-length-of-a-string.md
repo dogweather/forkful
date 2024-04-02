@@ -7,9 +7,8 @@ model: gpt-4-1106-preview
 summary: "Descobrir o comprimento de uma string \xE9 basicamente saber quantos caracteres\
   \ ela possui. Programadores fazem isso para validar entradas, delimitar\u2026"
 title: Descobrindo o comprimento de uma string
+weight: 7
 ---
-
-{{< edit_this_page >}}
 
 ## O Que & Porquê?
 Descobrir o comprimento de uma string é basicamente saber quantos caracteres ela possui. Programadores fazem isso para validar entradas, delimitar processos ou manipular textos.

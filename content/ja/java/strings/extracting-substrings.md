@@ -14,9 +14,8 @@ summary: "\u30B5\u30D6\u30B9\u30C8\u30EA\u30F3\u30B0\u62BD\u51FA\u3068\u306F\u65
   \u30A9\u30FC\u30DE\u30C3\u30C8\u5909\u66F4\u6642\u306B\u3088\u304F\u4F7F\u308F\u308C\
   \u307E\u3059\u3002"
 title: "\u90E8\u5206\u6587\u5B57\u5217\u306E\u62BD\u51FA"
+weight: 6
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 サブストリング抽出とは文字列の一部を取り出すことです。この操作はデータの解析やフォーマット変更時によく使われます。

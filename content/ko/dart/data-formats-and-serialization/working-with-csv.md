@@ -23,9 +23,8 @@ summary: "CSV(\uCF64\uB9C8\uB85C \uAD6C\uBD84\uB41C \uAC12) \uD30C\uC77C\uC744 \
   \ human-readable\uD55C \uD615\uC2DD\uC73C\uB85C \uB370\uC774\uD130\uB97C \uC800\uC7A5\
   \uD558\uAE30\u2026"
 title: "CSV\uC640 \uD568\uAED8 \uC791\uC5C5\uD558\uAE30"
+weight: 37
 ---
-
-{{< edit_this_page >}}
 
 ## 무엇 & 왜?
 

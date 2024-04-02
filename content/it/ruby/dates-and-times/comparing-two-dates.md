@@ -7,9 +7,8 @@ model: gpt-4-1106-preview
 summary: "Comparare due date significa verificare se sono uguali, quale precede l'altra\
   \ o quanto tempo passa tra loro. Questo \xE8 fondamentale per gestire\u2026"
 title: Confronto tra due date
+weight: 27
 ---
-
-{{< edit_this_page >}}
 
 ## Cosa e Perché?
 Comparare due date significa verificare se sono uguali, quale precede l'altra o quanto tempo passa tra loro. Questo è fondamentale per gestire prenotazioni, scadenze e storici dati.

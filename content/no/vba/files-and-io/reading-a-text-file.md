@@ -11,9 +11,8 @@ summary: "\xC5 lese en tekstfil i Visual Basic for Applications (VBA) inneb\xE6r
   \ \xE5 programmere tilgang og ekstrahering av innholdet i en tekstfil fra innenfor\
   \ en\u2026"
 title: Lese en tekstfil
+weight: 22
 ---
-
-{{< edit_this_page >}}
 
 ## Hva & Hvorfor?
 

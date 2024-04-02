@@ -7,9 +7,8 @@ model: gpt-4-1106-preview
 summary: "Deletar caracteres que correspondem a um padr\xE3o \xE9 basicamente dizer\
   \ ao computador: \"Ei, tudo que se parece com isso aqui, pode tirar!\". Programadores\u2026"
 title: "Excluindo caracteres que correspondem a um padr\xE3o"
+weight: 5
 ---
-
-{{< edit_this_page >}}
 
 ## O Que & Por Quê?
 

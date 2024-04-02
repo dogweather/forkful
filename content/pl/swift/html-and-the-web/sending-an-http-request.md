@@ -9,9 +9,8 @@ summary: "Wysy\u0142anie \u017C\u0105dania HTTP to spos\xF3b, aby tw\xF3j progra
   \ porozmawia\u0142 z serwerem: zapyta\u0142 o dane, przes\u0142a\u0142 formularz\
   \ albo pobi\u0142 witryn\u0119. Programi\u015Bci robi\u0105 to,\u2026"
 title: "Wysy\u0142anie \u017C\u0105dania HTTP"
+weight: 44
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why? (Co i Dlaczego?)
 

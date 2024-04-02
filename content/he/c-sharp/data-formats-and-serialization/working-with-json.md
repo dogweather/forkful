@@ -21,9 +21,8 @@ summary: "\u05E2\u05D1\u05D5\u05D3\u05D4 \u05E2\u05DD JSON (JavaScript Object No
   . \u05E4\u05D5\u05E8\u05DE\u05D8 \u05D4\u05D7\u05DC\u05E4\u05EA \u05D4\u05E0\u05EA\
   \u05D5\u05E0\u05D9\u05DD \u05D4\u05D6\u05D4\u2026"
 title: "\u05E2\u05D1\u05D5\u05D3\u05D4 \u05E2\u05DD JSON"
+weight: 38
 ---
-
-{{< edit_this_page >}}
 
 ## מה ולמה?
 

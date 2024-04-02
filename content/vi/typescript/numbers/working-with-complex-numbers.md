@@ -13,9 +13,8 @@ summary: "S\u1ED1 ph\u1EE9c, bao g\u1ED3m m\u1ED9t ph\u1EA7n th\u1EF1c v\xE0 m\u
   i d\u1EA1ng a + bi), m\u1EDF ra kh\u1EA3 n\u0103ng t\xEDnh to\xE1n kh\xF4ng th\u1EF1\
   c t\u1EBF ho\u1EB7c kh\xF4ng th\u1EC3 th\u1EF1c hi\u1EC7n ch\u1EC9 v\u1EDBi\u2026"
 title: "L\xE0m vi\u1EC7c v\u1EDBi s\u1ED1 ph\u1EE9c"
+weight: 14
 ---
-
-{{< edit_this_page >}}
 
 ## Làm thế nào & Tại sao?
 Số phức, bao gồm một phần thực và một phần ảo (thường được viết dưới dạng a + bi), mở ra khả năng tính toán không thực tế hoặc không thể thực hiện chỉ với số thực. Các lập trình viên sử dụng chúng trong các lĩnh vực như xử lý tín hiệu, tính toán lượng tử và toán ứng dụng, nơi mà biểu diễn số hai chiều là cần thiết.

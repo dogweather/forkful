@@ -7,9 +7,8 @@ model: gpt-4-0125-preview
 summary: "Komplekse tall har en reell del og en imagin\xE6r del, vanligvis skrevet\
   \ som `a + bi`. De er avgj\xF8rende for noen matte-tunge Arduino-prosjekter som\u2026"
 title: "\xC5 jobbe med komplekse tall"
+weight: 14
 ---
-
-{{< edit_this_page >}}
 
 ## Hva og hvorfor?
 Komplekse tall har en reell del og en imaginær del, vanligvis skrevet som `a + bi`. De er avgjørende for noen matte-tunge Arduino-prosjekter som involverer signalbehandling, elektroteknikk, eller ethvert annet domene der fenomener er best modellert i et plan.

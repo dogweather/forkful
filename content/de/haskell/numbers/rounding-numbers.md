@@ -9,9 +9,8 @@ summary: "Das Runden von Zahlen bedeutet, sie auf die n\xE4chstgelegene ganze Za
   \ oder eine angegebene Dezimalstelle anzupassen. Programmierer runden Zahlen, um\
   \ die\u2026"
 title: Zahlen runden
+weight: 13
 ---
-
-{{< edit_this_page >}}
 
 ## Was & Warum?
 

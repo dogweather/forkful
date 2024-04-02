@@ -9,9 +9,8 @@ summary: "Calculer une date dans le futur ou le pass\xE9, c'est juste ajuster un
   \ date actuelle pour trouver une autre date. Les d\xE9veloppeurs le font pour g\xE9\
   rer des\u2026"
 title: "Calcul d'une date future ou pass\xE9e"
+weight: 26
 ---
-
-{{< edit_this_page >}}
 
 ## Quoi & Pourquoi ?
 

@@ -9,9 +9,8 @@ summary: "Menneisyyden tai tulevaisuuden p\xE4iv\xE4m\xE4\xE4r\xE4n laskeminen t
   \ p\xE4iv\xE4m\xE4\xE4r\xE4n siirt\xE4mist\xE4 taakse- tai eteenp\xE4in kalenterissa.\
   \ Ohjelmoijat tekev\xE4t t\xE4t\xE4 mm.\u2026"
 title: "Tulevan tai menneen p\xE4iv\xE4m\xE4\xE4r\xE4n laskeminen"
+weight: 26
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 Menneisyyden tai tulevaisuuden päivämäärän laskeminen tarkoittaa päivämäärän siirtämistä taakse- tai eteenpäin kalenterissa. Ohjelmoijat tekevät tätä mm. vanhentumispäivien, muistutusten tai aikataulutusten automatisoimiseksi.

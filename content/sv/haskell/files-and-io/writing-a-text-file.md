@@ -11,9 +11,8 @@ summary: "Att skriva till en textfil i Haskell handlar om att programmatiskt ska
   \ eller uppdatera filer med textinneh\xE5ll. Programmerare g\xF6r detta f\xF6r att\
   \ bevara\u2026"
 title: Att skriva en textfil
+weight: 24
 ---
-
-{{< edit_this_page >}}
 
 ## Vad & Varför?
 

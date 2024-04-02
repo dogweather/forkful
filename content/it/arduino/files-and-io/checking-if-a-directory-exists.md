@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Nel contesto della programmazione Arduino, verificare se una directory esiste\
   \ su una scheda SD o su un modulo di memoria simile consente di leggere o\u2026"
 title: Verifica se una directory esiste
+weight: 20
 ---
-
-{{< edit_this_page >}}
 
 ## Cosa & Perché?
 Nel contesto della programmazione Arduino, verificare se una directory esiste su una scheda SD o su un modulo di memoria simile consente di leggere o scrivere file senza errori. Questa operazione è essenziale per il registro dati, la gestione della configurazione o qualsiasi compito che richieda una memorizzazione dei file strutturata, garantendo affidabilità e prestazioni fluide nelle tue applicazioni.

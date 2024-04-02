@@ -11,9 +11,8 @@ summary: "YAML, abrevia\xE7\xE3o de YAML Ain't Markup Language (YAML N\xE3o \xE9
   \ Linguagem de Marca\xE7\xE3o), \xE9 um formato de serializa\xE7\xE3o de dados leg\xED\
   vel por humanos.\u2026"
 title: Trabalhando com YAML
+weight: 41
 ---
-
-{{< edit_this_page >}}
 
 ## O Que & Por Que?
 

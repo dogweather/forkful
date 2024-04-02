@@ -11,9 +11,8 @@ summary: "Liczby zespolone, sk\u0142adaj\u0105ce si\u0119 z cz\u0119\u015Bci rze
   \ i urojonej (zwykle oznaczane jako a + bi), rozszerzaj\u0105 koncepcj\u0119 liczb\
   \ bezwymiarowych na przestrze\u0144\u2026"
 title: Praca z liczbami zespolonymi
+weight: 14
 ---
-
-{{< edit_this_page >}}
 
 ## Co i dlaczego?
 

@@ -19,9 +19,8 @@ summary: "\uB300\uD654\uD615 \uC178 \uB610\uB294 REPL(Read-Eval-Print Loop, \uC7
   \uC744 \uC124\uC815\uD558\uC9C0 \uC54A\uACE0\uB3C4 \uBE60\uB974\uACE0 \uAC04\uD3B8\
   \uD558\uAC8C \uC0AC\uC6A9\uD560 \uC218\u2026"
 title: "\uC778\uD130\uB799\uD2F0\uBE0C \uC178 (REPL) \uC0AC\uC6A9\uD558\uAE30"
+weight: 34
 ---
-
-{{< edit_this_page >}}
 
 ## 무엇인가 & 왜인가?
 대화형 셸 또는 REPL(Read-Eval-Print Loop, 읽기-평가-출력 루프)은 즉석에서 코드를 실행하여 함수, 알고리즘을 테스트하거나 아이디어를 시도해 볼 수 있게 해줍니다. 코딩의 메모장 같은 것으로, 전체 개발 환경을 설정하지 않고도 빠르고 간편하게 사용할 수 있습니다.

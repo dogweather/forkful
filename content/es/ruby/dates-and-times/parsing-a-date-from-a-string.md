@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Interpretar una fecha de un string se trata de convertir texto que representa\
   \ una fecha en un objeto `Date` o `DateTime` que Ruby entiende. Los\u2026"
 title: Analizando una fecha a partir de una cadena de texto
+weight: 30
 ---
-
-{{< edit_this_page >}}
 
 ## Qué y Por Qué?
 Interpretar una fecha de un string se trata de convertir texto que representa una fecha en un objeto `Date` o `DateTime` que Ruby entiende. Los programadores hacen esto para realizar operaciones como comparaciones, cálculos o formatos en fechas, que son tareas comunes en aplicaciones que manejan programación de eventos, análisis o procesamiento de datos.

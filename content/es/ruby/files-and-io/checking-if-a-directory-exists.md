@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Comprobar si un directorio existe en Ruby permite a los programadores verificar\
   \ la presencia de un directorio antes de realizar operaciones como leer\u2026"
 title: Comprobando si un directorio existe
+weight: 20
 ---
-
-{{< edit_this_page >}}
 
 ## ¿Qué y por qué?
 Comprobar si un directorio existe en Ruby permite a los programadores verificar la presencia de un directorio antes de realizar operaciones como leer archivos o crear nuevos directorios. Esto es crucial para evitar errores en el manejo de archivos y asegurar la fiabilidad de las manipulaciones del sistema de archivos.

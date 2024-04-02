@@ -9,9 +9,8 @@ summary: "\"Was & Warum?\" - Die L\xE4nge eines Strings festzustellen bedeutet, 
   \ Anzahl der Zeichen zu ermitteln. Programmierer machen das oft, um die Eingabe\
   \ zu\u2026"
 title: "Ermittlung der Zeichenkettenl\xE4nge"
+weight: 7
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 "Was & Warum?" - Die Länge eines Strings festzustellen bedeutet, die Anzahl der Zeichen zu ermitteln. Programmierer machen das oft, um die Eingabe zu validieren, Daten zu verarbeiten oder das Layout zu steuern.

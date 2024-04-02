@@ -9,9 +9,8 @@ summary: "Refaktorering er i bunn og grunn \xE5 gj\xF8re en v\xE5rrengj\xF8ring 
   \ koden din \u2013 det handler om \xE5 restrukturere eksisterende kode uten \xE5\
   \ endre dens eksterne\u2026"
 title: Refaktorering
+weight: 19
 ---
-
-{{< edit_this_page >}}
 
 ## Hva & Hvorfor?
 Refaktorering er i bunn og grunn å gjøre en vårrengjøring i koden din – det handler om å restrukturere eksisterende kode uten å endre dens eksterne oppførsel. Programmerere gjør det for å gjøre koden mer lesbar, redusere kompleksitet, forbedre vedlikeholdbarheten og gjøre det lettere å utvide.

@@ -21,9 +21,8 @@ summary: "\uC5F0\uAD00 \uBC30\uC5F4(Visual Basic for Applications(VBA)\uC5D0\uC1
   \uB2E4 \uB354 \uC720\uC5F0\uD558\uACE0 \uC9C1\uAD00\uC801\uC778 \uBC29\uBC95\uC73C\
   \uB85C \uB370\uC774\uD130\uB97C\u2026"
 title: "\uC5F0\uAD00 \uBC30\uC5F4 \uC0AC\uC6A9\uD558\uAE30"
+weight: 15
 ---
-
-{{< edit_this_page >}}
 
 ## 무엇인가 & 왜인가?
 

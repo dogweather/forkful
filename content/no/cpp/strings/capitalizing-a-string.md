@@ -10,9 +10,8 @@ model: gpt-4-0125-preview
 summary: "Det \xE5 kapitalisere en tekststreng inneb\xE6rer \xE5 konvertere det f\xF8\
   rste tegnet i hvert ord i strengen til store bokstaver hvis det er i sm\xE5 bokstaver,\u2026"
 title: Sette stor bokstav i en streng
+weight: 2
 ---
-
-{{< edit_this_page >}}
 
 ## Hva & Hvorfor?
 Det å kapitalisere en tekststreng innebærer å konvertere det første tegnet i hvert ord i strengen til store bokstaver hvis det er i små bokstaver, samtidig som de gjenværende tegnene forblir uendret. Programmerere utfører ofte denne oppgaven for formatering av utdata, brukerinndata eller databehandling for å sikre konsistens i hvordan tekst presenteres eller behandles, spesielt i brukergrensesnitt eller oppgaver for datanormalisering.

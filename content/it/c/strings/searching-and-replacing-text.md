@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "La ricerca e la sostituzione di testo in C prevedono l'identificazione di\
   \ specifiche sottostringhe all'interno di una stringa pi\xF9 grande e la loro\u2026"
 title: Ricerca e sostituzione del testo
+weight: 10
 ---
-
-{{< edit_this_page >}}
 
 ## Cosa & Perché?
 

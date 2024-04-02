@@ -8,9 +8,8 @@ model: gpt-4-0125-preview
 summary: "Les nombres complexes, ceux ayant une partie r\xE9elle et une partie imaginaire\
   \ (comme 3 + 4i), sont essentiels dans des domaines tels que l'ing\xE9nierie, la\u2026"
 title: Manipulation des nombres complexes
+weight: 14
 ---
-
-{{< edit_this_page >}}
 
 ## Quoi et Pourquoi ?
 Les nombres complexes, ceux ayant une partie réelle et une partie imaginaire (comme 3 + 4i), sont essentiels dans des domaines tels que l'ingénierie, la physique et la science des données. Les programmeurs les utilisent pour des simulations, le traitement de signal et la résolution de types spécifiques de problèmes mathématiques.

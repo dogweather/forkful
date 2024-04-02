@@ -11,9 +11,8 @@ summary: "Merkkijonon interpolaatio C#:ssa mahdollistaa uuden merkkijonon luomis
   \ sis\xE4llytt\xE4m\xE4ll\xE4 lausekkeita merkkijonoliteraalin sis\xE4\xE4n, mik\xE4\
   \ tekee merkkijonojen\u2026"
 title: Merkkijonon interpolointi
+weight: 8
 ---
-
-{{< edit_this_page >}}
 
 ## Mikä ja miksi?
 Merkkijonon interpolaatio C#:ssa mahdollistaa uuden merkkijonon luomisen sisällyttämällä lausekkeita merkkijonoliteraalin sisään, mikä tekee merkkijonojen muotoilusta ja yhdistämisestä helpompaa. Ohjelmoijat käyttävät tätä ominaisuutta parantaakseen koodin luettavuutta ja ylläpidettävyyttä, erityisesti käsiteltäessä dynaamista merkkijonosisältöä.

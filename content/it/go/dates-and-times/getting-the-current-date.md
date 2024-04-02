@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Ottenere la data corrente in Go \xE8 un compito fondamentale per i programmatori,\
   \ paragonabile alla diffusione di \"Hello, World!\". \xC8 essenziale per compiti\u2026"
 title: Ottenere la data corrente
+weight: 29
 ---
-
-{{< edit_this_page >}}
 
 ## Cosa e perché?
 

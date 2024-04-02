@@ -10,9 +10,8 @@ model: gpt-4-0125-preview
 summary: "\xC5 skrive tester i Clojure, mye som i andre programmeringsspr\xE5k, inneb\xE6\
   rer \xE5 lage dedikert kode for \xE5 verifisere at hovedkodebasen din fungerer som\u2026"
 title: Skrive tester
+weight: 36
 ---
-
-{{< edit_this_page >}}
 
 ## Hva & Hvorfor?
 Å skrive tester i Clojure, mye som i andre programmeringsspråk, innebærer å lage dedikert kode for å verifisere at hovedkodebasen din fungerer som forventet. Det bidrar til å sikre riktighet, lette refaktorering, og forbedre kode stabilitet.

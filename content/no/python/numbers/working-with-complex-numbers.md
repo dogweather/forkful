@@ -9,9 +9,8 @@ summary: "Komplekse tall er en mengde tall i formen `a + bi`, der `a` og `b` er 
   \ tall, og `i` er den imagin\xE6re enheten (`i^2 = -1`). I programmering bruker\
   \ vi\u2026"
 title: "\xC5 jobbe med komplekse tall"
+weight: 14
 ---
-
-{{< edit_this_page >}}
 
 ## Hva & Hvorfor?
 Komplekse tall er en mengde tall i formen `a + bi`, der `a` og `b` er reelle tall, og `i` er den imaginære enheten (`i^2 = -1`). I programmering bruker vi dem til å løse problemer i ulike domener, som elektroteknikk, signalbehandling og kvanteberegning.

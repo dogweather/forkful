@@ -9,9 +9,8 @@ summary: "Les coquilles interactives, ou REPLs (Read-Eval-Print Loops, Boucles d
   \ Lecture-\xC9valuation-Affichage), vous permettent d'ex\xE9cuter du code \xE0 la\
   \ vol\xE9e, de\u2026"
 title: Utilisation d'une console interactive (REPL)
+weight: 34
 ---
-
-{{< edit_this_page >}}
 
 ## Quoi & Pourquoi ?
 Les coquilles interactives, ou REPLs (Read-Eval-Print Loops, Boucles de Lecture-Évaluation-Affichage), vous permettent d'exécuter du code à la volée, de tester des fonctions, des algorithmes, ou de jouer avec des idées. Elles sont les blocs-notes du codage, rapides et peu soignés, sans installer un environnement de développement complet.

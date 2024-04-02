@@ -7,9 +7,8 @@ model: gpt-4-1106-preview
 summary: "Calculating a future or past date is about modifying a current date to see\
   \ what day it'll be, say, 10 days from now, or what day it was 10 days ago.\u2026"
 title: Calculating a date in the future or past
+weight: 26
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 

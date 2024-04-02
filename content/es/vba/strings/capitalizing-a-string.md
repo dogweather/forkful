@@ -10,9 +10,8 @@ model: gpt-4-0125-preview
 summary: "Capitalizar una cadena en Visual Basic para Aplicaciones (VBA) implica convertir\
   \ el primer car\xE1cter de cada palabra en una cadena a may\xFAsculas, asegurando\u2026"
 title: Capitalizando una cadena de caracteres
+weight: 2
 ---
-
-{{< edit_this_page >}}
 
 ## Qué y Por Qué?
 

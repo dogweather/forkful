@@ -9,9 +9,8 @@ summary: "Wysy\u0142anie \u017C\u0105dania HTTP z podstawow\u0105 autoryzacj\u01
   \ to proces dodawania nag\u0142\xF3wka autoryzacyjnego do \u017C\u0105dania HTTP,\
   \ aby potwierdzi\u0107, \u017Ce mamy dost\u0119p. Programi\u015Bci\u2026"
 title: "Wysy\u0142anie zapytania http z podstawow\u0105 autoryzacj\u0105"
+weight: 45
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why? (Co i Dlaczego?)
 

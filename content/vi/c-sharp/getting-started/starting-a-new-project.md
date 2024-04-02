@@ -15,9 +15,8 @@ summary: "B\u1EAFt \u0111\u1EA7u m\u1ED9t d\u1EF1 \xE1n C# m\u1EDBi c\xF3 ngh\u0
   a b\u1EA1n. L\u1EADp tr\xECnh vi\xEAn b\u1EAFt \u0111\u1EA7u nh\u1EEFng d\u1EF1\
   \ \xE1n\u2026"
 title: "B\u1EAFt \u0111\u1EA7u m\u1ED9t d\u1EF1 \xE1n m\u1EDBi"
+weight: 1
 ---
-
-{{< edit_this_page >}}
 
 ## Cái gì & Tại sao?
 Bắt đầu một dự án C# mới có nghĩa là thiết lập một giải pháp mới từ đầu và các tập tin dự án để cấu trúc mã của bạn. Lập trình viên bắt đầu những dự án mới để biến ý tưởng thành phần mềm, giải quyết vấn đề, hoặc khám phá công nghệ.

@@ -7,9 +7,8 @@ model: gpt-4-0125-preview
 summary: "Modificare file sul posto con i one-liner CLI (Interfaccia a Riga di Comando)\
   \ in Ruby ti consente di modificare i file direttamente dal tuo terminale,\u2026"
 title: Modifica dei file sul posto con righe di comando CLI
+weight: 32
 ---
-
-{{< edit_this_page >}}
 
 ## Cosa e Perché?
 

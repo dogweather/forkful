@@ -9,9 +9,8 @@ summary: "Loggning, i sin grundform, \xE4r praxisen att spela in h\xE4ndelser oc
   \ data fr\xE5n en mjukvaruapplikation till en extern utmatning, som en fil eller\
   \ konsol.\u2026"
 title: Loggning
+weight: 17
 ---
-
-{{< edit_this_page >}}
 
 ## Vad och varför?
 

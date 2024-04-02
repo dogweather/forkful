@@ -9,9 +9,8 @@ summary: "Kun puhumme merkkien poistamisesta kuvion mukaan, tarkoitamme tiettyj\
   \ merkkej\xE4 sis\xE4lt\xE4vien osien paikantamista ja poistamista merkkijonosta.\
   \ T\xE4m\xE4\u2026"
 title: Merkkien poistaminen hakemalla osumia kaavaan
+weight: 5
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why? (Mikä & Miksi?)
 Kun puhumme merkkien poistamisesta kuvion mukaan, tarkoitamme tiettyjä merkkejä sisältävien osien paikantamista ja poistamista merkkijonosta. Tämä toiminto on hyödyllinen, koska se auttaa siistimään ja muokkaamaan tekstidataa - esimerkiksi käyttäjäsyötteiden puhdistamisessa tai ennalta määrättyjen mallien, kuten puhelinnumeroiden, poistamisessa.

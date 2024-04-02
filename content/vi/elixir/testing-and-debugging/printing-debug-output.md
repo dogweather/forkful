@@ -13,9 +13,8 @@ summary: "Vi\u1EC7c in output g\u1EE1 l\u1ED7i trong Elixir bao g\u1ED3m vi\u1EC
   \ c\u1EE7a bi\u1EBFn trong b\u1EA3ng \u0111i\u1EC1u khi\u1EC3n. L\u1EADp tr\xEC\
   nh vi\xEAn l\xE0m \u0111i\u1EC1u n\xE0y \u0111\u1EC3 theo\u2026"
 title: "In ra th\xF4ng tin g\u1EE1 l\u1ED7i"
+weight: 33
 ---
-
-{{< edit_this_page >}}
 
 ## Cái gì & Tại sao?
 

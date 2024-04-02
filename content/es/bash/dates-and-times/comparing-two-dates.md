@@ -9,9 +9,8 @@ summary: "Comparar dos fechas significa verificar cu\xE1l es anterior o si son e
   \ mismo d\xEDa. Programadores hacen esto para gestionar eventos, vencimientos, y\
   \ ordenar\u2026"
 title: "Comparaci\xF3n de dos fechas"
+weight: 27
 ---
-
-{{< edit_this_page >}}
 
 ## Qué y Por Qué?
 Comparar dos fechas significa verificar cuál es anterior o si son el mismo día. Programadores hacen esto para gestionar eventos, vencimientos, y ordenar datos cronológicamente.

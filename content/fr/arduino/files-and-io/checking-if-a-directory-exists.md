@@ -11,9 +11,8 @@ summary: "Dans le contexte de la programmation Arduino, v\xE9rifier si un r\xE9p
   \ existe sur une carte SD ou un module de stockage similaire vous permet de lire\
   \ ou\u2026"
 title: "V\xE9rifier si un r\xE9pertoire existe"
+weight: 20
 ---
-
-{{< edit_this_page >}}
 
 ## Quoi & Pourquoi ?
 Dans le contexte de la programmation Arduino, vérifier si un répertoire existe sur une carte SD ou un module de stockage similaire vous permet de lire ou d'écrire des fichiers sans erreurs. Cette opération est essentielle pour la journalisation des données, la gestion de configuration ou toute tâche nécessitant un stockage de fichiers structuré, assurant fiabilité et performance fluide dans vos applications.

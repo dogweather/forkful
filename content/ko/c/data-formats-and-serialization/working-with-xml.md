@@ -23,9 +23,8 @@ summary: "C\uC5D0\uC11C XML\uC744 \uB2E4\uB8E8\uB294 \uAC83\uC740 \uB2E4\uC591\u
   \ \uC5B4\uD50C\uB9AC\uCF00\uC774\uC158 \uAC1C\uBC1C\uC744 \uC704\uD574 XML\uC744\
   \u2026"
 title: "XML\uB85C \uC791\uC5C5\uD558\uAE30"
+weight: 40
 ---
-
-{{< edit_this_page >}}
 
 ## 무엇 & 왜?
 

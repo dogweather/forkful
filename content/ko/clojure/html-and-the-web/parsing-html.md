@@ -21,9 +21,8 @@ summary: "Clojure\uC5D0\uC11C HTML \uD30C\uC2F1\uC740 HTML \uBB38\uC11C\uC5D0\uC
   \uB97C \uACF5\uAE09\uD558\uAE30 \uC704\uD574 \uC774 \uC791\uC5C5\uC744 \uC218\uD589\
   \uD569\uB2C8\uB2E4."
 title: "HTML \uD30C\uC2F1"
+weight: 43
 ---
-
-{{< edit_this_page >}}
 
 ## 무엇 & 왜?
 

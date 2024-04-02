@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Een REPL, of Read-Eval-Print Loop, stelt je in staat om C# code te typen\
   \ en deze interactief uit te voeren. Programmeurs gebruiken het voor snelle\u2026"
 title: Het gebruik van een interactieve shell (REPL)
+weight: 34
 ---
-
-{{< edit_this_page >}}
 
 ## Wat & Waarom?
 Een REPL, of Read-Eval-Print Loop, stelt je in staat om C# code te typen en deze interactief uit te voeren. Programmeurs gebruiken het voor snelle experimenten, debuggen, of om C# te leren, zonder de overhead van het opzetten van volledige projecten.

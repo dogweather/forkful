@@ -13,9 +13,8 @@ summary: "TOML l\xE0 \u0111\u1ECBnh d\u1EA1ng t\u1EC7p c\u1EA5u h\xECnh, d\u1EC5
   \ d\xE0ng ph\xE2n t\xEDch v\xE0 t\u1EA1o ra b\u1EDFi m\xE1y m\xF3c. L\u1EADp tr\xEC\
   nh vi\xEAn s\u1EED d\u1EE5ng TOML cho c\xE1c t\u1EC7p\u2026"
 title: "L\xE0m vi\u1EC7c v\u1EDBi TOML"
+weight: 39
 ---
-
-{{< edit_this_page >}}
 
 ## Gì và Tại sao?
 TOML là định dạng tệp cấu hình, dễ đọc và viết bởi con người, cũng như dễ dàng phân tích và tạo ra bởi máy móc. Lập trình viên sử dụng TOML cho các tệp cấu hình phân cấp, rõ ràng trong các dự án nơi mà tính dễ đọc là chìa khóa.

@@ -11,9 +11,8 @@ summary: "Att tolka ett datum fr\xE5n en str\xE4ng i C# inneb\xE4r att omvandla 
   \ representationer av datum och tider till ett `DateTime`-objekt. Detta \xE4r avg\xF6\
   rande\u2026"
 title: "Analysera ett datum fr\xE5n en str\xE4ng"
+weight: 30
 ---
-
-{{< edit_this_page >}}
 
 ## Vad & Varför?
 Att tolka ett datum från en sträng i C# innebär att omvandla textuella representationer av datum och tider till ett `DateTime`-objekt. Detta är avgörande för applikationer som behöver manipulera, lagra eller visa datum och tider i olika format, såsom planeringsappar, loggprocessorer eller vilket system som helst som hanterar datumindata från användare eller externa källor.

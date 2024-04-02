@@ -11,9 +11,8 @@ summary: "Loggning i Dart avser processen att spela in olika niv\xE5er av inform
   \ under k\xF6rningen av ett program. Programmerare g\xF6r detta f\xF6r att \xF6\
   vervaka\u2026"
 title: Loggning
+weight: 17
 ---
-
-{{< edit_this_page >}}
 
 ## Vad & Varför?
 

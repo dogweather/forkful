@@ -7,9 +7,8 @@ model: gpt-4-0125-preview
 summary: "I numeri complessi estendono la linea dei numeri reali attraverso l'aggiunta\
   \ di un'unit\xE0 immaginaria, `i`, dove `i^2 = -1`. Sono fondamentali in campi\u2026"
 title: Lavorare con i numeri complessi
+weight: 14
 ---
-
-{{< edit_this_page >}}
 
 ## Cosa e Perché?
 

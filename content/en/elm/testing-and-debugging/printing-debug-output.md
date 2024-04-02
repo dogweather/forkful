@@ -9,9 +9,8 @@ summary: "Printing debug output in Elm is about displaying values in the console
   \ understand what\u2019s happening in your code. We do it to catch bugs and ensure\
   \ the\u2026"
 title: Printing debug output
+weight: 33
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 

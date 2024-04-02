@@ -9,9 +9,8 @@ summary: "Muutetaan merkkijono pieniksi kirjaimiksi. Teemme sen siksi, ett\xE4 v
   \ vertailla tekstej\xE4 tasapuolisesti riippumatta alkuper\xE4isest\xE4 kirjainkoosta\
   \ tai\u2026"
 title: Merkkijonon muuntaminen pieniksi kirjaimiksi
+weight: 4
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why? / Mikä ja miksi?
 Muutetaan merkkijono pieniksi kirjaimiksi. Teemme sen siksi, että voimme vertailla tekstejä tasapuolisesti riippumatta alkuperäisestä kirjainkoosta tai toteuttaa ei-luokkauttavaa käyttäjäsyötteen käsittelyä.

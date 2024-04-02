@@ -7,9 +7,8 @@ model: gpt-4-0125-preview
 summary: "Regular expressions (regex) are sequences of characters that define search\
   \ patterns, primarily used for string matching and manipulation. Programmers\u2026"
 title: Using regular expressions
+weight: 11
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 Regular expressions (regex) are sequences of characters that define search patterns, primarily used for string matching and manipulation. Programmers leverage regex in Arduino projects for parsing serial inputs, validating user input, or extracting data from strings, enhancing data processing efficiency and flexibility.

@@ -11,9 +11,8 @@ summary: "\xC5 trekke ut delstrenger handler om \xE5 hente spesifikke deler av e
   \ streng basert p\xE5 deres posisjoner eller m\xF8nstre. Programmerere gj\xF8r dette\
   \ for oppgaver\u2026"
 title: Utdrag av delstrenger
+weight: 6
 ---
-
-{{< edit_this_page >}}
 
 ## Hva & Hvorfor?
 Å trekke ut delstrenger handler om å hente spesifikke deler av en streng basert på deres posisjoner eller mønstre. Programmerere gjør dette for oppgaver som å parse brukerinndata, manipulere data, eller trekke ut relevant informasjon fra større tekstkilder.

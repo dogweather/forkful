@@ -11,9 +11,8 @@ summary: "Associativa arrayer, k\xE4nda som ordb\xF6cker i Swift, l\xE5ter dig l
   \ och hantera data som nyckel-v\xE4rdepar. Programmerare anv\xE4nder dem f\xF6r\
   \ att organisera data\u2026"
 title: "Att anv\xE4nda associativa arrayer"
+weight: 15
 ---
-
-{{< edit_this_page >}}
 
 ## Vad & Varför?
 

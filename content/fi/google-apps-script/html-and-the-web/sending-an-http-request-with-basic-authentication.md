@@ -11,9 +11,8 @@ summary: "HTTP-pyynn\xF6n l\xE4hett\xE4minen perusautentikaatiolla sis\xE4lt\xE4
   \ k\xE4ytt\xE4j\xE4nimen ja salasanan koodaamisen pyynn\xF6n otsikkoon suojattujen\
   \ resurssien k\xE4ytt\xF6\xF6n.\u2026"
 title: "HTTP-pyynn\xF6n l\xE4hett\xE4minen perusautentikoinnilla"
+weight: 45
 ---
-
-{{< edit_this_page >}}
 
 ## Mikä & Miksi?
 

@@ -14,9 +14,8 @@ summary: "\u5F00\u59CB\u4E00\u4E2A\u65B0\u9879\u76EE\u5C31\u662F\u521B\u5EFA\u4E
   \u6CD5\u53D8\u6210\u73B0\u5B9E\uFF0C\u89E3\u51B3\u95EE\u9898\uFF0C\u6216\u8005\u5B66\
   \u4E60\u65B0\u6280\u672F\u3002"
 title: "\u5F00\u59CB\u4E00\u4E2A\u65B0\u9879\u76EE"
+weight: 1
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why? (什么与为什么？)
 开始一个新项目就是创建一个全新的空间来编写代码和组织文件。程序员这么做是为了将想法变成现实，解决问题，或者学习新技术。

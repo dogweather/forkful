@@ -11,9 +11,8 @@ summary: "Pobieranie aktualnej daty w j\u0119zyku Swift polega na u\u017Cyciu kl
   \ `Date`, aby uzyska\u0107 dost\u0119p do daty i czasu, w kt\xF3rym aplikacja jest\
   \ uruchamiana.\u2026"
 title: Pobieranie aktualnej daty
+weight: 29
 ---
-
-{{< edit_this_page >}}
 
 ## Co i dlaczego?
 Pobieranie aktualnej daty w języku Swift polega na użyciu klasy `Date`, aby uzyskać dostęp do daty i czasu, w którym aplikacja jest uruchamiana. Programiści muszą pobierać aktualną datę z wielu powodów, począwszy od timestampowania zdarzeń, wykonywania obliczeń związanych z datami, po wyświetlanie dat i godzin w interfejsie użytkownika.

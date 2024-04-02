@@ -15,9 +15,8 @@ summary: "\u4F7F\u7528Elixir\u5904\u7406TOML\u610F\u5473\u7740\u4F7F\u7528Elixir
   \u89E3\u6790\uFF0C\u5E76\u4E14\u80FD\u5F88\u597D\u5730\u6620\u5C04\u5230\u54C8\u5E0C\
   \u6570\u636E\u7ED3\u6784\u4E0A\u3002"
 title: "\u4F7F\u7528TOML"
+weight: 39
 ---
-
-{{< edit_this_page >}}
 
 ## 什么以及为什么?
 使用Elixir处理TOML意味着使用Elixir解析和生成TOML（Tom的明显、最小语言）数据。程序员使用它来处理配置文件，因为TOML易于阅读、易于解析，并且能很好地映射到哈希数据结构上。

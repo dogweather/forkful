@@ -9,9 +9,8 @@ summary: "Sending an HTTP request fetches data from or sends data to a web serve
   \ Programmers do it to interact with web services or APIs \u2013 grabbing info,\
   \ posting\u2026"
 title: Sending an HTTP request
+weight: 44
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 Sending an HTTP request fetches data from or sends data to a web server. Programmers do it to interact with web services or APIs – grabbing info, posting updates, you name it.

@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Verificar si un directorio existe en Fish Shell permite que los scripts\
   \ tomen decisiones basadas en la presencia o ausencia de estructuras de directorio,\u2026"
 title: Comprobando si un directorio existe
+weight: 20
 ---
-
-{{< edit_this_page >}}
 
 ## ¿Qué y Por Qué?
 Verificar si un directorio existe en Fish Shell permite que los scripts tomen decisiones basadas en la presencia o ausencia de estructuras de directorio, habilitando tareas como operaciones condicionales de archivos, registros o configuración del entorno. Esta técnica es crucial para escribir scripts robustos que interactúen con el sistema de archivos de manera predecible.

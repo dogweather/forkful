@@ -11,9 +11,8 @@ summary: "Att h\xE4mta det aktuella datumet i C++ \xE4r en grundl\xE4ggande uppg
   \ f\xF6r program som beh\xF6ver bearbeta eller visa datum baserat p\xE5 systemets\
   \ klocka. Det \xE4r\u2026"
 title: "F\xE5 det aktuella datumet"
+weight: 29
 ---
-
-{{< edit_this_page >}}
 
 ## Vad & Varför?
 Att hämta det aktuella datumet i C++ är en grundläggande uppgift för program som behöver bearbeta eller visa datum baserat på systemets klocka. Det är väsentligt för loggning, tidsstämpling, schemaläggning av uppgifter och alla funktioner som är beroende av datum och tid.

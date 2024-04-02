@@ -9,9 +9,8 @@ summary: "Lainausmerkkien poistaminen merkkijonosta tarkoittaa yksitt\xE4isten (
   \ tai kaksinkertaisten (`\"`) lainausmerkkien poistamista tekstin ymp\xE4rilt\xE4\
   .\u2026"
 title: Merkkijonosta lainausmerkkien poistaminen
+weight: 9
 ---
-
-{{< edit_this_page >}}
 
 ## Mitä & Miksi?
 Lainausmerkkien poistaminen merkkijonosta tarkoittaa yksittäisten (`'`) tai kaksinkertaisten (`"`) lainausmerkkien poistamista tekstin ympäriltä. Ohjelmoijat tekevät tätä usein syötteen puhdistamiseksi, merkkijonojen vertailua varten tai tekstidataa käsiteltäessä, joka saattaa vahingossa sisältää lainausmerkkejä osana merkkijonoa.

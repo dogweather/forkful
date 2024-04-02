@@ -21,9 +21,8 @@ summary: "\uBAA8\uB4E0 \uCF54\uB4DC\uB97C \uD558\uB098\uC758 \uD070 \uB354\uBBF8
   \uD568\uC73C\uB85C\uC368, \uD2B9\uC815 \uC791\uC5C5\uC744 \uC218\uD589\uD558\uB294\
   \ \uCF54\uB4DC\uB07C\uB9AC \uBB36\uAC8C \uB418\uC5B4,\u2026"
 title: "\uCF54\uB4DC\uB97C \uD568\uC218\uB85C \uAD6C\uC131\uD558\uAE30"
+weight: 18
 ---
-
-{{< edit_this_page >}}
 
 ## 무엇이며 왜인가?
 모든 코드를 하나의 큰 더미로 쌓아두는 것은 나쁜 생각입니다. 함수로 코드를 나누는 것은 좋은 생각입니다. 이것은 엘름 코드를 깨끗하게 유지할 수 있게 하고, 재사용 가능하며, 테스트하기 쉽게 만듭니다. 코드를 함수로 구성함으로써, 특정 작업을 수행하는 코드끼리 묶게 되어, 애플리케이션을 더 유지하기 좋고 이해하기 쉽게 만들어줍니다.

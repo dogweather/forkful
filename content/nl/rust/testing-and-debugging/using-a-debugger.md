@@ -2,15 +2,14 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:09:04.565659-07:00
-description: "Een debugger gebruiken is alsof je jezelf r\xF6ntgenvisie geeft om in\
-  \ de uitvoering van je code te gluren. Programmeurs doen dit om bugs op te sporen,\
-  \ de\u2026"
+description: "Rust ondersteunt verschillende debuggers, maar een veelvoorkomende is\
+  \ `gdb` voor GNU/Linux of `lldb` voor macOS. Je kunt ook `rust-gdb` of `rust-lldb`\u2026"
 lastmod: '2024-03-13T22:44:50.598646-06:00'
 model: gpt-4-0125-preview
-summary: "Een debugger gebruiken is alsof je jezelf r\xF6ntgenvisie geeft om in de\
-  \ uitvoering van je code te gluren. Programmeurs doen dit om bugs op te sporen,\
-  \ de\u2026"
+summary: "Rust ondersteunt verschillende debuggers, maar een veelvoorkomende is `gdb`\
+  \ voor GNU/Linux of `lldb` voor macOS. Je kunt ook `rust-gdb` of `rust-lldb`\u2026"
 title: Een debugger gebruiken
+weight: 35
 ---
 
 ## Hoe te:

@@ -11,9 +11,8 @@ summary: "Att g\xF6ra en str\xE4ngs f\xF6rsta bokstav i varje ord versal handlar
   \ att konvertera den initiala karakt\xE4ren av varje ord i str\xE4ngen till versal\
   \ om den \xE4r i\u2026"
 title: "G\xF6r om en str\xE4ng till versaler"
+weight: 2
 ---
-
-{{< edit_this_page >}}
 
 ## Vad och varför?
 Att göra en strängs första bokstav i varje ord versal handlar om att konvertera den initiala karaktären av varje ord i strängen till versal om den är i gemen, samtidigt som de återstående karaktärerna förblir oförändrade. Programmerare utför ofta denna uppgift för att formatera utdata, användarinmatningar eller databehandling för att säkerställa konsekvens i hur text presenteras eller bearbetas, särskilt i användargränssnitt eller uppgifter för datanormalisering.

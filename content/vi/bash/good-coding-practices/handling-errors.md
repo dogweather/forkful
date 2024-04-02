@@ -13,9 +13,8 @@ summary: "X\u1EED l\xFD l\u1ED7i trong k\u1ECBch b\u1EA3n Bash l\xE0 vi\u1EC7c l
   \ v\xE0 x\u1EED l\xFD ch\xFAng m\u1ED9t c\xE1ch nh\u1EB9 nh\xE0ng. T\u1EA1i sao\
   \ \u01B0? Ch\xE0, n\xF3 gi\u1EEF cho k\u1ECBch b\u1EA3n\u2026"
 title: "X\u1EED l\xFD l\u1ED7i"
+weight: 16
 ---
-
-{{< edit_this_page >}}
 
 ## Gì và Tại sao?
 

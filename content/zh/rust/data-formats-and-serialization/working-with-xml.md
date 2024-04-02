@@ -15,9 +15,8 @@ summary: "XML\uFF0C\u5373\u53EF\u6269\u5C55\u6807\u8BB0\u8BED\u8A00\uFF08eXtensi
   \u5F97\u4E0D\u4E0EXML\u6253\u4EA4\u9053\u3002\u5728\u9700\u8981\u6570\u636E\u4EA4\
   \u6362\u7684\u5730\u65B9\uFF0CXML\u4F9D\u7136\u7A33\u56FA\u5730\u7AD9\u7740\u3002"
 title: "\u5904\u7406XML"
+weight: 40
 ---
-
-{{< edit_this_page >}}
 
 ## 什么 & 为什么？
 XML，即可扩展标记语言（eXtensible Markup Language），就像是JSON那个冗长的堂兄。当处理遗留系统、企业软件或未跟随JSON潮流的API时，你将不得不与XML打交道。在需要数据交换的地方，XML依然稳固地站着。

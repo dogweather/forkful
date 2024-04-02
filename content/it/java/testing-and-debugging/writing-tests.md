@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Scrivere test in Java consiste nel verificare che il proprio codice si comporti\
   \ come previsto in varie condizioni. I programmatori scrivono test per\u2026"
 title: Scrivere test
+weight: 36
 ---
-
-{{< edit_this_page >}}
 
 ## Cosa & Perché?
 Scrivere test in Java consiste nel verificare che il proprio codice si comporti come previsto in varie condizioni. I programmatori scrivono test per prevenire bug, assicurare che la funzionalità rimanga corretta dopo modifiche e promuovere buoni principi di progettazione del software.

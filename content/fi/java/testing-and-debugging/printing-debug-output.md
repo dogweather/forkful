@@ -9,9 +9,8 @@ summary: "Debug-tulosteiden printtaaminen auttaa bongaamaan ohjelman ongelmakoht
   \ Koodarit tekev\xE4t t\xE4t\xE4 koska se on simppeli tapa n\xE4hd\xE4, mit\xE4\
   \ sovelluksessa\u2026"
 title: "Virheenj\xE4ljitystulosteiden tulostaminen"
+weight: 33
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why? (Mitä & Miksi?)
 Debug-tulosteiden printtaaminen auttaa bongaamaan ohjelman ongelmakohtia. Koodarit tekevät tätä koska se on simppeli tapa nähdä, mitä sovelluksessa tapahtuu eri vaiheissa.

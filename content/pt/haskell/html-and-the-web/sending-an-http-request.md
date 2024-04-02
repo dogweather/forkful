@@ -7,9 +7,8 @@ model: gpt-4-1106-preview
 summary: "Enviar um pedido HTTP \xE9 basicamente pedir para um servidor web fazer\
   \ algo ou dar algo. Programadores fazem isso para interagir com APIs, pegar dados,\u2026"
 title: "Enviando uma requisi\xE7\xE3o HTTP"
+weight: 44
 ---
-
-{{< edit_this_page >}}
 
 ## O Que & Por Quê?
 

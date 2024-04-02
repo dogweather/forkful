@@ -14,9 +14,8 @@ summary: "L\u1EA5y ng\xE0y hi\u1EC7n t\u1EA1i c\xF3 ngh\u0129a l\xE0 gi\xE0nh l\
   a b\u1EA1n. C\xE1c l\u1EADp tr\xECnh vi\xEAn l\xE0m \u0111i\u1EC1u n\xE0y \u0111\
   \u1EC3 \u0111\xE1nh d\u1EA5u th\u1EDDi gian c\xE1c s\u1EF1 ki\u1EC7n, l\xEAn\u2026"
 title: "L\u1EA5y ng\xE0y hi\u1EC7n t\u1EA1i"
+weight: 29
 ---
-
-{{< edit_this_page >}}
 
 ## Cái gì & Tại sao?
 

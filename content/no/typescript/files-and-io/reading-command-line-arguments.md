@@ -7,9 +7,8 @@ model: gpt-4-1106-preview
 summary: "Lesing av kommandolinjeargumenter lar programmereren hente input direkte\
   \ fra brukerens terminal. Det er nyttig for skript og applikasjoner som krever\u2026"
 title: Lese kommandolinjeargumenter
+weight: 23
 ---
-
-{{< edit_this_page >}}
 
 ## Hva & Hvorfor?
 Lesing av kommandolinjeargumenter lar programmereren hente input direkte fra brukerens terminal. Det er nyttig for skript og applikasjoner som krever dynamisk input, og for å tilpasse hvordan et program oppfører seg.

@@ -9,9 +9,8 @@ summary: "Att generera slumpm\xE4ssiga nummer i Elixir \xE4r en grundl\xE4ggande
   \ avg\xF6rande f\xF6r applikationer som beh\xF6ver of\xF6ruts\xE4gbara resultat\
   \ s\xE5som\u2026"
 title: Generera slumptal
+weight: 12
 ---
-
-{{< edit_this_page >}}
 
 ## Vad och Varför?
 

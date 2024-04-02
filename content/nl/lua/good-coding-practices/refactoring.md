@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Refactoren is de kunst van het aanpassen van bestaande code om de structuur,\
   \ leesbaarheid en effici\xEBntie ervan te verbeteren, zonder het externe gedrag\u2026"
 title: Refactoring
+weight: 19
 ---
-
-{{< edit_this_page >}}
 
 ## Wat & Waarom?
 Refactoren is de kunst van het aanpassen van bestaande code om de structuur, leesbaarheid en efficiëntie ervan te verbeteren, zonder het externe gedrag ervan te veranderen. Programmeurs doen dit om hun code beter onderhoudbaar te maken, complexiteit te verminderen en vaak als een voorbereidende stap voordat ze nieuwe functies toevoegen of bugs repareren.

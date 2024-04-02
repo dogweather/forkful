@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Sprawdzanie, czy katalog istnieje w Visual Basic for Applications (VBA),\
   \ polega na weryfikacji obecno\u015Bci folderu w systemie plik\xF3w przed wykonaniem\u2026"
 title: Sprawdzanie, czy katalog istnieje
+weight: 20
 ---
-
-{{< edit_this_page >}}
 
 ## Co i dlaczego?
 

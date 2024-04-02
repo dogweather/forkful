@@ -9,9 +9,8 @@ summary: "La gestione degli errori consiste nel prevedere l'inaspettato nel codi
   \ \u2014 gestire gli errori e i problemi con grazia senza che il programma vada\
   \ in\u2026"
 title: Gestione degli errori
+weight: 16
 ---
-
-{{< edit_this_page >}}
 
 ## Cosa e Perché?
 

@@ -16,9 +16,8 @@ summary: "\u30A6\u30A7\u30D6\u30DA\u30FC\u30B8\u3092\u30C0\u30A6\u30F3\u30ED\u30
   \u3057\u305F\u308A\u3001\u30AA\u30D5\u30E9\u30A4\u30F3\u3067\u8AAD\u3080\u305F\u3081\
   \u3060\u306D\u3002"
 title: "\u30A6\u30A7\u30D6\u30DA\u30FC\u30B8\u306E\u30C0\u30A6\u30F3\u30ED\u30FC\u30C9"
+weight: 42
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 ウェブページをダウンロードするって？：ウェブコンテンツをローカルに保存することだよ。なぜやるの？：情報を分析したり、オフラインで読むためだね。

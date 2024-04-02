@@ -11,9 +11,8 @@ summary: "Wyra\u017Cenia regularne (regex) to wzorce s\u0142u\u017C\u0105ce do w
   \ kombinacji znak\xF3w w ci\u0105gach tekstowych. Programi\u015Bci wykorzystuj\u0105\
   \ je do wyszukiwania, edycji\u2026"
 title: "Korzystanie z wyra\u017Ce\u0144 regularnych"
+weight: 11
 ---
-
-{{< edit_this_page >}}
 
 ## Co i dlaczego?
 Wyrażenia regularne (regex) to wzorce służące do wyszukiwania kombinacji znaków w ciągach tekstowych. Programiści wykorzystują je do wyszukiwania, edycji lub manipulowania tekstem na podstawie zdefiniowanych wzorców, co czyni je niezbędnymi do zadań takich jak walidacja danych, parsowanie czy transformacja.

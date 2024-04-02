@@ -8,9 +8,8 @@ model: gpt-4-1106-preview
 summary: "Crear un archivo temporal es generar un archivo que se usa durante una sesi\xF3\
   n de programa y normalmente se borra autom\xE1ticamente. Los programadores lo\u2026"
 title: Creando un archivo temporal
+weight: 21
 ---
-
-{{< edit_this_page >}}
 
 ## ¿Qué y Por Qué?
 Crear un archivo temporal es generar un archivo que se usa durante una sesión de programa y normalmente se borra automáticamente. Los programadores lo hacen para almacenar datos transitorios sin afectar la permanencia y el orden de los archivos del sistema.

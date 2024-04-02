@@ -14,9 +14,8 @@ summary: "\uD14D\uC2A4\uD2B8 \uD30C\uC77C\uC744 \uC77D\uB294\uB2E4\uB294 \uAC83\
   \uC6A9\uC790 \uB370\uC774\uD130, \uD639\uC740 \uB9AC\uC18C\uC2A4\uB97C \uCC98\uB9AC\
   \uD558\uAE30 \uC704\uD574 \uC774\uB97C \uC218\uD589\uD569\uB2C8\uB2E4."
 title: "\uD14D\uC2A4\uD2B8 \uD30C\uC77C \uC77D\uAE30"
+weight: 22
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why? (무엇이며 왜?)
 텍스트 파일을 읽는다는 것은 데이터를 파일에서 불러오는 행위입니다. 프로그래머는 설정, 사용자 데이터, 혹은 리소스를 처리하기 위해 이를 수행합니다.

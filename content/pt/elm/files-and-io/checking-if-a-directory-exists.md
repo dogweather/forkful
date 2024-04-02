@@ -9,9 +9,8 @@ summary: "Checar se um diret\xF3rio existe \xE9 o processo de verificar se um ca
   \ espec\xEDfico refere-se a um diret\xF3rio no sistema de arquivos. Programadores\
   \ fazem isso\u2026"
 title: "Verificando se um diret\xF3rio existe"
+weight: 20
 ---
-
-{{< edit_this_page >}}
 
 ## O Que é & Porquê?
 Checar se um diretório existe é o processo de verificar se um caminho específico refere-se a um diretório no sistema de arquivos. Programadores fazem isso para evitar erros ao tentar acessar, ler ou escrever em um diretório que pode não estar presente.

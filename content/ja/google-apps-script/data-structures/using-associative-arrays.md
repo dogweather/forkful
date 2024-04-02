@@ -7,9 +7,8 @@ lastmod: '2024-03-13T22:44:41.434069-06:00'
 model: gpt-4-0125-preview
 summary: "\u9023\u60F3\u914D\u5217\u306F\u3001Google Apps\u2026"
 title: "\u9023\u60F3\u914D\u5217\u306E\u4F7F\u7528"
+weight: 15
 ---
-
-{{< edit_this_page >}}
 
 ## 何を、なぜ？
 

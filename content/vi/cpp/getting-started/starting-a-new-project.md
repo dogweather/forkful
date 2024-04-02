@@ -15,9 +15,8 @@ summary: "B\u1EAFt \u0111\u1EA7u m\u1ED9t d\u1EF1 \xE1n m\u1EDBi c\xF3 ngh\u0129
   \ kh\u1EDFi \u0111\u1EA7u qu\xE1 tr\xECnh ph\xE1t tri\u1EC3n, h\u01B0\u1EDBng d\u1EAB\
   n c\u1EA5u\u2026"
 title: "B\u1EAFt \u0111\u1EA7u m\u1ED9t d\u1EF1 \xE1n m\u1EDBi"
+weight: 1
 ---
-
-{{< edit_this_page >}}
 
 ## Cái gì & Tại sao?
 Bắt đầu một dự án mới có nghĩa là thiết lập nền móng cho cơ sở mã của bạn. Lập trình viên làm điều này để khởi đầu quá trình phát triển, hướng dẫn cấu trúc dự án, và đặt nền tảng cho mã trong tương lai.

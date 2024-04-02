@@ -9,9 +9,8 @@ summary: "Obs\u0142uga b\u0142\u0119d\xF3w w PowerShell polega na przewidywaniu 
   \ sytuacji i zarz\u0105dzaniu nimi w spos\xF3b p\u0142ynny. Programi\u015Bci robi\u0105\
   \ to, aby zapobiec\u2026"
 title: "Obs\u0142uga b\u0142\u0119d\xF3w"
+weight: 16
 ---
-
-{{< edit_this_page >}}
 
 ## Co i Dlaczego?
 Obsługa błędów w PowerShell polega na przewidywaniu nieprzewidzianych sytuacji i zarządzaniu nimi w sposób płynny. Programiści robią to, aby zapobiec awariom oraz dostarczyć użytkownikom przydatne informacje zwrotne.

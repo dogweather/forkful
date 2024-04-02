@@ -10,9 +10,8 @@ model: gpt-4-0125-preview
 summary: "Att skriva en textfil i C inneb\xE4r att skapa eller \xF6ppna en fil i skrivl\xE4\
   ge och sedan anv\xE4nda Cs fil-I/O-funktioner f\xF6r att spara textdata till den.\u2026"
 title: Att skriva en textfil
+weight: 24
 ---
-
-{{< edit_this_page >}}
 
 ## Vad & Varför?
 

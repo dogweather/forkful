@@ -11,9 +11,8 @@ summary: "Assoziative Arrays, in Swift als W\xF6rterb\xFCcher (dictionaries) bek
   \ erm\xF6glichen es Ihnen, Daten als Schl\xFCssel-Wert-Paare zu speichern und zu\
   \ verwalten.\u2026"
 title: Verwendung von assoziativen Arrays
+weight: 15
 ---
-
-{{< edit_this_page >}}
 
 ## Was & Warum?
 

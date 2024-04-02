@@ -8,9 +8,8 @@ model: gpt-4-1106-preview
 summary: "\xC5 lese en tekstfil betyr \xE5 hente innhold fra en fil lagret p\xE5 lagringsmediet,\
   \ for eksempel et SD-kort, s\xE5 du kan bruke dataene i programmet ditt.\u2026"
 title: Lese en tekstfil
+weight: 22
 ---
-
-{{< edit_this_page >}}
 
 ## Hva & Hvorfor?
 Å lese en tekstfil betyr å hente innhold fra en fil lagret på lagringsmediet, for eksempel et SD-kort, så du kan bruke dataene i programmet ditt. Programmerere gjør dette for å kunne arbeide med konfigurasjoner, lagre data eller logge informasjon uten å hardkode det direkte i Arduino-sketchen.

@@ -22,9 +22,8 @@ summary: "C \u092E\u0947\u0902 JSON (JavaScript Object Notation) \u0915\u0947 \u
   \u0930\u093E\u092E\u0930 \u0910\u0938\u093E \u0935\u0947\u092C\u2026"
 title: "JSON \u0915\u0947 \u0938\u093E\u0925 \u0915\u093E\u092E \u0915\u0930\u0928\
   \u093E"
+weight: 38
 ---
-
-{{< edit_this_page >}}
 
 ## क्या और क्यों?
 

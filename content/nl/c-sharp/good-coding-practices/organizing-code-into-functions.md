@@ -10,9 +10,8 @@ model: gpt-4-0125-preview
 summary: "Code in functies opdelen is als LEGO-stenen sorteren in bakken\u2014het\
   \ maakt het vinden en gebruiken ervan gemakkelijker. We doen dit om herhaling te\u2026"
 title: Code organiseren in functies
+weight: 18
 ---
-
-{{< edit_this_page >}}
 
 ## Wat & Waarom?
 Code in functies opdelen is als LEGO-stenen sorteren in bakken—het maakt het vinden en gebruiken ervan gemakkelijker. We doen dit om herhaling te voorkomen, begrip te vereenvoudigen en onderhoud minder hoofdpijn te veroorzaken.

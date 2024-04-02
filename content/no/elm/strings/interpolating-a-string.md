@@ -8,9 +8,8 @@ model: gpt-4-1106-preview
 summary: "Strenginterpolasjon betyr \xE5 smelte sammen variabler med tekst. Vi gj\xF8\
   r det for \xE5 bygge brukertilpassede meldinger eller for \xE5 kombinere data dynamisk."
 title: Interpolering av en streng
+weight: 8
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 Strenginterpolasjon betyr å smelte sammen variabler med tekst. Vi gjør det for å bygge brukertilpassede meldinger eller for å kombinere data dynamisk.

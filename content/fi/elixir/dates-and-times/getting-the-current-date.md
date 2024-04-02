@@ -12,9 +12,8 @@ summary: "Nykyisen p\xE4iv\xE4m\xE4\xE4r\xE4n saaminen Elixirissa k\xE4sitt\xE4\
   \ j\xE4rjestelm\xE4n p\xE4iv\xE4m\xE4\xE4r\xE4n ja ajan tiedon saavuttamisen, yleinen\
   \ teht\xE4v\xE4 lokitukseen, datan leimaamiseen\u2026"
 title: "Nykyisen p\xE4iv\xE4m\xE4\xE4r\xE4n hankkiminen"
+weight: 29
 ---
-
-{{< edit_this_page >}}
 
 ## Mikä ja miksi?
 Nykyisen päivämäärän saaminen Elixirissa käsittää järjestelmän päivämäärän ja ajan tiedon saavuttamisen, yleinen tehtävä lokitukseen, datan leimaamiseen tai mihin tahansa toimintoon, joka edellyttää nykyisen päivämäärän tuntemista. Tämä operaatio on olennainen aikaan tietoisten sovellusten luomiselle ja tehtäville, kuten raporttien generoinnille tai aikaleimojen lisäämiselle verkkosovellukseen.

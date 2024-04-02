@@ -13,9 +13,8 @@ summary: "Ph\xE2n t\xEDch c\xFA ph\xE1p HTML c\xF3 ngh\u0129a l\xE0 l\u1ECDc qua
   t m\u1ED9t c\xE1ch l\u1EADp tr\xECnh. C\xE1c l\u1EADp tr\xECnh vi\xEAn l\xE0m \u0111\
   i\u1EC1u n\xE0y cho c\xE1c nhi\u1EC7m\u2026"
 title: "Ph\xE2n T\xEDch C\xFA Ph\xE1p HTML"
+weight: 43
 ---
-
-{{< edit_this_page >}}
 
 ## Làm gì và Tại sao?
 

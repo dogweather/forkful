@@ -9,9 +9,8 @@ summary: "Zaczynaj\u0105c nowy projekt, programi\u015Bci tworz\u0105 grunt pod s
   j kod - to jak u\u0142ozenie fundament\xF3w pod dom. Robi\u0105 to, bo dobrze przygotowany\
   \ start to klucz do\u2026"
 title: Rozpoczynanie nowego projektu
+weight: 1
 ---
-
-{{< edit_this_page >}}
 
 ## Co i dlaczego?
 Zaczynając nowy projekt, programiści tworzą grunt pod swój kod - to jak ułozenie fundamentów pod dom. Robią to, bo dobrze przygotowany start to klucz do elastycznego i efektywnego rozwoju aplikacji.

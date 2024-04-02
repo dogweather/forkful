@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Het lezen van een tekstbestand betekent het toegang krijgen tot de inhoud\
   \ van een bestand dat op de schijf is opgeslagen via code. Programmeurs doen dit\u2026"
 title: Een tekstbestand lezen
+weight: 22
 ---
-
-{{< edit_this_page >}}
 
 ## Wat & Waarom?
 Het lezen van een tekstbestand betekent het toegang krijgen tot de inhoud van een bestand dat op de schijf is opgeslagen via code. Programmeurs doen dit om gegevens binnen hun applicaties te verwerken, analyseren of weer te geven.

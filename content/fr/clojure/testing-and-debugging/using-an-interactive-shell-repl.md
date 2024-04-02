@@ -7,9 +7,8 @@ model: gpt-4-0125-preview
 summary: "REPL, ou Boucle Lire-\xC9valuer-Afficher, est un environnement de programmation\
   \ permettant de tester dynamiquement le code Clojure pi\xE8ce par pi\xE8ce. Les\u2026"
 title: Utilisation d'une console interactive (REPL)
+weight: 34
 ---
-
-{{< edit_this_page >}}
 
 ## Quoi & Pourquoi ?
 REPL, ou Boucle Lire-Évaluer-Afficher, est un environnement de programmation permettant de tester dynamiquement le code Clojure pièce par pièce. Les programmeurs l'utilisent pour obtenir un retour immédiat, pour le développement itératif, et pour l'expérimentation rapide sans l'overhead de la compilation ou de la mise en place d'un environnement de projet complet.

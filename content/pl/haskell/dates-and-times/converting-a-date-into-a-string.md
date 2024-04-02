@@ -9,9 +9,8 @@ summary: "Co i dlaczego? Konwersja daty na tekst to proces zmiany formatu daty n
   \ \u0142a\u0144cuch znak\xF3w. Programi\u015Bci robi\u0105 to, by daty by\u0142\
   y czytelne dla ludzi i by mo\u017Cna\u2026"
 title: "Konwersja daty na \u0142a\u0144cuch znak\xF3w"
+weight: 28
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 Co i dlaczego? Konwersja daty na tekst to proces zmiany formatu daty na łańcuch znaków. Programiści robią to, by daty były czytelne dla ludzi i by można je było łatwo wyświetlić w interfejsach użytkownika czy zapisywać w plikach tekstowych.

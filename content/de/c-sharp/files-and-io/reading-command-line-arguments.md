@@ -8,9 +8,8 @@ model: gpt-4-1106-preview
 summary: "Die Lekt\xFCre von Kommandozeilenargumenten erm\xF6glicht es, dass ein C#-Programm\
   \ beim Start Zusatzinformationen erh\xE4lt. So passen Programmierer das Verhalten\u2026"
 title: Lesen von Kommandozeilenargumenten
+weight: 23
 ---
-
-{{< edit_this_page >}}
 
 ## Was & Warum?
 Die Lektüre von Kommandozeilenargumenten ermöglicht es, dass ein C#-Programm beim Start Zusatzinformationen erhält. So passen Programmierer das Verhalten der Anwendung dynamisch an, ohne den Code zu ändern.

@@ -11,9 +11,8 @@ summary: "W Elixirze, tablice asocjacyjne, zwane Mapami, to kolekcje par klucz-w
   \u0107, gdzie unikalny klucz wskazuje na warto\u015B\u0107. S\u0105 niesamowicie\
   \ przydatne do\u2026"
 title: Korzystanie z tablic asocjacyjnych
+weight: 15
 ---
-
-{{< edit_this_page >}}
 
 ## Co i dlaczego?
 

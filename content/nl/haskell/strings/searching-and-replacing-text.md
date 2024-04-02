@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Tekst zoeken en vervangen stelt je in staat om strings te vinden en te wisselen.\
   \ Programmeurs gebruiken het om code te updaten, te refactoren of snel\u2026"
 title: Tekst zoeken en vervangen
+weight: 10
 ---
-
-{{< edit_this_page >}}
 
 ## Wat & Waarom?
 Tekst zoeken en vervangen stelt je in staat om strings te vinden en te wisselen. Programmeurs gebruiken het om code te updaten, te refactoren of snel gegevens te wijzigen.

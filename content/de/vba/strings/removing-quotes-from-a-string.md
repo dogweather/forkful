@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Das Entfernen von Anf\xFChrungszeichen aus einem String in VBA bedeutet,\
   \ die Instanzen von einfachen (`'`) oder doppelten (`\"`) Anf\xFChrungszeichen zu\u2026"
 title: "Anf\xFChrungszeichen aus einem String entfernen"
+weight: 9
 ---
-
-{{< edit_this_page >}}
 
 ## Was & Warum?
 

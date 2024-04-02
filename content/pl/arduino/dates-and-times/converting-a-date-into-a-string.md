@@ -9,9 +9,8 @@ summary: "Konwersja daty na ci\u0105g znak\xF3w (string) pozwala na \u0142atwe w
   wietlanie i zapisywanie dat w czytelnej formie. Programi\u015Bci wykonuj\u0105 t\u0119\
   \ operacj\u0119, by poprawi\u0107\u2026"
 title: "Konwersja daty na \u0142a\u0144cuch znak\xF3w"
+weight: 28
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why? (Co i Dlaczego?)
 Konwersja daty na ciąg znaków (string) pozwala na łatwe wyświetlanie i zapisywanie dat w czytelnej formie. Programiści wykonują tę operację, by poprawić interakcję z użytkownikiem oraz ułatwić logowanie i debugowanie programów.

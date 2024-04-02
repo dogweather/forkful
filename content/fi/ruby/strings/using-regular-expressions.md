@@ -11,9 +11,8 @@ summary: "S\xE4\xE4nn\xF6lliset lausekkeet (regex) Rubyn kieless\xE4 ovat mallej
   \ joita k\xE4ytet\xE4\xE4n merkkijonojen merkkiyhdistelmien vastaavuuden etsimiseen,\
   \ mahdollistaen\u2026"
 title: "S\xE4\xE4nn\xF6llisten lausekkeiden k\xE4ytt\xF6"
+weight: 11
 ---
-
-{{< edit_this_page >}}
 
 ## Mikä & Miksi?
 Säännölliset lausekkeet (regex) Rubyn kielessä ovat malleja, joita käytetään merkkijonojen merkkiyhdistelmien vastaavuuden etsimiseen, mahdollistaen kehittäjille tekstin etsimisen, vastaavuuden tarkistamisen ja manipuloinnin tehokkaasti. Ohjelmoijat käyttävät regexiä tehtäviin, kuten validointi, jäsentäminen ja merkkijonon manipulointi, tehden siitä korvaamattoman työkalun tekstin käsittelyssä.

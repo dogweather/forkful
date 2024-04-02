@@ -9,9 +9,8 @@ summary: "Leer un archivo de texto significa acceder y obtener el contenido alma
   \ en \xE9l. Programadores realizamos esto para procesar datos, configuraciones,\
   \ o\u2026"
 title: Lectura de un archivo de texto
+weight: 22
 ---
-
-{{< edit_this_page >}}
 
 ## Qué y Por Qué?
 Leer un archivo de texto significa acceder y obtener el contenido almacenado en él. Programadores realizamos esto para procesar datos, configuraciones, o simplemente importar y exportar información.

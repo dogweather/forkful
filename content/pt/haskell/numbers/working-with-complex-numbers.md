@@ -9,9 +9,8 @@ summary: "N\xFAmeros complexos, consistindo em uma parte real e uma parte imagin
   ria, s\xE3o essenciais em diversos campos computacionais como engenharia, f\xED\
   sica e\u2026"
 title: "Trabalhando com n\xFAmeros complexos"
+weight: 14
 ---
-
-{{< edit_this_page >}}
 
 ## O que & Por quê?
 

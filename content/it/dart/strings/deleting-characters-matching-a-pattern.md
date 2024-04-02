@@ -11,9 +11,8 @@ summary: "La rimozione dei caratteri che corrispondono a uno specifico modello n
   \ stringhe \xE8 fondamentale per la validazione dei dati, la loro sanificazione\
   \ o\u2026"
 title: Eliminare caratteri corrispondenti a un pattern
+weight: 5
 ---
-
-{{< edit_this_page >}}
 
 ## Cosa & Perché?
 

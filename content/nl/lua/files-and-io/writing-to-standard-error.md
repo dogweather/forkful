@@ -10,9 +10,8 @@ model: gpt-4-0125-preview
 summary: "Schrijven naar standaardfout (stderr) laat je programma praten over fouten\
   \ zonder de standaarduitvoer (stdout) te verstoppen. Het is een duidelijk signaal\u2026"
 title: Schrijven naar standaardfout
+weight: 25
 ---
-
-{{< edit_this_page >}}
 
 ## Wat & Waarom?
 

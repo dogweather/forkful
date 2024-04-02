@@ -18,9 +18,8 @@ summary: "\u5BFE\u8A71\u578B\u30B7\u30A7\u30EB\u3001\u307E\u305F\u306FRead-Eval-
   \u8A9E\u3092\u5B66\u3093\u3060\u308A\u3057\u307E\u3059\u3002"
 title: "\u30A4\u30F3\u30BF\u30E9\u30AF\u30C6\u30A3\u30D6\u30B7\u30A7\u30EB\uFF08REPL\uFF09\
   \u306E\u4F7F\u7528"
+weight: 34
 ---
-
-{{< edit_this_page >}}
 
 ## 何となぜ?
 対話型シェル、またはRead-Eval-Print Loop（REPL）を使用することで、対話的にコーディングできます。プログラマーはこれを使用して、迅速にSwiftのスニペットをテストしたり、デバッグしたり、言語を学んだりします。

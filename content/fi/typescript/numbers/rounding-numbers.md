@@ -8,9 +8,8 @@ model: gpt-4-0125-preview
 summary: "Numeroiden py\xF6rist\xE4minen tarkoittaa numeron karsimista tiettyyn tarkkuuteen.\
   \ Ohjelmoijat tekev\xE4t n\xE4in hallitakseen numeerista tulostetta luettavuuden,\u2026"
 title: "Numerojen py\xF6rist\xE4minen"
+weight: 13
 ---
-
-{{< edit_this_page >}}
 
 ## Mikä & Miksi?
 Numeroiden pyöristäminen tarkoittaa numeron karsimista tiettyyn tarkkuuteen. Ohjelmoijat tekevät näin hallitakseen numeerista tulostetta luettavuuden, näyttötarkoitusten vuoksi tai kun tietty tarkkuus vaaditaan operaatioissa, jotka tuottavat liukulukutuloksia.

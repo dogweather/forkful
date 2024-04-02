@@ -11,9 +11,8 @@ summary: "Att tolka (parse:a) HTML i Visual Basic for Applications (VBA) inneb\x
   r att extrahera specifik information fr\xE5n ett HTML-dokument. Programmerare g\xF6\
   r det\u2026"
 title: Att Tolka HTML
+weight: 43
 ---
-
-{{< edit_this_page >}}
 
 ## Vad & Varför?
 

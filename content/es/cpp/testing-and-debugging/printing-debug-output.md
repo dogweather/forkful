@@ -9,9 +9,8 @@ summary: "Cuando se programa, imprimir mensajes de depuraci\xF3n es como tener u
   \ linterna en un t\xFAnel oscuro; nos ayuda a ver qu\xE9 est\xE1 pasando dentro\
   \ del c\xF3digo. Los\u2026"
 title: "Imprimiendo salida de depuraci\xF3n"
+weight: 33
 ---
-
-{{< edit_this_page >}}
 
 ## Qué y Por Qué?
 Cuando se programa, imprimir mensajes de depuración es como tener una linterna en un túnel oscuro; nos ayuda a ver qué está pasando dentro del código. Los programadores lo hacen para entender el flujo y el estado del programa, para localizar fallos más rápidamente.

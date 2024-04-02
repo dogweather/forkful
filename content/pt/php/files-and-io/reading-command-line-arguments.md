@@ -9,9 +9,8 @@ summary: "Comandos na linha de comando s\xE3o instru\xE7\xF5es que voc\xEA inser
   \ diretamente no terminal para executar um programa com op\xE7\xF5es espec\xEDficas.\
   \ Os programadores\u2026"
 title: Lendo argumentos da linha de comando
+weight: 23
 ---
-
-{{< edit_this_page >}}
 
 ## O Que & Porquê?
 Comandos na linha de comando são instruções que você insere diretamente no terminal para executar um programa com opções específicas. Os programadores fazem isso para interagir com scripts de forma rápida, passando informações e parâmetros de forma programática.

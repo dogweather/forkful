@@ -9,9 +9,8 @@ summary: "TOML (Toms \xC5penbare, Minimale Spr\xE5k) er et data serialiseringsfo
   \ som er lett \xE5 lese p\xE5 grunn av sin klare semantikk. Programmerere bruker\
   \ TOML for\u2026"
 title: Jobbe med TOML
+weight: 39
 ---
-
-{{< edit_this_page >}}
 
 ## Hva og hvorfor?
 TOML (Toms Åpenbare, Minimale Språk) er et data serialiseringsformat som er lett å lese på grunn av sin klare semantikk. Programmerere bruker TOML for konfigurasjonsfiler fordi det gir en balanse mellom menneskelig lesbarhet og maskinens tolkbarhet.

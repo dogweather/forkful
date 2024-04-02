@@ -11,9 +11,8 @@ summary: "La g\xE9n\xE9ration de nombres al\xE9atoires en programmation consiste
   \ cr\xE9er une s\xE9quence de nombres qui ne peut pas \xEAtre pr\xE9dite de mani\xE8\
   re raisonnable mieux\u2026"
 title: "G\xE9n\xE9ration de nombres al\xE9atoires"
+weight: 12
 ---
-
-{{< edit_this_page >}}
 
 ## Quoi et pourquoi ?
 

@@ -7,9 +7,8 @@ model: gpt-4-0125-preview
 summary: "In the realm of programming, especially when dealing with Linux or Unix\
   \ environments, manipulating files directly from the command line interface (CLI)\u2026"
 title: Manipulating files with CLI one-liners
+weight: 31
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 

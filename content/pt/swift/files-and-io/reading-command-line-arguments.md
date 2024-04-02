@@ -8,9 +8,8 @@ model: gpt-4-1106-preview
 summary: "Ler argumentos da linha de comando permite que programas Swift recebam inputs\
   \ externos ao serem executados. Programadores fazem isso para personalizar a\u2026"
 title: Lendo argumentos da linha de comando
+weight: 23
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 Ler argumentos da linha de comando permite que programas Swift recebam inputs externos ao serem executados. Programadores fazem isso para personalizar a execução de apps via terminal ou scripts, baseando-se em dados fornecidos por usuários ou outros programas.

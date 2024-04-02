@@ -11,9 +11,8 @@ summary: "Calcolare una data nel futuro o nel passato consiste nel manipolare gl
   \ oggetti data per trovare date oltre o prima della data attuale, rispettivamente.\
   \ I\u2026"
 title: Calcolare una data nel futuro o nel passato
+weight: 26
 ---
-
-{{< edit_this_page >}}
 
 ## Cosa & Perché?
 

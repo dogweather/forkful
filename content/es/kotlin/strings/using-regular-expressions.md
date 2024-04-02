@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Las expresiones regulares (regex) son una herramienta poderosa para el procesamiento\
   \ de texto, permitiendo a los programadores buscar, coincidir y\u2026"
 title: Usando expresiones regulares
+weight: 11
 ---
-
-{{< edit_this_page >}}
 
 ## ¿Qué y Por Qué?
 

@@ -10,9 +10,8 @@ model: gpt-4-0125-preview
 summary: "Calcular uma data no futuro ou no passado \xE9 uma tarefa comum para programadores,\
   \ lidando com agendamentos, lembretes ou qualquer funcionalidade que\u2026"
 title: Calculando uma data no futuro ou passado
+weight: 26
 ---
-
-{{< edit_this_page >}}
 
 ## O que & Por quê?
 Calcular uma data no futuro ou no passado é uma tarefa comum para programadores, lidando com agendamentos, lembretes ou qualquer funcionalidade que dependa de cálculos de datas. Entender como manipular datas é crucial para sistemas de backend, interfaces de usuário e análise de dados, especialmente para aqueles que estão migrando para Dart e procuram implementar lógica temporal de forma eficiente.

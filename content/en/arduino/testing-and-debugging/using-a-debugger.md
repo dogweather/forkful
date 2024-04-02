@@ -1,12 +1,15 @@
 ---
 date: 2024-01-25 20:50:18.871808-07:00
-description: "A debugger is a tool that helps you squish bugs in your code by letting\
-  \ you pause, poke around, and find out what's really going on under the hood.\u2026"
+description: "With the Arduino IDE, you can use Serial prints to debug, but it's a\
+  \ bit like using a flashlight to explore a cave. For real debugging, you might want\
+  \ to\u2026"
 lastmod: '2024-03-13T22:45:00.325268-06:00'
 model: gpt-4-1106-preview
-summary: "A debugger is a tool that helps you squish bugs in your code by letting\
-  \ you pause, poke around, and find out what's really going on under the hood.\u2026"
+summary: "With the Arduino IDE, you can use Serial prints to debug, but it's a bit\
+  \ like using a flashlight to explore a cave. For real debugging, you might want\
+  \ to\u2026"
 title: Using a debugger
+weight: 35
 ---
 
 ## How to:

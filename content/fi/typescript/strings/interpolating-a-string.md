@@ -9,9 +9,8 @@ summary: "String-interpolointi on tapa sis\xE4llytt\xE4\xE4 muuttujien arvoja su
   \ merkkijonoihin. Ohjelmoijat k\xE4ytt\xE4v\xE4t t\xE4t\xE4 ominaisuutta, koska\
   \ se tekee koodista\u2026"
 title: Merkkijonon interpolointi
+weight: 8
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why? (Mitä & Miksi?)
 String-interpolointi on tapa sisällyttää muuttujien arvoja suoraan merkkijonoihin. Ohjelmoijat käyttävät tätä ominaisuutta, koska se tekee koodista selvempää ja tiiviimpää.

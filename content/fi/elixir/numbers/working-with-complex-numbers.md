@@ -9,9 +9,8 @@ summary: "Kompleksiluvuilla on reaaliosa ja imagin\xE4\xE4riosa (kuten `3 + 4i`)
   \ Niit\xE4 k\xE4ytet\xE4\xE4n tekniikassa, fysiikassa sek\xE4 tietyiss\xE4 tietojenk\xE4\
   sittelyn ongelmissa.\u2026"
 title: "Kompleksilukujen k\xE4sittely"
+weight: 14
 ---
-
-{{< edit_this_page >}}
 
 ## Mikä ja Miksi?
 Kompleksiluvuilla on reaaliosa ja imaginääriosa (kuten `3 + 4i`). Niitä käytetään tekniikassa, fysiikassa sekä tietyissä tietojenkäsittelyn ongelmissa. Ohjelmoijat työskentelevät niiden kanssa simulaatioissa, signaalinkäsittelyssä ja tietyntyyppisten matemaattisten ongelmien tehokkaassa ratkaisemisessa.

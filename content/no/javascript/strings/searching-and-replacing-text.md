@@ -9,9 +9,8 @@ summary: "S\xF8king og erstatting av tekst lar oss finne spesifikke ord eller m\
   nstre og bytte dem ut med noe annet. Det sparer tid, unng\xE5r feil og automatiserer\
   \ endel\u2026"
 title: "S\xF8king og erstatting av tekst"
+weight: 10
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 Søking og erstatting av tekst lar oss finne spesifikke ord eller mønstre og bytte dem ut med noe annet. Det sparer tid, unngår feil og automatiserer endel kjedelig jobb.

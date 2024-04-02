@@ -10,9 +10,8 @@ model: gpt-4-0125-preview
 summary: "Het lezen van command-line argumenten in Ruby stelt scripts in staat om\
   \ direct bij het uitvoeren input te krijgen, zoals het configureren van opties of\u2026"
 title: Commandoregelargumenten lezen
+weight: 23
 ---
-
-{{< edit_this_page >}}
 
 ## Wat & Waarom?
 Het lezen van command-line argumenten in Ruby stelt scripts in staat om direct bij het uitvoeren input te krijgen, zoals het configureren van opties of het doorgeven van gegevens. Programmeurs gebruiken ze om scripts dynamisch en aanpasbaar te maken zonder waarden te hardcoderen.

@@ -10,9 +10,8 @@ model: gpt-4-0125-preview
 summary: "Het verzenden van een HTTP-verzoek is hoe je JavaScript-code met een server\
   \ communiceert. Dit wordt gedaan om gegevens uit te wisselen, bronnen op te\u2026"
 title: Een HTTP-verzoek verzenden
+weight: 44
 ---
-
-{{< edit_this_page >}}
 
 ## Wat & Waarom?
 

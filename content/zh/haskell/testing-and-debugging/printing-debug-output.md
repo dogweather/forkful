@@ -12,9 +12,8 @@ summary: "\u8C03\u8BD5\u8F93\u51FA\u5C31\u662F\u5728\u7A0B\u5E8F\u8FD0\u884C\u65
   \u7684\u72B6\u6001\u4FE1\u606F\uFF0C\u4EE5\u5E2E\u52A9\u7A0B\u5E8F\u5458\u7406\u89E3\
   \u548C\u89E3\u51B3\u4EE3\u7801\u95EE\u9898\u3002"
 title: "\u6253\u5370\u8C03\u8BD5\u8F93\u51FA"
+weight: 33
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why? (是什么？为什么？)
 调试输出就是在程序运行时显示变量、表达式的值或者程序的状态信息，以帮助程序员理解和解决代码问题。

@@ -9,9 +9,8 @@ summary: "Wysy\u0142anie \u017C\u0105dania HTTP to spos\xF3b, by twoja aplikacja
   \ porozumiewa\u0142a si\u0119 z innymi serwerami \u2013 to jak wys\u0142anie listu\
   \ w cyfrowym \u015Bwiecie. Programi\u015Bci\u2026"
 title: "Wysy\u0142anie \u017C\u0105dania HTTP"
+weight: 44
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why? (Co i dlaczego?)
 Wysyłanie żądania HTTP to sposób, by twoja aplikacja PHP porozumiewała się z innymi serwerami – to jak wysłanie listu w cyfrowym świecie. Programiści robią to, by pobierać dane, wysyłać formularze, łączyć się z API i w zasadzie do wszelkiej komunikacji sieciowej.

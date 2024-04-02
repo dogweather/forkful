@@ -11,9 +11,8 @@ summary: "Trabalhar com arquivos CSV (Valores Separados por V\xEDrgula) \xE9 sob
   \ processar e manipular dados armazenados em um formato de texto simples, onde cada\
   \ linha\u2026"
 title: Trabalhando com CSV
+weight: 37
 ---
-
-{{< edit_this_page >}}
 
 ## O quê e Por quê?
 

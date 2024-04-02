@@ -11,9 +11,8 @@ summary: "Att arbeta med komplexa tal inneb\xE4r att utf\xF6ra matematiska opera
   \ med tal som har b\xE5de en reell del och en imagin\xE4r del. Programmerare anv\xE4\
   nder ofta\u2026"
 title: Att arbeta med komplexa tal
+weight: 14
 ---
-
-{{< edit_this_page >}}
 
 ## Vad & Varför?
 

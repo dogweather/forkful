@@ -23,9 +23,8 @@ summary: "Rust\uC5D0\uC11C \uD14D\uC2A4\uD2B8 \uD30C\uC77C\uC744 \uC791\uC131\uD
   \uD130\uB97C \uC601\uAD6C\uC801\uC73C\uB85C \uBCF4\uC874\uD558\uAE30 \uC704\uD574\
   \ \uC774 \uC791\uC5C5\uC744 \uC218\uD589\uD569\uB2C8\uB2E4.\u2026"
 title: "\uD14D\uC2A4\uD2B8 \uD30C\uC77C \uC4F0\uAE30"
+weight: 24
 ---
-
-{{< edit_this_page >}}
 
 ## 무엇 & 왜?
 Rust에서 텍스트 파일을 작성하는 것은 파일 시스템의 파일을 생성하고, 데이터를 작성하며, 필요한 경우 데이터를 추가하는 작업을 포함합니다. 프로그래머들은 애플리케이션 로그, 구성, 또는 사용자 생성 콘텐츠와 같은 데이터를 영구적으로 보존하기 위해 이 작업을 수행합니다. 이는 프로그램 실행 범위를 넘어서 데이터의 내구성을 보장합니다.

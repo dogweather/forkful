@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Verificar se um diret\xF3rio existe no Google Apps Script envolve confirmar\
   \ a presen\xE7a de uma pasta dentro do Google Drive. Programadores frequentemente\u2026"
 title: "Verificando se um diret\xF3rio existe"
+weight: 20
 ---
-
-{{< edit_this_page >}}
 
 ## O Que & Por Que?
 

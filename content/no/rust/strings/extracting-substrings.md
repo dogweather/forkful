@@ -9,9 +9,8 @@ summary: "\xC5 trekke ut substrings i Rust betyr \xE5 lage nye strenger fra et u
   \ av en st\xF8rre streng. Vi gj\xF8r dette for \xE5 analysere, transformere eller\
   \ validere data\u2026"
 title: Uthenting av delstrenger
+weight: 6
 ---
-
-{{< edit_this_page >}}
 
 ## Hva & Hvorfor?
 

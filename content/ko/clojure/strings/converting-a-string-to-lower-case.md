@@ -18,9 +18,8 @@ summary: "\uBB38\uC790\uC5F4\uC744 \uC18C\uBB38\uC790\uB85C \uBCC0\uD658\uD55C\u
   \uAD50\uB97C \uC218\uD589\uD558\uAE30 \uC704\uD574\uC11C \uC774 \uC791\uC5C5\uC744\
   \ \uD569\uB2C8\uB2E4."
 title: "\uBB38\uC790\uC5F4\uC744 \uC18C\uBB38\uC790\uB85C \uBCC0\uD658\uD558\uAE30"
+weight: 4
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why? (무엇과 왜?)
 문자열을 소문자로 변환한다는 건, 모든 대문자를 해당하는 소문자로 바꾸는 것입니다. 프로그래머들은 데이터를 표준화하거나 대소문자에 민감하지 않은 비교를 수행하기 위해서 이 작업을 합니다.

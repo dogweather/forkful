@@ -7,9 +7,8 @@ model: gpt-4-0125-preview
 summary: "Le remaniement est le processus de restructuration du code informatique\
   \ existant sans changer son comportement externe. Les programmeurs le font pour\u2026"
 title: Refactoring
+weight: 19
 ---
-
-{{< edit_this_page >}}
 
 ## Quoi & Pourquoi ?
 

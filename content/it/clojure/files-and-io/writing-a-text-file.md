@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Scrivere un file di testo in Clojure implica la creazione o la modifica\
   \ di file per salvare dati al di fuori della tua applicazione, consentendo la\u2026"
 title: Scrivere un file di testo
+weight: 24
 ---
-
-{{< edit_this_page >}}
 
 ## Cos'è e Perché?
 

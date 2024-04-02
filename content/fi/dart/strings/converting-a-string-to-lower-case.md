@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Merkkijonon muuttaminen pieniksi kirjaimiksi on perusoperaatio, joka k\xE4\
   sitt\xE4\xE4 kaikkien annetun merkkijonon merkkien muuttamisen niiden pienikirjaimisiin\u2026"
 title: Merkkijonon muuttaminen pieniksi kirjaimiksi
+weight: 4
 ---
-
-{{< edit_this_page >}}
 
 ## Mikä ja Miksi?
 

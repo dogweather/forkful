@@ -10,9 +10,8 @@ model: gpt-4-0125-preview
 summary: "La interpolaci\xF3n de cadenas es el m\xE9todo de incrustar expresiones\
   \ dentro de literales de cadena. Los programadores lo utilizan para insertar valores\u2026"
 title: Interpolando una cadena de caracteres
+weight: 8
 ---
-
-{{< edit_this_page >}}
 
 ## Qué y Por Qué?
 La interpolación de cadenas es el método de incrustar expresiones dentro de literales de cadena. Los programadores lo utilizan para insertar valores dinámicamente en las cadenas, lo que hace que el código sea más legible y limpio que la concatenación de cadenas tradicional.

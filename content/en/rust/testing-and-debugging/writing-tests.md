@@ -7,9 +7,8 @@ model: gpt-4-0125-preview
 summary: "Writing tests in Rust involves creating automated checks to ensure your\
   \ code performs as expected. Programmers do this to catch bugs early, facilitate\u2026"
 title: Writing tests
+weight: 36
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 

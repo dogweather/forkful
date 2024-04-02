@@ -11,9 +11,8 @@ summary: "Drukowanie danych diagnostycznych polega na generowaniu tymczasowych, 
   \ komunikat\xF3w logowania, kt\xF3re mog\u0105 pom\xF3c programistom zrozumie\u0107\
   \u2026"
 title: "Drukowanie komunikat\xF3w debugowania"
+weight: 33
 ---
-
-{{< edit_this_page >}}
 
 ## Co i dlaczego?
 

@@ -11,9 +11,8 @@ summary: "\xC5 sette stor bokstav i en streng i Visual Basic for Applications (V
   \ inneb\xE6rer \xE5 konvertere den f\xF8rste bokstaven i hvert ord i en streng til\
   \ stor\u2026"
 title: "\xC5 gj\xF8re om en streng til store bokstaver"
+weight: 2
 ---
-
-{{< edit_this_page >}}
 
 ## Hva & Hvorfor?
 

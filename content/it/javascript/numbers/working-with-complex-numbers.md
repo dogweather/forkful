@@ -7,9 +7,8 @@ model: gpt-4-0125-preview
 summary: "I numeri complessi sono numeri con una parte reale e una immaginaria (come\
   \ 3 + 4i). Emergono in vari problemi di programmazione, specialmente nel\u2026"
 title: Lavorare con i numeri complessi
+weight: 14
 ---
-
-{{< edit_this_page >}}
 
 ## Cosa e Perché?
 I numeri complessi sono numeri con una parte reale e una immaginaria (come 3 + 4i). Emergono in vari problemi di programmazione, specialmente nel processamento dei segnali, nella computazione quantistica e nella risoluzione delle equazioni polinomiali. I programmatori li maneggiano per affrontare efficacemente questo tipo di compiti.

@@ -10,9 +10,8 @@ model: gpt-4-0125-preview
 summary: "Et interaktivt skall, ogs\xE5 kjent som en Les-Evaluer-Skriv L\xF8kke (REPL),\
   \ lar programmerere taste inn uttrykk eller kode og umiddelbart se resultater, noe\u2026"
 title: Bruk av interaktiv shell (REPL)
+weight: 34
 ---
-
-{{< edit_this_page >}}
 
 ## Hva & Hvorfor?
 

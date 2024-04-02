@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "CSV-bestanden (Comma-Separated Values) vertegenwoordigen tabelgegevens in\
   \ platte tekst. Programmeurs gebruiken CSV's om datasets te importeren en te\u2026"
 title: Werken met CSV
+weight: 37
 ---
-
-{{< edit_this_page >}}
 
 ## Wat & Waarom?
 CSV-bestanden (Comma-Separated Values) vertegenwoordigen tabelgegevens in platte tekst. Programmeurs gebruiken CSV's om datasets te importeren en te exporteren omdat ze breed ondersteund worden, gemakkelijk te lezen zijn, en eenvoudig te ontleden.

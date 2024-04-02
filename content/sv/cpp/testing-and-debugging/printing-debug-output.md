@@ -9,9 +9,8 @@ summary: "Utskrift f\xF6r fels\xF6kning \xE4r n\xE4r man skriver ut meddelanden 
   r att f\xF6rst\xE5 vad programmet g\xF6r. Programmerare g\xF6r detta f\xF6r att\
   \ snabbt hitta och fixa buggar."
 title: "Skriva ut fels\xF6kningsdata"
+weight: 33
 ---
-
-{{< edit_this_page >}}
 
 ## Vad & Varför?
 Utskrift för felsökning är när man skriver ut meddelanden för att förstå vad programmet gör. Programmerare gör detta för att snabbt hitta och fixa buggar.

@@ -9,9 +9,8 @@ summary: "Interpoler une cha\xEEne de caract\xE8res, c'est y ins\xE9rer des vari
   \ directement. On le fait pour simplifier la concat\xE9nation et rendre le code\
   \ plus lisible."
 title: "Interpolation de cha\xEEnes de caract\xE8res"
+weight: 8
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 Interpoler une chaîne de caractères, c'est y insérer des variables directement. On le fait pour simplifier la concaténation et rendre le code plus lisible.

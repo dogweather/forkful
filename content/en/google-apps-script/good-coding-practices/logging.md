@@ -7,9 +7,8 @@ model: gpt-4-0125-preview
 summary: "Logging in programming involves recording events, errors, or notable occurrences\
   \ during runtime. Programmers do it to debug issues, monitor performance,\u2026"
 title: Logging
+weight: 17
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 

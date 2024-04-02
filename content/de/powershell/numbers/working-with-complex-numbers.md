@@ -7,9 +7,8 @@ model: gpt-4-0125-preview
 summary: "Komplexe Zahlen, die einen Realteil und einen Imagin\xE4rteil haben (wie\
   \ 3 + 4i), sind lebenswichtig in Bereichen wie Technik, Physik und Datenwissenschaft.\u2026"
 title: Umgang mit komplexen Zahlen
+weight: 14
 ---
-
-{{< edit_this_page >}}
 
 ## Was & Warum?
 Komplexe Zahlen, die einen Realteil und einen Imaginärteil haben (wie 3 + 4i), sind lebenswichtig in Bereichen wie Technik, Physik und Datenwissenschaft. Programmierer verwenden sie für Simulationen, Signalverarbeitung und zur Lösung spezifischer Arten von mathematischen Problemen.

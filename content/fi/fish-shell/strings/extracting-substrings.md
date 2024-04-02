@@ -9,9 +9,8 @@ summary: "Mik\xE4 se on ja miksi se on tarpeellista? Merkkijonojen osien irrotta
   \ \u2013 eli substringien erist\xE4minen \u2013 tarkoittaa tietyn merkkijonon aliosan\
   \ kaivamista\u2026"
 title: Merkkijonojen osien poimiminen
+weight: 6
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 Mikä se on ja miksi se on tarpeellista? Merkkijonojen osien irrottaminen – eli substringien eristäminen – tarkoittaa tietyn merkkijonon aliosan kaivamista ja käsittelyä. Ohjelmoijat tekevät tätä datan jäsentämiseen, esimerkiksi tiedostonimistä päätteiden poistamiseen tai päivämäärien muotoiluun.

@@ -9,9 +9,8 @@ summary: "TOML est un format de fichier de configuration, facile \xE0 lire et \x
   \ \xE9crire pour les humains, et facile \xE0 analyser et \xE0 g\xE9n\xE9rer pour\
   \ les machines. Les\u2026"
 title: Travailler avec TOML
+weight: 39
 ---
-
-{{< edit_this_page >}}
 
 ## Quoi & Pourquoi ?
 TOML est un format de fichier de configuration, facile à lire et à écrire pour les humains, et facile à analyser et à générer pour les machines. Les programmeurs utilisent TOML pour des fichiers de configuration clairs et hiérarchiques dans les projets où la lisibilité est primordiale.

@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Parsear HTML en Elm implica extraer informaci\xF3n de documentos HTML. Los\
   \ programadores lo hacen para interactuar con contenido web o APIs que retornan\u2026"
 title: Analizando HTML
+weight: 43
 ---
-
-{{< edit_this_page >}}
 
 ## ¿Qué y Por Qué?
 Parsear HTML en Elm implica extraer información de documentos HTML. Los programadores lo hacen para interactuar con contenido web o APIs que retornan HTML, permitiendo la creación de aplicaciones web más interactivas y dinámicas.

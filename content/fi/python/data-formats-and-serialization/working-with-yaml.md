@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "YAML, joka tulee sanoista YAML Ain't Markup Language, on ihmisen luettavissa\
   \ oleva tiedon sarjallistamismuoto. Ohjelmoijat k\xE4ytt\xE4v\xE4t YAMLia\u2026"
 title: "Ty\xF6skentely YAML:n kanssa"
+weight: 41
 ---
-
-{{< edit_this_page >}}
 
 ## Mikä & Miksi?
 YAML, joka tulee sanoista YAML Ain't Markup Language, on ihmisen luettavissa oleva tiedon sarjallistamismuoto. Ohjelmoijat käyttävät YAMLia konfiguraatiotiedostoihin, prosessien väliseen viestintään ja datan tallennukseen sen yksinkertaisen syntaksin ja helposti luettavuuden vuoksi verrattuna muihin muotoihin kuten XML tai JSON.

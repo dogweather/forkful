@@ -13,9 +13,8 @@ summary: "Vi\u1EC7c ghi v\xE0o l\u1ED7i chu\u1EA9n, `stderr`, xu\u1EA5t th\xF4ng
   c l\u1EADp tr\xECnh vi\xEAn s\u1EED d\u1EE5ng `stderr` \u0111\u1EC3 b\xE1o c\xE1\
   o l\u1ED7i m\xE0 kh\xF4ng\u2026"
 title: "Ghi v\xE0o l\u1ED7i chu\u1EA9n"
+weight: 25
 ---
-
-{{< edit_this_page >}}
 
 ## Gì và Tại sao?
 Việc ghi vào lỗi chuẩn, `stderr`, xuất thông báo lỗi riêng biệt khỏi đầu ra chuẩn, `stdout`. Các lập trình viên sử dụng `stderr` để báo cáo lỗi mà không ảnh hưởng đến các đầu ra lệnh thông thường, làm cho việc xử lý và ghi nhận lỗi trở nên dễ dàng hơn.

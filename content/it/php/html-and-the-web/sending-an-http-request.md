@@ -8,9 +8,8 @@ model: gpt-4-1106-preview
 summary: "Mandare una richiesta HTTP \xE8 come inviare una lettera al web per prendere\
   \ o mandare informazioni. I programmatori lo fanno per interagire con API, servizi\u2026"
 title: Inviare una richiesta http
+weight: 44
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 Mandare una richiesta HTTP è come inviare una lettera al web per prendere o mandare informazioni. I programmatori lo fanno per interagire con API, servizi esterni e per scaricare dati.

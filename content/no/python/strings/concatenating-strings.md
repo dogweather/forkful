@@ -9,9 +9,8 @@ summary: "I Python er string-sammenf\xF8yning prosessen \xE5 sette sammen to ell
   \ flere tekststrenger. Det gj\xF8res for \xE5 bygge setninger, kombinere brukerinput,\
   \ eller\u2026"
 title: "Sammensl\xE5ing av strenger"
+weight: 3
 ---
-
-{{< edit_this_page >}}
 
 ## Hva & Hvorfor?
 I Python er string-sammenføyning prosessen å sette sammen to eller flere tekststrenger. Det gjøres for å bygge setninger, kombinere brukerinput, eller generere dynamisk innhold.

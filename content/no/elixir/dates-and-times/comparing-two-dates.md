@@ -8,9 +8,8 @@ model: gpt-4-1106-preview
 summary: "Sammenligne to datoer er \xE5 vurdere deres forhold til hverandre - f\xF8\
   r, etter, eller samme dag. Programmerere trenger dette for \xE5 h\xE5ndtere tidsavhengige\u2026"
 title: Sammenlikning av to datoer
+weight: 27
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 Sammenligne to datoer er å vurdere deres forhold til hverandre - før, etter, eller samme dag. Programmerere trenger dette for å håndtere tidsavhengige funksjoner som frister, planlegging og gyldighetskontroller.

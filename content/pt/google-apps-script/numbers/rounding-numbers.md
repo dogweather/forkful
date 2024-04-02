@@ -10,9 +10,8 @@ model: gpt-4-0125-preview
 summary: "Arredondar n\xFAmeros, um conceito fundamental na programa\xE7\xE3o de computadores,\
   \ envolve ajustar um n\xFAmero para o inteiro mais pr\xF3ximo ou para um n\xFAmero\u2026"
 title: "Arredondamento de n\xFAmeros"
+weight: 13
 ---
-
-{{< edit_this_page >}}
 
 ## O que & Por quê?
 

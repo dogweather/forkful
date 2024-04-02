@@ -14,9 +14,8 @@ summary: "Vi\u1EC7c t\u1ED5 ch\u1EE9c m\xE3 l\u1EC7nh th\xE0nh c\xE1c h\xE0m l\x
   \ th\u1EF1c hi\u1EC7n nh\u1EEFng nhi\u1EC7m v\u1EE5 c\u1EE5 th\u1EC3. Ch\xFAng ta\
   \ l\xE0m \u0111i\u1EC1u n\xE0y b\u1EDFi v\xEC n\xF3 l\xE0m cho m\xE3 l\u1EC7nh\u2026"
 title: "S\u1EAFp x\u1EBFp m\xE3 l\u1EADp tr\xECnh v\xE0o trong h\xE0m"
+weight: 18
 ---
-
-{{< edit_this_page >}}
 
 ## Lý do & Tại sao?
 Việc tổ chức mã lệnh thành các hàm là việc gói những đoạn mã nhỏ lại để thực hiện những nhiệm vụ cụ thể. Chúng ta làm điều này bởi vì nó làm cho mã lệnh dễ đọc, kiểm tra và sử dụng lại hơn - không ai muốn lội qua một đầm lầy của "mã spaghetti".

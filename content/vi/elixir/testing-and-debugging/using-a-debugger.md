@@ -2,17 +2,18 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:09:15.736573-07:00
-description: "Vi\u1EC7c s\u1EED d\u1EE5ng m\u1ED9t tr\xECnh g\u1EE1 l\u1ED7i trong\
-  \ Elixir bao g\u1ED3m vi\u1EC7c b\u01B0\u1EDBc t\u1EEBng d\xF2ng m\xE3, ki\u1EC3\
-  m tra c\xE1c bi\u1EBFn, v\xE0 theo d\xF5i quy tr\xECnh \u0111\u1EC3 t\xECm v\xE0\
-  \ s\u1EEDa l\u1ED7i. C\xE1c l\u1EADp tr\xECnh vi\xEAn\u2026"
+description: "Elixir \u0111i k\xE8m v\u1EDBi m\u1ED9t tr\xECnh g\u1EE1 l\u1ED7i \u0111\
+  \u1ED3 h\u1ECDa t\xEDch h\u1EE3p s\u1EB5n c\xF3 t\xEAn l\xE0 `:debugger`. \u0110\
+  \u1EC3 s\u1EED d\u1EE5ng n\xF3, b\u1EA1n c\u1EA7n b\u1EAFt \u0111\u1EA7u n\xF3 v\xE0\
+  \ k\u1EBFt n\u1ED1i v\u1EDBi qu\xE1 tr\xECnh \u0111ang ch\u1EA1y c\u1EE7a\u2026"
 lastmod: '2024-03-13T22:44:36.214327-06:00'
 model: gpt-4-0125-preview
-summary: "Vi\u1EC7c s\u1EED d\u1EE5ng m\u1ED9t tr\xECnh g\u1EE1 l\u1ED7i trong Elixir\
-  \ bao g\u1ED3m vi\u1EC7c b\u01B0\u1EDBc t\u1EEBng d\xF2ng m\xE3, ki\u1EC3m tra c\xE1\
-  c bi\u1EBFn, v\xE0 theo d\xF5i quy tr\xECnh \u0111\u1EC3 t\xECm v\xE0 s\u1EEDa l\u1ED7\
-  i. C\xE1c l\u1EADp tr\xECnh vi\xEAn\u2026"
+summary: "Elixir \u0111i k\xE8m v\u1EDBi m\u1ED9t tr\xECnh g\u1EE1 l\u1ED7i \u0111\
+  \u1ED3 h\u1ECDa t\xEDch h\u1EE3p s\u1EB5n c\xF3 t\xEAn l\xE0 `:debugger`. \u0110\
+  \u1EC3 s\u1EED d\u1EE5ng n\xF3, b\u1EA1n c\u1EA7n b\u1EAFt \u0111\u1EA7u n\xF3 v\xE0\
+  \ k\u1EBFt n\u1ED1i v\u1EDBi qu\xE1 tr\xECnh \u0111ang ch\u1EA1y c\u1EE7a\u2026"
 title: "S\u1EED d\u1EE5ng b\u1ED9 g\u1EE1 l\u1ED7i"
+weight: 35
 ---
 
 ## Làm thế nào:

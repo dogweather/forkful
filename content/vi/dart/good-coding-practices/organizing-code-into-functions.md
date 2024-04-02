@@ -13,9 +13,8 @@ summary: "Vi\u1EC7c t\u1ED5 ch\u1EE9c code th\xE0nh c\xE1c h\xE0m trong Dart l\x
   \ t\xE1i s\u1EED d\u1EE5ng th\u1EF1c hi\u1EC7n c\xE1c t\xE1c v\u1EE5 c\u1EE5 th\u1EC3\
   , th\u01B0\u1EDDng nh\u1EADn \u0111\u1EA7u v\xE0o, x\u1EED l\xFD\u2026"
 title: "S\u1EAFp x\u1EBFp m\xE3 l\u1EADp tr\xECnh v\xE0o h\xE0m s\u1ED1"
+weight: 18
 ---
-
-{{< edit_this_page >}}
 
 ## Cái gì & Tại sao?
 Việc tổ chức code thành các hàm trong Dart là về việc định nghĩa các khối code có thể tái sử dụng thực hiện các tác vụ cụ thể, thường nhận đầu vào, xử lý dữ liệu và có thể trả về đầu ra. Lập trình viên làm điều này để tăng cường khả năng đọc code, giảm bớt sự trùng lặp và tạo thuận lợi cho việc bảo trì, cuối cùng dẫn đến việc có được các cơ sở mã dễ quản lý và mô-đun hơn.

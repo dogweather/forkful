@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Att organisera kod i funktioner i Go inneb\xE4r att man delar upp koden\
   \ i \xE5teranv\xE4ndbara, modul\xE4ra block som utf\xF6r specifika uppgifter. Detta\u2026"
 title: Organisering av kod i funktioner
+weight: 18
 ---
-
-{{< edit_this_page >}}
 
 ## Vad & Varför?
 

@@ -7,9 +7,8 @@ model: unknown
 summary: "Analisar HTML \xE9 o processo de converter string contendo HTML em algo\
   \ que possamos manipular no c\xF3digo, como um DOM (Document Object Model). Programadores\u2026"
 title: "An\xE1lise de HTML"
+weight: 43
 ---
-
-{{< edit_this_page >}}
 
 ## O Que é e Porquê?
 Analisar HTML é o processo de converter string contendo HTML em algo que possamos manipular no código, como um DOM (Document Object Model). Programadores fazem isso para poder extrair informações, modificar o conteúdo ou interagir com páginas web de forma programática.

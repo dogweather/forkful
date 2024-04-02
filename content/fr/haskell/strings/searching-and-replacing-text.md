@@ -8,9 +8,8 @@ model: gpt-4-1106-preview
 summary: "La recherche et le remplacement de texte permettent de localiser des cha\xEE\
   nes sp\xE9cifiques dans du texte et de les \xE9changer avec d'autres. Les programmeurs\u2026"
 title: Recherche et remplacement de texte
+weight: 10
 ---
-
-{{< edit_this_page >}}
 
 ## Quoi & Pourquoi ?
 

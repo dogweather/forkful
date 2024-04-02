@@ -11,9 +11,8 @@ summary: "Het schrijven van een tekstbestand houdt in dat er data wordt opgeslag
   \ in een bestand in een leesbare vorm. Programmeurs doen dit om configuraties op\
   \ te\u2026"
 title: Een tekstbestand schrijven
+weight: 24
 ---
-
-{{< edit_this_page >}}
 
 ## Wat & Waarom?
 Het schrijven van een tekstbestand houdt in dat er data wordt opgeslagen in een bestand in een leesbare vorm. Programmeurs doen dit om configuraties op te slaan, gebruikersgegevens te bewaren of informatie te loggen voor debugging.

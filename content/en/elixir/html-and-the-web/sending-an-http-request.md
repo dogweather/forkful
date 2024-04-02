@@ -7,9 +7,8 @@ model: gpt-4-1106-preview
 summary: "Sending an HTTP request is how your program asks for data from the web,\
   \ sorta like how you'd ask a librarian for a book. Programmers do this to fetch,\u2026"
 title: Sending an HTTP request
+weight: 44
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 Sending an HTTP request is how your program asks for data from the web, sorta like how you'd ask a librarian for a book. Programmers do this to fetch, send, or manipulate remote data, from getting the weather to posting tweets.

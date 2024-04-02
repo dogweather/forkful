@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Hakemiston olemassaolon tarkistaminen on perustoiminto monissa ohjelmointiteht\xE4\
   viss\xE4, mik\xE4 mahdollistaa ehdolliset toimenpiteet hakemistorakenteiden\u2026"
 title: Tarkistetaan, onko hakemisto olemassa
+weight: 20
 ---
-
-{{< edit_this_page >}}
 
 ## Mikä & Miksi?
 Hakemiston olemassaolon tarkistaminen on perustoiminto monissa ohjelmointitehtävissä, mikä mahdollistaa ehdolliset toimenpiteet hakemistorakenteiden läsnäolon tai puuttumisen perusteella. Se on elintärkeää tiedostojen käsittelyssä, automatisoiduissa skripteissä ja ohjelmiston alustavassa asetuksessa varmistettaessa, että tarvittavat hakemistot ovat paikoillaan, tai vältettäessä hakemistojen kaksoiskappaleiden luomista.

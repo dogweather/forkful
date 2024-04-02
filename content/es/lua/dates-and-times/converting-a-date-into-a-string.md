@@ -9,9 +9,8 @@ summary: "Convertir una fecha en una cadena permite presentar la informaci\xF3n 
   \ forma legible para humanos y facilita su almacenamiento o uso en formatos como\
   \ JSON.\u2026"
 title: Convirtiendo una fecha en una cadena de texto
+weight: 28
 ---
-
-{{< edit_this_page >}}
 
 ## Qué y Por Qué?
 Convertir una fecha en una cadena permite presentar la información de forma legible para humanos y facilita su almacenamiento o uso en formatos como JSON. Los programadores hacen esto para mostrar fechas en aplicaciones, para intercambiar datos, y para lograr un formato consistente.

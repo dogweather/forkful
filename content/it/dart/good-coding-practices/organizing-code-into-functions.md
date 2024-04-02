@@ -10,9 +10,8 @@ model: gpt-4-0125-preview
 summary: "Organizzare il codice in funzioni con Dart significa definire blocchi di\
   \ codice riutilizzabili che eseguono compiti specifici, ricevendo tipicamente in\u2026"
 title: Organizzare il codice in funzioni
+weight: 18
 ---
-
-{{< edit_this_page >}}
 
 ## Cosa & Perché?
 Organizzare il codice in funzioni con Dart significa definire blocchi di codice riutilizzabili che eseguono compiti specifici, ricevendo tipicamente in input dei dati, elaborandoli e, eventualmente, restituendo dei risultati. Gli sviluppatori fanno ciò per migliorare la leggibilità del codice, ridurre la duplicazione e facilitare la manutenzione, portando infine a basi di codice più modulari e gestibili.

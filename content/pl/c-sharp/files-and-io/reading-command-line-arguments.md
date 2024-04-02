@@ -9,9 +9,8 @@ summary: "(Co i Dlaczego?) Czytanie argument\xF3w linii komend to spos\xF3b, by 
   \ program C# m\xF3g\u0142 otrzymywa\u0107 dane bezpo\u015Brednio od u\u017Cytkownika\
   \ za pomoc\u0105 terminala.\u2026"
 title: "Odczytywanie argument\xF3w linii polece\u0144"
+weight: 23
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 (Co i Dlaczego?)

@@ -23,9 +23,8 @@ summary: "C\uC5D0\uC11C \uC784\uC2DC \uD30C\uC77C\uC744 \uC0DD\uC131\uD558\uB294
   \uB098 \uC0AC\uC6A9 \uD6C4 \uBBFC\uAC10\uD55C \uB370\uC774\uD130\uAC00 \uC9C0\uC6CC\
   \uC9C0\uB3C4\uB85D \uD558\uAE30 \uC704\uD574 \uC774 \uC791\uC5C5\uC744\u2026"
 title: "\uC784\uC2DC \uD30C\uC77C \uC0DD\uC131\uD558\uAE30"
+weight: 21
 ---
-
-{{< edit_this_page >}}
 
 ## 무엇인가 & 왜인가?
 C에서 임시 파일을 생성하는 것은 데이터 처리나 저장을 위한 임시 공간으로 일반적으로 사용되는 파일을 생성하는 것을 의미합니다. 프로그래머들은 프로그램의 영구 저장소에 영향을 주지 않으면서 임시 데이터를 관리하거나 사용 후 민감한 데이터가 지워지도록 하기 위해 이 작업을 합니다.

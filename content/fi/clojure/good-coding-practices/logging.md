@@ -9,9 +9,8 @@ summary: "Lokitus on ohjelmistojen vastine laivan lokikirjalle; se on tapa kirja
   \ tapahtumia, jotka sattuvat sovelluksen suorituksen aikana. Ohjelmoijat tekev\xE4\
   t\u2026"
 title: Lokitus
+weight: 17
 ---
-
-{{< edit_this_page >}}
 
 ## Mikä ja miksi?
 Lokitus on ohjelmistojen vastine laivan lokikirjalle; se on tapa kirjata tapahtumia, jotka sattuvat sovelluksen suorituksen aikana. Ohjelmoijat tekevät sitä, jotta voivat seurata näitä tapahtumia vianetsinnässä, auditointilokeissa tai saadakseen oivalluksia järjestelmän toiminnasta tuotannossa.

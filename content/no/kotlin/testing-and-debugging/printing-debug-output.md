@@ -8,9 +8,8 @@ model: gpt-4-1106-preview
 summary: "**Hva & Hvorfor?** Printing debug output lar oss vise verdier eller meldinger\
   \ mens programmet kj\xF8rer. Det er som en live-titt inn i appens hjerne, nyttig\u2026"
 title: "Skrive ut feils\xF8kingsdata"
+weight: 33
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 **Hva & Hvorfor?**

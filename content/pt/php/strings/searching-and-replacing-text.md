@@ -9,9 +9,8 @@ summary: "Procurar e substituir texto em PHP \xE9 como mudar uma palavra espec\x
   fica em um livro inteiro. Programadores fazem isso para atualizar dados, corrigir\
   \ erros\u2026"
 title: Pesquisando e substituindo texto
+weight: 10
 ---
-
-{{< edit_this_page >}}
 
 ## O Que & Porquê?
 Procurar e substituir texto em PHP é como mudar uma palavra específica em um livro inteiro. Programadores fazem isso para atualizar dados, corrigir erros ou alterar a informação rapidamente sem ter que procurar manualmente por cada ocorrência.

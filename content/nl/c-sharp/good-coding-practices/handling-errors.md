@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Het afhandelen van fouten in C# gaat over het beheren van het onverwachte\u2014\
   zoals struikelen over je veters. Programma's kunnen struikelen over slechte\u2026"
 title: Fouten afhandelen
+weight: 16
 ---
-
-{{< edit_this_page >}}
 
 ## Wat & Waarom?
 

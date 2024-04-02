@@ -7,9 +7,8 @@ model: gpt-4-0125-preview
 summary: "Working with CSV files involves reading from and writing data to Comma-Separated\
   \ Values (CSV) files, a popular format for data exchange because it is\u2026"
 title: Working with CSV
+weight: 37
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 

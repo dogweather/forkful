@@ -11,9 +11,8 @@ summary: "Att g\xF6ra en str\xE4ng versal i C inneb\xE4r att konvertera det f\xF
   rsta tecknet i varje ord i en given str\xE4ng till versal om det \xE4r en gemen\
   \ bokstav.\u2026"
 title: "G\xF6r om en str\xE4ng till versaler"
+weight: 2
 ---
-
-{{< edit_this_page >}}
 
 ## Vad & Varför?
 

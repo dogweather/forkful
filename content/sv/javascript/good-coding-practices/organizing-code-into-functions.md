@@ -9,9 +9,8 @@ summary: "Att organisera kod i funktioner bryter ner uppgifter i \xE5teranv\xE4n
   \ delar, vilket g\xF6r koden renare och mer underh\xE5llbar. Detta g\xF6rs f\xF6\
   r att minska\u2026"
 title: Att organisera kod i funktioner
+weight: 18
 ---
-
-{{< edit_this_page >}}
 
 ## Vad & Varför?
 Att organisera kod i funktioner bryter ner uppgifter i återanvändbara delar, vilket gör koden renare och mer underhållbar. Detta görs för att minska redundans, förenkla testning, och förbättra läsbarheten.

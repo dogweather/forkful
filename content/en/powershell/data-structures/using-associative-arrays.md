@@ -7,9 +7,8 @@ model: gpt-4-0125-preview
 summary: "Associative arrays, also known as hash tables or dictionaries in PowerShell,\
   \ let you store data in key-value pairs, making data retrieval straightforward\u2026"
 title: Using associative arrays
+weight: 15
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 

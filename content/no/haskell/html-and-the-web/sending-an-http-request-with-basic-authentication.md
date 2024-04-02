@@ -7,9 +7,8 @@ model: gpt-4-1106-preview
 summary: "\xC5 sende en HTTP-foresp\xF8rsel med grunnleggende autentisering inneb\xE6\
   rer \xE5 inkludere brukernavn og passord for \xE5 f\xE5 tilgang til beskyttede ressurser.\u2026"
 title: "\xC5 sende en HTTP-foresp\xF8rsel med grunnleggende autentisering"
+weight: 45
 ---
-
-{{< edit_this_page >}}
 
 ## Hva & Hvorfor?
 Å sende en HTTP-forespørsel med grunnleggende autentisering innebærer å inkludere brukernavn og passord for å få tilgang til beskyttede ressurser. Programmører gjør dette for å kommunisere sikkert med webtjenester som krever identifikasjon.

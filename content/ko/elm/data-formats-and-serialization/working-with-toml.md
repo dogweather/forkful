@@ -17,9 +17,8 @@ summary: "TOML\uC740 Tom's Obvious, Minimal Language\uC758 \uC57D\uC790\uB85C, \
   \uC131 \uB370\uC774\uD130\uB97C \uAD00\uB9AC\uD558\uAE30 \uC704\uD574 \uC0AC\uC6A9\
   \uD569\uB2C8\uB2E4."
 title: "\uD504\uB85C\uADF8\uB798\uBA38\uB97C \uC704\uD55C TOML \uB2E4\uB8E8\uAE30"
+weight: 39
 ---
-
-{{< edit_this_page >}}
 
 ## 무엇 & 왜?
 TOML은 Tom's Obvious, Minimal Language의 약자로, 데이터 직렬화 언어입니다. Elm 프로그래머들은 응용 프로그램에서 필요한 키-값 쌍에 깔끔하게 매핑되고 사람이 읽기 쉬운 이유로 구성 데이터를 관리하기 위해 사용합니다.

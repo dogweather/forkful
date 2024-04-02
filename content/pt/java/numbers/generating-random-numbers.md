@@ -9,9 +9,8 @@ summary: "Gerar n\xFAmeros aleat\xF3rios consiste em produzir sequ\xEAncias ou v
   \ \xFAnicos imprevis\xEDveis dentro de um intervalo definido. Os programadores utilizam\
   \ esta\u2026"
 title: "Gera\xE7\xE3o de n\xFAmeros aleat\xF3rios"
+weight: 12
 ---
-
-{{< edit_this_page >}}
 
 ## O Quê e Porquê?
 

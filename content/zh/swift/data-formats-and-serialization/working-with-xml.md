@@ -5,9 +5,8 @@ lastmod: '2024-03-13T22:44:48.185927-06:00'
 model: gpt-4-0125-preview
 summary: null
 title: "\u5904\u7406XML"
+weight: 40
 ---
-
-{{< edit_this_page >}}
 
 # 什么 & 为什么?
 在 Swift 中处理 XML 意味着解析和生成 XML 数据。程序员这么做是为了数据交换，特别是当与采用 XML 作为标准格式的系统集成时。

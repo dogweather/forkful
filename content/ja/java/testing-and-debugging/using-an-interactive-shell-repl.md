@@ -18,9 +18,8 @@ summary: "REPL\uFF08Read-Eval-Print Loop\uFF09\u306F\u3001\u5358\u4E00\u306E\u30
   \u30D0\u30C3\u30B0\u3084\u5B66\u7FD2\u306B\u4F7F\u7528\u3057\u307E\u3059\u3002"
 title: "\u30A4\u30F3\u30BF\u30E9\u30AF\u30C6\u30A3\u30D6\u30B7\u30A7\u30EB\uFF08REPL\uFF09\
   \u306E\u4F7F\u7528"
+weight: 34
 ---
-
-{{< edit_this_page >}}
 
 ## 何となぜ？
 REPL（Read-Eval-Print Loop）は、単一のユーザー入力を処理し、コードを実行して結果を返すインタラクティブシェルです。プログラマーは、即時フィードバックと反復が可能なため、短い実験、デバッグや学習に使用します。

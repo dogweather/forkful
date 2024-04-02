@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Refactoring im Programmierlexikon bezieht sich auf den Prozess des Umstrukturierens\
   \ bestehenden Computer-Codes \u2013 das \xC4ndern der Faktorierung ohne \xC4nderung\u2026"
 title: Refactoring
+weight: 19
 ---
-
-{{< edit_this_page >}}
 
 ## Was & Warum?
 

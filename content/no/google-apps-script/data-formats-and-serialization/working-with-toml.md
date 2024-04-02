@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "TOML, som st\xE5r for Toms Opplagte, Minimale Spr\xE5k, er et konfigurasjonsfilformat\
   \ som er lett \xE5 lese p\xE5 grunn av sin klare semantikk. Programmerere bruker\u2026"
 title: Arbeider med TOML
+weight: 39
 ---
-
-{{< edit_this_page >}}
 
 ## Hva & Hvorfor?
 

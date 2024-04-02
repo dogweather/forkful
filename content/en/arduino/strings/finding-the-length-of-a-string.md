@@ -7,9 +7,8 @@ model: gpt-4-1106-preview
 summary: "Finding the length of a string means figuring out how many characters it\
   \ contains. Programmers do it to validate input, loop through characters, align\u2026"
 title: Finding the length of a string
+weight: 7
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 Finding the length of a string means figuring out how many characters it contains. Programmers do it to validate input, loop through characters, align text, or manage data dynamically.

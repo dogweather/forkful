@@ -7,9 +7,8 @@ model: gpt-4-1106-preview
 summary: String concatenation is sticking strings end-to-end to make a new one. We
   do it to construct messages, generate output, or work with text dynamically.
 title: Concatenating strings
+weight: 3
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 String concatenation is sticking strings end-to-end to make a new one. We do it to construct messages, generate output, or work with text dynamically.

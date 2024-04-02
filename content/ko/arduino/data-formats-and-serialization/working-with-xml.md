@@ -21,9 +21,8 @@ summary: "\uC544\uB450\uC774\uB178\uC5D0\uC11C XML\uC744 \uB2E4\uB8E8\uB294 \uAC
   \ \uD615\uC2DD\uC73C\uB85C \uC800\uC7A5\uD558\uAE30 \uC704\uD574 \uC774 \uC791\uC5C5\
   \uC744 \uD569\uB2C8\uB2E4."
 title: "XML \uB2E4\uB8E8\uAE30"
+weight: 40
 ---
-
-{{< edit_this_page >}}
 
 ## 무엇 & 왜?
 아두이노에서 XML을 다루는 것은 웹 API나 구성 파일에서 오는 XML 데이터를 파싱하고 조작하는 것을 포함합니다. 프로그래머들은 데이터 교환을 위해 XML을 사용하는 서비스와 통합하거나 데이터를 구조화되고 사람이 읽을 수 있는 형식으로 저장하기 위해 이 작업을 합니다.

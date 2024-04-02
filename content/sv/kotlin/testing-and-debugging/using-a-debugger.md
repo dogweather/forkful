@@ -1,13 +1,15 @@
 ---
 date: 2024-01-26 03:50:00.676829-07:00
-description: "Att dyka in i en debugger handlar allt om att stega igenom din kod,\
-  \ se kugghjulen snurra och f\xE5nga de d\xE4r el\xE4ndiga buggarna p\xE5 bar g\xE4\
-  rning. Programmerare\u2026"
+description: "H\xE4r \xE4r en liten f\xF6rsmak av fels\xF6kning i Kotlin med IntelliJ\
+  \ IDEA - Sherlock Holmes bland IDE:er: ```kotlin fun main() { val mysteryNumber\
+  \ = 42 var guess =\u2026"
 lastmod: '2024-03-13T22:44:37.875764-06:00'
 model: gpt-4-0125-preview
-summary: "Att dyka in i en debugger handlar allt om att stega igenom din kod, se kugghjulen\
-  \ snurra och f\xE5nga de d\xE4r el\xE4ndiga buggarna p\xE5 bar g\xE4rning. Programmerare\u2026"
+summary: "H\xE4r \xE4r en liten f\xF6rsmak av fels\xF6kning i Kotlin med IntelliJ\
+  \ IDEA - Sherlock Holmes bland IDE:er: ```kotlin fun main() { val mysteryNumber\
+  \ = 42 var guess =\u2026"
 title: "Att anv\xE4nda en debugger"
+weight: 35
 ---
 
 ## Hur man gör:

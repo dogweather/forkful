@@ -5,9 +5,8 @@ lastmod: '2024-03-13T22:44:42.469097-06:00'
 model: gpt-4-0125-preview
 summary: "XML\u3092\u6271\u3046\u3053\u3068\u306F\u3001eXtensible Markup\u2026"
 title: "XML\u306E\u6271\u3044\u65B9"
+weight: 40
 ---
-
-{{< edit_this_page >}}
 
 ## 何となぜ？
 XMLを扱うことは、eXtensible Markup Languageで構造化されたデータを操作およびアクセスすることを意味します。プログラマーは、他のシステムとの相互運用を可能にするためや、設定ファイル、データフィード、ウェブサービスで一般的なその他の構造化ドキュメントの読み書きをするためにXMLを使用します。

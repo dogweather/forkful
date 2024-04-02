@@ -9,9 +9,8 @@ summary: "\xC5 konvertere en dato til en streng betyr \xE5 endre datoen fra et f
   \ som JavaScript Date-objektet forst\xE5r, til et tekstformat mennesker lett kan\
   \ lese.\u2026"
 title: Konvertere en dato til en streng
+weight: 28
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 Å konvertere en dato til en streng betyr å endre datoen fra et format som JavaScript Date-objektet forstår, til et tekstformat mennesker lett kan lese. Programmerere gjør dette for å vise datoer på nettsider eller i apper på en forståelig måte for brukerne.

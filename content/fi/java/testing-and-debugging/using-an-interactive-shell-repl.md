@@ -9,9 +9,8 @@ summary: "REPL (Read-Eval-Print Loop), suomeksi lue-arvioi-tulosta -silmukka, on
   \ kuori, joka k\xE4sittelee yksitt\xE4isi\xE4 k\xE4ytt\xE4j\xE4n sy\xF6tteit\xE4\
   , suorittaa\u2026"
 title: "Interaktiivisen komentotulkin (REPL) k\xE4ytt\xF6"
+weight: 34
 ---
-
-{{< edit_this_page >}}
 
 ## Mikä & Miksi?
 REPL (Read-Eval-Print Loop), suomeksi lue-arvioi-tulosta -silmukka, on interaktiivinen kuori, joka käsittelee yksittäisiä käyttäjän syötteitä, suorittaa koodia ja palauttaa tuloksen. Ohjelmoijat käyttävät sitä nopeisiin kokeiluihin, virheenkorjaukseen tai oppimiseen, koska se mahdollistaa välittömän palautteen ja iteroinnin.

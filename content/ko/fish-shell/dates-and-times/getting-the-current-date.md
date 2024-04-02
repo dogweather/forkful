@@ -19,9 +19,8 @@ summary: "\uD504\uB85C\uADF8\uB798\uBC0D\uC5D0\uC11C \uD604\uC7AC \uB0A0\uC9DC\u
   \uC784\uC2A4\uD0EC\uD504 \uC0DD\uC131, \uC791\uC5C5 \uC608\uC57D, \uB85C\uADF8 \uC0DD\
   \uC131 \uB4F1\uC5D0 \uD544\uC218\uC801\uC785\uB2C8\uB2E4."
 title: "\uD604\uC7AC \uB0A0\uC9DC \uAC00\uC838\uC624\uAE30"
+weight: 29
 ---
-
-{{< edit_this_page >}}
 
 ## 무엇 & 왜?
 프로그래밍에서 현재 날짜를 얻는 것은 시스템의 날짜 및 시간 데이터를 검색하고 조작할 수 있게 해주는 기본적인 작업입니다. 스크립팅 및 자동화 작업에서 타임스탬프 생성, 작업 예약, 로그 생성 등에 필수적입니다.

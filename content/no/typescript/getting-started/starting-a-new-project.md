@@ -9,9 +9,8 @@ summary: "\xC5 starte et nytt prosjekt i TypeScript er som \xE5 rulle ut et blan
   \ lerret; det gir deg en ren start for \xE5 kode noe nytt. Programmerere gj\xF8\
   r dette for \xE5\u2026"
 title: "\xC5 starte et nytt prosjekt"
+weight: 1
 ---
-
-{{< edit_this_page >}}
 
 ## Hva & Hvorfor?
 Å starte et nytt prosjekt i TypeScript er som å rulle ut et blankt lerret; det gir deg en ren start for å kode noe nytt. Programmerere gjør dette for å løse problemer, teste ideer eller bygge nyttige verktøy.

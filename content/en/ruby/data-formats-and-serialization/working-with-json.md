@@ -7,9 +7,8 @@ model: gpt-4-0125-preview
 summary: "JSON (JavaScript Object Notation) is a lightweight data interchange format,\
   \ prevalent in web applications for data exchange between clients and servers.\u2026"
 title: Working with JSON
+weight: 38
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 

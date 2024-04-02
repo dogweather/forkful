@@ -9,9 +9,8 @@ summary: "Wyszukiwanie i zamiana tekstu to operacje na ci\u0105gach znak\xF3w, u
   liwiaj\u0105ce szybkie modyfikowanie tre\u015Bci. W programowaniu stosuje si\u0119\
   \ je dla efektywno\u015Bci\u2026"
 title: Wyszukiwanie i zamiana tekstu
+weight: 10
 ---
-
-{{< edit_this_page >}}
 
 ## Co i Dlaczego?
 Wyszukiwanie i zamiana tekstu to operacje na ciągach znaków, umożliwiające szybkie modyfikowanie treści. W programowaniu stosuje się je dla efektywności pracy, np. do poprawiania błędów czy zmiany formatowania kodu.

@@ -17,9 +17,8 @@ summary: "\u6B63\u5219\u8868\u8FBE\u5F0F\uFF08regex\uFF09\u662F\u7528\u4E8E\u533
   \u8BC1\u3001\u89E3\u6790\u6216\u8F6C\u6362\u7B49\u4EFB\u52A1\u6765\u8BF4\uFF0C\u5B83\
   \u4EEC\u662F\u4E0D\u53EF\u6216\u7F3A\u7684\u3002"
 title: "\u4F7F\u7528\u6B63\u5219\u8868\u8FBE\u5F0F"
+weight: 11
 ---
-
-{{< edit_this_page >}}
 
 ## 什么 & 为什么？
 正则表达式（regex）是用于匹配字符串中字符组合的模式。程序员利用它们基于定义的模式搜索、编辑或操作文本，对于数据验证、解析或转换等任务来说，它们是不可或缺的。

@@ -11,9 +11,8 @@ summary: "Usuwanie znak\xF3w pasuj\u0105cych do okre\u015Blonego wzorca w Visual
   \ for Applications (VBA) polega na identyfikowaniu, a nast\u0119pnie usuwaniu znak\xF3\
   w lub ci\u0105g\xF3w,\u2026"
 title: "Usuwanie znak\xF3w pasuj\u0105cych do wzorca"
+weight: 5
 ---
-
-{{< edit_this_page >}}
 
 ## Co i dlaczego?
 

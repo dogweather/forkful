@@ -8,9 +8,8 @@ model: gpt-4-1106-preview
 summary: "La interpolaci\xF3n de cadenas nos permite infundir variables dentro de\
   \ un texto, creando as\xED una cadena personalizada en tiempo de ejecuci\xF3n. Los\u2026"
 title: "Interpolaci\xF3n de cadenas de texto"
+weight: 8
 ---
-
-{{< edit_this_page >}}
 
 ## Qué & Por Qué?
 

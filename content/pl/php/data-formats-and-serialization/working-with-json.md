@@ -11,9 +11,8 @@ summary: "JSON, czyli Notacja Obiektowa JavaScriptu, to lekki format wymiany dan
   \ \u0142atwy do odczytania i zapisania przez ludzi, jak r\xF3wnie\u017C \u0142atwy\
   \ do przetwarzania\u2026"
 title: Praca z JSON
+weight: 38
 ---
-
-{{< edit_this_page >}}
 
 ## Co i dlaczego?
 JSON, czyli Notacja Obiektowa JavaScriptu, to lekki format wymiany danych, łatwy do odczytania i zapisania przez ludzi, jak również łatwy do przetwarzania i generowania przez maszyny. Programiści często pracują z JSONem do wymiany danych między serwerami a aplikacjami internetowymi ze względu na jego prostotę i niezależność od języków, czyniąc go kamieniem węgielnym współczesnego rozwoju stron internetowych i API.

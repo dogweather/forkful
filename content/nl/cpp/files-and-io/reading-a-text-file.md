@@ -10,9 +10,8 @@ model: gpt-4-0125-preview
 summary: "Het lezen van een tekstbestand gaat over het trekken van data uit een bestand\
   \ op schijf naar je programma om ermee te werken. Programmeurs doen dit om\u2026"
 title: Een tekstbestand lezen
+weight: 22
 ---
-
-{{< edit_this_page >}}
 
 ## Wat & Waarom?
 

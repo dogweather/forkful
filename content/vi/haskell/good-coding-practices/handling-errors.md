@@ -14,9 +14,8 @@ summary: "X\u1EED l\xFD l\u1ED7i trong l\u1EADp tr\xECnh l\xE0 v\u1EC1 vi\u1EC7c
   i\u1EC1u c\xF3 th\u1EC3 \u0111i sai. L\u1EADp tr\xECnh vi\xEAn l\xE0m \u0111i\u1EC1\
   u n\xE0y \u0111\u1EC3 \u0111\u1EA3m b\u1EA3o r\u1EB1ng ch\u01B0\u01A1ng tr\xECnh\u2026"
 title: "X\u1EED l\xFD l\u1ED7i"
+weight: 16
 ---
-
-{{< edit_this_page >}}
 
 ## Cái gì và Tại sao?
 Xử lý lỗi trong lập trình là về việc quản lý những điều không mong đợi—những điều có thể đi sai. Lập trình viên làm điều này để đảm bảo rằng chương trình của họ có thể đối phó với những tình huống này một cách duyên dáng, không bị sụp đổ hoặc sản xuất kết quả sai.

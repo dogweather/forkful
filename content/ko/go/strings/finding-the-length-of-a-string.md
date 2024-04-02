@@ -23,9 +23,8 @@ summary: "Go\uC5D0\uC11C \uBB38\uC790\uC5F4\uC758 \uAE38\uC774\uB97C \uCC3E\uB29
   \uC744 \uC801\uC6A9\uD558\uAE30 \uC704\uD574 \uC774 \uC791\uC5C5\uC744 \uC815\uAE30\
   \uC801\uC73C\uB85C \uC218\uD589\uD569\uB2C8\uB2E4."
 title: "\uBB38\uC790\uC5F4\uC758 \uAE38\uC774 \uCC3E\uAE30"
+weight: 7
 ---
-
-{{< edit_this_page >}}
 
 ## 무엇 & 왜?
 Go에서 문자열의 길이를 찾는 것은 해당 문자열이 포함하고 있는 문자의 수를 결정하는 것에 관한 것입니다. 프로그래머들은 문자열을 효율적으로 조작하기 위해, 유효성 검사, 부분 문자열 추출, 또는 단순히 사용자 입력에 제약을 적용하기 위해 이 작업을 정기적으로 수행합니다.

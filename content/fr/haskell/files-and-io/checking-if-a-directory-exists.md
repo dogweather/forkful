@@ -11,9 +11,8 @@ summary: "V\xE9rifier si un r\xE9pertoire existe est une op\xE9ration fondamenta
   \ dans de nombreuses t\xE2ches de programmation, permettant des actions conditionnelles\
   \ bas\xE9es\u2026"
 title: "V\xE9rifier si un r\xE9pertoire existe"
+weight: 20
 ---
-
-{{< edit_this_page >}}
 
 ## Quoi & Pourquoi ?
 Vérifier si un répertoire existe est une opération fondamentale dans de nombreuses tâches de programmation, permettant des actions conditionnelles basées sur la présence ou l'absence de structures de répertoires. C'est crucial pour la manipulation de fichiers, les scripts automatisés, et lors de la configuration initiale du logiciel pour s'assurer que les répertoires nécessaires sont en place, ou pour éviter de dupliquer les répertoires.

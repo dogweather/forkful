@@ -19,9 +19,8 @@ summary: "\uCF54\uB4DC\uB97C \uD568\uC218\uB85C \uC870\uC9C1\uD654\uD55C\uB2E4\u
   \ \uADF8\uB9AC\uACE0 \uC720\uC9C0\uBCF4\uC218\uD558\uAE30 \uC27D\uAC8C \uB9CC\uB4E4\
   \uAE30 \uC704\uD574 \uC774\uB807\uAC8C \uD569\uB2C8\uB2E4."
 title: "\uCF54\uB4DC\uB97C \uD568\uC218\uB85C \uAD6C\uC131\uD558\uAE30"
+weight: 18
 ---
-
-{{< edit_this_page >}}
 
 ## 무엇 & 왜?
 코드를 함수로 조직화한다는 것은 하나의 큰 프로그램을 관리 가능한 조각으로 나누어 각각 고유한 작업을 수행하게 하는 것을 의미합니다. 프로그래머들은 코드를 읽기 쉽게, 재사용 가능하게 그리고 유지보수하기 쉽게 만들기 위해 이렇게 합니다.

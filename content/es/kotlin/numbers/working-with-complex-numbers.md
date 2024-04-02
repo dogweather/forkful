@@ -9,9 +9,8 @@ summary: "Los n\xFAmeros complejos ampl\xEDan nuestro sistema num\xE9rico para i
   \ las ra\xEDces cuadradas de n\xFAmeros negativos, donde la unidad \"imaginaria\"\
   \ i es igual a\u2026"
 title: "Trabajando con n\xFAmeros complejos"
+weight: 14
 ---
-
-{{< edit_this_page >}}
 
 ## Qué y por qué?
 Los números complejos amplían nuestro sistema numérico para incluir las raíces cuadradas de números negativos, donde la unidad "imaginaria" i es igual a la raíz cuadrada de -1. Los programadores los utilizan en campos como la ingeniería, la física y el procesamiento de señales, porque son excelentes para modelar olas, oscilaciones y cualquier cosa que gire.

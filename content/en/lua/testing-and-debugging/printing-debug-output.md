@@ -9,9 +9,8 @@ summary: "Printing debug output is chucking info onto your screen to see what's 
   \ with your code. Programmers do it to track down gremlins in the machine\u2014\
   bugs."
 title: Printing debug output
+weight: 33
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 Printing debug output is chucking info onto your screen to see what's up with your code. Programmers do it to track down gremlins in the machine—bugs.

@@ -9,9 +9,8 @@ summary: "Komplexa tal har en realdel och en imagin\xE4rdel och \xE4r avg\xF6ran
   \ inom olika omr\xE5den s\xE5som ingenj\xF6rsvetenskap, fysik och datorgrafik. Programmerare\
   \ anv\xE4nder\u2026"
 title: Att arbeta med komplexa tal
+weight: 14
 ---
-
-{{< edit_this_page >}}
 
 ## Vad & Varför?
 Komplexa tal har en realdel och en imaginärdel och är avgörande inom olika områden såsom ingenjörsvetenskap, fysik och datorgrafik. Programmerare använder dem för att lösa ekvationer som vanliga reella tal inte klarar av.

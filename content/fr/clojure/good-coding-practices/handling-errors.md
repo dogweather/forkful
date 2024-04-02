@@ -9,9 +9,8 @@ summary: "La gestion des erreurs consiste \xE0 g\xE9rer l'inattendu dans les pro
   comme un videur faisant face \xE0 des perturbateurs. Les programmeurs pr\xE9f\xE8\
   rent que\u2026"
 title: Gestion des erreurs
+weight: 16
 ---
-
-{{< edit_this_page >}}
 
 ## Quoi et Pourquoi ?
 La gestion des erreurs consiste à gérer l'inattendu dans les programmes—comme un videur faisant face à des perturbateurs. Les programmeurs préfèrent que tout se passe en douceur ; la gestion des erreurs permet de maintenir les problèmes en ligne, s'assurant que leur code ne trébuche et ne tombe pas lorsqu'il est confronté à l'inattendu.

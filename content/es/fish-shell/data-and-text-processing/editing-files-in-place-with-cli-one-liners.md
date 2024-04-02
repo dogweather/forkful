@@ -9,9 +9,8 @@ summary: "Editar archivos directamente con l\xEDneas de comando (CLI one-liners)
   \ trata de hacer cambios directamente en los archivos desde la l\xEDnea de comando,\
   \ sin\u2026"
 title: "Editando archivos directamente con l\xEDneas de comandos"
+weight: 32
 ---
-
-{{< edit_this_page >}}
 
 ## Qué y Por Qué?
 

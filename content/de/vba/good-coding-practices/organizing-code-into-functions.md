@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Code in Funktionen in Visual Basic f\xFCr Anwendungen (VBA) zu organisieren,\
   \ bedeutet, ein Programm in kleinere, handhabbare St\xFCcke, bekannt als Funktionen,\u2026"
 title: Organisation von Code in Funktionen
+weight: 18
 ---
-
-{{< edit_this_page >}}
 
 ## Was & Warum?
 

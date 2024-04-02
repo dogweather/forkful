@@ -9,9 +9,8 @@ summary: "En HTTP-foresp\xF8rsel med grunnleggende autentisering inneb\xE6rer \x
   \ sende brukernavn og passord over nett for \xE5 verifisere en brukers identitet.\
   \ Programmerere\u2026"
 title: "\xC5 sende en HTTP-foresp\xF8rsel med grunnleggende autentisering"
+weight: 45
 ---
-
-{{< edit_this_page >}}
 
 ## Hva & Hvorfor?
 En HTTP-forespørsel med grunnleggende autentisering innebærer å sende brukernavn og passord over nett for å verifisere en brukers identitet. Programmerere gjør det for å sikre tilgang til API-er eller webressurser som krever identifikasjon.

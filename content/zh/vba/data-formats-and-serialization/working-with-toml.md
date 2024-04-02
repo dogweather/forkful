@@ -17,9 +17,8 @@ summary: "TOML\uFF0C\u5373Tom's Obvious, Minimal Language\uFF08\u6C64\u59C6\u768
   \u6620\u5C04\u5230\u6570\u636E\u7ED3\u6784\u7684\u7279\u70B9\uFF0C\u4F7F\u5F97\u5728\
   \u5404\u79CD\u7F16\u7A0B\u73AF\u5883\u4E2D\uFF0C\u5305\u62ECVisual Basic for\u2026"
 title: "\u4F7F\u7528TOML\u5DE5\u4F5C"
+weight: 39
 ---
-
-{{< edit_this_page >}}
 
 ## 什么 & 为什么？
 

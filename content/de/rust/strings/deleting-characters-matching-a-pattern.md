@@ -8,9 +8,8 @@ model: gpt-4-1106-preview
 summary: "Zeichen, die einem Muster entsprechen, zu l\xF6schen, bedeutet, aus einem\
   \ Text gezielt bestimmte Elemente zu entfernen. Programmierer nutzen diese Operation,\u2026"
 title: "L\xF6schen von Zeichen, die einem Muster entsprechen"
+weight: 5
 ---
-
-{{< edit_this_page >}}
 
 # Rust-Programmierung: Löschung von Zeichen nach Muster
 

@@ -9,9 +9,8 @@ summary: "Refactorizar es el proceso de reestructurar el c\xF3digo inform\xE1tic
   \ existente sin cambiar su comportamiento externo. Los programadores lo hacen para\
   \ mejorar\u2026"
 title: "Refactorizaci\xF3n"
+weight: 19
 ---
-
-{{< edit_this_page >}}
 
 ## Qué y Por Qué?
 Refactorizar es el proceso de reestructurar el código informático existente sin cambiar su comportamiento externo. Los programadores lo hacen para mejorar los atributos no funcionales del software, lo que hace que el código sea más limpio y eficiente, lo que a su vez simplifica el mantenimiento y facilita la adición de futuras características.

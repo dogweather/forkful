@@ -11,9 +11,8 @@ summary: "Kapitalizacja \u0142a\u0144cucha znak\xF3w polega na przekszta\u0142ce
   \ pierwszej litery danego \u0142a\u0144cucha na wielk\u0105 liter\u0119, zachowuj\u0105\
   c reszt\u0119 liter w formie ma\u0142ych, cz\u0119sto\u2026"
 title: "Zamiana liter na wielkie w \u0142a\u0144cuchu znak\xF3w"
+weight: 2
 ---
-
-{{< edit_this_page >}}
 
 ## Co i dlaczego?
 

@@ -9,9 +9,8 @@ summary: "Liczby zespolone rozszerzaj\u0105 lini\u0119 liczb rzeczywistych przez
   \ jednostki urojonej, `i`, gdzie `i^2 = -1`. S\u0105 one kluczowe w takich dziedzinach\
   \ jak\u2026"
 title: Praca z liczbami zespolonymi
+weight: 14
 ---
-
-{{< edit_this_page >}}
 
 ## Co i dlaczego?
 

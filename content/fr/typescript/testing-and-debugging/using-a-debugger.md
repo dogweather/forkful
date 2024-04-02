@@ -1,12 +1,13 @@
 ---
 date: 2024-01-26 04:11:08.533785-07:00
-description: "Un d\xE9bogueur est un outil qui vous permet d'examiner et de modifier\
-  \ le fonctionnement interne de votre code pendant son ex\xE9cution. Les programmeurs\u2026"
+description: "Pour commencer avec un d\xE9bogueur en TypeScript, tout ce dont vous\
+  \ avez besoin est un IDE pris en charge (comme Visual Studio Code) et une configuration\u2026"
 lastmod: '2024-03-13T22:44:57.441720-06:00'
 model: gpt-4-0125-preview
-summary: "Un d\xE9bogueur est un outil qui vous permet d'examiner et de modifier le\
-  \ fonctionnement interne de votre code pendant son ex\xE9cution. Les programmeurs\u2026"
+summary: "Pour commencer avec un d\xE9bogueur en TypeScript, tout ce dont vous avez\
+  \ besoin est un IDE pris en charge (comme Visual Studio Code) et une configuration\u2026"
 title: "Utilisation d'un d\xE9bogueur"
+weight: 35
 ---
 
 ## Comment faire :

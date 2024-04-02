@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Ohjelmoinnissa refaktorointi tarkoittaa olemassa olevan koodin uudelleenrakentamista\
   \ muuttamatta sen ulkoista k\xE4ytt\xE4ytymist\xE4. Tavoitteena on parantaa ei-\u2026"
 title: Koodin uudelleenkirjoitus
+weight: 19
 ---
-
-{{< edit_this_page >}}
 
 ## Mitä & Miksi?
 

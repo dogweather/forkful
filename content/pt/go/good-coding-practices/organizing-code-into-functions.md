@@ -11,9 +11,8 @@ summary: "Organizar o c\xF3digo em fun\xE7\xF5es em Go envolve dividir o c\xF3di
   \ em blocos modulares reutiliz\xE1veis que executam tarefas espec\xEDficas. Esta\
   \ abordagem real\xE7a a\u2026"
 title: "Organizando c\xF3digo em fun\xE7\xF5es"
+weight: 18
 ---
-
-{{< edit_this_page >}}
 
 ## O Quê & Por Quê?
 

@@ -10,9 +10,8 @@ summary: "Comparing two dates means figuring out their order\u2014earlier, later
   \ or sort\u2026"
 title: "\u041F\u043E\u0440\u0456\u0432\u043D\u044F\u043D\u043D\u044F \u0434\u0432\u043E\
   \u0445 \u0434\u0430\u0442"
+weight: 27
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why? (Що і Чому?)
 Comparing two dates means figuring out their order—earlier, later, or the same moment. Programmers compare dates to track events, expire sessions, or sort timelines.

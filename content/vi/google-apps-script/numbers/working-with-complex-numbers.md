@@ -15,9 +15,8 @@ summary: "S\u1ED1 ph\u1EE9c, \u0111\u01B0\u1EE3c bi\u1EC3u di\u1EC5n nh\u01B0 l\
   \u1EC1 t\xEDnh to\xE1n, \u0111\u1EB7c bi\u1EC7t trong k\u1EF9 thu\u1EADt, v\u1EAD\
   t\u2026"
 title: "L\xE0m vi\u1EC7c v\u1EDBi s\u1ED1 ph\u1EE9c"
+weight: 14
 ---
-
-{{< edit_this_page >}}
 
 ## Cái gì và Tại sao?
 Số phức, được biểu diễn như là sự kết hợp của phần thực và phần ảo (ví dụ, 3 + 4i), là cơ bản trong nhiều vấn đề tính toán, đặc biệt trong kỹ thuật, vật lý và toán ứng dụng. Học cách thao tác với những số này trong Google Apps Script cho phép lập trình viên mở rộng khả năng của họ vào tính toán khoa học, xử lý tín hiệu, và hơn thế nữa.

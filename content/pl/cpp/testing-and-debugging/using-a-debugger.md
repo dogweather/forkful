@@ -1,14 +1,15 @@
 ---
 date: 2024-01-26 03:47:54.677346-07:00
-description: "U\u017Cycie debugera oznacza uruchomienie narz\u0119dzia, kt\xF3re pozwala\
-  \ zajrze\u0107 do wn\u0119trza dzia\u0142aj\u0105cego programu, aby zrozumie\u0107\
-  , co si\u0119 w nim naprawd\u0119 dzieje.\u2026"
+description: "C++ integruje si\u0119 z debuggerami, takimi jak GDB czy debugger Visual\
+  \ Studio. Oto przyk\u0142ad u\u017Cycia GDB: ```C++ #include <iostream> int main()\
+  \ { int a = 5;\u2026"
 lastmod: '2024-03-13T22:44:35.717481-06:00'
 model: gpt-4-0125-preview
-summary: "U\u017Cycie debugera oznacza uruchomienie narz\u0119dzia, kt\xF3re pozwala\
-  \ zajrze\u0107 do wn\u0119trza dzia\u0142aj\u0105cego programu, aby zrozumie\u0107\
-  , co si\u0119 w nim naprawd\u0119 dzieje.\u2026"
+summary: "C++ integruje si\u0119 z debuggerami, takimi jak GDB czy debugger Visual\
+  \ Studio. Oto przyk\u0142ad u\u017Cycia GDB: ```C++ #include <iostream> int main()\
+  \ { int a = 5;\u2026"
 title: Korzystanie z debugera
+weight: 35
 ---
 
 ## Jak to zrobić:

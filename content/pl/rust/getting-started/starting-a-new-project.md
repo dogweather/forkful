@@ -9,9 +9,8 @@ summary: "Zaczynamy nowy projekt Rust, by stworzy\u0107 \u015Bwie\u017Ce oprogra
   \ od podstaw. Programi\u015Bci robi\u0105 to dla realizacji unikalnych pomys\u0142\
   \xF3w lub eksperymentowania z\u2026"
 title: Rozpoczynanie nowego projektu
+weight: 1
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why? (Co i dlaczego?)
 Zaczynamy nowy projekt Rust, by stworzyć świeże oprogramowanie od podstaw. Programiści robią to dla realizacji unikalnych pomysłów lub eksperymentowania z nowymi technologiami.

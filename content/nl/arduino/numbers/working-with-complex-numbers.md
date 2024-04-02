@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Complexe getallen hebben een re\xEBel deel en een imaginair deel, meestal\
   \ geschreven als `a + bi`. Ze zijn essentieel voor sommige wiskunde-intensieve\u2026"
 title: Werken met complexe getallen
+weight: 14
 ---
-
-{{< edit_this_page >}}
 
 ## Wat & Waarom?
 Complexe getallen hebben een reëel deel en een imaginair deel, meestal geschreven als `a + bi`. Ze zijn essentieel voor sommige wiskunde-intensieve Arduino-projecten die te maken hebben met signaalbewerking, elektrotechniek, of elk ander domein waar verschijnselen het beste gemodelleerd worden in een vlak.

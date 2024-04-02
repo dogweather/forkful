@@ -9,9 +9,8 @@ summary: "Refaktoryzacja to proces modyfikowania kodu bez zmiany jego zewn\u0119
   \ zachowania. Chodzi o uporz\u0105dkowanie i oczyszczenie kodu, aby sta\u0142 si\u0119\
   \ \u0142atwiejszy\u2026"
 title: Refaktoryzacja
+weight: 19
 ---
-
-{{< edit_this_page >}}
 
 ## Co i dlaczego?
 Refaktoryzacja to proces modyfikowania kodu bez zmiany jego zewnętrznego zachowania. Chodzi o uporządkowanie i oczyszczenie kodu, aby stał się łatwiejszy do odczytania, utrzymania i rozszerzenia. Może również pomóc wyeliminować błędy i poprawić wydajność.

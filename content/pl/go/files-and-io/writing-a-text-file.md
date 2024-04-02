@@ -11,9 +11,8 @@ summary: "Zapisywanie pliku tekstowego w Go polega na tworzeniu i zapisywaniu ci
   g\xF3w danych w nowym lub istniej\u0105cym pliku tekstowym. Programi\u015Bci robi\u0105\
   \ to, aby\u2026"
 title: Pisanie pliku tekstowego
+weight: 24
 ---
-
-{{< edit_this_page >}}
 
 ## Co i dlaczego?
 

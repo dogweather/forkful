@@ -11,9 +11,8 @@ summary: "Regul\xE4re Ausdr\xFCcke (regex) werden in der Programmierung verwende
   \ um nach Mustern zu suchen, \xDCbereinstimmungen zu finden und Zeichenketten basierend\
   \ auf\u2026"
 title: "Regul\xE4re Ausdr\xFCcke verwenden"
+weight: 11
 ---
-
-{{< edit_this_page >}}
 
 ## Was & Warum?
 

@@ -7,9 +7,8 @@ model: gpt-4-0125-preview
 summary: "Komplexa tal har en reell del och en imagin\xE4r del (som 3 + 4i). Programmerare\
   \ anv\xE4nder dem i Swift f\xF6r uppgifter som signalbehandling, att l\xF6sa vissa\u2026"
 title: Att arbeta med komplexa tal
+weight: 14
 ---
-
-{{< edit_this_page >}}
 
 ## Vad & Varför?
 Komplexa tal har en reell del och en imaginär del (som 3 + 4i). Programmerare använder dem i Swift för uppgifter som signalbehandling, att lösa vissa matematiska problem och att simulera fysik.

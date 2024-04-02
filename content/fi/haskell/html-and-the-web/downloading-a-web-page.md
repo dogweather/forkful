@@ -7,9 +7,8 @@ model: gpt-4-1106-preview
 summary: "Ladataan nettisivu, eli noudetaan webbisivun sis\xE4lt\xF6 ohjelmoitavasti.\
   \ Ohjelmoijat tekev\xE4t t\xE4m\xE4n datan ker\xE4\xE4miseen, testaukseen tai palvelujen\u2026"
 title: Verkkosivun lataaminen
+weight: 42
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why? - Mikä ja Miksi?
 Ladataan nettisivu, eli noudetaan webbisivun sisältö ohjelmoitavasti. Ohjelmoijat tekevät tämän datan keräämiseen, testaukseen tai palvelujen automatisointiin.

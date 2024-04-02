@@ -13,9 +13,8 @@ summary: "T\u1EA1o m\u1ED9t t\u1EC7p t\u1EA1m th\u1EDDi ngh\u0129a l\xE0 t\u1EA1
   \ trung gian. L\u1EADp tr\xECnh vi\xEAn th\u1EF1c hi\u1EC7n vi\u1EC7c n\xE0y \u0111\
   \u1EC3 l\u01B0u tr\u1EEF d\u1EEF li\u1EC7u m\xE0 kh\xF4ng l\xE0m\u2026"
 title: "T\u1EA1o m\u1ED9t t\u1EADp tin t\u1EA1m th\u1EDDi"
+weight: 21
 ---
-
-{{< edit_this_page >}}
 
 ## Gì và Tại sao?
 

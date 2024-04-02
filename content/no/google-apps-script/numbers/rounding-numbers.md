@@ -10,9 +10,8 @@ model: gpt-4-0125-preview
 summary: "Avrunding av tall, et grunnleggende konsept innen dataprogrammering, inneb\xE6\
   rer \xE5 justere et tall til n\xE6rmeste heltall eller til et spesifisert antall\u2026"
 title: Avrunding av tall
+weight: 13
 ---
-
-{{< edit_this_page >}}
 
 ## Hva og hvorfor?
 

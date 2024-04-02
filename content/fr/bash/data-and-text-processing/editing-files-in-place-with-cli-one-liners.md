@@ -9,9 +9,8 @@ summary: "Imaginez que vous venez de d\xE9couvrir que vous devez effectuer une m
   \ \xE0 jour par lots sur plusieurs fichiers de configuration se trouvant sur votre\u2026"
 title: "Modification de fichiers sur place avec des lignes de commande en une seule\
   \ \xE9tape"
+weight: 32
 ---
-
-{{< edit_this_page >}}
 
 ## Quoi & Pourquoi ?
 

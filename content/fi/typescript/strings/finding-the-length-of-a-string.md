@@ -9,9 +9,8 @@ summary: "Merkkijonon pituuden selvitt\xE4minen tarkoittaa sen merkkim\xE4\xE4r\
   n laskemista. Ohjelmoijat tarvitsevat t\xE4t\xE4 tietoa validointiin, rajauksiin\
   \ ja tiedon\u2026"
 title: "Merkkijonon pituuden selvitt\xE4minen"
+weight: 7
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why? (Mitä & Miksi?)
 Merkkijonon pituuden selvittäminen tarkoittaa sen merkkimäärän laskemista. Ohjelmoijat tarvitsevat tätä tietoa validointiin, rajauksiin ja tiedon käsittelyn ohjaamiseen.

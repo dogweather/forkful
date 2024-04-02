@@ -15,9 +15,8 @@ summary: "\uC5D0\uB7EC \uD578\uB4E4\uB9C1\uC740 \uC2A4\uD06C\uB9BD\uD2B8\uAC00 \
   \uB85C \uC2E4\uD328\uB97C \uAD00\uB9AC\uD558\uAE30 \uC704\uD574 \uC774\uB97C \uC218\
   \uD589\uD569\uB2C8\uB2E4."
 title: "\uC5D0\uB7EC \uCC98\uB9AC\uD558\uAE30"
+weight: 16
 ---
-
-{{< edit_this_page >}}
 
 ## 무엇과 왜?
 에러 핸들링은 스크립트가 예상치 못한 상황을 우아하게 처리할 수 있게 해줍니다. 우리는 사용자의 머리카락을 하얗게 할 정도로 실패를 관리하기 위해 이를 수행합니다.

@@ -11,9 +11,8 @@ summary: "Imprimir sa\xEDdas de depura\xE7\xE3o envolve colocar estrategicamente
   \xF5es de registro no seu c\xF3digo para exibir valores de vari\xE1veis, fluxo de\
   \ execu\xE7\xE3o ou\u2026"
 title: "Imprimindo a sa\xEDda de depura\xE7\xE3o"
+weight: 33
 ---
-
-{{< edit_this_page >}}
 
 ## O Que & Por Quê?
 

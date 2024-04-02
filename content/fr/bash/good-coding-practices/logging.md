@@ -9,9 +9,8 @@ summary: "La journalisation est une pratique qui consiste \xE0 enregistrer les \
   v\xE9nements, les erreurs et d'autres informations significatives issues des processus\
   \ en\u2026"
 title: Journalisation
+weight: 17
 ---
-
-{{< edit_this_page >}}
 
 ## Quoi & Pourquoi ?
 

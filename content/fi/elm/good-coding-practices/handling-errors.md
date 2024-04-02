@@ -9,9 +9,8 @@ summary: "Virheiden k\xE4sittely tarkoittaa koodin kirjoittamista, joka osaa enn
   \ ja k\xE4sitell\xE4 ongelmia. Ohjelmoijat tekev\xE4t sit\xE4 v\xE4ltt\xE4\xE4kseen\
   \ kaatumisia,\u2026"
 title: "Virheiden k\xE4sittely"
+weight: 16
 ---
-
-{{< edit_this_page >}}
 
 ## Mikä ja miksi?
 Virheiden käsittely tarkoittaa koodin kirjoittamista, joka osaa ennakoida ja käsitellä ongelmia. Ohjelmoijat tekevät sitä välttääkseen kaatumisia, suojatakseen tietojen eheyttä ja tarjotakseen käyttäjille sujuvia varasuunnitelmia.

@@ -11,9 +11,8 @@ summary: "Das Erstellen einer tempor\xE4ren Datei in C bedeutet, eine Datei zu g
   \ die f\xFCr eine kurze Dauer gedacht ist, \xFCblicherweise als Zwischenspeicher\
   \ f\xFCr\u2026"
 title: "Erstellung einer tempor\xE4ren Datei"
+weight: 21
 ---
-
-{{< edit_this_page >}}
 
 ## Was & Warum?
 Das Erstellen einer temporären Datei in C bedeutet, eine Datei zu generieren, die für eine kurze Dauer gedacht ist, üblicherweise als Zwischenspeicher für Datenverarbeitung oder -speicherung. Programmierer tun dies, um temporäre Daten zu verwalten, ohne den permanenten Speicher des Programms zu beeinflussen oder um sicherzustellen, dass sensible Daten nach der Verwendung gelöscht werden.

@@ -11,9 +11,8 @@ summary: "Associativa arrayer, k\xE4nda som objekt i Google Apps Script (en vari
   \ av JavaScript), l\xE5ter programmerare skapa samlingar av nyckel-v\xE4rde-par.\
   \ Denna\u2026"
 title: "Anv\xE4nda associativa arrayer"
+weight: 15
 ---
-
-{{< edit_this_page >}}
 
 ## Vad & Varför?
 

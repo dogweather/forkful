@@ -12,9 +12,8 @@ summary: "\u4E0B\u8F09\u4E00\u500B\u7DB2\u9801\uFF0C\u5C31\u662F\u628A\u5B83\u5F
   \u9EBC\u505A\u4F86\u5206\u6790\u7DB2\u9801\u5167\u5BB9\u6216\u70BA\u4E86\u5099\u4EFD\
   \u3002"
 title: "\u4E0B\u8F7D\u7F51\u9875"
+weight: 42
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why? 什麼與為何?
 下載一個網頁，就是把它從網上搬到你的電腦上。程序員這麼做來分析網頁內容或為了備份。

@@ -11,9 +11,8 @@ summary: "Konkatenacja w Visual Basic for Applications (VBA) polega na \u0142\u0
   czeniu dw\xF3ch lub wi\u0119cej ci\u0105g\xF3w znak\xF3w w jedn\u0105 jednostk\u0119\
   . Jest to podstawowe zadanie w\u2026"
 title: "Konkatenacja ci\u0105g\xF3w znak\xF3w"
+weight: 3
 ---
-
-{{< edit_this_page >}}
 
 ## Co i dlaczego?
 

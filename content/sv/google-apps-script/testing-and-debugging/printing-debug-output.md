@@ -11,9 +11,8 @@ summary: "Att skriva ut felutskrifter inneb\xE4r att strategiskt placera loggutt
   \ i din kod f\xF6r att visa variabelv\xE4rden, utf\xF6randefl\xF6de eller felmeddelanden\
   \ under\u2026"
 title: "Skriva ut fels\xF6kningsdata"
+weight: 33
 ---
-
-{{< edit_this_page >}}
 
 ## Vad & Varför?
 

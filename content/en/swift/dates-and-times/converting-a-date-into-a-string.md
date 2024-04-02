@@ -7,9 +7,8 @@ model: gpt-4-1106-preview
 summary: "Converting a date to a string in Swift lets you format dates for humans.\
   \ It's key for UI display, logging, or whenever you need dates to make sense to\u2026"
 title: Converting a date into a string
+weight: 28
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 Converting a date to a string in Swift lets you format dates for humans. It's key for UI display, logging, or whenever you need dates to make sense to people, not just code.

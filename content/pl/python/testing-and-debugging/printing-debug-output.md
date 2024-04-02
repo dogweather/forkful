@@ -9,9 +9,8 @@ summary: "Drukowanie wynik\xF3w debugowania to pokazywanie warto\u015Bci zmienny
   \ stanu aplikacji, czy akcji w konsoli. Programi\u015Bci robi\u0105 to, aby szybko\
   \ diagnozowa\u0107\u2026"
 title: "Drukowanie komunikat\xF3w debugowania"
+weight: 33
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why? (Co i Dlaczego?)
 Drukowanie wyników debugowania to pokazywanie wartości zmiennych, stanu aplikacji, czy akcji w konsoli. Programiści robią to, aby szybko diagnozować problemy i śledzić, co się dzieje w kodzie.

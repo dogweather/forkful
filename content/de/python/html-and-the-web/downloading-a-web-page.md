@@ -7,9 +7,8 @@ model: gpt-4-1106-preview
 summary: "Webseiten herunterladen bedeutet, den Inhalt einer Webseite zu holen und\
   \ lokal zu speichern. Programmierer machen das, um Daten zu analysieren,\u2026"
 title: Webseite herunterladen
+weight: 42
 ---
-
-{{< edit_this_page >}}
 
 ## Was & Warum?
 Webseiten herunterladen bedeutet, den Inhalt einer Webseite zu holen und lokal zu speichern. Programmierer machen das, um Daten zu analysieren, Informationen zu sammeln oder Inhalte offline verfügbar zu machen.

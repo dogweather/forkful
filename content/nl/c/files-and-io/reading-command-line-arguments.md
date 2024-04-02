@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "In C-programmering maakt het lezen van commandoregelargumenten het mogelijk\
   \ dat programma's invoer rechtstreeks vanuit de terminal accepteren, wat de\u2026"
 title: Commandoregelargumenten lezen
+weight: 23
 ---
-
-{{< edit_this_page >}}
 
 ## Wat & Waarom?
 

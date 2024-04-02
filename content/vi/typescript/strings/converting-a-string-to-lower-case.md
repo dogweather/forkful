@@ -13,9 +13,8 @@ summary: "Chuy\u1EC3n \u0111\u1ED5i m\u1ED9t chu\u1ED7i sang ch\u1EEF th\u01B0\u
   \ th\xE0nh ch\u1EEF c\xE1i nh\u1ECF. C\xE1c l\u1EADp tr\xECnh vi\xEAn th\u1EF1c\
   \ hi\u1EC7n \u0111i\u1EC1u n\xE0y \u0111\u1EC3 \u0111\u1EA3m b\u1EA3o\u2026"
 title: "Chuy\u1EC3n \u0111\u1ED5i chu\u1ED7i th\xE0nh ch\u1EEF th\u01B0\u1EDDng"
+weight: 4
 ---
-
-{{< edit_this_page >}}
 
 ## Làm thế nào & Tại sao?
 Chuyển đổi một chuỗi sang chữ thường có nghĩa là làm cho mỗi ký tự trong chuỗi trở thành chữ cái nhỏ. Các lập trình viên thực hiện điều này để đảm bảo tính nhất quán, đặc biệt là đối với các so sánh không phân biệt chữ hoa chữ thường, chẳng hạn như khi kiểm tra đầu vào của người dùng so với một danh sách các lệnh hoặc dữ liệu đã lưu trữ.

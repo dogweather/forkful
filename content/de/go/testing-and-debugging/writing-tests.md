@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Tests in Go zu schreiben, bedeutet, kleine, handhabbare Code-Schnipsel zu\
   \ erstellen, die die Funktionalit\xE4t und das Verhalten Ihrer Anwendung validieren.\u2026"
 title: Tests schreiben
+weight: 36
 ---
-
-{{< edit_this_page >}}
 
 ## Was & Warum?
 

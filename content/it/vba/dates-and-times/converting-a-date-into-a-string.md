@@ -10,9 +10,8 @@ model: gpt-4-0125-preview
 summary: "Convertire una data in una stringa in Visual Basic for Applications (VBA)\
   \ \xE8 un processo utilizzato per modificare il tipo di dati di una data in un\u2026"
 title: Convertire una data in una stringa
+weight: 28
 ---
-
-{{< edit_this_page >}}
 
 ## Cosa e perché?
 

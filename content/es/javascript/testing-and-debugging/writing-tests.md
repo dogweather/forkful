@@ -11,9 +11,8 @@ summary: "Escribir pruebas en JavaScript se refiere a la pr\xE1ctica de crear sc
   \ automatizados que ejecutan tu c\xF3digo para asegurarse de que se comporte como\
   \ se\u2026"
 title: Escribiendo pruebas
+weight: 36
 ---
-
-{{< edit_this_page >}}
 
 ## Qué y Por Qué?
 

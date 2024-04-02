@@ -9,9 +9,8 @@ summary: "Skriva ut fels\xF6kningsmeddelanden i Lua hj\xE4lper dig att f\xF6rst\
   \ vad som h\xE4nder i koden. Vi g\xF6r det f\xF6r att snabbt identifiera och \xE5\
   tg\xE4rda buggar."
 title: "Skriva ut fels\xF6kningsdata"
+weight: 33
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 Skriva ut felsökningsmeddelanden i Lua hjälper dig att förstå vad som händer i koden. Vi gör det för att snabbt identifiera och åtgärda buggar.

@@ -11,9 +11,8 @@ summary: "\xC5 skrive tester i Elixir involverer \xE5 lage automatiserte skript 
   \ \xE5 validere oppf\xF8rselen til koden din. Programmerere gj\xF8r dette for \xE5\
   \ sikre kvalitet,\u2026"
 title: Skrive tester
+weight: 36
 ---
-
-{{< edit_this_page >}}
 
 ## Hva & Hvorfor?
 Å skrive tester i Elixir involverer å lage automatiserte skript for å validere oppførselen til koden din. Programmerere gjør dette for å sikre kvalitet, forhindre regresjoner, og lette koderestrukturering, noe som gjør utviklingsprosessen mer pålitelig og effektiv.

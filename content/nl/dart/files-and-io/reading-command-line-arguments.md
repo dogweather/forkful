@@ -10,9 +10,8 @@ model: gpt-4-0125-preview
 summary: "Het lezen van commandoregelargumenten in Dart stelt programmeurs in staat\
   \ om direct gegevens in de console in te voeren bij het uitvoeren van een Dart-\u2026"
 title: Commandoregelargumenten lezen
+weight: 23
 ---
-
-{{< edit_this_page >}}
 
 ## Wat & Waarom?
 

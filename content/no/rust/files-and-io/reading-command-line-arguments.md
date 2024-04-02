@@ -7,9 +7,8 @@ model: gpt-4-1106-preview
 summary: "Kommandolinjeargumenter lar deg ta input direkte ved programstart. Vi bruker\
   \ dem for \xE5 tilpasse programkj\xF8ring uten \xE5 endre koden."
 title: Lese kommandolinjeargumenter
+weight: 23
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 Kommandolinjeargumenter lar deg ta input direkte ved programstart. Vi bruker dem for å tilpasse programkjøring uten å endre koden.

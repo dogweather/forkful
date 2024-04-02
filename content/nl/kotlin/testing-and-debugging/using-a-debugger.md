@@ -2,13 +2,15 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:08:37.222256-07:00
-description: "Duiken in een debugger gaat helemaal over het doorlopen van je code,\
-  \ het bekijken van de draaiende radertjes en het op heterdaad betrappen van die\u2026"
+description: "Hier is een voorproefje van het debuggen in Kotlin met IntelliJ IDEA\
+  \ - de Sherlock Holmes van IDE's: ```kotlin fun main() { val mysterieNummer = 42\
+  \ var\u2026"
 lastmod: '2024-03-13T22:44:50.772386-06:00'
 model: gpt-4-0125-preview
-summary: "Duiken in een debugger gaat helemaal over het doorlopen van je code, het\
-  \ bekijken van de draaiende radertjes en het op heterdaad betrappen van die\u2026"
+summary: "Hier is een voorproefje van het debuggen in Kotlin met IntelliJ IDEA - de\
+  \ Sherlock Holmes van IDE's: ```kotlin fun main() { val mysterieNummer = 42 var\u2026"
 title: Een debugger gebruiken
+weight: 35
 ---
 
 ## Hoe te:

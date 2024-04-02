@@ -7,9 +7,8 @@ model: gpt-4-1106-preview
 summary: "Chunking code into functions is about packaging up blocks of code that accomplish\
   \ specific tasks. Doing this makes your code clean, easier to maintain,\u2026"
 title: Organizing code into functions
+weight: 18
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 

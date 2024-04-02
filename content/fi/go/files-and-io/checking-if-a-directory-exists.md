@@ -11,9 +11,8 @@ summary: "Tarkistaminen, l\xF6ytyyk\xF6 kansio Go:ssa, on kriittist\xE4 sovelluk
   \ jotka ovat vuorovaikutuksessa tiedostoj\xE4rjestelm\xE4n kanssa, jotta v\xE4ltet\xE4\
   \xE4n virheet\u2026"
 title: Tarkistetaan, onko hakemisto olemassa
+weight: 20
 ---
-
-{{< edit_this_page >}}
 
 ## Mikä ja miksi?
 

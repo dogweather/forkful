@@ -8,9 +8,8 @@ model: gpt-4-1106-preview
 summary: "Cercare e sostituire testo in JavaScript \xE8 fondamentale. Serve per modifica\
   \ dati dinamici, pulire input, e manipolare stringhe. E' utile in ogni scenario\u2026"
 title: Ricerca e sostituzione del testo
+weight: 10
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 Cercare e sostituire testo in JavaScript è fondamentale. Serve per modifica dati dinamici, pulire input, e manipolare stringhe. E' utile in ogni scenario dove il testo deve mutare in modo preciso e veloce.

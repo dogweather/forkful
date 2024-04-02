@@ -10,9 +10,8 @@ model: gpt-4-0125-preview
 summary: "Refaktorisering i programmeringslexikonet refererar till processen att omstrukturera\
   \ befintlig kod\u2014\xE4ndra faktoriseringen utan att \xE4ndra dess externa\u2026"
 title: Refaktorering
+weight: 19
 ---
-
-{{< edit_this_page >}}
 
 ## Vad & Varför?
 

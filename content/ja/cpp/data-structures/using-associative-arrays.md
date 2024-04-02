@@ -23,9 +23,8 @@ summary: "C++ \u3067 `std::map` \u3084 `std::unordered_map` \u3068\u3057\u3066\u
   \u5834\u5408\u306B\u306F\u3001\u3053\u308C\u3089\u304C\u9078\u3070\u308C\u307E\u3059\
   \u3002"
 title: "\u9023\u60F3\u914D\u5217\u306E\u4F7F\u7528"
+weight: 15
 ---
-
-{{< edit_this_page >}}
 
 ## 何となくなぜか？
 

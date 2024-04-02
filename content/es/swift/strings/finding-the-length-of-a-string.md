@@ -7,9 +7,8 @@ model: gpt-4-1106-preview
 summary: "En Swift, encontrar la longitud de un cadena (String) significa contar cu\xE1\
   ntos caracteres contiene. Los programadores lo hacen para validar entradas,\u2026"
 title: Calculando la longitud de una cadena
+weight: 7
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 En Swift, encontrar la longitud de un cadena (String) significa contar cuántos caracteres contiene. Los programadores lo hacen para validar entradas, limitar texto en UI, o manejar datos correctamente.

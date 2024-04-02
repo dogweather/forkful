@@ -11,9 +11,8 @@ summary: "Capitalizar uma string envolve modificar a entrada de modo que o prime
   \ caractere seja mai\xFAsculo, enquanto os restantes permane\xE7am min\xFAsculos,\
   \ comumente\u2026"
 title: Capitalizando uma String
+weight: 2
 ---
-
-{{< edit_this_page >}}
 
 ## O Que & Por Quê?
 

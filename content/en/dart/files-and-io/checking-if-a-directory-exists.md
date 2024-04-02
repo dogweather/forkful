@@ -7,9 +7,8 @@ model: gpt-4-0125-preview
 summary: "Checking if a directory exists in Dart is about verifying the presence of\
   \ a directory at a specified path on the file system before performing operations\u2026"
 title: Checking if a directory exists
+weight: 20
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 

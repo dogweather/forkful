@@ -13,9 +13,8 @@ summary: "Vi\u1EC7c t\u1EA1o ra c\xE1c s\u1ED1 ng\u1EABu nhi\xEAn trong l\u1EADp
   t k\u1EF3 m\u1ED9t m\u1EABu \u0111o\xE1n tr\u01B0\u1EDBc n\xE0o. C\xE1c l\u1EAD\
   p tr\xECnh vi\xEAn th\u1EF1c hi\u1EC7n \u0111i\u1EC1u n\xE0y\u2026"
 title: "Sinh s\u1ED1 ng\u1EABu nhi\xEAn"
+weight: 12
 ---
-
-{{< edit_this_page >}}
 
 ## Gì & Tại sao?
 

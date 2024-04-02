@@ -11,9 +11,8 @@ summary: "Pisanie plik\xF3w tekstowych w Rust polega na tworzeniu, zapisywaniu i
   \ dodawaniu danych do pliku w systemie plik\xF3w. Programi\u015Bci wykonuj\u0105\
   \ t\u0119\u2026"
 title: Pisanie pliku tekstowego
+weight: 24
 ---
-
-{{< edit_this_page >}}
 
 ## Co i dlaczego?
 Pisanie plików tekstowych w Rust polega na tworzeniu, zapisywaniu i potencjalnie dodawaniu danych do pliku w systemie plików. Programiści wykonują tę operację, aby zachować dane, takie jak logi aplikacji, konfiguracja czy treści generowane przez użytkowników, zapewniając trwałość danych poza zakresem wykonania programu.

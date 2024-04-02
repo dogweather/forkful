@@ -7,9 +7,8 @@ model: gpt-4-1106-preview
 summary: "Teksts\xF8king og -erstatning lar oss finne og bytte ut spesifikt innhold\
   \ i strenger. Programmerere bruker dette for \xE5 manipulere data, rette feil eller\u2026"
 title: "S\xF8king og erstatting av tekst"
+weight: 10
 ---
-
-{{< edit_this_page >}}
 
 ## Hva & Hvorfor?
 Tekstsøking og -erstatning lar oss finne og bytte ut spesifikt innhold i strenger. Programmerere bruker dette for å manipulere data, rette feil eller oppdatere informasjon i filer og applikasjoner.

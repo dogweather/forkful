@@ -8,9 +8,8 @@ model: gpt-4-0125-preview
 summary: "XML er et merkespr\xE5k for koding av dokumenter p\xE5 en m\xE5te som er\
   \ lesbar b\xE5de for mennesker og maskiner. Det er n\xF8kkel i webtjenester, konfigurasjonsfiler\u2026"
 title: "\xC5 jobbe med XML"
+weight: 40
 ---
-
-{{< edit_this_page >}}
 
 ## Hva & Hvorfor?
 XML er et merkespråk for koding av dokumenter på en måte som er lesbar både for mennesker og maskiner. Det er nøkkel i webtjenester, konfigurasjonsfiler og datautveksling fordi det bærer data i et strukturert, hierarkisk format.

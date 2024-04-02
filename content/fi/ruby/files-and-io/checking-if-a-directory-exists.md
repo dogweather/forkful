@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Tarkistamalla, onko hakemisto olemassa Rubylla, ohjelmoijat voivat varmistaa\
   \ hakemiston olemassaolon ennen toimintojen, kuten tiedostojen lukemisen tai\u2026"
 title: Tarkistetaan, onko hakemisto olemassa
+weight: 20
 ---
-
-{{< edit_this_page >}}
 
 ## Mitä & Miksi?
 Tarkistamalla, onko hakemisto olemassa Rubylla, ohjelmoijat voivat varmistaa hakemiston olemassaolon ennen toimintojen, kuten tiedostojen lukemisen tai uusien hakemistojen luomisen, suorittamista. Tämä on ratkaisevan tärkeää välttääkseen virheitä tiedostojen käsittelyssä ja varmistaakseen tiedostojärjestelmän manipulointien luotettavuuden.

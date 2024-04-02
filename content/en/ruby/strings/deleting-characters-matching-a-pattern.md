@@ -8,9 +8,8 @@ model: gpt-4-1106-preview
 summary: "Deleting characters matching a pattern in strings is about surgically removing\
   \ bits you don't need, like stripping hashtags from tweets. Programmers do it\u2026"
 title: Deleting characters matching a pattern
+weight: 5
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 Deleting characters matching a pattern in strings is about surgically removing bits you don't need, like stripping hashtags from tweets. Programmers do it to clean data, format it consistently, or prepare it for further processing.

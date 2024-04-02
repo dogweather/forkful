@@ -7,9 +7,8 @@ model: gpt-4-1106-preview
 summary: "String concatenation is stitching together two or more strings end-to-end.\
   \ Programmers do it to build sentences, create messages, or combine input data\u2026"
 title: Concatenating strings
+weight: 3
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 String concatenation is stitching together two or more strings end-to-end. Programmers do it to build sentences, create messages, or combine input data for processing or display.

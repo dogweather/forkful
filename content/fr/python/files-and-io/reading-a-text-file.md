@@ -9,9 +9,8 @@ summary: "Lire un fichier texte en Python, c'est collecter les donn\xE9es d'un f
   \ stock\xE9 sur disque pour les utiliser dans un programme. C'est essentiel car\
   \ un\u2026"
 title: Lecture d'un fichier texte
+weight: 22
 ---
-
-{{< edit_this_page >}}
 
 ## Quoi et Pourquoi?
 

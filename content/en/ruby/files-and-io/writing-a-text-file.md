@@ -7,9 +7,8 @@ model: gpt-4-0125-preview
 summary: "Writing to a text file in Ruby is a fundamental operation that allows you\
   \ to store output and data persistently, enabling data to be accessed or modified\u2026"
 title: Writing a text file
+weight: 24
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 Writing to a text file in Ruby is a fundamental operation that allows you to store output and data persistently, enabling data to be accessed or modified later. Programmers often perform this task for reasons such as logging, saving configurations, or exporting data in a human-readable format.

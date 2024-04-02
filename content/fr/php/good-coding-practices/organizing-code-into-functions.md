@@ -9,9 +9,8 @@ summary: "Organiser le code en fonctions consiste \xE0 d\xE9composer votre code 
   \ blocs r\xE9utilisables ayant des objectifs d\xE9finis. Nous le faisons pour maintenir\
   \ une\u2026"
 title: Organisation du code en fonctions
+weight: 18
 ---
-
-{{< edit_this_page >}}
 
 ## Quoi et Pourquoi ?
 Organiser le code en fonctions consiste à décomposer votre code en blocs réutilisables ayant des objectifs définis. Nous le faisons pour maintenir une certaine clarté, prévenir la redondance et simplifier le débogage.

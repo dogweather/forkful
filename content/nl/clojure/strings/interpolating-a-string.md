@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Stringinterpolatie stelt ons in staat variabelen zonder moeite in strings\
   \ te gooien. Waarom? Om dynamisch tekst te construeren - veel handiger dan de\u2026"
 title: Een string interpoleren
+weight: 8
 ---
-
-{{< edit_this_page >}}
 
 ## Wat & Waarom?
 Stringinterpolatie stelt ons in staat variabelen zonder moeite in strings te gooien. Waarom? Om dynamisch tekst te construeren - veel handiger dan de ouderwetse stringconcatenatie.

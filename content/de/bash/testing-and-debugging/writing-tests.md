@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Testen in Bash bedeutet, Testf\xE4lle zu scripten, um die Funktionalit\xE4\
   t Ihrer Bash-Skripte zu validieren. Programmierer f\xFChren Tests durch, um\u2026"
 title: Tests Schreiben
+weight: 36
 ---
-
-{{< edit_this_page >}}
 
 ## Was & Warum?
 Testen in Bash bedeutet, Testfälle zu scripten, um die Funktionalität Ihrer Bash-Skripte zu validieren. Programmierer führen Tests durch, um sicherzustellen, dass ihre Skripte unter verschiedenen Bedingungen wie erwartet funktionieren und um Fehler sowie Bugs vor der Bereitstellung zu finden.

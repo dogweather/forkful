@@ -11,9 +11,8 @@ summary: "Converter uma string para min\xFAsculas \xE9 uma opera\xE7\xE3o fundam
   \ que possibilita uniformidade e consist\xEAncia no processamento de texto, essencial\
   \ para\u2026"
 title: "Convertendo uma string para letras min\xFAsculas"
+weight: 4
 ---
-
-{{< edit_this_page >}}
 
 ## O Que & Por Quê?
 

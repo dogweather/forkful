@@ -11,9 +11,8 @@ summary: "\xC5 sammenligne to datoer i C inneb\xE6rer \xE5 bestemme det kronolog
   \ forholdet mellom dem - om \xE9n dato kommer f\xF8r den andre eller om de er like.\
   \ Denne evnen\u2026"
 title: Sammenligne to datoer
+weight: 27
 ---
-
-{{< edit_this_page >}}
 
 ## Hva & Hvorfor?
 

@@ -11,9 +11,8 @@ summary: "Les tableaux associatifs, connus dans d'autres langues sous le nom de 
   \ ou dictionnaires, sont des paires cl\xE9-valeur utilis\xE9es pour la recherche\
   \ et\u2026"
 title: Utilisation des tableaux associatifs
+weight: 15
 ---
-
-{{< edit_this_page >}}
 
 ## Quoi et pourquoi ?
 

@@ -16,9 +16,8 @@ summary: "\u5728JavaScript\u4E2D\u53D1\u9001HTTP\u8BF7\u6C42\u662F\u4E0E\u670D\u
   \u7F51\u9875\u5185\u5BB9\u800C\u4E0D\u9700\u8981\u91CD\u65B0\u52A0\u8F7D\u9875\u9762\
   \u3002"
 title: "\u53D1\u51FA HTTP \u8BF7\u6C42"
+weight: 44
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why? (是什么？为什么？)
 在JavaScript中发送HTTP请求是与服务器交换数据的方式。程序员这么做主要是为了从服务器获取数据或向服务器发送数据，动态更新网页内容而不需要重新加载页面。

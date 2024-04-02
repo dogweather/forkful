@@ -9,9 +9,8 @@ summary: "Ty\xF6skentely XML:n kanssa tarkoittaa XML-dokumenttien j\xE4sent\xE4m
   , muuntamista ja tuottamista Elm:ss\xE4. Syy t\xE4h\xE4n on vuorovaikutuksessa monien\
   \ web-\u2026"
 title: "XML:n k\xE4sittely"
+weight: 40
 ---
-
-{{< edit_this_page >}}
 
 ## Mikä & Miksi?
 Työskentely XML:n kanssa tarkoittaa XML-dokumenttien jäsentämistä, muuntamista ja tuottamista Elm:ssä. Syy tähän on vuorovaikutuksessa monien web-palveluiden ja perintöjärjestelmien kanssa, jotka käyttävät XML:ää datamuotonaan.

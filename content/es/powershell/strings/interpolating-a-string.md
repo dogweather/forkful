@@ -9,9 +9,8 @@ summary: "Interpolar una cadena es insertar variables o expresiones dentro de un
   \ cadena de texto. Los programadores lo hacen para construir mensajes din\xE1micos\
   \ sin\u2026"
 title: "Interpolaci\xF3n de cadenas de texto"
+weight: 8
 ---
-
-{{< edit_this_page >}}
 
 ## Qué es y Por Qué?
 

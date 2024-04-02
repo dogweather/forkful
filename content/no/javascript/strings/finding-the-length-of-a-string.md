@@ -9,9 +9,8 @@ summary: "I JavaScript bestemmer vi lengden p\xE5 en streng med `.length`-egensk
   \ Det hjelper oss med \xE5 h\xE5ndtere tekst, som \xE5 validering av input eller\
   \ looping\u2026"
 title: "Finn lengden p\xE5 en streng"
+weight: 7
 ---
-
-{{< edit_this_page >}}
 
 ## Hva & Hvorfor?
 I JavaScript bestemmer vi lengden på en streng med `.length`-egenskapen. Det hjelper oss med å håndtere tekst, som å validering av input eller looping gjennom hver karakter.

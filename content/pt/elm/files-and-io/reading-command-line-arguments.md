@@ -7,9 +7,8 @@ model: gpt-4-1106-preview
 summary: "Ler argumentos da linha de comando \xE9 o processo de capturar dados passados\
   \ ao executar um programa. Programadores fazem isso para permitir que seus\u2026"
 title: Lendo argumentos da linha de comando
+weight: 23
 ---
-
-{{< edit_this_page >}}
 
 ## O que é e Por quê?
 Ler argumentos da linha de comando é o processo de capturar dados passados ao executar um programa. Programadores fazem isso para permitir que seus programas sejam mais flexíveis e interativos, ajustando o comportamento baseado nas entradas do usuário.

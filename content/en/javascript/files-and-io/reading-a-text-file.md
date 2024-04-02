@@ -7,9 +7,8 @@ model: gpt-4-1106-preview
 summary: "Reading a text file is pulling info from a .txt document into your program.\
   \ Programmers do it to access and manipulate data: config settings, logs,\u2026"
 title: Reading a text file
+weight: 22
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 Reading a text file is pulling info from a .txt document into your program. Programmers do it to access and manipulate data: config settings, logs, exports, and so on. Plain and simple.

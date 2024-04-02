@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "\xC5 skrive til en tekstfil i Fish Shell lar deg lagre data vedvarende,\
   \ noe som gj\xF8r det enkelt \xE5 hente eller manipulere data enten av samme Fish-script\u2026"
 title: Skrive en tekstfil
+weight: 24
 ---
-
-{{< edit_this_page >}}
 
 ## Hva & hvorfor?
 

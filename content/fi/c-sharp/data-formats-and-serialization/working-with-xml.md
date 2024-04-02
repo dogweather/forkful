@@ -7,9 +7,8 @@ model: gpt-4-0125-preview
 summary: "XML (eXtensible Markup Language) koskee datan rakenteellistamista luettavassa\
   \ muodossa. Ohjelmoijat k\xE4sittelev\xE4t XML:\xE4\xE4 konfiguraatioon, datan vaihtoon\u2026"
 title: "XML:n k\xE4sittely"
+weight: 40
 ---
-
-{{< edit_this_page >}}
 
 ## Mitä & Miksi?
 XML (eXtensible Markup Language) koskee datan rakenteellistamista luettavassa muodossa. Ohjelmoijat käsittelevät XML:ää konfiguraatioon, datan vaihtoon sovellusten välillä ja kun määritykset sitä vaativat – ajattele SOAP-protokollaa tai web API:ja.

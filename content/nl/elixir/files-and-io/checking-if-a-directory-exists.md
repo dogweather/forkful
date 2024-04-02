@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Controleren of een map bestaat in Elixir zorgt ervoor dat je interactie\
   \ hebt met een geldig bestandspad. Programmeurs doen dit om fouten te vermijden,\u2026"
 title: Controleren of een directory bestaat
+weight: 20
 ---
-
-{{< edit_this_page >}}
 
 ## Wat & Waarom?
 

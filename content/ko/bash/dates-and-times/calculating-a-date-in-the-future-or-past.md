@@ -21,9 +21,8 @@ summary: "\uBBF8\uB798 \uD639\uC740 \uACFC\uAC70\uC758 \uB0A0\uC9DC\uB97C \uACC4
   ."
 title: "\uBBF8\uB798 \uD639\uC740 \uACFC\uAC70\uC758 \uB0A0\uC9DC \uACC4\uC0B0\uD558\
   \uAE30"
+weight: 26
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why? (무엇과 왜?)
 미래 혹은 과거의 날짜를 계산하는 것은 특정 기간 후 혹은 전의 날짜를 찾는 프로세스입니다. 프로그래머들이 이를 수행하는 이유는 일정 관리, 만료 확인, 역사적 이벤트 분석 등 다양한 애플리케이션에서 중요하기 때문입니다.

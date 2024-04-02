@@ -7,9 +7,8 @@ model: gpt-4-1106-preview
 summary: "Organizzare il codice in funzioni significa suddividere lo scripting in\
   \ pezzi gestibili\u2014pensate a blocchi LEGO funzionali. Lo facciamo per chiarezza,\u2026"
 title: Organizzazione del codice in funzioni
+weight: 18
 ---
-
-{{< edit_this_page >}}
 
 ## Cosa & Perché?
 Organizzare il codice in funzioni significa suddividere lo scripting in pezzi gestibili—pensate a blocchi LEGO funzionali. Lo facciamo per chiarezza, riusabilità e salute mentale. Rende il nostro codice ordinato, leggibile e manutenibile.

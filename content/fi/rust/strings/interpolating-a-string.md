@@ -7,9 +7,8 @@ model: gpt-4-1106-preview
 summary: "String-interpolointi tarkoittaa muuttujien yhdist\xE4mist\xE4 merkkijonoon.\
   \ Se tekee koodista luettavampaa ja dynaamista, koska voit muodostaa merkkijonon\u2026"
 title: Merkkijonon interpolointi
+weight: 8
 ---
-
-{{< edit_this_page >}}
 
 ## Mikä & Miksi?
 String-interpolointi tarkoittaa muuttujien yhdistämistä merkkijonoon. Se tekee koodista luettavampaa ja dynaamista, koska voit muodostaa merkkijonon lennosta arvojen perusteella.

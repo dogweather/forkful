@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "En programmation C, lire les arguments de la ligne de commande permet aux\
   \ programmes d'accepter des entr\xE9es directement depuis le terminal, ce qui\u2026"
 title: Lecture des arguments de ligne de commande
+weight: 23
 ---
-
-{{< edit_this_page >}}
 
 ## Quoi et Pourquoi ?
 

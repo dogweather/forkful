@@ -9,9 +9,8 @@ summary: "Mik\xE4 & Miksi? Yhdistelemme merkkijonoja - eli \"concatenate\" - kun
   \ liitt\xE4\xE4 erilliset tekstip\xE4tk\xE4t yhteen. Ohjelmoijat tekev\xE4t t\xE4\
   m\xE4n usein\u2026"
 title: "Merkkijonojen yhdist\xE4minen"
+weight: 3
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 Mikä & Miksi?  

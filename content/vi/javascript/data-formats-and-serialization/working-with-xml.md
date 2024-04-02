@@ -13,9 +13,8 @@ summary: "L\xE0m vi\u1EC7c v\u1EDBi XML c\xF3 ngh\u0129a l\xE0 ph\xE2n t\xEDch, 
   ng m\xE3. C\xE1c l\u1EADp tr\xECnh vi\xEAn l\xE0m \u0111i\u1EC1u n\xE0y b\u1EDF\
   i v\xEC XML \u0111\u01B0\u1EE3c s\u1EED d\u1EE5ng\u2026"
 title: "L\xE0m vi\u1EC7c v\u1EDBi XML"
+weight: 40
 ---
-
-{{< edit_this_page >}}
 
 ## Gì và Tại sao?
 Làm việc với XML có nghĩa là phân tích, thao tác và sản xuất nội dung XML bằng cách sử dụng mã. Các lập trình viên làm điều này bởi vì XML được sử dụng rộng rãi cho các tệp cấu hình, trao đổi dữ liệu và dịch vụ web do bản chất dễ đọc và có thể phân tích bằng máy.

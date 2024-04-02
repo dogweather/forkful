@@ -2,15 +2,16 @@
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 22:03:03.581800-07:00
-description: "Depurar en Google Apps Script (GAS) implica el proceso de identificaci\xF3\
-  n y eliminaci\xF3n de errores de los scripts destinados a automatizar Google Apps\
-  \ o\u2026"
+description: "Google Apps Script proporciona un depurador integrado dentro del Editor\
+  \ de Apps Script para ayudar a solucionar problemas en los scripts. As\xED es como\
+  \ se\u2026"
 lastmod: '2024-03-13T22:44:58.537823-06:00'
 model: gpt-4-0125-preview
-summary: "Depurar en Google Apps Script (GAS) implica el proceso de identificaci\xF3\
-  n y eliminaci\xF3n de errores de los scripts destinados a automatizar Google Apps\
-  \ o\u2026"
+summary: "Google Apps Script proporciona un depurador integrado dentro del Editor\
+  \ de Apps Script para ayudar a solucionar problemas en los scripts. As\xED es como\
+  \ se\u2026"
 title: Usando un depurador
+weight: 35
 ---
 
 ## Cómo:

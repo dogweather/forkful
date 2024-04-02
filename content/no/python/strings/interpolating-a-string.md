@@ -10,9 +10,8 @@ model: gpt-4-0125-preview
 summary: "Strenginterpolasjon er metoden for \xE5 bygge inn uttrykk i strenglitteraler.\
   \ Programmerere bruker det for \xE5 dynamisk sette inn verdier i strenger, noe som\u2026"
 title: Interpolering av en streng
+weight: 8
 ---
-
-{{< edit_this_page >}}
 
 ## Hva & Hvorfor?
 Strenginterpolasjon er metoden for å bygge inn uttrykk i strenglitteraler. Programmerere bruker det for å dynamisk sette inn verdier i strenger, noe som gjør koden mer lesbar og ryddigere enn tradisjonell strengkonkatenering.

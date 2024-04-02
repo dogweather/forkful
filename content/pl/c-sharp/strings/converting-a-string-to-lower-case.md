@@ -9,9 +9,8 @@ summary: "Zmienianie ci\u0105gu znak\xF3w na ma\u0142e litery to proces zamiany 
   \ wielkich liter w tek\u015Bcie na ich ma\u0142e odpowiedniki. Programi\u015Bci\
   \ to robi\u0105, aby\u2026"
 title: "Konwersja ci\u0105gu znak\xF3w na ma\u0142e litery"
+weight: 4
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why? (Co i Dlaczego?)
 Zmienianie ciągu znaków na małe litery to proces zamiany wszystkich wielkich liter w tekście na ich małe odpowiedniki. Programiści to robią, aby ujednolicić dane, np. przy porównywaniu ciągów lub przygotowaniu tekstu do wyświetlenia.

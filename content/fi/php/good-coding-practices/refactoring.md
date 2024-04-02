@@ -9,9 +9,8 @@ summary: "*Nimeksi annettu* kehitt\xE4minen on prosessi, jossa olemassa olevaa t
   \ uudelleenj\xE4rjestet\xE4\xE4n muuttamatta sen ulkoista k\xE4ytt\xE4ytymist\xE4\
   .\u2026"
 title: Koodin refaktorointi
+weight: 19
 ---
-
-{{< edit_this_page >}}
 
 ## Mikä & Miksi?
 *Nimeksi annettu* kehittäminen on prosessi, jossa olemassa olevaa tietokonekoodia uudelleenjärjestetään muuttamatta sen ulkoista käyttäytymistä. Ohjelmoijat tekevät *nimeksi annettu-a* parantaakseen ohjelmiston ei-toiminnallisia ominaisuuksia, tehdensä koodista selkeämpää, tehokkaampaa ja helpommin ylläpidettävää.

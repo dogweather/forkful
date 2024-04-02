@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Le espressioni regolari (regex) offrono un modo per cercare, corrispondere\
   \ e manipolare stringhe utilizzando schemi definiti. I programmatori le usano\u2026"
 title: Utilizzo delle espressioni regolari
+weight: 11
 ---
-
-{{< edit_this_page >}}
 
 ## Cosa & Perché?
 

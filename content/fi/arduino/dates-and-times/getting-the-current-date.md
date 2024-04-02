@@ -11,9 +11,8 @@ summary: "Nykyisen p\xE4iv\xE4m\xE4\xE4r\xE4n saaminen Arduino-projekteissa tark
   \ reaaliaikaisen tiedon hankkimista, joka voi olla ratkaisevan t\xE4rke\xE4\xE4\
   \ lokitiedostojen\u2026"
 title: "Nykyisen p\xE4iv\xE4m\xE4\xE4r\xE4n hankkiminen"
+weight: 29
 ---
-
-{{< edit_this_page >}}
 
 ## Mikä ja miksi?
 Nykyisen päivämäärän saaminen Arduino-projekteissa tarkoittaa reaaliaikaisen tiedon hankkimista, joka voi olla ratkaisevan tärkeää lokitiedostojen kirjaamisessa, aikaleimojen lisäämisessä tai tehtävien ajoittamisessa. Ohjelmoijat tarvitsevat usein tätä kykyä toiminnallisuuden parantamiseen, datan ajantasaisuuden varmistamiseen ja aikaherkkien operaatioiden helpottamiseen IoT- ja sulautetuissa projekteissa.

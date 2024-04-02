@@ -11,9 +11,8 @@ summary: "\xC5 sjekke om en katalog eksisterer betyr \xE5 bekrefte om en spesifi
   \ mappebane er til stede i filsystemet. Programmerere gj\xF8r dette for \xE5 unng\xE5\
   \ feil n\xE5r de\u2026"
 title: Sjekker om en mappe eksisterer
+weight: 20
 ---
-
-{{< edit_this_page >}}
 
 ## Hva og hvorfor?
 Å sjekke om en katalog eksisterer betyr å bekrefte om en spesifikk mappebane er til stede i filsystemet. Programmerere gjør dette for å unngå feil når de aksesserer, leser eller skriver filer.

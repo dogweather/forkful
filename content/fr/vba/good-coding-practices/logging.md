@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "La journalisation dans Visual Basic pour Applications (VBA) implique l'enregistrement\
   \ d'informations sur le comportement d'un programme lors de son\u2026"
 title: Journalisation
+weight: 17
 ---
-
-{{< edit_this_page >}}
 
 ## Quoi et Pourquoi ?
 

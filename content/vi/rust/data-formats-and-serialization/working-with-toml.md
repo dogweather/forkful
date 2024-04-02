@@ -13,9 +13,8 @@ summary: "TOML l\xE0 m\u1ED9t ng\xF4n ng\u1EEF tu\u1EA7n t\u1EF1 h\xF3a d\u1EEF 
   c s\u1EED d\u1EE5ng cho c\xE1c t\u1EC7p c\u1EA5u h\xECnh. L\u1EADp tr\xECnh vi\xEA\
   n s\u1EED d\u1EE5ng TOML v\xEC t\xEDnh \u0111\u01A1n gi\u1EA3n v\xE0\u2026"
 title: "L\xE0m vi\u1EC7c v\u1EDBi TOML"
+weight: 39
 ---
-
-{{< edit_this_page >}}
 
 ## Điều gì và Tại sao?
 TOML là một ngôn ngữ tuần tự hóa dữ liệu dễ đọc cho con người, thường được sử dụng cho các tệp cấu hình. Lập trình viên sử dụng TOML vì tính đơn giản và rõ ràng của nó, dễ dàng dịch thành một bảng băm trong Rust.

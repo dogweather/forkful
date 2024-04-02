@@ -11,9 +11,8 @@ summary: "Assosiatiiviset taulukot eli oliot TypeScriptiss\xE4 mahdollistavat me
   \ (avainten) k\xE4yt\xF6n arvoparien k\xE4sittelyss\xE4. Ohjelmoijat k\xE4ytt\xE4\
   v\xE4t niit\xE4\u2026"
 title: "Assosiatiivisten taulukoiden k\xE4ytt\xF6"
+weight: 15
 ---
-
-{{< edit_this_page >}}
 
 ## Mikä ja miksi?
 

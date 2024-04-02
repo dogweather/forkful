@@ -9,9 +9,8 @@ summary: "Arrotondare i numeri significa aggiustarli all'intero pi\xF9 vicino o 
   \ un punto decimale specificato. \xC8 un elemento fondamentale nella programmazione\
   \ per\u2026"
 title: Arrotondamento dei numeri
+weight: 13
 ---
-
-{{< edit_this_page >}}
 
 ## Cosa & Perché?
 Arrotondare i numeri significa aggiustarli all'intero più vicino o a un punto decimale specificato. È un elemento fondamentale nella programmazione per ridurre la complessità, migliorare le prestazioni e per i momenti in cui la precisione oltre un certo punto non aggiunge valore.

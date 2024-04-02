@@ -9,9 +9,8 @@ summary: "Uuden projektin aloittaminen tarkoittaa tyhj\xE4lt\xE4 p\xF6yd\xE4lt\x
   \ alkamista, koodipohjan rakentamista. Ohjelmoijat tekev\xE4t t\xE4m\xE4n uusien\
   \ ideoiden testailuun,\u2026"
 title: Uuden projektin aloittaminen
+weight: 1
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why? ("Mitä & Miksi?")
 Uuden projektin aloittaminen tarkoittaa tyhjältä pöydältä alkamista, koodipohjan rakentamista. Ohjelmoijat tekevät tämän uusien ideoiden testailuun, ongelmanratkaisuun tai oppiakseen jotain uutta.

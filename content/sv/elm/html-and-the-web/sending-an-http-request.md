@@ -9,9 +9,8 @@ summary: "HTTP-beg\xE4ran skickas f\xF6r att kommunicera med en webbserver, ofta
   \ f\xF6r att h\xE4mta eller skicka data. Programmerare anv\xE4nder detta f\xF6r\
   \ att l\xE5ta sina\u2026"
 title: "Skicka en http-f\xF6rfr\xE5gan"
+weight: 44
 ---
-
-{{< edit_this_page >}}
 
 ## Vad & Varför?
 HTTP-begäran skickas för att kommunicera med en webbserver, oftast för att hämta eller skicka data. Programmerare använder detta för att låta sina webbapplikationer interagera med andra tjänster eller för att hämta information som ska visas för användaren.

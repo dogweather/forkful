@@ -8,9 +8,8 @@ model: gpt-4-1106-preview
 summary: "Estraendo sottostringhe si prelevano parti specifiche di una stringa. Programmatori\
   \ fanno ci\xF2 per analizzare testi, pulire dati, o semplicemente isolare\u2026"
 title: Estrazione di sottostringhe
+weight: 6
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why? (Cosa e Perché?)
 Estraendo sottostringhe si prelevano parti specifiche di una stringa. Programmatori fanno ciò per analizzare testi, pulire dati, o semplicemente isolare informazioni rilevanti.

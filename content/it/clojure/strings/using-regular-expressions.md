@@ -8,9 +8,8 @@ model: unknown
 summary: "Le espressioni regolari (regex) sono modelli per cercare e manipolare testo.\
   \ Sono usate dai programmatori per validare, estrarre o sostituire parti di\u2026"
 title: Utilizzo delle espressioni regolari
+weight: 11
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why? (Cosa & Perché?)
 Le espressioni regolari (regex) sono modelli per cercare e manipolare testo. Sono usate dai programmatori per validare, estrarre o sostituire parti di stringhe con precisione e velocità.

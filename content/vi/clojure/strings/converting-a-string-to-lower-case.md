@@ -13,9 +13,8 @@ summary: "Chuy\u1EC3n m\u1ED9t chu\u1ED7i v\u0103n b\u1EA3n th\xE0nh ch\u1EEF th
   \ k\xFD t\u1EF1 trong v\u0103n b\u1EA3n th\xE0nh c\xE1c bi\u1EBFn th\u1EC3 ch\u1EEF\
   \ th\u01B0\u1EDDng c\u1EE7a ch\xFAng, nh\u01B0 chuy\u1EC3n \"Hello,\u2026"
 title: "Chuy\u1EC3n \u0111\u1ED5i chu\u1ED7i th\xE0nh ch\u1EEF th\u01B0\u1EDDng"
+weight: 4
 ---
-
-{{< edit_this_page >}}
 
 ## Gì và Tại sao?
 Chuyển một chuỗi văn bản thành chữ thường có nghĩa là biến đổi tất cả các ký tự trong văn bản thành các biến thể chữ thường của chúng, như chuyển "Hello, World!" thành "hello, world!". Lập trình viên làm điều này để đảm bảo tính nhất quán, đặc biệt trong các nhiệm vụ như so sánh đầu vào của người dùng, nơi mà việc phân biệt chữ hoa và chữ thường không nên quan trọng.

@@ -11,9 +11,8 @@ summary: "Att skriva en textfil i Java handlar om att anv\xE4nda spr\xE5kets m\x
   jligheter f\xF6r att skapa och skriva inneh\xE5ll till filer p\xE5 filsystemet.\
   \ Programmerare g\xF6r\u2026"
 title: Att skriva en textfil
+weight: 24
 ---
-
-{{< edit_this_page >}}
 
 ## Vad och varför?
 

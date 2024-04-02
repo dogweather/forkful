@@ -7,9 +7,8 @@ model: gpt-4-1106-preview
 summary: "Iniciar un nuevo proyecto en Haskell es abrir la puerta a un mundo de programaci\xF3\
   n funcional pura. Los programadores emprenden esta tarea para explorar\u2026"
 title: Iniciando un nuevo proyecto
+weight: 1
 ---
-
-{{< edit_this_page >}}
 
 ## ¿Qué y Por Qué?
 Iniciar un nuevo proyecto en Haskell es abrir la puerta a un mundo de programación funcional pura. Los programadores emprenden esta tarea para explorar soluciones elegantes, resolver problemas complejos o experimentar con conceptos avanzados de tipo y función.

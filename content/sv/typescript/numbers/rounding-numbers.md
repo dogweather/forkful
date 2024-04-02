@@ -9,9 +9,8 @@ summary: "Avrundning av tal inneb\xE4r att trimma ett nummer till en specifik pr
   \ Programmerare g\xF6r detta f\xF6r att kontrollera numerisk utdata f\xF6r l\xE4\
   sbarhet,\u2026"
 title: Avrundning av tal
+weight: 13
 ---
-
-{{< edit_this_page >}}
 
 ## Vad & Varför?
 Avrundning av tal innebär att trimma ett nummer till en specifik precision. Programmerare gör detta för att kontrollera numerisk utdata för läsbarhet, visningssyften eller när specifik precision krävs efter operationer som ger flyttalsresultat.

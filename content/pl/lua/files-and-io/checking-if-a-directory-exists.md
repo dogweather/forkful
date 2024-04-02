@@ -11,9 +11,8 @@ summary: "Sprawdzanie, czy katalog istnieje, to podstawowa operacja podczas pisa
   \ skrypt\xF3w wchodz\u0105cych w interakcj\u0119 z systemem plik\xF3w, zapewniaj\u0105\
   ca, \u017Ce program\u2026"
 title: Sprawdzanie, czy katalog istnieje
+weight: 20
 ---
-
-{{< edit_this_page >}}
 
 ## Co i dlaczego?
 

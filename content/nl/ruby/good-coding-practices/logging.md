@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Loggen in programmeren is als het bijhouden van een dagboek voor je applicatie.\
   \ Het is het systematisch vastleggen van gebeurtenissen, berichten en\u2026"
 title: Logboekregistratie
+weight: 17
 ---
-
-{{< edit_this_page >}}
 
 ## Wat & Waarom?
 Loggen in programmeren is als het bijhouden van een dagboek voor je applicatie. Het is het systematisch vastleggen van gebeurtenissen, berichten en gegevenspunten die je inzicht geven in wat je applicatie doet en hoe deze zich gedraagt. Programmeurs loggen omdat het cruciaal is voor het debuggen, het bewaken van de gezondheid van de applicatie, en het krijgen van aanwijzingen over mogelijke problemen voordat ze uitgroeien tot echte problemen.

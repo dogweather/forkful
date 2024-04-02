@@ -9,9 +9,8 @@ summary: "Druckausgabe zur Fehlersuche (engl. \"debug output\") wirft einen Blic
   \ unter die Motorhaube deines Codes. Programmierer nutzen sie, um zu verstehen,\
   \ was im\u2026"
 title: Debug-Ausgaben drucken
+weight: 33
 ---
-
-{{< edit_this_page >}}
 
 ## Was & Warum?
 Druckausgabe zur Fehlersuche (engl. "debug output") wirft einen Blick unter die Motorhaube deines Codes. Programmierer nutzen sie, um zu verstehen, was im Code passiert, besonders wenn etwas unerwartet schief läuft.

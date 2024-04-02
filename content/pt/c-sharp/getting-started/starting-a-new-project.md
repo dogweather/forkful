@@ -9,9 +9,8 @@ summary: "Come\xE7ar um novo projeto em C# \xE9 criar uma base de c\xF3digo do z
   \ que pode evoluir para qualquer coisa, desde uma aplica\xE7\xE3o simples at\xE9\
   \ um sistema\u2026"
 title: Iniciando um novo projeto
+weight: 1
 ---
-
-{{< edit_this_page >}}
 
 ## O Quê & Porquê?
 Começar um novo projeto em C# é criar uma base de código do zero que pode evoluir para qualquer coisa, desde uma aplicação simples até um sistema complexo. Programadores fazem isso para solucionar problemas, testar ideias, ou simplesmente por diversão e aprendizado.

@@ -9,9 +9,8 @@ summary: "Converting a date to a string in C++ turns a date object into a readab
   \ text format. It's key for displaying dates to users and for logging events in\
   \ a\u2026"
 title: Converting a date into a string
+weight: 28
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 Converting a date to a string in C++ turns a date object into a readable text format. It's key for displaying dates to users and for logging events in a human-friendly way.

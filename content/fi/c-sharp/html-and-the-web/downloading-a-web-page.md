@@ -8,9 +8,8 @@ model: gpt-4-1106-preview
 summary: "Web-sivun lataaminen on sen sis\xE4ll\xF6n hakemista internetist\xE4 ohjelmallisesti.\
   \ Ohjelmoijat tekev\xE4t t\xE4m\xE4n tiedon k\xE4sittelyyn, analysointiin tai\u2026"
 title: Verkkosivun lataaminen
+weight: 42
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why? (Mitä ja Miksi?)
 Web-sivun lataaminen on sen sisällön hakemista internetistä ohjelmallisesti. Ohjelmoijat tekevät tämän tiedon käsittelyyn, analysointiin tai varmuuskopiointiin.

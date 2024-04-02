@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "En el \xE1mbito de la programaci\xF3n, trabajar con archivos CSV (Valores\
   \ Separados por Comas) implica leer y escribir datos en archivos de texto organizados\u2026"
 title: Trabajando con CSV
+weight: 37
 ---
-
-{{< edit_this_page >}}
 
 ## Qué y Por Qué?
 

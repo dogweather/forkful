@@ -9,9 +9,8 @@ summary: "Baixar uma p\xE1gina da web \xE9 pegar o seu conte\xFAdo usando c\xF3d
   \ Programadores fazem isso para an\xE1lise de dados, testes automatizados ou para\
   \ turbinar\u2026"
 title: "Baixando uma p\xE1gina da web"
+weight: 42
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why? (O Que & Por Que?)
 Baixar uma página da web é pegar o seu conteúdo usando código. Programadores fazem isso para análise de dados, testes automatizados ou para turbinar aplicativos com informações em tempo real.

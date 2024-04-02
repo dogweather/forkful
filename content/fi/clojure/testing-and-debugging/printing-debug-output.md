@@ -9,9 +9,8 @@ summary: "Printtaus debuggaustarkoituksiin on virheiden j\xE4ljityst\xE4 koodist
   \ tulostusten avulla. Koodarit k\xE4ytt\xE4v\xE4t sit\xE4, koska se auttaa ymm\xE4\
   rt\xE4m\xE4\xE4n, miss\xE4 homma\u2026"
 title: "Virheenj\xE4ljitystulosteiden tulostaminen"
+weight: 33
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why? (Mikä ja Miksi?)
 Printtaus debuggaustarkoituksiin on virheiden jäljitystä koodista tulostusten avulla. Koodarit käyttävät sitä, koska se auttaa ymmärtämään, missä homma menee metsään ja miksi.

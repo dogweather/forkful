@@ -11,9 +11,8 @@ summary: "Att skicka en HTTP-f\xF6rfr\xE5gan i Dart \xE4r processen att initiera
   \ med en webbserver eller API fr\xE5n en Dart-applikation. Programmerare g\xF6r\
   \ detta\u2026"
 title: "Skicka en HTTP-beg\xE4ran"
+weight: 44
 ---
-
-{{< edit_this_page >}}
 
 ## Vad & Varför?
 

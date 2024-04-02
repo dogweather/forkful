@@ -19,9 +19,8 @@ summary: "\u5728Clojure\u4E2D\u68C0\u67E5\u76EE\u5F55\u662F\u5426\u5B58\u5728\u6
   \u51FA\u9519\uFF0C\u786E\u4FDD\u4EE3\u7801\u6267\u884C\u7684\u5065\u58EE\u6027\u548C\
   \u65E0\u8BEF\u3002"
 title: "\u68C0\u67E5\u76EE\u5F55\u662F\u5426\u5B58\u5728"
+weight: 20
 ---
-
-{{< edit_this_page >}}
 
 ## 什么与为什么？
 在Clojure中检查目录是否存在涉及从您的Clojure应用程序内部验证文件系统目录的存在。这项任务对于文件操作至关重要，以防止在读取或写入可能不存在的目录时出错，确保代码执行的健壮性和无误。

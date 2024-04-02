@@ -11,9 +11,8 @@ summary: "TOML (Toms Opplagte, Minimale Spr\xE5k) er et konfigurasjonsfilformat 
   \ er lett \xE5 lese p\xE5 grunn av sine klare semantikk. Programmerere bruker det\
   \ for\u2026"
 title: "\xC5 jobbe med TOML"
+weight: 39
 ---
-
-{{< edit_this_page >}}
 
 ## Hva & Hvorfor?
 

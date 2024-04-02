@@ -11,9 +11,8 @@ summary: "P\xE4iv\xE4m\xE4\xE4r\xE4n j\xE4sent\xE4minen merkkijonosta k\xE4sitt\
   \xE4 tekstuaalisten p\xE4iv\xE4m\xE4\xE4r\xE4- ja aikamuotojen muuntamisen `Date`-olioksi.\
   \ T\xE4m\xE4 prosessi on olennainen\u2026"
 title: "P\xE4iv\xE4m\xE4\xE4r\xE4n j\xE4sennys merkkijonosta"
+weight: 30
 ---
-
-{{< edit_this_page >}}
 
 ## Mikä & Miksi?
 Päivämäärän jäsentäminen merkkijonosta käsittää tekstuaalisten päivämäärä- ja aikamuotojen muuntamisen `Date`-olioksi. Tämä prosessi on olennainen sovelluksissa, joissa päivämääriä kommunikoidaan merkkijonoina, kuten API-vastausten tai käyttäjäsyötteiden yhteydessä, mahdollistaen helpomman päivämäärän käsittelyn ja muotoilun.

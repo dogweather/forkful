@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Tekstitiedoston kirjoittaminen Bashissa mahdollistaa datan tallennuksen,\
   \ lokitiedostojen kirjoittamisen, asetusten m\xE4\xE4rittelyn ja paljon muuta\u2026"
 title: Tekstitiedoston kirjoittaminen
+weight: 24
 ---
-
-{{< edit_this_page >}}
 
 ## Mitä & Miksi?
 

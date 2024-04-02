@@ -8,9 +8,8 @@ model: gpt-4-1106-preview
 summary: "\xC5 laste ned en nettside betyr \xE5 hente ned innholdet fra en URL til\
   \ din lokale enhet. Programmerere gj\xF8r det for \xE5 analysere innholdet, automatisere\u2026"
 title: Nedlasting av en nettside
+weight: 42
 ---
-
-{{< edit_this_page >}}
 
 ## Hva & Hvorfor?
 Å laste ned en nettside betyr å hente ned innholdet fra en URL til din lokale enhet. Programmerere gjør det for å analysere innholdet, automatisere datainnsamling eller sjekke tilgjengelighet.

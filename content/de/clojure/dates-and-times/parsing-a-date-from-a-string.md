@@ -10,9 +10,8 @@ model: gpt-4-0125-preview
 summary: "Das Parsen eines Datums aus einem String in Clojure bezieht sich auf das\
   \ Umwandeln textueller Darstellungen von Daten und Zeiten in eine nutzbarere Form\u2026"
 title: Einen Datum aus einem String analysieren
+weight: 30
 ---
-
-{{< edit_this_page >}}
 
 ## Was & Warum?
 Das Parsen eines Datums aus einem String in Clojure bezieht sich auf das Umwandeln textueller Darstellungen von Daten und Zeiten in eine nutzbarere Form (z.B. das DateTime-Objekt von Clojure). Dieser Prozess ist grundlegend für die Datenverarbeitung, das Logging oder jede Anwendung, die mit zeitlichen Daten manipuliert und ermöglicht es Programmierern, Aufgaben wie Operationen, Vergleiche oder Manipulationen effizient an Daten durchzuführen.

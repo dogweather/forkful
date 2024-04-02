@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "\xC5 sammenligne to datoer i Dart inneb\xE6rer \xE5 evaluere den tempor\xE6\
   re forskjellen eller rekkef\xF8lgen mellom dem, en essensiell funksjonalitet i applikasjoner\u2026"
 title: Sammenligner to datoer
+weight: 27
 ---
-
-{{< edit_this_page >}}
 
 ## Hva & Hvorfor?
 Å sammenligne to datoer i Dart innebærer å evaluere den temporære forskjellen eller rekkefølgen mellom dem, en essensiell funksjonalitet i applikasjoner som håndterer hendelser, frister eller annen tidsfølsom data. Utviklere trenger ofte dette for å kontrollere logikkflyt, validere eller sortere data basert på tidsbetingelser.

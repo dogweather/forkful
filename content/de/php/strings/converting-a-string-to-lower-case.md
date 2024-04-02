@@ -7,9 +7,8 @@ model: gpt-4-1106-preview
 summary: "Ein String zu Kleinbuchstaben umwandeln bedeutet, alle Gro\xDFbuchstaben\
   \ in einem Text in ihre entsprechenden kleineren Gegenst\xFCcke zu ver\xE4ndern.\u2026"
 title: Umformung eines Strings in Kleinbuchstaben
+weight: 4
 ---
-
-{{< edit_this_page >}}
 
 ## Was & Warum?
 Ein String zu Kleinbuchstaben umwandeln bedeutet, alle Großbuchstaben in einem Text in ihre entsprechenden kleineren Gegenstücke zu verändern. Programmierer nutzen das, um die Konsistenz zu erhöhen, bei der Suche und beim Vergleichen von Text zu helfen und um nutzererzeugte Eingaben zu standardisieren.

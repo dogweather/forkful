@@ -7,9 +7,8 @@ model: gpt-4-1106-preview
 summary: "In Swift, conoscere la lunghezza di una stringa significa sapere quanti\
   \ caratteri contiene. I programmatori lo fanno per validare input, manipolare testo,\u2026"
 title: Trovare la lunghezza di una stringa
+weight: 7
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 In Swift, conoscere la lunghezza di una stringa significa sapere quanti caratteri contiene. I programmatori lo fanno per validare input, manipolare testo, e per gestire la visualizzazione dei dati.

@@ -7,9 +7,8 @@ model: gpt-4-0125-preview
 summary: "REPL signifie Read-Eval-Print Loop (Boucle de Lecture-\xC9valuation-Affichage),\
   \ un environnement interactif o\xF9 vous pouvez rapidement tester du code. Les\u2026"
 title: Utilisation d'une console interactive (REPL)
+weight: 34
 ---
-
-{{< edit_this_page >}}
 
 ## Quoi & Pourquoi ?
 REPL signifie Read-Eval-Print Loop (Boucle de Lecture-Évaluation-Affichage), un environnement interactif où vous pouvez rapidement tester du code. Les programmeurs l'utilisent pour expérimenter, déboguer et apprendre les particularités d'un langage.

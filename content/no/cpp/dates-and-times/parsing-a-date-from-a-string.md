@@ -11,9 +11,8 @@ summary: "\xC5 tolke en dato fra en streng inneb\xE6rer \xE5 forst\xE5 strengfor
   \ for \xE5 trekke ut dato-komponenter som dag, m\xE5ned og \xE5r. Programmerere\
   \ gj\xF8r dette for \xE5\u2026"
 title: Analysering av en dato fra en streng
+weight: 30
 ---
-
-{{< edit_this_page >}}
 
 ## Hva & Hvorfor?
 Å tolke en dato fra en streng innebærer å forstå strengformatet for å trekke ut dato-komponenter som dag, måned og år. Programmerere gjør dette for å håndtere brukerinndata, lese datafiler eller samhandle med API-er som kommuniserer datoer i strengformater. Det er essensielt for databehandling, validering, og utføring av datoaritmetikk i applikasjoner.

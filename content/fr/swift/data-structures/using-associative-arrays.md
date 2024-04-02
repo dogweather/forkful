@@ -11,9 +11,8 @@ summary: "Les tableaux associatifs, connus sous le nom de dictionnaires dans Swi
   \ vous permettent de stocker et de g\xE9rer des donn\xE9es sous forme de paires\
   \ cl\xE9-\u2026"
 title: Utilisation des tableaux associatifs
+weight: 15
 ---
-
-{{< edit_this_page >}}
 
 ## Quoi et Pourquoi ?
 

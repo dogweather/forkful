@@ -12,9 +12,8 @@ summary: "Str\xE4nginterpolering \xE4r metoden att b\xE4dda in uttryck inom str\
   ngliteraler. Programmerare anv\xE4nder det f\xF6r att dynamiskt infoga v\xE4rden\
   \ i str\xE4ngar, vilket\u2026"
 title: "Interpolering av en str\xE4ng"
+weight: 8
 ---
-
-{{< edit_this_page >}}
 
 ## Vad & Varför?
 Stränginterpolering är metoden att bädda in uttryck inom strängliteraler. Programmerare använder det för att dynamiskt infoga värden i strängar, vilket gör koden mer läslig och renare än traditionell strängkonkatenering.

@@ -11,9 +11,8 @@ summary: "Escribir pruebas en Python implica crear scripts automatizados para va
   \ la correcci\xF3n de tu c\xF3digo. Los programadores hacen esto para asegurarse\
   \ de\u2026"
 title: Escribiendo pruebas
+weight: 36
 ---
-
-{{< edit_this_page >}}
 
 ## ¿Qué & Por qué?
 Escribir pruebas en Python implica crear scripts automatizados para validar la corrección de tu código. Los programadores hacen esto para asegurarse de que sus funciones o clases funcionen como se espera bajo varias condiciones, lo que ayuda a detectar errores temprano y facilita un mantenimiento y refactorización más sencillos.

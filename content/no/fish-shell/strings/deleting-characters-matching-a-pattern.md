@@ -8,9 +8,8 @@ model: gpt-4-1106-preview
 summary: "\xC5 slette tegn som matcher et m\xF8nster betyr \xE5 fjerne bestemte sekvenser\
   \ fra tekststrenger. Programmerere gj\xF8r dette for \xE5 rense data, ekstrahere\u2026"
 title: "Slette tegn som matcher et m\xF8nster"
+weight: 5
 ---
-
-{{< edit_this_page >}}
 
 ## Hva & Hvorfor?
 Å slette tegn som matcher et mønster betyr å fjerne bestemte sekvenser fra tekststrenger. Programmerere gjør dette for å rense data, ekstrahere informasjon eller formatere output.

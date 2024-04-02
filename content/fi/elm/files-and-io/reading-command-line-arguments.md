@@ -9,9 +9,8 @@ summary: "Komennon rivin argumenttien lukeminen tarkoittaa sy\xF6tteiden vastaan
   \ k\xE4ynnistyksen yhteydess\xE4. Ohjelmoijat k\xE4ytt\xE4v\xE4t t\xE4t\xE4 toimintoa,\
   \ koska se\u2026"
 title: Komennoriviparametrien lukeminen
+weight: 23
 ---
-
-{{< edit_this_page >}}
 
 ## Mitä & Miksi?
 Komennon rivin argumenttien lukeminen tarkoittaa syötteiden vastaanottamista käynnistyksen yhteydessä. Ohjelmoijat käyttävät tätä toimintoa, koska se mahdollistaa ohjelmien joustavan käytön ja mukauttamisen käyttäjän tarpeisiin.

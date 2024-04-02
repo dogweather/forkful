@@ -10,9 +10,8 @@ model: gpt-4-0125-preview
 summary: "Ler argumentos da linha de comando no Google Apps Script \xE9 um pouco inadequado\
   \ porque, ao contr\xE1rio de interfaces de linha de comando tradicionais em\u2026"
 title: Lendo argumentos da linha de comando
+weight: 23
 ---
-
-{{< edit_this_page >}}
 
 ## O que & Por quê?
 

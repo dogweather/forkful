@@ -2,13 +2,16 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:08:44.899315-07:00
-description: "Een debugger gebruiken betekent het opstarten van een hulpmiddel waarmee\
-  \ je binnenin je lopende programma kunt kijken om te begrijpen wat er echt gebeurt.\u2026"
+description: "C++ integreert met debuggers zoals GDB of de Visual Studio debugger.\
+  \ Hier is een hapklare voorbeeld met GDB: ```C++ #include <iostream> int main()\
+  \ { int a\u2026"
 lastmod: '2024-03-13T22:44:51.117390-06:00'
 model: gpt-4-0125-preview
-summary: "Een debugger gebruiken betekent het opstarten van een hulpmiddel waarmee\
-  \ je binnenin je lopende programma kunt kijken om te begrijpen wat er echt gebeurt.\u2026"
+summary: "C++ integreert met debuggers zoals GDB of de Visual Studio debugger. Hier\
+  \ is een hapklare voorbeeld met GDB: ```C++ #include <iostream> int main() { int\
+  \ a\u2026"
 title: Een debugger gebruiken
+weight: 35
 ---
 
 ## Hoe:

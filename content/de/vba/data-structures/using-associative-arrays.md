@@ -11,9 +11,8 @@ summary: "Assoziative Arrays, oft auch als W\xF6rterb\xFCcher in Visual Basic f\
   r Anwendungen (VBA) bekannt, erm\xF6glichen es Programmierern, Sammlungen von Schl\xFC\
   ssel-Wert-\u2026"
 title: Verwendung von assoziativen Arrays
+weight: 15
 ---
-
-{{< edit_this_page >}}
 
 ## Was & Warum?
 

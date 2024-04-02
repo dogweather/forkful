@@ -9,9 +9,8 @@ summary: "Endre tekststrenger til sm\xE5 bokstaver, fordi det sikrer konsistent 
   ndtering. Enten for \xE5 sammenligne tekster eller for estetikkens skyld, kommer\
   \ du\u2026"
 title: "Konvertere en streng til sm\xE5 bokstaver"
+weight: 4
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 Endre tekststrenger til små bokstaver, fordi det sikrer konsistent datahåndtering. Enten for å sammenligne tekster eller for estetikkens skyld, kommer du til å trenge det.

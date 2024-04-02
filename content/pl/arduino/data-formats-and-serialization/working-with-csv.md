@@ -11,9 +11,8 @@ summary: "Praca z plikami CSV (Comma-Separated Values - warto\u015Bci oddzielone
   \ w Arduino wi\u0105\u017Ce si\u0119 z odczytem z plik\xF3w CSV i zapisywaniem do\
   \ nich,\u2026"
 title: Praca z plikami CSV
+weight: 37
 ---
-
-{{< edit_this_page >}}
 
 ## Co i dlaczego?
 Praca z plikami CSV (Comma-Separated Values - wartości oddzielone przecinkami) w Arduino wiąże się z odczytem z plików CSV i zapisywaniem do nich, zazwyczaj przechowywanych na karcie SD, co umożliwia rejestrowanie danych, ustawienia konfiguracyjne i wiele więcej. Programiści często obsługują pliki CSV do zbierania danych z czujników, przechowywania parametrów konfiguracyjnych lub interfejsów z innymi systemami, ze względu na jego prostotę i szerokie przyjęcie na różnych platformach.

@@ -9,9 +9,8 @@ summary: "Uuden projektin aloittaminen Elixiriss\xE4 tarkoittaa uuden sovellukse
   \ tai kirjaston kehityksen k\xE4ynnist\xE4mist\xE4. Koodarit tekev\xE4t t\xE4m\xE4\
   n tyhj\xE4lt\xE4 p\xF6yd\xE4lt\xE4,\u2026"
 title: Uuden projektin aloittaminen
+weight: 1
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why? (Mitä & Miksi?)
 Uuden projektin aloittaminen Elixirissä tarkoittaa uuden sovelluksen tai kirjaston kehityksen käynnistämistä. Koodarit tekevät tämän tyhjältä pöydältä, järjestäen koodinsa modulaarisesti ja tehokkaasti uusien ominaisuuksien tai palveluiden kehittämiseksi.

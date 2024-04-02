@@ -8,9 +8,8 @@ summary: "String ki length jaanna matlab ye pata karna ki string me kitne charac
   \ hain. Programmers isse isliye karte hain taaki text data ko process ya validate\u2026"
 title: "\u0938\u094D\u091F\u094D\u0930\u093F\u0902\u0917 \u0915\u0940 \u0932\u0902\
   \u092C\u093E\u0908 \u091C\u094D\u091E\u093E\u0924 \u0915\u0930\u0928\u093E"
+weight: 7
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why? (क्या और क्यों?)
 String ki length jaanna matlab ye pata karna ki string me kitne characters hain. Programmers isse isliye karte hain taaki text data ko process ya validate kar sakein, jaise user input ki length check karna ya specific operations ke liye.

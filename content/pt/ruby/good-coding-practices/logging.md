@@ -9,9 +9,8 @@ summary: "Registrar eventos em programa\xE7\xE3o \xE9 como manter um di\xE1rio p
   \ a sua aplica\xE7\xE3o. \xC9 o registro sistem\xE1tico de eventos, mensagens e\
   \ pontos de dados que lhe\u2026"
 title: Registro de Logs
+weight: 17
 ---
-
-{{< edit_this_page >}}
 
 ## O Que & Porquê?
 Registrar eventos em programação é como manter um diário para a sua aplicação. É o registro sistemático de eventos, mensagens e pontos de dados que lhe dão uma visão sobre o que sua aplicação está fazendo e como está se comportando. Os programadores registram eventos porque é crucial para depuração, monitoramento da saúde da aplicação e obtenção de pistas sobre problemas potenciais antes que eles se transformem em problemas reais.

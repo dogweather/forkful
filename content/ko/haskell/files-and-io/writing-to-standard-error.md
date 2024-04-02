@@ -21,9 +21,8 @@ summary: "\uD558\uC2A4\uCF08\uC5D0\uC11C \uD45C\uC900 \uC624\uB958(stderr)\uB85C
   \ \uCD9C\uB825(stdout)\uC744 \uD63C\uC7A1\uD558\uAC8C \uD558\uC9C0 \uC54A\uC2B5\uB2C8\
   \uB2E4."
 title: "\uD45C\uC900 \uC5D0\uB7EC\uC5D0 \uC4F0\uAE30"
+weight: 25
 ---
-
-{{< edit_this_page >}}
 
 ## 무엇을, 왜?
 하스켈에서 표준 오류(stderr)로 쓰기는 프로그램이 일반 결과와 오류 메시지를 구분할 수 있게 합니다. 이는 문제 신호를 보내고 디버깅하는 데 중요하며, 프로그램의 주요 데이터나 결과를 담은 표준 출력(stdout)을 혼잡하게 하지 않습니다.

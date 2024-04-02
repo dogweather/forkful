@@ -9,9 +9,8 @@ summary: "Att arbeta med XML inneb\xE4r att tolka och generera XML-data i Swift.
   \ g\xF6r detta f\xF6r datautbyte, s\xE4rskilt n\xE4r de integrerar med system d\xE4\
   r XML\u2026"
 title: Att arbeta med XML
+weight: 40
 ---
-
-{{< edit_this_page >}}
 
 ## Vad & Varför?
 Att arbeta med XML innebär att tolka och generera XML-data i Swift. Programmerare gör detta för datautbyte, särskilt när de integrerar med system där XML är standardformatet.

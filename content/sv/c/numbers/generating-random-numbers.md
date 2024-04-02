@@ -11,9 +11,8 @@ summary: "Att generera slumpm\xE4ssiga nummer i C inneb\xE4r att skapa v\xE4rden
   \ \xE4r of\xF6ruts\xE4gbara och f\xF6ljer en specifik distribution, s\xE5som uniform\
   \ eller normal. Denna\u2026"
 title: "Generera slumpm\xE4ssiga nummer"
+weight: 12
 ---
-
-{{< edit_this_page >}}
 
 ## Vad & Varför?
 

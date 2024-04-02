@@ -9,9 +9,8 @@ summary: "XML (eXtensible Markup Language) is about structuring data in a readab
   \ format. Programmers juggle XML for configuration, data exchange between apps,\
   \ and\u2026"
 title: Working with XML
+weight: 40
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 XML (eXtensible Markup Language) is about structuring data in a readable format. Programmers juggle XML for configuration, data exchange between apps, and where specs ask for it—think SOAP or web APIs.

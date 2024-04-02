@@ -13,9 +13,8 @@ summary: "Trong Elixir, c\xE1c m\u1EA3ng li\xEAn k\u1EBFt, g\u1ECDi l\xE0 Maps, 
   \ nh\u1EA5t ch\u1EC9 \u0111\u1EBFn m\u1ED9t gi\xE1 tr\u1ECB. Ch\xFAng r\u1EA5t ti\u1EC7\
   n l\u1EE3i \u0111\u1EC3 l\u01B0u tr\u1EEF\u2026"
 title: "S\u1EED d\u1EE5ng m\u1EA3ng li\xEAn k\u1EBFt"
+weight: 15
 ---
-
-{{< edit_this_page >}}
 
 ## Cái gì & Tại sao?
 

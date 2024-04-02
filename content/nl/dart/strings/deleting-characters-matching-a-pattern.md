@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Het verwijderen van tekenreeksen die overeenkomen met een specifiek patroon\
   \ in strings is cruciaal voor gegevensvalidatie, sanering, of bij het\u2026"
 title: Karakters verwijderen die overeenkomen met een patroon
+weight: 5
 ---
-
-{{< edit_this_page >}}
 
 ## Wat & Waarom?
 

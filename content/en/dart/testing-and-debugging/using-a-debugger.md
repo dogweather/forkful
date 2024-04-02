@@ -1,12 +1,11 @@
 ---
 date: 2024-03-08 21:33:42.632352-07:00
-description: "Using a debugger in Dart allows programmers to methodically examine\
-  \ their code by setting breakpoints, stepping through execution, and inspecting\u2026"
+description: '#'
 lastmod: '2024-03-13T22:44:59.824815-06:00'
 model: gpt-4-0125-preview
-summary: "Using a debugger in Dart allows programmers to methodically examine their\
-  \ code by setting breakpoints, stepping through execution, and inspecting\u2026"
+summary: '#'
 title: Using a debugger
+weight: 35
 ---
 
 ## How to:

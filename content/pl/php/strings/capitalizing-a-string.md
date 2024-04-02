@@ -11,9 +11,8 @@ summary: "Du\u017Ca litera na pocz\u0105tku ci\u0105gu znak\xF3w polega na zmody
   \ pierwszego znaku danego tekstu na wielk\u0105 liter\u0119, zapewniaj\u0105c, \u017C\
   e zdania, tytu\u0142y lub nazwy\u2026"
 title: "Zamiana liter na wielkie w \u0142a\u0144cuchu znak\xF3w"
+weight: 2
 ---
-
-{{< edit_this_page >}}
 
 ## Co i dlaczego?
 Duża litera na początku ciągu znaków polega na zmodyfikowaniu pierwszego znaku danego tekstu na wielką literę, zapewniając, że zdania, tytuły lub nazwy własne zaczynają się poprawnie w zbiorze danych. Programiści często wykonują kapitalizację ciągu znaków w celu normalizacji danych, poprawy czytelności lub zapewnienia spójności w danych wejściowych użytkownika lub przetwarzaniu danych tekstowych.

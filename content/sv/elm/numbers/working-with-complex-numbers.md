@@ -9,9 +9,8 @@ summary: "Komplexa tal \xE4r en kombination av reella och imagin\xE4ra tal, som 
   \ + bi` d\xE4r `i` \xE4r kvadratroten av -1. De \xE4r avg\xF6rande inom omr\xE5\
   den som\u2026"
 title: Att arbeta med komplexa tal
+weight: 14
 ---
-
-{{< edit_this_page >}}
 
 ## Vad och varför?
 Komplexa tal är en kombination av reella och imaginära tal, som `a + bi` där `i` är kvadratroten av -1. De är avgörande inom områden som ingenjörsvetenskap och fysik för att lösa problem som vanliga tal inte kan hantera.

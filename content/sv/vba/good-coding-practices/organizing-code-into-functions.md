@@ -10,9 +10,8 @@ model: gpt-4-0125-preview
 summary: "Att organisera kod i funktioner i Visual Basic for Applications (VBA) inneb\xE4\
   r att man bryter ner ett program i mindre, hanterbara delar k\xE4nda som\u2026"
 title: Att organisera kod i funktioner
+weight: 18
 ---
-
-{{< edit_this_page >}}
 
 ## Vad & Varför?
 

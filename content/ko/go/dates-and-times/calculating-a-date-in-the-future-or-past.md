@@ -24,9 +24,8 @@ summary: "Go\uC5D0\uC11C \uBBF8\uB798 \uB610\uB294 \uACFC\uAC70\uC758 \uB0A0\uC9
   \ \uC704\uD574 \uC774 \uC791\uC5C5\uC744\u2026"
 title: "\uBBF8\uB798 \uB610\uB294 \uACFC\uAC70\uC758 \uB0A0\uC9DC \uACC4\uC0B0\uD558\
   \uAE30"
+weight: 26
 ---
-
-{{< edit_this_page >}}
 
 ## 무엇인가 & 왜인가?
 

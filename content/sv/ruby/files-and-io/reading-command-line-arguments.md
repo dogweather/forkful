@@ -9,9 +9,8 @@ summary: "Att l\xE4sa kommandoradsargument \xE4r processen att f\xE5nga data som
   ndaren skickar in till ditt program fr\xE5n terminalen. Vi g\xF6r det f\xF6r att\
   \ till\xE5ta\u2026"
 title: "L\xE4sa in kommandoradsargument"
+weight: 23
 ---
-
-{{< edit_this_page >}}
 
 ## Vad & Varför?
 Att läsa kommandoradsargument är processen att fånga data som användaren skickar in till ditt program från terminalen. Vi gör det för att tillåta användaren att justera programmet's beteende eller för att mata in viktig information utan att behöva ändra koden.

@@ -9,9 +9,8 @@ summary: "Creating a temporary file in C involves generating a file that is mean
   \ to be used for a short duration, usually as scratch space for data processing\
   \ or\u2026"
 title: Creating a temporary file
+weight: 21
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 Creating a temporary file in C involves generating a file that is meant to be used for a short duration, usually as scratch space for data processing or storage. Programmers do it to manage temporary data without affecting the program's permanent storage or to ensure sensitive data is erased after use.

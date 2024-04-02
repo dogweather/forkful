@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "\xC5 hente dagens dato i Bash involverer bruk av innebygde kommandoer for\
   \ \xE5 vise dato og tid i forskjellige formater. Programmerere bruker denne\u2026"
 title: "F\xE5 dagens dato"
+weight: 29
 ---
-
-{{< edit_this_page >}}
 
 ## Hva & Hvorfor?
 Å hente dagens dato i Bash involverer bruk av innebygde kommandoer for å vise dato og tid i forskjellige formater. Programmerere bruker denne funksjonaliteten til oppgaver som å tidsstemple logger, planlegge oppgaver, eller bare som en del av sine systeminformasjonsskript for å spore når handlinger ble utført.

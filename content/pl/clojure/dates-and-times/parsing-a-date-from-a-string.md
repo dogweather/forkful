@@ -11,9 +11,8 @@ summary: "Parsowanie daty z ci\u0105gu znak\xF3w w Clojure polega na przekszta\u
   caniu tekstowych reprezentacji dat i czas\xF3w na bardziej u\u017Cyteczn\u0105 form\u0119\
   \ (np. obiekt DateTime\u2026"
 title: "Analiza sk\u0142adniowa daty z \u0142a\u0144cucha znak\xF3w"
+weight: 30
 ---
-
-{{< edit_this_page >}}
 
 ## Co i dlaczego?
 Parsowanie daty z ciągu znaków w Clojure polega na przekształcaniu tekstowych reprezentacji dat i czasów na bardziej użyteczną formę (np. obiekt DateTime Clojure). Ten proces jest podstawą dla przetwarzania danych, logowania lub dowolnej aplikacji manipulującej danymi czasowymi, umożliwiając programistom wykonywanie operacji, porównań czy manipulacji na datach efektywnie.

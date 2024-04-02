@@ -13,9 +13,8 @@ summary: "Vi\u1EC7c t\u1EA1o s\u1ED1 ng\u1EABu nhi\xEAn trong Bash mang l\u1EA1i
   \u1EDBc v\xE0o c\xE1c script, \u0111i\u1EC1u n\xE0y r\u1EA5t c\u1EA7n thi\u1EBF\
   t cho c\xE1c t\xE1c v\u1EE5 nh\u01B0 t\u1EA1o m\u1EADt\u2026"
 title: "Sinh s\u1ED1 ng\u1EABu nhi\xEAn"
+weight: 12
 ---
-
-{{< edit_this_page >}}
 
 ## Gì và Tại sao?
 Việc tạo số ngẫu nhiên trong Bash mang lại cách thức để bổ sung tính không dự đoán trước vào các script, điều này rất cần thiết cho các tác vụ như tạo mật khẩu an toàn, mô phỏng dữ liệu, hoặc cho lập trình game. Các lập trình viên tận dụng khả năng này để thêm biến thể vào script của họ hoặc để kiểm thử chương trình của họ dưới nhiều điều kiện được tạo ra một cách ngẫu nhiên.

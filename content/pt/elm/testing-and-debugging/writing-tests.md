@@ -11,9 +11,8 @@ summary: "Escrever testes em Elm envolve a cria\xE7\xE3o de casos de teste para 
   \ a corre\xE7\xE3o do seu c\xF3digo Elm, garantindo que ele se comporte conforme\
   \ esperado.\u2026"
 title: Escrevendo testes
+weight: 36
 ---
-
-{{< edit_this_page >}}
 
 ## O que & Por quê?
 

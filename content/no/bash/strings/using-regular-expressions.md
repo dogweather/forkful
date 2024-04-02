@@ -11,9 +11,8 @@ summary: "Regul\xE6re uttrykk (regex) i Bash lar deg s\xF8ke, manipulere, og h\x
   ndtere strenger og filer basert p\xE5 spesifikke m\xF8nstre. Programmerere bruker\
   \ regex for\u2026"
 title: "Bruke regul\xE6re uttrykk"
+weight: 11
 ---
-
-{{< edit_this_page >}}
 
 ## Hva & Hvorfor?
 

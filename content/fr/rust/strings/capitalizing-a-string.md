@@ -11,9 +11,8 @@ summary: "Mettre en majuscule la premi\xE8re lettre d'une cha\xEEne de caract\xE
   res en Rust implique de modifier cette cha\xEEne afin que son premier caract\xE8\
   re soit une\u2026"
 title: "Mettre en majuscule une cha\xEEne"
+weight: 2
 ---
-
-{{< edit_this_page >}}
 
 ## Quoi & Pourquoi ?
 

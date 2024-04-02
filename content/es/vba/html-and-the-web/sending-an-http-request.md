@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Enviar una solicitud HTTP en Visual Basic para Aplicaciones (VBA) implica\
   \ acceder program\xE1ticamente a recursos o servicios web mediante solicitudes sobre\u2026"
 title: Enviando una solicitud HTTP
+weight: 44
 ---
-
-{{< edit_this_page >}}
 
 ## Qué y Por Qué?
 

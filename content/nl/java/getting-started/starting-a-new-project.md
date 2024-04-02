@@ -11,9 +11,8 @@ summary: "Een nieuw Java-project starten is alsof je een nieuw doek klaarzet voo
   \ je meesterwerk. Programmeurs zetten nieuwe projecten op om idee\xEBn om te zetten\
   \ in\u2026"
 title: Een nieuw project starten
+weight: 1
 ---
-
-{{< edit_this_page >}}
 
 ## Wat & Waarom?
 

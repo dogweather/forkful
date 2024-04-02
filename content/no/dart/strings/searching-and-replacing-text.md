@@ -11,9 +11,8 @@ summary: "S\xF8king og erstatting av tekst i Dart inneb\xE6rer \xE5 unders\xF8ke
   \ for \xE5 finne visse m\xF8nstre eller sekvenser av tegn og erstatte dem med nytt\
   \ innhold.\u2026"
 title: "S\xF8k og erstatt tekst"
+weight: 10
 ---
-
-{{< edit_this_page >}}
 
 ## Hva og Hvorfor?
 

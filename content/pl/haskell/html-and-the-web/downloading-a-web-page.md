@@ -9,9 +9,8 @@ summary: "Czyli po polsku: \"Co i dlaczego?\" Pobieranie strony internetowej to 
   \ w kt\xF3rym uzyskujemy jej dane (najcz\u0119\u015Bciej w formacie HTML) bezpo\u015B\
   rednio na\u2026"
 title: Pobieranie strony internetowej
+weight: 42
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why? 
 Czyli po polsku: "Co i dlaczego?"

@@ -11,9 +11,8 @@ summary: "YAML, skr\xF3t od YAML Ain't Markup Language, to format serializacji d
   \ kt\xF3ry jest czytelny dla cz\u0142owieka. Programi\u015Bci u\u017Cywaj\u0105\
   \ go do plik\xF3w\u2026"
 title: Praca z YAML
+weight: 41
 ---
-
-{{< edit_this_page >}}
 
 ## Co i dlaczego?
 

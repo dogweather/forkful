@@ -11,9 +11,8 @@ summary: "Att skapa en tempor\xE4r fil i Go m\xF6jligg\xF6r skapandet av en icke
   \ fil avsedd f\xF6r kortvarig anv\xE4ndning, fr\xE4mst f\xF6r uppgifter s\xE5som\
   \ att lagra\u2026"
 title: "Skapa en tillf\xE4llig fil"
+weight: 21
 ---
-
-{{< edit_this_page >}}
 
 ## Vad & Varför?
 

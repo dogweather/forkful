@@ -11,9 +11,8 @@ summary: "Logowanie w C polega na rejestrowaniu przep\u0142ywu i znacz\u0105cych
   \ programu podczas jego wykonania, zapewniaj\u0105c namacalny przegl\u0105d jego\
   \ zachowania i\u2026"
 title: Logowanie
+weight: 17
 ---
-
-{{< edit_this_page >}}
 
 ## Co i dlaczego?
 

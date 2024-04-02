@@ -7,9 +7,8 @@ model: gpt-4-1106-preview
 summary: "Die Fehlerbehandlung in Ihren Programmen f\xE4ngt die unvorhergesehenen\
   \ Dinge auf, die versuchen, Ihnen ein Bein zu stellen. Sie tun dies, um zu verhindern,\u2026"
 title: Fehlerbehandlung
+weight: 16
 ---
-
-{{< edit_this_page >}}
 
 ## Was & Warum?
 

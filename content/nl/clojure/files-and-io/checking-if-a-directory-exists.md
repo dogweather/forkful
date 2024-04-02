@@ -10,9 +10,8 @@ model: gpt-4-0125-preview
 summary: "Controleren of een directory bestaat betekent bevestigen of een pad naar\
   \ een directory op je bestandssysteem wijst. Programmeurs doen dit om fouten te\u2026"
 title: Controleren of een directory bestaat
+weight: 20
 ---
-
-{{< edit_this_page >}}
 
 ## Wat & Waarom?
 Controleren of een directory bestaat betekent bevestigen of een pad naar een directory op je bestandssysteem wijst. Programmeurs doen dit om fouten te voorkomen, correcte bestandsafhandeling te garanderen en noodzakelijke voorwaarden in te stellen voordat bestandsbewerkingen worden uitgevoerd.

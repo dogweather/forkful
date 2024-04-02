@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Parsowanie HTML w Google Apps Script polega na ekstrakcji danych z tre\u015B\
   ci HTML, co jest szczeg\xF3lnie przydatne podczas interakcji ze stronami internetowymi\u2026"
 title: "Analiza Sk\u0142adniowa HTML"
+weight: 43
 ---
-
-{{< edit_this_page >}}
 
 ## Co i dlaczego?
 Parsowanie HTML w Google Apps Script polega na ekstrakcji danych z treści HTML, co jest szczególnie przydatne podczas interakcji ze stronami internetowymi lub źródłami danych opartymi na sieci. Programiści robią to, aby automatyzować zbieranie danych, manipulować zawartością sieciową lub integrować funkcjonalności sieciowe z aplikacjami Google, takimi jak Arkusze i Dokumenty.

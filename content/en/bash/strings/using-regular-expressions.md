@@ -8,9 +8,8 @@ model: gpt-4-0125-preview
 summary: "Regular expressions (regex) in Bash allow you to search, manipulate, and\
   \ handle strings and files based on specific patterns. Programmers use regex for\u2026"
 title: Using regular expressions
+weight: 11
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 

@@ -10,9 +10,8 @@ model: gpt-4-0125-preview
 summary: "Att arbeta med XML i Go inneb\xE4r att tolka (l\xE4sa) och generera (skriva)\
   \ XML-dokument \u2013 ett standardformat f\xF6r utbyte av strukturerad data. Programmerare\u2026"
 title: Att arbeta med XML
+weight: 40
 ---
-
-{{< edit_this_page >}}
 
 ## Vad och varför?
 

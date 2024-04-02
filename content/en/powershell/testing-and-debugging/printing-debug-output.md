@@ -8,9 +8,8 @@ model: gpt-4-1106-preview
 summary: "Printing debug output is like having a conversation with your code. It's\
   \ about inserting print statements to show what's going on under the hood of your\u2026"
 title: Printing debug output
+weight: 33
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 

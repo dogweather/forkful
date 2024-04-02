@@ -7,9 +7,8 @@ model: gpt-4-0125-preview
 summary: "Comparing two dates in C involves determining the chronological relationship\
   \ between them -- whether one date precedes the other or if they are the same.\u2026"
 title: Comparing two dates
+weight: 27
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 

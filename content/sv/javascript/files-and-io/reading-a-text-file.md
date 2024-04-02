@@ -9,9 +9,8 @@ summary: "L\xE4sning av en textfil inneb\xE4r att man tar information lagrad som
   \ och g\xF6r den tillg\xE4nglig i din applikation. Programmerare g\xF6r detta f\xF6\
   r att hantera\u2026"
 title: "L\xE4sa en textfil"
+weight: 22
 ---
-
-{{< edit_this_page >}}
 
 ## Vad & Varför?
 Läsning av en textfil innebär att man tar information lagrad som text och gör den tillgänglig i din applikation. Programmerare gör detta för att hantera data, konfigurationer, och för att interagera med system utanför deras program.

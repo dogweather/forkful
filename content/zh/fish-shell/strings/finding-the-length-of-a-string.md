@@ -14,9 +14,8 @@ summary: "\u4EC0\u4E48\u662F\u5B57\u7B26\u4E32\u957F\u5EA6\u4EE5\u53CA\u6211\u4E
   \u5EA6\u6765\u5904\u7406\u6587\u672C\u6570\u636E\uFF0C\u4F8B\u5982\u9A8C\u8BC1\u8F93\
   \u5165\u6216\u8005\u62FC\u63A5\u5B57\u7B26\u4E32\u3002"
 title: "\u83B7\u53D6\u5B57\u7B26\u4E32\u7684\u957F\u5EA6"
+weight: 7
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?  
 什么是字符串长度以及我们为什么需要它？字符串长度是字符的数量。程序员计算字符串长度来处理文本数据，例如验证输入或者拼接字符串。

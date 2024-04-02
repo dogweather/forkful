@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "CSV-tiedostojen (pilkulla erotetut arvot) k\xE4sittely on yleinen teht\xE4\
   v\xE4 datan hallitsemiseksi ja manipuloimiseksi rakenteellisessa, taulukkomuodossa.\u2026"
 title: "Ty\xF6skentely CSV:n kanssa"
+weight: 37
 ---
-
-{{< edit_this_page >}}
 
 ## Mikä & Miksi?
 

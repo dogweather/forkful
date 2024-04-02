@@ -7,9 +7,8 @@ model: gpt-4-1106-preview
 summary: "\xC5 organisere kode i funksjoner deler scriptet ditt inn i gjenbrukbare\
   \ deler. Det handler om \xE5 gj\xF8re koden din ren, h\xE5ndterbar og mindre feilutsatt.\u2026"
 title: Organisering av kode i funksjoner
+weight: 18
 ---
-
-{{< edit_this_page >}}
 
 ## Hva & Hvorfor?
 Å organisere kode i funksjoner deler scriptet ditt inn i gjenbrukbare deler. Det handler om å gjøre koden din ren, håndterbar og mindre feilutsatt. Modulær kode er fantastisk fordi det sparer deg for tid, bevarer din psykiske helse, og forenkler feilsøking og enhetstesting.

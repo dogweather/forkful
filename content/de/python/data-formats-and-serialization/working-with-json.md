@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Die Arbeit mit JSON (JavaScript Object Notation) beinhaltet das Parsen von\
   \ JSON-formatierten Strings in Python-Objekte und umgekehrt. Dies ist\u2026"
 title: Arbeiten mit JSON
+weight: 38
 ---
-
-{{< edit_this_page >}}
 
 ## Was & Warum?
 

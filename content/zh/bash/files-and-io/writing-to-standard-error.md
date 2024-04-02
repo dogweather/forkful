@@ -18,9 +18,8 @@ summary: "\u5728 Bash \u4E2D\u5199\u5165\u6807\u51C6\u9519\u8BEF (stderr) \u662F
   \u606F\u53EF\u4EE5\u88AB\u8F7B\u677E\u8BC6\u522B\u3001\u8BB0\u5F55\u6216\u751A\u81F3\
   \u5FFD\u7565\uFF0C\u6709\u52A9\u4E8E\u8C03\u8BD5\u548C\u8BB0\u5F55\u8FC7\u7A0B\u3002"
 title: "\u5199\u5165\u6807\u51C6\u9519\u8BEF"
+weight: 25
 ---
-
-{{< edit_this_page >}}
 
 ## 什么和为什么？
 在 Bash 中写入标准错误 (stderr) 是关于将错误消息或任何重要的诊断输出与标准输出 (stdout) 分开指向。程序员这样做是为了确保错误消息可以被轻松识别、记录或甚至忽略，有助于调试和记录过程。

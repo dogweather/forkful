@@ -9,9 +9,8 @@ summary: "Stampare l'output di debug aiuta a vedere cosa sta succedendo nel codi
   \ Lo facciamo per trovare gli errori pi\xF9 velocemente e capire meglio il flusso\
   \ del\u2026"
 title: Stampa dell'output di debug
+weight: 33
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why? (Cosa e Perché?)
 Stampare l'output di debug aiuta a vedere cosa sta succedendo nel codice. Lo facciamo per trovare gli errori più velocemente e capire meglio il flusso del programma.

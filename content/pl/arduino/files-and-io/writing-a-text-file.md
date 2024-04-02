@@ -10,9 +10,8 @@ model: gpt-4-0125-preview
 summary: "Zapisywanie pliku tekstowego w Arduino polega na zapisywaniu danych na karcie\
   \ SD lub podobnym module pami\u0119ci, cz\u0119sto w celach rejestracji danych.\u2026"
 title: Pisanie pliku tekstowego
+weight: 24
 ---
-
-{{< edit_this_page >}}
 
 ## Co i dlaczego?
 Zapisywanie pliku tekstowego w Arduino polega na zapisywaniu danych na karcie SD lub podobnym module pamięci, często w celach rejestracji danych. Programiści robią to, aby rejestrować odczyty z sensorów, zapisywać konfiguracje lub logować zdarzenia aplikacji w czasie, co jest kluczowe dla projektów wymagających analizy danych lub śledzenia.

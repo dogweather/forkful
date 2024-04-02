@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Convertir una fecha en una cadena en Go implica transformar un objeto `time.Time`\
   \ en un formato de cadena legible. Los programadores a menudo realizan\u2026"
 title: Convirtiendo una fecha en una cadena de texto
+weight: 28
 ---
-
-{{< edit_this_page >}}
 
 ## ¿Qué y por qué?
 

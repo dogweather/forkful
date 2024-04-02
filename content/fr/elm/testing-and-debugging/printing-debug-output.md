@@ -9,9 +9,8 @@ summary: "Qu'est-ce que c'est l'impression de d\xE9bogage ? C\u2019est l\u2019ar
   \ de balancer des infos dans la console pour comprendre ce qui se passe dans ton\
   \ code. Pourquoi\u2026"
 title: "Affichage des sorties de d\xE9bogage"
+weight: 33
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why? 
 Qu'est-ce que c'est l'impression de débogage ? C’est l’art de balancer des infos dans la console pour comprendre ce qui se passe dans ton code. Pourquoi on le fait ? Pour traquer les bogues plus malins qu’un renard et pour saisir le comportement de notre programme en direct.

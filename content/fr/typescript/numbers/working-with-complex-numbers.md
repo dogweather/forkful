@@ -9,9 +9,8 @@ summary: "Les nombres complexes, compos\xE9s d'une partie r\xE9elle et d'une par
   \ imaginaire (g\xE9n\xE9ralement \xE9crits sous la forme a + bi), rendent possibles\
   \ des calculs\u2026"
 title: Manipulation des nombres complexes
+weight: 14
 ---
-
-{{< edit_this_page >}}
 
 ## Quoi et pourquoi ?
 Les nombres complexes, composés d'une partie réelle et d'une partie imaginaire (généralement écrits sous la forme a + bi), rendent possibles des calculs impraticables ou impossibles avec de simples nombres réels. Les programmeurs les utilisent dans des domaines tels que le traitement du signal, l'informatique quantique et les mathématiques appliquées, où les représentations numériques bidimensionnelles sont essentielles.

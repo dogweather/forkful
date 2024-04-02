@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Escribir en el error est\xE1ndar (stderr) en la programaci\xF3n de Arduino\
   \ implica dirigir los mensajes de error y diagn\xF3sticos a un canal separado, asegurando\u2026"
 title: "Escribiendo en el error est\xE1ndar"
+weight: 25
 ---
-
-{{< edit_this_page >}}
 
 ## ¿Qué y por qué?
 

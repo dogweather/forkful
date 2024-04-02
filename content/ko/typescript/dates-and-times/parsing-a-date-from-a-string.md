@@ -23,9 +23,8 @@ summary: "\uBB38\uC790\uC5F4\uC5D0\uC11C \uB0A0\uC9DC\uB97C \uD30C\uC2F1\uD558\u
   \ \uB354 \uAE30\uB2A5\uC801\uC774\uACE0 \uC0AC\uC6A9\uC790 \uCE5C\uD654\uC801\uC778\
   \ \uC560\uD50C\uB9AC\uCF00\uC774\uC158\uC744 \uAD6C\uD604\uD560 \uC218\u2026"
 title: "\uBB38\uC790\uC5F4\uC5D0\uC11C \uB0A0\uC9DC \uBD84\uC11D\uD558\uAE30"
+weight: 30
 ---
-
-{{< edit_this_page >}}
 
 ## 무엇 & 왜?
 문자열에서 날짜를 파싱하는 것은 날짜와 시간의 텍스트 표현을 프로그램에서 조작하고 분석할 수 있는 형식으로 변환하는 것을 말합니다. 이는 사용자 입력 처리, 시간 기록 데이터 저장, API와의 상호작용을 가능하게 함으로써 더 기능적이고 사용자 친화적인 애플리케이션을 구현할 수 있게 하는 프로그래밍에서 흔한 작업입니다.

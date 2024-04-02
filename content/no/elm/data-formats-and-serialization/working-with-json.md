@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "\xC5 jobbe med JSON i Elm handler om \xE5 dekode JSON-data til Elm-typer\
   \ og \xE5 kode Elm-verdier tilbake til JSON. Denne prosessen er avgj\xF8rende for\u2026"
 title: Arbeider med JSON
+weight: 38
 ---
-
-{{< edit_this_page >}}
 
 ## Hva & Hvorfor?
 Å jobbe med JSON i Elm handler om å dekode JSON-data til Elm-typer og å kode Elm-verdier tilbake til JSON. Denne prosessen er avgjørende for webapplikasjoner for å samhandle med APIer og eksterne datakilder, noe som tillater en sømløs utveksling av data mellom klienten (Elm) og servere eller andre tjenester.

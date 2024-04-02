@@ -9,9 +9,8 @@ summary: "Le d\xE9bogage, on conna\xEEt : imprimer des sorties dans la console p
   \ comprendre ce qui se passe dans le code. Pourquoi ? Pour traquer les bugs plus\
   \ vite et\u2026"
 title: "Affichage des sorties de d\xE9bogage"
+weight: 33
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why? (Quoi et Pourquoi ?)
 Le débogage, on connaît : imprimer des sorties dans la console pour comprendre ce qui se passe dans le code. Pourquoi ? Pour traquer les bugs plus vite et vérifier le comportement de notre programme.

@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Een HTTP-verzoek versturen in Google Apps Script gaat over het programmatisch\
   \ maken van een oproep naar een externe webserver of API. Programmeurs doen\u2026"
 title: Een HTTP-verzoek verzenden
+weight: 44
 ---
-
-{{< edit_this_page >}}
 
 ## Wat & Waarom?
 

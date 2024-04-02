@@ -23,9 +23,8 @@ summary: "PHP\uC5D0\uC11C HTML\uC744 \uD30C\uC2F1\uD558\uB294 \uAC83\uC740 HTML 
   \uB2A5\uC744 \uD5A5\uC0C1\uC2DC\uD0A4\uAE30 \uC704\uD574 \uC218\uD589\uD569\uB2C8\
   \uB2E4."
 title: "HTML \uD30C\uC2F1"
+weight: 43
 ---
-
-{{< edit_this_page >}}
 
 ## 무엇을, 왜?
 PHP에서 HTML을 파싱하는 것은 HTML 문서에서 특정 정보를 추출하는 과정을 말합니다. 개발자들은 이 작업을 데이터 추출 자동화, 웹 스크래핑 또는 다양한 웹 페이지의 콘텐츠를 자신의 애플리케이션 내에서 통합하여 수동 개입 없이 기능을 향상시키기 위해 수행합니다.

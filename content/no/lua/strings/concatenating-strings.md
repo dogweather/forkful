@@ -9,9 +9,8 @@ summary: "I koding er det \xE5 sette sammen strenger (concatenating) som \xE5 li
   \ sammen ord eller setninger for \xE5 lage nye. Vi gj\xF8r dette for \xE5 kunne\
   \ lage dynamiske\u2026"
 title: "Sammensl\xE5ing av strenger"
+weight: 3
 ---
-
-{{< edit_this_page >}}
 
 ## Hva & Hvorfor?
 I koding er det å sette sammen strenger (concatenating) som å lime sammen ord eller setninger for å lage nye. Vi gjør dette for å kunne lage dynamiske meldinger, brukergrensesnitt og lagre data på en ryddig måte.

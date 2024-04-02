@@ -8,9 +8,8 @@ model: gpt-4-1106-preview
 summary: "Iniciar un nuevo proyecto es crear un espacio limpio y estructurado para\
   \ tu c\xF3digo desde cero. Los programadores lo hacen para organizar ideas, facilitar\u2026"
 title: Iniciando un nuevo proyecto
+weight: 1
 ---
-
-{{< edit_this_page >}}
 
 ## Qué y Por Qué?
 Iniciar un nuevo proyecto es crear un espacio limpio y estructurado para tu código desde cero. Los programadores lo hacen para organizar ideas, facilitar la colaboración y gestionar recursos eficientemente.

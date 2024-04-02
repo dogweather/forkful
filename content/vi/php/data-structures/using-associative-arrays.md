@@ -13,9 +13,8 @@ summary: "M\u1EA3ng k\u1EBFt h\u1EE3p trong PHP gi\u1ED1ng nh\u01B0 nh\u1EEFng d
   \u01B0\u1EE3c truy c\u1EADp b\u1EB1ng m\u1ED9t kh\xF3a d\u1EC5 hi\u1EC3u thay v\xEC\
   \ ch\u1EC9 l\xE0 s\u1ED1. L\u1EADp tr\xECnh vi\xEAn s\u1EED\u2026"
 title: "S\u1EED d\u1EE5ng m\u1EA3ng li\xEAn k\u1EBFt"
+weight: 15
 ---
-
-{{< edit_this_page >}}
 
 ## Cái gì & Tại sao?
 

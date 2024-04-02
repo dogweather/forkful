@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Das Parsen von HTML in Clojure umfasst das programmgesteuerte Extrahieren\
   \ von Informationen aus HTML-Dokumenten. Programmierer tun dies, um auf Webinhalte\u2026"
 title: HTML parsen
+weight: 43
 ---
-
-{{< edit_this_page >}}
 
 ## Was & Warum?
 

@@ -9,9 +9,8 @@ summary: "Zaokr\u0105glanie liczb polega na modyfikacji liczby dziesi\u0119tnej 
   \ jej najbli\u017Cszej warto\u015Bci ca\u0142kowitej lub do okre\u015Blonej liczby\
   \ miejsc po przecinku.\u2026"
 title: "Zaokr\u0105glanie liczb"
+weight: 13
 ---
-
-{{< edit_this_page >}}
 
 ## Co i Dlaczego?
 

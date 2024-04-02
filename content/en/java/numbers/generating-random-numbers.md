@@ -8,9 +8,8 @@ model: gpt-4-0125-preview
 summary: "Generating random numbers is about producing unpredictable sequences or\
   \ single values within a defined range. Programmers use this technique for a variety\u2026"
 title: Generating random numbers
+weight: 12
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 

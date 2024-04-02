@@ -9,9 +9,8 @@ summary: "Usar um shell interativo, ou um Loop de Leitura-Avalia\xE7\xE3o-Impres
   o (REPL), permite programar interativamente. Programadores usam isso para testar\
   \ trechos\u2026"
 title: Usando um shell interativo (REPL)
+weight: 34
 ---
-
-{{< edit_this_page >}}
 
 ## O Que & Porquê?
 Usar um shell interativo, ou um Loop de Leitura-Avaliação-Impressão (REPL), permite programar interativamente. Programadores usam isso para testar trechos de Swift rapidamente, depurar ou aprender a linguagem.

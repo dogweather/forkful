@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Logging i programvareutvikling er prosessen med \xE5 registrere informasjon\
   \ om et programs utf\xF8relse, designet for \xE5 spore dets oppf\xF8rsel og diagnostisere\u2026"
 title: Logging
+weight: 17
 ---
-
-{{< edit_this_page >}}
 
 ## Hva & Hvorfor?
 

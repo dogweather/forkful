@@ -7,9 +7,8 @@ model: gpt-4-0125-preview
 summary: "Interaktiivinen kuori eli Read-Eval-Print Loop (REPL) mahdollistaa PowerShell-komentojen\
   \ kirjoittamisen ja v\xE4litt\xF6m\xE4n palautteen saamisen. Ohjelmoijat\u2026"
 title: "Interaktiivisen komentotulkin (REPL) k\xE4ytt\xF6"
+weight: 34
 ---
-
-{{< edit_this_page >}}
 
 ## Mikä & Miksi?
 Interaktiivinen kuori eli Read-Eval-Print Loop (REPL) mahdollistaa PowerShell-komentojen kirjoittamisen ja välittömän palautteen saamisen. Ohjelmoijat käyttävät sitä koodinpätkien nopeaan testaamiseen, vianetsintään tai uusien komentojen oppimiseen kirjoittamatta täydellistä skriptiä.

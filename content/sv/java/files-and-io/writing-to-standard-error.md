@@ -11,9 +11,8 @@ summary: "Att skriva till standardfel (stderr) inneb\xE4r att skicka felmeddelan
   \ och diagnostik till konsolen eller terminalen. Programmerare g\xF6r detta f\xF6\
   r att\u2026"
 title: Skriva till standardfel
+weight: 25
 ---
-
-{{< edit_this_page >}}
 
 ## Vad & Varför?
 Att skriva till standardfel (stderr) innebär att skicka felmeddelanden och diagnostik till konsolen eller terminalen. Programmerare gör detta för att separera felinformation från standardutdata (stdout), vilket underlättar felsökning och analys av loggar.

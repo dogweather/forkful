@@ -9,9 +9,8 @@ summary: "Satunnaislukujen tuottaminen PowerShelliss\xE4 tarkoittaa ennalta-arva
   \ numeeristen arvojen luontia m\xE4\xE4ritellyll\xE4 v\xE4lill\xE4. Ohjelmoijat\
   \ k\xE4ytt\xE4v\xE4t\u2026"
 title: Satunnaislukujen generointi
+weight: 12
 ---
-
-{{< edit_this_page >}}
 
 ## Mikä ja miksi?
 Satunnaislukujen tuottaminen PowerShellissä tarkoittaa ennalta-arvaamattomien numeeristen arvojen luontia määritellyllä välillä. Ohjelmoijat käyttävät tätä ominaisuutta monista syistä, mukaan lukien testaus, simulointi ja turvallisuustarkoitukset, joissa ennalta-arvaamattomuus tai todellisen maailman satunnaisuuden jäljitteleminen on elintärkeää.

@@ -2,17 +2,16 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:09:29.561831-07:00
-description: "S\u1EED d\u1EE5ng m\u1ED9t tr\xECnh g\u1EE1 l\u1ED7i c\xF3 ngh\u0129\
-  a l\xE0 thi\u1EBFt l\u1EADp \u0111i\u1EC3m d\u1EEBng, b\u01B0\u1EDBc qua m\xE3 c\u1EE7\
-  a b\u1EA1n, theo d\xF5i c\xE1c bi\u1EBFn, v\xE0 ki\u1EC3m tra tr\u1EA1ng th\xE1\
-  i c\u1EE7a ch\u01B0\u01A1ng tr\xECnh c\u1EE7a b\u1EA1n khi n\xF3\u2026"
+description: "Trong PowerShell, b\u1EA1n c\xF3 th\u1EC3 g\u1EE1 l\u1ED7i script s\u1EED\
+  \ d\u1EE5ng PowerShell Integrated Scripting Environment (ISE) t\xEDch h\u1EE3p s\u1EB5\
+  n ho\u1EB7c Visual Studio Code (VS Code) v\u1EDBi\u2026"
 lastmod: '2024-03-13T22:44:36.942450-06:00'
 model: gpt-4-0125-preview
-summary: "S\u1EED d\u1EE5ng m\u1ED9t tr\xECnh g\u1EE1 l\u1ED7i c\xF3 ngh\u0129a l\xE0\
-  \ thi\u1EBFt l\u1EADp \u0111i\u1EC3m d\u1EEBng, b\u01B0\u1EDBc qua m\xE3 c\u1EE7\
-  a b\u1EA1n, theo d\xF5i c\xE1c bi\u1EBFn, v\xE0 ki\u1EC3m tra tr\u1EA1ng th\xE1\
-  i c\u1EE7a ch\u01B0\u01A1ng tr\xECnh c\u1EE7a b\u1EA1n khi n\xF3\u2026"
+summary: "Trong PowerShell, b\u1EA1n c\xF3 th\u1EC3 g\u1EE1 l\u1ED7i script s\u1EED\
+  \ d\u1EE5ng PowerShell Integrated Scripting Environment (ISE) t\xEDch h\u1EE3p s\u1EB5\
+  n ho\u1EB7c Visual Studio Code (VS Code) v\u1EDBi\u2026"
 title: "S\u1EED d\u1EE5ng b\u1ED9 g\u1EE1 l\u1ED7i"
+weight: 35
 ---
 
 ## Làm thế nào:

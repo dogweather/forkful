@@ -9,9 +9,8 @@ summary: "S\xF6k och ers\xE4tt av text \xE4r en grundl\xE4ggande process d\xE4r 
   \ hittar specifika teckenkombinationer och byter ut dem mot nya. Programmerare anv\xE4\
   nder det f\xF6r\u2026"
 title: "S\xF6kning och ers\xE4ttning av text"
+weight: 10
 ---
-
-{{< edit_this_page >}}
 
 ## Vad & Varför?
 Sök och ersätt av text är en grundläggande process där vi hittar specifika teckenkombinationer och byter ut dem mot nya. Programmerare använder det för att manipulera textdata snabbt, som att korrigera stavfel, uppdatera information eller bearbeta datafiler.

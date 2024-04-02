@@ -11,9 +11,8 @@ summary: "Att skriva tester i PowerShell inneb\xE4r att skapa skript som automat
   \ validerar funktionaliteten i din PowerShell-kod, f\xF6r att s\xE4kerst\xE4lla\
   \ att den beter\u2026"
 title: Skriva tester
+weight: 36
 ---
-
-{{< edit_this_page >}}
 
 ## Vad & Varför?
 

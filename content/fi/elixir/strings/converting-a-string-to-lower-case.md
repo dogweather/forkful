@@ -9,9 +9,8 @@ summary: "Muuttaminen merkkijono pienaakkosiksi tarkoittaa kirjainten muuttamist
   \ kirjainkoosta riippumattomiksi. Koodarit tekev\xE4t t\xE4m\xE4n yleens\xE4 tekstin\
   \ vertailua\u2026"
 title: Merkkijonon muuntaminen pieniksi kirjaimiksi
+weight: 4
 ---
-
-{{< edit_this_page >}}
 
 ## Mikä & Miksi?
 Muuttaminen merkkijono pienaakkosiksi tarkoittaa kirjainten muuttamista kirjainkoosta riippumattomiksi. Koodarit tekevät tämän yleensä tekstin vertailua tai järjestämistä varten, poistaen ongelmat erilaisista kirjainkoista.

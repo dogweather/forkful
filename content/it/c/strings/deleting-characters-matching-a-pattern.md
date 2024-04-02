@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Eliminare i caratteri che corrispondono a uno specifico pattern dalle stringhe\
   \ in C consiste nel rimuovere tutte le istanze di certi caratteri che\u2026"
 title: Eliminazione dei caratteri corrispondenti a un pattern
+weight: 5
 ---
-
-{{< edit_this_page >}}
 
 ## Cosa & Perché?
 

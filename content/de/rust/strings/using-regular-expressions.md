@@ -10,9 +10,8 @@ model: gpt-4-0125-preview
 summary: "Regul\xE4re Ausdr\xFCcke, oder Regex, erm\xF6glichen es Entwicklern, mit\
   \ fortgeschrittenen Mustervergleichstechniken in Zeichenketten zu suchen, \xDCbereinstimmungen\u2026"
 title: "Regul\xE4re Ausdr\xFCcke verwenden"
+weight: 11
 ---
-
-{{< edit_this_page >}}
 
 ## Was & Warum?
 

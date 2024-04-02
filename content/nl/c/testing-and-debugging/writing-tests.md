@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Tests schrijven in C betreft het cre\xEBren van kleinere, hulpprogramma's\
   \ of functies die automatisch de functionaliteit van je code verifi\xEBren. Programmeurs\u2026"
 title: Tests Schrijven
+weight: 36
 ---
-
-{{< edit_this_page >}}
 
 ## Wat & Waarom?
 Tests schrijven in C betreft het creëren van kleinere, hulpprogramma's of functies die automatisch de functionaliteit van je code verifiëren. Programmeurs doen dit om te zorgen dat hun software werkt zoals verwacht, om fouten vroegtijdig op te sporen, en om toekomstige code wijzigingen te vergemakkelijken zonder onbedoelde bijeffecten.

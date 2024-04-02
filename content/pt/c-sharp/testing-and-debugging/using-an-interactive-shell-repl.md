@@ -7,9 +7,8 @@ model: gpt-4-0125-preview
 summary: "Um REPL, ou Ciclo Ler-Avaliar-Imprimir, permite que voc\xEA digite c\xF3\
   digo C# e o execute interativamente. Programadores utilizam isso para experimentos\u2026"
 title: Usando um shell interativo (REPL)
+weight: 34
 ---
-
-{{< edit_this_page >}}
 
 ## O Que é & Por Quê?
 Um REPL, ou Ciclo Ler-Avaliar-Imprimir, permite que você digite código C# e o execute interativamente. Programadores utilizam isso para experimentos rápidos, depuração ou aprender C#, sem a sobrecarga de configurar projetos completos.

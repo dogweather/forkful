@@ -9,9 +9,8 @@ summary: "Registrar logs \xE9 como manter um di\xE1rio para a sua aplica\xE7\xE3
   \ \xE9 a pr\xE1tica de gravar eventos, erros e outros dados pertinentes durante\
   \ a execu\xE7\xE3o.\u2026"
 title: Registro de Logs
+weight: 17
 ---
-
-{{< edit_this_page >}}
 
 ## O Quê & Porquê?
 

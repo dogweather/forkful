@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Scrivere su un file di testo in Fish Shell consente di memorizzare dati\
   \ in modo persistente, facilitando il recupero o la manipolazione dei dati sia dallo\u2026"
 title: Scrivere un file di testo
+weight: 24
 ---
-
-{{< edit_this_page >}}
 
 ## Cosa & Perché?
 

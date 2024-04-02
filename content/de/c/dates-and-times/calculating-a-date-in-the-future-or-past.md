@@ -10,9 +10,8 @@ model: gpt-4-0125-preview
 summary: "Die Berechnung eines zuk\xFCnftigen oder vergangenen Datums umfasst das\
   \ Bestimmen eines spezifischen Datums, indem eine bestimmte Anzahl von Tagen, Monaten\u2026"
 title: "Berechnung eines zuk\xFCnftigen oder vergangenen Datums"
+weight: 26
 ---
-
-{{< edit_this_page >}}
 
 ## Was & Warum?
 Die Berechnung eines zukünftigen oder vergangenen Datums umfasst das Bestimmen eines spezifischen Datums, indem eine bestimmte Anzahl von Tagen, Monaten oder Jahren zu einem gegebenen Datum hinzugefügt oder davon abgezogen wird. Programmierer tun dies für Aufgaben wie das Planen von Ereignissen, das Generieren von Erinnerungen oder das Handhaben von Ablaufdaten, was es zu einer wesentlichen Funktionalität in verschiedenen Anwendungen macht, von Kalendersystemen bis hin zu Finanzsoftware.

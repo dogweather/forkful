@@ -11,9 +11,8 @@ summary: "Kapitalizacja \u0142a\u0144cucha znak\xF3w polega na zmodyfikowaniu pi
   \ znaku danego ci\u0105gu na du\u017C\u0105 liter\u0119, je\u015Bli jest on w ma\u0142\
   ej literze, cz\u0119sto pozostawiaj\u0105c\u2026"
 title: "Zamiana liter na wielkie w \u0142a\u0144cuchu znak\xF3w"
+weight: 2
 ---
-
-{{< edit_this_page >}}
 
 ## Co i dlaczego?
 Kapitalizacja łańcucha znaków polega na zmodyfikowaniu pierwszego znaku danego ciągu na dużą literę, jeśli jest on w małej literze, często pozostawiając resztę ciągu bez zmian. Operacja ta jest zwykle używana, aby zapewnić, że nazwy własne lub początki zdań przestrzegają reguł gramatycznych w przetwarzaniu tekstu, co sprawia, że wyniki wyglądają profesjonalnie i są czytelne.

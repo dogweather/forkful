@@ -11,9 +11,8 @@ summary: "Parsowanie daty ze stringa w Go polega na konwersji daty przedstawione
   \ w formie tekstu na bardziej u\u017Cyteczny format (np. `time.Time`). Programi\u015B\
   ci\u2026"
 title: "Analiza sk\u0142adniowa daty z ci\u0105gu znak\xF3w"
+weight: 30
 ---
-
-{{< edit_this_page >}}
 
 ## Co i dlaczego?
 

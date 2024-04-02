@@ -7,9 +7,8 @@ model: gpt-4-1106-preview
 summary: "\xC5 lage en midlertidig fil er som \xE5 opprette et digitalt kritt-tavle;\
   \ du bruker det for \xE5 skrible ned info som ikke trenger \xE5 bli husket lenge.\u2026"
 title: Opprette en midlertidig fil
+weight: 21
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 Å lage en midlertidig fil er som å opprette et digitalt kritt-tavle; du bruker det for å skrible ned info som ikke trenger å bli husket lenge. Programmerere gjør dette for å håndtere midlertidige data uten å belaste systemressurser eller brukerens permanente lagringsplass.

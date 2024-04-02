@@ -16,9 +16,8 @@ summary: "\u0E01\u0E32\u0E23\u0E17\u0E33\u0E07\u0E32\u0E19\u0E01\u0E31\u0E1A TOM
   \ Minimal Language) \u0E14\u0E49\u0E27\u0E22 Haskell.\u2026"
 title: "\u0E01\u0E32\u0E23\u0E17\u0E33\u0E07\u0E32\u0E19\u0E23\u0E48\u0E27\u0E21\u0E01\
   \u0E31\u0E1A TOML"
+weight: 39
 ---
-
-{{< edit_this_page >}}
 
 ## อะไร & ทำไม?
 การทำงานกับ TOML หมายถึงการแยกวิเคราะห์ (parsing) และสร้างข้อมูล TOML (Tom's Obvious, Minimal Language) ด้วย Haskell. โปรแกรมเมอร์ทำสิ่งนี้เพื่อจัดการไฟล์การตั้งค่าหรือแลกเปลี่ยนข้อมูลได้อย่างง่ายดายด้วยการรับประกันประเภทข้อมูลที่แข็งแกร่งและไวยากรณ์ที่เรียบง่าย.

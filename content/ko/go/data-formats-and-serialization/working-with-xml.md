@@ -23,9 +23,8 @@ summary: "Go\uC5D0\uC11C XML\uC744 \uCC98\uB9AC\uD558\uB294 \uAC83\uC740 XML \uB
   \uD15C \uAC04 \uB370\uC774\uD130 \uAD50\uD658\uC744 \uC704\uD574 \uC774 \uC791\uC5C5\
   \uC744\u2026"
 title: "XML\uB85C \uC791\uC5C5\uD558\uAE30"
+weight: 40
 ---
-
-{{< edit_this_page >}}
 
 ## 무엇과 왜?
 

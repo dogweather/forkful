@@ -23,9 +23,8 @@ summary: "C\u8A00\u8A9E\u3067JSON\uFF08JavaScript Object Notation\uFF09\u3092\u6
   \u30A4\u30EB\u306A\u3069\u306E\u305F\u3081\u306B\u3053\u308C\u3092\u884C\u3044\u307E\
   \u3059\u3002"
 title: "JSON\u3092\u5229\u7528\u3059\u308B"
+weight: 38
 ---
-
-{{< edit_this_page >}}
 
 ## 何となく理由
 

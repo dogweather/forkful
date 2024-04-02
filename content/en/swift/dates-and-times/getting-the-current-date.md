@@ -8,9 +8,8 @@ model: gpt-4-0125-preview
 summary: "Getting the current date in Swift involves using the `Date` class to access\
   \ the date and time that the app is being run. Programmers need to fetch the\u2026"
 title: Getting the current date
+weight: 29
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 Getting the current date in Swift involves using the `Date` class to access the date and time that the app is being run. Programmers need to fetch the current date for a myriad of reasons ranging from timestamping events, performing date calculations, to displaying dates and times in a user interface.

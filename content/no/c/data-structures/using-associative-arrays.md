@@ -11,9 +11,8 @@ summary: "Assosiative tabeller, kjent i andre spr\xE5k som kart eller ordb\xF8ke
   \ er n\xF8kkel-verdi-par som brukes til effektiv dataoppslag og -manipulasjon. I\
   \ motsetning\u2026"
 title: Bruke associative tabeller
+weight: 15
 ---
-
-{{< edit_this_page >}}
 
 ## Hva & Hvorfor?
 

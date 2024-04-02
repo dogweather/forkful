@@ -7,9 +7,8 @@ model: gpt-4-1106-preview
 summary: "Stringinterpolation bedeutet, Variablen oder Ausdr\xFCcke in einen Textstring\
   \ einzusetzen. Programmierer nutzen das, um dynamische Werte in Skripten einfach\u2026"
 title: Zeichenketten interpolieren
+weight: 8
 ---
-
-{{< edit_this_page >}}
 
 ## Was & Warum?
 Stringinterpolation bedeutet, Variablen oder Ausdrücke in einen Textstring einzusetzen. Programmierer nutzen das, um dynamische Werte in Skripten einfach zu integrieren und die Lesbarkeit des Codes zu erhöhen.

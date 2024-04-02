@@ -14,9 +14,8 @@ summary: "\u5F00\u65B0\u9879\u76EE\u5C31\u662F\u521B\u5EFA\u4E00\u4E2A\u7A7A\u76
   \u53D8\u6210\u5B9E\u9645\u7684\u3001\u53EF\u64CD\u4F5C\u7684\u4EE3\u7801\uFF0C\u540C\
   \u65F6\u4FDD\u6301\u7EC4\u7EC7\u6027\u548C\u53EF\u7EF4\u62A4\u6027\u3002"
 title: "\u5F00\u59CB\u4E00\u4E2A\u65B0\u9879\u76EE"
+weight: 1
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why? (是什么 & 为什么？)
 开新项目就是创建一个空白的环境，用来开发新的代码或软件。程序员这么做是为了将想法变成实际的、可操作的代码，同时保持组织性和可维护性。

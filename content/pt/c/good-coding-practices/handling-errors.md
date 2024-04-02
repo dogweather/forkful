@@ -11,9 +11,8 @@ summary: "O tratamento de erros em C envolve a detec\xE7\xE3o e resposta a condi
   \xF5es an\xF4malas que surgem durante a execu\xE7\xE3o do programa. Os programadores\
   \ fazem isso para\u2026"
 title: Gerenciando erros
+weight: 16
 ---
-
-{{< edit_this_page >}}
 
 ## O Quê & Porquê?
 

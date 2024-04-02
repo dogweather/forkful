@@ -7,9 +7,8 @@ model: gpt-4-0125-preview
 summary: "Checking if a directory exists in Java is a fundamental task that involves\
   \ verifying the presence of a file system directory before reading from it,\u2026"
 title: Checking if a directory exists
+weight: 20
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 Checking if a directory exists in Java is a fundamental task that involves verifying the presence of a file system directory before reading from it, writing to it, or performing any operations that require its existence. This is crucial to avoid errors or exceptions in programs that interact with the file system, ensuring smoother execution and better user experience.

@@ -10,9 +10,8 @@ model: gpt-4-0125-preview
 summary: "Het kapitaliseren van een tekenreeks in Visual Basic for Applications (VBA)\
   \ houdt in dat je de eerste letter van elk woord in een tekenreeks omzet in een\u2026"
 title: Een string met hoofdletters maken
+weight: 2
 ---
-
-{{< edit_this_page >}}
 
 ## Wat & Waarom?
 

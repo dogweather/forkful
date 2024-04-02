@@ -11,9 +11,8 @@ summary: "\xC5 skrive tester i C# inneb\xE6rer \xE5 lage automatiserte skript fo
   \ \xE5 validere funksjonaliteten til koden din, for \xE5 sikre at den oppf\xF8rer\
   \ seg som forventet.\u2026"
 title: Skrive tester
+weight: 36
 ---
-
-{{< edit_this_page >}}
 
 ## Hva & Hvorfor?
 

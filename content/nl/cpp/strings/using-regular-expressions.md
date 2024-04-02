@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Reguliere expressies zijn patronen die worden gebruikt om karaktercombinaties\
   \ in tekst te matchen. Programmeurs gebruiken ze voor taken zoals validatie,\u2026"
 title: Reguliere expressies gebruiken
+weight: 11
 ---
-
-{{< edit_this_page >}}
 
 ## Wat & Waarom?
 

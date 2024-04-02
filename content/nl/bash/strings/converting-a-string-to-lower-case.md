@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Het omzetten van strings naar kleine letters is het transformeren van alle\
   \ alfabetische tekens in een string naar hun kleine lettervorm. Programmeurs\u2026"
 title: Een string omzetten naar kleine letters
+weight: 4
 ---
-
-{{< edit_this_page >}}
 
 ## Wat & Waarom?
 

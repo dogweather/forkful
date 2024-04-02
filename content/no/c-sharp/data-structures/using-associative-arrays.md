@@ -11,9 +11,8 @@ summary: "Assosiative tabeller, eller ordb\xF8ker i C#, lar deg lagre og h\xE5nd
   \ par av n\xF8kler og verdier. De er din go-to n\xE5r du trenger \xE5 hente verdier\
   \ raskt basert\u2026"
 title: Bruke associative tabeller
+weight: 15
 ---
-
-{{< edit_this_page >}}
 
 ## Hva & Hvorfor?
 

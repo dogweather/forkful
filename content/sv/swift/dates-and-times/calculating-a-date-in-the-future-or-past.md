@@ -9,9 +9,8 @@ summary: "Ber\xE4kning av framtida eller f\xF6rflutna datum \xE4r en process att
   gga till eller dra fr\xE5n ett givet datum. Programmerare g\xF6r detta f\xF6r att\
   \ hantera\u2026"
 title: "Ber\xE4kna ett datum i framtiden eller f\xF6rflutenheten"
+weight: 26
 ---
-
-{{< edit_this_page >}}
 
 ## Vad & Varför?
 Beräkning av framtida eller förflutna datum är en process att lägga till eller dra från ett givet datum. Programmerare gör detta för att hantera deadlines, agendor eller tidsbaserade funktioner i appar.

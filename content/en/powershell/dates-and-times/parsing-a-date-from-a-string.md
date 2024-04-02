@@ -7,9 +7,8 @@ model: gpt-4-0125-preview
 summary: "Parsing a date from a string is about recognizing and converting written\
   \ dates in text form into a date data type that PowerShell can understand and work\u2026"
 title: Parsing a date from a string
+weight: 30
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 Parsing a date from a string is about recognizing and converting written dates in text form into a date data type that PowerShell can understand and work with. Programmers do this to manipulate, format, compare, or calculate dates, which are common tasks in scripts dealing with log files, user input, or data processing.

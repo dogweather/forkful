@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Het maken van een tijdelijk bestand in Dart houdt in dat je een bestand\
   \ genereert dat bedoeld is voor kortstondig gebruik, voornamelijk voor scenario's\u2026"
 title: Een tijdelijk bestand aanmaken
+weight: 21
 ---
-
-{{< edit_this_page >}}
 
 ## Wat & Waarom?
 Het maken van een tijdelijk bestand in Dart houdt in dat je een bestand genereert dat bedoeld is voor kortstondig gebruik, voornamelijk voor scenario's zoals het cachen van gegevens, tijdelijke opslag voor bestandsverwerking, of het bewaren van informatie die te gevoelig is om lang te bewaren. Programmeurs doen dit om gegevens te beheren die geen permanente opslag nodig hebben, waardoor de prestaties worden verbeterd en de gegevenshygiëne wordt onderhouden.

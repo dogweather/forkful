@@ -7,9 +7,8 @@ model: gpt-4-0125-preview
 summary: "Working with XML in C involves parsing, querying, and manipulating XML documents\
   \ using various libraries. Programmers engage with XML due to its\u2026"
 title: Working with XML
+weight: 40
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 

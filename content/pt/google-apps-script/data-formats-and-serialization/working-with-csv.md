@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Trabalhar com arquivos CSV (Valores Separados por V\xEDrgulas) no Google\
   \ Apps Script envolve ler, modificar e escrever arquivos de texto simples onde cada\u2026"
 title: Trabalhando com CSV
+weight: 37
 ---
-
-{{< edit_this_page >}}
 
 ## O que & Por quê?
 

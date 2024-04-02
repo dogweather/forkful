@@ -9,9 +9,8 @@ summary: "El registro de eventos, en esencia, es la pr\xE1ctica de grabar evento
   \ y datos de una aplicaci\xF3n de software a una salida externa, como un archivo\
   \ o\u2026"
 title: Registro de Actividades
+weight: 17
 ---
-
-{{< edit_this_page >}}
 
 ## ¿Qué y por qué?
 

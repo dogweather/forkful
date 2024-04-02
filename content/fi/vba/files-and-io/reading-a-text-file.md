@@ -11,9 +11,8 @@ summary: "Tekstitiedoston lukeminen Visual Basic for Applications (VBA) -ohjelma
   \ sis\xE4lt\xE4\xE4 ohjelmakoodin avulla teht\xE4v\xE4n p\xE4\xE4syn ja tiedoston\
   \ sis\xE4ll\xF6n purkamisen\u2026"
 title: Tekstitiedoston lukeminen
+weight: 22
 ---
-
-{{< edit_this_page >}}
 
 ## Mikä & Miksi?
 

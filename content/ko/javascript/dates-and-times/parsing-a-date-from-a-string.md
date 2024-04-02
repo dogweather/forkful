@@ -23,9 +23,8 @@ summary: "\uBB38\uC790\uC5F4\uC5D0\uC11C \uB0A0\uC9DC\uB97C \uD30C\uC2F1\uD558\u
   \uC2A4\uC5D0\uC11C \uB370\uC774\uD130\uB97C \uCC98\uB9AC\uD558\uAC70\uB098, \uBB38\
   \uC790\uC5F4 \uD615\uC2DD\uC73C\uB85C \uB0A0\uC9DC\uB97C\u2026"
 title: "\uBB38\uC790\uC5F4\uC5D0\uC11C \uB0A0\uC9DC \uBD84\uC11D\uD558\uAE30"
+weight: 30
 ---
-
-{{< edit_this_page >}}
 
 ## 무엇 & 왜?
 문자열에서 날짜를 파싱하는 것은 프로그래머들이 텍스트 형태의 날짜 표현을 자바스크립트 `Date` 객체로 변환하여 날짜 조작, 비교, 포매팅 작업을 용이하게 하기 위함입니다. 이 과정은 사용자 입력을 처리하거나, 데이터베이스에서 데이터를 처리하거나, 문자열 형식으로 날짜를 통신하는 API와 작업할 때 필수적입니다.

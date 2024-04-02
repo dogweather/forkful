@@ -9,9 +9,8 @@ summary: "Luodaan v\xE4liaikainen tiedosto \u2013 se on tiedosto, joka poistuu a
   \ kun sit\xE4 ei en\xE4\xE4 tarvita. Ohjelmoijat tekev\xE4t n\xE4in tilap\xE4isen\
   \ tallennustilan\u2026"
 title: "V\xE4liaikaistiedoston luominen"
+weight: 21
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why? (Mitä & Miksi?)
 Luodaan väliaikainen tiedosto – se on tiedosto, joka poistuu automaattisesti, kun sitä ei enää tarvita. Ohjelmoijat tekevät näin tilapäisen tallennustilan tarpeessa ja turvallisuussyistä, kuten salasanojen käsittelyssä.

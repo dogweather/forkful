@@ -7,9 +7,8 @@ model: gpt-4-1106-preview
 summary: "Substringit ovat osia isommista tekstijonoista. K\xE4yt\xE4mme substringien\
   \ irrottamista, kun haluamme prosessoida tai analysoida pienempi\xE4 tietoja, kuten\u2026"
 title: Merkkijonojen osien poimiminen
+weight: 6
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why? / Mikä & Miksi?
 Substringit ovat osia isommista tekstijonoista. Käytämme substringien irrottamista, kun haluamme prosessoida tai analysoida pienempiä tietoja, kuten käyttäjänimen sähköpostiosoitteesta.

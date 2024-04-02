@@ -10,9 +10,8 @@ model: gpt-4-0125-preview
 summary: "Ottenere la data corrente in Google Apps Script riguarda il recupero della\
   \ data e dell'ora attuali, un compito comune per l'automazione di compiti, la\u2026"
 title: Ottenere la data corrente
+weight: 29
 ---
-
-{{< edit_this_page >}}
 
 ## Cosa e Perché?
 

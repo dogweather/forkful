@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Het berekenen van een toekomstige of verleden datum houdt in dat je met\
   \ datums speelt om erachter te komen welke dag het was of zal zijn. Programmeurs\u2026"
 title: Een datum in de toekomst of het verleden berekenen
+weight: 26
 ---
-
-{{< edit_this_page >}}
 
 ## Wat & Waarom?
 Het berekenen van een toekomstige of verleden datum houdt in dat je met datums speelt om erachter te komen welke dag het was of zal zijn. Programmeurs doen dit voor het plannen, herinneringen, of het bepalen van duur en deadlines.

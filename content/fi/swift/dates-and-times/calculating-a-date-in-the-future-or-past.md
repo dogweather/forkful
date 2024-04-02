@@ -9,9 +9,8 @@ summary: "Laskemme tulevaisuuden tai menneisyyden p\xE4iv\xE4m\xE4\xE4ri\xE4 ohj
   \ usein. Syyt voivat olla k\xE4ytt\xE4j\xE4n muistuttaminen, ajan kulumisen seuranta,\
   \ tai\u2026"
 title: "Tulevan tai menneen p\xE4iv\xE4m\xE4\xE4r\xE4n laskeminen"
+weight: 26
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why? (Mitä & Miksi?)
 Laskemme tulevaisuuden tai menneisyyden päivämääriä ohjelmoinnissa usein. Syyt voivat olla käyttäjän muistuttaminen, ajan kulumisen seuranta, tai päivämäärien vertailu.

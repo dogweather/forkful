@@ -21,9 +21,8 @@ summary: "\uB300\uD654\uD615 \uC258 \uB610\uB294 Read-Eval-Print Loop (REPL)\uC7
   \uC6A9\uC801\uC774\uACE0 \uBC18\uBCF5\uC801\uC778 \uD658\uACBD\uC5D0\uC11C \uB514\
   \uBC84\uAE45\uC744\u2026"
 title: "\uC778\uD130\uB799\uD2F0\uBE0C \uC178(REPL) \uC0AC\uC6A9\uD558\uAE30"
+weight: 34
 ---
-
-{{< edit_this_page >}}
 
 ## 무엇인가 & 왜인가?
 

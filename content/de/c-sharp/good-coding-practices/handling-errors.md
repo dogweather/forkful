@@ -9,9 +9,8 @@ summary: "Die Fehlerbehandlung in C# dient dazu, das Unerwartete zu bew\xE4ltige
   \ \u2013 so wie \xFCber eigene Schn\xFCrsenkel zu stolpern. Programme k\xF6nnen\
   \ \xFCber schlechte Daten\u2026"
 title: Fehlerbehandlung
+weight: 16
 ---
-
-{{< edit_this_page >}}
 
 ## Was & Warum?
 

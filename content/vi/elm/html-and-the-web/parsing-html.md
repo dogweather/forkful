@@ -13,9 +13,8 @@ summary: "Vi\u1EC7c ph\xE2n t\xEDch c\xFA ph\xE1p HTML c\xF3 ngh\u0129a l\xE0 ch
   \ li\u1EC7u m\xE0 ch\u01B0\u01A1ng tr\xECnh c\u1EE7a b\u1EA1n c\xF3 th\u1EC3 t\u01B0\
   \u01A1ng t\xE1c \u0111\u01B0\u1EE3c. C\xE1c l\u1EADp tr\xECnh\u2026"
 title: "Ph\xE2n T\xEDch C\xFA Ph\xE1p HTML"
+weight: 43
 ---
-
-{{< edit_this_page >}}
 
 ## Cái Gì & Tại Sao?
 Việc phân tích cú pháp HTML có nghĩa là chuyển đổi văn bản HTML thành một cấu trúc dữ liệu mà chương trình của bạn có thể tương tác được. Các lập trình viên làm việc này để thao tác, trích xuất và tương tác với nội dung của các trang web một cách lập trình.

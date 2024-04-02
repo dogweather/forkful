@@ -13,9 +13,8 @@ summary: "Vi\u1EC7c t\u1EA1o m\u1ED9t t\u1EC7p t\u1EA1m th\u1EDDi trong Visual B
   ng qua l\u1EADp tr\xECnh d\xF9ng cho m\u1EE5c \u0111\xEDch ng\u1EAFn h\u1EA1n, th\u01B0\
   \u1EDDng l\xE0\u2026"
 title: "T\u1EA1o m\u1ED9t t\u1EC7p t\u1EA1m th\u1EDDi"
+weight: 21
 ---
-
-{{< edit_this_page >}}
 
 ## Cái gì & Tại sao?
 

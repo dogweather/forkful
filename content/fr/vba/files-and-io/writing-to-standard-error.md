@@ -11,9 +11,8 @@ summary: "\xC9crire sur l'erreur standard en Visual Basic pour Applications (VBA
   \ consiste \xE0 diriger les messages d'erreur ou les diagnostics \xE0 part de la\
   \ sortie\u2026"
 title: "\xC9crire sur l'erreur standard"
+weight: 25
 ---
-
-{{< edit_this_page >}}
 
 ## Quoi et Pourquoi ?
 

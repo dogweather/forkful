@@ -11,9 +11,8 @@ summary: "Das Abrufen des aktuellen Datums in der Programmierung ist aus einer V
   \ von Gr\xFCnden entscheidend, einschlie\xDFlich Protokollierung, Zeitstempelung\
   \ von\u2026"
 title: Den aktuellen Datum abrufen
+weight: 29
 ---
-
-{{< edit_this_page >}}
 
 ## Was & Warum?
 Das Abrufen des aktuellen Datums in der Programmierung ist aus einer Vielzahl von Gründen entscheidend, einschließlich Protokollierung, Zeitstempelung von Ereignissen und Planen von Aufgaben. In Clojure, einem Lisp-Dialekt auf der JVM, nutzt diese Aufgabe die Java-Interop-Fähigkeiten, die einen unkomplizierten Zugang zur umfangreichen Java Date-Time API ermöglichen.

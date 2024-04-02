@@ -9,9 +9,8 @@ summary: "Drukowanie informacji debugowych to spos\xF3b na wypisywanie danych po
   cych zrozumie\u0107 dzia\u0142anie kodu. Robimy to, aby szybko znale\u017A\u0107\
   \ i naprawi\u0107 b\u0142\u0119dy."
 title: "Drukowanie komunikat\xF3w debugowania"
+weight: 33
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why? (Co i Dlaczego?)
 Drukowanie informacji debugowych to sposób na wypisywanie danych pomagających zrozumieć działanie kodu. Robimy to, aby szybko znaleźć i naprawić błędy.

@@ -11,9 +11,8 @@ summary: "Merkkijonon suurkirjoittaminen tarkoittaa jokaisen sanan ensimm\xE4ise
   \ merkin muuntamista suuraakkoseksi samalla varmistaen, ett\xE4 loput merkit s\xE4\
   ilyv\xE4t\u2026"
 title: Merkkijonon muuttaminen isoiksi kirjaimiksi
+weight: 2
 ---
-
-{{< edit_this_page >}}
 
 ## Mitä & Miksi?
 Merkkijonon suurkirjoittaminen tarkoittaa jokaisen sanan ensimmäisen merkin muuntamista suuraakkoseksi samalla varmistaen, että loput merkit säilyvät pienaakkosina. Tämä operaatio on yleinen tiedon muotoilussa ja käyttäjän syötteen normalisoinnissa ylläpitämään johdonmukaisuutta ja parantamaan luettavuutta.

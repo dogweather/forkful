@@ -9,9 +9,8 @@ summary: "Por\xF3wnywanie dat to sprawdzanie, kt\xF3ra data jest wcze\u015Bniejs
   \ p\xF3\u017Aniejsza, czy r\xF3wna drugiej. Programi\u015Bci robi\u0105 to, aby\
   \ zarz\u0105dza\u0107 wydarzeniami, logami czy\u2026"
 title: "Por\xF3wnywanie dw\xF3ch dat"
+weight: 27
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why? (Co i Dlaczego?)
 Porównywanie dat to sprawdzanie, która data jest wcześniejsza, późniejsza, czy równa drugiej. Programiści robią to, aby zarządzać wydarzeniami, logami czy ważnością danych.

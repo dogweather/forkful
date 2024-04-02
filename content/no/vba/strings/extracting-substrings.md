@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "\xC5 trekke ut delstrenger i Visual Basic for Applications (VBA) inneb\xE6\
   rer \xE5 isolere spesifikke deler av en streng basert p\xE5 gitte kriterier. Programmerere\u2026"
 title: Uttrekking av delstrenger
+weight: 6
 ---
-
-{{< edit_this_page >}}
 
 ## Hva og hvorfor?
 

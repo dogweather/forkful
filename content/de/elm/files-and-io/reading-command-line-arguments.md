@@ -8,9 +8,8 @@ model: gpt-4-1106-preview
 summary: "Kommandozeilenargumente lesen bedeutet, Parameter von der Shell ins Programm\
   \ zu \xFCbertragen. Programmierer nutzen es, um Einstellungen zu steuern oder\u2026"
 title: Lesen von Kommandozeilenargumenten
+weight: 23
 ---
-
-{{< edit_this_page >}}
 
 ## Was & Warum?
 

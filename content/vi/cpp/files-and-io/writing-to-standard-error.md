@@ -13,9 +13,8 @@ summary: "Vi\u1EC7c ghi v\xE0o l\u1ED7i chu\u1EA9n (`stderr`) c\xF3 ngh\u0129a l
   n \u0111\u1EBFn m\u1ED9t lu\u1ED3ng ri\xEAng bi\u1EC7t, t\xE1ch bi\u1EC7t kh\u1ECF\
   i \u0111\u1EA7u ra th\u01B0\u1EDDng\u2026"
 title: "Ghi v\xE0o l\u1ED7i chu\u1EA9n"
+weight: 25
 ---
-
-{{< edit_this_page >}}
 
 ## Gì & Tại sao?
 Việc ghi vào lỗi chuẩn (`stderr`) có nghĩa là gửi các thông báo lỗi và thông tin chẩn đoán đến một luồng riêng biệt, tách biệt khỏi đầu ra thường (`stdout`). Các lập trình viên làm điều này để tách biệt rõ ràng đầu ra bình thường khỏi các lỗi, làm cho việc xử lý và gỡ lỗi chương trình dễ dàng hơn.

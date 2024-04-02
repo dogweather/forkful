@@ -9,9 +9,8 @@ summary: "Working with JSON in Swift means dealing with a lightweight data forma
   \ for data interchange. Programmers use JSON to transmit data between a server and\
   \ a\u2026"
 title: Working with JSON
+weight: 38
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 

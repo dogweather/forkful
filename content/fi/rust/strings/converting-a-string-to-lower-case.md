@@ -7,9 +7,8 @@ model: gpt-4-1106-preview
 summary: "\"Mik\xE4 & Miksi?\" Muuttaa merkkijonon pieniksi kirjaimiksi. T\xE4m\xE4\
   \ helpottaa vertailua ja hakua, koska isot ja pienet kirjaimet kohdellaan samoin."
 title: Merkkijonon muuntaminen pieniksi kirjaimiksi
+weight: 4
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 "Mikä & Miksi?"

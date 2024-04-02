@@ -11,9 +11,8 @@ summary: "Associativa arrayer, som oftare kallas hashar i Ruby, g\xF6r det m\xF6
   \ att para ihop unika nycklar med v\xE4rden. De \xE4r oumb\xE4rliga n\xE4r du beh\xF6\
   ver h\xE5lla reda\u2026"
 title: "Att anv\xE4nda associativa arrayer"
+weight: 15
 ---
-
-{{< edit_this_page >}}
 
 ## Vad & Varför?
 

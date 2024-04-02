@@ -7,9 +7,8 @@ model: gpt-4-1106-preview
 summary: "Converting a string to lowercase means making every character in the string\
   \ a small letter. Programmers do it for consistency, especially for case-\u2026"
 title: Converting a string to lower case
+weight: 4
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 Converting a string to lowercase means making every character in the string a small letter. Programmers do it for consistency, especially for case-insensitive comparisons, such as when checking user input against a list of commands or stored data.

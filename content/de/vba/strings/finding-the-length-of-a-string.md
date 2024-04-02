@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Die Ermittlung der L\xE4nge eines Strings in Visual Basic for Applications\
   \ (VBA) umfasst die Bestimmung der Anzahl der Zeichen, die er enth\xE4lt. Programmierer\u2026"
 title: "Die L\xE4nge eines Strings ermitteln"
+weight: 7
 ---
-
-{{< edit_this_page >}}
 
 ## Was & Warum?
 

@@ -9,9 +9,8 @@ summary: "\"Mik\xE4 & Miksi?\" Ajan laskeminen tulevaisuuteen tai menneisyyteen 
   \ p\xE4iv\xE4m\xE4\xE4r\xE4n laskemista n p\xE4iv\xE4\xE4, viikkoa, kuukautta tai\
   \ vuotta ennen tai\u2026"
 title: "Tulevan tai menneen p\xE4iv\xE4m\xE4\xE4r\xE4n laskeminen"
+weight: 26
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 "Mikä & Miksi?"

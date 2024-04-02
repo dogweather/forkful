@@ -10,9 +10,8 @@ model: gpt-4-0125-preview
 summary: "Los arreglos asociativos en PHP son como listas supercargadas donde cada\
   \ elemento se puede acceder utilizando una clave legible por humanos en lugar de\u2026"
 title: Uso de matrices asociativas
+weight: 15
 ---
-
-{{< edit_this_page >}}
 
 ## ¿Qué y por qué?
 

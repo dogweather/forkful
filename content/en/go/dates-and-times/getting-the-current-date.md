@@ -7,9 +7,8 @@ model: gpt-4-0125-preview
 summary: "Getting the current date in Go is a fundamental task for programmers, akin\
   \ to \"Hello, World!\" in its ubiquity. It's essential for tasks ranging from\u2026"
 title: Getting the current date
+weight: 29
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 

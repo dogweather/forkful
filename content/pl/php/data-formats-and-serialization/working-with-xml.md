@@ -9,9 +9,8 @@ summary: "XML to j\u0119zyk znacznik\xF3w u\u017Cywany do przechowywania i trans
   \ danych. Programi\u015Bci pracuj\u0105 z XML, aby umo\u017Cliwi\u0107 interoperacyjno\u015B\
   \u0107 mi\u0119dzy aplikacjami i\u2026"
 title: Praca z XML
+weight: 40
 ---
-
-{{< edit_this_page >}}
 
 ## Co i dlaczego?
 XML to język znaczników używany do przechowywania i transportu danych. Programiści pracują z XML, aby umożliwić interoperacyjność między aplikacjami i systemami - myśl o wymianie danych i ustawieniach konfiguracyjnych.

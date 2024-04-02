@@ -15,9 +15,8 @@ summary: "L\xE0m tr\xF2n s\u1ED1 ngh\u0129a l\xE0 \u0111i\u1EC1u ch\u1EC9nh ch\x
   nh x\xE1c nh\u1EA5t \u0111\u1ECBnh. Vi\u1EC7c l\xE0m n\xE0y h\u1EEFu \xEDch cho\
   \ vi\u1EC7c\u2026"
 title: "L\xE0m tr\xF2n s\u1ED1"
+weight: 13
 ---
-
-{{< edit_this_page >}}
 
 ## Cái gì & Tại sao?
 Làm tròn số nghĩa là điều chỉnh chúng về một giá trị gần nhất để đơn giản hóa hoặc phù hợp với một độ chính xác nhất định. Việc làm này hữu ích cho việc cải thiện khả năng đọc, giảm dung lượng lưu trữ, hoặc đáp ứng nhu cầu cụ thể của lĩnh vực, như tính toán tiền bạc khi bạn muốn làm tròn đến phần trăm gần nhất.

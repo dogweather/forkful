@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Eliminar caracteres que coinciden con un patr\xF3n espec\xEDfico en Visual\
   \ Basic para Aplicaciones (VBA) implica identificar y posteriormente eliminar\u2026"
 title: "Eliminando caracteres que coinciden con un patr\xF3n"
+weight: 5
 ---
-
-{{< edit_this_page >}}
 
 ## Qué y Por Qué?
 

@@ -9,9 +9,8 @@ summary: "Nettsider lastes ned for \xE5 hente og bruke data eller innhold uten e
   \ nettleser. Programmerere gj\xF8r dette for \xE5 analysere informasjonen, teste\
   \ nettsider\u2026"
 title: Nedlasting av en nettside
+weight: 42
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 Nettsider lastes ned for å hente og bruke data eller innhold uten en nettleser. Programmerere gjør dette for å analysere informasjonen, teste nettsider eller integrere data i egne applikasjoner.

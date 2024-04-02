@@ -11,9 +11,8 @@ summary: "Att erh\xE5lla dagens datum i Java \xE4r en grundl\xE4ggande operation
   \ till\xE5ter programmerare att manipulera datumobjekt f\xF6r operationer s\xE5\
   som loggning,\u2026"
 title: "F\xE5 det aktuella datumet"
+weight: 29
 ---
-
-{{< edit_this_page >}}
 
 ## Vad & Varför?
 Att erhålla dagens datum i Java är en grundläggande operation som tillåter programmerare att manipulera datumobjekt för operationer såsom loggning, datumberäkningar och tidsbaserade villkor. Det är avgörande i applikationer där spårning, schemaläggning och analys av tidsdata är kritiskt.

@@ -8,9 +8,8 @@ model: gpt-4-1106-preview
 summary: "La stampa dei messaggi di debug \xE8 un modo per tracciare cosa sta succedendo\
   \ nel tuo script. I programmatori la usano per capire il comportamento del\u2026"
 title: Stampa dell'output di debug
+weight: 33
 ---
-
-{{< edit_this_page >}}
 
 ## Che cosa e perché?
 La stampa dei messaggi di debug è un modo per tracciare cosa sta succedendo nel tuo script. I programmatori la usano per capire il comportamento del codice e scovare gli errori.

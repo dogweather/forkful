@@ -9,9 +9,8 @@ summary: "(Kiedy i dlaczego?) Przekszta\u0142canie daty na \u0142a\u0144cuch zna
   w to proces formatowania obiektu daty w spos\xF3b czytelny dla cz\u0142owieka. Programi\u015B\
   ci to robi\u0105, aby\u2026"
 title: "Konwersja daty na \u0142a\u0144cuch znak\xF3w"
+weight: 28
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 (Kiedy i dlaczego?)

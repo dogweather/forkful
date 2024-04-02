@@ -9,9 +9,8 @@ summary: "Trabalhar com XML envolve o parseamento, extra\xE7\xE3o e manipula\xE7
   o de dados no formato da Linguagem de Marca\xE7\xE3o Extens\xEDvel. Programadores\
   \ lidam com o XML j\xE1\u2026"
 title: Trabalhando com XML
+weight: 40
 ---
-
-{{< edit_this_page >}}
 
 ## O Que & Por Quê?
 Trabalhar com XML envolve o parseamento, extração e manipulação de dados no formato da Linguagem de Marcação Extensível. Programadores lidam com o XML já que ele é um formato de troca de dados amplamente utilizado para configurações, APIs e mais.

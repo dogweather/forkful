@@ -11,9 +11,8 @@ summary: "Enviar uma requisi\xE7\xE3o HTTP no Google Apps Script \xE9 sobre faze
   \ uma chamada program\xE1tica para um servidor web externo ou API. Programadores\
   \ fazem isso para\u2026"
 title: "Enviando uma solicita\xE7\xE3o HTTP"
+weight: 44
 ---
-
-{{< edit_this_page >}}
 
 ## O Que & Por Quê?
 

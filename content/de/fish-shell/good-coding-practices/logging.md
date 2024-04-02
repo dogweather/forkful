@@ -8,9 +8,8 @@ model: gpt-4-1106-preview
 summary: "Logging ist im Grunde das Festhalten, was Ihre Anwendung gerade macht \u2013\
   \ ein Tagebuch, wenn man so will, aber f\xFCr Code. Programmierer tun dies, um den\u2026"
 title: Protokollierung
+weight: 17
 ---
-
-{{< edit_this_page >}}
 
 ## Was & Warum?
 Logging ist im Grunde das Festhalten, was Ihre Anwendung gerade macht – ein Tagebuch, wenn man so will, aber für Code. Programmierer tun dies, um den Überblick über die Details zu behalten, wie Zustandsänderungen, Systemereignisse und hartnäckige Fehler, und sicherzustellen, dass keine Störungen unbemerkt bleiben.

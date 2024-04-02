@@ -13,9 +13,8 @@ summary: "Vi\u1EC7c vi\u1EBFt tests trong l\u1EADp tr\xECnh ki\u1EC3m tra xem m\
   ng nh\u01B0 m\u1ED9t b\xE0i ki\u1EC3m tra cho c\xE1c h\xE0m c\u1EE7a b\u1EA1n. L\u1EAD\
   p tr\xECnh vi\xEAn vi\u1EBFt\u2026"
 title: "Vi\u1EBFt c\xE1c b\xE0i ki\u1EC3m tra"
+weight: 36
 ---
-
-{{< edit_this_page >}}
 
 ## Gì và Tại Sao?
 Việc viết tests trong lập trình kiểm tra xem mã có hoạt động như mong đợi hay không - giống như một bài kiểm tra cho các hàm của bạn. Lập trình viên viết tests để bắt lỗi sớm, tiết kiệm nhức đầu và tiền bạc.

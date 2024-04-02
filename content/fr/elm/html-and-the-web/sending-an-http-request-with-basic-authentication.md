@@ -8,9 +8,8 @@ model: gpt-4-1106-preview
 summary: "En Elm, envoyer une requ\xEAte HTTP avec une authentification de base consiste\
   \ \xE0 transmettre des identifiants (nom d'utilisateur et mot de passe) pour\u2026"
 title: "Envoi d'une requ\xEAte HTTP avec authentification de base"
+weight: 45
 ---
-
-{{< edit_this_page >}}
 
 ## Quoi & Pourquoi ?
 En Elm, envoyer une requête HTTP avec une authentification de base consiste à transmettre des identifiants (nom d'utilisateur et mot de passe) pour accéder à des ressources protégées. On le fait souvent pour interagir avec des API sécurisées qui nécessitent une identification.

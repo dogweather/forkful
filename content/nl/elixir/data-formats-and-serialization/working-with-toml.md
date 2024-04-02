@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Werken met TOML betekent het parseren en genereren van TOML (Tom's Obvious,\
   \ Minimal Language) gegevens met Elixir. Programmeurs gebruiken het om\u2026"
 title: Werken met TOML
+weight: 39
 ---
-
-{{< edit_this_page >}}
 
 ## Wat & Waarom?
 Werken met TOML betekent het parseren en genereren van TOML (Tom's Obvious, Minimal Language) gegevens met Elixir. Programmeurs gebruiken het om configuratiebestanden te verwerken omdat TOML leesbaar, eenvoudig te parsen is en goed overeenkomt met een hash datastructuur.

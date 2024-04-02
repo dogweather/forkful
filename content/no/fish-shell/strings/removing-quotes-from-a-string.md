@@ -9,9 +9,8 @@ summary: "\xC5 fjerne anf\xF8rselstegn fra en streng handler om \xE5 stripe bort
   \ irriterende enkle (' ') eller doble (\" \") anf\xF8rselstegnene fra tekstdataene\
   \ dine.\u2026"
 title: "Fjerne anf\xF8rselstegn fra en streng"
+weight: 9
 ---
-
-{{< edit_this_page >}}
 
 ## Hva & Hvorfor?
 

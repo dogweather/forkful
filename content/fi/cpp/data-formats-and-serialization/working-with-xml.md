@@ -9,9 +9,8 @@ summary: "XML:n (laajennettava merkint\xE4kieli) kanssa ty\xF6skentely tarkoitta
   \ XML-tietojen j\xE4sent\xE4mist\xE4, luomista ja manipulointia. Ohjelmoijat hallinnoivat\
   \ XML-\u2026"
 title: "XML:n k\xE4sittely"
+weight: 40
 ---
-
-{{< edit_this_page >}}
 
 ## Mikä ja miksi?
 XML:n (laajennettava merkintäkieli) kanssa työskentely tarkoittaa XML-tietojen jäsentämistä, luomista ja manipulointia. Ohjelmoijat hallinnoivat XML-tietoja käsitelläkseen rakenteistettua datanvaihtoa, konfiguraatiota ja muuta sen alusta-neutraalin luonteen vuoksi.

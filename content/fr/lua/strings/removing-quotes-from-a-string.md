@@ -7,9 +7,8 @@ model: gpt-4-0125-preview
 summary: "Retirer les guillemets d'une cha\xEEne de caract\xE8res signifie enlever\
   \ ces caract\xE8res de guillemets doubles ou simples qui enlacent votre texte. Les\u2026"
 title: "Retirer les guillemets d'une cha\xEEne"
+weight: 9
 ---
-
-{{< edit_this_page >}}
 
 ## Quoi et pourquoi ?
 Retirer les guillemets d'une chaîne de caractères signifie enlever ces caractères de guillemets doubles ou simples qui enlacent votre texte. Les programmeurs font cela pour assainir les entrées, simplifier l'analyse syntaxique, ou harmoniser des données qui pourraient être citées de manière inconsistante.

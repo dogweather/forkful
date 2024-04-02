@@ -7,9 +7,8 @@ model: gpt-4-1106-preview
 summary: "String lowercasing is transforming all alphabet characters in a string to\
   \ their lower case form. Programmers lower case strings for consistency,\u2026"
 title: Converting a string to lower case
+weight: 4
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 

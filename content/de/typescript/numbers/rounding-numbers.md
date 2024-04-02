@@ -7,9 +7,8 @@ model: gpt-4-0125-preview
 summary: "Das Runden von Zahlen ist das K\xFCrzen einer Zahl auf eine spezifische\
   \ Genauigkeit. Programmierer tun dies, um die numerische Ausgabe f\xFCr Lesbarkeit,\u2026"
 title: Zahlen runden
+weight: 13
 ---
-
-{{< edit_this_page >}}
 
 ## Was & Warum?
 Das Runden von Zahlen ist das Kürzen einer Zahl auf eine spezifische Genauigkeit. Programmierer tun dies, um die numerische Ausgabe für Lesbarkeit, Anzeigezwecke oder wenn eine spezifische Präzision nach Operationen, die Fließkommazahlen ergeben, erforderlich ist, zu kontrollieren.

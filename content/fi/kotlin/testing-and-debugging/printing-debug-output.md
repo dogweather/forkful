@@ -9,9 +9,8 @@ summary: "Mik\xE4 ja miksi? Debug-tulosteiden tulostaminen tarkoittaa koodin toi
   \ tarkkailua reaaliajassa. Kehitt\xE4j\xE4t k\xE4ytt\xE4v\xE4t sit\xE4 sovellusten\
   \ virheiden\u2026"
 title: "Virheenj\xE4ljitystulosteiden tulostaminen"
+weight: 33
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 Mikä ja miksi? Debug-tulosteiden tulostaminen tarkoittaa koodin toiminnan tarkkailua reaaliajassa. Kehittäjät käyttävät sitä sovellusten virheiden etsimiseen ja korjaamiseen.

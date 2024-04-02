@@ -7,9 +7,8 @@ model: gpt-4-1106-preview
 summary: "Iniziamo un nuovo progetto per dar vita alle nostre idee. Lo facciamo per\
   \ esplorare possibilit\xE0, risolvere problemi o creare qualcosa di unico."
 title: Avvio di un nuovo progetto
+weight: 1
 ---
-
-{{< edit_this_page >}}
 
 ## Cos'è e Perché?
 

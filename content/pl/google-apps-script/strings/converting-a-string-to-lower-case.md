@@ -11,9 +11,8 @@ summary: "Konwersja ci\u0105g\xF3w znak\xF3w na ma\u0142e litery w Google Apps S
   \ chmurowym j\u0119zyku skryptowym do automatyzacji zada\u0144 w produktach Google,\
   \ jest podstawowym\u2026"
 title: "Konwersja \u0142a\u0144cucha znak\xF3w na ma\u0142e litery"
+weight: 4
 ---
-
-{{< edit_this_page >}}
 
 ## Co i dlaczego?
 

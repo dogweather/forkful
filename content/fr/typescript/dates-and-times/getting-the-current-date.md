@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Obtenir la date courante en TypeScript, un langage construit sur JavaScript,\
   \ vous permet d'acc\xE9der et de manipuler les informations actuelles de date et\u2026"
 title: Obtenir la date actuelle
+weight: 29
 ---
-
-{{< edit_this_page >}}
 
 ## Quoi & Pourquoi ?
 Obtenir la date courante en TypeScript, un langage construit sur JavaScript, vous permet d'accéder et de manipuler les informations actuelles de date et d'heure. Les programmeurs ont souvent besoin de cette fonctionnalité pour créer des horodatages, planifier et autres caractéristiques sensibles au temps dans leurs applications.

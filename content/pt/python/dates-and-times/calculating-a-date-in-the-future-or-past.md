@@ -9,9 +9,8 @@ summary: "Calcular uma data futura ou passada significa simplesmente adicionar o
   \ subtrair dias, meses ou anos de uma data espec\xEDfica. Programadores fazem isso\
   \ para\u2026"
 title: Calculando uma data no futuro ou passado
+weight: 26
 ---
-
-{{< edit_this_page >}}
 
 ## O Que & Por Quê?
 Calcular uma data futura ou passada significa simplesmente adicionar ou subtrair dias, meses ou anos de uma data específica. Programadores fazem isso para funções como agendar eventos, gerar lembretes, ou calcular prazos.

@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Het verwijderen van tekens die overeenkomen met een patroon betekent specifieke\
   \ reeksen tekens uit een tekenreeks halen op basis van een gedefinieerd\u2026"
 title: Karakters verwijderen die overeenkomen met een patroon
+weight: 5
 ---
-
-{{< edit_this_page >}}
 
 ## Wat & Waarom?
 

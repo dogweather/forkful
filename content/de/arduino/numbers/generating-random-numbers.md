@@ -8,9 +8,8 @@ model: gpt-4-0125-preview
 summary: "Die Erzeugung zuf\xE4lliger Zahlen in Arduino-Projekten beinhaltet die Produktion\
   \ von Werten, die konzeptionell unvorhersehbar sind, was f\xFCr Anwendungen wie\u2026"
 title: Generierung von Zufallszahlen
+weight: 12
 ---
-
-{{< edit_this_page >}}
 
 ## Was & Warum?
 Die Erzeugung zufälliger Zahlen in Arduino-Projekten beinhaltet die Produktion von Werten, die konzeptionell unvorhersehbar sind, was für Anwendungen wie Spiele, Simulationen und Sicherheitssysteme entscheidend ist. Programmierer nutzen diese Technik, um Variabilität einzuführen oder Entscheidungen zu treffen, die nicht deterministisch sein sollten.

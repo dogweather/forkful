@@ -13,9 +13,8 @@ summary: "T\xE1i c\u1EA5u tr\xFAc l\xE0 qu\xE1 tr\xECnh t\xE1i c\u1EA5u tr\xFAc 
   i c\u1EE7a n\xF3, nh\u1EB1m m\u1EE5c \u0111\xEDch c\u1EA3i thi\u1EC7n c\xE1c thu\u1ED9\
   c t\xEDnh phi ch\u1EE9c n\u0103ng\u2026"
 title: "T\xE1i c\u1EA5u tr\xFAc m\xE3"
+weight: 19
 ---
-
-{{< edit_this_page >}}
 
 ## Cái gì & Tại sao?
 Tái cấu trúc là quá trình tái cấu trúc lại code hiện tại mà không thay đổi hành vi bên ngoài của nó, nhằm mục đích cải thiện các thuộc tính phi chức năng như tính dễ đọc và khả năng bảo trì. Lập trình viên thực hiện việc này để làm cho mã sạch hơn, dễ hiểu hơn và hiệu quả hơn, tạo điều kiện cho việc cập nhật trong tương lai và giảm rủi ro của lỗi.

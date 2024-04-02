@@ -21,9 +21,8 @@ summary: "PowerShell\uC5D0\uC11C \uD45C\uC900 \uC624\uB958(stderr)\uC5D0 \uC4F0\
   \uC5B4 \uAC1C\uBC1C\uC790\uAC00 \uC815\uC0C1 \uBA54\uC2DC\uC9C0\uC640 \uC624\uB958\
   \ \uBA54\uC2DC\uC9C0\uB97C\u2026"
 title: "\uD45C\uC900 \uC5D0\uB7EC\uC5D0 \uC4F0\uAE30"
+weight: 25
 ---
-
-{{< edit_this_page >}}
 
 ## 무엇이며 왜인가?
 

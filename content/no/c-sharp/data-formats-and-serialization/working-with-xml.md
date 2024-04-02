@@ -8,9 +8,8 @@ model: gpt-4-0125-preview
 summary: "XML (eXtensible Markup Language) handler om \xE5 strukturere data i et lesbart\
   \ format. Programmerere jobber med XML for konfigurasjon, datautveksling mellom\u2026"
 title: "\xC5 jobbe med XML"
+weight: 40
 ---
-
-{{< edit_this_page >}}
 
 ## Hva & Hvorfor?
 XML (eXtensible Markup Language) handler om å strukturere data i et lesbart format. Programmerere jobber med XML for konfigurasjon, datautveksling mellom apper, og der spesifikasjoner ber om det—tenk SOAP eller web-APIer.

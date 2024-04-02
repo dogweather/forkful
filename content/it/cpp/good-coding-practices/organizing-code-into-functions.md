@@ -9,9 +9,8 @@ summary: "Suddividere il codice in funzioni significa suddividere il codice in p
   \ pi\xF9 piccole e riutilizzabili. Lo facciamo per evitare ripetizioni, rendere\
   \ il\u2026"
 title: Organizzazione del codice in funzioni
+weight: 18
 ---
-
-{{< edit_this_page >}}
 
 ## Cosa e perché?
 Suddividere il codice in funzioni significa suddividere il codice in parti più piccole e riutilizzabili. Lo facciamo per evitare ripetizioni, rendere il nostro codice leggibile e semplificare il debug e il testing. Avere funzioni ben organizzate può essere come avere una scatola di strumenti ordinatamente etichettati, pronti per l'uso e la condivisione.

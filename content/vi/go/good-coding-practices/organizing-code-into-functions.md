@@ -13,9 +13,8 @@ summary: "Vi\u1EC7c t\u1ED5 ch\u1EE9c code th\xE0nh c\xE1c h\xE0m trong Go bao g
   \ d\u1EE5ng, m\xF4-\u0111un th\u1EF1c hi\u1EC7n c\xE1c nhi\u1EC7m v\u1EE5 c\u1EE5\
   \ th\u1EC3. Ph\u01B0\u01A1ng ph\xE1p\u2026"
 title: "S\u1EAFp x\u1EBFp m\xE3 l\u1EADp tr\xECnh v\xE0o trong h\xE0m"
+weight: 18
 ---
-
-{{< edit_this_page >}}
 
 ## Cái gì và Tại sao?
 

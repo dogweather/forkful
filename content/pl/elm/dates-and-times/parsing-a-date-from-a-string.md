@@ -11,9 +11,8 @@ summary: "Analiza daty z ci\u0105gu znak\xF3w w Elm polega na konwertowaniu info
   \ tekstowych przedstawiaj\u0105cych daty i czasy na format, kt\xF3ry Elm mo\u017C\
   e zrozumie\u0107 i\u2026"
 title: "Analiza sk\u0142adniowa daty z \u0142a\u0144cucha znak\xF3w"
+weight: 30
 ---
-
-{{< edit_this_page >}}
 
 ## Co i dlaczego?
 Analiza daty z ciągu znaków w Elm polega na konwertowaniu informacji tekstowych przedstawiających daty i czasy na format, który Elm może zrozumieć i manipulować, a konkretnie na typ `Date`. Ten proces jest kluczowy do obsługi danych wejściowych użytkownika, poprawnego lokalizowanego wyświetlania dat oraz wykonywania obliczeń związanych z datami, zapewniając, że aplikacje Elm mogą inteligentnie przetwarzać dane czasowe.

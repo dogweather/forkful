@@ -10,9 +10,8 @@ model: gpt-4-0125-preview
 summary: "Het versturen van een HTTP-verzoek met basisauthenticatie in Visual Basic\
   \ for Applications (VBA) gaat over het toegang krijgen tot webbronnen die zijn\u2026"
 title: Een HTTP-verzoek verzenden met basisauthenticatie
+weight: 45
 ---
-
-{{< edit_this_page >}}
 
 ## Wat & Waarom?
 

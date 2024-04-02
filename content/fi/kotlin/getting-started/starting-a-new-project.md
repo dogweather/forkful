@@ -7,9 +7,8 @@ model: gpt-4-1106-preview
 summary: "Uuden projektin aloittaminen on kuin puhtaan paperin ottaminen \u2013 mahdollisuus\
   \ luoda jotakin uutta. Koodarit tekev\xE4t sen ratkaistakseen ongelmia,\u2026"
 title: Uuden projektin aloittaminen
+weight: 1
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why? (Mitä & Miksi?)
 Uuden projektin aloittaminen on kuin puhtaan paperin ottaminen – mahdollisuus luoda jotakin uutta. Koodarit tekevät sen ratkaistakseen ongelmia, kokeillakseen ideoita tai oppiakseen uusia asioita.

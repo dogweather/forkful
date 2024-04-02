@@ -18,9 +18,8 @@ summary: "\u30C6\u30AD\u30B9\u30C8\u30D5\u30A1\u30A4\u30EB\u3092\u8AAD\u3080\u30
   \u306B\u5FC5\u8981\u3060\u304B\u3089\u3001\u30D5\u30A1\u30A4\u30EB\u8AAD\u307F\u8FBC\
   \u307F\u3092\u4F7F\u3046\u3002"
 title: "\u30C6\u30AD\u30B9\u30C8\u30D5\u30A1\u30A4\u30EB\u306E\u8AAD\u307F\u8FBC\u307F"
+weight: 22
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why? (何となぜ？)
 テキストファイルを読むってのは、ファイルの内容を表示したり、処理することだ。プログラマはデータ解析、スクリプト設定、自動化といったタスクに必要だから、ファイル読み込みを使う。

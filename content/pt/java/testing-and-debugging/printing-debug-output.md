@@ -9,9 +9,8 @@ summary: "No mundo da programa\xE7\xE3o, imprimir sa\xEDdas de depura\xE7\xE3o \
   \ o equivalente a uma l\xE2mpada que piscar quando algo errado acontece. \xC9 extremamente\
   \ \xFAtil: ajuda a\u2026"
 title: "Exibindo sa\xEDdas de depura\xE7\xE3o"
+weight: 33
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 No mundo da programação, imprimir saídas de depuração é o equivalente a uma lâmpada que piscar quando algo errado acontece. É extremamente útil: ajuda a entender o que está se passando no seu código e a encontrar bugs rapidinho.

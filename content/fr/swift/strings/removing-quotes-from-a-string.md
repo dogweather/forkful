@@ -8,9 +8,8 @@ model: gpt-4-0125-preview
 summary: "Supprimer les guillemets d'une cha\xEEne signifie retirer toutes les marques\
   \ de citation qui encadrent le contenu. Nous faisons cela pour assainir les\u2026"
 title: "Retirer les guillemets d'une cha\xEEne"
+weight: 9
 ---
-
-{{< edit_this_page >}}
 
 ## Quoi et pourquoi?
 

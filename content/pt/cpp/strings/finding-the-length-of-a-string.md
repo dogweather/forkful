@@ -9,9 +9,8 @@ summary: "N\xE3o h\xE1 enrola\xE7\xE3o: calcular o tamanho de uma string signifi
   \ descobrir quantos caracteres ela tem. Fazemos isso para manipular texto com precis\xE3\
   o, seja\u2026"
 title: Descobrindo o comprimento de uma string
+weight: 7
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 Não há enrolação: calcular o tamanho de uma string significa descobrir quantos caracteres ela tem. Fazemos isso para manipular texto com precisão, seja para slice, comparar ou validar dados.

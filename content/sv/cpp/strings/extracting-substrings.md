@@ -9,9 +9,8 @@ summary: "Att extrahera delstr\xE4ngar \xE4r processen att plocka ut specificera
   \ delar fr\xE5n en str\xE4ng. Programmerare g\xF6r detta f\xF6r att bearbeta, analysera\
   \ eller\u2026"
 title: "Extrahera delstr\xE4ngar"
+weight: 6
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why? (Vad & Varför?)
 Att extrahera delsträngar är processen att plocka ut specificerade delar från en sträng. Programmerare gör detta för att bearbeta, analysera eller modifiera textdata på ett flexibelt sätt.

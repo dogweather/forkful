@@ -8,9 +8,8 @@ model: gpt-4-1106-preview
 summary: "Calcular fechas futuras o pasadas implica a\xF1adir o quitar d\xEDas, meses\
   \ o a\xF1os a una fecha dada. Los programadores lo hacen para automatizar recordatorios,\u2026"
 title: Calcular una fecha en el futuro o pasado
+weight: 26
 ---
-
-{{< edit_this_page >}}
 
 ## ¿Qué y Por Qué?
 Calcular fechas futuras o pasadas implica añadir o quitar días, meses o años a una fecha dada. Los programadores lo hacen para automatizar recordatorios, tareas de mantenimiento, y vigilar plazos o caducidades. 

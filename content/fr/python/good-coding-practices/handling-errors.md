@@ -9,9 +9,8 @@ summary: "La gestion des erreurs en Python (ou dans tout autre langage de progra
   \ consiste \xE0 anticiper l'inattendu \u2013 c'est l'art de g\xE9rer avec gr\xE2\
   ce lorsque\u2026"
 title: Gestion des erreurs
+weight: 16
 ---
-
-{{< edit_this_page >}}
 
 ## Quoi & Pourquoi ?
 

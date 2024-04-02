@@ -7,9 +7,8 @@ model: gpt-4-1106-preview
 summary: "Inviare una richiesta HTTP significa chiedere dati o servizi da un server\
   \ web. I programmatori lo fanno per scaricare pagine, interagire con API o inviare\u2026"
 title: Inviare una richiesta http
+weight: 44
 ---
-
-{{< edit_this_page >}}
 
 ## Che cosa & Perché?
 Inviare una richiesta HTTP significa chiedere dati o servizi da un server web. I programmatori lo fanno per scaricare pagine, interagire con API o inviare dati a servizi online.

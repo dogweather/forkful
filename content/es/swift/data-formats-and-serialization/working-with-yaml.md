@@ -11,9 +11,8 @@ summary: "YAML, que significa \"YAML Ain't Markup Language\" (YAML no es un leng
   \ de marcado), es un est\xE1ndar de serializaci\xF3n de datos amigable para el ser\
   \ humano\u2026"
 title: Trabajando con YAML
+weight: 41
 ---
-
-{{< edit_this_page >}}
 
 ## ¿Qué y Por Qué?
 YAML, que significa "YAML Ain't Markup Language" (YAML no es un lenguaje de marcado), es un estándar de serialización de datos amigable para el ser humano utilizado en todos los lenguajes de programación. Los programadores lo utilizan para archivos de configuración, mensajería entre procesos y almacenamiento de datos porque su legibilidad es mucho más cercana al inglés llano comparado con otros formatos de datos como XML o JSON, lo que hace que sea más simple de entender y escribir.

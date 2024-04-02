@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Das Lesen einer Textdatei in Google Apps Script (GAS) umfasst den Zugriff\
   \ auf und das Extrahieren von Textdaten aus in Google Drive oder anderem\u2026"
 title: Eine Textdatei lesen
+weight: 22
 ---
-
-{{< edit_this_page >}}
 
 ## Was & Warum?
 

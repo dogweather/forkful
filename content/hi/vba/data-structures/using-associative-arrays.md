@@ -22,9 +22,8 @@ summary: "Visual Basic for Applications (VBA) \u092E\u0947\u0902, \u0938\u0939\u
   \u0947\u2026"
 title: "\u0938\u0939\u092F\u094B\u0917\u0940 \u0905\u0930\u0947 \u0915\u093E \u0909\
   \u092A\u092F\u094B\u0917 \u0915\u0930\u0928\u093E"
+weight: 15
 ---
-
-{{< edit_this_page >}}
 
 ## क्या और क्यों?
 

@@ -8,9 +8,8 @@ model: gpt-4-0125-preview
 summary: "TOML tarkoittaa Tom's Obvious, Minimal Language -kielt\xE4. Sit\xE4 k\xE4\
   ytet\xE4\xE4n konfiguraatiotiedostoihin, koska se on ihmisten luettavissa ja kirjoitettavissa\u2026"
 title: "Ty\xF6skentely TOML:n kanssa"
+weight: 39
 ---
-
-{{< edit_this_page >}}
 
 ## Mikä & Miksi?
 TOML tarkoittaa Tom's Obvious, Minimal Language -kieltä. Sitä käytetään konfiguraatiotiedostoihin, koska se on ihmisten luettavissa ja kirjoitettavissa helposti, mutta koneiden on myös helppo jäsentää sitä. Kehittäjät turvautuvat TOMLiin välttääkseen XML:n sekavuuden ja JSON:n kikkailut, kun he käsittelevät konfiguraatioita.

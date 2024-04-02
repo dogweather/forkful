@@ -9,9 +9,8 @@ summary: "Sammenkjede av strenger betyr \xE5 lime sammen to eller flere tekstbit
   \ ende til ende. Programmerere gj\xF8r dette for \xE5 bygge opp komplekse strenger\
   \ fra\u2026"
 title: "Sammensl\xE5ing av strenger"
+weight: 3
 ---
-
-{{< edit_this_page >}}
 
 ## Hva & Hvorfor?
 

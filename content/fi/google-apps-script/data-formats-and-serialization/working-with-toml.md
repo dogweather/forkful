@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "TOML, joka tarkoittaa Tom's Obvious, Minimal Language, on asetustiedostomuoto,\
   \ joka on helppo lukea sen selke\xE4n semantiikan ansiosta. Ohjelmoijat\u2026"
 title: "TOML:n kanssa ty\xF6skentely"
+weight: 39
 ---
-
-{{< edit_this_page >}}
 
 ## Mikä ja miksi?
 

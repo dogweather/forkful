@@ -7,9 +7,8 @@ model: gpt-4-0125-preview
 summary: "Die Arbeit mit XML umfasst das Parsen und Manipulieren von XML-Dokumenten\
   \ mithilfe von Code. Programmierer machen dies, um Daten in einem strukturierten,\u2026"
 title: Arbeiten mit XML
+weight: 40
 ---
-
-{{< edit_this_page >}}
 
 ## Was & Warum?
 Die Arbeit mit XML umfasst das Parsen und Manipulieren von XML-Dokumenten mithilfe von Code. Programmierer machen dies, um Daten in einem strukturierten, portablen Format zu lesen, zu schreiben und zu modifizieren, das weit verbreitet für Datenaustausch und Speicherung verwendet wird.

@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Das Abrufen des aktuellen Datums in Java ist eine grundlegende Operation,\
   \ die es Programmierern erm\xF6glicht, Datum-Objekte f\xFCr Operationen wie\u2026"
 title: Den aktuellen Datum abrufen
+weight: 29
 ---
-
-{{< edit_this_page >}}
 
 ## Was & Warum?
 Das Abrufen des aktuellen Datums in Java ist eine grundlegende Operation, die es Programmierern ermöglicht, Datum-Objekte für Operationen wie Protokollierung, Datumsberechnungen und zeitbasierte Bedingungen zu manipulieren. Es ist von entscheidender Bedeutung in Anwendungen, bei denen das Verfolgen, Planen und die Analyse zeitlicher Daten entscheidend sind.

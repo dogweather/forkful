@@ -15,9 +15,8 @@ summary: "B\u1EAFt \u0111\u1EA7u m\u1ED9t d\u1EF1 \xE1n m\u1EDBi v\u1EDBi Elixir
   i\u1EC1u n\xE0y \u0111\u1EC3 kh\u1EDFi \u0111\u1ED9ng m\u1ECDi th\u1EE9 v\u1EDB\
   i m\xE3\u2026"
 title: "B\u1EAFt \u0111\u1EA7u m\u1ED9t d\u1EF1 \xE1n m\u1EDBi"
+weight: 1
 ---
-
-{{< edit_this_page >}}
 
 ## Cái Gì & Tại Sao?
 Bắt đầu một dự án mới với Elixir có nghĩa là thiết lập một cấu trúc dự án Mix mới từ đầu. Các lập trình viên làm điều này để khởi động mọi thứ với mã nguồn được tổ chức bài bản và công cụ tự động, giúp xây dựng và kiểm thử ứng dụng Elixir một cách hiệu quả.

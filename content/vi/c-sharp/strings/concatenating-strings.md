@@ -13,9 +13,8 @@ summary: "N\u1ED1i chu\u1ED7i l\xE0 qu\xE1 tr\xECnh gh\xE9p c\xE1c chu\u1ED7i l\
   c hi\u1EC7n \u0111i\u1EC1u n\xE0y v\xEC th\u01B0\u1EDDng xuy\xEAn ch\xFAng ta c\u1EA7\
   n k\u1EBFt h\u1EE3p c\xE1c t\u1EEB ho\u1EB7c bi\u1EC3u\u2026"
 title: "N\u1ED1i chu\u1ED7i k\xFD t\u1EF1"
+weight: 3
 ---
-
-{{< edit_this_page >}}
 
 ## Cái gì & Tại sao?
 

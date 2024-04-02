@@ -8,9 +8,8 @@ model: gpt-4-1106-preview
 summary: "La registrazione (logging), in sostanza, \xE8 la pratica di annotare eventi\
   \ e dati da un'applicazione software su un output esterno, come un file o la\u2026"
 title: "Registrazione delle Attivit\xE0 (Logging)"
+weight: 17
 ---
-
-{{< edit_this_page >}}
 
 ## Cosa & Perché?
 

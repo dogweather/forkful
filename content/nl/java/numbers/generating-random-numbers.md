@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Random (willekeurige) getallen genereren gaat over het produceren van onvoorspelbare\
   \ sequenties of enkelvoudige waarden binnen een gedefinieerd bereik.\u2026"
 title: Willekeurige getallen genereren
+weight: 12
 ---
-
-{{< edit_this_page >}}
 
 ## Wat & Waarom?
 

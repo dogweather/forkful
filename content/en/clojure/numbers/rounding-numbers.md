@@ -7,9 +7,8 @@ model: gpt-4-1106-preview
 summary: "Rounding numbers is about tweaking a number to the nearest whole, or to\
   \ a certain decimal precision. We round numbers to simplify them for human\u2026"
 title: Rounding numbers
+weight: 13
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 Rounding numbers is about tweaking a number to the nearest whole, or to a certain decimal precision. We round numbers to simplify them for human readability, reduce computational load, or meet specific numerical requirements.

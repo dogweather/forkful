@@ -12,9 +12,8 @@ summary: "\u53D1\u9001HTTP\u8BF7\u6C42\u5C31\u662F\u8BA9\u4F60\u7684\u7A0B\u5E8F
   \u8FD9\u4E48\u505A\u4EE5\u83B7\u53D6\u8D44\u6599\u3001\u53D1\u9001\u6570\u636E\u3001\
   \u64CD\u4F5C\u8FDC\u7A0B\u670D\u52A1\u3002"
 title: "\u53D1\u51FA HTTP \u8BF7\u6C42"
+weight: 44
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why? 什么是HTTP请求以及为什么要用？
 发送HTTP请求就是让你的程序通过互联网与服务器交流。程序员这么做以获取资料、发送数据、操作远程服务。

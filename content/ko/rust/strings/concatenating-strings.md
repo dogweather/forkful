@@ -16,9 +16,8 @@ summary: "\uBB38\uC790\uC5F4 \uC5F0\uACB0(concatenating strings)\uC774\uB780, \u
   \ \uD6A8\uC728\uC801\uC73C\uB85C \uD558\uB824\uACE0 \uD504\uB85C\uADF8\uB798\uBA38\
   \uB294 \uBB38\uC790\uC5F4\uC744 \uC5F0\uACB0\uD574\uC694."
 title: "\uBB38\uC790\uC5F4 \uC5F0\uACB0\uD558\uAE30"
+weight: 3
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why? (무엇이며, 왜?)
 문자열 연결(concatenating strings)이란, 둘 이상의 문자열을 하나로 합치는 것을 뜻해요. 데이터를 하나로 모아서 출력하거나 데이터 처리를 효율적으로 하려고 프로그래머는 문자열을 연결해요.

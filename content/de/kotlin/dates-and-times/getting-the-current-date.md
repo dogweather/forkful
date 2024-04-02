@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "In der Programmierung ist das Abrufen des aktuellen Datums eine grundlegende\
   \ Aufgabe, die es Entwicklern erm\xF6glicht, auf das aktuelle Datum zuzugreifen,\u2026"
 title: Den aktuellen Datum abrufen
+weight: 29
 ---
-
-{{< edit_this_page >}}
 
 ## Was & Warum?
 In der Programmierung ist das Abrufen des aktuellen Datums eine grundlegende Aufgabe, die es Entwicklern ermöglicht, auf das aktuelle Datum zuzugreifen, es anzuzeigen oder damit zu arbeiten in ihren Anwendungen. Diese Fähigkeit ist entscheidend für alles, von der Protokollierung und Zeitstempelung von Ereignissen bis hin zu Berechnungen basierend auf Daten.

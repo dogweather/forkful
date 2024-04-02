@@ -9,9 +9,8 @@ summary: "Lire des arguments de ligne de commande, c'est r\xE9cup\xE9rer des don
   es fournies lorsque vous lancez votre programme. C'est crucial car \xE7a permet\
   \ aux\u2026"
 title: Lecture des arguments de ligne de commande
+weight: 23
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 Lire des arguments de ligne de commande, c'est récupérer des données fournies lorsque vous lancez votre programme. C'est crucial car ça permet aux utilisateurs de personnaliser l'exécution du programme sans changer le code.

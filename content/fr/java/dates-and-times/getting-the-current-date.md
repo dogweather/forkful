@@ -11,9 +11,8 @@ summary: "Obtenir la date actuelle en Java est une op\xE9ration fondamentale qui
   \ aux programmeurs de manipuler des objets de date pour des op\xE9rations telles\
   \ que\u2026"
 title: Obtenir la date actuelle
+weight: 29
 ---
-
-{{< edit_this_page >}}
 
 ## Quoi & Pourquoi ?
 Obtenir la date actuelle en Java est une opération fondamentale qui permet aux programmeurs de manipuler des objets de date pour des opérations telles que la journalisation, les calculs de dates et les conditions basées sur le temps. C'est essentiel dans les applications où le suivi, la planification et l'analyse des données temporelles sont cruciaux.

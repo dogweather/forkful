@@ -8,9 +8,8 @@ model: gpt-4-0125-preview
 summary: "Un REPL, ou Boucle Lire-\xC9valuer-Afficher, vous permet de taper du code\
   \ C# et de l'ex\xE9cuter interactivement. Les programmeurs l'utilisent pour des\u2026"
 title: Utilisation d'une console interactive (REPL)
+weight: 34
 ---
-
-{{< edit_this_page >}}
 
 ## Quoi & Pourquoi ?
 Un REPL, ou Boucle Lire-Évaluer-Afficher, vous permet de taper du code C# et de l'exécuter interactivement. Les programmeurs l'utilisent pour des expériences rapides, le débogage ou apprendre C#, sans le fardeau de configurer des projets complets.

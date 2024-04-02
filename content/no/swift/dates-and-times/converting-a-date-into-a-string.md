@@ -9,9 +9,8 @@ summary: "Konvertering av dato til streng gj\xF8r datoen menneskeleselig. Progra
   \ trenger dette for \xE5 vise datoer i apper og logger som folk faktisk forst\xE5\
   r."
 title: Konvertere en dato til en streng
+weight: 28
 ---
-
-{{< edit_this_page >}}
 
 ## Hva & Hvorfor?
 Konvertering av dato til streng gjør datoen menneskeleselig. Programmerere trenger dette for å vise datoer i apper og logger som folk faktisk forstår.

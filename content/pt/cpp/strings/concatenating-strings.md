@@ -9,9 +9,8 @@ summary: "Concatenar strings significa juntar duas ou mais sequ\xEAncias de cara
   \ em uma s\xF3. Programadores fazem isso para construir mensagens, gerar sa\xED\
   das\u2026"
 title: Concatenando strings
+weight: 3
 ---
-
-{{< edit_this_page >}}
 
 ## O Que É & Por Que?
 Concatenar strings significa juntar duas ou mais sequências de caracteres em uma só. Programadores fazem isso para construir mensagens, gerar saídas dinâmicas ou simplesmente reunir dados de diversas fontes.

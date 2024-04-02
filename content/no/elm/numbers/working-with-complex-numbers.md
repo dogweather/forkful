@@ -7,9 +7,8 @@ model: gpt-4-0125-preview
 summary: "Komplekse tall er en kombinasjon av reelle tall og imagin\xE6re tall, som\
   \ `a + bi`, der `i` er kvadratroten av -1. De er n\xF8kkelen i felt som\u2026"
 title: "\xC5 jobbe med komplekse tall"
+weight: 14
 ---
-
-{{< edit_this_page >}}
 
 ## Hva & Hvorfor?
 Komplekse tall er en kombinasjon av reelle tall og imaginære tall, som `a + bi`, der `i` er kvadratroten av -1. De er nøkkelen i felt som ingeniørvitenskap og fysikk for å løse problemer vanlige tall ikke kan røre.

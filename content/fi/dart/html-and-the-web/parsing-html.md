@@ -11,9 +11,8 @@ summary: "HTML:n j\xE4sent\xE4minen ohjelmoinnissa tarkoittaa tietojen kaivamist
   \ HTML-dokumenteista. Ohjelmoijat tekev\xE4t t\xE4m\xE4n vuorovaikuttaakseen tai\
   \ kaivaakseen\u2026"
 title: "HTML:n j\xE4sent\xE4minen"
+weight: 43
 ---
-
-{{< edit_this_page >}}
 
 ## Mikä & Miksi?
 HTML:n jäsentäminen ohjelmoinnissa tarkoittaa tietojen kaivamista HTML-dokumenteista. Ohjelmoijat tekevät tämän vuorovaikuttaakseen tai kaivaakseen verkkosisältöä tiedonkeruuta, testausta tai automatisointia varten, jopa silloin kun virallisia API:ja ei ole saatavilla.

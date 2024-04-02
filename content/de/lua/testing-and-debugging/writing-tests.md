@@ -11,9 +11,8 @@ summary: "Das Schreiben von Tests in der Programmierung bedeutet, kleine, separa
   \ Codeteile zu erstellen, um automatisch zu \xFCberpr\xFCfen, ob verschiedene Teile\
   \ Ihrer\u2026"
 title: Tests Schreiben
+weight: 36
 ---
-
-{{< edit_this_page >}}
 
 ## Was & Warum?
 

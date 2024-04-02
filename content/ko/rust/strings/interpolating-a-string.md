@@ -16,9 +16,8 @@ summary: "\uBB38\uC790\uC5F4\uC744 \uBCF4\uAC04\uD558\uB294 \uAC83\uC740 \uBB38\
   \uC801\uC73C\uB85C \uC0DD\uC131\uD558\uAE30 \uC704\uD574 \uC774\uB97C \uC0AC\uC6A9\
   \uD569\uB2C8\uB2E4."
 title: "\uBB38\uC790\uC5F4 \uBCF4\uAC04\uD558\uAE30"
+weight: 8
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why? (무엇이며 왜?)
 문자열을 보간하는 것은 문자열 안에 변수의 값을 집어넣는 과정입니다. 프로그래머들은 코드의 가독성을 높이고 문자열을 동적으로 생성하기 위해 이를 사용합니다.

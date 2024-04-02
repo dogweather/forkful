@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Debugoutput afdrukken is als een gesprek voeren met je code. Het gaat over\
   \ het invoegen van printfuncties om te tonen wat er onder de motorkap van je\u2026"
 title: Debug-output afdrukken
+weight: 33
 ---
-
-{{< edit_this_page >}}
 
 ## Wat & Waarom?
 

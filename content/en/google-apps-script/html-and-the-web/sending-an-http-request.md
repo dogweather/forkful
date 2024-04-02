@@ -9,9 +9,8 @@ summary: "Sending an HTTP request in Google Apps Script is about programmaticall
   \ making a call to an external web server or API. Programmers do this to retrieve\
   \ or\u2026"
 title: Sending an HTTP request
+weight: 44
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 

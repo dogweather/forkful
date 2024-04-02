@@ -7,9 +7,8 @@ model: gpt-4-0125-preview
 summary: "Working with JSON (JavaScript Object Notation) in Haskell involves parsing\
   \ JSON data into Haskell types and converting Haskell types back into JSON.\u2026"
 title: Working with JSON
+weight: 38
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 Working with JSON (JavaScript Object Notation) in Haskell involves parsing JSON data into Haskell types and converting Haskell types back into JSON. Programmers do this to enable their Haskell applications to exchange data with web services or APIs seamlessly, a common practice in modern software development for cross-platform data interchange.

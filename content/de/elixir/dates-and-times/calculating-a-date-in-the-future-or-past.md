@@ -7,9 +7,8 @@ model: gpt-4-1106-preview
 summary: "Datumskalkulation in der Zukunft oder Vergangenheit bedeutet, ein bestimmtes\
   \ Date aus einem Startdatum zu berechnen, indem Tage, Wochen oder Jahre\u2026"
 title: "Berechnung eines zuk\xFCnftigen oder vergangenen Datums"
+weight: 26
 ---
-
-{{< edit_this_page >}}
 
 ## Was & Warum?
 

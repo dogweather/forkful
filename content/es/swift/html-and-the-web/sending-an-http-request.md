@@ -8,9 +8,8 @@ model: gpt-4-1106-preview
 summary: "Cuando enviamos una solicitud HTTP, estamos comunic\xE1ndonos con un servidor\
   \ web para obtener, enviar o modificar datos. Lo hacemos todo el tiempo para\u2026"
 title: Enviando una solicitud http
+weight: 44
 ---
-
-{{< edit_this_page >}}
 
 ## Qué y Por Qué?
 

@@ -9,9 +9,8 @@ summary: "Tworzenie pliku tymczasowego to spos\xF3b na chwilowe przechowanie dan
   \ bez za\u015Bmiecania systemu. Programi\u015Bci robi\u0105 to, kiedy potrzebuj\u0105\
   \ szybkiego,\u2026"
 title: Tworzenie pliku tymczasowego
+weight: 21
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 Tworzenie pliku tymczasowego to sposób na chwilowe przechowanie danych bez zaśmiecania systemu. Programiści robią to, kiedy potrzebują szybkiego, bezpiecznego miejsca na małe ilości danych, które można łatwo usunąć.

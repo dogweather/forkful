@@ -7,9 +7,8 @@ model: gpt-4-1106-preview
 summary: "Complex numbers, comprised of a real and an imaginary part (like 3+4i),\
   \ are a staple in engineering and physics. Programmers work with them in\u2026"
 title: Working with complex numbers
+weight: 14
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 Complex numbers, comprised of a real and an imaginary part (like 3+4i), are a staple in engineering and physics. Programmers work with them in simulations, signal processing, and solving equations that don't play nice with just real numbers.

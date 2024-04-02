@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Nel contesto di Ruby, il testing si riferisce alla verifica che il codice\
   \ si comporti come previsto in varie condizioni. I programmatori scrivono test per\u2026"
 title: Scrivere test
+weight: 36
 ---
-
-{{< edit_this_page >}}
 
 ## Cos'è & Perché?
 Nel contesto di Ruby, il testing si riferisce alla verifica che il codice si comporti come previsto in varie condizioni. I programmatori scrivono test per assicurare la correttezza, prevenire regressioni e facilitare il refactoring, con l'obiettivo di realizzare applicazioni robuste e mantenibili.

@@ -7,9 +7,8 @@ model: gpt-4-1106-preview
 summary: "Iniziare un nuovo progetto in Elixir significa creare una base da cui far\
   \ evolvere il tuo codice. I programmatori aprono nuovi progetti per organizzare\u2026"
 title: Avvio di un nuovo progetto
+weight: 1
 ---
-
-{{< edit_this_page >}}
 
 ## Cosa e Perché?
 Iniziare un nuovo progetto in Elixir significa creare una base da cui far evolvere il tuo codice. I programmatori aprono nuovi progetti per organizzare meglio il codice, gestire le dipendenze, e sfruttare la potenza degli strumenti che vengono con il framework.

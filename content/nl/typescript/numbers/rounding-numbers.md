@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Rondgetallen is het bijsnijden van een getal naar een specifieke precisie.\
   \ Programmeurs doen dit om de numerieke uitvoer te beheersen voor leesbaarheid,\u2026"
 title: Afronden van getallen
+weight: 13
 ---
-
-{{< edit_this_page >}}
 
 ## Wat & Waarom?
 Rondgetallen is het bijsnijden van een getal naar een specifieke precisie. Programmeurs doen dit om de numerieke uitvoer te beheersen voor leesbaarheid, weergavedoeleinden of wanneer specifieke precisie vereist is na operaties die resultaten met zwevende komma opleveren.

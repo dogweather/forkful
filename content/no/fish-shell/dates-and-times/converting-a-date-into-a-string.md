@@ -9,9 +9,8 @@ summary: "\xC5 konvertere en dato til en streng betyr \xE5 endre dens format fra
   \ daterepresentasjonssystem til en tekstrepresentasjon. Programmerere gj\xF8r dette\
   \ for \xE5\u2026"
 title: Konvertere en dato til en streng
+weight: 28
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 

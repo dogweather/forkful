@@ -9,9 +9,8 @@ summary: "Dividir el c\xF3digo en funciones significa descomponer los scripts en
   \ m\xE1s peque\xF1os y reutilizables que realizan tareas espec\xEDficas. Hace que\
   \ el\u2026"
 title: "Organizando c\xF3digo en funciones"
+weight: 18
 ---
-
-{{< edit_this_page >}}
 
 ## ¿Qué y Por Qué?
 Dividir el código en funciones significa descomponer los scripts en bloques más pequeños y reutilizables que realizan tareas específicas. Hace que el código sea más limpio, más comprensible y más fácil de depurar.

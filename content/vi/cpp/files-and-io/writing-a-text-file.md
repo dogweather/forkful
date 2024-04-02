@@ -13,9 +13,8 @@ summary: "Vi\u1EBFt m\u1ED9t t\u1EC7p v\u0103n b\u1EA3n trong C++ c\xF3 ngh\u012
   u tr\u1EEF d\u1EEF li\u1EC7u v\u0103n b\u1EA3n. L\u1EADp tr\xECnh vi\xEAn th\u1EF1\
   c hi\u1EC7n \u0111\u1EC3 l\u01B0u tr\u1EEF d\u1EEF li\u1EC7u nh\u01B0 c\u1EA5u\u2026"
 title: "Vi\u1EBFt m\u1ED9t t\u1EC7p v\u0103n b\u1EA3n"
+weight: 24
 ---
-
-{{< edit_this_page >}}
 
 ## Điều gì và Tại sao?
 Viết một tệp văn bản trong C++ có nghĩa là tạo hoặc chỉnh sửa một tệp để lưu trữ dữ liệu văn bản. Lập trình viên thực hiện để lưu trữ dữ liệu như cấu hình, nhật ký, hoặc nội dung do người dùng tạo.

@@ -9,9 +9,8 @@ summary: "En interaktiv Rust-skal, eller REPL (Read-Eval-Print Loop), l\xE5ter d
   \ k\xF6ra Rust-kod p\xE5 flygande fot och se omedelbara resultat, perfekt f\xF6\
   r experiment\u2026"
 title: "Anv\xE4nda en interaktiv skal (REPL)"
+weight: 34
 ---
-
-{{< edit_this_page >}}
 
 ## Vad & Varför?
 En interaktiv Rust-skal, eller REPL (Read-Eval-Print Loop), låter dig köra Rust-kod på flygande fot och se omedelbara resultat, perfekt för experiment eller lärande. Programmerare använder det för att testa kodsnuttar, felsöka eller bara leka med språkets funktioner utan overhead av att kompilera ett helt projekt.

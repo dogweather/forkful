@@ -9,9 +9,8 @@ summary: "L'interpolation de cha\xEEnes permet d'ins\xE9rer des valeurs dans une
   ne de caract\xE8res. On l'utilise pour composer des messages dynamiques, lisibles\
   \ et\u2026"
 title: "Interpolation de cha\xEEnes de caract\xE8res"
+weight: 8
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 L'interpolation de chaînes permet d'insérer des valeurs dans une chaîne de caractères. On l'utilise pour composer des messages dynamiques, lisibles et personnalisables.

@@ -9,9 +9,8 @@ summary: "Datumber\xE4kningar \xE4r typ best\xE4mning av framtida eller f\xF6rg\
   ngna datum fr\xE5n en given punkt. Programmerare g\xF6r det f\xF6r att hantera bokningar,\
   \ p\xE5minnelser,\u2026"
 title: "Ber\xE4kna ett datum i framtiden eller f\xF6rflutenheten"
+weight: 26
 ---
-
-{{< edit_this_page >}}
 
 ## Vad & Varför?
 Datumberäkningar är typ bestämning av framtida eller förgångna datum från en given punkt. Programmerare gör det för att hantera bokningar, påminnelser, historiska data och tidsbaserade algoritmer.

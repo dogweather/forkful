@@ -10,9 +10,8 @@ model: gpt-4-0125-preview
 summary: "Stampare l'output di debug comporta il posizionamento strategico di istruzioni\
   \ di log nel codice per visualizzare i valori delle variabili, il flusso di\u2026"
 title: Stampa dell'output di debug
+weight: 33
 ---
-
-{{< edit_this_page >}}
 
 ## Cosa e perché?
 

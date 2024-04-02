@@ -10,9 +10,8 @@ model: gpt-4-0125-preview
 summary: "Het organiseren van code in functies gaat over het bundelen van stukjes\
   \ script om specifieke taken uit te voeren. We doen dit omdat het de code\u2026"
 title: Code organiseren in functies
+weight: 18
 ---
-
-{{< edit_this_page >}}
 
 ## Wat & Waarom?
 Het organiseren van code in functies gaat over het bundelen van stukjes script om specifieke taken uit te voeren. We doen dit omdat het de code makkelijker maakt om te lezen, te testen en te hergebruiken — niemand wil door een moeras van codespaghetti waden.

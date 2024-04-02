@@ -1,12 +1,13 @@
 ---
 date: 2024-01-25 20:50:03.292712-07:00
-description: "Using a debugger means diving into your code with tools designed to\
-  \ inspect, pause, and manipulate a program mid-execution. Programmers do it to chase\u2026"
+description: "Let's take a stroll with GHCi, Haskell's interactive environment that\
+  \ can act as a basic debugger. You fire it up with your Haskell code and start poking\u2026"
 lastmod: '2024-03-13T22:45:00.132579-06:00'
 model: gpt-4-1106-preview
-summary: "Using a debugger means diving into your code with tools designed to inspect,\
-  \ pause, and manipulate a program mid-execution. Programmers do it to chase\u2026"
+summary: "Let's take a stroll with GHCi, Haskell's interactive environment that can\
+  \ act as a basic debugger. You fire it up with your Haskell code and start poking\u2026"
 title: Using a debugger
+weight: 35
 ---
 
 ## How to:

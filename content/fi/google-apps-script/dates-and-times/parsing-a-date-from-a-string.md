@@ -11,9 +11,8 @@ summary: "P\xE4iv\xE4m\xE4\xE4r\xE4n j\xE4sennys merkkijonosta tarkoittaa teksti
   \ joka edustaa p\xE4iv\xE4m\xE4\xE4r\xE4\xE4, muuntamista p\xE4iv\xE4m\xE4\xE4r\xE4\
   objektiksi. Se mahdollistaa ohjelmoijien suorittaa\u2026"
 title: "P\xE4iv\xE4m\xE4\xE4r\xE4n j\xE4sent\xE4minen merkkijonosta"
+weight: 30
 ---
-
-{{< edit_this_page >}}
 
 ## Mikä ja miksi?
 

@@ -19,9 +19,8 @@ summary: "Rust \uC778\uD130\uB799\uD2F0\uBE0C \uC178, \uB610\uB294 REPL(Read-Eva
   \uB294 \uBD80\uB2F4 \uC5C6\uC774 \uCF54\uB4DC \uC870\uAC01\uC744 \uD14C\uC2A4\uD2B8\
   \uD558\uAC70\uB098\u2026"
 title: "\uC778\uD130\uB799\uD2F0\uBE0C \uC178 (REPL) \uC0AC\uC6A9\uD558\uAE30"
+weight: 34
 ---
-
-{{< edit_this_page >}}
 
 ## 무엇 & 왜?
 Rust 인터랙티브 셸, 또는 REPL(Read-Eval-Print Loop, 읽기-평가-출력 루프)은 즉각적인 결과를 보면서 Rust 코드를 실행할 수 있게 해주어, 실험하기나 배우기에 완벽합니다. 프로그래머들은 전체 프로젝트를 컴파일하는 부담 없이 코드 조각을 테스트하거나 디버그하거나 언어 기능을 가지고 놀기 위해 이를 사용합니다.

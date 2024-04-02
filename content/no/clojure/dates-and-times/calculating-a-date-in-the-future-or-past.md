@@ -9,9 +9,8 @@ summary: "Kalkulering av fremtidige eller tidligere datoer handler om \xE5 legge
   \ eller trekke fra tidsenheter p\xE5 en startdato. Programmere bruker dette for\
   \ \xE5\u2026"
 title: Beregning av en dato i fremtiden eller fortiden
+weight: 26
 ---
-
-{{< edit_this_page >}}
 
 ## Hva & Hvorfor?
 Kalkulering av fremtidige eller tidligere datoer handler om å legge til eller trekke fra tidsenheter på en startdato. Programmere bruker dette for å håndtere frister, planlegge eventer og beregne tidsforskjeller.

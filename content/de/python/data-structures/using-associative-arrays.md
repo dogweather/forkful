@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Assoziative Arrays, in Python als Dictionaries bekannt, ordnen Schl\xFC\
   ssel Werten zu, was das Abrufen, Modifizieren oder Nachverfolgen von Daten anhand\u2026"
 title: Verwendung von assoziativen Arrays
+weight: 15
 ---
-
-{{< edit_this_page >}}
 
 ## Was & Warum?
 

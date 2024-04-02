@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Kirjoittaminen standardivirheeseen Pythonilla tarkoittaa ohjelmasi virheilmoitusten\
   \ tai diagnostiikkatietojen suuntaamista virrasta (`stderr`), erilleen\u2026"
 title: Kirjoittaminen standardivirheeseen
+weight: 25
 ---
-
-{{< edit_this_page >}}
 
 ## Mikä & Miksi?
 Kirjoittaminen standardivirheeseen Pythonilla tarkoittaa ohjelmasi virheilmoitusten tai diagnostiikkatietojen suuntaamista virrasta (`stderr`), erilleen tavallisesta tulosteesta (`stdout`). Ohjelmoijat tekevät näin erotellakseen normaalit ohjelman tulosteet virheviesteistä, mikä helpottaa vianetsintää ja lokianalyysia.

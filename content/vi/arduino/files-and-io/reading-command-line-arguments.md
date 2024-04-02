@@ -15,9 +15,8 @@ summary: "\u0110\u1ECDc c\xE1c \u0111\u1ED1i s\u1ED1 d\xF2ng l\u1EC7nh c\xF3 ngh
   \ t\u1EEB terminal ho\u1EB7c d\u1EA5u nh\u1EAFc l\u1EC7nh. C\xE1c l\u1EADp tr\xEC\
   nh vi\xEAn\u2026"
 title: "\u0110\u1ECDc c\xE1c \u0111\u1ED1i s\u1ED1 d\xF2ng l\u1EC7nh"
+weight: 23
 ---
-
-{{< edit_this_page >}}
 
 ## Cái gì và Tại sao?
 Đọc các đối số dòng lệnh có nghĩa là lấy dữ liệu được truyền đến một chương trình khi bạn khởi động nó từ terminal hoặc dấu nhắc lệnh. Các lập trình viên sử dụng đối số để tùy chỉnh hành vi của chương trình mà không cần thay đổi mã.

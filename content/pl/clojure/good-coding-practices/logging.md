@@ -9,9 +9,8 @@ summary: "Logowanie to w zasadzie oprogramowaniowy odpowiednik dziennika pok\u01
   adowego statku; jest to spos\xF3b na rejestrowanie zdarze\u0144, kt\xF3re maj\u0105\
   \ miejsce podczas\u2026"
 title: "Rejestrowanie zdarze\u0144"
+weight: 17
 ---
-
-{{< edit_this_page >}}
 
 ## Co i dlaczego?
 Logowanie to w zasadzie oprogramowaniowy odpowiednik dziennika pokładowego statku; jest to sposób na rejestrowanie zdarzeń, które mają miejsce podczas działania aplikacji. Programiści robią to aby śledzić te zdarzenia w celu debugowania, tworzenia ścieżek audytu, lub zdobycia wglądu w zachowanie systemu w środowisku produkcyjnym.

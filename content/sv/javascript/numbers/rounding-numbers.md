@@ -9,9 +9,8 @@ summary: "Avrundning inneb\xE4r att sk\xE4ra av \"bruset\" efter en viss punkt i
   \ tal. Programmerare avrundar f\xF6r att kontrollera precision, hantera minne eller\
   \ g\xF6ra\u2026"
 title: Avrundning av tal
+weight: 13
 ---
-
-{{< edit_this_page >}}
 
 ## Vad och varför? 
 Avrundning innebär att skära av "bruset" efter en viss punkt i ett tal. Programmerare avrundar för att kontrollera precision, hantera minne eller göra utskriften användarvänlig—som att göra om 2.998 till ett rent 3.

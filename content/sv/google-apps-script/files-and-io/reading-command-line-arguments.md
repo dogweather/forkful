@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Att l\xE4sa kommandoradsargument i Google Apps Script \xE4r en smula missvisande\
   \ eftersom Google Apps Script, till skillnad fr\xE5n traditionella\u2026"
 title: "L\xE4sa kommandoradsargument"
+weight: 23
 ---
-
-{{< edit_this_page >}}
 
 ## Vad & Varför?
 

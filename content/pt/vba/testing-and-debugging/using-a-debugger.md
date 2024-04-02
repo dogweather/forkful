@@ -2,15 +2,16 @@
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 22:03:25.660577-07:00
-description: "Usar um depurador no Visual Basic para Aplica\xE7\xF5es (VBA) envolve\
-  \ executar o seu c\xF3digo passo a passo para inspecionar seu fluxo de execu\xE7\
-  \xE3o e o estado das\u2026"
+description: "No VBA, o depurador \xE9 parte integrante do Editor do Visual Basic\
+  \ (VBE). Veja como voc\xEA pode aproveit\xE1-lo: 1. **Definindo Pontos de Interrup\xE7\
+  \xE3o**: Clique\u2026"
 lastmod: '2024-03-13T22:44:46.417394-06:00'
 model: gpt-4-0125-preview
-summary: "Usar um depurador no Visual Basic para Aplica\xE7\xF5es (VBA) envolve executar\
-  \ o seu c\xF3digo passo a passo para inspecionar seu fluxo de execu\xE7\xE3o e o\
-  \ estado das\u2026"
+summary: "No VBA, o depurador \xE9 parte integrante do Editor do Visual Basic (VBE).\
+  \ Veja como voc\xEA pode aproveit\xE1-lo: 1. **Definindo Pontos de Interrup\xE7\xE3\
+  o**: Clique\u2026"
 title: Usando um depurador
+weight: 35
 ---
 
 ## Como fazer:

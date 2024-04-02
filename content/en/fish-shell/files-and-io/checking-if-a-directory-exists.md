@@ -7,9 +7,8 @@ model: gpt-4-0125-preview
 summary: "Checking if a directory exists in Fish Shell allows scripts to make decisions\
   \ based on the presence or absence of directory structures, enabling tasks\u2026"
 title: Checking if a directory exists
+weight: 20
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 Checking if a directory exists in Fish Shell allows scripts to make decisions based on the presence or absence of directory structures, enabling tasks like conditional file operations, logging, or environment setup. This technique is crucial for writing robust scripts that interact with the filesystem in a predictable way.

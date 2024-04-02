@@ -8,9 +8,8 @@ model: gpt-4-1106-preview
 summary: "Tekstin etsiminen ja korvaaminen on tapa bongata tietyt merkkijonot ja vaihtaa\
   \ ne toisiin. Koodarit tekev\xE4t t\xE4t\xE4 automatisoidakseen tyls\xE4t ja virhealttiit\u2026"
 title: Tekstin etsiminen ja korvaaminen
+weight: 10
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why - Mitä ja miksi?
 Tekstin etsiminen ja korvaaminen on tapa bongata tietyt merkkijonot ja vaihtaa ne toisiin. Koodarit tekevät tätä automatisoidakseen tylsät ja virhealttiit tekstimuokkaustehtävät.

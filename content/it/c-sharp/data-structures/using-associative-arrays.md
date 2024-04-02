@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Gli array associativi, o dizionari in C#, ti permettono di memorizzare e\
   \ gestire coppie di chiavi e valori. Sono la tua scelta principale quando hai\u2026"
 title: Utilizzo di array associativi
+weight: 15
 ---
-
-{{< edit_this_page >}}
 
 ## Cosa & Perché?
 

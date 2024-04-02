@@ -9,9 +9,8 @@ summary: "Beregning av en dato i fremtiden eller fortiden inneb\xE6rer \xE5 legg
   \ til eller trekke fra tid fra en n\xE5v\xE6rende dato. Programmerere bruker dette\
   \ for \xE5\u2026"
 title: Beregning av en dato i fremtiden eller fortiden
+weight: 26
 ---
-
-{{< edit_this_page >}}
 
 ## Hva & Hvorfor?
 Beregning av en dato i fremtiden eller fortiden innebærer å legge til eller trekke fra tid fra en nåværende dato. Programmerere bruker dette for å håndtere funksjoner som utløpsdatoer, påminnelser, eller tidsbaserte begivenheter i applikasjonene deres.

@@ -11,9 +11,8 @@ summary: "L'interpolation de cha\xEEne est une m\xE9thode pour construire des ch
   nes qui incorporent des variables, permettant la cr\xE9ation dynamique de cha\xEE\
   nes. Les\u2026"
 title: "Interpolation d'une cha\xEEne de caract\xE8res"
+weight: 8
 ---
-
-{{< edit_this_page >}}
 
 ## Quoi et pourquoi ?
 

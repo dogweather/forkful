@@ -13,9 +13,8 @@ summary: "Bi\u1EC3u th\u1EE9c ch\xEDnh quy (regex) trong l\u1EADp tr\xECnh \u011
   c chu\u1ED7i d\u1EF1a tr\xEAn c\xE1c m\u1EABu c\u1EE5 th\u1EC3. C\xE1c l\u1EADp\
   \ tr\xECnh vi\xEAn s\u1EED d\u1EE5ng ch\xFAng cho\u2026"
 title: "S\u1EED d\u1EE5ng bi\u1EC3u th\u1EE9c ch\xEDnh quy"
+weight: 11
 ---
-
-{{< edit_this_page >}}
 
 ## Cái gì và Tại sao?
 

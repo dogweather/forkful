@@ -8,9 +8,8 @@ model: gpt-4-1106-preview
 summary: "Starting a new project is just rolling up your sleeves and setting up the\
   \ initial environment and files for your coding adventure. Programmers kick off\u2026"
 title: Starting a new project
+weight: 1
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 Starting a new project is just rolling up your sleeves and setting up the initial environment and files for your coding adventure. Programmers kick off new projects to turn ideas into working software, sorta like planting a seed for a digital tree.

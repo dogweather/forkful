@@ -11,9 +11,8 @@ summary: "Tekstin etsiminen ja korvaaminen Google Apps Scriptilla k\xE4sitt\xE4\
   \ tiettyjen merkkijonojen ohjelmallisen tunnistamisen dokumentissa, laskentataulukossa\
   \ tai\u2026"
 title: Tekstin etsiminen ja korvaaminen
+weight: 10
 ---
-
-{{< edit_this_page >}}
 
 ## Mikä & Miksi?
 

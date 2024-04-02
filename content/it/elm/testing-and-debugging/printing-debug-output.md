@@ -8,9 +8,8 @@ model: gpt-4-1106-preview
 summary: "La stampa del debug output \xE8 mostrare i valori delle variabili o messaggi\
   \ su console per capire meglio cosa sta facendo il codice. I programmatori lo\u2026"
 title: Stampa dell'output di debug
+weight: 33
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 La stampa del debug output è mostrare i valori delle variabili o messaggi su console per capire meglio cosa sta facendo il codice. I programmatori lo fanno per trovare e risolvere i bug più facilmente.

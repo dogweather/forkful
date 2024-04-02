@@ -11,9 +11,8 @@ summary: "Analisar HTML \xE9 sobre extrair dados ou informa\xE7\xF5es de conte\x
   do HTML, uma tarefa comum ao lidar com dados da web. Programadores fazem isso para\
   \ automatizar\u2026"
 title: Analisando HTML
+weight: 43
 ---
-
-{{< edit_this_page >}}
 
 ## O Que & Por Quê?
 

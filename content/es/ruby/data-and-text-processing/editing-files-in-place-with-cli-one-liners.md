@@ -9,9 +9,8 @@ summary: "Editar archivos en su lugar con l\xEDneas de comando individuales (CLI
   \ por sus siglas en ingl\xE9s Interface de L\xEDnea de Comando) en Ruby te permite\
   \ modificar\u2026"
 title: "Editando archivos directamente con l\xEDneas de comandos"
+weight: 32
 ---
-
-{{< edit_this_page >}}
 
 ## Qué y Por Qué?
 

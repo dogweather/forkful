@@ -10,9 +10,8 @@ model: gpt-4-0125-preview
 summary: "TOML, een afkorting voor Tom's Obvious, Minimal Language, definieert hoe\
   \ configuratiebestanden moeten worden gestructureerd. Programmeurs werken met TOML\u2026"
 title: Werken met TOML
+weight: 39
 ---
-
-{{< edit_this_page >}}
 
 ## Wat & Waarom?
 TOML, een afkorting voor Tom's Obvious, Minimal Language, definieert hoe configuratiebestanden moeten worden gestructureerd. Programmeurs werken met TOML omdat het makkelijk te lezen, te schrijven is, en goed in kaart kan worden gebracht op een hashtabel, waardoor het de voorkeur geniet voor configuraties.

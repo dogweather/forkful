@@ -11,9 +11,8 @@ summary: "Nykyisen p\xE4iv\xE4m\xE4\xE4r\xE4n hakeminen ohjelmoinnissa on olenna
   \ teht\xE4v\xE4 monille sovelluksille, mukaan lukien lokit, tapahtumien aikaleimat\
   \ tai teht\xE4vien\u2026"
 title: "Nykyisen p\xE4iv\xE4m\xE4\xE4r\xE4n hankkiminen"
+weight: 29
 ---
-
-{{< edit_this_page >}}
 
 ## Mikä & Miksi?
 

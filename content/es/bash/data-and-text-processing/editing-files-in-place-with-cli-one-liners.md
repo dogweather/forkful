@@ -7,9 +7,8 @@ model: gpt-4-0125-preview
 summary: "Imagina que acabas de descubrir que necesitas hacer una actualizaci\xF3\
   n por lotes a varios archivos de configuraci\xF3n que se encuentran en tu servidor.\u2026"
 title: "Editando archivos directamente con l\xEDneas de comandos"
+weight: 32
 ---
-
-{{< edit_this_page >}}
 
 ## ¿Qué y Por Qué?
 

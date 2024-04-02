@@ -7,9 +7,8 @@ model: gpt-4-1106-preview
 summary: "Sending an HTTP request with basic authentication involves adding a username\
   \ and password to access a resource on a server. Programmers use it because\u2026"
 title: Sending an HTTP request with basic authentication
+weight: 45
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 

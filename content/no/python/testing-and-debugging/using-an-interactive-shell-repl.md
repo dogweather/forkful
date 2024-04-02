@@ -9,9 +9,8 @@ summary: "En REPL, eller Lese-Evaluer-Skriv-L\xF8kke, er et programmeringsmilj\x
   \ som tar enkeltbrukerinnskrivelser, utf\xF8rer dem og returnerer resultatet til\
   \ brukeren.\u2026"
 title: Bruke et interaktivt skall (REPL)
+weight: 34
 ---
-
-{{< edit_this_page >}}
 
 ## Hva & Hvorfor?
 En REPL, eller Lese-Evaluer-Skriv-Løkke, er et programmeringsmiljø som tar enkeltbrukerinnskrivelser, utfører dem og returnerer resultatet til brukeren. Programmerere bruker det til raske tester, læring, feilsøking eller for å gjøre beregninger på sparket.

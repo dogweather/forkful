@@ -10,9 +10,8 @@ model: gpt-4-0125-preview
 summary: "Controleren of een directory bestaat is belangrijk om zeker te weten dat\
   \ een map er is voordat je probeert er iets mee te doen, zoals bestanden lezen of\u2026"
 title: Controleren of een directory bestaat
+weight: 20
 ---
-
-{{< edit_this_page >}}
 
 ## Wat & Waarom?
 

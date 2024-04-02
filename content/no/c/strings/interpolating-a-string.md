@@ -11,9 +11,8 @@ summary: "Strenginterpolering, i programmering, inneb\xE6rer konstruksjonen av s
   \ ved \xE5 bygge inn uttrykk innenfor litterale strenger. Programm\xF8rer gj\xF8\
   r dette\u2026"
 title: Interpolering av en streng
+weight: 8
 ---
-
-{{< edit_this_page >}}
 
 ## Hva & Hvorfor?
 

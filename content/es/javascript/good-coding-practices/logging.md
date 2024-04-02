@@ -8,9 +8,8 @@ model: gpt-4-1106-preview
 summary: "El registro (logging), en pocas palabras, es como mantener un diario para\
   \ tu aplicaci\xF3n: registra eventos, errores y otras acciones significativas que\u2026"
 title: Registro de Actividades
+weight: 17
 ---
-
-{{< edit_this_page >}}
 
 ## Qué y Por Qué?
 El registro (logging), en pocas palabras, es como mantener un diario para tu aplicación: registra eventos, errores y otras acciones significativas que ocurren mientras se ejecuta el software. Los programadores lo hacen no solo para entender qué está sucediendo bajo el capó en tiempo real, sino también para contar con un registro histórico que es crucial para la depuración, auditoría y optimización del rendimiento.

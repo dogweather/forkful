@@ -11,9 +11,8 @@ summary: "Imprimir la salida de depuraci\xF3n en Visual Basic para Aplicaciones 
   \ implica colocar estrat\xE9gicamente instrucciones de impresi\xF3n dentro de su\
   \ c\xF3digo\u2026"
 title: "Imprimiendo salida de depuraci\xF3n"
+weight: 33
 ---
-
-{{< edit_this_page >}}
 
 ## Qué y Por qué?
 Imprimir la salida de depuración en Visual Basic para Aplicaciones (VBA) implica colocar estratégicamente instrucciones de impresión dentro de su código para mostrar valores de variables, el flujo de ejecución o mensajes de depuración personalizados. Esta técnica es esencial para la depuración, ya que permite a los programadores entender el comportamiento de su código en tiempo de ejecución e identificar cualquier comportamiento inesperado o errores.

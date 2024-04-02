@@ -9,9 +9,8 @@ summary: "Praca z XML polega na parsowaniu, ekstrakcji i manipulowaniu danymi w 
   \ j\u0119zyka znacznik\xF3w rozszerzalnych (XML). Programi\u015Bci borykaj\u0105\
   \ si\u0119 z XML,\u2026"
 title: Praca z XML
+weight: 40
 ---
-
-{{< edit_this_page >}}
 
 ## Co i dlaczego?
 Praca z XML polega na parsowaniu, ekstrakcji i manipulowaniu danymi w formacie języka znaczników rozszerzalnych (XML). Programiści borykają się z XML, ponieważ jest on powszechnie używanym formatem wymiany danych dla konfiguracji, API i nie tylko.

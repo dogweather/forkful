@@ -9,9 +9,8 @@ summary: "Redondear n\xFAmeros es recortar un decimal a su valor entero m\xE1s c
   \ o a un n\xFAmero establecido de decimales. Los programadores redondean los n\xFA\
   meros\u2026"
 title: "Redondeo de n\xFAmeros"
+weight: 13
 ---
-
-{{< edit_this_page >}}
 
 ## Qué y Por Qué?
 Redondear números es recortar un decimal a su valor entero más cercano o a un número establecido de decimales. Los programadores redondean los números para hacerlos más fáciles de leer y manejar, especialmente cuando la precisión más allá de cierto punto es innecesaria o podría llevar a errores.

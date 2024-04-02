@@ -10,9 +10,8 @@ model: gpt-4-0125-preview
 summary: "La concatenaci\xF3n en Visual Basic para Aplicaciones (VBA) implica unir\
   \ dos o m\xE1s cadenas en una \xFAnica entidad. Esta es una tarea fundamental en\u2026"
 title: Concatenando cadenas de texto
+weight: 3
 ---
-
-{{< edit_this_page >}}
 
 ## Qué y Por Qué?
 

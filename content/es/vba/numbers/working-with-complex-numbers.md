@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Trabajar con n\xFAmeros complejos implica realizar operaciones matem\xE1\
   ticas en n\xFAmeros que tienen tanto una parte real como una imaginaria. Los programadores\u2026"
 title: "Trabajando con n\xFAmeros complejos"
+weight: 14
 ---
-
-{{< edit_this_page >}}
 
 ## ¿Qué y por qué?
 

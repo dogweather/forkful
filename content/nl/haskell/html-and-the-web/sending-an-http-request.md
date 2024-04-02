@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Een HTTP-verzoek versturen is de handeling van het vragen om data of actie\
   \ aan een webserver. Programmeurs doen dit om te interacteren met API's,\u2026"
 title: Een HTTP-verzoek verzenden
+weight: 44
 ---
-
-{{< edit_this_page >}}
 
 ## Wat & Waarom?
 Een HTTP-verzoek versturen is de handeling van het vragen om data of actie aan een webserver. Programmeurs doen dit om te interacteren met API's, webinhoud te grijpen, of communicatie tussen diensten.

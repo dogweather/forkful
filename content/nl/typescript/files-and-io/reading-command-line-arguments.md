@@ -11,9 +11,8 @@ summary: "Opdrachtregelargumenten stellen gebruikers in staat om gegevens door t
   \ geven aan een programma wanneer ze het uitvoeren. Programmeurs gebruiken ze om\
   \ het\u2026"
 title: Commandoregelargumenten lezen
+weight: 23
 ---
-
-{{< edit_this_page >}}
 
 ## Wat & Waarom?
 Opdrachtregelargumenten stellen gebruikers in staat om gegevens door te geven aan een programma wanneer ze het uitvoeren. Programmeurs gebruiken ze om het gedrag van een programma aan te passen zonder de code te wijzigen.

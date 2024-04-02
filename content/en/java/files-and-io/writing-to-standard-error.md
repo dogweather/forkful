@@ -7,9 +7,8 @@ model: gpt-4-0125-preview
 summary: "Writing to standard error (stderr) involves outputting error messages and\
   \ diagnostics to the console or terminal. Programmers do it to separate error\u2026"
 title: Writing to standard error
+weight: 25
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 Writing to standard error (stderr) involves outputting error messages and diagnostics to the console or terminal. Programmers do it to separate error information from standard output (stdout), facilitating debugging and log analysis.

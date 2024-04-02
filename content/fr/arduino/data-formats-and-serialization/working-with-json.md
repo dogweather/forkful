@@ -11,9 +11,8 @@ summary: "JSON, ou JavaScript Object Notation, est un format l\xE9ger d'\xE9chan
   \ de donn\xE9es, ce qui le rend parfait pour le stockage de donn\xE9es ou les fichiers\
   \ de\u2026"
 title: Travailler avec JSON
+weight: 38
 ---
-
-{{< edit_this_page >}}
 
 ## Quoi & Pourquoi ?
 

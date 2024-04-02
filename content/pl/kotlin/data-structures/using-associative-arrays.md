@@ -11,9 +11,8 @@ summary: "Tablice asocjacyjne, czyli mapy, w Kotlinie to kolekcje przechowuj\u01
   ce pary klucz-warto\u015B\u0107. Programi\u015Bci u\u017Cywaj\u0105 ich do efektywnego\
   \ organizowania i\u2026"
 title: Korzystanie z tablic asocjacyjnych
+weight: 15
 ---
-
-{{< edit_this_page >}}
 
 ## Co i dlaczego?
 

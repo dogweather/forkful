@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "TOML (Tom's Obvious, Minimal Language) is een gegevensserialisatieformaat\
   \ dat makkelijk te lezen is vanwege de duidelijke semantiek. Programmeurs\u2026"
 title: Werken met TOML
+weight: 39
 ---
-
-{{< edit_this_page >}}
 
 ## Wat & Waarom?
 TOML (Tom's Obvious, Minimal Language) is een gegevensserialisatieformaat dat makkelijk te lezen is vanwege de duidelijke semantiek. Programmeurs gebruiken TOML voor configuratiebestanden omdat het een balans biedt tussen leesbaarheid voor mensen en analyseerbaarheid door machines.

@@ -13,9 +13,8 @@ summary: "Vi\u1EC7c t\u1EA1o s\u1ED1 ng\u1EABu nhi\xEAn trong PowerShell li\xEAn
   \ \u0111o\xE1n tr\u01B0\u1EDBc trong m\u1ED9t ph\u1EA1m vi \u0111\u01B0\u1EE3c ch\u1EC9\
   \ \u0111\u1ECBnh. C\xE1c l\u1EADp tr\xECnh vi\xEAn\u2026"
 title: "Sinh s\u1ED1 ng\u1EABu nhi\xEAn"
+weight: 12
 ---
-
-{{< edit_this_page >}}
 
 ## Cái gì & Tại sao?
 Việc tạo số ngẫu nhiên trong PowerShell liên quan đến việc tạo ra các giá trị số không thể đoán trước trong một phạm vi được chỉ định. Các lập trình viên sử dụng khả năng này vì nhiều lý do, bao gồm kiểm thử, mô phỏng, và mục đích bảo mật, nơi sự không dự đoán hoặc mô phỏng sự ngẫu nhiên của thế giới thực là cần thiết.

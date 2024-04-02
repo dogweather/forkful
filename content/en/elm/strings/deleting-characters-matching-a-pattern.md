@@ -7,9 +7,8 @@ model: gpt-4-1106-preview
 summary: "Deleting characters matching a pattern means to wipe out specific sets of\
   \ characters from text, based on rules (patterns). Programmers do this for text\u2026"
 title: Deleting characters matching a pattern
+weight: 5
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 Deleting characters matching a pattern means to wipe out specific sets of characters from text, based on rules (patterns). Programmers do this for text cleaning, data processing, or to simplify input before parsing.

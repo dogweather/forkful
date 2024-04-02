@@ -11,9 +11,8 @@ summary: "D\xE9marrer un nouveau projet dans Google Apps Script (GAS) n\xE9cessi
   \ d'initialiser un fichier de script au sein de l'\xE9cosyst\xE8me Google (Google\
   \ Drive, Docs,\u2026"
 title: "D\xE9marrer un nouveau projet"
+weight: 1
 ---
-
-{{< edit_this_page >}}
 
 ## Quoi & Pourquoi ?
 

@@ -11,9 +11,8 @@ summary: "L'impression de sorties de d\xE9bogage consiste \xE0 g\xE9n\xE9rer des
   \ de journal temporaires et informatifs qui peuvent aider les programmeurs \xE0\
   \ comprendre\u2026"
 title: "Impression de sortie de d\xE9bogage"
+weight: 33
 ---
-
-{{< edit_this_page >}}
 
 ## Quoi & Pourquoi ?
 

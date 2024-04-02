@@ -10,9 +10,8 @@ model: gpt-4-0125-preview
 summary: "Lire un fichier texte en Visual Basic pour Applications (VBA) implique d'acc\xE9\
   der programmatiquement et d'extraire le contenu d'un fichier texte depuis une\u2026"
 title: Lecture d'un fichier texte
+weight: 22
 ---
-
-{{< edit_this_page >}}
 
 ## Quoi & Pourquoi ?
 

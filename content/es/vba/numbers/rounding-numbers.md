@@ -11,9 +11,8 @@ summary: "Redondear n\xFAmeros en la programaci\xF3n se refiere a aproximar un n
   mero a su n\xFAmero entero m\xE1s cercano o a un cierto n\xFAmero de lugares decimales.\
   \ Los\u2026"
 title: "Redondeo de n\xFAmeros"
+weight: 13
 ---
-
-{{< edit_this_page >}}
 
 ## Qué y Por Qué?
 

@@ -14,9 +14,8 @@ summary: "\u6BD4\u8F83\u4E24\u4E2A\u65E5\u671F\u662F\u5224\u65AD\u5B83\u4EEC\u76
   \u636E\u6709\u6548\u6027\u68C0\u67E5\u6216\u65F6\u95F4\u95F4\u9694\u8BA1\u7B97\u7B49\
   \u64CD\u4F5C\u3002"
 title: "\u6BD4\u8F83\u4E24\u4E2A\u65E5\u671F"
+weight: 27
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why? 什么以及为什么?
 比较两个日期是判断它们相对先后的过程。程序员需要进行日期比较来执行如定时任务、数据有效性检查或时间间隔计算等操作。

@@ -9,9 +9,8 @@ summary: "TOML, abrevia\xE7\xE3o de Tom's Obvious, Minimal Language (Linguagem M
   nima e \xD3bvia do Tom), \xE9 um formato de dados semelhante ao JSON ou YAML, mas\
   \ mais f\xE1cil de\u2026"
 title: Trabalhando com TOML
+weight: 39
 ---
-
-{{< edit_this_page >}}
 
 ## O Que & Por Quê?
 TOML, abreviação de Tom's Obvious, Minimal Language (Linguagem Mínima e Óbvia do Tom), é um formato de dados semelhante ao JSON ou YAML, mas mais fácil de ler para humanos. Programadores o utilizam para arquivos de configuração por ser direto e traduzir-se bem em estruturas de dados.

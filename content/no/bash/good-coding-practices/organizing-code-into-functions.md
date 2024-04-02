@@ -7,9 +7,8 @@ model: gpt-4-1106-preview
 summary: "\xC5 dele opp kode i funksjoner betyr \xE5 bryte ned skript i mindre, gjenbrukbare\
   \ blokker som gj\xF8r spesifikke oppgaver. Det gj\xF8r koden mer oversiktlig,\u2026"
 title: Organisering av kode i funksjoner
+weight: 18
 ---
-
-{{< edit_this_page >}}
 
 ## Hva & Hvorfor?
 Å dele opp kode i funksjoner betyr å bryte ned skript i mindre, gjenbrukbare blokker som gjør spesifikke oppgaver. Det gjør koden mer oversiktlig, forståelig og enklere å feilsøke.

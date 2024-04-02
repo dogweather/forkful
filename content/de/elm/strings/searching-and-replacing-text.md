@@ -7,9 +7,8 @@ model: gpt-4-1106-preview
 summary: "Suchen und Ersetzen von Text erm\xF6glicht es, spezifische Zeichen oder\
   \ Zeichenfolgen in einem Textblock zu finden und durch andere auszutauschen.\u2026"
 title: Suchen und Ersetzen von Text
+weight: 10
 ---
-
-{{< edit_this_page >}}
 
 ## Was & Warum?
 Suchen und Ersetzen von Text ermöglicht es, spezifische Zeichen oder Zeichenfolgen in einem Textblock zu finden und durch andere auszutauschen. Programmierer nutzen diese Funktion, um Code schnell zu aktualisieren oder Daten zu bereinigen.

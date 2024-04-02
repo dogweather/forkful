@@ -17,9 +17,8 @@ summary: "\u5728 PowerShell \u4E2D\u5199\u5165\u6587\u672C\u6587\u4EF6\u5305\u62
   \u81EA\u52A8\u5316\u7CFB\u7EDF\u4EFB\u52A1\u3001\u6570\u636E\u5206\u6790\u4EE5\u53CA\
   \u4E0E\u5176\u4ED6\u5E94\u7528\u7A0B\u5E8F\u6216\u811A\u672C\u7684\u96C6\u6210\u3002"
 title: "\u7F16\u5199\u6587\u672C\u6587\u4EF6"
+weight: 24
 ---
-
-{{< edit_this_page >}}
 
 ## 什么与为什么？
 在 PowerShell 中写入文本文件包括创建和操作基于文本的文件，这是日志记录、数据存储和配置脚本编写的基本操作。程序员借此自动化系统任务、数据分析以及与其他应用程序或脚本的集成。

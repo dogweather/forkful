@@ -10,9 +10,8 @@ model: gpt-4-0125-preview
 summary: "Een nieuw project starten gaat over het leggen van de fundamenten voor je\
   \ codeerkunstwerk. Als programmeurs doen we dit om een frisse idee te starten of\u2026"
 title: Een nieuw project starten
+weight: 1
 ---
-
-{{< edit_this_page >}}
 
 ## Wat & Waarom?
 Een nieuw project starten gaat over het leggen van de fundamenten voor je codeerkunstwerk. Als programmeurs doen we dit om een frisse idee te starten of oplossingen op een georganiseerde, schaalbare manier te implementeren.

@@ -11,9 +11,8 @@ summary: "HTML:n j\xE4sent\xE4minen tarkoittaa HTML-koodinp\xE4tk\xE4n purkamist
   \ jotta ymm\xE4rt\xE4isimme sen rakenteen ja sis\xE4ll\xF6n. Ohjelmoijat tekev\xE4\
   t t\xE4t\xE4 dataa poimiakseen,\u2026"
 title: "HTML:n j\xE4sennys"
+weight: 43
 ---
-
-{{< edit_this_page >}}
 
 ## Mikä & Miksi?
 HTML:n jäsentäminen tarkoittaa HTML-koodinpätkän purkamista, jotta ymmärtäisimme sen rakenteen ja sisällön. Ohjelmoijat tekevät tätä dataa poimiakseen, sisältöä muokatakseen tai tietoa eri formaattien ja järjestelmien välillä siirtääkseen.

@@ -9,9 +9,8 @@ summary: "Extraire des sous-cha\xEEnes en Ruby, c'est comme prendre un morceau d
   \ votre baguette pr\xE9f\xE9r\xE9e : vous isolez une part de quelque chose de plus\
   \ grand. On le\u2026"
 title: "Extraction de sous-cha\xEEnes"
+weight: 6
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why? (Quoi et Pourquoi ?)
 

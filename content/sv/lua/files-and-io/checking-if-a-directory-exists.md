@@ -11,9 +11,8 @@ summary: "Att kontrollera om en katalog finns \xE4r en grundl\xE4ggande operatio
   \ n\xE4r man skriver skript som interagerar med filsystemet, f\xF6r att s\xE4kerst\xE4\
   lla att ditt\u2026"
 title: Kontrollera om en katalog existerar
+weight: 20
 ---
-
-{{< edit_this_page >}}
 
 ## Vad & Varför?
 

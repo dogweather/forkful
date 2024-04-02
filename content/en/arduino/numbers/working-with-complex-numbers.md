@@ -7,9 +7,8 @@ model: gpt-4-1106-preview
 summary: "Complex numbers have a real part and an imaginary part, typically written\
   \ as `a + bi`. They're vital for some math-heavy Arduino projects involving signal\u2026"
 title: Working with complex numbers
+weight: 14
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 Complex numbers have a real part and an imaginary part, typically written as `a + bi`. They're vital for some math-heavy Arduino projects involving signal processing, electrical engineering, or any other domain where phenomena are best modeled in a plane.

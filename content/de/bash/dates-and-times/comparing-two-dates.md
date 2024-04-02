@@ -7,9 +7,8 @@ model: gpt-4-1106-preview
 summary: "Das Vergleichen zweier Daten ermittelt, welches fr\xFCher oder sp\xE4ter\
   \ liegt oder ob sie identisch sind. F\xFCr Programmierer ist das wichtig, um Zeitdifferenzen\u2026"
 title: Vergleich von zwei Daten
+weight: 27
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why? (Was und Warum?)
 Das Vergleichen zweier Daten ermittelt, welches früher oder später liegt oder ob sie identisch sind. Für Programmierer ist das wichtig, um Zeitdifferenzen zu berechnen, Zeitpunkte zu sortieren oder Zeitabhängigkeiten zu steuern.

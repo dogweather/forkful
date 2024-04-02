@@ -13,9 +13,8 @@ summary: "X\xF3a c\xE1c k\xFD t\u1EF1 kh\u1EDBp v\u1EDBi m\u1ED9t m\u1EABu nh\u1
   ng mong mu\u1ED1n kh\u1ECFi chu\u1ED7i c\u1EE7a b\u1EA1n - h\xE3y ngh\u0129 \u0111\
   \u1EBFn vi\u1EC7c l\xE0m s\u1EA1ch d\u1EEF li\u1EC7u ho\u1EB7c ph\xE2n\u2026"
 title: "X\xF3a c\xE1c k\xFD t\u1EF1 ph\xF9 h\u1EE3p v\u1EDBi m\u1ED9t m\u1EABu"
+weight: 5
 ---
-
-{{< edit_this_page >}}
 
 ## Cái gì & Tại sao?
 Xóa các ký tự khớp với một mẫu nhất định nghĩa là loại bỏ những phần không mong muốn khỏi chuỗi của bạn - hãy nghĩ đến việc làm sạch dữ liệu hoặc phân tích các tệp văn bản. Các lập trình viên làm điều này để trích xuất thông tin có ý nghĩa, đảm bảo tính nhất quán của dữ liệu, hoặc chuẩn bị dữ liệu cho quá trình xử lý.

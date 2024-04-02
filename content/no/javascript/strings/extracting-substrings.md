@@ -8,9 +8,8 @@ model: gpt-4-1106-preview
 summary: "I JavaScript er uttrekk av delstrenger som et mini-felttog for \xE5 hente\
   \ spesifikke tekstbiter fra st\xF8rre strenger. Vi gj\xF8r dette for \xE5 manipulere,\u2026"
 title: Uthenting av delstrenger
+weight: 6
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 I JavaScript er uttrekk av delstrenger som et mini-felttog for å hente spesifikke tekstbiter fra større strenger. Vi gjør dette for å manipulere, analysere eller bare vise frem biter av data som er relevante for oppgaven vår.

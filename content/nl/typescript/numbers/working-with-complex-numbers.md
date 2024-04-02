@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Complexe getallen, bestaande uit een re\xEBel deel en een imaginair deel\
   \ (meestal geschreven als a + bi), maken berekeningen die onpraktisch of onmogelijk\u2026"
 title: Werken met complexe getallen
+weight: 14
 ---
-
-{{< edit_this_page >}}
 
 ## Wat & Waarom?
 Complexe getallen, bestaande uit een reëel deel en een imaginair deel (meestal geschreven als a + bi), maken berekeningen die onpraktisch of onmogelijk zijn met alleen reële getallen mogelijk. Programmeurs gebruiken ze op gebieden zoals signaalverwerking, kwantumcomputing en toegepaste wiskunde, waar tweedimensionale getallenweergaven essentieel zijn.

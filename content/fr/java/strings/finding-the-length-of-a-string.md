@@ -9,9 +9,8 @@ summary: "Calculer la longueur d'une cha\xEEne de caract\xE8res, c'est simplemen
   \ compter les caract\xE8res qu'elle contient. Les programmeurs ont besoin de cette\
   \ info pour\u2026"
 title: "Trouver la longueur d'une cha\xEEne de caract\xE8res"
+weight: 7
 ---
-
-{{< edit_this_page >}}
 
 ## Quoi & Pourquoi ?
 Calculer la longueur d'une chaîne de caractères, c'est simplement compter les caractères qu'elle contient. Les programmeurs ont besoin de cette info pour valider les entrées, manipuler des textes, ou tout simplement pour s'assurer qu'ils collent bien aux spécifications.

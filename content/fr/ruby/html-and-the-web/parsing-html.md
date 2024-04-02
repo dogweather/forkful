@@ -11,9 +11,8 @@ summary: "Analyser du HTML signifie d\xE9composer un bloc de code HTML pour en s
   \ la structure et le contenu. Les programmeurs le font pour extraire des donn\xE9\
   es,\u2026"
 title: Analyse Syntaxique du HTML
+weight: 43
 ---
-
-{{< edit_this_page >}}
 
 ## Quoi & Pourquoi ?
 Analyser du HTML signifie décomposer un bloc de code HTML pour en saisir la structure et le contenu. Les programmeurs le font pour extraire des données, manipuler le contenu, ou migrer des informations entre formats et systèmes.

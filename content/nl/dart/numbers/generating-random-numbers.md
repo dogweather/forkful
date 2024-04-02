@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Het genereren van willekeurige getallen in Dart omvat het cre\xEBren van\
   \ numerieke waarden die onvoorspelbaar zijn en bij elke uitvoering verschillen.\u2026"
 title: Genereren van willekeurige getallen
+weight: 12
 ---
-
-{{< edit_this_page >}}
 
 ## Wat & Waarom?
 Het genereren van willekeurige getallen in Dart omvat het creëren van numerieke waarden die onvoorspelbaar zijn en bij elke uitvoering verschillen. Programmeurs gebruiken deze functionaliteit om verschillende redenen, van het simuleren van realistische scenario's in testomgevingen tot het mogelijk maken van spelmechanismen en het waarborgen van veiligheid door willekeurigheid in cryptografische bewerkingen.

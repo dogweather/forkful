@@ -11,9 +11,8 @@ summary: "Een tijdelijk bestand cre\xEBren betekent het maken van een bestand vo
   \ kortstondig gebruik, vaak voor het beheren van gegevens tijdens de uitvoering\
   \ van\u2026"
 title: Een tijdelijk bestand aanmaken
+weight: 21
 ---
-
-{{< edit_this_page >}}
 
 ## Wat & Waarom?
 Een tijdelijk bestand creëren betekent het maken van een bestand voor kortstondig gebruik, vaak voor het beheren van gegevens tijdens de uitvoering van een programma. Programmeurs doen dit om te voorkomen dat de harde schijf vol raakt met vluchtige gegevens en om veilig met bestanden te werken zonder het risico op conflicten of het lekken van gegevens.

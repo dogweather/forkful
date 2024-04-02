@@ -11,9 +11,8 @@ summary: "En programmation, mettre en majuscule une cha\xEEne de caract\xE8res c
   \ \xE0 convertir son premier caract\xE8re en majuscule s'il ne l'est pas d\xE9j\xE0\
   , ce qui est\u2026"
 title: "Mettre en majuscule une cha\xEEne"
+weight: 2
 ---
-
-{{< edit_this_page >}}
 
 ## Quoi et pourquoi ?
 

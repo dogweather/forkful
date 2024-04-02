@@ -7,9 +7,8 @@ model: gpt-4-1106-preview
 summary: "Vergleichen von zwei Daten bedeutet, festzustellen, ob ein Datum vor, nach\
   \ oder gleichzeitig mit einem anderen ist. Programmierer nutzen diesen Vergleich\u2026"
 title: Vergleich von zwei Daten
+weight: 27
 ---
-
-{{< edit_this_page >}}
 
 ## Was & Warum?
 Vergleichen von zwei Daten bedeutet, festzustellen, ob ein Datum vor, nach oder gleichzeitig mit einem anderen ist. Programmierer nutzen diesen Vergleich für Features wie Gültigkeitsprüfungen, Terminplanungen und Zeitspannenberechnungen.

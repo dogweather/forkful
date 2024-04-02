@@ -7,9 +7,8 @@ model: gpt-4-1106-preview
 summary: String interpolation lets you embed variables and expressions into strings.
   It keeps your code readable and flexible - no plus signs, no muss, no fuss.
 title: Interpolating a string
+weight: 8
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 

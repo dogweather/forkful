@@ -11,9 +11,8 @@ summary: "Att skriva en textfil i Clojure involverar att skapa eller \xE4ndra fi
   \ f\xF6r att spara data utanf\xF6r din applikation, vilket m\xF6jligg\xF6r best\xE4\
   ndighet,\u2026"
 title: Att skriva en textfil
+weight: 24
 ---
-
-{{< edit_this_page >}}
 
 ## Vad & Varför?
 

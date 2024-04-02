@@ -24,9 +24,8 @@ summary: "`Associative arrays`, \u091C\u093F\u0928\u094D\u0939\u0947\u0902 \u092
   \u091C \u0914\u0930\u2026"
 title: "\u0938\u0902\u0918\u091F\u0915 \u0905\u0930\u0947\u091C\u093C \u0915\u093E\
   \ \u0909\u092A\u092F\u094B\u0917"
+weight: 15
 ---
-
-{{< edit_this_page >}}
 
 ## क्या और क्यों?
 

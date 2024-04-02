@@ -15,9 +15,8 @@ summary: "Vi\u1EC7c x\xF3a c\xE1c k\xFD t\u1EF1 ph\xF9 h\u1EE3p v\u1EDBi m\u1ED9
   \ k\xFD t\u1EF1 n\xE0o \u0111\xF3 ph\xF9 h\u1EE3p v\u1EDBi c\xE1c ti\xEAu chu\u1EA9\
   n\u2026"
 title: "X\xF3a c\xE1c k\xFD t\u1EF1 kh\u1EDBp v\u1EDBi m\u1ED9t m\xF4 h\xECnh"
+weight: 5
 ---
-
-{{< edit_this_page >}}
 
 ## Gì và Tại sao?
 

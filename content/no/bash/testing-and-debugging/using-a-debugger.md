@@ -1,14 +1,15 @@
 ---
 date: 2024-01-26 03:47:46.011422-07:00
-description: "\xC5 bruke en feils\xF8ker i Bash betyr \xE5 utnytte verkt\xF8y for\
-  \ \xE5 teste og finne problemer i skriptene dine, som \xE5 fange feil som f\xE5\
-  r koden din til \xE5 krasje eller\u2026"
+description: "Bash kommer ikke med en innebygd feils\xF8ker som noen andre spr\xE5\
+  k, men du kan bruke innebygde kommandoer som `set -x` for \xE5 spore hva som skjer.\
+  \ Eller, for\u2026"
 lastmod: '2024-03-13T22:44:40.979452-06:00'
 model: gpt-4-0125-preview
-summary: "\xC5 bruke en feils\xF8ker i Bash betyr \xE5 utnytte verkt\xF8y for \xE5\
-  \ teste og finne problemer i skriptene dine, som \xE5 fange feil som f\xE5r koden\
-  \ din til \xE5 krasje eller\u2026"
+summary: "Bash kommer ikke med en innebygd feils\xF8ker som noen andre spr\xE5k, men\
+  \ du kan bruke innebygde kommandoer som `set -x` for \xE5 spore hva som skjer. Eller,\
+  \ for\u2026"
 title: "\xC5 bruke en feils\xF8ker"
+weight: 35
 ---
 
 ## Hvordan:

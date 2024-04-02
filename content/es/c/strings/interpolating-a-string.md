@@ -11,9 +11,8 @@ summary: "La interpolaci\xF3n de cadenas, en programaci\xF3n, implica la constru
   n de cadenas mediante la incrustaci\xF3n de expresiones dentro de cadenas literales.\
   \ Los\u2026"
 title: Interpolando una cadena de texto
+weight: 8
 ---
-
-{{< edit_this_page >}}
 
 ## ¿Qué y por qué?
 

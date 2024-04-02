@@ -10,9 +10,8 @@ model: gpt-4-0125-preview
 summary: "Obtener la fecha actual en programaci\xF3n es crucial por una mir\xEDada\
   \ de razones, incluyendo el registro (logging), marcar eventos con una fecha y hora\u2026"
 title: Obteniendo la fecha actual
+weight: 29
 ---
-
-{{< edit_this_page >}}
 
 ## Qué y Por Qué?
 Obtener la fecha actual en programación es crucial por una miríada de razones, incluyendo el registro (logging), marcar eventos con una fecha y hora determinadas, y la programación de tareas. En Clojure, un dialecto de Lisp en la JVM, esta tarea aprovecha las capacidades de interoperabilidad con Java, permitiendo un acceso sencillo a la rica API de Fecha y Hora de Java.

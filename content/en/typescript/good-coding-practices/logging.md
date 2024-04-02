@@ -7,9 +7,8 @@ model: gpt-4-1106-preview
 summary: "Logging is the process of recording events, errors, and other significant\
   \ information during the execution of a program to an external medium, often files\u2026"
 title: Logging
+weight: 17
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 

@@ -9,9 +9,8 @@ summary: "L\xE4het\xE4t HTTP-pyynn\xF6n perusautentikoinnilla liitt\xE4\xE4ksesi
   ytt\xE4j\xE4tunnuksen ja salasanan verkkoresurssin pyynt\xF6\xF6n. Koodarit tekev\xE4\
   t t\xE4m\xE4n p\xE4\xE4st\xE4kseen\u2026"
 title: "HTTP-pyynn\xF6n l\xE4hett\xE4minen perusautentikoinnilla"
+weight: 45
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why? (Mikä & Miksi?)
 Lähetät HTTP-pyynnön perusautentikoinnilla liittääksesi käyttäjätunnuksen ja salasanan verkkoresurssin pyyntöön. Koodarit tekevät tämän päästäkseen käsiksi suojattuun sisältöön.

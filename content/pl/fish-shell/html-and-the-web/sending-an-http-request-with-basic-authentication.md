@@ -9,9 +9,8 @@ summary: "Wysy\u0142anie \u017C\u0105dania HTTP z podstawowym uwierzytelnieniem 
   liwia dost\u0119p do zabezpieczonych zasob\xF3w sieciowych. Programi\u015Bci korzystaj\u0105\
   \ z tego mechanizmu,\u2026"
 title: "Wysy\u0142anie zapytania http z podstawow\u0105 autoryzacj\u0105"
+weight: 45
 ---
-
-{{< edit_this_page >}}
 
 ## Co & Dlaczego?
 Wysyłanie żądania HTTP z podstawowym uwierzytelnieniem umożliwia dostęp do zabezpieczonych zasobów sieciowych. Programiści korzystają z tego mechanizmu, aby bezpiecznie wymieniać dane między klientem a serwerem.

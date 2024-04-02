@@ -7,9 +7,8 @@ model: gpt-4-0125-preview
 summary: "Trabajar con TOML implica analizar y generar datos TOML (Tom's Obvious,\
   \ Minimal Language) con Haskell. Los programadores lo hacen para administrar\u2026"
 title: Trabajando con TOML
+weight: 39
 ---
-
-{{< edit_this_page >}}
 
 ## ¿Qué y Por Qué?
 Trabajar con TOML implica analizar y generar datos TOML (Tom's Obvious, Minimal Language) con Haskell. Los programadores lo hacen para administrar fácilmente archivos de configuración o intercambio de datos con garantías de tipo fuerte y mínima complicación sintáctica.

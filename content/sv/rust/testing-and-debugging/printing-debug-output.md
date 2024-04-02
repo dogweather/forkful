@@ -9,9 +9,8 @@ summary: "Utskrift f\xF6r fels\xF6kning hj\xE4lper programmerare att f\xF6rst\xE
   \ vad deras kod g\xF6r under k\xF6rning. Det g\xF6r att vi kan sp\xE5ra v\xE4rden\
   \ och programfl\xF6de f\xF6r att hitta\u2026"
 title: "Skriva ut fels\xF6kningsdata"
+weight: 33
 ---
-
-{{< edit_this_page >}}
 
 ## Vad & Varför?
 Utskrift för felsökning hjälper programmerare att förstå vad deras kod gör under körning. Det gör att vi kan spåra värden och programflöde för att hitta och fixa buggar.

@@ -9,9 +9,8 @@ summary: "Il refactoring \xE8 il processo di modifica della struttura interna di
   \ programma informatico senza alterarne il comportamento esterno. I programmatori\
   \ lo\u2026"
 title: Rifattorizzazione
+weight: 19
 ---
-
-{{< edit_this_page >}}
 
 ## Cosa & Perché?
 

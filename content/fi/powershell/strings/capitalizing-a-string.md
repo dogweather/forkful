@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Merkkijonon alkukirjaimen muuttaminen isoksi kirjaimeksi PowerShelliss\xE4\
   \ tarkoittaa annetun merkkijonon ensimm\xE4isen merkin muuttamista isoksi kirjaimeksi,\u2026"
 title: Merkkijonon muuttaminen isoiksi kirjaimiksi
+weight: 2
 ---
-
-{{< edit_this_page >}}
 
 ## Mikä ja miksi?
 Merkkijonon alkukirjaimen muuttaminen isoksi kirjaimeksi PowerShellissä tarkoittaa annetun merkkijonon ensimmäisen merkin muuttamista isoksi kirjaimeksi, samalla kun loput merkkijonosta jätetään muuttumattomiksi. Ohjelmoijat suorittavat usein tämän tehtävän muotoilutarkoituksessa, esimerkiksi valmistellessaan tekstiä näytettäväksi käyttöliittymissä tai noudattaessaan kieliopillisia sääntöjä luoduissa dokumenteissa.

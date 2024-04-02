@@ -8,9 +8,8 @@ model: gpt-4-0125-preview
 summary: "Et interaktivt skall, eller REPL (Read-Eval-Print Loop), i Haskell lar deg\
   \ kj\xF8re kodefragmenter live. Det er en lekeplass for rask tilbakemelding, testing\u2026"
 title: Bruke et interaktivt skall (REPL)
+weight: 34
 ---
-
-{{< edit_this_page >}}
 
 ## Hva og hvorfor?
 Et interaktivt skall, eller REPL (Read-Eval-Print Loop), i Haskell lar deg kjøre kodefragmenter live. Det er en lekeplass for rask tilbakemelding, testing av funksjoner og læring av språket.

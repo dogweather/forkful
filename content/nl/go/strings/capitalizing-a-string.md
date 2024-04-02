@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Het kapitaliseren van een tekenreeks houdt in dat het eerste karakter van\
   \ een gegeven string naar een hoofdletter wordt getransformeerd als het in kleine\u2026"
 title: Een string kapitaliseren
+weight: 2
 ---
-
-{{< edit_this_page >}}
 
 ## Wat & Waarom?
 

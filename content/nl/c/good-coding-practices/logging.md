@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Loggen in C houdt in dat je de stroom en opmerkelijke gebeurtenissen van\
   \ een programma tijdens de uitvoering registreert, waardoor een tastbare\u2026"
 title: Loggen
+weight: 17
 ---
-
-{{< edit_this_page >}}
 
 ## Wat & Waarom?
 

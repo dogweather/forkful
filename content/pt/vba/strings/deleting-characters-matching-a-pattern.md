@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Deletar caracteres que correspondem a um padr\xE3o espec\xEDfico no Visual\
   \ Basic for Applications (VBA) envolve identificar e, subsequentemente, remover\u2026"
 title: "Excluindo caracteres correspondentes a um padr\xE3o"
+weight: 5
 ---
-
-{{< edit_this_page >}}
 
 ## O Quê & Porquê?
 

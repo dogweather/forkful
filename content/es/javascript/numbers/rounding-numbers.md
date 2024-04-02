@@ -9,9 +9,8 @@ summary: "Redondear es eliminar el ruido despu\xE9s de un cierto punto en un n\x
   mero. Los programadores redondean para controlar la precisi\xF3n, gestionar la memoria\
   \ o\u2026"
 title: "Redondeo de n\xFAmeros"
+weight: 13
 ---
-
-{{< edit_this_page >}}
 
 ## Qué y Por Qué?
 Redondear es eliminar el ruido después de un cierto punto en un número. Los programadores redondean para controlar la precisión, gestionar la memoria o hacer que la salida sea amigable para el usuario—como convertir 2.998 en un limpio 3.

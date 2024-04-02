@@ -11,9 +11,8 @@ summary: "Organiser le code en fonctions dans Dart consiste \xE0 d\xE9finir des 
   \ de code r\xE9utilisables qui effectuent des t\xE2ches sp\xE9cifiques, recevant\
   \ g\xE9n\xE9ralement\u2026"
 title: Organiser le code en fonctions
+weight: 18
 ---
-
-{{< edit_this_page >}}
 
 ## Quoi & Pourquoi ?
 Organiser le code en fonctions dans Dart consiste à définir des blocs de code réutilisables qui effectuent des tâches spécifiques, recevant généralement des entrées, traitant des données et, éventuellement, retournant des sorties. Les programmeurs font cela pour améliorer la lisibilité du code, réduire la duplication et faciliter la maintenance, conduisant finalement à des bases de code plus modulaires et gérables.

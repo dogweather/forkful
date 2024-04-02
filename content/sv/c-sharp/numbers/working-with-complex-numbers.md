@@ -9,9 +9,8 @@ summary: "Komplexa tal utvidgar v\xE5rt talsystem f\xF6r att inkludera imagin\xE
   ra tal, vilket m\xF6jligg\xF6r l\xF6sningar p\xE5 ekvationer som inte har reella\
   \ l\xF6sningar.\u2026"
 title: Att arbeta med komplexa tal
+weight: 14
 ---
-
-{{< edit_this_page >}}
 
 ## Vad & Varför?
 Komplexa tal utvidgar vårt talsystem för att inkludera imaginära tal, vilket möjliggör lösningar på ekvationer som inte har reella lösningar. Programmerare arbetar med dem inom områden som ingenjörsvetenskap, fysik och signalbehandling där dessa tal är väsentliga för modellering och problemlösning.

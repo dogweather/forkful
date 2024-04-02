@@ -9,9 +9,8 @@ summary: "Lire un fichier texte en programmation, c'est r\xE9colter le contenu d
   \ fichier pour l'utiliser ou le modifier. En tant que programmeurs, on fait \xE7\
   a pour\u2026"
 title: Lecture d'un fichier texte
+weight: 22
 ---
-
-{{< edit_this_page >}}
 
 ## Quoi & Pourquoi ?
 Lire un fichier texte en programmation, c'est récolter le contenu d'un fichier pour l'utiliser ou le modifier. En tant que programmeurs, on fait ça pour traiter des données, configurer nos apps ou juste pour interagir avec l'utilisateur.

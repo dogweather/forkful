@@ -11,9 +11,8 @@ summary: "Ohjelmoinnin sanastossa refaktorointi viittaa olemassa olevan tietokon
   \ uudelleenj\xE4rjest\xE4miseen\u2014muuttamalla sen toteutusta muuttamatta sen\
   \ ulkoista\u2026"
 title: Uudelleenkoodaus
+weight: 19
 ---
-
-{{< edit_this_page >}}
 
 ## Mikä ja miksi?
 

@@ -11,9 +11,8 @@ summary: "\xC5 hente den n\xE5v\xE6rende datoen i C++ er en grunnleggende oppgav
   \ for programmer som trenger \xE5 behandle eller vise datoer basert p\xE5 systemets\
   \ klokke. Det er\u2026"
 title: "F\xE5 dagens dato"
+weight: 29
 ---
-
-{{< edit_this_page >}}
 
 ## Hva & Hvorfor?
 Å hente den nåværende datoen i C++ er en grunnleggende oppgave for programmer som trenger å behandle eller vise datoer basert på systemets klokke. Det er essensielt for logging, tidsstempling, planlegging av oppgaver, og enhver funksjonalitet som stoler på datoer og tid.

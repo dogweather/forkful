@@ -11,9 +11,8 @@ summary: "Iniciar um novo projeto em Go envolve configurar um espa\xE7o de traba
   \ e inicializ\xE1-lo com os m\xF3dulos Go necess\xE1rios. Os programadores fazem\
   \ isso para\u2026"
 title: Iniciando um novo projeto
+weight: 1
 ---
-
-{{< edit_this_page >}}
 
 ## O Quê & Por Quê?
 

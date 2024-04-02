@@ -9,9 +9,8 @@ summary: "W \u015Bwiecie programowania, szczeg\xF3lnie podczas pracy z systemami
   \ lub Unix, manipulacja plikami bezpo\u015Brednio z poziomu interfejsu linii komend\
   \ (CLI)\u2026"
 title: "Manipulowanie plikami za pomoc\u0105 jednolinijkowc\xF3w CLI"
+weight: 31
 ---
-
-{{< edit_this_page >}}
 
 ## Co i dlaczego?
 

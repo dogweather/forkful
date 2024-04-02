@@ -11,9 +11,8 @@ summary: "Konwersja daty na ci\u0105g znak\xF3w w j\u0119zyku C polega na przeks
   ceniu struktury daty lub znacznika czasu na format czytelny dla cz\u0142owieka.\
   \ Programi\u015Bci cz\u0119sto\u2026"
 title: "Konwersja daty na ci\u0105g znak\xF3w"
+weight: 28
 ---
-
-{{< edit_this_page >}}
 
 ## Co i dlaczego?
 

@@ -9,9 +9,8 @@ summary: "Wysy\u0142anie zapytania HTTP to spos\xF3b, w jaki nasz kod komunikuje
   \ z serwerami internetowymi - pobiera dane, wysy\u0142a informacje, aktualizuje\
   \ zawarto\u015B\u0107.\u2026"
 title: "Wysy\u0142anie \u017C\u0105dania HTTP"
+weight: 44
 ---
-
-{{< edit_this_page >}}
 
 ## Co i dlaczego?
 

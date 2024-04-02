@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Lire les arguments de la ligne de commande en Dart permet aux programmeurs\
   \ d'entrer des donn\xE9es directement dans la console lors de l'ex\xE9cution d'un\u2026"
 title: Lire les arguments de la ligne de commande
+weight: 23
 ---
-
-{{< edit_this_page >}}
 
 ## Quoi & Pourquoi ?
 

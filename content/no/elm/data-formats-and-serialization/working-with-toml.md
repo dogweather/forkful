@@ -7,9 +7,8 @@ model: gpt-4-0125-preview
 summary: "TOML, forkortelse for Toms Obvious, Minimal Language, er et dataserialiseringspr\xE5\
   k. Elm-programmerere bruker det til \xE5 h\xE5ndtere konfigurasjonsdata fordi\u2026"
 title: Jobbe med TOML
+weight: 39
 ---
-
-{{< edit_this_page >}}
 
 ## Hva & Hvorfor?
 TOML, forkortelse for Toms Obvious, Minimal Language, er et dataserialiseringspråk. Elm-programmerere bruker det til å håndtere konfigurasjonsdata fordi det er menneskelesbart og kartlegger pene par med nøkkel-verdi som trengs i applikasjoner.

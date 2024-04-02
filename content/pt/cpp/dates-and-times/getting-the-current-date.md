@@ -11,9 +11,8 @@ summary: "Recuperar a data atual em C++ \xE9 uma tarefa fundamental para program
   \ que precisam processar ou exibir datas baseadas no rel\xF3gio do sistema. \xC9\
   \ essencial\u2026"
 title: Obtendo a data atual
+weight: 29
 ---
-
-{{< edit_this_page >}}
 
 ## O quê & Por quê?
 Recuperar a data atual em C++ é uma tarefa fundamental para programas que precisam processar ou exibir datas baseadas no relógio do sistema. É essencial para logging, registro de data e hora, agendamento de tarefas e qualquer funcionalidade que dependa de datas e horas.

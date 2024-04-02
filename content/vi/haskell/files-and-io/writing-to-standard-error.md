@@ -13,9 +13,8 @@ summary: "Vi\u1EC7c vi\u1EBFt ra l\u1ED7i chu\u1EA9n (stderr) trong Haskell cho 
   ch ri\xEAng bi\u1EC7t so v\u1EDBi \u0111\u1EA7u ra chu\u1EA9n (stdout). Vi\u1EC7\
   c n\xE0y \u0111\u01B0\u1EE3c\u2026"
 title: "Ghi v\xE0o l\u1ED7i chu\u1EA9n"
+weight: 25
 ---
-
-{{< edit_this_page >}}
 
 ## Gì & Tại sao?
 Việc viết ra lỗi chuẩn (stderr) trong Haskell cho phép bạn báo cáo lỗi và thông tin gỡ lỗi một cách riêng biệt so với đầu ra chuẩn (stdout). Việc này được thực hiện để giữ cho các luồng đầu ra được tổ chức, làm cho việc xử lý chỉ những gì cần thiết trở nên dễ dàng hơn — như đường ống đầu ra hoặc ghi lỗi.

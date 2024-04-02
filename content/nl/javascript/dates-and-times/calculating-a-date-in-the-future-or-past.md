@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Het berekenen van een toekomstige of verleden datum betekent het vinden\
   \ van een datum een aantal dagen, weken, maanden of jaren vanaf een bepaald punt.\u2026"
 title: Een datum in de toekomst of het verleden berekenen
+weight: 26
 ---
-
-{{< edit_this_page >}}
 
 ## Wat & Waarom?
 Het berekenen van een toekomstige of verleden datum betekent het vinden van een datum een aantal dagen, weken, maanden of jaren vanaf een bepaald punt. Programmeurs hebben dit vaak nodig voor taken zoals het instellen van vervaldatums, herinneringen of het plannen van evenementen.

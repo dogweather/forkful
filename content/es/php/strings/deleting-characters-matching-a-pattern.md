@@ -9,9 +9,8 @@ summary: "Eliminar caracteres que coinciden con un patr\xF3n es filtrar un strin
   \ para quitarle ciertas cosas seg\xFAn reglas definidas, como letras o n\xFAmeros\
   \ en\u2026"
 title: "Eliminando caracteres que coinciden con un patr\xF3n"
+weight: 5
 ---
-
-{{< edit_this_page >}}
 
 ## ¿Qué y Por Qué?
 

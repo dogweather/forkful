@@ -7,9 +7,8 @@ model: gpt-4-1106-preview
 summary: "In PowerShell, finding the length of a string means to count the number\
   \ of characters it contains. Programmers do it to validate input, manipulate text\u2026"
 title: Finding the length of a string
+weight: 7
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 In PowerShell, finding the length of a string means to count the number of characters it contains. Programmers do it to validate input, manipulate text data, and ensure data fits certain criteria or formats.

@@ -19,9 +19,8 @@ summary: "C++\uC5D0\uC11C \uD604\uC7AC \uB0A0\uC9DC\uB97C \uAC80\uC0C9\uD558\uB2
   \uC57D \uBC0F \uB0A0\uC9DC\uC640 \uC2DC\uAC04\uC5D0 \uC758\uC874\uD558\uB294 \uBAA8\
   \uB4E0 \uAE30\uB2A5\uC5D0 \uD544\uC218\uC801\uC785\uB2C8\uB2E4."
 title: "\uD604\uC7AC \uB0A0\uC9DC \uAC00\uC838\uC624\uAE30"
+weight: 29
 ---
-
-{{< edit_this_page >}}
 
 ## 무엇이며 왜인가?
 C++에서 현재 날짜를 검색하는 것은 시스템의 시계를 기반으로 날짜를 처리하거나 표시해야 하는 프로그램에 필수적인 작업입니다. 로깅, 타임 스탬핑, 작업 예약 및 날짜와 시간에 의존하는 모든 기능에 필수적입니다.

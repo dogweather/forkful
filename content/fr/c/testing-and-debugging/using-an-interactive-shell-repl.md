@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Une coquille interactive, \xE9galement connue sous le nom de boucle de lecture-\xE9\
   valuation-affichage (REPL, pour Read-Eval-Print Loop), permet aux\u2026"
 title: "Utilisation d'un interpr\xE9teur de commandes interactif (REPL)"
+weight: 34
 ---
-
-{{< edit_this_page >}}
 
 ## Quoi & Pourquoi ?
 

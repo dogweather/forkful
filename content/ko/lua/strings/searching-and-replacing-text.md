@@ -16,9 +16,8 @@ summary: "\uD14D\uC2A4\uD2B8 \uAC80\uC0C9\uACFC \uCE58\uD658\uC740 \uBB38\uC790\
   \uC774\uD130 \uC815\uC81C, \uD639\uC740 \uC124\uC815 \uBCC0\uACBD \uB4F1\uC744 \uC704\
   \uD574 \uC774 \uAE30\uB2A5\uC744 \uC0AC\uC6A9\uD569\uB2C8\uB2E4."
 title: "\uD14D\uC2A4\uD2B8 \uAC80\uC0C9 \uBC0F \uAD50\uCCB4"
+weight: 10
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why? (무엇과 왜?)
 텍스트 검색과 치환은 문자열에서 특정 단어나 패턴을 찾아 다른 것으로 바꾸는 작업입니다. 프로그래머들은 자동화된 수정, 데이터 정제, 혹은 설정 변경 등을 위해 이 기능을 사용합니다.

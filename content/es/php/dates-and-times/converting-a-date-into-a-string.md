@@ -7,9 +7,8 @@ model: gpt-4-1106-preview
 summary: "Convertir una fecha a cadena en PHP implica pasar de un formato de fecha\
   \ a uno de texto. Esto es clave para manejar fechas en formatos legibles por\u2026"
 title: Convirtiendo una fecha en una cadena de texto
+weight: 28
 ---
-
-{{< edit_this_page >}}
 
 ## Qué y Por Qué?
 Convertir una fecha a cadena en PHP implica pasar de un formato de fecha a uno de texto. Esto es clave para manejar fechas en formatos legibles por humanos o para almacenarlas en bases de datos que no aceptan tipos de fecha.

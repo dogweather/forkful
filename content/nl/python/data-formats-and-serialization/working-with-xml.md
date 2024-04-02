@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "\"Werken met XML\" verwijst naar het proces van het lezen, cre\xEBren en\
   \ wijzigen van XML (eXtensible Markup Language)-bestanden met behulp van programmering.\u2026"
 title: Werken met XML
+weight: 40
 ---
-
-{{< edit_this_page >}}
 
 ## Wat & Waarom?
 "Werken met XML" verwijst naar het proces van het lezen, creëren en wijzigen van XML (eXtensible Markup Language)-bestanden met behulp van programmering. Programmeurs doen dit omdat XML veel gebruikt wordt voor gegevensuitwisseling vanwege zijn platformonafhankelijke aard en zelfbeschrijvend formaat.

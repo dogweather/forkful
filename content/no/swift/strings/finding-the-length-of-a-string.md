@@ -9,9 +9,8 @@ summary: "\xC5 finne lengden av en streng er \xE5 m\xE5le antallet tegn den inne
   \ Programmerere gj\xF8r dette for data validering, grensesjekking og n\xE5r man\
   \ manipulerer\u2026"
 title: "Finn lengden p\xE5 en streng"
+weight: 7
 ---
-
-{{< edit_this_page >}}
 
 ## Hva & hvorfor?
 Å finne lengden av en streng er å måle antallet tegn den inneholder. Programmerere gjør dette for data validering, grensesjekking og når man manipulerer tekstbasert data.

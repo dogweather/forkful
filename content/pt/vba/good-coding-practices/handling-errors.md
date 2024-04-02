@@ -11,9 +11,8 @@ summary: "O tratamento de erros no Visual Basic for Applications (VBA) refere-se
   \ processo de antecipar, detectar e resolver erros de programa\xE7\xE3o, aplicativos\
   \ ou\u2026"
 title: Gerenciando erros
+weight: 16
 ---
-
-{{< edit_this_page >}}
 
 ## O que é & Por que?
 

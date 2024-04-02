@@ -11,9 +11,8 @@ summary: "Elixiriss\xE4 s\xE4\xE4nn\xF6llisi\xE4 lausekkeita (regex) k\xE4ytet\x
   \xE4n merkkijonojen hakemiseen, t\xE4sm\xE4\xE4miseen ja manipulointiin tiettyjen\
   \ mallien perusteella. Ohjelmoijat\u2026"
 title: "S\xE4\xE4nn\xF6llisten lausekkeiden k\xE4ytt\xF6"
+weight: 11
 ---
-
-{{< edit_this_page >}}
 
 ## Mikä ja miksi?
 

@@ -9,9 +9,8 @@ summary: "S\xF8k og erstatt i tekst betyr \xE5 finne spesifikke ord eller fraser
   \ bytte dem ut med andre. Programmerere bruker dette til \xE5 oppdatere kode, rette\
   \ feil\u2026"
 title: "S\xF8king og erstatting av tekst"
+weight: 10
 ---
-
-{{< edit_this_page >}}
 
 ## Hva & Hvorfor?
 Søk og erstatt i tekst betyr å finne spesifikke ord eller fraser og bytte dem ut med andre. Programmerere bruker dette til å oppdatere kode, rette feil eller behandle data effektivt.

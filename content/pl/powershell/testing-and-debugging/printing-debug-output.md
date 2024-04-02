@@ -9,9 +9,8 @@ summary: "Wypisywanie informacji debugowania to spos\xF3b pokazywania wewn\u0119
   \ pracy programu. Programi\u015Bci robi\u0105 to, by \u015Bledzi\u0107 b\u0142\u0119\
   dy i monitorowa\u0107, co si\u0119 dzieje\u2026"
 title: "Drukowanie komunikat\xF3w debugowania"
+weight: 33
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why? (Co i Dlaczego?)
 Wypisywanie informacji debugowania to sposób pokazywania wewnętrznej pracy programu. Programiści robią to, by śledzić błędy i monitorować, co się dzieje podczas wykonywania kodu.

@@ -9,9 +9,8 @@ summary: "Noen ganger trenger vi bare et blankt lerret. \xC5 starte et nytt pros
   \ i Clojure gir oss den freshe starten \u2013 for \xE5 utforske, eksperimentere,\
   \ eller bygge\u2026"
 title: "\xC5 starte et nytt prosjekt"
+weight: 1
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 Noen ganger trenger vi bare et blankt lerret. Å starte et nytt prosjekt i Clojure gir oss den freshe starten – for å utforske, eksperimentere, eller bygge noe nytt.

@@ -8,9 +8,8 @@ model: gpt-4-1106-preview
 summary: "Deletar caracteres que combinam com um padr\xE3o significa filtrar e remover\
   \ partes indesejadas de uma string baseando-se em crit\xE9rios espec\xEDficos.\u2026"
 title: "Excluindo caracteres que correspondem a um padr\xE3o"
+weight: 5
 ---
-
-{{< edit_this_page >}}
 
 ## O Que & Por Quê?
 Deletar caracteres que combinam com um padrão significa filtrar e remover partes indesejadas de uma string baseando-se em critérios específicos. Programadores fazem isso para limpar dados, validar entradas ou simplificar strings para processamento posterior.

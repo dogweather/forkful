@@ -10,9 +10,8 @@ model: gpt-4-0125-preview
 summary: "Escribir en el error est\xE1ndar (stderr) en C# implica dirigir los mensajes\
   \ de error y los diagn\xF3sticos de forma separada del salida regular (stdout) para\u2026"
 title: "Escribiendo en el error est\xE1ndar"
+weight: 25
 ---
-
-{{< edit_this_page >}}
 
 ## ¿Qué y Por Qué?
 Escribir en el error estándar (stderr) en C# implica dirigir los mensajes de error y los diagnósticos de forma separada del salida regular (stdout) para ayudar a los usuarios y desarrolladores a distinguir entre la salida normal del programa y las notificaciones de error. Los programadores hacen esto para hacer la depuración y el registro más eficientes, permitiendo una operación y mantenimiento más suaves de las aplicaciones.

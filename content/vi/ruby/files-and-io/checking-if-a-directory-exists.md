@@ -13,9 +13,8 @@ summary: "Ki\u1EC3m tra n\u1EBFu m\u1ED9t th\u01B0 m\u1EE5c t\u1ED3n t\u1EA1i c\
   t trong h\u1EC7 th\u1ED1ng t\u1EC7p tin hay kh\xF4ng. L\u1EADp tr\xECnh vi\xEAn\
   \ th\u1EF1c hi\u1EC7n \u0111i\u1EC1u n\xE0y \u0111\u1EC3 tr\xE1nh\u2026"
 title: "Ki\u1EC3m tra xem th\u01B0 m\u1EE5c c\xF3 t\u1ED3n t\u1EA1i kh\xF4ng"
+weight: 20
 ---
-
-{{< edit_this_page >}}
 
 ## Điều gì & Tại sao?
 Kiểm tra nếu một thư mục tồn tại có nghĩa là xác nhận xem một thư mục có mặt trong hệ thống tệp tin hay không. Lập trình viên thực hiện điều này để tránh lỗi trước khi thực hiện các thao tác tệp tin như đọc từ hoặc viết vào một thư mục.

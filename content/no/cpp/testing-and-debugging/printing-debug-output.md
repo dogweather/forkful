@@ -8,9 +8,8 @@ model: gpt-4-1106-preview
 summary: "Utskrift av feils\xF8kingsdata hjelper utviklere med \xE5 forst\xE5 hva\
   \ som skjer i koden deres. Det er en enkel metode for \xE5 spore variabler og applikasjonsflyt\u2026"
 title: "Skrive ut feils\xF8kingsdata"
+weight: 33
 ---
-
-{{< edit_this_page >}}
 
 ## Hva & Hvorfor?
 Utskrift av feilsøkingsdata hjelper utviklere med å forstå hva som skjer i koden deres. Det er en enkel metode for å spore variabler og applikasjonsflyt uten komplekse verktøy.

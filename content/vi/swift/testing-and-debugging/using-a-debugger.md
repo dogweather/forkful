@@ -2,17 +2,18 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:09:05.940464-07:00
-description: "S\u1EED d\u1EE5ng debugger c\xF3 ngh\u0129a l\xE0 s\u1EED d\u1EE5ng\
-  \ c\xE1c c\xF4ng c\u1EE5 chuy\xEAn bi\u1EC7t \u0111\u1EC3 ki\u1EC3m tra v\xE0 ki\u1EC3\
-  m so\xE1t m\xE3 c\u1EE7a b\u1EA1n khi n\xF3 ch\u1EA1y. \u0110i\u1EC1u n\xE0y th\u1EF1\
-  c s\u1EF1 quan tr\u1ECDng b\u1EDFi v\xEC n\xF3 cho\u2026"
+description: "\u0110\u1EC3 s\u1EED d\u1EE5ng debugger trong Xcode (m\xF4i tr\u01B0\
+  \u1EDDng ph\xE1t tri\u1EC3n t\xEDch h\u1EE3p d\xE0nh cho Swift), b\u1EA1n c\xF3\
+  \ th\u1EC3 \u0111\u1EB7t \u0111i\u1EC3m d\u1EEBng (breakpoints), ki\u1EC3m tra bi\u1EBF\
+  n v\xE0 theo d\xF5i bi\u1EC3u\u2026"
 lastmod: '2024-03-13T22:44:37.103249-06:00'
 model: gpt-4-0125-preview
-summary: "S\u1EED d\u1EE5ng debugger c\xF3 ngh\u0129a l\xE0 s\u1EED d\u1EE5ng c\xE1\
-  c c\xF4ng c\u1EE5 chuy\xEAn bi\u1EC7t \u0111\u1EC3 ki\u1EC3m tra v\xE0 ki\u1EC3\
-  m so\xE1t m\xE3 c\u1EE7a b\u1EA1n khi n\xF3 ch\u1EA1y. \u0110i\u1EC1u n\xE0y th\u1EF1\
-  c s\u1EF1 quan tr\u1ECDng b\u1EDFi v\xEC n\xF3 cho\u2026"
+summary: "\u0110\u1EC3 s\u1EED d\u1EE5ng debugger trong Xcode (m\xF4i tr\u01B0\u1EDD\
+  ng ph\xE1t tri\u1EC3n t\xEDch h\u1EE3p d\xE0nh cho Swift), b\u1EA1n c\xF3 th\u1EC3\
+  \ \u0111\u1EB7t \u0111i\u1EC3m d\u1EEBng (breakpoints), ki\u1EC3m tra bi\u1EBFn\
+  \ v\xE0 theo d\xF5i bi\u1EC3u\u2026"
 title: "S\u1EED d\u1EE5ng b\u1ED9 g\u1EE1 l\u1ED7i"
+weight: 35
 ---
 
 ## Làm thế nào:

@@ -11,9 +11,8 @@ summary: "Converter uma data em uma string em Dart \xE9 uma tarefa comum quando 
   \ precisa exibir informa\xE7\xF5es de data e hora em um formato leg\xEDvel por humanos,\
   \ ou\u2026"
 title: Convertendo uma data em uma string
+weight: 28
 ---
-
-{{< edit_this_page >}}
 
 ## O Que & Por Quê?
 

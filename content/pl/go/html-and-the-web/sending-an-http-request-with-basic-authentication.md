@@ -11,9 +11,8 @@ summary: "Wysy\u0142anie \u017C\u0105dania HTTP z podstawow\u0105 autoryzacj\u01
   \ w Go polega na dodaniu do \u017C\u0105dania nag\u0142\xF3wka autoryzacji, kt\xF3\
   ry zawiera nazw\u0119 u\u017Cytkownika i has\u0142o w formie\u2026"
 title: "Wysy\u0142anie \u017C\u0105dania HTTP z podstawowym uwierzytelnianiem"
+weight: 45
 ---
-
-{{< edit_this_page >}}
 
 ## Co i dlaczego?
 

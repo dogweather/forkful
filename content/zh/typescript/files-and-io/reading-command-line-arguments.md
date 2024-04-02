@@ -12,9 +12,8 @@ summary: "\u5728\u547D\u4EE4\u884C\u4E2D\u8BFB\u53D6\u53C2\u6570\u8BA9\u7A0B\u5E
   \u7A0B\u5E8F\u8FD0\u884C\u65F6\u5B9A\u5236\u884C\u4E3A\uFF0C\u975E\u5E38\u7075\u6D3B\
   \u3002"
 title: "\u8BFB\u53D6\u547D\u4EE4\u884C\u53C2\u6570"
+weight: 23
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why? (是什么？为什么？)
 在命令行中读取参数让程序接收用户输入。这意味着可以在程序运行时定制行为，非常灵活。

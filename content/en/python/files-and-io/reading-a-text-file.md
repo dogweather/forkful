@@ -7,6 +7,7 @@ model: gpt-4-1106-preview
 summary: "Reading a text file in Python is grabbing data from a file that's accessible\
   \ on your disk or over a network. Programmers read files to use the stored data\u2026"
 title: Reading a text file
+weight: 22
 ---
 
 ## What & Why?

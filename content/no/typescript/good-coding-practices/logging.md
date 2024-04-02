@@ -9,9 +9,8 @@ summary: "Logging er prosessen med \xE5 registrere hendelser, feil og annen vikt
   \ informasjon under kj\xF8ringen av et program til et eksternt medium, ofte filer\
   \ eller\u2026"
 title: "Loggf\xF8ring"
+weight: 17
 ---
-
-{{< edit_this_page >}}
 
 ## Hva & Hvorfor?
 

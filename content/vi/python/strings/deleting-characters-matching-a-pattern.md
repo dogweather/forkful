@@ -13,9 +13,8 @@ summary: "Trong l\u1EADp tr\xECnh, vi\u1EC7c x\xF3a c\xE1c k\xFD t\u1EF1 kh\u1ED
   \ ph\xF9 h\u1EE3p v\u1EDBi m\u1ED9t quy t\u1EAFc c\u1EE5 th\u1EC3\u2014m\u1ED9t\
   \ m\u1EABu\u2014v\xE0 lo\u1EA1i b\u1ECF ch\xFAng kh\u1ECFi chu\u1ED7i. C\xE1c\u2026"
 title: "X\xF3a c\xE1c k\xFD t\u1EF1 ph\xF9 h\u1EE3p v\u1EDBi m\u1ED9t m\u1EABu"
+weight: 5
 ---
-
-{{< edit_this_page >}}
 
 ## Gì và Tại sao?
 Trong lập trình, việc xóa các ký tự khớp với một mẫu nghĩa là tìm các chuỗi ký tự phù hợp với một quy tắc cụ thể—một mẫu—và loại bỏ chúng khỏi chuỗi. Các lập trình viên thực hiện điều này cho các tác vụ như làm sạch đầu vào, xử lý văn bản, hoặc chỉ đơn giản là dọn dẹp dữ liệu trước khi lưu trữ hoặc hiển thị nó.

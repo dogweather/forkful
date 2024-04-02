@@ -7,9 +7,8 @@ model: gpt-4-1106-preview
 summary: "Buscar y reemplazar texto es sencillo: es encontrar una cadena de texto\
   \ y cambiarla por otra. Los programadores lo hacen para actualizar datos, corregir\u2026"
 title: Buscando y reemplazando texto
+weight: 10
 ---
-
-{{< edit_this_page >}}
 
 ## ¿Qué y Por Qué?
 

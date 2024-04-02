@@ -19,9 +19,8 @@ summary: "Google Apps \uC2A4\uD06C\uB9BD\uD2B8\uC5D0\uC11C\uB294 `Logger` \uD074
   \ \uBAA9\uC801\uC5D0 \uC801\uD569\uD569\uB2C8\uB2E4. \uCD5C\uADFC \uC5C5\uB370\uC774\
   \uD2B8\uC5D0\uC11C\uB294\u2026"
 title: "\uB85C\uAE45"
+weight: 17
 ---
-
-{{< edit_this_page >}}
 
 # 무엇 & 왜?
 

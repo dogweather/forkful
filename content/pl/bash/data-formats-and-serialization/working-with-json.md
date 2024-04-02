@@ -11,9 +11,8 @@ summary: "Praca z JSON w Bash polega na parsowaniu, wydobywaniu i manipulowaniu 
   \ JSON bezpo\u015Brednio z linii polece\u0144. Programi\u015Bci cz\u0119sto robi\u0105\
   \ to, aby p\u0142ynnie\u2026"
 title: Praca z JSON
+weight: 38
 ---
-
-{{< edit_this_page >}}
 
 ## Co i dlaczego?
 Praca z JSON w Bash polega na parsowaniu, wydobywaniu i manipulowaniu danymi JSON bezpośrednio z linii poleceń. Programiści często robią to, aby płynnie integrować skrypty powłoki z interfejsami API sieciowymi i nowoczesnymi formatami wymiany danych, co sprawia, że skryptowanie w Bashu staje się bardziej potężne i aktualne w ekosystemie zdominowanym przez JSON.

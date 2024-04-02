@@ -9,9 +9,8 @@ summary: "Skapa en tillf\xE4llig fil inneb\xE4r att du skapar en fil som endast 
   vs under en kort stunds tid. Programmerare g\xF6r detta f\xF6r att hantera data\
   \ som inte\u2026"
 title: "Skapa en tempor\xE4r fil"
+weight: 21
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 Skapa en tillfällig fil innebär att du skapar en fil som endast behövs under en kort stunds tid. Programmerare gör detta för att hantera data som inte behövs permanent, som mellanlager i databearbetning eller för att undvika att skriva över befintliga filer.

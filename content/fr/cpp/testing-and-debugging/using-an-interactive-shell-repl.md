@@ -8,9 +8,8 @@ model: gpt-4-0125-preview
 summary: "Un REPL (Read-Eval-Print-Loop, ou Boucle de Lecture, \xC9valuation et Impression\
   \ en Fran\xE7ais) est un environnement de programmation simple et interactif. Les\u2026"
 title: Utilisation d'une console interactive (REPL)
+weight: 34
 ---
-
-{{< edit_this_page >}}
 
 ## Quoi & Pourquoi ?
 Un REPL (Read-Eval-Print-Loop, ou Boucle de Lecture, Évaluation et Impression en Français) est un environnement de programmation simple et interactif. Les programmeurs l'utilisent pour des expérimentations en temps réel avec le langage, des tâches rapides, ou pour comprendre de nouveaux concepts sans la charge de créer des applications complètes.

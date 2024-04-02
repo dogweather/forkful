@@ -13,9 +13,8 @@ summary: "Bi\u1EC3u th\u1EE9c ch\xEDnh quy l\xE0 c\xE1c m\u1EABu \u0111\u01B0\u1
   \ trong v\u0103n b\u1EA3n. L\u1EADp tr\xECnh vi\xEAn s\u1EED d\u1EE5ng ch\xFAng\
   \ cho c\xE1c t\xE1c v\u1EE5 nh\u01B0 x\xE1c th\u1EF1c, t\xECm ki\u1EBFm v\xE0\u2026"
 title: "S\u1EED d\u1EE5ng bi\u1EC3u th\u1EE9c ch\xEDnh quy"
+weight: 11
 ---
-
-{{< edit_this_page >}}
 
 ## Gì và Tại sao?
 

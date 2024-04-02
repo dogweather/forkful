@@ -9,9 +9,8 @@ summary: "Sammanfogning av str\xE4ngar \xE4r processen att limma ihop textstycke
   \ f\xF6r att skapa en ny, sammanh\xE4ngande text. Programmerare g\xF6r detta f\xF6\
   r att bygga\u2026"
 title: "Sammanslagning av str\xE4ngar"
+weight: 3
 ---
-
-{{< edit_this_page >}}
 
 ## Vad & Varför?
 Sammanfogning av strängar är processen att limma ihop textstycken för att skapa en ny, sammanhängande text. Programmerare gör detta för att bygga textmeddelanden, sammansätta data eller generera kod dynamiskt.

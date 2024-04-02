@@ -11,9 +11,8 @@ summary: "Het berekenen van een datum in de toekomst of het verleden gaat over h
   \ vinden van de datum v\xF3\xF3r of na een bepaalde periode. Programmeurs doen dit\
   \ voor\u2026"
 title: Een datum in de toekomst of het verleden berekenen
+weight: 26
 ---
-
-{{< edit_this_page >}}
 
 ## Wat & Waarom?
 Het berekenen van een datum in de toekomst of het verleden gaat over het vinden van de datum vóór of na een bepaalde periode. Programmeurs doen dit voor taken zoals het instellen van herinneringen, het uitvoeren van geplande taken, of het omgaan met vervaldatums.

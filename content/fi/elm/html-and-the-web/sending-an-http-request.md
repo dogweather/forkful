@@ -9,9 +9,8 @@ summary: "HTTP-pyynn\xF6n l\xE4hett\xE4minen on tiedon pyyt\xE4mist\xE4 palvelim
   \ Ohjelmoijat tekev\xE4t sen, koska heid\xE4n sovelluksensa tarvitsevat tietoa p\xE4\
   ivitty\xE4kseen tai\u2026"
 title: "HTTP-pyynn\xF6n l\xE4hett\xE4minen"
+weight: 44
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why? (Mikä & Miksi?)
 HTTP-pyynnön lähettäminen on tiedon pyytämistä palvelimelta. Ohjelmoijat tekevät sen, koska heidän sovelluksensa tarvitsevat tietoa päivittyäkseen tai käsitelläkseen käyttäjän pyyntöjä.

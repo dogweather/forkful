@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Verificare l'esistenza di una directory significa determinare la presenza\
   \ di una directory in un percorso specificato prima di eseguire operazioni come\u2026"
 title: Verifica se una directory esiste
+weight: 20
 ---
-
-{{< edit_this_page >}}
 
 ## Cosa e Perché?
 Verificare l'esistenza di una directory significa determinare la presenza di una directory in un percorso specificato prima di eseguire operazioni come leggere o scrivere file al suo interno. I programmatori lo fanno per evitare errori legati alle operazioni sui file, garantendo un'esecuzione più fluida e affidabile dei compiti di gestione dei file nelle loro applicazioni.

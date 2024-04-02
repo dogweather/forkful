@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Standardivirheen (stderr) kirjoittaminen ohjelmointikieliss\xE4 tarkoittaa\
   \ virheilmoitusten ja diagnostiikkojen ohjaamista erilliseen virtaan, pois\u2026"
 title: Kirjoittaminen vakiovirheeseen
+weight: 25
 ---
-
-{{< edit_this_page >}}
 
 ## Mikä & Miksi?
 

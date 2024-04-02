@@ -19,9 +19,8 @@ summary: "Visual Basic for Applications(VBA)\uC5D0\uC11C HTML\uC744 \uD30C\uC2F1
   \uD654\uD558\uAE30 \uC704\uD574 \uC774\uB97C \uC218\uD589\uD569\uB2C8\uB2E4. \uC608\
   \uB97C \uB4E4\uC5B4, \uC6F9\uC0AC\uC774\uD2B8 \uCF58\uD150\uCE20\uB97C\u2026"
 title: "HTML \uBD84\uC11D\uD558\uAE30"
+weight: 43
 ---
-
-{{< edit_this_page >}}
 
 ## 무엇이며 왜?
 

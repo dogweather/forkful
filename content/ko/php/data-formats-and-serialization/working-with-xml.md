@@ -17,9 +17,8 @@ summary: "XML\uC740 \uB370\uC774\uD130\uB97C \uC800\uC7A5\uD558\uACE0 \uC804\uC1
   \uC6A9\uD569\uB2C8\uB2E4 - \uB370\uC774\uD130 \uAD50\uD658\uACFC \uAD6C\uC131 \uC124\
   \uC815\uC744 \uC0DD\uAC01\uD574\uBCF4\uC138\uC694."
 title: "XML \uB2E4\uB8E8\uAE30"
+weight: 40
 ---
-
-{{< edit_this_page >}}
 
 ## 무엇 & 왜?
 XML은 데이터를 저장하고 전송하기 위해 사용되는 마크업 언어입니다. 프로그래머들은 응용 프로그램과 시스템 간의 상호 운용성을 가능하게 하기 위해 XML을 사용합니다 - 데이터 교환과 구성 설정을 생각해보세요.

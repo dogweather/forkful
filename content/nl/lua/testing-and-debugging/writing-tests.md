@@ -11,9 +11,8 @@ summary: "Het schrijven van tests betekent het cre\xEBren van code die automatis
   \ jouw andere code op fouten controleert. Programmeurs doen dit om bugs vroegtijdig\
   \ te\u2026"
 title: Tests Schrijven
+weight: 36
 ---
-
-{{< edit_this_page >}}
 
 ## Wat & Waarom?
 

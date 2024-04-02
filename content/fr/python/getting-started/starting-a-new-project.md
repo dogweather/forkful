@@ -11,9 +11,8 @@ model: gpt-4-0125-preview
 summary: "Commencer un nouveau projet en Python, c'est mettre en place d\xE8s le d\xE9\
   part une structure organis\xE9e et maintenable. Les programmeurs font cela pour\u2026"
 title: "D\xE9marrer un nouveau projet"
+weight: 1
 ---
-
-{{< edit_this_page >}}
 
 ## Quoi & Pourquoi ?
 

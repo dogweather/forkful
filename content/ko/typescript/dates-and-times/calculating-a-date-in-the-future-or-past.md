@@ -12,9 +12,8 @@ summary: "\uB0A0\uC9DC \uACC4\uC0B0\uC740 \uBBF8\uB798\uB098 \uACFC\uAC70\uC758 
   \uC2A4\uD15C, \uAE30\uD55C \uC124\uC815, \uC0AC\uAC74 \uCD94\uC801 \uB4F1\uC5D0\
   \ \uC4F0\uC785\uB2C8\uB2E4."
 title: "\uBBF8\uB798\uB098 \uACFC\uAC70\uC758 \uB0A0\uC9DC \uACC4\uC0B0\uD558\uAE30"
+weight: 26
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why? (무엇과 왜?)
 날짜 계산은 미래나 과거의 특정 날짜를 찾는 것입니다. 예약 시스템, 기한 설정, 사건 추적 등에 쓰입니다.

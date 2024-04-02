@@ -9,9 +9,8 @@ summary: "\"Logowanie\" to tworzenie zapisu wydarze\u0144, transakcji lub dzia\u
   a\u0144, kt\xF3re maj\u0105 miejsce w czasie w systemie. Programi\u015Bci u\u017C\
   ywaj\u0105 go do debugowania,\u2026"
 title: "Rejestrowanie zdarze\u0144"
+weight: 17
 ---
-
-{{< edit_this_page >}}
 
 ## Co i dlaczego?
 "Logowanie" to tworzenie zapisu wydarzeń, transakcji lub działań, które mają miejsce w czasie w systemie. Programiści używają go do debugowania, monitorowania stanu systemu, zbierania statystyk, a nawet audytu używania, co czyni je nieodzowną praktyką dla utrzymania i zrozumienia zachowania ich kodu w różnych warunkach.

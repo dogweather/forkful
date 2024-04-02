@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Het aaneenschakelen van strings betekent dat je ze eind-aan-eind samenvoegt\
   \ om een nieuwe te maken. Programmeurs doen dit om berichten samen te voegen,\u2026"
 title: Samenvoegen van strings
+weight: 3
 ---
-
-{{< edit_this_page >}}
 
 ## Wat & Waarom?
 Het aaneenschakelen van strings betekent dat je ze eind-aan-eind samenvoegt om een nieuwe te maken. Programmeurs doen dit om berichten samen te voegen, commando's te bouwen, of gewoon om informatie netjes weer te geven.

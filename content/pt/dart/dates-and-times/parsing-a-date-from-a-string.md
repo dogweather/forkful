@@ -11,9 +11,8 @@ summary: "Analisar uma data a partir de uma string em Dart envolve a convers\xE3
   \ da representa\xE7\xE3o textual de datas e horas em um objeto `DateTime`. Essa\
   \ opera\xE7\xE3o \xE9\u2026"
 title: Analisando uma data a partir de uma string
+weight: 30
 ---
-
-{{< edit_this_page >}}
 
 ## O Que & Por Quê?
 Analisar uma data a partir de uma string em Dart envolve a conversão da representação textual de datas e horas em um objeto `DateTime`. Essa operação é essencial para aplicações que lidam com agendamento, análise de dados ou qualquer recurso que exija manipulação de datas, garantindo que os dados relacionados a datas sejam corretamente entendidos e processados pelo programa.

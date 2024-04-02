@@ -10,9 +10,8 @@ model: gpt-4-0125-preview
 summary: "Encontrar la longitud de una cadena en C implica determinar el n\xFAmero\
   \ de caracteres antes del terminador nulo `\\0`. Los programadores hacen esto para\u2026"
 title: Encontrando la longitud de una cadena
+weight: 7
 ---
-
-{{< edit_this_page >}}
 
 ## ¿Qué & Por qué?
 Encontrar la longitud de una cadena en C implica determinar el número de caracteres antes del terminador nulo `\0`. Los programadores hacen esto para manipular cadenas correctamente sin encontrarse con errores como desbordamientos de búfer, que pueden llevar a vulnerabilidades de seguridad o caídas del programa.

@@ -9,9 +9,8 @@ summary: "Retirer les guillemets d'une cha\xEEne signifie \xE9liminer toute occu
   \ de caract\xE8res de guillemets, qu'ils soient simples (' ') ou doubles (\" \"\
   ), des\u2026"
 title: "Retirer les guillemets d'une cha\xEEne"
+weight: 9
 ---
-
-{{< edit_this_page >}}
 
 ## Quoi & Pourquoi ?
 

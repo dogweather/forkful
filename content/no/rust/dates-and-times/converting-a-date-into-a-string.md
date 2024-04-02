@@ -9,9 +9,8 @@ summary: "\xC5 konvertere en dato til en streng betyr \xE5 endre datotypen fra e
   \ datorepresentasjonsformat til en tekststreng. Dette er nyttig for \xE5 vise datoer\
   \ til\u2026"
 title: Konvertere en dato til en streng
+weight: 28
 ---
-
-{{< edit_this_page >}}
 
 ## Hva & Hvorfor?
 Å konvertere en dato til en streng betyr å endre datotypen fra et datorepresentasjonsformat til en tekststreng. Dette er nyttig for å vise datoer til brukere, lagring i tekstformater som JSON, eller for interoperabilitet med systemer som krever tekstinput.

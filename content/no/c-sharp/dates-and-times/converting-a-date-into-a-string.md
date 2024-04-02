@@ -7,9 +7,8 @@ model: gpt-4-1106-preview
 summary: "Konvertering av dato til streng gj\xF8r datoen lesbar for mennesker. Dette\
   \ er nyttig for visning, logging eller formatert utveksling mellom systemer."
 title: Konvertere en dato til en streng
+weight: 28
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why? (Hva & Hvorfor?)
 Konvertering av dato til streng gjør datoen lesbar for mennesker. Dette er nyttig for visning, logging eller formatert utveksling mellom systemer.

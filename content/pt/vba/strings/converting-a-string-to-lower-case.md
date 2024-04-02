@@ -11,9 +11,8 @@ summary: "Converter uma string para min\xFAsculas envolve transformar todos os c
   \ mai\xFAsculos de uma string em seus equivalentes min\xFAsculos. Esse processo\
   \ \xE9\u2026"
 title: "Convertendo uma string para min\xFAsculas"
+weight: 4
 ---
-
-{{< edit_this_page >}}
 
 ## O Que & Por Quê?
 

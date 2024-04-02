@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Reguliere expressies (regex) laten je zoeken naar patronen in tekst\u2014\
   denk aan jokertekens op stero\xEFden. Programmeurs gebruiken ze om invoer te valideren,\u2026"
 title: Reguliere expressies gebruiken
+weight: 11
 ---
-
-{{< edit_this_page >}}
 
 ## Wat & Waarom?
 

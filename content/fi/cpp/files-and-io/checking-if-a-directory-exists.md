@@ -11,9 +11,8 @@ summary: "Hakemiston olemassaolon tarkistaminen tarkoittaa m\xE4\xE4ritt\xE4mist
   , onko tietyss\xE4 polussa hakemistoa ennen toimintojen, kuten tiedostojen lukemisen\
   \ tai niihin\u2026"
 title: Tarkistetaan, onko hakemisto olemassa
+weight: 20
 ---
-
-{{< edit_this_page >}}
 
 ## Mikä & Miksi?
 Hakemiston olemassaolon tarkistaminen tarkoittaa määrittämistä, onko tietyssä polussa hakemistoa ennen toimintojen, kuten tiedostojen lukemisen tai niihin kirjoittamisen, suorittamista. Ohjelmoijat tekevät sen välttääkseen tiedosto-operaatioihin liittyviä virheitä, varmistaen sujuvamman ja luotettavamman tiedostonkäsittelyn tehtävien suorituksen sovelluksissaan.

@@ -11,9 +11,8 @@ summary: "Analizar una fecha desde una cadena es una tarea com\xFAn al tratar co
   \ entradas de usuario o al leer datos de archivos, lo cual implica convertir datos\
   \ en\u2026"
 title: Analizando una fecha a partir de una cadena de texto
+weight: 30
 ---
-
-{{< edit_this_page >}}
 
 ## Qué y Por Qué?
 

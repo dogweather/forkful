@@ -7,9 +7,8 @@ lastmod: '2024-03-13T22:44:41.585434-06:00'
 model: gpt-4-0125-preview
 summary: "Clojure\u3067JSON\uFF08JavaScript Object\u2026"
 title: "JSON\u3092\u6D3B\u7528\u3059\u308B"
+weight: 38
 ---
-
-{{< edit_this_page >}}
 
 ## 何となく理由
 ClojureでJSON（JavaScript Object Notation）を扱うことは、JSON文字列をClojureのデータ構造（マップ、ベクター）に解析し、その逆を行う作業を含みます。このタスクは、データを構造化されたテキストベースの形式で通信する必要があるWebサービス、API、アプリケーションにとって基本的です。なぜなら、JSONは異なるプログラミング環境全体で普遍的に認識され、サポートされているからです。

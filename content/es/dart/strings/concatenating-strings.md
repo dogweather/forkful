@@ -10,9 +10,8 @@ model: gpt-4-0125-preview
 summary: "Concatenar cadenas en la programaci\xF3n implica combinar dos o m\xE1s cadenas\
   \ en una. Los programadores hacen esto para manipular datos de texto f\xE1cilmente,\u2026"
 title: Concatenando cadenas de texto
+weight: 3
 ---
-
-{{< edit_this_page >}}
 
 ## Qué y Por Qué?
 Concatenar cadenas en la programación implica combinar dos o más cadenas en una. Los programadores hacen esto para manipular datos de texto fácilmente, construir mensajes o ensamblar partes de una interfaz de usuario de manera dinámica.

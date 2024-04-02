@@ -11,9 +11,8 @@ summary: "Analyser du HTML en PowerShell consiste \xE0 diss\xE9quer un contenu H
   \ pour extraire des donn\xE9es sp\xE9cifiques ou pour automatiser des t\xE2ches\
   \ li\xE9es au web. Les\u2026"
 title: Analyse Syntaxique du HTML
+weight: 43
 ---
-
-{{< edit_this_page >}}
 
 ## Quoi & Pourquoi ?
 Analyser du HTML en PowerShell consiste à disséquer un contenu HTML pour extraire des données spécifiques ou pour automatiser des tâches liées au web. Les programmeurs le font pour interagir avec des pages web, récupérer du contenu web ou automatiser la soumission de formulaires et d'autres interactions web sans avoir besoin d'un navigateur web.

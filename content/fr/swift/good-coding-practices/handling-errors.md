@@ -9,9 +9,8 @@ summary: "G\xE9rer les erreurs en Swift signifie anticiper et r\xE9pondre aux pr
   mes qui surviennent lorsque votre code est ex\xE9cut\xE9. Nous le faisons pour contr\xF4\
   ler le\u2026"
 title: Gestion des erreurs
+weight: 16
 ---
-
-{{< edit_this_page >}}
 
 ## Quoi & Pourquoi ?
 Gérer les erreurs en Swift signifie anticiper et répondre aux problèmes qui surviennent lorsque votre code est exécuté. Nous le faisons pour contrôler le chaos—empêcher les applications de planter et offrir une expérience fluide à l'utilisateur.

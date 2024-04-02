@@ -11,9 +11,8 @@ summary: "Convertir una cadena a min\xFAsculas es una operaci\xF3n fundamental q
   \ permite uniformidad y consistencia en el procesamiento de texto, esencial para\
   \ tareas\u2026"
 title: "Convirtiendo una cadena de texto a min\xFAsculas"
+weight: 4
 ---
-
-{{< edit_this_page >}}
 
 ## Qué y por qué?
 

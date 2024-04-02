@@ -9,9 +9,8 @@ summary: "Att arbeta med XML inneb\xE4r att tolka, extrahera och manipulera data
   \ Extensible Markup Language-formatet. Programmerare brottas med XML eftersom det\
   \ \xE4r\u2026"
 title: Att arbeta med XML
+weight: 40
 ---
-
-{{< edit_this_page >}}
 
 ## Vad & Varför?
 Att arbeta med XML innebär att tolka, extrahera och manipulera data i Extensible Markup Language-formatet. Programmerare brottas med XML eftersom det är ett mycket använt datautbytesformat för konfigurationer, API:er och mer.

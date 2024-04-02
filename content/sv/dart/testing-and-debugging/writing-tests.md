@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Att skriva tester i Dart inneb\xE4r att skapa testfall f\xF6r att automatiskt\
   \ verifiera att olika delar av ditt program fungerar som f\xF6rv\xE4ntat. Programmerare\u2026"
 title: Skriva tester
+weight: 36
 ---
-
-{{< edit_this_page >}}
 
 ## Vad & Varför?
 

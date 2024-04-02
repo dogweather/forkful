@@ -13,9 +13,8 @@ summary: "Vi\u1EC7c lo\u1EA1i b\u1ECF d\u1EA5u ngo\u1EB7c t\u1EEB m\u1ED9t chu\u
   ) ho\u1EB7c d\u1EA5u ngo\u1EB7c \u0111\u01A1n (') \u1EDF \u0111\u1EA7u v\xE0 cu\u1ED1\
   i c\u1EE7a m\u1ED9t chu\u1ED7i, h\u1EEFu \xEDch cho vi\u1EC7c\u2026"
 title: "Lo\u1EA1i b\u1ECF d\u1EA5u ngo\u1EB7c k\xE9p kh\u1ECFi chu\u1ED7i"
+weight: 9
 ---
-
-{{< edit_this_page >}}
 
 ## Lý do & Tại sao?
 Việc loại bỏ dấu ngoặc từ một chuỗi trong Dart bao gồm việc gỡ bỏ dấu ngoặc kép (") hoặc dấu ngoặc đơn (') ở đầu và cuối của một chuỗi, hữu ích cho việc làm sạch dữ liệu hoặc chuẩn bị chuỗi cho việc xử lý tiếp theo. Các lập trình viên thực hiện việc này để chuẩn hoá đầu vào dữ liệu, đảm bảo sự thống nhất trong việc lưu trữ dữ liệu, hoặc khi giao tiếp với các API có thể trả về dữ liệu dưới dạng có ngoặc.

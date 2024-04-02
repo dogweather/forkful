@@ -10,9 +10,8 @@ model: gpt-4-0125-preview
 summary: "Schrijven naar standaardfout in Visual Basic for Applications (VBA) houdt\
   \ in dat foutmeldingen of diagnostische berichten worden omgeleid, apart van de\u2026"
 title: Schrijven naar standaardfout
+weight: 25
 ---
-
-{{< edit_this_page >}}
 
 ## Wat & Waarom?
 

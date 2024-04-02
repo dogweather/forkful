@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Merkkijonoista tietyn kuvion mukaisesti vastaavien merkkien poistaminen\
   \ on olennaista datan validoinnissa, sanitoinnissa tai kun teksti\xE4 valmistellaan\u2026"
 title: Mallin mukaisten merkkien poistaminen
+weight: 5
 ---
-
-{{< edit_this_page >}}
 
 ## Mikä ja miksi?
 

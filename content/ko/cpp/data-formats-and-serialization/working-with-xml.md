@@ -15,9 +15,8 @@ summary: "XML\uC744 \uB2E4\uB8E8\uB294 \uAC83\uC740 XML(eXtensible Markup Langua
   \ \uAD6C\uC870\uD654\uB41C \uB370\uC774\uD130 \uAD50\uD658, \uAD6C\uC131 \uB4F1\uC744\
   \ \uAD00\uB9AC\uD558\uAE30 \uC704\uD574 XML\uC744 \uB2E4\uB8F9\uB2C8\uB2E4."
 title: "XML \uB2E4\uB8E8\uAE30"
+weight: 40
 ---
-
-{{< edit_this_page >}}
 
 ## 무엇 & 왜?
 XML을 다루는 것은 XML(eXtensible Markup Language) 데이터를 파싱, 생성, 조작하는 것을 의미합니다. 프로그래머들은 플랫폼 중립적인 특성 때문에 구조화된 데이터 교환, 구성 등을 관리하기 위해 XML을 다룹니다.

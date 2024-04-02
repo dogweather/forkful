@@ -9,9 +9,8 @@ summary: "La journalisation dans le d\xE9veloppement de logiciels est la techniq
   \ permettant d'enregistrer les \xE9v\xE9nements qui se produisent pendant l'ex\xE9\
   cution d'un\u2026"
 title: Journalisation
+weight: 17
 ---
-
-{{< edit_this_page >}}
 
 ## Quoi et Pourquoi ?
 La journalisation dans le développement de logiciels est la technique permettant d'enregistrer les événements qui se produisent pendant l'exécution d'un programme, typiquement dans un fichier ou un système externe. Les programmeurs le font pour obtenir des aperçus du comportement du logiciel, dépanner des problèmes, et maintenir un enregistrement de l'historique opérationnel qui est crucial pour le débogage et la surveillance de la santé des applications.

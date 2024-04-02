@@ -13,9 +13,8 @@ summary: "Ph\xE2n t\xEDch ng\xE0y t\u1EEB m\u1ED9t chu\u1ED7i ngh\u0129a l\xE0 c
   \u1EDDi sang \u0111\u1ECBnh d\u1EA1ng m\xE0 m\xE1y t\xEDnh c\xF3 th\u1EC3 hi\u1EC3\
   u \u0111\u01B0\u1EE3c. L\u1EADp tr\xECnh vi\xEAn th\u1EF1c hi\u1EC7n\u2026"
 title: "Ph\xE2n t\xEDch ng\xE0y t\u1EEB chu\u1ED7i k\xED t\u1EF1"
+weight: 30
 ---
-
-{{< edit_this_page >}}
 
 ## Gì và Tại sao?
 

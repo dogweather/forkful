@@ -11,9 +11,8 @@ summary: "Ty\xF6skentely CSV:n (pilkuin erotetut arvot) parissa sis\xE4lt\xE4\xE
   \ lukemista ja kirjoittamista CSV-tiedostoihin, yleinen muoto tabulaarisen datan\
   \ tallentamiseen.\u2026"
 title: "Ty\xF6skentely CSV:n kanssa"
+weight: 37
 ---
-
-{{< edit_this_page >}}
 
 ## Mitä & Miksi?
 Työskentely CSV:n (pilkuin erotetut arvot) parissa sisältää lukemista ja kirjoittamista CSV-tiedostoihin, yleinen muoto tabulaarisen datan tallentamiseen. Ohjelmoijat tekevät näin voidakseen helposti vaihtaa ja tallentaa dataa yksinkertaisessa, tekstipohjaisessa muodossa, jota laajasti tuetaan eri alustoilla ja kielillä.

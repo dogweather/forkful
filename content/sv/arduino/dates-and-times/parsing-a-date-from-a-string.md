@@ -11,9 +11,8 @@ summary: "Att tolka ett datum fr\xE5n en str\xE4ng i Arduino inneb\xE4r att extr
   \ och konvertera datumkomponenterna (\xE5r, m\xE5nad, dag) fr\xE5n en textuell representation\
   \ till\u2026"
 title: "Analysera ett datum fr\xE5n en str\xE4ng"
+weight: 30
 ---
-
-{{< edit_this_page >}}
 
 ## Vad & Varför?
 

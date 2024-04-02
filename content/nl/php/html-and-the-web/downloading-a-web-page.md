@@ -11,9 +11,8 @@ summary: "Het downloaden van een webpagina betekent het binnenhalen van de onlin
   \ inhoud, zodat je deze offline kunt gebruiken of analyseren. Programmeurs doen\
   \ dit\u2026"
 title: Een webpagina downloaden
+weight: 42
 ---
-
-{{< edit_this_page >}}
 
 ## Wat & Waarom?
 

@@ -10,9 +10,8 @@ model: gpt-4-0125-preview
 summary: "L'analisi dell'HTML (Parsing HTML) consiste nell'estrazione di dati e informazioni\
   \ dai documenti HTML, che \xE8 cruciale per il web scraping, l'analisi dei\u2026"
 title: Analisi del HTML
+weight: 43
 ---
-
-{{< edit_this_page >}}
 
 ## Cosa & Perché?
 L'analisi dell'HTML (Parsing HTML) consiste nell'estrazione di dati e informazioni dai documenti HTML, che è cruciale per il web scraping, l'analisi dei dati e i compiti di automazione. I programmatori eseguono questa operazione per raccogliere, analizzare o manipolare il contenuto web programmaticamente, abilitando l'automazione di ciò che altrimenti sarebbe l'estrazione manuale dei dati dai siti web.

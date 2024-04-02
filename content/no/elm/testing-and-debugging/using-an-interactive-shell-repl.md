@@ -7,9 +7,8 @@ model: gpt-4-0125-preview
 summary: "Read-Eval-Print Loop (REPL) er et enkelt, interaktivt programmeringsmilj\xF8\
   \ som tar enkeltbrukerinput, evaluerer dem, og returnerer resultatet til brukeren.\u2026"
 title: Bruke et interaktivt skall (REPL)
+weight: 34
 ---
-
-{{< edit_this_page >}}
 
 ## Hva & Hvorfor?
 Read-Eval-Print Loop (REPL) er et enkelt, interaktivt programmeringsmiljø som tar enkeltbrukerinput, evaluerer dem, og returnerer resultatet til brukeren. Elm-programmerere bruker REPL for raske eksperimenter, feilsøking eller for å lære språket.

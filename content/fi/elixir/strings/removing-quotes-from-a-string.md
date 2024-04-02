@@ -9,9 +9,8 @@ summary: "Lainausmerkkien poistaminen merkkijonosta tarkoittaa ylim\xE4\xE4r\xE4
   \ \"kuorien\" riisumista saadakseen puhtaan tekstin esiin. Ohjelmoijat tekev\xE4\
   t t\xE4m\xE4n\u2026"
 title: Merkkijonosta lainausmerkkien poistaminen
+weight: 9
 ---
-
-{{< edit_this_page >}}
 
 ## Mitä & Miksi?
 Lainausmerkkien poistaminen merkkijonosta tarkoittaa ylimääräisten "kuorien" riisumista saadakseen puhtaan tekstin esiin. Ohjelmoijat tekevät tämän puhdistaakseen syötteen, välttääkseen virheitä ja valmistellessaan dataa käsittelyyn, jossa lainausmerkit ovat haittoja, eivät hyödykkeitä.

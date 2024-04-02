@@ -7,9 +7,8 @@ model: gpt-4-1106-preview
 summary: "Gestire gli errori in C# significa gestire l'inaspettato\u2014come inciampare\
   \ sui propri lacci delle scarpe. I programmi possono inciampare su dati errati o\u2026"
 title: Gestione degli errori
+weight: 16
 ---
-
-{{< edit_this_page >}}
 
 ## Cosa & Perché?
 

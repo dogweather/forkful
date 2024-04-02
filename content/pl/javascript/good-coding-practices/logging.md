@@ -9,9 +9,8 @@ summary: "Logowanie, w najwi\u0119kszym skr\xF3cie, przypomina prowadzenie dzien
   \ dla Twojej aplikacji \u2013 rejestruje zdarzenia, b\u0142\u0119dy i inne znacz\u0105\
   ce akcje, kt\xF3re maj\u0105\u2026"
 title: "Rejestrowanie zdarze\u0144"
+weight: 17
 ---
-
-{{< edit_this_page >}}
 
 ## Co i dlaczego?
 Logowanie, w największym skrócie, przypomina prowadzenie dziennika dla Twojej aplikacji – rejestruje zdarzenia, błędy i inne znaczące akcje, które mają miejsce podczas działania oprogramowania. Programiści robią to nie tylko, aby zrozumieć co się dzieje pod maską w czasie rzeczywistym, ale również by mieć historyczny zapis, który jest kluczowy do debugowania, audytowania i optymalizacji wydajności.

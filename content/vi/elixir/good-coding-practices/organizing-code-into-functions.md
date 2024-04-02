@@ -13,9 +13,8 @@ summary: "T\u1ED5 ch\u1EE9c code th\xE0nh c\xE1c h\xE0m (functions) c\xF3 ngh\u0
   \ t\xE1i s\u1EED d\u1EE5ng. Ch\xFAng ta l\xE0m \u0111i\u1EC1u n\xE0y \u0111\u1EC3\
   \ c\u1EA3i thi\u1EC7n kh\u1EA3\u2026"
 title: "S\u1EAFp x\u1EBFp m\xE3 th\xE0nh c\xE1c h\xE0m"
+weight: 18
 ---
-
-{{< edit_this_page >}}
 
 ## Cái gì & Tại sao?
 Tổ chức code thành các hàm (functions) có nghĩa là gom các thao tác liên quan vào những khối có thể tái sử dụng. Chúng ta làm điều này để cải thiện khả năng đọc và bảo trì, giảm trùng lặp và đơn giản hóa việc kiểm thử.

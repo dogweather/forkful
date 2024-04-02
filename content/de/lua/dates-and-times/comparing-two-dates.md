@@ -7,9 +7,8 @@ model: gpt-4-1106-preview
 summary: "Datumvergleich bedeutet, zwei Zeitpunkte hinsichtlich ihrer chronologischen\
   \ Reihenfolge zu vergleichen. Programmierer nutzen dies, um Zeitabl\xE4ufe zu\u2026"
 title: Vergleich von zwei Daten
+weight: 27
 ---
-
-{{< edit_this_page >}}
 
 ## Was & Warum?
 Datumvergleich bedeutet, zwei Zeitpunkte hinsichtlich ihrer chronologischen Reihenfolge zu vergleichen. Programmierer nutzen dies, um Zeitabläufe zu steuern, Dauer zu berechnen oder Ereignisse zu terminieren.

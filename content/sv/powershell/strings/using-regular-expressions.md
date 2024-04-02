@@ -11,9 +11,8 @@ summary: "Regulj\xE4ra uttryck (regex) \xE4r sekvenser av tecken som bildar ett 
   km\xF6nster, prim\xE4rt anv\xE4nda f\xF6r s\xF6kning och manipulation av str\xE4\
   ngar. Programmerare\u2026"
 title: "Att anv\xE4nda regulj\xE4ra uttryck"
+weight: 11
 ---
-
-{{< edit_this_page >}}
 
 ## Vad & Varför?
 

@@ -9,9 +9,8 @@ summary: "Felhantering i dina program f\xE5ngar de ov\xE4ntade ting som f\xF6rs\
   ker s\xE4tta k\xE4ppar i hjulet. Du g\xF6r det f\xF6r att h\xE5lla din Arduino fr\xE5\
   n att sm\xE4lta ned n\xE4r det\u2026"
 title: Hantering av fel
+weight: 16
 ---
-
-{{< edit_this_page >}}
 
 ## Vad & Varför?
 

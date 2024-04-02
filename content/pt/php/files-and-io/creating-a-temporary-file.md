@@ -9,9 +9,8 @@ summary: "Criar um arquivo tempor\xE1rio em PHP \xE9 como rabiscar em um papel d
   \ rascunho. Programadores fazem isso quando querem guardar dados rapidamente sem\
   \ precisar\u2026"
 title: "Criando um arquivo tempor\xE1rio"
+weight: 21
 ---
-
-{{< edit_this_page >}}
 
 ## O Que & Porquê?
 

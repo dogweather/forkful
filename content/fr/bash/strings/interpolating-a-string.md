@@ -9,9 +9,8 @@ summary: "Interpoler une cha\xEEne, c'est ins\xE9rer des valeurs de variables ou
   \ directement dans le texte. C'est ultra-pratique pour int\xE9grer des donn\xE9\
   es\u2026"
 title: "Interpolation de cha\xEEnes de caract\xE8res"
+weight: 8
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why? (Quoi et Pourquoi ?)
 Interpoler une chaîne, c'est insérer des valeurs de variables ou d'expressions directement dans le texte. C'est ultra-pratique pour intégrer des données dynamiques sans s'embrouiller entre concaténations et citations.

@@ -11,9 +11,8 @@ summary: "Interpolacja ci\u0105g\xF3w w Google Apps Script umo\u017Cliwia dynami
   \ osadzanie wyra\u017Ce\u0144 w ci\u0105gach, u\u0142atwiaj\u0105c tworzenie bardziej\
   \ czytelnego i \u0142atwiejszego do\u2026"
 title: "Interpolacja ci\u0105gu znak\xF3w"
+weight: 8
 ---
-
-{{< edit_this_page >}}
 
 ## Co i dlaczego?
 

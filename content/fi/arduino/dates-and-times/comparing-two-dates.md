@@ -8,9 +8,8 @@ model: gpt-4-1106-preview
 summary: "Vertaillaan kahta p\xE4iv\xE4m\xE4\xE4r\xE4\xE4 selvitt\xE4m\xE4\xE4n niiden\
   \ j\xE4rjestys tai aikaero. Tarpeen esimerkiksi ajanhallinnassa ja tapahtumien seurannassa."
 title: "Kahden p\xE4iv\xE4m\xE4\xE4r\xE4n vertailu"
+weight: 27
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why? (Mikä ja Miksi?)
 Vertaillaan kahta päivämäärää selvittämään niiden järjestys tai aikaero. Tarpeen esimerkiksi ajanhallinnassa ja tapahtumien seurannassa.

@@ -11,9 +11,8 @@ summary: "L'analyse du HTML implique l'\xE9tude du code HTML d'une page web pour
   \ des informations ou des \xE9l\xE9ments sp\xE9cifiques, une t\xE2che commune pour\
   \ le web\u2026"
 title: Analyse Syntaxique du HTML
+weight: 43
 ---
-
-{{< edit_this_page >}}
 
 ## Quoi & Pourquoi ?
 L'analyse du HTML implique l'étude du code HTML d'une page web pour extraire des informations ou des éléments spécifiques, une tâche commune pour le web scraping, le data mining, ou l'automatisation des interactions avec les sites web. Les programmeurs le font pour interagir programmatiquement avec les sites web ou extraire des données, automatiser des tâches ou tester des applications web.

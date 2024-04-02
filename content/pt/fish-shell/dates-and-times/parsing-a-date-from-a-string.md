@@ -11,9 +11,8 @@ summary: "Analisar uma data a partir de uma string envolve extrair informa\xE7\x
   es de data codificadas dentro de strings e convert\xEA-las em um formato estruturado\
   \ que\u2026"
 title: Analisando uma data a partir de uma string
+weight: 30
 ---
-
-{{< edit_this_page >}}
 
 ## O que & Por quê?
 Analisar uma data a partir de uma string envolve extrair informações de data codificadas dentro de strings e convertê-las em um formato estruturado que ambientes de programação podem reconhecer e manipular. Programadores fazem isso para habilitar operações como comparação de datas, aritmética, formatação e localização, que são essenciais para o manuseio eficiente de agendamentos, timestamps e dados históricos em software.

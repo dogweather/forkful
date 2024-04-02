@@ -10,9 +10,8 @@ model: gpt-4-0125-preview
 summary: "Estrarre sottosequenze si riferisce al recupero di porzioni specifiche di\
   \ una stringa basate sulle loro posizioni o sui loro schemi. I programmatori fanno\u2026"
 title: Estrazione di sottostringhe
+weight: 6
 ---
-
-{{< edit_this_page >}}
 
 ## Cosa & Perché?
 Estrarre sottosequenze si riferisce al recupero di porzioni specifiche di una stringa basate sulle loro posizioni o sui loro schemi. I programmatori fanno ciò per compiti come l'analisi dell'input dell'utente, la manipolazione dei dati o l'estrazione di informazioni rilevanti da fonti di testo più ampie.

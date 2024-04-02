@@ -9,9 +9,8 @@ summary: "Praca z XML oznacza parsowanie, tworzenie i manipulowanie danymi XML (
   \ Markup Language). Programi\u015Bci zarz\u0105dzaj\u0105 XML, aby obs\u0142ugiwa\u0107\
   \ wymian\u0119\u2026"
 title: Praca z XML
+weight: 40
 ---
-
-{{< edit_this_page >}}
 
 ## Co i dlaczego?
 Praca z XML oznacza parsowanie, tworzenie i manipulowanie danymi XML (eXtensible Markup Language). Programiści zarządzają XML, aby obsługiwać wymianę danych strukturalnych, konfigurację i więcej, ze względu na jego neutralność platformową.

@@ -7,9 +7,8 @@ model: gpt-4-1106-preview
 summary: "Merkkijonojen poimiminen tarkoittaa osan ottamista isommasta merkkijonosta.\
   \ Ohjelmoijat tekev\xE4t n\xE4in datan muokkaamiseksi tai hy\xF6dyllisen informaation\u2026"
 title: Merkkijonojen osien poimiminen
+weight: 6
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 Merkkijonojen poimiminen tarkoittaa osan ottamista isommasta merkkijonosta. Ohjelmoijat tekevät näin datan muokkaamiseksi tai hyödyllisen informaation irrottamiseksi.

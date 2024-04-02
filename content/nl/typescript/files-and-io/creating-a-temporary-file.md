@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Een tijdelijk bestand maken betekent het cre\xEBren van een bestand dat\
   \ slechts voor korte tijd nodig is, meestal tijdens de uitvoering van een programma.\u2026"
 title: Een tijdelijk bestand aanmaken
+weight: 21
 ---
-
-{{< edit_this_page >}}
 
 ## Wat & Waarom?
 Een tijdelijk bestand maken betekent het creëren van een bestand dat slechts voor korte tijd nodig is, meestal tijdens de uitvoering van een programma. Programmeurs doen dit voor taken zoals het opslaan van gegevens die te groot zijn voor het geheugen, het delen van informatie tussen processen, of het bewaren van de staat tijdens complexe bewerkingen.

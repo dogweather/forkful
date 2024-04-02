@@ -9,9 +9,8 @@ summary: "Come\xE7ar um novo projeto em Haskell envolve criar a estrutura base d
   \ um programa, definindo seus m\xF3dulos e depend\xEAncias. Programadores fazem\
   \ isso para\u2026"
 title: Iniciando um novo projeto
+weight: 1
 ---
-
-{{< edit_this_page >}}
 
 ## O Que & Por Quê?
 

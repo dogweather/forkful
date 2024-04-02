@@ -11,9 +11,8 @@ summary: "Pisanie test\xF3w w TypeScript polega na tworzeniu automatycznych skry
   w sprawdzaj\u0105cych funkcjonalno\u015B\u0107 i poprawno\u015B\u0107 Twojego kodu.\
   \ Programi\u015Bci robi\u0105 to, aby\u2026"
 title: "Pisanie test\xF3w"
+weight: 36
 ---
-
-{{< edit_this_page >}}
 
 ## Co i Dlaczego?
 Pisanie testów w TypeScript polega na tworzeniu automatycznych skryptów sprawdzających funkcjonalność i poprawność Twojego kodu. Programiści robią to, aby zapewnić niezawodność, szybko łapać błędy i ułatwić utrzymywanie wzrostu kodu, ponieważ statyczne typowanie TypeScript dodaje poziom przewidywalności do testowania JavaScript.

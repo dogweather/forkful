@@ -8,9 +8,8 @@ summary: Starting a new coding project is like planting a seed. You do it to gro
   an app, tool, or service. You start fresh, excited about potential.
 title: "\u041F\u043E\u0447\u0438\u043D\u0430\u0454\u043C\u043E \u043D\u043E\u0432\u0438\
   \u0439 \u043F\u0440\u043E\u0435\u043A\u0442"
+weight: 1
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why? (Що та Чому?)
 Starting a new coding project is like planting a seed. You do it to grow an app, tool, or service. You start fresh, excited about potential.

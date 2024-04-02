@@ -8,9 +8,8 @@ model: gpt-4-1106-preview
 summary: "Konkatenasjon er prosessen \xE5 koble sammen tekststrenger. Det lar programmerere\
   \ sette sammen ord og setninger dynamisk, noe som er viktig i alt fra \xE5 lage\u2026"
 title: "Sammensl\xE5ing av strenger"
+weight: 3
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why? (Hva & Hvorfor?)
 Konkatenasjon er prosessen å koble sammen tekststrenger. Det lar programmerere sette sammen ord og setninger dynamisk, noe som er viktig i alt fra å lage brukervennlige meldinger til å generere kompleks kode. 

@@ -9,9 +9,8 @@ summary: "Komennoriviparametrien lukeminen on prosessi, jossa ohjelma ottaa sy\x
   tteen\xE4 argumentteja, jotka on annettu ohjelman k\xE4ynnistyksen yhteydess\xE4\
   . Syy miksi\u2026"
 title: Komennoriviparametrien lukeminen
+weight: 23
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 Komennoriviparametrien lukeminen on prosessi, jossa ohjelma ottaa syötteenä argumentteja, jotka on annettu ohjelman käynnistyksen yhteydessä. Syy miksi devaajat tekevät tämän? Joustavuuden ja konfiguroinnin mahdollistaminen ilman, että koodia tarvitsee muokata.

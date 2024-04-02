@@ -9,9 +9,8 @@ summary: "Att hantera fel i programmering handlar om att f\xF6rvalta det ov\xE4n
   saker som kan g\xE5 fel. Programmerare g\xF6r detta f\xF6r att s\xE4kerst\xE4lla\
   \ att deras program\u2026"
 title: Hantering av fel
+weight: 16
 ---
-
-{{< edit_this_page >}}
 
 ## Vad & Varför?
 Att hantera fel i programmering handlar om att förvalta det oväntade—saker som kan gå fel. Programmerare gör detta för att säkerställa att deras program kan hantera dessa situationer smidigt, utan att krascha eller producera felaktiga resultat.

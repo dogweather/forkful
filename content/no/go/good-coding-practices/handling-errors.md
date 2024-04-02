@@ -11,9 +11,8 @@ summary: "\xC5 h\xE5ndtere feil i Go inneb\xE6rer \xE5 gjenkjenne og reagere p\x
   \ feilsituasjoner i programmet ditt. Programmere engasjerer seg i feilh\xE5ndtering\
   \ for \xE5 sikre at\u2026"
 title: "H\xE5ndtering av feil"
+weight: 16
 ---
-
-{{< edit_this_page >}}
 
 ## Hva & Hvorfor?
 

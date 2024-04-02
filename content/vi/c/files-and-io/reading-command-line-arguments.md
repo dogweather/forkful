@@ -13,9 +13,8 @@ summary: "Trong l\u1EADp tr\xECnh C, vi\u1EC7c \u0111\u1ECDc c\xE1c \u0111\u1ED1
   n \u0111\u1EA7u v\xE0o ngay t\u1EEB terminal, l\xE0m t\u0103ng t\xEDnh linh ho\u1EA1\
   t v\xE0 kh\u1EA3 n\u0103ng s\u1EED d\u1EE5ng. C\xE1c\u2026"
 title: "\u0110\u1ECDc c\xE1c tham s\u1ED1 d\xF2ng l\u1EC7nh"
+weight: 23
 ---
-
-{{< edit_this_page >}}
 
 ## Cái gì & Tại sao?
 

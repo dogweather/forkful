@@ -7,9 +7,8 @@ model: gpt-4-0125-preview
 summary: "\xC5 jobbe med XML betyr \xE5 analysere, manipulere og produsere XML-innhold\
   \ ved hjelp av kode. Programmerere gj\xF8r det fordi XML er mye brukt til\u2026"
 title: "\xC5 jobbe med XML"
+weight: 40
 ---
-
-{{< edit_this_page >}}
 
 ## Hva og hvorfor?
 Å jobbe med XML betyr å analysere, manipulere og produsere XML-innhold ved hjelp av kode. Programmerere gjør det fordi XML er mye brukt til konfigurasjonsfiler, datautveksling og webtjenester på grunn av dens menneskelesbare og maskin-tolkbare natur.

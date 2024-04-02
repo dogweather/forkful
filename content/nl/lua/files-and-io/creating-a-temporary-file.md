@@ -11,9 +11,8 @@ summary: "Het cre\xEBren van een tijdelijk bestand is het proces van het maken v
   \ een kortstondig bestand om gegevens in op te slaan die alleen nodig zijn tijdens\
   \ de\u2026"
 title: Een tijdelijk bestand aanmaken
+weight: 21
 ---
-
-{{< edit_this_page >}}
 
 ## Wat & Waarom?
 Het creëren van een tijdelijk bestand is het proces van het maken van een kortstondig bestand om gegevens in op te slaan die alleen nodig zijn tijdens de uitvoering van een programma. Programmeurs doen dit om te voorkomen dat het bestandssysteem wordt volgepropt met onnodige gegevens en om gevoelige informatie te hanteren die niet moet blijven bestaan.

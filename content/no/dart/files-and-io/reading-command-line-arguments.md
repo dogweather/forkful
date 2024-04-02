@@ -11,9 +11,8 @@ summary: "\xC5 lese kommandolinjeargumenter i Dart gj\xF8r det mulig for program
   \ \xE5 legge inn data direkte i konsollen n\xE5r de kj\xF8rer et Dart-program, noe\
   \ som\u2026"
 title: Lese kommandolinje-argumenter
+weight: 23
 ---
-
-{{< edit_this_page >}}
 
 ## Hva & Hvorfor?
 

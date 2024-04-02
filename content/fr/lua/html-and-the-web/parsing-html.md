@@ -11,9 +11,8 @@ summary: "L'analyse du HTML implique l'extraction de donn\xE9es et d'information
   \ \xE0 partir de documents HTML, ce qui est crucial pour le web scraping, l'analyse\
   \ de\u2026"
 title: Analyse Syntaxique du HTML
+weight: 43
 ---
-
-{{< edit_this_page >}}
 
 ## Quoi & Pourquoi ?
 L'analyse du HTML implique l'extraction de données et d'informations à partir de documents HTML, ce qui est crucial pour le web scraping, l'analyse de données et les tâches d'automatisation. Les programmeurs réalisent cela pour collecter, analyser ou manipuler le contenu web de manière programmatique, rendant possible l'automatisation de ce qui serait autrement une extraction manuelle de données depuis des sites web.

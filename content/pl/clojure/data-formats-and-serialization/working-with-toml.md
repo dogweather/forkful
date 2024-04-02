@@ -9,9 +9,8 @@ summary: "Praca z TOML oznacza obs\u0142ug\u0119 danych w formacie Minimal \"Tom
   \ Obvious, Minimal Language\", popularnym w przypadku plik\xF3w konfiguracyjnych\
   \ ze wzgl\u0119du na\u2026"
 title: Praca z TOML
+weight: 39
 ---
-
-{{< edit_this_page >}}
 
 ## Co i dlaczego?
 Praca z TOML oznacza obsługę danych w formacie Minimal "Tom's Obvious, Minimal Language", popularnym w przypadku plików konfiguracyjnych ze względu na łatwość odczytu. Programiści używają go do prostego zarządzania konfiguracją, która działa od razu z przyjazną dla człowieka składnią.

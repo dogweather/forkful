@@ -9,9 +9,8 @@ summary: "Omvandling av en textstr\xE4ng till gemener inneb\xE4r att alla versal
   \ i en text blir sm\xE5 bokst\xE4ver. Programmerare anv\xE4nder detta f\xF6r att\
   \ standardisera text\u2026"
 title: "Konvertera en str\xE4ng till gemener"
+weight: 4
 ---
-
-{{< edit_this_page >}}
 
 ## Vad & Varför?
 Omvandling av en textsträng till gemener innebär att alla versaler i en text blir små bokstäver. Programmerare använder detta för att standardisera text för sökning, jämförelse eller för att möta användarinterface-krav.

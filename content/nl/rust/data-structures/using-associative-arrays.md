@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Associatieve arrays, of wat Rustaceans \"hash maps\" noemen, zijn collecties\
   \ die gegevens opslaan in sleutel-waardeparen. Programmeurs gebruiken ze voor\u2026"
 title: Gebruik van associatieve arrays
+weight: 15
 ---
-
-{{< edit_this_page >}}
 
 ## Wat & Waarom?
 

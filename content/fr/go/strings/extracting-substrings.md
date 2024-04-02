@@ -11,9 +11,8 @@ summary: "Extraire des sous-cha\xEEnes implique de r\xE9cup\xE9rer des portions 
   cifiques d'une cha\xEEne en fonction de leurs positions. Les programmeurs r\xE9\
   alisent\u2026"
 title: "Extraction de sous-cha\xEEnes"
+weight: 6
 ---
-
-{{< edit_this_page >}}
 
 ## Quoi & Pourquoi ?
 

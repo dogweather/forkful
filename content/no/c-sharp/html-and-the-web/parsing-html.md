@@ -11,9 +11,8 @@ summary: "Parsing av HTML i programmering inneb\xE6rer \xE5 analysere strukturen
   \ et HTML-dokument, noe som gj\xF8r det mulig for deg \xE5 trekke ut, manipulere\
   \ og samhandle\u2026"
 title: Analysering av HTML
+weight: 43
 ---
-
-{{< edit_this_page >}}
 
 ## Hva & Hvorfor?
 

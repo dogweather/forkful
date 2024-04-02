@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Das Erstellen einer tempor\xE4ren Datei in Visual Basic for Applications\
   \ (VBA) beinhaltet das programmatische Generieren einer Datei f\xFCr die kurzfristige\u2026"
 title: "Erstellung einer tempor\xE4ren Datei"
+weight: 21
 ---
-
-{{< edit_this_page >}}
 
 ## Was & Warum?
 

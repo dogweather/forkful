@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Das Extrahieren von Teilzeichenfolgen beinhaltet das Nehmen eines Teils\
   \ einer Zeichenkette - im Wesentlichen das Erstellen einer neuen Zeichenkette aus\u2026"
 title: Teilzeichenketten extrahieren
+weight: 6
 ---
-
-{{< edit_this_page >}}
 
 ## Was & Warum?
 

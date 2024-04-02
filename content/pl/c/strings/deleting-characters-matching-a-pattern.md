@@ -11,9 +11,8 @@ summary: "Usuwanie znak\xF3w pasuj\u0105cych do okre\u015Blonego wzorca ze strin
   w w j\u0119zyku C polega na usuni\u0119ciu wszystkich instancji pewnych znak\xF3\
   w, kt\xF3re spe\u0142niaj\u0105\u2026"
 title: "Usuwanie znak\xF3w pasuj\u0105cych do wzorca"
+weight: 5
 ---
-
-{{< edit_this_page >}}
 
 ## Co i dlaczego?
 

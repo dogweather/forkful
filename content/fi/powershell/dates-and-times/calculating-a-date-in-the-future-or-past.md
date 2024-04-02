@@ -9,9 +9,8 @@ summary: "Lasketaan tulevaisuuden tai menneisyyden p\xE4iv\xE4m\xE4\xE4r\xE4: oh
   \ tekev\xE4t t\xE4t\xE4, kun tarvitaan erityisp\xE4ivien k\xE4sittely\xE4 tai aikajaksojen\
   \ laskentaa."
 title: "Tulevan tai menneen p\xE4iv\xE4m\xE4\xE4r\xE4n laskeminen"
+weight: 26
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 Lasketaan tulevaisuuden tai menneisyyden päivämäärä: ohjelmoijat tekevät tätä, kun tarvitaan erityispäivien käsittelyä tai aikajaksojen laskentaa.

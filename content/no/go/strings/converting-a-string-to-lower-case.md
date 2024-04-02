@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Konvertering av en streng til sm\xE5 bokstaver er en grunnleggende operasjon\
   \ som muliggj\xF8r uniformitet og konsistens i tekstbehandling, essensielt for\u2026"
 title: "Konvertering av en streng til sm\xE5 bokstaver"
+weight: 4
 ---
-
-{{< edit_this_page >}}
 
 ## Hva & Hvorfor?
 

@@ -9,9 +9,8 @@ summary: "La impresi\xF3n de salidas de depuraci\xF3n (debug output) es un m\xE9
   \ para mostrar informaci\xF3n de un programa mientras se ejecuta. Los programadores\
   \ lo usan\u2026"
 title: "Imprimiendo salida de depuraci\xF3n"
+weight: 33
 ---
-
-{{< edit_this_page >}}
 
 ## Qué y Por Qué?
 La impresión de salidas de depuración (debug output) es un método para mostrar información de un programa mientras se ejecuta. Los programadores lo usan para entender qué está pasando por "debajo del capó" y para solucionar problemas rápidamente.

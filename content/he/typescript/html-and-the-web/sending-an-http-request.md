@@ -19,9 +19,8 @@ summary: "\u05E9\u05DC\u05D9\u05D7\u05EA \u05D1\u05E7\u05E9\u05EA HTTP \u05D6\u0
   \u05D0\u05E4\u05DC\u05D9\u05E7\u05E6\u05D9\u05D5\u05EA \u05E9\u05DC\u05D4\u05DD\
   \ \u05DC\u05EA\u05E7\u05E9\u05E8."
 title: "\u05E9\u05DC\u05D9\u05D7\u05EA \u05D1\u05E7\u05E9\u05EA HTTP"
+weight: 44
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why? (מה ולמה?)
 שליחת בקשת HTTP זה הדרך לדבר עם שרתים ברשת. פרוגרמרים עושים את זה כדי להחליף נתונים, לגשת ל-APIs, ולאפשר לאפליקציות שלהם לתקשר.

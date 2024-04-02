@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Werken met XML in Haskell omvat het parsen, manipuleren en genereren van\
   \ XML-structuren. Programmeurs gaan om met XML om te interacteren met tal van\u2026"
 title: Werken met XML
+weight: 40
 ---
-
-{{< edit_this_page >}}
 
 ## Wat & Waarom?
 

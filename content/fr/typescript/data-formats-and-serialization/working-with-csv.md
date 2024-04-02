@@ -11,9 +11,8 @@ summary: "Travailler avec des fichiers CSV (Valeurs S\xE9par\xE9es par des Virgu
   \ implique la lecture et l'\xE9criture de fichiers CSV, un format d'\xE9change de\
   \ donn\xE9es\u2026"
 title: Travailler avec CSV
+weight: 37
 ---
-
-{{< edit_this_page >}}
 
 ## Quoi et pourquoi ?
 

@@ -11,9 +11,8 @@ summary: "Capitalizar uma string em Bash envolve transformar o primeiro caracter
   \ da string para mai\xFAscula, mantendo o resto da string inalterado. Esta t\xE9\
   cnica \xE9\u2026"
 title: Capitalizando uma string
+weight: 2
 ---
-
-{{< edit_this_page >}}
 
 ## O Que & Por Que?
 Capitalizar uma string em Bash envolve transformar o primeiro caractere da string para maiúscula, mantendo o resto da string inalterado. Esta técnica é comumente usada para formatar saídas ou cumprir com convenções de código que requerem que certas strings comecem com uma letra maiúscula para legibilidade ou preferências estilísticas.

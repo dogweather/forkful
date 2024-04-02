@@ -7,9 +7,8 @@ model: gpt-4-0125-preview
 summary: "Checking if a directory exists in Clojure involves verifying the presence\
   \ of a file system directory from within your Clojure application. This task is\u2026"
 title: Checking if a directory exists
+weight: 20
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 Checking if a directory exists in Clojure involves verifying the presence of a file system directory from within your Clojure application. This task is crucial for file operations, to prevent errors when reading from or writing to directories that may not be there, ensuring robust and error-free code execution.

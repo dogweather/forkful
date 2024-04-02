@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Loggen in de context van programmeren is het proces van het vastleggen van\
   \ gebeurtenissen, toestanden en informatie in een bestand of een ander\u2026"
 title: Logboekregistratie
+weight: 17
 ---
-
-{{< edit_this_page >}}
 
 ## Wat & Waarom?
 Loggen in de context van programmeren is het proces van het vastleggen van gebeurtenissen, toestanden en informatie in een bestand of een ander uitvoermedium. Programmeurs loggen om bij te houden wat er in hun applicaties gebeurt, om problemen te debuggen en om prestaties te monitoren voor toekomstige analyse en optimalisatie.

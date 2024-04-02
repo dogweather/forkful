@@ -13,9 +13,8 @@ summary: "N\u1ED9i suy chu\u1ED7i l\xE0 vi\u1EC7c k\u1EBFt h\u1EE3p bi\u1EBFn v\
   u n\xE0y nh\u1EB1m t\u1EA1o c\xE1c chu\u1ED7i m\u1ED9t c\xE1ch linh ho\u1EA1t, l\xE0\
   m cho \u0111\u1EA7u ra \u0111\u1ED9ng v\xE0 d\u1EC5 \u0111\u1ECDc."
 title: "N\u1ED9i suy chu\u1ED7i k\xFD t\u1EF1"
+weight: 8
 ---
-
-{{< edit_this_page >}}
 
 ## Gì và Tại Sao?
 

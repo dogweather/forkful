@@ -9,9 +9,8 @@ summary: "D\xE9marrer un nouveau projet, c'est partir de z\xE9ro pour cr\xE9er q
   \ chose de fonctionnel. Pourquoi ? Pour r\xE9soudre un probl\xE8me, apprendre ou\
   \ simplement\u2026"
 title: Lancement d'un nouveau projet
+weight: 1
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why? - Quoi et Pourquoi ?
 Démarrer un nouveau projet, c'est partir de zéro pour créer quelque chose de fonctionnel. Pourquoi ? Pour résoudre un problème, apprendre ou simplement pour le plaisir de créer.

@@ -9,9 +9,8 @@ summary: "Praca z TOML oznacza parsowanie i generowanie danych TOML (Tom's Obvio
   \ Minimal Language) za pomoc\u0105 Elixir. Programi\u015Bci u\u017Cywaj\u0105 go\
   \ do obs\u0142ugi plik\xF3w\u2026"
 title: Praca z TOML
+weight: 39
 ---
-
-{{< edit_this_page >}}
 
 ## Co i Dlaczego?
 Praca z TOML oznacza parsowanie i generowanie danych TOML (Tom's Obvious, Minimal Language) za pomocą Elixir. Programiści używają go do obsługi plików konfiguracyjnych, ponieważ TOML jest czytelny, łatwy do sparsowania i dobrze mapuje się na strukturę danych typu hash.

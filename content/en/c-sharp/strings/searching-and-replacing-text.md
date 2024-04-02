@@ -7,9 +7,8 @@ model: gpt-4-1106-preview
 summary: "Searching and replacing text in strings lets you update data without manual\
   \ edits. Programmers need this to handle user input corrections, data\u2026"
 title: Searching and replacing text
+weight: 10
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 Searching and replacing text in strings lets you update data without manual edits. Programmers need this to handle user input corrections, data formatting, or batch updates efficiently.

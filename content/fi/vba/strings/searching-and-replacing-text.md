@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Tekstin etsiminen ja korvaaminen Visual Basic for Applications (VBA) -ymp\xE4\
   rist\xF6ss\xE4 on olennaista dokumenttien, taulukoiden ja tietokantojen\u2026"
 title: Tekstin etsiminen ja korvaaminen
+weight: 10
 ---
-
-{{< edit_this_page >}}
 
 ## Mikä & Miksi?
 

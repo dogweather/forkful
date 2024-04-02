@@ -10,9 +10,8 @@ model: gpt-4-0125-preview
 summary: "\xC5 analysere en dato fra en streng i Visual Basic for Applications (VBA)\
   \ handler om \xE5 konvertere tekst som representerer en dato til en datatotype for\u2026"
 title: Analysering av en dato fra en streng
+weight: 30
 ---
-
-{{< edit_this_page >}}
 
 ## Hva & Hvorfor?
 

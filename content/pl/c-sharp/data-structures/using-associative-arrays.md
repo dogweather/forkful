@@ -11,9 +11,8 @@ summary: "Tablice asocjacyjne, czyli s\u0142owniki w C#, pozwalaj\u0105 przechow
   \ i zarz\u0105dza\u0107 parami kluczy i warto\u015Bci. S\u0105 Twoim pierwszym wyborem,\
   \ gdy potrzebujesz szybko\u2026"
 title: Korzystanie z tablic asocjacyjnych
+weight: 15
 ---
-
-{{< edit_this_page >}}
 
 ## Co i dlaczego?
 

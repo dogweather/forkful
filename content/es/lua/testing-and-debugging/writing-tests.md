@@ -11,9 +11,8 @@ summary: "Escribir pruebas en programaci\xF3n implica crear peque\xF1as piezas d
   \ c\xF3digo separadas para verificar autom\xE1ticamente que diferentes partes de\
   \ tu aplicaci\xF3n\u2026"
 title: Escribiendo pruebas
+weight: 36
 ---
-
-{{< edit_this_page >}}
 
 ## ¿Qué y Por Qué?
 

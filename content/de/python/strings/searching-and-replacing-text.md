@@ -9,9 +9,8 @@ summary: "Suchen und Ersetzen von Text ist ein Standardvorgang, bei dem Zeichenf
   \ in Daten durch andere ersetzt werden. Programmierer greifen darauf zur\xFCck,\
   \ um\u2026"
 title: Suchen und Ersetzen von Text
+weight: 10
 ---
-
-{{< edit_this_page >}}
 
 ## Was & Warum?
 

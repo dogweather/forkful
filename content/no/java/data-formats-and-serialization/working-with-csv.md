@@ -10,9 +10,8 @@ model: gpt-4-0125-preview
 summary: "\xC5 jobbe med CSV-filer involverer lesing fra og skriving av data til komma-separerte\
   \ verdier (CSV)-filer, et popul\xE6rt format for datautveksling fordi det\u2026"
 title: Arbeide med CSV
+weight: 37
 ---
-
-{{< edit_this_page >}}
 
 ## Hva & Hvorfor?
 

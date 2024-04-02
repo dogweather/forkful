@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Das Kapitalisieren eines Strings beinhaltet die Umwandlung des Anfangsbuchstabens\
   \ eines gegebenen Strings in Gro\xDFbuchstaben, w\xE4hrend der Rest in\u2026"
 title: "Einen String gro\xDFschreiben"
+weight: 2
 ---
-
-{{< edit_this_page >}}
 
 ## Was & Warum?
 

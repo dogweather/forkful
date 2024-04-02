@@ -10,9 +10,8 @@ model: gpt-4-0125-preview
 summary: "Merkkijonon alkukirjaimen muuttaminen isoksi tarkoittaa merkkijonon ensimm\xE4\
   isen kirjaimen muuttamista isoksi kirjaimeksi samalla varmistaen, ett\xE4 kaikki\u2026"
 title: Merkkijonon muuttaminen isoiksi kirjaimiksi
+weight: 2
 ---
-
-{{< edit_this_page >}}
 
 ## Mikä ja miksi?
 

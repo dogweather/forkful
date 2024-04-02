@@ -11,9 +11,8 @@ summary: "Tablice asocjacyjne, znane jako obiekty w Google Apps Script (odmiana 
   \ umo\u017Cliwiaj\u0105 programistom tworzenie kolekcji par klucz-warto\u015B\u0107\
   .\u2026"
 title: Korzystanie z tablic asocjacyjnych
+weight: 15
 ---
-
-{{< edit_this_page >}}
 
 ## Co i dlaczego?
 

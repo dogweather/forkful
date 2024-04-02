@@ -9,9 +9,8 @@ summary: "Imprimir salida de depuraci\xF3n en Ruby significa mostrar en consola 
   \ que est\xE1 pasando dentro de tu c\xF3digo. Los programadores lo hacen para entender\
   \ y\u2026"
 title: "Imprimiendo salida de depuraci\xF3n"
+weight: 33
 ---
-
-{{< edit_this_page >}}
 
 ## ¿Qué y Por Qué?
 Imprimir salida de depuración en Ruby significa mostrar en consola lo que está pasando dentro de tu código. Los programadores lo hacen para entender y arreglar bugs más rápido.

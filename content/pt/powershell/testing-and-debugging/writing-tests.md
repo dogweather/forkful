@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Escrever testes em PowerShell envolve criar scripts que validam automaticamente\
   \ a funcionalidade do seu c\xF3digo PowerShell, garantindo que ele se comporte\u2026"
 title: Escrevendo testes
+weight: 36
 ---
-
-{{< edit_this_page >}}
 
 ## O Que & Porquê?
 

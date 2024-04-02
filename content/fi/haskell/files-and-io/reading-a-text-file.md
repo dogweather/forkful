@@ -7,9 +7,8 @@ model: gpt-4-1106-preview
 summary: "Tekstin lukeminen tiedostosta on yksinkertaisesti tiedon hakemista levylt\xE4\
   . Ohjelmoijat tekev\xE4t t\xE4t\xE4 datan k\xE4sittelyn, analysoinnin tai tulosten\u2026"
 title: Tekstitiedoston lukeminen
+weight: 22
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 Tekstin lukeminen tiedostosta on yksinkertaisesti tiedon hakemista levyltä. Ohjelmoijat tekevät tätä datan käsittelyn, analysoinnin tai tulosten tallentamisen vuoksi.

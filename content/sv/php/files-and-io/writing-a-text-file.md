@@ -10,9 +10,8 @@ model: gpt-4-0125-preview
 summary: "Att skriva en textfil i PHP inneb\xE4r att skapa eller \xF6ppna en fil och\
   \ infoga inneh\xE5ll i den. Programmerare g\xF6r detta f\xF6r att bevara data, som\u2026"
 title: Att skriva en textfil
+weight: 24
 ---
-
-{{< edit_this_page >}}
 
 ## Vad & Varför?
 Att skriva en textfil i PHP innebär att skapa eller öppna en fil och infoga innehåll i den. Programmerare gör detta för att bevara data, som användargenererat innehåll eller loggar, bortom programmets livscykel.

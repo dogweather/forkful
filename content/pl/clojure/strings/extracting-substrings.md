@@ -9,9 +9,8 @@ summary: "Wyci\u0105ganie pod\u0142a\u0144cuch\xF3w to jak wybieranie najlepszyc
   \ kawa\u0142k\xF3w ciasta - bierzesz tylko to, co potrzebujesz. Programi\u015Bci\
   \ to robi\u0105, aby operowa\u0107 na\u2026"
 title: "Wycinanie pod\u0142a\u0144cuch\xF3w"
+weight: 6
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 Wyciąganie podłańcuchów to jak wybieranie najlepszych kawałków ciasta - bierzesz tylko to, co potrzebujesz. Programiści to robią, aby operować na konkretnych fragmentach tekstów: weryfikować dane, wydobywać informacje lub po prostu dostosowywać wyświetlane wiadomości.

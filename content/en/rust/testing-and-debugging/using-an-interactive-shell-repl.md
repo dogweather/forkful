@@ -7,9 +7,8 @@ model: gpt-4-1106-preview
 summary: "A Rust interactive shell, or REPL (Read-Eval-Print Loop), lets you run Rust\
   \ code on-the-fly, seeing instant results, perfect for experimentation or\u2026"
 title: Using an interactive shell (REPL)
+weight: 34
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 A Rust interactive shell, or REPL (Read-Eval-Print Loop), lets you run Rust code on-the-fly, seeing instant results, perfect for experimentation or learning. Programmers use it to test snippets, debug, or just play with language features without the overhead of compiling a full project.

@@ -9,9 +9,8 @@ summary: "Arrondir les nombres signifie les ajuster \xE0 un degr\xE9 de pr\xE9ci
   \ sp\xE9cifi\xE9. Les programmeurs le font pour simplifier les nombres pour une\
   \ meilleure\u2026"
 title: Arrondir les nombres
+weight: 13
 ---
-
-{{< edit_this_page >}}
 
 ## Quoi et Pourquoi ?
 Arrondir les nombres signifie les ajuster à un degré de précision spécifié. Les programmeurs le font pour simplifier les nombres pour une meilleure lisibilité, pour répondre à certaines spécifications, ou pour s'assurer que les calculs restent dans certaines limites, comme éviter les erreurs de précision dans les opérations en virgule flottante.

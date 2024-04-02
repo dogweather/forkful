@@ -11,9 +11,8 @@ summary: "JSON, eller JavaScript Object Notation, \xE4r ett l\xE4ttviktsformat f
   r datautbyte som \xE4r enkelt f\xF6r m\xE4nniskor att l\xE4sa och skriva, och enkelt\
   \ f\xF6r maskiner att\u2026"
 title: Arbeta med JSON
+weight: 38
 ---
-
-{{< edit_this_page >}}
 
 ## Vad & Varför?
 JSON, eller JavaScript Object Notation, är ett lättviktsformat för datautbyte som är enkelt för människor att läsa och skriva, och enkelt för maskiner att tolka och generera. Programmerare arbetar ofta med JSON för att utbyta data mellan servrar och webbapplikationer på grund av dess enkelhet och språkoberoende, vilket gör det till en grundsten i modern webbutveckling och API:er.

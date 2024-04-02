@@ -7,9 +7,8 @@ model: gpt-4-0125-preview
 summary: "Writing to standard error (stderr) in Bash is about directing error messages\
   \ or any important diagnostic output separate from the standard output\u2026"
 title: Writing to standard error
+weight: 25
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 Writing to standard error (stderr) in Bash is about directing error messages or any important diagnostic output separate from the standard output (stdout). Programmers do this to ensure that error messages can be easily identified, logged, or even ignored, aiding in debugging and logging processes.

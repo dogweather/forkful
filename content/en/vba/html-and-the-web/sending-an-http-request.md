@@ -7,9 +7,8 @@ model: gpt-4-0125-preview
 summary: "Sending an HTTP request in Visual Basic for Applications (VBA) involves\
   \ programmatically accessing web resources or web services by making requests over\u2026"
 title: Sending an HTTP request
+weight: 44
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 

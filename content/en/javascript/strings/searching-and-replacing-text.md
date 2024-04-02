@@ -7,9 +7,8 @@ model: gpt-4-1106-preview
 summary: "Searching and replacing text means finding specific substrings and swapping\
   \ them out for something new. Why bother? It's everywhere: fixing typos in a\u2026"
 title: Searching and replacing text
+weight: 10
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 Searching and replacing text means finding specific substrings and swapping them out for something new. Why bother? It's everywhere: fixing typos in a document, refining code, or batch editing data.

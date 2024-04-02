@@ -7,9 +7,8 @@ model: gpt-4-1106-preview
 summary: "Stringinterpolasjon lar oss flette inn verdier i en streng. Det gj\xF8r\
   \ koden mer lesbar og dynamisk, og sparer oss for maset med konstant plussing av\u2026"
 title: Interpolering av en streng
+weight: 8
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why? (Hva & Hvorfor?)
 Stringinterpolasjon lar oss flette inn verdier i en streng. Det gjør koden mer lesbar og dynamisk, og sparer oss for maset med konstant plussing av strenger sammen.

@@ -9,9 +9,8 @@ summary: "Afficher des sorties de d\xE9bogage, c'est comme laisser des petites n
   \ dans votre code pour vous dire ce qui se passe. Les d\xE9veloppeurs font \xE7\
   a pour\u2026"
 title: "Affichage des sorties de d\xE9bogage"
+weight: 33
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why? (Quoi et Pourquoi ?)
 Afficher des sorties de débogage, c'est comme laisser des petites notes dans votre code pour vous dire ce qui se passe. Les développeurs font ça pour suivre le flot d’exécution et débusquer les bugs plus facilement.

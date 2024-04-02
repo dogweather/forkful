@@ -11,9 +11,8 @@ summary: "Att skriva en textfil i Visual Basic for Applications (VBA) inneb\xE4r
   \ skapa, \xE4ndra eller l\xE4gga till textdata i filer, en grundl\xE4ggande uppgift\
   \ f\xF6r att\u2026"
 title: Skriva en textfil
+weight: 24
 ---
-
-{{< edit_this_page >}}
 
 ## Vad & Varför?
 

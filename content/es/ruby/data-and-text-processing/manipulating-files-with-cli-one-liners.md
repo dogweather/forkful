@@ -8,9 +8,8 @@ model: gpt-4-0125-preview
 summary: "Manipular archivos con l\xEDneas de comando en una sola l\xEDnea en Ruby\
   \ se trata de realizar operaciones comunes con archivos directamente desde tu terminal\u2026"
 title: "Manipulando archivos con comandos de l\xEDnea de una sola l\xEDnea"
+weight: 31
 ---
-
-{{< edit_this_page >}}
 
 ## Qué y por qué?
 

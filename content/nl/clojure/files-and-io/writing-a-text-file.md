@@ -11,9 +11,8 @@ summary: "Het schrijven van een tekstbestand omvat het cre\xEBren of wijzigen va
   \ tekstgegevens en deze opslaan in een bestand op uw opslagmedium. Programmeurs\
   \ doen\u2026"
 title: Een tekstbestand schrijven
+weight: 24
 ---
-
-{{< edit_this_page >}}
 
 ## Wat & Waarom?
 

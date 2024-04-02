@@ -13,9 +13,8 @@ summary: "L\xE0m vi\u1EC7c v\u1EDBi CSV (Comma-Separated Values - Gi\xE1 tr\u1EC
   \ l\xFD d\u1EEF li\u1EC7u d\u1EA1ng b\u1EA3ng \u0111\u01B0\u1EE3c l\u01B0u tr\u1EEF\
   \ d\u01B0\u1EDBi \u0111\u1ECBnh d\u1EA1ng v\u0103n b\u1EA3n thu\u1EA7n\u2026"
 title: "L\xE0m vi\u1EC7c v\u1EDBi CSV"
+weight: 37
 ---
-
-{{< edit_this_page >}}
 
 ## Làm việc với CSV trong Clojure: Cái gì và Tại sao?
 

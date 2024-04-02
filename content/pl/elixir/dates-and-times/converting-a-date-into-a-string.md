@@ -9,9 +9,8 @@ summary: "Konwersja daty na \u0142a\u0144cuch znak\xF3w pozwala na \u0142atw\u01
   \ prezentacj\u0119 i archiwizacj\u0119 danych czasowych. Programi\u015Bci robi\u0105\
   \ to, aby u\u0142atwi\u0107 ludziom czytanie i\u2026"
 title: "Konwersja daty na \u0142a\u0144cuch znak\xF3w"
+weight: 28
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why? (Co i Dlaczego?)
 Konwersja daty na łańcuch znaków pozwala na łatwą prezentację i archiwizację danych czasowych. Programiści robią to, aby ułatwić ludziom czytanie i interpretację dat, jak również umożliwić ich przetwarzanie przez inne systemy.

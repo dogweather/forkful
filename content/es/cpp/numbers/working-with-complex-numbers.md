@@ -9,9 +9,8 @@ summary: "Los n\xFAmeros complejos extienden los n\xFAmeros reales al a\xF1adir 
   \ unidad imaginaria, representada como 'i', donde i\xB2 = -1. Los programadores\
   \ los utilizan\u2026"
 title: "Trabajando con n\xFAmeros complejos"
+weight: 14
 ---
-
-{{< edit_this_page >}}
 
 ## ¿Qué y Por Qué?
 Los números complejos extienden los números reales al añadir una unidad imaginaria, representada como 'i', donde i² = -1. Los programadores los utilizan para simulaciones, procesamiento de señales y resolver problemas matemáticos que exigen trabajar en dos dimensiones.

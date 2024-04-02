@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Scaricare una pagina web in C comporta l'accesso programmato al contenuto\
   \ di una pagina web tramite internet e il suo salvataggio localmente per\u2026"
 title: Scaricare una pagina web
+weight: 42
 ---
-
-{{< edit_this_page >}}
 
 ## Cosa & Perché?
 

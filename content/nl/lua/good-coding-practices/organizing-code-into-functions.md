@@ -10,9 +10,8 @@ model: gpt-4-0125-preview
 summary: "Het organiseren van code in functies gaat over het opsplitsen van je scriptwerk\
   \ in hapklare brokken\u2014denk aan functionele LEGO-blokken. We doen dit voor\u2026"
 title: Code organiseren in functies
+weight: 18
 ---
-
-{{< edit_this_page >}}
 
 ## Wat & Waarom?
 Het organiseren van code in functies gaat over het opsplitsen van je scriptwerk in hapklare brokken—denk aan functionele LEGO-blokken. We doen dit voor duidelijkheid, herbruikbaarheid en geestelijke gezondheid. Het maakt onze code netjes, leesbaar en onderhoudbaar.

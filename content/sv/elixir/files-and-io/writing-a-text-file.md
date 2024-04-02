@@ -11,9 +11,8 @@ summary: "Att skriva till en textfil i Elixir \xE4r en viktig f\xE4rdighet f\xF6
   \ utvecklare, vilket m\xF6jligg\xF6r datalagring, loggning eller exportering av\
   \ m\xE4nniskol\xE4sbar\u2026"
 title: Att skriva en textfil
+weight: 24
 ---
-
-{{< edit_this_page >}}
 
 ## Vad & Varför?
 

@@ -8,9 +8,8 @@ model: gpt-4-1106-preview
 summary: "Lokitus on prosessi, jossa kirjataan tapahtumia, virheit\xE4 ja muita merkitt\xE4\
   vi\xE4 tietoja ohjelman suorituksen aikana ulkoiseen v\xE4lineeseen, usein tiedostoon\u2026"
 title: Lokitus
+weight: 17
 ---
-
-{{< edit_this_page >}}
 
 ## Mikä & Miksi?
 

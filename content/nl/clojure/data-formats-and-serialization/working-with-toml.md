@@ -11,9 +11,8 @@ summary: "Werken met TOML betekent dat je gegevens beheert in een minimaal \"Tom
   \ Obvious, Minimal Language\" formaat, populair voor configuratiebestanden vanwege\
   \ de\u2026"
 title: Werken met TOML
+weight: 39
 ---
-
-{{< edit_this_page >}}
 
 ## Wat & Waarom?
 Werken met TOML betekent dat je gegevens beheert in een minimaal "Tom's Obvious, Minimal Language" formaat, populair voor configuratiebestanden vanwege de gemakkelijke leesbaarheid. Programmeurs gebruiken het voor eenvoudig configuratiebeheer dat direct uit de verpakking werkt met een gebruiksvriendelijke syntaxis.

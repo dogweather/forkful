@@ -22,9 +22,8 @@ summary: "TOML, \u09AF\u09BE Tom's Obvious, Minimal Language \u098F\u09B0 \u09B8
   \ \u0995\u09BE\u09B0\u09A3 \u098F\u099F\u09BF\u2026"
 title: "\u099F\u09AE\u09B2 \u09A8\u09BF\u09AF\u09BC\u09C7 \u0995\u09BE\u099C \u0995\
   \u09B0\u09BE"
+weight: 39
 ---
-
-{{< edit_this_page >}}
 
 ## কি এবং কেন?
 TOML, যা Tom's Obvious, Minimal Language এর সংক্ষিপ্ত রূপ, কনফিগ ফাইলগুলি কিভাবে গঠন করা উচিত তা নির্দেশ করে। প্রোগ্রামাররা TOML এর সাথে কাজ করে কারণ এটি পড়া, লেখা এবং একটি হ্যাশ টেবিলে সুন্দরভাবে ম্যাপিং করা সহজ, যা কনফিগুরেশনের জন্য একটি যাওয়া-আসা পথ হিসেবে গণ্য হয়।

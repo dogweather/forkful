@@ -9,9 +9,8 @@ summary: "Extrair substrings \xE9 o processo de pegar peda\xE7os de uma string -
   \ cortar um peda\xE7o de torta para provar. Programadores fazem isso para manipular\
   \ e\u2026"
 title: Extraindo substrings
+weight: 6
 ---
-
-{{< edit_this_page >}}
 
 ## O Que & Porquê?
 Extrair substrings é o processo de pegar pedaços de uma string - como cortar um pedaço de torta para provar. Programadores fazem isso para manipular e usar partes específicas de textos, como dados de entrada, configurações ou até mesmo para análise de dados.

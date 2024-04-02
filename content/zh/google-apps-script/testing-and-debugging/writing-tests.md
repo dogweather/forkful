@@ -19,9 +19,8 @@ summary: "\u5728\u8C37\u6B4C\u5E94\u7528\u811A\u672C\uFF08Google Apps Script, GA
   \u8BEF\u3001\u63D0\u9AD8\u4EE3\u7801\u8D28\u91CF\uFF0C\u4EE5\u53CA\u4FBF\u4E8E\u66F4\
   \u65B0\u548C\u7EF4\u62A4\u3002"
 title: "\u7F16\u5199\u6D4B\u8BD5"
+weight: 36
 ---
-
-{{< edit_this_page >}}
 
 ## 什么及为什么？
 

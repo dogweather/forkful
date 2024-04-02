@@ -9,9 +9,8 @@ summary: "Liczby zespolone sk\u0142adaj\u0105 si\u0119 z cz\u0119\u015Bci rzeczy
   \ i cz\u0119\u015Bci urojonej. Programi\u015Bci u\u017Cywaj\u0105 ich w dziedzinach\
   \ takich jak przetwarzanie sygna\u0142\xF3w, mechanika\u2026"
 title: Praca z liczbami zespolonymi
+weight: 14
 ---
-
-{{< edit_this_page >}}
 
 ## Co i dlaczego?
 Liczby zespolone składają się z części rzeczywistej i części urojonej. Programiści używają ich w dziedzinach takich jak przetwarzanie sygnałów, mechanika kwantowa oraz wszędzie tam, gdzie wymagane są obliczenia ponad zwykłe liczby rzeczywiste, ponieważ normalne liczby rzeczywiste po prostu nie wystarczają.

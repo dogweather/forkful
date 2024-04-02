@@ -9,9 +9,8 @@ summary: "TOML, die Abk\xFCrzung f\xFCr Toms Offensichtliche, Minimale Sprache, 
   \ ein Daten-Serialisierungsformat \xE4hnlich zu JSON oder YAML. Programmierer nutzen\
   \ es\u2026"
 title: Arbeiten mit TOML
+weight: 39
 ---
-
-{{< edit_this_page >}}
 
 ## Was & Warum?
 TOML, die Abkürzung für Toms Offensichtliche, Minimale Sprache, ist ein Daten-Serialisierungsformat ähnlich zu JSON oder YAML. Programmierer nutzen es wegen seiner menschlichen Lesbarkeit und der unkomplizierten Zuordnung zu Datentypen, was es zu einer ersten Wahl für Konfigurationsdateien und Datenaustausch macht.

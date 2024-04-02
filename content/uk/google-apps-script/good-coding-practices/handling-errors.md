@@ -26,9 +26,8 @@ summary: "\u041E\u0431\u0440\u043E\u0431\u043A\u0430 \u043F\u043E\u043C\u0438\u0
   .\u2026"
 title: "\u041E\u0431\u0440\u043E\u0431\u043A\u0430 \u043F\u043E\u043C\u0438\u043B\u043E\
   \u043A"
+weight: 16
 ---
-
-{{< edit_this_page >}}
 
 ## Що і чому?
 

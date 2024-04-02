@@ -9,9 +9,8 @@ summary: "Printing debug output in Ruby is like leaving breadcrumb trails in you
   \ code to track variable values and program flow. Programmers do it to catch bugs\
   \ by\u2026"
 title: Printing debug output
+weight: 33
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 Printing debug output in Ruby is like leaving breadcrumb trails in your code to track variable values and program flow. Programmers do it to catch bugs by checking what their code’s up to at various points.

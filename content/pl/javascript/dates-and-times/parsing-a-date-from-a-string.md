@@ -11,9 +11,8 @@ summary: "Parsowanie daty z ci\u0105gu znak\xF3w pozwala programistom konwertowa
   \ tekstowe reprezentacje dat na obiekty `Date` w JavaScript, u\u0142atwiaj\u0105\
   c operacje\u2026"
 title: "Analiza sk\u0142adniowa daty z \u0142a\u0144cucha znak\xF3w"
+weight: 30
 ---
-
-{{< edit_this_page >}}
 
 ## Co i dlaczego?
 Parsowanie daty z ciągu znaków pozwala programistom konwertować tekstowe reprezentacje dat na obiekty `Date` w JavaScript, ułatwiając operacje manipulowania datą, porównywania i formatowania. Proces ten jest niezbędny do obsługi danych wprowadzanych przez użytkownika, przetwarzania danych z baz danych lub pracy z API, które komunikują daty w formatach tekstowych.

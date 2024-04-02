@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "\xC9crire des tests en Elixir implique la cr\xE9ation de scripts automatis\xE9\
   s pour valider le comportement de votre code. Les programmeurs font cela pour\u2026"
 title: "R\xE9daction de tests"
+weight: 36
 ---
-
-{{< edit_this_page >}}
 
 ## Quoi & Pourquoi ?
 Écrire des tests en Elixir implique la création de scripts automatisés pour valider le comportement de votre code. Les programmeurs font cela pour garantir la qualité, prévenir les régressions et faciliter le refactorisation du code, rendant le processus de développement plus fiable et efficace.

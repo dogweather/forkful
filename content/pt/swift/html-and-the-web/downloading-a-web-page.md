@@ -9,9 +9,8 @@ summary: "Baixar uma p\xE1gina da web \xE9 basicamente pegar dados de um site pa
   \ us\xE1-los no seu app. Programadores fazem isso para obter conte\xFAdo atualizado,\
   \ interagir\u2026"
 title: "Baixando uma p\xE1gina da web"
+weight: 42
 ---
-
-{{< edit_this_page >}}
 
 ## O Que & Porquê?
 Baixar uma página da web é basicamente pegar dados de um site para usá-los no seu app. Programadores fazem isso para obter conteúdo atualizado, interagir com serviços online e processar informações dinamicamente.

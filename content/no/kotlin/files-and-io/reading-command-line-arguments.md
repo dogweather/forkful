@@ -9,9 +9,8 @@ summary: "Kommandolinjeargumenter lar deg sende informasjon til programmet ditt 
   \ oppstart, slik at oppf\xF8rselen kan tilpasses p\xE5 fly. Programmerere gj\xF8\
   r dette for\u2026"
 title: Lese kommandolinjeargumenter
+weight: 23
 ---
-
-{{< edit_this_page >}}
 
 ## Hva & Hvorfor?
 Kommandolinjeargumenter lar deg sende informasjon til programmet ditt ved oppstart, slik at oppførselen kan tilpasses på fly. Programmerere gjør dette for å lage fleksible applikasjoner som kan håndteres dynamisk uten endring av koden.

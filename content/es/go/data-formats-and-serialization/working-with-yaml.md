@@ -11,9 +11,8 @@ summary: "Trabajar con YAML en Go implica analizar archivos YAML (YAML Ain't Mar
   \ Language), un est\xE1ndar de serializaci\xF3n de datos amigable para humanos,\
   \ en\u2026"
 title: Trabajando con YAML
+weight: 41
 ---
-
-{{< edit_this_page >}}
 
 ## ¿Qué y por qué?
 

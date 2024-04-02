@@ -11,9 +11,8 @@ summary: "No Visual Basic for Applications (VBA), recuperar a data atual \xE9 um
   \ tarefa comum que permite aos programadores trabalhar dinamicamente com datas em\
   \ suas\u2026"
 title: Obtendo a data atual
+weight: 29
 ---
-
-{{< edit_this_page >}}
 
 ## O Que & Por Que?
 

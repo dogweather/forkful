@@ -11,9 +11,8 @@ summary: "Eliminar caracteres que correspondam a um padr\xE3o espec\xEDfico em s
   \ \xE9 crucial para a valida\xE7\xE3o de dados, saneamento ou quando se prepara\
   \ o texto para\u2026"
 title: "Excluindo caracteres que correspondem a um padr\xE3o"
+weight: 5
 ---
-
-{{< edit_this_page >}}
 
 ## O Que & Por Que?
 

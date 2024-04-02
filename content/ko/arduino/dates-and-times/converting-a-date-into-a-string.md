@@ -16,9 +16,8 @@ summary: "\uB0A0\uC9DC\uB97C \uBB38\uC790\uC5F4\uB85C \uBCC0\uD658\uD55C\uB2E4\u
   \ \uD45C\uC2DC\uD558\uAC70\uB098 \uBB38\uC790 \uD615\uC2DD\uC73C\uB85C \uC800\uC7A5\
   \uD558\uACE0 \uACF5\uC720\uD558\uAE30 \uC27D\uC2B5\uB2C8\uB2E4."
 title: "\uB0A0\uC9DC\uB97C \uBB38\uC790\uC5F4\uB85C \uBCC0\uD658\uD558\uAE30"
+weight: 28
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why? (무엇과 왜?)
 날짜를 문자열로 변환한다는 건, '2023년 3월 15일' 같은 날짜를 텍스트 '2023-03-15'로 바꾸는 과정입니다. 이렇게 하면 날짜 데이터를 화면에 표시하거나 문자 형식으로 저장하고 공유하기 쉽습니다.

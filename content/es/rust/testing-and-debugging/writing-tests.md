@@ -11,9 +11,8 @@ summary: "Escribir pruebas en Rust implica crear comprobaciones automatizadas pa
   \ asegurar que tu c\xF3digo funciona como se espera. Los programadores hacen esto\
   \ para\u2026"
 title: Escribiendo pruebas
+weight: 36
 ---
-
-{{< edit_this_page >}}
 
 ## ¿Qué y por qué?
 

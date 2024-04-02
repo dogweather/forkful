@@ -13,9 +13,8 @@ summary: "Vi\u1EC7c vi\u1EBFt hoa m\u1ED9t chu\u1ED7i ngh\u0129a l\xE0 l\xE0m ch
   i in hoa, th\u01B0\u1EDDng \u0111\u01B0\u1EE3c s\u1EED d\u1EE5ng cho ti\xEAu \u0111\
   \u1EC1 ho\u1EB7c \u0111\u1EC3 nh\u1EA5n m\u1EA1nh danh t\u1EEB ri\xEAng.\u2026"
 title: "Vi\u1EBFt hoa m\u1ED9t chu\u1ED7i"
+weight: 2
 ---
-
-{{< edit_this_page >}}
 
 ## Cái gì & Tại sao?
 Việc viết hoa một chuỗi nghĩa là làm cho từng chữ cái bắt đầu bằng một chữ cái in hoa, thường được sử dụng cho tiêu đề hoặc để nhấn mạnh danh từ riêng. Lập trình viên sử dụng nó để định dạng đầu ra hoặc chuẩn bị dữ liệu cho sự nhất quán trong hiển thị.

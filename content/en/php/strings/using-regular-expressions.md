@@ -7,9 +7,8 @@ model: gpt-4-0125-preview
 summary: "Regular expressions (regex) in PHP are patterns used to match character\
   \ combinations in strings, allowing for sophisticated search-and-replace operations\u2026"
 title: Using regular expressions
+weight: 11
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 

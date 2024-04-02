@@ -11,9 +11,8 @@ summary: "Travailler avec des nombres complexes implique d'effectuer des op\xE9r
   \ math\xE9matiques sur des nombres ayant \xE0 la fois une partie r\xE9elle et une\
   \ partie\u2026"
 title: Travailler avec des nombres complexes
+weight: 14
 ---
-
-{{< edit_this_page >}}
 
 ## Quoi & Pourquoi ?
 

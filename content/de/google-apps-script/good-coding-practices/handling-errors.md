@@ -11,9 +11,8 @@ summary: "Fehlerbehandlung in Google Apps Script bedeutet, Ausnahmen oder Fehler
   \ die w\xE4hrend der Ausf\xFChrung des Skripts auftreten, zu vorhersehen, abzufangen\
   \ und\u2026"
 title: Fehlerbehandlung
+weight: 16
 ---
-
-{{< edit_this_page >}}
 
 ## Was & Warum?
 

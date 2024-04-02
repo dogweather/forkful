@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Trabajar con archivos CSV (Valores Separados por Comas) en Bash consiste\
   \ en procesar y manipular datos tabulares almacenados en formato de texto plano.\u2026"
 title: Trabajando con CSV
+weight: 37
 ---
-
-{{< edit_this_page >}}
 
 ## Qué y Por Qué
 Trabajar con archivos CSV (Valores Separados por Comas) en Bash consiste en procesar y manipular datos tabulares almacenados en formato de texto plano. Esto es esencial para los programadores, ya que permite la automatización de tareas de transformación, análisis e integración de datos directamente desde la línea de comandos, sin la necesidad de herramientas más pesadas o entornos de programación.

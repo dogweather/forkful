@@ -16,9 +16,8 @@ summary: "\uD14D\uC2A4\uD2B8 \uAC80\uC0C9 \uBC0F \uB300\uCCB4\uB294 \uBB38\uC790
   , \uCF54\uB4DC \uC5C5\uB370\uC774\uD2B8 \uB4F1\uC744 \uC704\uD574 \uC790\uC8FC \uC0AC\
   \uC6A9\uD569\uB2C8\uB2E4."
 title: "\uD14D\uC2A4\uD2B8 \uAC80\uC0C9 \uBC0F \uAD50\uCCB4"
+weight: 10
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why? (무엇이며 왜?)
 텍스트 검색 및 대체는 문자열 내에서 특정 패턴을 찾아 다른 텍스트로 바꾸는 일입니다. 프로그래머들은 데이터 정제, 버그 수정, 코드 업데이트 등을 위해 자주 사용합니다.

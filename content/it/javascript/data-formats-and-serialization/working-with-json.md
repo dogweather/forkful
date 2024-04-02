@@ -11,9 +11,8 @@ summary: "JSON (JavaScript Object Notation) \xE8 un formato leggero per lo scamb
   \ di dati, facile da leggere e scrivere per gli umani e da analizzare e generare\
   \ per\u2026"
 title: Lavorare con JSON
+weight: 38
 ---
-
-{{< edit_this_page >}}
 
 ## Cosa e perché?
 

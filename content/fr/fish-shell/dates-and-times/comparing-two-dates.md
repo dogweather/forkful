@@ -8,9 +8,8 @@ model: gpt-4-1106-preview
 summary: "Comparer deux dates c'est mesurer la diff\xE9rence ou v\xE9rifier la relation\
   \ entre elles. Les programmeurs s'en servent pour des t\xE2ches comme valider des\u2026"
 title: Comparer deux dates
+weight: 27
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why? / Quoi et Pourquoi ?
 Comparer deux dates c'est mesurer la différence ou vérifier la relation entre elles. Les programmeurs s'en servent pour des tâches comme valider des périodes, trier des événements, rappeler des anniversaires, ou calculer des délais.

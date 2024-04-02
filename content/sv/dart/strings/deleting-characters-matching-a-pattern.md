@@ -11,9 +11,8 @@ summary: "Att ta bort tecken som matchar ett specifikt m\xF6nster i str\xE4ngar 
   r avg\xF6rande f\xF6r datavalidering, sanering, eller n\xE4r text f\xF6rbereds f\xF6\
   r vidare\u2026"
 title: "Ta bort tecken som matchar ett m\xF6nster"
+weight: 5
 ---
-
-{{< edit_this_page >}}
 
 ## Vad & Varför?
 

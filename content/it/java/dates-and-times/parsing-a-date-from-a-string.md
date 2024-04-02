@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Estrarre una data da una stringa implica convertire la rappresentazione\
   \ testuale di una data e ora in un oggetto `Date` o in un oggetto `LocalDateTime`\u2026"
 title: Analisi di una data da una stringa
+weight: 30
 ---
-
-{{< edit_this_page >}}
 
 ## Cosa e perché?
 Estrarre una data da una stringa implica convertire la rappresentazione testuale di una data e ora in un oggetto `Date` o in un oggetto `LocalDateTime` più moderno. I programmatori lo fanno per manipolare, formattare, confrontare o memorizzare date in un formato standardizzato, il che è cruciale per applicazioni che richiedono calcoli con le date, validazione o internazionalizzazione coerente.

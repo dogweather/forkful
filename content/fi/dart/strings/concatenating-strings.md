@@ -11,9 +11,8 @@ summary: "Merkkijonojen yhdist\xE4minen ohjelmoinnissa tarkoittaa kahden tai use
   \ merkkijonon liitt\xE4mist\xE4 yhteen. Ohjelmoijat tekev\xE4t n\xE4in k\xE4sitell\xE4\
   kseen\u2026"
 title: "Merkkijonojen yhdist\xE4minen"
+weight: 3
 ---
-
-{{< edit_this_page >}}
 
 ## Mitä & Miksi?
 Merkkijonojen yhdistäminen ohjelmoinnissa tarkoittaa kahden tai useamman merkkijonon liittämistä yhteen. Ohjelmoijat tekevät näin käsitelläkseen tekstidataa helposti, rakentaakseen viestejä tai kootakseen dynaamisesti käyttöliittymän osia.

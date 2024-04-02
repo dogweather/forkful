@@ -11,9 +11,8 @@ summary: "Przetwarzanie HTML polega na wydobywaniu danych i informacji z dokumen
   w HTML, co jest kluczowe dla takich zada\u0144 jak scraping internetowy, analiza\
   \ danych\u2026"
 title: "Analiza sk\u0142adniowa HTML"
+weight: 43
 ---
-
-{{< edit_this_page >}}
 
 ## Co i dlaczego?
 Przetwarzanie HTML polega na wydobywaniu danych i informacji z dokumentów HTML, co jest kluczowe dla takich zadań jak scraping internetowy, analiza danych oraz automatyzacja. Programiści wykonują to w celu zbierania, analizowania lub manipulowania zawartością sieciową programowo, umożliwiając automatyzację tego, co w przeciwnym razie byłoby ręcznym wydobyciem danych ze stron internetowych.

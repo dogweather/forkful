@@ -15,9 +15,8 @@ summary: "TOML\uFF08Tom's Obvious, Minimal Language\uFF0C\u6C64\u59C6\u7684\u660
   \u6587\u4EF6\uFF0C\u5176\u4E2D\u4EBA\u7C7B\u7684\u53EF\u8BFB\u6027\u548C\u673A\u5668\
   \u7684\u6613\u89E3\u6790\u6027\u662F\u5173\u952E\u3002"
 title: "\u4F7F\u7528TOML"
+weight: 39
 ---
-
-{{< edit_this_page >}}
 
 ## 什么 & 为什么?
 TOML（Tom's Obvious, Minimal Language，汤姆的明了、最小化语言）是一种数据序列化格式，由于其清晰的语义而易于阅读。程序员使用TOML进行配置文件，其中人类的可读性和机器的易解析性是关键。

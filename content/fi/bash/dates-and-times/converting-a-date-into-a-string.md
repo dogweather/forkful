@@ -9,9 +9,8 @@ summary: "Muunnetaan p\xE4iv\xE4m\xE4\xE4r\xE4 merkkijonoksi, koska j\xE4sennell
   \ formaatit on helpompi jakaa ja k\xE4sitell\xE4. Joskus tarvitaan tarkkaa muotoilua,\
   \ esimerkiksi\u2026"
 title: "P\xE4iv\xE4m\xE4\xE4r\xE4n muuntaminen merkkijonoksi"
+weight: 28
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 Muunnetaan päivämäärä merkkijonoksi, koska jäsennellyt formaatit on helpompi jakaa ja käsitellä. Joskus tarvitaan tarkkaa muotoilua, esimerkiksi lokitiedostoissa tai rajapintavastauksissa.

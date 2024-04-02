@@ -9,9 +9,8 @@ summary: "Lataamme verkkosivun, kun haluamme hakea sen sis\xE4lt\xF6\xE4 koodill
   \ T\xE4m\xE4 mahdollistaa tiedon k\xE4sittelyn, tallentamisen tai hy\xF6dynt\xE4\
   misen automaattisissa\u2026"
 title: Verkkosivun lataaminen
+weight: 42
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why? (Mitä & Miksi?)
 Lataamme verkkosivun, kun haluamme hakea sen sisältöä koodillamme. Tämä mahdollistaa tiedon käsittelyn, tallentamisen tai hyödyntämisen automaattisissa prosesseissa.

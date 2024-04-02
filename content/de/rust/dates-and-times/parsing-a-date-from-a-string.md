@@ -10,9 +10,8 @@ model: gpt-4-0125-preview
 summary: "Das Parsen eines Datums aus einem String ist eine g\xE4ngige Aufgabe, wenn\
   \ es um die Verarbeitung von Benutzereingaben oder das Lesen von Daten aus Dateien\u2026"
 title: Einen Datum aus einem String analysieren
+weight: 30
 ---
-
-{{< edit_this_page >}}
 
 ## Was & Warum?
 

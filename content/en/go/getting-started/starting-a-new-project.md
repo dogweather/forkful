@@ -7,9 +7,8 @@ model: gpt-4-0125-preview
 summary: "Starting a new project in Go involves setting up a workspace and initializing\
   \ it with the necessary Go modules. Programmers do this to organize code,\u2026"
 title: Starting a new project
+weight: 1
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 

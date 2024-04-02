@@ -9,9 +9,8 @@ summary: "Supprimer des caract\xE8res selon un mod\xE8le (pattern) c'est enlever
   \ \xE9l\xE9ments d'une cha\xEEne qui correspondent \xE0 un crit\xE8re pr\xE9cis.\
   \ Les d\xE9veloppeurs le font\u2026"
 title: "Suppression de caract\xE8res correspondant \xE0 un motif"
+weight: 5
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why? (Quoi et Pourquoi ?)
 Supprimer des caractères selon un modèle (pattern) c'est enlever des éléments d'une chaîne qui correspondent à un critère précis. Les développeurs le font pour nettoyer des données, valider des entrées ou manipuler du texte de manière contrôlée.

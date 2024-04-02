@@ -7,9 +7,8 @@ model: gpt-4-0125-preview
 summary: "Refaktorisering \xE4r processen att omstrukturera befintlig dator kod utan\
   \ att \xE4ndra dess externa beteende. Det \xE4r en vital metod f\xF6r att reducera\u2026"
 title: Refaktorisering
+weight: 19
 ---
-
-{{< edit_this_page >}}
 
 ## Vad & Varför?
 Refaktorisering är processen att omstrukturera befintlig dator kod utan att ändra dess externa beteende. Det är en vital metod för att reducera komplexitet, förbättra underhållbarheten och hålla din kodbas frisk och lättare att förstå för både nuvarande och framtida utvecklare.

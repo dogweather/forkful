@@ -11,9 +11,8 @@ summary: "L'interpolation de cha\xEEnes, en programmation, implique la construct
   \ de cha\xEEnes de caract\xE8res en int\xE9grant des expressions \xE0 l'int\xE9\
   rieur de cha\xEEnes\u2026"
 title: "Interpolation d'une cha\xEEne de caract\xE8res"
+weight: 8
 ---
-
-{{< edit_this_page >}}
 
 ## Quoi & Pourquoi ?
 

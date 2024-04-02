@@ -1,14 +1,15 @@
 ---
 date: 2024-01-26 04:10:28.202713-07:00
-description: "Ein Debugger wird eingesetzt, um spezialisierte Werkzeuge zu nutzen,\
-  \ mit denen Ihr Code w\xE4hrend der Ausf\xFChrung getestet und inspiziert werden\
-  \ kann. Das\u2026"
+description: "Um den Debugger in Xcode (der IDE f\xFCr Swift) zu verwenden, k\xF6\
+  nnen Sie Haltepunkte setzen, Variablen inspizieren und Ausdr\xFCcke \xFCberwachen.\
+  \ Hier ist ein\u2026"
 lastmod: '2024-03-13T22:44:54.229975-06:00'
 model: gpt-4-0125-preview
-summary: "Ein Debugger wird eingesetzt, um spezialisierte Werkzeuge zu nutzen, mit\
-  \ denen Ihr Code w\xE4hrend der Ausf\xFChrung getestet und inspiziert werden kann.\
-  \ Das\u2026"
+summary: "Um den Debugger in Xcode (der IDE f\xFCr Swift) zu verwenden, k\xF6nnen\
+  \ Sie Haltepunkte setzen, Variablen inspizieren und Ausdr\xFCcke \xFCberwachen.\
+  \ Hier ist ein\u2026"
 title: Einsatz eines Debuggers
+weight: 35
 ---
 
 ## Wie man:

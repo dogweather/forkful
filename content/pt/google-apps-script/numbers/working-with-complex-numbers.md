@@ -11,9 +11,8 @@ summary: "N\xFAmeros complexos, representados como uma combina\xE7\xE3o de unida
   \ reais e imagin\xE1rias (por exemplo, 3 + 4i), s\xE3o fundamentais em v\xE1rios\
   \ problemas\u2026"
 title: "Trabalhando com n\xFAmeros complexos"
+weight: 14
 ---
-
-{{< edit_this_page >}}
 
 ## O que & Por quê?
 Números complexos, representados como uma combinação de unidades reais e imaginárias (por exemplo, 3 + 4i), são fundamentais em vários problemas computacionais, especialmente em engenharia, física e matemática aplicada. Aprender a manipular esses números no Google Apps Script permite que os programadores ampliem suas capacidades para computação científica, processamento de sinais e além.

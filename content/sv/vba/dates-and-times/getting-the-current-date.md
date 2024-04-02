@@ -11,9 +11,8 @@ summary: "I Visual Basic f\xF6r Applikationer (VBA) \xE4r det en vanlig uppgift 
   \ h\xE4mta aktuellt datum, vilket m\xF6jligg\xF6r f\xF6r programmerare att dynamiskt\
   \ arbeta med\u2026"
 title: "H\xE4mta aktuellt datum"
+weight: 29
 ---
-
-{{< edit_this_page >}}
 
 ## Vad och Varför?
 

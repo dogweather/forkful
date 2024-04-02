@@ -9,9 +9,8 @@ summary: "I JavaScript kan vi slette tegn som matcher et m\xF8nster gjennom regu
   re uttrykk for \xE5 rense strenger, trekke ut data eller for en rekke andre oppgaver\
   \ som\u2026"
 title: "Slette tegn som matcher et m\xF8nster"
+weight: 5
 ---
-
-{{< edit_this_page >}}
 
 ## Hva & Hvorfor?
 I JavaScript kan vi slette tegn som matcher et mønster gjennom regulære uttrykk for å rense strenger, trekke ut data eller for en rekke andre oppgaver som krever tekstmanipulasjon.

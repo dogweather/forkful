@@ -8,9 +8,8 @@ model: gpt-4-0125-preview
 summary: "Komplekse tall, som best\xE5r av en reell og en imagin\xE6r del (som 3+4i),\
   \ er en grunnpilar i ingeni\xF8rfag og fysikk. Programmerere jobber med dem i\u2026"
 title: "\xC5 jobbe med komplekse tall"
+weight: 14
 ---
-
-{{< edit_this_page >}}
 
 ## Hva & Hvorfor?
 Komplekse tall, som består av en reell og en imaginær del (som 3+4i), er en grunnpilar i ingeniørfag og fysikk. Programmerere jobber med dem i simuleringer, signalbehandling, og løsning av ligninger som ikke fungerer bra med bare reelle tall.

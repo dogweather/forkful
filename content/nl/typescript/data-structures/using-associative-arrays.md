@@ -10,9 +10,8 @@ model: gpt-4-0125-preview
 summary: "Associatieve arrays, of objecten in TypeScript, laten je strings (of sleutels)\
   \ gebruiken om toegang te krijgen tot waardeparen. Programmeurs gebruiken ze\u2026"
 title: Gebruik van associatieve arrays
+weight: 15
 ---
-
-{{< edit_this_page >}}
 
 ## Wat & Waarom?
 

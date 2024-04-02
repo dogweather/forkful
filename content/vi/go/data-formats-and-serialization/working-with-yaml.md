@@ -13,9 +13,8 @@ summary: "L\xE0m vi\u1EC7c v\u1EDBi YAML trong Go bao g\u1ED3m vi\u1EC7c ph\xE2n
   t nh\u1EADp li\u1EC7u th\xE2n thi\u1EC7n v\u1EDBi con ng\u01B0\u1EDDi, th\xE0nh\
   \ c\xE1c\u2026"
 title: "L\xE0m vi\u1EC7c v\u1EDBi YAML"
+weight: 41
 ---
-
-{{< edit_this_page >}}
 
 ## Gì & Tại Sao?
 

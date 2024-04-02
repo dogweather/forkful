@@ -13,9 +13,8 @@ summary: "X\u1EED l\xFD l\u1ED7i trong Python (ho\u1EB7c b\u1EA5t k\u1EF3 ng\xF4
   ng \u0111i\u1EC1u kh\xF4ng mong \u0111\u1EE3i - \u0111\xF3 l\xE0 ngh\u1EC7 thu\u1EAD\
   t qu\u1EA3n l\xFD m\u1ED9t c\xE1ch nh\u1EB9 nh\xE0ng khi\u2026"
 title: "X\u1EED l\xFD l\u1ED7i"
+weight: 16
 ---
-
-{{< edit_this_page >}}
 
 ## Gì và Tại sao?
 

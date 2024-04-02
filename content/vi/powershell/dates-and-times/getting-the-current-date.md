@@ -13,9 +13,8 @@ summary: "L\u1EA5y ng\xE0y hi\u1EC7n t\u1EA1i trong PowerShell ch\u1EC9 l\xE0 l\
   p tr\xECnh vi\xEAn s\u1EED d\u1EE5ng \u0111i\u1EC1u n\xE0y \u0111\u1EC3 \u0111\xE1\
   nh d\u1EA5u th\u1EDDi gian trong c\xE1c b\u1EA3n\u2026"
 title: "L\u1EA5y ng\xE0y hi\u1EC7n t\u1EA1i"
+weight: 29
 ---
-
-{{< edit_this_page >}}
 
 ## Lý do & Vì sao?
 

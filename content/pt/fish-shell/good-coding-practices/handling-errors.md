@@ -7,9 +7,8 @@ model: gpt-4-1106-preview
 summary: "O tratamento de erros permite que seu script lide com o inesperado de forma\
   \ elegante. Fazemos isso para gerenciar falhas sem deixar os cabelos dos nossos\u2026"
 title: Tratamento de erros
+weight: 16
 ---
-
-{{< edit_this_page >}}
 
 ## O Quê & Por Quê?
 O tratamento de erros permite que seu script lide com o inesperado de forma elegante. Fazemos isso para gerenciar falhas sem deixar os cabelos dos nossos usuários ficarem grisalhos.

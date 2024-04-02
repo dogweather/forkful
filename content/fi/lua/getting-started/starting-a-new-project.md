@@ -7,9 +7,8 @@ model: gpt-4-1106-preview
 summary: "Uusien projektien aloittaminen tarkoittaa puhtaalta p\xF6yd\xE4lt\xE4 aloittamista.\
   \ Ohjelmoijat tekev\xE4t sen tuodakseen uudet ideansa eloon ja ratkaistakseen\u2026"
 title: Uuden projektin aloittaminen
+weight: 1
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why? - Mitä & Miksi?
 Uusien projektien aloittaminen tarkoittaa puhtaalta pöydältä aloittamista. Ohjelmoijat tekevät sen tuodakseen uudet ideansa eloon ja ratkaistakseen ongelmia.

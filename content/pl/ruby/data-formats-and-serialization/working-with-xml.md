@@ -9,9 +9,8 @@ summary: "Praca z XML oznacza parsowanie, generowanie i manipulowanie dokumentam
   \ XML (eXtensible Markup Language) za pomoc\u0105 kodu. Programi\u015Bci robi\u0105\
   \ to, aby\u2026"
 title: Praca z XML
+weight: 40
 ---
-
-{{< edit_this_page >}}
 
 ## Co i dlaczego?
 Praca z XML oznacza parsowanie, generowanie i manipulowanie dokumentami XML (eXtensible Markup Language) za pomocą kodu. Programiści robią to, aby współdziałać z wieloma usługami sieciowymi, plikami konfiguracyjnymi i formatami wymiany danych, gdzie XML jest lingua franca.

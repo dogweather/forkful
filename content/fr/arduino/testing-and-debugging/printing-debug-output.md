@@ -9,9 +9,8 @@ summary: "Imprimer un d\xE9bogage, c'est \xE9crire dans la console pour suivre c
   \ que fait votre programme. On le fait pour rep\xE9rer les bugs et comprendre le\
   \ flux\u2026"
 title: "Affichage des sorties de d\xE9bogage"
+weight: 33
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 Imprimer un débogage, c'est écrire dans la console pour suivre ce que fait votre programme. On le fait pour repérer les bugs et comprendre le flux d'exécution.

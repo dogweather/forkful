@@ -10,9 +10,8 @@ model: gpt-4-0125-preview
 summary: "Controleren of een directory bestaat gaat over bevestigen of een map aanwezig\
   \ is op een gespecificeerd pad in het bestandssysteem. Programmeurs doen dit\u2026"
 title: Controleren of een directory bestaat
+weight: 20
 ---
-
-{{< edit_this_page >}}
 
 ## Wat & Waarom?
 Controleren of een directory bestaat gaat over bevestigen of een map aanwezig is op een gespecificeerd pad in het bestandssysteem. Programmeurs doen dit om fouten te voorkomen, zoals proberen te lezen van of te schrijven naar een directory die er niet is.

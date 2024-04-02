@@ -7,9 +7,8 @@ model: gpt-4-0125-preview
 summary: "Writing tests in JavaScript refers to the practice of creating automated\
   \ scripts that run your code to ensure it behaves as expected, which can\u2026"
 title: Writing tests
+weight: 36
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 

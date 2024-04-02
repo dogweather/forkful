@@ -7,9 +7,8 @@ model: gpt-4-1106-preview
 summary: "Baixar uma p\xE1gina da web significa trazer seu conte\xFAdo para processamento\
   \ local. Programadores fazem isso para an\xE1lises, testes ou para armazenar\u2026"
 title: "Baixando uma p\xE1gina da web"
+weight: 42
 ---
-
-{{< edit_this_page >}}
 
 ## O Quê & Porquê?
 Baixar uma página da web significa trazer seu conteúdo para processamento local. Programadores fazem isso para análises, testes ou para armazenar informação.

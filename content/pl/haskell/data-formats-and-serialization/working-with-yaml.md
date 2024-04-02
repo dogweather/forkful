@@ -11,9 +11,8 @@ summary: "YAML, skr\xF3t od \"YAML Ain't Markup Language\", jest przyjaznym dla 
   owieka standardem serializacji danych, kt\xF3ry mo\u017Ce by\u0107 u\u017Cywany\
   \ we wszystkich j\u0119zykach\u2026"
 title: Praca z YAML
+weight: 41
 ---
-
-{{< edit_this_page >}}
 
 ## Co i dlaczego?
 

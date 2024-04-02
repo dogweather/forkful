@@ -8,9 +8,8 @@ model: gpt-4-1106-preview
 summary: "Envoyer une requ\xEAte HTTP avec une authentification de base consiste \xE0\
   \ transmettre des informations d'identification (nom d'utilisateur et mot de passe)\u2026"
 title: "Envoi d'une requ\xEAte HTTP avec authentification de base"
+weight: 45
 ---
-
-{{< edit_this_page >}}
 
 ## Quoi et Pourquoi?
 

@@ -9,9 +9,8 @@ summary: "Utskrift for feils\xF8king er som \xE5 droppe br\xF8dsmuler for \xE5 f
   \ veien hjem; det hjelper utviklere \xE5 spore appens flyt og finne bugs. Vi gj\xF8\
   r det fordi det\u2026"
 title: "Skrive ut feils\xF8kingsdata"
+weight: 33
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 Utskrift for feilsøking er som å droppe brødsmuler for å finne veien hjem; det hjelper utviklere å spore appens flyt og finne bugs. Vi gjør det fordi det gir innsikt som leder til raske reparasjoner.

@@ -11,9 +11,8 @@ summary: "Por\xF3wnywanie dw\xF3ch dat w programowaniu to podstawowe zadanie, po
   ce programistom na ocen\u0119 chronologicznych relacji mi\u0119dzy datami. Takie\
   \ por\xF3wnania\u2026"
 title: "Por\xF3wnywanie dw\xF3ch dat"
+weight: 27
 ---
-
-{{< edit_this_page >}}
 
 ## Co i dlaczego?
 

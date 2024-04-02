@@ -9,9 +9,8 @@ summary: "Creating a temporary file in PHP means making a file that'll stick aro
   \ just long enough for you to use it, then poof\u2014it's gone. Why do that? It's\
   \ great\u2026"
 title: Creating a temporary file
+weight: 21
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 Creating a temporary file in PHP means making a file that'll stick around just long enough for you to use it, then poof—it's gone. Why do that? It's great for handling data chunks during processing, keeping sensitive info off disk, and ensuring no trace is left behind after your script wraps up.

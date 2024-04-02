@@ -7,9 +7,8 @@ model: gpt-4-1106-preview
 summary: "Att konvertera ett datum till en str\xE4ng inneb\xE4r att omvandla datumdata\
   \ till textformat. Programmerare g\xF6r detta f\xF6r utskrift, lagring eller\u2026"
 title: "Omvandla ett datum till en str\xE4ng"
+weight: 28
 ---
-
-{{< edit_this_page >}}
 
 ## Vad & Varför?
 Att konvertera ett datum till en sträng innebär att omvandla datumdata till textformat. Programmerare gör detta för utskrift, lagring eller användargränssnitt.

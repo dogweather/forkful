@@ -11,9 +11,8 @@ summary: "Praca z plikami CSV (Comma Separated Values), czyli warto\u015Bciami r
   \ przecinkami, wi\u0105\u017Ce si\u0119 z parsowaniem, manipulowaniem i generowaniem\
   \ danych w\u2026"
 title: Praca z plikami CSV
+weight: 37
 ---
-
-{{< edit_this_page >}}
 
 ## Co i dlaczego?
 

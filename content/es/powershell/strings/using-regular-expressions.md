@@ -11,9 +11,8 @@ summary: "Las expresiones regulares (regex) son secuencias de caracteres que for
   \ un patr\xF3n de b\xFAsqueda, utilizadas principalmente para la b\xFAsqueda y manipulaci\xF3\
   n\u2026"
 title: Usando expresiones regulares
+weight: 11
 ---
-
-{{< edit_this_page >}}
 
 ## Qué y Por Qué?
 

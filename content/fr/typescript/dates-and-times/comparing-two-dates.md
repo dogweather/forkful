@@ -9,9 +9,8 @@ summary: "Comparer deux dates, c'est voir laquelle vient avant ou apr\xE8s, ou s
   \ elles sont identiques. Les devs le font pour g\xE9rer des \xE9ch\xE9ances, trier\
   \ des\u2026"
 title: Comparer deux dates
+weight: 27
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why? (Quoi et Pourquoi ?)
 Comparer deux dates, c'est voir laquelle vient avant ou après, ou si elles sont identiques. Les devs le font pour gérer des échéances, trier des événements, etc.

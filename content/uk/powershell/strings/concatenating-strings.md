@@ -8,9 +8,8 @@ summary: Concatenating strings means sticking them together end-to-end. Programm
   do it to assemble text dynamically, like creating messages or generating paths.
 title: "\u041E\u0431'\u0454\u0434\u043D\u0430\u043D\u043D\u044F \u0440\u044F\u0434\
   \u043A\u0456\u0432"
+weight: 3
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why? (Що і Чому?)
 Concatenating strings means sticking them together end-to-end. Programmers do it to assemble text dynamically, like creating messages or generating paths.

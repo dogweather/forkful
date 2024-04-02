@@ -16,9 +16,8 @@ summary: "\uCEE4\uB9E8\uB4DC \uB77C\uC778 \uC778\uC790 \uC77D\uAE30\uB294 \uC0AC
   \uB3D9\uC744 \uC870\uC815\uD560 \uC218 \uC788\uAE30 \uB54C\uBB38\uC5D0 \uAC1C\uBC1C\
   \uC790\uB4E4\uC774 \uC0AC\uC6A9\uD569\uB2C8\uB2E4."
 title: "\uBA85\uB839\uC904 \uC778\uC218 \uC77D\uAE30"
+weight: 23
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why? (무엇인가요? 왜 사용하는 건가요?)
 커맨드 라인 인자 읽기는 사용자가 프로그램을 시작할 때 파라미터를 전달하는 방법입니다. 이를 통해 동적으로 프로그램의 행동을 조정할 수 있기 때문에 개발자들이 사용합니다.

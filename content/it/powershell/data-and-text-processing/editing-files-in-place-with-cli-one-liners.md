@@ -8,9 +8,8 @@ model: gpt-4-0125-preview
 summary: "Modificare i file sul posto con i one-liner CLI in PowerShell riguarda l'apportare\
   \ modifiche dirette ai file dalla riga di comando, senza la necessit\xE0 di\u2026"
 title: Modifica dei file sul posto con righe di comando CLI
+weight: 32
 ---
-
-{{< edit_this_page >}}
 
 ## Cosa & Perché?
 

@@ -11,9 +11,8 @@ summary: "Att skriva till en textfil i Python \xE4r en grundl\xE4ggande uppgift 
   \ inneb\xE4r att skapa eller \xF6ppna en fil f\xF6r att sedan l\xE4gga till eller\
   \ skriva \xF6ver text.\u2026"
 title: Att skriva en textfil
+weight: 24
 ---
-
-{{< edit_this_page >}}
 
 ## Vad & Varför?
 Att skriva till en textfil i Python är en grundläggande uppgift som innebär att skapa eller öppna en fil för att sedan lägga till eller skriva över text. Denna funktionalitet är avgörande för datalogning, konfigurationshantering och lagring av utdata som genereras av program, vilket gör det till ett grundläggande men viktigt verktyg i en programmerares arsenal.

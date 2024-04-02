@@ -7,9 +7,8 @@ model: gpt-4-0125-preview
 summary: "Capitalizing a string in Bash involves transforming the first character\
   \ of the string to uppercase while leaving the rest of the string unchanged. This\u2026"
 title: Capitalizing a string
+weight: 2
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 Capitalizing a string in Bash involves transforming the first character of the string to uppercase while leaving the rest of the string unchanged. This technique is commonly used for formatting output or complying with coding conventions that require certain strings to start with a capital letter for readability or stylistic preferences.

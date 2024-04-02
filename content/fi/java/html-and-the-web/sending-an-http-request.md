@@ -9,9 +9,8 @@ summary: "L\xE4hett\xE4m\xE4ll\xE4 HTTP-pyynn\xF6n, ohjelmat voivat pyyt\xE4\xE4
   \ tai l\xE4hett\xE4\xE4 dataa web-palvelimelle. Ohjelmoijat tekev\xE4t sen, koska\
   \ se on netin kanssak\xE4ymisen\u2026"
 title: "HTTP-pyynn\xF6n l\xE4hett\xE4minen"
+weight: 44
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why? (Mikä ja Miksi?)
 Lähettämällä HTTP-pyynnön, ohjelmat voivat pyytää tietoa tai lähettää dataa web-palvelimelle. Ohjelmoijat tekevät sen, koska se on netin kanssakäymisen ydin - ilman pyyntöjä, ei keskustelua palvelimien kanssa.

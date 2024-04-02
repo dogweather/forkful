@@ -7,9 +7,8 @@ model: gpt-4-1106-preview
 summary: "Logging in the context of programming is the process of recording events,\
   \ states, and information to a file or another output medium. Programmers log to\u2026"
 title: Logging
+weight: 17
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 Logging in the context of programming is the process of recording events, states, and information to a file or another output medium. Programmers log to keep track of what's happening in their applications, to debug issues, and to monitor performance for future analysis and optimization.

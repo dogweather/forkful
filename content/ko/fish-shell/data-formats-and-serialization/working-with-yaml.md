@@ -20,9 +20,8 @@ summary: "Fish Shell\uC5D0\uC11C YAML\uC744 \uB2E4\uB8E8\uB294 \uC77C\uC740 YAML
   \uC5D0\uC11C \uC5B4\uD50C\uB9AC\uCF00\uC774\uC158\uC774\uB098 \uC11C\uBE44\uC2A4\
   \uB97C \uC790\uB3D9\uD654\uD558\uACE0 \uAD6C\uC131\uD558\uB294 \uAC83\uC744\u2026"
 title: "YAML\uB85C \uC791\uC5C5\uD558\uAE30"
+weight: 41
 ---
-
-{{< edit_this_page >}}
 
 ## 무엇 & 왜?
 Fish Shell에서 YAML을 다루는 일은 YAML (YAML Ain't Markup Language) 파일, 구성 파일에 사용되는 데이터 직렬화 형식을 파싱하고 조작하는 것을 포함합니다. 프로그래머들은 쉘 환경의 맥락에서 어플리케이션이나 서비스를 자동화하고 구성하는 것을 효율적으로 수행하기 위해 이를 수행합니다. 이는 설정 관리와 자원의 프로비저닝과 같은 작업을 용이하게 합니다.

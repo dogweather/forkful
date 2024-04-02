@@ -8,9 +8,8 @@ model: gpt-4-1106-preview
 summary: "Leer un archivo de texto en Python es b\xE1sicamente acceder y obtener el\
   \ contenido de un archivo `.txt` en tu c\xF3digo. Los programadores lo hacen para\u2026"
 title: Lectura de un archivo de texto
+weight: 22
 ---
-
-{{< edit_this_page >}}
 
 ## ¿Qué & Por Qué?
 

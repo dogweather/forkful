@@ -11,9 +11,8 @@ summary: "Controleren of een directory bestaat betekent verifi\xEBren dat deze e
   \ is voordat je probeert bestanden erin te lezen of te schrijven. Programmeurs doen\
   \ dit\u2026"
 title: Controleren of een directory bestaat
+weight: 20
 ---
-
-{{< edit_this_page >}}
 
 ## Wat & Waarom?
 Controleren of een directory bestaat betekent verifiëren dat deze er is voordat je probeert bestanden erin te lezen of te schrijven. Programmeurs doen dit om fouten te voorkomen, zoals proberen een bestand op te slaan waar geen plaats is om het neer te zetten.

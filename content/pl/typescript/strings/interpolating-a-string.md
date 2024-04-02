@@ -9,9 +9,8 @@ summary: "Interpolacja to wplecenie zmiennej w ci\u0105g tekstowy, co u\u0142atw
   \ tworzenie dynamicznego tekstu. Programi\u015Bci u\u017Cywaj\u0105 interpolacji,\
   \ aby \u0142atwo \u0142\u0105czy\u0107 sta\u0142e\u2026"
 title: "Interpolacja \u0142a\u0144cuch\xF3w znak\xF3w"
+weight: 8
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 Interpolacja to wplecenie zmiennej w ciąg tekstowy, co ułatwia tworzenie dynamicznego tekstu. Programiści używają interpolacji, aby łatwo łączyć stałe fragmenty tekstu z zmiennymi danymi, co czyni kod bardziej czytelnym i elastycznym.

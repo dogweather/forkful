@@ -13,9 +13,8 @@ summary: "Vi\u1EC7c ph\xE2n t\xEDch c\xFA ph\xE1p m\u1ED9t ng\xE0y t\u1EEB m\u1E
   \ m\xF4 t\u1EA3 m\u1ED9t ng\xE0y th\xE0nh \u0111\u1ECBnh d\u1EA1ng m\xE0 m\u1ED9\
   t ch\u01B0\u01A1ng tr\xECnh c\xF3 th\u1EC3 l\xE0m vi\u1EC7c v\u1EDBi. L\u1EADp\u2026"
 title: "Ph\xE2n t\xEDch ng\xE0y t\u1EEB chu\u1ED7i k\xED t\u1EF1"
+weight: 30
 ---
-
-{{< edit_this_page >}}
 
 ## Cái gì & Tại sao?
 Việc phân tích cú pháp một ngày từ một chuỗi có nghĩa là chuyển đổi văn bản mô tả một ngày thành định dạng mà một chương trình có thể làm việc với. Lập trình viên thực hiện điều này để thao tác với ngày tháng—nghĩ về việc sắp xếp sự kiện hoặc tính toán khoảng thời gian—trong các ứng dụng xử lý lịch trình, hạn chót và nhiều hơn nữa.

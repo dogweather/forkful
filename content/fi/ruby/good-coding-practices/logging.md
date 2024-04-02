@@ -7,9 +7,8 @@ model: gpt-4-1106-preview
 summary: "Lokitus ohjelmoinnissa on kuin p\xE4iv\xE4kirjan pit\xE4mist\xE4 sovelluksellesi.\
   \ Se on systemaattista tapahtumien, viestien ja datapisteiden tallentamista, jotka\u2026"
 title: Lokitus
+weight: 17
 ---
-
-{{< edit_this_page >}}
 
 ## Mikä & Miksi?
 Lokitus ohjelmoinnissa on kuin päiväkirjan pitämistä sovelluksellesi. Se on systemaattista tapahtumien, viestien ja datapisteiden tallentamista, jotka antavat sinulle käsityksen siitä, mitä sovelluksesi tekee ja miten se käyttäytyy. Koodaajat lokittavat, koska se on tärkeää virheenkorjauksessa, sovelluksen terveyden seurannassa ja potentiaalisten ongelmien havaitsemisessa ennen kuin ne paisuvat todellisiksi ongelmiksi.

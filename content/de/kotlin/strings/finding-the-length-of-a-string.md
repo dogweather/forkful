@@ -9,9 +9,8 @@ summary: "Die L\xE4nge eines Strings zu finden, hei\xDFt, zu bestimmen, wie viel
   \ Zeichen er enth\xE4lt. Wir brauchen das, um Textdaten zu validieren, zu schneiden\
   \ oder\u2026"
 title: "Ermittlung der Zeichenkettenl\xE4nge"
+weight: 7
 ---
-
-{{< edit_this_page >}}
 
 ## Was & Warum?
 Die Länge eines Strings zu finden, heißt, zu bestimmen, wie viele Zeichen er enthält. Wir brauchen das, um Textdaten zu validieren, zu schneiden oder einfach um zu wissen, wie viel Inhalt vorhanden ist.

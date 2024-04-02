@@ -11,9 +11,8 @@ summary: "Envoyer une requ\xEAte HTTP consiste \xE0 cr\xE9er et envoyer une requ
   te \xE0 un serveur web pour r\xE9cup\xE9rer ou soumettre des donn\xE9es. Les programmeurs\
   \ font cela en C\u2026"
 title: "Envoyer une requ\xEAte HTTP"
+weight: 44
 ---
-
-{{< edit_this_page >}}
 
 ## Quoi & Pourquoi ?
 

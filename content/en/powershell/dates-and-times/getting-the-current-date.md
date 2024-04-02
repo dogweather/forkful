@@ -7,9 +7,8 @@ model: gpt-4-0125-preview
 summary: "Retrieving the current date in PowerShell is about fetching the system\u2019\
   s current date and time. This operation is fundamental for tasks such as logging,\u2026"
 title: Getting the current date
+weight: 29
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 

@@ -17,9 +17,8 @@ summary: "\u4F7F\u7528 JSON (JavaScript \u5BF9\u8C61\u8868\u793A\u6CD5) \u6D89\u
   \u5668\u4E0E\u5BA2\u6237\u7AEF\u4EA4\u6362\u6570\u636E\u7684\u901A\u7528\u8BED\u8A00\
   \u3002"
 title: "\u4F7F\u7528JSON\u8FDB\u884C\u7F16\u7A0B"
+weight: 38
 ---
-
-{{< edit_this_page >}}
 
 ## 什么 & 为什么？
 

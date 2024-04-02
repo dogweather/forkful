@@ -9,9 +9,8 @@ summary: "Et nytt prosjekt er starten p\xE5 en frisk kodebase, og programmerere 
   \ nye prosjekter for \xE5 realisere unike ideer eller l\xF8se spesifikke problemer.\
   \ Det\u2026"
 title: "\xC5 starte et nytt prosjekt"
+weight: 1
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 Et nytt prosjekt er starten på en frisk kodebase, og programmerere starter nye prosjekter for å realisere unike ideer eller løse spesifikke problemer. Det gir ren arkitektur og nytt potensial.

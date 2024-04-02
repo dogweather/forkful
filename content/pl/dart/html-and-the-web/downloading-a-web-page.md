@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Pobieranie strony internetowej polega na pobraniu zawarto\u015Bci strony\
   \ internetowej za pomoc\u0105 jej adresu URL w celu przetworzenia lub przechowania.\u2026"
 title: Pobieranie strony internetowej
+weight: 42
 ---
-
-{{< edit_this_page >}}
 
 ## Co i dlaczego?
 

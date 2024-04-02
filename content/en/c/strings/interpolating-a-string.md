@@ -7,9 +7,8 @@ model: gpt-4-0125-preview
 summary: "String interpolation, in programming, involves the construction of strings\
   \ by embedding expressions within literal strings. Programmers do this to create\u2026"
 title: Interpolating a string
+weight: 8
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 

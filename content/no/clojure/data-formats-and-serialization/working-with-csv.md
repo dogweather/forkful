@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "\xC5 jobbe med CSV-filer (Comma-Separated Values) inneb\xE6rer parsing og\
   \ generering av tekstdata strukturert som rader og kolonner, likt som regnearkdata.\u2026"
 title: Arbeide med CSV
+weight: 37
 ---
-
-{{< edit_this_page >}}
 
 ## Hva & Hvorfor?
 

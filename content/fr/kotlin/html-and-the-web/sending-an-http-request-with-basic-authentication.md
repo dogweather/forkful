@@ -9,9 +9,8 @@ summary: "Une requ\xEAte HTTP avec authentification de base envoie des informati
   \ d'identification cod\xE9es en base64. Les programmeurs l'utilisent pour acc\xE9\
   der \xE0 des\u2026"
 title: "Envoi d'une requ\xEAte HTTP avec authentification de base"
+weight: 45
 ---
-
-{{< edit_this_page >}}
 
 ## Quoi & Pourquoi ?
 Une requête HTTP avec authentification de base envoie des informations d'identification codées en base64. Les programmeurs l'utilisent pour accéder à des ressources web sécurisées simplement.

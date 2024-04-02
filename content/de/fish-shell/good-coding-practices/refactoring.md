@@ -7,9 +7,8 @@ model: gpt-4-0125-preview
 summary: "Refactoring ist der Prozess des Umstrukturierens bestehenden Codes, ohne\
   \ sein externes Verhalten zu \xE4ndern, um nichtfunktionale Attribute zu verbessern.\u2026"
 title: Refactoring
+weight: 19
 ---
-
-{{< edit_this_page >}}
 
 ## Was & Warum?
 Refactoring ist der Prozess des Umstrukturierens bestehenden Codes, ohne sein externes Verhalten zu ändern, um nichtfunktionale Attribute zu verbessern. Programmierer tun dies, um den Code lesbarer zu machen, Komplexität zu verringern, die Wartbarkeit zu verbessern und ihn einfacher skalierbar oder modifizierbar für die Zukunft zu machen.

@@ -11,9 +11,8 @@ summary: "Regul\xE6re uttrykk, et kraftfullt verkt\xF8y for m\xF8nstersammenlign
   \ og databehandling, er essensielle i tekstbehandlingsoppgaver slik som \xE5 validere\
   \ inndata,\u2026"
 title: "Bruke regul\xE6re uttrykk"
+weight: 11
 ---
-
-{{< edit_this_page >}}
 
 ## Hva & Hvorfor?
 Regulære uttrykk, et kraftfullt verktøy for mønstersammenligning og databehandling, er essensielle i tekstbehandlingsoppgaver slik som å validere inndata, søke og erstatte tekst. Programmerere bruker dem omfattende for å håndtere komplekse string-parsing og datavalideringsoppgaver effektivt og kortfattet.

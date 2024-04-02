@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "CSV:n (pilkulla erotetut arvot) k\xE4sittelyyn kuuluu CSV-tiedostojen lukemista\
   \ ja niihin kirjoittamista, mik\xE4 on yleinen tiedonvaihtomuoto sen\u2026"
 title: "Ty\xF6skentely CSV:n kanssa"
+weight: 37
 ---
-
-{{< edit_this_page >}}
 
 ## Mikä & Miksi?
 

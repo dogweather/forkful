@@ -9,9 +9,8 @@ summary: "Wyci\u0105ganie pod\u0142a\u0144cuch\xF3w to proces pozyskiwania kr\xF
   tszych ci\u0105g\xF3w znak\xF3w z wi\u0119kszego tekstu. Programi\u015Bci u\u017C\
   ywaj\u0105 tej techniki, by manipulowa\u0107 danymi\u2026"
 title: "Wycinanie pod\u0142a\u0144cuch\xF3w"
+weight: 6
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 Wyciąganie podłańcuchów to proces pozyskiwania krótszych ciągów znaków z większego tekstu. Programiści używają tej techniki, by manipulować danymi tekstowymi, uzyskiwać wartościowe informacje lub przygotowywać tekst do wyświetlenia użytkownikowi.

@@ -9,9 +9,8 @@ summary: "Zamiana daty na ci\u0105g znak\xF3w to proces przekszta\u0142cania obi
   w daty w tekst. Robimy to, by \u0142atwiej by\u0142o przechowywa\u0107, wy\u015B\
   wietla\u0107 oraz wsp\xF3\u0142dzieli\u0107\u2026"
 title: "Konwersja daty na \u0142a\u0144cuch znak\xF3w"
+weight: 28
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why? (Co i Dlaczego?)
 Zamiana daty na ciąg znaków to proces przekształcania obiektów daty w tekst. Robimy to, by łatwiej było przechowywać, wyświetlać oraz współdzielić informacje o dacie i czasie.

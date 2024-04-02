@@ -21,9 +21,8 @@ summary: "HTTP\u30EA\u30AF\u30A8\u30B9\u30C8\u3092Basic\u8A8D\u8A3C\u4ED8\u304D\
   \u308B\u305F\u3081\u306B\u4F7F\u3044\u307E\u3059\u3002"
 title: "\u57FA\u672C\u8A8D\u8A3C\u3092\u4F7F\u7528\u3057\u305FHTTP\u30EA\u30AF\u30A8\
   \u30B9\u30C8\u306E\u9001\u4FE1"
+weight: 45
 ---
-
-{{< edit_this_page >}}
 
 ## 何となぜ？ (What & Why?)
 HTTPリクエストをBasic認証付きで送ることは、ユーザー名とパスワードを使ってサーバーに安全にアクセスする方法です。サーバーが要求者の身元を確認し、許可されたユーザーだけがリソースにアクセスできるようにするために使います。

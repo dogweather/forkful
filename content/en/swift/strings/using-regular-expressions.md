@@ -7,9 +7,8 @@ model: gpt-4-0125-preview
 summary: "Regular expressions, or regex, are sequences of characters that form a search\
   \ pattern, often used for string matching or manipulation tasks. Programmers\u2026"
 title: Using regular expressions
+weight: 11
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 Regular expressions, or regex, are sequences of characters that form a search pattern, often used for string matching or manipulation tasks. Programmers utilize them for everything from data validation and parsing to transformations, making them an indispensable tool in text processing and manipulation tasks across various programming languages, including Swift.

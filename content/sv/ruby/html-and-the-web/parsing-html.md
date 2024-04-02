@@ -11,9 +11,8 @@ summary: "Att tolka HTML inneb\xE4r att bryta ned en bit HTML-kod f\xF6r att f\x
   rst\xE5 dess struktur och inneh\xE5ll. Programmerare g\xF6r detta f\xF6r att extrahera\
   \ data, manipulera\u2026"
 title: Tolka HTML
+weight: 43
 ---
-
-{{< edit_this_page >}}
 
 ## Vad & Varför?
 Att tolka HTML innebär att bryta ned en bit HTML-kod för att förstå dess struktur och innehåll. Programmerare gör detta för att extrahera data, manipulera innehåll eller migrera information mellan format och system.

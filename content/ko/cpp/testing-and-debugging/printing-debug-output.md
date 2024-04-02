@@ -14,9 +14,8 @@ summary: "\uB514\uBC84\uADF8 \uCD9C\uB825\uC740 \uD504\uB85C\uADF8\uB7A8 \uC2E4\
   \ \uD504\uB85C\uADF8\uB7A8 \uC774\uD574\uB97C \uC99D\uC9C4\uD558\uAE30 \uC704\uD574\
   \ \uC774\uB97C \uC0AC\uC6A9\uD569\uB2C8\uB2E4."
 title: "\uB514\uBC84\uADF8 \uCD9C\uB825\uC744 \uCC0D\uC5B4\uBCF4\uAE30"
+weight: 33
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why? (무엇인가요? 왜 그런가요?)
 디버그 출력은 프로그램 실행 중 정보를 콘솔에 표시하는 것입니다. 프로그래머는 버그를 찾고 프로그램 이해를 증진하기 위해 이를 사용합니다.

@@ -11,9 +11,8 @@ model: gpt-4-0125-preview
 summary: "Code in Funktionen zu organisieren bedeutet, Teile eines Skripts zu b\xFC\
   ndeln, um spezifische Aufgaben zu erledigen. Wir tun dies, da es den Code leichter\u2026"
 title: Organisation von Code in Funktionen
+weight: 18
 ---
-
-{{< edit_this_page >}}
 
 ## Was & Warum?
 Code in Funktionen zu organisieren bedeutet, Teile eines Skripts zu bündeln, um spezifische Aufgaben zu erledigen. Wir tun dies, da es den Code leichter lesbar, testbar und wiederverwendbar macht – niemand möchte durch einen Sumpf von Codespaghetti waten.

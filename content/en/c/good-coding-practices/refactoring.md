@@ -9,9 +9,8 @@ summary: "Refactoring in programming involves restructuring existing code withou
   \ changing its external behavior, aiming to improve nonfunctional attributes such\
   \ as\u2026"
 title: Refactoring
+weight: 19
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 

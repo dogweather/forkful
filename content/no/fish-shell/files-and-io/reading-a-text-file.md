@@ -9,9 +9,8 @@ summary: "Lesing av tekstfiler lar deg hente data lagret p\xE5 din disk. Program
   \ gj\xF8r dette for \xE5 bearbeide data, konfigurere systemer eller bare for \xE5\
   \ hente\u2026"
 title: Lese en tekstfil
+weight: 22
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 Lesing av tekstfiler lar deg hente data lagret på din disk. Programmerere gjør dette for å bearbeide data, konfigurere systemer eller bare for å hente informasjon.

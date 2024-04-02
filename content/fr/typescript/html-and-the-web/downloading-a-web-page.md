@@ -9,9 +9,8 @@ summary: "T\xE9l\xE9charger une page web, c'est r\xE9cup\xE9rer ses donn\xE9es (
   \ CSS, scripts) pour les manipuler ou les stocker. Les programmeurs le font pour\
   \ analyser le\u2026"
 title: "T\xE9l\xE9chargement d'une page web"
+weight: 42
 ---
-
-{{< edit_this_page >}}
 
 ## Quoi & Pourquoi ?
 

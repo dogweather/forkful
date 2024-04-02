@@ -9,9 +9,8 @@ summary: "Tratar erros significa planejar para quando as coisas derem errado. \x
   \ vital por ajudar a evitar falhas e tornar seu software robusto e amig\xE1vel para\
   \ o\u2026"
 title: Tratamento de erros
+weight: 16
 ---
-
-{{< edit_this_page >}}
 
 ## O Que & Por Quê?
 Tratar erros significa planejar para quando as coisas derem errado. É vital por ajudar a evitar falhas e tornar seu software robusto e amigável para o usuário.

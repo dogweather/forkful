@@ -11,9 +11,8 @@ summary: "Regular expressions (regulj\xE4ra uttryck) i Java l\xE5ter dig definie
   \ specifika m\xF6nster f\xF6r att s\xF6ka, manipulera eller validera str\xE4ngar\
   \ i din kod.\u2026"
 title: "Att anv\xE4nda regulj\xE4ra uttryck"
+weight: 11
 ---
-
-{{< edit_this_page >}}
 
 ## Vad & Varför?
 

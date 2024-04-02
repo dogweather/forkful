@@ -10,9 +10,8 @@ model: gpt-4-0125-preview
 summary: "Standardivirheeseen (stderr) kirjoittaminen PowerShellissa tarkoittaa virhesanomien\
   \ tai diagnostiikkatietojen l\xE4hett\xE4mist\xE4 suoraan stderr-virtaan, joka on\u2026"
 title: Kirjoittaminen standardivirheeseen
+weight: 25
 ---
-
-{{< edit_this_page >}}
 
 ## Mikä & Miksi?
 

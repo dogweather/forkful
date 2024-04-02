@@ -11,9 +11,8 @@ summary: "Tekstitiedostoon kirjoittaminen Rubylla on perustoiminto, jonka avulla
   \ tallentaa tulosteita ja tietoja pysyv\xE4sti, mahdollistaen datan my\xF6hemp\xE4\
   \xE4\u2026"
 title: Tekstitiedoston kirjoittaminen
+weight: 24
 ---
-
-{{< edit_this_page >}}
 
 ## Mikä ja Miksi?
 Tekstitiedostoon kirjoittaminen Rubylla on perustoiminto, jonka avulla voit tallentaa tulosteita ja tietoja pysyvästi, mahdollistaen datan myöhempää pääsyä tai muokkausta varten. Ohjelmoijat suorittavat tätä tehtävää usein syistä kuten lokitiedostojen kirjoittaminen, asetusten tallentaminen tai datan vieminen ihmisen luettavassa muodossa.

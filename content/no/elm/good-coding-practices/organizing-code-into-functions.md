@@ -9,9 +9,8 @@ summary: "\xC5 dumpe all koden din i en stor haug? D\xE5rlig id\xE9. \xC5 dele d
   \ opp i funksjoner? God ide. Det holder din Elm-kode ren, gjenbrukbar og lettere\
   \ \xE5 teste. Ved \xE5\u2026"
 title: Organisering av kode i funksjoner
+weight: 18
 ---
-
-{{< edit_this_page >}}
 
 ## Hva & Hvorfor?
 Å dumpe all koden din i en stor haug? Dårlig idé. Å dele den opp i funksjoner? God ide. Det holder din Elm-kode ren, gjenbrukbar og lettere å teste. Ved å organisere koden din i funksjoner, grupperer du kode som utfører spesifikke oppgaver sammen, noe som gjør applikasjonen din mer vedlikeholdbar og forståelig.

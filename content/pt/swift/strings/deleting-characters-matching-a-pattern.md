@@ -9,9 +9,8 @@ summary: "Apagar caracteres que correspondem a um padr\xE3o \xE9 filtrar o que n
   o queremos em uma string. Programadores fazem isso para limpar dados, validar entradas\
   \ ou\u2026"
 title: "Excluindo caracteres que correspondem a um padr\xE3o"
+weight: 5
 ---
-
-{{< edit_this_page >}}
 
 ## O Quê & Porquê?
 Apagar caracteres que correspondem a um padrão é filtrar o que não queremos em uma string. Programadores fazem isso para limpar dados, validar entradas ou preparar textos para processamentos específicos.

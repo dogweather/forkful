@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Das Extrahieren von Teilzeichenketten bezieht sich auf das Abrufen spezifischer\
   \ Abschnitte einer Zeichenkette basierend auf ihren Positionen oder Mustern.\u2026"
 title: Teilstrings extrahieren
+weight: 6
 ---
-
-{{< edit_this_page >}}
 
 ## Was & Warum?
 Das Extrahieren von Teilzeichenketten bezieht sich auf das Abrufen spezifischer Abschnitte einer Zeichenkette basierend auf ihren Positionen oder Mustern. Programmierer tun dies für Aufgaben wie das Parsen von Benutzereingaben, Datenmanipulation oder das Extrahieren relevanter Informationen aus größeren Textquellen.

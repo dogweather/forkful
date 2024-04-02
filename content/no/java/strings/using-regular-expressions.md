@@ -11,9 +11,8 @@ summary: "Regul\xE6re uttrykk (regex) i Java lar deg definere spesifikke m\xF8ns
   \ for \xE5 s\xF8ke, manipulere eller validere strenger i koden din. Programmerere\
   \ bruker dem\u2026"
 title: "Bruke regul\xE6re uttrykk"
+weight: 11
 ---
-
-{{< edit_this_page >}}
 
 ## Hva & hvorfor?
 

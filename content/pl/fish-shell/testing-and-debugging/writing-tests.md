@@ -11,9 +11,8 @@ summary: "Pisanie test\xF3w w Fish Shell polega na tworzeniu skrypt\xF3w, kt\xF3
   \ automatycznie uruchamiaj\u0105 Tw\xF3j kod w celu zweryfikowania jego zachowania\
   \ wzgl\u0119dem\u2026"
 title: "Pisanie test\xF3w"
+weight: 36
 ---
-
-{{< edit_this_page >}}
 
 ## Co i dlaczego?
 

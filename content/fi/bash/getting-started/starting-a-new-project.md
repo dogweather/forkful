@@ -7,9 +7,8 @@ model: gpt-4-1106-preview
 summary: "Uuden projektin aloittaminen on puhtaan koodisivun luomista ja projektikansion\
   \ rakentamista. Koodarit aloittavat uusia projekteja organisoidakseen ideansa\u2026"
 title: Uuden projektin aloittaminen
+weight: 1
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why? (Mitä & Miksi?)
 Uuden projektin aloittaminen on puhtaan koodisivun luomista ja projektikansion rakentamista. Koodarit aloittavat uusia projekteja organisoidakseen ideansa ja aloittaakseen puhtaalta pöydältä.

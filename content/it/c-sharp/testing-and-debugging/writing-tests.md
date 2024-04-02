@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Scrivere test in C# comporta la creazione di script automatizzati per validare\
   \ la funzionalit\xE0 del proprio codice, assicurando che si comporti come\u2026"
 title: Scrivere test
+weight: 36
 ---
-
-{{< edit_this_page >}}
 
 ## Cosa & Perché?
 

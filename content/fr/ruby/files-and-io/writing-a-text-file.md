@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "\xC9crire dans un fichier texte en Ruby est une op\xE9ration fondamentale\
   \ qui vous permet de stocker des sorties et des donn\xE9es de mani\xE8re persistante,\u2026"
 title: "R\xE9diger un fichier texte"
+weight: 24
 ---
-
-{{< edit_this_page >}}
 
 ## Quoi & Pourquoi ?
 Écrire dans un fichier texte en Ruby est une opération fondamentale qui vous permet de stocker des sorties et des données de manière persistante, permettant ainsi aux données d'être consultées ou modifiées ultérieurement. Les programmeurs effectuent souvent cette tâche pour des raisons telles que la journalisation, la sauvegarde de configurations ou l'exportation de données dans un format lisible par l'homme.

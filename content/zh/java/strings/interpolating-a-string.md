@@ -12,9 +12,8 @@ summary: "\u5B57\u7B26\u4E32\u63D2\u503C\u662F\u628A\u53D8\u91CF\u6216\u8868\u8F
   \u7A0B\u5E8F\u5458\u8FD9\u4E48\u505A\uFF0C\u662F\u4E3A\u4E86\u521B\u5EFA\u52A8\u6001\
   \u548C\u6613\u4E8E\u8BFB\u5199\u7684\u4FE1\u606F\u3002"
 title: "\u5B57\u7B26\u4E32\u63D2\u503C"
+weight: 8
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why? 什么是字符串插值？为什么程序员要使用它？
 字符串插值是把变量或表达式的值嵌入到字符串中的技术。程序员这么做，是为了创建动态和易于读写的信息。

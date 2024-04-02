@@ -7,9 +7,8 @@ model: gpt-4-1106-preview
 summary: "Stampare l'output di debug aiuta a vedere cosa succede nel tuo codice. Usiamo\
   \ questa tecnica per controllare i valori delle variabili e capire il flusso\u2026"
 title: Stampa dell'output di debug
+weight: 33
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why? (Cosa e Perché?)
 Stampare l'output di debug aiuta a vedere cosa succede nel tuo codice. Usiamo questa tecnica per controllare i valori delle variabili e capire il flusso dell'esecuzione del programma.

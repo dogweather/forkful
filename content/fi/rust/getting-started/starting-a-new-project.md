@@ -9,9 +9,8 @@ summary: "Aloitamme uuden projektin luomalla puhtaan ty\xF6tilan, joka sis\xE4lt
   \xE4 kaikki tarvittavat tiedostot ja hakemistorakenteet. Koodareina teemme t\xE4\
   m\xE4n, koska se\u2026"
 title: Uuden projektin aloittaminen
+weight: 1
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why? (Mitä & Miksi?)
 Aloitamme uuden projektin luomalla puhtaan työtilan, joka sisältää kaikki tarvittavat tiedostot ja hakemistorakenteet. Koodareina teemme tämän, koska se nopeuttaa kehitystä ja pitää koodimme organisoiduna alusta lähtien.

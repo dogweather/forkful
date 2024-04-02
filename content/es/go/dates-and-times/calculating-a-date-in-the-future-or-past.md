@@ -11,9 +11,8 @@ summary: "Calcular una fecha en el futuro o pasado en Go implica manipular valor
   \ de fecha y hora para determinar un punto espec\xEDfico en relaci\xF3n con una\
   \ fecha\u2026"
 title: "C\xE1lculo de una fecha en el futuro o en el pasado"
+weight: 26
 ---
-
-{{< edit_this_page >}}
 
 ## Qué y Por Qué?
 

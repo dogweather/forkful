@@ -11,9 +11,8 @@ summary: "Die \xDCberpr\xFCfung, ob ein Verzeichnis in Go existiert, ist kritisc
   \ f\xFCr Anwendungen, die mit dem Dateisystem interagieren, um Fehler beim Versuch\
   \ des\u2026"
 title: "\xDCberpr\xFCfen, ob ein Verzeichnis existiert"
+weight: 20
 ---
-
-{{< edit_this_page >}}
 
 ## Was & Warum?
 

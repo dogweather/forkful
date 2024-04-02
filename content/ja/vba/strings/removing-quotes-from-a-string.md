@@ -7,9 +7,8 @@ lastmod: '2024-03-13T22:44:41.866552-06:00'
 model: gpt-4-0125-preview
 summary: "\u2026"
 title: "\u6587\u5B57\u5217\u304B\u3089\u5F15\u7528\u7B26\u3092\u524A\u9664\u3059\u308B"
+weight: 9
 ---
-
-{{< edit_this_page >}}
 
 ## 何となぜ？
 

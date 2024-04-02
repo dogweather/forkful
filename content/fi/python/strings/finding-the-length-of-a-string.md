@@ -9,9 +9,8 @@ summary: "Stringin pituuden selvitt\xE4minen tarkoittaa merkkijonon merkkien luk
   \xE4r\xE4n laskemista. Koodarit tekev\xE4t t\xE4t\xE4 validoinnin, muotoilun ja\
   \ silmukoiden\u2026"
 title: "Merkkijonon pituuden selvitt\xE4minen"
+weight: 7
 ---
-
-{{< edit_this_page >}}
 
 ## Mikä & Miksi?
 Stringin pituuden selvittäminen tarkoittaa merkkijonon merkkien lukumäärän laskemista. Koodarit tekevät tätä validoinnin, muotoilun ja silmukoiden hallinnan helpottamiseksi.

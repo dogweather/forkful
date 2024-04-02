@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "YAML, een afkorting voor YAML Ain't Markup Language, is een voor mensen\
   \ leesbaar gegevensserialisatieformaat. Programmeurs gebruiken het voor\u2026"
 title: Werken met YAML
+weight: 41
 ---
-
-{{< edit_this_page >}}
 
 ## Wat & Waarom?
 

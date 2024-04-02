@@ -15,9 +15,8 @@ summary: "N\u1ED1i chu\u1ED7i c\xF3 ngh\u0129a l\xE0 gh\xE9p ch\xFAng l\u1EA1i v
   i \u0111\u1EC3 t\u1EA1o ra c\xE1c th\xF4ng \u0111i\u1EC7p t\xF9y ch\u1EC9nh, x\xE2\
   y\u2026"
 title: "N\u1ED1i chu\u1ED7i k\xFD t\u1EF1"
+weight: 3
 ---
-
-{{< edit_this_page >}}
 
 ## Cái gì & Tại sao?
 

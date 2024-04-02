@@ -9,9 +9,8 @@ summary: "En C++, supprimer des caract\xE8res qui correspondent \xE0 un motif s\
   av\xE8re utile pour nettoyer des strings, valider des entr\xE9es, ou pour tout traitement\
   \ de\u2026"
 title: "Suppression de caract\xE8res correspondant \xE0 un motif"
+weight: 5
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 En C++, supprimer des caractères qui correspondent à un motif s’avère utile pour nettoyer des strings, valider des entrées, ou pour tout traitement de texte personnalisé. Cette manipulation est courante pour uniformiser des données ou préparer du texte pour des analyses ultérieures.

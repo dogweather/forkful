@@ -14,9 +14,8 @@ summary: "\u53D1\u9001\u5E26\u57FA\u672C\u8BA4\u8BC1\u7684HTTP\u8BF7\u6C42\u5141
   \u4E48\u505A\u6765\u786E\u4FDD\u6570\u636E\u7684\u4F20\u8F93\u662F\u5B89\u5168\u7684\
   \uFF0C\u53EA\u6709\u6388\u6743\u7528\u6237\u624D\u80FD\u8BBF\u95EE\u3002"
 title: "\u4F7F\u7528\u57FA\u672C\u8BA4\u8BC1\u53D1\u9001 HTTP \u8BF7\u6C42"
+weight: 45
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why? (是什么&为什么？)
 发送带基本认证的HTTP请求允许你通过用户名和密码保护的方式，从服务器获取数据。程序员这么做来确保数据的传输是安全的，只有授权用户才能访问。

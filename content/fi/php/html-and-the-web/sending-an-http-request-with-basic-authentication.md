@@ -9,9 +9,8 @@ summary: "L\xE4hett\xE4m\xE4ll\xE4 HTTP-pyynn\xF6n perusautentikoinnilla, ohjelm
   \ voi turvata p\xE4\xE4syn tiettyihin web-resursseihin. T\xE4t\xE4 k\xE4ytet\xE4\
   \xE4n yleisesti API:en suojattuun\u2026"
 title: "HTTP-pyynn\xF6n l\xE4hett\xE4minen perusautentikoinnilla"
+weight: 45
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why? - Mikä & Miksi?
 Lähettämällä HTTP-pyynnön perusautentikoinnilla, ohjelmoija voi turvata pääsyn tiettyihin web-resursseihin. Tätä käytetään yleisesti API:en suojattuun yhteyteen, kun halutaan varmistaa että käyttäjällä on oikea käyttäjätunnus ja salasana.

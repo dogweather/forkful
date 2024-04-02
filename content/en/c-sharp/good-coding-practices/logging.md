@@ -7,9 +7,8 @@ model: gpt-4-1106-preview
 summary: "Logging is the process of recording application events and data output during\
   \ runtime. Programmers log to diagnose bugs, monitor software performance,\u2026"
 title: Logging
+weight: 17
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 Logging is the process of recording application events and data output during runtime. Programmers log to diagnose bugs, monitor software performance, track user actions, and maintain compliance with security and business standards.

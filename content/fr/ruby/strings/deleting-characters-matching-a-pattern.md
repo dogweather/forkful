@@ -9,9 +9,8 @@ summary: "Supprimer des caract\xE8res qui correspondent \xE0 un motif, c'est fil
   \ les s\xE9quences ind\xE9sirables de votre texte. Les programmeurs le font pour\
   \ nettoyer les\u2026"
 title: "Suppression de caract\xE8res correspondant \xE0 un motif"
+weight: 5
 ---
-
-{{< edit_this_page >}}
 
 ## Quoi & Pourquoi?
 

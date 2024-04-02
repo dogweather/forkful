@@ -9,9 +9,8 @@ summary: "Feilh\xE5ndtering i Python (eller ethvert programmeringsspr\xE5k) hand
   \ om \xE5 forvente det uventede \u2013 det er kunsten \xE5 h\xE5ndtere n\xE5dige\
   \ problemer n\xE5r ting g\xE5r\u2026"
 title: "Feilh\xE5ndtering"
+weight: 16
 ---
-
-{{< edit_this_page >}}
 
 ## Hva & Hvorfor?
 

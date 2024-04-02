@@ -9,9 +9,8 @@ summary: "Concatenar cadenas es simplemente juntar dos o m\xE1s trozos de texto 
   \ uno solo. Lo hacemos porque a veces necesitamos construir mensajes personalizados\
   \ o\u2026"
 title: "Concatenaci\xF3n de cadenas de texto"
+weight: 3
 ---
-
-{{< edit_this_page >}}
 
 ## ¿Qué es y por qué?
 Concatenar cadenas es simplemente juntar dos o más trozos de texto en uno solo. Lo hacemos porque a veces necesitamos construir mensajes personalizados o combinar información de diferentes fuentes.

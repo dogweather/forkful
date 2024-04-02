@@ -7,9 +7,8 @@ model: gpt-4-1106-preview
 summary: "Working with XML means wrangling data in a pervasive, structured format\
   \ used in configurations, messaging, and more. Programmers manipulate XML to read,\u2026"
 title: Working with XML
+weight: 40
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 Working with XML means wrangling data in a pervasive, structured format used in configurations, messaging, and more. Programmers manipulate XML to read, write, update, and query data—vital for interoperability in tons of apps and services.

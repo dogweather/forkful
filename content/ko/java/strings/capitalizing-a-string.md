@@ -21,9 +21,8 @@ summary: "\uBB38\uC790\uC5F4\uC758 \uCCAB \uAE00\uC790\uB97C \uB300\uBB38\uC790\
   \uCF00\uC774\uC158\uC5D0\uC11C \uD14D\uC2A4\uD2B8\uB97C \uD3EC\uB9F7\uD305\uD558\
   \uB294 \uB370 \uC720\uC6A9\uD569\uB2C8\uB2E4."
 title: "\uBB38\uC790\uC5F4 \uB300\uBB38\uC790\uD654"
+weight: 2
 ---
-
-{{< edit_this_page >}}
 
 ## 무엇 & 왜?
 문자열의 첫 글자를 대문자로 변환하면서 나머지는 소문자로 유지하는 것을 말합니다. 이러한 문자열 조작 작업은 사용자 이름이나 제목을 관례나 문법적 정확성에 따라 표시하기 위해 애플리케이션에서 텍스트를 포맷팅하는 데 유용합니다.

@@ -11,9 +11,8 @@ summary: "Comparare due date in C comporta la determinazione della relazione cro
   \ tra di loro - se una data precede l'altra o se sono uguali. Questa capacit\xE0\
   \u2026"
 title: Confrontare due date
+weight: 27
 ---
-
-{{< edit_this_page >}}
 
 ## Cosa & Perché?
 

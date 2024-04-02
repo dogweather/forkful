@@ -9,9 +9,8 @@ summary: "Arbeiten mit XML bedeutet das Parsen, Transformieren und Generieren vo
   \ XML-Dokumenten in Elm. Es wird durchgef\xFChrt, um mit vielen Webdiensten und\
   \ \xE4lteren\u2026"
 title: Arbeiten mit XML
+weight: 40
 ---
-
-{{< edit_this_page >}}
 
 ## Was & Warum?
 Arbeiten mit XML bedeutet das Parsen, Transformieren und Generieren von XML-Dokumenten in Elm. Es wird durchgeführt, um mit vielen Webdiensten und älteren Systemen zu interagieren, die XML als ihr Datenformat verwenden.

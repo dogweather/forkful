@@ -21,9 +21,8 @@ summary: "REPL, \uC989 \uC77D\uAE30-\uD3C9\uAC00-\uCD9C\uB825 \uB8E8\uD504\uB294
   \uB4DC \uC5C6\uC774 \uCF54\uB529 \uAC1C\uB150\uC744 \uC2E0\uC18D\uD558\uAC8C \uC2E4\
   \uD5D8\uD558\uAE30 \uC704\uD574 \uC774\uB97C\u2026"
 title: "\uC778\uD130\uB799\uD2F0\uBE0C \uC178 (REPL) \uC0AC\uC6A9\uD558\uAE30"
+weight: 34
 ---
-
-{{< edit_this_page >}}
 
 ## 무엇이며 왜 사용하는가?
 REPL, 즉 읽기-평가-출력 루프는 사용자 입력을 단일로 받아들여 실행하고 그 결과를 반환하는 상호작용형 프로그래밍 환경입니다. 프로그래머들은 즉각적인 피드백, 디버깅, 그리고 전체 프로그램을 컴파일하고 실행하는 오버헤드 없이 코딩 개념을 신속하게 실험하기 위해 이를 사용합니다.

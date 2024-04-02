@@ -17,9 +17,8 @@ summary: "JSON\uFF0C\u6216 JavaScript \u5BF9\u8C61\u8868\u793A\u6CD5\uFF0C\u662F
   \ Apps Script \u4E2D\u5229\u7528\u5B83\uFF0C\u56E0\u4E3A\u5B83\u5728\u8C37\u6B4C\
   \u670D\u52A1\uFF08\u5982 Sheets, Docs,\u2026"
 title: "\u4F7F\u7528JSON\u5DE5\u4F5C"
+weight: 38
 ---
-
-{{< edit_this_page >}}
 
 ## 什么和为什么？
 

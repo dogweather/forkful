@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Att starta ett nytt projekt i C inneb\xE4r att man s\xE4tter upp en grundl\xE4\
   ggande kodstruktur och milj\xF6 f\xF6r att effektivt hantera utvecklingsuppgifter.\u2026"
 title: Att starta ett nytt projekt
+weight: 1
 ---
-
-{{< edit_this_page >}}
 
 ## Vad & Varför?
 

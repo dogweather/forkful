@@ -11,9 +11,8 @@ summary: "Enviar uma solicita\xE7\xE3o HTTP em Visual Basic for Applications (VB
   \ envolve acessar programaticamente recursos ou servi\xE7os web fazendo solicita\xE7\
   \xF5es via\u2026"
 title: "Enviando uma solicita\xE7\xE3o HTTP"
+weight: 44
 ---
-
-{{< edit_this_page >}}
 
 ## O Que & Por Que?
 

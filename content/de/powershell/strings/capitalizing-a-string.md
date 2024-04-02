@@ -11,9 +11,8 @@ summary: "Das Gro\xDFschreiben eines Strings in PowerShell beinhaltet die Umwand
   \ des ersten Zeichens eines gegebenen Strings in Gro\xDFbuchstaben, w\xE4hrend der\
   \ Rest\u2026"
 title: "Einen String gro\xDFschreiben"
+weight: 2
 ---
-
-{{< edit_this_page >}}
 
 ## Was & Warum?
 Das Großschreiben eines Strings in PowerShell beinhaltet die Umwandlung des ersten Zeichens eines gegebenen Strings in Großbuchstaben, während der Rest des Strings unverändert bleibt. Programmierer führen diese Aufgabe oft für Formatierungszwecke durch, wie zum Beispiel die Vorbereitung von Texten für die Anzeige in Benutzeroberflächen oder das Befolgen von grammatikalischen Regeln in generierten Dokumenten.

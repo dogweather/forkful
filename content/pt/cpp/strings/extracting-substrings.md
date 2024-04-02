@@ -8,9 +8,8 @@ model: gpt-4-1106-preview
 summary: "Extrair substrings \xE9 pegar peda\xE7os de uma string. Programadores fazem\
   \ isso para analisar, manipular ou validar dados de texto, como processar uma entrada\u2026"
 title: Extraindo substrings
+weight: 6
 ---
-
-{{< edit_this_page >}}
 
 ## O Que & Porquê?
 Extrair substrings é pegar pedaços de uma string. Programadores fazem isso para analisar, manipular ou validar dados de texto, como processar uma entrada do usuário ou analisar um arquivo de configuração.

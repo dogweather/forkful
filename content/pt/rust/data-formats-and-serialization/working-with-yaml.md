@@ -11,9 +11,8 @@ summary: "Na programa\xE7\xE3o com Rust, trabalhar com YAML (YAML Ain't Markup L
   \ refere-se a analisar e gerar dados no formato YAML, um padr\xE3o de serializa\xE7\
   \xE3o de\u2026"
 title: Trabalhando com YAML
+weight: 41
 ---
-
-{{< edit_this_page >}}
 
 ## O Que & Por Quê?
 

@@ -8,9 +8,8 @@ model: gpt-4-0125-preview
 summary: "Arredondar n\xFAmeros significa ajust\xE1-los a um determinado grau de precis\xE3\
   o. Programadores fazem isso para simplificar n\xFAmeros para legibilidade, cumprir\u2026"
 title: "Arredondamento de n\xFAmeros"
+weight: 13
 ---
-
-{{< edit_this_page >}}
 
 ## O Que & Por Quê?
 Arredondar números significa ajustá-los a um determinado grau de precisão. Programadores fazem isso para simplificar números para legibilidade, cumprir certas especificações, ou garantir que os cálculos se encaixem dentro de certos limites, como evitar erros de precisão na aritmética de ponto flutuante.

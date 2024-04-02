@@ -11,9 +11,8 @@ summary: "Das Protokollieren in der Softwareentwicklung ist der Prozess der Aufz
   \ von Informationen \xFCber die Ausf\xFChrung eines Programms, um sein Verhalten\
   \ zu\u2026"
 title: Protokollierung
+weight: 17
 ---
-
-{{< edit_this_page >}}
 
 ## Was & Warum?
 

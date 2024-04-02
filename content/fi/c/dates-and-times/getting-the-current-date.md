@@ -11,9 +11,8 @@ summary: "Nykyisen p\xE4iv\xE4m\xE4\xE4r\xE4n saaminen C-kieless\xE4 tarkoittaa 
   \ C-kirjaston hy\xF6dynt\xE4mist\xE4 j\xE4rjestelm\xE4n nykyisen ajan ja p\xE4iv\xE4\
   m\xE4\xE4r\xE4n noutamiseen ja\u2026"
 title: "Nykyisen p\xE4iv\xE4m\xE4\xE4r\xE4n hankkiminen"
+weight: 29
 ---
-
-{{< edit_this_page >}}
 
 ## Mikä & Miksi?
 

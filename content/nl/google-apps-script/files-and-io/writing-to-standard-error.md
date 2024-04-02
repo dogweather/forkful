@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Schrijven naar standaardfout (stderr) in programmeertalen gaat over het\
   \ richten van foutmeldingen en diagnostiek naar een aparte stroom, los van de\u2026"
 title: Schrijven naar standaardfout
+weight: 25
 ---
-
-{{< edit_this_page >}}
 
 ## Wat & Waarom?
 

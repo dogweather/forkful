@@ -10,9 +10,8 @@ model: gpt-4-0125-preview
 summary: "Los arreglos asociativos en Dart, com\xFAnmente conocidos como Mapas, son\
   \ estructuras de datos que almacenan datos en pares clave-valor. Permiten a los\u2026"
 title: Usando arrays asociativos
+weight: 15
 ---
-
-{{< edit_this_page >}}
 
 ## ¿Qué y Por Qué?
 

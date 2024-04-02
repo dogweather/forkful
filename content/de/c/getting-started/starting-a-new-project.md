@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Ein neues Projekt in C zu starten, umfasst das Einrichten einer grundlegenden\
   \ Code-Struktur und Umgebung, um Entwicklungsarbeiten effizient zu verwalten.\u2026"
 title: Ein neues Projekt starten
+weight: 1
 ---
-
-{{< edit_this_page >}}
 
 ## Was & Warum?
 

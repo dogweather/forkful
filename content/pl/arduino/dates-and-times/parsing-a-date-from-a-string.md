@@ -11,9 +11,8 @@ summary: "Parsowanie daty ze stringa w Arduino polega na wydobywaniu i konwertow
   \ komponent\xF3w daty (rok, miesi\u0105c, dzie\u0144) z reprezentacji tekstowej\
   \ na format,\u2026"
 title: "Analiza sk\u0142adniowa daty z \u0142a\u0144cucha znak\xF3w"
+weight: 30
 ---
-
-{{< edit_this_page >}}
 
 ## Co i dlaczego?
 

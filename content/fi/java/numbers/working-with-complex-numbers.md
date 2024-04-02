@@ -9,9 +9,8 @@ summary: "Kompleksiluvut laajentavat reaalilukusuoraa lis\xE4\xE4m\xE4ll\xE4 ima
   n, `i`, miss\xE4 `i^2 = -1`. Ne ovat keskeisi\xE4 aloilla kuten insin\xF6\xF6ritiede,\
   \ fysiikka\u2026"
 title: "Kompleksilukujen k\xE4sittely"
+weight: 14
 ---
-
-{{< edit_this_page >}}
 
 ## Mikä & Miksi?
 

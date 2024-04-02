@@ -11,9 +11,8 @@ summary: "La g\xE9n\xE9ration de nombres al\xE9atoires en Visual Basic pour Appl
   \ (VBA) permet aux programmes de simuler des processus comportant des \xE9l\xE9\
   ments de\u2026"
 title: "G\xE9n\xE9ration de nombres al\xE9atoires"
+weight: 12
 ---
-
-{{< edit_this_page >}}
 
 ## Quoi & Pourquoi ?
 

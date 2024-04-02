@@ -7,9 +7,8 @@ model: gpt-4-1106-preview
 summary: "Comparing two dates is like asking, \"Which came first, the chicken or the\
   \ egg?\" but with calendar dates. Programmers do it to sort events, trigger\u2026"
 title: Comparing two dates
+weight: 27
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 Comparing two dates is like asking, "Which came first, the chicken or the egg?" but with calendar dates. Programmers do it to sort events, trigger actions, and evaluate periods.

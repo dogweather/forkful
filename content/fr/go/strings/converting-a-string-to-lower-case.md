@@ -11,9 +11,8 @@ summary: "Convertir une cha\xEEne en minuscules est une op\xE9ration fondamental
   \ qui permet l'uniformit\xE9 et la coh\xE9rence dans le traitement du texte, essentielle\
   \ pour\u2026"
 title: "Convertir une cha\xEEne en minuscules"
+weight: 4
 ---
-
-{{< edit_this_page >}}
 
 ## Quoi & Pourquoi ?
 

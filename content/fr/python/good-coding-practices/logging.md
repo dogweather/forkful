@@ -9,9 +9,8 @@ summary: "Le logging est le processus d'enregistrement des \xE9v\xE9nements d'un
   \ application pendant l'ex\xE9cution d'un programme, fournissant un fil d'Ariane\
   \ pour\u2026"
 title: Journalisation
+weight: 17
 ---
-
-{{< edit_this_page >}}
 
 ## Quoi & Pourquoi ?
 Le logging est le processus d'enregistrement des événements d'une application pendant l'exécution d'un programme, fournissant un fil d'Ariane pour l'analyse post-mortem et la surveillance en temps réel. Les programmeurs le font car cela aide à déboguer les problèmes, à surveiller la performance, et à suivre les actions des utilisateurs pour la sécurité et l'analyse.

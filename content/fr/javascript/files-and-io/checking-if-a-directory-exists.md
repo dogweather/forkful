@@ -11,9 +11,8 @@ summary: "V\xE9rifier si un r\xE9pertoire existe en JavaScript est essentiel pou
   \ les t\xE2ches de manipulation de fichiers, permettant aux scripts de v\xE9rifier\
   \ la pr\xE9sence\u2026"
 title: "V\xE9rifier si un r\xE9pertoire existe"
+weight: 20
 ---
-
-{{< edit_this_page >}}
 
 ## Quoi & Pourquoi ?
 Vérifier si un répertoire existe en JavaScript est essentiel pour les tâches de manipulation de fichiers, permettant aux scripts de vérifier la présence du répertoire avant de le lire ou d'y écrire. Cette opération prévient les erreurs et assure une exécution plus fluide du programme, en particulier dans les applications qui gèrent dynamiquement les fichiers ou les répertoires en fonction des entrées des utilisateurs ou des sources de données externes.

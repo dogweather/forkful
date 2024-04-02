@@ -7,9 +7,8 @@ model: gpt-4-0125-preview
 summary: "Associative arrays, or hash maps, let you store data as key-value pairs,\
   \ making it easier to organize and retrieve information by key. They're handy for\u2026"
 title: Using associative arrays
+weight: 15
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 

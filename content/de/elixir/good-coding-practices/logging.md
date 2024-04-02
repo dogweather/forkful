@@ -7,9 +7,8 @@ model: gpt-4-1106-preview
 summary: "Logging in der Softwareentwicklung ist die Technik, Ereignisse aufzuzeichnen,\
   \ die w\xE4hrend des Betriebs eines Programms auftreten, typischerweise in einer\u2026"
 title: Protokollierung
+weight: 17
 ---
-
-{{< edit_this_page >}}
 
 ## Was & Warum?
 Logging in der Softwareentwicklung ist die Technik, Ereignisse aufzuzeichnen, die während des Betriebs eines Programms auftreten, typischerweise in einer Datei oder in einem externen System. Programmierer machen das, um Einblicke in das Verhalten der Software zu gewinnen, Probleme zu diagnostizieren und einen Betriebsverlauf zu dokumentieren, der für das Debugging und die Überwachung der Anwendungsgesundheit entscheidend ist.

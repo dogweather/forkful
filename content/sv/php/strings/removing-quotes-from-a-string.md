@@ -9,9 +9,8 @@ summary: "Att ta bort citattecken fr\xE5n en str\xE4ng i PHP betyder att ta bort
   \ irriterande dubbla (`\"`) eller enkla (`'`) citattecknen som kan st\xF6ka till\
   \ din\u2026"
 title: "Ta bort citattecken fr\xE5n en str\xE4ng"
+weight: 9
 ---
-
-{{< edit_this_page >}}
 
 ## Vad & Varför?
 Att ta bort citattecken från en sträng i PHP betyder att ta bort de irriterande dubbla (`"`) eller enkla (`'`) citattecknen som kan stöka till din kodlogik eller databasfrågor. Programmerare gör det för att städa eller sanera inmatningsdata, vilket säkerställer att strängarna kan användas eller lagras på ett säkert sätt.

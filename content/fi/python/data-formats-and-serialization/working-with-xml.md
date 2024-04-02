@@ -7,9 +7,8 @@ model: gpt-4-0125-preview
 summary: "\"XML:n k\xE4sittely\" viittaa XML-tiedostojen (eXtensible Markup Language)\
   \ lukemisen, luomisen ja muokkaamisen prosessiin ohjelmoinnin avulla. Ohjelmoijat\u2026"
 title: "XML:n k\xE4sittely"
+weight: 40
 ---
-
-{{< edit_this_page >}}
 
 ## Mikä & Miksi?
 "XML:n käsittely" viittaa XML-tiedostojen (eXtensible Markup Language) lukemisen, luomisen ja muokkaamisen prosessiin ohjelmoinnin avulla. Ohjelmoijat tekevät sen, koska XML:tä käytetään laajasti datan vaihtoon sen alustariippumattomuuden ja itsekuvailevan formaatin vuoksi.

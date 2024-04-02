@@ -11,9 +11,8 @@ summary: "Analizar HTML en Clojure implica extraer informaci\xF3n de documentos 
   \ de manera program\xE1tica. Los programadores hacen esto para acceder, manipular\
   \ o\u2026"
 title: Analizando HTML
+weight: 43
 ---
-
-{{< edit_this_page >}}
 
 ## ¿Qué y Por Qué?
 

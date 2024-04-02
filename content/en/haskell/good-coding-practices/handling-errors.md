@@ -8,9 +8,8 @@ model: gpt-4-1106-preview
 summary: "Handling errors in programming is about managing the unexpected\u2014things\
   \ that can go wrong. Programmers do it to ensure that their programs can cope with\u2026"
 title: Handling errors
+weight: 16
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 Handling errors in programming is about managing the unexpected—things that can go wrong. Programmers do it to ensure that their programs can cope with these situations gracefully, without crashing or producing wrong results.

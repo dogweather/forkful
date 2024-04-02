@@ -9,9 +9,8 @@ summary: "Avrunding av tall inneb\xE6rer \xE5 trimme et desimaltall til sin n\xE
   rmeste hele verdi eller til et bestemt antall desimalplasser. Programmerere runder\
   \ av tall\u2026"
 title: Avrunding av tall
+weight: 13
 ---
-
-{{< edit_this_page >}}
 
 ## Hva og hvorfor?
 Avrunding av tall innebærer å trimme et desimaltall til sin nærmeste hele verdi eller til et bestemt antall desimalplasser. Programmerere runder av tall for å gjøre dem enklere å lese og håndtere, spesielt når presisjon utover et visst punkt er unødvendig eller kan føre til feil.

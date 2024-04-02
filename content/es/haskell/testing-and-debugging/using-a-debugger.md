@@ -1,14 +1,14 @@
 ---
 date: 2024-01-26 03:49:23.488550-07:00
-description: "Usar un depurador significa sumergirse en tu c\xF3digo con herramientas\
-  \ dise\xF1adas para inspeccionar, pausar y manipular un programa en medio de su\
-  \ ejecuci\xF3n.\u2026"
+description: "Vamos a dar un paseo con GHCi, el entorno interactivo de Haskell que\
+  \ puede actuar como un depurador b\xE1sico. Lo inicias con tu c\xF3digo de Haskell\
+  \ y\u2026"
 lastmod: '2024-03-13T22:44:59.123300-06:00'
 model: gpt-4-0125-preview
-summary: "Usar un depurador significa sumergirse en tu c\xF3digo con herramientas\
-  \ dise\xF1adas para inspeccionar, pausar y manipular un programa en medio de su\
-  \ ejecuci\xF3n.\u2026"
+summary: "Vamos a dar un paseo con GHCi, el entorno interactivo de Haskell que puede\
+  \ actuar como un depurador b\xE1sico. Lo inicias con tu c\xF3digo de Haskell y\u2026"
 title: Usando un depurador
+weight: 35
 ---
 
 ## Cómo hacerlo:

@@ -9,9 +9,8 @@ summary: "\u0141\u0105czenie \u0142a\u0144cuch\xF3w znak\xF3w, czyli string\xF3w
   \ to po prostu proces ich zestawiania w jeden ci\u0105g\u0142y tekst. Dzi\u0119\
   ki temu mo\u017Cemy tworzy\u0107 wiadomo\u015Bci, kt\xF3re maj\u0105\u2026"
 title: "\u0141\u0105czenie \u0142a\u0144cuch\xF3w znak\xF3w"
+weight: 3
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why? (Co i Dlaczego?)
 Łączenie łańcuchów znaków, czyli stringów, to po prostu proces ich zestawiania w jeden ciągły tekst. Dzięki temu możemy tworzyć wiadomości, które mają sens, generować dynamiczne treści czy też manipulować danymi dla formatowania wyjścia.

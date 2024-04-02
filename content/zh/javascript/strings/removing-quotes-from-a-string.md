@@ -17,9 +17,8 @@ summary: "\u4ECE\u5B57\u7B26\u4E32\u4E2D\u5265\u79BB\u5F15\u53F7\u610F\u5473\u77
   \u8BED\u6CD5\u9519\u8BEF\uFF0C\u5E76\u4F7F\u5B57\u7B26\u4E32\u4E0E\u4EE3\u7801\u7684\
   \u5176\u4ED6\u90E8\u5206\u66F4\u597D\u5730\u534F\u4F5C\u3002"
 title: "\u4ECE\u5B57\u7B26\u4E32\u4E2D\u79FB\u9664\u5F15\u53F7"
+weight: 9
 ---
-
-{{< edit_this_page >}}
 
 ## 是什么 & 为什么?
 从字符串中剥离引号意味着摆脱那些可能会干扰你的代码的讨厌的引号符号，特别是当你在解析数据或构建JSON对象时。程序员这样做是为了清理输入，避免语法错误，并使字符串与代码的其他部分更好地协作。

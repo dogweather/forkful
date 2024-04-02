@@ -14,9 +14,8 @@ summary: "\uBB38\uC790\uC5F4\uC758 \uAE38\uC774 \uCE21\uC815\uC740 \uC694\uC18C 
   \uB97C \uB2E4\uB8E8\uAC70\uB098 \uAC80\uC99D\uD558\uAE30 \uC704\uD574 \uD544\uC694\
   \uD558\uB2E4."
 title: "\uBB38\uC790\uC5F4\uC758 \uAE38\uC774 \uCC3E\uAE30"
+weight: 7
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why? (무엇을 왜?)
 문자열의 길이 측정은 요소 갯수를 확인하는 것이다. 문자열 처리를 할 때, 길이를 알아야 데이터를 다루거나 검증하기 위해 필요하다.

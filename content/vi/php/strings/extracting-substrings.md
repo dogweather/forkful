@@ -13,9 +13,8 @@ summary: "Vi\u1EC7c tr\xEDch xu\u1EA5t c\xE1c chu\u1ED7i con l\xE0 vi\u1EC7c l\u
   p tr\xECnh vi\xEAn th\u1EF1c hi\u1EC7n vi\u1EC7c n\xE0y \u0111\u1EC3 x\u1EED l\xFD\
   \ ho\u1EB7c thao t\xE1c d\u1EEF li\u1EC7u, nh\u01B0 l\u1EA5y t\xEAn\u2026"
 title: "Tr\xEDch xu\u1EA5t chu\u1ED7i con"
+weight: 6
 ---
-
-{{< edit_this_page >}}
 
 ## Cái gì & Tại sao?
 Việc trích xuất các chuỗi con là việc lấy ra những phần cụ thể từ một chuỗi. Lập trình viên thực hiện việc này để xử lý hoặc thao tác dữ liệu, như lấy tên người dùng từ địa chỉ email hay một phần mở rộng tệp từ tên file.

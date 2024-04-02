@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Testen controleert of je code doet wat het moet doen. Het bespaart tijd\
   \ door vroegtijdig fouten op te vangen en zorgt ervoor dat code-wijzigingen niets\u2026"
 title: Tests Schrijven
+weight: 36
 ---
-
-{{< edit_this_page >}}
 
 ## Wat & Waarom?
 Testen controleert of je code doet wat het moet doen. Het bespaart tijd door vroegtijdig fouten op te vangen en zorgt ervoor dat code-wijzigingen niets breken.

@@ -11,9 +11,8 @@ summary: "Avrundning av tal handlar om att justera v\xE4rdet av ett tal till det
   rmaste hela talet eller till ett specifikt antal decimaler. Programmerare g\xF6\
   r detta\u2026"
 title: Avrundning av nummer
+weight: 13
 ---
-
-{{< edit_this_page >}}
 
 ## Vad & Varför?
 

@@ -11,9 +11,8 @@ summary: "Tests in der Programmierung zu schreiben, bedeutet, Skripte zu erstell
   \ und auszuf\xFChren, die \xFCberpr\xFCfen, ob der Code sich unter verschiedenen\
   \ Bedingungen\u2026"
 title: Tests Schreiben
+weight: 36
 ---
-
-{{< edit_this_page >}}
 
 ## Was & Warum?
 Tests in der Programmierung zu schreiben, bedeutet, Skripte zu erstellen und auszuführen, die überprüfen, ob der Code sich unter verschiedenen Bedingungen wie erwartet verhält. Programmierer tun dies, um Qualität zu gewährleisten, Regressionen zu verhindern und sicheres Refactoring zu erleichtern, was für die Aufrechterhaltung einer gesunden, skalierbaren und fehlerfreien Codebasis entscheidend ist.

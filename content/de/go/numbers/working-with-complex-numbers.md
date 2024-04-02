@@ -10,9 +10,8 @@ model: gpt-4-0125-preview
 summary: "Die Arbeit mit komplexen Zahlen in der Programmierung beinhaltet die Manipulation\
   \ von Zahlen, die sowohl einen Real- als auch einen Imagin\xE4rteil haben,\u2026"
 title: Arbeiten mit komplexen Zahlen
+weight: 14
 ---
-
-{{< edit_this_page >}}
 
 ## Was & Warum?
 

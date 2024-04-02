@@ -9,9 +9,8 @@ summary: "\"Co i Dlaczego?\" Wyszukiwanie i zamiana tekstu to szybka edycja, zmi
   ca fragmenty kodu czy tekstu. Programi\u015Bci robi\u0105 to, by poprawia\u0107\
   \ b\u0142\u0119dy,\u2026"
 title: Wyszukiwanie i zamiana tekstu
+weight: 10
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 "Co i Dlaczego?"

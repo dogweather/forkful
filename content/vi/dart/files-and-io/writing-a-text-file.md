@@ -15,9 +15,8 @@ summary: "Vi\u1EC7c vi\u1EBFt m\u1ED9t t\u1EC7p v\u0103n b\u1EA3n trong Dart bao
   ng c\xF3 th\u1EC3 \u0111\u1ECDc \u0111\u01B0\u1EE3c. L\u1EADp tr\xECnh vi\xEAn th\u1EF1\
   c hi\u1EC7n\u2026"
 title: "Vi\u1EBFt t\u1EC7p v\u0103n b\u1EA3n"
+weight: 24
 ---
-
-{{< edit_this_page >}}
 
 ## Gì & Tại sao?
 Việc viết một tệp văn bản trong Dart bao gồm việc tạo hoặc sửa đổi các tệp trên đĩa để lưu trữ dữ liệu dưới dạng có thể đọc được. Lập trình viên thực hiện điều này để lưu trữ dữ liệu ứng dụng, cấu hình, nhật ký hoặc bất kỳ thông tin nào cần được bảo tồn giữa các lần chạy ứng dụng hoặc chia sẻ dữ liệu với các ứng dụng hoặc người dùng khác.

@@ -13,9 +13,8 @@ summary: "S\u1ED1 ph\u1EE9c, g\u1ED3m c\xF3 m\u1ED9t ph\u1EA7n th\u1EF1c v\xE0 m
   t v\xE0 v\u1EADt l\xFD. L\u1EADp tr\xECnh vi\xEAn l\xE0m vi\u1EC7c v\u1EDBi ch\xFA\
   ng trong c\xE1c m\xF4 ph\u1ECFng, x\u1EED l\xFD\u2026"
 title: "L\xE0m vi\u1EC7c v\u1EDBi s\u1ED1 ph\u1EE9c"
+weight: 14
 ---
-
-{{< edit_this_page >}}
 
 ## Cái gì và Tại sao?
 Số phức, gồm có một phần thực và một phần ảo (như 3+4i), là nền tảng trong kỹ thuật và vật lý. Lập trình viên làm việc với chúng trong các mô phỏng, xử lý tín hiệu và giải các phương trình không thể giải quyết chỉ với số thực.

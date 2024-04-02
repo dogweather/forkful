@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Assosiatiiviset taulukot, jotka tunnetaan Google Apps Scriptiss\xE4 (JavaScriptin\
   \ muunnelma) objekteina, mahdollistavat ohjelmoijille avain-arvo -parien\u2026"
 title: "Assosiatiivisten taulukoiden k\xE4ytt\xF6"
+weight: 15
 ---
-
-{{< edit_this_page >}}
 
 ## Mikä ja miksi?
 

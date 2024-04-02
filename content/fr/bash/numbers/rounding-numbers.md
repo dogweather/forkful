@@ -9,9 +9,8 @@ summary: "Arrondir les nombres signifie \xE9liminer les d\xE9cimales pour arrive
   \ \xE0 une valeur plus simple qui est suffisamment bonne pour un contexte donn\xE9\
   . Les\u2026"
 title: Arrondir les nombres
+weight: 13
 ---
-
-{{< edit_this_page >}}
 
 ## Quoi & Pourquoi ?
 

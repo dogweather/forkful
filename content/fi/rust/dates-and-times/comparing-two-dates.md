@@ -9,9 +9,8 @@ summary: "\"Miten & Miksi?\" Tietojen vertailu on ydintoiminto ohjelmoinnissa. K
   \ p\xE4iv\xE4m\xE4\xE4r\xE4\xE4 vertaamalla selvitet\xE4\xE4n niiden v\xE4linen\
   \ suhde, esimerkiksi tapahtumien\u2026"
 title: "Kahden p\xE4iv\xE4m\xE4\xE4r\xE4n vertailu"
+weight: 27
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 "Miten & Miksi?"

@@ -9,9 +9,8 @@ summary: "Kommandoradsargument l\xE5ter skripten anpassas vid k\xF6rning. Progra
   \ anv\xE4nder det f\xF6r att g\xF6ra skript dynamiska och flexibla \u2013 anv\xE4\
   ndbara f\xF6r olika\u2026"
 title: "L\xE4sa in kommandoradsargument"
+weight: 23
 ---
-
-{{< edit_this_page >}}
 
 ## Vad & Varför?
 Kommandoradsargument låter skripten anpassas vid körning. Programmerare använder det för att göra skript dynamiska och flexibla – användbara för olika scenarion utan ändring av koden.

@@ -10,9 +10,8 @@ model: gpt-4-0125-preview
 summary: "Ottenere la data corrente in Swift comporta l'uso della classe `Date` per\
   \ accedere alla data e all'ora in cui l'app viene eseguita. I programmatori hanno\u2026"
 title: Ottenere la data corrente
+weight: 29
 ---
-
-{{< edit_this_page >}}
 
 ## Cosa e perché?
 Ottenere la data corrente in Swift comporta l'uso della classe `Date` per accedere alla data e all'ora in cui l'app viene eseguita. I programmatori hanno bisogno di recuperare la data corrente per una miriade di motivi che vanno dalla timbratura degli eventi, all'esecuzione di calcoli sulla data, fino alla visualizzazione di date e orari in un'interfaccia utente.

@@ -9,9 +9,8 @@ summary: "Subjonojen poiminta tarkoittaa merkkijonon osien irrottamista. Ohjelmo
   \ tekev\xE4t sit\xE4, kun tarvitsevat k\xE4sitell\xE4 merkkijonojen erityisi\xE4\
   \ segmenttej\xE4 \u2013\u2026"
 title: Merkkijonojen osien poimiminen
+weight: 6
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 Subjonojen poiminta tarkoittaa merkkijonon osien irrottamista. Ohjelmoijat tekevät sitä, kun tarvitsevat käsitellä merkkijonojen erityisiä segmenttejä – kuten tietojen siistimistä tai merkkijonon analysointia.

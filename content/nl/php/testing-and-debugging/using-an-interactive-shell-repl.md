@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Een interactieve shell of REPL (Read-Eval-Print Loop) stelt je in staat\
   \ om PHP-code ter plekke te schrijven en uit te voeren. Het is ideaal voor\u2026"
 title: Het gebruik van een interactieve shell (REPL)
+weight: 34
 ---
-
-{{< edit_this_page >}}
 
 ## Wat & Waarom?
 Een interactieve shell of REPL (Read-Eval-Print Loop) stelt je in staat om PHP-code ter plekke te schrijven en uit te voeren. Het is ideaal voor experimenteren, debuggen of leren, omdat je stukjes code kunt testen zonder de overhead van het creëren van een volledig script.

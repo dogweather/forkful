@@ -10,9 +10,8 @@ model: gpt-4-0125-preview
 summary: "Refaktoryzacja w leksykonie programowania odnosi si\u0119 do procesu restrukturyzacji\
   \ istniej\u0105cego kodu komputerowego \u2013 zmiany faktoryzacji bez zmiany jego\u2026"
 title: Refaktoryzacja
+weight: 19
 ---
-
-{{< edit_this_page >}}
 
 ## Co i dlaczego?
 

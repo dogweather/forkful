@@ -11,9 +11,8 @@ summary: "Stringconcatenatie betekent het eind-aan-eind samenvoegen van strings 
   \ \"hallo\" + \"wereld\" wordt \"hallowereld\". Programmeurs doen dit om tekst samen\
   \ te\u2026"
 title: Samenvoegen van strings
+weight: 3
 ---
-
-{{< edit_this_page >}}
 
 ## Wat & Waarom?
 

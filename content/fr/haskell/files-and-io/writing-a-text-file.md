@@ -11,9 +11,8 @@ summary: "\xC9crire dans un fichier texte en Haskell consiste \xE0 cr\xE9er ou m
   \ \xE0 jour des fichiers avec du contenu textuel de mani\xE8re programmatique. Les\
   \ programmeurs\u2026"
 title: "R\xE9diger un fichier texte"
+weight: 24
 ---
-
-{{< edit_this_page >}}
 
 ## Quoi & Pourquoi ?
 

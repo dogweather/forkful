@@ -8,9 +8,8 @@ model: gpt-4-0125-preview
 summary: "Die Arbeit mit XML umfasst die Manipulation und den Zugriff auf Daten, die\
   \ in der eXtensible Markup Language strukturiert sind. Programmierer arbeiten mit\u2026"
 title: Arbeiten mit XML
+weight: 40
 ---
-
-{{< edit_this_page >}}
 
 ## Was & Warum?
 Die Arbeit mit XML umfasst die Manipulation und den Zugriff auf Daten, die in der eXtensible Markup Language strukturiert sind. Programmierer arbeiten mit XML, um die Interoperabilität mit anderen Systemen zu ermöglichen oder Konfigurationsdateien, Datenfeeds und andere strukturierte Dokumente, die in Webdiensten üblich sind, zu lesen und zu schreiben.

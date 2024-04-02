@@ -7,9 +7,8 @@ model: gpt-4-1106-preview
 summary: Reading command line arguments lets scripts behave differently based on user
   input. It's how scripts can be versatile and not just one-trick ponies.
 title: Reading command line arguments
+weight: 23
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 

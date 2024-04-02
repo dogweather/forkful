@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Recuperar a data atual no Bash envolve o uso de comandos internos para exibir\
   \ a data e a hora em v\xE1rios formatos. Programadores utilizam essa\u2026"
 title: Obtendo a data atual
+weight: 29
 ---
-
-{{< edit_this_page >}}
 
 ## O Que & Por Que?
 Recuperar a data atual no Bash envolve o uso de comandos internos para exibir a data e a hora em vários formatos. Programadores utilizam essa funcionalidade para tarefas como marcar logs com timestamps, agendar tarefas ou apenas como parte de seus scripts de informação do sistema para rastrear quando as ações foram realizadas.

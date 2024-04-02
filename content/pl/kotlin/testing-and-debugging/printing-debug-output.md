@@ -9,9 +9,8 @@ summary: "Drukowanie danych debugowania to jak rozmowa z programem: \"Co robisz?
   . Programi\u015Bci u\u017Cywaj\u0105 tego do \u015Bledzenia warto\u015Bci i zachowania\
   \ aplikacji podczas\u2026"
 title: "Drukowanie komunikat\xF3w debugowania"
+weight: 33
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why? (Co i Dlaczego?)
 Drukowanie danych debugowania to jak rozmowa z programem: "Co robisz?". Programiści używają tego do śledzenia wartości i zachowania aplikacji podczas pisania kodu - znacznie ułatwia to znalezienie i naprawienie błędów.

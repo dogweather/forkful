@@ -10,9 +10,8 @@ model: gpt-4-0125-preview
 summary: "Elm ei tarjoa sis\xE4\xE4nrakennettua tukea YAML:lle, joka on datan serialisointiformaatti\
   \ ja jota k\xE4ytet\xE4\xE4n usein konfiguraatiotiedostoissa tai datan\u2026"
 title: "Ty\xF6skentely YAML:n kanssa"
+weight: 41
 ---
-
-{{< edit_this_page >}}
 
 ## Mikä ja miksi?
 Elm ei tarjoa sisäänrakennettua tukea YAML:lle, joka on datan serialisointiformaatti ja jota käytetään usein konfiguraatiotiedostoissa tai datan jakamisessa, koska se painottaa vahvasti tyypin turvallisuutta ja ennustettavia tuloksia. Ohjelmoijat kohtaavat kuitenkin usein YAML:ää käsitellessään API:ja tai konfiguraatioita web-kehityksessä, mikä edellyttää luotettavia menetelmiä YAML-datan jäsentämiseksi Elmin tiukan tyypitettyyn ekosysteemiin saumattoman integraation ja manipuloinnin mahdollistamiseksi.

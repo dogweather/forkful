@@ -9,9 +9,8 @@ summary: "Konvertera en str\xE4ng till gemener (sm\xE5 bokst\xE4ver) inneb\xE4r 
   \ omvandla alla stora bokst\xE4ver i en textstr\xE4ng till deras motsvarande sm\xE5\
   \ bokst\xE4ver.\u2026"
 title: "Konvertera en str\xE4ng till gemener"
+weight: 4
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why? (Vad & Varför?)
 Konvertera en sträng till gemener (små bokstäver) innebär att omvandla alla stora bokstäver i en textsträng till deras motsvarande små bokstäver. Programmerare gör detta för att standardisera data, underlätta jämförelser och sökningar utan att oroa sig för blandade skiftlägen.

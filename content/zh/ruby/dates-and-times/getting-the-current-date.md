@@ -17,9 +17,8 @@ summary: "\u5728\u51E0\u4E4E\u6240\u6709\u7F16\u7A0B\u5DE5\u4F5C\u4E2D\uFF0C\u83
   \u8FC7\u4F7F\u7528\u6807\u51C6\u5E93\u8F7B\u677E\u5B8C\u6210\uFF0C\u7B80\u5316\u6D89\
   \u53CA\u65E5\u671F\u7684\u64CD\u4F5C\u3002"
 title: "\u83B7\u53D6\u5F53\u524D\u65E5\u671F"
+weight: 29
 ---
-
-{{< edit_this_page >}}
 
 ## 什么和为什么？
 在几乎所有编程工作中，获取当前日期是一个基本任务，从应用程序中记录活动到生成带有日期戳的报告。在Ruby中，可以通过使用标准库轻松完成，简化涉及日期的操作。

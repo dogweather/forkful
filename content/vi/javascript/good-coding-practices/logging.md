@@ -13,9 +13,8 @@ summary: "Ghi nh\u1EADt k\xFD, n\xF3i m\u1ED9t c\xE1ch ng\u1EAFn g\u1ECDn, gi\u1
   ng c\u1EE7a b\u1EA1n\u2014n\xF3 ghi l\u1EA1i c\xE1c s\u1EF1 ki\u1EC7n, l\u1ED7i,\
   \ v\xE0 c\xE1c h\xE0nh \u0111\u1ED9ng \u0111\xE1ng ch\xFA \xFD kh\xE1c\u2026"
 title: Ghi log
+weight: 17
 ---
-
-{{< edit_this_page >}}
 
 ## Gì và Tại Sao?
 Ghi nhật ký, nói một cách ngắn gọn, giống như việc giữ một cuốn nhật ký cho ứng dụng của bạn—nó ghi lại các sự kiện, lỗi, và các hành động đáng chú ý khác xảy ra trong khi phần mềm đang chạy. Lập trình viên thực hiện việc này không chỉ để hiểu được điều gì đang xảy ra bên dưới góc độ kỹ thuật một cách thực tiễn, mà còn để có một bản ghi lịch sử quan trọng cho việc gỡ rối, kiểm toán, và tối ưu hóa hiệu suất.

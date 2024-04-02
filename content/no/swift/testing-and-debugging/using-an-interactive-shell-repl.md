@@ -8,9 +8,8 @@ model: gpt-4-0125-preview
 summary: "Bruk av et interaktivt skall, eller en Les-Evaluer-Skriv Ut-l\xF8kke (REPL),\
   \ lar deg kode interaktivt. Programmerere bruker det til raskt \xE5 teste Swift-\u2026"
 title: Bruke et interaktivt skall (REPL)
+weight: 34
 ---
-
-{{< edit_this_page >}}
 
 ## Hva og hvorfor?
 Bruk av et interaktivt skall, eller en Les-Evaluer-Skriv Ut-løkke (REPL), lar deg kode interaktivt. Programmerere bruker det til raskt å teste Swift-snutter, feilsøke eller lære språket.

@@ -9,9 +9,8 @@ summary: "Buscar e substituir texto \xE9 o processo de localizar sequ\xEAncias d
   \ caracteres dentro de strings e troc\xE1-las por outras. Programadores realizam\
   \ essa tarefa\u2026"
 title: Pesquisando e substituindo texto
+weight: 10
 ---
-
-{{< edit_this_page >}}
 
 ## O Que & Porquê?
 Buscar e substituir texto é o processo de localizar sequências de caracteres dentro de strings e trocá-las por outras. Programadores realizam essa tarefa para corrigir erros, atualizar informações ou automatizar a edição de código e dados.

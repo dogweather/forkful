@@ -8,9 +8,8 @@ model: gpt-4-0125-preview
 summary: "Koodin j\xE4rjest\xE4minen funktioihin tarkoittaa ohjelmasi jakamista uudelleenk\xE4\
   ytett\xE4viin, modulaarisiin palasiin, joita kutsutaan nimell\xE4. Teemme sen\u2026"
 title: "Koodin j\xE4rjest\xE4minen funktioihin"
+weight: 18
 ---
-
-{{< edit_this_page >}}
 
 ## Mikä ja miksi?
 Koodin järjestäminen funktioihin tarkoittaa ohjelmasi jakamista uudelleenkäytettäviin, modulaarisiin palasiin, joita kutsutaan nimellä. Teemme sen tehdäksemme koodistamme puhtaampaa, luettavampaa ja helpommin debugattavaa. Kyse on siitä, ettemme toista itseämme ja teemme päivityksistä sujuvampia.

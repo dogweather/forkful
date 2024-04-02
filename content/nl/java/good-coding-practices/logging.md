@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Loggen is in essentie het proces van het vastleggen van gebeurtenissen die\
   \ plaatsvinden binnen een softwareapplicatie. Programmeurs loggen deze\u2026"
 title: Logboekregistratie
+weight: 17
 ---
-
-{{< edit_this_page >}}
 
 ## Wat & Waarom?
 Loggen is in essentie het proces van het vastleggen van gebeurtenissen die plaatsvinden binnen een softwareapplicatie. Programmeurs loggen deze gebeurtenissen om runtime-informatie te verzamelen, problemen te debuggen, systeemgedrag te monitoren en een audit trail te creëren voor beveiligings- en nalevingsdoeleinden.

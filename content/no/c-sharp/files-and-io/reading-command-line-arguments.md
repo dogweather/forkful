@@ -9,9 +9,8 @@ summary: "Kommandolinjeargumenter lar oss sende informasjon til et program n\xE5
   \ vi starter det. Vi gj\xF8r dette for \xE5 gi fleksibel kontroll over programmets\
   \ oppf\xF8rsel\u2026"
 title: Lese kommandolinjeargumenter
+weight: 23
 ---
-
-{{< edit_this_page >}}
 
 ## Hva & Hvorfor?
 Kommandolinjeargumenter lar oss sende informasjon til et program når vi starter det. Vi gjør dette for å gi fleksibel kontroll over programmets oppførsel uten å hardkode verdier.

@@ -1,13 +1,13 @@
 ---
 date: 2024-01-26 03:48:09.939683-07:00
-description: "Die Verwendung eines Debuggers bedeutet, spezialisierte Werkzeuge zu\
-  \ nutzen, um Code zu testen und zu diagnostizieren. Programmierer tun dies, um Bugs\
-  \ zu\u2026"
+description: "Stellen Sie sich vor, Sie haben ein kleines Programm, das nicht richtig\
+  \ funktioniert: ```C# static void Main() { int result = Sum(1, 2);\u2026"
 lastmod: '2024-03-13T22:44:53.892670-06:00'
 model: gpt-4-0125-preview
-summary: "Die Verwendung eines Debuggers bedeutet, spezialisierte Werkzeuge zu nutzen,\
-  \ um Code zu testen und zu diagnostizieren. Programmierer tun dies, um Bugs zu\u2026"
+summary: "Stellen Sie sich vor, Sie haben ein kleines Programm, das nicht richtig\
+  \ funktioniert: ```C# static void Main() { int result = Sum(1, 2);\u2026"
 title: Einsatz eines Debuggers
+weight: 35
 ---
 
 ## Wie:

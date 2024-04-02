@@ -18,9 +18,8 @@ summary: "\uC22B\uC790 \uBC18\uC62C\uB9BC\uC740 \uC22B\uC790\uB97C \uAC00\uC7A5 
   \ \uC904\uC774\uBA70, \uD2B9\uC815 \uC218\uCE58 \uC694\uAD6C \uC0AC\uD56D\uC744\
   \ \uCDA9\uC871\uD558\uAE30 \uC704\uD574 \uBC18\uC62C\uB9BC\uD569\uB2C8\uB2E4."
 title: "\uC22B\uC790 \uBC18\uC62C\uB9BC\uD558\uAE30"
+weight: 13
 ---
-
-{{< edit_this_page >}}
 
 ## 무엇이며 왜?
 숫자 반올림은 숫자를 가장 가까운 정수로, 또는 특정 소수 정밀도까지 조정하는 것입니다. 우리는 숫자를 반올림하여 인간의 가독성을 단순화하고, 계산 부하를 줄이며, 특정 수치 요구 사항을 충족하기 위해 반올림합니다.

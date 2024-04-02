@@ -9,9 +9,8 @@ summary: "Buscar y reemplazar texto es como usar el comando \"buscar\" de tu lec
   \ PDF, pero en el c\xF3digo puedes cambiar todas las apariciones de un patr\xF3\
   n por otro.\u2026"
 title: Buscando y reemplazando texto
+weight: 10
 ---
-
-{{< edit_this_page >}}
 
 ## Qué y Por Qué?
 Buscar y reemplazar texto es como usar el comando "buscar" de tu lector PDF, pero en el código puedes cambiar todas las apariciones de un patrón por otro. Los programadores lo hacen para corregir errores, actualizar datos o mejorar la legibilidad.

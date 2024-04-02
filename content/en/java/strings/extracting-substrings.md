@@ -9,9 +9,8 @@ summary: "Extracting substrings means pulling out a specific part of a string\u2
   a sequence of characters inside a bigger string. Programmers slice and dice strings\
   \ to\u2026"
 title: Extracting substrings
+weight: 6
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 

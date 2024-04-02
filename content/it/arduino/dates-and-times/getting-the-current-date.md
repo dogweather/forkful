@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Ottenere la data corrente nei progetti Arduino coinvolge l'acquisizione\
   \ di informazioni in tempo reale che possono essere cruciali per la registrazione,\u2026"
 title: Ottenere la data corrente
+weight: 29
 ---
-
-{{< edit_this_page >}}
 
 ## Cosa & Perché?
 Ottenere la data corrente nei progetti Arduino coinvolge l'acquisizione di informazioni in tempo reale che possono essere cruciali per la registrazione, l'apposizione di timestamp o la programmazione di attività. I programmatori spesso necessitano di questa capacità per migliorare la funzionalità, garantire la rilevanza dei dati e facilitare le operazioni sensibili al tempo nei loro progetti IoT e embedded.

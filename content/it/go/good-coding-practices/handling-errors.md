@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "La gestione degli errori in Go implica il riconoscimento e la risposta alle\
   \ condizioni di errore nel tuo programma. I programmatori si impegnano nella\u2026"
 title: Gestione degli errori
+weight: 16
 ---
-
-{{< edit_this_page >}}
 
 ## Cosa e Perché?
 

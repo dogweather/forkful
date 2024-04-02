@@ -9,9 +9,8 @@ summary: "Komplexe Zahlen, bestehend aus einem Realteil und einem Imagin\xE4rtei
   \ (\xFCblicherweise geschrieben als a + bi), erm\xF6glichen Berechnungen, die mit\
   \ nur reellen\u2026"
 title: Umgang mit komplexen Zahlen
+weight: 14
 ---
-
-{{< edit_this_page >}}
 
 ## Was & Warum?
 Komplexe Zahlen, bestehend aus einem Realteil und einem Imaginärteil (üblicherweise geschrieben als a + bi), ermöglichen Berechnungen, die mit nur reellen Zahlen praktisch unmöglich oder nicht durchführbar wären. Programmierer nutzen sie in Bereichen wie der Signalverarbeitung, Quantencomputing und angewandten Mathematik, wo zweidimensionale Zahlenrepräsentationen essentiell sind.

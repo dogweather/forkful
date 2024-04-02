@@ -8,9 +8,8 @@ model: gpt-4-0125-preview
 summary: "Parsing HTML in Haskell allows you to extract data, manipulate HTML content,\
   \ or interact with web pages programmatically. This operation is essential for\u2026"
 title: Parsing HTML
+weight: 43
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 

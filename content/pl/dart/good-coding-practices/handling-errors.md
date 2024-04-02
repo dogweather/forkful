@@ -11,9 +11,8 @@ summary: "Obs\u0142uga b\u0142\u0119d\xF3w w Dart polega na przewidywaniu i zarz
   dzaniu wyj\u0105tkami, kt\xF3re pojawiaj\u0105 si\u0119 podczas wykonywania programu,\
   \ aby zwi\u0119kszy\u0107 jego niezawodno\u015B\u0107 i\u2026"
 title: "Obs\u0142uga b\u0142\u0119d\xF3w"
+weight: 16
 ---
-
-{{< edit_this_page >}}
 
 ## Co & Dlaczego?
 Obsługa błędów w Dart polega na przewidywaniu i zarządzaniu wyjątkami, które pojawiają się podczas wykonywania programu, aby zwiększyć jego niezawodność i użyteczność. Programiści implementują obsługę błędów, aby zapobiec awariom i zapewnić użytkownikom znaczące informacje zwrotne, gwarantując płynniejsze, bezpieczniejsze doświadczenie z aplikacją.

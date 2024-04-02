@@ -11,9 +11,8 @@ summary: "Trabalhar com JSON (JavaScript Object Notation) envolve analisar, gera
   \ e consultar dados JSON, tornando-se uma habilidade cr\xEDtica para a programa\xE7\
   \xE3o\u2026"
 title: Trabalhando com JSON
+weight: 38
 ---
-
-{{< edit_this_page >}}
 
 ## O Que & Por Que?
 

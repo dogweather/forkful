@@ -7,9 +7,8 @@ model: gpt-4-1106-preview
 summary: "HTTP-Anfragen senden bedeutet, dass Daten \xFCber das Internet von einem\
   \ Client zu einem Server \xFCbermittelt werden. Programmierer nutzen dies, um\u2026"
 title: Einen HTTP-Request senden
+weight: 44
 ---
-
-{{< edit_this_page >}}
 
 ## Was & Warum?
 HTTP-Anfragen senden bedeutet, dass Daten über das Internet von einem Client zu einem Server übermittelt werden. Programmierer nutzen dies, um Informationen abzurufen, Daten zu senden oder Dienste von APIs zu nutzen.

@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Probar en Ruby es verificar que tu c\xF3digo se comporte como se espera\
   \ bajo varias condiciones. Los programistas escriben pruebas para asegurar la\u2026"
 title: Escribiendo pruebas
+weight: 36
 ---
-
-{{< edit_this_page >}}
 
 ## ¿Qué y por qué?
 Probar en Ruby es verificar que tu código se comporte como se espera bajo varias condiciones. Los programistas escriben pruebas para asegurar la corrección, prevenir regresiones y facilitar la refactorización, apuntando a aplicaciones robustas y mantenibles.

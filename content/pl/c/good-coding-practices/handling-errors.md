@@ -11,9 +11,8 @@ summary: "Obs\u0142uga b\u0142\u0119d\xF3w w C polega na wykrywaniu i reagowaniu
   \ nietypowe warunki, kt\xF3re pojawiaj\u0105 si\u0119 podczas wykonania programu.\
   \ Programi\u015Bci robi\u0105 to, aby\u2026"
 title: "Obs\u0142uga b\u0142\u0119d\xF3w"
+weight: 16
 ---
-
-{{< edit_this_page >}}
 
 ## Co i dlaczego?
 

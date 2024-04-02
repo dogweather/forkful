@@ -10,9 +10,8 @@ model: gpt-4-0125-preview
 summary: "\xC5 sjekke om en mappe eksisterer i Dart handler om \xE5 verifisere tilstedev\xE6\
   relsen av en mappe p\xE5 en angitt bane i filsystemet f\xF8r man utf\xF8rer operasjoner\u2026"
 title: Sjekker om en katalog eksisterer
+weight: 20
 ---
-
-{{< edit_this_page >}}
 
 ## Hva & Hvorfor?
 

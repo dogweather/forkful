@@ -7,9 +7,8 @@ model: gpt-4-0125-preview
 summary: "Das Generieren von Zufallszahlen in TypeScript dreht sich darum, unberechenbare\
   \ numerische Werte innerhalb eines spezifizierten Bereichs zu erschaffen.\u2026"
 title: Generierung von Zufallszahlen
+weight: 12
 ---
-
-{{< edit_this_page >}}
 
 ## Was & Warum?
 

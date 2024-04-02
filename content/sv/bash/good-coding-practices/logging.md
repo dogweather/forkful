@@ -9,9 +9,8 @@ summary: "Loggning \xE4r praktiken att spela in h\xE4ndelser, fel och annan vikt
   \ information fr\xE5n de k\xF6rande processerna i ett program till en fil eller\
   \ en utstr\xF6mning.\u2026"
 title: Loggning
+weight: 17
 ---
-
-{{< edit_this_page >}}
 
 ## Vad & Varför?
 

@@ -7,9 +7,8 @@ model: gpt-4-0125-preview
 summary: "Writing tests in Elm involves crafting test cases to verify the correctness\
   \ of your Elm code, ensuring it behaves as expected. Programmers do it to catch\u2026"
 title: Writing tests
+weight: 36
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 

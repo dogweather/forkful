@@ -10,9 +10,8 @@ model: gpt-4-0125-preview
 summary: "Imprimir salida de depuraci\xF3n implica colocar estrat\xE9gicamente declaraciones\
   \ de registro en su c\xF3digo para mostrar los valores de las variables, el flujo\u2026"
 title: "Imprimiendo salida de depuraci\xF3n"
+weight: 33
 ---
-
-{{< edit_this_page >}}
 
 ## Qué y Por Qué?
 

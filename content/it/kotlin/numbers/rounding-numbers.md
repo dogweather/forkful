@@ -9,9 +9,8 @@ summary: "Arrotondare i numeri significa aggiustarli al numero intero pi\xF9 vic
   \ o a un grado di precisione specificato. I programmatori lo fanno per migliorare\
   \ la\u2026"
 title: Arrotondamento dei numeri
+weight: 13
 ---
-
-{{< edit_this_page >}}
 
 ## Cosa e Perché?
 

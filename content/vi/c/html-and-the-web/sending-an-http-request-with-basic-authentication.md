@@ -13,9 +13,8 @@ summary: "G\u1EEDi m\u1ED9t y\xEAu c\u1EA7u HTTP v\u1EDBi x\xE1c th\u1EF1c c\u01
   u HTTP bao g\u1ED3m m\u1ED9t ti\xEAu \u0111\u1EC1 \u1EE6y quy\u1EC1n v\u1EDBi th\xF4\
   ng tin \u0111\u0103ng nh\u1EADp c\u1EE7a ng\u01B0\u1EDDi d\xF9ng\u2026"
 title: "G\u1EEDi y\xEAu c\u1EA7u HTTP v\u1EDBi x\xE1c th\u1EF1c c\u01A1 b\u1EA3n"
+weight: 45
 ---
-
-{{< edit_this_page >}}
 
 ## Là gì và Tại sao?
 Gửi một yêu cầu HTTP với xác thực cơ bản trong C đòi hỏi việc tạo ra một yêu cầu HTTP bao gồm một tiêu đề Ủy quyền với thông tin đăng nhập của người dùng được mã hóa trong Base64. Đây là một phương pháp phổ biến để thêm một lớp xác thực đơn giản vào các yêu cầu HTTP, cho phép truy cập vào những tài nguyên bị hạn chế một cách lập trình.

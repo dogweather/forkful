@@ -9,9 +9,8 @@ summary: "Zaokr\u0105glanie liczb polega na dostosowaniu liczby do najbli\u017Cs
   \ liczby ca\u0142kowitej lub okre\u015Blonej precyzji dziesi\u0119tnej. Liczby zaokr\u0105\
   glamy w celu ich\u2026"
 title: "Zaokr\u0105glanie liczb"
+weight: 13
 ---
-
-{{< edit_this_page >}}
 
 ## Co i dlaczego?
 Zaokrąglanie liczb polega na dostosowaniu liczby do najbliższej liczby całkowitej lub określonej precyzji dziesiętnej. Liczby zaokrąglamy w celu ich uproszczenia dla czytelności człowieka, zmniejszenia obciążenia obliczeniowego lub spełnienia konkretnych wymagań numerycznych.

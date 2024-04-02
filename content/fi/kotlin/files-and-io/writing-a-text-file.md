@@ -11,9 +11,8 @@ summary: "Tekstitiedoston kirjoittaminen Kotlinilla sis\xE4lt\xE4\xE4 tiedoston 
   \ ja tekstisis\xE4ll\xF6n sy\xF6tt\xE4misen siihen, mik\xE4 on yleinen teht\xE4\
   v\xE4 datan tallentamiseksi,\u2026"
 title: Tekstitiedoston kirjoittaminen
+weight: 24
 ---
-
-{{< edit_this_page >}}
 
 ## Mikä & Miksi?
 Tekstitiedoston kirjoittaminen Kotlinilla sisältää tiedoston luomisen ja tekstisisällön syöttämisen siihen, mikä on yleinen tehtävä datan tallentamiseksi, lokitiedostojen kirjaamiseksi tai asetusten määrittämiseksi. Ohjelmoijat tekevät tämän tallentaakseen ja manipuloidakseen dataa ohimenevän muistin ulkopuolella, varmistaen tiedon pysyvyyden istuntojen välillä.

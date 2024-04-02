@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Att skriva en textfil i Kotlin inneb\xE4r att skapa en fil och mata in textinneh\xE5\
   ll i den, en vanlig uppgift f\xF6r att lagra data, logga eller\u2026"
 title: Att skriva en textfil
+weight: 24
 ---
-
-{{< edit_this_page >}}
 
 ## Vad & Varför?
 Att skriva en textfil i Kotlin innebär att skapa en fil och mata in textinnehåll i den, en vanlig uppgift för att lagra data, logga eller konfigurationsinställningar. Programmerare gör detta för att spara och manipulera data utanför det flyktiga minnesutrymmet, vilket säkerställer beständighet över sessioner.

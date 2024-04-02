@@ -9,9 +9,8 @@ summary: "Por\xF3wnywanie dat pozwala okre\u015Bli\u0107, kt\xF3ra z nich jest w
   niejsza, p\xF3\u017Aniejsza, czy mo\u017Ce identyczna. Programi\u015Bci robi\u0105\
   \ to, \u017Ceby obs\u0142ugiwa\u0107 wydarzenia\u2026"
 title: "Por\xF3wnywanie dw\xF3ch dat"
+weight: 27
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 Porównywanie dat pozwala określić, która z nich jest wcześniejsza, późniejsza, czy może identyczna. Programiści robią to, żeby obsługiwać wydarzenia chronologicznie, zarządzać terminami i sprawdzać okresy ważności.

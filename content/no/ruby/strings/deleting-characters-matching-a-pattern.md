@@ -8,9 +8,8 @@ model: gpt-4-1106-preview
 summary: "Hva er det og hvorfor? Vi sletter tegn som samsvarer med et m\xF8nster for\
   \ \xE5 rense strenger - for \xE5 fjerne u\xF8nskede karakterer eller formatere data.\u2026"
 title: "Slette tegn som matcher et m\xF8nster"
+weight: 5
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 Hva er det og hvorfor? Vi sletter tegn som samsvarer med et mønster for å rense strenger - for å fjerne uønskede karakterer eller formatere data. Programmerere gjør dette for å forenkle inndatahåndtering, validering og for å forbedre brukeropplevelsen.

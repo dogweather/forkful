@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Das Protokollieren in Dart bezieht sich auf den Prozess der Aufzeichnung\
   \ verschiedener Informationsniveaus w\xE4hrend der Ausf\xFChrung eines Programms.\u2026"
 title: Protokollierung
+weight: 17
 ---
-
-{{< edit_this_page >}}
 
 ## Was & Warum?
 

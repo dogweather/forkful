@@ -13,9 +13,8 @@ summary: "S\u1ED1 ph\u1EE9c c\xF3 m\u1ED9t ph\u1EA7n th\u1EF1c v\xE0 m\u1ED9t ph
   c nh\u01B0 k\u1EF9 thu\u1EADt, v\u1EADt l\xFD v\xE0 \u0111\u1ED3 h\u1ECDa m\xE1\
   y t\xEDnh. L\u1EADp tr\xECnh vi\xEAn s\u1EED d\u1EE5ng\u2026"
 title: "L\xE0m vi\u1EC7c v\u1EDBi s\u1ED1 ph\u1EE9c"
+weight: 14
 ---
-
-{{< edit_this_page >}}
 
 ## Cái gì & Tại sao?
 Số phức có một phần thực và một phần ảo, đóng vai trò quan trọng trong nhiều lĩnh vực như kỹ thuật, vật lý và đồ họa máy tính. Lập trình viên sử dụng chúng để giải các phương trình mà số thực thông thường không xử lý được.

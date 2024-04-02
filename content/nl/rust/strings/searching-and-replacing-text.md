@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Zoeken en vervangen van tekst is het proces van het vinden van strings binnen\
   \ strings en deze omwisselen voor iets anders. Programmeurs doen dit om\u2026"
 title: Tekst zoeken en vervangen
+weight: 10
 ---
-
-{{< edit_this_page >}}
 
 ## Wat & Waarom?
 Zoeken en vervangen van tekst is het proces van het vinden van strings binnen strings en deze omwisselen voor iets anders. Programmeurs doen dit om gegevens te bewerken, code te herstructureren, of tekstmanipulatie te automatiseren.

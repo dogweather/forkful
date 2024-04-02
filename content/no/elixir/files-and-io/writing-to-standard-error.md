@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "\xC5 skrive til standardfeil (stderr) i Elixir er en metode for \xE5 dirigere\
   \ feilmeldinger og diagnostikk separat fra hovedutdataen (stdout). Programmerere\u2026"
 title: Skriving til standardfeil
+weight: 25
 ---
-
-{{< edit_this_page >}}
 
 ## Hva & Hvorfor?
 

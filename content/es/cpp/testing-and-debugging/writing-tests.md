@@ -11,9 +11,8 @@ summary: "Escribir pruebas en C++ implica crear programas peque\xF1os y aut\xF3n
   \ que verifican autom\xE1ticamente el comportamiento de secciones de tu base de\
   \ c\xF3digo.\u2026"
 title: Escribiendo pruebas
+weight: 36
 ---
-
-{{< edit_this_page >}}
 
 ## ¿Qué y Por qué?
 

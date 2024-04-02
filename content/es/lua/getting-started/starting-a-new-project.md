@@ -9,9 +9,8 @@ summary: "Iniciar un nuevo proyecto es crear la base sobre la cual construir\xE1
   \ tu aplicaci\xF3n. Los programadores comienzan nuevos proyectos para transformar\
   \ ideas en\u2026"
 title: Iniciando un nuevo proyecto
+weight: 1
 ---
-
-{{< edit_this_page >}}
 
 ## ¿Qué & Por Qué?
 Iniciar un nuevo proyecto es crear la base sobre la cual construirás tu aplicación. Los programadores comienzan nuevos proyectos para transformar ideas en realidad, resolver problemas o explorar nuevas tecnologías. 

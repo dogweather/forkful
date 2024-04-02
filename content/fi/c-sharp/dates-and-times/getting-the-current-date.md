@@ -11,9 +11,8 @@ summary: "C#:ssa t\xE4m\xE4nhetkisen p\xE4iv\xE4m\xE4\xE4r\xE4n saaminen tarkoit
   \ j\xE4rjestelm\xE4st\xE4 nykyisen p\xE4iv\xE4m\xE4\xE4r\xE4n ja ajan tietojen noutamista.\
   \ Ohjelmoijat tarvitsevat usein p\xE4\xE4sy\xE4\u2026"
 title: "Nykyisen p\xE4iv\xE4m\xE4\xE4r\xE4n hankkiminen"
+weight: 29
 ---
-
-{{< edit_this_page >}}
 
 ## Mikä ja miksi?
 C#:ssa tämänhetkisen päivämäärän saaminen tarkoittaa järjestelmästä nykyisen päivämäärän ja ajan tietojen noutamista. Ohjelmoijat tarvitsevat usein pääsyä näihin tietoihin lokitukseen, aikaleimojen lisäämiseen toimintoihin tai tehtävien aikatauluttamiseen sovelluksissa, varmistaen, että toiminnot ajoitetaan tarkasti ja tiedot merkitään tarkoin aikaleimoin.

@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Le espressioni regolari (regex) in Java ti permettono di definire schemi\
   \ specifici per cercare, manipolare o validare stringhe nel tuo codice. I\u2026"
 title: Utilizzo delle espressioni regolari
+weight: 11
 ---
-
-{{< edit_this_page >}}
 
 ## Cosa & Perché?
 

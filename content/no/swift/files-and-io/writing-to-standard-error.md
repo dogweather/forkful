@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Skriving til standardfeil (stderr) handler om \xE5 lede programmets feilmeldinger\
   \ eller diagnostiske utdata til en separat str\xF8m, forskjellig fra\u2026"
 title: Skriving til standardfeil
+weight: 25
 ---
-
-{{< edit_this_page >}}
 
 ## Hva & Hvorfor?
 

@@ -13,9 +13,8 @@ summary: "Vi\u1EBFt test trong Go bao g\u1ED3m vi\u1EC7c t\u1EA1o ra nh\u1EEFng 
   c n\u0103ng v\xE0 h\xE0nh vi c\u1EE7a \u1EE9ng d\u1EE5ng. L\u1EADp tr\xECnh vi\xEA\
   n vi\u1EBFt test \u0111\u1EC3 \u0111\u1EA3m b\u1EA3o\u2026"
 title: "Vi\u1EBFt ki\u1EC3m th\u1EED"
+weight: 36
 ---
-
-{{< edit_this_page >}}
 
 ## Cái gì & Tại sao?
 

@@ -9,9 +9,8 @@ summary: "Agrupar c\xF3digo en funciones consiste en descomponer tareas en bloqu
   \ reutilizables. Esto hace que el c\xF3digo sea limpio, menos propenso a errores\
   \ y m\xE1s\u2026"
 title: "Organizando c\xF3digo en funciones"
+weight: 18
 ---
-
-{{< edit_this_page >}}
 
 ## ¿Qué y por qué?
 Agrupar código en funciones consiste en descomponer tareas en bloques reutilizables. Esto hace que el código sea limpio, menos propenso a errores y más fácil de depurar o refactorizar.

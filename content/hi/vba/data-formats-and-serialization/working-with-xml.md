@@ -19,9 +19,8 @@ summary: "Visual Basic for Applications (VBA) \u092E\u0947\u0902 XML \u0915\u094
   \u0930\u0928\u0947, \u092C\u0928\u093E\u0928\u0947, \u0914\u0930 \u0938\u0902\u0936\
   \u094B\u0927\u093F\u0924 \u0915\u0930\u0928\u0947\u2026"
 title: "XML \u0915\u0947 \u0938\u093E\u0925 \u0915\u093E\u092E \u0915\u0930\u0928\u093E"
+weight: 40
 ---
-
-{{< edit_this_page >}}
 
 ## क्या और क्यों?
 

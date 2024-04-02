@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Convertire una stringa in minuscolo in C comporta la trasformazione di tutte\
   \ le lettere maiuscole presenti in una stringa data nelle loro equivalenti\u2026"
 title: Convertire una stringa in minuscolo
+weight: 4
 ---
-
-{{< edit_this_page >}}
 
 ## Cosa e perché?
 

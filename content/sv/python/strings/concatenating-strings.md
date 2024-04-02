@@ -9,9 +9,8 @@ summary: "Sammanfogning av str\xE4ngar, eller \"concatenation\" som det ofta kal
   \ inneb\xE4r att du kopplar ihop tv\xE5 eller flera textstycken till en enda str\xE4\
   ng.\u2026"
 title: "Sammanslagning av str\xE4ngar"
+weight: 3
 ---
-
-{{< edit_this_page >}}
 
 ## Vad & Varför?
 

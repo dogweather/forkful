@@ -14,9 +14,8 @@ summary: "\uBB38\uC790\uC5F4 \uB0B4\uC0BD(string interpolation)\uC740 \uBB38\uC7
   \ \uD558\uACE0, \uB3D9\uC801\uC73C\uB85C \uBB38\uC790\uC5F4\uC744 \uC0DD\uC131\uD560\
   \ \uB54C \uC720\uC6A9\uD569\uB2C8\uB2E4."
 title: "\uBB38\uC790\uC5F4 \uBCF4\uAC04\uD558\uAE30"
+weight: 8
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why? (무엇이며, 왜 사용하는가)
 

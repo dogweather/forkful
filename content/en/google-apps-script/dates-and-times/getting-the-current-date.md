@@ -8,9 +8,8 @@ model: gpt-4-0125-preview
 summary: "Getting the current date in Google Apps Script is about fetching the live\
   \ date and time, a common task for automating tasks, logging, and timestamping in\u2026"
 title: Getting the current date
+weight: 29
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 

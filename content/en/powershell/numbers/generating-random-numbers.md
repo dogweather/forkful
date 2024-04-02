@@ -9,9 +9,8 @@ summary: "Generating random numbers in PowerShell is about creating unpredictabl
   \ numeric values within a specified range. Programmers utilize this capability for\
   \ a\u2026"
 title: Generating random numbers
+weight: 12
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 Generating random numbers in PowerShell is about creating unpredictable numeric values within a specified range. Programmers utilize this capability for a myriad of reasons, including testing, simulation, and security purposes, where unpredictability or mimicking real-world randomness is crucial.

@@ -19,9 +19,8 @@ summary: "Visual Basic for Applications (VBA) \u3067\u306E HTTP \u30EA\u30AF\u30
   \u30D7\u30ED\u30B0\u30E9\u30DE\u30FC\u306F\u3001\u30C7\u30FC\u30BF\u3092\u53D6\u5F97\
   \u3057\u305F\u308A\u3001\u30AA\u30F3\u30E9\u30A4\u30F3 API\u2026"
 title: "HTTP\u30EA\u30AF\u30A8\u30B9\u30C8\u306E\u9001\u4FE1"
+weight: 44
 ---
-
-{{< edit_this_page >}}
 
 ## 何となぜ？
 

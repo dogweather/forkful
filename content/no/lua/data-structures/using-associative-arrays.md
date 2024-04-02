@@ -11,9 +11,8 @@ summary: "Assosiative tabeller er som hemmelige h\xE5ndtrykk for data i Lua\u201
   istedenfor bare tall som f\xF8lger trofast etter indeks, kan n\xF8klene dine v\xE6\
   re hva som helst,\u2026"
 title: Bruke associative tabeller
+weight: 15
 ---
-
-{{< edit_this_page >}}
 
 ## Hva & Hvorfor?
 

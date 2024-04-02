@@ -9,9 +9,8 @@ summary: "Lire les arguments de la ligne de commande, \xE7a consiste \xE0 r\xE9c
   rer ce que l'utilisateur tape apr\xE8s le nom de ton script. On fait \xE7a pour\
   \ rendre nos\u2026"
 title: Lecture des arguments de ligne de commande
+weight: 23
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 Lire les arguments de la ligne de commande, ça consiste à récupérer ce que l'utilisateur tape après le nom de ton script. On fait ça pour rendre nos scripts flexibles et interactifs.

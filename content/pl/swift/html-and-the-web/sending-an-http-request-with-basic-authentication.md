@@ -9,9 +9,8 @@ summary: "Wys\u0142anie \u017C\u0105dania HTTP z podstawowym uwierzytelnieniem t
   \ proces dodania nag\u0142\xF3wka uwierzytelniaj\u0105cego do \u017C\u0105dania\
   \ HTTP. Programi\u015Bci to robi\u0105, by uzyska\u0107\u2026"
 title: "Wysy\u0142anie zapytania http z podstawow\u0105 autoryzacj\u0105"
+weight: 45
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why? (Co i dlaczego?)
 Wysłanie żądania HTTP z podstawowym uwierzytelnieniem to proces dodania nagłówka uwierzytelniającego do żądania HTTP. Programiści to robią, by uzyskać dostęp do zasobów wymagających potwierdzenia tożsamości.

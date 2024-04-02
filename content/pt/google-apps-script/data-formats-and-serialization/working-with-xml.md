@@ -11,9 +11,8 @@ summary: "Trabalhar com XML no Google Apps Script permite que programadores fa\x
   am o parse, manipulem e gerem dados XML, essencial para servi\xE7os web e configura\xE7\
   \xF5es.\u2026"
 title: Trabalhando com XML
+weight: 40
 ---
-
-{{< edit_this_page >}}
 
 ## O Que & Por Quê?
 

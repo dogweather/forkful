@@ -9,9 +9,8 @@ summary: "Komplekse tall utvider v\xE5rt tallsystem til \xE5 inkludere imagin\xE
   re tall, noe som gj\xF8r det mulig \xE5 l\xF8se ligninger som ikke har reelle l\xF8\
   sninger.\u2026"
 title: "\xC5 jobbe med komplekse tall"
+weight: 14
 ---
-
-{{< edit_this_page >}}
 
 ## Hva & Hvorfor?
 Komplekse tall utvider vårt tallsystem til å inkludere imaginære tall, noe som gjør det mulig å løse ligninger som ikke har reelle løsninger. Programmerere jobber med dem innen felt som ingeniørvitenskap, fysikk og signalbehandling hvor disse tallene er essensielle for modellering og problemløsing.

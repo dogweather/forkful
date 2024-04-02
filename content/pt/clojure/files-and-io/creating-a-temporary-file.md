@@ -8,9 +8,8 @@ model: gpt-4-1106-preview
 summary: "Criar um arquivo tempor\xE1rio \xE9 fazer um arquivo que s\xF3 precisa existir\
   \ por um curto per\xEDodo, geralmente durante a execu\xE7\xE3o de um programa. Programadores\u2026"
 title: "Criando um arquivo tempor\xE1rio"
+weight: 21
 ---
-
-{{< edit_this_page >}}
 
 ## O Que & Por Que?
 

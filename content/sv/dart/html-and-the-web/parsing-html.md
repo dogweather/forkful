@@ -11,9 +11,8 @@ summary: "Att tolka HTML i programmering inneb\xE4r att extrahera data fr\xE5n H
   \ Programmerare g\xF6r detta f\xF6r att interagera med eller skrapa webbinneh\xE5\
   ll f\xF6r\u2026"
 title: Tolka HTML
+weight: 43
 ---
-
-{{< edit_this_page >}}
 
 ## Vad & Varför?
 Att tolka HTML i programmering innebär att extrahera data från HTML-dokument. Programmerare gör detta för att interagera med eller skrapa webbinnehåll för informationsutvinning, testning eller automatisering, även när officiella API:er inte finns tillgängliga.

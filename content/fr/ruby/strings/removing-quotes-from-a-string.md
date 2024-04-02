@@ -7,9 +7,8 @@ model: gpt-4-0125-preview
 summary: "Supprimer les guillemets d'une cha\xEEne signifie retirer ces marques de\
   \ citation doubles ou simples qui entourent les valeurs de texte. Les programmeurs\u2026"
 title: "Retirer les guillemets d'une cha\xEEne"
+weight: 9
 ---
-
-{{< edit_this_page >}}
 
 ## Quoi & Pourquoi ?
 Supprimer les guillemets d'une chaîne signifie retirer ces marques de citation doubles ou simples qui entourent les valeurs de texte. Les programmeurs font souvent cela pour nettoyer les entrées des utilisateurs, assurer la cohérence dans le traitement des données, ou préparer des données pour des systèmes qui pourraient être confus par ces caractères supplémentaires.

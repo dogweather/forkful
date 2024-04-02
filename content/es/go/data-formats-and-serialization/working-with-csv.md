@@ -11,9 +11,8 @@ summary: "El formato de Valores Separados por Comas (CSV) es omnipresente para e
   \ intercambio de datos debido a su simplicidad y facilidad de integraci\xF3n con\
   \ la\u2026"
 title: Trabajando con CSV
+weight: 37
 ---
-
-{{< edit_this_page >}}
 
 ## Qué y Por Qué?
 

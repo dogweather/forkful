@@ -10,9 +10,8 @@ model: gpt-4-0125-preview
 summary: "Przetwarzanie daty z ci\u0105gu znak\xF3w w C# polega na konwertowaniu tekstowych\
   \ reprezentacji dat i czas\xF3w na obiekt `DateTime`. Jest to kluczowe dla aplikacji,\u2026"
 title: "Analiza sk\u0142adniowa daty z \u0142a\u0144cucha znak\xF3w"
+weight: 30
 ---
-
-{{< edit_this_page >}}
 
 ## Co i dlaczego?
 Przetwarzanie daty z ciągu znaków w C# polega na konwertowaniu tekstowych reprezentacji dat i czasów na obiekt `DateTime`. Jest to kluczowe dla aplikacji, które potrzebują manipulować, przechowywać lub wyświetlać daty i czasy w różnych formatach, takich jak aplikacje do planowania, procesory logów lub dowolny system obsługujący wprowadzanie dat przez użytkowników lub z zewnętrznych źródeł.

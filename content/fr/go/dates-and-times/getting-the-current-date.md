@@ -10,9 +10,8 @@ model: gpt-4-0125-preview
 summary: "Obtenir la date actuelle en Go est une t\xE2che fondamentale pour les programmeurs,\
   \ au m\xEAme titre que \"Hello, World!\" en raison de son omnipr\xE9sence. C'est\u2026"
 title: Obtenir la date actuelle
+weight: 29
 ---
-
-{{< edit_this_page >}}
 
 ## Quoi & Pourquoi ?
 

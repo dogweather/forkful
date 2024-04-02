@@ -9,9 +9,8 @@ summary: "Att ta bort citationstecken fr\xE5n en str\xE4ng i PowerShell inneb\xE
   r att man tar bort enkla (`'`) eller dubbla (`\"`) citationstecken som omsluter\
   \ din text.\u2026"
 title: "Ta bort citattecken fr\xE5n en str\xE4ng"
+weight: 9
 ---
-
-{{< edit_this_page >}}
 
 ## Vad & Varför?
 Att ta bort citationstecken från en sträng i PowerShell innebär att man tar bort enkla (`'`) eller dubbla (`"`) citationstecken som omsluter din text. Programmerare behöver ofta rensa strängar för bearbetning, jämförelse eller utmatning, särskilt när man hanterar användarinmatning eller filtolkning.

@@ -9,9 +9,8 @@ summary: "Deleting characters matching a pattern means getting rid of specific s
   \ of characters from strings\u2014think cleaning up data or inputs. Programmers\
   \ do\u2026"
 title: Deleting characters matching a pattern
+weight: 5
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 

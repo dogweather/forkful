@@ -11,9 +11,8 @@ summary: "Descargar una p\xE1gina web en Visual Basic for Applications (VBA) imp
   \ obtener el contenido HTML de una p\xE1gina web desde Internet. Los programadores\
   \ a\u2026"
 title: "Descargando una p\xE1gina web"
+weight: 42
 ---
-
-{{< edit_this_page >}}
 
 ## ¿Qué y Por Qué?
 

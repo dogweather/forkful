@@ -10,9 +10,8 @@ model: gpt-4-0125-preview
 summary: "Regul\xE4re Ausdr\xFCcke (Regex) sind Muster, die verwendet werden, um Kombinationen\
   \ von Zeichen in Zeichenketten zu finden. Programmierer nutzen sie f\xFCr die\u2026"
 title: "Regul\xE4re Ausdr\xFCcke verwenden"
+weight: 11
 ---
-
-{{< edit_this_page >}}
 
 ## Was & Warum?
 Reguläre Ausdrücke (Regex) sind Muster, die verwendet werden, um Kombinationen von Zeichen in Zeichenketten zu finden. Programmierer nutzen sie für die Suche, Bearbeitung oder Manipulation von Text basierend auf definierten Mustern, was sie für Aufgaben wie Datenvalidierung, Parsen oder Transformation unverzichtbar macht.

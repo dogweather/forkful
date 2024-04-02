@@ -9,9 +9,8 @@ summary: "Mik\xE4 & Miksi? Debug-tulosteiden printtaaminen on koodin tulostamist
   \ n\xE4hd\xE4ksemme mit\xE4 siell\xE4 tapahtuu. K\xE4yt\xE4mme sit\xE4 virheiden\
   \ j\xE4ljitt\xE4miseen ja ohjelman\u2026"
 title: "Virheenj\xE4ljitystulosteiden tulostaminen"
+weight: 33
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 Mikä & Miksi?

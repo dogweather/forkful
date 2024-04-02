@@ -22,9 +22,8 @@ summary: "Rust \u092A\u094D\u0930\u094B\u0917\u094D\u0930\u093E\u092E\u093F\u090
   \u0932 \u0921\u0947\u091F\u093E\u2026"
 title: "YAML \u0915\u0947 \u0938\u093E\u0925 \u0915\u093E\u092E \u0915\u0930\u0928\
   \u093E"
+weight: 41
 ---
-
-{{< edit_this_page >}}
 
 ## क्या और क्यों?
 

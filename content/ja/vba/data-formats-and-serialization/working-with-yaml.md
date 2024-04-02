@@ -21,9 +21,8 @@ summary: "YAML\uFF08\"YAML Ain't Markup Language\"\u306E\u7565\uFF09\u306F\u3001
   \u30ED\u30B0\u30E9\u30DF\u30F3\u30B0\u74B0\u5883\u306B\u304A\u3044\u3066\u3001\u7279\
   \u306BVisual Basic for\u2026"
 title: "YAML\u3068\u306E\u4F5C\u696D"
+weight: 41
 ---
-
-{{< edit_this_page >}}
 
 ## 何となぜ？
 

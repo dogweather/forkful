@@ -7,9 +7,8 @@ model: gpt-4-0125-preview
 summary: "Writing to standard error in Visual Basic for Applications (VBA) involves\
   \ directing error messages or diagnostics apart from standard output, usually to\u2026"
 title: Writing to standard error
+weight: 25
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 

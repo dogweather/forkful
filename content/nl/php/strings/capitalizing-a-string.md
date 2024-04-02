@@ -10,9 +10,8 @@ model: gpt-4-0125-preview
 summary: "Het kapitaliseren van een string betekent het veranderen van de eerste letter\
   \ van elk woord naar een hoofdletter. Programmeurs kapitaliseren strings voor\u2026"
 title: Een string met hoofdletters maken
+weight: 2
 ---
-
-{{< edit_this_page >}}
 
 ## Wat & Waarom?
 Het kapitaliseren van een string betekent het veranderen van de eerste letter van elk woord naar een hoofdletter. Programmeurs kapitaliseren strings voor visuele consistentie, branding of ontwerp van de gebruikerservaring.

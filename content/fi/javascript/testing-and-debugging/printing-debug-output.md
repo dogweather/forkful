@@ -7,9 +7,8 @@ model: gpt-4-1106-preview
 summary: "JavaScriptissa virheiden j\xE4ljitys (debugging) tarkoittaa koodin suorituksen\
   \ tarkkailua, jotta voidaan ymm\xE4rt\xE4\xE4, miss\xE4 ja miksi virheit\xE4 ilmenee.\u2026"
 title: "Virheenj\xE4ljitystulosteiden tulostaminen"
+weight: 33
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why? (Mikä ja Miksi?)
 JavaScriptissa virheiden jäljitys (debugging) tarkoittaa koodin suorituksen tarkkailua, jotta voidaan ymmärtää, missä ja miksi virheitä ilmenee. Kehittäjät tulostavat debug-viestejä, koska se auttaa paikantamaan ja korjaamaan ongelmia nopeammin.

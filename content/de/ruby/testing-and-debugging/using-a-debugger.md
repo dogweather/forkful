@@ -1,13 +1,15 @@
 ---
 date: 2024-01-26 04:09:35.915177-07:00
-description: "Die Verwendung eines Debuggers in Ruby verleiht Programmierern eine\
-  \ Superkraft, um ihren Code anzuhalten, Variablen zu inspizieren und ihren Code\
-  \ Zeile\u2026"
+description: "Ruby kommt mit einem eingebauten Debugger namens `byebug`. Zuerst f\xFC\
+  ge `byebug` in deiner Gemfile hinzu und f\xFChre `bundle install` aus. Dann setz\
+  \ einfach\u2026"
 lastmod: '2024-03-13T22:44:54.404983-06:00'
 model: gpt-4-0125-preview
-summary: "Die Verwendung eines Debuggers in Ruby verleiht Programmierern eine Superkraft,\
-  \ um ihren Code anzuhalten, Variablen zu inspizieren und ihren Code Zeile\u2026"
+summary: "Ruby kommt mit einem eingebauten Debugger namens `byebug`. Zuerst f\xFC\
+  ge `byebug` in deiner Gemfile hinzu und f\xFChre `bundle install` aus. Dann setz\
+  \ einfach\u2026"
 title: Einsatz eines Debuggers
+weight: 35
 ---
 
 ## Wie geht das:

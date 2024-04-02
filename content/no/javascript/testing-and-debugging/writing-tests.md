@@ -10,9 +10,8 @@ model: gpt-4-0125-preview
 summary: "\xC5 skrive tester i JavaScript refererer til praksisen med \xE5 lage automatiserte\
   \ skript som kj\xF8rer koden din for \xE5 sikre at den oppf\xF8rer seg som forventet,\u2026"
 title: Skrive tester
+weight: 36
 ---
-
-{{< edit_this_page >}}
 
 ## Hva & Hvorfor?
 

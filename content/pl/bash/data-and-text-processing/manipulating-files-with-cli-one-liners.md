@@ -9,9 +9,8 @@ summary: "Manipulowanie plikami za pomoc\u0105 jednoliniowych polece\u0144 CLI (
   \ Line Interface) polega na u\u017Cywaniu skrypt\xF3w Bash lub polece\u0144 do wykonywania\
   \ dzia\u0142a\u0144 na\u2026"
 title: "Manipulowanie plikami za pomoc\u0105 jednolinijkowc\xF3w CLI"
+weight: 31
 ---
-
-{{< edit_this_page >}}
 
 ## Co i dlaczego?
 

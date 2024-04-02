@@ -9,9 +9,8 @@ summary: "**Co i Dlaczego?** Znalezienie d\u0142ugo\u015Bci ci\u0105gu znak\xF3w
   \ po prostu sprawdzenie, ile znak\xF3w zawiera. Programi\u015Bci robi\u0105 to,\
   \ by walidowa\u0107 dane wej\u015Bciowe,\u2026"
 title: "Znalezienie d\u0142ugo\u015Bci ci\u0105gu znak\xF3w"
+weight: 7
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 **Co i Dlaczego?**

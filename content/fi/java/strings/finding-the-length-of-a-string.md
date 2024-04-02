@@ -9,9 +9,8 @@ summary: "Mit\xE4 ja miksi? Stringin pituuden selvitt\xE4minen tarkoittaa merkki
   \ merkkien m\xE4\xE4r\xE4n laskemista. Ohjelmoijat tarvitsevat t\xE4t\xE4 toimintoa\
   \ esimerkiksi\u2026"
 title: "Merkkijonon pituuden selvitt\xE4minen"
+weight: 7
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 Mitä ja miksi? Stringin pituuden selvittäminen tarkoittaa merkkijonon merkkien määrän laskemista. Ohjelmoijat tarvitsevat tätä toimintoa esimerkiksi silloin, kun haluavat varmistaa, että syöte on tietyn mittainen tai kun he pilkkovat ja käsittelevät tekstiä.

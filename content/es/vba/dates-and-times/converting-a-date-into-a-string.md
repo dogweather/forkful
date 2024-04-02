@@ -10,9 +10,8 @@ model: gpt-4-0125-preview
 summary: "Convertir una fecha en una cadena en Visual Basic para Aplicaciones (VBA)\
   \ es un proceso utilizado para cambiar el tipo de datos de una fecha a un formato\u2026"
 title: Convirtiendo una fecha en una cadena de caracteres
+weight: 28
 ---
-
-{{< edit_this_page >}}
 
 ## Qué y Por Qué?
 

@@ -11,9 +11,8 @@ summary: "Logging no desenvolvimento de software \xE9 o processo de registrar in
   \xF5es sobre a execu\xE7\xE3o de um programa, projetado para rastrear seu comportamento\
   \ e\u2026"
 title: Registro de Logs
+weight: 17
 ---
-
-{{< edit_this_page >}}
 
 ## O Que & Por Que?
 

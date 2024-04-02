@@ -7,9 +7,8 @@ model: gpt-4-0125-preview
 summary: "Capitalizing a string involves modifying the string so that its first character\
   \ is uppercase, while the rest of the string remains unchanged. Programmers\u2026"
 title: Capitalizing a string
+weight: 2
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 Capitalizing a string involves modifying the string so that its first character is uppercase, while the rest of the string remains unchanged. Programmers often perform string capitalization to ensure data consistency, especially for names and places or to comply with grammatical rules in user interfaces.

@@ -10,9 +10,8 @@ model: gpt-4-0125-preview
 summary: "Les tableaux associatifs, ou ce que les Rustac\xE9s appellent \"hash maps\"\
   , sont des collections qui stockent des donn\xE9es en paires cl\xE9-valeur. Les\u2026"
 title: Utilisation des tableaux associatifs
+weight: 15
 ---
-
-{{< edit_this_page >}}
 
 ## Quoi & Pourquoi ?
 

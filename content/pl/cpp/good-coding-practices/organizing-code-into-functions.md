@@ -9,9 +9,8 @@ summary: "Podzia\u0142 kodu na funkcje oznacza, \u017Ce rozdzielamy nasz kod na 
   \ wielokrotnego u\u017Cytku cz\u0119\u015Bci. Robimy to, aby unika\u0107 powt\xF3\
   rze\u0144, uczyni\u0107 nasz kod\u2026"
 title: Organizacja kodu w funkcje
+weight: 18
 ---
-
-{{< edit_this_page >}}
 
 ## Co i dlaczego?
 Podział kodu na funkcje oznacza, że rozdzielamy nasz kod na mniejsze, wielokrotnego użytku części. Robimy to, aby unikać powtórzeń, uczynić nasz kod czytelnym oraz uprościć debugowanie i testowanie. Dobrze zorganizowane funkcje mogą być jak posiadanie pudełka starannie oznakowanych narzędzi, gotowych do użytku i podzielenia się nimi.

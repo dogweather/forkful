@@ -9,9 +9,8 @@ summary: "HTTP request, czyli \u017C\u0105danie HTTP, to pro\u015Bba o dane z si
   \ Programi\u015Bci wykorzystuj\u0105 je do zdobycia danych ze stron internetowych\
   \ lub serwer\xF3w, co jest\u2026"
 title: "Wysy\u0142anie \u017C\u0105dania HTTP"
+weight: 44
 ---
-
-{{< edit_this_page >}}
 
 ## Co i Dlaczego?
 HTTP request, czyli żądanie HTTP, to prośba o dane z sieci. Programiści wykorzystują je do zdobycia danych ze stron internetowych lub serwerów, co jest kluczowe w projektach IoT czy interakcjach sieciowych.

@@ -11,9 +11,8 @@ summary: "Verificar se um diret\xF3rio existe \xE9 uma opera\xE7\xE3o fundamenta
   \ ao escrever scripts que interagem com o sistema de arquivos, garantindo que seu\
   \ programa opere\u2026"
 title: "Verificando se um diret\xF3rio existe"
+weight: 20
 ---
-
-{{< edit_this_page >}}
 
 ## O Que & Por Que?
 

@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Das Kapitalisieren eines Strings beinhaltet die Modifikation des Strings,\
   \ sodass sein erstes Zeichen gro\xDFgeschrieben wird, w\xE4hrend der Rest des Strings\u2026"
 title: "Einen String gro\xDFschreiben"
+weight: 2
 ---
-
-{{< edit_this_page >}}
 
 ## Was & Warum?
 Das Kapitalisieren eines Strings beinhaltet die Modifikation des Strings, sodass sein erstes Zeichen großgeschrieben wird, während der Rest des Strings unverändert bleibt. Programmierer führen oft die Großschreibung von Strings durch, um die Datenkonsistenz zu gewährleisten, insbesondere bei Namen und Orten oder um grammatikalischen Regeln in Benutzeroberflächen zu entsprechen.

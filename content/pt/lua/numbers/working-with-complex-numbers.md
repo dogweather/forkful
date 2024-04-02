@@ -7,9 +7,8 @@ model: gpt-4-0125-preview
 summary: "N\xFAmeros complexos estendem a ideia da linha num\xE9rica unidimensional\
   \ para o plano bidimensional, incluindo um eixo imagin\xE1rio perpendicular. Programadores\u2026"
 title: "Trabalhando com n\xFAmeros complexos"
+weight: 14
 ---
-
-{{< edit_this_page >}}
 
 ## O que & Por quê?
 Números complexos estendem a ideia da linha numérica unidimensional para o plano bidimensional, incluindo um eixo imaginário perpendicular. Programadores trabalham com eles em campos como processamento de sinais, dinâmica dos fluidos e engenharia elétrica, onde são essenciais para representar oscilações e outros fenômenos.

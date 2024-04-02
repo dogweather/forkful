@@ -13,9 +13,8 @@ summary: "REPL, hay V\xF2ng L\u1EB7p \u0110\u1ECDc-\u0110\xE1nh gi\xE1-In, cho p
   ng t\xE1c. C\xE1c l\u1EADp tr\xECnh vi\xEAn s\u1EED d\u1EE5ng n\xF3 \u0111\u1EC3\
   \ th\u1EED nghi\u1EC7m nhanh, g\u1EE1 l\u1ED7i, ho\u1EB7c\u2026"
 title: "S\u1EED d\u1EE5ng v\u1ECF t\u01B0\u01A1ng t\xE1c (REPL)"
+weight: 34
 ---
-
-{{< edit_this_page >}}
 
 ## Cái gì và Tại sao?
 REPL, hay Vòng Lặp Đọc-Đánh giá-In, cho phép bạn nhập mã C# và chạy nó một cách tương tác. Các lập trình viên sử dụng nó để thử nghiệm nhanh, gỡ lỗi, hoặc học C#, mà không cần phải thiết lập các dự án đầy đủ.

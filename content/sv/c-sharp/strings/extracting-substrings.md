@@ -9,9 +9,8 @@ summary: "I programmering \xE4r 'substring' en delstr\xE4ng fr\xE5n en annan str
   ng. Vi extraherar substrings f\xF6r att man\xF6vrera specifika textsegment \u2013\
   \ till exempel, f\xF6r\u2026"
 title: "Extrahera delstr\xE4ngar"
+weight: 6
 ---
-
-{{< edit_this_page >}}
 
 ## Vad & Varför?
 I programmering är 'substring' en delsträng från en annan sträng. Vi extraherar substrings för att manövrera specifika textsegment – till exempel, för datahantering, validering eller sökfunktionalitet.

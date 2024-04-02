@@ -10,9 +10,8 @@ model: gpt-4-0125-preview
 summary: "Wyszukiwanie i zast\u0119powanie tekstu w Google Apps Script polega na programowym\
   \ identyfikowaniu konkretnych ci\u0105g\xF3w znak\xF3w w dokumencie, arkuszu\u2026"
 title: Wyszukiwanie i zamiana tekstu
+weight: 10
 ---
-
-{{< edit_this_page >}}
 
 ## Co i dlaczego?
 

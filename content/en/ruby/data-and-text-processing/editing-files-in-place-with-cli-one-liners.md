@@ -8,9 +8,8 @@ model: gpt-4-0125-preview
 summary: "Editing files in-place with CLI (Command Line Interface) one-liners in Ruby\
   \ allows you to modify files directly from your terminal, without needing to\u2026"
 title: Editing files in-place with CLI one-liners
+weight: 32
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 

@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "\xC5 skrive til standardfeil (stderr) handler om \xE5 lede feilmeldinger\
   \ og diagnostiske utdata til en egen kanal, adskilt fra standard utdata (stdout).\u2026"
 title: Skriving til standardfeil
+weight: 25
 ---
-
-{{< edit_this_page >}}
 
 ## Hva & Hvorfor?
 Å skrive til standardfeil (stderr) handler om å lede feilmeldinger og diagnostiske utdata til en egen kanal, adskilt fra standard utdata (stdout). Programmerere gjør dette for å skille vanlige programresultater fra feilinformasjon, noe som forenkler feilsøking og loggføringsprosesser.

@@ -9,9 +9,8 @@ summary: "Zaczynanie nowego projektu to jak otwieranie nowej, pustej ksi\u0105\u
   ki, w kt\xF3r\u0105 mo\u017Cemy wpisa\u0107 dowolny kod. Programi\u015Bci rozpoczynaj\u0105\
   \ nowe projekty, by tworzy\u0107\u2026"
 title: Rozpoczynanie nowego projektu
+weight: 1
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why? (Co i Dlaczego?)
 Zaczynanie nowego projektu to jak otwieranie nowej, pustej książki, w którą możemy wpisać dowolny kod. Programiści rozpoczynają nowe projekty, by tworzyć aplikacje od zera, eksplorować pomysły lub uczyć się nowych technologii.

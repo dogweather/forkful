@@ -7,9 +7,8 @@ model: gpt-4-1106-preview
 summary: "Att konvertera en str\xE4ng till gemener inneb\xE4r att alla stora bokst\xE4\
   ver i texten f\xF6rvandlas till sm\xE5. Programmerare g\xF6r detta f\xF6r att standardisera\u2026"
 title: "Konvertera en str\xE4ng till gemener"
+weight: 4
 ---
-
-{{< edit_this_page >}}
 
 ## Vad & Varför?
 Att konvertera en sträng till gemener innebär att alla stora bokstäver i texten förvandlas till små. Programmerare gör detta för att standardisera textdata, till exempel vid sökningar eller jämförelser, där det inte ska spela någon roll om ord är skrivna med stora eller små bokstäver.

@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "XML, de afkorting voor eXtensible Markup Language, is zoals de breedsprakige\
   \ neef van JSON. Je zult met XML worstelen wanneer je te maken hebt met legacy\u2026"
 title: Werken met XML
+weight: 40
 ---
-
-{{< edit_this_page >}}
 
 ## Wat & Waarom?
 XML, de afkorting voor eXtensible Markup Language, is zoals de breedsprakige neef van JSON. Je zult met XML worstelen wanneer je te maken hebt met legacy systemen, bedrijfssoftware, of API's die de overstap naar JSON niet hebben gemaakt. XML is essentieel voor gegevensuitwisseling waar het zijn grond behoudt.

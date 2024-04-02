@@ -9,9 +9,8 @@ summary: "Koodin j\xE4rjest\xE4minen funktioiksi on lohkojen paketoimista teht\x
   vi\xE4 suorittaviksi osiksi. T\xE4m\xE4n tekeminen pit\xE4\xE4 koodisi puhtaana,\
   \ helpommin yll\xE4pidett\xE4v\xE4n\xE4\u2026"
 title: "Koodin j\xE4rjest\xE4minen funktioihin"
+weight: 18
 ---
-
-{{< edit_this_page >}}
 
 ## Mikä & Miksi?
 

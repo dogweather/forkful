@@ -7,9 +7,8 @@ model: gpt-4-0125-preview
 summary: "Regular expressions (regex) in Elixir are used for searching, matching,\
   \ and manipulating strings based on specific patterns. Programmers leverage regex\u2026"
 title: Using regular expressions
+weight: 11
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 

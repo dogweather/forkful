@@ -20,9 +20,8 @@ summary: "C\uC5D0\uC11C \uAE30\uBCF8 \uC778\uC99D\uC744 \uD3EC\uD568\uD55C HTTP 
   \uC778 \uBC29\uBC95\uC73C\uB85C, \uC81C\uD55C\uB41C \uC790\uC6D0\uC5D0\u2026"
 title: "\uAE30\uBCF8 \uC778\uC99D\uC744 \uC0AC\uC6A9\uD558\uC5EC HTTP \uC694\uCCAD\
   \ \uBCF4\uB0B4\uAE30"
+weight: 45
 ---
-
-{{< edit_this_page >}}
 
 ## 무엇을, 왜?
 C에서 기본 인증을 포함한 HTTP 요청을 보내는 것은 사용자 자격증명이 Base64로 인코딩된 Authorization 헤더를 포함하는 HTTP 요청을 만드는 것을 포함합니다. 이는 HTTP 요청에 단순 인증 레이어를 추가하는 일반적인 방법으로, 제한된 자원에 프로그래매틱하게 접근할 수 있게 합니다.

@@ -11,9 +11,8 @@ summary: "Refactoring in programmeren houdt in dat bestaande computercodes worde
   \ geherstructureerd\u2014de factoring wordt veranderd\u2014zonder dat hun externe\
   \ gedrag\u2026"
 title: Refactoring
+weight: 19
 ---
-
-{{< edit_this_page >}}
 
 ## Wat & Waarom?
 

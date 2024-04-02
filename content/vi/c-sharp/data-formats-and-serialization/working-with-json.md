@@ -13,9 +13,8 @@ summary: "L\xE0m vi\u1EC7c v\u1EDBi JSON c\xF3 ngh\u0129a l\xE0 ph\xE2n t\xEDch 
   \u1EE3ng JavaScript) trong c\xE1c \u1EE9ng d\u1EE5ng c\u1EE7a b\u1EA1n. L\u1EAD\
   p tr\xECnh vi\xEAn l\xE0m \u0111i\u1EC1u\u2026"
 title: "L\xE0m vi\u1EC7c v\u1EDBi JSON"
+weight: 38
 ---
-
-{{< edit_this_page >}}
 
 ## Cái gì & Tại sao?
 

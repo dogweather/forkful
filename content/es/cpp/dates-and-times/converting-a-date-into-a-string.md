@@ -8,9 +8,8 @@ model: gpt-4-1106-preview
 summary: "Convertir una fecha a texto permite mostrarla en diferentes formatos, facilitando\
   \ la lectura para humanos o la compatibilidad con sistemas externos. Es\u2026"
 title: Convirtiendo una fecha en una cadena de texto
+weight: 28
 ---
-
-{{< edit_this_page >}}
 
 ## ¿Qué & Por Qué?
 Convertir una fecha a texto permite mostrarla en diferentes formatos, facilitando la lectura para humanos o la compatibilidad con sistemas externos. Es esencial para reportes, interfaces de usuario y almacenamiento de datos en formatos específicos.

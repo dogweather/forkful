@@ -14,9 +14,8 @@ summary: "\uC0C8 \uD504\uB85C\uC81D\uD2B8 \uC2DC\uC791\uC740 \uBE48 \uC2A4\uCF00
   \uB97C \uD604\uC2E4\uB85C \uB9CC\uB4E4\uAC70\uB098 \uC0C8\uB85C\uC6B4 \uAE30\uC220\
   \uC744 \uBC30\uC6B0\uAE30 \uC704\uD574 \uC774\uB97C \uD569\uB2C8\uB2E4."
 title: "\uC0C8 \uD504\uB85C\uC81D\uD2B8 \uC2DC\uC791\uD558\uAE30"
+weight: 1
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why? (무엇과 왜?)
 새 프로젝트 시작은 빈 스케치에서 자신만의 코드를 쓰는 것입니다. 프로그래머들은 아이디어를 현실로 만들거나 새로운 기술을 배우기 위해 이를 합니다.

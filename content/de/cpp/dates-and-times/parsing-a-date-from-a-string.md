@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Das Parsen eines Datums aus einem String beinhaltet die Interpretation des\
   \ Stringformats, um Komponenten wie Tag, Monat und Jahr zu extrahieren.\u2026"
 title: Einen Datum aus einem String analysieren
+weight: 30
 ---
-
-{{< edit_this_page >}}
 
 ## Was & Warum?
 Das Parsen eines Datums aus einem String beinhaltet die Interpretation des Stringformats, um Komponenten wie Tag, Monat und Jahr zu extrahieren. Programmierer tun dies, um Benutzereingaben zu verarbeiten, Datendateien zu lesen oder mit APIs zu interagieren, die Daten in Stringformaten kommunizieren. Es ist wesentlich für die Datenverarbeitung, Validierung und das Durchführen von Datumsarithmetik in Anwendungen.

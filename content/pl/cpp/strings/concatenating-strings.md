@@ -9,9 +9,8 @@ summary: "\u0141\u0105czenie \u0142a\u0144cuch\xF3w to po prostu sklejanie s\u01
   \xF3w lub zda\u0144, aby tworzy\u0107 nowe ci\u0105gi znak\xF3w. Programi\u015B\
   ci robi\u0105 to, by tworzy\u0107 komunikaty, dynamiczne tre\u015Bci\u2026"
 title: "\u0141\u0105czenie \u0142a\u0144cuch\xF3w znak\xF3w"
+weight: 3
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why? (Co i dlaczego?)
 Łączenie łańcuchów to po prostu sklejanie słów lub zdań, aby tworzyć nowe ciągi znaków. Programiści robią to, by tworzyć komunikaty, dynamiczne treści albo przetwarzać teksty.

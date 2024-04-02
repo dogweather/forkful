@@ -7,9 +7,8 @@ model: gpt-4-0125-preview
 summary: "Writing a text file in Visual Basic for Applications (VBA) involves creating,\
   \ modifying, or appending text data to files, a fundamental task for storing\u2026"
 title: Writing a text file
+weight: 24
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 

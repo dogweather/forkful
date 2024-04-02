@@ -8,9 +8,8 @@ model: gpt-4-1106-preview
 summary: "Ler um arquivo de texto em C++ \xE9 o processo de acessar e extrair informa\xE7\
   \xF5es de um arquivo armazenado no seu computador. Programadores fazem isso para\u2026"
 title: Lendo um arquivo de texto
+weight: 22
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 Ler um arquivo de texto em C++ é o processo de acessar e extrair informações de um arquivo armazenado no seu computador. Programadores fazem isso para manipular dados, configurar programas ou simplesmente para armazenar e recuperar informações.

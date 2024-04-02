@@ -9,9 +9,8 @@ summary: "Utskrift av fels\xF6kningsdata \xE4r att f\xE5 programmet att skriva u
   \ vad det t\xE4nker p\xE5. Programmerare anv\xE4nder detta f\xF6r att f\xF6rst\xE5\
   \ vad som h\xE4nder under huven\u2026"
 title: "Skriva ut fels\xF6kningsdata"
+weight: 33
 ---
-
-{{< edit_this_page >}}
 
 ## Vad & Varför?
 Utskrift av felsökningsdata är att få programmet att skriva ut vad det tänker på. Programmerare använder detta för att förstå vad som händer under huven och snabbt hitta kryphål.

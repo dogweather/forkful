@@ -7,9 +7,8 @@ model: gpt-4-0125-preview
 summary: "Utilizzare un shell interattivo, o un Loop di Lettura-Valutazione-Stampa\
   \ (REPL), permette di programmare interattivamente. I programmatori lo utilizzano\u2026"
 title: Utilizzo di un interprete interattivo (REPL)
+weight: 34
 ---
-
-{{< edit_this_page >}}
 
 ## Cos'è & Perché?
 Utilizzare un shell interattivo, o un Loop di Lettura-Valutazione-Stampa (REPL), permette di programmare interattivamente. I programmatori lo utilizzano per testare rapidamente frammenti di codice Swift, per fare debug, o per imparare il linguaggio.

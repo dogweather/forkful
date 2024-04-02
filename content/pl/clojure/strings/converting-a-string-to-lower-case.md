@@ -9,9 +9,8 @@ summary: "Konwertowanie ci\u0105gu znak\xF3w na ma\u0142e litery oznacza zmian\u
   \ wszystkich liter w tek\u015Bcie na ich ma\u0142e odpowiedniki. W programowaniu\
   \ robimy to dla jednolito\u015Bci\u2026"
 title: "Konwersja ci\u0105gu znak\xF3w na ma\u0142e litery"
+weight: 4
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 Konwertowanie ciągu znaków na małe litery oznacza zmianę wszystkich liter w tekście na ich małe odpowiedniki. W programowaniu robimy to dla jednolitości danych, łatwiejszego porównywania stringów i spełniania wymagań specyficznych interfejsów użytkownika.

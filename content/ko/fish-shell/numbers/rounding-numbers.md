@@ -19,9 +19,8 @@ summary: "\uC22B\uC790 \uBC18\uC62C\uB9BC\uC740 \uB370\uC774\uD130\uB97C \uB2E8\
   \uBC00\uB3C4\uAC00 \uC911\uC694\uD558\uC9C0 \uC54A\uC744 \uB54C \uC774\uB97C \uC218\
   \uD589\uD569\uB2C8\uB2E4."
 title: "\uC22B\uC790 \uBC18\uC62C\uB9BC\uD558\uAE30"
+weight: 13
 ---
-
-{{< edit_this_page >}}
 
 ## 무엇과 왜?
 숫자 반올림은 데이터를 단순화하거나 특정 형식에 맞추기 위해 소수점 자리를 잘라내는 것을 말합니다. 프로그래머들은 사용자 친화적인 디스플레이, 효율적인 저장 공간 사용 또는 소수점 정밀도가 중요하지 않을 때 이를 수행합니다.

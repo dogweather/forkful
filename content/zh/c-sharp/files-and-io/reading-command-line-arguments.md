@@ -14,9 +14,8 @@ summary: "\u5728C#\u7A0B\u5E8F\u4E2D\u8BFB\u53D6\u547D\u4EE4\u884C\u53C2\u6570\u
   \u8DEF\u5F84\u3002\u7A0B\u5E8F\u5458\u8FD9\u4E48\u505A\u662F\u4E3A\u4E86\u63D0\u4F9B\
   \u7075\u6D3B\u6027\u548C\u7528\u6237\u5B9A\u5236\u7684\u53EF\u80FD\u6027\u3002"
 title: "\u8BFB\u53D6\u547D\u4EE4\u884C\u53C2\u6570"
+weight: 23
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why? (什么和为什么？)
 在C#程序中读取命令行参数可以让你的应用程序接收用户输入的信息，比如配置选项或者文件路径。程序员这么做是为了提供灵活性和用户定制的可能性。

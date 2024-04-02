@@ -9,9 +9,8 @@ summary: "En Java, supprimer des caract\xE8res correspondant \xE0 un motif, c'es
   \ retirer de fa\xE7on s\xE9lective certains caract\xE8res d'une cha\xEEne en se\
   \ basant sur des r\xE8gles\u2026"
 title: "Suppression de caract\xE8res correspondant \xE0 un motif"
+weight: 5
 ---
-
-{{< edit_this_page >}}
 
 ## Quoi et Pourquoi ?
 

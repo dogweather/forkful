@@ -9,9 +9,8 @@ summary: "Das Vergleichen von zwei Daten entscheidet, welches Datum fr\xFCher od
   \ sp\xE4ter ist oder ob sie gleich sind. Programmierer nutzen das, um Zeitabl\xE4\
   ufe zu\u2026"
 title: Vergleich von zwei Daten
+weight: 27
 ---
-
-{{< edit_this_page >}}
 
 ## Was & Warum?
 Das Vergleichen von zwei Daten entscheidet, welches Datum früher oder später ist oder ob sie gleich sind. Programmierer nutzen das, um Zeitabläufe zu sortieren, Ereignisse zu terminieren oder Zeitdifferenzen zu berechnen.

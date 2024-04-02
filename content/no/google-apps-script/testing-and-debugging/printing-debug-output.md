@@ -11,9 +11,8 @@ summary: "\xC5 skrive ut feils\xF8kingsutdata inneb\xE6rer strategisk plassering
   \ loggutsagn i koden din for \xE5 vise variabelverdier, utf\xF8relsesflyt eller\
   \ meldingsfeil\u2026"
 title: "Utskrift av feils\xF8kingsdata"
+weight: 33
 ---
-
-{{< edit_this_page >}}
 
 ## Hva & Hvorfor?
 

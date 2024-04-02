@@ -11,9 +11,8 @@ summary: "Att tolka HTML i Clojure inneb\xE4r att man programmatiskt extraherar 
   \ fr\xE5n HTML-dokument. Programmerare g\xF6r detta f\xF6r att f\xE5 \xE5tkomst\
   \ till,\u2026"
 title: Tolka HTML
+weight: 43
 ---
-
-{{< edit_this_page >}}
 
 ## Vad & Varför?
 

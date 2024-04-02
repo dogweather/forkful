@@ -8,9 +8,8 @@ model: gpt-4-0125-preview
 summary: "Writing a text file in C involves creating or opening a file in write mode\
   \ and then using C's file I/O functions to save text data to it. Programmers do\u2026"
 title: Writing a text file
+weight: 24
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 

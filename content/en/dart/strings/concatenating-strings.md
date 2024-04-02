@@ -7,9 +7,8 @@ model: gpt-4-0125-preview
 summary: "Concatenating strings in programming involves combining two or more strings\
   \ into one. Programmers do this to manipulate text data easily, construct\u2026"
 title: Concatenating strings
+weight: 3
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 Concatenating strings in programming involves combining two or more strings into one. Programmers do this to manipulate text data easily, construct messages, or assemble parts of a user interface dynamically.

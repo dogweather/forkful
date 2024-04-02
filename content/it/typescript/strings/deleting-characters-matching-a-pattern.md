@@ -8,9 +8,8 @@ model: gpt-4-1106-preview
 summary: "Cancellare i caratteri che corrispondono a un pattern significa usare espressioni\
   \ regolari o funzioni per rimuovere specifiche sequenze di caratteri da\u2026"
 title: Eliminazione di caratteri che corrispondono a un pattern
+weight: 5
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 Cancellare i caratteri che corrispondono a un pattern significa usare espressioni regolari o funzioni per rimuovere specifiche sequenze di caratteri da una stringa. I programmatori lo fanno per pulire i dati, validare l'input, o per manipolare il testo secondo necessità.

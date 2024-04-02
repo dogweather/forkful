@@ -13,9 +13,8 @@ summary: "L\u1EA5y ng\xE0y th\xE1ng hi\u1EC7n t\u1EA1i trong l\u1EADp tr\xECnh g
   ng ta c\u1EA7n d\u1EA5u th\u1EDDi gian cho c\xE1c b\u1EA3n ghi, h\u1ED3 s\u01A1\
   , ho\u1EB7c ch\u1EC9 \u0111\u01A1n\u2026"
 title: "L\u1EA5y ng\xE0y hi\u1EC7n t\u1EA1i"
+weight: 29
 ---
-
-{{< edit_this_page >}}
 
 ## Cái gì & Tại sao?
 

@@ -9,9 +9,8 @@ summary: "Envoyer une requ\xEAte HTTP, c'est demander des donn\xE9es \xE0 un ser
   \ web. Les programmeurs font \xE7a pour int\xE9ragir avec des APIs, r\xE9cup\xE9\
   rer des fichiers, ou\u2026"
 title: "Envoi d'une requ\xEAte HTTP"
+weight: 44
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why? (Quoi et Pourquoi ?)
 

@@ -10,9 +10,8 @@ model: gpt-4-0125-preview
 summary: "Envoyer une requ\xEAte HTTP implique d'initier un appel depuis votre application\
   \ Go vers un serveur web, une API ou tout autre service bas\xE9 sur HTTP. Les\u2026"
 title: "Envoyer une requ\xEAte HTTP"
+weight: 44
 ---
-
-{{< edit_this_page >}}
 
 ## Quoi & Pourquoi ?
 

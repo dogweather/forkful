@@ -2,13 +2,14 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:08:40.808448-07:00
-description: "Een debugger gebruiken betekent dat je gespecialiseerde tools gebruikt\
-  \ om code te testen en te diagnosticeren. Programmeurs doen dit om bugs te pletten,\u2026"
+description: "Stel je voor dat je een klein programma hebt dat zich niet goed gedraagt:\
+  \ ```C# static void Main() { int resultaat = Som(1, 2);\u2026"
 lastmod: '2024-03-13T22:44:50.814773-06:00'
 model: gpt-4-0125-preview
-summary: "Een debugger gebruiken betekent dat je gespecialiseerde tools gebruikt om\
-  \ code te testen en te diagnosticeren. Programmeurs doen dit om bugs te pletten,\u2026"
+summary: "Stel je voor dat je een klein programma hebt dat zich niet goed gedraagt:\
+  \ ```C# static void Main() { int resultaat = Som(1, 2);\u2026"
 title: Een debugger gebruiken
+weight: 35
 ---
 
 ## Hoe te:

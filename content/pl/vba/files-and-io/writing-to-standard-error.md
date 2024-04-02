@@ -11,9 +11,8 @@ summary: "Pisanie do standardowego b\u0142\u0119du w Visual Basic for Applicatio
   \ (VBA) oznacza kierowanie komunikat\xF3w o b\u0142\u0119dach lub diagnostyki niezale\u017C\
   nie od standardowego\u2026"
 title: "Pisanie do standardowego b\u0142\u0119du"
+weight: 25
 ---
-
-{{< edit_this_page >}}
 
 ## Co i dlaczego?
 

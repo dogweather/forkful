@@ -9,9 +9,8 @@ summary: "J\xE4mf\xF6relse av tv\xE5 datum \xE4r processen att se vilket datum s
   \ kommer f\xF6rst eller om de \xE4r samma. Programmerare g\xF6r detta f\xF6r att\
   \ hantera deadlines,\u2026"
 title: "J\xE4mf\xF6ra tv\xE5 datum"
+weight: 27
 ---
-
-{{< edit_this_page >}}
 
 ## Vad & Varför?
 Jämförelse av två datum är processen att se vilket datum som kommer först eller om de är samma. Programmerare gör detta för att hantera deadlines, tidslinjer eller helt enkelt för att sortera eller filtrera datumdata.

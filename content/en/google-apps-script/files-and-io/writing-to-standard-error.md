@@ -7,9 +7,8 @@ model: gpt-4-0125-preview
 summary: "Writing to standard error (stderr) in programming languages is about directing\
   \ error messages and diagnostics to a separate stream, apart from the\u2026"
 title: Writing to standard error
+weight: 25
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 

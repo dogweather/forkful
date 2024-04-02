@@ -9,9 +9,8 @@ summary: "Arredondar n\xFAmeros \xE9 ajustar um n\xFAmero para o inteiro mais pr
   ximo, ou para uma certa precis\xE3o decimal. Arredondamos n\xFAmeros para simplific\xE1\
   -los para\u2026"
 title: "Arredondamento de n\xFAmeros"
+weight: 13
 ---
-
-{{< edit_this_page >}}
 
 ## O Quê & Porquê?
 Arredondar números é ajustar um número para o inteiro mais próximo, ou para uma certa precisão decimal. Arredondamos números para simplificá-los para leitura humana, reduzir a carga computacional, ou satisfazer requisitos numéricos específicos.

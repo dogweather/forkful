@@ -11,9 +11,8 @@ summary: "\xC9crire un fichier texte en Go implique de cr\xE9er et d'\xE9crire d
   \ cha\xEEnes de donn\xE9es dans un fichier texte nouveau ou existant. Les programmeurs\
   \ font cela\u2026"
 title: "\xC9crire un fichier texte"
+weight: 24
 ---
-
-{{< edit_this_page >}}
 
 ## Quoi & Pourquoi ?
 

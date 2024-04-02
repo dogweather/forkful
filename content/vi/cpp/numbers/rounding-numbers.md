@@ -15,9 +15,8 @@ summary: "L\xE0m tr\xF2n s\u1ED1 ngh\u0129a l\xE0 \u0111i\u1EC1u ch\u1EC9nh gi\x
   \ th\u1EF1c hi\u1EC7n \u0111i\u1EC1u n\xE0y \u0111\u1EC3 \u0111\u01A1n gi\u1EA3\
   n h\xF3a, ph\xF9 h\u1EE3p\u2026"
 title: "L\xE0m tr\xF2n s\u1ED1"
+weight: 13
 ---
-
-{{< edit_this_page >}}
 
 ## Cái gì & Tại sao?
 Làm tròn số nghĩa là điều chỉnh giá trị tới số nguyên gần nhất hoặc độ chính xác đã chỉ định. Lập trình viên thực hiện điều này để đơn giản hóa, phù hợp với các ràng buộc thực tế, hoặc cải thiện hiệu suất bằng cách loại bỏ độ chính xác dư thừa.

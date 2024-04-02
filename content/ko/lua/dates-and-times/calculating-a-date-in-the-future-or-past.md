@@ -18,9 +18,8 @@ summary: "\uB0A0\uC9DC\uB97C \uBBF8\uB798\uB098 \uACFC\uAC70\uB85C \uACC4\uC0B0\
   \uD15C, \uC774\uBCA4\uD2B8 \uC2A4\uCF00\uC904\uB9C1 \uB4F1\uC744 \uC704\uD574 \uC774\
   \uB97C \uC0AC\uC6A9\uD569\uB2C8\uB2E4."
 title: "\uBBF8\uB798\uB098 \uACFC\uAC70\uC758 \uB0A0\uC9DC \uACC4\uC0B0\uD558\uAE30"
+weight: 26
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why? (무엇과 왜?)
 날짜를 미래나 과거로 계산한다는 것은 지정된 시간을 기준으로 특정 기간만큼 시간을 더하거나 빼는 것을 말합니다. 프로그래머들은 유효기간 계산, 예약 시스템, 이벤트 스케줄링 등을 위해 이를 사용합니다.

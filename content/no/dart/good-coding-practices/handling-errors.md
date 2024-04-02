@@ -11,9 +11,8 @@ summary: "H\xE5ndtering av feil i Dart handler om \xE5 forutse og h\xE5ndtere un
   \ som oppst\xE5r under programkj\xF8ring for \xE5 forbedre p\xE5liteligheten og\
   \ brukervennligheten.\u2026"
 title: "H\xE5ndtering av feil"
+weight: 16
 ---
-
-{{< edit_this_page >}}
 
 ## Hva & Hvorfor?
 Håndtering av feil i Dart handler om å forutse og håndtere unntak som oppstår under programkjøring for å forbedre påliteligheten og brukervennligheten. Programmerere implementerer feilhåndtering for å forhindre krasj og gi meningsfull tilbakemelding til brukerne, noe som sikrer en jevnere, tryggere applikasjonsopplevelse.

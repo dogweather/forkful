@@ -9,9 +9,8 @@ summary: "Gerar n\xFAmeros aleat\xF3rios na programa\xE7\xE3o \xE9 sobre criar v
   \ num\xE9ricos n\xE3o determin\xEDsticos ou imprevis\xEDveis. Programadores usam\
   \ n\xFAmeros aleat\xF3rios por\u2026"
 title: "Gera\xE7\xE3o de n\xFAmeros aleat\xF3rios"
+weight: 12
 ---
-
-{{< edit_this_page >}}
 
 ## O Que & Porquê?
 

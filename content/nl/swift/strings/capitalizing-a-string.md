@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Capitalisatie betekent het veranderen van de eerste letter van woorden naar\
   \ hoofdletters; in strings gaat het vaak om het opmaken of gebruiksvriendelijk\u2026"
 title: Een string met hoofdletters maken
+weight: 2
 ---
-
-{{< edit_this_page >}}
 
 ## Wat & Waarom?
 Capitalisatie betekent het veranderen van de eerste letter van woorden naar hoofdletters; in strings gaat het vaak om het opmaken of gebruiksvriendelijk maken van tekst. Programmeurs gebruiken capitalisatie voor de leesbaarheid, om grammaticale regels te volgen of om een stijlgids te matchen.

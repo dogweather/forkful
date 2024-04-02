@@ -11,9 +11,8 @@ summary: "Les tableaux associatifs en Dart, commun\xE9ment appel\xE9s Maps, sont
   \ structures de donn\xE9es qui stockent des donn\xE9es en paires cl\xE9-valeur.\
   \ Ils permettent\u2026"
 title: Utilisation des tableaux associatifs
+weight: 15
 ---
-
-{{< edit_this_page >}}
 
 ## Quoi & Pourquoi ?
 

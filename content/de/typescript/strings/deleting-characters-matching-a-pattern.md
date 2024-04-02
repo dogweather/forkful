@@ -7,9 +7,8 @@ model: gpt-4-1106-preview
 summary: "Das L\xF6schen von Zeichen, die einem Muster entsprechen, ist oft notwendig,\
   \ um Eingabedaten zu bereinigen oder bestimmte Zeichen aus Text zu entfernen.\u2026"
 title: "L\xF6schen von Zeichen, die einem Muster entsprechen"
+weight: 5
 ---
-
-{{< edit_this_page >}}
 
 ## Was & Warum?
 Das Löschen von Zeichen, die einem Muster entsprechen, ist oft notwendig, um Eingabedaten zu bereinigen oder bestimmte Zeichen aus Text zu entfernen. Entwickler machen das, um Datensätze zu standardisieren oder unerwünschte Zeichen zu filtern.

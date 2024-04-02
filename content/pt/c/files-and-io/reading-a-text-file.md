@@ -10,9 +10,8 @@ model: gpt-4-0125-preview
 summary: "Ler um arquivo de texto em C envolve abrir um arquivo no seu sistema para\
   \ extrair informa\xE7\xF5es e manipul\xE1-las ou exibi-las conforme necess\xE1rio.\u2026"
 title: Lendo um arquivo de texto
+weight: 22
 ---
-
-{{< edit_this_page >}}
 
 ## O Quê & Por Quê?
 

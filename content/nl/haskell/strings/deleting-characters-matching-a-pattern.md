@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Karakters verwijderen die overeenkomen met een specifiek patroon gaat over\
   \ het doorzoeken van tekst en het verwijderen van delen die je niet nodig hebt.\u2026"
 title: Karakters verwijderen die overeenkomen met een patroon
+weight: 5
 ---
-
-{{< edit_this_page >}}
 
 ## Wat & Waarom?
 

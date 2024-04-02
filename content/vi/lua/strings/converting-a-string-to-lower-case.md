@@ -13,9 +13,8 @@ summary: "Chuy\u1EC3n \u0111\u1ED5i m\u1ED9t chu\u1ED7i th\xE0nh d\u1EA1ng in th
   i in hoa trong chu\u1ED7i b\u1EB1ng c\xE1c ch\u1EEF c\xE1i in th\u01B0\u1EDDng t\u01B0\
   \u01A1ng \u1EE9ng. L\u1EADp tr\xECnh vi\xEAn\u2026"
 title: "Chuy\u1EC3n \u0111\u1ED5i chu\u1ED7i th\xE0nh ch\u1EEF th\u01B0\u1EDDng"
+weight: 4
 ---
-
-{{< edit_this_page >}}
 
 ## Lý do & Tại sao?
 Chuyển đổi một chuỗi thành dạng in thường có nghĩa là thay thế tất cả các chữ cái in hoa trong chuỗi bằng các chữ cái in thường tương ứng. Lập trình viên thực hiện điều này để đảm bảo tính nhất quán, đặc biệt khi so sánh hoặc xử lý dữ liệu văn bản nơi mà trường hợp chữ không quan trọng, như đầu vào của người dùng hoặc truy vấn tìm kiếm.

@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Analisar uma data a partir de uma string consiste em converter um texto\
   \ que representa uma data em um objeto `Date` ou `DateTime` que o Ruby compreende.\u2026"
 title: Analisando uma data a partir de uma string
+weight: 30
 ---
-
-{{< edit_this_page >}}
 
 ## O Que & Por Quê?
 Analisar uma data a partir de uma string consiste em converter um texto que representa uma data em um objeto `Date` ou `DateTime` que o Ruby compreende. Programadores fazem isso para realizar operações como comparações, cálculos ou formatações em datas, tarefas comuns em aplicações que lidam com agendamentos, análises ou processamento de dados.

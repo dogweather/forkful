@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Het verzenden van een HTTP-verzoek houdt in dat er vanuit je Go-applicatie\
   \ een oproep wordt gedaan naar een webserver, API of een andere op HTTP-\u2026"
 title: Een HTTP-verzoek verzenden
+weight: 44
 ---
-
-{{< edit_this_page >}}
 
 ## Wat & Waarom?
 

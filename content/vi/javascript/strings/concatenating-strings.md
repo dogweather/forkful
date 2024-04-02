@@ -13,9 +13,8 @@ summary: "N\u1ED1i chu\u1ED7i c\xF3 ngh\u0129a l\xE0 gh\xE9p ch\xFAng l\u1EA1i v
   y \u0111\u1EC3 t\u1EA1o ra c\xE1c th\xF4ng \u0111i\u1EC7p, URL, ho\u1EB7c b\u1EA5\
   t k\u1EF3 v\u0103n b\u1EA3n n\xE0o v\u1EDBi c\xE1c ph\u1EA7n t\u1EEB\u2026"
 title: "N\u1ED1i chu\u1ED7i k\xFD t\u1EF1"
+weight: 3
 ---
-
-{{< edit_this_page >}}
 
 ## Gì và Tại sao?
 Nối chuỗi có nghĩa là ghép chúng lại với nhau từ đầu đến cuối. Chúng ta làm vậy để tạo ra các thông điệp, URL, hoặc bất kỳ văn bản nào với các phần từ nguồn khác nhau.

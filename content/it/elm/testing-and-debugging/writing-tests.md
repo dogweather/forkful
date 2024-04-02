@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Scrivere test in Elm comporta la creazione di casi di test per verificare\
   \ la correttezza del tuo codice Elm, assicurandosi che si comporti come previsto.\u2026"
 title: Scrivere test
+weight: 36
 ---
-
-{{< edit_this_page >}}
 
 ## Cosa & Perché?
 

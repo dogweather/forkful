@@ -9,9 +9,8 @@ summary: "Envoyer une requ\xEAte HTTP avec une authentification basique transmet
   \ identifiants d\u2019acc\xE8s \xE0 un serveur web s\xE9curis\xE9. Les d\xE9veloppeurs\
   \ utilisent cela\u2026"
 title: "Envoi d'une requ\xEAte HTTP avec authentification de base"
+weight: 45
 ---
-
-{{< edit_this_page >}}
 
 ## Quoi & Pourquoi ?
 Envoyer une requête HTTP avec une authentification basique transmet des identifiants d’accès à un serveur web sécurisé. Les développeurs utilisent cela pour accéder aux ressources protégées via des API ou des services web.

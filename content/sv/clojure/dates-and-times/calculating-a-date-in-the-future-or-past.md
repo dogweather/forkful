@@ -9,9 +9,8 @@ summary: "Ber\xE4kning av ett datum i framtiden eller f\xF6rflutna \xE4r precis 
   \ det l\xE5ter som - att hitta ett datum f\xF6re eller efter ett k\xE4nt datum.\
   \ Programmerare g\xF6r\u2026"
 title: "Ber\xE4kna ett datum i framtiden eller f\xF6rflutenheten"
+weight: 26
 ---
-
-{{< edit_this_page >}}
 
 ## Vad & Varför?
 Beräkning av ett datum i framtiden eller förflutna är precis det det låter som - att hitta ett datum före eller efter ett känt datum. Programmerare gör detta för att hantera tidsbaserade uppgifter som att skapa påminnelser, generera rapporter, eller för att hålla koll på tidsperioder för avtal.

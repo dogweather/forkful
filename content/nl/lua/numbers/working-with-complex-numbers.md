@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Complexe getallen breiden het idee van de eendimensionale getallenlijn uit\
   \ tot het tweedimensionale vlak door een loodrechte imaginaire as op te nemen.\u2026"
 title: Werken met complexe getallen
+weight: 14
 ---
-
-{{< edit_this_page >}}
 
 ## Wat & Waarom?
 Complexe getallen breiden het idee van de eendimensionale getallenlijn uit tot het tweedimensionale vlak door een loodrechte imaginaire as op te nemen. Programmeurs werken ermee in velden zoals signaalverwerking, stromingsdynamica en elektrotechniek, waar ze essentieel zijn voor het vertegenwoordigen van oscillaties en andere verschijnselen.

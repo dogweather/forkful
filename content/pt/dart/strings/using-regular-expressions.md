@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Express\xF5es regulares (regex) em Dart oferecem uma maneira poderosa de\
   \ buscar e manipular strings, permitindo que programadores realizem tarefas complexas\u2026"
 title: "Usando express\xF5es regulares"
+weight: 11
 ---
-
-{{< edit_this_page >}}
 
 ## O Que & Por Que?
 Expressões regulares (regex) em Dart oferecem uma maneira poderosa de buscar e manipular strings, permitindo que programadores realizem tarefas complexas de processamento de texto de forma eficiente. Ao compreender regex, os desenvolvedores podem executar validações de texto, buscar padrões e transformar textos rapidamente, o que é essencial para o processamento de formulários, análise de dados e manipulações gerais de strings em aplicações modernas.

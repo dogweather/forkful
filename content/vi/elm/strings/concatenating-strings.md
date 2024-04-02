@@ -13,9 +13,8 @@ summary: "N\u1ED1i chu\u1ED7i c\xF3 ngh\u0129a l\xE0 gh\xE9p hai ho\u1EB7c nhi\u
   \ vi\u1EC7c c\u01A1 b\u1EA3n v\xE0 thi\u1EBFt y\u1EBFu nh\u01B0 s\u1EED d\u1EE5\
   ng b\u0103ng d\xEDnh, cho ph\xE9p b\u1EA1n t\u1EA1o ra c\xE1c\u2026"
 title: "N\u1ED1i chu\u1ED7i k\xFD t\u1EF1"
+weight: 3
 ---
-
-{{< edit_this_page >}}
 
 ## Là gì & Tại sao?
 Nối chuỗi có nghĩa là ghép hai hoặc nhiều phần văn bản lại với nhau. Đó là một việc cơ bản và thiết yếu như sử dụng băng dính, cho phép bạn tạo ra các chuỗi mới một cách linh hoạt để hiển thị thông điệp, tạo mẫu, và nhiều hơn nữa.

@@ -9,9 +9,8 @@ summary: "Fehlerbehandlung in Swift bedeutet, auf Probleme zu reagieren, die auf
   \ wenn Ihr Code ausgef\xFChrt wird. Wir tun dies, um das Chaos zu kontrollieren\
   \ \u2013\u2026"
 title: Fehlerbehandlung
+weight: 16
 ---
-
-{{< edit_this_page >}}
 
 ## Was & Warum?
 Fehlerbehandlung in Swift bedeutet, auf Probleme zu reagieren, die auftreten, wenn Ihr Code ausgeführt wird. Wir tun dies, um das Chaos zu kontrollieren – um zu verhindern, dass Apps abstürzen und um dem Benutzer eine reibungslose Erfahrung zu bieten.

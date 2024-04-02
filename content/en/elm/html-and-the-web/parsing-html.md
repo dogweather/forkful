@@ -7,9 +7,8 @@ model: gpt-4-0125-preview
 summary: "Parsing HTML in Elm involves extracting information from HTML documents.\
   \ Programmers do it to interface with web content or APIs that return HTML,\u2026"
 title: Parsing HTML
+weight: 43
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 Parsing HTML in Elm involves extracting information from HTML documents. Programmers do it to interface with web content or APIs that return HTML, allowing for the creation of more interactive and dynamic web applications.

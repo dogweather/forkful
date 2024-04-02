@@ -11,9 +11,8 @@ summary: "Att arbeta med JSON (JavaScript Object Notation) inneb\xE4r att tolka 
   \ fr\xE5n str\xE4ngar till Dart-objekt och tv\xE4rtom, en vanlig uppgift i webb-\
   \ och\u2026"
 title: Att Arbeta med JSON
+weight: 38
 ---
-
-{{< edit_this_page >}}
 
 ## Vad & Varför?
 

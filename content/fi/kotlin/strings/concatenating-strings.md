@@ -8,9 +8,8 @@ model: gpt-4-1106-preview
 summary: "Stringien yhdist\xE4minen tarkoittaa kahden tai useamman merkkijonon liitt\xE4\
   mist\xE4 yhteen. Ohjelmoijat tekev\xE4t t\xE4t\xE4, koska se helpottaa tekstipohjaisten\u2026"
 title: "Merkkijonojen yhdist\xE4minen"
+weight: 3
 ---
-
-{{< edit_this_page >}}
 
 ## Mitä & Miksi?
 Stringien yhdistäminen tarkoittaa kahden tai useamman merkkijonon liittämistä yhteen. Ohjelmoijat tekevät tätä, koska se helpottaa tekstipohjaisten arvojen käsittelyä ja yhdistelyä, mikä on usein tarpeen tulostettaessa tai tallennettaessa tietoja.

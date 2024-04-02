@@ -9,9 +9,8 @@ summary: "Concatenar cadenas significa unir dos o m\xE1s textos en uno. Los prog
   \ lo hacen para manipular y combinar informaci\xF3n textual de manera din\xE1mica\
   \ y\u2026"
 title: "Concatenaci\xF3n de cadenas de texto"
+weight: 3
 ---
-
-{{< edit_this_page >}}
 
 ## ¿Qué es y por qué?
 

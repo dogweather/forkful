@@ -11,9 +11,8 @@ summary: "Py\xF6rist\xE4minen, perusk\xE4site tietokoneohjelmoinnissa, tarkoitta
   \ luvun s\xE4\xE4t\xE4mist\xE4 l\xE4himp\xE4\xE4n kokonaislukuun tai tiettyyn m\xE4\
   \xE4r\xE4\xE4n desimaalipaikkoja.\u2026"
 title: "Lukujen py\xF6rist\xE4minen"
+weight: 13
 ---
-
-{{< edit_this_page >}}
 
 ## Mikä & Miksi?
 

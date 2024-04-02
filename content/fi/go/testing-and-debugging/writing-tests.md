@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Testien kirjoittaminen Go-kielell\xE4 k\xE4sitt\xE4\xE4 pienien, hallittavien\
   \ koodip\xE4tkien luomisen, jotka varmistavat sovelluksesi toiminnallisuuden ja\u2026"
 title: Testien kirjoittaminen
+weight: 36
 ---
-
-{{< edit_this_page >}}
 
 ## Mitä & Miksi?
 

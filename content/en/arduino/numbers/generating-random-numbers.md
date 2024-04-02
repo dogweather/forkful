@@ -7,9 +7,8 @@ model: gpt-4-0125-preview
 summary: "Generating random numbers in Arduino projects involves producing values\
   \ that are unpredictable by design, crucial for applications like games,\u2026"
 title: Generating random numbers
+weight: 12
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 Generating random numbers in Arduino projects involves producing values that are unpredictable by design, crucial for applications like games, simulations, and security systems. Programmers utilize this technique to introduce variability or make decisions that should not be deterministic.

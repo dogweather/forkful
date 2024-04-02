@@ -8,9 +8,8 @@ model: gpt-4-0125-preview
 summary: "Refaktorering er prosessen med \xE5 justere eksisterende kode for \xE5 forbedre\
   \ dens struktur, lesbarhet og ytelse uten \xE5 endre dens eksterne oppf\xF8rsel.\u2026"
 title: Refaktorering
+weight: 19
 ---
-
-{{< edit_this_page >}}
 
 ## Hva & Hvorfor?
 Refaktorering er prosessen med å justere eksisterende kode for å forbedre dens struktur, lesbarhet og ytelse uten å endre dens eksterne oppførsel. Programmerere refaktorerer for å gjøre kode mer vedlikeholdbar, for å forenkle tillegg av nye funksjoner, og for å oppdage og fikse feil lettere.

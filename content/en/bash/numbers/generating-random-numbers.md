@@ -7,9 +7,8 @@ model: gpt-4-0125-preview
 summary: "Generating random numbers in Bash provides a way to introduce unpredictability\
   \ in scripts, which is essential for tasks like generating secure passwords,\u2026"
 title: Generating random numbers
+weight: 12
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 Generating random numbers in Bash provides a way to introduce unpredictability in scripts, which is essential for tasks like generating secure passwords, simulating data, or for programming games. Programmers leverage this capability to add variability to their scripts or to test their programs under a variety of randomly generated conditions.

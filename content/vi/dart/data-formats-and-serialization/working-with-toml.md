@@ -13,9 +13,8 @@ summary: "TOML, vi\u1EBFt t\u1EAFt c\u1EE7a Tom's Obvious, Minimal Language, l\x
   \ k\u1EBF \u0111\u1EC3 d\u1EC5 \u0111\u1ECDc do ng\u1EEF ngh\u0129a r\xF5 r\xE0\
   ng c\u1EE7a n\xF3. C\xE1c l\u1EADp tr\xECnh vi\xEAn s\u1EED\u2026"
 title: "L\xE0m vi\u1EC7c v\u1EDBi TOML"
+weight: 39
 ---
-
-{{< edit_this_page >}}
 
 ## Cái gì & Tại sao?
 

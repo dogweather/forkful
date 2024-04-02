@@ -9,9 +9,8 @@ summary: "Enviar uma requisi\xE7\xE3o HTTP com autentica\xE7\xE3o b\xE1sica sign
   \ que voc\xEA fornece um nome de usu\xE1rio e senha para acessar um recurso protegido\
   \ online.\u2026"
 title: "Enviando uma requisi\xE7\xE3o HTTP com autentica\xE7\xE3o b\xE1sica"
+weight: 45
 ---
-
-{{< edit_this_page >}}
 
 ## O Que & Porquê?
 

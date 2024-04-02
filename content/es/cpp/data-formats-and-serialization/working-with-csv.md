@@ -11,9 +11,8 @@ summary: "Trabajar con archivos CSV (Valores Separados por Comas) se trata de pr
   \ y manipular datos almacenados en un formato de texto simple, donde cada l\xED\
   nea\u2026"
 title: Trabajando con CSV
+weight: 37
 ---
-
-{{< edit_this_page >}}
 
 ## ¿Qué y por qué?
 

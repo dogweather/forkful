@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Het verwijderen van aanhalingstekens uit een tekenreeks in C# betekent dat\
   \ je die vervelende dubbele (`\"`) of enkele (`'`) aanhalingstekens die je tekst\u2026"
 title: Quotes verwijderen uit een string
+weight: 9
 ---
-
-{{< edit_this_page >}}
 
 ## Wat & Waarom?
 Het verwijderen van aanhalingstekens uit een tekenreeks in C# betekent dat je die vervelende dubbele (`"`) of enkele (`'`) aanhalingstekens die je tekst omhullen weg haalt. Programmeurs doen dit om data te reinigen, voor te bereiden op database invoer, of om tekenreeksen veilig te maken voor verdere verwerking zodat er geen chaos ontstaat wanneer er een verdwaald aanhalingsteken opduikt.

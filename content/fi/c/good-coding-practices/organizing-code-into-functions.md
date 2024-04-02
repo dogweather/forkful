@@ -11,9 +11,8 @@ summary: "Koodin j\xE4rjest\xE4minen funktioihin C-kieless\xE4 tarkoittaa monimu
   \ teht\xE4vien pilkkomista pienempiin, uudelleenk\xE4ytett\xE4viin koodilohkoihin.\
   \ T\xE4m\xE4\u2026"
 title: "Koodin j\xE4rjest\xE4minen funktioihin"
+weight: 18
 ---
-
-{{< edit_this_page >}}
 
 ## Mikä & Miksi?
 

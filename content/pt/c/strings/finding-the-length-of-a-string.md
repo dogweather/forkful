@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Encontrar o comprimento de uma string em C envolve determinar o n\xFAmero\
   \ de caracteres antes do terminador nulo `\\0`. Os programadores fazem isso para\u2026"
 title: Encontrando o comprimento de uma string
+weight: 7
 ---
-
-{{< edit_this_page >}}
 
 ## O Que & Por Quê?
 Encontrar o comprimento de uma string em C envolve determinar o número de caracteres antes do terminador nulo `\0`. Os programadores fazem isso para manipular strings corretamente sem se deparar com erros, como estouros de buffer, que podem levar a vulnerabilidades de segurança ou falhas no programa.

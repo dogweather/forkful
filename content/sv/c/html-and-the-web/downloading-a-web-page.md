@@ -11,9 +11,8 @@ summary: "Att ladda ner en webbsida i C inneb\xE4r att programmatiskt f\xE5 till
   ng till inneh\xE5llet p\xE5 en webbsida \xF6ver internet och spara det lokalt f\xF6\
   r bearbetning\u2026"
 title: Ladda ner en webbsida
+weight: 42
 ---
-
-{{< edit_this_page >}}
 
 ## Vad & Varför?
 

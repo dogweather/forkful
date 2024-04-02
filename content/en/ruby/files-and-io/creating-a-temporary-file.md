@@ -8,9 +8,8 @@ model: gpt-4-1106-preview
 summary: "In Ruby, creating a temporary file helps protect sensitive data and manage\
   \ fleeting storage needs. Programmers use it for secure, short-term file handling\u2026"
 title: Creating a temporary file
+weight: 21
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 In Ruby, creating a temporary file helps protect sensitive data and manage fleeting storage needs. Programmers use it for secure, short-term file handling that avoids cluttering up the filesystem.

@@ -11,9 +11,8 @@ summary: "Zmiana pierwszej litery ci\u0105gu na wielk\u0105 w Bashu polega na pr
   ceniu pierwszego znaku ci\u0105gu na wielk\u0105 liter\u0119, pozostawiaj\u0105\
   c reszt\u0119 ci\u0105gu bez zmian.\u2026"
 title: "Zamiana liter na wielkie w \u0142a\u0144cuchu znak\xF3w"
+weight: 2
 ---
-
-{{< edit_this_page >}}
 
 ## Co i Dlaczego?
 Zmiana pierwszej litery ciągu na wielką w Bashu polega na przekształceniu pierwszego znaku ciągu na wielką literę, pozostawiając resztę ciągu bez zmian. Ta technika jest powszechnie stosowana do formatowania wyjścia lub dostosowania się do konwencji kodowania wymagających, aby pewne ciągi rozpoczynały się wielką literą ze względów czytelności lub preferencji stylistycznych.

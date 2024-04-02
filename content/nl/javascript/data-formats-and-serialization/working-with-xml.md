@@ -10,9 +10,8 @@ model: gpt-4-0125-preview
 summary: "Werken met XML betekent het parseren, manipuleren en produceren van XML-inhoud\
   \ met behulp van code. Programmeurs doen dit omdat XML veel gebruikt wordt\u2026"
 title: Werken met XML
+weight: 40
 ---
-
-{{< edit_this_page >}}
 
 ## Wat & Waarom?
 Werken met XML betekent het parseren, manipuleren en produceren van XML-inhoud met behulp van code. Programmeurs doen dit omdat XML veel gebruikt wordt voor configuratiebestanden, gegevensuitwisseling en webservices vanwege de leesbaarheid voor mensen en de verwerkbaarheid door machines.

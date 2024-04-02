@@ -7,9 +7,8 @@ model: gpt-4-0125-preview
 summary: "Creating a temporary file in Dart involves generating a file that is intended\
   \ for short-term use, primarily for scenarios such as caching data, temporary\u2026"
 title: Creating a temporary file
+weight: 21
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 Creating a temporary file in Dart involves generating a file that is intended for short-term use, primarily for scenarios such as caching data, temporary storage for file processing, or holding information that is too sensitive to retain for long. Programmers do it to manage data that doesn't need permanent storage, thereby enhancing performance and maintaining data hygiene.

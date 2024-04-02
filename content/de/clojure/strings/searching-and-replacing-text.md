@@ -9,9 +9,8 @@ summary: "Textsuche und -ersatz ist ein Vorgang, bei dem spezifische Textfragmen
   \ gefunden und durch andere ersetzt werden. Programmierer nutzen diese Funktion,\
   \ um\u2026"
 title: Suchen und Ersetzen von Text
+weight: 10
 ---
-
-{{< edit_this_page >}}
 
 ## Was & Warum?
 Textsuche und -ersatz ist ein Vorgang, bei dem spezifische Textfragmente gefunden und durch andere ersetzt werden. Programmierer nutzen diese Funktion, um Daten zu aktualisieren, Fehler zu korrigieren oder Informationen zu reorganisieren.

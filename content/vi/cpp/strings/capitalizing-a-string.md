@@ -13,9 +13,8 @@ summary: "Bi\u1EBFn ch\u1EEF hoa to\xE0n b\u1ED9 chu\u1ED7i ngh\u0129a l\xE0 chu
   \ in hoa. L\u1EADp tr\xECnh vi\xEAn l\xE0m \u0111i\u1EC1u n\xE0y \u0111\u1EC3 t\u1EA1\
   o ra s\u1EF1 th\u1ED1ng nh\u1EA5t, nh\u1EA5n\u2026"
 title: "Vi\u1EBFt hoa m\u1ED9t chu\u1ED7i"
+weight: 2
 ---
-
-{{< edit_this_page >}}
 
 ## Cái Gì & Tại Sao?
 Biến chữ hoa toàn bộ chuỗi nghĩa là chuyển tất cả các ký tự trong văn bản thành chữ in hoa. Lập trình viên làm điều này để tạo ra sự thống nhất, nhấn mạnh, hoặc đôi khi để đáp ứng một số tiêu chuẩn dữ liệu nào đó.

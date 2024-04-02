@@ -13,9 +13,8 @@ summary: "L\u1EA5y ng\xE0y hi\u1EC7n t\u1EA1i trong PHP l\xE0 vi\u1EC7c ch\u1EE5
   \ m\xE1y ch\u1EE7. C\xE1c l\u1EADp tr\xECnh vi\xEAn l\xE0m \u0111i\u1EC1u n\xE0\
   y \u0111\u1EC3 theo d\xF5i h\xE0nh \u0111\u1ED9ng c\u1EE7a ng\u01B0\u1EDDi\u2026"
 title: "L\u1EA5y ng\xE0y hi\u1EC7n t\u1EA1i"
+weight: 29
 ---
-
-{{< edit_this_page >}}
 
 ## Cái gì & Tại sao?
 Lấy ngày hiện tại trong PHP là việc chụp lấy ngày và giờ của hôm nay trực tiếp từ máy chủ. Các lập trình viên làm điều này để theo dõi hành động của người dùng, đánh dấu thời gian cho bài viết, hoặc chỉ đơn giản là nói, "Này, hôm nay là thứ Sáu!"

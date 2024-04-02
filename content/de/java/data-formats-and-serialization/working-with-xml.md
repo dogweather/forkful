@@ -7,9 +7,8 @@ model: gpt-4-0125-preview
 summary: "Die Arbeit mit XML umfasst das Parsen, Abfragen und Manipulieren von XML-Dokumenten\
   \ mit Java. Programmierer tun dies f\xFCr den Datenaustausch, die\u2026"
 title: Arbeiten mit XML
+weight: 40
 ---
-
-{{< edit_this_page >}}
 
 ## Was & Warum?
 Die Arbeit mit XML umfasst das Parsen, Abfragen und Manipulieren von XML-Dokumenten mit Java. Programmierer tun dies für den Datenaustausch, die Konfigurationsverwaltung und weil viele Alt-Systeme und APIs mittels XML kommunizieren.

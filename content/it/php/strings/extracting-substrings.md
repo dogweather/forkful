@@ -7,9 +7,8 @@ model: gpt-4-1106-preview
 summary: "Estrarre sottostringhe significa prendere pezzetti di testo da una stringa\
   \ pi\xF9 grande. Lo facciamo per analizzare, manipolare o validare dati e rendere\u2026"
 title: Estrazione di sottostringhe
+weight: 6
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why? (Cosa & Perché?)
 Estrarre sottostringhe significa prendere pezzetti di testo da una stringa più grande. Lo facciamo per analizzare, manipolare o validare dati e rendere dinamiche le nostre applicazioni PHP.

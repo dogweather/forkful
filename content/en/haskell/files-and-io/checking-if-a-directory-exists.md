@@ -7,9 +7,8 @@ model: gpt-4-0125-preview
 summary: "Checking if a directory exists is a fundamental operation in many programming\
   \ tasks, allowing for conditional actions based on the presence or absence of\u2026"
 title: Checking if a directory exists
+weight: 20
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 Checking if a directory exists is a fundamental operation in many programming tasks, allowing for conditional actions based on the presence or absence of directory structures. It's crucial for file manipulation, automated scripts, and during the initial setup of software to ensure that necessary directories are in place, or to avoid duplicating directories.

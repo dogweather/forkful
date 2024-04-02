@@ -7,9 +7,8 @@ model: gpt-4-0125-preview
 summary: "Kompleksiluvut laajentavat yksiulotteisen lukusuoran ideaa kaksiulotteiseen\
   \ tasoon sis\xE4llytt\xE4m\xE4ll\xE4 pystysuoran imagin\xE4\xE4riakselin. Ohjelmoijat\u2026"
 title: "Kompleksilukujen k\xE4sittely"
+weight: 14
 ---
-
-{{< edit_this_page >}}
 
 ## Mikä & Miksi?
 Kompleksiluvut laajentavat yksiulotteisen lukusuoran ideaa kaksiulotteiseen tasoon sisällyttämällä pystysuoran imaginääriakselin. Ohjelmoijat työskentelevät niiden parissa aloilla kuten signaalinkäsittely, fluididynamiikka ja sähkötekniikka, joissa ne ovat olennaisia esittämään oskillaatioita ja muita ilmiöitä.

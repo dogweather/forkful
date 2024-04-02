@@ -9,9 +9,8 @@ summary: "Obs\u0142uga b\u0142\u0119d\xF3w polega na oczekiwaniu nieoczekiwanego
   \ kodzie \u2014 zarz\u0105dzaniu pomy\u0142kami i problemami w spos\xF3b \u0142\
   agodny, bez awarii. Programi\u015Bci robi\u0105 to, by\u2026"
 title: "Obs\u0142uga b\u0142\u0119d\xF3w"
+weight: 16
 ---
-
-{{< edit_this_page >}}
 
 ## Co i Dlaczego?
 

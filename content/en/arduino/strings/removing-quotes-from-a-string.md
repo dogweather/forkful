@@ -9,9 +9,8 @@ summary: "Removing quotes from a string means stripping out any instances of sin
   \ (`'`) or double (`\"`) quote characters that wrap the text. Programmers often\
   \ do\u2026"
 title: Removing quotes from a string
+weight: 9
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 Removing quotes from a string means stripping out any instances of single (`'`) or double (`"`) quote characters that wrap the text. Programmers often do this to sanitize input, prepare strings for comparison, or process text data that might accidentally include quotes as part of the string content.

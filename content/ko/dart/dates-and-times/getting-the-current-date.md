@@ -23,9 +23,8 @@ summary: "Dart\uC5D0\uC11C \uD604\uC7AC \uB0A0\uC9DC\uB97C \uC5BB\uB294 \uAC83\u
   \uC801\uC73C\uB85C \uD604\uC7AC \uB0A0\uC9DC\uB97C \uAC80\uC0C9\uD558\uACE0 \uC870\
   \uC791\uD558\uB294 \uBC29\uBC95\uC744 \uC544\uB294 \uAC83\uC740\u2026"
 title: "\uD604\uC7AC \uB0A0\uC9DC \uAC00\uC838\uC624\uAE30"
+weight: 29
 ---
-
-{{< edit_this_page >}}
 
 ## 무엇 & 왜?
 Dart에서 현재 날짜를 얻는 것은 시스템에 현재 날짜와 시간을 요청하는 것을 포함합니다. 이 기능은 이벤트의 타임스탬프, 사용자에게 현재 날짜를 표시하거나 기간을 계산하는 것과 같은 기능에서 일반적으로 사용됩니다. 효율적으로 현재 날짜를 검색하고 조작하는 방법을 아는 것은 스케줄링, 로깅, 시간에 민감한 기능에 기초적입니다.

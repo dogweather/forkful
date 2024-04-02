@@ -15,9 +15,8 @@ summary: "X\u1EED l\xFD l\u1ED7i c\xF3 ngh\u0129a l\xE0 vi\u1EBFt m\xE3 c\xF3 th
   \ \u0111i\u1EC1u n\xE0y \u0111\u1EC3 ng\u0103n ch\u1EB7n s\u1EF1 c\u1ED1, b\u1EA3\
   o v\u1EC7\u2026"
 title: "X\u1EED l\xFD l\u1ED7i"
+weight: 16
 ---
-
-{{< edit_this_page >}}
 
 ## Lý do & Tại sao?
 Xử lý lỗi có nghĩa là viết mã có thể dự đoán và xử lý những điều không diễn ra như mong đợi. Lập trình viên thực hiện điều này để ngăn chặn sự cố, bảo vệ tính toàn vẹn của dữ liệu và cung cấp cho người dùng những phương án thay thế một cách duyên dáng.

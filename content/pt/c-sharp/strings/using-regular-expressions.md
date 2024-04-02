@@ -11,9 +11,8 @@ summary: "Express\xF5es regulares (regex) em C# s\xE3o uma ferramenta poderosa p
   \ correspond\xEAncia de padr\xF5es dentro de strings, permitindo que programadores\
   \ procurem,\u2026"
 title: "Usando express\xF5es regulares"
+weight: 11
 ---
-
-{{< edit_this_page >}}
 
 ## O Que & Por Que?
 Expressões regulares (regex) em C# são uma ferramenta poderosa para correspondência de padrões dentro de strings, permitindo que programadores procurem, substituam, dividam ou extraiam dados de forma eficiente. Os programadores utilizam regex para tarefas que variam desde validações simples, como a verificação do formato de e-mail, até tarefas complexas de processamento de texto devido à sua flexibilidade e desempenho.

@@ -9,9 +9,8 @@ summary: "CSV, \"Comma-Separated Values\", \xE4r textfiler d\xE4r data separeras
   \ kommatecken. Programmerare anv\xE4nder CSV f\xF6r enkelheten att lagra och utbyta\
   \ data mellan\u2026"
 title: Arbeta med csv
+weight: 37
 ---
-
-{{< edit_this_page >}}
 
 ## Vad & Varför?
 CSV, "Comma-Separated Values", är textfiler där data separeras med kommatecken. Programmerare använder CSV för enkelheten att lagra och utbyta data mellan olika system.

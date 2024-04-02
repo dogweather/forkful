@@ -9,9 +9,8 @@ summary: "Zliczanie znak\xF3w w ci\u0105gu znak\xF3w to podstawa. Programi\u015B
   \ robi\u0105 to, by wiedzie\u0107, ile danych maj\u0105 przed sob\u0105 \u2013 czy\
   \ to waliduj\u0105c input, formatuj\u0105c tekst, czy\u2026"
 title: "Znalezienie d\u0142ugo\u015Bci ci\u0105gu znak\xF3w"
+weight: 7
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why? (Co i Dlaczego?)
 Zliczanie znaków w ciągu znaków to podstawa. Programiści robią to, by wiedzieć, ile danych mają przed sobą – czy to walidując input, formatując tekst, czy sprawdzając na potrzeby logiki programu.

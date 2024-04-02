@@ -11,9 +11,8 @@ summary: "Zapis do standardowego b\u0142\u0119du (stderr) polega na wyprowadzani
   \ komunikat\xF3w o b\u0142\u0119dach i diagnostyki na konsol\u0119 lub terminal.\
   \ Programi\u015Bci robi\u0105 to, aby\u2026"
 title: "Pisanie do standardowego b\u0142\u0119du"
+weight: 25
 ---
-
-{{< edit_this_page >}}
 
 ## Co i dlaczego?
 Zapis do standardowego błędu (stderr) polega na wyprowadzaniu komunikatów o błędach i diagnostyki na konsolę lub terminal. Programiści robią to, aby oddzielić informacje o błędach od standardowego wyjścia (stdout), ułatwiając debugowanie i analizę logów.

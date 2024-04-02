@@ -11,9 +11,8 @@ summary: "El registro de actividades en C implica grabar el flujo y los eventos 
   \ de un programa durante su tiempo de ejecuci\xF3n, proporcionando una revisi\xF3\
   n\u2026"
 title: Registro
+weight: 17
 ---
-
-{{< edit_this_page >}}
 
 ## ¿Qué y Por Qué?
 

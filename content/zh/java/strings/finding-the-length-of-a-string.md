@@ -12,9 +12,8 @@ summary: "\u5728Java\u4E2D\u8BA1\u7B97\u5B57\u7B26\u4E32\u7684\u957F\u5EA6\uFF0C
   \u7A0B\u5E8F\u5458\u9700\u8981\u8FD9\u4E2A\u4FE1\u606F\u6765\u8FDB\u884C\u5FAA\u73AF\
   \u3001\u9A8C\u8BC1\u6570\u636E\uFF0C\u6216\u8005\u5904\u7406\u683C\u5F0F\u3002"
 title: "\u83B7\u53D6\u5B57\u7B26\u4E32\u7684\u957F\u5EA6"
+weight: 7
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why? (是什么以及为什么？)
 在Java中计算字符串的长度，就是知道字符串包含多少个字符。程序员需要这个信息来进行循环、验证数据，或者处理格式。

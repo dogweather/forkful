@@ -11,9 +11,8 @@ summary: "Trabajar con n\xFAmeros complejos en programaci\xF3n implica manipular
   meros que tienen tanto una parte real como una imaginaria, t\xEDpicamente expresados\
   \ como\u2026"
 title: "Trabajando con n\xFAmeros complejos"
+weight: 14
 ---
-
-{{< edit_this_page >}}
 
 ## ¿Qué y por qué?
 

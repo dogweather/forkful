@@ -11,9 +11,8 @@ summary: "Att konvertera en str\xE4ng till gemener \xE4r en grundl\xE4ggande ope
   \ som inneb\xE4r att man transformerar alla tecken i en given str\xE4ng till deras\
   \ gemena\u2026"
 title: "Konvertera en str\xE4ng till gemener"
+weight: 4
 ---
-
-{{< edit_this_page >}}
 
 ## Vad & Varför?
 

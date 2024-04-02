@@ -9,9 +9,8 @@ summary: "Gerar n\xFAmeros aleat\xF3rios em Haskell implica na cria\xE7\xE3o de 
   meros que s\xE3o imprevis\xEDveis segundo padr\xF5es humanos. Isso \xE9 cr\xEDtico\
   \ em cen\xE1rios que v\xE3o desde\u2026"
 title: "Gera\xE7\xE3o de n\xFAmeros aleat\xF3rios"
+weight: 12
 ---
-
-{{< edit_this_page >}}
 
 ## O Que & Porquê?
 

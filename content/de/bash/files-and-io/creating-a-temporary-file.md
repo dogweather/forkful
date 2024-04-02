@@ -7,9 +7,8 @@ model: gpt-4-1106-preview
 summary: "Tempor\xE4re Dateien sind kurzlebige Dateien, die w\xE4hrend der Laufzeit\
   \ eines Programms erstellt werden. Programmierer nutzen sie f\xFCr Datenverarbeitung,\u2026"
 title: "Erstellung einer tempor\xE4ren Datei"
+weight: 21
 ---
-
-{{< edit_this_page >}}
 
 ## Was & Warum?
 Temporäre Dateien sind kurzlebige Dateien, die während der Laufzeit eines Programms erstellt werden. Programmierer nutzen sie für Datenverarbeitung, Zwischenspeicherung und um auf Festplatte basierte Locks zu implementieren. 

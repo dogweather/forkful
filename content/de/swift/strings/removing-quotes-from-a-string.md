@@ -9,9 +9,8 @@ summary: "Das Entfernen von Anf\xFChrungszeichen aus einem String bedeutet, jegl
   \ Anf\xFChrungszeichen, die den Inhalt umschlie\xDFen, zu beseitigen. Wir tun dies,\
   \ um\u2026"
 title: "Anf\xFChrungszeichen aus einem String entfernen"
+weight: 9
 ---
-
-{{< edit_this_page >}}
 
 ## Was & Warum?
 

@@ -6,9 +6,8 @@ lastmod: '2024-03-13T22:44:42.106571-06:00'
 model: gpt-4-1106-preview
 summary: ''
 title: "\u6587\u5B57\u5217\u3092\u5C0F\u6587\u5B57\u306B\u5909\u63DB"
+weight: 4
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 ## 何となぜ？

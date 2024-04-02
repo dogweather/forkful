@@ -14,9 +14,8 @@ summary: "JavaScript\u91CC\u5220\u9664\u5339\u914D\u6A21\u5F0F\u7684\u5B57\u7B26
   \u5458\u8FD9\u4E48\u505A\u662F\u4E3A\u4E86\u6570\u636E\u6E05\u6D17\u3001\u683C\u5F0F\
   \u7EDF\u4E00\u6216\u7B80\u5316\u5B57\u7B26\u4E32\u5904\u7406\u3002"
 title: "\u5339\u914D\u6A21\u5F0F\u5220\u9664\u5B57\u7B26"
+weight: 5
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why? (是什么？为什么？)
 JavaScript里删除匹配模式的字符是用正则表达式识别并移除字符串中的特定字符或字符序列。程序员这么做是为了数据清洗、格式统一或简化字符串处理。

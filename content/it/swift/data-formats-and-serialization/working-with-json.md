@@ -10,9 +10,8 @@ model: gpt-4-0125-preview
 summary: "Lavorare con JSON in Swift significa occuparsi di un formato di dati leggero\
   \ per lo scambio di dati. I programmatori usano JSON per trasmettere dati tra\u2026"
 title: Lavorare con JSON
+weight: 38
 ---
-
-{{< edit_this_page >}}
 
 ## Cosa e Perché?
 

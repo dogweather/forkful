@@ -13,9 +13,8 @@ summary: "Vi\u1EC7c l\xE0m vi\u1EC7c v\u1EDBi XML trong Dart bao g\u1ED3m vi\u1E
   \ t\xE0i li\u1EC7u XML, m\u1ED9t qu\xE1 tr\xECnh r\u1EA5t quan tr\u1ECDng \u0111\
   \u1ED1i v\u1EDBi c\xE1c \u1EE9ng d\u1EE5ng\u2026"
 title: "L\xE0m vi\u1EC7c v\u1EDBi XML"
+weight: 40
 ---
-
-{{< edit_this_page >}}
 
 ## Cái gì & Tại sao?
 

@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Arbeid med CSV-filer (Comma Separated Values) inneb\xE6rer analyse og generering\
   \ av tekstfiler hvor hver linje holder verdier separert av kommaer.\u2026"
 title: Arbeide med CSV
+weight: 37
 ---
-
-{{< edit_this_page >}}
 
 ## Hva & Hvorfor?
 

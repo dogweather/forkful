@@ -11,9 +11,8 @@ summary: "L'analyse d'une date \xE0 partir d'une cha\xEEne de caract\xE8res impl
   \ de convertir du texte en un objet Date. Cette op\xE9ration est fondamentale pour\
   \ les\u2026"
 title: "Analyser une date depuis une cha\xEEne de caract\xE8res"
+weight: 30
 ---
-
-{{< edit_this_page >}}
 
 ## Quoi & Pourquoi ?
 L'analyse d'une date à partir d'une chaîne de caractères implique de convertir du texte en un objet Date. Cette opération est fondamentale pour les applications qui interagissent avec des dates saisies par les utilisateurs ou provenant de jeux de données externes, permettant ainsi une manipulation et un formatage facile selon les besoins.

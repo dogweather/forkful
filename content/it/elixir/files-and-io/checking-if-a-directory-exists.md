@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Controllare se una directory esiste in Elixir significa verificare la presenza\
   \ di una directory in un percorso specificato nel file system. I\u2026"
 title: Verifica se una directory esiste
+weight: 20
 ---
-
-{{< edit_this_page >}}
 
 ## Cosa & Perché?
 Controllare se una directory esiste in Elixir significa verificare la presenza di una directory in un percorso specificato nel file system. I programmatori lo fanno per assicurarsi di poter leggere, scrivere o eseguire operazioni sulla directory in modo sicuro, senza incontrare errori dovuti alla sua assenza.

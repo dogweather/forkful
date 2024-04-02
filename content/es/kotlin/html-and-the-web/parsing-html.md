@@ -10,9 +10,8 @@ model: gpt-4-0125-preview
 summary: "Analizar HTML significa descomponer el marcado de una p\xE1gina web en algo\
   \ que un programa puede entender y manipular. Los programadores analizan HTML para\u2026"
 title: Analizando HTML
+weight: 43
 ---
-
-{{< edit_this_page >}}
 
 ## ¿Qué y Por Qué?
 Analizar HTML significa descomponer el marcado de una página web en algo que un programa puede entender y manipular. Los programadores analizan HTML para extraer datos, automatizar interacciones web o migrar contenido entre sistemas.

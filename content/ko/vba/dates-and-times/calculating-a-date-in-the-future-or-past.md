@@ -24,9 +24,8 @@ summary: "\uBBF8\uB798 \uB610\uB294 \uACFC\uAC70\uC758 \uB0A0\uC9DC\uB97C \uACC4
   \uB2E4."
 title: "\uBBF8\uB798 \uB610\uB294 \uACFC\uAC70\uC758 \uB0A0\uC9DC \uACC4\uC0B0\uD558\
   \uAE30"
+weight: 26
 ---
-
-{{< edit_this_page >}}
 
 ## 무엇이며 왜인가?
 미래 또는 과거의 날짜를 계산하는 것은 주어진 날짜로부터 특정 일수, 월수, 또는 년수만큼 떨어진 날짜를 결정하는 것을 포함합니다. 프로그래머는 종종 알림, 구독, 만료 날짜, 그리고 다양한 애플리케이션에서 일정 작업을 자동화하기 위해 이 기능이 필요합니다.

@@ -23,9 +23,8 @@ summary: "Elixir \u098F XML \u09A8\u09BF\u09DF\u09C7 \u0995\u09BE\u099C \u09AE\u
   \u09BF \u09B8\u09BF\u09B8\u09CD\u099F\u09C7\u09AE\u09C7\u09B0 \u09AC\u09CD\u09AF\
   \u09BE\u09AA\u0995\u09A4\u09BE\u09DF XML \u098F\u09B0 \u09B8\u09BE\u09A5\u09C7\u2026"
 title: "XML \u09A8\u09BF\u09AF\u09BC\u09C7 \u0995\u09BE\u099C \u0995\u09B0\u09BE"
+weight: 40
 ---
-
-{{< edit_this_page >}}
 
 ## কি এবং কেন?
 Elixir এ XML নিয়ে কাজ মানে পার্সিং, তৈরি এবং XML ডেটা ম্যানিপুলেট করা। প্রোগ্রামাররা ওয়েব সার্ভিস, কনফিগ ফাইল এবং লিগ্যাসি সিস্টেমের ব্যাপকতায় XML এর সাথে কাজ করে।

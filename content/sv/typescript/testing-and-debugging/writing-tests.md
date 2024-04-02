@@ -11,9 +11,8 @@ summary: "Att skriva tester i TypeScript inneb\xE4r att man skapar automatiska s
   \ f\xF6r att verifiera funktionaliteten och korrektheten i koden. Programmerare\
   \ g\xF6r\u2026"
 title: Skriva tester
+weight: 36
 ---
-
-{{< edit_this_page >}}
 
 ## Vad & Varför?
 Att skriva tester i TypeScript innebär att man skapar automatiska skript för att verifiera funktionaliteten och korrektheten i koden. Programmerare gör detta för att säkerställa tillförlitlighet, snabbt upptäcka buggar och underlätta underhåll av kodtillväxten, eftersom TypeScript's statiska typning lägger till en nivå av förutsägbarhet till JavaScript-testning.

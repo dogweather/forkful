@@ -9,9 +9,8 @@ summary: "Wyci\u0105ganie podci\u0105g\xF3w to proces wydobywania konkretnych cz
   \u015Bci z d\u0142u\u017Cszego ci\u0105gu znak\xF3w. Robimy to, \u017Ceby pracowa\u0107\
   \ tylko z istotnymi fragmentami danych, na\u2026"
 title: "Wycinanie pod\u0142a\u0144cuch\xF3w"
+weight: 6
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why? (Co i dlaczego?)
 Wyciąganie podciągów to proces wydobywania konkretnych części z dłuższego ciągu znaków. Robimy to, żeby pracować tylko z istotnymi fragmentami danych, na przykład unikając zbędnych informacji.

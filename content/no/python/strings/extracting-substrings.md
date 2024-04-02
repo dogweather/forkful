@@ -9,9 +9,8 @@ summary: "Utdrag av delstrenger er \xE5 ta ut spesifikke deler av en tekststreng
   \ Vi gj\xF8r dette for \xE5 analysere, transformere, eller bruke deler av dataene\
   \ uten \xE5\u2026"
 title: Uthenting av delstrenger
+weight: 6
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 Utdrag av delstrenger er å ta ut spesifikke deler av en tekststreng. Vi gjør dette for å analysere, transformere, eller bruke deler av dataene uten å behøve hele teksten.

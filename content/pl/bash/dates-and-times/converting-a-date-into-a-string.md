@@ -9,9 +9,8 @@ summary: "Konwersja daty na \u0142a\u0144cuch znak\xF3w to zamiana formatu daty 
   \ tekst. Programi\u015Bci robi\u0105 to dla czytelno\u015Bci, do zapisu w plikach\
   \ czy bazy danych."
 title: "Konwersja daty na \u0142a\u0144cuch znak\xF3w"
+weight: 28
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why? - Czym i Dlaczego?
 Konwersja daty na łańcuch znaków to zamiana formatu daty na tekst. Programiści robią to dla czytelności, do zapisu w plikach czy bazy danych.

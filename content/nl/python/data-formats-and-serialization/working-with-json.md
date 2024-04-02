@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "JSON (JavaScript Object Notation) is een alomtegenwoordig data-uitwisselingsformaat\
   \ op het web. Programmeurs gebruiken JSON om gemakkelijk gegevens tussen\u2026"
 title: Werken met JSON
+weight: 38
 ---
-
-{{< edit_this_page >}}
 
 ## Wat & Waarom?
 JSON (JavaScript Object Notation) is een alomtegenwoordig data-uitwisselingsformaat op het web. Programmeurs gebruiken JSON om gemakkelijk gegevens tussen servers en webclients door te geven vanwege de eenvoud en het feit dat het van nature begrepen wordt door JavaScript en dus door webbrowsers.

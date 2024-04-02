@@ -11,9 +11,8 @@ summary: "HTML:n j\xE4sent\xE4minen Rustilla koskee tietojen poimimista HTML-dok
   \ mik\xE4 on olennaista web-skaapaukselle, datan poiminnalle tai web-kiipij\xF6\
   iden\u2026"
 title: "HTML:n j\xE4sennys"
+weight: 43
 ---
-
-{{< edit_this_page >}}
 
 ## Mikä ja miksi?
 

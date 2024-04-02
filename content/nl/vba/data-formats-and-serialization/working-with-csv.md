@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Werken met CSV (Comma Separated Values) bestanden houdt in dat er wordt\
   \ gelezen van of geschreven naar platte tekstbestanden waar de gegevensvelden worden\u2026"
 title: Werken met CSV
+weight: 37
 ---
-
-{{< edit_this_page >}}
 
 ## Wat & Waarom?
 

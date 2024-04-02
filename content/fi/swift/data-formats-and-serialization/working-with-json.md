@@ -11,9 +11,8 @@ summary: "JSON:n k\xE4ytt\xE4minen Swiftiss\xE4 tarkoittaa kevyen datanvaihtofor
   \ k\xE4sittely\xE4. Ohjelmoijat k\xE4ytt\xE4v\xE4t JSONia datan siirt\xE4miseen\
   \ palvelimen ja web-\u2026"
 title: "Ty\xF6skentely JSON:n kanssa"
+weight: 38
 ---
-
-{{< edit_this_page >}}
 
 ## Mikä & Miksi?
 

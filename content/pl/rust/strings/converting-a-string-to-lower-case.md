@@ -9,9 +9,8 @@ summary: "Zmiana \u0142a\u0144cucha znak\xF3w na ma\u0142e litery oznacza przeks
   cenie wszystkich wielkich liter w danym ci\u0105gu na ich odpowiedniki w dolnym\
   \ rejestrowie.\u2026"
 title: "Konwersja ci\u0105gu znak\xF3w na ma\u0142e litery"
+weight: 4
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why? (Co i Dlaczego?)
 Zmiana łańcucha znaków na małe litery oznacza przekształcenie wszystkich wielkich liter w danym ciągu na ich odpowiedniki w dolnym rejestrowie. Programiści robią to dla jednolitości danych, łatwiejszego porównywania tekstów i spełnienia specyficznych wymagań aplikacji.

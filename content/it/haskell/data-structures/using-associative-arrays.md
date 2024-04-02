@@ -10,9 +10,8 @@ model: gpt-4-0125-preview
 summary: "Gli array associativi, o dizionari, in Haskell riguardano principalmente\
   \ la mappatura di chiavi a valori per una ricerca veloce e una gestione efficiente\u2026"
 title: Utilizzo di array associativi
+weight: 15
 ---
-
-{{< edit_this_page >}}
 
 ## Cosa & Perché?
 

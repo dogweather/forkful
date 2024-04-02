@@ -10,9 +10,8 @@ model: gpt-4-0125-preview
 summary: "L'interpolazione di stringhe \xE8 il metodo di incorporamento di espressioni\
   \ all'interno di letterali di stringa. I programmatori lo usano per inserire\u2026"
 title: Interpolazione di una stringa
+weight: 8
 ---
-
-{{< edit_this_page >}}
 
 ## Cosa & Perché?
 L'interpolazione di stringhe è il metodo di incorporamento di espressioni all'interno di letterali di stringa. I programmatori lo usano per inserire dinamicamente valori nelle stringhe, rendendo il codice più leggibile e pulito rispetto alla tradizionale concatenazione di stringhe.

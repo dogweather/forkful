@@ -21,9 +21,8 @@ summary: "\uB85C\uAE45(Logging)\uC740 \uC18C\uD504\uD2B8\uC6E8\uC5B4\uC5D0\uC11C
   \uBCA4\uD2B8\uB4E4\uC744 \uCD94\uC801\uD558\uB294 \uB370\uC5D0 \uB85C\uAE45\uC744\
   \ \uC0AC\uC6A9\uD569\uB2C8\uB2E4."
 title: "\uB85C\uAE45"
+weight: 17
 ---
-
-{{< edit_this_page >}}
 
 ## 무엇이며 왜 사용하는가?
 로깅(Logging)은 소프트웨어에서의 선박 항해일지와 같은 것입니다; 애플리케이션이 실행되는 동안 발생하는 이벤트들을 기록하는 방법입니다. 프로그래머들은 디버깅, 감사 경로, 또는 프로덕션 시스템의 동작을 이해하기 위해 이벤트들을 추적하는 데에 로깅을 사용합니다.

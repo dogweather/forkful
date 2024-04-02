@@ -11,9 +11,8 @@ summary: "Att l\xE4sa en textfil i Dart inneb\xE4r att man f\xE5r tillg\xE5ng ti
   \ och h\xE4mtar data fr\xE5n filer som \xE4r lagrade p\xE5 filsystemet. Programmerare\
   \ g\xF6r detta f\xF6r att\u2026"
 title: "L\xE4sa en textfil"
+weight: 22
 ---
-
-{{< edit_this_page >}}
 
 ## Vad & Varför?
 

@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Las expresiones regulares (regex) en Java te permiten definir patrones espec\xED\
   ficos para buscar, manipular o validar cadenas en tu c\xF3digo. Los\u2026"
 title: Usando expresiones regulares
+weight: 11
 ---
-
-{{< edit_this_page >}}
 
 ## ¿Qué y por qué?
 

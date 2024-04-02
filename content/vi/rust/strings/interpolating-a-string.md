@@ -13,9 +13,8 @@ summary: "N\u1ED9i suy chu\u1ED7i (String interpolation) ch\xE8n c\xE1c bi\u1EBF
   y d\u1EF1ng chu\u1ED7i tr\u1EDF n\xEAn m\u01B0\u1EE3t m\xE0 v\xE0 d\u1EC5 \u0111\
   \u1ECDc, tr\xE1nh \u0111\u01B0\u1EE3c vi\u1EC7c\u2026"
 title: "N\u1ED9i suy chu\u1ED7i k\xFD t\u1EF1"
+weight: 8
 ---
-
-{{< edit_this_page >}}
 
 ## Cái gì & Tại sao?
 

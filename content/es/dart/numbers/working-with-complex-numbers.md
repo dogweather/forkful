@@ -11,9 +11,8 @@ summary: "Los n\xFAmeros complejos, compuestos por una parte real y una parte im
   \ (generalmente denotados como a + bi), extienden el concepto de los n\xFAmeros\
   \ sin\u2026"
 title: "Trabajando con n\xFAmeros complejos"
+weight: 14
 ---
-
-{{< edit_this_page >}}
 
 ## ¿Qué y por qué?
 

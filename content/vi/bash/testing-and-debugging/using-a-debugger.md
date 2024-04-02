@@ -2,17 +2,18 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:08:45.057558-07:00
-description: "S\u1EED d\u1EE5ng m\u1ED9t tr\xECnh g\u1EE1 l\u1ED7i trong Bash c\xF3\
-  \ ngh\u0129a l\xE0 s\u1EED d\u1EE5ng c\xE1c c\xF4ng c\u1EE5 \u0111\u1EC3 ki\u1EC3\
-  m tra v\xE0 t\xECm l\u1ED7i trong c\xE1c script c\u1EE7a b\u1EA1n, ch\u1EB3ng h\u1EA1\
-  n nh\u01B0 b\u1EAFt l\u1ED7i l\xE0m s\u1EADp m\xE3 c\u1EE7a\u2026"
+description: "Bash kh\xF4ng c\xF3 tr\xECnh g\u1EE1 l\u1ED7i t\xEDch h\u1EE3p s\u1EB5\
+  n gi\u1ED1ng nh\u01B0 m\u1ED9t s\u1ED1 ng\xF4n ng\u1EEF kh\xE1c, nh\u01B0ng b\u1EA1\
+  n c\xF3 th\u1EC3 s\u1EED d\u1EE5ng c\xE1c l\u1EC7nh t\xEDch h\u1EE3p nh\u01B0 `set\
+  \ -x` \u0111\u1EC3 theo d\xF5i nh\u1EEFng g\xEC \u0111ang\u2026"
 lastmod: '2024-03-13T22:44:36.885093-06:00'
 model: gpt-4-0125-preview
-summary: "S\u1EED d\u1EE5ng m\u1ED9t tr\xECnh g\u1EE1 l\u1ED7i trong Bash c\xF3 ngh\u0129\
-  a l\xE0 s\u1EED d\u1EE5ng c\xE1c c\xF4ng c\u1EE5 \u0111\u1EC3 ki\u1EC3m tra v\xE0\
-  \ t\xECm l\u1ED7i trong c\xE1c script c\u1EE7a b\u1EA1n, ch\u1EB3ng h\u1EA1n nh\u01B0\
-  \ b\u1EAFt l\u1ED7i l\xE0m s\u1EADp m\xE3 c\u1EE7a\u2026"
+summary: "Bash kh\xF4ng c\xF3 tr\xECnh g\u1EE1 l\u1ED7i t\xEDch h\u1EE3p s\u1EB5n\
+  \ gi\u1ED1ng nh\u01B0 m\u1ED9t s\u1ED1 ng\xF4n ng\u1EEF kh\xE1c, nh\u01B0ng b\u1EA1\
+  n c\xF3 th\u1EC3 s\u1EED d\u1EE5ng c\xE1c l\u1EC7nh t\xEDch h\u1EE3p nh\u01B0 `set\
+  \ -x` \u0111\u1EC3 theo d\xF5i nh\u1EEFng g\xEC \u0111ang\u2026"
 title: "S\u1EED d\u1EE5ng b\u1ED9 g\u1EE1 l\u1ED7i"
+weight: 35
 ---
 
 ## Cách thực hiện:

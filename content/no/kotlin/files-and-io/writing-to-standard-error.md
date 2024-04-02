@@ -11,9 +11,8 @@ summary: "\xC5 skrive til standard feil (stderr) handler om \xE5 sende ut feilme
   \ og diagnostikk til en separat str\xF8m, forskjellig fra standard utdata (stdout),\
   \ som\u2026"
 title: Skriving til standardfeil
+weight: 25
 ---
-
-{{< edit_this_page >}}
 
 ## Hva & Hvorfor?
 

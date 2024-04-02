@@ -10,9 +10,8 @@ model: gpt-4-0125-preview
 summary: "\xC5 parse HTML betyr \xE5 trekke ut data fra HTML-dokumenter. Programmerere\
   \ gj\xF8r dette for \xE5 samhandle med eller manipulere webinnhold, automatisere\u2026"
 title: Analysering av HTML
+weight: 43
 ---
-
-{{< edit_this_page >}}
 
 ## Hva & Hvorfor?
 Å parse HTML betyr å trekke ut data fra HTML-dokumenter. Programmerere gjør dette for å samhandle med eller manipulere webinnhold, automatisere dataekstraksjon, eller for web scraping-formål.

@@ -11,9 +11,8 @@ summary: "Parsowanie daty ze stringa polega na interpretacji formatu ci\u0105gu 
   w w celu wyodr\u0119bnienia sk\u0142adnik\xF3w daty, takich jak dzie\u0144, miesi\u0105\
   c i rok. Programi\u015Bci\u2026"
 title: "Analiza sk\u0142adniowa daty z \u0142a\u0144cucha znak\xF3w"
+weight: 30
 ---
-
-{{< edit_this_page >}}
 
 ## Co i dlaczego?
 Parsowanie daty ze stringa polega na interpretacji formatu ciągu znaków w celu wyodrębnienia składników daty, takich jak dzień, miesiąc i rok. Programiści robią to, aby obsłużyć dane wejściowe użytkownika, odczytać pliki danych lub współpracować z API, które komunikują daty w formatach tekstowych. Jest to istotne dla przetwarzania danych, walidacji oraz wykonywania arytmetyki dat w aplikacjach.

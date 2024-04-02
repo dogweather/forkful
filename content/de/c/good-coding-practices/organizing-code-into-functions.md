@@ -10,9 +10,8 @@ model: gpt-4-0125-preview
 summary: "Code in Funktionen in C zu organisieren, bedeutet komplexe Aufgaben in kleinere,\
   \ wiederverwendbare Codebl\xF6cke zu unterteilen. Diese Praxis verbessert die\u2026"
 title: Organisation von Code in Funktionen
+weight: 18
 ---
-
-{{< edit_this_page >}}
 
 ## Was & Warum?
 

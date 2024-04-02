@@ -9,9 +9,8 @@ summary: "Java-ohjelmoinnissa merkkien poistaminen kuvioita vastaavasti tarkoitt
   \ tietyn s\xE4\xE4nn\xF6llisen lausekkeen (regex) m\xE4\xE4ritt\xE4mi\xE4 merkkej\xE4\
   \ olevien kohtien\u2026"
 title: Merkkien poistaminen hakemalla osumia kaavaan
+weight: 5
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why? - Mitä & Miksi?
 Java-ohjelmoinnissa merkkien poistaminen kuvioita vastaavasti tarkoittaa tietyn säännöllisen lausekkeen (regex) määrittämiä merkkejä olevien kohtien poistamista merkkijonosta. Tätä tehdään yleensä syötteen siistimiseen, datan muotoiluun tai tarpeettoman tiedon suodattamiseen.

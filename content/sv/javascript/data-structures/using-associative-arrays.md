@@ -11,9 +11,8 @@ summary: "Associativa arrayer, eller som de mer korrekt kallas i JavaScript, obj
   \ l\xE5ter dig koppla nycklar till v\xE4rden. Detta \xE4r extremt praktiskt n\xE4\
   r du beh\xF6ver\u2026"
 title: "Att anv\xE4nda associativa arrayer"
+weight: 15
 ---
-
-{{< edit_this_page >}}
 
 ## Vad & Varför?
 

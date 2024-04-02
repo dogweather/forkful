@@ -7,9 +7,8 @@ model: gpt-4-1106-preview
 summary: "Das Berechnen von zuk\xFCnftigen oder vergangenen Daten bedeutet, einem\
   \ bestimmten Datum Tage, Monate oder Jahre hinzuzuf\xFCgen oder abzuziehen. Programmierer\u2026"
 title: "Berechnung eines zuk\xFCnftigen oder vergangenen Datums"
+weight: 26
 ---
-
-{{< edit_this_page >}}
 
 ## Was & Warum?
 Das Berechnen von zukünftigen oder vergangenen Daten bedeutet, einem bestimmten Datum Tage, Monate oder Jahre hinzuzufügen oder abzuziehen. Programmierer nutzen diese Funktion, um Fristen zu verwalten, Erinnerungen zu planen oder Zeitabstände zu analysieren.

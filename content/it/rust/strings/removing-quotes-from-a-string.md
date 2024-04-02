@@ -7,9 +7,8 @@ model: gpt-4-0125-preview
 summary: "Rimuovere le virgolette da una stringa in Rust significa eliminare caratteri\
   \ di virgolette extra non necessari che potrebbero essere avvolti attorno ai\u2026"
 title: Rimuovere le virgolette da una stringa
+weight: 9
 ---
-
-{{< edit_this_page >}}
 
 ## Cos'è e Perché?
 

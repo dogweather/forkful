@@ -8,9 +8,8 @@ model: gpt-4-1106-preview
 summary: "Logging er i bunn og grunn prosessen med \xE5 registrere hendelser og datautskrifter\
   \ fra et stykke programvare mens det kj\xF8rer, tenk p\xE5 det som programvarens\u2026"
 title: "Loggf\xF8ring"
+weight: 17
 ---
-
-{{< edit_this_page >}}
 
 ## Hva & Hvorfor?
 Logging er i bunn og grunn prosessen med å registrere hendelser og datautskrifter fra et stykke programvare mens det kjører, tenk på det som programvarens dagbok. Programmører bruker logging for å holde oversikt over hva som skjer under hetten - det er uvurderlig for feilsøking, overvåking av systematferd i sanntid og analyse av tidligere aktivitet for ytelsesoptimaliseringer eller revisjoner.

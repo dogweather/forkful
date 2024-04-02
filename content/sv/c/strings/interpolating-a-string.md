@@ -11,9 +11,8 @@ summary: "Str\xE4nginterpolering, i programmering, inneb\xE4r konstruktionen av 
   ngar genom att b\xE4dda in uttryck inom litterala str\xE4ngar. Programmerare g\xF6\
   r detta f\xF6r\u2026"
 title: "Interpolera en str\xE4ng"
+weight: 8
 ---
-
-{{< edit_this_page >}}
 
 ## Vad & Varför?
 

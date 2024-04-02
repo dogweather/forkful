@@ -10,9 +10,8 @@ model: gpt-4-0125-preview
 summary: "Loggen in softwareontwikkeling is de techniek van het vastleggen van gebeurtenissen\
   \ die plaatsvinden terwijl een programma wordt uitgevoerd, meestal naar\u2026"
 title: Logboekregistratie
+weight: 17
 ---
-
-{{< edit_this_page >}}
 
 ## Wat & Waarom?
 Loggen in softwareontwikkeling is de techniek van het vastleggen van gebeurtenissen die plaatsvinden terwijl een programma wordt uitgevoerd, meestal naar een bestand of extern systeem. Programmeurs doen dit om inzicht te krijgen in het gedrag van de software, problemen op te lossen en een operationele geschiedenis bij te houden die cruciaal is voor het debuggen en monitoren van de gezondheid van applicaties.

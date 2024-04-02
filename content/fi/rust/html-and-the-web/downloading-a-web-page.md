@@ -9,9 +9,8 @@ summary: "Web-sivun lataaminen tarkoittaa sivun sis\xE4ll\xF6n noutamista intern
   . Ohjelmoijat tekev\xE4t t\xE4t\xE4 esimerkiksi datan ker\xE4\xE4miseen, sis\xE4\
   ll\xF6n analysointiin tai\u2026"
 title: Verkkosivun lataaminen
+weight: 42
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why? (Mitä & Miksi?)
 Web-sivun lataaminen tarkoittaa sivun sisällön noutamista internetistä. Ohjelmoijat tekevät tätä esimerkiksi datan keräämiseen, sisällön analysointiin tai palveluiden automatisointiin.

@@ -11,9 +11,8 @@ summary: "\xC9crire des tests en Rust consiste \xE0 cr\xE9er des v\xE9rification
   \ automatis\xE9es pour s'assurer que votre code fonctionne comme pr\xE9vu. Les programmeurs\
   \ font cela\u2026"
 title: "R\xE9daction de tests"
+weight: 36
 ---
-
-{{< edit_this_page >}}
 
 ## Quoi & Pourquoi ?
 

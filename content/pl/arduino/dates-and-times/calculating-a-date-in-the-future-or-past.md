@@ -9,9 +9,8 @@ summary: "Obliczanie daty w przysz\u0142o\u015Bci lub przesz\u0142o\u015Bci to u
   \ dnia, miesi\u0105ca i roku przed lub po danym dniu. Programi\u015Bci robi\u0105\
   \ to, by zarz\u0105dza\u0107 czasem w\u2026"
 title: "Obliczanie daty w przysz\u0142o\u015Bci lub przesz\u0142o\u015Bci"
+weight: 26
 ---
-
-{{< edit_this_page >}}
 
 # Obliczanie daty w przeszłości lub przyszłości na Arduino
 

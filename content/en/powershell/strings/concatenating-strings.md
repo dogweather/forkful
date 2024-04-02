@@ -7,9 +7,8 @@ model: gpt-4-1106-preview
 summary: "Combining strings, or concatenation, is like making a train of words. We\
   \ do it to stitch together text values, creating phrases, sentences, or anything\u2026"
 title: Concatenating strings
+weight: 3
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 Combining strings, or concatenation, is like making a train of words. We do it to stitch together text values, creating phrases, sentences, or anything where separate strings need to buddy up and become one.

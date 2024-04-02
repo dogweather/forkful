@@ -11,9 +11,8 @@ summary: "Obliczanie daty w przysz\u0142o\u015Bci lub przesz\u0142o\u015Bci to p
   \ zadanie dla programist\xF3w zajmuj\u0105cych si\u0119 planowaniem, przypomnieniami\
   \ lub jak\u0105kolwiek funkcj\u0105\u2026"
 title: "Obliczanie daty w przysz\u0142o\u015Bci lub przesz\u0142o\u015Bci"
+weight: 26
 ---
-
-{{< edit_this_page >}}
 
 ## Co i dlaczego?
 Obliczanie daty w przyszłości lub przeszłości to powszechne zadanie dla programistów zajmujących się planowaniem, przypomnieniami lub jakąkolwiek funkcją zależną od obliczeń daty. Zrozumienie, jak manipulować datami, jest kluczowe dla systemów backendowych, interfejsów użytkownika i analizy danych, szczególnie dla tych, którzy przechodzą na Dart i chcą efektywnie wdrażać logikę czasową.

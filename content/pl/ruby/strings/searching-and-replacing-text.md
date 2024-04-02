@@ -9,9 +9,8 @@ summary: "Szukanie i zamiana tekstu to fundament operacji na stringach, pozwalaj
   cy zamieni\u0107 pewne wyra\u017Cenia czy ci\u0105gi znak\xF3w na inne. Programi\u015B\
   ci u\u017Cywaj\u0105 tego,\u2026"
 title: Wyszukiwanie i zamiana tekstu
+weight: 10
 ---
-
-{{< edit_this_page >}}
 
 ## Co i dlaczego?
 Szukanie i zamiana tekstu to fundament operacji na stringach, pozwalający zamienić pewne wyrażenia czy ciągi znaków na inne. Programiści używają tego, żeby modyfikować dane, poprawiać błędy, a także przetwarzać i analizować kod czy tekst.

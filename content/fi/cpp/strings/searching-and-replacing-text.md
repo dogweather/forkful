@@ -9,9 +9,8 @@ summary: "Tekstin etsiminen ja korvaaminen on tekstip\xE4tkien vaihtamista. Ohje
   \ k\xE4ytt\xE4v\xE4t sit\xE4 korjatakseen bugeja, p\xE4ivitt\xE4\xE4kseen koodia\
   \ tai muokatakseen\u2026"
 title: Tekstin etsiminen ja korvaaminen
+weight: 10
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why? (Mitä & Miksi?)
 Tekstin etsiminen ja korvaaminen on tekstipätkien vaihtamista. Ohjelmoijat käyttävät sitä korjatakseen bugeja, päivittääkseen koodia tai muokatakseen dataa.

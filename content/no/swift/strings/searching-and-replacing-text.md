@@ -9,9 +9,8 @@ summary: "S\xF8ke og erstatte tekst lar deg finne og skifte ut ord eller fraser 
   \ en streng. Det sparer tid og minimerer feil n\xE5r du jobber med store datamengder\
   \ eller\u2026"
 title: "S\xF8king og erstatting av tekst"
+weight: 10
 ---
-
-{{< edit_this_page >}}
 
 ## Hva & Hvorfor?
 Søke og erstatte tekst lar deg finne og skifte ut ord eller fraser i en streng. Det sparer tid og minimerer feil når du jobber med store datamengder eller oppdaterer kode.

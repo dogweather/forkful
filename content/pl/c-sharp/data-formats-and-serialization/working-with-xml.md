@@ -9,9 +9,8 @@ summary: "XML (eXtensible Markup Language) dotyczy strukturyzowania danych w czy
   \ formacie. Programi\u015Bci \u017Congluj\u0105 XML-em do konfiguracji, wymiany\
   \ danych mi\u0119dzy\u2026"
 title: Praca z XML
+weight: 40
 ---
-
-{{< edit_this_page >}}
 
 ## Co i dlaczego?
 XML (eXtensible Markup Language) dotyczy strukturyzowania danych w czytelnym formacie. Programiści żonglują XML-em do konfiguracji, wymiany danych między aplikacjami oraz tam, gdzie specyfikacje tego wymagają—pomyśl o SOAP czy web API.

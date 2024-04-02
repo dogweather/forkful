@@ -9,9 +9,8 @@ summary: "Komennon riviargumentit mahdollistavat erilaisten arvojen sy\xF6tt\xE4
   \ ohjelmallesi sen k\xE4ynnistyess\xE4. T\xE4m\xE4 auttaa tekem\xE4\xE4n ohjelmasta\
   \ joustavamman, sill\xE4\u2026"
 title: Komennoriviparametrien lukeminen
+weight: 23
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why? (Mitä ja Miksi?)
 Komennon riviargumentit mahdollistavat erilaisten arvojen syöttämisen ohjelmallesi sen käynnistyessä. Tämä auttaa tekemään ohjelmasta joustavamman, sillä voit muokata ohjelman toimintaa ilman koodin muuttamista.

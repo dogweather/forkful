@@ -11,9 +11,8 @@ summary: "Praca z JSON-em (JavaScript Object Notation) polega na parsowaniu dany
   \ JSON do i z u\u017Cywalnego formatu w TypeScript. Programi\u015Bci robi\u0105\
   \ to, aby \u0142atwo\u2026"
 title: Praca z JSON
+weight: 38
 ---
-
-{{< edit_this_page >}}
 
 ## Co i dlaczego?
 

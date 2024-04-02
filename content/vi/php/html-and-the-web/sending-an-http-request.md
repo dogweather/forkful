@@ -13,9 +13,8 @@ summary: "G\u1EEDi m\u1ED9t y\xEAu c\u1EA7u HTTP l\xE0 quy tr\xECnh m\xE0 ch\u01
   p tr\xECnh vi\xEAn th\u1EF1c hi\u1EC7n vi\u1EC7c n\xE0y \u0111\u1EC3 t\u01B0\u01A1\
   ng t\xE1c v\u1EDBi d\u1ECBch v\u1EE5 web, API, ho\u1EB7c\u2026"
 title: "G\u1EEDi m\u1ED9t y\xEAu c\u1EA7u HTTP"
+weight: 44
 ---
-
-{{< edit_this_page >}}
 
 ## Cái gì & Tại sao?
 

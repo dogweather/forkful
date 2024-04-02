@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Virheiden kirjoittaminen (stderr) Fish Shelliss\xE4 tarkoittaa virheilmoitusten\
   \ tai diagnostiikkatietojen ohjaamista erill\xE4\xE4n tavallisesta tulosteesta\u2026"
 title: Kirjoittaminen standardivirheeseen
+weight: 25
 ---
-
-{{< edit_this_page >}}
 
 ## Mikä & Miksi?
 

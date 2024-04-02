@@ -11,9 +11,8 @@ summary: "Zwi\u0119kszanie wielko\u015Bci pierwszej litery ci\u0105gu polega na 
   \ pierwszej litery ci\u0105gu na wielk\u0105, przy jednoczesnym zapewnieniu, \u017C\
   e reszta liter jest\u2026"
 title: "Zamiana liter na wielkie w \u0142a\u0144cuchu znak\xF3w"
+weight: 2
 ---
-
-{{< edit_this_page >}}
 
 ## Co i Dlaczego?
 

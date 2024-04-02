@@ -15,9 +15,8 @@ summary: "L\xE0m tr\xF2n s\u1ED1 l\xE0 vi\u1EC7c c\u1EAFt gi\u1EA3m m\u1ED9t s\u
   \ \u0111\u1ECBnh. C\xE1c l\u1EADp tr\xECnh vi\xEAn l\xE0m tr\xF2n s\u1ED1 \u0111\
   \u1EC3\u2026"
 title: "L\xE0m tr\xF2n s\u1ED1"
+weight: 13
 ---
-
-{{< edit_this_page >}}
 
 ## Gì và Tại Sao?
 Làm tròn số là việc cắt giảm một số thập phân về giá trị nguyên gần nhất hoặc về một số lượng chữ số thập phân cố định. Các lập trình viên làm tròn số để chúng dễ đọc và xử lý hơn, đặc biệt khi độ chính xác vượt qua một mức độ nhất định không cần thiết hoặc có thể dẫn đến lỗi.

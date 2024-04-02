@@ -7,9 +7,8 @@ model: gpt-4-1106-preview
 summary: "Interpolera en str\xE4ng betyder att du mixar variabler med text. Programmerare\
   \ g\xF6r det f\xF6r att skapa dynamiska meddelanden."
 title: "Interpolera en str\xE4ng"
+weight: 8
 ---
-
-{{< edit_this_page >}}
 
 ## Vad & Varför?
 Interpolera en sträng betyder att du mixar variabler med text. Programmerare gör det för att skapa dynamiska meddelanden.

@@ -8,9 +8,8 @@ model: gpt-4-1106-preview
 summary: "Using an interactive shell, or a Read-Eval-Print Loop (REPL), lets you code\
   \ interactively. Programmers use it to test Swift snippets quickly, debug, or\u2026"
 title: Using an interactive shell (REPL)
+weight: 34
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 Using an interactive shell, or a Read-Eval-Print Loop (REPL), lets you code interactively. Programmers use it to test Swift snippets quickly, debug, or learn the language.

@@ -8,9 +8,8 @@ model: gpt-4-1106-preview
 summary: "Il logging \xE8 come tenere un diario per la tua applicazione; \xE8 la pratica\
   \ di registrare eventi, errori e altri dati pertinenti durante l'esecuzione. Gli\u2026"
 title: "Registrazione delle Attivit\xE0 (Logging)"
+weight: 17
 ---
-
-{{< edit_this_page >}}
 
 ## Cosa e Perché?
 

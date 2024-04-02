@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "\xC5 skrive en tekstfil i Arduino inneb\xE6rer \xE5 lagre data til en fil\
   \ p\xE5 et SD-kort eller lignende lagringsmodul, ofte for form\xE5l som datalogging.\u2026"
 title: Skrive en tekstfil
+weight: 24
 ---
-
-{{< edit_this_page >}}
 
 ## Hva & Hvorfor?
 Å skrive en tekstfil i Arduino innebærer å lagre data til en fil på et SD-kort eller lignende lagringsmodul, ofte for formål som datalogging. Programmerere gjør dette for å registrere sensoravlesninger, lagre konfigurasjoner, eller logge applikasjonshendelser over tid, noe som er avgjørende for prosjekter som krever dataanalyse eller sporing.

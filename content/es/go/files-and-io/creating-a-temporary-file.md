@@ -11,9 +11,8 @@ summary: "Crear un archivo temporal en Go permite generar un archivo no persiste
   \ dise\xF1ado para uso a corto plazo, principalmente para tareas como almacenar\
   \ datos\u2026"
 title: Creando un archivo temporal
+weight: 21
 ---
-
-{{< edit_this_page >}}
 
 ## ¿Qué y Por Qué?
 

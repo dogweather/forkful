@@ -8,9 +8,8 @@ model: gpt-4-0125-preview
 summary: "Die Arbeit mit TOML umfasst das Parsen und Generieren von TOML-Daten (Tom's\
   \ Offensichtliche, Minimale Sprache) mit Lua. Programmierer nutzen TOML f\xFCr\u2026"
 title: Arbeiten mit TOML
+weight: 39
 ---
-
-{{< edit_this_page >}}
 
 ## Was & Warum?
 Die Arbeit mit TOML umfasst das Parsen und Generieren von TOML-Daten (Tom's Offensichtliche, Minimale Sprache) mit Lua. Programmierer nutzen TOML für Konfigurationsdateien aufgrund seiner Lesbarkeit und einfachen Syntax, die sich leicht in eine Datenstruktur übersetzen lässt.

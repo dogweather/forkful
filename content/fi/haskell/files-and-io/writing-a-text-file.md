@@ -11,9 +11,8 @@ summary: "Tekstitiedoston kirjoittaminen Haskellissa tarkoittaa tekstimuotoisten
   \ ohjelmallista luomista tai p\xE4ivitt\xE4mist\xE4. Ohjelmoijat tekev\xE4t t\xE4\
   t\xE4\u2026"
 title: Tekstitiedoston kirjoittaminen
+weight: 24
 ---
-
-{{< edit_this_page >}}
 
 ## Mikä & Miksi?
 

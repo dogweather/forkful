@@ -7,9 +7,8 @@ model: gpt-4-0125-preview
 summary: "Writing a text file in JavaScript often pertains to creating and saving\
   \ data in a simple, readable format for logging, exporting user input, or\u2026"
 title: Writing a text file
+weight: 24
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 Writing a text file in JavaScript often pertains to creating and saving data in a simple, readable format for logging, exporting user input, or configuration purposes. This functionality is crucial for applications that need to persist data beyond the lifetime of the application process, providing a way to store and later retrieve or share information.

@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "YAML, et data serialiseringsspr\xE5k designet for \xE5 v\xE6re brukervennlig,\
   \ brukes ofte til konfigurasjonsfiler, mellomprosessmeldinger og datalagring.\u2026"
 title: Arbeider med YAML
+weight: 41
 ---
-
-{{< edit_this_page >}}
 
 ## Hva & Hvorfor?
 YAML, et data serialiseringsspråk designet for å være brukervennlig, brukes ofte til konfigurasjonsfiler, mellomprosessmeldinger og datalagring. Programmerere støtter seg på YAML på grunn av dets lesbarhet og brukervennlighet, spesielt når de håndterer kompleks strukturerte data, noe som gjør det til et utmerket valg for applikasjoner utviklet i TypeScript.

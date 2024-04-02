@@ -9,9 +9,8 @@ summary: "Skriva ut debug-meddelanden hj\xE4lper utvecklare att f\xF6rst\xE5 vad
   \ h\xE4nder i koden under k\xF6rning. Det anv\xE4nds f\xF6r fels\xF6kning och f\xF6\
   r att snabbt f\xE5 insikt i\u2026"
 title: "Skriva ut fels\xF6kningsdata"
+weight: 33
 ---
-
-{{< edit_this_page >}}
 
 ## Vad & Varför?
 Skriva ut debug-meddelanden hjälper utvecklare att förstå vad som händer i koden under körning. Det används för felsökning och för att snabbt få insikt i programmets tillstånd eller variabelvärden.

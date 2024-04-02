@@ -11,9 +11,8 @@ summary: "Scrivere un file di testo in C comporta la creazione o l'apertura di u
   \ file in modalit\xE0 di scrittura e poi l'uso delle funzioni di I/O su file di\
   \ C per\u2026"
 title: Scrivere un file di testo
+weight: 24
 ---
-
-{{< edit_this_page >}}
 
 ## Cosa e perché?
 

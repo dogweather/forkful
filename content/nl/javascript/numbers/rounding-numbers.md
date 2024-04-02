@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Afronden is het weglaten van de 'ruis' na een bepaald punt in een nummer.\
   \ Programmeurs ronden af om precisie te beheersen, geheugen te beheren of de\u2026"
 title: Afronden van getallen
+weight: 13
 ---
-
-{{< edit_this_page >}}
 
 ## Wat & Waarom?
 Afronden is het weglaten van de 'ruis' na een bepaald punt in een nummer. Programmeurs ronden af om precisie te beheersen, geheugen te beheren of de output gebruiksvriendelijk te maken—zoals het omzetten van 2.998 in een schone 3.

@@ -1,14 +1,15 @@
 ---
 date: 2024-01-26 04:10:21.316599-07:00
-description: "U\u017Cycie debugera to jak przyznanie sobie rentgenowskiego wzroku,\
-  \ aby zajrze\u0107 do wykonania twojego kodu. Programi\u015Bci robi\u0105 to, aby\
-  \ wykry\u0107 b\u0142\u0119dy, zrozumie\u0107\u2026"
+description: "Rust wspiera r\xF3\u017Cne debugery, ale popularnym jest `gdb` dla GNU/Linuxa\
+  \ lub `lldb` dla macOS. Mo\u017Cna tak\u017Ce u\u017Cy\u0107 `rust-gdb` lub `rust-lldb`,\
+  \ kt\xF3re s\u0105\u2026"
 lastmod: '2024-03-13T22:44:35.189496-06:00'
 model: gpt-4-0125-preview
-summary: "U\u017Cycie debugera to jak przyznanie sobie rentgenowskiego wzroku, aby\
-  \ zajrze\u0107 do wykonania twojego kodu. Programi\u015Bci robi\u0105 to, aby wykry\u0107\
-  \ b\u0142\u0119dy, zrozumie\u0107\u2026"
+summary: "Rust wspiera r\xF3\u017Cne debugery, ale popularnym jest `gdb` dla GNU/Linuxa\
+  \ lub `lldb` dla macOS. Mo\u017Cna tak\u017Ce u\u017Cy\u0107 `rust-gdb` lub `rust-lldb`,\
+  \ kt\xF3re s\u0105\u2026"
 title: Korzystanie z debugera
+weight: 35
 ---
 
 ## Jak to zrobić:

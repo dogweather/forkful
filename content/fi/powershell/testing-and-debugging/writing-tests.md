@@ -11,9 +11,8 @@ summary: "Testien kirjoittaminen PowerShellill\xE4 tarkoittaa skriptien luomista
   \ jotka automaattisesti varmistavat PowerShell-koodisi toiminnallisuuden, taaten\
   \ sen\u2026"
 title: Testien kirjoittaminen
+weight: 36
 ---
-
-{{< edit_this_page >}}
 
 ## Mikä & Miksi?
 

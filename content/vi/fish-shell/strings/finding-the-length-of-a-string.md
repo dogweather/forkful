@@ -15,9 +15,8 @@ summary: "T\xECm \u0111\u1ED9 d\xE0i c\u1EE7a m\u1ED9t chu\u1ED7i ngh\u0129a l\x
   c th\u1EF1c \u0111\u1EA7u v\xE0o, k\xEDch c\u1EE1 buffer, ho\u1EB7c l\u1EB7p qua\
   \ c\xE1c\u2026"
 title: "T\xECm chi\u1EC1u d\xE0i c\u1EE7a m\u1ED9t chu\u1ED7i k\xFD t\u1EF1"
+weight: 7
 ---
-
-{{< edit_this_page >}}
 
 ## Điều gì & Tại sao?
 Tìm độ dài của một chuỗi nghĩa là đếm số lượng ký tự trong đó. Các lập trình viên thực hiện điều này để xác thực đầu vào, kích cỡ buffer, hoặc lặp qua các ký tự.

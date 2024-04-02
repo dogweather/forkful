@@ -13,9 +13,8 @@ summary: "Shell t\u01B0\u01A1ng t\xE1c, hay REPLs (V\xF2ng l\u1EB7p \u0110\u1ECD
   m th\u1EED c\xE1c h\xE0m, thu\u1EADt to\xE1n, ho\u1EB7c ngh\u1ECBch ng\u1EE3m v\u1EDB\
   i \xFD t\u01B0\u1EDFng.\u2026"
 title: "S\u1EED d\u1EE5ng v\u1ECF t\u01B0\u01A1ng t\xE1c (REPL)"
+weight: 34
 ---
-
-{{< edit_this_page >}}
 
 ## Cái gì và Tại sao?
 Shell tương tác, hay REPLs (Vòng lặp Đọc-Đánh giá-In), cho phép bạn chạy mã trên máy bay, kiểm thử các hàm, thuật toán, hoặc nghịch ngợm với ý tưởng. Chúng là bảng nháp của việc lập trình, nhanh và bẩn, không cần thiết lập một môi trường phát triển đầy đủ.

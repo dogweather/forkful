@@ -9,9 +9,8 @@ summary: "Att hantera fel handlar om att f\xF6rv\xE4nta sig det ov\xE4ntade; det
   r hur vi hanterar n\xE4r saker g\xE5r fel i v\xE5r kod. Vi g\xF6r det f\xF6r att\
   \ undvika krascher och f\xF6r\u2026"
 title: Hantering av fel
+weight: 16
 ---
-
-{{< edit_this_page >}}
 
 ## Vad & Varför?
 Att hantera fel handlar om att förvänta sig det oväntade; det är hur vi hanterar när saker går fel i vår kod. Vi gör det för att undvika krascher och för att ge användarna en smidig upplevelse, även när det oväntade inträffar.

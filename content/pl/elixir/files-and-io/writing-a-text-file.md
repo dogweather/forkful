@@ -11,9 +11,8 @@ summary: "Zapisywanie do pliku tekstowego w Elixirze to podstawowa umiej\u0119tn
   \u0107 dla programist\xF3w, pozwalaj\u0105ca na trwa\u0142o\u015B\u0107 danych,\
   \ logowanie lub eksportowanie tre\u015Bci\u2026"
 title: Pisanie pliku tekstowego
+weight: 24
 ---
-
-{{< edit_this_page >}}
 
 ## Co i dlaczego?
 

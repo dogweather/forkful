@@ -10,9 +10,8 @@ model: gpt-4-0125-preview
 summary: "Het genereren van willekeurige getallen is een fundamentele taak in programmeren,\
   \ gebruikt voor alles van gegevenssampling tot spelontwikkeling. In Fish\u2026"
 title: Willekeurige getallen genereren
+weight: 12
 ---
-
-{{< edit_this_page >}}
 
 ## Wat & Waarom?
 

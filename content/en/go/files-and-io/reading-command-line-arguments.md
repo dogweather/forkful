@@ -7,9 +7,8 @@ model: gpt-4-0125-preview
 summary: "Reading command line arguments in Go involves extracting the arguments provided\
   \ to a program during its invocation from the terminal or command prompt.\u2026"
 title: Reading command line arguments
+weight: 23
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 

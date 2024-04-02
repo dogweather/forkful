@@ -19,9 +19,8 @@ summary: "Go\uC5D0\uC11C JSON(JavaScript Object Notation)\uC744 \uB2E4\uB8E8\uB2
   , JSON\uC740 \uAC00\uBCBC\uC6B4, \uD14D\uC2A4\uD2B8 \uAE30\uBC18, \uC5B8\uC5B4 \uB3C5\
   \uB9BD\uC801 \uB370\uC774\uD130 \uAD50\uD658\u2026"
 title: "JSON \uC791\uC5C5\uD558\uAE30"
+weight: 38
 ---
-
-{{< edit_this_page >}}
 
 ## 무엇 & 왜?
 

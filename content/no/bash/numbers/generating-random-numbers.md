@@ -8,9 +8,8 @@ model: gpt-4-0125-preview
 summary: "\xC5 generere tilfeldige tall i Bash gir en m\xE5te \xE5 innf\xF8re uforutsigbarhet\
   \ i skript p\xE5, noe som er essensielt for oppgaver som \xE5 generere sikre passord,\u2026"
 title: Generering av tilfeldige tall
+weight: 12
 ---
-
-{{< edit_this_page >}}
 
 ## Hva og hvorfor?
 Å generere tilfeldige tall i Bash gir en måte å innføre uforutsigbarhet i skript på, noe som er essensielt for oppgaver som å generere sikre passord, simulere data eller for programmering av spill. Programmerere utnytter denne muligheten til å legge til variabilitet i skriptene sine eller for å teste programmene sine under en rekke tilfeldig genererte forhold.

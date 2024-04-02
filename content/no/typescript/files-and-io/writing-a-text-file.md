@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "\xC5 skrive en tekstfil i TypeScript er en kritisk ferdighet for datalagring,\
   \ konfigurasjoner eller logggenerering. Programmerere utf\xF8rer ofte denne oppgaven\u2026"
 title: Skrive en tekstfil
+weight: 24
 ---
-
-{{< edit_this_page >}}
 
 ## Hva & Hvorfor?
 Å skrive en tekstfil i TypeScript er en kritisk ferdighet for datalagring, konfigurasjoner eller logggenerering. Programmerere utfører ofte denne oppgaven for å lagre og manipulere data utenfor applikasjonsminnet av grunner som dataanalyse, rapportering, eller rett og slett for å lagre brukerinnstillinger mellom økter.

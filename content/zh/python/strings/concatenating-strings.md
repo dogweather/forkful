@@ -12,9 +12,8 @@ summary: "\u5B57\u7B26\u4E32\u8FDE\u63A5\u5C31\u662F\u5C06\u591A\u4E2A\u5B57\u7B
   \u4E86\u521B\u5EFA\u52A8\u6001\u6587\u672C\u6570\u636E\u6216\u5408\u5E76\u4FE1\u606F\
   \u3002"
 title: "\u5B57\u7B26\u4E32\u62FC\u63A5"
+weight: 3
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why? 什么以及为什么?
 字符串连接就是将多个字符串拼成一个。程序员这样做是为了创建动态文本数据或合并信息。

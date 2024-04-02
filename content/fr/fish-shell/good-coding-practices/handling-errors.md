@@ -9,9 +9,8 @@ summary: "La gestion des erreurs permet \xE0 votre script de faire face de mani\
   re \xE9l\xE9gante \xE0 l'inattendu. Nous le faisons pour g\xE9rer les \xE9checs\
   \ sans donner des\u2026"
 title: Gestion des erreurs
+weight: 16
 ---
-
-{{< edit_this_page >}}
 
 ## Quoi & Pourquoi ?
 La gestion des erreurs permet à votre script de faire face de manière élégante à l'inattendu. Nous le faisons pour gérer les échecs sans donner des cheveux gris à nos utilisateurs.

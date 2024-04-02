@@ -14,9 +14,8 @@ summary: "In ra \u0111\u1EA7u ra \u0111\u1EC3 g\u1EE1 l\u1ED7i l\xE0 vi\u1EC7c n
   n \u0111\u1EC3 t\xECm v\xE0 x\u1EED l\xFD l\u1ED7i. N\xF3 nhanh, kh\xF4ng c\u1EA7\
   n s\u1EA1ch s\u1EBD, v\xE0 hi\u1EC7u qu\u1EA3 \u0111\u1EC3 hi\u1EC3u nh\u1EEFng\u2026"
 title: "In ra th\xF4ng tin g\u1EE1 l\u1ED7i"
+weight: 33
 ---
-
-{{< edit_this_page >}}
 
 ## Gì & Tại sao?
 In ra đầu ra để gỡ lỗi là việc ném những mẩu thông tin nhỏ vào bảng điều khiển để tìm và xử lý lỗi. Nó nhanh, không cần sạch sẽ, và hiệu quả để hiểu những gì đang xảy ra bên trong mã của bạn khi nó đang hoạt động một cách hoang dã.

@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Inom programmering involverar arbete med CSV-filer (Comma-Separated Values,\
   \ komma-separerade v\xE4rden) att l\xE4sa fr\xE5n och skriva data till textfiler\u2026"
 title: Arbeta med CSV
+weight: 37
 ---
-
-{{< edit_this_page >}}
 
 ## Vad & Varför?
 

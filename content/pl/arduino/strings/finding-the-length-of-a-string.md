@@ -9,9 +9,8 @@ summary: "Znalezienie d\u0142ugo\u015Bci ci\u0105gu znak\xF3w to sprawdzenie, il
   \ znak\xF3w zawiera. Programi\u015Bci robi\u0105 to, by zarz\u0105dza\u0107 danymi\
   \ tekstowymi, walidowa\u0107 wej\u015Bcia lub\u2026"
 title: "Znalezienie d\u0142ugo\u015Bci ci\u0105gu znak\xF3w"
+weight: 7
 ---
-
-{{< edit_this_page >}}
 
 ## Co i Dlaczego?
 Znalezienie długości ciągu znaków to sprawdzenie, ile znaków zawiera. Programiści robią to, by zarządzać danymi tekstowymi, walidować wejścia lub oszacować miejsce potrzebne do przechowywania informacji.

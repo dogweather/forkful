@@ -9,9 +9,8 @@ summary: "Regne ut en fremtidig eller fortidig dato betyr \xE5 beregne en dato f
   r eller etter et bestemt startpunkt. Programmerere gj\xF8r dette for \xE5 h\xE5\
   ndtere\u2026"
 title: Beregning av en dato i fremtiden eller fortiden
+weight: 26
 ---
-
-{{< edit_this_page >}}
 
 ## Hva & Hvorfor?
 Regne ut en fremtidig eller fortidig dato betyr å beregne en dato før eller etter et bestemt startpunkt. Programmerere gjør dette for å håndtere tidsbestemte funksjoner som gjentagende hendelser, frister eller tidsfrister.

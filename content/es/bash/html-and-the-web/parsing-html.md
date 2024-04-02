@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Parsear HTML significa tamizar la estructura y el contenido de un archivo\
   \ HTML para extraer informaci\xF3n. Los programadores lo hacen para acceder a datos,\u2026"
 title: Analizando HTML
+weight: 43
 ---
-
-{{< edit_this_page >}}
 
 ## Qué y Por Qué?
 

@@ -9,9 +9,8 @@ summary: "Commencer un nouveau projet, c'est partir de z\xE9ro pour cr\xE9er un 
   \ original. Les programmeurs se lancent dans de nouveaux projets pour r\xE9soudre\
   \ un\u2026"
 title: Lancement d'un nouveau projet
+weight: 1
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why? (Quoi et Pourquoi ?)
 Commencer un nouveau projet, c'est partir de zéro pour créer un programme original. Les programmeurs se lancent dans de nouveaux projets pour résoudre un problème, apprendre ou s'amuser.

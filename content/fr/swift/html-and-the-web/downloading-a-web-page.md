@@ -9,9 +9,8 @@ summary: "T\xE9l\xE9charger une page web, c'est r\xE9cup\xE9rer son contenu via 
   \ r\xE9seau. Les programmeurs le font pour traiter des donn\xE9es, afficher des\
   \ informations \xE0\u2026"
 title: "T\xE9l\xE9chargement d'une page web"
+weight: 42
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 

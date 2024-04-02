@@ -18,9 +18,8 @@ summary: "\uBA85\uB839\uC904 \uC778\uC218 \uC77D\uAE30(Command line arguments re
   \uC544 \uCEE4\uC2A4\uD130\uB9C8\uC774\uC988\uB41C \uD589\uB3D9\uC744 \uD558\uAE30\
   \ \uC704\uD574 \uC774\uB97C \uC0AC\uC6A9\uD569\uB2C8\uB2E4."
 title: "\uBA85\uB839\uC904 \uC778\uC218 \uC77D\uAE30"
+weight: 23
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why? (무엇과 왜?)
 명령줄 인수 읽기(Command line arguments reading)는 사용자가 프로그램을 시작할 때 명령줄을 통해 프로그램에 데이터를 전달하는 방법입니다. 프로그래머들은 사용자의 입력을 받아 커스터마이즈된 행동을 하기 위해 이를 사용합니다.

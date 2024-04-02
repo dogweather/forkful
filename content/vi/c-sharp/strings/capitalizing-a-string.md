@@ -13,9 +13,8 @@ summary: "Chuy\u1EC3n m\u1ED9t chu\u1ED7i th\xE0nh ch\u1EEF hoa trong l\u1EADp t
   t chu\u1ED7i th\xE0nh ch\u1EEF hoa. \u0110\xE2y l\xE0 m\u1ED9t t\xE1c v\u1EE5 ph\u1ED5\
   \ bi\u1EBFn \u0111\u1EC3 \u0111\u1ECBnh d\u1EA1ng\u2026"
 title: "Vi\u1EBFt hoa m\u1ED9t chu\u1ED7i"
+weight: 2
 ---
-
-{{< edit_this_page >}}
 
 ## Cái gì & Tại sao?
 

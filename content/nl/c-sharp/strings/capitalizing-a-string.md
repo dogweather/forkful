@@ -10,9 +10,8 @@ model: gpt-4-0125-preview
 summary: "Een tekenreeks kapitaliseren in programmeren betekent alle letters in een\
   \ tekenreeks in hoofdletters omzetten. Het is een vaak voorkomende taak voor het\u2026"
 title: Een string met hoofdletters maken
+weight: 2
 ---
-
-{{< edit_this_page >}}
 
 ## Wat & Waarom?
 

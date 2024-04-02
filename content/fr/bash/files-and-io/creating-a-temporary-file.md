@@ -9,9 +9,8 @@ summary: "Cr\xE9er un fichier temporaire, c'est comme faire une note rapide pour
   \ pas oublier quelque chose. Les programmeurs les utilisent pour stocker des donn\xE9\
   es\u2026"
 title: "Cr\xE9ation d'un fichier temporaire"
+weight: 21
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why? (Quoi & Pourquoi ?)
 

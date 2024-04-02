@@ -22,9 +22,8 @@ summary: "Google Apps Script\u3067HTML\u3092\u89E3\u6790\u3059\u308B\u3068\u306F
   \u3001\u30C7\u30FC\u30BF\u53CE\u96C6\u3092\u81EA\u52D5\u5316\u3057\u305F\u308A\u3001\
   Web\u30B3\u30F3\u30C6\u30F3\u30C4\u3092\u64CD\u4F5C\u3057\u305F\u308A\u3001Google\u2026"
 title: "HTML\u306E\u89E3\u6790"
+weight: 43
 ---
-
-{{< edit_this_page >}}
 
 ## 何となぜ？
 Google Apps ScriptでHTMLを解析するとは、HTMLコンテンツからデータを抽出することを意味します。これは、WebページやWebベースのデータソースとのやり取りをするときに特に有用です。プログラマーは、データ収集を自動化したり、Webコンテンツを操作したり、Google Apps（SheetsやDocsなど）とWeb機能を統合したりするためにこれを行います。

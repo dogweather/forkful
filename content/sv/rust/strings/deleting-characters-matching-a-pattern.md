@@ -9,9 +9,8 @@ summary: "Att ta bort tecken utifr\xE5n ett m\xF6nster handlar om att rensa str\
   ngar fr\xE5n o\xF6nskade sekvenser. Programmerare g\xF6r detta f\xF6r att sanera\
   \ data, extrahera\u2026"
 title: "Ta bort tecken som matchar ett m\xF6nster"
+weight: 5
 ---
-
-{{< edit_this_page >}}
 
 ## Vad & Varför?
 Att ta bort tecken utifrån ett mönster handlar om att rensa strängar från oönskade sekvenser. Programmerare gör detta för att sanera data, extrahera information, eller förbereda text för vidare processer.

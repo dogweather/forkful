@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "HTML in Elixir zu parsen, umfasst das Extrahieren von Informationen aus\
   \ HTML-Dokumenten. Programmierer tun dies, um programmatisch mit Webseiten zu\u2026"
 title: HTML parsen
+weight: 43
 ---
-
-{{< edit_this_page >}}
 
 ## Was & Warum?
 

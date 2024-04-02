@@ -1,14 +1,15 @@
 ---
 date: 2024-01-26 03:47:27.375181-07:00
-description: "Att anv\xE4nda en debugger i Bash inneb\xE4r att utnyttja verktyg f\xF6\
-  r att testa och hitta problem i dina skript, s\xE5som att f\xE5nga buggar som kraschar\
-  \ din kod\u2026"
+description: "Bash kommer inte med en inbyggd debugger som vissa andra spr\xE5k, men\
+  \ du kan anv\xE4nda inbyggda kommandon som `set -x` f\xF6r att sp\xE5ra vad som\
+  \ h\xE4nder. Eller,\u2026"
 lastmod: '2024-03-13T22:44:38.086931-06:00'
 model: gpt-4-0125-preview
-summary: "Att anv\xE4nda en debugger i Bash inneb\xE4r att utnyttja verktyg f\xF6\
-  r att testa och hitta problem i dina skript, s\xE5som att f\xE5nga buggar som kraschar\
-  \ din kod\u2026"
+summary: "Bash kommer inte med en inbyggd debugger som vissa andra spr\xE5k, men du\
+  \ kan anv\xE4nda inbyggda kommandon som `set -x` f\xF6r att sp\xE5ra vad som h\xE4\
+  nder. Eller,\u2026"
 title: "Att anv\xE4nda en debugger"
+weight: 35
 ---
 
 ## Hur man gör:

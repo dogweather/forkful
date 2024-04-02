@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Het aan elkaar plakken van strings betekent dat je ze achter elkaar koppelt.\
   \ We doen dit om berichten, URL's of elke tekst met stukjes & beetjes uit\u2026"
 title: Samenvoegen van strings
+weight: 3
 ---
-
-{{< edit_this_page >}}
 
 ## Wat & Waarom?
 Het aan elkaar plakken van strings betekent dat je ze achter elkaar koppelt. We doen dit om berichten, URL's of elke tekst met stukjes & beetjes uit verschillende bronnen te creëren.

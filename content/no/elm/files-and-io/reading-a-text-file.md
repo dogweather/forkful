@@ -8,9 +8,8 @@ model: gpt-4-1106-preview
 summary: "\xC5 lese en tekstfil betyr \xE5 hente den lagrede tekstdataen fra en fil.\
   \ Programmerere gj\xF8r dette for \xE5 behandle, vise eller manipulere innhold som\u2026"
 title: Lese en tekstfil
+weight: 22
 ---
-
-{{< edit_this_page >}}
 
 ## Hva & Hvorfor?
 Å lese en tekstfil betyr å hente den lagrede tekstdataen fra en fil. Programmerere gjør dette for å behandle, vise eller manipulere innhold som konfigurasjoner eller brukerdata.

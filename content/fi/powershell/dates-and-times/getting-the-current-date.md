@@ -11,9 +11,8 @@ summary: "Nykyisen p\xE4iv\xE4m\xE4\xE4r\xE4n hakeminen PowerShelliss\xE4 tarkoi
   \ j\xE4rjestelm\xE4n nykyisen p\xE4iv\xE4m\xE4\xE4r\xE4n ja ajan noutamista. T\xE4\
   m\xE4 toiminto on perustavaa laatua oleva\u2026"
 title: "Nykyisen p\xE4iv\xE4m\xE4\xE4r\xE4n hankkiminen"
+weight: 29
 ---
-
-{{< edit_this_page >}}
 
 ## Mikä ja Miksi?
 

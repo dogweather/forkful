@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Foutafhandeling is het verwachten van het onverwachte; het is hoe we omgaan\
   \ met problemen in onze code. We doen het om crashes te voorkomen en om\u2026"
 title: Fouten afhandelen
+weight: 16
 ---
-
-{{< edit_this_page >}}
 
 ## Wat & Waarom?
 Foutafhandeling is het verwachten van het onverwachte; het is hoe we omgaan met problemen in onze code. We doen het om crashes te voorkomen en om gebruikers een soepele ervaring te bieden, zelfs wanneer het onverwachte gebeurt.

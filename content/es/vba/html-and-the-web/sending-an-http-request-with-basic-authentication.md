@@ -11,9 +11,8 @@ summary: "Enviar una solicitud HTTP con autenticaci\xF3n b\xE1sica en Visual Bas
   \ para Aplicaciones (VBA) se trata de acceder a recursos web que est\xE1n protegidos\
   \ por\u2026"
 title: "Enviando una solicitud HTTP con autenticaci\xF3n b\xE1sica"
+weight: 45
 ---
-
-{{< edit_this_page >}}
 
 ## ¿Qué y por qué?
 

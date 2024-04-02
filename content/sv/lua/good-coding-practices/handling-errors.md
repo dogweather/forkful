@@ -9,9 +9,8 @@ summary: "Att hantera fel i kodning \xE4r att v\xE4nta sig det ov\xE4ntade. Det 
   r konsten att planera f\xF6r n\xE4r saker och ting g\xE5r snett s\xE5 att du kan\
   \ h\xE5lla ditt program\u2026"
 title: Hantering av fel
+weight: 16
 ---
-
-{{< edit_this_page >}}
 
 ## Vad & Varför?
 Att hantera fel i kodning är att vänta sig det oväntade. Det är konsten att planera för när saker och ting går snett så att du kan hålla ditt program körande smidigt.

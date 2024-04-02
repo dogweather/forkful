@@ -15,9 +15,8 @@ summary: "Vi\u1EC7c vi\u1EBFt ki\u1EC3m th\u1EED t\u1EE9c l\xE0 t\u1EA1o ra m\xE
   \ l\u1ED7i, \u0111\u1EA3m b\u1EA3o \u0111\u1ED9 tin c\u1EADy, v\xE0 l\xE0m cho vi\u1EC7\
   c\u2026"
 title: "Vi\u1EBFt c\xE1c b\xE0i ki\u1EC3m tra"
+weight: 36
 ---
-
-{{< edit_this_page >}}
 
 ## Cái gì & Tại sao?
 

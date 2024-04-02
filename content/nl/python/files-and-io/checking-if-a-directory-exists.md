@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Controleren of een directory bestaat in Python gaat over het bevestigen\
   \ van de aanwezigheid van een map op het bestandssysteem voordat er acties op worden\u2026"
 title: Controleren of een directory bestaat
+weight: 20
 ---
-
-{{< edit_this_page >}}
 
 ## Wat & Waarom?
 

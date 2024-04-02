@@ -13,9 +13,8 @@ summary: "K\u1EBFt h\u1EE3p chu\u1ED7i, hay c\xF2n g\u1ECDi l\xE0 n\u1ED1i chu\u
   c t\u1EEB. Ch\xFAng ta th\u1EF1c hi\u1EC7n \u0111i\u1EC1u n\xE0y \u0111\u1EC3 li\xEA\
   n k\u1EBFt c\xE1c gi\xE1 tr\u1ECB v\u0103n b\u1EA3n l\u1EA1i v\u1EDBi\u2026"
 title: "N\u1ED1i chu\u1ED7i k\xFD t\u1EF1"
+weight: 3
 ---
-
-{{< edit_this_page >}}
 
 ## Gì & Tại sao?
 Kết hợp chuỗi, hay còn gọi là nối chuỗi, giống như việc tạo một đoàn tàu từ các từ. Chúng ta thực hiện điều này để liên kết các giá trị văn bản lại với nhau, tạo ra các cụm từ, câu, hoặc bất cứ thứ gì mà các chuỗi riêng biệt cần kết bạn và trở thành một.

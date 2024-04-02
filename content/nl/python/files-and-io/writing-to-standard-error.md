@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Standaardfout, vaak aangeduid als stderr, is een vooraf gedefinieerde bestandsstroom\
   \ voor het loggen van foutmeldingen. Programmeurs gebruiken het om\u2026"
 title: Schrijven naar standaardfout
+weight: 25
 ---
-
-{{< edit_this_page >}}
 
 ## Wat & Waarom?
 Standaardfout, vaak aangeduid als stderr, is een vooraf gedefinieerde bestandsstroom voor het loggen van foutmeldingen. Programmeurs gebruiken het om reguliere programma-uitvoer te scheiden van foutmeldingen, wat het debuggen gemakkelijker maakt.

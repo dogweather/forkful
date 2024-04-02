@@ -9,9 +9,8 @@ summary: "\"Mik\xE4 & Miksi?\" Stringin pituuden selvitt\xE4minen tarkoittaa mer
   \ olevien merkkien m\xE4\xE4r\xE4n laskemista. Ohjelmoijat tekev\xE4t t\xE4m\xE4\
   n, jotta voivat\u2026"
 title: "Merkkijonon pituuden selvitt\xE4minen"
+weight: 7
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 "Mikä & Miksi?"

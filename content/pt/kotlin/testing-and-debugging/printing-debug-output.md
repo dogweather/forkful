@@ -9,9 +9,8 @@ summary: "Mostrar outputs de debug \xE9 basicamente imprimir mensagens no consol
   \ do seu programa para entender o que est\xE1 acontecendo durante a execu\xE7\xE3\
   o.\u2026"
 title: "Exibindo sa\xEDdas de depura\xE7\xE3o"
+weight: 33
 ---
-
-{{< edit_this_page >}}
 
 ## O Que é & Porquê?
 

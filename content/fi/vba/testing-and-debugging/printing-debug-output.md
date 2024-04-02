@@ -11,9 +11,8 @@ summary: "Tulosteen tulostaminen debuggausta varten Visual Basic for Application
   \ (VBA) -ohjelmassa sis\xE4lt\xE4\xE4 tulostuslauseiden strategisen sijoittamisen\
   \ koodiisi\u2026"
 title: Debug-tulosteen tulostaminen
+weight: 33
 ---
-
-{{< edit_this_page >}}
 
 ## Mikä & Miksi?
 Tulosteen tulostaminen debuggausta varten Visual Basic for Applications (VBA) -ohjelmassa sisältää tulostuslauseiden strategisen sijoittamisen koodiisi näyttämään muuttujien arvot, suorituksen kulun tai mukautetut debug-viestit. Tämä tekniikka on olennainen osa vianetsintää, sillä se mahdollistaa ohjelmoijien ymmärtää koodinsa käyttäytymistä suoritusaikana ja tunnistaa mahdolliset odottamattomat käyttäytymiset tai virheet.

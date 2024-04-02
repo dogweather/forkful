@@ -9,9 +9,8 @@ summary: "Enviar una solicitud HTTP con autenticaci\xF3n b\xE1sica es el proceso
   \ hacer un pedido a un servidor incluyendo un usuario y contrase\xF1a en la cabecera\
   \ de la\u2026"
 title: "Enviando una solicitud http con autenticaci\xF3n b\xE1sica"
+weight: 45
 ---
-
-{{< edit_this_page >}}
 
 ## Qué y Por Qué?
 

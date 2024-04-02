@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Scrivere su un file di testo in Elixir \xE8 una competenza essenziale per\
   \ gli sviluppatori, che permette la persistenza dei dati, il logging o l'esportazione\u2026"
 title: Scrivere un file di testo
+weight: 24
 ---
-
-{{< edit_this_page >}}
 
 ## Cosa & Perché?
 

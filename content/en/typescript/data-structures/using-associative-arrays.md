@@ -7,9 +7,8 @@ model: gpt-4-0125-preview
 summary: "Associative arrays, or objects in TypeScript, let you use strings (or keys)\
   \ to access value pairs. Programmers use them for more dynamic data access\u2026"
 title: Using associative arrays
+weight: 15
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 

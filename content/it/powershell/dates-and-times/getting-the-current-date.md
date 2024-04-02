@@ -11,9 +11,8 @@ summary: "Ottenere la data corrente in PowerShell riguarda il recupero della dat
   \ e dell'ora attuali del sistema. Quest'operazione \xE8 fondamentale per compiti\
   \ come\u2026"
 title: Ottenere la data corrente
+weight: 29
 ---
-
-{{< edit_this_page >}}
 
 ## Cosa & Perché?
 

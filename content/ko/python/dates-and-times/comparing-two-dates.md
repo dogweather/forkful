@@ -18,9 +18,8 @@ summary: "\uB450 \uB0A0\uC9DC\uB97C \uBE44\uAD50\uD55C\uB2E4\uB294 \uAC74, \uADF
   \ \uAE30\uAC04 \uBD84\uC11D, \uC2DC\uAC04 \uAE30\uBC18\uC758 \uB85C\uC9C1 \uC2E4\
   \uD589 \uB4F1\uC744 \uD560 \uC218 \uC788\uC2B5\uB2C8\uB2E4."
 title: "\uB450 \uB0A0\uC9DC \uBE44\uAD50\uD558\uAE30"
+weight: 27
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why? (무엇과 왜?)
 두 날짜를 비교한다는 건, 그들이 서로 얼마나 차이나는지, 어떤 것이 더 이전이거나 최신인지 파악하는 과정입니다. 이를 통해 프로그래머는 유효성 검사, 이벤트 기간 분석, 시간 기반의 로직 실행 등을 할 수 있습니다.

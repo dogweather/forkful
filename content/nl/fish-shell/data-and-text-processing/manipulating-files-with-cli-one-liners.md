@@ -10,9 +10,8 @@ model: gpt-4-0125-preview
 summary: "In de wereld van het programmeren, vooral wanneer je te maken hebt met Linux-\
   \ of Unix-omgevingen, is het manipuleren van bestanden rechtstreeks vanuit de\u2026"
 title: Bestanden manipuleren met CLI one-liners
+weight: 31
 ---
-
-{{< edit_this_page >}}
 
 ## Wat & Waarom?
 

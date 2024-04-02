@@ -9,9 +9,8 @@ summary: "HTTP-pyynt\xF6 perusautentikaatiolla on web-palvelimelle l\xE4hetetty 
   , jossa on k\xE4ytt\xE4j\xE4tunnus ja salasana. Koodarit k\xE4ytt\xE4v\xE4t t\xE4\
   t\xE4 yksinkertaiseen\u2026"
 title: "HTTP-pyynn\xF6n l\xE4hett\xE4minen perusautentikoinnilla"
+weight: 45
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 HTTP-pyyntö perusautentikaatiolla on web-palvelimelle lähetetty pyyntö, jossa on käyttäjätunnus ja salasana. Koodarit käyttävät tätä yksinkertaiseen pääsynvalvontaan, kun haluavat suojata resurssejaan.

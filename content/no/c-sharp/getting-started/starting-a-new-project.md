@@ -9,9 +9,8 @@ summary: "\xC5 starte et nytt prosjekt i C# er \xE5 opprette en struktur av kode
   \ og filer for \xE5 bygge en applikasjon eller et bibliotek. Programmerere gj\xF8\
   r dette for \xE5\u2026"
 title: "\xC5 starte et nytt prosjekt"
+weight: 1
 ---
-
-{{< edit_this_page >}}
 
 ## Hva & Hvorfor?
 Å starte et nytt prosjekt i C# er å opprette en struktur av koder og filer for å bygge en applikasjon eller et bibliotek. Programmerere gjør dette for å omsette ideer til virkelighet, løse problemer, eller teste konsepter.

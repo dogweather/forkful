@@ -17,9 +17,8 @@ summary: "\u05E2\u05D1\u05D5\u05D3\u05D4 \u05E2\u05DD TOML \u05DB\u05D5\u05DC\u0
   \u05DD) \u05D1\u05D0\u05DE\u05E6\u05E2\u05D5\u05EA Lua. \u05EA\u05DB\u05E0\u05EA\
   \u05D9\u05DD \u05DE\u05E9\u05EA\u05DE\u05E9\u05D9\u05DD \u05D1-TOML\u2026"
 title: "\u05E2\u05D1\u05D5\u05D3\u05D4 \u05E2\u05DD TOML"
+weight: 39
 ---
-
-{{< edit_this_page >}}
 
 ## מה ולמה?
 עבודה עם TOML כוללת ניתוח וייצור נתוני TOML (Tom's Obvious, Minimal Language - שפת תכנות מובנת ומינימליסטית של טום) באמצעות Lua. תכנתים משתמשים ב-TOML עבור קבצי תצורה בשל קריאותה ותחבירה הפשוט שהופך בקלות למבנה נתונים.

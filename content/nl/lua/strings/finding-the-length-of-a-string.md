@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "De lengte van een tekst vinden betekent uitzoeken hoeveel tekens deze bevat.\
   \ Programmeurs doen dit om invoer te valideren, tekst te manipuleren of\u2026"
 title: De lengte van een string vinden
+weight: 7
 ---
-
-{{< edit_this_page >}}
 
 ## Wat & Waarom?
 

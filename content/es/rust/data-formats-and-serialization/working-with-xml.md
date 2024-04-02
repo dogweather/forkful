@@ -7,9 +7,8 @@ model: gpt-4-0125-preview
 summary: "XML, siglas de eXtensible Markup Language (Lenguaje de Marcado Extensible),\
   \ es como el primo verborr\xE1gico de JSON. Luchar\xE1s con XML al tratar con sistemas\u2026"
 title: Trabajando con XML
+weight: 40
 ---
-
-{{< edit_this_page >}}
 
 ## ¿Qué y por qué?
 XML, siglas de eXtensible Markup Language (Lenguaje de Marcado Extensible), es como el primo verborrágico de JSON. Lucharás con XML al tratar con sistemas legados, software empresarial o APIs que pasaron por alto la moda de JSON. Es esencial para el intercambio de datos donde XML mantiene su posición.

@@ -21,9 +21,8 @@ summary: "\uC815\uADDC \uD45C\uD604\uC2DD, \uB610\uB294 regex\uB294 \uD504\uB85C
   \uD558\uAC8C \uD65C\uC6A9\uB420 \uC218 \uC788\uAE30 \uB54C\uBB38\uC785\uB2C8\uB2E4\
   ."
 title: "\uC815\uADDC \uD45C\uD604\uC2DD \uC0AC\uC6A9\uD558\uAE30"
+weight: 11
 ---
-
-{{< edit_this_page >}}
 
 ## 무엇 & 왜?
 정규 표현식, 또는 regex는 프로그래밍에서 강력한 패턴 매칭 및 검색 도구입니다. 프로그래머들은 사용자 입력 검증, 텍스트 검색, 문자열 조작 등의 작업에 regex를 사용하는데, 이는 효율적이며 다양하게 활용될 수 있기 때문입니다.

@@ -15,9 +15,8 @@ summary: "\u65E5\u5FD7\u8BB0\u5F55\u672C\u8D28\u4E0A\u662F\u8F6F\u4EF6\u7684\u82
   \u8C03\u8BD5\u3001\u5BA1\u8BA1\u8DEF\u5F84\uFF0C\u6216\u8005\u83B7\u5F97\u5BF9\u751F\
   \u4EA7\u4E2D\u7CFB\u7EDF\u884C\u4E3A\u7684\u6D1E\u5BDF\u3002"
 title: "\u65E5\u5FD7\u8BB0\u5F55"
+weight: 17
 ---
-
-{{< edit_this_page >}}
 
 ## 什么以及为什么?
 日志记录本质上是软件的航海日志；它是一种记录应用程序运行时发生事件的方式。程序员这样做是为了跟踪这些事件进行调试、审计路径，或者获得对生产中系统行为的洞察。

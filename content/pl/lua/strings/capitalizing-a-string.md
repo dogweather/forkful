@@ -11,9 +11,8 @@ summary: "Wielk\u0105 liter\u0105 zaczyna si\u0119 ka\u017Cde s\u0142owo w zdani
   \ modyfikuj\u0105c pierwszy znak ka\u017Cdego s\u0142owa na wielk\u0105 liter\u0119\
   , jednocze\u015Bnie zapewniaj\u0105c, \u017Ce pozosta\u0142e s\u0105 ma\u0142e.\u2026"
 title: "Zamiana liter na wielkie w \u0142a\u0144cuchu znak\xF3w"
+weight: 2
 ---
-
-{{< edit_this_page >}}
 
 ## Co i dlaczego?
 Wielką literą zaczyna się każde słowo w zdaniu, modyfikując pierwszy znak każdego słowa na wielką literę, jednocześnie zapewniając, że pozostałe są małe. Ta technika jest powszechnie stosowana do formatowania tekstu na potrzeby bardziej profesjonalnej lub czytelnej prezentacji, takich jak przygotowywanie tytułów lub danych wejściowych użytkownika do wyświetlenia.

@@ -13,9 +13,8 @@ summary: "Ph\xE2n t\xEDch c\xFA ph\xE1p ng\xE0y th\xE1ng c\xF3 ngh\u0129a l\xE0 
   n sang m\u1ED9t \u0111\u1ED1i t\u01B0\u1EE3ng ng\xE0y m\xE0 ch\u01B0\u01A1ng tr\xEC\
   nh c\xF3 th\u1EC3 hi\u1EC3u v\xE0 thao t\xE1c \u0111\u01B0\u1EE3c.\u2026"
 title: "Ph\xE2n t\xEDch ng\xE0y t\u1EEB chu\u1ED7i k\xED t\u1EF1"
+weight: 30
 ---
-
-{{< edit_this_page >}}
 
 ## Gì & Tại sao?
 Phân tích cú pháp ngày tháng có nghĩa là chuyển đổi ngày tháng từ định dạng văn bản sang một đối tượng ngày mà chương trình có thể hiểu và thao tác được. Điều này rất quan trọng để đọc dữ liệu từ nhiều nguồn như nhập liệu của người dùng hay từ các tệp, cho phép chương trình xử lý và quản lý ngày tháng một cách nhất quán.

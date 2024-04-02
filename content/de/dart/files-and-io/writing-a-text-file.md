@@ -10,9 +10,8 @@ model: gpt-4-0125-preview
 summary: "Das Schreiben einer Textdatei in Dart beinhaltet das Erstellen oder Modifizieren\
   \ von Dateien auf der Festplatte, um Daten in einem lesbaren Format zu\u2026"
 title: Eine Textdatei schreiben
+weight: 24
 ---
-
-{{< edit_this_page >}}
 
 ## Was & Warum?
 Das Schreiben einer Textdatei in Dart beinhaltet das Erstellen oder Modifizieren von Dateien auf der Festplatte, um Daten in einem lesbaren Format zu speichern. Programmierer tun dies, um Anwendungsdaten, Konfigurationen, Protokolle oder jegliche Informationen, die zwischen den Ausführungen der Anwendung bestehen bleiben sollten oder Daten mit anderen Anwendungen oder Benutzern teilen sollen, zu speichern.

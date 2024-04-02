@@ -7,9 +7,8 @@ model: gpt-4-0125-preview
 summary: "Redondear n\xFAmeros significa ajustarlos al lugar de valor especificado\
   \ m\xE1s cercano\u2014piensa en simplificarlos a una forma m\xE1s simple. Los programadores\u2026"
 title: "Redondeo de n\xFAmeros"
+weight: 13
 ---
-
-{{< edit_this_page >}}
 
 ## ¿Qué y Por Qué?
 Redondear números significa ajustarlos al lugar de valor especificado más cercano—piensa en simplificarlos a una forma más simple. Los programadores redondean para controlar la precisión, mejorar el rendimiento o cuando muestran resultados amigables al usuario—como precios que no necesitan tres lugares decimales.

@@ -8,9 +8,8 @@ model: gpt-4-0125-preview
 summary: "Los n\xFAmeros complejos ampl\xEDan nuestro sistema num\xE9rico para incluir\
   \ n\xFAmeros imaginarios, permiti\xE9ndonos resolver ecuaciones que no tienen soluciones\u2026"
 title: "Trabajando con n\xFAmeros complejos"
+weight: 14
 ---
-
-{{< edit_this_page >}}
 
 ## ¿Qué y por qué?
 Los números complejos amplían nuestro sistema numérico para incluir números imaginarios, permitiéndonos resolver ecuaciones que no tienen soluciones reales. Los programadores trabajan con ellos en campos como la ingeniería, la física y el procesamiento de señales, donde estos números son esenciales para modelar y resolver problemas.

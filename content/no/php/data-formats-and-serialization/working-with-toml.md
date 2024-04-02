@@ -9,9 +9,8 @@ summary: "TOML, som st\xE5r for Tom's Obvious, Minimal Language, er et dataforma
   \ liknende JSON eller YAML, men enklere \xE5 lese for mennesker. Programmerere bruker\
   \ det\u2026"
 title: Jobbe med TOML
+weight: 39
 ---
-
-{{< edit_this_page >}}
 
 ## Hva & Hvorfor?
 TOML, som står for Tom's Obvious, Minimal Language, er et dataformat liknende JSON eller YAML, men enklere å lese for mennesker. Programmerere bruker det til konfigurasjonsfiler fordi det er ukomplisert og oversetter godt til datastrukturer.

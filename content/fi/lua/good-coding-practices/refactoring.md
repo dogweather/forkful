@@ -9,9 +9,8 @@ summary: "Koodin uudelleenj\xE4rjestely on taidetta, jossa olemassa olevaa koodi
   \ muokataan parantamaan sen rakennetta, luettavuutta ja tehokkuutta muuttamatta\
   \ sen\u2026"
 title: Koodin refaktorointi
+weight: 19
 ---
-
-{{< edit_this_page >}}
 
 ## Mikä & Miksi?
 Koodin uudelleenjärjestely on taidetta, jossa olemassa olevaa koodia muokataan parantamaan sen rakennetta, luettavuutta ja tehokkuutta muuttamatta sen ulkoista käyttäytymistä. Ohjelmoijat tekevät tämän tehdäkseen koodistaan helpommin ylläpidettävää, vähentääkseen monimutkaisuutta ja usein esivalmisteluna ennen uusien ominaisuuksien lisäämistä tai virheiden korjaamista.

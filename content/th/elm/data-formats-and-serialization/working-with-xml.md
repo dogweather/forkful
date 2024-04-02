@@ -17,9 +17,8 @@ summary: "\u0E01\u0E32\u0E23\u0E17\u0E33\u0E07\u0E32\u0E19\u0E01\u0E31\u0E1A XML
   \u0E30\u0E01\u0E32\u0E23\u0E2A\u0E23\u0E49\u0E32\u0E07\u0E40\u0E2D\u0E01\u0E2A\u0E32\
   \u0E23 XML \u0E43\u0E19 Elm.\u2026"
 title: "\u0E01\u0E32\u0E23\u0E17\u0E33\u0E07\u0E32\u0E19\u0E01\u0E31\u0E1A XML"
+weight: 40
 ---
-
-{{< edit_this_page >}}
 
 ## อะไรและทำไม?
 การทำงานกับ XML หมายถึงการแยกวิเคราะห์ (parsing), การเปลี่ยนแปลง (transforming), และการสร้างเอกสาร XML ใน Elm. การทำเช่นนี้เพื่อทำงานร่วมกับบริการเว็บและระบบเก่าที่ใช้ XML เป็นรูปแบบข้อมูลของพวกเขา

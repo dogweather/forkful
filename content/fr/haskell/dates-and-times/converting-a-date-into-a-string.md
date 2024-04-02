@@ -7,9 +7,8 @@ model: gpt-4-1106-preview
 summary: "Convertir une date en cha\xEEne nous permet de la formater pour l'affichage.\
   \ Les programmeurs le font pour rendre les dates compr\xE9hensibles par les humains\u2026"
 title: "Conversion d'une date en cha\xEEne de caract\xE8res"
+weight: 28
 ---
-
-{{< edit_this_page >}}
 
 ## Quoi & Pourquoi ?
 Convertir une date en chaîne nous permet de la formater pour l'affichage. Les programmeurs le font pour rendre les dates compréhensibles par les humains ou préparer pour la sérialisation.

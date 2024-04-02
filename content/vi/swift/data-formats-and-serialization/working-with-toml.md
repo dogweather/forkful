@@ -13,9 +13,8 @@ summary: "TOML (Tom's Obvious, Minimal Language) l\xE0 m\u1ED9t \u0111\u1ECBnh d
   \ ngh\u0129a r\xF5 r\xE0ng c\u1EE7a n\xF3. L\u1EADp tr\xECnh vi\xEAn s\u1EED d\u1EE5\
   ng TOML cho c\xE1c t\u1EC7p\u2026"
 title: "L\xE0m vi\u1EC7c v\u1EDBi TOML"
+weight: 39
 ---
-
-{{< edit_this_page >}}
 
 ## Cái gì và Tại sao?
 TOML (Tom's Obvious, Minimal Language) là một định dạng tuần tự hóa dữ liệu dễ đọc do ngữ nghĩa rõ ràng của nó. Lập trình viên sử dụng TOML cho các tệp cấu hình nơi khả năng đọc bởi con người và dễ dàng phân tích bởi máy tính là chìa khóa.

@@ -13,9 +13,8 @@ summary: "X\u1EED l\xFD l\u1ED7i trong Go bao g\u1ED3m vi\u1EC7c nh\u1EADn bi\u1
   nh c\u1EE7a b\u1EA1n. L\u1EADp tr\xECnh vi\xEAn th\u1EF1c hi\u1EC7n x\u1EED l\xFD\
   \ l\u1ED7i \u0111\u1EC3 \u0111\u1EA3m b\u1EA3o \u1EE9ng d\u1EE5ng\u2026"
 title: "X\u1EED l\xFD l\u1ED7i"
+weight: 16
 ---
-
-{{< edit_this_page >}}
 
 ## Gì và Tại sao?
 

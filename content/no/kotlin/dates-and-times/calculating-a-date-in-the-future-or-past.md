@@ -9,9 +9,8 @@ summary: "\xC5 beregne en dato i fremtiden eller fortiden handler om \xE5 tilf\x
   ye eller trekke fra dager, m\xE5neder eller \xE5r fra en n\xE6rv\xE6rende dato.\
   \ Programutviklere gj\xF8r\u2026"
 title: Beregning av en dato i fremtiden eller fortiden
+weight: 26
 ---
-
-{{< edit_this_page >}}
 
 ## Hva & Hvorfor?
 

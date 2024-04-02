@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Het afdrukken van debuginformatie gaat over het genereren van tijdelijke,\
   \ informatieve logberichten die programmeurs kunnen helpen om de stroom en staat\u2026"
 title: Debug output afdrukken
+weight: 33
 ---
-
-{{< edit_this_page >}}
 
 ## Wat & Waarom?
 

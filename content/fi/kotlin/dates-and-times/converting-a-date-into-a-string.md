@@ -7,9 +7,8 @@ model: gpt-4-1106-preview
 summary: "P\xE4iv\xE4m\xE4\xE4r\xE4n muuntaminen merkkijonoksi tarkoittaa LocalDateTime-olioista,\
   \ Date-objekteista tai vastaavista p\xE4iv\xE4m\xE4\xE4r\xE4representaatioista\u2026"
 title: "P\xE4iv\xE4m\xE4\xE4r\xE4n muuntaminen merkkijonoksi"
+weight: 28
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 Päivämäärän muuntaminen merkkijonoksi tarkoittaa LocalDateTime-olioista, Date-objekteista tai vastaavista päivämäärärepresentaatioista merkkijonoformaatissa esittämistä. Koodarit tekevät tätä, koska ihmiskäyttäjien on helpompi lukea ja ymmärtää päivämääriä tekstimuodossa.

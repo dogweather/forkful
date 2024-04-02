@@ -19,9 +19,8 @@ summary: "\uB9AC\uD329\uD130\uB9C1\uC740 \uCF54\uB4DC\uC758 \uC678\uBD80 \uB3D9\
   \ \uD5A5\uC0C1\uC2DC\uD0A4\uB294 \uB370\uB3C4 \uB3C4\uC6C0\uC774 \uB420 \uC218 \uC788\
   \uC2B5\uB2C8\uB2E4."
 title: "\uB9AC\uD329\uD1A0\uB9C1"
+weight: 19
 ---
-
-{{< edit_this_page >}}
 
 ## 무엇 & 왜?
 리팩터링은 코드의 외부 동작을 변경하지 않고 코드를 조정하는 과정입니다. 코드를 더 쉽게 읽고, 관리하며, 확장할 수 있도록 정리하고 조직하는 것이 전부입니다. 또한 버그를 제거하고 성능을 향상시키는 데도 도움이 될 수 있습니다.

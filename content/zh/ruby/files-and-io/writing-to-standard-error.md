@@ -19,9 +19,8 @@ summary: "\u5728 Ruby \u4E2D\u5199\u5165\u6807\u51C6\u9519\u8BEF\uFF08stderr\uFF
   \u606F\uFF0C\u4ECE\u800C\u4FBF\u4E8E\u66F4\u5BB9\u6613\u5730\u8BCA\u65AD\u95EE\u9898\
   \u548C\u89E3\u6790\u65E5\u5FD7\u3002"
 title: "\u5199\u5165\u6807\u51C6\u9519\u8BEF"
+weight: 25
 ---
-
-{{< edit_this_page >}}
 
 ## 什么 & 为什么？
 在 Ruby 中写入标准错误（stderr）是指将错误消息或诊断信息定向到与标准输出（stdout）不同的单独输出流。程序员这样做是为了区分常规程序输出与错误和调试信息，从而便于更容易地诊断问题和解析日志。

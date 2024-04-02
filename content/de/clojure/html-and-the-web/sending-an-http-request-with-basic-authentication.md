@@ -9,9 +9,8 @@ summary: "HTTP-Anfragen mit Basisauthentifizierung f\xFCgen Zugangsdaten im Head
   \ hinzu, um gesch\xFCtzte Ressourcen zu erreichen. Programmierer nutzen dies, um\
   \ sich bei\u2026"
 title: HTTP-Anfragen mit Basisauthentifizierung senden
+weight: 45
 ---
-
-{{< edit_this_page >}}
 
 # HTTP-Anfrage mit Basisauthentifizierung: Clojure-Anleitung
 

@@ -9,9 +9,8 @@ summary: "Enviar uma requisi\xE7\xE3o HTTP \xE9 o processo de solicitar dados ou
   \xF5es de um servidor usando o protocolo HTTP. Programadores fazem isso para interagir\
   \ com\u2026"
 title: "Enviando uma requisi\xE7\xE3o HTTP"
+weight: 44
 ---
-
-{{< edit_this_page >}}
 
 ## O que é & Porquê?
 Enviar uma requisição HTTP é o processo de solicitar dados ou ações de um servidor usando o protocolo HTTP. Programadores fazem isso para interagir com APIs web, obter conteúdo do servidor para os usuários ou enviar dados para serem processados.

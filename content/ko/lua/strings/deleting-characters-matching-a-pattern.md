@@ -16,9 +16,8 @@ summary: "\uD328\uD134\uC5D0 \uB9DE\uB294 \uBB38\uC790 \uC0AD\uC81C\uD558\uAE30\
   \uCE58, \uB610\uB294 \uBD88\uD544\uC694\uD55C \uC815\uBCF4 \uC0AD\uC81C\uB97C \uC704\
   \uD574 \uC0AC\uC6A9\uB429\uB2C8\uB2E4."
 title: "\uD328\uD134\uC5D0 \uC77C\uCE58\uD558\uB294 \uBB38\uC790 \uC0AD\uC81C"
+weight: 5
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why? (무엇과 왜?)
 패턴에 맞는 문자 삭제하기는 특정 규칙에 부합하는 문자들을 문자열에서 제거하는 것입니다. 이 작업은 데이터 정제, 형식 일치, 또는 불필요한 정보 삭제를 위해 사용됩니다.

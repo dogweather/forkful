@@ -23,9 +23,8 @@ summary: "Dart\uC5D0\uC11C \uB09C\uC218\uB97C \uC0DD\uC131\uD558\uB294 \uAC83\uC
   \uC131\uC744 \uD1B5\uD574 \uBCF4\uC548\uC744 \uBCF4\uC7A5\uD558\uB294 \uAC83\uAE4C\
   \uC9C0 \uB2E4\uC591\uD55C \uC774\uC720\uB85C \uC774 \uAE30\uB2A5\uC744\u2026"
 title: "\uC784\uC758\uC758 \uC22B\uC790 \uC0DD\uC131\uD558\uAE30"
+weight: 12
 ---
-
-{{< edit_this_page >}}
 
 ## 무엇이며 왜인가?
 Dart에서 난수를 생성하는 것은 예측할 수 없으며 각 실행마다 다른 숫자 값을 만드는 것을 말합니다. 프로그래머들은 테스트 환경에서 실제 상황을 시뮬레이션하는 것부터 게임 메커니즘을 활성화하고 암호화 작업에서 무작위성을 통해 보안을 보장하는 것까지 다양한 이유로 이 기능을 활용합니다.

@@ -16,9 +16,8 @@ summary: "HTTP\u30EA\u30AF\u30A8\u30B9\u30C8\u3092\u9001\u308B\u3068\u306F\u3001
   \u30B9\u304C\u5916\u306E\u4E16\u754C\u3068\u901A\u4FE1\u3059\u308B\u305F\u3081\u306B\
   \u3088\u304F\u4F7F\u308F\u308C\u307E\u3059\u3002"
 title: "HTTP\u30EA\u30AF\u30A8\u30B9\u30C8\u306E\u9001\u4FE1"
+weight: 44
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why? (何となぜ？)
 HTTPリクエストを送るとは、インターネット上のサーバーに情報を求めるか、データを送ることです。この機能は、IoTデバイスが外の世界と通信するためによく使われます。

@@ -11,9 +11,8 @@ summary: "Pobieranie strony internetowej polega na pobraniu tre\u015Bci HTML str
   \ internetowej za po\u015Brednictwem protoko\u0142u HTTP/HTTPS. Programi\u015Bci\
   \ cz\u0119sto robi\u0105 to w\u2026"
 title: Pobieranie strony internetowej
+weight: 42
 ---
-
-{{< edit_this_page >}}
 
 ## Co i dlaczego?
 

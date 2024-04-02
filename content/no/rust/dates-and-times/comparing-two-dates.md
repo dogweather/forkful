@@ -9,9 +9,8 @@ summary: "Sammenligning av to datoer ser p\xE5 forskjellen mellom dem \u2014 ent
   \ i tid, rekkef\xF8lge, eller begge deler. Programmerere bruker dette til \xE5 h\xE5\
   ndtere frister,\u2026"
 title: Sammenlikning av to datoer
+weight: 27
 ---
-
-{{< edit_this_page >}}
 
 ## Hva & Hvorfor?
 Sammenligning av to datoer ser på forskjellen mellom dem — enten i tid, rekkefølge, eller begge deler. Programmerere bruker dette til å håndtere frister, beregne tid som har gått, og organisere hendelser.

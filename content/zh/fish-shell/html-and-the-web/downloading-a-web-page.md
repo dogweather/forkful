@@ -14,9 +14,8 @@ summary: "\u4E0B\u8F7D\u7F51\u9875\u610F\u5473\u7740\u4ECE\u4E92\u8054\u7F51\u4E
   \u6790\uFF0C\u5185\u5BB9\u5907\u4EFD\uFF0C\u6216\u8005\u662F\u79BB\u7EBF\u67E5\u770B\
   \u3002"
 title: "\u4E0B\u8F7D\u7F51\u9875"
+weight: 42
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why? (是什么 & 为什么？)
 

@@ -19,9 +19,8 @@ summary: "\u4ECE\u5B57\u7B26\u4E32\u89E3\u6790\u65E5\u671F\u5141\u8BB8\u7A0B\u5E
   \u636E\u6216\u4E0E\u4EE5\u5B57\u7B26\u4E32\u683C\u5F0F\u901A\u4FE1\u65E5\u671F\u7684\
   APIs\u5DE5\u4F5C\u81F3\u5173\u91CD\u8981\u3002"
 title: "\u4ECE\u5B57\u7B26\u4E32\u89E3\u6790\u65E5\u671F"
+weight: 30
 ---
-
-{{< edit_this_page >}}
 
 ## 什么 & 为什么？
 从字符串解析日期允许程序员将文本日期表示转换为JavaScript `Date`对象，以便于进行日期操作、比较和格式化操作。这个过程对于处理用户输入、处理数据库中的数据或与以字符串格式通信日期的APIs工作至关重要。

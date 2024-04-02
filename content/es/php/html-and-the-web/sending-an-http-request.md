@@ -8,9 +8,8 @@ model: gpt-4-1106-preview
 summary: "Enviar una solicitud HTTP significa pedirle datos a un servidor web desde\
   \ tu script PHP. Programadores lo hacen para interactuar con otros sistemas, como\u2026"
 title: Enviando una solicitud http
+weight: 44
 ---
-
-{{< edit_this_page >}}
 
 ## Qué & Por Qué?
 

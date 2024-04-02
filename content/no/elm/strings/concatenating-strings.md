@@ -9,9 +9,8 @@ summary: "I Elm handler sammensl\xE5ing av strenger om \xE5 sette sammen to elle
   \ flere tekstfragmenter til en lengre tekst. Vi gj\xF8r dette for \xE5 bygge dynamisk\
   \ innhold,\u2026"
 title: "Sammensl\xE5ing av strenger"
+weight: 3
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 I Elm handler sammenslåing av strenger om å sette sammen to eller flere tekstfragmenter til en lengre tekst. Vi gjør dette for å bygge dynamisk innhold, som brukernavn eller datoer i meldinger.

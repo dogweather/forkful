@@ -9,9 +9,8 @@ summary: "Supprimer des caract\xE8res selon un motif, c'est retirer des parties 
   cifiques d'une cha\xEEne en se basant sur un pattern (motif). Les d\xE9veloppeurs\
   \ font \xE7a\u2026"
 title: "Suppression de caract\xE8res correspondant \xE0 un motif"
+weight: 5
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why? (Quoi & Pourquoi ?)
 

@@ -9,9 +9,8 @@ summary: "Procurar e substituir texto \xE9 uma pr\xE1tica de encontrar sequ\xEAn
   \ espec\xEDficas de caracteres numa string e troc\xE1-las por outras. Programadores\
   \ fazem isso\u2026"
 title: Pesquisando e substituindo texto
+weight: 10
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 Procurar e substituir texto é uma prática de encontrar sequências específicas de caracteres numa string e trocá-las por outras. Programadores fazem isso para corrigir erros, atualizar informações ou automatizar edições em massa.

@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Lavorare con file CSV (Valori Separati da Virgola) in Bash consiste nel\
   \ processare e manipolare dati tabellari memorizzati in formato di testo semplice.\u2026"
 title: Lavorare con i CSV
+weight: 37
 ---
-
-{{< edit_this_page >}}
 
 ## Che cosa & Perché?
 Lavorare con file CSV (Valori Separati da Virgola) in Bash consiste nel processare e manipolare dati tabellari memorizzati in formato di testo semplice. Questo è fondamentale per i programmatori poiché consente l'automazione di compiti di trasformazione, analisi e integrazione dei dati direttamente dalla riga di comando, senza la necessità di strumenti più pesanti o ambienti di programmazione.

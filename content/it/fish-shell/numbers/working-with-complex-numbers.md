@@ -7,9 +7,8 @@ model: gpt-4-0125-preview
 summary: "I numeri complessi estendono l'idea delle linee numeriche unidimensionali\
   \ a un piano complesso bidimensionale. I programmatori li utilizzano in campi come\u2026"
 title: Lavorare con i numeri complessi
+weight: 14
 ---
-
-{{< edit_this_page >}}
 
 ## Cosa & Perché?
 I numeri complessi estendono l'idea delle linee numeriche unidimensionali a un piano complesso bidimensionale. I programmatori li utilizzano in campi come l'ingegneria, la fisica e la grafica per calcoli che richiedono due componenti, come segnali o rotazioni.

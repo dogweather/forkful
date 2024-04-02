@@ -13,9 +13,8 @@ summary: "Vi\u1EC7c vi\u1EBFt c\xE1c b\xE0i ki\u1EC3m tra trong Dart bao g\u1ED3
   \ t\u1EF1 \u0111\u1ED9ng x\xE1c minh r\u1EB1ng c\xE1c ph\u1EA7n kh\xE1c nhau c\u1EE7\
   a ch\u01B0\u01A1ng tr\xECnh ho\u1EA1t \u0111\u1ED9ng\u2026"
 title: "Vi\u1EBFt b\xE0i ki\u1EC3m tra"
+weight: 36
 ---
-
-{{< edit_this_page >}}
 
 ## Gì & Tại sao?
 

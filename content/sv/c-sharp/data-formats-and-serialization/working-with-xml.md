@@ -7,9 +7,8 @@ model: gpt-4-0125-preview
 summary: "XML (eXtensible Markup Language) handlar om att strukturera data i ett l\xE4\
   sbart format. Programmerare jonglerar med XML f\xF6r konfiguration, datautbyte\u2026"
 title: Att arbeta med XML
+weight: 40
 ---
-
-{{< edit_this_page >}}
 
 ## Vad & Varför?
 XML (eXtensible Markup Language) handlar om att strukturera data i ett läsbart format. Programmerare jonglerar med XML för konfiguration, datautbyte mellan appar och där specifikationer kräver det—tänk SOAP eller webb-APIer.

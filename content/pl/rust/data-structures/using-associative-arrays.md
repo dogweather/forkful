@@ -11,9 +11,8 @@ summary: "Tablice asocjacyjne, czyli to, co Rustaceanie nazywaj\u0105 \"mapami h
   , to kolekcje przechowuj\u0105ce dane w parach klucz-warto\u015B\u0107. Programi\u015B\
   ci u\u017Cywaj\u0105 ich do\u2026"
 title: Korzystanie z tablic asocjacyjnych
+weight: 15
 ---
-
-{{< edit_this_page >}}
 
 ## Co i dlaczego?
 

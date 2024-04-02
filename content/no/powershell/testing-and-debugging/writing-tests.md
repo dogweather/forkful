@@ -11,9 +11,8 @@ summary: "\xC5 skrive tester i PowerShell involverer \xE5 lage skript som automa
   \ validerer funksjonaliteten til PowerShell-koden din, for \xE5 sikre at den oppf\xF8\
   rer seg\u2026"
 title: Skrive tester
+weight: 36
 ---
-
-{{< edit_this_page >}}
 
 ## Hva & Hvorfor?
 

@@ -18,9 +18,8 @@ summary: "\"XML \uC791\uC5C5\"\uC740 \uD504\uB85C\uADF8\uB798\uBC0D\uC744 \uC0AC
   \uC778 \uD2B9\uC131\uACFC \uC790\uCCB4 \uAE30\uC220 \uD615\uC2DD \uB54C\uBB38\uC5D0\
   \ \uB370\uC774\uD130 \uAD50\uD658\uC5D0 \uB110\uB9AC \uC0AC\uC6A9\uB418\uAE30\u2026"
 title: "XML \uB2E4\uB8E8\uAE30"
+weight: 40
 ---
-
-{{< edit_this_page >}}
 
 ## 무엇 & 왜?
 "XML 작업"은 프로그래밍을 사용하여 XML(eXtensible Markup Language) 파일을 읽고, 생성하며 수정하는 과정을 의미합니다. 프로그래머들이 이 작업을 하는 이유는 XML이 플랫폼 독립적인 특성과 자체 기술 형식 때문에 데이터 교환에 널리 사용되기 때문입니다.

@@ -8,9 +8,8 @@ model: gpt-4-1106-preview
 summary: "Ler argumentos da linha de comando permite que seu programa TypeScript receba\
   \ inputs externos ao ser executado. Programadores fazem isso para tornar seus\u2026"
 title: Lendo argumentos da linha de comando
+weight: 23
 ---
-
-{{< edit_this_page >}}
 
 ## O Que é & Por Que Fazer?
 Ler argumentos da linha de comando permite que seu programa TypeScript receba inputs externos ao ser executado. Programadores fazem isso para tornar seus aplicativos mais flexíveis e interativos, permitindo diferentes comportamentos baseados nos dados fornecidos pelos usuários na execução.

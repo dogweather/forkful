@@ -11,9 +11,8 @@ summary: "Les expressions r\xE9guli\xE8res (regex) sont des motifs utilis\xE9s p
   \ rechercher des combinaisons de caract\xE8res dans des cha\xEEnes de caract\xE8\
   res. Les\u2026"
 title: "Utilisation des expressions r\xE9guli\xE8res"
+weight: 11
 ---
-
-{{< edit_this_page >}}
 
 ## Quoi & Pourquoi ?
 

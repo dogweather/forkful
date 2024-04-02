@@ -23,9 +23,8 @@ summary: "\u5728 Go \u4E2D\u5904\u7406 YAML \u6D89\u53CA\u5230\u89E3\u6790 YAML\
   \u7F16\u5199\u7684\u670D\u52A1\u548C\u7EC4\u4EF6\u4E4B\u95F4\u8FDB\u884C\u6570\u636E\
   \u4EA4\u6362\u3002"
 title: "\u4F7F\u7528YAML\u8FDB\u884C\u7F16\u7A0B"
+weight: 41
 ---
-
-{{< edit_this_page >}}
 
 ## 什么 & 为什么?
 

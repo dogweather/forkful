@@ -15,9 +15,8 @@ summary: "\u5728PowerShell\u4E2D\u4ECE\u5B57\u7B26\u4E32\u4E2D\u79FB\u9664\u5F15
   \u7279\u522B\u662F\u5728\u5904\u7406\u7528\u6237\u8F93\u5165\u6216\u89E3\u6790\u6587\
   \u4EF6\u65F6\uFF0C\u7ECF\u5E38\u9700\u8981\u6E05\u7406\u5B57\u7B26\u4E32\u3002"
 title: "\u4ECE\u5B57\u7B26\u4E32\u4E2D\u79FB\u9664\u5F15\u53F7"
+weight: 9
 ---
-
-{{< edit_this_page >}}
 
 ## 什么 & 为什么？
 在PowerShell中从字符串中移除引号是指去除包围在文本周围的单引号（`'`）或双引号（`"`）。程序员在处理、比较或输出字符串时，特别是在处理用户输入或解析文件时，经常需要清理字符串。

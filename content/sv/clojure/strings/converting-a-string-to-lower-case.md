@@ -9,9 +9,8 @@ summary: "Att konvertera en str\xE4ng till sm\xE5 bokst\xE4ver inneb\xE4r att \x
   ndra varje bokstav till dess motsvarighet i gemener. Programmerare g\xF6r detta\
   \ f\xF6r att normalisera\u2026"
 title: "Konvertera en str\xE4ng till gemener"
+weight: 4
 ---
-
-{{< edit_this_page >}}
 
 ## Vad & Varför?
 Att konvertera en sträng till små bokstäver innebär att ändra varje bokstav till dess motsvarighet i gemener. Programmerare gör detta för att normalisera textdata för sökning, sortering eller andra jämförelser där skiftlägen inte ska spela någon roll.

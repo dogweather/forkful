@@ -10,9 +10,8 @@ model: gpt-4-0125-preview
 summary: "Das Abrufen des aktuellen Datums in Go ist eine grundlegende Aufgabe f\xFC\
   r Programmierer, vergleichbar mit \"Hello, World!\" in seiner Allgegenwart. Es ist\u2026"
 title: Das aktuelle Datum abrufen
+weight: 29
 ---
-
-{{< edit_this_page >}}
 
 ## Was & Warum?
 

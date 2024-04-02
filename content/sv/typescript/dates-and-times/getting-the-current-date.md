@@ -11,9 +11,8 @@ summary: "Att f\xE5 det aktuella datumet i TypeScript, ett spr\xE5k byggt p\xE5 
   \ g\xF6r det m\xF6jligt f\xF6r dig att komma \xE5t och manipulera nuvarande datum-\
   \ och\u2026"
 title: "F\xE5 det aktuella datumet"
+weight: 29
 ---
-
-{{< edit_this_page >}}
 
 ## Vad & Varför?
 Att få det aktuella datumet i TypeScript, ett språk byggt på JavaScript, gör det möjligt för dig att komma åt och manipulera nuvarande datum- och tidsinformation. Programmerare behöver ofta denna funktionalitet för att skapa tidsstämplar, schemaläggning och andra tidskänsliga funktioner i sina applikationer.

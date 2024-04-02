@@ -7,9 +7,8 @@ model: gpt-4-0125-preview
 summary: "Searching and replacing text in C involves identifying specific substrings\
   \ within a larger string and substituting them with different substrings.\u2026"
 title: Searching and replacing text
+weight: 10
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 

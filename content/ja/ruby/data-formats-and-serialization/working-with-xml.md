@@ -21,9 +21,8 @@ summary: "XML\u3092\u6271\u3046\u3053\u3068\u306F\u3001XML\uFF08eXtensible Marku
   \u30DE\u30C3\u30C8\u3068\u3084\u308A\u53D6\u308A\u3059\u308B\u305F\u3081\u306B\u3053\
   \u308C\u3092\u884C\u3044\u307E\u3059\u3002"
 title: "XML\u306E\u6271\u3044\u65B9"
+weight: 40
 ---
-
-{{< edit_this_page >}}
 
 ## 何となぜ？
 XMLを扱うことは、XML（eXtensible Markup Language）ドキュメントをコードを使用して解析、生成、および操作することを意味します。プログラマーは、多くのWebサービス、設定ファイル、そしてXMLが共通言語であるデータ交換フォーマットとやり取りするためにこれを行います。

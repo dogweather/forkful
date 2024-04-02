@@ -9,9 +9,8 @@ summary: "Tworzenie tymczasowych plik\xF3w to proces, w kt\xF3rym program tworzy
   \ kt\xF3ry ma by\u0107 u\u017Cyty tylko na kr\xF3tki czas. Programi\u015Bci robi\u0105\
   \ to, by zarz\u0105dza\u0107 danymi\u2026"
 title: Tworzenie pliku tymczasowego
+weight: 21
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why? (Co i Dlaczego?)
 Tworzenie tymczasowych plików to proces, w którym program tworzy plik, który ma być użyty tylko na krótki czas. Programiści robią to, by zarządzać danymi tymczasowymi, które nie są potrzebne po zakończeniu zadania, jak np. cachowanie, przechowywanie dużych obiektów do zadań batchowych, lub jako miejsce pracy dla dużej operacji przetwarzania.

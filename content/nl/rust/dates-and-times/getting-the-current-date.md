@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "In programmeren helpt het verkrijgen van de huidige datum bij het volgen\
   \ van gebeurtenissen of het loggen van gegevens. Het is praktisch voor zaken zoals\u2026"
 title: Het huidige datum ophalen
+weight: 29
 ---
-
-{{< edit_this_page >}}
 
 ## Wat & Waarom?
 

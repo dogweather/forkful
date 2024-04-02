@@ -7,9 +7,8 @@ model: gpt-4-1106-preview
 summary: "In Haskell, eliminare caratteri che corrispondono a un pattern significa\
   \ rimuovere specifici elementi da una stringa, basandosi su regole definite. I\u2026"
 title: Eliminazione di caratteri che corrispondono a un pattern
+weight: 5
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 In Haskell, eliminare caratteri che corrispondono a un pattern significa rimuovere specifici elementi da una stringa, basandosi su regole definite. I programmatori lo fanno per pulire i dati, formattare l'output, o preparare stringhe per ulteriori elaborazioni.

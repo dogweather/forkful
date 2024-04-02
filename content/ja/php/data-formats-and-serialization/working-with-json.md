@@ -7,9 +7,8 @@ lastmod: '2024-03-13T22:44:42.275599-06:00'
 model: gpt-4-0125-preview
 summary: "JSON\u3001\u307E\u305F\u306FJavaScript Object\u2026"
 title: "JSON\u3092\u6D3B\u7528\u3059\u308B"
+weight: 38
 ---
-
-{{< edit_this_page >}}
 
 ## 何となぜ？
 JSON、またはJavaScript Object Notationは、人間が読み書きしやすく、マシンが解析し生成しやすい軽量データ交換フォーマットです。そのシンプルさと言語の独立性のため、プログラマーはしばしばサーバー間やウェブアプリケーション間でデータを交換するためにJSONを使用します。これは現代のウェブ開発やAPIにおける基石となっています。

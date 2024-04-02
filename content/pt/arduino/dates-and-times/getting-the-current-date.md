@@ -11,9 +11,8 @@ summary: "Obter a data atual em projetos Arduino envolve a obten\xE7\xE3o de inf
   \xF5es em tempo real que podem ser cruciais para registro, marca\xE7\xE3o de tempo\
   \ ou\u2026"
 title: Obtendo a data atual
+weight: 29
 ---
-
-{{< edit_this_page >}}
 
 ## O que & Por quê?
 Obter a data atual em projetos Arduino envolve a obtenção de informações em tempo real que podem ser cruciais para registro, marcação de tempo ou agendamento de tarefas. Programadores frequentemente precisam dessa capacidade para melhorar a funcionalidade, garantir a relevância dos dados e facilitar operações sensíveis ao tempo em seus projetos de IoT e embarcados.

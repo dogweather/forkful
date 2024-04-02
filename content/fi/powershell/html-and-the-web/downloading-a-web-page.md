@@ -7,9 +7,8 @@ model: gpt-4-1106-preview
 summary: "Lataaminen on verkkosivun datan siirt\xE4mist\xE4 paikalliselle koneelle.\
   \ Ohjelmoijat tekev\xE4t sen tiedon k\xE4sittely\xE4 tai automatisointia varten."
 title: Verkkosivun lataaminen
+weight: 42
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 Lataaminen on verkkosivun datan siirtämistä paikalliselle koneelle. Ohjelmoijat tekevät sen tiedon käsittelyä tai automatisointia varten.

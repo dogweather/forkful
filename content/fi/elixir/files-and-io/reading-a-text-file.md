@@ -8,9 +8,8 @@ model: gpt-4-1106-preview
 summary: "Lukemalla tekstitiedostoa ohjelma voi k\xE4sitell\xE4 tiedon sis\xE4lt\xF6\
   \xE4. T\xE4m\xE4 on peruskauraa, koska tiedot tallennetaan ja jaetaan usein tekstitiedostoina."
 title: Tekstitiedoston lukeminen
+weight: 22
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why? (Mikä & Miksi?)
 

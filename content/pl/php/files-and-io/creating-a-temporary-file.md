@@ -9,9 +9,8 @@ summary: "Tworzymy pliki tymczasowe, gdy musimy przechowa\u0107 dane tymczasowo,
   \ uko\u0144czymy z nimi co\u015B konkretnego. Programi\u015Bci robi\u0105 to, by\
   \ zarz\u0105dza\u0107 danymi\u2026"
 title: Tworzenie pliku tymczasowego
+weight: 21
 ---
-
-{{< edit_this_page >}}
 
 ## Co i dlaczego?
 Tworzymy pliki tymczasowe, gdy musimy przechować dane tymczasowo, zanim ukończymy z nimi coś konkretnego. Programiści robią to, by zarządzać danymi tymczasowymi w sposób bezpieczny, izolując je od reszty systemu, co jest kluczowe przy operacjach, które są wrażliwe na zakłócenia, takie jak transakcje czy przetwarzanie danych w tle.

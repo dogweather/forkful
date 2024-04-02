@@ -10,9 +10,8 @@ model: gpt-4-0125-preview
 summary: "Pobieranie strony internetowej w C polega na programowym uzyskiwaniu dost\u0119\
   pu do zawarto\u015Bci strony internetowej przez internet i zapisywaniu jej lokalnie\u2026"
 title: Pobieranie strony internetowej
+weight: 42
 ---
-
-{{< edit_this_page >}}
 
 ## Co i dlaczego?
 

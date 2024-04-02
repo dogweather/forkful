@@ -11,9 +11,8 @@ summary: "Avrunding av tall er prosessen med \xE5 justere et tall til n\xE6rmest
   \ hele tall eller til et spesifisert antall desimalplasser. Programmerere runder\
   \ ofte av\u2026"
 title: Avrunding av tall
+weight: 13
 ---
-
-{{< edit_this_page >}}
 
 ## Hva & Hvorfor?
 

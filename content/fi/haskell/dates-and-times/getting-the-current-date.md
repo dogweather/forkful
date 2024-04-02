@@ -11,9 +11,8 @@ summary: "Nykyisen p\xE4iv\xE4m\xE4\xE4r\xE4n noutaminen Haskellissa k\xE4sitt\x
   \xE4 j\xE4rjestelm\xE4n nykyisen ajan hankkimisen ja sen muuntamisen luettavaan\
   \ p\xE4iv\xE4m\xE4\xE4r\xE4muotoon. Ohjelmoijat\u2026"
 title: "Nykyisen p\xE4iv\xE4m\xE4\xE4r\xE4n hankkiminen"
+weight: 29
 ---
-
-{{< edit_this_page >}}
 
 ## Mikä & Miksi?
 Nykyisen päivämäärän noutaminen Haskellissa käsittää järjestelmän nykyisen ajan hankkimisen ja sen muuntamisen luettavaan päivämäärämuotoon. Ohjelmoijat tekevät tämän suorittaakseen toimintoja päivämäärän perusteella, kuten lokitusta, tehtävien ajoitusta tai tapahtumien aikaleimausta sovelluksissa.

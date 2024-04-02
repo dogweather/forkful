@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Los arreglos asociativos, o lo que los Rust\xE1ceos llaman \"mapas hash\"\
   , son colecciones que almacenan datos en pares clave-valor. Los programadores los\u2026"
 title: Uso de matrices asociativas
+weight: 15
 ---
-
-{{< edit_this_page >}}
 
 ## Qué y Por Qué?
 

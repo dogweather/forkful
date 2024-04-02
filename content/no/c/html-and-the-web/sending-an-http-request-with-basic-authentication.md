@@ -10,9 +10,8 @@ model: gpt-4-0125-preview
 summary: "\xC5 sende en HTTP-foresp\xF8rsel med grunnleggende autentisering i C involverer\
   \ \xE5 lage en HTTP-foresp\xF8rsel som inkluderer en autorisasjonsheader med\u2026"
 title: "Sende en HTTP-foresp\xF8rsel med grunnleggende autentisering"
+weight: 45
 ---
-
-{{< edit_this_page >}}
 
 ## Hva & Hvorfor?
 Å sende en HTTP-forespørsel med grunnleggende autentisering i C involverer å lage en HTTP-forespørsel som inkluderer en autorisasjonsheader med brukerlegitimasjon kodet i Base64. Dette er en vanlig metode for å legge til et enkelt autentiseringslag til HTTP-forespørsler, som gjør det mulig å programmelt få tilgang til begrensede ressurser.

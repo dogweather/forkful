@@ -11,9 +11,8 @@ summary: "Les tableaux associatifs, ou comme ils sont plus pr\xE9cis\xE9ment con
   \ en JavaScript, les objets, vous permettent d\u2019associer des cl\xE9s \xE0 des\
   \ valeurs. Ceci est\u2026"
 title: Utilisation des tableaux associatifs
+weight: 15
 ---
-
-{{< edit_this_page >}}
 
 ## Quoi & Pourquoi ?
 

@@ -9,9 +9,8 @@ summary: "Refaktorering er prosessen med \xE5 tweake koden din uten \xE5 endre d
   \ eksterne oppf\xF8rsel. Det handler alt om \xE5 rydde opp og organisere din handling\
   \ for \xE5\u2026"
 title: Refaktorering
+weight: 19
 ---
-
-{{< edit_this_page >}}
 
 ## Hva & Hvorfor?
 Refaktorering er prosessen med å tweake koden din uten å endre dens eksterne oppførsel. Det handler alt om å rydde opp og organisere din handling for å gjøre koden enklere å lese, vedlikeholde og utvide. Det kan også bidra til å knuse bugs og forbedre ytelsen.

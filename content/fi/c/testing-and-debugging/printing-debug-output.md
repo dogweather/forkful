@@ -11,9 +11,8 @@ summary: "Debug-tulosteen tulostaminen tarkoittaa v\xE4liaikaisten, informatiivi
   \ lokiviestien tuottamista, jotka voivat auttaa ohjelmoijia ymm\xE4rt\xE4m\xE4\xE4\
   n ohjelman\u2026"
 title: "Tulostetaan virheenj\xE4ljitystietoja"
+weight: 33
 ---
-
-{{< edit_this_page >}}
 
 ## Mikä & Miksi?
 

@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Merkkijonon alkukirjaimen suurentaminen tarkoittaa merkkijonon jokaisen\
   \ sanan ensimm\xE4isen merkin muuttamista suuraakkoseksi, jos se on pienaakkosena,\u2026"
 title: Merkkijonon muuttaminen isoiksi kirjaimiksi
+weight: 2
 ---
-
-{{< edit_this_page >}}
 
 ## Mikä & Miksi?
 Merkkijonon alkukirjaimen suurentaminen tarkoittaa merkkijonon jokaisen sanan ensimmäisen merkin muuttamista suuraakkoseksi, jos se on pienaakkosena, samalla kun kaikki muut merkit jätetään muuttumattomiksi. Ohjelmoijat suorittavat usein tämän tehtävän tulosteiden muotoilun, käyttäjän syötteiden tai datan käsittelyn yhteydessä varmistaakseen tekstin esitys- tai käsittelytavan johdonmukaisuuden, erityisesti käyttöliittymissä tai datan normalisointitehtävissä.

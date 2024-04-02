@@ -9,9 +9,8 @@ summary: "Interpolering av str\xE4ng \xE4r processen d\xE4r man s\xE4tter in utt
   \ eller variabler in i str\xE4ngar. Programmerare g\xF6r det f\xF6r att dynamiskt\
   \ bygga str\xE4ngar \u2013\u2026"
 title: "Interpolera en str\xE4ng"
+weight: 8
 ---
-
-{{< edit_this_page >}}
 
 ## Vad & Varför?
 Interpolering av sträng är processen där man sätter in uttryck eller variabler in i strängar. Programmerare gör det för att dynamiskt bygga strängar – oftast för att visa information till användaren eller för att skapa dynamisk kod.

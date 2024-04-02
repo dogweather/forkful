@@ -11,9 +11,8 @@ summary: "Att skriva tester i Elm inneb\xE4r att skapa testfall f\xF6r att verif
   \ riktigheten av din Elm-kod, s\xE4kerst\xE4llande att den fungerar som f\xF6rv\xE4\
   ntat.\u2026"
 title: Skriva tester
+weight: 36
 ---
-
-{{< edit_this_page >}}
 
 ## Vad & Varför?
 

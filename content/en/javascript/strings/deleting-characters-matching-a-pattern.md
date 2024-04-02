@@ -7,9 +7,8 @@ model: gpt-4-1106-preview
 summary: "Removing characters based on a pattern makes strings clean and uniform.\
   \ Programmers do this for formatting, removing unwanted characters, or for\u2026"
 title: Deleting characters matching a pattern
+weight: 5
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 Removing characters based on a pattern makes strings clean and uniform. Programmers do this for formatting, removing unwanted characters, or for simplification before processing.

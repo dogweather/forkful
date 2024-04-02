@@ -10,9 +10,8 @@ model: gpt-4-0125-preview
 summary: "L'interpolazione di stringhe in Visual Basic for Applications (VBA) si riferisce\
   \ al processo di incorporazione di variabili o espressioni all'interno di\u2026"
 title: Interpolazione di una stringa
+weight: 8
 ---
-
-{{< edit_this_page >}}
 
 ## Cosa e Perché?
 

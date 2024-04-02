@@ -11,9 +11,8 @@ summary: "Les expressions r\xE9guli\xE8res, un outil puissant pour la correspond
   \ de motifs et la manipulation de donn\xE9es, sont essentielles dans les t\xE2ches\
   \ de\u2026"
 title: "Utilisation des expressions r\xE9guli\xE8res"
+weight: 11
 ---
-
-{{< edit_this_page >}}
 
 ## Quoi & Pourquoi ?
 Les expressions régulières, un outil puissant pour la correspondance de motifs et la manipulation de données, sont essentielles dans les tâches de traitement de texte telles que la validation d'entrée, la recherche et le remplacement de texte. Les programmeurs les utilisent largement pour gérer de manière efficace et succincte les tâches complexes d'analyse de chaînes et de validation de données.

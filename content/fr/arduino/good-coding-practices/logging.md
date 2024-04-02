@@ -9,9 +9,8 @@ summary: "Le \"logging\", ou journalisation, consiste \xE0 conserver un enregist
   \ d\u2019\xE9v\xE9nements, de transactions ou d\u2019activit\xE9s qui se produisent\
   \ dans un syst\xE8me au\u2026"
 title: Journalisation
+weight: 17
 ---
-
-{{< edit_this_page >}}
 
 ## Quoi & Pourquoi ?
 Le "logging", ou journalisation, consiste à conserver un enregistrement d’événements, de transactions ou d’activités qui se produisent dans un système au fil du temps. Les programmeurs l’utilisent pour déboguer, surveiller l’état du système, collecter des statistiques, ou même auditer l’usage, ce qui en fait une pratique indispensable pour maintenir et comprendre le comportement de leur code sous diverses conditions.

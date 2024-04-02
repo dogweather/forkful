@@ -11,9 +11,8 @@ summary: "Merkkijonosta lainausmerkit poistaminen C-kieless\xE4 tarkoittaa tekst
   ll\xF6n erottamista ilman ymp\xE4r\xF6ivi\xE4 yksitt\xE4isi\xE4 (' ') tai kaksois\
   \ (\" \")\u2026"
 title: Lainausmerkkien poistaminen merkkijonosta
+weight: 9
 ---
-
-{{< edit_this_page >}}
 
 ## Mikä & Miksi?
 

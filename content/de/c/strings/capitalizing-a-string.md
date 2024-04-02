@@ -11,9 +11,8 @@ summary: "Das Gro\xDFschreiben eines Strings in C beinhaltet das Umwandeln des e
   \ Buchstabens jedes Wortes in einem gegebenen String in Gro\xDFbuchstaben, falls\
   \ es\u2026"
 title: "Einen String gro\xDFschreiben"
+weight: 2
 ---
-
-{{< edit_this_page >}}
 
 ## Was & Warum?
 

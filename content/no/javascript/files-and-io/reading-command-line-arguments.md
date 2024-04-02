@@ -9,9 +9,8 @@ summary: "Kommandolinjeargumenter lar oss gi input direkte til et JavaScript-pro
   \ i kj\xF8retid, slik at oppf\xF8rselen kan endres dynamisk. Programmerere bruker\
   \ dette\u2026"
 title: Lese kommandolinjeargumenter
+weight: 23
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 Kommandolinjeargumenter lar oss gi input direkte til et JavaScript-program i kjøretid, slik at oppførselen kan endres dynamisk. Programmerere bruker dette for å gjøre skriptene mer fleksible og for å kunne håndtere ulike scenarier uten å røre koden.

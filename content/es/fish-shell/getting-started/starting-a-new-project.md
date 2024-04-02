@@ -7,9 +7,8 @@ model: gpt-4-1106-preview
 summary: "Iniciar un nuevo proyecto es como preparar el terreno antes de construir\
   \ una casa; es el proceso de configurar las bases para tu c\xF3digo. Los programadores\u2026"
 title: Iniciando un nuevo proyecto
+weight: 1
 ---
-
-{{< edit_this_page >}}
 
 ## ¿Qué & Por Qué?
 Iniciar un nuevo proyecto es como preparar el terreno antes de construir una casa; es el proceso de configurar las bases para tu código. Los programadores lo hacen para organizar sus ideas y asegurarse de que tienen todas las herramientas necesarias a mano.

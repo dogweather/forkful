@@ -8,9 +8,8 @@ model: gpt-4-1106-preview
 summary: "Beim Verketten von Strings geht es darum, sie aneinanderzureihen, um einen\
   \ l\xE4ngeren String zu bilden. Programmierer machen das, um dynamische Texte zu\u2026"
 title: "Zeichenketten verkn\xFCpfen"
+weight: 3
 ---
-
-{{< edit_this_page >}}
 
 ## Was & Warum?
 

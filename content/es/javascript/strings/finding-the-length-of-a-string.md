@@ -8,9 +8,8 @@ model: gpt-4-1106-preview
 summary: "La longitud de una cadena en JavaScript se refiere a la cantidad de caracteres\
   \ que contiene. Los programadores frecuentemente necesitan esta informaci\xF3n\u2026"
 title: Calculando la longitud de una cadena
+weight: 7
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 

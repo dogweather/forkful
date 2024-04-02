@@ -11,9 +11,8 @@ summary: "Leggere un file di testo in C comporta l'apertura di un file sul tuo s
   \ per estrarne informazioni e manipolarle o visualizzarle secondo necessit\xE0.\
   \ I\u2026"
 title: Leggere un file di testo
+weight: 22
 ---
-
-{{< edit_this_page >}}
 
 ## Cos'è e Perché?
 

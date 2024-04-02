@@ -17,9 +17,8 @@ summary: "\u0E01\u0E32\u0E23\u0E17\u0E33\u0E07\u0E32\u0E19\u0E01\u0E31\u0E1A XML
   \ XML (eXtensible Markup Language) \u0E42\u0E14\u0E22\u0E43\u0E0A\u0E49\u0E42\u0E04\
   \u0E49\u0E14\u2026"
 title: "\u0E01\u0E32\u0E23\u0E17\u0E33\u0E07\u0E32\u0E19\u0E01\u0E31\u0E1A XML"
+weight: 40
 ---
-
-{{< edit_this_page >}}
 
 ## อะไรและทำไม?
 การทำงานกับ XML หมายถึงการแยกวิเคราะห์, สร้าง, และจัดการเอกสาร XML (eXtensible Markup Language) โดยใช้โค้ด โปรแกรมเมอร์ทำเช่นนี้เพื่อโต้ตอบกับบริการเว็บมากมาย, ไฟล์คอนฟิก, และรูปแบบการแลกเปลี่ยนข้อมูลที่ XML เป็นภาษาสากล

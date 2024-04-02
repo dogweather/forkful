@@ -9,9 +9,8 @@ summary: "Refatora\xE7\xE3o \xE9 o processo de reestrutura\xE7\xE3o do c\xF3digo
   \ computador existente\u2014mudando a fatora\xE7\xE3o\u2014sem alterar seu comportamento\
   \ externo. Programadores\u2026"
 title: "Refatora\xE7\xE3o"
+weight: 19
 ---
-
-{{< edit_this_page >}}
 
 ## O Que & Porquê?
 

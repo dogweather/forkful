@@ -11,9 +11,8 @@ summary: "Att s\xF6ka och ers\xE4tta text i Visual Basic for Applications (VBA) 
   r avg\xF6rande f\xF6r att programmeringsm\xE4ssigt redigera dokument, kalkylblad\
   \ och databaser.\u2026"
 title: "S\xF6ka och ers\xE4tta text"
+weight: 10
 ---
-
-{{< edit_this_page >}}
 
 ## Vad & Varför?
 

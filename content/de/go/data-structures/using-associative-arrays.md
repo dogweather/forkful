@@ -11,9 +11,8 @@ summary: "Assoziative Arrays, in Go als Maps bekannt, erm\xF6glichen es dir, Sch
   ssel-Wert-Paare zu speichern, bei denen jeder einzigartige Schl\xFCssel auf einen\
   \ Wert\u2026"
 title: Verwendung von assoziativen Arrays
+weight: 15
 ---
-
-{{< edit_this_page >}}
 
 ## Was & Warum?
 

@@ -13,9 +13,8 @@ summary: "N\u1ED9i suy chu\u1ED7i cho ph\xE9p b\u1EA1n ch\xE8n gi\xE1 tr\u1ECB v
   \ ra c\xE1c tin nh\u1EAFn t\xF9y ch\u1EC9nh, t\u1EF1 \u0111\u1ED9ng h\xF3a l\u1EC7\
   nh v\xE0 vi\u1EBFt k\u1ECBch b\u1EA3n nh\u01B0 m\u1ED9t\u2026"
 title: "N\u1ED9i suy chu\u1ED7i k\xFD t\u1EF1"
+weight: 8
 ---
-
-{{< edit_this_page >}}
 
 ## Cái gì & Tại sao?
 Nội suy chuỗi cho phép bạn chèn giá trị vào một chuỗi. Nó rất tiện lợi cho việc tạo ra các tin nhắn tùy chỉnh, tự động hóa lệnh và viết kịch bản như một ông chủ. 

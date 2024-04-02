@@ -7,9 +7,8 @@ model: gpt-4-1106-preview
 summary: "Printing debug output in JavaScript is about showing variables, errors,\
   \ or any other info that helps figure out what your code is doing at a glance.\u2026"
 title: Printing debug output
+weight: 33
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 

@@ -8,9 +8,8 @@ model: gpt-4-1106-preview
 summary: "S\xF8k og erstatt er metoden for \xE5 finne tekststrenger og bytte dem ut\
   \ med ny tekst. Programmerere bruker dette for \xE5 oppdatere kode, rette feil eller\u2026"
 title: "S\xF8king og erstatting av tekst"
+weight: 10
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 Søk og erstatt er metoden for å finne tekststrenger og bytte dem ut med ny tekst. Programmerere bruker dette for å oppdatere kode, rette feil eller bearbeide data.

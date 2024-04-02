@@ -11,9 +11,8 @@ summary: "Logging i Visual Basic for Applications (VBA) inneb\xE6rer \xE5 regist
   \ informasjon om et programs kj\xF8retidsoppf\xF8rsel til en fil, konsoll eller\
   \ database.\u2026"
 title: Logging
+weight: 17
 ---
-
-{{< edit_this_page >}}
 
 ## Hva & Hvorfor?
 

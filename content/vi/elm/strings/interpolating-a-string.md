@@ -13,9 +13,8 @@ summary: "N\u1ED9i suy chu\u1ED7i cho ph\xE9p b\u1EA1n nh\xFAng tr\u1EF1c ti\u1E
   c gi\u1ED1ng nh\u01B0 v\u0103n b\u1EA3n b\xECnh th\u01B0\u1EDDng h\u01A1n. L\u1EAD\
   p tr\xECnh vi\xEAn s\u1EED d\u1EE5ng n\xF3 \u0111\u1EC3 x\xE2y\u2026"
 title: "N\u1ED9i suy chu\u1ED7i k\xFD t\u1EF1"
+weight: 8
 ---
-
-{{< edit_this_page >}}
 
 ## Cái gì & Tại sao?
 

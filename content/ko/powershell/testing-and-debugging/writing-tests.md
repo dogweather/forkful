@@ -23,9 +23,8 @@ summary: "PowerShell\uC5D0\uC11C \uD14C\uC2A4\uD2B8\uB97C \uC791\uC131\uD55C\uB2
   \uB4DC \uC720\uC9C0 \uAD00\uB9AC\uB97C \uB2E8\uC21C\uD654\uD558\uBA70, \uCF54\uB4DC\
   \u2026"
 title: "\uD14C\uC2A4\uD2B8 \uC791\uC131\uD558\uAE30"
+weight: 36
 ---
-
-{{< edit_this_page >}}
 
 ## 무엇 & 왜?
 

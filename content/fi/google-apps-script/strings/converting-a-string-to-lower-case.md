@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Merkkijonon muuttaminen pieniksi kirjaimiksi Google Apps Scriptill\xE4,\
   \ pilvipohjaisella skriptauskielell\xE4 Google-tuotteiden automatisointiin, on\u2026"
 title: Merkkijonon muuttaminen pieniksi kirjaimiksi
+weight: 4
 ---
-
-{{< edit_this_page >}}
 
 ## Mikä & Miksi?
 

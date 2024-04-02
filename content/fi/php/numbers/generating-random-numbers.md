@@ -9,9 +9,8 @@ summary: "Satunnaisten numeroiden tuottaminen PHP:ss\xE4 tarkoittaa ennalta arva
   \ arvojen tuottamista m\xE4\xE4ritellyll\xE4 v\xE4lill\xE4. T\xE4m\xE4 on olennaista\
   \ teht\xE4viss\xE4\u2026"
 title: Satunnaislukujen generointi
+weight: 12
 ---
-
-{{< edit_this_page >}}
 
 ## Mikä & Miksi?
 

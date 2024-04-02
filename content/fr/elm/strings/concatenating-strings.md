@@ -9,9 +9,8 @@ summary: "La concat\xE9nation de cha\xEEnes, c'est simplement coller des textes 
   \ \xE0 bout. On le fait pour modeler des messages, combiner des valeurs ou cr\xE9\
   er des\u2026"
 title: "Concat\xE9nation de cha\xEEnes de caract\xE8res"
+weight: 3
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 La concaténation de chaînes, c'est simplement coller des textes bout à bout. On le fait pour modeler des messages, combiner des valeurs ou créer des formats spécifiques.

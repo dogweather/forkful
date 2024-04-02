@@ -1,14 +1,15 @@
 ---
 date: 2024-01-26 03:48:19.193934-07:00
-description: "Att anv\xE4nda en debugger inneb\xE4r att du utrustar dig sj\xE4lv med\
-  \ ett f\xF6rstoringsglas f\xF6r att granska din kod. Programmerare g\xF6r detta\
-  \ f\xF6r att krossa buggar,\u2026"
+description: "Clojure st\xF6djer sig p\xE5 Java Virtual Machine (JVM), s\xE5 mycket\
+  \ av fels\xF6kningen sker med Java-verktyg. Ett s\xE5dant verktyg \xE4r `CIDER`,\
+  \ ett kraftfullt paket\u2026"
 lastmod: '2024-03-13T22:44:37.529904-06:00'
 model: gpt-4-0125-preview
-summary: "Att anv\xE4nda en debugger inneb\xE4r att du utrustar dig sj\xE4lv med ett\
-  \ f\xF6rstoringsglas f\xF6r att granska din kod. Programmerare g\xF6r detta f\xF6\
-  r att krossa buggar,\u2026"
+summary: "Clojure st\xF6djer sig p\xE5 Java Virtual Machine (JVM), s\xE5 mycket av\
+  \ fels\xF6kningen sker med Java-verktyg. Ett s\xE5dant verktyg \xE4r `CIDER`, ett\
+  \ kraftfullt paket\u2026"
 title: "Att anv\xE4nda en debugger"
+weight: 35
 ---
 
 ## Hur man gör:

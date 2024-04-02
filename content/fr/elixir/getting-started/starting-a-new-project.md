@@ -9,9 +9,8 @@ summary: "Le d\xE9marrage d'un nouveau projet, c'est un peu aller \xE0 l'aventur
   \ avec Elixir : on commence avec une id\xE9e et des outils pour cr\xE9er quelque\
   \ chose d'utile\u2026"
 title: Lancement d'un nouveau projet
+weight: 1
 ---
-
-{{< edit_this_page >}}
 
 ## Quoi & Pourquoi ?
 

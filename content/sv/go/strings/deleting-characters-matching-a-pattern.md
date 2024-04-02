@@ -10,9 +10,8 @@ model: gpt-4-0125-preview
 summary: "Att ta bort tecken som matchar ett specifikt m\xF6nster handlar om att eliminera\
   \ vissa tecken eller sekvenser av tecken fr\xE5n str\xE4ngar, baserat p\xE5 regler\u2026"
 title: "Radera tecken som matchar ett m\xF6nster"
+weight: 5
 ---
-
-{{< edit_this_page >}}
 
 ## Vad & Varför?
 

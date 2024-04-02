@@ -9,9 +9,8 @@ summary: "Virheiden k\xE4sittely ohjelmoinnissa on odottamattoman odottamista. S
   \ on suunnittelutaidetta silt\xE4 varalta, ett\xE4 asiat menev\xE4t pieleen, jotta\
   \ voit pit\xE4\xE4\u2026"
 title: "Virheiden k\xE4sittely"
+weight: 16
 ---
-
-{{< edit_this_page >}}
 
 ## Mikä ja miksi?
 Virheiden käsittely ohjelmoinnissa on odottamattoman odottamista. Se on suunnittelutaidetta siltä varalta, että asiat menevät pieleen, jotta voit pitää ohjelmasi sujuvasti toiminnassa.

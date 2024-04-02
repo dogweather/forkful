@@ -10,9 +10,8 @@ model: gpt-4-0125-preview
 summary: "Het parsen van HTML in C omvat het analyseren van HTML-documenten om gegevens,\
   \ structuur of specifieke onderdelen effici\xEBnt te extraheren, vaak als\u2026"
 title: HTML Parsen
+weight: 43
 ---
-
-{{< edit_this_page >}}
 
 ## Wat & Waarom?
 

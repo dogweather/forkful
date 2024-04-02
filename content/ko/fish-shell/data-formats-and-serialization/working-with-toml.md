@@ -16,9 +16,8 @@ summary: "TOML\uC740 \uC0AC\uB78C\uC774 \uC77D\uACE0 \uC4F0\uAE30 \uC26C\uC6B0\u
   \uD2B8\uC5D0\uC11C \uBA85\uD655\uD558\uACE0 \uACC4\uCE35\uC801\uC778 \uC124\uC815\
   \ \uD30C\uC77C\uC744 \uC704\uD574 TOML\uC744 \uC0AC\uC6A9\uD569\uB2C8\uB2E4."
 title: "\uD504\uB85C\uADF8\uB798\uBA38\uB97C \uC704\uD55C TOML \uB2E4\uB8E8\uAE30"
+weight: 39
 ---
-
-{{< edit_this_page >}}
 
 ## 무엇 & 왜?
 TOML은 사람이 읽고 쓰기 쉬우며 기계가 파싱하고 생성하기 쉬운 설정 파일 형식입니다. 프로그래머들은 가독성이 중요한 프로젝트에서 명확하고 계층적인 설정 파일을 위해 TOML을 사용합니다.

@@ -17,9 +17,8 @@ summary: "HTTP request \u0915\u0947 \u0938\u093E\u0925 basic authentication \u09
 title: "\u092C\u0947\u0938\u093F\u0915 \u092A\u094D\u0930\u092E\u093E\u0923\u0940\u0915\
   \u0930\u0923 \u0915\u0947 \u0938\u093E\u0925 HTTP \u0905\u0928\u0941\u0930\u094B\
   \u0927 \u092D\u0947\u091C\u0928\u093E"
+weight: 45
 ---
-
-{{< edit_this_page >}}
 
 ## क्या और क्यों?
 HTTP request के साथ basic authentication एक सरल तरीका है जिसमें username और password को encode करके request headers में भेजा जाता है। यह तकनीक वेब services और APIs तक सुरक्षित एक्सेस पाने के लिए प्रयोग की जाती है।

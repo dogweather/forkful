@@ -11,9 +11,8 @@ summary: "Das \xDCberpr\xFCfen, ob ein Verzeichnis existiert, ist eine grundlege
   \ Operation, wenn man Skripte schreibt, die mit dem Dateisystem interagieren. Dabei\
   \ wird\u2026"
 title: "\xDCberpr\xFCfung, ob ein Verzeichnis existiert"
+weight: 20
 ---
-
-{{< edit_this_page >}}
 
 ## Was & Warum?
 

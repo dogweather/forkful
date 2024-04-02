@@ -23,9 +23,8 @@ summary: "Dart\uC5D0\uC11C \uC784\uC2DC \uD30C\uC77C\uC744 \uC0DD\uC131\uD558\uB
   \uB2C8\uB2E4. \uD504\uB85C\uADF8\uB798\uBA38\uB4E4\uC740 \uC601\uAD6C\uC801\uC778\
   \ \uC800\uC7A5\uC774 \uD544\uC694 \uC5C6\uB294\u2026"
 title: "\uC784\uC2DC \uD30C\uC77C \uC0DD\uC131\uD558\uAE30"
+weight: 21
 ---
-
-{{< edit_this_page >}}
 
 ## 무엇이며 왜인가?
 Dart에서 임시 파일을 생성하는 것은 짧은 기간 동안 사용하도록 의도된 파일을 생성하는 것을 의미합니다. 주로 데이터 캐싱, 파일 처리를 위한 임시 저장, 또는 오래 보관하기에는 너무 민감한 정보를 담는 등의 상황을 위한 것입니다. 프로그래머들은 영구적인 저장이 필요 없는 데이터를 관리하여 성능을 향상시키고 데이터 위생을 유지하기 위해 이러한 작업을 합니다.

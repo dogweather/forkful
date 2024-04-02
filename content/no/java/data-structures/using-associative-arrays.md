@@ -10,9 +10,8 @@ model: gpt-4-0125-preview
 summary: "I Java lar assosiative tabeller, eller ordb\xF8ker, deg lagre n\xF8kkel-verdi-par\
   \ for effektiv oppslag og manipulering av data. Programmerere bruker dem til\u2026"
 title: Bruke associative tabeller
+weight: 15
 ---
-
-{{< edit_this_page >}}
 
 ## Hva og hvorfor?
 

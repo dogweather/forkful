@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Assosiative tabeller i PHP er som superladde lister der hvert element kan\
   \ n\xE5s ved hjelp av en menneskeleselig n\xF8kkel i stedet for bare tall. Programmerere\u2026"
 title: Bruke associative tabeller
+weight: 15
 ---
-
-{{< edit_this_page >}}
 
 ## Hva & Hvorfor?
 

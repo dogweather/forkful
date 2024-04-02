@@ -8,9 +8,8 @@ model: gpt-4-1106-preview
 summary: "Protokollierung ist im Wesentlichen der Prozess der Aufzeichnung von Ereignissen\
   \ und Datenausgaben einer Software w\xE4hrend ihres Betriebs \u2013 man kann sie\u2026"
 title: Protokollierung
+weight: 17
 ---
-
-{{< edit_this_page >}}
 
 ## Was & Warum?
 Protokollierung ist im Wesentlichen der Prozess der Aufzeichnung von Ereignissen und Datenausgaben einer Software während ihres Betriebs – man kann sie sich wie das Tagebuch der Software vorstellen. Programmierer nutzen die Protokollierung, um den Überblick darüber zu behalten, was unter der Haube passiert – sie ist äußerst wertvoll für das Debugging, die Überwachung des Systemverhaltens in Echtzeit und die Analyse vergangener Aktivitäten zur Leistungsoptimierung oder für Audits.

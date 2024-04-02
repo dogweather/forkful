@@ -8,9 +8,8 @@ model: gpt-4-0125-preview
 summary: "Das Runden von Zahlen besteht darin, Dezimalstellen abzuschneiden, um Ihre\
   \ Daten zu vereinfachen oder spezifischen Formaten anzupassen. Programmierer tun\u2026"
 title: Zahlen runden
+weight: 13
 ---
-
-{{< edit_this_page >}}
 
 ## Was & Warum?
 Das Runden von Zahlen besteht darin, Dezimalstellen abzuschneiden, um Ihre Daten zu vereinfachen oder spezifischen Formaten anzupassen. Programmierer tun dies für eine benutzerfreundliche Anzeige, effiziente Speicherung oder wenn die Dezimalgenauigkeit kein Thema ist.

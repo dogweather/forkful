@@ -11,9 +11,8 @@ summary: "\xC5 hente den n\xE5v\xE6rende datoen i programmering er en grunnlegge
   \ oppgave som lar deg hente og manipulere systemets dato- og tidsdata. I scripting\
   \ og\u2026"
 title: "F\xE5 dagens dato"
+weight: 29
 ---
-
-{{< edit_this_page >}}
 
 ## Hva & Hvorfor?
 Å hente den nåværende datoen i programmering er en grunnleggende oppgave som lar deg hente og manipulere systemets dato- og tidsdata. I scripting og automatiseringsoppgaver er det essensielt for å generere tidsstempler, planlegge oppgaver og opprette logger.

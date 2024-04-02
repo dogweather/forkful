@@ -9,9 +9,8 @@ summary: "Organizar el c\xF3digo en funciones consiste en envolver segmentos de 
   digo que realizan tareas espec\xEDficas y asignarles un nombre. Se hace para hacer\
   \ el\u2026"
 title: "Organizando c\xF3digo en funciones"
+weight: 18
 ---
-
-{{< edit_this_page >}}
 
 ## ¿Qué y Por Qué?
 Organizar el código en funciones consiste en envolver segmentos de código que realizan tareas específicas y asignarles un nombre. Se hace para hacer el código reutilizable, legible y mantenible. En lugar de reescribir el mismo código, llama a una función. ¿Quieres solucionar problemas o actualizar? Modifica la función sin tener que examinar pilas de scripts.

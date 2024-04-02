@@ -14,9 +14,8 @@ summary: "\u5728Java\u4E2D\uFF0C\u628A\u65E5\u671F\u8F6C\u6362\u4E3A\u5B57\u7B26
   \u671F\u683C\u5F0F\uFF0C\u6216\u8005\u5728\u6570\u636E\u5904\u7406\u548C\u65E5\u5FD7\
   \u8BB0\u5F55\u4E2D\u4F7F\u7528\u5B57\u7B26\u4E32\u683C\u5F0F\u3002"
 title: "\u5C06\u65E5\u671F\u8F6C\u6362\u4E3A\u5B57\u7B26\u4E32"
+weight: 28
 ---
-
-{{< edit_this_page >}}
 
 ## 什么&为什么？
 在Java中，把日期转换为字符串意味着将日期格式化为可读文本。程序员这么做来显示友好的日期格式，或者在数据处理和日志记录中使用字符串格式。

@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Das Parsen von HTML dreht sich um das Extrahieren von Daten oder Informationen\
   \ aus HTML-Inhalten, eine g\xE4ngige Aufgabe beim Umgang mit Webdaten.\u2026"
 title: HTML parsen
+weight: 43
 ---
-
-{{< edit_this_page >}}
 
 ## Was & Warum?
 

@@ -11,9 +11,8 @@ summary: "Konkatenacja \u0142a\u0144cuch\xF3w w programowaniu polega na po\u0142
   czeniu dw\xF3ch lub wi\u0119cej \u0142a\u0144cuch\xF3w w jeden. Programi\u015Bci\
   \ robi\u0105 to, aby \u0142atwiej manipulowa\u0107 danymi\u2026"
 title: "\u0141\u0105czenie \u0142a\u0144cuch\xF3w znak\xF3w"
+weight: 3
 ---
-
-{{< edit_this_page >}}
 
 ## Co i dlaczego?
 Konkatenacja łańcuchów w programowaniu polega na połączeniu dwóch lub więcej łańcuchów w jeden. Programiści robią to, aby łatwiej manipulować danymi tekstowymi, konstruować wiadomości lub dynamicznie składać części interfejsu użytkownika.

@@ -11,9 +11,8 @@ summary: "I programmering \xE4r att f\xE5 fram dagens datum en grundl\xE4ggande 
   \ som m\xF6jligg\xF6r f\xF6r utvecklare att f\xE5 tillg\xE5ng till, visa eller manipulera\
   \ det aktuella\u2026"
 title: "F\xE5 det aktuella datumet"
+weight: 29
 ---
-
-{{< edit_this_page >}}
 
 ## Vad & Varför?
 I programmering är att få fram dagens datum en grundläggande uppgift som möjliggör för utvecklare att få tillgång till, visa eller manipulera det aktuella datumet inom sina applikationer. Denna funktion är avgörande för allt från loggning och tidsstämpling av händelser till beräkningar baserade på datum.

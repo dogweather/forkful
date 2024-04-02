@@ -7,9 +7,8 @@ lastmod: '2024-03-13T22:44:41.476829-06:00'
 model: gpt-4-0125-preview
 summary: "Google Apps\u2026"
 title: "XML\u3068\u306E\u4F5C\u696D"
+weight: 40
 ---
-
-{{< edit_this_page >}}
 
 ## 何となぜ？
 

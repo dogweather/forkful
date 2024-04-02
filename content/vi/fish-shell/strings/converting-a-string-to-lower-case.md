@@ -14,9 +14,8 @@ summary: "Chuy\u1EC3n \u0111\u1ED5i m\u1ED9t chu\u1ED7i sang ch\u1EEF th\u01B0\u
   i \u0111\xF3 th\xE0nh d\u1EA1ng ch\u1EEF th\u01B0\u1EDDng. L\u1EADp tr\xECnh vi\xEA\
   n th\u1EF1c hi\u1EC7n vi\u1EC7c n\xE0y \u0111\u1EC3 \u0111\u1EA3m b\u1EA3o\u2026"
 title: "Chuy\u1EC3n \u0111\u1ED5i chu\u1ED7i th\xE0nh ch\u1EEF th\u01B0\u1EDDng"
+weight: 4
 ---
-
-{{< edit_this_page >}}
 
 ## Cái Gì và Tại Sao?
 

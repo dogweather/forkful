@@ -11,9 +11,8 @@ summary: "Logowanie w Dart odnosi si\u0119 do procesu rejestrowania r\xF3\u017Cn
   \ poziom\xF3w informacji podczas wykonywania programu. Programi\u015Bci robi\u0105\
   \ to, aby monitorowa\u0107\u2026"
 title: Rejestrowanie
+weight: 17
 ---
-
-{{< edit_this_page >}}
 
 ## Co i dlaczego?
 

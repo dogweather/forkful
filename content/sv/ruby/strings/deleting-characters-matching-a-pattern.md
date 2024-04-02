@@ -9,9 +9,8 @@ summary: "I Ruby kan du rensa str\xE4ngar fr\xE5n o\xF6nskade tecken genom att m
   \ dem mot ett m\xF6nster. Programmerare g\xF6r detta f\xF6r att st\xE4da data, validera\
   \ input eller\u2026"
 title: "Ta bort tecken som matchar ett m\xF6nster"
+weight: 5
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 I Ruby kan du rensa strängar från oönskade tecken genom att matcha dem mot ett mönster. Programmerare gör detta för att städa data, validera input eller bearbeta text på ett specifikt sätt.

@@ -2,13 +2,16 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 18:10:22.395197-07:00
-description: "C-kielen debuggerit ovat erikoisty\xF6kaluja, jotka mahdollistavat ohjelmoijille\
-  \ koodin vaiheittaisen suorituksen seurannan, muuttujien tarkastelun ja\u2026"
+description: "GDB (GNU Debugger) on yleisimmin k\xE4ytetty debuggeri C-ohjelmoinnissa.\
+  \ T\xE4ss\xE4 on lyhyt opas GDB:n k\xE4ytt\xF6\xF6n yksinkertaisen C-ohjelman debuggaamiseen.\
+  \ Ensin,\u2026"
 lastmod: '2024-03-13T22:44:57.045259-06:00'
 model: gpt-4-0125-preview
-summary: "C-kielen debuggerit ovat erikoisty\xF6kaluja, jotka mahdollistavat ohjelmoijille\
-  \ koodin vaiheittaisen suorituksen seurannan, muuttujien tarkastelun ja\u2026"
+summary: "GDB (GNU Debugger) on yleisimmin k\xE4ytetty debuggeri C-ohjelmoinnissa.\
+  \ T\xE4ss\xE4 on lyhyt opas GDB:n k\xE4ytt\xF6\xF6n yksinkertaisen C-ohjelman debuggaamiseen.\
+  \ Ensin,\u2026"
 title: "Debuggerin k\xE4ytt\xF6"
+weight: 35
 ---
 
 ## Kuinka:

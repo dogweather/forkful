@@ -11,9 +11,8 @@ summary: "Mettre une cha\xEEne de caract\xE8res en capitales implique de convert
   \ le premier caract\xE8re de chaque mot de la cha\xEEne en majuscule s'il est en\
   \ minuscule,\u2026"
 title: "Mettre en majuscule une cha\xEEne"
+weight: 2
 ---
-
-{{< edit_this_page >}}
 
 ## Quoi & Pourquoi ?
 Mettre une chaîne de caractères en capitales implique de convertir le premier caractère de chaque mot de la chaîne en majuscule s'il est en minuscule, tout en gardant les caractères restants inchangés. Les programmeurs effectuent souvent cette tâche pour formater des sorties, des entrées utilisateur ou pour le traitement des données afin d'assurer la cohérence dans la présentation ou le traitement du texte, en particulier dans les interfaces utilisateur ou les tâches de normalisation des données.

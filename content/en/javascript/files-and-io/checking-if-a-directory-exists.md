@@ -7,9 +7,8 @@ model: gpt-4-0125-preview
 summary: "Checking if a directory exists in JavaScript is essential for file manipulation\
   \ tasks, enabling scripts to verify directory presence before reading from\u2026"
 title: Checking if a directory exists
+weight: 20
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 Checking if a directory exists in JavaScript is essential for file manipulation tasks, enabling scripts to verify directory presence before reading from or writing to it. This operation prevents errors and ensures smoother program execution, particularly in applications that dynamically handle files or directories based on user input or external data sources.

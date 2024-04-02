@@ -2,13 +2,14 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:08:51.727157-07:00
-description: "Een debugger gebruiken betekent dat je jezelf uitrust met een vergrootglas\
-  \ om je code nauwkeurig te onderzoeken. Programmeurs doen dit om fouten te\u2026"
+description: "Clojure leunt op de Java Virtuele Machine (JVM), dus veel debuggen gebeurt\
+  \ met Java-tools. Een dergelijke tool is `CIDER`, een krachtig pakket voor\u2026"
 lastmod: '2024-03-13T22:44:50.424165-06:00'
 model: gpt-4-0125-preview
-summary: "Een debugger gebruiken betekent dat je jezelf uitrust met een vergrootglas\
-  \ om je code nauwkeurig te onderzoeken. Programmeurs doen dit om fouten te\u2026"
+summary: "Clojure leunt op de Java Virtuele Machine (JVM), dus veel debuggen gebeurt\
+  \ met Java-tools. Een dergelijke tool is `CIDER`, een krachtig pakket voor\u2026"
 title: Een debugger gebruiken
+weight: 35
 ---
 
 ## Hoe:

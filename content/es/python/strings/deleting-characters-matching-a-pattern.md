@@ -9,9 +9,8 @@ summary: "Eliminar caracteres que siguen un patr\xF3n en Python es como limpiar 
   \ texto, dejando solo lo que necesitas. Los programadores lo hacen para validar\
   \ datos,\u2026"
 title: "Eliminando caracteres que coinciden con un patr\xF3n"
+weight: 5
 ---
-
-{{< edit_this_page >}}
 
 ## Qué y Por Qué?
 Eliminar caracteres que siguen un patrón en Python es como limpiar tu texto, dejando solo lo que necesitas. Los programadores lo hacen para validar datos, simplificar cadenas o preparar texto antes de procesarlo.

@@ -11,9 +11,8 @@ summary: "Pisanie test\xF3w w Dart polega na tworzeniu przypadk\xF3w testowych, 
   \ automatycznie weryfikowa\u0107, czy r\xF3\u017Cne cz\u0119\u015Bci programu dzia\u0142\
   aj\u0105 zgodnie z oczekiwaniami.\u2026"
 title: "Pisanie test\xF3w"
+weight: 36
 ---
-
-{{< edit_this_page >}}
 
 ## Co i dlaczego?
 

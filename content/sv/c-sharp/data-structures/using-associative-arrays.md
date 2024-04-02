@@ -11,9 +11,8 @@ summary: "Associativa f\xE4lt, eller ordb\xF6cker i C#, l\xE5ter dig lagra och h
   \ par av nycklar och v\xE4rden. De \xE4r ditt f\xF6rstahandsval n\xE4r du beh\xF6\
   ver h\xE4mta v\xE4rden\u2026"
 title: "Att anv\xE4nda associativa arrayer"
+weight: 15
 ---
-
-{{< edit_this_page >}}
 
 ## Vad & Varför?
 

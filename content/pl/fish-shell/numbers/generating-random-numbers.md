@@ -9,9 +9,8 @@ summary: "Generowanie losowych liczb jest podstawowym zadaniem w programowaniu, 
   ywanym do wszystkiego - od pr\xF3bkowania danych po rozw\xF3j gier. W Fish Shell\
   \ u\u017Cycie\u2026"
 title: Generowanie liczb losowych
+weight: 12
 ---
-
-{{< edit_this_page >}}
 
 ## Co i dlaczego?
 

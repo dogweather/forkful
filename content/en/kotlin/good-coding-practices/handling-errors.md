@@ -9,9 +9,8 @@ summary: "Handling errors is how your code deals with problems that pop up durin
   \ execution\u2014like handling a curveball without dropping it. Programmers do it\
   \ to\u2026"
 title: Handling errors
+weight: 16
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 Handling errors is how your code deals with problems that pop up during execution—like handling a curveball without dropping it. Programmers do it to prevent crashes and give users a smooth experience.

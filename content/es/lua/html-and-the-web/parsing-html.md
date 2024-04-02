@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Analizar HTML implica extraer datos e informaci\xF3n de documentos HTML,\
   \ lo cual es crucial para el raspado web, an\xE1lisis de datos y tareas de\u2026"
 title: Analizando HTML
+weight: 43
 ---
-
-{{< edit_this_page >}}
 
 ## Qué y Por Qué?
 Analizar HTML implica extraer datos e información de documentos HTML, lo cual es crucial para el raspado web, análisis de datos y tareas de automatización. Los programadores realizan esto para recopilar, analizar o manipular contenido web programáticamente, permitiendo la automatización de lo que de otro modo sería la extracción manual de datos de sitios web.

@@ -7,9 +7,8 @@ model: gpt-4-0125-preview
 summary: "Finding the length of a string in Google Apps Script, a JavaScript cloud\
   \ scripting language that lets you automate tasks across Google products, is about\u2026"
 title: Finding the length of a string
+weight: 7
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 Finding the length of a string in Google Apps Script, a JavaScript cloud scripting language that lets you automate tasks across Google products, is about determining the number of characters a string contains. Programmers frequently perform this operation to verify input, loop through characters, or manipulate strings for various automation tasks within Google Apps.

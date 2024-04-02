@@ -8,9 +8,8 @@ model: gpt-4-0125-preview
 summary: "Die Generierung von Zufallszahlen in Rust erfolgt durch die Verwendung von\
   \ Bibliotheken, um unvorhergesehene numerische Werte zu produzieren, was f\xFCr\u2026"
 title: Generierung von Zufallszahlen
+weight: 12
 ---
-
-{{< edit_this_page >}}
 
 ## Was & Warum?
 

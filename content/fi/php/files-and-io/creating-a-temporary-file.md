@@ -9,9 +9,8 @@ summary: "PHP:ss\xE4 v\xE4liaikaisen tiedoston luonta mahdollistaa datan tilap\x
   inen tallennus. Ohjelmoijat tekev\xE4t sen tiedon k\xE4sittely\xE4, siirtoa tai\
   \ turvallisuuden\u2026"
 title: "V\xE4liaikaistiedoston luominen"
+weight: 21
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why? - Mitä ja miksi?
 PHP:ssä väliaikaisen tiedoston luonta mahdollistaa datan tilapäinen tallennus. Ohjelmoijat tekevät sen tiedon käsittelyä, siirtoa tai turvallisuuden varmistusta varten.

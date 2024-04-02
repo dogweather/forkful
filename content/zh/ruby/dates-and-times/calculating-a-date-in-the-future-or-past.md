@@ -14,9 +14,8 @@ summary: "\u5728Ruby\u4E2D\u8BA1\u7B97\u672A\u6765\u6216\u8FC7\u53BB\u7684\u65E5
   \u8FD9\u6837\u505A\u662F\u4E3A\u4E86\u5904\u7406\u622A\u6B62\u65E5\u671F\u3001\u9884\
   \u8BA2\u7CFB\u7EDF\u6216\u65F6\u95F4\u8F74\u529F\u80FD\u7B49\u4EFB\u52A1\u3002"
 title: "\u8BA1\u7B97\u672A\u6765\u6216\u8FC7\u53BB\u7684\u65E5\u671F"
+weight: 26
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why? (是什么以及为什么？)
 在Ruby中计算未来或过去的日期是指找出从某个特定日期开始加上或减去天数后的日期。程序员这样做是为了处理截止日期、预订系统或时间轴功能等任务。

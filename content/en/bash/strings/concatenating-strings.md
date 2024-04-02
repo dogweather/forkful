@@ -7,9 +7,8 @@ model: gpt-4-1106-preview
 summary: "Concatenating strings in Bash means sticking two or more pieces of text\
   \ together. Programmers do it to build up commands, create file paths, or simply\u2026"
 title: Concatenating strings
+weight: 3
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 

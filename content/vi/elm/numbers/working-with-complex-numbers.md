@@ -13,9 +13,8 @@ summary: "S\u1ED1 ph\u1EE9c l\xE0 s\u1EF1 k\u1EBFt h\u1EE3p c\u1EE7a s\u1ED1 th\
   n b\u1EADc hai c\u1EE7a -1. Ch\xFAng l\xE0 ch\xECa kh\xF3a trong c\xE1c l\u0129\
   nh v\u1EF1c nh\u01B0 k\u1EF9 thu\u1EADt v\xE0 v\u1EADt l\xFD\u2026"
 title: "L\xE0m vi\u1EC7c v\u1EDBi s\u1ED1 ph\u1EE9c"
+weight: 14
 ---
-
-{{< edit_this_page >}}
 
 ## Gì và Tại sao?
 Số phức là sự kết hợp của số thực và số ảo, ví dụ như `a + bi` nơi `i` là căn bậc hai của -1. Chúng là chìa khóa trong các lĩnh vực như kỹ thuật và vật lý để giải quyết những bài toán mà số thường không thể chạm tới.

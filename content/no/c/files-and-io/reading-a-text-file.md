@@ -11,9 +11,8 @@ summary: "\xC5 lese en tekstfil i C inneb\xE6rer \xE5 \xE5pne en fil p\xE5 syste
   \ ditt for \xE5 hente informasjon, samt manipulere eller vise den som n\xF8dvendig.\
   \ Programmerere gj\xF8r\u2026"
 title: Lese en tekstfil
+weight: 22
 ---
-
-{{< edit_this_page >}}
 
 ## Hva & Hvorfor?
 

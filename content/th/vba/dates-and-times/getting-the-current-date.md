@@ -8,9 +8,8 @@ model: gpt-4-0125-preview
 summary: "\u0E43\u0E19 Visual Basic for Applications (VBA)\u2026"
 title: "\u0E01\u0E32\u0E23\u0E23\u0E31\u0E1A\u0E27\u0E31\u0E19\u0E17\u0E35\u0E48\u0E1B\
   \u0E31\u0E08\u0E08\u0E38\u0E1A\u0E31\u0E19"
+weight: 29
 ---
-
-{{< edit_this_page >}}
 
 ## การทำงานและเหตุผล
 

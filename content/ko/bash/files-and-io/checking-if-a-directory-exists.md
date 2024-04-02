@@ -26,9 +26,8 @@ summary: "Bash \uD504\uB85C\uADF8\uB798\uBC0D\uC5D0\uC11C \uB514\uB809\uD1A0\uB9
   \uAC8C\u2026"
 title: "\uB514\uB809\uD1A0\uB9AC\uAC00 \uC874\uC7AC\uD558\uB294\uC9C0 \uD655\uC778\
   \uD558\uAE30"
+weight: 20
 ---
-
-{{< edit_this_page >}}
 
 ## 무엇을, 왜?
 

@@ -9,9 +9,8 @@ summary: "Usuwanie cudzys\u0142ow\xF3w z ci\u0105gu znak\xF3w oznacza wyci\u0119
   \ wszystkich znak\xF3w cudzys\u0142owu, kt\xF3re otaczaj\u0105 tre\u015B\u0107.\
   \ Robimy to, aby oczy\u015Bci\u0107 dane wej\u015Bciowe,\u2026"
 title: "Usuwanie cudzys\u0142ow\xF3w z ci\u0105gu znak\xF3w"
+weight: 9
 ---
-
-{{< edit_this_page >}}
 
 ## Co i dlaczego?
 

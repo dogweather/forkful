@@ -10,9 +10,8 @@ model: gpt-4-0125-preview
 summary: "Assosiative tabeller, eller ordb\xF8ker, i Haskell handler om \xE5 kartlegge\
   \ n\xF8kler til verdier for rask oppslag og effektiv datah\xE5ndtering. Programmerere\u2026"
 title: Bruke associative tabeller
+weight: 15
 ---
-
-{{< edit_this_page >}}
 
 ## Hva & Hvorfor?
 

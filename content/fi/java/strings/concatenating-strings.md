@@ -9,9 +9,8 @@ summary: "Stringin yhdist\xE4minen eli konkatenointi tarkoittaa useampien teksti
   tkien yhdist\xE4mist\xE4 yhdeksi. Sit\xE4 k\xE4ytet\xE4\xE4n, koska halutaan rakentaa\
   \ dynaamisia\u2026"
 title: "Merkkijonojen yhdist\xE4minen"
+weight: 3
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why? (Mitä ja Miksi?)
 Stringin yhdistäminen eli konkatenointi tarkoittaa useampien tekstipätkien yhdistämistä yhdeksi. Sitä käytetään, koska halutaan rakentaa dynaamisia viestejä tai käsitellä muuttuvaa tekstidataa.

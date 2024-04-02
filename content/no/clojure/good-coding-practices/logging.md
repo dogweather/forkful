@@ -9,9 +9,8 @@ summary: "Logging er i prinsippet programvareekvivalenten til en skipslogg; det 
   \ en m\xE5te \xE5 registrere hendelser som skjer mens en applikasjon kj\xF8rer.\
   \ Utviklere\u2026"
 title: "Loggf\xF8ring"
+weight: 17
 ---
-
-{{< edit_this_page >}}
 
 ## Hva & hvorfor?
 Logging er i prinsippet programvareekvivalenten til en skipslogg; det er en måte å registrere hendelser som skjer mens en applikasjon kjører. Utviklere gjør det for å holde oversikt over disse hendelsene for feilsøking, revisjonsspor, eller for å få innsikt i atferden til et system i produksjon.

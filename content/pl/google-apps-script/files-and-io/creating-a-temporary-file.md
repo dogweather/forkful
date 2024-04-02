@@ -11,9 +11,8 @@ summary: "Tworzenie tymczasowego pliku w Google Apps Script polega na generowani
   \ pliku przeznaczonego do kr\xF3tkotrwa\u0142ego u\u017Cytku, zazwyczaj do przetwarzania\
   \ danych\u2026"
 title: Tworzenie tymczasowego pliku
+weight: 21
 ---
-
-{{< edit_this_page >}}
 
 ## Co i Dlaczego?
 

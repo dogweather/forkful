@@ -10,9 +10,8 @@ model: gpt-4-0125-preview
 summary: "Een nieuw project starten in Visual Basic for Applications (VBA) houdt in\
   \ dat je een omgeving opzet binnen een hosttoepassing, zoals Excel, om taken te\u2026"
 title: Een nieuw project starten
+weight: 1
 ---
-
-{{< edit_this_page >}}
 
 ## Wat & Waarom?
 

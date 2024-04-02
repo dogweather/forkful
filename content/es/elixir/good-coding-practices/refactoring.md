@@ -7,9 +7,8 @@ model: gpt-4-0125-preview
 summary: "Refactorizar es el proceso de reestructurar el c\xF3digo existente sin cambiar\
   \ su comportamiento externo, con el objetivo de mejorar atributos no funcionales\u2026"
 title: "Refactorizaci\xF3n"
+weight: 19
 ---
-
-{{< edit_this_page >}}
 
 ## ¿Qué y Por Qué?
 Refactorizar es el proceso de reestructurar el código existente sin cambiar su comportamiento externo, con el objetivo de mejorar atributos no funcionales como la legibilidad y la mantenibilidad. Los programadores lo hacen para que el código sea más limpio, fácil de entender y más eficiente, facilitando las actualizaciones futuras y reduciendo el riesgo de errores.

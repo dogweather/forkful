@@ -13,9 +13,8 @@ summary: "T\xECm ki\u1EBFm v\xE0 thay th\u1EBF v\u0103n b\u1EA3n cho ph\xE9p b\u
   nh m\u1ED9t c\xE1i g\xEC kh\xE1c. L\u1EADp tr\xECnh vi\xEAn s\u1EED d\u1EE5ng n\xF3\
   \ cho m\u1ECDi th\u1EE9 t\u1EEB s\u1EEDa l\u1ED7i ch\xEDnh\u2026"
 title: "T\xECm ki\u1EBFm v\xE0 thay th\u1EBF v\u0103n b\u1EA3n"
+weight: 10
 ---
-
-{{< edit_this_page >}}
 
 ## Gì & Tại Sao?
 Tìm kiếm và thay thế văn bản cho phép bạn tìm các chuỗi cụ thể và đổi chúng thành một cái gì khác. Lập trình viên sử dụng nó cho mọi thứ từ sửa lỗi chính tả đến tái cấu trúc code một cách hiệu quả.

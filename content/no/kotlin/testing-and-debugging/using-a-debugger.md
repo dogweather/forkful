@@ -1,13 +1,15 @@
 ---
 date: 2024-01-26 03:49:55.933864-07:00
-description: "\xC5 dykke ned i en feils\xF8ker handler om \xE5 steg-for-steg g\xE5\
-  \ gjennom koden din, se tannhjulene dreie og fange de irriterende feilene p\xE5\
-  \ fersk gjerning.\u2026"
+description: "Her er en liten smakebit p\xE5 feils\xF8king i Kotlin med IntelliJ IDEA\
+  \ - Sherlock Holmes av IDEer: ```kotlin fun main() { val mysteryNumber = 42 var\
+  \ guess = 0\u2026"
 lastmod: '2024-03-13T22:44:40.755210-06:00'
 model: gpt-4-0125-preview
-summary: "\xC5 dykke ned i en feils\xF8ker handler om \xE5 steg-for-steg g\xE5 gjennom\
-  \ koden din, se tannhjulene dreie og fange de irriterende feilene p\xE5 fersk gjerning.\u2026"
+summary: "Her er en liten smakebit p\xE5 feils\xF8king i Kotlin med IntelliJ IDEA\
+  \ - Sherlock Holmes av IDEer: ```kotlin fun main() { val mysteryNumber = 42 var\
+  \ guess = 0\u2026"
 title: "\xC5 bruke en feils\xF8ker"
+weight: 35
 ---
 
 ## Hvordan:

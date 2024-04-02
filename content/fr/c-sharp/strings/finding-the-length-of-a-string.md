@@ -9,9 +9,8 @@ summary: "La longueur d'une cha\xEEne, c'est combien de caract\xE8res elle conti
   \ On mesure \xE7a pour tout, des mots de passe aux tweets : c'est essentiel pour\
   \ valider,\u2026"
 title: "Trouver la longueur d'une cha\xEEne de caract\xE8res"
+weight: 7
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 La longueur d'une chaîne, c'est combien de caractères elle contient. On mesure ça pour tout, des mots de passe aux tweets : c'est essentiel pour valider, stocker ou manipuler le texte.

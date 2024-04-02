@@ -7,9 +7,8 @@ model: gpt-4-1106-preview
 summary: "Sending an HTTP request with basic authentication adds a layer of security\
   \ by requiring a username and password. Programmers use it to access APIs or web\u2026"
 title: Sending an HTTP request with basic authentication
+weight: 45
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 Sending an HTTP request with basic authentication adds a layer of security by requiring a username and password. Programmers use it to access APIs or web services that are locked down to authorized users only.

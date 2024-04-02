@@ -9,9 +9,8 @@ summary: "TOML:lla ty\xF6skentely sis\xE4lt\xE4\xE4 TOML-datan (Tom's Obvious, M
   \ Language) j\xE4sent\xE4misen ja luomisen Haskellilla. Ohjelmoijat tekev\xE4t sen\
   \ helposti\u2026"
 title: "Ty\xF6skentely TOML:n kanssa"
+weight: 39
 ---
-
-{{< edit_this_page >}}
 
 ## Mitä & Miksi?
 TOML:lla työskentely sisältää TOML-datan (Tom's Obvious, Minimal Language) jäsentämisen ja luomisen Haskellilla. Ohjelmoijat tekevät sen helposti hallitakseen konfiguraatiotiedostoja tai tietojenvaihtoa vankkojen tyyppitakuuksien ja minimaalisen syntaksin vaivan kanssa.

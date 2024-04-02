@@ -14,9 +14,8 @@ summary: "\uD14D\uC2A4\uD2B8 \uD30C\uC77C \uC77D\uAE30\uB294 \uD30C\uC77C\uC758 
   \uC624\uAC70\uB098 \uC124\uC815\uC744 \uC77D\uAE30 \uC704\uD574 \uC774 \uC791\uC5C5\
   \uC744 \uD569\uB2C8\uB2E4."
 title: "\uD14D\uC2A4\uD2B8 \uD30C\uC77C \uC77D\uAE30"
+weight: 22
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why? (무엇과 왜?)
 텍스트 파일 읽기는 파일의 내용을 코드로 가져오는 것입니다. 프로그래머들은 데이터를 불러오거나 설정을 읽기 위해 이 작업을 합니다.

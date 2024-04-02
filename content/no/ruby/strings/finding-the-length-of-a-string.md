@@ -8,9 +8,8 @@ model: gpt-4-1106-preview
 summary: "Finne lengden til en streng er \xE5 telle antall tegn den inneholder. Programmerere\
   \ gj\xF8r dette for validering, formatering eller andre logiske form\xE5l i kode."
 title: "Finn lengden p\xE5 en streng"
+weight: 7
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 Finne lengden til en streng er å telle antall tegn den inneholder. Programmerere gjør dette for validering, formatering eller andre logiske formål i kode.

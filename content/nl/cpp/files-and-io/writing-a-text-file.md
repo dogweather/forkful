@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Een tekstbestand schrijven in C++ betekent het cre\xEBren of wijzigen van\
   \ een bestand om tekstuele gegevens op te slaan. Programmeurs doen dit om gegevens\u2026"
 title: Een tekstbestand schrijven
+weight: 24
 ---
-
-{{< edit_this_page >}}
 
 ## Wat & Waarom?
 Een tekstbestand schrijven in C++ betekent het creëren of wijzigen van een bestand om tekstuele gegevens op te slaan. Programmeurs doen dit om gegevens zoals configuraties, logs of door gebruikers gegenereerde inhoud te bewaren.

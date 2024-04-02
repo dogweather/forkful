@@ -13,9 +13,8 @@ summary: "Vi\u1EC7c n\u1ED9i suy chu\u1ED7i trong Google Apps Script cho ph\xE9p
   o ra code d\u1EC5 \u0111\u1ECDc v\xE0 b\u1EA3o tr\xEC h\u01A1n. L\u1EADp tr\xEC\
   nh vi\xEAn s\u1EED\u2026"
 title: "N\u1ED9i suy chu\u1ED7i k\xFD t\u1EF1"
+weight: 8
 ---
-
-{{< edit_this_page >}}
 
 ## Gì & Tại sao?
 

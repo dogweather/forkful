@@ -7,9 +7,8 @@ model: gpt-4-0125-preview
 summary: "In Visual Basic for Applications (VBA), retrieving the current date is a\
   \ common task that enables programmers to dynamically work with dates in their\u2026"
 title: Getting the current date
+weight: 29
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 

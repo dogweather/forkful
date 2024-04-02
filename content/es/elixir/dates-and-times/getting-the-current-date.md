@@ -11,9 +11,8 @@ model: gpt-4-0125-preview
 summary: "Obtener la fecha actual en Elixir implica acceder a la informaci\xF3n de\
   \ fecha y hora del sistema, una tarea com\xFAn para registrar, marcar datos o cualquier\u2026"
 title: Obteniendo la fecha actual
+weight: 29
 ---
-
-{{< edit_this_page >}}
 
 ## Qué y Por Qué?
 Obtener la fecha actual en Elixir implica acceder a la información de fecha y hora del sistema, una tarea común para registrar, marcar datos o cualquier funcionalidad que requiera conocimiento de la fecha actual. Esta operación es esencial para crear aplicaciones conscientes del tiempo y para tareas como generar informes o timestamps en una aplicación web.

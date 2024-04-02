@@ -11,9 +11,8 @@ summary: "Str\xE4nginterpolering \xE4r en metod f\xF6r att konstruera str\xE4nga
   \ som inkorporerar variabler, vilket m\xF6jligg\xF6r dynamisk skapande av str\xE4\
   ngar. Programmerare g\xF6r\u2026"
 title: "Interpolera en str\xE4ng"
+weight: 8
 ---
-
-{{< edit_this_page >}}
 
 ## Vad och varför?
 

@@ -9,9 +9,8 @@ summary: "Iniciar um novo projeto \xE9 como abrir uma p\xE1gina em branco onde v
   \ colocar\xE1 seu c\xF3digo criativo em a\xE7\xE3o. Programadores fazem isso para\
   \ transformar ideias\u2026"
 title: Iniciando um novo projeto
+weight: 1
 ---
-
-{{< edit_this_page >}}
 
 ## O Que & Por Quê?
 Iniciar um novo projeto é como abrir uma página em branco onde você colocará seu código criativo em ação. Programadores fazem isso para transformar ideias em realidade, resolver problemas, ou simplesmente para brincar com as possibilidades infinitas da programação.

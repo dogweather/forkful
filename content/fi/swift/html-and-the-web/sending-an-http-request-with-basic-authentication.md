@@ -9,9 +9,8 @@ summary: "HTTP-pyynt\xF6 perusautentikaatiolla on tapa l\xE4hett\xE4\xE4 k\xE4yt
   j\xE4nimi ja salasana verkon yli turvallisesti. Ohjelmoijat k\xE4ytt\xE4v\xE4t t\xE4\
   t\xE4 tapaa, kun heid\xE4n t\xE4ytyy\u2026"
 title: "HTTP-pyynn\xF6n l\xE4hett\xE4minen perusautentikoinnilla"
+weight: 45
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why? (Mikä ja Miksi?)
 HTTP-pyyntö perusautentikaatiolla on tapa lähettää käyttäjänimi ja salasana verkon yli turvallisesti. Ohjelmoijat käyttävät tätä tapaa, kun heidän täytyy varmistaa käyttäjän oikeudet palvelimiin tai API:hin pääsyssä.

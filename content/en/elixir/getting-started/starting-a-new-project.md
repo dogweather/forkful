@@ -7,9 +7,8 @@ model: gpt-4-1106-preview
 summary: "Starting a new Elixir project means setting up a fresh Mix project structure.\
   \ Programmers do this to kick things off with organized code and automated\u2026"
 title: Starting a new project
+weight: 1
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 Starting a new Elixir project means setting up a fresh Mix project structure. Programmers do this to kick things off with organized code and automated tooling, helping to build and test their Elixir applications efficiently.

@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Loggen is het proces van het vastleggen van applicatiegedragingen, fouten\
   \ en andere belangrijke informatie in een blijvend medium, zoals een bestand of\u2026"
 title: Logboekregistratie
+weight: 17
 ---
-
-{{< edit_this_page >}}
 
 ## Wat & Waarom?
 Loggen is het proces van het vastleggen van applicatiegedragingen, fouten en andere belangrijke informatie in een blijvend medium, zoals een bestand of database. Programmeurs doen dit om de gezondheid en prestaties van hun apps bij te houden, om problemen te debuggen, en om een oogje in het zeil te houden op wat er onder de motorkap gebeurt in productieomgevingen.

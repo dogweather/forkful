@@ -12,6 +12,7 @@ summary: "\xC5 sette stor bokstav i en streng betyr vanligvis \xE5 konvertere de
   \ f\xF8rste tegnet i en streng til store bokstaver og resten til sm\xE5 bokstaver.\
   \ Men noen\u2026"
 title: Sette store bokstaver i en streng
+weight: 2
 ---
 
 ## Hva og hvorfor?

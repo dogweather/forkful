@@ -19,9 +19,8 @@ summary: "\uB9AC\uD329\uD1A0\uB9C1\uC740 \uAE30\uC874\uC758 \uCEF4\uD4E8\uD130 \
   \uB85C \uBBF8\uB798 \uAE30\uB2A5\uC744 \uC704\uD55C \uAE38\uC744 \uB2E6\uAE30 \uC704\
   \uD574 \uC774 \uC791\uC5C5\uC744 \uC9C4\uD589\uD569\uB2C8\uB2E4."
 title: "\uB9AC\uD329\uD1A0\uB9C1"
+weight: 19
 ---
-
-{{< edit_this_page >}}
 
 ## 무엇이며 왜?
 리팩토링은 기존의 컴퓨터 코드를 외부 동작을 변경하지 않고 구조를 재조정하는 과정입니다. 프로그래머들은 코드베이스를 정리하고 가독성, 유지보수성을 향상시키며, 최소한의 기술 부채로 미래 기능을 위한 길을 닦기 위해 이 작업을 진행합니다.

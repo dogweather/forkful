@@ -13,9 +13,8 @@ summary: "S\u1ED1 ph\u1EE9c c\xF3 m\u1ED9t ph\u1EA7n th\u1EF1c v\xE0 m\u1ED9t ph
   ng r\u1EA5t quan tr\u1ECDng cho m\u1ED9t s\u1ED1 d\u1EF1 \xE1n Arduino n\u1EB7ng\
   \ v\u1EC1 to\xE1n h\u1ECDc li\xEAn quan \u0111\u1EBFn x\u1EED l\xFD\u2026"
 title: "L\xE0m vi\u1EC7c v\u1EDBi s\u1ED1 ph\u1EE9c"
+weight: 14
 ---
-
-{{< edit_this_page >}}
 
 ## Cái gì & Tại sao?
 Số phức có một phần thực và một phần ảo, thường được viết là `a + bi`. Chúng rất quan trọng cho một số dự án Arduino nặng về toán học liên quan đến xử lý tín hiệu, kỹ thuật điện, hoặc bất kỳ lĩnh vực nào khác mà hiện tượng được mô hình hóa tốt nhất trong một mặt phẳng.

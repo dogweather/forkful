@@ -9,9 +9,8 @@ summary: "Konwersja daty do postaci \u0142a\u0144cucha znak\xF3w umo\u017Cliwia 
   \ zapis i wy\u015Bwietlanie w ludzko zrozumia\u0142ym formacie. Programi\u015Bci\
   \ wykonuj\u0105 t\u0119 operacj\u0119, by \u0142atwiej\u2026"
 title: "Konwersja daty na \u0142a\u0144cuch znak\xF3w"
+weight: 28
 ---
-
-{{< edit_this_page >}}
 
 ## Co i Dlaczego?
 Konwersja daty do postaci łańcucha znaków umożliwia jej zapis i wyświetlanie w ludzko zrozumiałym formacie. Programiści wykonują tę operację, by łatwiej manipulować datami w interfejsach użytkownika, logach czy przy zapisie danych.

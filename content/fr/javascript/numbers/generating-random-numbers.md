@@ -9,9 +9,8 @@ summary: "La g\xE9n\xE9ration de nombres al\xE9atoires en JavaScript est une tec
   \ utilis\xE9e pour cr\xE9er de l'impr\xE9visibilit\xE9 dans les applications, depuis\
   \ les jeux qui\u2026"
 title: "G\xE9n\xE9ration de nombres al\xE9atoires"
+weight: 12
 ---
-
-{{< edit_this_page >}}
 
 ## Quoi et pourquoi ?
 

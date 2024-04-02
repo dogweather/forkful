@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "YAML, acronimo di YAML Ain't Markup Language, \xE8 un formato di serializzazione\
   \ di dati leggibile dall'uomo. I programmatori utilizzano YAML per file di\u2026"
 title: Lavorare con YAML
+weight: 41
 ---
-
-{{< edit_this_page >}}
 
 ## Cosa & Perché?
 YAML, acronimo di YAML Ain't Markup Language, è un formato di serializzazione di dati leggibile dall'uomo. I programmatori utilizzano YAML per file di configurazione, messaggistica tra processi e archiviazione di dati a causa della sua semplice sintassi e della facilità di lettura rispetto ad altri formati come XML o JSON.

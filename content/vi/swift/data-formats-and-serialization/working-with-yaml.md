@@ -13,9 +13,8 @@ summary: "YAML, vi\u1EBFt t\u1EAFt c\u1EE7a \"YAML Ain't Markup Language\", l\xE
   \ ng\u01B0\u1EDDi, ch\xFAng ta c\xF3 th\u1EC3 s\u1EED d\u1EE5ng \u0111\u1EC3 c\u1EA5\
   u h\xECnh t\u1EC7p ho\u1EB7c trao \u0111\u1ED5i\u2026"
 title: "L\xE0m vi\u1EC7c v\u1EDBi YAML"
+weight: 41
 ---
-
-{{< edit_this_page >}}
 
 ## Lý do & Tại sao?
 YAML, viết tắt của "YAML Ain't Markup Language", là một chuẩn mã hóa dữ liệu dễ đọc cho con người, chúng ta có thể sử dụng để cấu hình tệp hoặc trao đổi dữ liệu. Các lập trình viên yêu thích YAML vì sự đơn giản và dễ đọc của nó, đặc biệt trong các cài đặt cấu hình, kịch bản CI/CD và hệ thống điều phối container.

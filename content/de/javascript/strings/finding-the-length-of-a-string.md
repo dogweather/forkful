@@ -9,9 +9,8 @@ summary: "Das Ermitteln der L\xE4nge eines Strings bedeutet, zu z\xE4hlen, wie v
   \ Zeichen er enth\xE4lt. Programmierer tun dies, um die Verarbeitung von Textdaten\
   \ zu\u2026"
 title: "Ermittlung der Zeichenkettenl\xE4nge"
+weight: 7
 ---
-
-{{< edit_this_page >}}
 
 ## Was & Warum?
 

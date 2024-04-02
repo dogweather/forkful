@@ -9,9 +9,8 @@ summary: "\xC5 runde av tall betyr \xE5 justere dem til n\xE6rmeste heltall elle
   \ angitt desimalplass. Programmerere runder av tall for \xE5 kontrollere presisjon,\
   \ tilpasse\u2026"
 title: Avrunding av tall
+weight: 13
 ---
-
-{{< edit_this_page >}}
 
 ## Hva & Hvorfor?
 

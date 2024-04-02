@@ -11,9 +11,8 @@ summary: "Att konvertera en str\xE4ng till sm\xE5 bokst\xE4ver i Google Apps Scr
   \ ett molnbaserat skriptspr\xE5k f\xF6r automatisering av uppgifter \xF6ver Googles\
   \ produkter, \xE4r\u2026"
 title: "Omvandla en str\xE4ng till gemener"
+weight: 4
 ---
-
-{{< edit_this_page >}}
 
 ## Vad & Varför?
 

@@ -11,9 +11,8 @@ summary: "Tekstitiedoston kirjoittaminen C#:ssa k\xE4sitt\xE4\xE4 ohjelmallisest
   \ tekstiedostojen luomisen tai muokkaamisen tiedostoj\xE4rjestelm\xE4ss\xE4 - t\xE4\
   m\xE4 on perusteht\xE4v\xE4\u2026"
 title: Tekstitiedoston kirjoittaminen
+weight: 24
 ---
-
-{{< edit_this_page >}}
 
 ## Mikä & Miksi?
 Tekstitiedoston kirjoittaminen C#:ssa käsittää ohjelmallisesti tekstiedostojen luomisen tai muokkaamisen tiedostojärjestelmässä - tämä on perustehtävä monille sovelluksille, kuten lokitiedostojen kirjoittaminen, datan vienti tai konfiguraation hallinta. Ohjelmoijat suorittavat tämän toimenpiteen tallentaakseen dataa istuntojen välillä, jakaakseen tietoa järjestelmien kesken tai tallentaakseen ihmisen luettavaa tulostetta.

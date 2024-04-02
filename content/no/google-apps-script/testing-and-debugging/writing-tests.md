@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "\xC5 skrive tester i Google Apps Script (GAS) handler om \xE5 lage automatiserte\
   \ skript for \xE5 verifisere oppf\xF8rselen til kodene dine, og sikre at de fungerer\u2026"
 title: Skrive tester
+weight: 36
 ---
-
-{{< edit_this_page >}}
 
 ## Hva & Hvorfor?
 

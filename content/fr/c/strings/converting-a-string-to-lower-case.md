@@ -11,9 +11,8 @@ summary: "Convertir une cha\xEEne en minuscules en C implique de transformer tou
   \ les lettres majuscules d'une cha\xEEne donn\xE9e en leurs \xE9quivalents en minuscules.\
   \ Les\u2026"
 title: "Convertir une cha\xEEne en minuscules"
+weight: 4
 ---
-
-{{< edit_this_page >}}
 
 ## Quoi & Pourquoi ?
 

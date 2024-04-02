@@ -11,9 +11,8 @@ summary: "Un shell interactif, ou boucle lire-\xE9valuer-afficher (REPL, de l'an
   \ Read-Eval-Print Loop), vous permet d'exp\xE9rimenter avec du code Go en temps\
   \ r\xE9el,\u2026"
 title: "Utilisation d'un interpr\xE9teur de commandes interactif (REPL)"
+weight: 34
 ---
-
-{{< edit_this_page >}}
 
 ## Quoi & Pourquoi ?
 

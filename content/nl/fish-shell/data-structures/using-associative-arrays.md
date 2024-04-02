@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Associatieve arrays, of hash maps, laten je data opslaan als sleutel-waarde\
   \ paren, wat het makkelijker maakt om informatie te organiseren en op te halen\u2026"
 title: Gebruik van associatieve arrays
+weight: 15
 ---
-
-{{< edit_this_page >}}
 
 ## Wat & Waarom?
 

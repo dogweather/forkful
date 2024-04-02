@@ -9,9 +9,8 @@ summary: "Convertire una data in una stringa permette di manipolare e visualizza
   \ il dato in un formato leggibile e personalizzabile. I programmatori fanno ci\xF2\
   \ per\u2026"
 title: Conversione di una data in una stringa
+weight: 28
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 Convertire una data in una stringa permette di manipolare e visualizzare il dato in un formato leggibile e personalizzabile. I programmatori fanno ciò per interfacciarsi meglio con gli utenti, salvare le date in un database, o per fare operazioni di confronto e calcolo.

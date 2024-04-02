@@ -9,9 +9,8 @@ summary: "**Co i Dlaczego?** Usuwanie znak\xF3w pasuj\u0105cych do wzorca to pro
   \ eliminowania okre\u015Blonych znak\xF3w z ci\u0105g\xF3w tekstowych. Robimy to,\
   \ by oczy\u015Bci\u0107 dane,\u2026"
 title: "Usuwanie znak\xF3w pasuj\u0105cych do wzorca"
+weight: 5
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 **Co i Dlaczego?**

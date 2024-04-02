@@ -7,9 +7,8 @@ model: gpt-4-0125-preview
 summary: "Parsing a date from a string in Dart involves converting textual representation\
   \ of dates and times into a `DateTime` object. This operation is essential\u2026"
 title: Parsing a date from a string
+weight: 30
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 Parsing a date from a string in Dart involves converting textual representation of dates and times into a `DateTime` object. This operation is essential for applications dealing with scheduling, data analysis, or any feature requiring date manipulation, ensuring that date-related data is correctly understood and processed by the program.

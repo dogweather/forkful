@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Parsing av HTML involverer analyse av en nettsides HTML-kode for \xE5 trekke\
   \ ut spesifikk informasjon eller elementer, en vanlig oppgave for web scraping,\u2026"
 title: Analysering av HTML
+weight: 43
 ---
-
-{{< edit_this_page >}}
 
 ## Hva & Hvorfor?
 Parsing av HTML involverer analyse av en nettsides HTML-kode for å trekke ut spesifikk informasjon eller elementer, en vanlig oppgave for web scraping, data mining eller automatisering av interaksjoner med nettsteder. Programmerere gjør dette for å programmert interagere med eller trekke ut data fra nettsteder, automatisere oppgaver, eller teste webapplikasjoner.

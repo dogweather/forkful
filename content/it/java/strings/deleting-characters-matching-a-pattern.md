@@ -7,9 +7,8 @@ model: gpt-4-1106-preview
 summary: "In Java, cancellare caratteri che corrispondono a un modello significa usare\
   \ espressioni regolari per identificare e rimuovere sequenze specifiche di\u2026"
 title: Eliminazione di caratteri che corrispondono a un pattern
+weight: 5
 ---
-
-{{< edit_this_page >}}
 
 ## Che cosa & Perché?
 In Java, cancellare caratteri che corrispondono a un modello significa usare espressioni regolari per identificare e rimuovere sequenze specifiche di caratteri da una stringa. Lo facciamo per validare l'input, pulire i dati, o manipolare testo per varie necessità del codice.

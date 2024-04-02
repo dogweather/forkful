@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Hier is een snel voorbeeld met behulp van JavaScript's Fetch API: ```javascript\
   \ const url = 'https://some-protected-resource.com/data'; const username =\u2026"
 title: Een HTTP-verzoek verzenden met basisauthenticatie
+weight: 45
 ---
-
-{{< edit_this_page >}}
 
 # Wat & Waarom?
 

@@ -11,9 +11,8 @@ summary: "Obs\u0142uga b\u0142\u0119d\xF3w w Google Apps Script dotyczy przewidy
   \ przechwytywania i reagowania na wyj\u0105tki lub b\u0142\u0119dy, kt\xF3re wyst\u0119\
   puj\u0105 podczas wykonywania skryptu.\u2026"
 title: "Obs\u0142uga b\u0142\u0119d\xF3w"
+weight: 16
 ---
-
-{{< edit_this_page >}}
 
 ## Co i dlaczego?
 

@@ -7,9 +7,8 @@ model: unknown
 summary: "Le espressioni regolari sono modelli usati per trovare corrispondenze di\
   \ testo. I programmatori le usano per semplificare compiti come la ricerca, la\u2026"
 title: Utilizzo delle espressioni regolari
+weight: 11
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why? (Cosa e Perché?)
 Le espressioni regolari sono modelli usati per trovare corrispondenze di testo. I programmatori le usano per semplificare compiti come la ricerca, la validazione dei dati, e la manipolazione di stringhe.

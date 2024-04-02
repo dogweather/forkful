@@ -13,9 +13,8 @@ summary: "G\u1EEDi m\u1ED9t y\xEAu c\u1EA7u HTTP gi\u1ED1ng nh\u01B0 g\xF5 c\u1E
   c v\u1EE5 m\u1ED9t s\u1ED1 d\u1EEF li\u1EC7u. L\u1EADp tr\xECnh vi\xEAn l\xE0m \u0111\
   i\u1EC1u n\xE0y \u0111\u1EC3 t\u01B0\u01A1ng t\xE1c v\u1EDBi c\xE1c API,\u2026"
 title: "G\u1EEDi m\u1ED9t y\xEAu c\u1EA7u HTTP"
+weight: 44
 ---
-
-{{< edit_this_page >}}
 
 ## Gì & Tại Sao?
 Gửi một yêu cầu HTTP giống như gõ cửa một máy chủ web, yêu cầu dữ liệu hoặc phục vụ một số dữ liệu. Lập trình viên làm điều này để tương tác với các API, tải nội dung, hoặc liên lạc với các dịch vụ khác.

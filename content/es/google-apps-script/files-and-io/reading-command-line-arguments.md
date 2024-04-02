@@ -11,9 +11,8 @@ summary: "Leer argumentos de la l\xEDnea de comandos en Google Apps Script es un
   \ un t\xE9rmino incorrecto porque, a diferencia de las interfaces de l\xEDnea de\
   \ comandos\u2026"
 title: "Leyendo argumentos de la l\xEDnea de comandos"
+weight: 23
 ---
-
-{{< edit_this_page >}}
 
 ## ¿Qué y Por Qué?
 

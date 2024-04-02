@@ -9,9 +9,8 @@ summary: "Die L\xE4nge eines Strings zu finden bedeutet, die Anzahl der Zeichen,
   \ denen er besteht, zu z\xE4hlen. Programmierer machen das oft, um Benutzereingaben\
   \ zu\u2026"
 title: "Ermittlung der Zeichenkettenl\xE4nge"
+weight: 7
 ---
-
-{{< edit_this_page >}}
 
 ## Was & Warum?
 Die Länge eines Strings zu finden bedeutet, die Anzahl der Zeichen, aus denen er besteht, zu zählen. Programmierer machen das oft, um Benutzereingaben zu validieren, für Textverarbeitungen oder um bei der Datenverarbeitung Grenzfälle zu handhaben.

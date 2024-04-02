@@ -22,9 +22,8 @@ summary: "Python\uC5D0\uC11C \uB514\uB809\uD1A0\uB9AC\uAC00 \uC874\uC7AC\uD558\u
   \uC6A9\uC744 \uC2DC\uB3C4\uD560 \uB54C\u2026"
 title: "\uB514\uB809\uD1A0\uB9AC\uAC00 \uC874\uC7AC\uD558\uB294\uC9C0 \uD655\uC778\
   \uD558\uAE30"
+weight: 20
 ---
-
-{{< edit_this_page >}}
 
 ## 무엇인가 & 왜인가?
 Python에서 디렉토리가 존재하는지 확인하는 것은 파일을 읽거나 쓰는 등의 작업을 수행하기 전에 파일 시스템에서 폴더의 존재를 검증하는 것입니다. 프로그래머들은 이를 통해 `FileNotFoundError`와 같은 오류를 피하고, 디렉토리와 상호작용을 시도할 때 애플리케이션이 신뢰성 있게 동작하며 충돌하지 않도록 합니다.

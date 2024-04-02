@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Scrivere su un file di testo in Haskell consiste nella creazione o aggiornamento\
   \ programmato di file contenenti testo. I programmatori eseguono questa\u2026"
 title: Scrivere un file di testo
+weight: 24
 ---
-
-{{< edit_this_page >}}
 
 ## Cosa & Perché?
 

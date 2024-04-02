@@ -9,9 +9,8 @@ summary: "G\xE9n\xE9rer des nombres al\xE9atoires en Ruby implique la cr\xE9atio
   \ de nombres qui ne peuvent pas \xEAtre pr\xE9dits logiquement, essentiel pour des\
   \ sc\xE9narios tels que\u2026"
 title: "G\xE9n\xE9ration de nombres al\xE9atoires"
+weight: 12
 ---
-
-{{< edit_this_page >}}
 
 ## Quoi & Pourquoi ?
 

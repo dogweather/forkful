@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "YAML, wat staat voor \"YAML Ain't Markup Language\", is een voor mensen\
   \ leesbare standaard voor gegevensserialisatie die voor allerlei toepassingen kan\u2026"
 title: Werken met YAML
+weight: 41
 ---
-
-{{< edit_this_page >}}
 
 ## Wat & Waarom?
 

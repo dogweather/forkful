@@ -9,9 +9,8 @@ summary: "Los n\xFAmeros complejos son una combinaci\xF3n de n\xFAmeros reales y
   meros imaginarios, como `a + bi` donde `i` es la ra\xEDz cuadrada de -1. Son clave\
   \ en campos\u2026"
 title: "Trabajando con n\xFAmeros complejos"
+weight: 14
 ---
-
-{{< edit_this_page >}}
 
 ## ¿Qué y Por Qué?
 Los números complejos son una combinación de números reales y números imaginarios, como `a + bi` donde `i` es la raíz cuadrada de -1. Son clave en campos como la ingeniería y la física para resolver problemas que los números regulares no pueden abordar.

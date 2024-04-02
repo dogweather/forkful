@@ -11,9 +11,8 @@ summary: "Att skicka en HTTP-f\xF6rfr\xE5gan med grundl\xE4ggande autentisering 
   r att bifoga ett anv\xE4ndarnamn och l\xF6senord till en f\xF6rfr\xE5gan f\xF6r\
   \ att verifiera\u2026"
 title: "S\xE4nda en HTTP-f\xF6rfr\xE5gan med grundl\xE4ggande autentisering"
+weight: 45
 ---
-
-{{< edit_this_page >}}
 
 ## Vad & Varför?
 

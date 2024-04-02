@@ -11,9 +11,8 @@ summary: "Dans le domaine de la programmation, travailler avec des fichiers CSV 
   \ S\xE9par\xE9es par des Virgules) implique de lire et d'\xE9crire des donn\xE9\
   es dans\u2026"
 title: Travailler avec CSV
+weight: 37
 ---
-
-{{< edit_this_page >}}
 
 ## Quoi & Pourquoi ?
 

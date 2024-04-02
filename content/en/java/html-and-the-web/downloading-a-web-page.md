@@ -7,9 +7,8 @@ model: gpt-4-1106-preview
 summary: "Downloading a webpage means grabbing its content, like HTML, CSS, and JavaScript,\
   \ programmatically. Programmers do this to process data, monitor changes,\u2026"
 title: Downloading a web page
+weight: 42
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 

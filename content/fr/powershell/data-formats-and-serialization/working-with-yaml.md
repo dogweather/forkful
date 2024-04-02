@@ -10,9 +10,8 @@ model: gpt-4-0125-preview
 summary: "YAML, ou \"YAML Ain't Markup Language\" (YAML n'est pas un langage de balisage),\
   \ est un langage de s\xE9rialisation de donn\xE9es lisible par l'humain. Les\u2026"
 title: Travailler avec YAML
+weight: 41
 ---
-
-{{< edit_this_page >}}
 
 ## Quoi et Pourquoi ?
 YAML, ou "YAML Ain't Markup Language" (YAML n'est pas un langage de balisage), est un langage de sérialisation de données lisible par l'humain. Les programmeurs l'utilisent souvent pour les fichiers de configuration et la transmission de données entre langages. Sa simplicité et sa lisibilité le rendent particulièrement populaire pour des tâches impliquant la configuration d'environnements, d'applications ou de services où les configurations sont cruciales et doivent être facilement comprises et modifiées.

@@ -9,9 +9,8 @@ summary: "Konvertering av en dato til en streng inneb\xE6rer \xE5 endre datotype
   \ fra \u2018date\u2019 (dato) til \u2018string\u2019 (tekststreng) for visning eller\
   \ lagring. Dette gj\xF8res for\u2026"
 title: Konvertere en dato til en streng
+weight: 28
 ---
-
-{{< edit_this_page >}}
 
 ## Hva & Hvorfor?
 Konvertering av en dato til en streng innebærer å endre datotypen fra ‘date’ (dato) til ‘string’ (tekststreng) for visning eller lagring. Dette gjøres for å kunne presentere datoer på et leservennlig format eller for å lagre i tekstbaserte systemer.

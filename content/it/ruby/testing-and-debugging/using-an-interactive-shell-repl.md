@@ -7,9 +7,8 @@ model: gpt-4-0125-preview
 summary: "Una shell interattiva, o REPL (Read-Eval-Print Loop, Ciclo Leggi-Valuta-Stampa),\
   \ permette di testare il codice in tempo reale. I programmatori la usano\u2026"
 title: Utilizzo di un interprete interattivo (REPL)
+weight: 34
 ---
-
-{{< edit_this_page >}}
 
 ## Cosa & Perché?
 Una shell interattiva, o REPL (Read-Eval-Print Loop, Ciclo Leggi-Valuta-Stampa), permette di testare il codice in tempo reale. I programmatori la usano per sperimentare, fare debug, e imparare le sfumature di Ruby senza dover creare script completi.

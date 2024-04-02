@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Das Herunterladen einer Webseite bezieht sich auf das Abrufen des HTML-Inhalts\
   \ einer Webseite \xFCber das HTTP/HTTPS-Protokoll. Programmierer tun dies oft\u2026"
 title: Herunterladen einer Webseite
+weight: 42
 ---
-
-{{< edit_this_page >}}
 
 ## Was & Warum?
 

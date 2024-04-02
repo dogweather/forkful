@@ -11,9 +11,8 @@ summary: "Das Kapitalisieren eines Strings bedeutet, das erste Zeichen des Strin
   \ in einen Gro\xDFbuchstaben umzuwandeln, w\xE4hrend die restlichen Zeichen unver\xE4\
   ndert\u2026"
 title: "Einen String gro\xDFschreiben"
+weight: 2
 ---
-
-{{< edit_this_page >}}
 
 ## Was & Warum?
 Das Kapitalisieren eines Strings bedeutet, das erste Zeichen des Strings in einen Großbuchstaben umzuwandeln, während die restlichen Zeichen unverändert bleiben. Diese Operation wird in JavaScript häufig durchgeführt, um Benutzereingaben zu formatieren, Namen oder Titel anzuzeigen und Konsistenz in den Texten der Benutzeroberfläche zu gewährleisten.

@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Gli array associativi, o mappe hash, permettono di memorizzare dati come\
   \ coppie chiave-valore, rendendo pi\xF9 semplice organizzare e recuperare informazioni\u2026"
 title: Utilizzo di array associativi
+weight: 15
 ---
-
-{{< edit_this_page >}}
 
 ## Cos'è e Perché?
 

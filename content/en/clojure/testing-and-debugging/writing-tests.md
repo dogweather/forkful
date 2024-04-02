@@ -7,9 +7,8 @@ model: gpt-4-0125-preview
 summary: "Writing tests in Clojure, much like in other programming languages, involves\
   \ creating dedicated code to verify that your main codebase works as expected.\u2026"
 title: Writing tests
+weight: 36
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 Writing tests in Clojure, much like in other programming languages, involves creating dedicated code to verify that your main codebase works as expected. It helps in ensuring correctness, facilitating refactoring, and enhancing code stability.

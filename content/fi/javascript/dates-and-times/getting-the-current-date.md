@@ -11,9 +11,8 @@ summary: "Nykyisen p\xE4iv\xE4m\xE4\xE4r\xE4n saaminen JavaScriptill\xE4 on peru
   v\xE4, johon kuuluu t\xE4m\xE4n p\xE4iv\xE4n p\xE4iv\xE4m\xE4\xE4r\xE4n ja ajan\
   \ noutaminen ja mahdollisesti manipulointi.\u2026"
 title: "Nykyisen p\xE4iv\xE4m\xE4\xE4r\xE4n hankkiminen"
+weight: 29
 ---
-
-{{< edit_this_page >}}
 
 ## Mikä ja Miksi?
 Nykyisen päivämäärän saaminen JavaScriptillä on perustehtävä, johon kuuluu tämän päivän päivämäärän ja ajan noutaminen ja mahdollisesti manipulointi. Ohjelmoijat suorittavat tämän näyttääkseen päivämääriä verkkosivuilla, sovelluksissa, seuratakseen käyttäjän vuorovaikutuksia tai käsitelläkseen aikaan sidottua dataa.

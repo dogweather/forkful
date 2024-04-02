@@ -10,9 +10,8 @@ model: gpt-4-0125-preview
 summary: "Parsing av HTML i programmering inneb\xE6rer \xE5 trekke ut data fra HTML-dokumenter.\
   \ Programmerere gj\xF8r dette for \xE5 samhandle med eller skrape nettinnhold for\u2026"
 title: Analysering av HTML
+weight: 43
 ---
-
-{{< edit_this_page >}}
 
 ## Hva & Hvorfor?
 Parsing av HTML i programmering innebærer å trekke ut data fra HTML-dokumenter. Programmerere gjør dette for å samhandle med eller skrape nettinnhold for informasjonsekstraksjon, testing eller automatiseringsformål, selv når offisielle API-er ikke er tilgjengelige.

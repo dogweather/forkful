@@ -14,9 +14,8 @@ summary: "\u5728\u7F16\u7A0B\u4E2D\uFF0C\u6BD4\u8F83\u4E24\u4E2A\u65E5\u671F\u5C
   \u5982\u8BA1\u7B97\u65F6\u5DEE\u3001\u9A8C\u8BC1\u6709\u6548\u671F\u4EE5\u53CA\u5B89\
   \u6392\u4E8B\u4EF6\u987A\u5E8F\u3002"
 title: "\u6BD4\u8F83\u4E24\u4E2A\u65E5\u671F"
+weight: 27
 ---
-
-{{< edit_this_page >}}
 
 ## 什么 & 为什么？
 在编程中，比较两个日期就是确定它们的先后关系。程序员需要这么做来处理时间逻辑，比如计算时差、验证有效期以及安排事件顺序。

@@ -7,9 +7,8 @@ model: gpt-4-1106-preview
 summary: "Organizzare il codice in funzioni divide il tuo script in blocchi riutilizzabili.\
   \ Si tratta di rendere il codice pulito, gestibile e meno soggetto a\u2026"
 title: Organizzazione del codice in funzioni
+weight: 18
 ---
-
-{{< edit_this_page >}}
 
 ## Cosa & Perché?
 Organizzare il codice in funzioni divide il tuo script in blocchi riutilizzabili. Si tratta di rendere il codice pulito, gestibile e meno soggetto a errori. Il codice modulare è fantastico perché ti fa risparmiare tempo, mantiene la tua sanità mentale e semplifica il debug e il test delle unità.

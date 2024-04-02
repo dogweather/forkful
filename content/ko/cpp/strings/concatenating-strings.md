@@ -12,9 +12,8 @@ summary: "\uBB38\uC790\uC5F4 \uC5F0\uACB0(concatenation)\uC740 \uBB38\uC790\uC5F
   \ \uD569\uCE58\uAC70\uB098 \uCD9C\uB825\uC744 \uD615\uC2DD\uD654\uD560 \uB54C \uC0AC\
   \uC6A9\uD569\uB2C8\uB2E4."
 title: "\uBB38\uC790\uC5F4 \uC5F0\uACB0\uD558\uAE30"
+weight: 3
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why? (무엇과 왜?)
 문자열 연결(concatenation)은 문자열을 이어 붙이는 것입니다. 데이터를 합치거나 출력을 형식화할 때 사용합니다.

@@ -9,9 +9,8 @@ summary: "Come\xE7ar um novo projeto \xE9 dar o pontap\xE9 inicial no desenvolvi
   \ de uma ideia de software. Programadores iniciam projetos para transformar conceitos\
   \ em\u2026"
 title: Iniciando um novo projeto
+weight: 1
 ---
-
-{{< edit_this_page >}}
 
 ## O Que & Por Quê?
 

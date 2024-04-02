@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Las expresiones regulares (regex) son patrones utilizados para hacer coincidir\
   \ combinaciones de caracteres en cadenas de texto. Los programadores las\u2026"
 title: Usando expresiones regulares
+weight: 11
 ---
-
-{{< edit_this_page >}}
 
 ## Qué y Por Qué?
 

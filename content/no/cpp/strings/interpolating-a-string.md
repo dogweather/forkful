@@ -7,9 +7,8 @@ model: gpt-4-1106-preview
 summary: "Strenginterpolasjon betyr \xE5 stikke variabler eller uttrykk inn i en streng.\
   \ Det gj\xF8r koden mer lesbar og lar oss lett bygge dynamiske meldinger."
 title: Interpolering av en streng
+weight: 8
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 Strenginterpolasjon betyr å stikke variabler eller uttrykk inn i en streng. Det gjør koden mer lesbar og lar oss lett bygge dynamiske meldinger.

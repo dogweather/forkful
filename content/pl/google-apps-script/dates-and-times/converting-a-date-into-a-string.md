@@ -11,9 +11,8 @@ summary: "Konwersja dat na ci\u0105gi znak\xF3w to podstawowe zadanie, kt\xF3re 
   liwia programistom manipulowanie informacjami o dacie i wy\u015Bwietlanie ich w\
   \ formacie\u2026"
 title: "Konwersja daty na ci\u0105g znak\xF3w"
+weight: 28
 ---
-
-{{< edit_this_page >}}
 
 ## Co i dlaczego?
 

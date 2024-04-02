@@ -11,9 +11,8 @@ summary: "\xC5 konvertere en dato til en streng i C inneb\xE6rer \xE5 oversette 
   \ datostuktur eller tidsstempel til et menneskelesbart format. Programmerere utf\xF8\
   rer ofte\u2026"
 title: "Omgj\xF8ring av en dato til en streng"
+weight: 28
 ---
-
-{{< edit_this_page >}}
 
 ## Hva & Hvorfor?
 

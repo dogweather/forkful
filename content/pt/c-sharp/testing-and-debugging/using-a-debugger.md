@@ -1,14 +1,15 @@
 ---
 date: 2024-01-26 03:48:31.961726-07:00
-description: "Usar um depurador significa acessar ferramentas especializadas para\
-  \ testar e diagnosticar c\xF3digo. Programadores fazem isso para eliminar bugs,\
-  \ entender o\u2026"
+description: "Imagine que voc\xEA tem um programinha que n\xE3o est\xE1 agindo corretamente:\
+  \ ```C# static void Main() { int result = Sum(1, 2); Console.WriteLine(result);\
+  \ }\u2026"
 lastmod: '2024-03-13T22:44:46.588526-06:00'
 model: gpt-4-0125-preview
-summary: "Usar um depurador significa acessar ferramentas especializadas para testar\
-  \ e diagnosticar c\xF3digo. Programadores fazem isso para eliminar bugs, entender\
-  \ o\u2026"
+summary: "Imagine que voc\xEA tem um programinha que n\xE3o est\xE1 agindo corretamente:\
+  \ ```C# static void Main() { int result = Sum(1, 2); Console.WriteLine(result);\
+  \ }\u2026"
 title: Usando um depurador
+weight: 35
 ---
 
 ## Como fazer:

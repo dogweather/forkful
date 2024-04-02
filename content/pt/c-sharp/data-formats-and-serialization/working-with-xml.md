@@ -9,9 +9,8 @@ summary: "XML (eXtensible Markup Language) trata-se de estruturar dados em um fo
   \ leg\xEDvel. Programadores manipulam o XML para configura\xE7\xE3o, troca de dados\
   \ entre\u2026"
 title: Trabalhando com XML
+weight: 40
 ---
-
-{{< edit_this_page >}}
 
 ## O que é & Por quê?
 XML (eXtensible Markup Language) trata-se de estruturar dados em um formato legível. Programadores manipulam o XML para configuração, troca de dados entre aplicativos e onde as especificações o solicitem — pense em SOAP ou APIs web.

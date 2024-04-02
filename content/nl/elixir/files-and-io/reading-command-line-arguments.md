@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Commandoregelargumenten lezen stelt een programma in staat om direct vanuit\
   \ de terminal gegevens te grijpen\u2014dingen zoals instellingen of bestandsnamen.\u2026"
 title: Commandoregelargumenten lezen
+weight: 23
 ---
-
-{{< edit_this_page >}}
 
 ## Wat & Waarom?
 Commandoregelargumenten lezen stelt een programma in staat om direct vanuit de terminal gegevens te grijpen—dingen zoals instellingen of bestandsnamen. Programmeurs doen dit om het gedrag van een programma aan te passen zonder de code te veranderen.

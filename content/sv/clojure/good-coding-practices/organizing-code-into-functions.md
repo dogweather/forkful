@@ -8,9 +8,8 @@ model: gpt-4-1106-preview
 summary: "Att organisera kod i funktioner handlar om att paketera kodblock som utf\xF6\
   r specifika uppgifter. Genom att g\xF6ra detta blir koden renare, l\xE4ttare att\u2026"
 title: Att organisera kod i funktioner
+weight: 18
 ---
-
-{{< edit_this_page >}}
 
 ## Vad & Varför?
 

@@ -11,9 +11,8 @@ summary: "Express\xF5es regulares, ou regex, s\xE3o uma ferramenta poderosa de c
   ncia de padr\xF5es e busca na programa\xE7\xE3o. Os programadores utilizam regex\
   \ para\u2026"
 title: "Usando express\xF5es regulares"
+weight: 11
 ---
-
-{{< edit_this_page >}}
 
 ## O Que & Por Quê?
 Expressões regulares, ou regex, são uma ferramenta poderosa de correspondência de padrões e busca na programação. Os programadores utilizam regex para tarefas como validar entradas de usuários, buscar textos ou manipular strings porque é eficiente e versátil.

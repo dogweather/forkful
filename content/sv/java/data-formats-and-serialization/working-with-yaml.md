@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "YAML, som st\xE5r f\xF6r \"YAML Ain't Markup Language,\" \xE4r en l\xE4\
   sbar standard f\xF6r dataserialisering som programmerare anv\xE4nder f\xF6r konfigurationsfiler,\u2026"
 title: Att Arbeta med YAML
+weight: 41
 ---
-
-{{< edit_this_page >}}
 
 ## Vad & Varför?
 YAML, som står för "YAML Ain't Markup Language," är en läsbar standard för dataserialisering som programmerare använder för konfigurationsfiler, datadumpning och datatransmission mellan språk. Det är populärt på grund av sin läsbarhet och enkelhet, vilket gör det till ett vanligt val för konfigurering av applikationer och tjänster.

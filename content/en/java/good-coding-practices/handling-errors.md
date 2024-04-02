@@ -7,9 +7,8 @@ model: gpt-4-1106-preview
 summary: "Handling errors means writing code that anticipates and deals with things\
   \ going wrong. Programmers do it to make software robust, preventing crashes and\u2026"
 title: Handling errors
+weight: 16
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 

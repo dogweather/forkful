@@ -11,9 +11,8 @@ summary: "Strenginterpolering i Visual Basic for Applications (VBA) refererer ti
   \ prosessen med \xE5 inneby variabler eller uttrykk innenfor en strengliteral, noe\
   \ som\u2026"
 title: Interpolering av en streng
+weight: 8
 ---
-
-{{< edit_this_page >}}
 
 ## Hva & Hvorfor?
 

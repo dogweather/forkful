@@ -11,9 +11,8 @@ summary: "Att h\xE4mta det aktuella datumet \xE4r en v\xE4sentlig uppgift i n\xE
   stan alla programmeringsprojekt, fr\xE5n att logga aktiviteter i en applikation\
   \ till att generera\u2026"
 title: "F\xE5 det aktuella datumet"
+weight: 29
 ---
-
-{{< edit_this_page >}}
 
 ## Vad & Varför?
 Att hämta det aktuella datumet är en väsentlig uppgift i nästan alla programmeringsprojekt, från att logga aktiviteter i en applikation till att generera rapporter med datumstämplar. I Ruby kan detta enkelt åstadkommas genom att använda standardbiblioteket, vilket förenklar operationer som involverar datum.

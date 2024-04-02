@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Escribir un archivo de texto en TypeScript es una habilidad cr\xEDtica para\
   \ la persistencia de datos, configuraciones o generaci\xF3n de registros. Los\u2026"
 title: Escribiendo un archivo de texto
+weight: 24
 ---
-
-{{< edit_this_page >}}
 
 ## Qué y Por Qué?
 Escribir un archivo de texto en TypeScript es una habilidad crítica para la persistencia de datos, configuraciones o generación de registros. Los programadores a menudo realizan esta tarea para almacenar y manipular datos fuera de la memoria de la aplicación por razones como análisis de datos, informes, o simplemente guardar configuraciones de usuario entre sesiones.

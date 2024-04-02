@@ -11,9 +11,8 @@ summary: "Generowanie losowych liczb w Visual Basic for Applications (VBA) umo\u
   liwia programom symulowanie proces\xF3w z elementami szansy lub zmienno\u015Bci,\
   \ takimi jak\u2026"
 title: Generowanie liczb losowych
+weight: 12
 ---
-
-{{< edit_this_page >}}
 
 ## Co i dlaczego?
 

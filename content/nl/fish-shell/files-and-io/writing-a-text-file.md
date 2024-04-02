@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Schrijven naar een tekstbestand betekent het opslaan van gegevens zoals\
   \ tekst of code op je computer. Programmeurs doen dit om configuraties op te slaan,\u2026"
 title: Een tekstbestand schrijven
+weight: 24
 ---
-
-{{< edit_this_page >}}
 
 ## Wat & Waarom?
 Schrijven naar een tekstbestand betekent het opslaan van gegevens zoals tekst of code op je computer. Programmeurs doen dit om configuraties op te slaan, informatie te loggen of gegevens voor later gebruik te bewaren.

@@ -21,9 +21,8 @@ summary: "\u5728 Google Apps \u811A\u672C\u4E2D\u83B7\u53D6\u5F53\u524D\u65E5\u6
   \u6B62\u65E5\u671F\u8DDF\u8E2A\u4EE5\u53CA\u5728 Google Docs\u3001Sheets \u548C\u5176\
   \u4ED6 Google \u670D\u52A1\u5185\u7684\u8C03\u5EA6\u3002"
 title: "\u83B7\u53D6\u5F53\u524D\u65E5\u671F"
+weight: 29
 ---
-
-{{< edit_this_page >}}
 
 ## 什么与为什么？
 

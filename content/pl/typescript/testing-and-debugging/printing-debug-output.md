@@ -9,9 +9,8 @@ summary: "Wypisywanie informacji debuguj\u0105cych to wy\u015Bwietlanie danych, 
   re pomagaj\u0105 programi\u015Bcie zrozumie\u0107, co si\u0119 dzieje w kodzie.\
   \ Programi\u015Bci robi\u0105 to, by szybko\u2026"
 title: "Drukowanie komunikat\xF3w debugowania"
+weight: 33
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why? (Co i Dlaczego?)
 Wypisywanie informacji debugujących to wyświetlanie danych, które pomagają programiście zrozumieć, co się dzieje w kodzie. Programiści robią to, by szybko znaleźć i naprawić błędy.

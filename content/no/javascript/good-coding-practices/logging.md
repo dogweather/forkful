@@ -9,9 +9,8 @@ summary: "Logging, kort fortalt, er som \xE5 f\xF8re en dagbok for din applikasj
   \ \u2013 det registrerer hendelser, feil og andre vesentlige handlinger som finner\
   \ sted mens\u2026"
 title: "Loggf\xF8ring"
+weight: 17
 ---
-
-{{< edit_this_page >}}
 
 ## Hva & Hvorfor?
 Logging, kort fortalt, er som å føre en dagbok for din applikasjon – det registrerer hendelser, feil og andre vesentlige handlinger som finner sted mens programvaren kjører. Programmerere gjør dette ikke bare for å forstå hva som skjer under panseret i sanntid, men også for å ha en historisk oversikt som er avgjørende for feilsøking, revisjon og optimalisering av ytelse.

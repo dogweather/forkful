@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Werken met XML in Google Apps Script stelt programmeurs in staat om XML-gegevens\
   \ te parseren, te manipuleren en te genereren, essentieel voor webservices\u2026"
 title: Werken met XML
+weight: 40
 ---
-
-{{< edit_this_page >}}
 
 ## Wat & Waarom?
 

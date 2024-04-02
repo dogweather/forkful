@@ -10,9 +10,8 @@ model: gpt-4-0125-preview
 summary: "Das aktuelle Datum in Arduino-Projekten zu bekommen, beinhaltet das Abrufen\
   \ von Echtzeitinformationen, die f\xFCr das Logging, Zeitstempeln oder das Planen\u2026"
 title: Den aktuellen Datum abrufen
+weight: 29
 ---
-
-{{< edit_this_page >}}
 
 ## Was & Warum?
 Das aktuelle Datum in Arduino-Projekten zu bekommen, beinhaltet das Abrufen von Echtzeitinformationen, die für das Logging, Zeitstempeln oder das Planen von Aufgaben entscheidend sein können. Programmierer benötigen diese Fähigkeit oft, um die Funktionalität zu verbessern, die Datenrelevanz zu sichern und zeitkritische Operationen in ihren IoT- und Embedded-Projekten zu erleichtern.

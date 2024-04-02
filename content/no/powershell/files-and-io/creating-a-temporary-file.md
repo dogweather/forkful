@@ -8,9 +8,8 @@ model: gpt-4-1106-preview
 summary: "Opprettelse av en midlertidig fil er \xE5 lage en fil som er ment for kortvarig\
   \ bruk. Programmere bruker dem for \xE5 lagre data under kj\xF8ring av et program\u2026"
 title: Opprette en midlertidig fil
+weight: 21
 ---
-
-{{< edit_this_page >}}
 
 ## Hva & Hvorfor?
 Opprettelse av en midlertidig fil er å lage en fil som er ment for kortvarig bruk. Programmere bruker dem for å lagre data under kjøring av et program uten å påvirke langsiktig lagring eller brukerdata.

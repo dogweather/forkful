@@ -11,9 +11,8 @@ summary: "Escrever testes em Rust envolve criar verifica\xE7\xF5es automatizadas
   \ assegurar que seu c\xF3digo executa conforme o esperado. Programadores fazem isso\
   \ para\u2026"
 title: Escrevendo testes
+weight: 36
 ---
-
-{{< edit_this_page >}}
 
 ## O Quê & Por Quê?
 

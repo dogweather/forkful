@@ -1,14 +1,13 @@
 ---
 date: 2024-01-26 03:49:46.740623-07:00
-description: "Utiliser un d\xE9bogueur signifie recourir \xE0 des outils sp\xE9cialis\xE9\
-  s qui vous permettent de jeter un coup d'\u0153il sous le capot de votre code, en\
-  \ le regardant\u2026"
+description: "Voici un peu de code JavaScript qui ne se comporte pas comme pr\xE9\
+  vu : ```javascript function buggyMultiply(a, b) { return a + b; // Oups ! Cela devrait\u2026"
 lastmod: '2024-03-13T22:44:58.280681-06:00'
 model: gpt-4-0125-preview
-summary: "Utiliser un d\xE9bogueur signifie recourir \xE0 des outils sp\xE9cialis\xE9\
-  s qui vous permettent de jeter un coup d'\u0153il sous le capot de votre code, en\
-  \ le regardant\u2026"
+summary: "Voici un peu de code JavaScript qui ne se comporte pas comme pr\xE9vu :\
+  \ ```javascript function buggyMultiply(a, b) { return a + b; // Oups ! Cela devrait\u2026"
 title: "Utilisation d'un d\xE9bogueur"
+weight: 35
 ---
 
 ## Comment faire :

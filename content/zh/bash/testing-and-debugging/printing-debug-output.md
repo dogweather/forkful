@@ -12,9 +12,8 @@ summary: "\u6253\u5370\u8C03\u8BD5\u4FE1\u606F\u662F\u7A0B\u5E8F\u8FD0\u884C\u65
   \u5E8F\u5458\u8FD9\u6837\u505A\u662F\u4E3A\u4E86\u7406\u89E3\u7A0B\u5E8F\u7684\u884C\
   \u4E3A\uFF0C\u89E3\u51B3bug\u3002"
 title: "\u6253\u5370\u8C03\u8BD5\u4FE1\u606F"
+weight: 33
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why? (是什么？为什么？)
 打印调试信息是程序运行时输出变量和流程信息的做法。程序员这样做是为了理解程序的行为，解决bug。

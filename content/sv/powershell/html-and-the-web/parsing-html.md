@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Att analysera HTML med PowerShell handlar om att dissekera HTML-inneh\xE5\
   ll f\xF6r att extrahera specifika data eller automatisera webbrelaterade uppgifter.\u2026"
 title: Tolka HTML
+weight: 43
 ---
-
-{{< edit_this_page >}}
 
 ## Vad & Varför?
 Att analysera HTML med PowerShell handlar om att dissekera HTML-innehåll för att extrahera specifika data eller automatisera webbrelaterade uppgifter. Programmerare gör det för att interagera med webbsidor, skrapa webbinnehåll, eller automatisera formulärinlämningar och andra webbinteraktioner utan att behöva en webbläsare.

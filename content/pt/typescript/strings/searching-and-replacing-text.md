@@ -8,9 +8,8 @@ model: gpt-4-1106-preview
 summary: "Buscar e substituir texto \xE9 o processo de encontrar sequ\xEAncias de\
   \ caracteres e troc\xE1-las por outras. Programadores fazem isso para corrigir erros,\u2026"
 title: Pesquisando e substituindo texto
+weight: 10
 ---
-
-{{< edit_this_page >}}
 
 ## O Que & Por Quê?
 Buscar e substituir texto é o processo de encontrar sequências de caracteres e trocá-las por outras. Programadores fazem isso para corrigir erros, atualizar dados ou simplificar refatorações em códigos.

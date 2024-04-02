@@ -9,9 +9,8 @@ summary: "Rozpoczynanie nowego projektu to jak stawianie pierwszych cegie\u0142e
   \ \u2013 wymaga jasnego planu i narz\u0119dzi. Programi\u015Bci tworz\u0105 nowe\
   \ projekty, aby rozwi\u0105zywa\u0107\u2026"
 title: Rozpoczynanie nowego projektu
+weight: 1
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why? (Co i Dlaczego?)
 Rozpoczynanie nowego projektu to jak stawianie pierwszych cegiełek – wymaga jasnego planu i narzędzi. Programiści tworzą nowe projekty, aby rozwiązywać problemy, uczyć się czy też testować pomysły.

@@ -9,9 +9,8 @@ summary: "Haemme tekstin osia, eli substringej\xE4, kun tarvitsemme erityist\xE4
   \ merkkijonosta. Ohjelmoijat tekev\xE4t niin, jotta voivat k\xE4sitell\xE4, verrata\
   \ tai\u2026"
 title: Merkkijonojen osien poimiminen
+weight: 6
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why? - Mitä & Miksi?
 Haemme tekstin osia, eli substringejä, kun tarvitsemme erityistä tietoa merkkijonosta. Ohjelmoijat tekevät niin, jotta voivat käsitellä, verrata tai analysoida tekstin osia.

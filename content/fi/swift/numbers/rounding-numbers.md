@@ -9,9 +9,8 @@ summary: "Numeroiden py\xF6rist\xE4minen tarkoittaa numeerisen arvon likim\xE4\x
   r\xE4ist\xE4mist\xE4 tiettyyn tarkkuuteen, tyypillisesti ei-toivottujen desimaalien\
   \ poistamiseksi.\u2026"
 title: "Numerojen py\xF6rist\xE4minen"
+weight: 13
 ---
-
-{{< edit_this_page >}}
 
 ## Mikä ja miksi?
 

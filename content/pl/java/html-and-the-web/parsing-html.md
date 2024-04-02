@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Parsowanie HTML oznacza przekopywanie si\u0119 przez znaczniki w celu wydobycia\
   \ danych takich jak tekst, linki czy inne elementy. Robimy to, aby interaktywnie\u2026"
 title: "Analiza sk\u0142adniowa HTML"
+weight: 43
 ---
-
-{{< edit_this_page >}}
 
 ## Co & Dlaczego?
 

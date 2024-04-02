@@ -9,9 +9,8 @@ summary: "Lire les arguments de ligne de commande, c'est r\xE9cup\xE9rer les don
   es fournies \xE0 votre script PHP lors de son ex\xE9cution dans un terminal. On\
   \ le fait pour\u2026"
 title: Lecture des arguments de ligne de commande
+weight: 23
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why? (Quoi et Pourquoi ?)
 Lire les arguments de ligne de commande, c'est récupérer les données fournies à votre script PHP lors de son exécution dans un terminal. On le fait pour permettre aux utilisateurs de personnaliser l'exécution du script, comme spécifier un fichier à traiter ou choisir une option de configuration.

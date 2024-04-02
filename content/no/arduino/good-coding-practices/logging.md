@@ -9,9 +9,8 @@ summary: "\"Logging\" er \xE5 f\xF8re en registrering av hendelser, transaksjone
   \ eller aktiviteter som skjer over tid i et system. Programmerere bruker det for\
   \ \xE5 feils\xF8ke,\u2026"
 title: "Loggf\xF8ring"
+weight: 17
 ---
-
-{{< edit_this_page >}}
 
 ## Hva & Hvorfor?
 "Logging" er å føre en registrering av hendelser, transaksjoner eller aktiviteter som skjer over tid i et system. Programmerere bruker det for å feilsøke, overvåke systemets helse, samle statistikk, eller til og med for å revidere bruk, noe som gjør det til en uunnværlig praksis for vedlikehold og å forstå oppførselen til koden deres under ulike forhold.

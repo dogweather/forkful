@@ -7,9 +7,8 @@ model: gpt-4-1106-preview
 summary: "La journalisation est le processus d'enregistrement des comportements, des\
   \ erreurs et d'autres informations importantes d'une application dans un support\u2026"
 title: Journalisation
+weight: 17
 ---
-
-{{< edit_this_page >}}
 
 ## Quoi & Pourquoi ?
 La journalisation est le processus d'enregistrement des comportements, des erreurs et d'autres informations importantes d'une application dans un support persistant, comme un fichier ou une base de données. Les programmeurs le font pour suivre la santé et les performances de leurs applications, pour déboguer des problèmes et pour garder un œil sur ce qui se passe sous le capot dans les environnements de production.

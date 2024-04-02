@@ -10,9 +10,8 @@ model: gpt-4-0125-preview
 summary: "Escribir en el error est\xE1ndar (stderr) en Bash se trata de dirigir mensajes\
   \ de error o cualquier salida de diagn\xF3stico importante, separ\xE1ndola de la\u2026"
 title: "Escribiendo en el error est\xE1ndar"
+weight: 25
 ---
-
-{{< edit_this_page >}}
 
 ## ¿Qué y Por Qué?
 Escribir en el error estándar (stderr) en Bash se trata de dirigir mensajes de error o cualquier salida de diagnóstico importante, separándola de la salida estándar (stdout). Los programadores hacen esto para asegurarse de que los mensajes de error puedan ser fácilmente identificados, registrados o incluso ignorados, ayudando en los procesos de depuración y registro.

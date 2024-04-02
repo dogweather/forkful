@@ -8,9 +8,8 @@ model: gpt-4-0125-preview
 summary: "REPL tarkoittaa Read-Eval-Print Loopia, interaktiivista ymp\xE4rist\xF6\xE4\
   , jossa voit nopeasti testata koodia. Ohjelmoijat k\xE4ytt\xE4v\xE4t sit\xE4 kokeiluun,\u2026"
 title: "Interaktiivisen komentotulkin (REPL) k\xE4ytt\xF6"
+weight: 34
 ---
-
-{{< edit_this_page >}}
 
 ## Mikä & Miksi?
 REPL tarkoittaa Read-Eval-Print Loopia, interaktiivista ympäristöä, jossa voit nopeasti testata koodia. Ohjelmoijat käyttävät sitä kokeiluun, vianmääritykseen ja kielen erikoisuuksien opetteluun.

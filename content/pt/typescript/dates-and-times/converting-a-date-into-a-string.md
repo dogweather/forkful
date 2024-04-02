@@ -7,9 +7,8 @@ model: gpt-4-1106-preview
 summary: "Converter uma data em uma string trata-se de transformar o objeto Date em\
   \ um texto leg\xEDvel. Programadores fazem isso para exibir datas de forma\u2026"
 title: Convertendo uma data em uma string
+weight: 28
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 Converter uma data em uma string trata-se de transformar o objeto Date em um texto legível. Programadores fazem isso para exibir datas de forma compreensível para usuários ou para preparar informações para armazenamento e transferência.

@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "L'interpolazione di stringhe \xE8 un metodo per costruire stringhe che incorporano\
   \ variabili, consentendo la creazione di stringhe dinamiche. I programmatori\u2026"
 title: Interpolazione di una stringa
+weight: 8
 ---
-
-{{< edit_this_page >}}
 
 ## Cosa & Perché?
 

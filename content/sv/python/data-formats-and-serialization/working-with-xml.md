@@ -9,9 +9,8 @@ summary: "\"Arbeta med XML\" avser processen att l\xE4sa, skapa och modifiera XM
   \ (eXtensible Markup Language)-filer med programmering. Programmerare g\xF6r det\
   \ eftersom\u2026"
 title: Att arbeta med XML
+weight: 40
 ---
-
-{{< edit_this_page >}}
 
 ## Vad & Varför?
 "Arbeta med XML" avser processen att läsa, skapa och modifiera XML (eXtensible Markup Language)-filer med programmering. Programmerare gör det eftersom XML är brett använd för datautbyte på grund av dess plattformsoberoende natur och självbeskrivande format.

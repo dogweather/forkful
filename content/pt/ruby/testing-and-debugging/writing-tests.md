@@ -11,9 +11,8 @@ summary: "Testar em Ruby \xE9 verificar se o seu c\xF3digo se comporta como espe
   \ sob v\xE1rias condi\xE7\xF5es. Os programadores escrevem testes para garantir\
   \ corre\xE7\xE3o,\u2026"
 title: Escrevendo testes
+weight: 36
 ---
-
-{{< edit_this_page >}}
 
 ## O Que & Por Quê?
 Testar em Ruby é verificar se o seu código se comporta como esperado sob várias condições. Os programadores escrevem testes para garantir correção, prevenir regressões e facilitar o refatoramento, com o objetivo de ter aplicações robustas e mantíveis.

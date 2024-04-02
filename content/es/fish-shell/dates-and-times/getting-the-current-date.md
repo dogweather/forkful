@@ -11,9 +11,8 @@ summary: "Obtener la fecha actual en programaci\xF3n es una tarea fundamental qu
   \ te permite recuperar y manipular los datos de fecha y hora del sistema. En tareas\
   \ de\u2026"
 title: Obteniendo la fecha actual
+weight: 29
 ---
-
-{{< edit_this_page >}}
 
 ## Qué y Por Qué?
 Obtener la fecha actual en programación es una tarea fundamental que te permite recuperar y manipular los datos de fecha y hora del sistema. En tareas de script y automatización, es esencial para generar marcas de tiempo, programar tareas y crear registros.

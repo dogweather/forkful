@@ -9,9 +9,8 @@ summary: "Att avrunda tal inneb\xE4r att justera dem till n\xE4rmaste heltal ell
   \ angiven decimalplats. Programmerare avrundar tal f\xF6r att kontrollera precision,\
   \ anpassa\u2026"
 title: Avrundning av tal
+weight: 13
 ---
-
-{{< edit_this_page >}}
 
 ## Vad & Varför?
 

@@ -9,9 +9,8 @@ summary: "I JavaScript \xE4r att skriva ut fels\xF6kningsmeddelanden en metod f\
   r att visa data eller fel under kodens k\xF6rning. Programmerare g\xF6r detta f\xF6\
   r att f\xF6rst\xE5 vad\u2026"
 title: "Skriva ut fels\xF6kningsdata"
+weight: 33
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 I JavaScript är att skriva ut felsökningsmeddelanden en metod för att visa data eller fel under kodens körning. Programmerare gör detta för att förstå vad deras program gör, hitta fel snabbt, och säkerställa att allt fungerar som det ska.

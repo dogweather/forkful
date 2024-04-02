@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Creare un file temporaneo in Dart implica la generazione di un file destinato\
   \ a un uso a breve termine, principalmente per scenari come la memorizzazione\u2026"
 title: Creazione di un file temporaneo
+weight: 21
 ---
-
-{{< edit_this_page >}}
 
 ## Cosa e perché?
 Creare un file temporaneo in Dart implica la generazione di un file destinato a un uso a breve termine, principalmente per scenari come la memorizzazione nella cache dei dati, lo storage temporaneo per l'elaborazione dei file o il mantenimento di informazioni troppo sensibili per essere conservate a lungo. Gli sviluppatori lo fanno per gestire dati che non necessitano di una conservazione permanente, migliorando così le prestazioni e mantenendo l'igiene dei dati.

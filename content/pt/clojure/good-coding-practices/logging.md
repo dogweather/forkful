@@ -9,9 +9,8 @@ summary: "O log \xE9 essencialmente o equivalente de software ao di\xE1rio de bo
   \ de um navio; \xE9 uma maneira de registrar eventos que acontecem enquanto uma\
   \ aplica\xE7\xE3o\u2026"
 title: Registro de Logs
+weight: 17
 ---
-
-{{< edit_this_page >}}
 
 ## O Que e Por Quê?
 O log é essencialmente o equivalente de software ao diário de bordo de um navio; é uma maneira de registrar eventos que acontecem enquanto uma aplicação está em execução. Programadores fazem isso para manter um registro desses eventos para depuração, trilhas de auditoria ou para obter insights sobre o comportamento de um sistema em produção.

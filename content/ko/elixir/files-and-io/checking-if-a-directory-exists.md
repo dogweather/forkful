@@ -24,9 +24,8 @@ summary: "Elixir\uC5D0\uC11C \uB514\uB809\uD130\uB9AC\uC758 \uC874\uC7AC \uC5EC\
   \uD589\uD560 \uC218 \uC788\uB294\uC9C0\u2026"
 title: "\uB514\uB809\uD1A0\uB9AC\uAC00 \uC874\uC7AC\uD558\uB294\uC9C0 \uD655\uC778\
   \uD558\uAE30"
+weight: 20
 ---
-
-{{< edit_this_page >}}
 
 ## 무엇인가 & 왜인가?
 Elixir에서 디렉터리의 존재 여부를 확인하는 것은 파일 시스템에서 지정된 경로에 디렉터리의 존재를 검증하는 것에 관한 것입니다. 프로그래머들은 이러한 작업을 통해 디렉터리가 존재하지 않는 것으로 인한 오류 없이 안전하게 읽기, 쓰기 또는 다른 작업을 수행할 수 있는지 확인합니다.

@@ -21,9 +21,8 @@ summary: "\uC5F0\uAD00 \uBC30\uC5F4\uC740 Google Apps Script(JavaScript\uC758 \u
   \uD615 \uC800\uC7A5 \uBC0F \uC811\uADFC \uBAA8\uB378\uC774 \uCDA9\uBD84\uD558\uC9C0\
   \ \uC54A\uC744\u2026"
 title: "\uC5F0\uAD00 \uBC30\uC5F4 \uC0AC\uC6A9\uD558\uAE30"
+weight: 15
 ---
-
-{{< edit_this_page >}}
 
 ## 무엇이며 왜 사용하나?
 

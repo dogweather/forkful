@@ -9,9 +9,8 @@ summary: "Virheenk\xE4sittelyss\xE4 on kyse odottamattoman odottamisesta koodiss
   \ \u2013 hallitaan virheet ja ongelmat sulavasti ilman, ett\xE4 ohjelma kaatuu.\
   \ Ohjelmoijat\u2026"
 title: "Virheiden k\xE4sittely"
+weight: 16
 ---
-
-{{< edit_this_page >}}
 
 ## Mikä ja miksi?
 

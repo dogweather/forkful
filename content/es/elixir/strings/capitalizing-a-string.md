@@ -11,9 +11,8 @@ summary: "Capitalizar una cadena implica convertir la primera letra de la cadena
   \ may\xFAscula mientras aseguramos que el resto de las letras est\xE9n en min\xFA\
   sculas.\u2026"
 title: Capitalizando una cadena de texto
+weight: 2
 ---
-
-{{< edit_this_page >}}
 
 ## ¿Qué y Por Qué?
 

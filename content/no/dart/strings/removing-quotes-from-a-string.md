@@ -11,9 +11,8 @@ summary: "\xC5 fjerne anf\xF8rselstegn fra en streng i Dart involverer \xE5 stri
   \ bort doble (\") eller enkle (') anf\xF8rselstegn fra starten og slutten av en\
   \ streng, nyttig\u2026"
 title: "Fjerning av anf\xF8rselstegn fra en streng"
+weight: 9
 ---
-
-{{< edit_this_page >}}
 
 ## Hva & Hvorfor?
 Å fjerne anførselstegn fra en streng i Dart involverer å stripe bort doble (") eller enkle (') anførselstegn fra starten og slutten av en streng, nyttig for rensing av data eller forberedelse av strenger for videre behandling. Programmerere gjør dette for å normalisere datainnganger, sikre uniformitet i datalagring, eller når de grensesnitt med API-er som kan returnere data i siterte formater.

@@ -9,9 +9,8 @@ summary: "HTTP-pyynt\xF6jen l\xE4hett\xE4minen on tapa kommunikoida palvelimien 
   \ verkossa. Koodaajat tekev\xE4t n\xE4in hakiakseen tietoa, l\xE4hett\xE4\xE4kseen\
   \ tietoja, tai\u2026"
 title: "HTTP-pyynn\xF6n l\xE4hett\xE4minen"
+weight: 44
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why? - Mikä ja Miksi?
 HTTP-pyyntöjen lähettäminen on tapa kommunikoida palvelimien kanssa verkossa. Koodaajat tekevät näin hakiakseen tietoa, lähettääkseen tietoja, tai vaikuttaakseen palvelimen resursseihin.

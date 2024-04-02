@@ -7,9 +7,8 @@ model: gpt-4-0125-preview
 summary: "Extracting substrings in Visual Basic for Applications (VBA) involves isolating\
   \ specific parts of a string based on given criteria. Programmers do this\u2026"
 title: Extracting substrings
+weight: 6
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 

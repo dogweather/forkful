@@ -13,9 +13,8 @@ summary: "Ph\xE2n t\xEDch c\xFA ph\xE1p HTML c\xF3 ngh\u0129a l\xE0 x\u1EED l\xF
   \ L\u1EADp tr\xECnh vi\xEAn l\xE0m \u0111i\u1EC1u n\xE0y \u0111\u1EC3 l\u1EA5y d\u1EEF\
   \ li\u1EC7u t\u1EEB trang web, thao t\xE1c\u2026"
 title: "Ph\xE2n T\xEDch C\xFA Ph\xE1p HTML"
+weight: 43
 ---
-
-{{< edit_this_page >}}
 
 ## Gì & Tại Sao?
 Phân tích cú pháp HTML có nghĩa là xử lý và phân tích cấu trúc và nội dung của mã HTML. Lập trình viên làm điều này để lấy dữ liệu từ trang web, thao tác hoặc trích xuất dữ liệu, tự động hóa việc kiểm thử, hoặc tích hợp nội dung web vào các ứng dụng.

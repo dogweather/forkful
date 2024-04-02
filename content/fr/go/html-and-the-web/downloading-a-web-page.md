@@ -11,9 +11,8 @@ summary: "T\xE9l\xE9charger une page web consiste \xE0 r\xE9cup\xE9rer le conten
   \ HTML d'une page web via le protocole HTTP/HTTPS. Les programmeurs font souvent\
   \ cela pour le\u2026"
 title: "T\xE9l\xE9chargement d'une page web"
+weight: 42
 ---
-
-{{< edit_this_page >}}
 
 ## Quoi & Pourquoi ?
 

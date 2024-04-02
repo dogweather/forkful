@@ -7,9 +7,8 @@ model: gpt-4-1106-preview
 summary: "Converter uma data em string significa transformar uma representa\xE7\xE3\
   o de data (geralmente um tipo espec\xEDfico como `std::chrono::system_clock::time_point`)\u2026"
 title: Convertendo uma data em uma string
+weight: 28
 ---
-
-{{< edit_this_page >}}
 
 ## O Que & Porquê?
 Converter uma data em string significa transformar uma representação de data (geralmente um tipo específico como `std::chrono::system_clock::time_point`) em texto (string) que é legível por humanos. Programadores fazem isso para exibir datas em interfaces gráficas, para armazenar como textos em arquivos ou bancos de dados, e para facilitar a comparação e manipulação de datas.

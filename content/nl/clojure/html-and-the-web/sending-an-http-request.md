@@ -11,9 +11,8 @@ summary: "Een HTTP-verzoek verzenden is hoe je programma een ander systeem vraag
   \ om gegevens of diensten over het web. Programmeurs doen dit om te interageren\
   \ met\u2026"
 title: Een HTTP-verzoek verzenden
+weight: 44
 ---
-
-{{< edit_this_page >}}
 
 ## Wat & Waarom?
 Een HTTP-verzoek verzenden is hoe je programma een ander systeem vraagt om gegevens of diensten over het web. Programmeurs doen dit om te interageren met web-API's, bronnen op te halen of communicatie tussen diensten mogelijk te maken.

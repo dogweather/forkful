@@ -10,9 +10,8 @@ model: gpt-4-0125-preview
 summary: "Merkkijonon v\xE4limuuttaminen (string interpolation) ohjelmoinnissa tarkoittaa\
   \ merkkijonojen rakentamista sis\xE4llytt\xE4m\xE4ll\xE4 lausekkeita kirjaimellisiin\u2026"
 title: Merkkijonon interpolaatio
+weight: 8
 ---
-
-{{< edit_this_page >}}
 
 ## Mikä ja miksi?
 

@@ -9,9 +9,8 @@ summary: "Interaktive skall, eller REPLer (Read-Eval-Print Looper), lar deg kj\x
   re kode p\xE5 sparket, teste funksjoner, algoritmer, eller tukle med ideer. De er\
   \ kodens\u2026"
 title: Bruke et interaktivt skall (REPL)
+weight: 34
 ---
-
-{{< edit_this_page >}}
 
 ## Hva & Hvorfor?
 Interaktive skall, eller REPLer (Read-Eval-Print Looper), lar deg kjøre kode på sparket, teste funksjoner, algoritmer, eller tukle med ideer. De er kodens kladdeark, raske og skitne, uten å sette opp et fullt utviklermiljø.

@@ -13,9 +13,8 @@ summary: "Vi\u1EC7c ph\xE2n t\xEDch c\xFA ph\xE1p HTML l\xE0 qu\xE1 tr\xECnh l\u
   \ vi\u1EC7c t\xECm kim trong \u0111\u1ED1ng r\u01A1m\u2014n\u1EBFu nh\u01B0 \u0111\
   \u1ED1ng r\u01A1m \u0111\u01B0\u1EE3c l\xE0m t\u1EEB c\xE1c\u2026"
 title: "Ph\xE2n T\xEDch C\xFA Ph\xE1p HTML"
+weight: 43
 ---
-
-{{< edit_this_page >}}
 
 ## Cái Gì & Tại Sao?
 

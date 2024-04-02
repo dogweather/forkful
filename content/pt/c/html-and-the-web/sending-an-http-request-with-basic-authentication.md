@@ -11,9 +11,8 @@ summary: "Enviar uma requisi\xE7\xE3o HTTP com autentica\xE7\xE3o b\xE1sica em C
   \ criar uma solicita\xE7\xE3o HTTP que inclua um cabe\xE7alho de Autoriza\xE7\xE3\
   o com credenciais de\u2026"
 title: "Enviando uma requisi\xE7\xE3o HTTP com autentica\xE7\xE3o b\xE1sica"
+weight: 45
 ---
-
-{{< edit_this_page >}}
 
 ## O Que & Por Quê?
 Enviar uma requisição HTTP com autenticação básica em C envolve criar uma solicitação HTTP que inclua um cabeçalho de Autorização com credenciais de usuário codificadas em Base64. Este é um método comum para adicionar uma camada de autenticação simples às solicitações HTTP, permitindo que recursos restritos sejam acessados programaticamente.

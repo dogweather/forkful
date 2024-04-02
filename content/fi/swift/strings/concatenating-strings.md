@@ -9,9 +9,8 @@ summary: "Yhdist\xE4mme merkkijonoja siksikin, ett\xE4 voimme luoda pitki\xE4 te
   tki\xE4 pienist\xE4 palasista. T\xE4t\xE4 tekev\xE4t ohjelmoijat everywhere luodaakseen\
   \ dynaamisia\u2026"
 title: "Merkkijonojen yhdist\xE4minen"
+weight: 3
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why? (Mitä & Miksi?)
 Yhdistämme merkkijonoja siksikin, että voimme luoda pitkiä tekstinpätkiä pienistä palasista. Tätä tekevät ohjelmoijat everywhere luodaakseen dynaamisia viestejä tai yhdistelläkseen käyttäjäsyötettä.

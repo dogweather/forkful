@@ -11,9 +11,8 @@ summary: "En TypeScript, escribir en el error est\xE1ndar (stderr) es un proceso
   \ enviar mensajes de error o registros directamente al flujo de salida de error\
   \ del\u2026"
 title: "Escribiendo en el error est\xE1ndar"
+weight: 25
 ---
-
-{{< edit_this_page >}}
 
 ## ¿Qué y por qué?
 En TypeScript, escribir en el error estándar (stderr) es un proceso de enviar mensajes de error o registros directamente al flujo de salida de error del entorno (por ejemplo, la consola en node.js o un navegador web). Esto es esencial para diagnosticar problemas sin interferir con la salida estándar (stdout) utilizada típicamente para los datos del programa, asegurando que el manejo de errores y el registro se gestionen de manera eficiente y cohesiva.

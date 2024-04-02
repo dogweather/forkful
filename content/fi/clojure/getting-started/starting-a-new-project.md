@@ -7,9 +7,8 @@ model: gpt-4-1106-preview
 summary: "Kun aloitat uuden projektin, luot pohjan tulevalle koodillesi. Koodarit\
   \ aloittavat uusia projekteja testatakseen ideoita, ratkaistakseen ongelmia tai\u2026"
 title: Uuden projektin aloittaminen
+weight: 1
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why? - Mistä ja Miksi?
 Kun aloitat uuden projektin, luot pohjan tulevalle koodillesi. Koodarit aloittavat uusia projekteja testatakseen ideoita, ratkaistakseen ongelmia tai pelkästään oppiakseen.

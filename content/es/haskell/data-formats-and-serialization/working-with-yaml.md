@@ -11,9 +11,8 @@ summary: "YAML, siglas de \"YAML Ain't Markup Language\" (YAML no es un lenguaje
   \ marcado), es un est\xE1ndar de serializaci\xF3n de datos amigable para los humanos\
   \ que\u2026"
 title: Trabajando con YAML
+weight: 41
 ---
-
-{{< edit_this_page >}}
 
 ## ¿Qué y Por Qué?
 

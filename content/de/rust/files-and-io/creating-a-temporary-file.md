@@ -9,9 +9,8 @@ summary: "Das Erstellen einer tempor\xE4ren Datei erm\xF6glicht die vor\xFCberge
   \ Speicherung von Daten w\xE4hrend der Ausf\xFChrung eines Programms. Programmierer\
   \ nutzen sie\u2026"
 title: "Erstellung einer tempor\xE4ren Datei"
+weight: 21
 ---
-
-{{< edit_this_page >}}
 
 ## Was & Warum?
 

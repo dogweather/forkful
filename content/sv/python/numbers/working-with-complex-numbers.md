@@ -9,9 +9,8 @@ summary: "Komplexa tal \xE4r en m\xE4ngd tal i formen `a + bi`, d\xE4r `a` och `
   \ \xE4r reella tal, och `i` \xE4r den imagin\xE4ra enheten (`i^2 = -1`). I programmering\
   \ anv\xE4nder vi\u2026"
 title: Att arbeta med komplexa tal
+weight: 14
 ---
-
-{{< edit_this_page >}}
 
 ## Vad och varför?
 Komplexa tal är en mängd tal i formen `a + bi`, där `a` och `b` är reella tal, och `i` är den imaginära enheten (`i^2 = -1`). I programmering använder vi dem för att lösa problem inom olika områden, som elektroteknik, signalbehandling och kvantdatorberäkning.

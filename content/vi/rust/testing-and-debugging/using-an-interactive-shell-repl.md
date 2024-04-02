@@ -13,9 +13,8 @@ summary: "M\u1ED9t shell t\u01B0\u01A1ng t\xE1c Rust, hay REPL (Read-Eval-Print 
   \ ngay l\u1EADp t\u1EE9c, r\u1EA5t ho\xE0n h\u1EA3o cho vi\u1EC7c th\u1EED nghi\u1EC7\
   m\u2026"
 title: "S\u1EED d\u1EE5ng v\u1ECF t\u01B0\u01A1ng t\xE1c (REPL)"
+weight: 34
 ---
-
-{{< edit_this_page >}}
 
 ## Cái gì và Tại sao?
 Một shell tương tác Rust, hay REPL (Read-Eval-Print Loop), cho phép bạn chạy mã Rust tức thì, xem kết quả ngay lập tức, rất hoàn hảo cho việc thử nghiệm hoặc học hỏi. Lập trình viên sử dụng nó để kiểm tra đoạn mã, gỡ lỗi, hoặc chỉ đơn giản là chơi với các tính năng của ngôn ngữ mà không cần tốn công biên dịch một dự án đầy đủ.

@@ -7,9 +7,8 @@ model: gpt-4-1106-preview
 summary: "Leggere gli argomenti da linea di comando permette al tuo programma JavaScript\
   \ di accettare input esterno, rendendolo interattivo. I programmatori\u2026"
 title: Lettura degli argomenti della riga di comando
+weight: 23
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why? - Cosa e Perché?
 Leggere gli argomenti da linea di comando permette al tuo programma JavaScript di accettare input esterno, rendendolo interattivo. I programmatori utilizzano questa funzionalità per creare script personalizzabili, per gestire configurazioni, e per rispondere a specifiche esigenze dell'utente.

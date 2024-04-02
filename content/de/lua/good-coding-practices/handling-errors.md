@@ -9,9 +9,8 @@ summary: "Fehlerbehandlung in der Programmierung bedeutet, mit dem Unerwarteten 
   \ rechnen. Es ist die Kunst, f\xFCr den Fall zu planen, dass Dinge schiefgehen,\
   \ damit\u2026"
 title: Fehlerbehandlung
+weight: 16
 ---
-
-{{< edit_this_page >}}
 
 ## Was & Warum?
 Fehlerbehandlung in der Programmierung bedeutet, mit dem Unerwarteten zu rechnen. Es ist die Kunst, für den Fall zu planen, dass Dinge schiefgehen, damit man sein Programm reibungslos weiterlaufen lassen kann.

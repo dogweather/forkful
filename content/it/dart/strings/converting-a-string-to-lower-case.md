@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Convertire una stringa in minuscolo \xE8 un'operazione fondamentale che\
   \ consiste nel trasformare tutti i caratteri di una stringa data nei loro equivalenti\u2026"
 title: Convertire una stringa in minuscolo
+weight: 4
 ---
-
-{{< edit_this_page >}}
 
 ## Cosa & Perché?
 

@@ -11,9 +11,8 @@ summary: "Elixiriss\xE4 assosiatiiviset taulukot, kutsuttuina karttoina (Maps), 
   \ avain-arvo-pareista koostuvia kokoelmia, joissa uniikki avain osoittaa arvoon.\
   \ Ne\u2026"
 title: "Assosiatiivisten taulukoiden k\xE4ytt\xF6"
+weight: 15
 ---
-
-{{< edit_this_page >}}
 
 ## Mitä & Miksi?
 

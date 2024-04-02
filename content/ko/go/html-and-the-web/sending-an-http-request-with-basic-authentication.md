@@ -24,9 +24,8 @@ summary: "Go\uC5D0\uC11C \uAE30\uBCF8 \uC778\uC99D\uC744 \uD3EC\uD568\uD55C HTTP
   \uCF00\uC774\uC158\uC774 \uC6F9\uC744\u2026"
 title: "\uAE30\uBCF8 \uC778\uC99D\uC744 \uC0AC\uC6A9\uD558\uC5EC HTTP \uC694\uCCAD\
   \ \uBCF4\uB0B4\uAE30"
+weight: 45
 ---
-
-{{< edit_this_page >}}
 
 ## 무엇인가 & 왜?
 

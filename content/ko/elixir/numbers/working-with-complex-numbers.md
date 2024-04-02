@@ -19,9 +19,8 @@ summary: "\uBCF5\uC18C\uC218\uB294 \uC2E4\uC218\uBD80\uC640 \uD5C8\uC218\uBD80(`
   \ \uBB38\uC81C\uB97C \uD6A8\uC728\uC801\uC73C\uB85C \uD574\uACB0\uD558\uAE30 \uC704\
   \uD574 \uBCF5\uC18C\uC218\uB97C \uC0AC\uC6A9\uD569\uB2C8\uB2E4."
 title: "\uBCF5\uC18C\uC218 \uB2E4\uB8E8\uAE30"
+weight: 14
 ---
-
-{{< edit_this_page >}}
 
 ## 무엇인가 & 왜인가?
 복소수는 실수부와 허수부(`3 + 4i` 같은)를 가지고 있습니다. 복소수는 공학, 물리학, 그리고 특정한 컴퓨팅 문제에서 사용됩니다. 프로그래머들은 시뮬레이션, 신호 처리, 그리고 특정 유형의 수학 문제를 효율적으로 해결하기 위해 복소수를 사용합니다.

@@ -8,9 +8,8 @@ model: gpt-4-1106-preview
 summary: "Iniciar um novo projeto em Java \xE9 como plantar uma semente digital \u2013\
   \ voc\xEA come\xE7a com uma tela em branco e transforma-a em algo que pode resolver\u2026"
 title: Iniciando um novo projeto
+weight: 1
 ---
-
-{{< edit_this_page >}}
 
 ## O Que & Por Que?
 

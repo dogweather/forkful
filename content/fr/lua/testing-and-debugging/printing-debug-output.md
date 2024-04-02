@@ -9,9 +9,8 @@ summary: "On imprime des donn\xE9es de d\xE9bogage pour voir ce qui se passe dan
   \ le code pendant son ex\xE9cution. Cela aide \xE0 rep\xE9rer les erreurs et \xE0\
   \ comprendre le flux\u2026"
 title: "Affichage des sorties de d\xE9bogage"
+weight: 33
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why? / Quoi & Pourquoi ?
 On imprime des données de débogage pour voir ce qui se passe dans le code pendant son exécution. Cela aide à repérer les erreurs et à comprendre le flux du programme.

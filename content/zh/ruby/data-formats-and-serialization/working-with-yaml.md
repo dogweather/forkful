@@ -21,9 +21,8 @@ summary: "YAML\uFF0C\u5373 YAML \u4E0D\u662F\u6807\u8BB0\u8BED\u8A00 (YAML Ain't
   \u7BA1\u7406\u3001\u6570\u636E\u5B58\u50A8\u548C\u8DE8\u8BED\u8A00\u6570\u636E\u5171\
   \u4EAB\u7B49\u4EFB\u52A1\u3002"
 title: "\u4F7F\u7528YAML\u5DE5\u4F5C"
+weight: 41
 ---
-
-{{< edit_this_page >}}
 
 ## 什么 & 为什么？
 YAML，即 YAML 不是标记语言 (YAML Ain't Markup Language)，因其可读性强，在 Ruby 中广泛用于配置文件和数据序列化。当程序员需要以可读但结构化的方式存储或传输数据对象时，他们倾向于使用 YAML，这简化了配置管理、数据存储和跨语言数据共享等任务。

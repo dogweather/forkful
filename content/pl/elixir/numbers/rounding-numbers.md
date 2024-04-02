@@ -9,9 +9,8 @@ summary: "Zaokr\u0105glanie liczb oznacza dostosowanie ich do bliskiej warto\u01
   ci dla uproszczenia lub aby dopasowa\u0107 je do okre\u015Blonej precyzji. Jest\
   \ to przydatne do\u2026"
 title: "Zaokr\u0105glanie liczb"
+weight: 13
 ---
-
-{{< edit_this_page >}}
 
 ## Co i dlaczego?
 Zaokrąglanie liczb oznacza dostosowanie ich do bliskiej wartości dla uproszczenia lub aby dopasować je do określonej precyzji. Jest to przydatne do poprawy czytelności, zmniejszenia zajmowanego miejsca w pamięci lub zaspokojenia specyficznych potrzeb domenowych, takich jak obliczenia pieniężne, gdzie chcesz zaokrąglić do najbliższego centa.

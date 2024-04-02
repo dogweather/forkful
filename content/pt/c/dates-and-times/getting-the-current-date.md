@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Obter a data atual em C envolve acessar a biblioteca padr\xE3o do C para\
   \ buscar e formatar a data e a hora atual do sistema. Os programadores frequentemente\u2026"
 title: Obtendo a data atual
+weight: 29
 ---
-
-{{< edit_this_page >}}
 
 ## O Que & Por Que?
 

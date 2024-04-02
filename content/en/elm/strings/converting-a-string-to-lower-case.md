@@ -7,9 +7,8 @@ model: gpt-4-1106-preview
 summary: "Converting a string to lowercase means transforming all alphabetical characters\
   \ to their lower-case form. Programmers often do this for case-insensitive\u2026"
 title: Converting a string to lower case
+weight: 4
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 

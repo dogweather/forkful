@@ -11,9 +11,8 @@ summary: "Att skriva till standardfel (stderr) i programmeringsspr\xE5k handlar 
   \ att dirigera felmeddelanden och diagnostik till en separat str\xF6m, skild fr\xE5\
   n den\u2026"
 title: Skriva till standardfel
+weight: 25
 ---
-
-{{< edit_this_page >}}
 
 ## Vad & Varför?
 

@@ -7,9 +7,8 @@ model: gpt-4-1106-preview
 summary: "Iniziare un nuovo progetto significa creare un ambiente di lavoro da zero,\
   \ dove il codice prende vita. Si fa per trasformare le idee in software\u2026"
 title: Avvio di un nuovo progetto
+weight: 1
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why? - Cosa & Perché?
 Iniziare un nuovo progetto significa creare un ambiente di lavoro da zero, dove il codice prende vita. Si fa per trasformare le idee in software funzionante, spesso per risolvere problemi specifici o esplorare nuove tecnologie.

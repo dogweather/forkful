@@ -9,9 +9,8 @@ summary: "La gestion des erreurs en programmation consiste \xE0 g\xE9rer l'inatt
   les choses qui peuvent mal tourner. Les programmeurs le font pour s'assurer que\
   \ leurs\u2026"
 title: Gestion des erreurs
+weight: 16
 ---
-
-{{< edit_this_page >}}
 
 ## Quoi et Pourquoi ?
 La gestion des erreurs en programmation consiste à gérer l'inattendu—les choses qui peuvent mal tourner. Les programmeurs le font pour s'assurer que leurs programmes peuvent gérer ces situations avec grâce, sans planter ni produire de mauvais résultats.

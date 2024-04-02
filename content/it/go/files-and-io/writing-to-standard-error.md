@@ -11,9 +11,8 @@ summary: "Scrivere su standard error (stderr) in Go comporta l'indirizzare messa
   \ di errore o diagnostica che non sono destinati al flusso di output principale.\
   \ I\u2026"
 title: Scrittura su errore standard
+weight: 25
 ---
-
-{{< edit_this_page >}}
 
 ## Cosa & Perché?
 

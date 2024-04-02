@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Mettre en majuscule une cha\xEEne implique de modifier le premier caract\xE8\
   re d'un texte donn\xE9 en majuscule, afin que les phrases, les titres ou les noms\u2026"
 title: "Mettre en majuscule une cha\xEEne"
+weight: 2
 ---
-
-{{< edit_this_page >}}
 
 ## Quoi & Pourquoi ?
 Mettre en majuscule une chaîne implique de modifier le premier caractère d'un texte donné en majuscule, afin que les phrases, les titres ou les noms propres commencent correctement dans un ensemble de données. Les programmeurs exécutent souvent la capitalisation de chaînes pour normaliser les données, améliorer la lisibilité ou assurer la cohérence dans la saisie utilisateur ou le traitement de données textuelles.

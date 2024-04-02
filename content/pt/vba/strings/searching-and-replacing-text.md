@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Pesquisar e substituir texto em Visual Basic for Applications (VBA) \xE9\
   \ essencial para editar documentos, planilhas e bancos de dados programaticamente.\u2026"
 title: Pesquisando e substituindo texto
+weight: 10
 ---
-
-{{< edit_this_page >}}
 
 ## O Que & Por Quê?
 

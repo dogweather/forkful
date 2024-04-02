@@ -9,9 +9,8 @@ summary: "Calcular datas futuras ou passadas \xE9 um jeito de lidar com interval
   \ de tempo em programa\xE7\xE3o. Programadores fazem isso para agendar eventos,\
   \ fazer\u2026"
 title: Calculando uma data no futuro ou passado
+weight: 26
 ---
-
-{{< edit_this_page >}}
 
 ## O Que & Por Que?
 Calcular datas futuras ou passadas é um jeito de lidar com intervalos de tempo em programação. Programadores fazem isso para agendar eventos, fazer relatórios ou verificar a validade de alguma informação com base no tempo.

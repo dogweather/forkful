@@ -10,9 +10,8 @@ model: gpt-4-0125-preview
 summary: "Das Vergleichen von zwei Daten in Google Apps Script, einer Abwandlung von\
   \ JavaScript, die speziell f\xFCr Googles Anwendungs-Suite entwickelt wurde, ist\u2026"
 title: Zwei Daten vergleichen
+weight: 27
 ---
-
-{{< edit_this_page >}}
 
 ## Was & Warum?
 Das Vergleichen von zwei Daten in Google Apps Script, einer Abwandlung von JavaScript, die speziell für Googles Anwendungs-Suite entwickelt wurde, ist eine wesentliche Aufgabe für Entwickler, die sich mit Planung, Zeitplänen oder jeglichen datumsbezogenen Daten beschäftigen. Zu verstehen, wie man Daten genau vergleicht, ermöglicht es Programmierern, Funktionen wie Fristen, Eventplanung oder Inhaltsplanung effektiv zu implementieren.

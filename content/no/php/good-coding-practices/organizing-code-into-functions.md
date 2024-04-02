@@ -8,9 +8,8 @@ model: gpt-4-1106-preview
 summary: "\xC5 organisere kode i funksjoner handler om \xE5 dele opp koden din i gjenbrukbare\
   \ blokker med definerte form\xE5l. Vi gj\xF8r dette for \xE5 holde ting ryddig,\u2026"
 title: Organisering av kode i funksjoner
+weight: 18
 ---
-
-{{< edit_this_page >}}
 
 ## Hva & Hvorfor?
 Å organisere kode i funksjoner handler om å dele opp koden din i gjenbrukbare blokker med definerte formål. Vi gjør dette for å holde ting ryddig, forhindre redundans, og gjøre feilsøking til en lek.

@@ -9,9 +9,8 @@ summary: "Starta ett nytt projekt inneb\xE4r att skapa en ny bas d\xE4r din kod 
   \ v\xE4xa och utvecklas. Programmerare g\xF6r det f\xF6r att omvandla id\xE9er till\
   \ k\xF6rbar kod som\u2026"
 title: "Att p\xE5b\xF6rja ett nytt projekt"
+weight: 1
 ---
-
-{{< edit_this_page >}}
 
 ## Vad & Varför?
 Starta ett nytt projekt innebär att skapa en ny bas där din kod kan växa och utvecklas. Programmerare gör det för att omvandla idéer till körbar kod som löser problem eller skapar värde.

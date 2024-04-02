@@ -9,9 +9,8 @@ summary: "Iniciar um novo projeto em Rust \xE9 como desenhar o molde para uma no
   \ inven\xE7\xE3o. Programadores fazem isso para transformar ideias em c\xF3digo,\
   \ criando a base\u2026"
 title: Iniciando um novo projeto
+weight: 1
 ---
-
-{{< edit_this_page >}}
 
 ## O Que & Porquê?
 

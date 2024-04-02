@@ -8,9 +8,8 @@ model: gpt-4-1106-preview
 summary: "Die L\xE4nge eines Strings zu finden, bedeutet zu ermitteln, wie viele Zeichen\
   \ er enth\xE4lt. Programmierer tun das, um Textdaten zu verarbeiten, zu validieren\u2026"
 title: "Ermittlung der Zeichenkettenl\xE4nge"
+weight: 7
 ---
-
-{{< edit_this_page >}}
 
 ## Was & Warum?
 Die Länge eines Strings zu finden, bedeutet zu ermitteln, wie viele Zeichen er enthält. Programmierer tun das, um Textdaten zu verarbeiten, zu validieren oder Formatierungen anzupassen.

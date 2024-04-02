@@ -9,9 +9,8 @@ summary: "Enviar uma requisi\xE7\xE3o HTTP \xE9 o m\xE9todo atrav\xE9s do qual o
   \ programa pode pedir dados a um servidor ou uma API na web. Programadores fazem\
   \ isso para\u2026"
 title: "Enviando uma requisi\xE7\xE3o HTTP"
+weight: 44
 ---
-
-{{< edit_this_page >}}
 
 ## O Que & Porquê?
 

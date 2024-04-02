@@ -9,9 +9,8 @@ summary: "Extraire des sous-cha\xEEnes, c'est r\xE9cup\xE9rer des morceaux sp\xE
   cifiques d'une cha\xEEne de caract\xE8res. On le fait pour analyser, manipuler ou\
   \ transformer des\u2026"
 title: "Extraction de sous-cha\xEEnes"
+weight: 6
 ---
-
-{{< edit_this_page >}}
 
 ## Quoi & Pourquoi ?
 Extraire des sous-chaînes, c'est récupérer des morceaux spécifiques d'une chaîne de caractères. On le fait pour analyser, manipuler ou transformer des données basées sur le texte, comme récupérer un nom d'utilisateur d'une adresse e-mail.

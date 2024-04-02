@@ -7,9 +7,8 @@ model: gpt-4-0125-preview
 summary: "Writing tests in Swift involves creating and executing code that verifies\
   \ the correctness of other code units in your application. Programmers do it to\u2026"
 title: Writing tests
+weight: 36
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 Writing tests in Swift involves creating and executing code that verifies the correctness of other code units in your application. Programmers do it to ensure reliability, detect bugs early in the development cycle, and facilitate future code refactoring without unintentional consequences.

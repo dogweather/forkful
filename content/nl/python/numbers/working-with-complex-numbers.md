@@ -10,9 +10,8 @@ model: gpt-4-0125-preview
 summary: "Complexe getallen zijn een set van getallen in de vorm `a + bi`, waar `a`\
   \ en `b` re\xEBle getallen zijn, en `i` de imaginaire eenheid is (`i^2 = -1`). In\u2026"
 title: Werken met complexe getallen
+weight: 14
 ---
-
-{{< edit_this_page >}}
 
 ## Wat & Waarom?
 Complexe getallen zijn een set van getallen in de vorm `a + bi`, waar `a` en `b` reële getallen zijn, en `i` de imaginaire eenheid is (`i^2 = -1`). In programmeren gebruiken we ze om problemen in verschillende domeinen op te lossen, zoals elektrotechniek, signaalverwerking en kwantumcomputing.

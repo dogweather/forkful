@@ -13,9 +13,8 @@ summary: "Refactoring l\xE0 qu\xE1 tr\xECnh t\xE1i c\u1EA5u tr\xFAc code m\xE1y 
   \ kh\xF4ng l\xE0m thay \u0111\u1ED5i h\xE0nh vi b\xEAn ngo\xE0i c\u1EE7a n\xF3.\
   \ C\xE1c l\u1EADp tr\xECnh vi\xEAn th\u1EF1c\u2026"
 title: "T\xE1i c\u1EA5u tr\xFAc m\xE3"
+weight: 19
 ---
-
-{{< edit_this_page >}}
 
 ## Cái gì & Tại sao?
 Refactoring là quá trình tái cấu trúc code máy tính hiện có—thay đổi cách tổ chức—mà không làm thay đổi hành vi bên ngoài của nó. Các lập trình viên thực hiện điều này để dọn dẹp code, cải thiện tính dễ đọc, và làm cho việc bảo trì và mở rộng trở nên dễ dàng hơn, tất cả mà không thêm mới tính năng nào.

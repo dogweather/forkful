@@ -7,9 +7,8 @@ model: gpt-4-1106-preview
 summary: "Ler argumentos da linha de comando em JavaScript significa pegar informa\xE7\
   \xF5es extras passadas ao iniciar um script Node.js. Programadores fazem isso para\u2026"
 title: Lendo argumentos da linha de comando
+weight: 23
 ---
-
-{{< edit_this_page >}}
 
 ## O Que é & Por Que?
 Ler argumentos da linha de comando em JavaScript significa pegar informações extras passadas ao iniciar um script Node.js. Programadores fazem isso para personalizar a execução de um programa sem alterar o código.

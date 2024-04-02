@@ -9,9 +9,8 @@ summary: "Un nouveau projet Arduino, c'est comme un tableau blanc pour un peintr
   \ On d\xE9marre des projets pour donner vie \xE0 nos id\xE9es, r\xE9soudre des probl\xE8\
   mes ou\u2026"
 title: Lancement d'un nouveau projet
+weight: 1
 ---
-
-{{< edit_this_page >}}
 
 ## Quoi & Pourquoi ?
 

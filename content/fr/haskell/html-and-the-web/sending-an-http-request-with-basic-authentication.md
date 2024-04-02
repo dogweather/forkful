@@ -9,9 +9,8 @@ summary: "L\u2019envoi d\u2019une requ\xEAte HTTP avec authentification basique 
   \ \xE0 transmettre \xE0 un serveur des identifiants (nom d\u2019utilisateur et mot\
   \ de passe) encod\xE9s\u2026"
 title: "Envoi d'une requ\xEAte HTTP avec authentification de base"
+weight: 45
 ---
-
-{{< edit_this_page >}}
 
 ## Quoi & Pourquoi ?
 

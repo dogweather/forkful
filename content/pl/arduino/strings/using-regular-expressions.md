@@ -11,9 +11,8 @@ summary: "Wyra\u017Cenia regularne (regex) to sekwencje znak\xF3w definiuj\u0105
   \ wzorce wyszukiwania, g\u0142\xF3wnie u\u017Cywane do dopasowywania i manipulacji\
   \ ci\u0105gami znak\xF3w.\u2026"
 title: "Korzystanie z wyra\u017Ce\u0144 regularnych"
+weight: 11
 ---
-
-{{< edit_this_page >}}
 
 ## Co i dlaczego?
 Wyrażenia regularne (regex) to sekwencje znaków definiujące wzorce wyszukiwania, głównie używane do dopasowywania i manipulacji ciągami znaków. Programiści wykorzystują regex w projektach Arduino do parsowania danych wejściowych z portu szeregowego, walidacji danych wprowadzanych przez użytkownika, czy ekstrakcji danych z ciągów tekstowych, zwiększając efektywność i elastyczność przetwarzania danych.

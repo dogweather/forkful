@@ -13,9 +13,8 @@ summary: "L\u1EA5y ng\xE0y hi\u1EC7n t\u1EA1i trong Google Apps Script l\xE0 vi\
   \ ph\u1ED5 bi\u1EBFn cho vi\u1EC7c t\u1EF1 \u0111\u1ED9ng h\xF3a c\xF4ng vi\u1EC7\
   c, ghi nh\u1EADt k\xFD v\xE0 \u0111\xE1nh d\u1EA5u\u2026"
 title: "L\u1EA5y ng\xE0y hi\u1EC7n t\u1EA1i"
+weight: 29
 ---
-
-{{< edit_this_page >}}
 
 ## Cái gì & Tại sao?
 

@@ -9,9 +9,8 @@ summary: "Menneiden tai tulevien p\xE4ivien laskenta on p\xE4iv\xE4m\xE4\xE4rien
   \ Sit\xE4 k\xE4ytet\xE4\xE4n esimerkiksi vanhentumisp\xE4ivien, tapahtumien ajoitusten\
   \ tai\u2026"
 title: "Tulevaisuuden tai menneisyyden p\xE4iv\xE4m\xE4\xE4r\xE4n laskeminen"
+weight: 26
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 Menneiden tai tulevien päivien laskenta on päivämäärien manipulointia. Sitä käytetään esimerkiksi vanhentumispäivien, tapahtumien ajoitusten tai aikavälien selvittämiseen.

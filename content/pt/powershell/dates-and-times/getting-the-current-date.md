@@ -11,9 +11,8 @@ summary: "Obter a data atual no PowerShell \xE9 sobre recuperar a data e hora at
   \ do sistema. Esta opera\xE7\xE3o \xE9 fundamental para tarefas como registrar,\
   \ cronometrar\u2026"
 title: Obtendo a data atual
+weight: 29
 ---
-
-{{< edit_this_page >}}
 
 ## O Quê & Por Quê?
 

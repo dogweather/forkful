@@ -7,9 +7,8 @@ model: gpt-4-0125-preview
 summary: "XML \xE9 uma linguagem de marca\xE7\xE3o usada para armazenar e transportar\
   \ dados. Programadores trabalham com XML para permitir a interoperabilidade entre\u2026"
 title: Trabalhando com XML
+weight: 40
 ---
-
-{{< edit_this_page >}}
 
 ## O Quê & Porquê?
 XML é uma linguagem de marcação usada para armazenar e transportar dados. Programadores trabalham com XML para permitir a interoperabilidade entre aplicações e sistemas - pense em troca de dados e configurações.

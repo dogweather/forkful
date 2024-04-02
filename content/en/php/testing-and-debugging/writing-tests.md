@@ -9,9 +9,8 @@ summary: "Writing tests in programming involves creating and running scripts tha
   \ verify the code behaves as expected under various conditions. Programmers do it\
   \ to\u2026"
 title: Writing tests
+weight: 36
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 Writing tests in programming involves creating and running scripts that verify the code behaves as expected under various conditions. Programmers do it to ensure quality, prevent regressions, and facilitate safe refactoring, which is crucial for maintaining a healthy, scalable, and bug-free codebase.

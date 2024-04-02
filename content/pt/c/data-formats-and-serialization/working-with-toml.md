@@ -11,9 +11,8 @@ summary: "TOML (Tom's Obvious, Minimal Language) \xE9 um formato de arquivo de c
   \xE3o f\xE1cil de ler devido \xE0 sua clareza sem\xE2ntica. Programadores o utilizam\
   \ em\u2026"
 title: Trabalhando com TOML
+weight: 39
 ---
-
-{{< edit_this_page >}}
 
 ## O Que & Por Que?
 

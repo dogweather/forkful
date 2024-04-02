@@ -17,9 +17,8 @@ summary: "\u5728 TypeScript \u4E2D\u83B7\u53D6\u5F53\u524D\u65E5\u671F\u548C\u65
   \u8FD9\u4E2A\u529F\u80FD\u6765\u521B\u5EFA\u65F6\u95F4\u6233\u3001\u6392\u7A0B\u548C\
   \u5176\u4ED6\u5E94\u7528\u4E2D\u7684\u65F6\u95F4\u654F\u611F\u7279\u6027\u3002"
 title: "\u83B7\u53D6\u5F53\u524D\u65E5\u671F"
+weight: 29
 ---
-
-{{< edit_this_page >}}
 
 ## 什么 & 为什么？
 在 TypeScript 中获取当前日期和时间，一个构建于 JavaScript 之上的语言，可以让你访问和操作当前的日期和时间信息。程序员经常需要这个功能来创建时间戳、排程和其他应用中的时间敏感特性。

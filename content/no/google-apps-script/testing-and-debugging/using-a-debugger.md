@@ -2,14 +2,16 @@
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 22:03:17.586174-07:00
-description: "Feils\xF8king i Google Apps Script (GAS) involverer prosessen med \xE5\
-  \ identifisere og fjerne feil fra skript som er ment for \xE5 automatisere Google\
-  \ Apps eller\u2026"
+description: "Google Apps Script tilbyr en innebygd feils\xF8ker i Apps Script Editor\
+  \ for \xE5 hjelpe med \xE5 feils\xF8ke skript. Her er hvordan du starter og bruker\
+  \ feils\xF8keren:\u2026"
 lastmod: '2024-03-13T22:44:40.320603-06:00'
 model: gpt-4-0125-preview
-summary: "Feils\xF8king i Google Apps Script (GAS) involverer prosessen med \xE5 identifisere\
-  \ og fjerne feil fra skript som er ment for \xE5 automatisere Google Apps eller\u2026"
+summary: "Google Apps Script tilbyr en innebygd feils\xF8ker i Apps Script Editor\
+  \ for \xE5 hjelpe med \xE5 feils\xF8ke skript. Her er hvordan du starter og bruker\
+  \ feils\xF8keren:\u2026"
 title: Bruker en debugger
+weight: 35
 ---
 
 ## Hvordan:

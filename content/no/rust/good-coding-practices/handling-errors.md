@@ -9,9 +9,8 @@ summary: "Feilh\xE5ndtering handler om \xE5 takle ting n\xE5r de skj\xE6rer seg.
   \ gj\xF8r dette for \xE5 h\xE5ndtere det uventede, slik at deres Rust-programmer\
   \ er robuste\u2026"
 title: "Feilh\xE5ndtering"
+weight: 16
 ---
-
-{{< edit_this_page >}}
 
 ## Hva & Hvorfor?
 

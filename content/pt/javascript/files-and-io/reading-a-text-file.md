@@ -8,9 +8,8 @@ model: gpt-4-1106-preview
 summary: "Ler um arquivo de texto em JavaScript significa acessar o conte\xFAdo guardado\
   \ em um arquivo `.txt` - uma tarefa b\xE1sica e crucial. Programadores fazem isso\u2026"
 title: Lendo um arquivo de texto
+weight: 22
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 Ler um arquivo de texto em JavaScript significa acessar o conteúdo guardado em um arquivo `.txt` - uma tarefa básica e crucial. Programadores fazem isso para manipular dados, realizar análises ou apenas exibir informações em aplicações web.

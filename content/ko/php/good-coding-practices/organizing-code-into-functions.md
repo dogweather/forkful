@@ -17,9 +17,8 @@ summary: "\uCF54\uB4DC\uB97C \uD568\uC218\uB85C \uC870\uC9C1\uD654\uD558\uB294 \
   \uACE0, \uB514\uBC84\uAE45\uC744 \uC27D\uAC8C \uD558\uAE30 \uC704\uD574 \uC218\uD589\
   \uB429\uB2C8\uB2E4."
 title: "\uCF54\uB4DC\uB97C \uD568\uC218\uB85C \uAD6C\uC131\uD558\uAE30"
+weight: 18
 ---
-
-{{< edit_this_page >}}
 
 ## 무엇을 왜?
 코드를 함수로 조직화하는 것은 정의된 목적을 가진 재사용 가능한 블록으로 코드를 나누는 것에 대한 것입니다. 이는 코드를 깔끔하게 유지하고, 중복을 방지하고, 디버깅을 쉽게 하기 위해 수행됩니다.

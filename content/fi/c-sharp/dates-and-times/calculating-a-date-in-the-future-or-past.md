@@ -9,9 +9,8 @@ summary: "Laskemalla tulevaisuuden tai menneisyyden p\xE4iv\xE4m\xE4\xE4r\xE4, t
   \ p\xE4iv\xE4m\xE4\xE4r\xE4n m\xE4\xE4ritt\xE4mist\xE4 suhteessa nykyhetkeen. Ohjelmoijat\
   \ tekev\xE4t t\xE4m\xE4n esimerkiksi\u2026"
 title: "Tulevaisuuden tai menneisyyden p\xE4iv\xE4m\xE4\xE4r\xE4n laskeminen"
+weight: 26
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why? (Mitä & Miksi?)
 Laskemalla tulevaisuuden tai menneisyyden päivämäärä, tarkoitetaan päivämäärän määrittämistä suhteessa nykyhetkeen. Ohjelmoijat tekevät tämän esimerkiksi tehtävien määräaikojen, tapahtumien ajoituksen tai korkolaskelmien määrittämiseksi.

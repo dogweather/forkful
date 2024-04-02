@@ -9,9 +9,8 @@ summary: "Raggruppare il codice in funzioni significa scomporre compiti in blocc
   \ riutilizzabili. Ci\xF2 rende il codice pi\xF9 pulito, meno incline a errori e\
   \ pi\xF9\u2026"
 title: Organizzare il codice in funzioni
+weight: 18
 ---
-
-{{< edit_this_page >}}
 
 ## Cosa & Perché?
 Raggruppare il codice in funzioni significa scomporre compiti in blocchi riutilizzabili. Ciò rende il codice più pulito, meno incline a errori e più facile da debuggare o rifattorizzare.

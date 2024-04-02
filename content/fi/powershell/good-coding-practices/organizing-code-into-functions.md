@@ -9,9 +9,8 @@ summary: "Koodin j\xE4rjest\xE4minen funktioihin tarkoittaa koodirykelmien k\xE4
   rimist\xE4, jotka suorittavat tiettyj\xE4 teht\xE4vi\xE4 ja niille annetaan nimi.\
   \ T\xE4m\xE4 tehd\xE4\xE4n koodin\u2026"
 title: "Koodin j\xE4rjest\xE4minen funktioihin"
+weight: 18
 ---
-
-{{< edit_this_page >}}
 
 ## Mikä & Miksi?
 Koodin järjestäminen funktioihin tarkoittaa koodirykelmien käärimistä, jotka suorittavat tiettyjä tehtäviä ja niille annetaan nimi. Tämä tehdään koodin uudelleenkäytettävyyden, luettavuuden ja ylläpidettävyyden vuoksi. Sen sijaan, että kirjoittaisi saman koodin uudelleen, kutsu funktiota. Haluatko vianetsiä tai päivittää? Säädä funktiota ilman, että sinun tarvitsee penkoa läjää skriptejä.

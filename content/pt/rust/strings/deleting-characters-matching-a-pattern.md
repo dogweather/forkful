@@ -9,9 +9,8 @@ summary: "Na programa\xE7\xE3o, deletar caracteres que correspondem a um padr\xE
   o significa identificar e remover s\xE9ries espec\xEDficas de caracteres dentro\
   \ de uma string.\u2026"
 title: "Excluindo caracteres que correspondem a um padr\xE3o"
+weight: 5
 ---
-
-{{< edit_this_page >}}
 
 ## O Que & Porquê?
 

@@ -9,9 +9,8 @@ summary: "P\xE5 norsk: Hva og hvorfor? Konkatenering av strenger er \xE5 sl\xE5 
   \ to eller flere tekster til \xE9n. Vi gj\xF8r dette for \xE5 bygge dynamiske beskjeder,\
   \ filbaner\u2026"
 title: "Sammensl\xE5ing av strenger"
+weight: 3
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 På norsk: Hva og hvorfor?

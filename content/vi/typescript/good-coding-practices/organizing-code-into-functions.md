@@ -13,9 +13,8 @@ summary: "T\u1ED5 ch\u1EE9c code th\xE0nh c\xE1c h\xE0m c\xF3 ngh\u0129a l\xE0 c
   i s\u1EED d\u1EE5ng, linh ho\u1EA1t. Ch\xFAng ta l\xE0m \u0111i\u1EC1u n\xE0y \u0111\
   \u1EC3 gi\u1EEF cho m\u1ECDi th\u1EE9 kh\xF4ng\u2026"
 title: "S\u1EAFp x\u1EBFp m\xE3 th\xE0nh c\xE1c h\xE0m"
+weight: 18
 ---
-
-{{< edit_this_page >}}
 
 ## Lý do và Mục đích
 Tổ chức code thành các hàm có nghĩa là chia nhỏ code của bạn thành các khối có thể tái sử dụng, linh hoạt. Chúng ta làm điều này để giữ cho mọi thứ không bị lặp lại (Don't Repeat Yourself - DRY), làm cho code sạch sẽ hơn, dễ đọc hơn và dễ gỡ lỗi hơn.

@@ -11,9 +11,8 @@ summary: "Merkkijonon muuntaminen pieniksi kirjaimiksi tarkoittaa kaikkien merkk
   \ suurten kirjainten muuntamista niiden pieniksi vastineiksi. T\xE4m\xE4 prosessi\
   \ on\u2026"
 title: Merkkijonon muuttaminen pieniksi kirjaimiksi
+weight: 4
 ---
-
-{{< edit_this_page >}}
 
 ## Mikä & Miksi?
 

@@ -9,9 +9,8 @@ summary: "G\xE9rer les erreurs implique de planifier pour les cas o\xF9 les chos
   \ tournent mal. C'est essentiel car cela aide \xE0 \xE9viter les plantages et rend\
   \ votre\u2026"
 title: Gestion des erreurs
+weight: 16
 ---
-
-{{< edit_this_page >}}
 
 ## Quoi & Pourquoi ?
 Gérer les erreurs implique de planifier pour les cas où les choses tournent mal. C'est essentiel car cela aide à éviter les plantages et rend votre logiciel robuste et convivial.

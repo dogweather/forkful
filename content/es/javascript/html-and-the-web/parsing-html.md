@@ -10,9 +10,8 @@ model: gpt-4-0125-preview
 summary: "Analizar HTML significa extraer datos de documentos HTML. Los programadores\
   \ lo hacen para interactuar con o manipular contenido web, automatizar la\u2026"
 title: "An\xE1lisis de HTML"
+weight: 43
 ---
-
-{{< edit_this_page >}}
 
 ## ¿Qué y por qué?
 Analizar HTML significa extraer datos de documentos HTML. Los programadores lo hacen para interactuar con o manipular contenido web, automatizar la extracción de datos o para fines de web scraping.

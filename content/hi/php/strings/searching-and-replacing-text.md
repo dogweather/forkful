@@ -18,9 +18,8 @@ summary: "Searching and replacing text in PHP \u092E\u0924\u0932\u092C \u0939\u0
   \u0947 \u0932\u093F\u090F, \u091C\u0948\u0938\u0947 \u0915\u093F\u0938\u0940\u2026"
 title: "\u092A\u093E\u0920 \u0916\u094B\u091C\u0928\u093E \u0914\u0930 \u092C\u0926\
   \u0932\u0928\u093E"
+weight: 10
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why? (क्या और क्यों?)
 

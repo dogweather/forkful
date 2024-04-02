@@ -9,9 +9,8 @@ summary: "\xC5 hente n\xE5v\xE6rende dato betyr \xE5 tilgjengeliggj\xF8re akkura
   \ hvilken dag det er, helt ned til millisekundet, i Elm-programmet ditt. Dette er\
   \ nyttig for alt\u2026"
 title: "Slik f\xE5r du tak i dagens dato"
+weight: 29
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why? 
 Å hente nåværende dato betyr å tilgjengeliggjøre akkurat hvilken dag det er, helt ned til millisekundet, i Elm-programmet ditt. Dette er nyttig for alt fra å tidsstemple hendelser til å vise oppdaterte tidspunkter for brukerne.

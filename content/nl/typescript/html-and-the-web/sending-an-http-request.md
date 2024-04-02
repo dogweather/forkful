@@ -11,9 +11,8 @@ summary: "Het verzenden van een HTTP-verzoek is hoe je programma gegevens van ee
   \ server vraagt of gegevens naar een server stuurt. Programmeurs doen dit omdat\
   \ het\u2026"
 title: Een HTTP-verzoek verzenden
+weight: 44
 ---
-
-{{< edit_this_page >}}
 
 ## Wat & Waarom?
 

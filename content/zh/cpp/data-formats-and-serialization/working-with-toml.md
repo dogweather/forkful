@@ -17,9 +17,8 @@ summary: "TOML\uFF08Tom's Obvious, Minimal Language\uFF09\uFF0C\u5373Tom\u7684\u
   \u8BFB\u6027\u548C\u673A\u5668\u53EF\u89E3\u6790\u6027\u4E4B\u95F4\u53D6\u5F97\u4E86\
   \u5E73\u8861\u3002"
 title: "\u4F7F\u7528TOML"
+weight: 39
 ---
-
-{{< edit_this_page >}}
 
 ## 什么和为什么？
 TOML（Tom's Obvious, Minimal Language），即Tom的明了、最小语言，是一种易于阅读的数据序列化格式，因其明确的语义而易于阅读。程序员用TOML来编写配置文件，因为它在人类可读性和机器可解析性之间取得了平衡。

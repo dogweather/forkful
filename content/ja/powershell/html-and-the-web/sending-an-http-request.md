@@ -14,9 +14,8 @@ summary: "HTTP\u30EA\u30AF\u30A8\u30B9\u30C8\u306FWeb\u30B5\u30FC\u30D0\u30FC\u3
   \u3068\u4EA4\u4FE1\u3059\u308B\u305F\u3081\u306B\u30D7\u30ED\u30B0\u30E9\u30DE\u30FC\
   \u306F\u3053\u308C\u3092\u4F7F\u3044\u307E\u3059\u3002"
 title: "HTTP\u30EA\u30AF\u30A8\u30B9\u30C8\u306E\u9001\u4FE1"
+weight: 44
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why? (何となぜ？)
 HTTPリクエストはWebサーバーに情報を求める方法です。データを取得したり、ウェブサービスと交信するためにプログラマーはこれを使います。

@@ -13,9 +13,8 @@ summary: "B\u1EAFt \u0111\u1EA7u m\u1ED9t d\u1EF1 \xE1n m\u1EDBi b\u1EB1ng Go ba
   c v\xE0 kh\u1EDFi t\u1EA1o n\xF3 v\u1EDBi c\xE1c m\xF4-\u0111un Go c\u1EA7n thi\u1EBF\
   t. C\xE1c l\u1EADp tr\xECnh vi\xEAn l\xE0m \u0111i\u1EC1u n\xE0y\u2026"
 title: "Kh\u1EDFi \u0111\u1EA7u m\u1ED9t d\u1EF1 \xE1n m\u1EDBi"
+weight: 1
 ---
-
-{{< edit_this_page >}}
 
 ## Gì và Tại sao?
 

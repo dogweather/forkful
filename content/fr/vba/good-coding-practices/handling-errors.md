@@ -11,9 +11,8 @@ summary: "La gestion des erreurs dans Visual Basic pour Applications (VBA) fait 
   f\xE9rence au processus d'anticipation, de d\xE9tection et de r\xE9solution des\
   \ erreurs de\u2026"
 title: Gestion des erreurs
+weight: 16
 ---
-
-{{< edit_this_page >}}
 
 ## Quoi & Pourquoi ?
 

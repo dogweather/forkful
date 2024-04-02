@@ -9,9 +9,8 @@ summary: "Att skicka en HTTP-f\xF6rfr\xE5gan med basic authentication inneb\xE4r
   \ man skickar anv\xE4ndarnamn och l\xF6senord i klartext, kodat med base64, f\xF6\
   r att autentisera\u2026"
 title: "Skicka en HTTP-f\xF6rfr\xE5gan med Basic-autentisering"
+weight: 45
 ---
-
-{{< edit_this_page >}}
 
 ## Vad & Varför?
 Att skicka en HTTP-förfrågan med basic authentication innebär att man skickar användarnamn och lösenord i klartext, kodat med base64, för att autentisera en användare mot en server. Programmerare gör detta för att begränsa åtkomst till resurser så att endast auktoriserade användare kan nå dem.

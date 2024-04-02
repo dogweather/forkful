@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "String interpolatie, in programmeren, houdt in dat strings worden opgebouwd\
   \ door expressies in te sluiten binnen letterlijke strings. Programmeurs doen\u2026"
 title: Een string interpoleren
+weight: 8
 ---
-
-{{< edit_this_page >}}
 
 ## Wat & Waarom?
 

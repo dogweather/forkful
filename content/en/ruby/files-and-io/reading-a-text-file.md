@@ -8,9 +8,8 @@ model: gpt-4-1106-preview
 summary: "Reading a text file means accessing the content of a file stored on disk\
   \ through code. Programmers do it to process, analyze, or display data within their\u2026"
 title: Reading a text file
+weight: 22
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 Reading a text file means accessing the content of a file stored on disk through code. Programmers do it to process, analyze, or display data within their applications.

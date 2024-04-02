@@ -11,9 +11,8 @@ summary: "\xC9crire sur l'erreur standard (stderr) dans la programmation Arduino
   \ \xE0 diriger les messages d'erreur et les diagnostics vers un canal s\xE9par\xE9\
   ,\u2026"
 title: "\xC9crire sur l'erreur standard"
+weight: 25
 ---
-
-{{< edit_this_page >}}
 
 ## Quoi & Pourquoi ?
 

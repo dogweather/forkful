@@ -7,9 +7,8 @@ model: gpt-4-1106-preview
 summary: "Iniziare un nuovo progetto Arduino significa scrivere codice per far interagire\
   \ hardware e software. I programmatori lo fanno per creare prototipi,\u2026"
 title: Avvio di un nuovo progetto
+weight: 1
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why? (Cos'è & Perché?)
 Iniziare un nuovo progetto Arduino significa scrivere codice per far interagire hardware e software. I programmatori lo fanno per creare prototipi, imparare e divertirsi.

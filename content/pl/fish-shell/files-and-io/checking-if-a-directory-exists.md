@@ -11,9 +11,8 @@ summary: "Sprawdzanie, czy katalog istnieje w pow\u0142oce Fish, pozwala skrypto
   \ na podejmowanie decyzji w oparciu o obecno\u015B\u0107 lub brak struktur katalog\xF3\
   w, umo\u017Cliwiaj\u0105c\u2026"
 title: Sprawdzanie, czy katalog istnieje
+weight: 20
 ---
-
-{{< edit_this_page >}}
 
 ## Co i dlaczego?
 Sprawdzanie, czy katalog istnieje w powłoce Fish, pozwala skryptom na podejmowanie decyzji w oparciu o obecność lub brak struktur katalogów, umożliwiając zadania takie jak warunkowe operacje na plikach, logowanie czy konfiguracja środowiska. Ta technika jest kluczowa dla pisania solidnych skryptów, które w przewidywalny sposób wchodzą w interakcję z systemem plików.

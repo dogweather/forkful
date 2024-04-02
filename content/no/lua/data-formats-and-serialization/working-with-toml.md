@@ -7,9 +7,8 @@ model: gpt-4-0125-preview
 summary: "\xC5 arbeide med TOML inneb\xE6rer parsing og generering av TOML (Toms Obvious,\
   \ Minimal Language)-data med Lua. Programmerere benytter TOML for\u2026"
 title: Jobbe med TOML
+weight: 39
 ---
-
-{{< edit_this_page >}}
 
 ## Hva & Hvorfor?
 Å arbeide med TOML innebærer parsing og generering av TOML (Toms Obvious, Minimal Language)-data med Lua. Programmerere benytter TOML for konfigurasjonsfiler på grunn av dets lesbarhet og enkle syntaks som enkelt oversettes til en datastruktur.

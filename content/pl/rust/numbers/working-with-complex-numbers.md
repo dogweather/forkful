@@ -9,9 +9,8 @@ summary: "Liczby z\u0142o\u017Cone sk\u0142adaj\u0105 si\u0119 z cz\u0119\u015Bc
   \ rzeczywistej i urojonej i s\u0105 niezb\u0119dne w r\xF3\u017Cnych dziedzinach,\
   \ takich jak in\u017Cynieria, fizyka i grafika komputerowa.\u2026"
 title: Praca z liczbami zespolonymi
+weight: 14
 ---
-
-{{< edit_this_page >}}
 
 ## Co i dlaczego?
 Liczby złożone składają się z części rzeczywistej i urojonej i są niezbędne w różnych dziedzinach, takich jak inżynieria, fizyka i grafika komputerowa. Programiści używają ich do rozwiązywania równań, z którymi zwykłe liczby rzeczywiste nie mogą sobie poradzić.

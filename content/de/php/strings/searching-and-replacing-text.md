@@ -7,9 +7,8 @@ model: gpt-4-1106-preview
 summary: "Suchen und Ersetzen von Text in PHP ist quasi ein digitaler Find-Dich-Fix-Dich-Prozess:\
   \ Du hast ein St\xFCckchen Text, und Du willst ein Wort oder eine\u2026"
 title: Suchen und Ersetzen von Text
+weight: 10
 ---
-
-{{< edit_this_page >}}
 
 ## Was & Warum?
 

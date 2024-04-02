@@ -9,9 +9,8 @@ summary: "(\"Co i Dlaczego?\") Zapisywanie pliku tekstowego to spos\xF3b trwa\u0
   ego przechowywania danych. Programi\u015Bci robi\u0105 to, by zapisywa\u0107 ustawienia,\
   \ dane u\u017Cytkownika,\u2026"
 title: Zapisywanie pliku tekstowego
+weight: 24
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 ("Co i Dlaczego?")

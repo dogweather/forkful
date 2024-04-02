@@ -9,9 +9,8 @@ summary: "TOML to format pliku konfiguracyjnego, \u0142atwy do odczytu i zapisu 
   \ ludzi, oraz \u0142atwy do przetwarzania i generowania przez maszyny. Programi\u015B\
   ci u\u017Cywaj\u0105\u2026"
 title: Praca z TOML
+weight: 39
 ---
-
-{{< edit_this_page >}}
 
 ## Co i dlaczego?
 TOML to format pliku konfiguracyjnego, łatwy do odczytu i zapisu przez ludzi, oraz łatwy do przetwarzania i generowania przez maszyny. Programiści używają TOML dla jasnych, hierarchicznych plików konfiguracyjnych w projektach, gdzie czytelność jest kluczowa.

@@ -11,9 +11,8 @@ summary: "Pobieranie strony internetowej w Google Apps Script polega na pobieran
   \ tre\u015Bci strony internetowej za pomoc\u0105 HTML do r\xF3\u017Cnych cel\xF3\
   w, takich jak web\u2026"
 title: Pobieranie strony internetowej
+weight: 42
 ---
-
-{{< edit_this_page >}}
 
 ## Co i dlaczego?
 Pobieranie strony internetowej w Google Apps Script polega na pobieraniu treści strony internetowej za pomocą HTML do różnych celów, takich jak web scraping, ekstrakcja danych lub monitorowanie zmian. Programiści optują za tą operację, aby automatyzować zadania związane z gromadzeniem danych lub integracją, minimalizując wysiłek manualny i zapewniając przetwarzanie danych w czasie rzeczywistym.

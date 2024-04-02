@@ -11,9 +11,8 @@ summary: "Att starta ett nytt projekt i Go inneb\xE4r att s\xE4tta upp en arbets
   \ och initiera den med n\xF6dv\xE4ndiga Go-moduler. Programmerare g\xF6r detta f\xF6\
   r att organisera\u2026"
 title: Att starta ett nytt projekt
+weight: 1
 ---
-
-{{< edit_this_page >}}
 
 ## Vad & Varför?
 

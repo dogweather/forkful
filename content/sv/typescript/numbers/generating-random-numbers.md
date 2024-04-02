@@ -9,9 +9,8 @@ summary: "Att generera slumpm\xE4ssiga tal i TypeScript handlar om att skapa of\
   ruts\xE4gbara numeriska v\xE4rden inom ett specificerat intervall. Programmerare\
   \ utnyttjar\u2026"
 title: Generera slumptal
+weight: 12
 ---
-
-{{< edit_this_page >}}
 
 ## Vad & Varför?
 

@@ -13,9 +13,8 @@ summary: "Ghi nh\u1EADt k\xFD trong Dart \xE1m ch\u1EC9 qu\xE1 tr\xECnh ghi l\u1
   c thi c\u1EE7a m\u1ED9t ch\u01B0\u01A1ng tr\xECnh. L\u1EADp tr\xECnh vi\xEAn th\u1EF1\
   c hi\u1EC7n\u2026"
 title: "Ghi L\u1EA1i"
+weight: 17
 ---
-
-{{< edit_this_page >}}
 
 ## Gì & Tại Sao?
 

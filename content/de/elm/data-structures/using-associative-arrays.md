@@ -11,9 +11,8 @@ summary: "Assoziative Arrays, oder wie sie in Elm genannt werden, Dictionaries, 
   \ Schl\xFCsseln Werte zu, was das Suchen, Einf\xFCgen und L\xF6schen von Werten\
   \ super\u2026"
 title: Verwendung von assoziativen Arrays
+weight: 15
 ---
-
-{{< edit_this_page >}}
 
 ## Was & Warum?
 

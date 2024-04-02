@@ -11,9 +11,8 @@ summary: "\xC5 skrive tester i Bash inneb\xE6rer \xE5 lage testtilfeller for \xE
   \ validere funksjonaliteten til Bash-skriptene dine. Programmerere utf\xF8rer tester\
   \ for \xE5 sikre at\u2026"
 title: Skrive tester
+weight: 36
 ---
-
-{{< edit_this_page >}}
 
 ## Hva & Hvorfor?
 Å skrive tester i Bash innebærer å lage testtilfeller for å validere funksjonaliteten til Bash-skriptene dine. Programmerere utfører tester for å sikre at skriptene deres fungerer som forventet under ulike forhold, og fanger opp feil og bugs før utrulling.

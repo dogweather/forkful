@@ -13,9 +13,8 @@ summary: "L\u1ED7i chu\u1EA9n (`stderr`) l\xE0 m\u1ED9t lu\u1ED3ng t\xE1ch bi\u1
   ng ch\u1EE7 y\u1EBFu \u0111\u1EC3 xu\u1EA5t th\xF4ng b\xE1o l\u1ED7i ho\u1EB7c ch\u1EA9\
   n \u0111o\xE1n. L\u1EADp tr\xECnh vi\xEAn s\u1EED d\u1EE5ng\u2026"
 title: "Ghi v\xE0o l\u1ED7i chu\u1EA9n"
+weight: 25
 ---
-
-{{< edit_this_page >}}
 
 ## Gì & Tại sao?
 Lỗi chuẩn (`stderr`) là một luồng tách biệt khỏi đầu ra chuẩn (`stdout`) được sử dụng chủ yếu để xuất thông báo lỗi hoặc chẩn đoán. Lập trình viên sử dụng nó để ngăn thông báo lỗi trộn lẫn với đầu ra chương trình thông thường, giúp việc gỡ lỗi và xử lý đầu ra dễ dàng hơn.

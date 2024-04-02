@@ -7,9 +7,8 @@ model: gpt-4-1106-preview
 summary: "La ricerca e la sostituzione di testo consente di trovare stringhe specifiche\
   \ e cambiarle con altre. I programmatori lo fanno per correggere errori,\u2026"
 title: Ricerca e sostituzione del testo
+weight: 10
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 La ricerca e la sostituzione di testo consente di trovare stringhe specifiche e cambiarle con altre. I programmatori lo fanno per correggere errori, aggiornare codici o dati e manipolare stringhe in modo efficiente.

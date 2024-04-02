@@ -11,9 +11,8 @@ summary: "Refaktorering inom programmering inneb\xE4r att man omstrukturerar bef
   \ kod utan att \xE4ndra dess externa beteende, med m\xE5let att f\xF6rb\xE4ttra\
   \ icke-\u2026"
 title: Refaktorisering
+weight: 19
 ---
-
-{{< edit_this_page >}}
 
 ## Vad & Varför?
 

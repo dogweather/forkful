@@ -11,9 +11,8 @@ summary: "V\xE9rifier si un r\xE9pertoire existe en Java est une t\xE2che fondam
   \ qui implique de v\xE9rifier la pr\xE9sence d'un r\xE9pertoire du syst\xE8me de\
   \ fichiers avant de\u2026"
 title: "V\xE9rifier si un r\xE9pertoire existe"
+weight: 20
 ---
-
-{{< edit_this_page >}}
 
 ## Quoi & Pourquoi ?
 Vérifier si un répertoire existe en Java est une tâche fondamentale qui implique de vérifier la présence d'un répertoire du système de fichiers avant de le lire, d'écrire dedans ou d'effectuer toute opération nécessitant son existence. Cela est crucial pour éviter les erreurs ou les exceptions dans les programmes qui interagissent avec le système de fichiers, assurant une exécution plus fluide et une meilleure expérience utilisateur.

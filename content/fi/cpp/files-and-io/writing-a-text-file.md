@@ -11,9 +11,8 @@ summary: "Tekstitiedostoon kirjoittaminen C++:lla sis\xE4lt\xE4\xE4 tiedoston lu
   \ tai avaamisen ja sitten datan kirjoittamisen siihen, mik\xE4 on perustavaa laatua\
   \ oleva\u2026"
 title: Tekstitiedoston kirjoittaminen
+weight: 24
 ---
-
-{{< edit_this_page >}}
 
 ## Mikä & Miksi?
 Tekstitiedostoon kirjoittaminen C++:lla sisältää tiedoston luomisen tai avaamisen ja sitten datan kirjoittamisen siihen, mikä on perustavaa laatua oleva tehtävä sovelluksille, jotka tarvitsevat tietojen säilyttämistä, kuten lokit, käyttäjän luoma sisältö tai konfiguraatioasetukset. Ohjelmoijat tekevät tämän tallentaakseen datan, joka on luotu ohjelman suorituksen aikana tai viedäkseen datan käytettäväksi muissa ohjelmissa tai käyttäjien toimesta.

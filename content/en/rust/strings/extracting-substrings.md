@@ -7,9 +7,8 @@ model: gpt-4-1106-preview
 summary: "Extracting substrings means grabbing a smaller piece from a larger string\u2014\
   kind of like slicing a cake to get a piece you actually want to eat. Programmers\u2026"
 title: Extracting substrings
+weight: 6
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 

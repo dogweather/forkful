@@ -9,9 +9,8 @@ summary: "Vertaillaan kahta p\xE4iv\xE4m\xE4\xE4r\xE4\xE4 - siis tutkitaan kumpi
   \ aikaisempi tai onko ne samat. Tarvitaan esimerkiksi ajanjaksojen validointiin\
   \ tai aikaj\xE4rjestyksen\u2026"
 title: "Kahden p\xE4iv\xE4m\xE4\xE4r\xE4n vertailu"
+weight: 27
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 Vertaillaan kahta päivämäärää - siis tutkitaan kumpi on aikaisempi tai onko ne samat. Tarvitaan esimerkiksi ajanjaksojen validointiin tai aikajärjestyksen määrittelemiseen.

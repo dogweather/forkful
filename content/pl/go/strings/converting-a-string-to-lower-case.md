@@ -11,9 +11,8 @@ summary: "Konwersja ci\u0105g\xF3w znak\xF3w na ma\u0142e litery to podstawowa o
   \ umo\u017Cliwiaj\u0105ca jednolito\u015B\u0107 i sp\xF3jno\u015B\u0107 w przetwarzaniu\
   \ tekstu, co jest niezb\u0119dne do zada\u0144\u2026"
 title: "Konwersja \u0142a\u0144cucha znak\xF3w na ma\u0142e litery"
+weight: 4
 ---
-
-{{< edit_this_page >}}
 
 ## Co i dlaczego?
 

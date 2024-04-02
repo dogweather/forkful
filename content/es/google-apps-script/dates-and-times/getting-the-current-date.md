@@ -10,9 +10,8 @@ model: gpt-4-0125-preview
 summary: "Obtener la fecha actual en Google Apps Script se trata de obtener la fecha\
   \ y hora en vivo, una tarea com\xFAn para automatizar tareas, registrar y poner\u2026"
 title: Obteniendo la fecha actual
+weight: 29
 ---
-
-{{< edit_this_page >}}
 
 ## Qué y Por Qué?
 

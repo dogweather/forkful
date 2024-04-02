@@ -11,9 +11,8 @@ summary: "P\xE4iv\xE4m\xE4\xE4r\xE4n j\xE4sent\xE4minen merkkijonosta tarkoittaa
   \ Date-objektiksi muuntamista. T\xE4m\xE4 toiminto on olennainen sovelluksille,\
   \ jotka k\xE4sittelev\xE4t\u2026"
 title: "P\xE4iv\xE4m\xE4\xE4r\xE4n j\xE4sennys merkkijonosta"
+weight: 30
 ---
-
-{{< edit_this_page >}}
 
 ## Mikä & Miksi?
 Päivämäärän jäsentäminen merkkijonosta tarkoittaa tekstistä Date-objektiksi muuntamista. Tämä toiminto on olennainen sovelluksille, jotka käsittelevät käyttäjien syöttämiä päivämääriä tai ulkoisista tietoaineistoista peräisin olevia päivämääriä, mahdollistaen niiden helpomman käsittelyn ja muotoilun tarpeen mukaan.

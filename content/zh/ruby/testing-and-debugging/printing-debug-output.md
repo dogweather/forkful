@@ -14,9 +14,8 @@ summary: "\u6253\u5370\u8C03\u8BD5\u8F93\u51FA\u662F\u5728\u4EE3\u7801\u4E2D\u4E
   \u8DDF\u8E2A\u9519\u8BEF\u6216\u7406\u89E3\u4EE3\u7801\u7684\u6267\u884C\u8DEF\u5F84\
   \u3002"
 title: "\u6253\u5370\u8C03\u8BD5\u8F93\u51FA"
+weight: 33
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why? (是什么？为什么？)
 打印调试输出是在代码中临时插入语句以查看变量值或程序流程。程序员这么做主要是为了跟踪错误或理解代码的执行路径。

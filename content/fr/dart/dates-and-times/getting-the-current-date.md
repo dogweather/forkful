@@ -11,9 +11,8 @@ summary: "Obtenir la date actuelle en Dart implique de demander au syst\xE8me la
   \ et l'heure actuelles. Cette fonctionnalit\xE9 est couramment utilis\xE9e dans\
   \ les\u2026"
 title: Obtenir la date actuelle
+weight: 29
 ---
-
-{{< edit_this_page >}}
 
 ## Quoi & Pourquoi ?
 Obtenir la date actuelle en Dart implique de demander au système la date et l'heure actuelles. Cette fonctionnalité est couramment utilisée dans les applications pour des fonctionnalités telles que le marquage temporel des événements, l'affichage de la date actuelle aux utilisateurs ou le calcul des durées. Savoir comment récupérer et manipuler efficacement la date actuelle est fondamental pour la planification, la journalisation et les fonctionnalités sensibles au temps.

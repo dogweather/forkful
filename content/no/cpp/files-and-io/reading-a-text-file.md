@@ -8,9 +8,8 @@ model: gpt-4-1106-preview
 summary: "\xC5 lese en tekstfil i C++ handler om \xE5 f\xE5 innholdet fra en fil p\xE5\
   \ harddisken inn i programmet ditt. Vi gj\xF8r dette for \xE5 behandle data, lagre\u2026"
 title: Lese en tekstfil
+weight: 22
 ---
-
-{{< edit_this_page >}}
 
 ## Hva & Hvorfor?
 Å lese en tekstfil i C++ handler om å få innholdet fra en fil på harddisken inn i programmet ditt. Vi gjør dette for å behandle data, lagre konfigurasjoner, eller laste inn ressurser.

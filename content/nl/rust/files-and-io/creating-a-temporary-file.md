@@ -11,9 +11,8 @@ summary: "Een tijdelijk bestand maken betekent het cre\xEBren van een kortstondi
   \ bestand voor tussenliggende verwerking. Programmeurs doen dit om gegevens op te\
   \ slaan\u2026"
 title: Een tijdelijk bestand aanmaken
+weight: 21
 ---
-
-{{< edit_this_page >}}
 
 ## Wat & Waarom?
 

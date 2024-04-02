@@ -11,9 +11,8 @@ summary: "Rozpocz\u0119cie nowego projektu w Google Apps Script (GAS) wi\u0105\u
   e si\u0119 z inicjalizacj\u0105 pliku skryptu w ekosystemie Google (Google Drive,\
   \ Docs, Arkusze itp.) w\u2026"
 title: Rozpoczynanie nowego projektu
+weight: 1
 ---
-
-{{< edit_this_page >}}
 
 ## Co i Dlaczego?
 

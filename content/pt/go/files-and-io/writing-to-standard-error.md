@@ -11,9 +11,8 @@ summary: "Escrever no erro padr\xE3o (stderr) em Go envolve direcionar mensagens
   \ erro ou diagn\xF3sticos que n\xE3o s\xE3o destinados ao fluxo de sa\xEDda principal.\
   \ Os\u2026"
 title: "Escrevendo no erro padr\xE3o"
+weight: 25
 ---
-
-{{< edit_this_page >}}
 
 ## O que & Por quê?
 

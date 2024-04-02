@@ -9,9 +9,8 @@ summary: "Eliminar caracteres que coinciden con un patr\xF3n sirve para limpiar 
   \ procesar texto, como quitar espacios o caracteres especiales. Los programadores\
   \ lo\u2026"
 title: "Eliminando caracteres que coinciden con un patr\xF3n"
+weight: 5
 ---
-
-{{< edit_this_page >}}
 
 ## ¿Qué y Por Qué?
 Eliminar caracteres que coinciden con un patrón sirve para limpiar o procesar texto, como quitar espacios o caracteres especiales. Los programadores lo hacen para validar entradas o simplificar cadenas antes de usarlas.

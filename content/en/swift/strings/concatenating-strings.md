@@ -7,9 +7,8 @@ model: gpt-4-1106-preview
 summary: "Concatenating strings is gluing separate strings together to make a new\
   \ one. Programmers do it to combine text dynamically, like putting together\u2026"
 title: Concatenating strings
+weight: 3
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 Concatenating strings is gluing separate strings together to make a new one. Programmers do it to combine text dynamically, like putting together greetings, messages, or just to structure data in a readable format.

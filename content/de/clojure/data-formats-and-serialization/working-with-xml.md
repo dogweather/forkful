@@ -8,9 +8,8 @@ model: gpt-4-0125-preview
 summary: "XML ist eine Auszeichnungssprache zum Kodieren von Dokumenten auf eine Weise,\
   \ die sowohl f\xFCr Menschen als auch f\xFCr Maschinen lesbar ist. Sie ist ein\u2026"
 title: Arbeiten mit XML
+weight: 40
 ---
-
-{{< edit_this_page >}}
 
 ## Was & Warum?
 XML ist eine Auszeichnungssprache zum Kodieren von Dokumenten auf eine Weise, die sowohl für Menschen als auch für Maschinen lesbar ist. Sie ist ein Schlüssel in Webdiensten, Konfigurationsdateien und für den Datenaustausch, da sie Daten in einem strukturierten, hierarchischen Format überträgt.

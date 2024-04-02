@@ -13,9 +13,8 @@ summary: "\u0110\u1ECDc c\xE1c tham s\u1ED1 d\xF2ng l\u1EC7nh cho ph\xE9p m\u1ED
   \ l\u1EC7nh terminal c\u1EE7a ng\u01B0\u1EDDi d\xF9ng. L\u1EADp tr\xECnh vi\xEA\
   n l\xE0m \u0111i\u1EC1u n\xE0y \u0111\u1EC3 t\xF9y ch\u1EC9nh\u2026"
 title: "\u0110\u1ECDc c\xE1c \u0111\u1ED1i s\u1ED1 d\xF2ng l\u1EC7nh"
+weight: 23
 ---
-
-{{< edit_this_page >}}
 
 ## Cái gì và Tại sao?
 

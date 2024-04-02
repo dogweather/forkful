@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Scrivere un file di testo in Visual Basic for Applications (VBA) implica\
   \ la creazione, modifica o aggiunta di dati testuali ai file, un compito\u2026"
 title: Scrivere un file di testo
+weight: 24
 ---
-
-{{< edit_this_page >}}
 
 ## Cosa & Perché?
 

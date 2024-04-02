@@ -9,9 +9,8 @@ summary: "I Clojure och andra programmeringsspr\xE5k betyder att ta bort tecken 
   \ matchar ett m\xF6nster att du rensar din textstr\xE4ng fr\xE5n o\xF6nskade sekvenser.\
   \ Detta\u2026"
 title: "Ta bort tecken som matchar ett m\xF6nster"
+weight: 5
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 I Clojure och andra programmeringsspråk betyder att ta bort tecken som matchar ett mönster att du rensar din textsträng från oönskade sekvenser. Detta görs ofta för datarensning, för att hantera användarinmatning, eller för att förbereda text för vidare bearbetning.

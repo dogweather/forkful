@@ -11,9 +11,8 @@ summary: "Att kontrollera om en katalog finns i JavaScript \xE4r avg\xF6rande f\
   r filhanteringsuppgifter, vilket m\xF6jligg\xF6r f\xF6r skript att verifiera katalogens\
   \ n\xE4rvaro\u2026"
 title: Kontrollera om en katalog existerar
+weight: 20
 ---
-
-{{< edit_this_page >}}
 
 ## Vad & Varför?
 Att kontrollera om en katalog finns i JavaScript är avgörande för filhanteringsuppgifter, vilket möjliggör för skript att verifiera katalogens närvaro innan de läser från eller skriver till den. Denna operation förhindrar fel och säkerställer en smidigare programkörning, särskilt i applikationer som dynamiskt hanterar filer eller kataloger baserat på användarinput eller externa datakällor.

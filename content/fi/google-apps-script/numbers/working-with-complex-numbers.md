@@ -11,9 +11,8 @@ summary: "Kompleksiluvut, jotka esitet\xE4\xE4n reaaliluvun ja imaginaariyksik\x
   n yhdistelm\xE4n\xE4 (esim. 3 + 4i), ovat keskeisi\xE4 erilaisissa laskennallisissa\
   \ ongelmissa,\u2026"
 title: "Ty\xF6skentely kompleksilukujen kanssa"
+weight: 14
 ---
-
-{{< edit_this_page >}}
 
 ## Mikä & Miksi?
 Kompleksiluvut, jotka esitetään reaaliluvun ja imaginaariyksikön yhdistelmänä (esim. 3 + 4i), ovat keskeisiä erilaisissa laskennallisissa ongelmissa, erityisesti insinööritieteissä, fysiikassa ja sovelletussa matematiikassa. Kompleksilukujen käsittelyn oppiminen Google Apps Scriptillä mahdollistaa ohjelmoijien kykyjen laajentamisen tieteelliseen laskentaan, signaalinkäsittelyyn ja sen ulkopuolelle.

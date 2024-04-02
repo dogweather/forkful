@@ -19,9 +19,8 @@ summary: "TOML, \uC989 Tom's Obvious, Minimal Language,\uB294 \uBA85\uD655\uD55C
   \ \uC27D\uACE0 \uC624\uB958\uB098 \uD63C\uB780\uC744 \uCD5C\uC18C\uD654\uD569\uB2C8\
   \uB2E4."
 title: "TOML\uB85C \uC791\uC5C5\uD558\uAE30"
+weight: 39
 ---
-
-{{< edit_this_page >}}
 
 ## 무엇인가 & 왜인가?
 

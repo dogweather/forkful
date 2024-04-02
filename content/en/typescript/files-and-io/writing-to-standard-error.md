@@ -7,9 +7,8 @@ model: gpt-4-0125-preview
 summary: "In TypeScript, writing to standard error (stderr) is a process of sending\
   \ error messages or logs directly to the error output stream of the environment\u2026"
 title: Writing to standard error
+weight: 25
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 In TypeScript, writing to standard error (stderr) is a process of sending error messages or logs directly to the error output stream of the environment (e.g., the console in node.js or a web browser). This is essential for diagnosing problems without interfering with the standard output (stdout) used typically for program data, ensuring that error handling and logging are managed efficiently and cohesively.

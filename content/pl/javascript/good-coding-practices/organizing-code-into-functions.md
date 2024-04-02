@@ -9,9 +9,8 @@ summary: "Organizowanie kodu w funkcje dzieli zadania na wielokrotnie u\u017Cyte
   \ cz\u0119\u015Bci, co sprawia, \u017Ce kod jest czystszy i \u0142atwiejszy w utrzymaniu.\
   \ Robimy to, aby\u2026"
 title: Organizacja kodu w funkcje
+weight: 18
 ---
-
-{{< edit_this_page >}}
 
 ## Co i dlaczego?
 Organizowanie kodu w funkcje dzieli zadania na wielokrotnie użyteczne części, co sprawia, że kod jest czystszy i łatwiejszy w utrzymaniu. Robimy to, aby zredukować redundancję, ułatwić testowanie i poprawić czytelność.

@@ -14,9 +14,8 @@ summary: "\u5728Rust\u4E2D\u8BFB\u53D6\u547D\u4EE4\u884C\u53C2\u6570\u5141\u8BB8
   \u5E8F\u53EF\u4EE5\u7075\u6D3B\u5730\u5E94\u5BF9\u4E0D\u540C\u7684\u7528\u9014\u548C\
   \u6570\u636E\u3002"
 title: "\u8BFB\u53D6\u547D\u4EE4\u884C\u53C2\u6570"
+weight: 23
 ---
-
-{{< edit_this_page >}}
 
 ## 什么 & 为什么？
 在Rust中读取命令行参数允许你接受用户在启动程序时输入的信息。程序员这么做是因为它让程序可以灵活地应对不同的用途和数据。

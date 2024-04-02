@@ -9,9 +9,8 @@ summary: "Obs\u0142uga b\u0142\u0119d\xF3w w programowaniu polega na oczekiwaniu
   \ To sztuka planowania na wypadek gdyby co\u015B posz\u0142o nie tak, aby\u015B\
   \ m\xF3g\u0142 utrzyma\u0107 swoj\u0105\u2026"
 title: "Obs\u0142uga b\u0142\u0119d\xF3w"
+weight: 16
 ---
-
-{{< edit_this_page >}}
 
 ## Co i dlaczego?
 Obsługa błędów w programowaniu polega na oczekiwaniu nieoczekiwanego. To sztuka planowania na wypadek gdyby coś poszło nie tak, abyś mógł utrzymać swoją aplikację w stabilnej pracy.

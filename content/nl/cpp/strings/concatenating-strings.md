@@ -10,9 +10,8 @@ model: gpt-4-0125-preview
 summary: "Stringconcatenatie is het aan elkaar rijgen van twee of meer strings achter\
   \ elkaar. Programmeurs doen dit om zinnen te bouwen, berichten te cre\xEBren of\u2026"
 title: Samenvoegen van strings
+weight: 3
 ---
-
-{{< edit_this_page >}}
 
 ## Wat & Waarom?
 Stringconcatenatie is het aan elkaar rijgen van twee of meer strings achter elkaar. Programmeurs doen dit om zinnen te bouwen, berichten te creëren of invoergegevens te combineren voor verwerking of weergave.

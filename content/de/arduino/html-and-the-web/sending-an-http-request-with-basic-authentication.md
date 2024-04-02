@@ -8,9 +8,8 @@ model: gpt-4-1106-preview
 summary: "HTTP-Requests mit Basic Authentication senden Daten an einen Server, gesch\xFC\
   tzt durch Benutzername und Passwort. Programmierer nutzen das f\xFCr sichere\u2026"
 title: HTTP-Anfragen mit Basisauthentifizierung senden
+weight: 45
 ---
-
-{{< edit_this_page >}}
 
 ## Was & Warum?
 HTTP-Requests mit Basic Authentication senden Daten an einen Server, geschützt durch Benutzername und Passwort. Programmierer nutzen das für sichere Datenübertragungen zu APIs oder Webdiensten.

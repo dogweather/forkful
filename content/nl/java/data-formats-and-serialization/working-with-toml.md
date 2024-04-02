@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "TOML staat voor Tom's Obvious, Minimal Language. Het is een gegevensserialisatieformaat\
   \ dat wordt gebruikt voor configuratiebestanden. Programmeurs\u2026"
 title: Werken met TOML
+weight: 39
 ---
-
-{{< edit_this_page >}}
 
 ## Wat & Waarom?
 TOML staat voor Tom's Obvious, Minimal Language. Het is een gegevensserialisatieformaat dat wordt gebruikt voor configuratiebestanden. Programmeurs gebruiken het omdat het gemakkelijk te lezen, te schrijven is en goed in kaart kan worden gebracht op een hashtabel.

@@ -10,9 +10,8 @@ model: gpt-4-0125-preview
 summary: "Het samenvoegen van strings betreft het aaneenrijgen van twee of meer strings\
   \ om een nieuwe string te vormen. Programmeurs doen dit om dynamisch tekst te\u2026"
 title: Strings samenvoegen
+weight: 3
 ---
-
-{{< edit_this_page >}}
 
 ## Wat & Waarom?
 

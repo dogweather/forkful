@@ -9,9 +9,8 @@ summary: "I Elixir kan uttrekking av delstrenger hjelpe deg \xE5 f\xE5 ut spesif
   \ info fra tekststr\xF8mmer. Du gj\xF8r det fordi du kanskje trenger \xE5 bearbeide\
   \ eller\u2026"
 title: Uthenting av delstrenger
+weight: 6
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 I Elixir kan uttrekking av delstrenger hjelpe deg å få ut spesifikk info fra tekststrømmer. Du gjør det fordi du kanskje trenger å bearbeide eller analysere tekstdeler individuelt.

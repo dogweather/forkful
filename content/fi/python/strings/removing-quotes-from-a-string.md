@@ -9,9 +9,8 @@ summary: "Lainausmerkkien poistaminen merkkijonosta tarkoittaa yleens\xE4 ylim\x
   \xE4r\xE4isten kaksois- (\") tai yksitt\xE4isten (') lainausmerkkien karsimista.\
   \ Ohjelmoijat\u2026"
 title: Merkkijonosta lainausmerkkien poistaminen
+weight: 9
 ---
-
-{{< edit_this_page >}}
 
 ## Mikä & Miksi?
 Lainausmerkkien poistaminen merkkijonosta tarkoittaa yleensä ylimääräisten kaksois- (") tai yksittäisten (') lainausmerkkien karsimista. Ohjelmoijat tekevät tämän syötteen desinfioimiseksi tai kun lainausmerkkejä ei tarvita jatkokäsittelyssä—kuten tekstin tallentamisessa tietokantaan tai valmisteltaessa sitä näyttöä varten.

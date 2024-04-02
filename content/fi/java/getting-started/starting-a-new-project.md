@@ -8,9 +8,8 @@ model: gpt-4-1106-preview
 summary: "Aloittaa uuden projektin Java-ohjelmoinnissa tarkoittaa tyhj\xE4st\xE4 aloittamista;\
   \ uutta koodikantaa, uusia ideoita, uutta energiaa. Koodarit aloittavat uusia\u2026"
 title: Uuden projektin aloittaminen
+weight: 1
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why? (Mitä & Miksi?)
 Aloittaa uuden projektin Java-ohjelmoinnissa tarkoittaa tyhjästä aloittamista; uutta koodikantaa, uusia ideoita, uutta energiaa. Koodarit aloittavat uusia projekteja ratkaistakseen ongelmia, oppiakseen, tai vain kokeillakseen jotain uutta ja jännittävää.

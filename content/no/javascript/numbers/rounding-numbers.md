@@ -8,9 +8,8 @@ model: gpt-4-0125-preview
 summary: "Avrunding er \xE5 klippe av st\xF8yen etter et visst punkt i et tall. Programmerere\
   \ avrunder for \xE5 kontrollere presisjon, h\xE5ndtere minne, eller gj\xF8re output\u2026"
 title: Avrunding av tall
+weight: 13
 ---
-
-{{< edit_this_page >}}
 
 ## Hva og Hvorfor?
 Avrunding er å klippe av støyen etter et visst punkt i et tall. Programmerere avrunder for å kontrollere presisjon, håndtere minne, eller gjøre output brukervennlig—som å endre 2.998 til et rent 3.

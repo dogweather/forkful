@@ -17,9 +17,8 @@ summary: "\u5728C\u8BED\u8A00\u4E2D\u64CD\u4F5CJSON\uFF08JavaScript\u5BF9\u8C61\
   \u4EE5\u8F7B\u91CF\u7EA7\u548C\u4EBA\u7C7B\u53EF\u8BFB\u7684\u683C\u5F0F\u914D\u7F6E\
   \u6587\u4EF6\u3002"
 title: "\u5904\u7406JSON\u6570\u636E"
+weight: 38
 ---
-
-{{< edit_this_page >}}
 
 ## 什么 & 为什么？
 

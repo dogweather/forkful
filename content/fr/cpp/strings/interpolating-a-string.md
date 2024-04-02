@@ -8,9 +8,8 @@ model: gpt-4-1106-preview
 summary: "L'interpolation de cha\xEEne permet d'ins\xE9rer des variables ou des expressions\
   \ dans une cha\xEEne de caract\xE8res. Les programmeurs l'utilisent pour construire\u2026"
 title: "Interpolation de cha\xEEnes de caract\xE8res"
+weight: 8
 ---
-
-{{< edit_this_page >}}
 
 ## Quoi et Pourquoi ?
 L'interpolation de chaîne permet d'insérer des variables ou des expressions dans une chaîne de caractères. Les programmeurs l'utilisent pour construire des chaînes dynamiquement, faciliter la lecture et éviter la concaténation fastidieuse.

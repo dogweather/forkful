@@ -13,9 +13,8 @@ summary: "TOML, vi\u1EBFt t\u1EAFt c\u1EE7a Tom's Obvious, Minimal Language, l\x
   \u01A1ng t\u1EF1 nh\u01B0 JSON ho\u1EB7c YAML, nh\u01B0ng m\u1EE5c ti\xEAu l\xE0\
   \ s\u1EF1 \u0111\u01A1n gi\u1EA3n v\xE0 d\u1EC5\u2026"
 title: "L\xE0m vi\u1EC7c v\u1EDBi TOML"
+weight: 39
 ---
-
-{{< edit_this_page >}}
 
 ## Cái gì & Tại sao?
 TOML, viết tắt của Tom's Obvious, Minimal Language, là một định dạng tuần tự hóa dữ liệu tương tự như JSON hoặc YAML, nhưng mục tiêu là sự đơn giản và dễ đọc. Lập trình viên sử dụng TOML cho các tệp cấu hình vì nó dễ viết và hiểu, và nó ánh xạ gọn gàng vào các cấu trúc dữ liệu trong các ngôn ngữ lập trình như Python.

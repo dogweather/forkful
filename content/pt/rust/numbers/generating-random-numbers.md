@@ -9,9 +9,8 @@ summary: "Gerar n\xFAmeros aleat\xF3rios em Rust envolve o uso de bibliotecas pa
   \ produzir valores num\xE9ricos imprevis\xEDveis, o que \xE9 indispens\xE1vel para\
   \ tarefas que v\xE3o\u2026"
 title: "Gera\xE7\xE3o de n\xFAmeros aleat\xF3rios"
+weight: 12
 ---
-
-{{< edit_this_page >}}
 
 ## O Que & Por Que?
 

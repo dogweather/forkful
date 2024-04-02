@@ -1,14 +1,15 @@
 ---
 date: 2024-01-26 03:49:42.390443-07:00
-description: "Debuggerin k\xE4ytt\xE4minen tarkoittaa ty\xF6kalun k\xE4ytt\xF6\xE4\
-  \ koodisi testaamiseen ja virheiden korjaamiseen. Ohjelmoijat tekev\xE4t n\xE4in\
-  \ ymm\xE4rt\xE4\xE4kseen sovellustensa\u2026"
+description: "Oletetaan, ett\xE4 sinulla on yksinkertainen Java-ohjelma, joka temppuilee,\
+  \ etk\xE4 voi keksi\xE4 miksi. T\xE4ss\xE4 on, miten k\xE4ynnist\xE4isit debuggerin\
+  \ k\xE4ytt\xE4m\xE4ll\xE4\u2026"
 lastmod: '2024-03-13T22:44:56.449676-06:00'
 model: gpt-4-0125-preview
-summary: "Debuggerin k\xE4ytt\xE4minen tarkoittaa ty\xF6kalun k\xE4ytt\xF6\xE4 koodisi\
-  \ testaamiseen ja virheiden korjaamiseen. Ohjelmoijat tekev\xE4t n\xE4in ymm\xE4\
-  rt\xE4\xE4kseen sovellustensa\u2026"
+summary: "Oletetaan, ett\xE4 sinulla on yksinkertainen Java-ohjelma, joka temppuilee,\
+  \ etk\xE4 voi keksi\xE4 miksi. T\xE4ss\xE4 on, miten k\xE4ynnist\xE4isit debuggerin\
+  \ k\xE4ytt\xE4m\xE4ll\xE4\u2026"
 title: "Debuggerin k\xE4ytt\xF6"
+weight: 35
 ---
 
 ## Miten:

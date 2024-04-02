@@ -11,9 +11,8 @@ summary: "Verificar se um diret\xF3rio existe no sistema de arquivos \xE9 essenc
   \ para gerenciar estruturas de arquivo dentro de suas aplica\xE7\xF5es Swift. Esta\
   \ tarefa\u2026"
 title: "Verificando se um diret\xF3rio existe"
+weight: 20
 ---
-
-{{< edit_this_page >}}
 
 ## O Que & Por Quê?
 Verificar se um diretório existe no sistema de arquivos é essencial para gerenciar estruturas de arquivo dentro de suas aplicações Swift. Esta tarefa permite aos desenvolvedores verificar a presença de diretórios antes de tentarem ler ou escrever neles, evitando assim possíveis erros de execução.

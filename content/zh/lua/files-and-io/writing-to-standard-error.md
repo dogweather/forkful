@@ -19,9 +19,8 @@ summary: "\u5C06\u9519\u8BEF\u4FE1\u606F\u548C\u8BCA\u65AD\u8F93\u51FA\u5199\u51
   \u533A\u5206\u5F00\u6765\uFF0C\u4ECE\u800C\u7B80\u5316\u8C03\u8BD5\u548C\u65E5\u5FD7\
   \u8BB0\u5F55\u8FC7\u7A0B\u3002"
 title: "\u5199\u5165\u6807\u51C6\u9519\u8BEF"
+weight: 25
 ---
-
-{{< edit_this_page >}}
 
 ## 什么 & 为什么？
 将错误信息和诊断输出写入标准错误（stderr）是指将这些信息定向到一个与标准输出（stdout）不同的独立通道。程序员这样做是为了将常规程序结果和错误信息区分开来，从而简化调试和日志记录过程。

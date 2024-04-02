@@ -11,9 +11,8 @@ summary: "Ty\xF6skentely JSONin (JavaScript Object Notation) kanssa sis\xE4lt\xE
   \ JSON-datan j\xE4sent\xE4mist\xE4 edestakaisin TypeScriptiss\xE4 k\xE4ytett\xE4\
   v\xE4\xE4n muotoon. Ohjelmoijat\u2026"
 title: "Ty\xF6skentely JSON:n kanssa"
+weight: 38
 ---
-
-{{< edit_this_page >}}
 
 ## Mikä & Miksi?
 

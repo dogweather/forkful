@@ -7,9 +7,8 @@ lastmod: '2024-03-13T22:44:42.524707-06:00'
 model: gpt-4-0125-preview
 summary: "Arduino\u3067CSV\uFF08Comma-Separated\u2026"
 title: "CSV\u3068\u306E\u4F5C\u696D"
+weight: 37
 ---
-
-{{< edit_this_page >}}
 
 ## 何となぜ？
 ArduinoでCSV（Comma-Separated Values、カンマ区切り値）ファイルを扱うことは、通常SDカードに保存されたCSVファイルからの読み取りと書き込みを含み、データのログ記録、設定の構成などを可能にします。そのシンプルさとプラットフォーム間での広範な採用のため、プログラマーはしばしばセンサーデータの収集、設定パラメータの保存、または他のシステムとのインターフェース用にCSVを扱います。

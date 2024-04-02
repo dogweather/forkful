@@ -21,9 +21,8 @@ summary: "\uBB38\uC790\uC5F4\uC5D0\uC11C \uB0A0\uC9DC\uB97C \uD30C\uC2F1\uD55C\u
   \ \uBE44\uAD50, \uACC4\uC0B0, \uD615\uC2DD \uC9C0\uC815 \uB4F1\uC758 \uC791\uC5C5\
   \uC744 \uC218\uD589\uD558\uAE30 \uC704\uD574 \uC774\u2026"
 title: "\uBB38\uC790\uC5F4\uC5D0\uC11C \uB0A0\uC9DC \uBD84\uC11D\uD558\uAE30"
+weight: 30
 ---
-
-{{< edit_this_page >}}
 
 ## 무엇 & 왜?
 문자열에서 날짜를 파싱한다는 것은 날짜를 나타내는 텍스트를 Ruby가 이해할 수 있는 `Date` 또는 `DateTime` 객체로 변환하는 것입니다. 프로그래머는 일정 관리, 분석, 또는 데이터 처리와 같은 작업에서 날짜 비교, 계산, 형식 지정 등의 작업을 수행하기 위해 이 작업을 합니다.

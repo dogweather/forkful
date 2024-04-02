@@ -9,9 +9,8 @@ summary: "Travailler avec XML signifie analyser, manipuler et produire du conten
   \ XML \xE0 l'aide de code. Les programmeurs le font parce que XML est largement\
   \ utilis\xE9\u2026"
 title: Travailler avec XML
+weight: 40
 ---
-
-{{< edit_this_page >}}
 
 ## Quoi et Pourquoi ?
 Travailler avec XML signifie analyser, manipuler et produire du contenu XML à l'aide de code. Les programmeurs le font parce que XML est largement utilisé pour les fichiers de configuration, l'échange de données et les services web en raison de sa nature lisible par l'homme et analysable par machine.

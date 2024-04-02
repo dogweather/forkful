@@ -7,9 +7,8 @@ model: gpt-4-1106-preview
 summary: "TOML, short for Tom's Obvious, Minimal Language, is a data format similar\
   \ to JSON or YAML, but easier to read for humans. Programmers use it for config\u2026"
 title: Working with TOML
+weight: 39
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 TOML, short for Tom's Obvious, Minimal Language, is a data format similar to JSON or YAML, but easier to read for humans. Programmers use it for config files because it's straightforward and translates well to data structures.

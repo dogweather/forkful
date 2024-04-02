@@ -9,9 +9,8 @@ summary: "Logging er i grunn \xE5 notere ned hva applikasjonen din gj\xF8r\u2014
   \ slags dagbok, hvis du vil, men for kode. Programmerere gj\xF8r dette for \xE5\
   \ holde styr p\xE5 de sm\xE5\u2026"
 title: "Loggf\xF8ring"
+weight: 17
 ---
-
-{{< edit_this_page >}}
 
 ## Hva og hvorfor?
 Logging er i grunn å notere ned hva applikasjonen din gjør—en slags dagbok, hvis du vil, men for kode. Programmerere gjør dette for å holde styr på de små detaljene, som statusendringer, systemhendelser og irriterende feil, og sikre at ingen ujevnheter går ubemerket forbi.

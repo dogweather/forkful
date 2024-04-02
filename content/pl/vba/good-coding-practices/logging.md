@@ -11,9 +11,8 @@ summary: "Logowanie w Visual Basic for Applications (VBA) polega na rejestrowani
   \ informacji o zachowaniu programu w czasie jego dzia\u0142ania do pliku, konsoli\
   \ lub\u2026"
 title: Rejestrowanie
+weight: 17
 ---
-
-{{< edit_this_page >}}
 
 ## Co i dlaczego?
 

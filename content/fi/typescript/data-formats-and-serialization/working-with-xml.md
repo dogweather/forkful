@@ -9,9 +9,8 @@ summary: "Ty\xF6skentely XML:n parissa tarkoittaa XML-tiedon j\xE4sent\xE4mist\x
   , manipulointia ja kirjoittamista ohjelmoinnin avulla. Ohjelmoijat k\xE4sittelev\xE4\
   t XML:\xE4\xE4\u2026"
 title: "XML:n k\xE4sittely"
+weight: 40
 ---
-
-{{< edit_this_page >}}
 
 ## Mikä & Miksi?
 Työskentely XML:n parissa tarkoittaa XML-tiedon jäsentämistä, manipulointia ja kirjoittamista ohjelmoinnin avulla. Ohjelmoijat käsittelevät XML:ää vaihtaakseen tietoja eri järjestelmien välillä, käyttöön konfiguraatiotiedostoissa tai kun työskentelevät standardien, kuten SOAP, parissa, jotka nojaavat XML:ään.

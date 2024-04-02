@@ -9,9 +9,8 @@ summary: "Att ta bort citattecken fr\xE5n en str\xE4ng i Rust handlar om att avl
   gsna on\xF6diga extra citattecken som kan vara inslagna runt din textdata. Programmerare\
   \ g\xF6r\u2026"
 title: "Ta bort citattecken fr\xE5n en str\xE4ng"
+weight: 9
 ---
-
-{{< edit_this_page >}}
 
 ## Vad och Varför?
 

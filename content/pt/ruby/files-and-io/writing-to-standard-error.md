@@ -11,9 +11,8 @@ summary: "Escrever para o erro padr\xE3o (stderr) em Ruby \xE9 sobre direcionar 
   \ de erro ou diagn\xF3sticos para um fluxo de sa\xEDda separado, distinto da sa\xED\
   da\u2026"
 title: "Escrevendo para o erro padr\xE3o"
+weight: 25
 ---
-
-{{< edit_this_page >}}
 
 ## O Que & Por Que?
 Escrever para o erro padrão (stderr) em Ruby é sobre direcionar mensagens de erro ou diagnósticos para um fluxo de saída separado, distinto da saída padrão (stdout). Os programadores fazem isso para diferenciar a saída regular do programa de erros e informações de depuração, facilitando o diagnóstico de problemas e a análise de logs.

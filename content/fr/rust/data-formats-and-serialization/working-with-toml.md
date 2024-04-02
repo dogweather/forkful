@@ -9,9 +9,8 @@ summary: "TOML est un langage de s\xE9rialisation de donn\xE9es lisible par l'ho
   \ souvent utilis\xE9 pour les configurations. Les programmeurs utilisent TOML pour\
   \ sa\u2026"
 title: Travailler avec TOML
+weight: 39
 ---
-
-{{< edit_this_page >}}
 
 ## Quoi & Pourquoi ?
 TOML est un langage de sérialisation de données lisible par l'homme, souvent utilisé pour les configurations. Les programmeurs utilisent TOML pour sa simplicité et sa clarté, se traduisant facilement en une table de hachage en Rust.

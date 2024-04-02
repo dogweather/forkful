@@ -19,9 +19,8 @@ summary: "\uC22B\uC790 \uBC18\uC62C\uB9BC\uC740 \uAC12\uC744 \uAC00\uC7A5 \uAC00
   \uC2DC\uD0A4\uAE30 \uC704\uD574 \uC22B\uC790\uB97C \uBC18\uC62C\uB9BC\uD569\uB2C8\
   \uB2E4."
 title: "\uC22B\uC790 \uBC18\uC62C\uB9BC\uD558\uAE30"
+weight: 13
 ---
-
-{{< edit_this_page >}}
 
 ## 무엇인가 & 왜인가?
 숫자 반올림은 값을 가장 가까운 정수나 지정된 소수점 자리로 조정하는 것에 관한 것입니다. 프로그래머들은 데이터를 단순화하고, 가독성을 높이거나, 계산 도중 특정 수학적 요구 사항을 만족시키기 위해 숫자를 반올림합니다.

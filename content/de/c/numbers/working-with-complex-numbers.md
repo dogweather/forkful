@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Komplexe Zahlen bestehen aus einem Realteil und einem Imagin\xE4rteil, dargestellt\
   \ als `a + bi`, wobei `i` die Quadratwurzel von `-1` ist. Programmierer\u2026"
 title: Arbeiten mit komplexen Zahlen
+weight: 14
 ---
-
-{{< edit_this_page >}}
 
 ## Was & Warum?
 

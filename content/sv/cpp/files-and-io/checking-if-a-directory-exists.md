@@ -11,9 +11,8 @@ summary: "Att kontrollera om en katalog finns handlar om att avg\xF6ra n\xE4rvar
   \ av en katalog p\xE5 en specificerad s\xF6kv\xE4g innan man utf\xF6r operationer\
   \ som att l\xE4sa fr\xE5n\u2026"
 title: Kontrollera om en katalog existerar
+weight: 20
 ---
-
-{{< edit_this_page >}}
 
 ## Vad & Varför?
 Att kontrollera om en katalog finns handlar om att avgöra närvaron av en katalog på en specificerad sökväg innan man utför operationer som att läsa från eller skriva till filer inuti den. Programmerare gör detta för att undvika fel relaterade till filoperationer, vilket säkerställer en smidigare och mer tillförlitlig utförande av uppgifter för filhantering i sina applikationer.

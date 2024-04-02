@@ -7,9 +7,8 @@ model: gpt-4-1106-preview
 summary: "Fehlerbehandlung bedeutet, Code zu schreiben, der vorhersehen und mit Problemen\
   \ umgehen kann, wenn etwas schief geht. Programmierer machen das, um\u2026"
 title: Fehlerbehandlung
+weight: 16
 ---
-
-{{< edit_this_page >}}
 
 ## Was & Warum?
 Fehlerbehandlung bedeutet, Code zu schreiben, der vorhersehen und mit Problemen umgehen kann, wenn etwas schief geht. Programmierer machen das, um Abstürze zu verhindern, die Datenintegrität zu schützen und den Benutzern anmutige Ausweichlösungen zu bieten.

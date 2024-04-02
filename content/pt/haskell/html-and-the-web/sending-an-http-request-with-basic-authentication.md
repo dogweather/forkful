@@ -8,9 +8,8 @@ model: gpt-4-1106-preview
 summary: "Realizar uma requisi\xE7\xE3o HTTP com autentica\xE7\xE3o b\xE1sica consiste\
   \ em enviar um cabe\xE7alho com credenciais codificadas em base64 para acessar recursos\u2026"
 title: "Enviando uma requisi\xE7\xE3o HTTP com autentica\xE7\xE3o b\xE1sica"
+weight: 45
 ---
-
-{{< edit_this_page >}}
 
 ## O Que é & Por Que?
 Realizar uma requisição HTTP com autenticação básica consiste em enviar um cabeçalho com credenciais codificadas em base64 para acessar recursos protegidos numa aplicação web. Programadores fazem isso para interagir com APIs que requerem autenticação para fornecer dados ou executar operações.

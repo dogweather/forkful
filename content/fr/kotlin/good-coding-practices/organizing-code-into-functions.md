@@ -9,9 +9,8 @@ summary: "Organiser le code en fonctions signifie diviser votre programme en mor
   \ r\xE9utilisables, chacun g\xE9rant une t\xE2che sp\xE9cifique. Nous faisons cela\
   \ pour\u2026"
 title: Organisation du code en fonctions
+weight: 18
 ---
-
-{{< edit_this_page >}}
 
 ## Quoi & Pourquoi ?
 Organiser le code en fonctions signifie diviser votre programme en morceaux réutilisables, chacun gérant une tâche spécifique. Nous faisons cela pour rendre le code plus facile à lire, à déboguer et à mettre à jour. Pensez à votre code comme à un garde-manger : vous voulez que tout, des fournitures de pâtisserie aux conserves, soit regroupé, de sorte que vous trouviez ce dont vous avez besoin sans tracas.

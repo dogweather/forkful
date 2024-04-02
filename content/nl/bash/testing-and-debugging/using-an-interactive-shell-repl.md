@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "REPL staat voor Read-Eval-Print Loop, een eenvoudige, interactieve computerprogrammeeromgeving.\
   \ Programmeurs gebruiken het om snel code te schrijven en te\u2026"
 title: Het gebruik van een interactieve shell (REPL)
+weight: 34
 ---
-
-{{< edit_this_page >}}
 
 ## Wat & Waarom?
 REPL staat voor Read-Eval-Print Loop, een eenvoudige, interactieve computerprogrammeeromgeving. Programmeurs gebruiken het om snel code te schrijven en te testen, te experimenteren met syntaxis en programmeerconcepten te leren zonder de overhead van het creëren en uitvoeren van volledige applicaties.

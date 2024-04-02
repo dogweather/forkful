@@ -7,9 +7,8 @@ model: gpt-4-0125-preview
 summary: "Complex numbers, consisting of a real and an imaginary part (usually denoted\
   \ as a + bi), extend the concept of the dimensionless numbers to a two-\u2026"
 title: Working with complex numbers
+weight: 14
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 

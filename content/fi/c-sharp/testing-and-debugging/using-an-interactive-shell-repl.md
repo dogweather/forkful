@@ -8,9 +8,8 @@ model: gpt-4-0125-preview
 summary: "REPL eli Lue-Arvo-Tulosta Silmukka antaa sinun kirjoittaa C#-koodia ja suorittaa\
   \ sit\xE4 vuorovaikutteisesti. Ohjelmoijat k\xE4ytt\xE4v\xE4t sit\xE4 nopeisiin\u2026"
 title: "Interaktiivisen komentotulkin (REPL) k\xE4ytt\xF6"
+weight: 34
 ---
-
-{{< edit_this_page >}}
 
 ## Mitä ja miksi?
 REPL eli Lue-Arvo-Tulosta Silmukka antaa sinun kirjoittaa C#-koodia ja suorittaa sitä vuorovaikutteisesti. Ohjelmoijat käyttävät sitä nopeisiin kokeiluihin, virheenkorjaukseen tai C#:n opiskeluun ilman täydellisten projektien pystyttämisen vaivaa.

@@ -10,9 +10,8 @@ model: gpt-4-0125-preview
 summary: "Foutafhandeling in Visual Basic for Applications (VBA) verwijst naar het\
   \ proces van anticiperen, detecteren en oplossen van programmeer-, applicatie- of\u2026"
 title: Fouten afhandelen
+weight: 16
 ---
-
-{{< edit_this_page >}}
 
 ## Wat & Waarom?
 

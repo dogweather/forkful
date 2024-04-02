@@ -11,9 +11,8 @@ summary: "PowerShells integration med JSON (JavaScript Object Notation) handlar 
   \ att tolka (l\xE4sa) och generera (skriva) JSON-data, ett gemensamt format f\xF6\
   r\u2026"
 title: Arbeta med JSON
+weight: 38
 ---
-
-{{< edit_this_page >}}
 
 ## Vad & Varför?
 

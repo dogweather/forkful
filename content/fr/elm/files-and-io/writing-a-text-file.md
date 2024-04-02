@@ -9,9 +9,8 @@ summary: "\xC9crire un fichier texte consiste \xE0 sauvegarder des donn\xE9es en
   \ lisible. Les d\xE9veloppeurs le font pour conserver des configurations, sauver\
   \ des\u2026"
 title: "\xC9criture d'un fichier texte"
+weight: 24
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 Écrire un fichier texte consiste à sauvegarder des données en format lisible. Les développeurs le font pour conserver des configurations, sauver des résultats, ou gérer des logs.

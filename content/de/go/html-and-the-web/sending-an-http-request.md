@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Das Senden einer HTTP-Anfrage beinhaltet, dass von Ihrer Go-Anwendung ein\
   \ Aufruf zu einem Webserver, einer API oder einem anderen HTTP-basierten Dienst\u2026"
 title: Eine HTTP-Anforderung senden
+weight: 44
 ---
-
-{{< edit_this_page >}}
 
 ## Was & Warum?
 

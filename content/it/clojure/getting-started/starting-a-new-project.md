@@ -7,9 +7,8 @@ model: gpt-4-1106-preview
 summary: "Avviare un nuovo progetto significa configurare l'ambiente di sviluppo per\
   \ piazzare solidamente le basi del software. I programmatori fanno questo per\u2026"
 title: Avvio di un nuovo progetto
+weight: 1
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why? (Cosa & Perché?)
 Avviare un nuovo progetto significa configurare l'ambiente di sviluppo per piazzare solidamente le basi del software. I programmatori fanno questo per garantire che partano con le migliori pratiche, abbiano una struttura organizzata e possano integrare strumenti che aumentino l'efficienza dello sviluppo.

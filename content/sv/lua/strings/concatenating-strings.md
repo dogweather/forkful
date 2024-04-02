@@ -9,9 +9,8 @@ summary: "I programmering \xE4r att sammanfoga str\xE4ngar processen att kombine
   \ flera str\xE4ngar till en enda. Programmerare g\xF6r detta f\xF6r att dynamiskt\
   \ bygga text, som\u2026"
 title: "Sammanslagning av str\xE4ngar"
+weight: 3
 ---
-
-{{< edit_this_page >}}
 
 ## Vad & Varför?
 I programmering är att sammanfoga strängar processen att kombinera flera strängar till en enda. Programmerare gör detta för att dynamiskt bygga text, som användargränssnitt eller databasfrågor.

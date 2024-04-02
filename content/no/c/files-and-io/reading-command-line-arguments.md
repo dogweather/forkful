@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "I C-programmering gj\xF8r det mulig \xE5 lese kommandolinjeargumenter at\
   \ programmer kan akseptere inndata direkte fra terminalen, noe som \xF8ker fleksibiliteten\u2026"
 title: Lese kommandolinjeargumenter
+weight: 23
 ---
-
-{{< edit_this_page >}}
 
 ## Hva & Hvorfor?
 

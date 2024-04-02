@@ -13,9 +13,8 @@ summary: "Gh\xE9p chu\u1ED7i l\xE0 vi\u1EC7c k\u1EBFt h\u1EE3p c\xE1c chu\u1ED7i
   i m\u1EDBi. L\u1EADp tr\xECnh vi\xEAn th\u1EF1c hi\u1EC7n \u0111i\u1EC1u n\xE0y\
   \ \u0111\u1EC3 k\u1EBFt h\u1EE3p v\u0103n b\u1EA3n m\u1ED9t c\xE1ch linh\u2026"
 title: "N\u1ED1i chu\u1ED7i k\xFD t\u1EF1"
+weight: 3
 ---
-
-{{< edit_this_page >}}
 
 ## Cái gì và Tại sao?
 Ghép chuỗi là việc kết hợp các chuỗi riêng biệt lại với nhau để tạo ra một chuỗi mới. Lập trình viên thực hiện điều này để kết hợp văn bản một cách linh hoạt, như tổng hợp lời chào, thông điệp, hay chỉ đơn giản là để cấu trúc dữ liệu một cách dễ đọc.

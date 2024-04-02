@@ -10,9 +10,8 @@ model: gpt-4-0125-preview
 summary: "Das Herunterladen einer Webseite beinhaltet das Abrufen des Inhalts einer\
   \ Webseite \xFCber ihre URL zur Verarbeitung oder Speicherung. Programmierer tun\u2026"
 title: Herunterladen einer Webseite
+weight: 42
 ---
-
-{{< edit_this_page >}}
 
 ## Was & Warum?
 

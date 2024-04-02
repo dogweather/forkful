@@ -9,9 +9,8 @@ summary: "\xC5 organisere kode i funksjoner handler om \xE5 pakke inn kodesnutte
   \ som utf\xF8rer spesifikke oppgaver og gi dem et navn. Det gj\xF8res for \xE5 gj\xF8\
   re koden\u2026"
 title: Organisering av kode i funksjoner
+weight: 18
 ---
-
-{{< edit_this_page >}}
 
 ## Hva & Hvorfor?
 Å organisere kode i funksjoner handler om å pakke inn kodesnutter som utfører spesifikke oppgaver og gi dem et navn. Det gjøres for å gjøre koden gjenbrukbar, lesbar og vedlikeholdbar. I stedet for å skrive den samme koden på nytt, kaller du en funksjon. Vil du feilsøke eller oppgradere? Juster funksjonen uten å måtte sile gjennom hauger av skript.

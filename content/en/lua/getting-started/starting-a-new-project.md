@@ -7,9 +7,8 @@ model: gpt-4-1106-preview
 summary: "Starting a new project means you're setting up the groundwork for your brilliant\
   \ idea. Programmers kick things off to transform concepts into code that\u2026"
 title: Starting a new project
+weight: 1
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 Starting a new project means you're setting up the groundwork for your brilliant idea. Programmers kick things off to transform concepts into code that practically does something useful.

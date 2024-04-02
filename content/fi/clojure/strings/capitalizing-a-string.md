@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Merkkijonon alkukirjaimen muuttaminen isoksi muuttaa merkkijonon niin, ett\xE4\
   \ sen ensimm\xE4inen merkki on isolla ja loput merkkijonosta pysyv\xE4t\u2026"
 title: Merkkijonon muuttaminen isoiksi kirjaimiksi
+weight: 2
 ---
-
-{{< edit_this_page >}}
 
 ## Mikä & Miksi?
 Merkkijonon alkukirjaimen muuttaminen isoksi muuttaa merkkijonon niin, että sen ensimmäinen merkki on isolla ja loput merkkijonosta pysyvät muuttumattomina. Ohjelmoijat suorittavat usein merkkijonojen alkukirjaimen muuttamisen varmistaakseen tietojen johdonmukaisuuden, erityisesti nimien ja paikkojen osalta tai noudattaakseen kieliopillisia sääntöjä käyttöliittymissä.

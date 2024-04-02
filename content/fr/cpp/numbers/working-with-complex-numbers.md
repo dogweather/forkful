@@ -9,9 +9,8 @@ summary: "Les nombres complexes \xE9tendent les nombres r\xE9els en ajoutant une
   \ imaginaire, repr\xE9sent\xE9e par 'i', o\xF9 i^2 = -1. Les programmeurs les utilisent\
   \ pour\u2026"
 title: Manipulation des nombres complexes
+weight: 14
 ---
-
-{{< edit_this_page >}}
 
 ## Quoi et Pourquoi ?
 Les nombres complexes étendent les nombres réels en ajoutant une unité imaginaire, représentée par 'i', où i^2 = -1. Les programmeurs les utilisent pour des simulations, le traitement de signal, et la résolution de problèmes mathématiques qui exigent de travailler en deux dimensions.

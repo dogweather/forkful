@@ -8,9 +8,8 @@ model: gpt-4-1106-preview
 summary: "Calcular uma data futura ou passada \xE9 o processo de adicionar ou subtrair\
   \ dias, meses ou anos a uma data espec\xEDfica. Programadores fazem isso para agendar\u2026"
 title: Calculando uma data no futuro ou passado
+weight: 26
 ---
-
-{{< edit_this_page >}}
 
 ## O Que & Porquê?
 Calcular uma data futura ou passada é o processo de adicionar ou subtrair dias, meses ou anos a uma data específica. Programadores fazem isso para agendar eventos, monitorar durações ou criar lembretes.

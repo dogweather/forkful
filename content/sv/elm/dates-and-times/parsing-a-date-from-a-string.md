@@ -11,9 +11,8 @@ summary: "Att tolka ett datum fr\xE5n en str\xE4ng i Elm inneb\xE4r att konverte
   \ textuell information som representerar datum och tider till ett format som Elm\
   \ kan f\xF6rst\xE5\u2026"
 title: "Analysera ett datum fr\xE5n en str\xE4ng"
+weight: 30
 ---
-
-{{< edit_this_page >}}
 
 ## Vad & Varför?
 Att tolka ett datum från en sträng i Elm innebär att konvertera textuell information som representerar datum och tider till ett format som Elm kan förstå och manipulera, specifikt till `Date`-typen. Denna process är avgörande för att hantera användarinmatning, visa datum korrekt lokaliserat och utföra beräkningar relaterade till datum, vilket säkerställer att dina Elm-applikationer kan behandla temporär data på ett intelligent sätt.

@@ -7,9 +7,8 @@ lastmod: '2024-03-13T22:44:42.883370-06:00'
 model: gpt-4-0125-preview
 summary: "YAML\u306F \"YAML Ain't Markup Language\"\u2026"
 title: "YAML \u3092\u64CD\u4F5C\u3059\u308B"
+weight: 41
 ---
-
-{{< edit_this_page >}}
 
 ## 何となぜ？
 YAMLは "YAML Ain't Markup Language" の略です。これは、その人間が読みやすい形式のため、Rubyにおける設定ファイルやデータの直列化に広く使用されています。プログラマーは、データオブジェクトを読みやすく、かつ構造的に格納または転送する必要がある場合に、YAMLを好んで使用します。これは、設定管理、データストレージ、異言語間データ共有といったタスクを簡素化します。

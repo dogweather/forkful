@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Naar een tekstbestand schrijven in Ruby betekent gegevens opslaan in een\
   \ bestand op je systeem. Programmeurs doen dit voor gegevenspersistentie, loggen,\u2026"
 title: Een tekstbestand schrijven
+weight: 24
 ---
-
-{{< edit_this_page >}}
 
 ## Wat & Waarom?
 

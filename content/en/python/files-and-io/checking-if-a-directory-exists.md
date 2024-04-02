@@ -7,9 +7,8 @@ model: gpt-4-0125-preview
 summary: "Checking if a directory exists in Python is about verifying the presence\
   \ of a folder in the filesystem before performing operations like reading or\u2026"
 title: Checking if a directory exists
+weight: 20
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 Checking if a directory exists in Python is about verifying the presence of a folder in the filesystem before performing operations like reading or writing files. Programmers do this to avoid errors such as `FileNotFoundError`, ensuring the application behaves reliably and doesn't crash when attempting to interact with directories.

@@ -11,9 +11,8 @@ summary: "YAML, acronimo di \"YAML Ain't Markup Language\" (YAML non \xE8 un lin
   \ di marcatura), \xE8 uno standard di serializzazione di dati leggibile dall'uomo\
   \ che\u2026"
 title: Lavorare con YAML
+weight: 41
 ---
-
-{{< edit_this_page >}}
 
 ## Cosa e Perché?
 YAML, acronimo di "YAML Ain't Markup Language" (YAML non è un linguaggio di marcatura), è uno standard di serializzazione di dati leggibile dall'uomo che i programmatori utilizzano per file di configurazione, dumping di dati e trasmissione di dati tra linguaggi. È popolare grazie alla sua leggibilità e facilità di uso, rendendolo una scelta comune per la configurazione di applicazioni e servizi.

@@ -11,9 +11,8 @@ summary: "Los arreglos asociativos, m\xE1s conocidos como hashes en Ruby, permit
   \ emparejar claves \xFAnicas con valores. Son indispensables cuando necesitas llevar\
   \ un\u2026"
 title: Uso de matrices asociativas
+weight: 15
 ---
-
-{{< edit_this_page >}}
 
 ## ¿Qué y Por Qué?
 

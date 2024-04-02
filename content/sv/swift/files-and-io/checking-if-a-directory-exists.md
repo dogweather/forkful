@@ -11,9 +11,8 @@ summary: "Att kontrollera om en katalog finns i filsystemet \xE4r avg\xF6rande f
   r att hantera filstrukturer fr\xE5n dina Swift-applikationer. Denna uppgift m\xF6\
   jligg\xF6r f\xF6r\u2026"
 title: Kontrollera om en katalog existerar
+weight: 20
 ---
-
-{{< edit_this_page >}}
 
 ## Vad & Varför?
 Att kontrollera om en katalog finns i filsystemet är avgörande för att hantera filstrukturer från dina Swift-applikationer. Denna uppgift möjliggör för utvecklare att verifiera närvaron av kataloger innan de försöker läsa från eller skriva till dem, och undviker därmed möjliga körningsfel.

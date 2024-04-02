@@ -16,9 +16,8 @@ summary: "\u521B\u5EFA\u4E34\u65F6\u6587\u4EF6\u5C31\u662F\u5728\u78C1\u76D8\u4E
   \u6570\u636E\u51B2\u7A81\uFF0C\u4F18\u5316\u5B58\u50A8\u7BA1\u7406\uFF0C\u4EE5\u53CA\
   \u4FDD\u62A4\u654F\u611F\u4FE1\u606F\u3002"
 title: "\u521B\u5EFA\u4E34\u65F6\u6587\u4EF6"
+weight: 21
 ---
-
-{{< edit_this_page >}}
 
 ## 什么 & 为什么？
 创建临时文件就是在磁盘上生成一个临时存储数据的文件，通常用于处理不需要永久保存的数据。程序员这么做是为了避免数据冲突，优化存储管理，以及保护敏感信息。

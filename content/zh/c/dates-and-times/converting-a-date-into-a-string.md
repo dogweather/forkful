@@ -15,9 +15,8 @@ summary: "\u4E3A\u6B64\u5E38\u7528\u7684\u51FD\u6570\u662F `<time.h>` \u5E93\u4E
   \u65E5\u671F\u548C\u65F6\u95F4\u3002\u4EE5\u4E0B\u662F\u4E00\u4E2A\u5FEB\u901F\u793A\
   \u4F8B\uFF1A ```c #include <stdio.h> #include <time.h> int main() { char dateStr[100];\u2026"
 title: "\u5C06\u65E5\u671F\u8F6C\u5316\u4E3A\u5B57\u7B26\u4E32"
+weight: 28
 ---
-
-{{< edit_this_page >}}
 
 # 什么与为什么？
 

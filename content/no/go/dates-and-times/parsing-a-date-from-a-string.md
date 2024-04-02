@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "\xC5 parse en dato fra en streng i Go inneb\xE6rer \xE5 konvertere datoen\
   \ representert som tekst til et mer brukbart format (f.eks. `time.Time`). Programmerere\u2026"
 title: Analysering av en dato fra en streng
+weight: 30
 ---
-
-{{< edit_this_page >}}
 
 ## Hva & Hvorfor?
 

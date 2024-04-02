@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Capitalizzare una stringa in C# comporta la conversione del primo carattere\
   \ di una stringa in maiuscolo, se gi\xE0 non lo \xE8. Questa modifica pu\xF2 essere\u2026"
 title: Capitalizzare una stringa
+weight: 2
 ---
-
-{{< edit_this_page >}}
 
 ## Cos'è & Perché?
 Capitalizzare una stringa in C# comporta la conversione del primo carattere di una stringa in maiuscolo, se già non lo è. Questa modifica può essere fondamentale per formattare gli output, far rispettare gli standard di codifica, o rendere i testi dell'interfaccia utente più leggibili.

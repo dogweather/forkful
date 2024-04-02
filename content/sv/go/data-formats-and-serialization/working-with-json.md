@@ -11,9 +11,8 @@ summary: "Att arbeta med JSON (JavaScript Object Notation) i Go inneb\xE4r att k
   \ om och avkoda data mellan Go datastrukturer och JSON-format. Denna uppgift \xE4\
   r\u2026"
 title: Att Arbeta med JSON
+weight: 38
 ---
-
-{{< edit_this_page >}}
 
 ## Vad & Varför?
 

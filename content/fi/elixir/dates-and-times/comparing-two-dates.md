@@ -9,9 +9,8 @@ summary: "`P\xE4iv\xE4m\xE4\xE4rien vertailu` tarkoittaa kahta p\xE4iv\xE4m\xE4\
   r\xE4\xE4 vertaamalla selvitt\xE4mist\xE4, kumpi on aikaisempi tai ovatko ne samat.\
   \ Ohjelmoijat vertailevat\u2026"
 title: "Kahden p\xE4iv\xE4m\xE4\xE4r\xE4n vertailu"
+weight: 27
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 `Päivämäärien vertailu` tarkoittaa kahta päivämäärää vertaamalla selvittämistä, kumpi on aikaisempi tai ovatko ne samat. Ohjelmoijat vertailevat päivämääriä, jotta voivat järjestellä tapahtumia, validoida ajanjaksoja tai hallita aikasidonnaisia toimintoja.

@@ -9,9 +9,8 @@ summary: "TOML:n kanssa ty\xF6skentely sis\xE4lt\xE4\xE4 TOML-tietojen (Tom\u201
   s Obvious, Minimal Language) j\xE4sent\xE4misen ja tuottamisen Lualla. Ohjelmoijat\
   \ k\xE4ytt\xE4v\xE4t TOML:\xE4\xE4\u2026"
 title: "Ty\xF6skentely TOML:n kanssa"
+weight: 39
 ---
-
-{{< edit_this_page >}}
 
 ## Mikä & Miksi?
 TOML:n kanssa työskentely sisältää TOML-tietojen (Tom’s Obvious, Minimal Language) jäsentämisen ja tuottamisen Lualla. Ohjelmoijat käyttävät TOML:ää konfiguraatiotiedostoihin sen luettavuuden ja yksinkertaisen syntaksin vuoksi, joka kääntyy helposti datarakenteeksi.

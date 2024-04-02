@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Complexe getallen hebben een re\xEBel deel en een imaginair deel en zijn\
   \ cruciaal in diverse velden zoals engineering, fysica en computergrafiek.\u2026"
 title: Werken met complexe getallen
+weight: 14
 ---
-
-{{< edit_this_page >}}
 
 ## Wat & Waarom?
 Complexe getallen hebben een reëel deel en een imaginair deel en zijn cruciaal in diverse velden zoals engineering, fysica en computergrafiek. Programmeurs gebruiken ze om vergelijkingen op te lossen die gewone reële getallen niet aankunnen.

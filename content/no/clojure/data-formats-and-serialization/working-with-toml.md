@@ -9,9 +9,8 @@ summary: "\xC5 jobbe med TOML betyr at du h\xE5ndterer data i et minimalt format
   \ \"Tom's Obvious, Minimal Language\", som er popul\xE6rt for konfigurasjonsfiler\
   \ p\xE5 grunn\u2026"
 title: Jobbe med TOML
+weight: 39
 ---
-
-{{< edit_this_page >}}
 
 ## Hva & Hvorfor?
 Å jobbe med TOML betyr at du håndterer data i et minimalt format kalt "Tom's Obvious, Minimal Language", som er populært for konfigurasjonsfiler på grunn av dets enkle lesbarhet. Programmerere bruker det til enkel konfigurasjonsstyring som fungerer rett ut av boksen med menneskevennlig syntaks.

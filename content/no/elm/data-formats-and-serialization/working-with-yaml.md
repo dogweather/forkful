@@ -7,9 +7,8 @@ model: unknown
 summary: "YAML er et dataformat for \xE5 skrive konfigurasjoner lett leslig for mennesker.\
   \ Programmerere bruker det for \xE5 h\xE5ndtere konfigurasjoner og datautveksling."
 title: Arbeid med YAML
+weight: 41
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 YAML er et dataformat for å skrive konfigurasjoner lett leslig for mennesker. Programmerere bruker det for å håndtere konfigurasjoner og datautveksling.

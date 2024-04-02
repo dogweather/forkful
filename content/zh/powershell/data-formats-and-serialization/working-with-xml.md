@@ -17,9 +17,8 @@ summary: "\u4F7F\u7528 XML \u6D89\u53CA\u5230\u64CD\u4F5C\u548C\u8BBF\u95EE\u4EE
   \u548C\u7F51\u7EDC\u670D\u52A1\u4E2D\u5E38\u89C1\u7684\u5176\u4ED6\u7ED3\u6784\u5316\
   \u6587\u6863\u3002"
 title: "\u5904\u7406XML"
+weight: 40
 ---
-
-{{< edit_this_page >}}
 
 ## 什么和为什么？
 使用 XML 涉及到操作和访问以可扩展标记语言（eXtensible Markup Language）结构化的数据。程序员使用 XML 是为了实现与其他系统的互操作性，或是为了读写配置文件、数据源和网络服务中常见的其他结构化文档。

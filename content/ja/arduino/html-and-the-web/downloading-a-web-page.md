@@ -16,9 +16,8 @@ summary: "Web\u30DA\u30FC\u30B8\u3092\u30C0\u30A6\u30F3\u30ED\u30FC\u30C9\u3059\
   \u30EA\u30A2\u30EB\u30BF\u30A4\u30E0\u306E\u60C5\u5831\u3092\u6D3B\u7528\u3059\u308B\
   \u305F\u3081\u3060\u3088\u3002"
 title: "\u30A6\u30A7\u30D6\u30DA\u30FC\u30B8\u306E\u30C0\u30A6\u30F3\u30ED\u30FC\u30C9"
+weight: 42
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why? (何となぜ？)
 Webページをダウンロードするって？Web上の情報を手元のデバイスに取り込むことさ。なぜやるのか？データを分析したり、リアルタイムの情報を活用するためだよ。

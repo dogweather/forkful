@@ -9,9 +9,8 @@ summary: "La suppression de caract\xE8res correspondant \xE0 un motif, c\u2019es
   \ l\u2019acte d\u2019enlever des caract\xE8res d\u2019une cha\xEEne de caract\xE8\
   res (string) qui matchent un certain\u2026"
 title: "Suppression de caract\xE8res correspondant \xE0 un motif"
+weight: 5
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 La suppression de caractères correspondant à un motif, c’est l’acte d’enlever des caractères d’une chaîne de caractères (string) qui matchent un certain pattern. On fait ça pour nettoyer des données, valider des entrées ou simplifier le traitement de textes.

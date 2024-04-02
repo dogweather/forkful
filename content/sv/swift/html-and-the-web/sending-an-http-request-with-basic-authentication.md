@@ -9,9 +9,8 @@ summary: "Att skicka en HTTP-beg\xE4ran med Basic Authentication inneb\xE4r att 
   \ inkluderar anv\xE4ndarens legitimationer i en header f\xF6r att f\xE5 tillg\xE5\
   ng till skyddade\u2026"
 title: "Skicka en HTTP-f\xF6rfr\xE5gan med Basic-autentisering"
+weight: 45
 ---
-
-{{< edit_this_page >}}
 
 ## Vad & Varför?
 Att skicka en HTTP-begäran med Basic Authentication innebär att du inkluderar användarens legitimationer i en header för att få tillgång till skyddade resurser på en server. Programmerare gör detta för att säkerställa att endast behöriga användare kan interagera med sensitiva delar av en webbtjänst.

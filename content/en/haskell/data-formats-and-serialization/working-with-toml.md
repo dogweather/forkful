@@ -7,9 +7,8 @@ model: gpt-4-1106-preview
 summary: "Working with TOML involves parsing and generating TOML (Tom's Obvious, Minimal\
   \ Language) data with Haskell. Programmers do it to easily manage\u2026"
 title: Working with TOML
+weight: 39
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 Working with TOML involves parsing and generating TOML (Tom's Obvious, Minimal Language) data with Haskell. Programmers do it to easily manage configuration files or data interchange with strong type guarantees and minimal syntax fuss.

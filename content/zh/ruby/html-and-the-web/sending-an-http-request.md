@@ -12,9 +12,8 @@ summary: "\u53D1\u9001HTTP\u8BF7\u6C42\u5C31\u662F\u8BA9\u4F60\u7684\u4EE3\u7801
   \u4E48\u505A\u662F\u56E0\u4E3A\u4ED6\u4EEC\u9700\u8981\u4ECE\u4E92\u8054\u7F51\u83B7\
   \u53D6\u6216\u53D1\u9001\u6570\u636E\u3002"
 title: "\u53D1\u51FA HTTP \u8BF7\u6C42"
+weight: 44
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why? (是什么 & 为什么?)
 发送HTTP请求就是让你的代码和网上的服务器"聊天"。程序员这么做是因为他们需要从互联网获取或发送数据。

@@ -15,9 +15,8 @@ summary: "L\xE0m tr\xF2n s\u1ED1 trong l\u1EADp tr\xECnh l\xE0 vi\u1EC7c \u01B0\
   p ph\xE2n nh\u1EA5t \u0111\u1ECBnh. C\xE1c l\u1EADp tr\xECnh vi\xEAn l\xE0m tr\xF2\
   n\u2026"
 title: "L\xE0m tr\xF2n s\u1ED1"
+weight: 13
 ---
-
-{{< edit_this_page >}}
 
 ## Làm gì & Tại sao?
 

@@ -10,9 +10,8 @@ model: gpt-4-0125-preview
 summary: "L'arrotondamento dei numeri consiste nell'aggiustare il valore di un numero\
   \ al suo intero pi\xF9 vicino o a un numero specifico di cifre decimali. I\u2026"
 title: Arrotondamento dei numeri
+weight: 13
 ---
-
-{{< edit_this_page >}}
 
 ## Cosa & Perché?
 

@@ -9,9 +9,8 @@ summary: "Avrundning av tal inneb\xE4r att man klipper av decimalerna till ett e
   \ v\xE4rde som \xE4r tillr\xE4ckligt bra f\xF6r ett givet sammanhang. Programmerare\
   \ avrundar\u2026"
 title: Avrundning av tal
+weight: 13
 ---
-
-{{< edit_this_page >}}
 
 ## Vad & Varför?
 

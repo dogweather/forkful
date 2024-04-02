@@ -9,9 +9,8 @@ summary: "D\xE9marrer un nouveau projet, c'est cr\xE9er une base vierge pour tra
   \ des id\xE9es en code. C'est essentiel pour structurer ses pens\xE9es, tester des\
   \ concepts,\u2026"
 title: Lancement d'un nouveau projet
+weight: 1
 ---
-
-{{< edit_this_page >}}
 
 ## Quoi et pourquoi ?
 

@@ -13,9 +13,8 @@ summary: "So s\xE1nh hai ng\xE0y ngh\u0129a l\xE0 ki\u1EC3m tra ch\xFAng c\xF3 m
   c, sau, hay ch\xEDnh x\xE1c nh\u01B0 nhau so v\u1EDBi c\xE1i kia? C\xE1c l\u1EAD\
   p tr\xECnh vi\xEAn th\u1EF1c\u2026"
 title: "So s\xE1nh hai ng\xE0y"
+weight: 27
 ---
-
-{{< edit_this_page >}}
 
 ## Gì & Tại sao?
 So sánh hai ngày nghĩa là kiểm tra chúng có mối quan hệ như thế nào—một cái có trước, sau, hay chính xác như nhau so với cái kia? Các lập trình viên thực hiện điều này để xử lý hạn chót, lên lịch sự kiện, và theo dõi dữ liệu liên quan đến thời gian.

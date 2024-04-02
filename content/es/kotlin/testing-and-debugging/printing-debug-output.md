@@ -9,9 +9,8 @@ summary: "Imprimir mensajes de depuraci\xF3n es un truco sencillo: mandar inform
   n a la consola para entender qu\xE9 est\xE1 haciendo tu programa. \xBFPor qu\xE9\
   ? Porque\u2026"
 title: "Imprimiendo salida de depuraci\xF3n"
+weight: 33
 ---
-
-{{< edit_this_page >}}
 
 ## Qué es y por qué?
 Imprimir mensajes de depuración es un truco sencillo: mandar información a la consola para entender qué está haciendo tu programa. ¿Por qué? Porque permite seguir la pista de los valores y comportamientos internos del código mientras se ejecuta, facilitando encontrar y arreglar errores.

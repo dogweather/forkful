@@ -11,9 +11,8 @@ summary: "\xC5 skrive til standard feil (stderr) i Fish Shell handler om \xE5 di
   \ feilmeldinger eller diagnostikk separat fra standard utdata (stdout). Programm\xF8\
   rer\u2026"
 title: Skriving til standardfeil
+weight: 25
 ---
-
-{{< edit_this_page >}}
 
 ## Hva & Hvorfor?
 

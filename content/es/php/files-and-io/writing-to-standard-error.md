@@ -10,9 +10,8 @@ model: gpt-4-0125-preview
 summary: "Escribir en el error est\xE1ndar (stderr) en PHP se trata de dirigir mensajes\
   \ de error o diagn\xF3sticos de forma separada de la salida est\xE1ndar (stdout),\u2026"
 title: "Escribiendo en el error est\xE1ndar"
+weight: 25
 ---
-
-{{< edit_this_page >}}
 
 ## Qué y Por Qué?
 

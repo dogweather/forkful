@@ -8,9 +8,8 @@ model: gpt-4-0125-preview
 summary: "Les nombres complexes \xE9tendent la ligne des nombres r\xE9els par l'ajout\
   \ d'une unit\xE9 imaginaire, `i`, o\xF9 `i^2 = -1`. Ils sont cruciaux dans des domaines\u2026"
 title: Manipulation des nombres complexes
+weight: 14
 ---
-
-{{< edit_this_page >}}
 
 ## Quoi & Pourquoi ?
 

@@ -9,9 +9,8 @@ summary: "\xC5 skrive ut feils\xF8kingsdata, eller \"debug output\", lar utvikle
   \ se hva som skjer i koden under kj\xF8ring. Vi gj\xF8r det for \xE5 forst\xE5 feil,\
   \ optimalisere\u2026"
 title: "Skrive ut feils\xF8kingsdata"
+weight: 33
 ---
-
-{{< edit_this_page >}}
 
 ## Hva & Hvorfor?
 Å skrive ut feilsøkingsdata, eller "debug output", lar utviklere se hva som skjer i koden under kjøring. Vi gjør det for å forstå feil, optimalisere ytelsen og bekrefte at alt fungerer som det skal.

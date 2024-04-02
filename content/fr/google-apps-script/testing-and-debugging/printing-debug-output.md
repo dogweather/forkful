@@ -11,9 +11,8 @@ summary: "L'impression des sorties de d\xE9bogage implique de placer strat\xE9gi
   \ des d\xE9clarations de journalisation dans votre code pour afficher les valeurs\
   \ des\u2026"
 title: "Affichage du d\xE9bogage"
+weight: 33
 ---
-
-{{< edit_this_page >}}
 
 ## Quoi et pourquoi ?
 

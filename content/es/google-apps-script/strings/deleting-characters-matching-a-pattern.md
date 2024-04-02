@@ -11,9 +11,8 @@ summary: "Eliminar caracteres que coinciden con un patr\xF3n espec\xEDfico es un
   \ t\xE9cnica utilizada para limpiar o formatear cadenas en programaci\xF3n. En el\
   \ contexto de\u2026"
 title: "Eliminando caracteres que coinciden con un patr\xF3n"
+weight: 5
 ---
-
-{{< edit_this_page >}}
 
 ## Qué y Por Qué?
 

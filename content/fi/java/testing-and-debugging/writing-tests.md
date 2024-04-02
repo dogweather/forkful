@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Testien kirjoittaminen Javassa koskee koodisi toiminnan varmistamista odotetulla\
   \ tavalla eri olosuhteissa. Ohjelmoijat kirjoittavat testej\xE4 vikojen\u2026"
 title: Testien kirjoittaminen
+weight: 36
 ---
-
-{{< edit_this_page >}}
 
 ## Mitä & Miksi?
 Testien kirjoittaminen Javassa koskee koodisi toiminnan varmistamista odotetulla tavalla eri olosuhteissa. Ohjelmoijat kirjoittavat testejä vikojen estämiseksi, varmistaakseen toiminnallisuuden pysyvän oikeana muutosten jälkeen ja edistääkseen hyviä ohjelmistosuunnittelun periaatteita.

@@ -8,9 +8,8 @@ summary: "Temporary files are files created to hold data temporarily while a pro
   \ is running. Programmers use them for tasks like managing large data that won't\u2026"
 title: "\u0421\u0442\u0432\u043E\u0440\u0435\u043D\u043D\u044F \u0442\u0438\u043C\u0447\
   \u0430\u0441\u043E\u0432\u043E\u0433\u043E \u0444\u0430\u0439\u043B\u0443"
+weight: 21
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why? / Що і Чому?
 

@@ -7,9 +7,8 @@ model: gpt-4-1106-preview
 summary: "Handling errors in coding is about expecting the unexpected. It's the art\
   \ of planning for when things go sideways so you can keep your program running\u2026"
 title: Handling errors
+weight: 16
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 Handling errors in coding is about expecting the unexpected. It's the art of planning for when things go sideways so you can keep your program running smoothly.

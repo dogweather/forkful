@@ -9,9 +9,8 @@ summary: "Das Lesen von Befehlszeilenargumenten erlaubt es Skripten, verschieden
   \ Eingaben zu verarbeiten und anzupassen. Programmierer nutzen dies, um flexible\
   \ und\u2026"
 title: Lesen von Kommandozeilenargumenten
+weight: 23
 ---
-
-{{< edit_this_page >}}
 
 ## Was & Warum?
 Das Lesen von Befehlszeilenargumenten erlaubt es Skripten, verschiedene Eingaben zu verarbeiten und anzupassen. Programmierer nutzen dies, um flexible und interaktive Tools zu erstellen.

@@ -9,9 +9,8 @@ summary: "\xC5 redigere filer p\xE5 stedet med CLI-enlinjers i PowerShell handle
   \ om \xE5 gj\xF8re direkte endringer i filer fra kommandolinjen, uten behov for\
   \ \xE5 \xE5pne dem i en\u2026"
 title: "Redigering av filer p\xE5 stedet med CLI-enlinjerskommandoer"
+weight: 32
 ---
-
-{{< edit_this_page >}}
 
 ## Hva & Hvorfor?
 

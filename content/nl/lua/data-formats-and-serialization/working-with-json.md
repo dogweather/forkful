@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "JSON (JavaScript Object Notation) wordt gebruikt om gegevens op te slaan\
   \ en te transporteren. Programmeurs gebruiken JSON omdat het lichtgewicht is,\u2026"
 title: Werken met JSON
+weight: 38
 ---
-
-{{< edit_this_page >}}
 
 ## Wat & Waarom?
 

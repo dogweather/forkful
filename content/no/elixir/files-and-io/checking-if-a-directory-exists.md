@@ -10,9 +10,8 @@ model: gpt-4-0125-preview
 summary: "\xC5 sjekke om en katalog finnes i Elixir handler om \xE5 verifisere tilstedev\xE6\
   relsen av en katalog p\xE5 en angitt bane i filsystemet. Programmerere gj\xF8r dette\u2026"
 title: Sjekker om en mappe eksisterer
+weight: 20
 ---
-
-{{< edit_this_page >}}
 
 ## Hva og hvorfor?
 Å sjekke om en katalog finnes i Elixir handler om å verifisere tilstedeværelsen av en katalog på en angitt bane i filsystemet. Programmerere gjør dette for å sikre at de trygt kan lese fra, skrive til eller utføre operasjoner på katalogen uten å støte på feil på grunn av dens fravær.

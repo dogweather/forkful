@@ -8,9 +8,8 @@ model: gpt-4-1106-preview
 summary: "Iniciar um novo projeto em PowerShell \xE9 como abrir um livro branco; voc\xEA\
   \ cria um espa\xE7o para desenvolver scripts e solu\xE7\xF5es automatizadas. Programadores\u2026"
 title: Iniciando um novo projeto
+weight: 1
 ---
-
-{{< edit_this_page >}}
 
 ## O Que & Porquê?
 Iniciar um novo projeto em PowerShell é como abrir um livro branco; você cria um espaço para desenvolver scripts e soluções automatizadas. Programadores fazem isso para organizar código, facilitar a manutenção e colaboração, e definir claramente o escopo e intenção das suas ferramentas.

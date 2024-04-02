@@ -10,9 +10,8 @@ model: gpt-4-0125-preview
 summary: "Analisar uma data de uma string em Bash envolve extrair e converter informa\xE7\
   \xF5es de data de dados textuais para um formato que o Bash pode manipular ou\u2026"
 title: Analisando uma data a partir de uma string
+weight: 30
 ---
-
-{{< edit_this_page >}}
 
 ## O Que e Por Quê?
 

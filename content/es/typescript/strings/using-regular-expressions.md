@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Las expresiones regulares, o regex, son una herramienta poderosa para coincidencia\
   \ de patrones y b\xFAsqueda en programaci\xF3n. Los programadores utilizan\u2026"
 title: Usando expresiones regulares
+weight: 11
 ---
-
-{{< edit_this_page >}}
 
 ## ¿Qué y Por Qué?
 Las expresiones regulares, o regex, son una herramienta poderosa para coincidencia de patrones y búsqueda en programación. Los programadores utilizan regex para tareas como validar entradas de usuarios, buscar en texto o manipular cadenas de caracteres porque es eficiente y versátil.

@@ -9,9 +9,8 @@ summary: "\xC5 lese kommandolinjeargumenter handler om \xE5 hente inn data gitt 
   \ til programmet ditt ved oppstart. Vi gj\xF8r dette for \xE5 tilpasse programoppf\xF8\
   rselen\u2026"
 title: Lese kommandolinjeargumenter
+weight: 23
 ---
-
-{{< edit_this_page >}}
 
 ## Hva & Hvorfor?
 Å lese kommandolinjeargumenter handler om å hente inn data gitt direkte til programmet ditt ved oppstart. Vi gjør dette for å tilpasse programoppførselen uten å endre koden.

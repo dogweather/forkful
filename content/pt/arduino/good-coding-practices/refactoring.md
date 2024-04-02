@@ -7,9 +7,8 @@ model: gpt-4-0125-preview
 summary: "Refatora\xE7\xE3o \xE9 o processo de reestruturar o seu c\xF3digo para melhorar\
   \ sua estrutura e legibilidade sem alterar o comportamento externo ou funcionalidade.\u2026"
 title: "Refatora\xE7\xE3o"
+weight: 19
 ---
-
-{{< edit_this_page >}}
 
 ## O Que e Por Quê?
 Refatoração é o processo de reestruturar o seu código para melhorar sua estrutura e legibilidade sem alterar o comportamento externo ou funcionalidade. Programadores refatoram para tornar seu código mais limpo, fácil de entender e mais mantível, o que a longo prazo torna a depuração e a adição de novas funcionalidades muito menos problemáticas.

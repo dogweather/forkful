@@ -9,9 +9,8 @@ summary: "Szukanie i zamiana tekstu to codzienny chleb programisty. Robimy to, a
   \ modyfikowa\u0107 dane, poprawia\u0107 b\u0142\u0119dy, czy te\u017C dostosowywa\u0107\
   \ ci\u0105gi znak\xF3w pod\u2026"
 title: Wyszukiwanie i zamiana tekstu
+weight: 10
 ---
-
-{{< edit_this_page >}}
 
 ## Co i dlaczego?
 Szukanie i zamiana tekstu to codzienny chleb programisty. Robimy to, aby modyfikować dane, poprawiać błędy, czy też dostosowywać ciągi znaków pod konkretne potrzeby. Proste, ale niezwykle istotne narzędzie w naszej kuchni kodu.

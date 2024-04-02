@@ -7,9 +7,8 @@ model: gpt-4-1106-preview
 summary: "Searching and replacing text is swapping specific words or phrases with\
   \ alternatives in a string. Programmers do it to update data, fix errors, or change\u2026"
 title: Searching and replacing text
+weight: 10
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 Searching and replacing text is swapping specific words or phrases with alternatives in a string. Programmers do it to update data, fix errors, or change formatting - it keeps things accurate and tidy.

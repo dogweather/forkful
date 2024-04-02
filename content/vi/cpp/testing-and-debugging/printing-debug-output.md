@@ -13,9 +13,8 @@ summary: "In th\xF4ng \u0111i\u1EC7p g\u1EE1 l\u1ED7i gi\u1ED1ng nh\u01B0 vi\u1E
   c v\xE0o c\xE1c c\xE2u l\u1EC7nh in \u0111\u1EC3 ki\u1EC3m tra s\u1EE9c kh\u1ECF\
   e v\xE0 t\u01B0 duy c\u1EE7a n\xF3. L\u1EADp tr\xECnh vi\xEAn l\xE0m\u2026"
 title: "In ra th\xF4ng tin g\u1EE1 l\u1ED7i"
+weight: 33
 ---
-
-{{< edit_this_page >}}
 
 ## Là gì và Tại sao?
 In thông điệp gỡ lỗi giống như việc trò chuyện với mã lệnh của bạn; bạn rắc vào các câu lệnh in để kiểm tra sức khỏe và tư duy của nó. Lập trình viên làm điều này để tìm và khắc phục lỗi hoặc để đảm bảo mọi thứ đang diễn ra suôn sẻ—giống như đang kiểm tra nhanh mã lệnh của bạn.

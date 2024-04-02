@@ -17,9 +17,8 @@ summary: "\u5728\u6587\u4EF6\u7CFB\u7EDF\u4E2D\u68C0\u67E5\u76EE\u5F55\u662F\u54
   \u5B83\u4EEC\u4E4B\u524D\uFF0C\u9A8C\u8BC1\u76EE\u5F55\u7684\u5B58\u5728\u6027\uFF0C\
   \u4ECE\u800C\u907F\u514D\u53EF\u80FD\u7684\u8FD0\u884C\u65F6\u9519\u8BEF\u3002"
 title: "\u68C0\u67E5\u76EE\u5F55\u662F\u5426\u5B58\u5728"
+weight: 20
 ---
-
-{{< edit_this_page >}}
 
 ## 什么 & 为什么？
 在文件系统中检查目录是否存在对于从 Swift 应用程序内部管理文件结构至关重要。这一任务使得开发者能够在尝试读取或写入它们之前，验证目录的存在性，从而避免可能的运行时错误。

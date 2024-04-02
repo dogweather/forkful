@@ -9,9 +9,8 @@ summary: "Wyci\u0105ganie podci\u0105g\xF3w to wydobywanie konkretnych fragment\
   w tekstu z wi\u0119kszych ci\u0105g\xF3w znak\xF3w. Programi\u015Bci robi\u0105\
   \ to, by manipulowa\u0107 danymi, weryfikowa\u0107\u2026"
 title: "Wycinanie pod\u0142a\u0144cuch\xF3w"
+weight: 6
 ---
-
-{{< edit_this_page >}}
 
 ## Co i dlaczego?
 Wyciąganie podciągów to wydobywanie konkretnych fragmentów tekstu z większych ciągów znaków. Programiści robią to, by manipulować danymi, weryfikować format, czy po prostu wydobyć potrzebne informacje.

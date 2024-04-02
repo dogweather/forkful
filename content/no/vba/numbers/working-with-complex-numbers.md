@@ -11,9 +11,8 @@ summary: "Arbeid med komplekse tall inneb\xE6rer \xE5 utf\xF8re matematiske oper
   \ p\xE5 tall som har b\xE5de en reell del og en imagin\xE6r del. Programmerere tar\
   \ ofte for seg\u2026"
 title: Arbeide med komplekse tall
+weight: 14
 ---
-
-{{< edit_this_page >}}
 
 ## Hva & Hvorfor?
 

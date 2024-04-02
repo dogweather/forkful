@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Het converteren van een datum naar een string in Rust stelt ons in staat\
   \ om data weer te geven in een voor mensen leesbaar formaat. We doen dit voor UI's,\u2026"
 title: Een datum converteren naar een string
+weight: 28
 ---
-
-{{< edit_this_page >}}
 
 ## Wat & Waarom?
 

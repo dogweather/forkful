@@ -9,9 +9,8 @@ summary: "Baixar uma p\xE1gina da web \xE9 simplesmente o ato de obter o conte\x
   do HTML dessa p\xE1gina para seu uso local. Programadores fazem isso para an\xE1\
   lise de dados,\u2026"
 title: "Baixando uma p\xE1gina da web"
+weight: 42
 ---
-
-{{< edit_this_page >}}
 
 ## O Que & Por Quê?
 Baixar uma página da web é simplesmente o ato de obter o conteúdo HTML dessa página para seu uso local. Programadores fazem isso para análise de dados, monitoramento de conteúdo ou para automatizar interações com sites.

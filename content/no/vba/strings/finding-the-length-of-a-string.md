@@ -11,9 +11,8 @@ summary: "\xC5 finne lengden p\xE5 en streng i Visual Basic for Applications (VB
   \ inneb\xE6rer \xE5 bestemme antall tegn den inneholder. Programmerere utf\xF8rer\
   \ ofte denne\u2026"
 title: "Finner lengden p\xE5 en streng"
+weight: 7
 ---
-
-{{< edit_this_page >}}
 
 ## Hva & Hvorfor?
 

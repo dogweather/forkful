@@ -11,9 +11,8 @@ summary: "Das Senden einer HTTP-Anfrage mit Basisauthentifizierung beinhaltet da
   \ Anh\xE4ngen eines Benutzernamens und Passworts an eine Anfrage, um die Identit\xE4\
   t des\u2026"
 title: Eine HTTP-Anfrage mit Basisauthentifizierung senden
+weight: 45
 ---
-
-{{< edit_this_page >}}
 
 ## Was & Warum?
 

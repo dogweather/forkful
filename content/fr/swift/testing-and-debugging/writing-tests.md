@@ -11,9 +11,8 @@ summary: "\xC9crire des tests en Swift implique de cr\xE9er et d'ex\xE9cuter du 
   \ qui v\xE9rifie la justesse d'autres unit\xE9s de code dans votre application.\
   \ Les programmeurs\u2026"
 title: "R\xE9daction de tests"
+weight: 36
 ---
-
-{{< edit_this_page >}}
 
 ## Quoi & Pourquoi ?
 Écrire des tests en Swift implique de créer et d'exécuter du code qui vérifie la justesse d'autres unités de code dans votre application. Les programmeurs le font pour assurer la fiabilité, détecter les bugs tôt dans le cycle de développement, et faciliter le refactoring du code futur sans conséquences involontaires.

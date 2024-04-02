@@ -9,9 +9,8 @@ summary: "XML \xE4r ett m\xE4rkspr\xE5k som anv\xE4nds f\xF6r att lagra och tran
   \ data. Programmerare arbetar med XML f\xF6r att m\xF6jligg\xF6ra interoperabilitet\
   \ mellan\u2026"
 title: Att arbeta med XML
+weight: 40
 ---
-
-{{< edit_this_page >}}
 
 ## Vad och varför?
 XML är ett märkspråk som används för att lagra och transportera data. Programmerare arbetar med XML för att möjliggöra interoperabilitet mellan applikationer och system - tänk datautbyte och konfigurationsinställningar.

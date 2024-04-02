@@ -13,9 +13,8 @@ summary: "L\u1EA5y ng\xE0y hi\u1EC7n t\u1EA1i trong m\u1ED9t ch\u01B0\u01A1ng tr
   u?\" Ch\xFAng ta l\xE0m \u0111i\u1EC1u n\xE0y \u0111\u1EC3 ghi d\u1EA5u th\u1EDD\
   i gian c\xE1c s\u1EF1 ki\u1EC7n, x\u1EED l\xFD\u2026"
 title: "L\u1EA5y ng\xE0y hi\u1EC7n t\u1EA1i"
+weight: 29
 ---
-
-{{< edit_this_page >}}
 
 ## Cái gì & Tại sao?
 Lấy ngày hiện tại trong một chương trình giống như việc hỏi, "Hôm nay là ngày bao nhiêu?" Chúng ta làm điều này để ghi dấu thời gian các sự kiện, xử lý lịch trình, hoặc chỉ đơn giản là cho người dùng biết hôm nay là ngày nào.

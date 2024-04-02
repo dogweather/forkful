@@ -7,9 +7,8 @@ model: gpt-4-1106-preview
 summary: "Logging is the process of recording application behaviors, errors, and other\
   \ important info to a persisting medium, like a file or database. Programmers\u2026"
 title: Logging
+weight: 17
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 Logging is the process of recording application behaviors, errors, and other important info to a persisting medium, like a file or database. Programmers do it to track the health and performance of their apps, to debug issues, and to keep an eye on what's going down under the hood in production environments.

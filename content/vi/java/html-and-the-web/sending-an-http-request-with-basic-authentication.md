@@ -14,9 +14,8 @@ summary: "Vi\u1EC7c g\u1EEDi m\u1ED9t y\xEAu c\u1EA7u HTTP v\u1EDBi x\xE1c th\u1
   o m\u1ED9t t\xE0i nguy\xEAn \u0111\u01B0\u1EE3c b\u1EA3o v\u1EC7. L\u1EADp\u2026"
 title: "G\u1EEDi m\u1ED9t y\xEAu c\u1EA7u HTTP v\u1EDBi x\xE1c th\u1EF1c c\u01A1 b\u1EA3\
   n"
+weight: 45
 ---
-
-{{< edit_this_page >}}
 
 ## Gì & Tại sao?
 Việc gửi một yêu cầu HTTP với xác thực cơ bản bao gồm việc thêm một header với tên người dùng và mật khẩu để truy cập vào một tài nguyên được bảo vệ. Lập trình viên sử dụng nó cho việc ủy quyền đơn giản trong dịch vụ web khi không cần thiết phải sử dụng các phương pháp tiên tiến hơn.

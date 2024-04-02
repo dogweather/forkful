@@ -11,9 +11,8 @@ summary: "Wypisywanie danych diagnostycznych w Dart polega na wy\u015Bwietlaniu 
   \ w konsoli podczas dzia\u0142ania programu, co pozwala programistom \u015Bledzi\u0107\
   \ przep\u0142yw\u2026"
 title: "Drukowanie komunikat\xF3w debugowania"
+weight: 33
 ---
-
-{{< edit_this_page >}}
 
 ## Co i dlaczego?
 

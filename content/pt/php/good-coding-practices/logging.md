@@ -9,9 +9,8 @@ summary: "O registro de atividades (logging) \xE9 basicamente como manter um di\
   rio para o seu c\xF3digo; \xE9 o ato de gravar eventos, erros e outros pontos de\
   \ dados\u2026"
 title: Registro de Logs
+weight: 17
 ---
-
-{{< edit_this_page >}}
 
 ## O Quê & Porquê?
 

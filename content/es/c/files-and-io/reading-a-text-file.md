@@ -10,9 +10,8 @@ model: gpt-4-0125-preview
 summary: "Leer un archivo de texto en C involucra abrir un archivo en tu sistema para\
   \ extraer informaci\xF3n y manipularla o mostrarla seg\xFAn sea necesario. Los\u2026"
 title: Leyendo un archivo de texto
+weight: 22
 ---
-
-{{< edit_this_page >}}
 
 ## Qué y Por Qué?
 

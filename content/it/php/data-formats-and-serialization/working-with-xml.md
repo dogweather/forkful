@@ -7,9 +7,8 @@ model: gpt-4-0125-preview
 summary: "XML \xE8 un linguaggio di markup utilizzato per memorizzare e trasportare\
   \ dati. I programmatori lavorano con XML per consentire l'interoperabilit\xE0 tra\u2026"
 title: Lavorare con XML
+weight: 40
 ---
-
-{{< edit_this_page >}}
 
 ## Cos'è & Perché?
 XML è un linguaggio di markup utilizzato per memorizzare e trasportare dati. I programmatori lavorano con XML per consentire l'interoperabilità tra applicazioni e sistemi - pensate allo scambio di dati e alle impostazioni di configurazione.

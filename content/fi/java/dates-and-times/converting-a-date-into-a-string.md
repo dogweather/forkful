@@ -9,9 +9,8 @@ summary: "Muunnamme p\xE4iv\xE4m\xE4\xE4r\xE4n merkkijonoksi, koska ihmissilm\xE
   lle ymm\xE4rrett\xE4v\xE4 muoto on helpompi k\xE4sitell\xE4. Ohjelmoinnissa se on\
   \ hy\xF6dyllist\xE4 lokitusta,\u2026"
 title: "P\xE4iv\xE4m\xE4\xE4r\xE4n muuntaminen merkkijonoksi"
+weight: 28
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why? (Mitä ja Miksi?)
 Muunnamme päivämäärän merkkijonoksi, koska ihmissilmälle ymmärrettävä muoto on helpompi käsitellä. Ohjelmoinnissa se on hyödyllistä lokitusta, käyttöliittymien näyttöä ja päivämääräkäsittelyä varten.

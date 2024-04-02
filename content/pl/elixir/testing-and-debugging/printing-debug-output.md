@@ -9,9 +9,8 @@ summary: "Debugowanie to jak detektywowanie w kodzie \u2013 szukamy b\u0142\u011
   d\xF3w, u\u017Cywaj\u0105c wydruk\xF3w, \u017Ceby zobaczy\u0107, co si\u0119 dzieje\
   \ w trakcie dzia\u0142ania programu. Drukujemy r\xF3\u017Cne\u2026"
 title: "Drukowanie komunikat\xF3w debugowania"
+weight: 33
 ---
-
-{{< edit_this_page >}}
 
 ## Co i dlaczego?
 Debugowanie to jak detektywowanie w kodzie – szukamy błędów, używając wydruków, żeby zobaczyć, co się dzieje w trakcie działania programu. Drukujemy różne informacje, by zrozumieć przyczyny problemów i je naprawić.

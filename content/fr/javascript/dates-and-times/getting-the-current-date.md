@@ -11,9 +11,8 @@ summary: "Obtenir la date courante en JavaScript est une t\xE2che fondamentale, 
   \ implique de r\xE9cup\xE9rer et \xE9ventuellement de manipuler la date et l'heure\
   \ du jour.\u2026"
 title: Obtenir la date actuelle
+weight: 29
 ---
-
-{{< edit_this_page >}}
 
 ## Quoi et Pourquoi ?
 Obtenir la date courante en JavaScript est une tâche fondamentale, qui implique de récupérer et éventuellement de manipuler la date et l'heure du jour. Les programmeurs réalisent cette opération pour afficher les dates sur les sites web, dans les applications, pour suivre les interactions des utilisateurs ou pour gérer des données sensibles au temps.

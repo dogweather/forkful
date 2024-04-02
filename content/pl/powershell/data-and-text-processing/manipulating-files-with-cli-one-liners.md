@@ -9,9 +9,8 @@ summary: "Manipulowanie plikami przy u\u017Cyciu jednolinijkowc\xF3w CLI w Power
   \ to sprawa szybkiej zmiany, przenoszenia lub uzyskiwania danych pliku bezpo\u015B\
   rednio z\u2026"
 title: "Manipulowanie plikami za pomoc\u0105 jednolinijkowc\xF3w CLI"
+weight: 31
 ---
-
-{{< edit_this_page >}}
 
 ## Co i dlaczego?
 

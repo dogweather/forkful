@@ -8,9 +8,8 @@ model: gpt-4-1106-preview
 summary: "\xC5 organisere kode i funksjoner inneb\xE6rer \xE5 gruppere relaterte operasjoner\
   \ i gjenbrukbare blokker. Vi gj\xF8r dette for \xE5 forbedre lesbarhet og\u2026"
 title: Organisering av kode i funksjoner
+weight: 18
 ---
-
-{{< edit_this_page >}}
 
 ## Hva & Hvorfor?
 Å organisere kode i funksjoner innebærer å gruppere relaterte operasjoner i gjenbrukbare blokker. Vi gjør dette for å forbedre lesbarhet og vedlikeholdbarhet, redusere duplisering, og forenkle testing.

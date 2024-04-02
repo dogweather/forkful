@@ -9,9 +9,8 @@ summary: "Virheiden k\xE4sittely on tapa, jolla koodisi k\xE4sittelee ongelmia, 
   \ ilmenev\xE4t suorituksen aikana - kuin ottaisi vastaan \xE4killisen sy\xF6t\xF6\
   n pudottamatta\u2026"
 title: "Virheiden k\xE4sittely"
+weight: 16
 ---
-
-{{< edit_this_page >}}
 
 ## Mikä & Miksi?
 Virheiden käsittely on tapa, jolla koodisi käsittelee ongelmia, jotka ilmenevät suorituksen aikana - kuin ottaisi vastaan äkillisen syötön pudottamatta sitä. Ohjelmoijat tekevät sen estääkseen sovelluksen kaatumisen ja tarjotakseen käyttäjille sujuvan kokemuksen.

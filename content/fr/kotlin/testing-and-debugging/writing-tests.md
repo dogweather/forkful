@@ -11,9 +11,8 @@ summary: "\xC9crire des tests en Kotlin consiste \xE0 cr\xE9er des extraits de c
   \ qui valident automatiquement la correction fonctionnelle de vos modules logiciels,\
   \ en\u2026"
 title: "R\xE9daction de tests"
+weight: 36
 ---
-
-{{< edit_this_page >}}
 
 ## Quoi & Pourquoi ?
 

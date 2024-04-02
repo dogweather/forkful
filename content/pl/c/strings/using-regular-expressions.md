@@ -11,9 +11,8 @@ summary: "Wyra\u017Cenia regularne (regex) dostarczaj\u0105 sposobu na wyszukiwa
   \ dopasowywanie i manipulowanie ci\u0105gami znak\xF3w przy u\u017Cyciu zdefiniowanych\
   \ wzorc\xF3w.\u2026"
 title: "Korzystanie z wyra\u017Ce\u0144 regularnych"
+weight: 11
 ---
-
-{{< edit_this_page >}}
 
 ## Czym i Dlaczego?
 

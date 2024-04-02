@@ -8,9 +8,8 @@ model: gpt-4-0125-preview
 summary: "Writing to standard error (stderr) in JavaScript is about directing error\
   \ messages or any critical information to a specific, separate stream, which is\u2026"
 title: Writing to standard error
+weight: 25
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 Writing to standard error (stderr) in JavaScript is about directing error messages or any critical information to a specific, separate stream, which is especially useful in Unix-like environments for logging and debugging purposes. Programmers do this to differentiate normal program output from error messages, allowing for cleaner output management and easier error monitoring.

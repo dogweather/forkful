@@ -8,9 +8,8 @@ model: gpt-4-1106-preview
 summary: "Calcolare una data nel futuro o nel passato \xE8 una pratica comune in programmazione,\
   \ utile per gestire eventi, scadenze e funzionalit\xE0 legate al tempo. I\u2026"
 title: Calcolo di una data futura o passata
+weight: 26
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 Calcolare una data nel futuro o nel passato è una pratica comune in programmazione, utile per gestire eventi, scadenze e funzionalità legate al tempo. I programmatori lo fanno per tracciare periodi di tempo, programmare compiti futuri o analizzare dati storici.

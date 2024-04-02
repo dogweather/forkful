@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Liczby zespolone, przedstawiane jako kombinacja jednostek rzeczywistych\
   \ i urojonych (np. 3 + 4i), s\u0105 fundamentalne w r\xF3\u017Cnych problemach obliczeniowych,\u2026"
 title: Praca z liczbami zespolonymi
+weight: 14
 ---
-
-{{< edit_this_page >}}
 
 ## Co & Dlaczego?
 Liczby zespolone, przedstawiane jako kombinacja jednostek rzeczywistych i urojonych (np. 3 + 4i), są fundamentalne w różnych problemach obliczeniowych, zwłaszcza w inżynierii, fizyce i matematyce stosowanej. Nauka manipulowania tymi liczbami w Google Apps Script pozwala programistom rozszerzyć ich możliwości na obliczenia naukowe, przetwarzanie sygnałów i dalej.

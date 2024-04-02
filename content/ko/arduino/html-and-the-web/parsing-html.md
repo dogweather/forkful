@@ -23,9 +23,8 @@ summary: "\uC544\uB450\uC774\uB178 \uD504\uB85C\uC81D\uD2B8\uC5D0\uC11C HTML \uD
   \uD574 \uC6F9\uC0AC\uC774\uD2B8\uC5D0\uC11C \uB370\uC774\uD130\uB97C \uC218\uC9D1\
   \uD558\uAC8C \uD569\uB2C8\uB2E4."
 title: "HTML \uD30C\uC2F1"
+weight: 43
 ---
-
-{{< edit_this_page >}}
 
 ## 무엇인가 & 왜?
 

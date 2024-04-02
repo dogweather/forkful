@@ -8,9 +8,8 @@ model: gpt-4-1106-preview
 summary: "Das Herunterladen einer Webseite l\xE4dt deren Inhalt programmatisch herunter,\
   \ um Daten zu sammeln oder Dienste zu integrieren. Entwickler tun dies, um\u2026"
 title: Webseite herunterladen
+weight: 42
 ---
-
-{{< edit_this_page >}}
 
 ## Was & Warum?
 Das Herunterladen einer Webseite lädt deren Inhalt programmatisch herunter, um Daten zu sammeln oder Dienste zu integrieren. Entwickler tun dies, um Webinhalte in Apps zu nutzen oder um Informationen für Datenanalyse und -verarbeitung zu extrahieren.

@@ -11,9 +11,8 @@ summary: "Extrair substrings em C envolve criar uma string menor (substring) a p
   \ de uma string maior com base em crit\xE9rios especificados, como posi\xE7\xE3\
   o e\u2026"
 title: Extraindo substrings
+weight: 6
 ---
-
-{{< edit_this_page >}}
 
 ## O quê & Por quê?
 

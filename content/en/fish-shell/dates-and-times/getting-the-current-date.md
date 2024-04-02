@@ -7,9 +7,8 @@ model: gpt-4-0125-preview
 summary: "Getting the current date in programming is a fundamental task that allows\
   \ you to retrieve and manipulate the system's date and time data. In scripting and\u2026"
 title: Getting the current date
+weight: 29
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 Getting the current date in programming is a fundamental task that allows you to retrieve and manipulate the system's date and time data. In scripting and automation tasks, it's essential for generating timestamps, scheduling tasks, and creating logs.

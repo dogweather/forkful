@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Die Umwandlung eines Datums in einen String in C beinhaltet die \xDCbersetzung\
   \ einer Datenstruktur oder eines Zeitstempels in ein menschenlesbares Format.\u2026"
 title: Ein Datum in einen String umwandeln
+weight: 28
 ---
-
-{{< edit_this_page >}}
 
 ## Was & Warum?
 

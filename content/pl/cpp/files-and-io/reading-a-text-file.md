@@ -9,9 +9,8 @@ summary: "Odczytywanie pliku tekstowego to proces wydobycia informacji zapisanyc
   \ w pliku na dysku. Programi\u015Bci robi\u0105 to, by umo\u017Cliwi\u0107 aplikacjom\
   \ korzystanie z\u2026"
 title: Odczytywanie pliku tekstowego
+weight: 22
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why? (Co i dlaczego?)
 Odczytywanie pliku tekstowego to proces wydobycia informacji zapisanych w pliku na dysku. Programiści robią to, by umożliwić aplikacjom korzystanie z danych, takich jak ustawienia, dane wejściowe użytkownika czy zawartość do przetworzenia.

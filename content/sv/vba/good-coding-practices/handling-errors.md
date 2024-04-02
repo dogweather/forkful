@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Felhantering i Visual Basic for Applications (VBA) syftar till processen\
   \ att f\xF6rutse, uppt\xE4cka och l\xF6sa programmerings-, applikations- eller\u2026"
 title: Hantera fel
+weight: 16
 ---
-
-{{< edit_this_page >}}
 
 ## Vad & Varför?
 

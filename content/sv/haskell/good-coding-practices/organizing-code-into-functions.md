@@ -9,9 +9,8 @@ summary: "Att organisera kod i funktioner i Haskell inneb\xE4r att bryta ner din
   \ i \xE5teranv\xE4ndbara, namngivna block. Varf\xF6r? Det h\xE5ller din kod DRY\
   \ (Don't Repeat\u2026"
 title: Att organisera kod i funktioner
+weight: 18
 ---
-
-{{< edit_this_page >}}
 
 ## Vad & Varför?
 Att organisera kod i funktioner i Haskell innebär att bryta ner din kod i återanvändbara, namngivna block. Varför? Det håller din kod DRY (Don't Repeat Yourself), gör den läslig, och enklare att felsöka.

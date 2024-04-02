@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Escribir un archivo de texto en C implica crear o abrir un archivo en modo\
   \ de escritura y luego usar las funciones de E/S de archivos de C para guardar\u2026"
 title: Escribiendo un archivo de texto
+weight: 24
 ---
-
-{{< edit_this_page >}}
 
 ## ¿Qué y Por Qué?
 

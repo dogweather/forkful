@@ -10,9 +10,8 @@ model: gpt-4-0125-preview
 summary: "Een datum omzetten naar een tekenreeks betekent het wijzigen van het datumformaat\
   \ van de ruwe of timestampvorm naar een voor mensen leesbare reeks tekens.\u2026"
 title: Een datum converteren naar een string
+weight: 28
 ---
-
-{{< edit_this_page >}}
 
 ## Wat & Waarom?
 Een datum omzetten naar een tekenreeks betekent het wijzigen van het datumformaat van de ruwe of timestampvorm naar een voor mensen leesbare reeks tekens. Programmeurs doen dit om data op een gebruiksvriendelijke manier weer te geven of om data voor te bereiden voor opslag en vergelijking in databases en logs.

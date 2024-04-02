@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Interaktiivinen komentotulkki, joka on tunnettu my\xF6s nimityksell\xE4\
   \ Lue-Arvo-Tulosta-Silmukka (REPL), mahdollistaa ohjelmoijille ilmaisujen tai koodin\u2026"
 title: "Interaktiivisen kuoren (REPL) k\xE4ytt\xE4minen"
+weight: 34
 ---
-
-{{< edit_this_page >}}
 
 ## Mikä & Miksi?
 

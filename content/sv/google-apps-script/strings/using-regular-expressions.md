@@ -11,9 +11,8 @@ summary: "Regulj\xE4ra uttryck (regex) \xE4r m\xF6nster som anv\xE4nds f\xF6r at
   \ matcha teckenkombinationer i str\xE4ngar. Programmerare anv\xE4nder dem f\xF6\
   r att s\xF6ka, redigera eller\u2026"
 title: "Anv\xE4nda regulj\xE4ra uttryck"
+weight: 11
 ---
-
-{{< edit_this_page >}}
 
 ## Vad & Varför?
 

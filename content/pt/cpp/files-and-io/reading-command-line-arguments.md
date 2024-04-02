@@ -9,9 +9,8 @@ summary: "Ler argumentos da linha de comando \xE9 capturar as entradas que usu\x
   rios passam ao iniciar um programa. Programadores fazem isso para permitir customiza\xE7\
   \xE3o\u2026"
 title: Lendo argumentos da linha de comando
+weight: 23
 ---
-
-{{< edit_this_page >}}
 
 ## O Quê & Porquê?
 Ler argumentos da linha de comando é capturar as entradas que usuários passam ao iniciar um programa. Programadores fazem isso para permitir customização e flexibilidade sem alterar o código-fonte.

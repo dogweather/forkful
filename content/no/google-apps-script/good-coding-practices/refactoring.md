@@ -11,9 +11,8 @@ summary: "Omstrukturering i programmeringsspr\xE5ket refererer til prosessen med
   \ restrukturere eksisterende dataprogramkode - endre faktoriseringen uten \xE5 endre\
   \ den\u2026"
 title: Refaktorering
+weight: 19
 ---
-
-{{< edit_this_page >}}
 
 ## Hva & Hvorfor?
 

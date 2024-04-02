@@ -7,9 +7,8 @@ model: gpt-4-0125-preview
 summary: "Manipular arquivos com CLI (Interface de Linha de Comando) com one-liners\
   \ envolve usar scripts ou comandos Bash para realizar a\xE7\xF5es em arquivos, como\u2026"
 title: Manipulando arquivos com one-liners de CLI
+weight: 31
 ---
-
-{{< edit_this_page >}}
 
 ## O Que & Por Quê?
 

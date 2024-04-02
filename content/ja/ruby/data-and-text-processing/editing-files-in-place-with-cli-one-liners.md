@@ -6,9 +6,8 @@ model: gpt-4-0125-preview
 summary: "\u2026"
 title: "CLI\u30EF\u30F3\u30E9\u30A4\u30CA\u30FC\u3067\u306E\u30D5\u30A1\u30A4\u30EB\
   \u306E\u30A4\u30F3\u30D7\u30EC\u30FC\u30B9\u7DE8\u96C6"
+weight: 32
 ---
-
-{{< edit_this_page >}}
 
 ## 何となぜ？
 

@@ -9,9 +9,8 @@ summary: "Lasketaan p\xE4iv\xE4m\xE4\xE4r\xE4 tulevaisuudessa tai menneisyydess\
   . Koodarit k\xE4ytt\xE4v\xE4t t\xE4t\xE4 esimerkiksi m\xE4\xE4r\xE4aikojen hallintaan\
   \ tai tapahtumien ajoittamiseen."
 title: "Tulevan tai menneen p\xE4iv\xE4m\xE4\xE4r\xE4n laskeminen"
+weight: 26
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why? - Mikä ja Miksi?
 Lasketaan päivämäärä tulevaisuudessa tai menneisyydessä. Koodarit käyttävät tätä esimerkiksi määräaikojen hallintaan tai tapahtumien ajoittamiseen.

@@ -11,9 +11,8 @@ summary: "Nedladdning av en webbsida i Visual Basic for Applications (VBA) inneb
   r att h\xE4mta HTML-inneh\xE5llet p\xE5 en webbsida fr\xE5n internet. Programmerare\
   \ utf\xF6r ofta\u2026"
 title: "H\xE4mta en webbsida"
+weight: 42
 ---
-
-{{< edit_this_page >}}
 
 ## Vad och varför?
 

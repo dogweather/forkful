@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "In PHP betekent het converteren van een string naar kleine letters dat alle\
   \ alfabetische karakters in een string worden getransformeerd naar hun kleine\u2026"
 title: Een string omzetten naar kleine letters
+weight: 4
 ---
-
-{{< edit_this_page >}}
 
 ## Wat & Waarom?
 

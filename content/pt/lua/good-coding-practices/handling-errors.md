@@ -9,9 +9,8 @@ summary: "Tratar erros na codifica\xE7\xE3o \xE9 esperar pelo inesperado. \xC9 a
   \ de se planejar para quando as coisas sa\xEDrem do controle, para que voc\xEA possa\
   \ manter seu\u2026"
 title: Tratamento de erros
+weight: 16
 ---
-
-{{< edit_this_page >}}
 
 ## O Que & Por Quê?
 Tratar erros na codificação é esperar pelo inesperado. É a arte de se planejar para quando as coisas saírem do controle, para que você possa manter seu programa funcionando suavemente.

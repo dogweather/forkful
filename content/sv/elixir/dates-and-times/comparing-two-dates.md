@@ -9,9 +9,8 @@ summary: "Att j\xE4mf\xF6ra tv\xE5 datum inneb\xE4r att granska deras relativa p
   \ p\xE5 tidslinjen. Programmerare g\xF6r detta f\xF6r att avg\xF6ra tidsintervaller,\
   \ h\xE4ndelseordning,\u2026"
 title: "J\xE4mf\xF6ra tv\xE5 datum"
+weight: 27
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 Att jämföra två datum innebär att granska deras relativa position på tidslinjen. Programmerare gör detta för att avgöra tidsintervaller, händelseordning, eller utföra tidsspecifika uppgifter, som att filtrera eller sortera poster.

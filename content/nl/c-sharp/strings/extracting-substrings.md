@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Substrings extraheren is het actie van een specifiek deel van een tekenreeks\
   \ grijpen \u2014 een beetje zoals het uitscheppen van je favoriete stuk van een\u2026"
 title: Substrings extraheren
+weight: 6
 ---
-
-{{< edit_this_page >}}
 
 ## Wat & Waarom?
 Substrings extraheren is het actie van een specifiek deel van een tekenreeks grijpen — een beetje zoals het uitscheppen van je favoriete stuk van een taart. Programmeurs doen dit om kleinere stukjes van een grotere tekenreeks te manipuleren, analyseren of valideren zonder te worstelen met het geheel.

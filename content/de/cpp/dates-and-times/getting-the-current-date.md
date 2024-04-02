@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Das Abrufen des aktuellen Datums in C++ ist eine grundlegende Aufgabe f\xFC\
   r Programme, die Daten verarbeiten oder anzeigen m\xFCssen, die auf der Systemuhr\u2026"
 title: Den aktuellen Datum abrufen
+weight: 29
 ---
-
-{{< edit_this_page >}}
 
 ## Was & Warum?
 Das Abrufen des aktuellen Datums in C++ ist eine grundlegende Aufgabe für Programme, die Daten verarbeiten oder anzeigen müssen, die auf der Systemuhr basieren. Es ist wesentlich für das Logging, Zeitstempeln, das Planen von Aufgaben und jede Funktionalität, die auf Daten und Zeit angewiesen ist.

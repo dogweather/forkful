@@ -11,9 +11,8 @@ summary: "\xC5 starte et nytt prosjekt i C inneb\xE6rer \xE5 sette opp en grunnl
   \ kodestruktur og milj\xF8 for effektivt \xE5 h\xE5ndtere utviklingsoppgaver. Programmerere\
   \ gj\xF8r\u2026"
 title: Starter et nytt prosjekt
+weight: 1
 ---
-
-{{< edit_this_page >}}
 
 ## Hva & Hvorfor?
 

@@ -8,9 +8,8 @@ model: gpt-4-0125-preview
 summary: "Les nombres complexes \xE9tendent l'id\xE9e de lignes num\xE9riques unidimensionnelles\
   \ \xE0 un plan complexe bidimensionnel. Les programmeurs les utilisent dans des\u2026"
 title: Manipulation des nombres complexes
+weight: 14
 ---
-
-{{< edit_this_page >}}
 
 ## Quoi & Pourquoi ?
 Les nombres complexes étendent l'idée de lignes numériques unidimensionnelles à un plan complexe bidimensionnel. Les programmeurs les utilisent dans des domaines tels que l'ingénierie, la physique et les graphiques pour des calculs nécessitant deux composants, comme les signaux ou les rotations.

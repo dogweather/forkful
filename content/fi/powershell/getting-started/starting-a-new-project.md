@@ -9,9 +9,8 @@ summary: "Uuden projektin aloittaminen on tyhj\xE4lt\xE4 p\xF6yd\xE4lt\xE4 alkav
   \ koodiprojektin luomista. Koodarit tekev\xE4t sen aloittaakseen uuden idean kehitt\xE4\
   misen tai\u2026"
 title: Uuden projektin aloittaminen
+weight: 1
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why? - Mitä & Miksi?
 Uuden projektin aloittaminen on tyhjältä pöydältä alkavan koodiprojektin luomista. Koodarit tekevät sen aloittaakseen uuden idean kehittämisen tai vastatakseen johonkin tarpeeseen.

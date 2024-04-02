@@ -11,9 +11,8 @@ summary: "I Elixir, kallade associativa arrayer f\xF6r Maps, \xE4r samlingar av 
   rde-par d\xE4r en unik nyckel pekar p\xE5 ett v\xE4rde. De \xE4r superpraktiska\
   \ f\xF6r att lagra\u2026"
 title: "Att anv\xE4nda associativa arrayer"
+weight: 15
 ---
-
-{{< edit_this_page >}}
 
 ## Vad & Varför?
 

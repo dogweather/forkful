@@ -15,9 +15,8 @@ summary: "Vi\u1EC7c t\xECm \u0111\u1ED9 d\xE0i c\u1EE7a chu\u1ED7i \u0111\u1EC1 
   c nh\u1EADn \u0111\u1EA7u v\xE0o, l\u1EB7p qua c\xE1c k\xFD t\u1EF1, ph\xE2n b\u1ED5\
   \ t\xE0i\u2026"
 title: "T\xECm chi\u1EC1u d\xE0i c\u1EE7a m\u1ED9t chu\u1ED7i k\xFD t\u1EF1"
+weight: 7
 ---
-
-{{< edit_this_page >}}
 
 ## Lý do và Mục đích
 

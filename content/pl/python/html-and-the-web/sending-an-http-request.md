@@ -9,9 +9,8 @@ summary: "Wys\u0142anie \u017C\u0105dania HTTP (Hypertext Transfer Protocol) to 
   b, w jaki nasz program mo\u017Ce komunikowa\u0107 si\u0119 z serwerami w Internecie.\
   \ Robimy to, \u017Ceby pobra\u0107\u2026"
 title: "Wysy\u0142anie \u017C\u0105dania HTTP"
+weight: 44
 ---
-
-{{< edit_this_page >}}
 
 ## Co i dlaczego?
 

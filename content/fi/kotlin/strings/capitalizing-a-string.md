@@ -11,9 +11,8 @@ summary: "Merkkijonon alkukirjaimen muuttaminen suureksi ohjelmoinnissa tarkoitt
   \ merkkijonon ensimm\xE4isen merkin muuttamista suuraakkoseksi, jos se ei jo ole,\
   \ mik\xE4\u2026"
 title: Merkkijonon muuttaminen isoiksi kirjaimiksi
+weight: 2
 ---
-
-{{< edit_this_page >}}
 
 ## Mikä & Miksi?
 

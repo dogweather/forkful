@@ -7,9 +7,8 @@ model: gpt-4-1106-preview
 summary: "Das Vergleichen von zwei Daten bedeutet, sie hinsichtlich ihrer zeitlichen\
   \ Reihenfolge zu pr\xFCfen. Programmierer machen das, um Zeitabschnitte zu\u2026"
 title: Vergleich von zwei Daten
+weight: 27
 ---
-
-{{< edit_this_page >}}
 
 ## Was & Warum?
 Das Vergleichen von zwei Daten bedeutet, sie hinsichtlich ihrer zeitlichen Reihenfolge zu prüfen. Programmierer machen das, um Zeitabschnitte zu berechnen, Fristen zu überwachen oder Chronologien zu ermitteln.

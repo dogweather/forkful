@@ -10,9 +10,8 @@ model: gpt-4-0125-preview
 summary: "Eine interaktive Shell, auch bekannt als Read-Eval-Print Loop (REPL), erm\xF6\
   glicht es Programmierern, Ausdr\xFCcke oder Code einzugeben und sofort Ergebnisse\u2026"
 title: Mit einer interaktiven Shell (REPL) arbeiten
+weight: 34
 ---
-
-{{< edit_this_page >}}
 
 ## Was und Warum?
 

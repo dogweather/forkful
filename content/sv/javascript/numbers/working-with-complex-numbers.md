@@ -7,9 +7,8 @@ model: gpt-4-0125-preview
 summary: "Komplexa tal \xE4r tal med en reell och en imagin\xE4r del (som 3 + 4i).\
   \ De dyker upp i olika programmeringsproblem, s\xE4rskilt inom signalbehandling,\u2026"
 title: Att arbeta med komplexa tal
+weight: 14
 ---
-
-{{< edit_this_page >}}
 
 ## Vad & Varför?
 Komplexa tal är tal med en reell och en imaginär del (som 3 + 4i). De dyker upp i olika programmeringsproblem, särskilt inom signalbehandling, kvantdatorer och lösning av polynomekvationer. Programmerare jonglerar dem för att effektivt hantera dessa typer av uppgifter.

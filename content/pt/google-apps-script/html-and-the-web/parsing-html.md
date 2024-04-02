@@ -11,9 +11,8 @@ summary: "Analisar HTML no Google Apps Script envolve extrair dados de conte\xFA
   \ HTML, o que \xE9 particularmente \xFAtil ao interagir com p\xE1ginas da web ou\
   \ fontes de\u2026"
 title: Analisando HTML
+weight: 43
 ---
-
-{{< edit_this_page >}}
 
 ## O que & Por quê?
 Analisar HTML no Google Apps Script envolve extrair dados de conteúdo HTML, o que é particularmente útil ao interagir com páginas da web ou fontes de dados baseadas na web. Programadores fazem isso para automatizar a coleta de dados, manipular conteúdo web ou integrar funcionalidades da web com aplicativos do Google como Planilhas e Documentos.

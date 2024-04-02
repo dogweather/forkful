@@ -7,9 +7,8 @@ model: gpt-4-1106-preview
 summary: Converting a date to a string changes the date object into a text format.
   Programmers do this for readability, storage, or to display dates to users.
 title: Converting a date into a string
+weight: 28
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 

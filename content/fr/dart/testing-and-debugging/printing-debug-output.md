@@ -11,9 +11,8 @@ summary: "Imprimer le d\xE9bogage dans Dart consiste \xE0 afficher des informati
   \ dans la console pendant l'ex\xE9cution, permettant aux d\xE9veloppeurs de suivre\
   \ le flux\u2026"
 title: "Imprimer la sortie de d\xE9bogage"
+weight: 33
 ---
-
-{{< edit_this_page >}}
 
 ## Quoi et Pourquoi ?
 

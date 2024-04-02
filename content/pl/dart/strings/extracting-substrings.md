@@ -11,9 +11,8 @@ summary: "Wyodr\u0119bnianie podci\u0105g\xF3w dotyczy pozyskiwania okre\u015Blo
   \ cz\u0119\u015Bci ci\u0105gu na podstawie ich pozycji lub wzorc\xF3w. Programi\u015B\
   ci robi\u0105 to w celu zada\u0144 takich jak\u2026"
 title: "Wydobywanie podci\u0105g\xF3w"
+weight: 6
 ---
-
-{{< edit_this_page >}}
 
 ## Co i dlaczego?
 Wyodrębnianie podciągów dotyczy pozyskiwania określonych części ciągu na podstawie ich pozycji lub wzorców. Programiści robią to w celu zadań takich jak analizowanie danych wejściowych użytkownika, manipulacja danymi, lub ekstrahowanie istotnych informacji z większych źródeł tekstu.

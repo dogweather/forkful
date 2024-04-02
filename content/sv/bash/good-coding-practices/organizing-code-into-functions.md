@@ -9,9 +9,8 @@ summary: "Att dela upp kod i funktioner inneb\xE4r att man bryter ned skript i m
   \ \xE5teranv\xE4ndbara block som utf\xF6r specifika uppgifter. Det g\xF6r koden\
   \ renare, mer\u2026"
 title: Att organisera kod i funktioner
+weight: 18
 ---
-
-{{< edit_this_page >}}
 
 ## Vad & Varför?
 Att dela upp kod i funktioner innebär att man bryter ned skript i mindre, återanvändbara block som utför specifika uppgifter. Det gör koden renare, mer begriplig och lättare att felsöka.

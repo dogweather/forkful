@@ -9,9 +9,8 @@ summary: "Sletting av tegn som matcher et m\xF8nster gj\xF8r at vi kan finrense 
   \ ved \xE5 ta vekk u\xF8nskede deler, som ekstrategn eller kode. Programmerere gj\xF8\
   r dette\u2026"
 title: "Slette tegn som matcher et m\xF8nster"
+weight: 5
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why? (Hva & Hvorfor?)
 Sletting av tegn som matcher et mønster gjør at vi kan finrense tekst ved å ta vekk uønskede deler, som ekstrategn eller kode. Programmerere gjør dette for å bearbeide data smidig og automatisere tekstbehandlingen.

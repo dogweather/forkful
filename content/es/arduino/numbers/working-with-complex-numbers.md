@@ -8,9 +8,8 @@ model: gpt-4-0125-preview
 summary: "Los n\xFAmeros complejos tienen una parte real y una parte imaginaria, escritos\
   \ t\xEDpicamente como `a + bi`. Son vitales para algunos proyectos de Arduino que\u2026"
 title: "Trabajando con n\xFAmeros complejos"
+weight: 14
 ---
-
-{{< edit_this_page >}}
 
 ## Qué y Por Qué?
 Los números complejos tienen una parte real y una parte imaginaria, escritos típicamente como `a + bi`. Son vitales para algunos proyectos de Arduino que requieren de matemáticas avanzadas, incluyendo el procesamiento de señales, ingeniería eléctrica, o cualquier otro dominio donde los fenómenos se modelan mejor en un plano.

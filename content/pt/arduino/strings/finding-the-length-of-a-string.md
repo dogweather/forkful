@@ -8,9 +8,8 @@ model: gpt-4-1106-preview
 summary: "Descobrir o tamanho de uma string significa saber quantos caracteres ela\
   \ possui. Programadores fazem isso para manipular texto de forma eficiente, validar\u2026"
 title: Descobrindo o comprimento de uma string
+weight: 7
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 Descobrir o tamanho de uma string significa saber quantos caracteres ela possui. Programadores fazem isso para manipular texto de forma eficiente, validar entradas ou economizar memória.

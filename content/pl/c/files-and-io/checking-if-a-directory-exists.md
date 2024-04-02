@@ -11,9 +11,8 @@ summary: "Sprawdzanie, czy katalog istnieje w j\u0119zyku C, polega na zapytaniu
   \ plik\xF3w, aby zweryfikowa\u0107, czy okre\u015Blona \u015Bcie\u017Cka prowadzi\
   \ do katalogu.\u2026"
 title: Sprawdzanie, czy katalog istnieje
+weight: 20
 ---
-
-{{< edit_this_page >}}
 
 ## Co i dlaczego?
 

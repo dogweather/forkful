@@ -14,9 +14,8 @@ summary: "\u5408\u5E76\u5B57\u7B26\u4E32\u5C31\u662F\u628A\u591A\u4E2A\u5B57\u7B
   \u5355\u4E00\u5B57\u7B26\u4E32\uFF0C\u5F80\u5F80\u7528\u4E8E\u663E\u793A\u6D88\u606F\
   \u3001\u6784\u5EFA\u8F93\u51FA\u683C\u5F0F\u6216\u662F\u751F\u6210\u4EE3\u7801\u3002"
 title: "\u5B57\u7B26\u4E32\u62FC\u63A5"
+weight: 3
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why? (什么和为什么?)
 合并字符串就是把多个字符串拼接成一个。程序员这么做是因为要创建一个包含所有信息的单一字符串，往往用于显示消息、构建输出格式或是生成代码。

@@ -7,9 +7,8 @@ model: gpt-4-1106-preview
 summary: "La lecture de fichiers texte consiste \xE0 acc\xE9der au contenu stock\xE9\
   \ dans des fichiers sur le disque pour pouvoir le manipuler ou l'analyser. Les\u2026"
 title: Lecture d'un fichier texte
+weight: 22
 ---
-
-{{< edit_this_page >}}
 
 ## Quoi & Pourquoi ?
 La lecture de fichiers texte consiste à accéder au contenu stocké dans des fichiers sur le disque pour pouvoir le manipuler ou l'analyser. Les programmeurs le font pour diverses raisons, comme lire des configurations, des données ou encore des scripts.

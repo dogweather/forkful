@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Das Schreiben einer Textdatei in Bash erlaubt es, die Datenspeicherung,\
   \ das Logging, Konfigurationseinstellungen und mehr zu automatisieren. Es ist eine\u2026"
 title: Eine Textdatei schreiben
+weight: 24
 ---
-
-{{< edit_this_page >}}
 
 ## Was & Warum?
 

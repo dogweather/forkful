@@ -9,9 +9,8 @@ summary: "Liczby zespolone maj\u0105 cz\u0119\u015B\u0107 rzeczywist\u0105 i cz\
   \u015B\u0107 urojon\u0105, zazwyczaj zapisywane jako `a + bi`. S\u0105 kluczowe\
   \ w zaawansowanej matematyce, fizyce, in\u017Cynierii\u2026"
 title: Praca z liczbami zespolonymi
+weight: 14
 ---
-
-{{< edit_this_page >}}
 
 ## Co i dlaczego?
 Liczby zespolone mają część rzeczywistą i część urojoną, zazwyczaj zapisywane jako `a + bi`. Są kluczowe w zaawansowanej matematyce, fizyce, inżynierii oraz niektórych algorytmach komputerowych. Programiści pracują z nimi, aby radzić sobie z obliczeniami obejmującymi pierwiastki kwadratowe z liczb ujemnych oraz funkcje oscylacyjne.

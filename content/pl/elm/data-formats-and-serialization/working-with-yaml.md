@@ -9,9 +9,8 @@ summary: "YAML to format danych u\u017Cywany do konfiguracji i serializacji. Pro
   ci korzystaj\u0105 z niego ze wzgl\u0119du na jego czytelno\u015B\u0107 i prostot\u0119\
   ."
 title: Praca z yaml
+weight: 41
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why? (Co i Dlaczego?)
 

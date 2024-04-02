@@ -11,9 +11,8 @@ summary: "Les expressions r\xE9guli\xE8res (regex) en programmation sont utilis\
   es pour rechercher, correspondre et manipuler des cha\xEEnes de caract\xE8res bas\xE9\
   es sur des\u2026"
 title: "Utilisation des expressions r\xE9guli\xE8res"
+weight: 11
 ---
-
-{{< edit_this_page >}}
 
 ## Quoi et pourquoi ?
 

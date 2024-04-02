@@ -8,9 +8,8 @@ model: gpt-4-1106-preview
 summary: "Converter uma data em uma string em Rust \xE9 transformar um valor de data/hora\
   \ em um formato de texto leg\xEDvel. Fazemos isso principalmente para mostrar\u2026"
 title: Convertendo uma data em uma string
+weight: 28
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 

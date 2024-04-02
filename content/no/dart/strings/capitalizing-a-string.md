@@ -10,9 +10,8 @@ model: gpt-4-0125-preview
 summary: "Det \xE5 sette stor forbokstav i en streng inneb\xE6rer \xE5 endre den f\xF8\
   rste bokstaven i et ord eller en hel setning til stor bokstav, mens resten av tegnene\u2026"
 title: Sette stor bokstav i en streng
+weight: 2
 ---
-
-{{< edit_this_page >}}
 
 ## Hva & Hvorfor?
 

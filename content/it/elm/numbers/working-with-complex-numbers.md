@@ -8,9 +8,8 @@ model: gpt-4-0125-preview
 summary: "I numeri complessi sono una combinazione di numeri reali e immaginari, come\
   \ `a + bi` dove `i` \xE8 la radice quadrata di -1. Sono fondamentali in campi come\u2026"
 title: Lavorare con i numeri complessi
+weight: 14
 ---
-
-{{< edit_this_page >}}
 
 ## Cosa & Perché?
 I numeri complessi sono una combinazione di numeri reali e immaginari, come `a + bi` dove `i` è la radice quadrata di -1. Sono fondamentali in campi come l'ingegneria e la fisica per risolvere problemi che i numeri regolari non possono affrontare.

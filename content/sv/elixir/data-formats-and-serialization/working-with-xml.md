@@ -8,9 +8,8 @@ model: gpt-4-0125-preview
 summary: "Att arbeta med XML i Elixir inneb\xE4r att tolka, skapa och manipulera XML-data.\
   \ Programmerare tar sig an XML eftersom det \xE4r utbrett inom webbtj\xE4nster,\u2026"
 title: Att arbeta med XML
+weight: 40
 ---
-
-{{< edit_this_page >}}
 
 ## Vad & Varför?
 Att arbeta med XML i Elixir innebär att tolka, skapa och manipulera XML-data. Programmerare tar sig an XML eftersom det är utbrett inom webbtjänster, konfigurationsfiler och äldre system.

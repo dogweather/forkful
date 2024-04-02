@@ -11,9 +11,8 @@ summary: "Obliczanie daty w przysz\u0142o\u015Bci lub przesz\u0142o\u015Bci pole
   \ na manipulowaniu obiektami daty, aby znale\u017A\u0107 daty poza obecn\u0105 dat\u0105\
   \ lub przed ni\u0105, odpowiednio.\u2026"
 title: "Obliczanie daty w przysz\u0142o\u015Bci lub przesz\u0142o\u015Bci"
+weight: 26
 ---
-
-{{< edit_this_page >}}
 
 ## Co i dlaczego?
 

@@ -7,9 +7,8 @@ model: gpt-4-1106-preview
 summary: "L'interpolazione di stringhe consente di incastrare variabili direttamente\
   \ dentro una stringa. Facilita la lettura e la scrittura del codice, rendendolo\u2026"
 title: Interpolazione di una stringa
+weight: 8
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why? (Cosa e Perché?)
 L'interpolazione di stringhe consente di incastrare variabili direttamente dentro una stringa. Facilita la lettura e la scrittura del codice, rendendolo più pulito e semplificando la concatenazione delle stringhe.

@@ -9,9 +9,8 @@ summary: "Tilap\xE4istiedosto on v\xE4liaikainen s\xE4il\xF6 tietoja varten, kui
   \ kertak\xE4ytt\xF6astia koodille. Ohjelmoijat k\xE4ytt\xE4v\xE4t niit\xE4 turvallisen\
   \ testiymp\xE4rist\xF6n luomiseen,\u2026"
 title: "V\xE4liaikaistiedoston luominen"
+weight: 21
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 Tilapäistiedosto on väliaikainen säilö tietoja varten, kuin kertakäyttöastia koodille. Ohjelmoijat käyttävät niitä turvallisen testiympäristön luomiseen, välimuistina tai kun haluavat varmistaa, ettei sensitiivistä dataa tallennu pysyvästi.

@@ -11,9 +11,8 @@ summary: "Att konvertera en str\xE4ng till gemener \xE4r en grundl\xE4ggande ope
   \ som m\xF6jligg\xF6r enhetlighet och konsekvens i textbehandling, viktigt f\xF6\
   r uppgifter som\u2026"
 title: "Omvandla en str\xE4ng till gemener"
+weight: 4
 ---
-
-{{< edit_this_page >}}
 
 ## Vad & Varför?
 

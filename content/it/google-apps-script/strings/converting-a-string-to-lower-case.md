@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Convertire una stringa in minuscolo in Google Apps Script, un linguaggio\
   \ di scripting basato su cloud per automatizzare compiti attraverso i prodotti\u2026"
 title: Convertire una stringa in minuscolo
+weight: 4
 ---
-
-{{< edit_this_page >}}
 
 ## Cosa & Perché?
 

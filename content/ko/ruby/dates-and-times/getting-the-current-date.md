@@ -23,9 +23,8 @@ summary: "\uC5B4\uB5A4 \uD504\uB85C\uADF8\uB798\uBC0D \uC791\uC5C5\uC5D0\uC11C\u
   \uC6A9\uD558\uC5EC \uB0A0\uC9DC\uC640 \uAD00\uB828\uB41C \uC791\uC5C5\uC744 \uC27D\
   \uAC8C \uC218\uD589\uD560 \uC218 \uC788\uC2B5\uB2C8\uB2E4."
 title: "\uD604\uC7AC \uB0A0\uC9DC \uAC00\uC838\uC624\uAE30"
+weight: 29
 ---
-
-{{< edit_this_page >}}
 
 ## 무엇을, 왜?
 어떤 프로그래밍 작업에서든 현재 날짜를 가져오는 것은 거의 필수적인 작업입니다. 애플리케이션에서 활동을 기록하는 것부터 날짜 스탬프를 포함한 보고서를 생성하는 것까지 다양합니다. Ruby에서는 표준 라이브러리를 사용하여 날짜와 관련된 작업을 쉽게 수행할 수 있습니다.

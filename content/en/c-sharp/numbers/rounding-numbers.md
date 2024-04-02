@@ -8,9 +8,8 @@ model: gpt-4-1106-preview
 summary: "Rounding numbers means adjusting them to the nearest specified place value\u2014\
   think buckling them down to a simpler form. Programmers round off to control\u2026"
 title: Rounding numbers
+weight: 13
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 Rounding numbers means adjusting them to the nearest specified place value—think buckling them down to a simpler form. Programmers round off to control precision, boost performance, or when showing user-friendly results—like prices that don't need three decimal places.

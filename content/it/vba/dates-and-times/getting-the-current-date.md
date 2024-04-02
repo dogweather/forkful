@@ -11,9 +11,8 @@ summary: "In Visual Basic for Applications (VBA), recuperare la data corrente \x
   \ un compito comune che permette ai programmatori di lavorare dinamicamente con\
   \ le\u2026"
 title: Ottenere la data corrente
+weight: 29
 ---
-
-{{< edit_this_page >}}
 
 ## Cosa & Perché?
 

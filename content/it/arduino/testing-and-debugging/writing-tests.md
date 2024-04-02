@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Scrivere test nell'ambiente Arduino si riferisce al processo di creazione\
   \ di test automatizzati che validano la funzionalit\xE0 del tuo codice su dispositivi\u2026"
 title: Scrivere test
+weight: 36
 ---
-
-{{< edit_this_page >}}
 
 ## Cosa & Perché?
 

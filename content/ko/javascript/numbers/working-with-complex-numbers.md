@@ -19,9 +19,8 @@ summary: "\uBCF5\uC18C\uC218\uB294 \uC2E4\uC218\uBD80\uC640 \uD5C8\uC218\uBD80(\
   \ \uD6A8\uACFC\uC801\uC73C\uB85C \uCC98\uB9AC\uD558\uAE30 \uC704\uD574 \uBCF5\uC18C\
   \uC218\uB97C \uB2E4\uB8F9\uB2C8\uB2E4."
 title: "\uBCF5\uC18C\uC218 \uB2E4\uB8E8\uAE30"
+weight: 14
 ---
-
-{{< edit_this_page >}}
 
 ## 무엇 & 왜?
 복소수는 실수부와 허수부(예: 3 + 4i)를 가진 숫자입니다. 복소수는 신호 처리, 양자 컴퓨팅, 다항 방정식 풀이와 같은 다양한 프로그래밍 문제에서 나타나며, 프로그래머들은 이러한 종류의 작업을 효과적으로 처리하기 위해 복소수를 다룹니다.

@@ -13,9 +13,8 @@ summary: "\u0110\u1ECBnh d\u1EA1ng Gi\xE1 tr\u1ECB T\xE1ch b\u1EB1ng D\u1EA5u ph
   \u01A1n gi\u1EA3n v\xE0 d\u1EC5 d\xE0ng t\xEDch h\u1EE3p v\u1EDBi h\u1EA7u h\u1EBF\
   t c\xE1c ng\xF4n ng\u1EEF l\u1EADp tr\xECnh, bao g\u1ED3m\u2026"
 title: "L\xE0m vi\u1EC7c v\u1EDBi CSV"
+weight: 37
 ---
-
-{{< edit_this_page >}}
 
 ## Cái gì và Tại sao?
 

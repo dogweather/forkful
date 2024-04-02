@@ -11,9 +11,8 @@ summary: "Extraire des sous-cha\xEEnes en C consiste \xE0 cr\xE9er une cha\xEEne
   \ petite (sous-cha\xEEne) \xE0 partir d'une cha\xEEne plus grande en fonction de\
   \ crit\xE8res sp\xE9cifi\xE9s,\u2026"
 title: "Extraction de sous-cha\xEEnes"
+weight: 6
 ---
-
-{{< edit_this_page >}}
 
 ## Quoi et pourquoi ?
 

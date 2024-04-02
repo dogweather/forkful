@@ -8,9 +8,8 @@ model: gpt-4-1106-preview
 summary: "Wyszukiwanie i zamiana tekstu to podstawy manipulacji ci\u0105gami. Programi\u015B\
   ci u\u017Cywaj\u0105 tych technik do edycji danych, automatyzacji poprawek i przetwarzania\u2026"
 title: Wyszukiwanie i zamiana tekstu
+weight: 10
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why? (Co i dlaczego?)
 Wyszukiwanie i zamiana tekstu to podstawy manipulacji ciągami. Programiści używają tych technik do edycji danych, automatyzacji poprawek i przetwarzania wprowadzania.

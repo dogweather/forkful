@@ -11,9 +11,8 @@ summary: "Generare numeri casuali \xE8 un compito fondamentale nella programmazi
   \ che viene utilizzato per una miriade di applicazioni, come simulazioni, giochi\
   \ e\u2026"
 title: Generare numeri casuali
+weight: 12
 ---
-
-{{< edit_this_page >}}
 
 ## Cosa & Perché?
 

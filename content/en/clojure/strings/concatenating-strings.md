@@ -8,9 +8,8 @@ model: gpt-4-1106-preview
 summary: "Concatenating strings means sticking them end to end - \"hello\" + \"world\"\
   \ becomes \"helloworld\". Programmers do this to build up text, like URLs, messages,\u2026"
 title: Concatenating strings
+weight: 3
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 

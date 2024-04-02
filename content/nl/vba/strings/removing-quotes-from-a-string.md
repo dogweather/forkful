@@ -11,9 +11,8 @@ summary: "Het verwijderen van aanhalingstekens uit een string in VBA houdt in da
   \ enkele (`'`) of dubbele (`\"`) aanhalingstekens, die een string kunnen omsluiten\
   \ of\u2026"
 title: Quotes uit een string verwijderen
+weight: 9
 ---
-
-{{< edit_this_page >}}
 
 ## Wat & Waarom?
 

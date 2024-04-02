@@ -9,9 +9,8 @@ summary: "Komplexa tal best\xE5r av en reell del och en imagin\xE4r del. Program
   \ anv\xE4nder dem inom omr\xE5den s\xE5som signalbehandling, kvantmekanik och n\xE4\
   rhelst\u2026"
 title: Att arbeta med komplexa tal
+weight: 14
 ---
-
-{{< edit_this_page >}}
 
 ## Vad & Varför?
 Komplexa tal består av en reell del och en imaginär del. Programmerare använder dem inom områden såsom signalbehandling, kvantmekanik och närhelst uträkningen kräver det, eftersom vanliga reella tal helt enkelt inte är tillräckliga.

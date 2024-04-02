@@ -10,9 +10,8 @@ model: gpt-4-0125-preview
 summary: "Ohjelmoinnissa CSV-tiedostojen (pilkuin erotetut arvot) k\xE4sittely tarkoittaa\
   \ tietojen lukemista ja kirjoittamista tekstiedostoihin, jotka on j\xE4rjestetty\u2026"
 title: "Ty\xF6skentely CSV:n kanssa"
+weight: 37
 ---
-
-{{< edit_this_page >}}
 
 ## Mikä & Miksi?
 

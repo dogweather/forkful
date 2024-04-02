@@ -9,9 +9,8 @@ summary: "Att generera slumpm\xE4ssiga tal i JavaScript \xE4r en teknik som anv\
   nds f\xF6r att skapa of\xF6ruts\xE4gbarhet i applikationer, fr\xE5n spel som beh\xF6\
   ver slumpm\xE4ssigt\u2026"
 title: Generera slumptal
+weight: 12
 ---
-
-{{< edit_this_page >}}
 
 ## Vad & Varför?
 

@@ -9,9 +9,8 @@ summary: "S\xF8k og erstatt er prosessen med \xE5 finne tekststrenger og bytte d
   \ ut med noe annet. Programmerere bruker dette for \xE5 oppdatere kode, korrigere\
   \ feil,\u2026"
 title: "S\xF8king og erstatting av tekst"
+weight: 10
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 Søk og erstatt er prosessen med å finne tekststrenger og bytte dem ut med noe annet. Programmerere bruker dette for å oppdatere kode, korrigere feil, eller endre data på en effektiv måte.

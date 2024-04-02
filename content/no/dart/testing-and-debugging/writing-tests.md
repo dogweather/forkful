@@ -10,9 +10,8 @@ model: gpt-4-0125-preview
 summary: "\xC5 skrive tester i Dart involverer oppretting av testtilfeller for automatisk\
   \ \xE5 verifisere at forskjellige deler av programmet ditt fungerer som forventet.\u2026"
 title: Skrive tester
+weight: 36
 ---
-
-{{< edit_this_page >}}
 
 ## Hva & Hvorfor?
 

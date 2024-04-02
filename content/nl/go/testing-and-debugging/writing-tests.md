@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Tests schrijven in Go betekent kleine, beheersbare stukken code cre\xEB\
   ren die de functionaliteit en het gedrag van je applicatie valideren. Programmeurs\u2026"
 title: Tests Schrijven
+weight: 36
 ---
-
-{{< edit_this_page >}}
 
 ## Wat & Waarom?
 

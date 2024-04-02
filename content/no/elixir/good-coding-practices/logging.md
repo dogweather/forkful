@@ -7,9 +7,8 @@ model: gpt-4-1106-preview
 summary: "Logging i programvareutvikling er teknikken for \xE5 registrere hendelser\
   \ som finner sted mens et program kj\xF8rer, vanligvis til en fil eller et eksternt\u2026"
 title: "Loggf\xF8ring"
+weight: 17
 ---
-
-{{< edit_this_page >}}
 
 ## Hva & Hvorfor?
 Logging i programvareutvikling er teknikken for å registrere hendelser som finner sted mens et program kjører, vanligvis til en fil eller et eksternt system. Programmerere gjør dette for å få innsikt i programvarens oppførsel, feilsøke problemer, og vedlikeholde en historikk over operasjonsloggen som er kritisk for feilsøking og overvåkning av applikasjonenes helse.

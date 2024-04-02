@@ -11,9 +11,8 @@ summary: "Tekstitiedostoon kirjoittaminen Luassa tarkoittaa tiedoston luomista t
   \ avaamista kirjoitustilassa ja sen j\xE4lkeen tiedosto-operaatioiden k\xE4ytt\xE4\
   mist\xE4\u2026"
 title: Tekstitiedoston kirjoittaminen
+weight: 24
 ---
-
-{{< edit_this_page >}}
 
 ## Mikä & Miksi?
 

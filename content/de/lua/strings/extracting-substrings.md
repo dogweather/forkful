@@ -8,9 +8,8 @@ model: gpt-4-1106-preview
 summary: "Extrahieren von Teilstrings bedeutet, bestimmte Teile aus einem l\xE4ngeren\
   \ String herauszutrennen. Programmierer nutzen das, um Daten zu manipulieren, zu\u2026"
 title: Teilstrings extrahieren
+weight: 6
 ---
-
-{{< edit_this_page >}}
 
 ## Was & Warum?
 Extrahieren von Teilstrings bedeutet, bestimmte Teile aus einem längeren String herauszutrennen. Programmierer nutzen das, um Daten zu manipulieren, zu analysieren oder einfach spezifische Informationen aus einer größeren Menge von Text zu gewinnen.

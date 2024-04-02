@@ -11,9 +11,8 @@ summary: "\xC5 konvertere en streng til sm\xE5 bokstaver i Google Apps Script, e
   \ skybasert skriptspr\xE5k for automatisering av oppgaver p\xE5 tvers av Googles\
   \ produkter, er\u2026"
 title: "Konvertere en streng til sm\xE5 bokstaver"
+weight: 4
 ---
-
-{{< edit_this_page >}}
 
 ## Hva og Hvorfor?
 

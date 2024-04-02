@@ -10,9 +10,8 @@ model: gpt-4-0125-preview
 summary: "Een tekstbestand lezen in PHP betekent inhoud uit een bestand halen en in\
   \ je script brengen. Programmeurs doen dit om gegevensopslag, configuratie te\u2026"
 title: Een tekstbestand lezen
+weight: 22
 ---
-
-{{< edit_this_page >}}
 
 ## Wat & Waarom?
 Een tekstbestand lezen in PHP betekent inhoud uit een bestand halen en in je script brengen. Programmeurs doen dit om gegevensopslag, configuratie te beheren, of om grote datasets te verwerken zonder hun code te belasten.

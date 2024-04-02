@@ -11,9 +11,8 @@ summary: "Analisar HTML em Haskell permite extrair dados, manipular conte\xFAdo 
   \ ou interagir com p\xE1ginas web programaticamente. Essa opera\xE7\xE3o \xE9 essencial\
   \ para\u2026"
 title: Analisando HTML
+weight: 43
 ---
-
-{{< edit_this_page >}}
 
 ## O Quê & Porquê?
 

@@ -7,9 +7,8 @@ model: gpt-4-1106-preview
 summary: "Printing debug output is all about echoing data to the console to check\
   \ what's going on in your script. Programmers do it to track variables, follow logic\u2026"
 title: Printing debug output
+weight: 33
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 

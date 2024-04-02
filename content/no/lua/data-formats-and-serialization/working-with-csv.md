@@ -11,9 +11,8 @@ summary: "\xC5 arbeide med CSV (kommaseparerte verdier) filer inneb\xE6rer parsi
   \ og generering av tekstdata organisert i rader og kolonner, ved bruk av komma for\
   \ \xE5\u2026"
 title: Arbeide med CSV
+weight: 37
 ---
-
-{{< edit_this_page >}}
 
 ## Hva & Hvorfor?
 

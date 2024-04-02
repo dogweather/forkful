@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Command line argumenten lezen stelt je Python script in staat om netjes\
   \ om te gaan met gebruikersinvoer vanuit de terminal. Waarom? Wel, omdat\u2026"
 title: Commandoregelargumenten lezen
+weight: 23
 ---
-
-{{< edit_this_page >}}
 
 ## Wat & Waarom?
 

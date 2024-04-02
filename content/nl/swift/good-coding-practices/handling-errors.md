@@ -10,9 +10,8 @@ model: gpt-4-0125-preview
 summary: "Foutafhandeling in Swift betekent dat je anticipeert op en reageert op problemen\
   \ die opduiken wanneer je code wordt uitgevoerd. We doen dit om de chaos te\u2026"
 title: Fouten afhandelen
+weight: 16
 ---
-
-{{< edit_this_page >}}
 
 ## Wat & Waarom?
 Foutafhandeling in Swift betekent dat je anticipeert op en reageert op problemen die opduiken wanneer je code wordt uitgevoerd. We doen dit om de chaos te beheersen—om te voorkomen dat apps crashen en om de gebruiker een soepele ervaring te bieden.

@@ -7,9 +7,8 @@ model: gpt-4-1106-preview
 summary: "Enviar um pedido HTTP com autentica\xE7\xE3o b\xE1sica significa incluir\
   \ credenciais de usu\xE1rio e senha codificados em base-64 no cabe\xE7alho do pedido.\u2026"
 title: "Enviando uma requisi\xE7\xE3o HTTP com autentica\xE7\xE3o b\xE1sica"
+weight: 45
 ---
-
-{{< edit_this_page >}}
 
 ## O Que & Porquê?
 Enviar um pedido HTTP com autenticação básica significa incluir credenciais de usuário e senha codificados em base-64 no cabeçalho do pedido. Programadores fazem isso para acessar recursos protegidos em um servidor remotamente.

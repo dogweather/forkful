@@ -9,9 +9,8 @@ summary: "\"Printing debug output\" betyr \xE5 vise mellomliggende data fra et p
   \ for \xE5 forst\xE5 hva som skjer under kj\xF8ring. Programmerere gj\xF8r dette\
   \ for \xE5 feils\xF8ke\u2026"
 title: "Skrive ut feils\xF8kingsdata"
+weight: 33
 ---
-
-{{< edit_this_page >}}
 
 ## Hva & Hvorfor?
 "Printing debug output" betyr å vise mellomliggende data fra et program for å forstå hva som skjer under kjøring. Programmerere gjør dette for å feilsøke og finjustere kode.

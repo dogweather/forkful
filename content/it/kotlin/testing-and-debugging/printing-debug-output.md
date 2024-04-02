@@ -7,9 +7,8 @@ model: gpt-4-1106-preview
 summary: "Stampare output di debug permette di vedere che cosa succede nel codice\
   \ durante l'esecuzione. I programmatori lo fanno per scovare errori o comportamenti\u2026"
 title: Stampa dell'output di debug
+weight: 33
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 Stampare output di debug permette di vedere che cosa succede nel codice durante l'esecuzione. I programmatori lo fanno per scovare errori o comportamenti inaspettati.

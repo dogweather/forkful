@@ -11,9 +11,8 @@ summary: "Escribir en el error est\xE1ndar en Visual Basic para Aplicaciones (VB
   \ implica dirigir mensajes de error o diagn\xF3sticos aparte de la salida est\xE1\
   ndar,\u2026"
 title: "Escribir en el error est\xE1ndar"
+weight: 25
 ---
-
-{{< edit_this_page >}}
 
 ## Qué y Por Qué?
 

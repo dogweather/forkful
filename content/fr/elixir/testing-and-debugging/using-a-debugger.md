@@ -1,14 +1,15 @@
 ---
 date: 2024-01-26 03:48:20.046588-07:00
-description: "Utiliser un d\xE9bogueur avec Elixir consiste \xE0 parcourir votre code\
-  \ pas \xE0 pas, inspecter les variables et suivre les flux pour \xE9craser les bugs.\
-  \ Les\u2026"
+description: "Elixir est livr\xE9 avec un d\xE9bogueur graphique int\xE9gr\xE9 appel\xE9\
+  \ `:debugger`. Pour l'utiliser, vous devrez le d\xE9marrer et vous attacher \xE0\
+  \ votre processus en\u2026"
 lastmod: '2024-03-13T22:44:57.332030-06:00'
 model: gpt-4-0125-preview
-summary: "Utiliser un d\xE9bogueur avec Elixir consiste \xE0 parcourir votre code\
-  \ pas \xE0 pas, inspecter les variables et suivre les flux pour \xE9craser les bugs.\
-  \ Les\u2026"
+summary: "Elixir est livr\xE9 avec un d\xE9bogueur graphique int\xE9gr\xE9 appel\xE9\
+  \ `:debugger`. Pour l'utiliser, vous devrez le d\xE9marrer et vous attacher \xE0\
+  \ votre processus en\u2026"
 title: "Utilisation d'un d\xE9bogueur"
+weight: 35
 ---
 
 ## Comment faire :

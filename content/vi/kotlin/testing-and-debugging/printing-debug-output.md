@@ -13,9 +13,8 @@ summary: "In th\xF4ng tin g\u1EE1 l\u1ED7i ra m\xE0n h\xECnh c\u01A1 b\u1EA3n l\
   ng g\xEC \u0111ang di\u1EC5n ra b\xEAn trong m\xE3 c\u1EE7a h\u1ECD theo th\u1EDD\
   i gian th\u1EF1c. \u0110i\u1EC1u\u2026"
 title: "In ra th\xF4ng tin g\u1EE1 l\u1ED7i"
+weight: 33
 ---
-
-{{< edit_this_page >}}
 
 ## Cái gì & Tại sao?
 In thông tin gỡ lỗi ra màn hình cơ bản là cách mà lập trình viên "lén lút" nhìn vào những gì đang diễn ra bên trong mã của họ theo thời gian thực. Điều này rất quan trọng để theo dõi các lỗi và hiểu luồng mã mà không cần thiết lập các công cụ hoặc phiên gỡ lỗi chính thức.

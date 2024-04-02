@@ -11,9 +11,8 @@ summary: "Zapisywanie pliku tekstowego w j\u0119zyku C polega na utworzeniu lub 
   \ pliku w trybie zapisu, a nast\u0119pnie wykorzystaniu funkcji wej\u015Bcia/wyj\u015B\
   cia plik\xF3w\u2026"
 title: Pisanie pliku tekstowego
+weight: 24
 ---
-
-{{< edit_this_page >}}
 
 ## Co i dlaczego?
 

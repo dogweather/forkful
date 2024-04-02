@@ -11,9 +11,8 @@ summary: "\xC5 sjekke om en katalog eksisterer i Fish Shell gj\xF8r det mulig fo
   \ skript \xE5 ta beslutninger basert p\xE5 tilstedev\xE6relsen eller frav\xE6ret\
   \ av katalogstrukturer,\u2026"
 title: Sjekker om en mappe eksisterer
+weight: 20
 ---
-
-{{< edit_this_page >}}
 
 ## Hva & Hvorfor?
 Å sjekke om en katalog eksisterer i Fish Shell gjør det mulig for skript å ta beslutninger basert på tilstedeværelsen eller fraværet av katalogstrukturer, noe som muliggjør oppgaver som betingede filoperasjoner, logging eller oppsett av miljø. Denne teknikken er avgjørende for å skrive robuste skript som samhandler med filsystemet på en forutsigbar måte.

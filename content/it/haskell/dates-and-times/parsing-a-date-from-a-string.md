@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "L'analisi di una data da una stringa in Haskell consiste nel convertire\
   \ le rappresentazioni testuali delle date in un formato strutturato che il programma\u2026"
 title: Analisi di una data da una stringa
+weight: 30
 ---
-
-{{< edit_this_page >}}
 
 ## Cosa & Perché?
 

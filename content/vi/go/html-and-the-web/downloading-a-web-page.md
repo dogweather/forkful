@@ -13,9 +13,8 @@ summary: "T\u1EA3i v\u1EC1 m\u1ED9t trang web l\xE0 vi\u1EC7c l\u1EA5y n\u1ED9i 
   p tr\xECnh vi\xEAn th\u01B0\u1EDDng l\xE0m \u0111i\u1EC1u n\xE0y cho vi\u1EC7c thu\
   \ th\u1EADp d\u1EEF\u2026"
 title: "T\u1EA3i trang web v\u1EC1"
+weight: 42
 ---
-
-{{< edit_this_page >}}
 
 ## Cái gì và Tại sao?
 

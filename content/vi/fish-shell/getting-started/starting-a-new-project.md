@@ -15,9 +15,8 @@ summary: "B\u1EAFt \u0111\u1EA7u m\u1ED9t d\u1EF1 \xE1n m\u1EDBi c\xF3 ngh\u0129
   t code. C\xE1c l\u1EADp tr\xECnh vi\xEAn l\xE0m \u0111i\u1EC1u n\xE0y \u0111\u1EC3\
   \ kh\u1EDFi \u0111\u1EA7u\u2026"
 title: "B\u1EAFt \u0111\u1EA7u m\u1ED9t d\u1EF1 \xE1n m\u1EDBi"
+weight: 1
 ---
-
-{{< edit_this_page >}}
 
 ## Cái gì và Tại sao?
 Bắt đầu một dự án mới có nghĩa là khởi tạo một thư mục mới hoàn toàn với mọi thứ bạn cần để bắt đầu viết code. Các lập trình viên làm điều này để khởi đầu phát triển theo cách sạch sẽ, có tổ chức.

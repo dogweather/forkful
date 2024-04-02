@@ -9,9 +9,8 @@ summary: "Convertir un `string` a min\xFAsculas significa cambiar todas las letr
   \ may\xFAsculas de una cadena de texto a su versi\xF3n en min\xFAsculas. Esto se\
   \ hace a menudo\u2026"
 title: "Conversi\xF3n de una cadena de texto a min\xFAsculas"
+weight: 4
 ---
-
-{{< edit_this_page >}}
 
 ## ¿Qué & Por Qué?
 Convertir un `string` a minúsculas significa cambiar todas las letras mayúsculas de una cadena de texto a su versión en minúsculas. Esto se hace a menudo para normalizar los datos y facilitar comparaciones insensibles a mayúsculas.

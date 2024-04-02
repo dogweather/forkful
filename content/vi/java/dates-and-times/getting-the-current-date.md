@@ -15,9 +15,8 @@ summary: "L\u1EA5y ng\xE0y hi\u1EC7n t\u1EA1i trong Java d\u1EC5 nh\u01B0 \u0103
   \ th\u1ED1ng. C\xE1c l\u1EADp tr\xECnh vi\xEAn l\xE0m \u0111i\u1EC1u n\xE0y \u0111\
   \u1EC3\u2026"
 title: "L\u1EA5y ng\xE0y hi\u1EC7n t\u1EA1i"
+weight: 29
 ---
-
-{{< edit_this_page >}}
 
 ## Gì và Tại Sao?
 

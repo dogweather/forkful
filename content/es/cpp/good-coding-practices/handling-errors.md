@@ -7,9 +7,8 @@ model: gpt-4-1106-preview
 summary: "Manejar errores significa planificar para cuando las cosas salen mal. Es\
   \ vital porque ayuda a evitar fallos y hace que tu software sea robusto y amigable\u2026"
 title: Manejo de errores
+weight: 16
 ---
-
-{{< edit_this_page >}}
 
 ## ¿Qué y por qué?
 Manejar errores significa planificar para cuando las cosas salen mal. Es vital porque ayuda a evitar fallos y hace que tu software sea robusto y amigable para el usuario.

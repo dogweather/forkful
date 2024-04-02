@@ -9,9 +9,8 @@ summary: "Comparar duas datas \xE9 verificar se elas s\xE3o iguais, qual vem ant
   \ ou depois. Programadores fazem isso para controlar eventos, prazos, e para l\xF3\
   gica de\u2026"
 title: Comparando duas datas
+weight: 27
 ---
-
-{{< edit_this_page >}}
 
 ## O Quê & Por Quê?
 Comparar duas datas é verificar se elas são iguais, qual vem antes ou depois. Programadores fazem isso para controlar eventos, prazos, e para lógica de negócios como validações de períodos de oferta ou monitoramento de datas de vencimento.

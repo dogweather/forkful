@@ -11,9 +11,8 @@ summary: "\xC5 starte et nytt prosjekt i Visual Basic for Applications (VBA) inn
   rer \xE5 sette opp et milj\xF8 innenfor en vertsapplikasjon, som Excel, for \xE5\
   \ automatisere\u2026"
 title: "\xC5 starte et nytt prosjekt"
+weight: 1
 ---
-
-{{< edit_this_page >}}
 
 ## Hva & Hvorfor?
 

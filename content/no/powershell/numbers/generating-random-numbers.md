@@ -8,9 +8,8 @@ model: gpt-4-0125-preview
 summary: "Det \xE5 generere tilfeldige tall i PowerShell handler om \xE5 skape uforutsigbare\
   \ numeriske verdier innenfor et spesifisert omr\xE5de. Programmerere bruker denne\u2026"
 title: Generering av tilfeldige tall
+weight: 12
 ---
-
-{{< edit_this_page >}}
 
 ## Hva & Hvorfor?
 Det å generere tilfeldige tall i PowerShell handler om å skape uforutsigbare numeriske verdier innenfor et spesifisert område. Programmerere bruker denne funksjonen av mange grunner, inkludert testing, simulering og sikkerhetsformål, der uforutsigbarhet eller etterligning av virkelighetens tilfeldighet er avgjørende.

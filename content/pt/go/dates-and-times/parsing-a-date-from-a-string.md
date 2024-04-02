@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Analisar uma data a partir de uma string em Go envolve converter a data\
   \ representada como texto em um formato mais utiliz\xE1vel (por exemplo, `time.Time`).\u2026"
 title: Analisando uma data a partir de uma string
+weight: 30
 ---
-
-{{< edit_this_page >}}
 
 ## O Que & Por Quê?
 

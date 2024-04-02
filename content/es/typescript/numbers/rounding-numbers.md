@@ -9,9 +9,8 @@ summary: "Redondear n\xFAmeros implica ajustar un n\xFAmero a una precisi\xF3n e
   fica. Los programadores lo hacen para controlar la salida num\xE9rica para mejorar\
   \ la\u2026"
 title: "Redondeo de n\xFAmeros"
+weight: 13
 ---
-
-{{< edit_this_page >}}
 
 ## Qué y Por Qué?
 Redondear números implica ajustar un número a una precisión específica. Los programadores lo hacen para controlar la salida numérica para mejorar la legibilidad, fines de visualización o cuando se requiere una precisión específica después de operaciones que generan resultados de punto flotante.

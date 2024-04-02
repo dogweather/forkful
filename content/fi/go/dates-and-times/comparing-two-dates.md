@@ -11,9 +11,8 @@ summary: "P\xE4iv\xE4m\xE4\xE4rien vertailu ohjelmoinnissa on perustavaa laatua 
   \ teht\xE4v\xE4, joka mahdollistaa kehitt\xE4jien aikasuhteiden arvioinnin p\xE4\
   iv\xE4m\xE4\xE4rien v\xE4lill\xE4.\u2026"
 title: "Kahden p\xE4iv\xE4m\xE4\xE4r\xE4n vertailu"
+weight: 27
 ---
-
-{{< edit_this_page >}}
 
 ## Mikä ja miksi?
 

@@ -11,9 +11,8 @@ summary: "Les tableaux associatifs, ou objets en TypeScript, vous permettent d'u
   \ des cha\xEEnes de caract\xE8res (ou cl\xE9s) pour acc\xE9der aux paires de valeurs.\
   \ Les\u2026"
 title: Utilisation des tableaux associatifs
+weight: 15
 ---
-
-{{< edit_this_page >}}
 
 ## Quoi & Pourquoi ?
 

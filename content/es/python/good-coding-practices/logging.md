@@ -9,9 +9,8 @@ summary: "La generaci\xF3n de registros (logging) es el proceso de grabar evento
   \ de una aplicaci\xF3n mientras un programa se ejecuta, proporcionando un rastro\
   \ que puede\u2026"
 title: Registro de Actividades
+weight: 17
 ---
-
-{{< edit_this_page >}}
 
 ## ¿Qué y por qué?
 La generación de registros (logging) es el proceso de grabar eventos de una aplicación mientras un programa se ejecuta, proporcionando un rastro que puede ser analizado después de la ejecución y monitoreado en tiempo real. Los programadores lo hacen porque ayuda a depurar problemas, monitorear el rendimiento y rastrear las acciones de los usuarios por motivos de seguridad y análisis.

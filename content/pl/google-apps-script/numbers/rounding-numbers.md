@@ -11,9 +11,8 @@ summary: "Zaokr\u0105glanie liczb, podstawowe poj\u0119cie w programowaniu kompu
   \ polega na dopasowaniu liczby do najbli\u017Cszej liczby ca\u0142kowitej lub do\
   \ okre\u015Blonej\u2026"
 title: "Zaokr\u0105glanie liczb"
+weight: 13
 ---
-
-{{< edit_this_page >}}
 
 ## Co i dlaczego?
 

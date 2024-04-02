@@ -9,9 +9,8 @@ summary: "Runden von Zahlen bedeutet, eine Zahl auf die n\xE4chste ganze Zahl od
   \ auf eine bestimmte Dezimalgenauigkeit anzupassen. Wir runden Zahlen, um sie f\xFC\
   r die\u2026"
 title: Zahlen runden
+weight: 13
 ---
-
-{{< edit_this_page >}}
 
 ## Was & Warum?
 Runden von Zahlen bedeutet, eine Zahl auf die nächste ganze Zahl oder auf eine bestimmte Dezimalgenauigkeit anzupassen. Wir runden Zahlen, um sie für die menschliche Lesbarkeit zu vereinfachen, die Rechenlast zu reduzieren oder spezifischen numerischen Anforderungen zu entsprechen.

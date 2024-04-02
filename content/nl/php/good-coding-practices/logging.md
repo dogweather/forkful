@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Loggen is in feite te vergelijken met het bijhouden van een dagboek voor\
   \ je code; het is het registreren van gebeurtenissen, fouten en andere significante\u2026"
 title: Logboekregistratie
+weight: 17
 ---
-
-{{< edit_this_page >}}
 
 ## Wat & Waarom?
 

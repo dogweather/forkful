@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "HTML:n j\xE4sent\xE4minen Arduino-projekteissa koskee tietojen poimimista\
   \ verkkosivuilta. Ohjelmoijat tekev\xE4t t\xE4m\xE4n mahdollistaakseen Arduinolaitteidensa\u2026"
 title: "HTML:n j\xE4sennys"
+weight: 43
 ---
-
-{{< edit_this_page >}}
 
 ## Mikä & Miksi?
 

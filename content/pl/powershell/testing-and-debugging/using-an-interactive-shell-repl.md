@@ -9,9 +9,8 @@ summary: "Interaktywna pow\u0142oka, czyli p\u0119tla Read-Eval-Print (REPL), po
   \ na wprowadzanie polece\u0144 PowerShell i uzyskiwanie natychmiastowego odzewu.\
   \ Programi\u015Bci\u2026"
 title: Korzystanie z interaktywnego shella (REPL)
+weight: 34
 ---
-
-{{< edit_this_page >}}
 
 ## Co & Dlaczego?
 Interaktywna powłoka, czyli pętla Read-Eval-Print (REPL), pozwala na wprowadzanie poleceń PowerShell i uzyskiwanie natychmiastowego odzewu. Programiści używają jej do szybkiego testowania fragmentów kodu, debugowania, lub nauki nowych poleceń bez konieczności pisania pełnego skryptu.

@@ -13,9 +13,8 @@ summary: "Ph\xE2n t\xEDch c\xFA ph\xE1p HTML c\xF3 ngh\u0129a l\xE0 l\u1ECDc qua
   ng nh\u01B0 t\xECm s\u1ED1 \u0111i\u1EC7n tho\u1EA1i tr\xEAn m\u1ED9t trang li\xEA\
   n h\u1EC7. T\u1EA1i sao l\u1EA1i l\xE0m\u2026"
 title: "Ph\xE2n T\xEDch C\xFA Ph\xE1p HTML"
+weight: 43
 ---
-
-{{< edit_this_page >}}
 
 ## Điều gì và Tại sao?
 Phân tích cú pháp HTML có nghĩa là lọc qua mã HTML để trích xuất các phần hữu ích - giống như tìm số điện thoại trên một trang liên hệ. Tại sao lại làm điều này? Để tự động hóa việc thu thập dữ liệu hoặc tương tác với các trang web từ dự án Arduino của bạn.

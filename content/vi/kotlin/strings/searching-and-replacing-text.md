@@ -13,9 +13,8 @@ summary: "T\xECm ki\u1EBFm v\xE0 thay th\u1EBF v\u0103n b\u1EA3n gi\u1ED1ng nh\u
   \ ng\u01B0\u1EDDi \u1EA9n b\u1EB1ng ng\u01B0\u1EDDi kh\xE1c. \u0110\xF3 l\xE0 m\u1ED9\
   t nhi\u1EC7m v\u1EE5 l\u1EADp tr\xECnh ph\u1ED5 bi\u1EBFn, r\u1EA5t\u2026"
 title: "T\xECm ki\u1EBFm v\xE0 thay th\u1EBF v\u0103n b\u1EA3n"
+weight: 10
 ---
-
-{{< edit_this_page >}}
 
 ## Gì và Tại sao?
 Tìm kiếm và thay thế văn bản giống như chơi trốn tìm với chuỗi ký tự, sau đó thay người ẩn bằng người khác. Đó là một nhiệm vụ lập trình phổ biến, rất quan trọng cho các công việc như chỉnh sửa hàng loạt, làm sạch dữ liệu và tự động hóa những công việc nhàm chán.

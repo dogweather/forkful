@@ -9,9 +9,8 @@ summary: "Edycja plik\xF3w w miejscu za pomoc\u0105 jednolinijkowych polece\u014
   \ CLI w PowerShellu polega na dokonywaniu bezpo\u015Brednich modyfikacji plik\xF3\
   w z linii polece\u0144, bez\u2026"
 title: "Edycja plik\xF3w w miejscu przy u\u017Cyciu jednolinijkowc\xF3w CLI"
+weight: 32
 ---
-
-{{< edit_this_page >}}
 
 ## Co i Dlaczego?
 

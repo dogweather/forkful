@@ -11,9 +11,8 @@ summary: "YAML, skr\xF3t od \"YAML Ain't Markup Language\", to standard serializ
   \ danych, kt\xF3ry jest czytelny dla cz\u0142owieka i kt\xF3rego programi\u015B\
   ci u\u017Cywaj\u0105 do plik\xF3w\u2026"
 title: Praca z YAML
+weight: 41
 ---
-
-{{< edit_this_page >}}
 
 ## Co i dlaczego?
 YAML, skrót od "YAML Ain't Markup Language", to standard serializacji danych, który jest czytelny dla człowieka i którego programiści używają do plików konfiguracyjnych, zrzutów danych oraz transmisji danych między językami. Jest popularny ze względu na swoją czytelność i łatwość użycia, co czyni go powszechnym wyborem do konfigurowania aplikacji i usług.

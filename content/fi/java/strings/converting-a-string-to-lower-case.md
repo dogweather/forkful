@@ -7,9 +7,8 @@ model: gpt-4-1106-preview
 summary: "Muuttaa stringin pieniksi kirjaimiksi. Teemme n\xE4in muun muassa tiedon\
   \ normalisointiin ja vertailuihin, jolloin isot kirjaimet eiv\xE4t vaikuta tulokseen."
 title: Merkkijonon muuntaminen pieniksi kirjaimiksi
+weight: 4
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why? (Mitä ja Miksi?)
 Muuttaa stringin pieniksi kirjaimiksi. Teemme näin muun muassa tiedon normalisointiin ja vertailuihin, jolloin isot kirjaimet eivät vaikuta tulokseen.

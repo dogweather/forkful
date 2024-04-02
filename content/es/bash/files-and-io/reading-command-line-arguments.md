@@ -8,9 +8,8 @@ model: gpt-4-1106-preview
 summary: "Leer argumentos de l\xEDnea de comandos es c\xF3mo tu script de Bash agarra\
   \ y usa los datos que el usuario pasa cuando ejecuta el programa. Esto es crucial\u2026"
 title: "Lectura de argumentos de l\xEDnea de comandos"
+weight: 23
 ---
-
-{{< edit_this_page >}}
 
 ## Qué & Por Qué?
 Leer argumentos de línea de comandos es cómo tu script de Bash agarra y usa los datos que el usuario pasa cuando ejecuta el programa. Esto es crucial porque permite personalizar la ejecución del script sin cambiar el código.

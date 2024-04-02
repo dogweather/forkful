@@ -9,9 +9,8 @@ summary: "\xC5 starte et nytt prosjekt handler om \xE5 skape en ren skifer for \
   \ utvikle programvare. Programmerere gj\xF8r dette for \xE5 realisere nye ideer,\
   \ l\xF8se problemer,\u2026"
 title: "\xC5 starte et nytt prosjekt"
+weight: 1
 ---
-
-{{< edit_this_page >}}
 
 ## Hva & Hvorfor?
 Å starte et nytt prosjekt handler om å skape en ren skifer for å utvikle programvare. Programmerere gjør dette for å realisere nye ideer, løse problemer, eller teste ut nye teknologier.

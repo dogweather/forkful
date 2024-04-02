@@ -8,9 +8,8 @@ model: gpt-4-1106-preview
 summary: "El manejo de errores se refiere a esperar lo inesperado; es c\xF3mo administramos\
   \ cuando las cosas van mal en nuestro c\xF3digo. Lo hacemos para evitar bloqueos\u2026"
 title: Manejo de errores
+weight: 16
 ---
-
-{{< edit_this_page >}}
 
 ## Qué & Por qué?
 El manejo de errores se refiere a esperar lo inesperado; es cómo administramos cuando las cosas van mal en nuestro código. Lo hacemos para evitar bloqueos y para brindar a los usuarios una experiencia fluida, incluso cuando ocurre lo inesperado.

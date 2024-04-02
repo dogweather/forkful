@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "YAML, som st\xE5r for YAML Ain't Markup Language, er mye brukt i Ruby for\
   \ konfigurasjonsfiler og dataserialisering p\xE5 grunn av sitt lesbare format.\u2026"
 title: Arbeider med YAML
+weight: 41
 ---
-
-{{< edit_this_page >}}
 
 ## Hva & Hvorfor?
 YAML, som står for YAML Ain't Markup Language, er mye brukt i Ruby for konfigurasjonsfiler og dataserialisering på grunn av sitt lesbare format. Programmerere trekkes mot YAML når de trenger å lagre eller overføre dataobjekter på en lesbar, men strukturert måte, noe som forenkler oppgaver som konfigurasjonsstyring, datalagring og deling av data mellom språk.

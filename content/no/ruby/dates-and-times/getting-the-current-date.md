@@ -10,9 +10,8 @@ model: gpt-4-0125-preview
 summary: "\xC5 hente gjeldende dato er en avgj\xF8rende oppgave i nesten enhver programmeringsinnsats,\
   \ fra \xE5 logge aktiviteter i en applikasjon til \xE5 generere rapporter\u2026"
 title: "F\xE5 dagens dato"
+weight: 29
 ---
-
-{{< edit_this_page >}}
 
 ## Hva og hvorfor?
 Å hente gjeldende dato er en avgjørende oppgave i nesten enhver programmeringsinnsats, fra å logge aktiviteter i en applikasjon til å generere rapporter med datostempler. I Ruby kan dette enkelt oppnås ved å bruke standardbiblioteket, noe som forenkler operasjoner som involverer datoer.

@@ -9,9 +9,8 @@ summary: "L'impression du d\xE9bogage, c'est afficher des infos pour comprendre 
   \ qui se passe dans le code. On le fait parce que \xE7a aide \xE0 rep\xE9rer les\
   \ bugs\u2026"
 title: "Affichage des sorties de d\xE9bogage"
+weight: 33
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 L'impression du débogage, c'est afficher des infos pour comprendre ce qui se passe dans le code. On le fait parce que ça aide à repérer les bugs rapidement.

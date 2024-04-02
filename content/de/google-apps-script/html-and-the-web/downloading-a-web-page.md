@@ -10,9 +10,8 @@ model: gpt-4-0125-preview
 summary: "Das Herunterladen einer Webseite in Google Apps Script beinhaltet das Abrufen\
   \ des Inhalts einer Webseite \xFCber HTML f\xFCr verschiedene Zwecke, wie zum\u2026"
 title: Herunterladen einer Webseite
+weight: 42
 ---
-
-{{< edit_this_page >}}
 
 ## Was & Warum?
 

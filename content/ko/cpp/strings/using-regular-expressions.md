@@ -23,9 +23,8 @@ summary: "C++\uC5D0\uC11C \uC815\uADDC \uD45C\uD604\uC2DD\uC740 \uAC80\uC0C9 \uD
   \uC801\uC774\uACE0 \uD6A8\uACFC\uC801\uC778 \uD14D\uC2A4\uD2B8 \uCC98\uB9AC\uC5D0\
   \ \uD544\uC218\uC801\uC778 \uB3C4\uAD6C\uB85C\u2026"
 title: "\uC815\uADDC \uD45C\uD604\uC2DD \uC0AC\uC6A9\uD558\uAE30"
+weight: 11
 ---
-
-{{< edit_this_page >}}
 
 ## 무엇인가 & 왜 사용하는가?
 C++에서 정규 표현식은 검색 패턴을 정의하는 문자의 연속으로, 문자열 일치나 조작에 사용됩니다. 프로그래머는 입력 검증, 문자열 내 발생하는 항목 검색, 문자열을 토큰으로 분리하는 등의 작업에 정규 표현식을 사용하여, 효율적이고 효과적인 텍스트 처리에 필수적인 도구로 삼습니다.

@@ -9,9 +9,8 @@ summary: "Utskriving av feils\xF8kingsdata i Rust lar deg se hva som foreg\xE5r 
   \ panseret i koden din. Programmere gj\xF8r dette for \xE5 spore flyten og oppdage\
   \ bugs."
 title: "Skrive ut feils\xF8kingsdata"
+weight: 33
 ---
-
-{{< edit_this_page >}}
 
 ## Hva & Hvorfor?
 Utskriving av feilsøkingsdata i Rust lar deg se hva som foregår under panseret i koden din. Programmere gjør dette for å spore flyten og oppdage bugs.

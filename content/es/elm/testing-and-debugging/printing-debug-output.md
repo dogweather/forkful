@@ -9,9 +9,8 @@ summary: "Imprimir mensajes de depuraci\xF3n es como dejar migajas de pan para s
   \ tu camino en el c\xF3digo. Los programadores lo hacemos para entender qu\xE9 est\xE1\
   \u2026"
 title: "Imprimiendo salida de depuraci\xF3n"
+weight: 33
 ---
-
-{{< edit_this_page >}}
 
 ## ¿Qué y Por Qué?
 Imprimir mensajes de depuración es como dejar migajas de pan para seguir tu camino en el código. Los programadores lo hacemos para entender qué está pasando y por qué, especialmente cuando las cosas se ponen raras.

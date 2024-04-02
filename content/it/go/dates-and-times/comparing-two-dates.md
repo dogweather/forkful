@@ -10,9 +10,8 @@ model: gpt-4-0125-preview
 summary: "Comparare due date nella programmazione \xE8 un compito fondamentale che\
   \ permette agli sviluppatori di valutare la relazione cronologica tra le date. Questi\u2026"
 title: Confrontare due date
+weight: 27
 ---
-
-{{< edit_this_page >}}
 
 ## Cosa e Perché?
 

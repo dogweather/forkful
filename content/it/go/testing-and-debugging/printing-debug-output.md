@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Nella programmazione informatica, \"Stampare l'output di debug\" implica\
   \ produrre messaggi informativi dettagliati che aiutano gli sviluppatori a\u2026"
 title: Stampa dell'output di debug
+weight: 33
 ---
-
-{{< edit_this_page >}}
 
 ## Cosa & Perché?
 

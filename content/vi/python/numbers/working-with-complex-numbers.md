@@ -13,9 +13,8 @@ summary: "S\u1ED1 ph\u1EE9c l\xE0 m\u1ED9t t\u1EADp h\u1EE3p c\xE1c s\u1ED1 c\xF
   \ `i` l\xE0 \u0111\u01A1n v\u1ECB \u1EA3o (`i^2 = -1`). Trong l\u1EADp tr\xECnh,\
   \ ch\xFAng ta s\u1EED d\u1EE5ng ch\xFAng\u2026"
 title: "L\xE0m vi\u1EC7c v\u1EDBi s\u1ED1 ph\u1EE9c"
+weight: 14
 ---
-
-{{< edit_this_page >}}
 
 ## Cái gì và Tại sao?
 Số phức là một tập hợp các số có dạng `a + bi`, nơi `a` và `b` là các số thực, và `i` là đơn vị ảo (`i^2 = -1`). Trong lập trình, chúng ta sử dụng chúng để giải quyết các vấn đề trong nhiều lĩnh vực, như kỹ thuật điện, xử lý tín hiệu và tính toán lượng tử.

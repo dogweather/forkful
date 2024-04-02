@@ -7,9 +7,8 @@ model: gpt-4-0125-preview
 summary: "Working with CSV (Comma Separated Values) involves parsing and generating\
   \ files that store tabular data in a simple, plaintext format. This is commonly\u2026"
 title: Working with CSV
+weight: 37
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 

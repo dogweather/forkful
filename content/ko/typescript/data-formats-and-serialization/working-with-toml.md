@@ -17,9 +17,8 @@ summary: "TOML\uC740 Tom's Obvious, Minimal Language\uC758 \uC57D\uC790\uB85C JS
   \uC815 \uD30C\uC77C\uACFC \uB370\uC774\uD130 \uAD50\uD658\uC744 \uC704\uD55C \uC8FC\
   \uC694 \uC120\uD0DD\uC9C0\uB85C \uC0AC\uC6A9\uD569\uB2C8\uB2E4."
 title: "\uD504\uB85C\uADF8\uB798\uBA38\uB97C \uC704\uD55C TOML \uB2E4\uB8E8\uAE30"
+weight: 39
 ---
-
-{{< edit_this_page >}}
 
 ## 무엇 & 왜?
 TOML은 Tom's Obvious, Minimal Language의 약자로 JSON이나 YAML과 같은 데이터 직렬화 포맷입니다. 프로그래머들은 그것의 인간이 읽기 쉬움과 데이터 타입으로의 직관적인 매핑 때문에 설정 파일과 데이터 교환을 위한 주요 선택지로 사용합니다.

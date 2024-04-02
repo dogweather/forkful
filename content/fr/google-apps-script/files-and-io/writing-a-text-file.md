@@ -10,9 +10,8 @@ model: gpt-4-0125-preview
 summary: "\xC9crire un fichier texte dans Google Apps Script permet aux d\xE9veloppeurs\
   \ de stocker des donn\xE9es de mani\xE8re persistante, rendant ces donn\xE9es accessibles\u2026"
 title: "R\xE9daction d'un fichier texte"
+weight: 24
 ---
-
-{{< edit_this_page >}}
 
 ## Quoi & Pourquoi ?
 

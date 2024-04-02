@@ -11,9 +11,8 @@ summary: "Organizar o c\xF3digo em fun\xE7\xF5es no Dart consiste em definir blo
   \ de c\xF3digo reutiliz\xE1veis que realizam tarefas espec\xEDficas, normalmente\
   \ recebendo entradas,\u2026"
 title: "Organizando c\xF3digo em fun\xE7\xF5es"
+weight: 18
 ---
-
-{{< edit_this_page >}}
 
 ## O Que & Por Quê?
 Organizar o código em funções no Dart consiste em definir blocos de código reutilizáveis que realizam tarefas específicas, normalmente recebendo entradas, processando dados e, possivelmente, retornando saídas. Os programadores fazem isso para melhorar a legibilidade do código, reduzir a duplicação e facilitar a manutenção, levando, em última análise, a bases de código mais modulares e gerenciáveis.

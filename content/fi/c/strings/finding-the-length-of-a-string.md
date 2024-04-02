@@ -11,9 +11,8 @@ summary: "Merkkijonon pituuden m\xE4\xE4ritt\xE4minen C-kieless\xE4 tarkoittaa m
   \ lukum\xE4\xE4r\xE4n selvitt\xE4mist\xE4 ennen nolla-terminaattoria `\\0`. Ohjelmoijat\
   \ tekev\xE4t t\xE4m\xE4n,\u2026"
 title: "Merkkijonon pituuden m\xE4\xE4ritt\xE4minen"
+weight: 7
 ---
-
-{{< edit_this_page >}}
 
 ## Mitä & Miksi?
 Merkkijonon pituuden määrittäminen C-kielessä tarkoittaa merkkien lukumäärän selvittämistä ennen nolla-terminaattoria `\0`. Ohjelmoijat tekevät tämän, jotta he voivat käsitellä merkkijonoja oikein ilman, että esiintyy virheitä, kuten puskurin ylivuotoja, jotka voivat johtaa turvallisuusaukkoihin tai ohjelman kaatumisiin.

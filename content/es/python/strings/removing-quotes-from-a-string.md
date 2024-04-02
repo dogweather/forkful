@@ -9,9 +9,8 @@ summary: "Eliminar comillas de una cadena generalmente significa deshacerse de l
   \ comillas dobles (\") o simples (') innecesarias. Los programadores hacen esto\
   \ para\u2026"
 title: Eliminando comillas de una cadena
+weight: 9
 ---
-
-{{< edit_this_page >}}
 
 ## ¿Qué & Por qué?
 Eliminar comillas de una cadena generalmente significa deshacerse de las comillas dobles (") o simples (') innecesarias. Los programadores hacen esto para sanear la entrada o cuando las comillas no son necesarias para el procesamiento posterior, como al guardar texto en una base de datos o prepararlo para mostrar.

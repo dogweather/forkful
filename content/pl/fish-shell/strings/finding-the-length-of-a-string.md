@@ -9,9 +9,8 @@ summary: "Okre\u015Blenie d\u0142ugo\u015Bci stringa to po prostu zliczenie ilo\
   ci znak\xF3w w nim zawartych. Programi\u015Bci robi\u0105 to, by walidowa\u0107\
   \ dane, manipulowa\u0107 tekstami czy po\u2026"
 title: "Znalezienie d\u0142ugo\u015Bci ci\u0105gu znak\xF3w"
+weight: 7
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why? | Co i Dlaczego?
 Określenie długości stringa to po prostu zliczenie ilości znaków w nim zawartych. Programiści robią to, by walidować dane, manipulować tekstami czy po prostu określić ich zasoby.

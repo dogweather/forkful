@@ -9,9 +9,8 @@ summary: "\xC5 runde av tall betyr \xE5 justere dem til det n\xE6rmeste hele tal
   \ eller til en spesifisert grad av presisjon. Programmerere runder av tall for \xE5\
   \ forenkle,\u2026"
 title: Avrunding av tall
+weight: 13
 ---
-
-{{< edit_this_page >}}
 
 ## Hva & Hvorfor?
 Å runde av tall betyr å justere dem til det nærmeste hele tallet eller til en spesifisert grad av presisjon. Programmerere runder av tall for å forenkle, for å møte menneskelige forventninger, eller for å passe data inn i spesifikke formater—tenk finansielle beregninger, grafiske fremstillinger, eller for å redusere lagringsstørrelse.

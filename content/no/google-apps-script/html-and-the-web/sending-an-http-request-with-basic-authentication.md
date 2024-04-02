@@ -11,9 +11,8 @@ summary: "\xC5 sende en HTTP-foresp\xF8rsel med grunnleggende godkjenning involv
   \ koding av et brukernavn og passord i en foresp\xF8rselsoverskrift for \xE5 f\xE5\
   \ tilgang til\u2026"
 title: "\xC5 sende en HTTP-foresp\xF8rsel med grunnleggende autentisering"
+weight: 45
 ---
-
-{{< edit_this_page >}}
 
 ## Hva & Hvorfor?
 

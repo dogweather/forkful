@@ -10,9 +10,8 @@ model: gpt-4-0125-preview
 summary: "Verificar se um diret\xF3rio existe em C envolve consultar o sistema de\
   \ arquivos para verificar se um caminho espec\xEDfico leva a um diret\xF3rio. Os\u2026"
 title: "Verificando se um diret\xF3rio existe"
+weight: 20
 ---
-
-{{< edit_this_page >}}
 
 ## O Que & Por Que?
 

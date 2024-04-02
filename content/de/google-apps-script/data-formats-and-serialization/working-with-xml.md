@@ -11,9 +11,8 @@ summary: "Die Arbeit mit XML in Google Apps Script erm\xF6glicht es Programmiere
   \ XML-Daten zu parsen, zu manipulieren und zu generieren, was f\xFCr Webdienste\
   \ und\u2026"
 title: Arbeiten mit XML
+weight: 40
 ---
-
-{{< edit_this_page >}}
 
 ## Was & Warum?
 

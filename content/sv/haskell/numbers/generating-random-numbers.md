@@ -9,9 +9,8 @@ summary: "Att generera slumpm\xE4ssiga tal i Haskell inneb\xE4r att skapa tal so
   \ \xE4r of\xF6ruts\xE4gbara enligt m\xE4nskliga standarder. Detta \xE4r avg\xF6\
   rande i scenarier som\u2026"
 title: Generera slumptal
+weight: 12
 ---
-
-{{< edit_this_page >}}
 
 ## Vad & Varför?
 

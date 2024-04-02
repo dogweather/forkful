@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Schrijven naar een tekstbestand is het opslaan van gegevens als leesbare\
   \ tekens in een bestand op uw opslagapparaat. Programmeurs doen dit om gegevens\u2026"
 title: Een tekstbestand schrijven
+weight: 24
 ---
-
-{{< edit_this_page >}}
 
 ## Wat & Waarom?
 

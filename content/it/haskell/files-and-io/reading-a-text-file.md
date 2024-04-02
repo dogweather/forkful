@@ -7,9 +7,8 @@ model: gpt-4-1106-preview
 summary: "Leggere un file di testo permette ai programmi di processare dati salvati\
   \ su disco. Programmatori lo fanno per analizzare, modificare o semplicemente\u2026"
 title: Lettura di un file di testo
+weight: 22
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 Leggere un file di testo permette ai programmi di processare dati salvati su disco. Programmatori lo fanno per analizzare, modificare o semplicemente visualizzare il contenuto del file.

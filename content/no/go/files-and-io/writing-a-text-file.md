@@ -11,9 +11,8 @@ summary: "\xC5 skrive en tekstfil i Go inneb\xE6rer \xE5 lage og skrive strenger
   \ data til en ny eller eksisterende tekstfil. Programmerere gj\xF8r dette for \xE5\
   \ bevare data,\u2026"
 title: Skrive en tekstfil
+weight: 24
 ---
-
-{{< edit_this_page >}}
 
 ## Hva & Hvorfor?
 

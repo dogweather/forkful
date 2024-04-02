@@ -11,9 +11,8 @@ summary: "HTML:n j\xE4sent\xE4minen Visual Basic for Applications (VBA) -ohjelmo
   \ tarkoittaa tiettyjen tietojen poimimista HTML-dokumentista. Ohjelmoijat tekev\xE4\
   t\u2026"
 title: "HTML:n j\xE4sent\xE4minen"
+weight: 43
 ---
-
-{{< edit_this_page >}}
 
 ## Mikä & Miksi?
 

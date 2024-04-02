@@ -9,9 +9,8 @@ summary: "Criar um arquivo tempor\xE1rio \xE9 criar um arquivo que \xE9 necess\x
   rio apenas enquanto seu programa est\xE1 rodando. Programadores fazem isso para\
   \ n\xE3o correr o\u2026"
 title: "Criando um arquivo tempor\xE1rio"
+weight: 21
 ---
-
-{{< edit_this_page >}}
 
 ## O Que & Porquê?
 

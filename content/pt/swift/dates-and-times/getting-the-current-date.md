@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Obter a data atual em Swift envolve o uso da classe `Date` para acessar\
   \ a data e a hora em que o aplicativo est\xE1 sendo executado. Os programadores\u2026"
 title: Obtendo a data atual
+weight: 29
 ---
-
-{{< edit_this_page >}}
 
 ## O que & Por quê?
 Obter a data atual em Swift envolve o uso da classe `Date` para acessar a data e a hora em que o aplicativo está sendo executado. Os programadores precisam buscar a data atual por uma miríade de razões, que vão desde marcar eventos com timestamp, realizar cálculos de datas, até exibir datas e horários em uma interface de usuário.

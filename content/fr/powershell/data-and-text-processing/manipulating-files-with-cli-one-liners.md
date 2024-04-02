@@ -7,9 +7,8 @@ model: gpt-4-0125-preview
 summary: "Manipuler des fichiers avec des commandes d'une ligne CLI dans PowerShell,\
   \ c'est modifier, d\xE9placer ou obtenir rapidement les donn\xE9es d'un fichier\u2026"
 title: Manipulation de fichiers avec des commandes en une ligne en CLI
+weight: 31
 ---
-
-{{< edit_this_page >}}
 
 ## Quoi & Pourquoi ?
 

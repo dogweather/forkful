@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Comprobar si un directorio existe en TypeScript es esencial para tareas\
   \ de manejo de archivos, tales como leer de o escribir datos a archivos, asegurando\u2026"
 title: Comprobando si un directorio existe
+weight: 20
 ---
-
-{{< edit_this_page >}}
 
 ## Qué y Por Qué?
 Comprobar si un directorio existe en TypeScript es esencial para tareas de manejo de archivos, tales como leer de o escribir datos a archivos, asegurando que las operaciones se realicen solo en directorios válidos. Esta operación es crucial para evitar errores que surgen al intentar acceder o manipular directorios inexistentes.

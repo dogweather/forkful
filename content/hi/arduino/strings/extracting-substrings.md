@@ -16,9 +16,8 @@ summary: "Substring \u0915\u093E \u092E\u0924\u0932\u092C \u0939\u0948 \u0915\u0
   \u0928\u0947 \u092F\u093E \u0915\u093F\u0938\u0940 specific text \u0915\u094B\u2026"
 title: "\u0938\u092C\u0938\u094D\u091F\u094D\u0930\u093F\u0902\u0917\u094D\u0938 \u0928\
   \u093F\u0915\u093E\u0932\u0928\u093E"
+weight: 6
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why? (क्या और क्यों?)
 Substring का मतलब है किसी string का एक छोटा हिस्सा निकालना। Programmers इसे use करते हैं डेटा को analyze करने, manipulate करने या किसी specific text को extract करने के लिए।

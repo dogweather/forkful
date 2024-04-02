@@ -9,9 +9,8 @@ summary: "V\xE4liaikaistiedosto on hetkellisesti k\xE4ytett\xE4v\xE4 tiedosto, j
   \ ohjelmat voivat tallentaa dataa turvallisesti. Ohjelmoijat luovat niit\xE4 datan\
   \ v\xE4liaikaiseen\u2026"
 title: "V\xE4liaikaistiedoston luominen"
+weight: 21
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why? (Mitä ja Miksi?)
 Väliaikaistiedosto on hetkellisesti käytettävä tiedosto, johon ohjelmat voivat tallentaa dataa turvallisesti. Ohjelmoijat luovat niitä datan väliaikaiseen säilömiseen, törmäysten estämiseen tai herkän tiedon käsittelyyn, jotta sitä ei tallenneta pysyvästi.

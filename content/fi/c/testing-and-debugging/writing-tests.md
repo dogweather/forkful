@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Testien kirjoittaminen C-kielell\xE4 tarkoittaa pienempien, apuohjelmien\
   \ tai funktioiden luomista, jotka automaattisesti varmistavat koodisi toimivuuden.\u2026"
 title: Testien kirjoittaminen
+weight: 36
 ---
-
-{{< edit_this_page >}}
 
 ## Mitä & Miksi?
 Testien kirjoittaminen C-kielellä tarkoittaa pienempien, apuohjelmien tai funktioiden luomista, jotka automaattisesti varmistavat koodisi toimivuuden. Ohjelmoijat tekevät niin varmistaakseen, että heidän ohjelmistonsa toimii odotetusti, löytääkseen virheet aikaisin ja helpottaakseen tulevia koodimuutoksia ilman ei-toivottuja sivuvaikutuksia.

@@ -1,14 +1,14 @@
 ---
 date: 2024-01-26 03:48:55.675291-07:00
-description: "L'uso di un debugger riguarda lo schiacciare i bug\u2014gli errori fastidiosi\
-  \ e che consumano tempo nel tuo codice. I programmatori eseguono il debug perch\xE9\
-  \u2026"
+description: "Fish non dispone di un debugger integrato come altre shell, ma puoi\
+  \ utilizzare strumenti esterni come `gdb` per il debug di programmi compilati o\
+  \ `fish\u2026"
 lastmod: '2024-03-13T22:44:43.863716-06:00'
 model: gpt-4-0125-preview
-summary: "L'uso di un debugger riguarda lo schiacciare i bug\u2014gli errori fastidiosi\
-  \ e che consumano tempo nel tuo codice. I programmatori eseguono il debug perch\xE9\
-  \u2026"
+summary: "Fish non dispone di un debugger integrato come altre shell, ma puoi utilizzare\
+  \ strumenti esterni come `gdb` per il debug di programmi compilati o `fish\u2026"
 title: Utilizzo di un debugger
+weight: 35
 ---
 
 ## Come fare:

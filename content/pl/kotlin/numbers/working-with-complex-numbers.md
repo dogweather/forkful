@@ -7,9 +7,8 @@ model: gpt-4-0125-preview
 summary: "Liczby zespolone rozszerzaj\u0105 nasz system liczbowy o pierwiastki kwadratowe\
   \ z liczb ujemnych, gdzie 'urojona' jednostka i r\xF3wna si\u0119 pierwiastkowi\u2026"
 title: Praca z liczbami zespolonymi
+weight: 14
 ---
-
-{{< edit_this_page >}}
 
 ## Co & Dlaczego?
 Liczby zespolone rozszerzają nasz system liczbowy o pierwiastki kwadratowe z liczb ujemnych, gdzie 'urojona' jednostka i równa się pierwiastkowi kwadratowemu z -1. Programiści używają ich w dziedzinach takich jak inżynieria, fizyka i przetwarzanie sygnałów, ponieważ świetnie nadają się do modelowania fal, oscylacji i wszystkiego, co się obraca.

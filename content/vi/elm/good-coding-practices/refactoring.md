@@ -13,9 +13,8 @@ summary: "T\xE1i c\u1EA5u tr\xFAc m\xE3 essentially l\xE0 vi\u1EC7c d\u1ECDn d\u
   \ vi\u1EC7c c\u1EA5u tr\xFAc l\u1EA1i m\xE3 hi\u1EC7n c\xF3 m\xE0 kh\xF4ng thay\
   \ \u0111\u1ED5i h\xE0nh vi b\xEAn ngo\xE0i c\u1EE7a\u2026"
 title: "T\xE1i c\u1EA5u tr\xFAc m\xE3"
+weight: 19
 ---
-
-{{< edit_this_page >}}
 
 ## Cái gì & Tại sao?
 Tái cấu trúc mã essentially là việc dọn dẹp mã nguồn như làm sạch mùa xuân - nó là về việc cấu trúc lại mã hiện có mà không thay đổi hành vi bên ngoài của nó. Lập trình viên thực hiện việc này để làm cho mã dễ đọc hơn, giảm độ phức tạp, cải thiện khả năng bảo trì, và làm cho nó dễ mở rộng hơn.

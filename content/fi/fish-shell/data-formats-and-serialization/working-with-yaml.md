@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "YAML-tiedostojen k\xE4sittelyyn kuuluu YAML-tiedostojen (YAML Ain't Markup\
   \ Language) j\xE4sent\xE4minen ja manipulointi, jotka ovat konfiguraatiotiedostoissa\u2026"
 title: "Ty\xF6skentely YAML:n kanssa"
+weight: 41
 ---
-
-{{< edit_this_page >}}
 
 ## Mikä & Miksi?
 YAML-tiedostojen käsittelyyn kuuluu YAML-tiedostojen (YAML Ain't Markup Language) jäsentäminen ja manipulointi, jotka ovat konfiguraatiotiedostoissa käytettyä datan sarjallistamismuotoa, Fish Shellissä. Ohjelmoijat tekevät tätä automatisoidakseen ja konfiguroidakseen sovelluksia tai palveluita tehokkaasti shell-ympäristöjen kontekstissa, helpottaen tehtäviä kuten konfiguraatioiden hallinta ja resurssien varaus.

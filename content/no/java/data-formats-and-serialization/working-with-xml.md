@@ -7,9 +7,8 @@ model: gpt-4-0125-preview
 summary: "\xC5 jobbe med XML inneb\xE6rer parsing, sp\xF8rring og manipulering av\
   \ XML-dokumenter med Java. Programmerere gj\xF8r dette for datautveksling, konfigurasjonsstyring\u2026"
 title: "\xC5 jobbe med XML"
+weight: 40
 ---
-
-{{< edit_this_page >}}
 
 ## Hva & Hvorfor?
 Å jobbe med XML innebærer parsing, spørring og manipulering av XML-dokumenter med Java. Programmerere gjør dette for datautveksling, konfigurasjonsstyring og fordi mange eldre systemer og API-er kommuniserer ved hjelp av XML.

@@ -11,9 +11,8 @@ summary: "Capitalizar una cadena significa convertir el primer car\xE1cter de la
   \ a may\xFAsculas mientras se mantienen los caracteres restantes tal como est\xE1\
   n.\u2026"
 title: Capitalizando una cadena de texto
+weight: 2
 ---
-
-{{< edit_this_page >}}
 
 ## Qué y Por Qué?
 Capitalizar una cadena significa convertir el primer carácter de la cadena a mayúsculas mientras se mantienen los caracteres restantes tal como están. Esta operación se realiza comúnmente en JavaScript para formatear las entradas de los usuarios, mostrar nombres o títulos y asegurar la coherencia en los textos de la interfaz del usuario.

@@ -14,9 +14,8 @@ summary: "\u8B80\u53D6\u547D\u4EE4\u5217\u53C3\u6578\u8B93\u7A0B\u5E8F\u7372\u5F
   \u500B\u7A0B\u5E8F\u80FD\u66F4\u9748\u6D3B\u5730\u61C9\u5C0D\u4E0D\u540C\u7684\u4EFB\
   \u52D9\u3002"
 title: "\u8BFB\u53D6\u547D\u4EE4\u884C\u53C2\u6570"
+weight: 23
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why? 什麼和為什麼？
 讀取命令列參數讓程序獲得從外部傳入的信息。程式設計師這麼做來自訂程式行為，讓同一個程序能更靈活地應對不同的任務。

@@ -7,9 +7,8 @@ model: gpt-4-1106-preview
 summary: "Printing debug output ist das Ausgeben von Nachrichten in der Konsole, um\
   \ zu verfolgen, was im Code passiert. Programmierer verwenden es, um Fehler zu\u2026"
 title: Debug-Ausgaben drucken
+weight: 33
 ---
-
-{{< edit_this_page >}}
 
 ## Was & Warum?
 Printing debug output ist das Ausgeben von Nachrichten in der Konsole, um zu verfolgen, was im Code passiert. Programmierer verwenden es, um Fehler zu finden und zu verstehen, wie ihr Code während der Ausführung funktioniert.

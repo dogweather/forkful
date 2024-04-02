@@ -9,9 +9,8 @@ summary: "La refactorisation est le processus de restructuration du code informa
   \ existant\u2014changer la facturation\u2014sans modifier son comportement externe.\
   \ Les\u2026"
 title: "R\xE9usinage"
+weight: 19
 ---
-
-{{< edit_this_page >}}
 
 ## Quoi & Pourquoi ?
 La refactorisation est le processus de restructuration du code informatique existant—changer la facturation—sans modifier son comportement externe. Les programmeurs le font pour améliorer les attributs non fonctionnels du logiciel, en améliorant la lisibilité, réduisant la complexité, et rendant le code plus facile à maintenir pour les futures entreprises.

@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Generar n\xFAmeros aleatorios en C implica crear valores que son impredecibles\
   \ y siguen una distribuci\xF3n espec\xEDfica, como uniforme o normal. Esta capacidad\u2026"
 title: "Generando n\xFAmeros aleatorios"
+weight: 12
 ---
-
-{{< edit_this_page >}}
 
 ## Qué y Por Qué?
 

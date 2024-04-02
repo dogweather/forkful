@@ -8,9 +8,8 @@ summary: "Modifier des fichiers sur place avec des lignes de commande (CLI - Com
   \ Line Interface) en Ruby vous permet de modifier des fichiers directement depuis\u2026"
 title: "Modification de fichiers sur place avec des lignes de commande en une seule\
   \ \xE9tape"
+weight: 32
 ---
-
-{{< edit_this_page >}}
 
 ## Quoi & Pourquoi ?
 

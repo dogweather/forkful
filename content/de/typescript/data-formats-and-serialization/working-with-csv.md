@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Die Arbeit mit CSV (Comma-Separated Values, zu Deutsch: kommagetrennte Werte)\
   \ beinhaltet das Lesen von und Schreiben in CSV-Dateien, einem g\xE4ngigen\u2026"
 title: Arbeiten mit CSV
+weight: 37
 ---
-
-{{< edit_this_page >}}
 
 ## Was & Warum?
 

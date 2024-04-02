@@ -9,9 +9,8 @@ summary: "HTTP-pyynt\xF6 on web-palvelimen kanssa kommunikoinnin tavallinen tapa
   \ Koodarit l\xE4hett\xE4v\xE4t HTTP-pyynt\xF6j\xE4 vaihtaakseen dataa palvelinten\
   \ ja front-end\u2026"
 title: "HTTP-pyynn\xF6n l\xE4hett\xE4minen"
+weight: 44
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why? (Mitä & Miksi?)
 HTTP-pyyntö on web-palvelimen kanssa kommunikoinnin tavallinen tapa. Koodarit lähettävät HTTP-pyyntöjä vaihtaakseen dataa palvelinten ja front-end sovellusten välillä.

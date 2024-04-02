@@ -19,9 +19,8 @@ summary: "\u5728TypeScript\u4E2D\u68C0\u67E5\u76EE\u5F55\u662F\u5426\u5B58\u5728
   \u64CD\u4F5C\u4E0D\u5B58\u5728\u7684\u76EE\u5F55\u800C\u4EA7\u751F\u7684\u9519\u8BEF\
   \u81F3\u5173\u91CD\u8981\u3002"
 title: "\u68C0\u67E5\u76EE\u5F55\u662F\u5426\u5B58\u5728"
+weight: 20
 ---
-
-{{< edit_this_page >}}
 
 ## 什么 & 为什么？
 在TypeScript中检查目录是否存在对于文件管理任务至关重要，例如从文件中读取或向文件写入数据，确保只在有效目录上执行操作。这个操作对于避免尝试访问或操作不存在的目录而产生的错误至关重要。

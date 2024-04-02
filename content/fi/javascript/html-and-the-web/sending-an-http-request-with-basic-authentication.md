@@ -9,9 +9,8 @@ summary: "Perustiedot: HTTP-pyynt\xF6 basic-autentikaatiolla tarkoittaa k\xE4ytt
   j\xE4nimen ja salasanan sis\xE4llytt\xE4mist\xE4 HTTP-pyynt\xF6\xF6n tunnistautumista\
   \ varten. Ohjelmoijat\u2026"
 title: "HTTP-pyynn\xF6n l\xE4hett\xE4minen perusautentikoinnilla"
+weight: 45
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 Perustiedot: HTTP-pyyntö basic-autentikaatiolla tarkoittaa käyttäjänimen ja salasanan sisällyttämistä HTTP-pyyntöön tunnistautumista varten. Ohjelmoijat käyttävät tätä tapaa turvatakseen resurssien pääsy vain valtuutetuille käyttäjille.

@@ -15,9 +15,8 @@ summary: "\u5C06\u4EE3\u7801\u7EC4\u7EC7\u6210\u51FD\u6570\uFF0C\u5C31\u662F\u5C
   \u548C\u5FC3\u667A\u5065\u5EB7\u3002\u5B83\u4F7F\u5F97\u6211\u4EEC\u7684\u4EE3\u7801\
   \u6574\u6D01\u3001\u53EF\u8BFB\u5E76\u4E14\u4FBF\u4E8E\u7EF4\u62A4\u3002"
 title: "\u5C06\u4EE3\u7801\u7EC4\u7EC7\u6210\u51FD\u6570"
+weight: 18
 ---
-
-{{< edit_this_page >}}
 
 ## 什么 & 为什么？
 将代码组织成函数，就是将你的脚本分解为可管理的小块——想象成功能性的乐高积木块。这么做是为了清晰性、可重用性和心智健康。它使得我们的代码整洁、可读并且便于维护。

@@ -8,9 +8,8 @@ model: gpt-4-1106-preview
 summary: "Stringinterpolasjon lar deg sette variabler rett inn i strenger. Det forenkler\
   \ kombinasjonen av statisk tekst og variabler, noe som gj\xF8r koden mer leselig\u2026"
 title: Interpolering av en streng
+weight: 8
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 Stringinterpolasjon lar deg sette variabler rett inn i strenger. Det forenkler kombinasjonen av statisk tekst og variabler, noe som gjør koden mer leselig og vedlikeholdbar.

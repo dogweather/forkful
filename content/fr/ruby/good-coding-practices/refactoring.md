@@ -7,9 +7,8 @@ model: gpt-4-0125-preview
 summary: "Le refactorisage est le processus de restructuration du code informatique\
   \ existant sans en changer le comportement externe. Les programmeurs refactorisent\u2026"
 title: Remaniement de code
+weight: 19
 ---
-
-{{< edit_this_page >}}
 
 ## Quoi & Pourquoi ?
 

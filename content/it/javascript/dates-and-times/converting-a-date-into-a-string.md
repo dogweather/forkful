@@ -7,9 +7,8 @@ model: gpt-4-1106-preview
 summary: "Convertire una data in una stringa significa trasformare l'oggetto `Date`\
   \ di JavaScript in un formato di testo leggibile. Lo facciamo per semplificare la\u2026"
 title: Conversione di una data in una stringa
+weight: 28
 ---
-
-{{< edit_this_page >}}
 
 ## Cos'è e Perché?
 

@@ -1,13 +1,13 @@
 ---
 date: 2024-01-26 03:49:52.314418-07:00
-description: "Utilizzare un debugger significa sfruttare strumenti specializzati che\
-  \ consentono di guardare sotto il cofano del proprio codice, osservandolo passo\
-  \ dopo\u2026"
+description: "Ecco un po' di codice JavaScript che non si comporta come previsto:\
+  \ ```javascript function buggyMultiply(a, b) { return a + b; // Ops! Questo dovrebbe\u2026"
 lastmod: '2024-03-13T22:44:43.816804-06:00'
 model: gpt-4-0125-preview
-summary: "Utilizzare un debugger significa sfruttare strumenti specializzati che consentono\
-  \ di guardare sotto il cofano del proprio codice, osservandolo passo dopo\u2026"
+summary: "Ecco un po' di codice JavaScript che non si comporta come previsto: ```javascript\
+  \ function buggyMultiply(a, b) { return a + b; // Ops! Questo dovrebbe\u2026"
 title: Utilizzo di un debugger
+weight: 35
 ---
 
 ## Come fare:

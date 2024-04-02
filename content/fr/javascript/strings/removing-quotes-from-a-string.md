@@ -9,9 +9,8 @@ summary: "Retirer les guillemets d'une cha\xEEne de caract\xE8res signifie se d\
   barrasser de ces marques de citation ennuyeuses qui peuvent perturber votre code,\
   \ surtout\u2026"
 title: "Retirer les guillemets d'une cha\xEEne"
+weight: 9
 ---
-
-{{< edit_this_page >}}
 
 ## Quoi & Pourquoi ?
 Retirer les guillemets d'une chaîne de caractères signifie se débarrasser de ces marques de citation ennuyeuses qui peuvent perturber votre code, surtout lorsque vous analysez des données ou construisez des objets JSON. Les programmeurs le font pour assainir les entrées, éviter les erreurs de syntaxe, et faire en sorte que les chaînes s'intègrent bien avec d'autres parties de leur code.

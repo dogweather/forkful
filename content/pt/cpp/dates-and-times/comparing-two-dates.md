@@ -8,9 +8,8 @@ model: gpt-4-1106-preview
 summary: "Comparar datas \xE9 verificar a rela\xE7\xE3o temporal entre elas - qual\
   \ \xE9 mais cedo ou mais tarde. Programadores fazem isso para ordenar eventos, validar\u2026"
 title: Comparando duas datas
+weight: 27
 ---
-
-{{< edit_this_page >}}
 
 ## O Que & Porquê?
 Comparar datas é verificar a relação temporal entre elas - qual é mais cedo ou mais tarde. Programadores fazem isso para ordenar eventos, validar períodos, e controlar a lógica que depende de tempo.

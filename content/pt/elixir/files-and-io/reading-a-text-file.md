@@ -9,9 +9,8 @@ summary: "Ler um arquivo de texto em programa\xE7\xE3o significa acessar e recup
   \ informa\xE7\xF5es de um arquivo salvo em disco. Programadores fazem isso para\
   \ manipular\u2026"
 title: Lendo um arquivo de texto
+weight: 22
 ---
-
-{{< edit_this_page >}}
 
 ## O Que & Porquê?
 Ler um arquivo de texto em programação significa acessar e recuperar informações de um arquivo salvo em disco. Programadores fazem isso para manipular dados, configurar sistemas ou ler inputs externos.

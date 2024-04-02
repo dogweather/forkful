@@ -8,9 +8,8 @@ model: gpt-4-0125-preview
 summary: "En REPL (Read-Eval-Print Loop) er et interaktivt skall som behandler enkeltbrukerinndata,\
   \ utf\xF8rer kode, og returnerer resultatet. Programmerere bruker det\u2026"
 title: Bruke et interaktivt skall (REPL)
+weight: 34
 ---
-
-{{< edit_this_page >}}
 
 ## Hva & Hvorfor?
 En REPL (Read-Eval-Print Loop) er et interaktivt skall som behandler enkeltbrukerinndata, utfører kode, og returnerer resultatet. Programmerere bruker det til raske eksperimenter, feilsøking, eller læring, ettersom det tillater umiddelbar tilbakemelding og iterasjon.

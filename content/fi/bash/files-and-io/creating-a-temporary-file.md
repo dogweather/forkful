@@ -9,9 +9,8 @@ summary: "Luodaan tilap\xE4isi\xE4 tiedostoja v\xE4liaikaisen datan s\xE4ilytt\x
   miseen ja sen varmistamiseen, ett\xE4 sovelluksen k\xE4ytt\xE4m\xE4 ymp\xE4rist\xF6\
   \ pysyy siistin\xE4. Ohjelmoijat\u2026"
 title: "V\xE4liaikaistiedoston luominen"
+weight: 21
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why? (Mikä ja Miksi?)
 Luodaan tilapäisiä tiedostoja väliaikaisen datan säilyttämiseen ja sen varmistamiseen, että sovelluksen käyttämä ympäristö pysyy siistinä. Ohjelmoijat käyttävät niitä prosessien välisessä datan välityksessä ja tilapäisenä työtilana, joka voidaan turvallisesti poistaa käytön jälkeen.

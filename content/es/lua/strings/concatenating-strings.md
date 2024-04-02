@@ -9,9 +9,8 @@ summary: "La concatenaci\xF3n de cadenas es simplemente pegar una cadena de text
   \ al final de otra. Los programadores lo hacen para construir mensajes, combinar\
   \ datos\u2026"
 title: "Concatenaci\xF3n de cadenas de texto"
+weight: 3
 ---
-
-{{< edit_this_page >}}
 
 ## Qué es y por qué?
 La concatenación de cadenas es simplemente pegar una cadena de texto al final de otra. Los programadores lo hacen para construir mensajes, combinar datos y generar salida dinámica.

@@ -17,9 +17,8 @@ summary: "\u5728 Java \u4E2D\u7F16\u5199\u6D4B\u8BD5\u7684\u76EE\u7684\u662F\u4E
   \u80FD\u4ECD\u7136\u6B63\u786E\uFF0C\u5E76\u4FC3\u8FDB\u826F\u597D\u7684\u8F6F\u4EF6\
   \u8BBE\u8BA1\u539F\u5219\u3002"
 title: "\u7F16\u5199\u6D4B\u8BD5"
+weight: 36
 ---
-
-{{< edit_this_page >}}
 
 ## 什么 & 为什么？
 在 Java 中编写测试的目的是为了验证你的代码在各种条件下的行为是否符合预期。程序员编写测试来防止 bug，确保在更改后功能仍然正确，并促进良好的软件设计原则。

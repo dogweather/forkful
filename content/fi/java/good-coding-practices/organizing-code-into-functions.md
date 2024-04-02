@@ -8,9 +8,8 @@ model: gpt-4-1106-preview
 summary: "Koodin j\xE4rjest\xE4minen funktioihin tarkoittaa ohjelman jakamista hallittaviin\
   \ palasiin, joista kukin suorittaa oman, erillisen teht\xE4v\xE4ns\xE4. Ohjelmoijat\u2026"
 title: "Koodin j\xE4rjest\xE4minen funktioihin"
+weight: 18
 ---
-
-{{< edit_this_page >}}
 
 ## Mikä & Miksi?
 Koodin järjestäminen funktioihin tarkoittaa ohjelman jakamista hallittaviin palasiin, joista kukin suorittaa oman, erillisen tehtävänsä. Ohjelmoijat tekevät tämän tehdäkseen koodista luettavaa, uudelleenkäytettävää ja ylläpidettävää.

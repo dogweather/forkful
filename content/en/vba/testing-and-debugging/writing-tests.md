@@ -8,9 +8,8 @@ model: gpt-4-0125-preview
 summary: "Writing tests in programming involves creating specific procedures to validate\
   \ the functionality and performance of your code segments, ensuring they work\u2026"
 title: Writing tests
+weight: 36
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 

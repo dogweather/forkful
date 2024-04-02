@@ -10,9 +10,8 @@ model: gpt-4-0125-preview
 summary: "Escribir pruebas en Go implica crear peque\xF1as piezas de c\xF3digo manejables\
   \ que validan la funcionalidad y el comportamiento de tu aplicaci\xF3n. Los\u2026"
 title: Escribir pruebas
+weight: 36
 ---
-
-{{< edit_this_page >}}
 
 ## ¿Qué y por qué?
 

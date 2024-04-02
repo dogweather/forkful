@@ -9,9 +9,8 @@ summary: "Leer un archivo de texto en programaci\xF3n significa acceder al conte
   \ almacenado en un archivo en tu disco y trabajar con \xE9l en tu c\xF3digo. Es\
   \ una tarea\u2026"
 title: Lectura de un archivo de texto
+weight: 22
 ---
-
-{{< edit_this_page >}}
 
 ## ¿Qué y Por Qué?
 Leer un archivo de texto en programación significa acceder al contenido almacenado en un archivo en tu disco y trabajar con él en tu código. Es una tarea común porque los programas a menudo necesitan cargar configuraciones, datos o plantillas guardadas como texto.

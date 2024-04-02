@@ -11,9 +11,8 @@ summary: "\xC5 skrive tester i Java handler om \xE5 verifisere at koden din oppf
   rer seg som forventet under forskjellige forhold. Programmerere skriver tester for\
   \ \xE5\u2026"
 title: Skrive tester
+weight: 36
 ---
-
-{{< edit_this_page >}}
 
 ## Hva & Hvorfor?
 Å skrive tester i Java handler om å verifisere at koden din oppfører seg som forventet under forskjellige forhold. Programmerere skriver tester for å forebygge feil, sikre at funksjonaliteten forblir korrekt etter endringer, og fremme gode prinsipper for programvaredesign.

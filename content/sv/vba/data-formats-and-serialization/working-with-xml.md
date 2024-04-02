@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Att arbeta med XML i Visual Basic for Applications (VBA) inneb\xE4r att\
   \ analysera, skapa och modifiera XML-dokument inom ramen f\xF6r Microsoft Office-\u2026"
 title: Arbeta med XML
+weight: 40
 ---
-
-{{< edit_this_page >}}
 
 ## Vad & Varför?
 

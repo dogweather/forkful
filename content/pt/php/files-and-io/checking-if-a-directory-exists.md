@@ -11,9 +11,8 @@ summary: "Verificar se um diret\xF3rio existe \xE9 uma tarefa fundamental na pro
   \xE3o PHP, pois permite que voc\xEA verifique a presen\xE7a de um diret\xF3rio antes\
   \ de realizar\u2026"
 title: "Verificando se um diret\xF3rio existe"
+weight: 20
 ---
-
-{{< edit_this_page >}}
 
 ## O que & Por quê?
 

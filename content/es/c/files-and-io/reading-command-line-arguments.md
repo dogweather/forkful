@@ -10,9 +10,8 @@ model: gpt-4-0125-preview
 summary: "En la programaci\xF3n en C, leer argumentos de la l\xEDnea de comando permite\
   \ a los programas aceptar entradas directamente desde el terminal, mejorando la\u2026"
 title: "Leyendo argumentos de l\xEDnea de comandos"
+weight: 23
 ---
-
-{{< edit_this_page >}}
 
 ## Qué y Por Qué?
 

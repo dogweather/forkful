@@ -8,9 +8,8 @@ model: gpt-4-0125-preview
 summary: "Kompleksiluvut ovat reaalilukujen ja imaginaarilukujen yhdistelmi\xE4, kuten\
   \ `a + bi`, miss\xE4 `i` on -1:n neli\xF6juuri. Ne ovat avainasemassa aloilla kuten\u2026"
 title: "Kompleksilukujen k\xE4sittely"
+weight: 14
 ---
-
-{{< edit_this_page >}}
 
 ## Mitä ja miksi?
 Kompleksiluvut ovat reaalilukujen ja imaginaarilukujen yhdistelmiä, kuten `a + bi`, missä `i` on -1:n neliöjuuri. Ne ovat avainasemassa aloilla kuten insinööritiede ja fysiikka ratkaisemaan ongelmia, joita tavallisilla luvuilla ei voi käsitellä.

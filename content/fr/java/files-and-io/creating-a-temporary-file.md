@@ -9,9 +9,8 @@ summary: "Cr\xE9er un fichier temporaire en Java, c'est g\xE9n\xE9rer un fichier
   \ des donn\xE9es \xE9ph\xE9m\xE8res. Les programmeurs le font souvent pour tester\
   \ des morceaux de\u2026"
 title: "Cr\xE9ation d'un fichier temporaire"
+weight: 21
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why? (Quoi et Pourquoi?)
 Créer un fichier temporaire en Java, c'est générer un fichier pour des données éphémères. Les programmeurs le font souvent pour tester des morceaux de code ou gérer des données sensibles qui ne doivent pas rester sur le disque dur indéfiniment.

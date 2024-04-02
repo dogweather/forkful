@@ -9,9 +9,8 @@ summary: "O tratamento de erros \xE9 como voc\xEA gerencia quando as coisas n\xE
   o saem como esperado no seu c\xF3digo. \xC9 crucial porque ajuda seus programas\
   \ a falharem de\u2026"
 title: Tratamento de erros
+weight: 16
 ---
-
-{{< edit_this_page >}}
 
 ## O Quê & Porquê?
 

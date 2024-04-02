@@ -11,9 +11,8 @@ summary: "\xC5 sende en HTTP-foresp\xF8rsel med grunnleggende autentisering i Go
   rer \xE5 legge til en autorisasjonsheader til foresp\xF8rselen din som inkluderer\
   \ et\u2026"
 title: "Sende en HTTP-foresp\xF8rsel med grunnleggende autentisering"
+weight: 45
 ---
-
-{{< edit_this_page >}}
 
 ## Hva & Hvorfor?
 

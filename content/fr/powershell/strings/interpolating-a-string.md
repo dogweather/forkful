@@ -9,9 +9,8 @@ summary: "Interpoler une cha\xEEne, c'est ins\xE9rer des valeurs de variables di
   \ dedans. C'est utilis\xE9 pour composer des messages ou des commandes de fa\xE7\
   on\u2026"
 title: "Interpolation de cha\xEEnes de caract\xE8res"
+weight: 8
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 Interpoler une chaîne, c'est insérer des valeurs de variables directement dedans. C'est utilisé pour composer des messages ou des commandes de façon fluide et dynamique, sans recoller des bouts de chaîne à la mano.

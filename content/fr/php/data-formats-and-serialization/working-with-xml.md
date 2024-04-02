@@ -7,9 +7,8 @@ model: gpt-4-0125-preview
 summary: "XML est un langage de balisage utilis\xE9 pour le stockage et le transport\
   \ des donn\xE9es. Les programmeurs travaillent avec XML pour permettre\u2026"
 title: Travailler avec XML
+weight: 40
 ---
-
-{{< edit_this_page >}}
 
 ## Quoi & Pourquoi ?
 XML est un langage de balisage utilisé pour le stockage et le transport des données. Les programmeurs travaillent avec XML pour permettre l’interopérabilité entre applications et systèmes - pensez à l’échange de données et aux paramètres de configuration.

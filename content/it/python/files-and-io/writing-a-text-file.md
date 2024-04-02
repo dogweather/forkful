@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Scrivere su un file di testo in Python \xE8 un'operazione fondamentale che\
   \ implica la creazione o l'apertura di un file e poi l'appendere o sovrascrivere\u2026"
 title: Scrivere un file di testo
+weight: 24
 ---
-
-{{< edit_this_page >}}
 
 ## Cosa e perché?
 Scrivere su un file di testo in Python è un'operazione fondamentale che implica la creazione o l'apertura di un file e poi l'appendere o sovrascrivere testo. Questa funzionalità è cruciale per la registrazione dei dati, la gestione della configurazione e l'archiviazione dell'output generato dai programmi, rendendola uno strumento basilare ma essenziale nell'arsenale di un programmatore.

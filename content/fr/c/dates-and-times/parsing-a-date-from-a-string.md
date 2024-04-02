@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Analyser une date \xE0 partir d'une cha\xEEne en C implique de convertir\
   \ des repr\xE9sentations textuelles de dates en un format que les programmes peuvent\u2026"
 title: "Analyser une date \xE0 partir d'une cha\xEEne de caract\xE8res"
+weight: 30
 ---
-
-{{< edit_this_page >}}
 
 ## Quoi & Pourquoi ?
 

@@ -12,9 +12,8 @@ summary: "\u5B57\u7B26\u4E32\u62FC\u63A5\u5C31\u662F\u5C06\u591A\u4E2A\u5B57\u7B
   \u4E86\u751F\u6210\u52A8\u6001\u5185\u5BB9\u3001\u6784\u5EFA\u8DEF\u5F84\u6216\u8005\
   \u7EC4\u5408\u6D88\u606F\u3002"
 title: "\u5B57\u7B26\u4E32\u62FC\u63A5"
+weight: 3
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why? 什麼 & 為什麼?
 字符串拼接就是将多个字符串合并成一个。程序员这么做为了生成动态内容、构建路径或者组合消息。

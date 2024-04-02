@@ -11,9 +11,8 @@ summary: "Escribir en un archivo de texto en Fish Shell te permite almacenar dat
   \ de manera persistente, facilitando la recuperaci\xF3n o manipulaci\xF3n f\xE1\
   cil de datos\u2026"
 title: Escribiendo un archivo de texto
+weight: 24
 ---
-
-{{< edit_this_page >}}
 
 ## ¿Qué y por qué?
 

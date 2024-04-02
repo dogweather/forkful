@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Tworzenie pliku tekstowego w Bashu pozwala na automatyzacj\u0119 przechowywania\
   \ danych, logowania, ustawie\u0144 konfiguracyjnych i wielu innych. Jest to podstawowa\u2026"
 title: Pisanie pliku tekstowego
+weight: 24
 ---
-
-{{< edit_this_page >}}
 
 ## Co i Dlaczego?
 

@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Att starta ett nytt projekt i Google Apps Script (GAS) inneb\xE4r att man\
   \ initialiserar en skriptfil inom Googles ekosystem (Google Drive, Dokument,\u2026"
 title: Att starta ett nytt projekt
+weight: 1
 ---
-
-{{< edit_this_page >}}
 
 ## Vad & Varför?
 

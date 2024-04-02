@@ -9,9 +9,8 @@ summary: "String-Interpolation erm\xF6glicht es, Variablen oder Ausdr\xFCcke in 
   \ String einzubetten, sodass der String deren Werte enth\xE4lt. Programmierer nutzen\
   \ dies\u2026"
 title: Zeichenketten interpolieren
+weight: 8
 ---
-
-{{< edit_this_page >}}
 
 ## Was & Warum?
 String-Interpolation ermöglicht es, Variablen oder Ausdrücke in einem String einzubetten, sodass der String deren Werte enthält. Programmierer nutzen dies für dynamisch generierte Nachrichten und die Formatierung von Ausgaben, um Code sauber und flexibel zu halten.

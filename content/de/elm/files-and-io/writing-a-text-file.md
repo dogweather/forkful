@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Das Schreiben einer Textdatei in Elm beinhaltet das Erstellen und Speichern\
   \ von textuellen Daten in einer Datei aus einer Elm-Anwendung heraus.\u2026"
 title: Eine Textdatei schreiben
+weight: 24
 ---
-
-{{< edit_this_page >}}
 
 ## Was & Warum?
 

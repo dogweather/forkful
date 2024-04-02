@@ -9,9 +9,8 @@ summary: "Descargar una p\xE1gina web significa traer su contenido a tu equipo l
   \ Programadores hacen esto para analizar la informaci\xF3n, probar la conectividad\
   \ o\u2026"
 title: "Descargando una p\xE1gina web"
+weight: 42
 ---
-
-{{< edit_this_page >}}
 
 ## Qué es y por qué?
 Descargar una página web significa traer su contenido a tu equipo local. Programadores hacen esto para analizar la información, probar la conectividad o monitorear cambios en el sitio.

@@ -10,9 +10,8 @@ model: gpt-4-0125-preview
 summary: "I TypeScript er skriving til standardfeil (stderr) en prosess for \xE5 sende\
   \ feilmeldinger eller logger direkte til milj\xF8ets feilutdatastr\xF8m (for eksempel\u2026"
 title: Skriving til standardfeil
+weight: 25
 ---
-
-{{< edit_this_page >}}
 
 ## Hva & hvorfor?
 I TypeScript er skriving til standardfeil (stderr) en prosess for å sende feilmeldinger eller logger direkte til miljøets feilutdatastrøm (for eksempel konsollen i node.js eller en nettleser). Dette er essensielt for diagnostisering av problemer uten å forstyrre standardutdata (stdout), som vanligvis brukes for programdata, og sikrer at feilhåndtering og logging håndteres effektivt og sammenhengende.

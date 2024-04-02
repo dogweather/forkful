@@ -7,9 +7,8 @@ model: gpt-4-1106-preview
 summary: "Downloading a web page means grabbing its data over the internet; it's like\
   \ saving a copy to read or process locally. Programmers do it to scrape content,\u2026"
 title: Downloading a web page
+weight: 42
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 

@@ -10,9 +10,8 @@ model: gpt-4-0125-preview
 summary: "Virheviestien kirjoittaminen standardivirheeseen (stderr) PHP:ss\xE4 tarkoittaa\
   \ virheilmoitusten tai diagnostiikkatietojen ohjaamista erill\xE4\xE4n\u2026"
 title: Kirjoittaminen standardivirheeseen
+weight: 25
 ---
-
-{{< edit_this_page >}}
 
 ## Mikä ja miksi?
 

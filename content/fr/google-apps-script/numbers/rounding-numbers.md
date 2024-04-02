@@ -11,9 +11,8 @@ summary: "Arrondir les nombres, un concept fondamental en programmation informat
   \ consiste \xE0 ajuster un nombre \xE0 l'entier le plus proche ou \xE0 un nombre\
   \ sp\xE9cifi\xE9\u2026"
 title: Arrondissement des nombres
+weight: 13
 ---
-
-{{< edit_this_page >}}
 
 ## Quoi et Pourquoi ?
 

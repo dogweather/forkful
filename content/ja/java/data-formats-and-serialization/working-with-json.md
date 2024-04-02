@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Java\u30A2\u30D7\u30EA\u30B1\u30FC\u30B7\u30E7\u30F3\u5185\u3067\u306EJSON\uFF08\
   JavaScript Object\u2026"
 title: "JSON\u3092\u6D3B\u7528\u3059\u308B"
+weight: 38
 ---
-
-{{< edit_this_page >}}
 
 ## 何となぜ？
 Javaアプリケーション内でのJSON（JavaScript Object Notation）の取り扱いは、この軽量なデータ交換フォーマットを扱うことを意味します。プログラマーは、JSONを使って構造化されたデータをネットワーク越しにシリアライズ（直列化）し転送したり、データを簡単に設定・保存したりするために採用しています。それは、JSONが人間にとって読みやすく言語に依存しないからです。

@@ -9,9 +9,8 @@ summary: "Refactorizar es b\xE1sicamente hacer limpieza de primavera en tu base 
   \ c\xF3digo\u2014se trata de reestructurar el c\xF3digo existente sin cambiar su\
   \ comportamiento\u2026"
 title: "Refactorizaci\xF3n"
+weight: 19
 ---
-
-{{< edit_this_page >}}
 
 ## ¿Qué y Por Qué?
 Refactorizar es básicamente hacer limpieza de primavera en tu base de código—se trata de reestructurar el código existente sin cambiar su comportamiento externo. Los programadores lo hacen para hacer el código más legible, reducir la complejidad, mejorar la mantenibilidad y facilitar su extensión.

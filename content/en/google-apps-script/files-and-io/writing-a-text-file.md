@@ -9,9 +9,8 @@ summary: "Writing a text file in Google Apps Script allows developers to store d
   \ persistently, making it accessible for future use or analysis. This operation\
   \ is\u2026"
 title: Writing a text file
+weight: 24
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 

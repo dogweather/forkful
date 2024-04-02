@@ -19,9 +19,8 @@ summary: "\uC2E4\uC218\uBD80\uC640 \uD5C8\uC218\uBD80(\uBCF4\uD1B5 a + bi\uB85C 
   \ \uC22B\uC790 \uD45C\uD604\uC774 \uD544\uC218\uC801\uC77C \uB54C \uBCF5\uC18C\uC218\
   \uB97C \uC0AC\uC6A9\uD569\uB2C8\uB2E4."
 title: "\uBCF5\uC18C\uC218 \uB2E4\uB8E8\uAE30"
+weight: 14
 ---
-
-{{< edit_this_page >}}
 
 ## 무엇과 왜?
 실수부와 허수부(보통 a + bi로 표기)로 구성된 복소수는 실수만으로는 실현 불가능하거나 불편한 계산을 가능하게 합니다. 프로그래머들은 신호 처리, 양자 컴퓨팅, 응용 수학 같은 분야에서 이차원 숫자 표현이 필수적일 때 복소수를 사용합니다.

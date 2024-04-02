@@ -11,9 +11,8 @@ summary: "Trabalhar com arquivos CSV em Ruby oferece uma abordagem direta para l
   \ com dados tabulares. Programadores frequentemente se engajam nesta pr\xE1tica\
   \ para\u2026"
 title: Trabalhando com CSV
+weight: 37
 ---
-
-{{< edit_this_page >}}
 
 ## O Que & Por Quê?
 

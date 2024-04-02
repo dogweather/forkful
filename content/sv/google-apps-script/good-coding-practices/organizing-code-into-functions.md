@@ -10,9 +10,8 @@ model: gpt-4-0125-preview
 summary: "Att organisera kod i funktioner handlar om att strukturera din Google Apps\
   \ Script-kod genom att separera logiska segment till distinkta block, d\xE4r varje\u2026"
 title: Att organisera kod i funktioner
+weight: 18
 ---
-
-{{< edit_this_page >}}
 
 ## Vad & Varför?
 

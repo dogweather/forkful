@@ -9,9 +9,8 @@ summary: "T\xE9l\xE9charger une page web, c'est r\xE9cup\xE9rer son contenu via 
   \ Les programmeurs le font pour analyser des donn\xE9es, automatiser des t\xE2ches\
   \ ou agr\xE9ger\u2026"
 title: "T\xE9l\xE9chargement d'une page web"
+weight: 42
 ---
-
-{{< edit_this_page >}}
 
 ## Quoi & Pourquoi ?
 Télécharger une page web, c'est récupérer son contenu via Internet. Les programmeurs le font pour analyser des données, automatiser des tâches ou agréger du contenu.

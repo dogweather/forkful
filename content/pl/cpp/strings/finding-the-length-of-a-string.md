@@ -9,9 +9,8 @@ summary: "Znalezienie d\u0142ugo\u015Bci \u0142a\u0144cucha znak\xF3w to spos\xF
   b na okre\u015Blenie, ile znak\xF3w zawiera dany tekst. Programi\u015Bci robi\u0105\
   \ to, aby manipulowa\u0107 tekstami, walidowa\u0107\u2026"
 title: "Znalezienie d\u0142ugo\u015Bci ci\u0105gu znak\xF3w"
+weight: 7
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why? (Co i Dlaczego?)
 Znalezienie długości łańcucha znaków to sposób na określenie, ile znaków zawiera dany tekst. Programiści robią to, aby manipulować tekstami, walidować dane wejściowe lub po prostu określić potrzebne zasoby.

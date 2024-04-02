@@ -9,9 +9,8 @@ summary: "Koodin j\xE4rjest\xE4minen funktioihin pilkkoo teht\xE4v\xE4t uudellee
   ytett\xE4viksi osiksi, mik\xE4 tekee koodista siistimp\xE4\xE4 ja yll\xE4pidett\xE4\
   v\xE4mp\xE4\xE4. T\xE4m\xE4 v\xE4hent\xE4\xE4\u2026"
 title: "Koodin j\xE4rjest\xE4minen funktioihin"
+weight: 18
 ---
-
-{{< edit_this_page >}}
 
 ## Mitä & Miksi?
 Koodin järjestäminen funktioihin pilkkoo tehtävät uudelleenkäytettäviksi osiksi, mikä tekee koodista siistimpää ja ylläpidettävämpää. Tämä vähentää toistoa, helpottaa testaamista ja parantaa luettavuutta.

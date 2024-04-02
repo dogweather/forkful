@@ -2,15 +2,16 @@
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 22:03:25.694988-07:00
-description: "Fels\xF6kning i Google Apps Script (GAS) inneb\xE4r processen att identifiera\
-  \ och avl\xE4gsna fel fr\xE5n skript avsedda att automatisera Google Appar eller\
-  \ bygga\u2026"
+description: "Google Apps Script erbjuder en inbyggd fels\xF6kare inom Apps Script\
+  \ Editor f\xF6r att hj\xE4lpa till att fels\xF6ka skript. S\xE5 h\xE4r initierar\
+  \ och anv\xE4nder du\u2026"
 lastmod: '2024-03-13T22:44:37.443732-06:00'
 model: gpt-4-0125-preview
-summary: "Fels\xF6kning i Google Apps Script (GAS) inneb\xE4r processen att identifiera\
-  \ och avl\xE4gsna fel fr\xE5n skript avsedda att automatisera Google Appar eller\
-  \ bygga\u2026"
+summary: "Google Apps Script erbjuder en inbyggd fels\xF6kare inom Apps Script Editor\
+  \ f\xF6r att hj\xE4lpa till att fels\xF6ka skript. S\xE5 h\xE4r initierar och anv\xE4\
+  nder du\u2026"
 title: "Att anv\xE4nda en debugger"
+weight: 35
 ---
 
 ## Hur man gör:

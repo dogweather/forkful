@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Analisar uma data a partir de uma string em Visual Basic for Applications\
   \ (VBA) \xE9 sobre converter texto que representa uma data em um tipo de dados de\u2026"
 title: Analisando uma data a partir de uma string
+weight: 30
 ---
-
-{{< edit_this_page >}}
 
 ## O Que & Por Que?
 

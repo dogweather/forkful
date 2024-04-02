@@ -21,9 +21,8 @@ summary: "\uBB38\uC790\uC5F4\uC5D0\uC11C \uB530\uC634\uD45C\uB97C \uC81C\uAC70\u
   \ \uBC29\uD574\uAC00 \uB420 \uC218 \uC788\uB294 \uBD88\uD544\uC694\uD55C \uBB38\uC790\
   \uB4E4\uC744 \uC5C6\uC560\uAE30 \uC704\uD574\u2026"
 title: "\uBB38\uC790\uC5F4\uC5D0\uC11C \uB530\uC634\uD45C \uC81C\uAC70\uD558\uAE30"
+weight: 9
 ---
-
-{{< edit_this_page >}}
 
 ## 무엇 & 왜?
 문자열에서 따옴표를 제거한다는 것은 문자열 데이터의 일부인 모든 인용 부호—단일(' ') 또는 이중(" ")—를 제거하는 것을 의미합니다. 프로그래머들은 입력을 정화하거나, 텍스트를 처리 준비를 하거나, 데이터 처리 및 작업에 방해가 될 수 있는 불필요한 문자들을 없애기 위해 이 작업을 수행합니다.

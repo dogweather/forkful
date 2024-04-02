@@ -7,9 +7,8 @@ model: gpt-4-1106-preview
 summary: "Logging er i bunn og grunn \xE5 etterlate et spor av br\xF8dsmuler gjennom\
   \ koden din - det er hvordan du holder oversikten over hva som skjer n\xE5r skriptet\u2026"
 title: "Loggf\xF8ring"
+weight: 17
 ---
-
-{{< edit_this_page >}}
 
 ## Hva & Hvorfor?
 Logging er i bunn og grunn å etterlate et spor av brødsmuler gjennom koden din - det er hvordan du holder oversikten over hva som skjer når skriptet kjører i det fri. Programmerere logger for å feilsøke, spore appatferd, overvåke ytelse, og holde et øye med eventuelle misligheter.

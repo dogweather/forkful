@@ -11,9 +11,8 @@ summary: "XML:n k\xE4sittely C-kieless\xE4 sis\xE4lt\xE4\xE4 XML-dokumenttien j\
   sent\xE4misen, kyselyiden teon ja manipuloinnin k\xE4ytt\xE4en erilaisia kirjastoja.\
   \ Ohjelmoijat k\xE4ytt\xE4v\xE4t\u2026"
 title: "Ty\xF6skentely XML:n kanssa"
+weight: 40
 ---
-
-{{< edit_this_page >}}
 
 ## Mitä ja miksi?
 

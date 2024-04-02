@@ -11,9 +11,8 @@ summary: "Att l\xE4sa en textfil i C inneb\xE4r att \xF6ppna en fil p\xE5 ditt s
   \ f\xF6r att extrahera information och manipulera eller visa den som det beh\xF6\
   vs. Programmerare\u2026"
 title: "L\xE4sa en textfil"
+weight: 22
 ---
-
-{{< edit_this_page >}}
 
 ## Vad och varför?
 

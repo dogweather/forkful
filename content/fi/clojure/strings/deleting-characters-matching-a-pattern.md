@@ -9,9 +9,8 @@ summary: "Mik\xE4 ja miksi? Ohjelmoinnissa merkkien poistaminen kuvioon sopivast
   \ on datan siistimist\xE4. Tehd\xE4\xE4n n\xE4timp\xE4\xE4, helpommin k\xE4sitelt\xE4\
   v\xE4\xE4."
 title: Merkkien poistaminen hakemalla osumia kaavaan
+weight: 5
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 Mikä ja miksi? Ohjelmoinnissa merkkien poistaminen kuvioon sopivasti on datan siistimistä. Tehdään nätimpää, helpommin käsiteltävää.

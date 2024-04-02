@@ -14,9 +14,8 @@ summary: "JavaScript\uC5D0\uC11C \uBB38\uC790\uC5F4\uC758 \uC77C\uBD80\uB97C \uC
   \ \uC815\uC81C \uB610\uB294 UI \uD45C\uC2DC\uC640 \uAC19\uC740 \uB9CE\uC740 \uC791\
   \uC5C5\uC5D0 \uD544\uC218\uC801\uC785\uB2C8\uB2E4."
 title: "\uBD80\uBD84 \uBB38\uC790\uC5F4 \uCD94\uCD9C"
+weight: 6
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why? (무엇과 왜?)
 JavaScript에서 문자열의 일부를 추출하는 것은 특정 부분의 데이터를 얻기 위함입니다. 검색, 데이터 정제 또는 UI 표시와 같은 많은 작업에 필수적입니다.

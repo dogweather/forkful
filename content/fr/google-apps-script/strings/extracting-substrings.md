@@ -11,9 +11,8 @@ summary: "Extraire des sous-cha\xEEnes consiste \xE0 prendre une portion d'une c
   ne de caract\xE8res - en cr\xE9ant essentiellement une nouvelle cha\xEEne \xE0 partir\
   \ d'une partie\u2026"
 title: "Extraction de sous-cha\xEEnes"
+weight: 6
 ---
-
-{{< edit_this_page >}}
 
 ## Quoi & Pourquoi ?
 

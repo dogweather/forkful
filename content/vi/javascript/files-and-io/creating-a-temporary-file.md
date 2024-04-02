@@ -15,9 +15,8 @@ summary: "T\u1EA1o m\u1ED9t t\u1EC7p t\u1EA1m th\u1EDDi cho ph\xE9p \u1EE9ng d\u
   \ \u0111ang x\u1EED l\xFD d\u1EEF li\u1EC7u l\u1EDBn, b\u1ED9 nh\u1EDB \u0111\u1EC7\
   m,\u2026"
 title: "T\u1EA1o m\u1ED9t t\u1EADp tin t\u1EA1m th\u1EDDi"
+weight: 21
 ---
-
-{{< edit_this_page >}}
 
 ## Cái gì & Tại sao?
 

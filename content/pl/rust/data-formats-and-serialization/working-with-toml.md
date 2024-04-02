@@ -9,9 +9,8 @@ summary: "TOML to j\u0119zyk serializacji danych czytelny dla cz\u0142owieka, cz
   sto u\u017Cywany do konfiguracji. Programi\u015Bci u\u017Cywaj\u0105 TOML ze wzgl\u0119\
   du na jego prostot\u0119 i\u2026"
 title: Praca z TOML
+weight: 39
 ---
-
-{{< edit_this_page >}}
 
 ## Co i dlaczego?
 TOML to język serializacji danych czytelny dla człowieka, często używany do konfiguracji. Programiści używają TOML ze względu na jego prostotę i przejrzystość, co łatwo przekłada się na mapę mieszającą w Rust.

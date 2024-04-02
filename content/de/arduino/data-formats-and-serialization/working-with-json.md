@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "JSON, oder JavaScript Object Notation, ist ein leichtgewichtiges Daten-Austauschformat,\
   \ was es perfekt f\xFCr die Datenspeicherung oder Konfigurationsdateien\u2026"
 title: Arbeiten mit JSON
+weight: 38
 ---
-
-{{< edit_this_page >}}
 
 ## Was & Warum?
 

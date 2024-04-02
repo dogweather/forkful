@@ -7,9 +7,8 @@ model: gpt-4-0125-preview
 summary: "Il Read-Eval-Print Loop (REPL) \xE8 un ambiente di programmazione semplice\
   \ e interattivo che prende singoli input dall'utente, li valuta e ritorna il\u2026"
 title: Utilizzo di un interprete interattivo (REPL)
+weight: 34
 ---
-
-{{< edit_this_page >}}
 
 ## Cos'è e Perché?
 Il Read-Eval-Print Loop (REPL) è un ambiente di programmazione semplice e interattivo che prende singoli input dall'utente, li valuta e ritorna il risultato all'utente. I programmatori Elm usano il REPL per esperimenti rapidi, per il debugging o per imparare il linguaggio.

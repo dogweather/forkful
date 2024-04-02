@@ -16,9 +16,8 @@ summary: "\uBBF8\uB798 \uD639\uC740 \uACFC\uAC70\uC758 \uB0A0\uC9DC \uACC4\uC0B0
   \ \uBC94\uC704 \uD655\uC778 \uB4F1\uC758 \uD504\uB85C\uADF8\uB798\uBC0D \uC0C1\uD669\
   \uC5D0\uC11C \uD544\uC694\uD569\uB2C8\uB2E4."
 title: "\uBBF8\uB798\uB098 \uACFC\uAC70\uC758 \uB0A0\uC9DC \uACC4\uC0B0\uD558\uAE30"
+weight: 26
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 미래 혹은 과거의 날짜 계산은 특정 기준일로부터 일정 기간 후나 전의 날짜를 찾는 것입니다. 이는 만기일, 이벤트 스케줄링, 기간 범위 확인 등의 프로그래밍 상황에서 필요합니다. 

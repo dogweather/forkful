@@ -7,9 +7,8 @@ model: gpt-4-1106-preview
 summary: "Buscar y reemplazar texto significa localizar ciertas palabras o frases\
   \ en una cadena de texto y sustituirlas por otras. Programadores lo usan para\u2026"
 title: Buscando y reemplazando texto
+weight: 10
 ---
-
-{{< edit_this_page >}}
 
 ## Qué y Por Qué?
 Buscar y reemplazar texto significa localizar ciertas palabras o frases en una cadena de texto y sustituirlas por otras. Programadores lo usan para actualizar datos, corregir errores o modificar contenido de manera rápida y eficiente.

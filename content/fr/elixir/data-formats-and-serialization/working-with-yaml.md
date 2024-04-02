@@ -10,9 +10,8 @@ model: gpt-4-0125-preview
 summary: "YAML, acronyme de YAML Ain't Markup Language, est un standard de s\xE9rialisation\
   \ de donn\xE9es lisible par l'humain, couramment utilis\xE9 pour les fichiers de\u2026"
 title: Travailler avec YAML
+weight: 41
 ---
-
-{{< edit_this_page >}}
 
 ## Quoi et pourquoi ?
 

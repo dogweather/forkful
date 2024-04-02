@@ -13,9 +13,8 @@ summary: "Vi\u1EC7c t\xECm chi\u1EC1u d\xE0i c\u1EE7a m\u1ED9t chu\u1ED7i trong 
   n \u0111\xE1m m\xE2y cho ph\xE9p b\u1EA1n t\u1EF1 \u0111\u1ED9ng h\xF3a c\xE1c t\xE1\
   c v\u1EE5 tr\xEAn c\xE1c\u2026"
 title: "T\xECm \u0111\u1ED9 d\xE0i c\u1EE7a chu\u1ED7i"
+weight: 7
 ---
-
-{{< edit_this_page >}}
 
 ## Gì và Tại sao?
 Việc tìm chiều dài của một chuỗi trong Google Apps Script, một ngôn ngữ lập trình JavaScript dựa trên đám mây cho phép bạn tự động hóa các tác vụ trên các sản phẩm của Google, là về việc xác định số lượng ký tự trong một chuỗi. Các lập trình viên thường xuyên thực hiện thao tác này để xác minh đầu vào, lặp qua các ký tự hoặc thao tác với chuỗi cho các tác vụ tự động hóa khác nhau trong Google Apps.

@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Tests schrijven in programmeren betekent het cre\xEBren van mini-programma's\
   \ om te controleren of je code werkt zoals verwacht. Programmeurs doen dit om bugs\u2026"
 title: Tests Schrijven
+weight: 36
 ---
-
-{{< edit_this_page >}}
 
 ## Wat & Waarom?
 Tests schrijven in programmeren betekent het creëren van mini-programma's om te controleren of je code werkt zoals verwacht. Programmeurs doen dit om bugs te vinden, kwaliteit te waarborgen, en tijd te besparen bij het later oplossen van problemen.

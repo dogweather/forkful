@@ -9,9 +9,8 @@ summary: "Imprimir salida de depuraci\xF3n en PHP significa mostrar datos en pan
   \ para entender qu\xE9 est\xE1 pasando dentro de tu c\xF3digo. Los programadores\
   \ lo hacen\u2026"
 title: "Imprimiendo salida de depuraci\xF3n"
+weight: 33
 ---
-
-{{< edit_this_page >}}
 
 ## ¿Qué y Por Qué?
 Imprimir salida de depuración en PHP significa mostrar datos en pantalla para entender qué está pasando dentro de tu código. Los programadores lo hacen para rastrear errores y verificar que todo marche como debería.

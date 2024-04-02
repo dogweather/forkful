@@ -11,9 +11,8 @@ summary: "Escrever para o erro padr\xE3o (stderr) na programa\xE7\xE3o Arduino e
   \ direcionar mensagens de erro e diagn\xF3sticos para um canal separado, garantindo\
   \ que\u2026"
 title: "Escrevendo para o erro padr\xE3o"
+weight: 25
 ---
-
-{{< edit_this_page >}}
 
 ## O Que & Porquê?
 

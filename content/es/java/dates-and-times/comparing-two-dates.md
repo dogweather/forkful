@@ -9,9 +9,8 @@ summary: "Comparar dos fechas permite determinar cu\xE1l es anterior o posterior
   \ o si son iguales. Los programadores lo hacen para validaciones, c\xE1lculos de\
   \ per\xEDodos\u2026"
 title: "Comparaci\xF3n de dos fechas"
+weight: 27
 ---
-
-{{< edit_this_page >}}
 
 ## Qué y Por Qué?
 

@@ -9,9 +9,8 @@ summary: "L'interpolation de cha\xEEnes permet d'ins\xE9rer des valeurs de varia
   \ directement dans une cha\xEEne de caract\xE8res. Les programmeurs l'utilisent\
   \ pour\u2026"
 title: "Interpolation de cha\xEEnes de caract\xE8res"
+weight: 8
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 L'interpolation de chaînes permet d'insérer des valeurs de variables directement dans une chaîne de caractères. Les programmeurs l'utilisent pour assembler du texte dynamique de manière lisible et efficace.

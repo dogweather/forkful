@@ -19,9 +19,8 @@ summary: "\u5728Google Apps\u811A\u672C\u4E2D\u4F7F\u7528XML\uFF0C\u5141\u8BB8\u
   \u4ECD\u7136\u4F9D\u8D56\u4E8EXML\u800C\u975EJSON\u8FDB\u884C\u6570\u636E\u4EA4\u6362\
   \u7684API\u901A\u4FE1\u3002"
 title: "\u5904\u7406XML"
+weight: 40
 ---
-
-{{< edit_this_page >}}
 
 ## 什么及为什么？
 

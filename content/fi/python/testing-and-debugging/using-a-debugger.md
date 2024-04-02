@@ -1,14 +1,15 @@
 ---
 date: 2024-01-26 04:09:00.655890-07:00
-description: "\"Debuggerin k\xE4ytt\xF6\" tarkoittaa Python-koodisi l\xE4pik\xE4ymist\xE4\
-  \ askel askeleelta virheiden l\xF6yt\xE4miseksi ja toiminnan ymm\xE4rt\xE4miseksi.\
-  \ Teemme niin, koska se on\u2026"
+description: "K\xE4yd\xE4\xE4n l\xE4pi `pdb`:n, Pythonin sis\xE4\xE4nrakennetun debuggerin,\
+  \ k\xE4ytt\xF6. Kuvittele tiedosto, `buggy.py`, jossa on ovela bugi: ```Python def\
+  \ add_one(number):\u2026"
 lastmod: '2024-03-13T22:44:56.148212-06:00'
 model: gpt-4-0125-preview
-summary: "\"Debuggerin k\xE4ytt\xF6\" tarkoittaa Python-koodisi l\xE4pik\xE4ymist\xE4\
-  \ askel askeleelta virheiden l\xF6yt\xE4miseksi ja toiminnan ymm\xE4rt\xE4miseksi.\
-  \ Teemme niin, koska se on\u2026"
+summary: "K\xE4yd\xE4\xE4n l\xE4pi `pdb`:n, Pythonin sis\xE4\xE4nrakennetun debuggerin,\
+  \ k\xE4ytt\xF6. Kuvittele tiedosto, `buggy.py`, jossa on ovela bugi: ```Python def\
+  \ add_one(number):\u2026"
 title: "Debuggerin k\xE4ytt\xF6"
+weight: 35
 ---
 
 ## Kuinka:

@@ -9,9 +9,8 @@ summary: "Refactoring ist der Prozess der Umstrukturierung vorhandenen Computer-
   \ ohne dessen \xE4u\xDFeres Verhalten zu ver\xE4ndern. Programmierer tun dies, um\
   \ den\u2026"
 title: Refactoring
+weight: 19
 ---
-
-{{< edit_this_page >}}
 
 ## Was & Warum?
 

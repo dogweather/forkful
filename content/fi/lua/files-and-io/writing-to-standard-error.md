@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Kirjoittaminen standardivirheeseen (stderr) tarkoittaa virheviestien ja\
   \ diagnostiikkatulosteiden ohjaamista erilliseen kanavaan, eroon\u2026"
 title: Kirjoittaminen standardivirheeseen
+weight: 25
 ---
-
-{{< edit_this_page >}}
 
 ## Mikä ja Miksi?
 Kirjoittaminen standardivirheeseen (stderr) tarkoittaa virheviestien ja diagnostiikkatulosteiden ohjaamista erilliseen kanavaan, eroon standarditulosteesta (stdout). Ohjelmoijat tekevät näin erottaakseen tavalliset ohjelman tulokset virhetiedoista, mikä tekee vianetsinnästä ja lokien kirjaamisesta sujuvampaa.

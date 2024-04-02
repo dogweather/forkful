@@ -11,9 +11,8 @@ summary: "Calcular uma data no futuro ou passado envolve determinar uma data esp
   fica adicionando ou subtraindo um certo n\xFAmero de dias, meses ou anos de uma\
   \ data\u2026"
 title: Calculando uma data no futuro ou passado
+weight: 26
 ---
-
-{{< edit_this_page >}}
 
 ## O Que e Por Quê?
 Calcular uma data no futuro ou passado envolve determinar uma data específica adicionando ou subtraindo um certo número de dias, meses ou anos de uma data fornecida. Os programadores fazem isso para tarefas como agendar eventos, gerar lembretes ou lidar com datas de expiração, o que torna essa funcionalidade essencial em várias aplicações, de sistemas de calendário a software financeiro.

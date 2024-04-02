@@ -11,9 +11,8 @@ summary: "Organizar o c\xF3digo em fun\xE7\xF5es no Visual Basic for Application
   \ (VBA) envolve dividir um programa em partes menores e gerenci\xE1veis, conhecidas\
   \ como\u2026"
 title: "Organizando c\xF3digo em fun\xE7\xF5es"
+weight: 18
 ---
-
-{{< edit_this_page >}}
 
 ## O Que & Por Que?
 

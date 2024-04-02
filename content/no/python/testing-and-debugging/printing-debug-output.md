@@ -9,9 +9,8 @@ summary: "\xC5 skrive ut debug-informasjon betyr \xE5 vise data som hjelper deg 
   \ forst\xE5 hva programmet ditt gj\xF8r. Programmerere gj\xF8r dette for \xE5 feils\xF8\
   ke kode og sikre\u2026"
 title: "Skrive ut feils\xF8kingsdata"
+weight: 33
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 Å skrive ut debug-informasjon betyr å vise data som hjelper deg å forstå hva programmet ditt gjør. Programmerere gjør dette for å feilsøke kode og sikre at alt kjører som det skal.

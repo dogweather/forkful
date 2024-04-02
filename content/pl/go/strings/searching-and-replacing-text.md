@@ -11,9 +11,8 @@ summary: "Wyszukiwanie i zamiana tekstu w programowaniu u\u0142atwia modyfikacj\
   \ i zarz\u0105dzanie ci\u0105gami znak\xF3w, co jest podstawowym zadaniem w manipulacji\
   \ danymi i\u2026"
 title: Wyszukiwanie i zamienianie tekstu
+weight: 10
 ---
-
-{{< edit_this_page >}}
 
 ## Co i dlaczego?
 

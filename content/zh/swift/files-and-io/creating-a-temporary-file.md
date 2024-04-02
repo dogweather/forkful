@@ -16,9 +16,8 @@ summary: "\u521B\u5EFA\u4E34\u65F6\u6587\u4EF6\u53EF\u4EE5\u5E2E\u52A9\u4F60\u5B
   \u5B8C\u6BD5\u540E\u53EF\u4EE5\u81EA\u52A8\u6216\u5BB9\u6613\u5730\u88AB\u6E05\u7406\
   \u6389\u3002"
 title: "\u521B\u5EFA\u4E34\u65F6\u6587\u4EF6"
+weight: 21
 ---
-
-{{< edit_this_page >}}
 
 ## 什么 & 为什么？
 创建临时文件可以帮助你存储会话数据或处理临时数据交换。程序员这么做是因为它们可以确保数据的即时性，并且在使用完毕后可以自动或容易地被清理掉。

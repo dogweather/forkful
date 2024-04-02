@@ -7,9 +7,8 @@ model: gpt-4-1106-preview
 summary: "Organizing code into functions is about breaking down your scripting into\
   \ bite-size chunks\u2014think functional LEGO blocks. We do it for clarity,\u2026"
 title: Organizing code into functions
+weight: 18
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 Organizing code into functions is about breaking down your scripting into bite-size chunks—think functional LEGO blocks. We do it for clarity, reusability, and sanity. It makes our code neat, readable, and maintainable.

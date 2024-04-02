@@ -11,9 +11,8 @@ summary: "Parsowanie HTML w programowaniu polega na analizie struktury dokumentu
   \ co pozwala na ekstrakcj\u0119, manipulacj\u0119 i interakcj\u0119 z jego zawarto\u015B\
   ci\u0105\u2026"
 title: "Analiza sk\u0142adniowa HTML"
+weight: 43
 ---
-
-{{< edit_this_page >}}
 
 ## Co & Dlaczego?
 

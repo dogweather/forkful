@@ -11,9 +11,8 @@ summary: "Testien kirjoittaminen Clojurella, kuten muillakin ohjelmointikielill\
   , sis\xE4lt\xE4\xE4 omistautuneen koodin luomisen p\xE4\xE4koodikannan toimivuuden\
   \ varmistamiseksi.\u2026"
 title: Testien kirjoittaminen
+weight: 36
 ---
-
-{{< edit_this_page >}}
 
 ## Mikä ja miksi?
 Testien kirjoittaminen Clojurella, kuten muillakin ohjelmointikielillä, sisältää omistautuneen koodin luomisen pääkoodikannan toimivuuden varmistamiseksi. Se auttaa tarkkuuden varmistamisessa, refaktoroinnin helpottamisessa ja koodin vakauden parantamisessa.

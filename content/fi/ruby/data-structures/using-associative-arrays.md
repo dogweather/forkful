@@ -10,9 +10,8 @@ model: gpt-4-0125-preview
 summary: "Assosiatiiviset taulukot, jotka tunnetaan yleisemmin hasheina Rubyn kieless\xE4\
   , mahdollistavat ainutlaatuisten avainten parittamisen arvoihin. Ne ovat\u2026"
 title: "Assosiatiivisten taulukoiden k\xE4ytt\xF6"
+weight: 15
 ---
-
-{{< edit_this_page >}}
 
 ## Mikä & Miksi?
 

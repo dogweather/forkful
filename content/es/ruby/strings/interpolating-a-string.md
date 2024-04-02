@@ -8,9 +8,8 @@ model: gpt-4-1106-preview
 summary: "La interpolaci\xF3n de cadenas en Ruby permite incrustar el valor de cualquier\
   \ expresi\xF3n dentro de una cadena de texto. Los programadores lo hacen para\u2026"
 title: "Interpolaci\xF3n de cadenas de texto"
+weight: 8
 ---
-
-{{< edit_this_page >}}
 
 ## Qué y Por Qué?
 

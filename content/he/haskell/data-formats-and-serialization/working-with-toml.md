@@ -17,9 +17,8 @@ summary: "\u05E2\u05D1\u05D5\u05D3\u05D4 \u05E2\u05DD TOML \u05DB\u05D5\u05DC\u0
   \ \u05D8\u05D5\u05DD) \u05E2\u05DD Haskell. \u05EA\u05DB\u05E0\u05EA\u05D9\u05DD\
   \ \u05E2\u05D5\u05E9\u05D9\u05DD \u05D6\u05D0\u05EA \u05DB\u05D3\u05D9\u2026"
 title: "\u05E2\u05D1\u05D5\u05D3\u05D4 \u05E2\u05DD TOML"
+weight: 39
 ---
-
-{{< edit_this_page >}}
 
 ## מה ולמה?
 עבודה עם TOML כוללת ניתוח ויצירה של נתוני TOML (Tom's Obvious, Minimal Language - שפת העיצוב המינימלית והברורה של טום) עם Haskell. תכנתים עושים זאת כדי לנהל בקלות קבצי תצורה או החלפת נתונים עם הבטחות טיפוס חזקות ובלאגן תחבירי מינימלי.

@@ -13,9 +13,8 @@ summary: "Trong Ruby, vi\u1EC7c t\u1EA1o m\u1ED9t t\u1EC7p t\u1EA1m gi\xFAp b\u1
   u l\u01B0u tr\u1EEF tho\xE1ng qua. C\xE1c l\u1EADp tr\xECnh vi\xEAn s\u1EED d\u1EE5\
   ng n\xF3 cho vi\u1EC7c x\u1EED l\xFD t\u1EC7p ng\u1EAFn\u2026"
 title: "T\u1EA1o m\u1ED9t t\u1EADp tin t\u1EA1m th\u1EDDi"
+weight: 21
 ---
-
-{{< edit_this_page >}}
 
 ## Cái gì và Tại sao?
 Trong Ruby, việc tạo một tệp tạm giúp bảo vệ dữ liệu nhạy cảm và quản lý nhu cầu lưu trữ thoáng qua. Các lập trình viên sử dụng nó cho việc xử lý tệp ngắn hạn an toàn mà không làm bừa bãi hệ thống tệp.

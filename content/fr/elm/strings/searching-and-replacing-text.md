@@ -9,9 +9,8 @@ summary: "Chercher et remplacer du texte, c'est juste modifier une cha\xEEne par
   \ autre dans un bloc de texte. Les programmeurs font \xE7a souvent pour corriger\
   \ des\u2026"
 title: Recherche et remplacement de texte
+weight: 10
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why? 
 Chercher et remplacer du texte, c'est juste modifier une chaîne par une autre dans un bloc de texte. Les programmeurs font ça souvent pour corriger des erreurs, mettre à jour des informations ou manipuler des données.

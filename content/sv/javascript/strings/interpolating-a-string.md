@@ -9,9 +9,8 @@ summary: "Interpolering av str\xE4ngar l\xE5ter dig infoga variabler eller uttry
   \ direkt i en str\xE4ng. Det f\xF6renklar och g\xF6r koden mer l\xE4sbar n\xE4r\
   \ du beh\xF6ver bygga\u2026"
 title: "Interpolera en str\xE4ng"
+weight: 8
 ---
-
-{{< edit_this_page >}}
 
 ## Vad & Varför?
 Interpolering av strängar låter dig infoga variabler eller uttryck direkt i en sträng. Det förenklar och gör koden mer läsbar när du behöver bygga strängar dynamiskt.

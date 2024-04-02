@@ -7,9 +7,8 @@ model: gpt-4-1106-preview
 summary: "L'autenticazione di base HTTP \xE8 un metodo per inviare le credenziali\
   \ (username e password) in un'intestazione HTTP. I programmatori la utilizzano per\u2026"
 title: Inviare una richiesta http con autenticazione di base
+weight: 45
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 L'autenticazione di base HTTP è un metodo per inviare le credenziali (username e password) in un'intestazione HTTP. I programmatori la utilizzano per accedere a server e servizi web che richiedono identificazione.

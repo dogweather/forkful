@@ -19,9 +19,8 @@ summary: "\u5728 Fish Shell \u4E2D\u68C0\u67E5\u76EE\u5F55\u662F\u5426\u5B58\u57
   \u7F16\u5199\u4E0E\u6587\u4EF6\u7CFB\u7EDF\u4EE5\u53EF\u9884\u6D4B\u7684\u65B9\u5F0F\
   \u4EA4\u4E92\u7684\u5065\u58EE\u811A\u672C\u81F3\u5173\u91CD\u8981\u3002"
 title: "\u68C0\u67E5\u76EE\u5F55\u662F\u5426\u5B58\u5728"
+weight: 20
 ---
-
-{{< edit_this_page >}}
 
 ## 是什么 & 为什么？
 在 Fish Shell 中检查目录是否存在允许脚本基于目录结构的存在或缺失做出决策，使得像条件文件操作、日志记录或环境设置这样的任务成为可能。这个技巧对于编写与文件系统以可预测的方式交互的健壮脚本至关重要。

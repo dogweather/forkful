@@ -11,9 +11,8 @@ summary: "Tekstitiedoston kirjoittaminen Google Apps Scriptill\xE4 mahdollistaa 
   jille datan tallentamisen pysyv\xE4sti, tehden siit\xE4 saatavilla tulevaa k\xE4\
   ytt\xF6\xE4 tai\u2026"
 title: Tekstitiedoston kirjoittaminen
+weight: 24
 ---
-
-{{< edit_this_page >}}
 
 ## Mikä & Miksi?
 

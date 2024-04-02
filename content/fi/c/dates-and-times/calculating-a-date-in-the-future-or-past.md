@@ -12,9 +12,8 @@ summary: "Tulevaisuuden tai menneisyyden p\xE4iv\xE4m\xE4\xE4r\xE4n laskeminen t
   \ tietyn p\xE4iv\xE4m\xE4\xE4r\xE4n m\xE4\xE4ritt\xE4mist\xE4 lis\xE4\xE4m\xE4ll\xE4\
   \ tai v\xE4hent\xE4m\xE4ll\xE4 tietty m\xE4\xE4r\xE4 p\xE4ivi\xE4,\u2026"
 title: "Tulevaisuuden tai menneisyyden p\xE4iv\xE4m\xE4\xE4r\xE4n laskeminen"
+weight: 26
 ---
-
-{{< edit_this_page >}}
 
 ## Mikä & Miksi?
 Tulevaisuuden tai menneisyyden päivämäärän laskeminen tarkoittaa tietyn päivämäärän määrittämistä lisäämällä tai vähentämällä tietty määrä päiviä, kuukausia tai vuosia annetusta päivämäärästä. Ohjelmoijat tekevät tätä tehtäviä varten, kuten tapahtumien aikatauluttaminen, muistutusten luominen tai viimeisten käyttöpäivien käsittely, mikä tekee siitä olennaisen toiminnallisuuden erilaisissa sovelluksissa, kalenterijärjestelmistä talousohjelmistoihin.

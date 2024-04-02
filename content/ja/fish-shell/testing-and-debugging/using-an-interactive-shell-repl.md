@@ -6,9 +6,8 @@ model: gpt-4-0125-preview
 summary: "REPL\u3001\u3059\u306A\u308F\u3061Read-Eval-Print\u2026"
 title: "\u30A4\u30F3\u30BF\u30E9\u30AF\u30C6\u30A3\u30D6\u30B7\u30A7\u30EB\uFF08REPL\uFF09\
   \u306E\u4F7F\u7528"
+weight: 34
 ---
-
-{{< edit_this_page >}}
 
 ## 何となぜ？
 REPL、すなわちRead-Eval-Print Loopは、単一のユーザー入力を受け取り、それを実行し、結果を返す対話式プログラミング環境です。プログラマーは、コンパイルや完全なプログラムの実行のオーバーヘッドなしに、即時のフィードバック、デバッグ、そしてコーディング概念の迅速な実験のためにこれを使用します。

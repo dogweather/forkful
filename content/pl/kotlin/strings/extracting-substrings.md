@@ -9,9 +9,8 @@ summary: "Wyodr\u0119bnianie podci\u0105g\xF3w to proces wycinania mniejszych ci
   g\xF3w znak\xF3w z wi\u0119kszego. Programi\u015Bci robi\u0105 to, by manipulowa\u0107\
   \ danymi tekstowymi \u2013 weryfikowa\u0107,\u2026"
 title: "Wycinanie pod\u0142a\u0144cuch\xF3w"
+weight: 6
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why? (Co i Dlaczego?)
 Wyodrębnianie podciągów to proces wycinania mniejszych ciągów znaków z większego. Programiści robią to, by manipulować danymi tekstowymi – weryfikować, analizować, czy formatować je według potrzeb.

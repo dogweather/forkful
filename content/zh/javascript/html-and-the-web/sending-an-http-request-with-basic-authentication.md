@@ -14,9 +14,8 @@ summary: "\u53D1\u9001\u5E26\u6709\u57FA\u672C\u8BA4\u8BC1\u7684HTTP\u8BF7\u6C42
   \u53EA\u5141\u8BB8\u7ECF\u8FC7\u6388\u6743\u7684\u4EBA\u8BBF\u95EE\u654F\u611F\u6570\
   \u636E\u3002"
 title: "\u4F7F\u7528\u57FA\u672C\u8BA4\u8BC1\u53D1\u9001 HTTP \u8BF7\u6C42"
+weight: 45
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why? (是什么？为什么？)
 发送带有基本认证的HTTP请求可以让你访问需要验证的资源。程序员这么做是为了确保安全性，只允许经过授权的人访问敏感数据。

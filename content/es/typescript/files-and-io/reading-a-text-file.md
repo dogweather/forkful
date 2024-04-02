@@ -8,9 +8,8 @@ model: gpt-4-1106-preview
 summary: "Leer un archivo de texto implica cargar su contenido en un programa para\
   \ procesar esa informaci\xF3n. Los programadores hacen esto para manipular datos,\u2026"
 title: Lectura de un archivo de texto
+weight: 22
 ---
-
-{{< edit_this_page >}}
 
 ## Qué y Por Qué?
 

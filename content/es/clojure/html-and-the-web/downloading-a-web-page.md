@@ -9,9 +9,8 @@ summary: "Descargar una p\xE1gina web significa obtener su contenido, usualmente
   \ formato HTML, a trav\xE9s de Internet. Los programadores lo hacen para analizar\
   \ datos,\u2026"
 title: "Descargando una p\xE1gina web"
+weight: 42
 ---
-
-{{< edit_this_page >}}
 
 ## Qué y Por Qué?
 

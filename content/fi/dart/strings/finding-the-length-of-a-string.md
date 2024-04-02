@@ -11,9 +11,8 @@ summary: "Merkkijonon pituuden selvitt\xE4minen Dartissa tarkoittaa annetun merk
   \ koodiyksik\xF6iden (k\xE4yt\xE4nn\xF6ss\xE4 merkkien m\xE4\xE4r\xE4 yksinkertaistettuna)\
   \ m\xE4\xE4r\xE4n\u2026"
 title: "Merkkijonon pituuden selvitt\xE4minen"
+weight: 7
 ---
-
-{{< edit_this_page >}}
 
 ## Mikä ja miksi?
 Merkkijonon pituuden selvittäminen Dartissa tarkoittaa annetun merkkijonon koodiyksiköiden (käytännössä merkkien määrä yksinkertaistettuna) määrän määrittämistä. Ohjelmoijat tekevät tämän manipuloidakseen merkkijonoja tarkemmin, esimerkiksi validoidakseen syötettä, katkaistakseen näytettävää tekstiä tai käsitellessään datamuotoja, joissa pituus on tärkeä (esim. protokollat, joissa viestit on etuliitetty pituudella).

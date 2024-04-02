@@ -9,9 +9,8 @@ summary: "L\xE4hett\xE4\xE4 HTTP-pyynt\xF6 perusautentikoinnilla tarkoittaa k\xE
   ytt\xE4j\xE4tunnuksen ja salasanan l\xE4hett\xE4mist\xE4 palvelimelle. T\xE4m\xE4\
   \ tehd\xE4\xE4n yleens\xE4 turvallisen resurssin\u2026"
 title: "HTTP-pyynn\xF6n l\xE4hett\xE4minen perusautentikoinnilla"
+weight: 45
 ---
-
-{{< edit_this_page >}}
 
 ## Mitä & Miksi?
 Lähettää HTTP-pyyntö perusautentikoinnilla tarkoittaa käyttäjätunnuksen ja salasanan lähettämistä palvelimelle. Tämä tehdään yleensä turvallisen resurssin saamiseksi tai API:n käyttämiseksi.

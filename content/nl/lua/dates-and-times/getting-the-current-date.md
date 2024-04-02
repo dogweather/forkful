@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Het verkrijgen van de huidige datum in de programmering stelt ons in staat\
   \ om bij te houden wanneer dingen gebeuren. We hebben tijdstempels nodig voor\u2026"
 title: Het huidige datum ophalen
+weight: 29
 ---
-
-{{< edit_this_page >}}
 
 ## Wat & Waarom?
 

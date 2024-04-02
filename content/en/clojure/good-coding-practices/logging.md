@@ -8,9 +8,8 @@ model: gpt-4-1106-preview
 summary: "Logging is essentially the software equivalent of a ship's log; it's a way\
   \ to record events that happen while an application is running. Programmers do it\u2026"
 title: Logging
+weight: 17
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 Logging is essentially the software equivalent of a ship's log; it's a way to record events that happen while an application is running. Programmers do it to keep track of these events for debugging, audit trails, or to gain insights into the behavior of a system in production.

@@ -11,9 +11,8 @@ summary: "Att h\xE4mta det aktuella datumet i programmering \xE4r en avg\xF6rand
   \ uppgift f\xF6r en m\xE4ngd applikationer, inklusive loggning, tidsst\xE4mpling\
   \ av h\xE4ndelser eller\u2026"
 title: "F\xE5 det aktuella datumet"
+weight: 29
 ---
-
-{{< edit_this_page >}}
 
 ## Vad & Varför?
 

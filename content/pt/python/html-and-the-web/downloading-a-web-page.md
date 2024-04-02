@@ -9,9 +9,8 @@ summary: "Baixar uma p\xE1gina da web \xE9 o processo de salvar os dados de uma 
   gina em um arquivo local. Programadores fazem isso para analisar o conte\xFAdo,\
   \ obter\u2026"
 title: "Baixando uma p\xE1gina da web"
+weight: 42
 ---
-
-{{< edit_this_page >}}
 
 ## O Que & Por Quê?
 

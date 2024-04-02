@@ -11,9 +11,8 @@ summary: "Les tableaux associatifs, \xE9galement connus sous le nom de tables de
   \ ou de dictionnaires dans PowerShell, vous permettent de stocker des donn\xE9es\
   \ en\u2026"
 title: Utilisation des tableaux associatifs
+weight: 15
 ---
-
-{{< edit_this_page >}}
 
 ## Quoi et Pourquoi ?
 

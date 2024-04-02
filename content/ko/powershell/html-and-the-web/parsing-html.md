@@ -23,9 +23,8 @@ summary: "PowerShell\uC5D0\uC11C HTML \uD30C\uC2F1\uC740 \uD2B9\uC815 \uB370\uC7
   \uC774\uB098 \uB2E4\uB978 \uC6F9 \uC0C1\uD638\uC791\uC6A9\uC744 \uC790\uB3D9\uD654\
   \uD558\uAE30 \uC704\uD574\u2026"
 title: "HTML \uD30C\uC2F1"
+weight: 43
 ---
-
-{{< edit_this_page >}}
 
 ## 무엇 & 왜?
 PowerShell에서 HTML 파싱은 특정 데이터를 추출하거나 웹 관련 작업을 자동화하기 위해 HTML 콘텐츠를 분석하는 것을 의미합니다. 프로그래머들은 웹 페이지와 상호작용하거나 웹 콘텐츠를 스크레이핑하거나 웹 브라우저 없이 폼 제출이나 다른 웹 상호작용을 자동화하기 위해 이 작업을 수행합니다.

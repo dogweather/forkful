@@ -11,9 +11,8 @@ summary: "Att skriva till en textfil i Lua inneb\xE4r att skapa eller \xF6ppna e
   \ fil i skrivl\xE4ge, och sedan anv\xE4nda filoperationer f\xF6r att infoga text.\
   \ Det \xE4r en\u2026"
 title: Att skriva en textfil
+weight: 24
 ---
-
-{{< edit_this_page >}}
 
 ## Vad & Varför?
 

@@ -7,9 +7,8 @@ model: gpt-4-0125-preview
 summary: "REPL, eller Read-Eval-Print Loop, er et programmeringsmilj\xF8 for dynamisk\
   \ testing av Clojure-kode stykke for stykke. Kodeutviklere bruker det for\u2026"
 title: Bruke et interaktivt skall (REPL)
+weight: 34
 ---
-
-{{< edit_this_page >}}
 
 ## Hva & Hvorfor?
 REPL, eller Read-Eval-Print Loop, er et programmeringsmiljø for dynamisk testing av Clojure-kode stykke for stykke. Kodeutviklere bruker det for øyeblikkelig tilbakemelding, iterativ utvikling og rask eksperimentering uten overheaden av å kompilere eller sette opp et komplett prosjektmiljø.

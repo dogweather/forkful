@@ -14,9 +14,8 @@ summary: "JavaScript\u4E2D\u8BFB\u53D6\u547D\u4EE4\u884C\u53C2\u6570\uFF0C\u5C31
   \u7A0B\u5E8F\u66F4\u7075\u6D3B\uFF0C\u53EF\u6839\u636E\u4E0D\u540C\u7684\u53C2\u6570\
   \u6267\u884C\u4E0D\u540C\u7684\u4EFB\u52A1\u3002"
 title: "\u8BFB\u53D6\u547D\u4EE4\u884C\u53C2\u6570"
+weight: 23
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why? 什么和为什么？
 JavaScript中读取命令行参数，就是获取在终端运行脚本时传入的额外信息。程序员这么做是为了让程序更灵活，可根据不同的参数执行不同的任务。

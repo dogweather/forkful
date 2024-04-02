@@ -9,9 +9,8 @@ summary: "Att s\xF6ka och ers\xE4tta text handlar om att hitta specifika textstr
   ngar och byta ut dem mot andra. Programmerare g\xF6r det f\xF6r att uppdatera data,\
   \ refactora\u2026"
 title: "S\xF6kning och ers\xE4ttning av text"
+weight: 10
 ---
-
-{{< edit_this_page >}}
 
 ## Vad & Varför?
 Att söka och ersätta text handlar om att hitta specifika textsträngar och byta ut dem mot andra. Programmerare gör det för att uppdatera data, refactora kod eller massmodifiera konfigurationsfiler.

@@ -12,9 +12,8 @@ summary: "\u5728 PowerShell \u811A\u672C\u4E2D\u8BFB\u53D6\u547D\u4EE4\u884C\u53
   \u5B9A\u5236\u64CD\u4F5C\u3002\u7A0B\u5E8F\u5458\u8FD9\u6837\u505A\u4E3A\u4E86\u589E\
   \u52A0\u811A\u672C\u7684\u7075\u6D3B\u6027\u548C\u5B9E\u7528\u6027\u3002"
 title: "\u8BFB\u53D6\u547D\u4EE4\u884C\u53C2\u6570"
+weight: 23
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why? (是什么？为什么？)
 在 PowerShell 脚本中读取命令行参数可以让你的脚本根据用户输入定制操作。程序员这样做为了增加脚本的灵活性和实用性。

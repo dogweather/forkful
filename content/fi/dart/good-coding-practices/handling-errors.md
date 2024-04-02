@@ -10,9 +10,8 @@ model: gpt-4-0125-preview
 summary: "Virheiden k\xE4sittely Dartissa tarkoittaa ohjelman suorituksen aikana ilmenevien\
   \ poikkeusten ennakointia ja hallintaa luotettavuuden ja k\xE4ytett\xE4vyyden\u2026"
 title: "Virheiden k\xE4sittely"
+weight: 16
 ---
-
-{{< edit_this_page >}}
 
 ## Mikä ja Miksi?
 Virheiden käsittely Dartissa tarkoittaa ohjelman suorituksen aikana ilmenevien poikkeusten ennakointia ja hallintaa luotettavuuden ja käytettävyyden parantamiseksi. Ohjelmoijat toteuttavat virheidenhallintaa estääkseen sovelluksen kaatumisen ja tarjotakseen käyttäjille merkityksellistä palautetta, varmistaen sujuvamman ja turvallisemman sovelluskokemuksen.

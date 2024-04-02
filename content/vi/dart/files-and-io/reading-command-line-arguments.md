@@ -13,9 +13,8 @@ summary: "Vi\u1EC7c \u0111\u1ECDc c\xE1c \u0111\u1ED1i s\u1ED1 d\xF2ng l\u1EC7nh
   c ti\u1EBFp v\xE0o console khi th\u1EF1c thi m\u1ED9t ch\u01B0\u01A1ng tr\xECnh\
   \ Dart, n\xE2ng cao t\xEDnh\u2026"
 title: "\u0110\u1ECDc c\xE1c tham s\u1ED1 d\xF2ng l\u1EC7nh"
+weight: 23
 ---
-
-{{< edit_this_page >}}
 
 ## Điều gì & Tại sao?
 

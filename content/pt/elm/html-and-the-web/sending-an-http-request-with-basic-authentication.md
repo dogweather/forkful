@@ -9,9 +9,8 @@ summary: "Enviar uma requisi\xE7\xE3o HTTP com autentica\xE7\xE3o b\xE1sica \xE9
   \ processo de acessar recursos protegidos em um servidor, fornecendo um nome de\
   \ usu\xE1rio e senha.\u2026"
 title: "Enviando uma requisi\xE7\xE3o HTTP com autentica\xE7\xE3o b\xE1sica"
+weight: 45
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 Enviar uma requisição HTTP com autenticação básica é o processo de acessar recursos protegidos em um servidor, fornecendo um nome de usuário e senha. Programadores fazem isso para garantir que apenas usuários autorizados acessem certos dados.

@@ -7,9 +7,8 @@ model: gpt-4-1106-preview
 summary: "L'autenticazione base HTTP serve per accedere a risorse protette via web\
   \ usando username e password. I programmatori la usano per una semplice e diretta\u2026"
 title: Inviare una richiesta http con autenticazione di base
+weight: 45
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 L'autenticazione base HTTP serve per accedere a risorse protette via web usando username e password. I programmatori la usano per una semplice e diretta protezione delle comunicazioni fra client e server.

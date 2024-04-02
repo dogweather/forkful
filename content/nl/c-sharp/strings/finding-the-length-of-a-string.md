@@ -10,9 +10,8 @@ model: gpt-4-0125-preview
 summary: "Het vinden van een stringlengte betekent het tellen van de tekens. We doen\
   \ dit om invoer te valideren, door tekens te lopen, bronnen toe te wijzen, of uit\u2026"
 title: De lengte van een string vinden
+weight: 7
 ---
-
-{{< edit_this_page >}}
 
 ## Wat & Waarom?
 

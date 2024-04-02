@@ -14,9 +14,8 @@ summary: "N\u1ED1i chu\u1ED7i c\xF3 ngh\u0129a l\xE0 gh\xE9p ch\xFAng l\u1EA1i v
   \ th\u1EF1c hi\u1EC7n \u0111i\u1EC1u n\xE0y khi h\u1ECD c\u1EA7n gh\xE9p c\xE1c\
   \ \u0111o\u1EA1n v\u0103n b\u1EA3n l\u1EA1i v\u1EDBi nhau \u0111\u1EC3 t\u1EA1o\u2026"
 title: "N\u1ED1i chu\u1ED7i k\xFD t\u1EF1"
+weight: 3
 ---
-
-{{< edit_this_page >}}
 
 ## Những gì & Tại sao?
 Nối chuỗi có nghĩa là ghép chúng lại với nhau từ đầu đến cuối. Lập trình viên thực hiện điều này khi họ cần ghép các đoạn văn bản lại với nhau để tạo thành một chuỗi mới, như khi tạo ra các thông điệp hoặc tạo đường dẫn tệp.

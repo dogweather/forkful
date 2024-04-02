@@ -9,9 +9,8 @@ summary: "Avrunding av tall handler om \xE5 justere et tall til n\xE6rmeste hele
   \ eller til en bestemt desimalpresisjon. Vi avrunder tall for \xE5 forenkle dem\
   \ for\u2026"
 title: Avrunding av tall
+weight: 13
 ---
-
-{{< edit_this_page >}}
 
 ## Hva & Hvorfor?
 Avrunding av tall handler om å justere et tall til nærmeste hele, eller til en bestemt desimalpresisjon. Vi avrunder tall for å forenkle dem for menneskelig lesbarhet, redusere beregningsbelastning, eller for å møte spesifikke numeriske krav.

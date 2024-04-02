@@ -7,9 +7,8 @@ model: gpt-4-1106-preview
 summary: "Cercare e sostituire testo nel mondo della programmazione \xE8 fondamentale\
   \ per modificare dati o correggere errori in modo efficiente. I programmatori lo\u2026"
 title: Ricerca e sostituzione del testo
+weight: 10
 ---
-
-{{< edit_this_page >}}
 
 ## Cos'è & Perché?
 Cercare e sostituire testo nel mondo della programmazione è fondamentale per modificare dati o correggere errori in modo efficiente. I programmatori lo fanno per risparmiare tempo, evitare errori umani e automatizzare la manutenzione del codice.

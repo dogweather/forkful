@@ -14,9 +14,8 @@ summary: "\u68C0\u67E5\u76EE\u5F55\u662F\u5426\u5B58\u5728\u662F\u786E\u8BA4\u65
   \u8BEF\uFF0C\u786E\u4FDD\u6587\u4EF6\u64CD\u4F5C\uFF08\u5982\u8BFB\u5199\uFF09\u80FD\
   \u6B63\u5E38\u8FDB\u884C\u3002"
 title: "\u68C0\u67E5\u76EE\u5F55\u662F\u5426\u5B58\u5728"
+weight: 20
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why? (什么 & 为什么？)
 检查目录是否存在是确认文件系统上某个文件夹是否在的过程。程序员这么做是为了避免错误，确保文件操作（如读写）能正常进行。

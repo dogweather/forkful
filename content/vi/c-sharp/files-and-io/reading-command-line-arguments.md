@@ -15,9 +15,8 @@ summary: "\u0110\u1ECDc c\xE1c \u0111\u1ED1i s\u1ED1 d\xF2ng l\u1EC7nh cho ph\xE
   i ch\u1EA1y. C\xE1c l\u1EADp tr\xECnh vi\xEAn s\u1EED d\u1EE5ng \u0111i\u1EC1u n\xE0\
   y \u0111\u1EC3\u2026"
 title: "\u0110\u1ECDc c\xE1c \u0111\u1ED1i s\u1ED1 d\xF2ng l\u1EC7nh"
+weight: 23
 ---
-
-{{< edit_this_page >}}
 
 ## Cái gì và Tại sao?
 Đọc các đối số dòng lệnh cho phép một chương trình C# xử lý các đầu vào của người dùng được cung cấp khi khởi chạy. Các lập trình viên sử dụng điều này để tùy chỉnh hành vi ứng dụng mà không cần chỉnh sửa mã.

@@ -19,9 +19,8 @@ summary: "Visual Basic for Applications(VBA)\uC5D0\uC11C HTTP \uC694\uCCAD\uC744
   , Excel, Access \uB610\uB294 \uB9DE\uCDA4\uD615 VBA \uC194\uB8E8\uC158\uACFC \uAC19\
   \uC740\u2026"
 title: "HTTP \uC694\uCCAD \uBCF4\uB0B4\uAE30"
+weight: 44
 ---
-
-{{< edit_this_page >}}
 
 ## 무엇 & 왜?
 

@@ -7,9 +7,8 @@ model: gpt-4-0125-preview
 summary: "I numeri complessi hanno una parte reale e una parte immaginaria, solitamente\
   \ scritti come `a + bi`. Sono fondamentali in matematica avanzata, fisica,\u2026"
 title: Lavorare con i numeri complessi
+weight: 14
 ---
-
-{{< edit_this_page >}}
 
 ## Cosa e perché?
 I numeri complessi hanno una parte reale e una parte immaginaria, solitamente scritti come `a + bi`. Sono fondamentali in matematica avanzata, fisica, ingegneria e alcuni algoritmi informatici. I programmatori lavorano con essi per gestire calcoli che coinvolgono radici quadrate di numeri negativi e funzioni oscillanti.

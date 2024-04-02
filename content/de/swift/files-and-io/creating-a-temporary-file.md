@@ -7,9 +7,8 @@ model: gpt-4-1106-preview
 summary: "Tempor\xE4re Dateien sind kurzlebige Datenbeh\xE4lter. Entwickler nutzen\
   \ sie, um Daten zwischenzuspeichern, ohne auf die dauerhafte Speicherstruktur zuzugreifen."
 title: "Erstellung einer tempor\xE4ren Datei"
+weight: 21
 ---
-
-{{< edit_this_page >}}
 
 ## Was & Warum?
 Temporäre Dateien sind kurzlebige Datenbehälter. Entwickler nutzen sie, um Daten zwischenzuspeichern, ohne auf die dauerhafte Speicherstruktur zuzugreifen.

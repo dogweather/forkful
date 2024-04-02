@@ -9,9 +9,8 @@ summary: "Organizar c\xF3digo em fun\xE7\xF5es em Haskell significa decompor seu
   digo em blocos nomeados reutiliz\xE1veis. Por qu\xEA? Isso mant\xE9m seu c\xF3digo\
   \ DRY (Don't Repeat\u2026"
 title: "Organizando o c\xF3digo em fun\xE7\xF5es"
+weight: 18
 ---
-
-{{< edit_this_page >}}
 
 ## O Quê e Porquê?
 Organizar código em funções em Haskell significa decompor seu código em blocos nomeados reutilizáveis. Por quê? Isso mantém seu código DRY (Don't Repeat Yourself - Não Se Repita), torna-o legível e mais fácil de depurar.

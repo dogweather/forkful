@@ -11,9 +11,8 @@ summary: "Assoziative Arrays, bekannt als `std::map` oder `std::unordered_map` i
   \ C++, schlie\xDFen die L\xFCcke zwischen Array-Indizes und realen Daten, indem\
   \ sie es\u2026"
 title: Verwendung von assoziativen Arrays
+weight: 15
 ---
-
-{{< edit_this_page >}}
 
 ## Was & Warum?
 

@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "La suppression des guillemets d'une cha\xEEne dans VBA implique de retirer\
   \ les instances de guillemets simples (`'`) ou doubles (`\"`) qui peuvent encapsuler\u2026"
 title: "Supprimer les guillemets d'une cha\xEEne"
+weight: 9
 ---
-
-{{< edit_this_page >}}
 
 ## Quoi & Pourquoi ?
 

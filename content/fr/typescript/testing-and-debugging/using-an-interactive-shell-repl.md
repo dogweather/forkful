@@ -9,9 +9,8 @@ summary: "Un Read-Eval-Print-Loop (REPL) est un environnement de programmation q
   \ prend des entr\xE9es utilisateur uniques, les ex\xE9cute et retourne le r\xE9\
   sultat \xE0\u2026"
 title: Utilisation d'une console interactive (REPL)
+weight: 34
 ---
-
-{{< edit_this_page >}}
 
 ## Quoi et pourquoi ?
 Un Read-Eval-Print-Loop (REPL) est un environnement de programmation qui prend des entrées utilisateur uniques, les exécute et retourne le résultat à l'utilisateur. Les programmeurs utilisent un REPL pour expérimenter rapidement avec des extraits de code, déboguer et apprendre de nouvelles fonctionnalités de langage sans la nécessité de créer une application complète.

@@ -11,9 +11,8 @@ summary: "Das Generieren von Zufallszahlen in Visual Basic for Applications (VBA
   \ erm\xF6glicht es Programmen, Prozesse mit Elementen des Zufalls oder der Variabilit\xE4\
   t\u2026"
 title: Zufallszahlen generieren
+weight: 12
 ---
-
-{{< edit_this_page >}}
 
 ## Was & Warum?
 

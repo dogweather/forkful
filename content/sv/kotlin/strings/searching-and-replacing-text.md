@@ -9,9 +9,8 @@ summary: "Att s\xF6ka och ers\xE4tta text \xE4r processen att hitta specifika st
   ngar i data och automatiskt byta ut dem mot annan text. Programmerare anv\xE4nder\
   \ det f\xF6r att\u2026"
 title: "S\xF6kning och ers\xE4ttning av text"
+weight: 10
 ---
-
-{{< edit_this_page >}}
 
 ## Vad & Varför?
 Att söka och ersätta text är processen att hitta specifika strängar i data och automatiskt byta ut dem mot annan text. Programmerare använder det för att snabbt ändra kod, korrigera data eller manipulera textbaserat innehåll.

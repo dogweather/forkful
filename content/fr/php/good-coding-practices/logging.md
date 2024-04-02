@@ -8,9 +8,8 @@ model: gpt-4-1106-preview
 summary: "La journalisation est en gros l'\xE9quivalent de tenir un journal pour votre\
   \ code ; c'est l'action d'enregistrer des \xE9v\xE9nements, des erreurs et d'autres\u2026"
 title: Journalisation
+weight: 17
 ---
-
-{{< edit_this_page >}}
 
 ## Quoi & Pourquoi ?
 

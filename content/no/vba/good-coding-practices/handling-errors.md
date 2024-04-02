@@ -10,9 +10,8 @@ model: gpt-4-0125-preview
 summary: "Feilh\xE5ndtering i Visual Basic for Applications (VBA) refererer til prosessen\
   \ med \xE5 forutse, oppdage og l\xF8se programmerings-, applikasjons- eller\u2026"
 title: "H\xE5ndtering av feil"
+weight: 16
 ---
-
-{{< edit_this_page >}}
 
 ## Hva & Hvorfor?
 

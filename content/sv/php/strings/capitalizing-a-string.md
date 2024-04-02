@@ -11,9 +11,8 @@ summary: "Att versalisera en str\xE4ng inneb\xE4r att \xE4ndra det f\xF6rsta tec
   \ i given text till versal, och s\xE4kerst\xE4ller att meningar, titlar eller egennamn\
   \ b\xF6rjar\u2026"
 title: "G\xF6r om en str\xE4ng till versaler"
+weight: 2
 ---
-
-{{< edit_this_page >}}
 
 ## Vad & Varför?
 Att versalisera en sträng innebär att ändra det första tecknet i given text till versal, och säkerställer att meningar, titlar eller egennamn börjar korrekt i en datamängd. Programmerare utför ofta versalisering av strängar för datanormalisering, för att förbättra läsbarheten eller för att säkerställa konsekvens i användarinput eller textuell databehandling.

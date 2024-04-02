@@ -9,9 +9,8 @@ summary: "Chercher et remplacer du texte est essentiel pour modifier des cha\xEE
   \ de caract\xE8res. Les programmeurs l'utilisent pour corriger des erreurs, mettre\
   \ \xE0\u2026"
 title: Recherche et remplacement de texte
+weight: 10
 ---
-
-{{< edit_this_page >}}
 
 ## Quoi et Pourquoi ?
 Chercher et remplacer du texte est essentiel pour modifier des chaînes de caractères. Les programmeurs l'utilisent pour corriger des erreurs, mettre à jour des données ou refactoriser du code.

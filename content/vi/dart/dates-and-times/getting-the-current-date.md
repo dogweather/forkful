@@ -14,9 +14,8 @@ summary: "Vi\u1EC7c l\u1EA5y ng\xE0y hi\u1EC7n t\u1EA1i trong Dart \u0111\u1EC1 
   y ng\xE0y v\xE0 gi\u1EDD hi\u1EC7n t\u1EA1i. Ch\u1EE9c n\u0103ng n\xE0y th\u01B0\
   \u1EDDng \u0111\u01B0\u1EE3c s\u1EED d\u1EE5ng trong c\xE1c \u1EE9ng d\u1EE5ng cho\u2026"
 title: "L\u1EA5y ng\xE0y hi\u1EC7n t\u1EA1i"
+weight: 29
 ---
-
-{{< edit_this_page >}}
 
 ## Cái gì & Tại sao?
 Việc lấy ngày hiện tại trong Dart đề cập đến việc truy vấn hệ thống để lấy ngày và giờ hiện tại. Chức năng này thường được sử dụng trong các ứng dụng cho các tính năng như đánh dấu thời gian sự kiện, hiển thị ngày hiện tại cho người dùng, hoặc tính toán thời lượng. Việc biết cách lấy và thao tác với ngày hiện tại một cách hiệu quả là cơ bản cho việc lập lịch, ghi nhật ký, và các tính năng nhạy cảm với thời gian.

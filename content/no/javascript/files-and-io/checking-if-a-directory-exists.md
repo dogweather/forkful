@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "\xC5 sjekke om en mappe finnes i JavaScript er essensielt for oppgaver som\
   \ involverer manipulasjon av filer, slik at skript kan verifisere mappens\u2026"
 title: Sjekker om en mappe eksisterer
+weight: 20
 ---
-
-{{< edit_this_page >}}
 
 ## Hva og hvorfor?
 Å sjekke om en mappe finnes i JavaScript er essensielt for oppgaver som involverer manipulasjon av filer, slik at skript kan verifisere mappens tilstedeværelse før man leser fra eller skriver til den. Denne operasjonen forhindrer feil og sikrer en jevnere kjøring av programmet, spesielt i applikasjoner som dynamisk håndterer filer eller mapper basert på brukerinndata eller eksterne datakilder.

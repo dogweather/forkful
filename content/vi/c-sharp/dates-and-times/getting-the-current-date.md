@@ -14,9 +14,8 @@ summary: "L\u1EA5y ng\xE0y hi\u1EC7n t\u1EA1i trong C# bao g\u1ED3m vi\u1EC7c n\
   \ h\u1EC7 th\u1ED1ng c\u1EE7a b\u1EA1n. \u0110i\u1EC1u n\xE0y r\u1EA5t h\u1EEFu\
   \ \xEDch cho vi\u1EC7c \u0111\xE1nh d\u1EA5u th\u1EDDi gian, nh\u1EADt k\xFD,\u2026"
 title: "L\u1EA5y ng\xE0y hi\u1EC7n t\u1EA1i"
+weight: 29
 ---
-
-{{< edit_this_page >}}
 
 ## Cái gì & Tại sao?
 

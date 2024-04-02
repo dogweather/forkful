@@ -23,9 +23,8 @@ summary: "C++\uC5D0\uC11C \uD45C\uC900 \uC624\uB958(`stderr`)\uB85C \uC791\uC131
   \ \uB514\uBC84\uAE45\uACFC \uC624\uB958 \uCC98\uB9AC\uB97C \uC27D\uAC8C \uD560 \uC218\
   \ \uC788\uC2B5\uB2C8\uB2E4."
 title: "\uD45C\uC900 \uC5D0\uB7EC\uC5D0 \uC4F0\uAE30"
+weight: 25
 ---
-
-{{< edit_this_page >}}
 
 ## 무엇 & 왜?
 

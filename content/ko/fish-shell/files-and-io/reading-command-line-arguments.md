@@ -16,9 +16,8 @@ summary: "\uBA85\uB839\uC904 \uC778\uC218\uB97C \uC77D\uAE30\uB294 \uC2A4\uD06C\
   \uACFC \uC0AC\uC6A9\uC790 \uACBD\uD5D8\uC744 \uD5A5\uC0C1\uC2DC\uD0B5\uB2C8\uB2E4\
   ."
 title: "\uBA85\uB839\uC904 \uC778\uC218 \uC77D\uAE30"
+weight: 23
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why? (무엇이며 왜?)
 명령줄 인수를 읽기는 스크립트가 사용자 지정 옵션과 데이터를 받는 방법입니다. 프로그래머는 이를 통해 스크립트의 유연성과 사용자 경험을 향상시킵니다.

@@ -23,9 +23,8 @@ summary: "Go\uC5D0\uC11C HTML \uD30C\uC2F1\uC740 HTML \uD30C\uC77C\uC758 \uB0B4\
   \uD55C \uB3D9\uC2DC\uC131 \uAE30\uB2A5\uC744 \uD65C\uC6A9\uD558\uC5EC \uB300\uB7C9\
   \uC758\u2026"
 title: "HTML \uD30C\uC2F1"
+weight: 43
 ---
-
-{{< edit_this_page >}}
 
 ## 무엇 & 왜?
 

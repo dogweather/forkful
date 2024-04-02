@@ -7,9 +7,8 @@ model: gpt-4-0125-preview
 summary: "YAML, a data serialization language designed to be human-friendly, is often\
   \ used for configuration files, inter-process messaging, and data storage.\u2026"
 title: Working with YAML
+weight: 41
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 YAML, a data serialization language designed to be human-friendly, is often used for configuration files, inter-process messaging, and data storage. Programmers lean on YAML for its readability and ease of use, especially when dealing with complex structured data, making it an excellent choice for applications developed in TypeScript.

@@ -11,9 +11,8 @@ summary: "Travailler avec JSON en Swift signifie manipuler un format de donn\xE9
   \ l\xE9ger pour l'\xE9change de donn\xE9es. Les programmeurs utilisent JSON pour\
   \ transmettre\u2026"
 title: Travailler avec JSON
+weight: 38
 ---
-
-{{< edit_this_page >}}
 
 ## Quoi et pourquoi ?
 

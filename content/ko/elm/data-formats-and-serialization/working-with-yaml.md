@@ -16,9 +16,8 @@ summary: "YAML (YAML Ain't Markup Language)\uC740 \uB370\uC774\uD130\uB97C \uD45
   \ \uC218 \uC788\uB3C4\uB85D \uD558\uAE30 \uC704\uD574 YAML\uC744 \uC0AC\uC6A9\uD569\
   \uB2C8\uB2E4."
 title: "YAML \uB2E4\uB8E8\uAE30"
+weight: 41
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why? (무엇과 왜?)
 YAML (YAML Ain't Markup Language)은 데이터를 표현하기 위한 인간 친화적인 형식입니다. 프로그래머들은 설정 파일, 데이터 교환 등에 쉽게 읽고 쓸 수 있도록 하기 위해 YAML을 사용합니다.

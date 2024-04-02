@@ -13,9 +13,8 @@ summary: "Logging l\xE0 qu\xE1 tr\xECnh ghi l\u1EA1i c\xE1c s\u1EF1 ki\u1EC7n, l
   nh th\u1EF1c thi c\u1EE7a m\u1ED9t ch\u01B0\u01A1ng tr\xECnh v\xE0o m\u1ED9t ph\u01B0\
   \u01A1ng ti\u1EC7n ngo\u1EA1i vi,\u2026"
 title: Ghi log
+weight: 17
 ---
-
-{{< edit_this_page >}}
 
 ## Cái gì & Tại sao?
 

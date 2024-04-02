@@ -11,9 +11,8 @@ summary: "Comparar duas datas em Dart envolve avaliar a diferen\xE7a temporal ou
   \ ordem entre elas, uma funcionalidade essencial em aplica\xE7\xF5es que gerenciam\
   \ eventos,\u2026"
 title: Comparando duas datas
+weight: 27
 ---
-
-{{< edit_this_page >}}
 
 ## O Que & Por Que?
 Comparar duas datas em Dart envolve avaliar a diferença temporal ou a ordem entre elas, uma funcionalidade essencial em aplicações que gerenciam eventos, prazos ou qualquer dado sensível ao tempo. Os programadores frequentemente requerem isso para controlar o fluxo lógico, validar ou ordenar dados baseados em condições de tempo.

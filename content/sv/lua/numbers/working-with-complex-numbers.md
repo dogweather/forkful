@@ -8,9 +8,8 @@ model: gpt-4-0125-preview
 summary: "Komplexa tal utvidgar id\xE9n om en endimensionell tal-linje till ett tv\xE5\
   dimensionellt plan genom att inkludera en vinkelr\xE4t imagin\xE4r axel. Programmerare\u2026"
 title: Att arbeta med komplexa tal
+weight: 14
 ---
-
-{{< edit_this_page >}}
 
 ## Vad & Varför?
 Komplexa tal utvidgar idén om en endimensionell tal-linje till ett tvådimensionellt plan genom att inkludera en vinkelrät imaginär axel. Programmerare arbetar med dem inom områden som signalbehandling, fluiddynamik och elektroteknik, där de är avgörande för att representera oscillationer och andra fenomen.

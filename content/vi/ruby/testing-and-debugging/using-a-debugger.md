@@ -2,17 +2,18 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:09:28.104204-07:00
-description: "S\u1EED d\u1EE5ng debugger trong Ruby mang l\u1EA1i cho l\u1EADp tr\xEC\
-  nh vi\xEAn m\u1ED9t si\xEAu n\u0103ng l\u1EF1c \u0111\u1EC3 t\u1EA1m d\u1EEBng m\xE3\
-  \ c\u1EE7a h\u1ECD, ki\u1EC3m tra c\xE1c bi\u1EBFn v\xE0 b\u01B0\u1EDBc qua m\xE3\
-  \ c\u1EE7a h\u1ECD t\u1EEBng d\xF2ng m\u1ED9t.\u2026"
+description: "Ruby \u0111i k\xE8m v\u1EDBi m\u1ED9t debugger t\xEDch h\u1EE3p s\u1EB5\
+  n c\xF3 t\xEAn l\xE0 `byebug`. \u0110\u1EA7u ti\xEAn, bao g\u1ED3m `byebug` trong\
+  \ Gemfile c\u1EE7a b\u1EA1n v\xE0 ch\u1EA1y `bundle install`. Sau \u0111\xF3, th\u1EA3\
+  \u2026"
 lastmod: '2024-03-13T22:44:37.347036-06:00'
 model: gpt-4-0125-preview
-summary: "S\u1EED d\u1EE5ng debugger trong Ruby mang l\u1EA1i cho l\u1EADp tr\xEC\
-  nh vi\xEAn m\u1ED9t si\xEAu n\u0103ng l\u1EF1c \u0111\u1EC3 t\u1EA1m d\u1EEBng m\xE3\
-  \ c\u1EE7a h\u1ECD, ki\u1EC3m tra c\xE1c bi\u1EBFn v\xE0 b\u01B0\u1EDBc qua m\xE3\
-  \ c\u1EE7a h\u1ECD t\u1EEBng d\xF2ng m\u1ED9t.\u2026"
+summary: "Ruby \u0111i k\xE8m v\u1EDBi m\u1ED9t debugger t\xEDch h\u1EE3p s\u1EB5\
+  n c\xF3 t\xEAn l\xE0 `byebug`. \u0110\u1EA7u ti\xEAn, bao g\u1ED3m `byebug` trong\
+  \ Gemfile c\u1EE7a b\u1EA1n v\xE0 ch\u1EA1y `bundle install`. Sau \u0111\xF3, th\u1EA3\
+  \u2026"
 title: "S\u1EED d\u1EE5ng b\u1ED9 g\u1EE1 l\u1ED7i"
+weight: 35
 ---
 
 ## Cách thực hiện:

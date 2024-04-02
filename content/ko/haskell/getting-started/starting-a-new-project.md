@@ -16,9 +16,8 @@ summary: "\uC0C8 \uD504\uB85C\uC81D\uD2B8\uB97C \uC2DC\uC791\uD55C\uB2E4\uB294 \
   \uB098, \uAE30\uB2A5\uC744 \uAC1C\uC120\uD558\uAE30 \uC704\uD558\uC5EC \uC0C8 \uD504\
   \uB85C\uC81D\uD2B8\uB97C \uB9CC\uB4ED\uB2C8\uB2E4."
 title: "\uC0C8 \uD504\uB85C\uC81D\uD2B8 \uC2DC\uC791\uD558\uAE30"
+weight: 1
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why? (무엇과 왜?)
 새 프로젝트를 시작한다는 것은 공백 상태에서 아이디어를 실현하려는 과정입니다. 프로그래머들은 새로운 문제를 해결하거나, 기능을 개선하기 위하여 새 프로젝트를 만듭니다.

@@ -8,9 +8,8 @@ model: gpt-4-1106-preview
 summary: "N\xE4r du startar ett nytt projekt skapar du en grund f\xF6r din kod. Programmerare\
   \ g\xF6r detta f\xF6r att organisera och strukturera sitt arbete fr\xE5n b\xF6rjan."
 title: "Att p\xE5b\xF6rja ett nytt projekt"
+weight: 1
 ---
-
-{{< edit_this_page >}}
 
 ## Vad & Varför?
 När du startar ett nytt projekt skapar du en grund för din kod. Programmerare gör detta för att organisera och strukturera sitt arbete från början.

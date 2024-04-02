@@ -9,9 +9,8 @@ summary: "Tratar erros significa escrever c\xF3digo que pode antecipar e lidar c
   \ situa\xE7\xF5es problem\xE1ticas. Os programadores fazem isso para prevenir falhas,\
   \ proteger\u2026"
 title: Tratamento de erros
+weight: 16
 ---
-
-{{< edit_this_page >}}
 
 ## O Que & Por Que?
 Tratar erros significa escrever código que pode antecipar e lidar com situações problemáticas. Os programadores fazem isso para prevenir falhas, proteger a integridade dos dados e fornecer aos usuários alternativas elegantes quando algo dá errado.

@@ -9,9 +9,8 @@ summary: "Unire le stringhe, o concatenazione, significa attaccare una stringa a
   \ fine di un'altra. Lo facciamo per creare messaggi completi, percorsi di file,\
   \ o\u2026"
 title: Concatenazione di stringhe
+weight: 3
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why? (Cosa e Perché?)
 Unire le stringhe, o concatenazione, significa attaccare una stringa alla fine di un'altra. Lo facciamo per creare messaggi completi, percorsi di file, o qualunque cosa richieda l'unione di testo in una sola stringa.

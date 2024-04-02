@@ -10,9 +10,8 @@ model: gpt-4-0125-preview
 summary: "Zoeken en vervangen in Java overschrijft originele strings met nieuwe karakters\
   \ - zie het als een digitale correctievloeistof. Programmeurs gebruiken dit\u2026"
 title: Tekst zoeken en vervangen
+weight: 10
 ---
-
-{{< edit_this_page >}}
 
 ## Wat & Waarom?
 

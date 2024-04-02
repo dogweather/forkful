@@ -11,9 +11,8 @@ summary: "Le format des valeurs s\xE9par\xE9es par des virgules (CSV) est omnipr
   sent pour l'\xE9change de donn\xE9es en raison de sa simplicit\xE9 et de sa facilit\xE9\
   \ d'int\xE9gration\u2026"
 title: Travailler avec CSV
+weight: 37
 ---
-
-{{< edit_this_page >}}
 
 ## Quoi & Pourquoi ?
 

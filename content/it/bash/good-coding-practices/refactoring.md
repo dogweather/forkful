@@ -9,9 +9,8 @@ summary: "Il refactoring \xE8 il processo di ristrutturazione del codice informa
   \ esistente senza cambiarne il comportamento esterno. \xC8 una pratica fondamentale\
   \ per\u2026"
 title: Rifattorizzazione
+weight: 19
 ---
-
-{{< edit_this_page >}}
 
 ## Cos'è & Perché?
 Il refactoring è il processo di ristrutturazione del codice informatico esistente senza cambiarne il comportamento esterno. È una pratica fondamentale per ridurre la complessità, migliorare la manutenibilità e mantenere il tuo codice sano e più facile da comprendere sia per gli sviluppatori attuali sia per quelli futuri.

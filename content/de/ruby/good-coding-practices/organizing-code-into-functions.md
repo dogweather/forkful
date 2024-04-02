@@ -7,9 +7,8 @@ model: gpt-4-1106-preview
 summary: "Code in Funktionen zu organisieren teilt Ihr Skript in wiederverwendbare\
   \ Bl\xF6cke auf. Es geht darum, Ihren Code sauber, handhabbar und weniger\u2026"
 title: Code in Funktionen organisieren
+weight: 18
 ---
-
-{{< edit_this_page >}}
 
 ## Was & Warum?
 Code in Funktionen zu organisieren teilt Ihr Skript in wiederverwendbare Blöcke auf. Es geht darum, Ihren Code sauber, handhabbar und weniger fehleranfällig zu machen. Modularer Code ist toll, weil er Zeit spart, den Verstand schont und das Debuggen sowie das Unit Testing vereinfacht.

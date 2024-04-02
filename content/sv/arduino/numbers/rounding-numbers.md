@@ -9,9 +9,8 @@ summary: "Avrundning av tal inneb\xE4r att trimma ett decimaltal till dess n\xE4
   \ hela v\xE4rde eller till ett best\xE4mt antal decimaler. Programmerare avrundar\
   \ tal f\xF6r\u2026"
 title: Avrundning av tal
+weight: 13
 ---
-
-{{< edit_this_page >}}
 
 ## Vad & Varför?
 Avrundning av tal innebär att trimma ett decimaltal till dess närmaste hela värde eller till ett bestämt antal decimaler. Programmerare avrundar tal för att göra dem lättare att läsa och hantera, särskilt när noggrannhet utöver en viss punkt är onödig eller kan leda till fel.

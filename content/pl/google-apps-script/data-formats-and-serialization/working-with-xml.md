@@ -11,9 +11,8 @@ summary: "Praca z XML w Google Apps Script pozwala programistom na parsowanie, m
   \ i generowanie danych XML, kt\xF3re s\u0105 niezb\u0119dne dla us\u0142ug sieciowych\
   \ i\u2026"
 title: Praca z XML
+weight: 40
 ---
-
-{{< edit_this_page >}}
 
 ## Co i dlaczego?
 

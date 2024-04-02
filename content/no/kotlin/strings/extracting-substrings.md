@@ -9,9 +9,8 @@ summary: "Hva er ekstrahering av delstrenger? Det er n\xE5r du plukker ut deler 
   \ en tekststreng. Hvorfor? Fordi noen ganger trenger du bare et spesifikt stykke\
   \ av\u2026"
 title: Uthenting av delstrenger
+weight: 6
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 Hva er ekstrahering av delstrenger? Det er når du plukker ut deler av en tekststreng. Hvorfor? Fordi noen ganger trenger du bare et spesifikt stykke av informasjonen, som brukernavn fra en e-post eller en dato fra en tekst.

@@ -9,9 +9,8 @@ summary: "Interpoloinnissa yhdistet\xE4\xE4n muuttujia ja kiinte\xE4\xE4 teksti\
   \ yhdeksi merkkijonoksi. Koodarit k\xE4ytt\xE4v\xE4t t\xE4t\xE4 menetelm\xE4\xE4\
   \ siksi, ett\xE4 se tekee koodista\u2026"
 title: Merkkijonon interpolointi
+weight: 8
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why? (Mitä ja Miksi?)
 Interpoloinnissa yhdistetään muuttujia ja kiinteää tekstiä yhdeksi merkkijonoksi. Koodarit käyttävät tätä menetelmää siksi, että se tekee koodista selkeämpää ja dynaamista sisällön yhdistämisen kautta.

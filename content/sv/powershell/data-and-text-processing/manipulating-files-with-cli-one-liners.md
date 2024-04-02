@@ -9,9 +9,8 @@ summary: "Att manipulera filer med CLI-enradare i PowerShell handlar om att snab
   \ \xE4ndra, flytta eller erh\xE5lla fildata direkt fr\xE5n kommandoraden. Programmerare\
   \ g\xF6r\u2026"
 title: Hantera filer med CLI-engreppskommandon
+weight: 31
 ---
-
-{{< edit_this_page >}}
 
 ## Vad & Varför?
 

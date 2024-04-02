@@ -10,9 +10,8 @@ model: gpt-4-0125-preview
 summary: "Capitalizar uma string em Swift modifica a string dada de modo que seu primeiro\
   \ caractere seja mai\xFAsculo, e os caracteres restantes sejam min\xFAsculos.\u2026"
 title: Capitalizando uma string
+weight: 2
 ---
-
-{{< edit_this_page >}}
 
 ## O Que & Por Que?
 

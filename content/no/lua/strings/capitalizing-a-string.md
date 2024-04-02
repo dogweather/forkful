@@ -11,9 +11,8 @@ summary: "\xC5 kapitalisere en streng inneb\xE6rer \xE5 endre det f\xF8rste tegn
   \ i hvert ord i en setning til stor bokstav, samtidig som resten sikres \xE5 v\xE6\
   re sm\xE5 bokstaver.\u2026"
 title: Sette stor bokstav i en streng
+weight: 2
 ---
-
-{{< edit_this_page >}}
 
 ## Hva & Hvorfor?
 Å kapitalisere en streng innebærer å endre det første tegnet i hvert ord i en setning til stor bokstav, samtidig som resten sikres å være små bokstaver. Denne teknikken brukes ofte for å formatere tekst til et mer profesjonelt eller leselig resultat, slik som forberedelse av titler eller brukerinndata for visning.

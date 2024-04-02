@@ -17,9 +17,8 @@ summary: "TOML\uC740 Tom's Obvious, Minimal Language\uC758 \uC57D\uC790\uC785\uB
   \uB2E4\uB85C\uC6C0\uC744 \uD53C\uD558\uAE30 \uC704\uD574 TOML\uC744 \uC0AC\uC6A9\
   \uD569\uB2C8\uB2E4."
 title: "\uD504\uB85C\uADF8\uB798\uBA38\uB97C \uC704\uD55C TOML \uB2E4\uB8E8\uAE30"
+weight: 39
 ---
-
-{{< edit_this_page >}}
 
 ## 무엇 & 왜?
 TOML은 Tom's Obvious, Minimal Language의 약자입니다. 사람이 읽고 쓰기 쉬우면서도 기계가 파싱하기 쉬워 설정 파일에 사용됩니다. 개발자들은 설정을 처리할 때 XML의 복잡함과 JSON의 까다로움을 피하기 위해 TOML을 사용합니다.

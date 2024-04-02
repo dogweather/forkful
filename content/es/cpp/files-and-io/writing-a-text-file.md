@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Escribir en un archivo de texto en C++ implica crear o abrir un archivo\
   \ y luego escribir datos en \xE9l, lo cual es una tarea fundamental para aplicaciones\u2026"
 title: Escribiendo un archivo de texto
+weight: 24
 ---
-
-{{< edit_this_page >}}
 
 ## ¿Qué y Por Qué?
 Escribir en un archivo de texto en C++ implica crear o abrir un archivo y luego escribir datos en él, lo cual es una tarea fundamental para aplicaciones que necesitan persistir datos, como registros, contenido generado por usuarios o configuraciones. Los programadores hacen esto para guardar datos generados durante la ejecución de un programa o para exportar datos para su uso por otros programas o usuarios.

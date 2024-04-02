@@ -9,9 +9,8 @@ summary: "D\u0142ugo\u015B\u0107 \u0142a\u0144cucha znak\xF3w to po prostu liczb
   \ znak\xF3w w nim zawartych. Programi\u015Bci sprawdzaj\u0105 t\u0119 d\u0142ugo\u015B\
   \u0107 by weryfikowa\u0107 dane wej\u015Bciowe, ogranicza\u0107 tekst do\u2026"
 title: "Znalezienie d\u0142ugo\u015Bci ci\u0105gu znak\xF3w"
+weight: 7
 ---
-
-{{< edit_this_page >}}
 
 ## Co i dlaczego?
 Długość łańcucha znaków to po prostu liczba znaków w nim zawartych. Programiści sprawdzają tę długość by weryfikować dane wejściowe, ograniczać tekst do określonej długości czy po prostu manipulować treścią.

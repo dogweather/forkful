@@ -9,9 +9,8 @@ summary: "\"Trabalhando com XML\" refere-se ao processo de leitura, cria\xE7\xE3
   \ e modifica\xE7\xE3o de arquivos XML (eXtensible Markup Language) utilizando programa\xE7\
   \xE3o. Os\u2026"
 title: Trabalhando com XML
+weight: 40
 ---
-
-{{< edit_this_page >}}
 
 ## O Que & Porquê?
 "Trabalhando com XML" refere-se ao processo de leitura, criação e modificação de arquivos XML (eXtensible Markup Language) utilizando programação. Os programadores fazem isso porque o XML é amplamente utilizado para troca de dados devido à sua natureza independente de plataforma e formato autoexplicativo.

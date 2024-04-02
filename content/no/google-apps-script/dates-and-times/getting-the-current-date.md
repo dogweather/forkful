@@ -11,9 +11,8 @@ summary: "\xC5 f\xE5 tak i dagens dato i Google Apps Script handler om \xE5 hent
   \ den levende datoen og tiden, en vanlig oppgave for automatisering, logging og\
   \ tidsstempling\u2026"
 title: "F\xE5 den gjeldende datoen"
+weight: 29
 ---
-
-{{< edit_this_page >}}
 
 ## Hva & Hvorfor?
 

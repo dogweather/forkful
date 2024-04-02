@@ -9,9 +9,8 @@ summary: "Tilap\xE4iset tiedostot ovat v\xE4liaikaisia tiedostoja, joita k\xE4yt
   \xE4n dataa k\xE4sitelless\xE4 tai tallennettaessa. Ne ovat hy\xF6dyllisi\xE4, kun\
   \ tarvitaan nopeaa,\u2026"
 title: "V\xE4liaikaistiedoston luominen"
+weight: 21
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 Tilapäiset tiedostot ovat väliaikaisia tiedostoja, joita käytetään dataa käsitellessä tai tallennettaessa. Ne ovat hyödyllisiä, kun tarvitaan nopeaa, yksinkertaista tallennustilaa testaukseen tai väliaikaistietojen käsittelyyn poisheitettävästi.

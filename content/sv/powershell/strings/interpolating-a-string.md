@@ -9,9 +9,8 @@ summary: "Interpolering av str\xE4ngar handlar om att stoppa in variabler eller 
   \ direkt i en textstr\xE4ng. Det sparas tid och \xF6kar l\xE4sbarheten i din kod\
   \ genom att\u2026"
 title: "Interpolera en str\xE4ng"
+weight: 8
 ---
-
-{{< edit_this_page >}}
 
 ## Vad & Varför?
 Interpolering av strängar handlar om att stoppa in variabler eller uttryck direkt i en textsträng. Det sparas tid och ökar läsbarheten i din kod genom att slippa klumpig konkaterning.

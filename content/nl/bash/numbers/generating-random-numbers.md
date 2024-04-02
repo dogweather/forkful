@@ -10,9 +10,8 @@ model: gpt-4-0125-preview
 summary: "Het genereren van willekeurige getallen in Bash biedt een manier om onvoorspelbaarheid\
   \ in scripts te introduceren, wat essentieel is voor taken zoals het\u2026"
 title: Willekeurige getallen genereren
+weight: 12
 ---
-
-{{< edit_this_page >}}
 
 ## Wat & Waarom?
 Het genereren van willekeurige getallen in Bash biedt een manier om onvoorspelbaarheid in scripts te introduceren, wat essentieel is voor taken zoals het genereren van veilige wachtwoorden, het simuleren van gegevens of voor het programmeren van spellen. Programmeurs benutten deze mogelijkheid om variabiliteit aan hun scripts toe te voegen of om hun programma's onder een verscheidenheid van willekeurig gegenereerde omstandigheden te testen.

@@ -21,9 +21,8 @@ summary: "YAML\uC740 \"YAML Ain't Markup Language\"\uC758 \uC57D\uC790\uB85C, \u
   \ \uC800\uC7A5\uD558\uAC70\uB098 \uC804\uB2EC\uD574\uC57C \uD560 \uB54C YAML\uC744\
   \u2026"
 title: "YAML\uB85C \uC791\uC5C5\uD558\uAE30"
+weight: 41
 ---
-
-{{< edit_this_page >}}
 
 ## 무엇이며 왜 사용하는가?
 YAML은 "YAML Ain't Markup Language"의 약자로, 인간이 읽을 수 있는 형식으로 되어 있어 Ruby에서 설정 파일 및 데이터 직렬화에 광범위하게 사용됩니다. 프로그래머들은 데이터 객체를 읽기 쉽고 구조화된 방식으로 저장하거나 전달해야 할 때 YAML을 선호하는데, 이는 구성 관리, 데이터 저장, 언어 간 데이터 공유 같은 작업을 단순화합니다.

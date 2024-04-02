@@ -11,9 +11,8 @@ summary: "Att skicka en HTTP-f\xF6rfr\xE5gan inneb\xE4r att skapa och skicka en 
   rfr\xE5gan till en webbserver f\xF6r att h\xE4mta eller skicka in data. Programmerare\
   \ g\xF6r detta i C\u2026"
 title: "Att skicka en HTTP-beg\xE4ran"
+weight: 44
 ---
-
-{{< edit_this_page >}}
 
 ## Vad och varför?
 

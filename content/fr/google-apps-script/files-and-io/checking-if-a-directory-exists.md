@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "V\xE9rifier si un r\xE9pertoire existe dans Google Apps Script implique\
   \ de v\xE9rifier la pr\xE9sence d'un dossier au sein de Google Drive. Les programmeurs\u2026"
 title: "V\xE9rifier si un r\xE9pertoire existe"
+weight: 20
 ---
-
-{{< edit_this_page >}}
 
 ## Quoi & Pourquoi ?
 

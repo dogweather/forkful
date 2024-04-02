@@ -13,9 +13,8 @@ summary: "\u5C06\u4EE3\u7801\u7EC4\u7EC7\u6210\u51FD\u6570\u610F\u5473\u7740\u5C
   \u8BFB\u6027\u548C\u53EF\u7EF4\u62A4\u6027\uFF0C\u51CF\u5C11\u91CD\u590D\uFF0C\u5E76\
   \u7B80\u5316\u6D4B\u8BD5\u3002"
 title: "\u5C06\u4EE3\u7801\u7EC4\u7EC7\u6210\u51FD\u6570"
+weight: 18
 ---
-
-{{< edit_this_page >}}
 
 ## 什么及为什么？
 将代码组织成函数意味着将相关操作分块成可重用的模块。我们这样做是为了提高代码的可读性和可维护性，减少重复，并简化测试。

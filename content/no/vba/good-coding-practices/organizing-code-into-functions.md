@@ -11,9 +11,8 @@ summary: "\xC5 organisere kode i funksjoner i Visual Basic for Applications (VBA
   \ inneb\xE6rer \xE5 bryte ned et program i mindre, h\xE5ndterbare deler kjent som\
   \ funksjoner.\u2026"
 title: Organisering av kode i funksjoner
+weight: 18
 ---
-
-{{< edit_this_page >}}
 
 ## Hva & Hvorfor?
 

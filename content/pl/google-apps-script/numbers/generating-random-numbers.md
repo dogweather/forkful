@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Generowanie losowych liczb to podstawowe zadanie w programowaniu, u\u017C\
   ywane w wielu aplikacjach, takich jak symulacje, gry i systemy bezpiecze\u0144stwa.\u2026"
 title: Generowanie liczb losowych
+weight: 12
 ---
-
-{{< edit_this_page >}}
 
 ## Co & Dlaczego?
 

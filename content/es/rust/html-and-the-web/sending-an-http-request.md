@@ -7,9 +7,8 @@ model: gpt-4-1106-preview
 summary: "Enviar una petici\xF3n HTTP es comunicarte con un servidor para intercambiar\
   \ datos. Los programadores lo hacen para interactuar con servicios web, como APIs,\u2026"
 title: Enviando una solicitud http
+weight: 44
 ---
-
-{{< edit_this_page >}}
 
 ## Qué & Por qué?
 Enviar una petición HTTP es comunicarte con un servidor para intercambiar datos. Los programadores lo hacen para interactuar con servicios web, como APIs, para obtener información, realizar operaciones o iniciar sesiones.

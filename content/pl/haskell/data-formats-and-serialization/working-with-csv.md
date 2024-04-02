@@ -11,9 +11,8 @@ summary: "Praca z CSV (Comma-Separated Values, warto\u015Bci rozdzielone przecin
   \ polega na parsowaniu oraz generowaniu plik\xF3w, kt\xF3re przechowuj\u0105 dane\
   \ tabelaryczne w\u2026"
 title: Praca z plikami CSV
+weight: 37
 ---
-
-{{< edit_this_page >}}
 
 ## Co i dlaczego?
 

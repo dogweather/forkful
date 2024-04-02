@@ -13,9 +13,8 @@ summary: "X\xF3a d\u1EA5u ngo\u1EB7c t\u1EEB m\u1ED9t chu\u1ED7i l\xE0 vi\u1EC7c
   c \u0111\u01A1n (' ') kh\xF3 ch\u1ECBu kh\u1ECFi d\u1EEF li\u1EC7u v\u0103n b\u1EA3\
   n c\u1EE7a b\u1EA1n. L\u1EADp tr\xECnh vi\xEAn th\u01B0\u1EDDng\u2026"
 title: "Lo\u1EA1i b\u1ECF d\u1EA5u ngo\u1EB7c k\xE9p kh\u1ECFi chu\u1ED7i"
+weight: 9
 ---
-
-{{< edit_this_page >}}
 
 ## Gì & Tại Sao?
 

@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Het lezen van commandoregelargumenten in Haskell laat je gebruikersinvoer\
   \ opsnuiven wanneer ze je programma uitvoeren. Waarom? Om het gedrag van het\u2026"
 title: Commandoregelargumenten lezen
+weight: 23
 ---
-
-{{< edit_this_page >}}
 
 ## Wat & Waarom?
 

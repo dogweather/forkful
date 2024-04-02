@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Nel mondo di Arduino, gli array associativi ti permettono di abbinare chiavi\
   \ a valori, un po' come accoppiare i calzini con i loro compagni. Sono la\u2026"
 title: Utilizzo di array associativi
+weight: 15
 ---
-
-{{< edit_this_page >}}
 
 ## Cosa & Perché?
 Nel mondo di Arduino, gli array associativi ti permettono di abbinare chiavi a valori, un po' come accoppiare i calzini con i loro compagni. Sono la scelta prediletta quando hai bisogno di memorizzare e recuperare dati usando nomi descrittivi, rendendo il tuo codice più pulito e molto più comprensibile.

@@ -7,9 +7,8 @@ model: gpt-4-1106-preview
 summary: "Printing debug output in Elixir involves displaying interim results or variable\
   \ values in the console. Programmers do this to track down bugs or to\u2026"
 title: Printing debug output
+weight: 33
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 

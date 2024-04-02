@@ -10,9 +10,8 @@ model: gpt-4-0125-preview
 summary: "Trouver la longueur d'une cha\xEEne en C revient \xE0 d\xE9terminer le nombre\
   \ de caract\xE8res avant le terminateur nul `\\0`. Les programmeurs font cela pour\u2026"
 title: "Trouver la longueur d'une cha\xEEne"
+weight: 7
 ---
-
-{{< edit_this_page >}}
 
 ## Quoi & Pourquoi ?
 Trouver la longueur d'une chaîne en C revient à déterminer le nombre de caractères avant le terminateur nul `\0`. Les programmeurs font cela pour manipuler correctement les chaînes sans rencontrer d'erreurs comme des dépassements de tampon, qui peuvent conduire à des vulnérabilités de sécurité ou des plantages de programme.

@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Debuguitvoer afdrukken in Visual Basic for Applications (VBA) houdt in dat\
   \ je strategisch printopdrachten in je code plaatst om variabelwaarden,\u2026"
 title: Afdrukken van debug output
+weight: 33
 ---
-
-{{< edit_this_page >}}
 
 ## Wat & Waarom?
 Debuguitvoer afdrukken in Visual Basic for Applications (VBA) houdt in dat je strategisch printopdrachten in je code plaatst om variabelwaarden, uitvoeringsstroom of aangepaste debugberichten weer te geven. Deze techniek is essentieel voor het debuggen, waardoor programmeurs het gedrag van hun code tijdens runtime kunnen begrijpen en eventueel onverwacht gedrag of fouten kunnen identificeren.

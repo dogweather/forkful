@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Het verzenden van een HTTP-verzoek houdt in dat je een verzoek cre\xEBert\
   \ en verstuurt naar een webserver om gegevens op te halen of in te dienen.\u2026"
 title: Een HTTP-verzoek verzenden
+weight: 44
 ---
-
-{{< edit_this_page >}}
 
 ## Wat & Waarom?
 

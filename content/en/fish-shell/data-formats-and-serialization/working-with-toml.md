@@ -7,9 +7,8 @@ model: gpt-4-1106-preview
 summary: "TOML is a config file format, easy for humans to read and write, and easy\
   \ for machines to parse and generate. Programmers work with TOML for clear,\u2026"
 title: Working with TOML
+weight: 39
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 TOML is a config file format, easy for humans to read and write, and easy for machines to parse and generate. Programmers work with TOML for clear, hierarchical config files in projects where readability is key.

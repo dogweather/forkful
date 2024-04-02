@@ -11,9 +11,8 @@ summary: "P\xE4iv\xE4m\xE4\xE4r\xE4n laskeminen tulevaisuudessa tai menneisyydes
   \ Go:ssa k\xE4sitt\xE4\xE4 p\xE4iv\xE4m\xE4\xE4r\xE4n ja ajan arvojen manipulointia\
   \ m\xE4\xE4ritt\xE4m\xE4\xE4n tietyn pisteen suhteessa\u2026"
 title: "Tulevaisuuden tai menneisyyden p\xE4iv\xE4m\xE4\xE4r\xE4n laskeminen"
+weight: 26
 ---
-
-{{< edit_this_page >}}
 
 ## Mikä ja miksi?
 

@@ -1,14 +1,14 @@
 ---
 date: 2024-01-26 04:10:23.734989-07:00
-description: "\xC5 bruke en debugger er som \xE5 gi deg selv r\xF8ntgensyn for \xE5\
-  \ titte inn i koden din under utf\xF8relse. Programmerere gj\xF8r dette for \xE5\
-  \ oppdage feil, forst\xE5\u2026"
+description: "Rust st\xF8tter forskjellige debuggere, men en vanlig en er `gdb` for\
+  \ GNU/Linux eller `lldb` for macOS. Du kan ogs\xE5 bruke `rust-gdb` eller `rust-lldb`,\
+  \ som\u2026"
 lastmod: '2024-03-13T22:44:40.578387-06:00'
 model: gpt-4-0125-preview
-summary: "\xC5 bruke en debugger er som \xE5 gi deg selv r\xF8ntgensyn for \xE5 titte\
-  \ inn i koden din under utf\xF8relse. Programmerere gj\xF8r dette for \xE5 oppdage\
-  \ feil, forst\xE5\u2026"
+summary: "Rust st\xF8tter forskjellige debuggere, men en vanlig en er `gdb` for GNU/Linux\
+  \ eller `lldb` for macOS. Du kan ogs\xE5 bruke `rust-gdb` eller `rust-lldb`, som\u2026"
 title: "\xC5 bruke en debugger"
+weight: 35
 ---
 
 ## Hvordan:

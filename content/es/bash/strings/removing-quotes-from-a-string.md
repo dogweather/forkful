@@ -7,9 +7,8 @@ model: gpt-4-0125-preview
 summary: "Eliminar las comillas de una cadena implica quitar las marcas de comillas\
   \ que encierran la cadena. Los programadores a menudo quieren hacer esto para\u2026"
 title: Eliminando comillas de una cadena
+weight: 9
 ---
-
-{{< edit_this_page >}}
 
 ## ¿Qué y Por Qué?
 Eliminar las comillas de una cadena implica quitar las marcas de comillas que encierran la cadena. Los programadores a menudo quieren hacer esto para sanear los datos de entrada, preparar los datos para comparaciones, o adherirse a un formato de datos específico al interactuar con otros programas o sistemas.

@@ -8,9 +8,8 @@ model: gpt-4-0125-preview
 summary: "Visual Basic for\u2026"
 title: "\u30B3\u30DE\u30F3\u30C9\u30E9\u30A4\u30F3\u5F15\u6570\u306E\u8AAD\u307F\u8FBC\
   \u307F"
+weight: 23
 ---
-
-{{< edit_this_page >}}
 
 ## 何となぜ？
 

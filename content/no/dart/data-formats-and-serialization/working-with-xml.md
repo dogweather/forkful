@@ -11,9 +11,8 @@ summary: "\xC5 jobbe med XML i Dart inneb\xE6rer parsing, sp\xF8rre og modifiser
   \ XML-dokumenter, en prosess som er avgj\xF8rende for applikasjoner som samhandler\
   \ med\u2026"
 title: Arbeider med XML
+weight: 40
 ---
-
-{{< edit_this_page >}}
 
 ## Hva & Hvorfor?
 

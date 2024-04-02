@@ -7,9 +7,8 @@ model: gpt-4-0125-preview
 summary: "\xC5 manipulere filer med CLI \xE9n-linjers kommandoer i PowerShell handler\
   \ om \xE5 raskt endre, flytte eller hente fildata direkte fra kommandolinjen.\u2026"
 title: Manipulering av filer med CLI-enkeltkommandoer
+weight: 31
 ---
-
-{{< edit_this_page >}}
 
 ## Hva & Hvorfor?
 

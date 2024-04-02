@@ -7,9 +7,8 @@ model: gpt-4-0125-preview
 summary: "Satunnaislukujen tuottaminen Bashissa tarjoaa keinon tuoda ep\xE4varmuutta\
   \ skripteihin, mik\xE4 on olennaista teht\xE4viss\xE4 kuten turvallisten salasanojen\u2026"
 title: Satunnaislukujen generointi
+weight: 12
 ---
-
-{{< edit_this_page >}}
 
 ## Mikä ja miksi?
 Satunnaislukujen tuottaminen Bashissa tarjoaa keinon tuoda epävarmuutta skripteihin, mikä on olennaista tehtävissä kuten turvallisten salasanojen generointi, datan simulointi tai pelien ohjelmointi. Ohjelmoijat hyödyntävät tätä kykyä lisätäkseen vaihtelua skripteihinsä tai testatakseen ohjelmiaan monenlaisissa satunnaisesti generoiduissa olosuhteissa.

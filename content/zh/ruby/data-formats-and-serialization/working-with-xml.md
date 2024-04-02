@@ -15,9 +15,8 @@ summary: "\u4F7F\u7528XML\u610F\u5473\u7740\u4F7F\u7528\u4EE3\u7801\u6765\u89E3\
   \u7EDC\u670D\u52A1\u3001\u914D\u7F6E\u6587\u4EF6\u548C\u6570\u636E\u4EA4\u6362\u683C\
   \u5F0F\u8FDB\u884C\u4EA4\u4E92\u3002"
 title: "\u5904\u7406XML"
+weight: 40
 ---
-
-{{< edit_this_page >}}
 
 ## 什么 & 为什么？
 使用XML意味着使用代码来解析、生成和操作XML（可扩展标记语言）文档。程序员这样做是为了与许多使用XML作为通用语言的网络服务、配置文件和数据交换格式进行交互。

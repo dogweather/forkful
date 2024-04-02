@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Een webpagina downloaden betekent het verzamelen van de gegevens die het\
   \ bevat. Programmeurs doen dit om informatie te verkrijgen, tests te automatiseren,\u2026"
 title: Een webpagina downloaden
+weight: 42
 ---
-
-{{< edit_this_page >}}
 
 ## Wat & Waarom?
 

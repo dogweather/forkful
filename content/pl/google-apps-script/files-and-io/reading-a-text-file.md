@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Odczytywanie pliku tekstowego w Google Apps Script (GAS) polega na dost\u0119\
   pie do danych tekstowych z plik\xF3w przechowywanych w Google Drive lub innym\u2026"
 title: Czytanie pliku tekstowego
+weight: 22
 ---
-
-{{< edit_this_page >}}
 
 ## Co i dlaczego?
 

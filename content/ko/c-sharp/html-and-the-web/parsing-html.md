@@ -23,9 +23,8 @@ summary: "\uD504\uB85C\uADF8\uB798\uBC0D\uC5D0\uC11C HTML \uD30C\uC2F1\uC740 HTM
   \ HTML \uBB38\uC11C\uB97C \uB3D9\uC801\uC73C\uB85C \uC218\uC815\uD558\uB294 \uB4F1\
   \uC758\u2026"
 title: "HTML \uD30C\uC2F1"
+weight: 43
 ---
-
-{{< edit_this_page >}}
 
 ## 무엇인가 & 왜 사용하는가?
 

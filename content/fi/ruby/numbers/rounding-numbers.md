@@ -9,9 +9,8 @@ summary: "Py\xF6rist\xE4minen tarkoittaa lukujen s\xE4\xE4t\xE4mist\xE4 l\xE4him
   \xE4n kokonaislukuun tai m\xE4\xE4ritettyyn tarkkuusasteeseen. Ohjelmoijat py\xF6\
   rist\xE4v\xE4t lukuja\u2026"
 title: "Numerojen py\xF6rist\xE4minen"
+weight: 13
 ---
-
-{{< edit_this_page >}}
 
 ## Mikä & Miksi?
 Pyöristäminen tarkoittaa lukujen säätämistä lähimpään kokonaislukuun tai määritettyyn tarkkuusasteeseen. Ohjelmoijat pyöristävät lukuja yksinkertaistaakseen, vastatakseen ihmisten odotuksiin tai sovittaakseen tiedot tiettyihin muotoihin—ajattele taloudellisia laskelmia, graafisia näyttöjä tai tallennustilan vähentämistä.

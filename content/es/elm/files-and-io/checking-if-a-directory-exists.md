@@ -10,9 +10,8 @@ model: gpt-4-0125-preview
 summary: "Comprobar si un directorio existe significa confirmar si una ruta de carpeta\
   \ espec\xEDfica est\xE1 presente en el sistema de archivos. Los programadores lo\u2026"
 title: Comprobando si un directorio existe
+weight: 20
 ---
-
-{{< edit_this_page >}}
 
 ## Qué y Por Qué?
 Comprobar si un directorio existe significa confirmar si una ruta de carpeta específica está presente en el sistema de archivos. Los programadores lo hacen para evitar errores al acceder, leer o escribir archivos.

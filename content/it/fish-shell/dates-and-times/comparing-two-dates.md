@@ -7,9 +7,8 @@ model: gpt-4-1106-preview
 summary: "Confrontare due date significa verificare se una precede, segue o coincide\
   \ con l'altra. I programmatori lo fanno per gestire eventi, scadenze, o per\u2026"
 title: Confronto tra due date
+weight: 27
 ---
-
-{{< edit_this_page >}}
 
 ## Cosa & Perché?
 Confrontare due date significa verificare se una precede, segue o coincide con l'altra. I programmatori lo fanno per gestire eventi, scadenze, o per organizzare dati cronologicamente.

@@ -1,14 +1,15 @@
 ---
 date: 2024-01-26 03:50:12.306170-07:00
-description: "Zanurzenie si\u0119 w debugger to wszystko o krokowym przechodzeniu\
-  \ przez kod, obserwowaniu jak dzia\u0142aj\u0105 mechanizmy i \u0142apaniu tych\
-  \ irytuj\u0105cych b\u0142\u0119d\xF3w na\u2026"
+description: "Oto ma\u0142a pr\xF3bka debugowania w Kotlinie z IntelliJ IDEA - Sherlocku\
+  \ Holmesie w\u015Br\xF3d IDE: ```kotlin fun main() { val tajemniczaLiczba = 42 var\
+  \ zgadnij = 0\u2026"
 lastmod: '2024-03-13T22:44:35.369484-06:00'
 model: gpt-4-0125-preview
-summary: "Zanurzenie si\u0119 w debugger to wszystko o krokowym przechodzeniu przez\
-  \ kod, obserwowaniu jak dzia\u0142aj\u0105 mechanizmy i \u0142apaniu tych irytuj\u0105\
-  cych b\u0142\u0119d\xF3w na\u2026"
+summary: "Oto ma\u0142a pr\xF3bka debugowania w Kotlinie z IntelliJ IDEA - Sherlocku\
+  \ Holmesie w\u015Br\xF3d IDE: ```kotlin fun main() { val tajemniczaLiczba = 42 var\
+  \ zgadnij = 0\u2026"
 title: Korzystanie z debugera
+weight: 35
 ---
 
 ## Jak to zrobić:

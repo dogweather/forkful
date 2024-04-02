@@ -11,9 +11,8 @@ summary: "A interpola\xE7\xE3o de strings em C# permite criar uma nova string in
   \ express\xF5es dentro de um literal de string, facilitando a formata\xE7\xE3o e\
   \ a\u2026"
 title: Interpolando uma String
+weight: 8
 ---
-
-{{< edit_this_page >}}
 
 ## O Quê & Porquê?
 A interpolação de strings em C# permite criar uma nova string incluindo expressões dentro de um literal de string, facilitando a formatação e a concatenação de strings. Os programadores utilizam esse recurso para melhorar a legibilidade e a manutenibilidade do código, especialmente ao lidar com conteúdo de string dinâmico.

@@ -9,9 +9,8 @@ summary: "Stringinterpolering inneb\xE4r att du injicerar variabler direkt i en 
   ng. Programmerare anv\xE4nder det f\xF6r att enkelt bygga dynamiska meddelanden\
   \ eller\u2026"
 title: "Interpolera en str\xE4ng"
+weight: 8
 ---
-
-{{< edit_this_page >}}
 
 ## Vad & Varför?
 Stringinterpolering innebär att du injicerar variabler direkt i en textsträng. Programmerare använder det för att enkelt bygga dynamiska meddelanden eller behandla data utan att klumpigt konkatenera strängar och variabler.

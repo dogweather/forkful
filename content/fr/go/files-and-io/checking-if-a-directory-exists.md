@@ -11,9 +11,8 @@ summary: "V\xE9rifier l'existence d'un r\xE9pertoire en Go est crucial pour les 
   \ qui interagissent avec le syst\xE8me de fichiers, afin d'\xE9viter les erreurs\
   \ lors\u2026"
 title: "V\xE9rifier si un r\xE9pertoire existe"
+weight: 20
 ---
-
-{{< edit_this_page >}}
 
 ## Quoi et pourquoi ?
 

@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Scrivere test in JavaScript si riferisce alla pratica di creare script automatizzati\
   \ che eseguono il tuo codice per assicurarsi che si comporti come\u2026"
 title: Scrivere test
+weight: 36
 ---
-
-{{< edit_this_page >}}
 
 ## Cosa e Perché?
 

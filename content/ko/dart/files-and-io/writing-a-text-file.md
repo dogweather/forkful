@@ -23,9 +23,8 @@ summary: "Dart\uC5D0\uC11C \uD14D\uC2A4\uD2B8 \uD30C\uC77C\uC744 \uC791\uC131\uD
   \uB418\uC5B4\uC57C \uD558\uB294 \uC815\uBCF4\uB098 \uB2E4\uB978 \uC560\uD50C\uB9AC\
   \uCF00\uC774\uC158 \uB610\uB294 \uC0AC\uC6A9\uC790\uC640\u2026"
 title: "\uD14D\uC2A4\uD2B8 \uD30C\uC77C \uC791\uC131\uD558\uAE30"
+weight: 24
 ---
-
-{{< edit_this_page >}}
 
 ## 무엇 & 왜?
 Dart에서 텍스트 파일을 작성하는 것은 디스크에 파일을 생성하거나 수정하여 데이터를 읽을 수 있는 형식으로 저장하는 것을 포함합니다. 프로그래머들은 애플리케이션 데이터, 설정, 로그 또는 애플리케이션 실행 사이에 지속되어야 하는 정보나 다른 애플리케이션 또는 사용자와 데이터를 공유하기 위해 이러한 작업을 합니다.

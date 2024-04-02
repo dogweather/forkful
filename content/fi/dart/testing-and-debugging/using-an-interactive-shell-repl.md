@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Interaktiivinen komentorivi (REPL - Read-Evaluate-Print Loop) Dartille mahdollistaa\
   \ ohjelmoijien dynaamisen koodin kirjoittamisen ja suorittamisen rivi\u2026"
 title: "Interaktiivisen kuoren (REPL) k\xE4ytt\xF6"
+weight: 34
 ---
-
-{{< edit_this_page >}}
 
 ## Mikä & Miksi?
 

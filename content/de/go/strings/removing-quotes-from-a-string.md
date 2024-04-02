@@ -11,9 +11,8 @@ summary: "Das Entfernen von Anf\xFChrungszeichen aus einem String in Go bedeutet
   \ die f\xFChrenden und abschlie\xDFenden Anf\xFChrungszeichen (`\"` oder `'`) aus\
   \ einem gegebenen\u2026"
 title: "Anf\xFChrungszeichen aus einem String entfernen"
+weight: 9
 ---
-
-{{< edit_this_page >}}
 
 ## Was & Warum?
 

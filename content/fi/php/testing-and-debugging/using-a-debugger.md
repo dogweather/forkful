@@ -1,14 +1,15 @@
 ---
 date: 2024-01-26 03:50:47.400388-07:00
-description: "Debuggeri on ty\xF6kalu, joka auttaa ohjelmoijia ymm\xE4rt\xE4m\xE4\xE4\
-  n, mit\xE4 heid\xE4n koodinsa todellisuudessa tekee sen suorittaessa. Se on suurennuslasi,\
-  \ joka\u2026"
+description: "PHP:ss\xE4 on interaktiivinen debuggeri nimelt\xE4\xE4n Xdebug. N\xE4\
+  in sit\xE4 k\xE4ytet\xE4\xE4n. Ensiksi, varmista ett\xE4 sinulla on Xdebug asennettuna\
+  \ ja konfiguroituna\u2026"
 lastmod: '2024-03-13T22:44:56.660381-06:00'
 model: gpt-4-0125-preview
-summary: "Debuggeri on ty\xF6kalu, joka auttaa ohjelmoijia ymm\xE4rt\xE4m\xE4\xE4\
-  n, mit\xE4 heid\xE4n koodinsa todellisuudessa tekee sen suorittaessa. Se on suurennuslasi,\
-  \ joka\u2026"
+summary: "PHP:ss\xE4 on interaktiivinen debuggeri nimelt\xE4\xE4n Xdebug. N\xE4in\
+  \ sit\xE4 k\xE4ytet\xE4\xE4n. Ensiksi, varmista ett\xE4 sinulla on Xdebug asennettuna\
+  \ ja konfiguroituna\u2026"
 title: "Debuggerin k\xE4ytt\xF6"
+weight: 35
 ---
 
 ## Miten:

@@ -11,9 +11,8 @@ summary: "La cr\xE9ation d'un fichier temporaire en Dart implique de g\xE9n\xE9r
   \ un fichier destin\xE9 \xE0 une utilisation \xE0 court terme, principalement pour\
   \ des sc\xE9narios tels\u2026"
 title: "Cr\xE9ation d'un fichier temporaire"
+weight: 21
 ---
-
-{{< edit_this_page >}}
 
 ## Quoi & Pourquoi ?
 La création d'un fichier temporaire en Dart implique de générer un fichier destiné à une utilisation à court terme, principalement pour des scénarios tels que la mise en cache des données, le stockage temporaire pour le traitement de fichiers, ou le maintien d'informations trop sensibles pour être conservées longtemps. Les programmeurs le font pour gérer des données qui n'ont pas besoin d'un stockage permanent, améliorant ainsi la performance et maintenant l'hygiène des données.

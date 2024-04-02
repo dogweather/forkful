@@ -9,9 +9,8 @@ summary: "Att redigera filer p\xE5 plats med CLI (Command Line Interface) enrads
   \ i Ruby m\xF6jligg\xF6r att du modifierar filer direkt fr\xE5n din terminal, utan\
   \ att\u2026"
 title: "Redigera filer p\xE5 plats med kommandoradsenradare"
+weight: 32
 ---
-
-{{< edit_this_page >}}
 
 ## Vad och Varför?
 

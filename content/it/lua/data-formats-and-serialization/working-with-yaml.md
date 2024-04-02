@@ -11,9 +11,8 @@ summary: "YAML, acronimo di \"YAML Ain't Markup Language\" (YAML non \xE8 un lin
   \ di marcatura), \xE8 uno standard di serializzazione di dati leggibile dall'uomo\
   \ che\u2026"
 title: Lavorare con YAML
+weight: 41
 ---
-
-{{< edit_this_page >}}
 
 ## Cosa e Perché?
 

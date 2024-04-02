@@ -11,9 +11,8 @@ summary: "Hakemiston olemassaolon tarkistaminen Clojuressa k\xE4sitt\xE4\xE4 tie
   rjestelm\xE4n hakemiston l\xE4sn\xE4olon varmistamisen Clojure-sovelluksessasi.\
   \ T\xE4m\xE4 teht\xE4v\xE4 on\u2026"
 title: Tarkistetaan, onko hakemisto olemassa
+weight: 20
 ---
-
-{{< edit_this_page >}}
 
 ## Mikä ja miksi?
 Hakemiston olemassaolon tarkistaminen Clojuressa käsittää tiedostojärjestelmän hakemiston läsnäolon varmistamisen Clojure-sovelluksessasi. Tämä tehtävä on kriittinen tiedosto-operaatioille, jotta voidaan estää virheet lukiessasi tai kirjoittaessasi hakemistoihin, jotka eivät ehkä ole olemassa, varmistaen vankan ja virheettömän koodin suorituksen.

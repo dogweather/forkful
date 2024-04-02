@@ -11,9 +11,8 @@ summary: "\xC9crire des tests en programmation implique de cr\xE9er des proc\xE9
   \ sp\xE9cifiques pour valider la fonctionnalit\xE9 et la performance de vos segments\
   \ de code,\u2026"
 title: "R\xE9daction de tests"
+weight: 36
 ---
-
-{{< edit_this_page >}}
 
 ## Quoi & Pourquoi ?
 

@@ -11,9 +11,8 @@ summary: "S\xE4\xE4nn\xF6lliset lausekkeet (regex) ovat merkkijonoja, jotka m\xE
   rittelev\xE4t hakukuviot ja joita k\xE4ytet\xE4\xE4n ensisijaisesti merkkijonojen\
   \ haussa ja\u2026"
 title: "S\xE4\xE4nn\xF6llisten lausekkeiden k\xE4ytt\xF6"
+weight: 11
 ---
-
-{{< edit_this_page >}}
 
 ## Mikä & Miksi?
 Säännölliset lausekkeet (regex) ovat merkkijonoja, jotka määrittelevät hakukuviot ja joita käytetään ensisijaisesti merkkijonojen haussa ja manipuloinnissa. Ohjelmoijat hyödyntävät regexiä Arduino-projekteissa sarjasyötteiden jäsentämiseen, käyttäjän syötteen validointiin tai tietojen poimintaan merkkijonoista, mikä tehostaa datan käsittelyn tehokkuutta ja joustavuutta.

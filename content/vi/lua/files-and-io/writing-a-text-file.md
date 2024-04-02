@@ -15,9 +15,8 @@ summary: "Vi\u1EBFt m\u1ED9t t\u1EC7p v\u0103n b\u1EA3n bao g\u1ED3m vi\u1EC7c l
   \ hi\u1EC7n \u0111i\u1EC1u n\xE0y \u0111\u1EC3 l\u01B0u c\u1EA5u h\xECnh, l\u01B0\
   u d\u1EEF li\u1EC7u\u2026"
 title: "Vi\u1EBFt m\u1ED9t t\u1EC7p v\u0103n b\u1EA3n"
+weight: 24
 ---
-
-{{< edit_this_page >}}
 
 ## Lý do & Tại sao?
 Viết một tệp văn bản bao gồm việc lưu dữ liệu vào một tệp dưới dạng có thể đọc được. Các lập trình viên thực hiện điều này để lưu cấu hình, lưu dữ liệu người dùng, hoặc ghi thông tin để gỡ lỗi.

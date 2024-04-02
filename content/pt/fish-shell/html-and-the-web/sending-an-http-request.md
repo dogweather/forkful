@@ -9,9 +9,8 @@ summary: "Enviar uma requisi\xE7\xE3o HTTP \xE9 o processo de pedir \xE0 um serv
   \ na web informa\xE7\xF5es ou para executar uma a\xE7\xE3o. Programadores fazem\
   \ isso para interagir com\u2026"
 title: "Enviando uma requisi\xE7\xE3o HTTP"
+weight: 44
 ---
-
-{{< edit_this_page >}}
 
 ## O Que é & Por Que?
 

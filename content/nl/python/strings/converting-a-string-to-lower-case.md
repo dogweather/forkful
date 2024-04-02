@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Een tekenreeks converteren naar kleine letters betekent het veranderen van\
   \ alle hoofdletters in de tekst naar hun kleine letter equivalenten. Programmeurs\u2026"
 title: Een string omzetten naar kleine letters
+weight: 4
 ---
-
-{{< edit_this_page >}}
 
 ## Wat & Waarom?
 Een tekenreeks converteren naar kleine letters betekent het veranderen van alle hoofdletters in de tekst naar hun kleine letter equivalenten. Programmeurs doen dit vaak voor consistentie, vergelijking, of zoekdoeleinden, omdat 'A' niet hetzelfde is als 'a' in de wereld van computers.

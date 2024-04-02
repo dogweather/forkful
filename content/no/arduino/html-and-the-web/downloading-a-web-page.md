@@ -9,9 +9,8 @@ summary: "Lasting av nettsider gj\xF8r at din Arduino kan hente data fra interne
   \ det kan v\xE6re alt fra v\xE6rdata til aksjepriser. Programmerere gj\xF8r dette\
   \ for \xE5 gi\u2026"
 title: Nedlasting av en nettside
+weight: 42
 ---
-
-{{< edit_this_page >}}
 
 ## Hva & Hvorfor?
 Lasting av nettsider gjør at din Arduino kan hente data fra internett; det kan være alt fra værdata til aksjepriser. Programmerere gjør dette for å gi enheter tilgang til oppdateringer og interaktivitet med nettet.

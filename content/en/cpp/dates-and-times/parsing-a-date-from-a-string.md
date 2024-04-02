@@ -7,9 +7,8 @@ model: gpt-4-0125-preview
 summary: "Parsing a date from a string involves interpreting the string format to\
   \ extract date components like day, month, and year. Programmers do this to handle\u2026"
 title: Parsing a date from a string
+weight: 30
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 Parsing a date from a string involves interpreting the string format to extract date components like day, month, and year. Programmers do this to handle user input, read data files, or interact with APIs that communicate dates in string formats. It's essential for data processing, validation, and performing date arithmetic in applications.

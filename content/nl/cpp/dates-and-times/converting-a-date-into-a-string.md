@@ -10,9 +10,8 @@ model: gpt-4-0125-preview
 summary: "Het omzetten van een datum naar een tekstreeks in C++ verandert een datumobject\
   \ in een leesbaar tekstformaat. Het is essentieel voor het weergeven van\u2026"
 title: Een datum converteren naar een string
+weight: 28
 ---
-
-{{< edit_this_page >}}
 
 ## Wat & Waarom?
 Het omzetten van een datum naar een tekstreeks in C++ verandert een datumobject in een leesbaar tekstformaat. Het is essentieel voor het weergeven van data aan gebruikers en voor het loggen van gebeurtenissen op een mensvriendelijke manier.

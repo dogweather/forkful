@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Hakemiston olemassaolon tarkistaminen TypeScriptill\xE4 on oleellinen osa\
   \ tiedostonhallintateht\xE4vi\xE4, kuten tiedostoista lukemista tai niihin tietojen\u2026"
 title: Tarkistetaan, onko hakemisto olemassa
+weight: 20
 ---
-
-{{< edit_this_page >}}
 
 ## Mikä ja miksi?
 Hakemiston olemassaolon tarkistaminen TypeScriptillä on oleellinen osa tiedostonhallintatehtäviä, kuten tiedostoista lukemista tai niihin tietojen kirjoittamista, varmistaen, että toimenpiteet suoritetaan ainoastaan validioiden hakemistojen kanssa. Tämä toiminto on kriittinen välttääkseen virheet, jotka syntyvät yrittäessä päästä käsiksi tai manipuloida olemattomia hakemistoja.

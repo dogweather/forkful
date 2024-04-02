@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Das Schreiben von Tests in C# beinhaltet das Erstellen von automatisierten\
   \ Skripten, um die Funktionalit\xE4t Ihres Codes zu validieren und sicherzustellen,\u2026"
 title: Tests Schreiben
+weight: 36
 ---
-
-{{< edit_this_page >}}
 
 ## Was & Warum?
 

@@ -10,9 +10,8 @@ model: gpt-4-0125-preview
 summary: "Att kontrollera om en mapp finns \xE4r en grundl\xE4ggande uppgift i PHP-programmering\
   \ eftersom det l\xE5ter dig verifiera n\xE4rvaron av en mapp innan du utf\xF6r\u2026"
 title: Kontrollera om en katalog existerar
+weight: 20
 ---
-
-{{< edit_this_page >}}
 
 ## Vad & Varför?
 

@@ -13,9 +13,8 @@ summary: "Vi\u1EBFt test trong l\u1EADp tr\xECnh ngh\u0129a l\xE0 t\u1EA1o ra c\
   n c\xF3 ho\u1EA1t \u0111\u1ED9ng nh\u01B0 mong \u0111\u1EE3i hay kh\xF4ng. L\u1EAD\
   p tr\xECnh vi\xEAn l\xE0m \u0111i\u1EC1u\u2026"
 title: "Vi\u1EBFt c\xE1c b\xE0i ki\u1EC3m tra"
+weight: 36
 ---
-
-{{< edit_this_page >}}
 
 ## Cái gì & Tại sao?
 Viết test trong lập trình nghĩa là tạo ra các mini-chương trình để kiểm tra xem mã của bạn có hoạt động như mong đợi hay không. Lập trình viên làm điều này để bắt lỗi, đảm bảo chất lượng, và tiết kiệm thời gian sửa chữa vấn đề sau này.

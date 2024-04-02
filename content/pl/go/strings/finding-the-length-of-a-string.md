@@ -11,9 +11,8 @@ summary: "Znalezienie d\u0142ugo\u015Bci ci\u0105gu znak\xF3w w Go polega na okr
   leniu liczby znak\xF3w, kt\xF3re zawiera. Programi\u015Bci regularnie wykonuj\u0105\
   \ t\u0119 operacj\u0119, aby efektywnie\u2026"
 title: "Znajdowanie d\u0142ugo\u015Bci \u0142a\u0144cucha"
+weight: 7
 ---
-
-{{< edit_this_page >}}
 
 ## Co i dlaczego?
 Znalezienie długości ciągu znaków w Go polega na określeniu liczby znaków, które zawiera. Programiści regularnie wykonują tę operację, aby efektywnie manipulować ciągami znaków, czy to dla celów weryfikacji, ekstrakcji podciągów, czy po prostu do egzekwowania ograniczeń w danych wejściowych użytkownika.

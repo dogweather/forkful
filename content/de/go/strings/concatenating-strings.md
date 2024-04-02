@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Das Verketten von Zeichenfolgen beinhaltet das aneinanderf\xFCgen von zwei\
   \ oder mehreren Zeichenfolgen am Ende, um eine neue Zeichenfolge zu bilden.\u2026"
 title: Strings verketten
+weight: 3
 ---
-
-{{< edit_this_page >}}
 
 ## Was & Warum?
 

@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Werken met TOML omvat het parsen en genereren van TOML (Tom's Obvious, Minimal\
   \ Language) data met Haskell. Programmeurs doen dit om gemakkelijk\u2026"
 title: Werken met TOML
+weight: 39
 ---
-
-{{< edit_this_page >}}
 
 ## Wat & Waarom?
 Werken met TOML omvat het parsen en genereren van TOML (Tom's Obvious, Minimal Language) data met Haskell. Programmeurs doen dit om gemakkelijk configuratiebestanden of data-uitwisseling te beheren met sterke typegaranties en minimale syntax rompslomp.

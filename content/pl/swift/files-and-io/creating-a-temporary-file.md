@@ -9,9 +9,8 @@ summary: "Tworzenie tymczasowego pliku pozwala na przechowywanie danych tymczaso
   \ podczas dzia\u0142ania aplikacji. Programi\u015Bci robi\u0105 to, aby na przyk\u0142\
   ad unikn\u0105\u0107\u2026"
 title: Tworzenie pliku tymczasowego
+weight: 21
 ---
-
-{{< edit_this_page >}}
 
 ## Co i dlaczego?
 Tworzenie tymczasowego pliku pozwala na przechowywanie danych tymczasowo podczas działania aplikacji. Programiści robią to, aby na przykład uniknąć zaśmiecania dysku stałymi plikami czy przeprowadzić operacje na danych, które są potrzebne tylko przez chwilę.

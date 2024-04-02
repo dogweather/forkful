@@ -9,9 +9,8 @@ summary: "Imprimir mensajes de depuraci\xF3n es como dejar migas de pan en tu c\
   digo para saber qu\xE9 sucede durante la ejecuci\xF3n. Los programadores lo hacen\
   \ para\u2026"
 title: "Imprimiendo salida de depuraci\xF3n"
+weight: 33
 ---
-
-{{< edit_this_page >}}
 
 ## Qué y Por Qué?
 

@@ -11,9 +11,8 @@ summary: "Das \xDCberpr\xFCfen, ob ein Verzeichnis in Visual Basic f\xFCr Anwend
   \ (VBA) existiert, bedeutet, die Anwesenheit eines Ordners innerhalb des Dateisystems\
   \ zu\u2026"
 title: "\xDCberpr\xFCfung, ob ein Verzeichnis existiert"
+weight: 20
 ---
-
-{{< edit_this_page >}}
 
 ## Was & Warum?
 

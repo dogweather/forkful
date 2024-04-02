@@ -7,9 +7,8 @@ model: gpt-4-0125-preview
 summary: "Testing in Ruby is about verifying that your code behaves as expected under\
   \ various conditions. Programmers write tests to ensure correctness, prevent\u2026"
 title: Writing tests
+weight: 36
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 Testing in Ruby is about verifying that your code behaves as expected under various conditions. Programmers write tests to ensure correctness, prevent regressions, and facilitate refactoring, aiming for robust and maintainable applications. 

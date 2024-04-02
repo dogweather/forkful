@@ -11,9 +11,8 @@ summary: "V\xE4liaikaistiedoston luominen Go:lla mahdollistaa v\xE4liaikaisen, l
   \ k\xE4ytt\xF6\xF6n suunnitellun tiedoston luomisen, joka on tarkoitettu p\xE4\xE4\
   asiassa\u2026"
 title: "Tilap\xE4isen tiedoston luominen"
+weight: 21
 ---
-
-{{< edit_this_page >}}
 
 ## Mitä & Miksi?
 

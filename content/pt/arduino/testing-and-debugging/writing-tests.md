@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Escrever testes no ambiente Arduino refere-se ao processo de criar testes\
   \ automatizados que validam a funcionalidade do seu c\xF3digo em dispositivos\u2026"
 title: Escrevendo testes
+weight: 36
 ---
-
-{{< edit_this_page >}}
 
 ## O Que & Por Quê?
 

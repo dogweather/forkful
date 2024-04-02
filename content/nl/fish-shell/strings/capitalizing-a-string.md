@@ -10,9 +10,8 @@ model: gpt-4-0125-preview
 summary: "Een string met hoofdletters schrijven betekent alle karakters omzetten naar\
   \ hoofdletters. Programmeurs doen dit voor consistentie, leesbaarheid, of om aan\u2026"
 title: Een string met hoofdletters maken
+weight: 2
 ---
-
-{{< edit_this_page >}}
 
 ## Wat & Waarom?
 Een string met hoofdletters schrijven betekent alle karakters omzetten naar hoofdletters. Programmeurs doen dit voor consistentie, leesbaarheid, of om aan bepaalde coderingsnormen te voldoen.

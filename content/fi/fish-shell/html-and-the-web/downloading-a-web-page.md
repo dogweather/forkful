@@ -7,9 +7,8 @@ model: gpt-4-1106-preview
 summary: "Ladata web-sivu tarkoittaa, ett\xE4 haet sivun sis\xE4ll\xF6n netist\xE4\
   . Ohjelmoijat tekev\xE4t t\xE4t\xE4 datan analysointiin, testaukseen tai automatisointiin."
 title: Verkkosivun lataaminen
+weight: 42
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why? (Mitä & Miksi?)
 Ladata web-sivu tarkoittaa, että haet sivun sisällön netistä. Ohjelmoijat tekevät tätä datan analysointiin, testaukseen tai automatisointiin.

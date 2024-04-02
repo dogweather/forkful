@@ -9,9 +9,8 @@ summary: "Le remaniement (Refactoring) est le processus de restructuration du co
   \ informatique existant sans en changer le comportement externe, visant \xE0 am\xE9\
   liorer\u2026"
 title: Refactoring
+weight: 19
 ---
-
-{{< edit_this_page >}}
 
 ## Quoi et pourquoi ?
 

@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "YAML, joka tarkoittaa YAML Ain't Markup Language, on ihmisen luettavissa\
   \ oleva datan sarjallistamisformaatti. Ohjelmoijat k\xE4ytt\xE4v\xE4t sit\xE4 usein\u2026"
 title: "Ty\xF6skentely YAML:n kanssa"
+weight: 41
 ---
-
-{{< edit_this_page >}}
 
 ## Mikä ja miksi?
 YAML, joka tarkoittaa YAML Ain't Markup Language, on ihmisen luettavissa oleva datan sarjallistamisformaatti. Ohjelmoijat käyttävät sitä usein konfiguraatiotiedostoihin, prosessien väliseen viestintään ja datan tallennukseen sen yksinkertaisuuden ja luettavuuden vuoksi verrattuna muihin datamuotoihin kuten XML tai JSON.

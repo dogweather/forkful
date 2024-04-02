@@ -13,9 +13,8 @@ summary: "S\u1ED1 ph\u1EE9c m\u1EDF r\u1ED9ng \xFD t\u01B0\u1EDFng c\u1EE7a d\u1
   ng c\xE1ch bao g\u1ED3m m\u1ED9t tr\u1EE5c \u1EA3o vu\xF4ng g\xF3c. L\u1EADp tr\xEC\
   nh vi\xEAn l\xE0m vi\u1EC7c v\u1EDBi ch\xFAng trong\u2026"
 title: "L\xE0m vi\u1EC7c v\u1EDBi s\u1ED1 ph\u1EE9c"
+weight: 14
 ---
-
-{{< edit_this_page >}}
 
 ## Cái gì & Tại sao?
 Số phức mở rộng ý tưởng của dải số một chiều thành mặt phẳng hai chiều bằng cách bao gồm một trục ảo vuông góc. Lập trình viên làm việc với chúng trong các lĩnh vực như xử lý tín hiệu, động lực học chất lỏng và kỹ thuật điện, nơi chúng là thiết yếu để biểu diễn dao động và các hiện tượng khác.

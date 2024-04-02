@@ -8,9 +8,8 @@ summary: "Finding the length of a string in Swift is about getting the count of 
   \ it contains. Programmers do this to validate inputs, size elements,\u2026"
 title: "\u0412\u0438\u0437\u043D\u0430\u0447\u0435\u043D\u043D\u044F \u0434\u043E\u0432\
   \u0436\u0438\u043D\u0438 \u0440\u044F\u0434\u043A\u0430"
+weight: 7
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why? (Що і Чому?)
 Finding the length of a string in Swift is about getting the count of characters it contains. Programmers do this to validate inputs, size elements, manage loops, and more. It's a bread-and-butter operation for almost any app dealing with text.

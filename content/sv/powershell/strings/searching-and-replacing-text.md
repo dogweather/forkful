@@ -7,9 +7,8 @@ model: gpt-4-1106-preview
 summary: "Att s\xF6ka och ers\xE4tta text \xE4r en grundsten i programmering; det\
   \ handlar om att finna specifika str\xE4ngar och byta ut dem mot andra. Anledningen?\u2026"
 title: "S\xF6kning och ers\xE4ttning av text"
+weight: 10
 ---
-
-{{< edit_this_page >}}
 
 ## Vad & Varför?
 Att söka och ersätta text är en grundsten i programmering; det handlar om att finna specifika strängar och byta ut dem mot andra. Anledningen? Automatisering och effektivitet – det är oftast snabbare än att plocka och ändra manuellt.

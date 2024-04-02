@@ -9,9 +9,8 @@ summary: "Logging in software development is the process of recording informatio
   \ about a program\u2019s execution, designed to track its behavior and diagnose\
   \ issues.\u2026"
 title: Logging
+weight: 17
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 

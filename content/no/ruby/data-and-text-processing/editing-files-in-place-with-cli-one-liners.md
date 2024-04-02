@@ -9,9 +9,8 @@ summary: "\xC5 redigere filer p\xE5 stedet med CLI (kommandolinjegrensesnitt) en
   \ kommandoer i Ruby lar deg endre filer direkte fra terminalen din, uten \xE5 m\xE5\
   tte\u2026"
 title: "Redigering av filer p\xE5 stedet med CLI-enlinjerskommandoer"
+weight: 32
 ---
-
-{{< edit_this_page >}}
 
 ## Hva og hvorfor?
 

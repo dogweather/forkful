@@ -7,9 +7,8 @@ model: gpt-4-1106-preview
 summary: "Loggning i programmeringssammanhang \xE4r processen att spela in h\xE4ndelser,\
   \ tillst\xE5nd och information till en fil eller ett annat utg\xE5ngsmedium.\u2026"
 title: Loggning
+weight: 17
 ---
-
-{{< edit_this_page >}}
 
 ## Vad & Varför?
 Loggning i programmeringssammanhang är processen att spela in händelser, tillstånd och information till en fil eller ett annat utgångsmedium. Programmerare loggar för att hålla koll på vad som händer i deras applikationer, för att felsöka problem, samt för att övervaka prestanda för framtida analys och optimering.

@@ -11,9 +11,8 @@ summary: "Dans PowerShell, v\xE9rifier si un r\xE9pertoire existe est une t\xE2c
   \ courante qui aide les scripts \xE0 prendre des d\xE9cisions bas\xE9es sur la structure\
   \ du syst\xE8me\u2026"
 title: "V\xE9rifier si un r\xE9pertoire existe"
+weight: 20
 ---
-
-{{< edit_this_page >}}
 
 ## Quoi & Pourquoi ?
 Dans PowerShell, vérifier si un répertoire existe est une tâche courante qui aide les scripts à prendre des décisions basées sur la structure du système de fichiers—comme éviter les erreurs en confirmant qu'un répertoire cible est en place avant de tenter de lire ou d'écrire dedans. C'est essentiel pour assurer que votre script se comporte de manière fiable dans des environnements divers.

@@ -11,9 +11,8 @@ summary: "Praca z JSON (JavaScript Object Notation) obejmuje parsowanie danych J
   \ z ci\u0105g\xF3w znak\xF3w na obiekty Dart i odwrotnie, co jest powszechnym zadaniem\
   \ w\u2026"
 title: Praca z JSON
+weight: 38
 ---
-
-{{< edit_this_page >}}
 
 ## Co i dlaczego?
 

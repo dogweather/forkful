@@ -11,9 +11,8 @@ summary: "Usuwanie cudzys\u0142ow\xF3w ze stringa w VBA polega na eliminacji wys
   pie\u0144 pojedynczych (`'`) lub podw\xF3jnych (`\"`) znak\xF3w cudzys\u0142owu,\
   \ kt\xF3re mog\u0105 znajdowa\u0107 si\u0119\u2026"
 title: "Usuwanie cudzys\u0142ow\xF3w z ci\u0105gu znak\xF3w"
+weight: 9
 ---
-
-{{< edit_this_page >}}
 
 ## Co i Dlaczego?
 

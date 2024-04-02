@@ -7,9 +7,8 @@ model: gpt-4-1106-preview
 summary: "Haskellissa merkkien poistaminen kuvion mukaisesti tarkoittaa ei-toivottujen\
   \ merkkien suodattamista sy\xF6tteest\xE4. Ohjelmoijat tekev\xE4t t\xE4m\xE4n datan\u2026"
 title: Merkkien poistaminen hakemalla osumia kaavaan
+weight: 5
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why? - Mitä & Miksi?
 Haskellissa merkkien poistaminen kuvion mukaisesti tarkoittaa ei-toivottujen merkkien suodattamista syötteestä. Ohjelmoijat tekevät tämän datan puhdistamiseksi ja käsiteltävyyden parantamiseksi.

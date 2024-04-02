@@ -14,9 +14,8 @@ summary: "\u521B\u5EFA\u4E34\u65F6\u6587\u4EF6\u53EF\u4EE5\u8BA9\u7A0B\u5E8F\u59
   \u5B89\u5168\u6027\u3001\u907F\u514D\u51B2\u7A81\u6216\u51CF\u5C11\u5BF9\u5B58\u50A8\
   \u8D44\u6E90\u7684\u9700\u6C42\u3002"
 title: "\u521B\u5EFA\u4E34\u65F6\u6587\u4EF6"
+weight: 21
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why? (是什么？为什么？)
 创建临时文件可以让程序处理临时数据而不必在磁盘上留下痕迹。程序员这样做通常是为了安全性、避免冲突或减少对存储资源的需求。

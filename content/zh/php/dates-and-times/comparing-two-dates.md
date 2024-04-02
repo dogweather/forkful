@@ -12,9 +12,8 @@ summary: "\u6BD4\u8F83\u4E24\u4E2A\u65E5\u671F\u610F\u5473\u7740\u786E\u5B9A\u5B
   \u5B89\u6392\u4E8B\u4EF6\u3001\u9A8C\u8BC1\u6709\u6548\u671F\u6216\u8BA1\u7B97\u65F6\
   \u95F4\u8DE8\u5EA6\u3002"
 title: "\u6BD4\u8F83\u4E24\u4E2A\u65E5\u671F"
+weight: 27
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why? (是什么？为什么？)
 比较两个日期意味着确定它们的先后顺序。程序员这么做来安排事件、验证有效期或计算时间跨度。

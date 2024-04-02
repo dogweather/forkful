@@ -11,9 +11,8 @@ summary: "Tworzenie pliku tekstowego w PowerShell polega na tworzeniu i manipulo
   \ plikami opartymi na tek\u015Bcie, co jest fundamentaln\u0105 operacj\u0105 dla\
   \ logowania,\u2026"
 title: Pisanie pliku tekstowego
+weight: 24
 ---
-
-{{< edit_this_page >}}
 
 ## Co i dlaczego?
 Tworzenie pliku tekstowego w PowerShell polega na tworzeniu i manipulowaniu plikami opartymi na tekście, co jest fundamentalną operacją dla logowania, przechowywania danych i pisania skryptów konfiguracji. Programiści wykorzystują to do automatyzacji zadań systemowych, analizy danych oraz integracji z innymi aplikacjami lub skryptami.

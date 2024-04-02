@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Complexe getallen breiden de re\xEBle getallen uit met een extra deel, de\
   \ imaginaire eenheid 'i'. Programmeurs gebruiken ze in verschillende domeinen,\u2026"
 title: Werken met complexe getallen
+weight: 14
 ---
-
-{{< edit_this_page >}}
 
 ## Wat & Waarom?
 Complexe getallen breiden de reële getallen uit met een extra deel, de imaginaire eenheid 'i'. Programmeurs gebruiken ze in verschillende domeinen, waaronder signaalverwerking, elektromagnetische theorie en fractals, waar berekeningen met de wortel van een negatief getal routine zijn.

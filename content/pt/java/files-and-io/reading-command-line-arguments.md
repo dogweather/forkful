@@ -9,9 +9,8 @@ summary: "Argumentos de linha de comando s\xE3o informa\xE7\xF5es que voc\xEA pa
   \ para o seu programa Java ao inici\xE1-lo. Programadores usam isso para customizar\
   \ a execu\xE7\xE3o de\u2026"
 title: Lendo argumentos da linha de comando
+weight: 23
 ---
-
-{{< edit_this_page >}}
 
 ## O Que & Porquê?
 Argumentos de linha de comando são informações que você passa para o seu programa Java ao iniciá-lo. Programadores usam isso para customizar a execução de um aplicativo sem mudar o código.

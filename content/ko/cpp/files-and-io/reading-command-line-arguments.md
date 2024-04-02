@@ -18,9 +18,8 @@ summary: "\uBA85\uB839\uC904 \uC778\uC218\uB97C \uC77D\uB294 \uAC83\uC740 \uD504
   \ \uC870\uC815\uD558\uAE30 \uC704\uD574 \uC774\uB97C \uC218\uD589\uD569\uB2C8\uB2E4\
   ."
 title: "\uBA85\uB839\uC904 \uC778\uC218 \uC77D\uAE30"
+weight: 23
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why? (무엇이며 왜?)
 명령줄 인수를 읽는 것은 프로그램 실행 시 사용자가 제공한 옵션을 가져오는 방법입니다. 프로그래머는 일반적으로 프로그램의 동작을 사용자가 원하는 대로 조정하기 위해 이를 수행합니다.

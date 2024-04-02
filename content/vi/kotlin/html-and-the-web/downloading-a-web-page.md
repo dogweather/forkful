@@ -13,9 +13,8 @@ summary: "T\u1EA3i m\u1ED9t trang web c\xF3 ngh\u0129a l\xE0 l\u1EA5y m\xE3 HTML
   t c\xE1ch n\u1ED9i b\u1ED9. L\u1EADp tr\xECnh vi\xEAn l\xE0m \u0111i\u1EC1u n\xE0\
   y cho c\xE1c c\xF4ng vi\u1EC7c nh\u01B0 web\u2026"
 title: "T\u1EA3i trang web"
+weight: 42
 ---
-
-{{< edit_this_page >}}
 
 ## Cái Gì & Tại Sao?
 Tải một trang web có nghĩa là lấy mã HTML từ một URL cụ thể để xem hoặc sử dụng một cách nội bộ. Lập trình viên làm điều này cho các công việc như web scraping, đọc offline, hoặc kiểm thử tự động.

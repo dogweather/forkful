@@ -10,9 +10,8 @@ model: gpt-4-0125-preview
 summary: "Extraer subcadenas se trata de recuperar partes espec\xEDficas de una cadena\
   \ bas\xE1ndose en sus posiciones o patrones. Los programadores hacen esto para tareas\u2026"
 title: Extrayendo subcadenas
+weight: 6
 ---
-
-{{< edit_this_page >}}
 
 ## ¿Qué y por qué?
 Extraer subcadenas se trata de recuperar partes específicas de una cadena basándose en sus posiciones o patrones. Los programadores hacen esto para tareas como analizar la entrada del usuario, manipulación de datos o extracción de información relevante de fuentes de texto más grandes.

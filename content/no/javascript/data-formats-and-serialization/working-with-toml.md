@@ -9,9 +9,8 @@ summary: "TOML, forkortelse for Tom's Obvious, Minimal Language, definerer hvord
   \ man strukturerer konfigurasjonsfiler. Programmerere jobber med TOML fordi det\
   \ er\u2026"
 title: Jobbe med TOML
+weight: 39
 ---
-
-{{< edit_this_page >}}
 
 ## Hva & Hvorfor?
 TOML, forkortelse for Tom's Obvious, Minimal Language, definerer hvordan man strukturerer konfigurasjonsfiler. Programmerere jobber med TOML fordi det er lett å lese, skrive, og det mapper pent til en hashtabell, noe som gjør det til et foretrukket valg for konfigurasjoner.

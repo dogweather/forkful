@@ -23,9 +23,8 @@ summary: "Elixir\uC5D0\uC11C \uD14C\uC2A4\uD2B8\uB97C \uC791\uC131\uD55C\uB2E4\u
   \ \uC2E0\uB8B0\uC131 \uC788\uACE0 \uD6A8\uC728\uC801\uC73C\uB85C \uB9CC\uB4ED\uB2C8\
   \uB2E4."
 title: "\uD14C\uC2A4\uD2B8 \uC791\uC131\uD558\uAE30"
+weight: 36
 ---
-
-{{< edit_this_page >}}
 
 ## 무엇을, 왜?
 Elixir에서 테스트를 작성한다는 것은 코드의 동작을 검증하기 위해 자동화된 스크립트를 만드는 것을 의미합니다. 프로그래머는 이를 통해 품질을 보장하고, 회귀를 방지하며, 코드 리팩토링을 용이하게 하여 개발 프로세스를 더 신뢰성 있고 효율적으로 만듭니다.

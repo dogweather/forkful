@@ -11,9 +11,8 @@ summary: "Regulj\xE4ra uttryck, eller regex, l\xE5ter utvecklare s\xF6ka, matcha
   \ manipulera str\xE4ngar med avancerade m\xF6nsterpassningstekniker. I Rust hj\xE4\
   lper anv\xE4ndning\u2026"
 title: "Att anv\xE4nda regulj\xE4ra uttryck"
+weight: 11
 ---
-
-{{< edit_this_page >}}
 
 ## Vad och varför?
 

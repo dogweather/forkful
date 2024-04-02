@@ -9,9 +9,8 @@ summary: "Att skicka en HTTP-beg\xE4ran med grundl\xE4ggande autentisering inneb
   r att du \xF6verf\xF6r inloggningsuppgifter (anv\xE4ndarnamn och l\xF6senord) i\
   \ klartext, kodat med\u2026"
 title: "Skicka en HTTP-f\xF6rfr\xE5gan med Basic-autentisering"
+weight: 45
 ---
-
-{{< edit_this_page >}}
 
 ## Vad & Varför?
 Att skicka en HTTP-begäran med grundläggande autentisering innebär att du överför inloggningsuppgifter (användarnamn och lösenord) i klartext, kodat med base64, i en HTTP-header. Programmerare gör detta för att enkelt bekräfta användaridentitet vid enkel API-åtkomst eller webbtjänster.

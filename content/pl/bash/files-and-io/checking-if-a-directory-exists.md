@@ -10,9 +10,8 @@ model: gpt-4-0125-preview
 summary: "W programowaniu Bash sprawdzanie, czy katalog istnieje, jest kluczowym mechanizmem\
   \ kontrolnym wykorzystywanym do weryfikacji obecno\u015Bci katalogu przed\u2026"
 title: Sprawdzanie, czy katalog istnieje
+weight: 20
 ---
-
-{{< edit_this_page >}}
 
 ## Co i dlaczego?
 

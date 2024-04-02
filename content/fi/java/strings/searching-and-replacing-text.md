@@ -9,9 +9,8 @@ summary: "Tekstin etsiminen ja korvaaminen on tapa l\xF6yt\xE4\xE4 merkkijono ja
   \ se toisella. Ohjelmoijat k\xE4ytt\xE4v\xE4t sit\xE4 p\xE4\xE4st\xE4kseen eroon\
   \ vanhentuneesta koodista,\u2026"
 title: Tekstin etsiminen ja korvaaminen
+weight: 10
 ---
-
-{{< edit_this_page >}}
 
 ## Mitä & Miksi?
 

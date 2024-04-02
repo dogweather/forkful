@@ -9,9 +9,8 @@ summary: "Tilap\xE4istiedostot ovat tilap\xE4isi\xE4 tiedostoja, jotka ohjelmat 
   \ v\xE4liaikaisen datan tallentamiseen. Ne ovat t\xE4rkeit\xE4, sill\xE4 ne auttavat\
   \ v\xE4ltt\xE4m\xE4\xE4n\u2026"
 title: "V\xE4liaikaistiedoston luominen"
+weight: 21
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why? (Mikä ja Miksi?)
 Tilapäistiedostot ovat tilapäisiä tiedostoja, jotka ohjelmat luovat väliaikaisen datan tallentamiseen. Ne ovat tärkeitä, sillä ne auttavat välttämään datan menetyksen ja pitävät tilapäisen sisällön erillään pysyvästä tallennustilasta.

@@ -8,9 +8,8 @@ summary: "Reading a text file means pulling text data from a file on your system
   \ it's basic I/O. Programmers need this to access and manipulate data, like configs\u2026"
 title: "\u0427\u0438\u0442\u0430\u043D\u043D\u044F \u0442\u0435\u043A\u0441\u0442\u043E\
   \u0432\u043E\u0433\u043E \u0444\u0430\u0439\u043B\u0443"
+weight: 22
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why? (Що і Чому?)
 Reading a text file means pulling text data from a file on your system - it's basic I/O. Programmers need this to access and manipulate data, like configs or logs.

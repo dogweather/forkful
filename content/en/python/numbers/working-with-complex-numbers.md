@@ -7,9 +7,8 @@ model: gpt-4-1106-preview
 summary: "Complex numbers are a set of numbers of the form `a + bi`, where `a` and\
   \ `b` are real numbers, and `i` is the imaginary unit (`i^2 = -1`). In programming,\u2026"
 title: Working with complex numbers
+weight: 14
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 Complex numbers are a set of numbers of the form `a + bi`, where `a` and `b` are real numbers, and `i` is the imaginary unit (`i^2 = -1`). In programming, we use them to solve problems in various domains, like electrical engineering, signal processing, and quantum computing.

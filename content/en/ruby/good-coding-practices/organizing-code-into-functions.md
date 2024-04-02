@@ -7,9 +7,8 @@ model: gpt-4-1106-preview
 summary: "Organizing code into functions splits your script into reusable chunks.\
   \ It's all about making your code clean, manageable, and less buggy. Modular code\u2026"
 title: Organizing code into functions
+weight: 18
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 Organizing code into functions splits your script into reusable chunks. It's all about making your code clean, manageable, and less buggy. Modular code rocks because it saves you time, keeps your sanity, and simplifies debugging and unit testing.

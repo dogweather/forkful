@@ -9,9 +9,8 @@ summary: "\xC5 laste ned en nettside inneb\xE6rer \xE5 hente ned all HTML-koden 
   \ danner selve siden du ser i nettleseren. Programmere gj\xF8r dette for \xE5 hente\
   \ data, sjekke\u2026"
 title: Nedlasting av en nettside
+weight: 42
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 Å laste ned en nettside innebærer å hente ned all HTML-koden som danner selve siden du ser i nettleseren. Programmere gjør dette for å hente data, sjekke for innholdsendringer, eller skrape nettstedet for spesifikk informasjon.

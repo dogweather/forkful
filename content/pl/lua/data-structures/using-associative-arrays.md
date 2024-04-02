@@ -11,9 +11,8 @@ summary: "Tablice asocjacyjne to jak tajne u\u015Bciski d\u0142oni dla danych w 
   \ \u2014 zamiast samych numer\xF3w ustawiaj\u0105cych si\u0119 pos\u0142usznie wed\u0142\
   ug indeksu, Twoje klucze mog\u0105\u2026"
 title: Korzystanie z tablic asocjacyjnych
+weight: 15
 ---
-
-{{< edit_this_page >}}
 
 ## Co i Dlaczego?
 

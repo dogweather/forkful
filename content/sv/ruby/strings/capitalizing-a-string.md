@@ -12,6 +12,7 @@ summary: "Att versalisera en str\xE4ng betyder vanligtvis att omvandla det f\xF6
   \ tecknet i en str\xE4ng till versal (stort bokstav) och resten till gemener (sm\xE5\
   \u2026"
 title: "G\xF6r om en str\xE4ng till versaler"
+weight: 2
 ---
 
 ## Vad & Varför?

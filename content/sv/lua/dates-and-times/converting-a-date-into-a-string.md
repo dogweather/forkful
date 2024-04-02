@@ -9,9 +9,8 @@ summary: "Datum till str\xE4ng-konvertering handlar om att omvandla den s\xE4tt 
   \ datum lagras i kod (ofta som ett numeriskt v\xE4rde eller ett datumobjekt) till\
   \ en l\xE4sbar\u2026"
 title: "Omvandla ett datum till en str\xE4ng"
+weight: 28
 ---
-
-{{< edit_this_page >}}
 
 ## Vad & Varför?
 Datum till sträng-konvertering handlar om att omvandla den sätt som datum lagras i kod (ofta som ett numeriskt värde eller ett datumobjekt) till en läsbar textform. Programmerare gör detta för att visa datum på skärmar eller i loggfiler på ett sätt som människor enkelt kan förstå och använda.

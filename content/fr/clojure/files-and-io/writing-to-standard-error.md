@@ -11,9 +11,8 @@ summary: "\xC9crire sur l'erreur standard (stderr) consiste \xE0 diriger les mes
   \ d'erreur et les diagnostics vers le flux stderr, s\xE9par\xE9ment de la sortie\
   \ standard\u2026"
 title: "\xC9crire sur l'erreur standard"
+weight: 25
 ---
-
-{{< edit_this_page >}}
 
 ## Quoi et pourquoi ?
 Écrire sur l'erreur standard (stderr) consiste à diriger les messages d'erreur et les diagnostics vers le flux stderr, séparément de la sortie standard (stdout). Les programmeurs font cela pour différencier la sortie régulière du programme des messages d'erreur, permettant ainsi un débogage et un journalisation plus efficaces.

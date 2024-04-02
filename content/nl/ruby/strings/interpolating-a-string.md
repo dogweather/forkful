@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Stringinterpolatie stelt je in staat om variabelen of expressies binnen\
   \ een string in te voegen. We doen dit voor schonere, beter leesbare code die\u2026"
 title: Een string interpoleren
+weight: 8
 ---
-
-{{< edit_this_page >}}
 
 ## Wat & Waarom?
 

@@ -11,9 +11,8 @@ summary: "\u590D\u6570\u5177\u6709\u5B9E\u90E8\u548C\u865A\u90E8\uFF08\u5C31\u50
   \u3001\u89E3\u51B3\u67D0\u4E9B\u6570\u5B66\u95EE\u9898\u4EE5\u53CA\u6A21\u62DF\u7269\
   \u7406\u7B49\u4EFB\u52A1\u4E2D\u4F7F\u7528\u5B83\u4EEC\u3002"
 title: "\u5904\u7406\u590D\u6570"
+weight: 14
 ---
-
-{{< edit_this_page >}}
 
 ## 什么 & 为什么?
 复数具有实部和虚部（就像 3 + 4i）。Swift 程序员会在信号处理、解决某些数学问题以及模拟物理等任务中使用它们。

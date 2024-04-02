@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Satunnaislukujen generointi Dart-kieless\xE4 sis\xE4lt\xE4\xE4 arvaamattomien\
   \ numeeristen arvojen luomisen, jotka eroavat jokaisella suorituskerralla. Ohjelmoijat\u2026"
 title: Satunnaisten numeroiden luominen
+weight: 12
 ---
-
-{{< edit_this_page >}}
 
 ## Mitä & Miksi?
 Satunnaislukujen generointi Dart-kielessä sisältää arvaamattomien numeeristen arvojen luomisen, jotka eroavat jokaisella suorituskerralla. Ohjelmoijat hyödyntävät tätä toiminnallisuutta monista syistä, simuloidakseen todellisia tilanteita testiympäristöissä, mahdollistaakseen pelimekaniikkoja ja varmistaakseen turvallisuuden satunnaisuuden kautta kryptografisissa toiminnoissa.

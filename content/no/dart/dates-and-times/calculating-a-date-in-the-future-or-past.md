@@ -11,9 +11,8 @@ summary: "\xC5 beregne en dato i fremtiden eller fortiden er en vanlig oppgave f
   \ programmerere, som handler om planlegging, p\xE5minnelser, eller enhver funksjon\
   \ som\u2026"
 title: Beregning av en dato i fremtiden eller fortiden
+weight: 26
 ---
-
-{{< edit_this_page >}}
 
 ## Hva & Hvorfor?
 Å beregne en dato i fremtiden eller fortiden er en vanlig oppgave for programmerere, som handler om planlegging, påminnelser, eller enhver funksjon som avhenger av datoberegninger. Det å forstå hvordan man manipulerer datoer er avgjørende for baksystemer, brukergrensesnitt og dataanalyse, spesielt for de som går over til Dart og ser etter å implementere tidslogikk effektivt.

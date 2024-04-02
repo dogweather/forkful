@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Het ontleden van een datum uit een string in C betreft het omzetten van\
   \ tekstuele voorstellingen van data naar een formaat dat programma's effectiever\u2026"
 title: Een datum ontleden uit een string
+weight: 30
 ---
-
-{{< edit_this_page >}}
 
 ## Wat & Waarom?
 

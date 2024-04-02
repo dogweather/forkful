@@ -11,9 +11,8 @@ summary: "Hakemiston olemassaolon tarkistaminen C#:ssa tarkoittaa kansion l\xE4s
   olon varmistamista m\xE4\xE4ritetyss\xE4 polussa tiedostoj\xE4rjestelm\xE4ss\xE4\
   . Ohjelmoijat tekev\xE4t\u2026"
 title: Tarkistetaan, onko hakemisto olemassa
+weight: 20
 ---
-
-{{< edit_this_page >}}
 
 ## Mikä ja miksi?
 

@@ -11,9 +11,8 @@ summary: "Bestanden manipuleren met CLI (Command Line Interface) one-liners houd
   \ in dat Bash-scripts of -opdrachten worden gebruikt om acties op bestanden uit\
   \ te\u2026"
 title: Bestanden manipuleren met CLI one-liners
+weight: 31
 ---
-
-{{< edit_this_page >}}
 
 ## Wat & Waarom?
 

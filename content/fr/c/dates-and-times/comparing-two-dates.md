@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Comparer deux dates en C implique de d\xE9terminer la relation chronologique\
   \ entre elles - si une date pr\xE9c\xE8de l'autre ou si elles sont identiques. Cette\u2026"
 title: Comparer deux dates
+weight: 27
 ---
-
-{{< edit_this_page >}}
 
 ## Quoi & Pourquoi ?
 

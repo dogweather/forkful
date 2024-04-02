@@ -11,9 +11,8 @@ summary: "JSON, eller JavaScript Object Notation, er et lettvekts datautveksling
   \ som er lett \xE5 lese og skrive for mennesker, og lett for maskiner \xE5 parse\
   \ og\u2026"
 title: Arbeider med JSON
+weight: 38
 ---
-
-{{< edit_this_page >}}
 
 ## Hva og hvorfor?
 JSON, eller JavaScript Object Notation, er et lettvekts datautvekslingsformat som er lett å lese og skrive for mennesker, og lett for maskiner å parse og generere. Programmerere jobber ofte med JSON for å utveksle data mellom servere og webapplikasjoner på grunn av dets enkelhet og språkuavhengighet, noe som gjør det til en hjørnestein i moderne webutvikling og API-er.

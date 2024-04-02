@@ -9,9 +9,8 @@ summary: "Wypisywanie debugowania to wy\u015Bwietlanie informacji o dzia\u0142an
   \ programu \u2013 pomaga to programistom \u0142apa\u0107 b\u0142\u0119dy. Wykorzystujemy\
   \ to, aby zobaczy\u0107, co si\u0119\u2026"
 title: "Drukowanie komunikat\xF3w debugowania"
+weight: 33
 ---
-
-{{< edit_this_page >}}
 
 ## Co i dlaczego?
 Wypisywanie debugowania to wyświetlanie informacji o działaniu programu – pomaga to programistom łapać błędy. Wykorzystujemy to, aby zobaczyć, co się dzieje w naszym kodzie, zanim coś pójdzie nie tak.

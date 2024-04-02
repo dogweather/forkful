@@ -7,9 +7,8 @@ model: gpt-4-0125-preview
 summary: "Merkkijonojen yhdist\xE4minen tarkoittaa kahden tai useamman merkkijonon\
   \ liitt\xE4mist\xE4 yhteen muodostamaan yksi tekstikappale. Saatat tarvita tekstien\u2026"
 title: "Merkkijonojen yhdist\xE4minen"
+weight: 3
 ---
-
-{{< edit_this_page >}}
 
 ## Mikä ja miksi?
 Merkkijonojen yhdistäminen tarkoittaa kahden tai useamman merkkijonon liittämistä yhteen muodostamaan yksi tekstikappale. Saatat tarvita tekstien yhdistämistä esimerkiksi käyttäjäviestien tuottamiseen, tiedostopolkujeen luomiseen tai datan sarjallistamisprosessiin. Se on perustoiminto missä tahansa ohjelmointikielessä, myös Elixirissä, mahdollistaen kehittäjien rakentaa dynaamisia merkkijonoja helposti.

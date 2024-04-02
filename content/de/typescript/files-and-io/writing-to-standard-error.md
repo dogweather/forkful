@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "In TypeScript ist das Schreiben auf Standardfehler (stderr) ein Prozess\
   \ des Sendens von Fehlermeldungen oder Protokollen direkt an den Fehlerausgabestrom\u2026"
 title: Schreiben auf Standardfehler
+weight: 25
 ---
-
-{{< edit_this_page >}}
 
 ## Was & Warum?
 In TypeScript ist das Schreiben auf Standardfehler (stderr) ein Prozess des Sendens von Fehlermeldungen oder Protokollen direkt an den Fehlerausgabestrom der Umgebung (z.B. die Konsole in node.js oder ein Webbrowser). Dies ist wesentlich für die Diagnose von Problemen, ohne dass der Standardausgabe (stdout) eingegriffen wird, die üblicherweise für Programmdaten verwendet wird. Dies stellt sicher, dass Fehlerbehandlung und Protokollierung effizient und kohärent verwaltet werden.

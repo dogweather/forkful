@@ -9,9 +9,8 @@ summary: "\xC5 finne lengden p\xE5 en tekststreng betyr \xE5 telle antallet tegn
   \ inneholder. Vi gj\xF8r dette for \xE5 validere inndata, h\xE5ndtere tekstbaserte\
   \ protokoller,\u2026"
 title: "Finn lengden p\xE5 en streng"
+weight: 7
 ---
-
-{{< edit_this_page >}}
 
 ## Hva & Hvorfor?
 Å finne lengden på en tekststreng betyr å telle antallet tegn den inneholder. Vi gjør dette for å validere inndata, håndtere tekstbaserte protokoller, eller for å formatere utdata riktig.

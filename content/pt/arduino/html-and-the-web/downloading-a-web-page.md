@@ -9,9 +9,8 @@ summary: "Baixar uma p\xE1gina da web \xE9 o ato de obter o conte\xFAdo dispon\x
   vel em um endere\xE7o espec\xEDfico da internet. Programadores fazem isso para coletar\
   \ dados,\u2026"
 title: "Baixando uma p\xE1gina da web"
+weight: 42
 ---
-
-{{< edit_this_page >}}
 
 ## O Que é & Porquê?
 Baixar uma página da web é o ato de obter o conteúdo disponível em um endereço específico da internet. Programadores fazem isso para coletar dados, interagir com serviços online ou integrar funcionalidades externas em seus projetos de Arduino.

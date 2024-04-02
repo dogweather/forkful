@@ -11,9 +11,8 @@ summary: "Las expresiones regulares en la programaci\xF3n permiten la b\xFAsqued
   \ y manipulaci\xF3n de cadenas basadas en patrones espec\xEDficos. Los programadores\
   \ las\u2026"
 title: Usando expresiones regulares
+weight: 11
 ---
-
-{{< edit_this_page >}}
 
 ## ¿Qué y Por Qué?
 

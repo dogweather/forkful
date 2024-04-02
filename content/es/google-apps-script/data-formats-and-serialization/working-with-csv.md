@@ -10,9 +10,8 @@ model: gpt-4-0125-preview
 summary: "Trabajar con archivos CSV (Valores Separados por Comas) en Google Apps Script\
   \ implica leer, modificar y escribir archivos de texto plano donde cada l\xEDnea\u2026"
 title: Trabajando con CSV
+weight: 37
 ---
-
-{{< edit_this_page >}}
 
 ## Qué y por qué?
 

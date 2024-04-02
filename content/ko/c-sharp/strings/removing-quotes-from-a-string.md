@@ -21,9 +21,8 @@ summary: "C#\uC5D0\uC11C \uBB38\uC790\uC5F4\uC5D0\uC11C \uC778\uC6A9\uBD80\uD638
   \ \uCC98\uB9AC\uC5D0 \uC548\uC804\uD558\uAC8C \uB9CC\uB4E4\uC5B4 \uC798\uBABB\uB41C\
   \ \uC778\uC6A9\uBD80\uD638\uAC00 \uB098\uD0C0\uB0AC\uC744 \uB54C\u2026"
 title: "\uBB38\uC790\uC5F4\uC5D0\uC11C \uB530\uC634\uD45C \uC81C\uAC70\uD558\uAE30"
+weight: 9
 ---
-
-{{< edit_this_page >}}
 
 ## 무엇 & 왜?
 C#에서 문자열에서 인용부호를 제거한다는 것은 텍스트를 감싸는 귀찮은 이중(`"`) 또는 단일(`'`) 인용부호를 제거한다는 것을 의미합니다. 프로그래머들은 데이터를 정리하거나 데이터베이스 입력을 준비하거나 문자열을 추가 처리에 안전하게 만들어 잘못된 인용부호가 나타났을 때 문제가 발생하지 않도록 하기 위해 이 작업을 수행합니다.

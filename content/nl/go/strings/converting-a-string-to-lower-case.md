@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Het omzetten van een tekenreeks naar kleine letters is een fundamentele\
   \ bewerking die uniformiteit en consistentie in tekstverwerking mogelijk maakt,\u2026"
 title: Een string converteren naar kleine letters
+weight: 4
 ---
-
-{{< edit_this_page >}}
 
 ## Wat & Waarom?
 

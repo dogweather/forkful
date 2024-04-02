@@ -7,9 +7,8 @@ model: gpt-4-1106-preview
 summary: "Complex numbers consist of a real part and an imaginary part. Programmers\
   \ use them in fields like signal processing, quantum mechanics, and whenever the\u2026"
 title: Working with complex numbers
+weight: 14
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 Complex numbers consist of a real part and an imaginary part. Programmers use them in fields like signal processing, quantum mechanics, and whenever the calculation requires them, because normal real numbers just don't cut it.

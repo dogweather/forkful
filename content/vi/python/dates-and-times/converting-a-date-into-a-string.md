@@ -15,9 +15,8 @@ summary: "Chuy\u1EC3n \u0111\u1ED5i ng\xE0y th\xE1ng th\xE0nh x\xE2u k\xFD t\u1E
   n th\u1EF1c hi\u1EC7n \u0111i\u1EC1u n\xE0y \u0111\u1EC3 hi\u1EC3n th\u1ECB ng\xE0\
   y th\xE1ng\u2026"
 title: "Chuy\u1EC3n \u0111\u1ED5i m\u1ED9t ng\xE0y th\xE0nh chu\u1ED7i"
+weight: 28
 ---
-
-{{< edit_this_page >}}
 
 ## Cái gì & Tại sao?
 Chuyển đổi ngày tháng thành xâu ký tự biến đổi một đối tượng ngày tháng thành định dạng văn bản. Lập trình viên thực hiện điều này để hiển thị ngày tháng một cách thân thiện với người dùng hoặc để chuẩn bị chúng cho việc lưu trữ trong các định dạng dựa trên văn bản như CSV hoặc JSON.

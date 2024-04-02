@@ -24,9 +24,8 @@ summary: "Elixir\uC5D0\uC11C \uD604\uC7AC \uB0A0\uC9DC\uB97C \uAC00\uC838\uC624\
   , \uC6F9 \uC5B4\uD50C\uB9AC\uCF00\uC774\uC158\uC5D0\uC11C \uB9AC\uD3EC\uD2B8\uB098\
   \ \uD0C0\uC784\uC2A4\uD0EC\uD504\uB97C\u2026"
 title: "\uD604\uC7AC \uB0A0\uC9DC \uAC00\uC838\uC624\uAE30"
+weight: 29
 ---
-
-{{< edit_this_page >}}
 
 ## 무엇 & 왜?
 Elixir에서 현재 날짜를 가져오는 것은 시스템의 날짜와 시간 정보에 접근하는 것을 포함하며, 로깅, 데이터 스탬핑 또는 현재 날짜를 알아야 하는 기능에 흔히 사용되는 작업입니다. 이 작업은 시간에 민감한 어플리케이션을 만들고, 웹 어플리케이션에서 리포트나 타임스탬프를 생성하는 작업과 같은 일에 필수적입니다.

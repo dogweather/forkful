@@ -13,9 +13,8 @@ summary: "G\u1EE1 b\u1ECF d\u1EA5u ngo\u1EB7c k\xE9p kh\u1ECFi m\u1ED9t chu\u1ED
   c \u0111\u01A1n th\u1EEBa b\u1EA1n kh\xF4ng th\u1EF1c s\u1EF1 c\u1EA7n trong v\u0103\
   n b\u1EA3n \u0111\xE3 x\u1EED l\xFD. C\xE1c l\u1EADp tr\xECnh vi\xEAn l\xE0m\u2026"
 title: "Lo\u1EA1i b\u1ECF d\u1EA5u ngo\u1EB7c k\xE9p kh\u1ECFi chu\u1ED7i"
+weight: 9
 ---
-
-{{< edit_this_page >}}
 
 ## Gì & Tại Sao?
 Gỡ bỏ dấu ngoặc kép khỏi một chuỗi nghĩa là loại bỏ những dấu ngoặc kép hoặc đơn thừa bạn không thực sự cần trong văn bản đã xử lý. Các lập trình viên làm điều này để làm sạch đầu vào, chuẩn bị dữ liệu cho việc lưu trữ, hoặc khiến đầu ra dễ đọc hơn cho con người khi không cần thiết phải có dấu ngoặc trong ngữ cảnh đã cho.

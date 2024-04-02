@@ -9,9 +9,8 @@ summary: "En JavaScript, conna\xEEtre la longueur d'une cha\xEEne signifie compt
   \ le nombre de caract\xE8res qu'elle contient. C'est essentiel pour valider des\
   \ entr\xE9es,\u2026"
 title: "Trouver la longueur d'une cha\xEEne de caract\xE8res"
+weight: 7
 ---
-
-{{< edit_this_page >}}
 
 ## Quoi & Pourquoi ?
 

@@ -8,9 +8,8 @@ model: gpt-4-0125-preview
 summary: "TOML er et menneskelesbart data serialiseringsspr\xE5k, ofte brukt for konfigurasjoner.\
   \ Programmerere bruker TOML p\xE5 grunn av dets enkelhet og klarhet, som\u2026"
 title: Jobbe med TOML
+weight: 39
 ---
-
-{{< edit_this_page >}}
 
 ## Hva & Hvorfor?
 TOML er et menneskelesbart data serialiseringsspråk, ofte brukt for konfigurasjoner. Programmerere bruker TOML på grunn av dets enkelhet og klarhet, som enkelt oversettes til en hash map i Rust.

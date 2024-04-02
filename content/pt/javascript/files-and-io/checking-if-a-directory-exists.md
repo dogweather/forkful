@@ -11,9 +11,8 @@ summary: "Verificar se um diret\xF3rio existe em JavaScript \xE9 essencial para 
   \ de manipula\xE7\xE3o de arquivos, permitindo que scripts verifiquem a presen\xE7\
   a do\u2026"
 title: "Verificando se um diret\xF3rio existe"
+weight: 20
 ---
-
-{{< edit_this_page >}}
 
 ## O que & Por quê?
 Verificar se um diretório existe em JavaScript é essencial para tarefas de manipulação de arquivos, permitindo que scripts verifiquem a presença do diretório antes de ler ou escrever nele. Esta operação previne erros e assegura uma execução mais suave do programa, particularmente em aplicações que manipulam arquivos ou diretórios dinamicamente baseados em entrada do usuário ou fontes de dados externas.

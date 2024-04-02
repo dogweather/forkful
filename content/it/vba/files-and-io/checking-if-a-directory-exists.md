@@ -10,9 +10,8 @@ model: gpt-4-0125-preview
 summary: "Verificare se una directory esiste in Visual Basic for Applications (VBA)\
   \ significa accertarsi della presenza di una cartella all'interno del file system\u2026"
 title: Verifica se una directory esiste
+weight: 20
 ---
-
-{{< edit_this_page >}}
 
 ## Cos'è & Perché?
 

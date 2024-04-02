@@ -9,9 +9,8 @@ summary: "Por\xF3wnywanie dat umo\u017Cliwia ustalenie, kt\xF3ra z nich jest wcz
   niejsza lub p\xF3\u017Aniejsza. Programi\u015Bci robi\u0105 to, aby \u015Bledzi\u0107\
   \ czas, zarz\u0105dza\u0107 wydarzeniami, lub\u2026"
 title: "Por\xF3wnywanie dw\xF3ch dat"
+weight: 27
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why? (Co i Dlaczego?)
 Porównywanie dat umożliwia ustalenie, która z nich jest wcześniejsza lub późniejsza. Programiści robią to, aby śledzić czas, zarządzać wydarzeniami, lub określić terminy.

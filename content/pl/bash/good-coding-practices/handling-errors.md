@@ -9,9 +9,8 @@ summary: "Obs\u0142uga b\u0142\u0119d\xF3w w skryptach Bash polega na przewidywa
   \ gdzie mog\u0105 pojawi\u0107 si\u0119 problemy i radzenie sobie z nimi w elegancki\
   \ spos\xF3b. Dlaczego? Poniewa\u017C\u2026"
 title: "Obs\u0142uga b\u0142\u0119d\xF3w"
+weight: 16
 ---
-
-{{< edit_this_page >}}
 
 ## Co i dlaczego?
 

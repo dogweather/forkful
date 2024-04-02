@@ -10,9 +10,8 @@ model: gpt-4-0125-preview
 summary: "Gli array associativi sono come degli array super-potenziati che ti permettono\
   \ di usare stringhe come indici invece di semplici interi. I programmatori li\u2026"
 title: Utilizzo di array associativi
+weight: 15
 ---
-
-{{< edit_this_page >}}
 
 ## Cosa & Perché?
 

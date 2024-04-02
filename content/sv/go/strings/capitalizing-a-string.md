@@ -11,9 +11,8 @@ summary: "Att skriva med stor begynnelsebokstav inneb\xE4r att omvandla det f\xF
   rsta tecknet i en given str\xE4ng till versal om det \xE4r i gemen, vilket s\xE4\
   kerst\xE4ller att\u2026"
 title: "G\xF6r om en str\xE4ng till versaler"
+weight: 2
 ---
-
-{{< edit_this_page >}}
 
 ## Vad & Varför?
 

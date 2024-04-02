@@ -11,9 +11,8 @@ summary: "Los arreglos asociativos, o como los llama Elm, Diccionarios, mapean c
   \ a valores de una manera que hace que la b\xFAsqueda, inserci\xF3n y eliminaci\xF3\
   n de\u2026"
 title: Uso de matrices asociativas
+weight: 15
 ---
-
-{{< edit_this_page >}}
 
 ## ¿Qué y Por Qué?
 

@@ -11,9 +11,8 @@ summary: "La suppression de caract\xE8res correspondant \xE0 un motif sp\xE9cifi
   \ dans Visual Basic pour Applications (VBA) implique d'identifier et de supprimer\
   \ ensuite\u2026"
 title: "Suppression de caract\xE8res correspondant \xE0 un motif"
+weight: 5
 ---
-
-{{< edit_this_page >}}
 
 ## Quoi & Pourquoi ?
 

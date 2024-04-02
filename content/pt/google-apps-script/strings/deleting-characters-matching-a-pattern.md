@@ -11,9 +11,8 @@ summary: "Deletar caracteres que correspondem a um padr\xE3o espec\xEDfico \xE9 
   \ t\xE9cnica usada para limpar ou formatar strings na programa\xE7\xE3o. No contexto\
   \ do Google Apps\u2026"
 title: "Excluindo caracteres correspondentes a um padr\xE3o"
+weight: 5
 ---
-
-{{< edit_this_page >}}
 
 ## O que & Por quê?
 

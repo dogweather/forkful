@@ -7,9 +7,8 @@ model: gpt-4-0125-preview
 summary: "L'utilisation d'une coquille interactive, ou d'une boucle de lecture-\xE9\
   valuation-impression (REPL), vous permet de coder de mani\xE8re interactive. Les\u2026"
 title: Utilisation d'une console interactive (REPL)
+weight: 34
 ---
-
-{{< edit_this_page >}}
 
 ## Quoi & Pourquoi ?
 L'utilisation d'une coquille interactive, ou d'une boucle de lecture-évaluation-impression (REPL), vous permet de coder de manière interactive. Les programmeurs l'utilisent pour tester rapidement des extraits de Swift, déboguer ou apprendre le langage.

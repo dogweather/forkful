@@ -11,9 +11,8 @@ summary: "Tworzenie pliku tekstowego w Elm polega na tworzeniu i zapisywaniu dan
   \ tekstowych do pliku z aplikacji Elm. Programi\u015Bci cz\u0119sto musz\u0105 generowa\u0107\
   \ raporty,\u2026"
 title: Pisanie pliku tekstowego
+weight: 24
 ---
-
-{{< edit_this_page >}}
 
 ## Co i dlaczego?
 

@@ -11,9 +11,8 @@ summary: "Wyra\u017Cenia regularne (regex) w Ruby to wzorce u\u017Cywane do dopa
   \ kombinacji znak\xF3w w ci\u0105gach tekstowych, co umo\u017Cliwia programistom\
   \ efektywne\u2026"
 title: "Korzystanie z wyra\u017Ce\u0144 regularnych"
+weight: 11
 ---
-
-{{< edit_this_page >}}
 
 ## Co i dlaczego?
 Wyrażenia regularne (regex) w Ruby to wzorce używane do dopasowywania kombinacji znaków w ciągach tekstowych, co umożliwia programistom efektywne wyszukiwanie, dopasowywanie i manipulowanie tekstem. Programiści wykorzystują regex do zadań takich jak walidacja, parsowanie i manipulowanie ciągami znaków, co czyni go niezbędnym narzędziem do przetwarzania tekstu.

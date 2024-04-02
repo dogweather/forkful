@@ -9,9 +9,8 @@ summary: "Debugowanie to sztuka wykrywania b\u0142\u0119d\xF3w. Szybko pokazujem
   \ zmienne i komunikaty, by zrozumie\u0107, co si\u0119 dzieje w skrypcie. Dlaczego?\
   \ Bo informatyk bez\u2026"
 title: "Drukowanie komunikat\xF3w debugowania"
+weight: 33
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why? (Co i dlaczego?)
 Debugowanie to sztuka wykrywania błędów. Szybko pokazujemy zmienne i komunikaty, by zrozumieć, co się dzieje w skrypcie. Dlaczego? Bo informatyk bez debugowania to jak lekarz bez stetoskopu – leci na ślepo.

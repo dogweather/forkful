@@ -10,9 +10,8 @@ model: gpt-4-0125-preview
 summary: "Il recupero della data corrente nella programmazione \xE8 un compito cruciale\
   \ per una moltitudine di applicazioni, inclusi i registri degli eventi, la\u2026"
 title: Ottenere la data corrente
+weight: 29
 ---
-
-{{< edit_this_page >}}
 
 ## Cosa & Perché?
 

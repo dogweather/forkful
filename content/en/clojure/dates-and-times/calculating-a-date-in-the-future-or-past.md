@@ -9,9 +9,8 @@ summary: "Calculating future or past dates involves manipulating dates to find o
   \ what they'll be after a certain period or what they were. Programmers do this\
   \ for\u2026"
 title: Calculating a date in the future or past
+weight: 26
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 

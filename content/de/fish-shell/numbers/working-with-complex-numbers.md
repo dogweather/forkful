@@ -7,9 +7,8 @@ model: gpt-4-0125-preview
 summary: "Komplexe Zahlen erweitern die Idee von eindimensionalen Zahlengeraden zu\
   \ einer zweidimensionalen komplexen Ebene. Programmierer nutzen sie in Bereichen\u2026"
 title: Umgang mit komplexen Zahlen
+weight: 14
 ---
-
-{{< edit_this_page >}}
 
 ## Was & Warum?
 Komplexe Zahlen erweitern die Idee von eindimensionalen Zahlengeraden zu einer zweidimensionalen komplexen Ebene. Programmierer nutzen sie in Bereichen wie Ingenieurwesen, Physik und Grafik für Berechnungen, die zwei Komponenten benötigen, wie Signale oder Rotationen.

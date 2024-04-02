@@ -8,9 +8,8 @@ model: gpt-4-0125-preview
 summary: "In the realm of programming, working with CSV (Comma-Separated Values) files\
   \ involves reading from and writing data to text files organized by rows, where\u2026"
 title: Working with CSV
+weight: 37
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 

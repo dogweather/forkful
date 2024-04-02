@@ -7,9 +7,8 @@ model: unknown
 summary: "Conseguir a data atual significa acessar o momento exato em que o c\xF3\
   digo est\xE1 sendo executado. Programadores fazem isso para marcar eventos, gerenciar\u2026"
 title: Obtendo a data atual
+weight: 29
 ---
-
-{{< edit_this_page >}}
 
 ## O que & Porquê?
 

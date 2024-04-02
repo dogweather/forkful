@@ -7,9 +7,8 @@ model: gpt-4-0125-preview
 summary: "Deleting characters matching a specific pattern is a technique used to cleanse\
   \ or format strings in programming. In the context of Google Apps Script,\u2026"
 title: Deleting characters matching a pattern
+weight: 5
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 

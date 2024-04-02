@@ -12,9 +12,8 @@ summary: "\u65B0\u9879\u76EE\u5C31\u662F\u4ECE\u96F6\u5F00\u59CB\u7684\u4EE3\u78
   \u9898\uFF0C\u5B9E\u73B0\u60F3\u6CD5\uFF0C\u6216\u8005\u5B66\u4E60\u65B0\u6280\u672F\
   \u3002"
 title: "\u5F00\u59CB\u4E00\u4E2A\u65B0\u9879\u76EE"
+weight: 1
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why? (是什么 & 为什么？)
 新项目就是从零开始的代码创作。程序员这么做为了解决问题，实现想法，或者学习新技术。

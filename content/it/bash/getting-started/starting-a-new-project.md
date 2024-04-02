@@ -8,9 +8,8 @@ model: gpt-4-1106-preview
 summary: "Iniziare un nuovo progetto significa creare una base da cui partire a programmare.\
   \ I programmatori lo fanno per organizzare e strutturare il codice da\u2026"
 title: Avvio di un nuovo progetto
+weight: 1
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why? (Cosa & Perché?)
 Iniziare un nuovo progetto significa creare una base da cui partire a programmare. I programmatori lo fanno per organizzare e strutturare il codice da zero in modo efficiente e logicamente coerente.

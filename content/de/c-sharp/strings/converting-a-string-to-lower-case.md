@@ -7,9 +7,8 @@ model: gpt-4-1106-preview
 summary: "Das Umwandeln eines Strings in Kleinbuchstaben macht alle Buchstaben klein.\
   \ Das ist wichtig f\xFCr einheitliche Datenverarbeitung, beispielsweise beim\u2026"
 title: Umformung eines Strings in Kleinbuchstaben
+weight: 4
 ---
-
-{{< edit_this_page >}}
 
 ## Was & Warum?
 Das Umwandeln eines Strings in Kleinbuchstaben macht alle Buchstaben klein. Das ist wichtig für einheitliche Datenverarbeitung, beispielsweise beim Vergleichen von Eingaben.

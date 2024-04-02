@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Tekens die overeenkomen met een patroon verwijderen in Lua gaat over het\
   \ gebruik van patronen om specifieke reeksen tekens in een string te identificeren\u2026"
 title: Karakters verwijderen die overeenkomen met een patroon
+weight: 5
 ---
-
-{{< edit_this_page >}}
 
 ## Wat & Waarom?
 

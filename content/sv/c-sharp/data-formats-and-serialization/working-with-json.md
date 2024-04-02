@@ -11,9 +11,8 @@ summary: "Att arbeta med JSON (JavaScript Object Notation) inneb\xE4r att parse:
   \ generera och fr\xE5ga JSON-data, vilket g\xF6r det till en kritisk f\xE4rdighet\
   \ f\xF6r modern\u2026"
 title: Arbeta med JSON
+weight: 38
 ---
-
-{{< edit_this_page >}}
 
 ## Vad & Varför?
 

@@ -9,9 +9,8 @@ summary: "Eliminar las comillas de una cadena significa deshacerse de esas moles
   \ comillas que pueden interferir con tu c\xF3digo, especialmente cuando est\xE1\
   s\u2026"
 title: Eliminando comillas de una cadena
+weight: 9
 ---
-
-{{< edit_this_page >}}
 
 ## ¿Qué y por qué?
 Eliminar las comillas de una cadena significa deshacerse de esas molestas comillas que pueden interferir con tu código, especialmente cuando estás analizando datos o construyendo objetos JSON. Los programadores lo hacen para sanear entradas, evitar errores de sintaxis y hacer que las cadenas se lleven bien con otras partes de su código.

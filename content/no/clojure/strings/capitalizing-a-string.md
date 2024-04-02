@@ -10,9 +10,8 @@ model: gpt-4-0125-preview
 summary: "\xC5 sette stor bokstav i en streng inneb\xE6rer \xE5 endre strengen slik\
   \ at dens f\xF8rste tegn er en stor bokstav, mens resten av strengen forblir uendret.\u2026"
 title: Sette stor bokstav i en streng
+weight: 2
 ---
-
-{{< edit_this_page >}}
 
 ## Hva & Hvorfor?
 Å sette stor bokstav i en streng innebærer å endre strengen slik at dens første tegn er en stor bokstav, mens resten av strengen forblir uendret. Programmerere utfører ofte stor bokstavsetting av strenger for å sikre datakonsistens, spesielt for navn og steder, eller for å overholde grammatiske regler i brukergrensesnitt.

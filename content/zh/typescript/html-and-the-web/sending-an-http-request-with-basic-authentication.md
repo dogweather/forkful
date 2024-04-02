@@ -15,9 +15,8 @@ summary: "\u5728TypeScript\u4E2D\uFF0C\u53D1\u9001\u5E26\u6709\u57FA\u672C\u8BA4
   \u5B9E\u73B0\u7528\u6237\u8BA4\u8BC1\u3002\u7A0B\u5E8F\u5458\u8FD9\u6837\u505A\u662F\
   \u4E3A\u4E86\u5B89\u5168\u5730\u8BBF\u95EE\u53D7\u4FDD\u62A4\u7684\u8D44\u6E90\u3002"
 title: "\u4F7F\u7528\u57FA\u672C\u8BA4\u8BC1\u53D1\u9001 HTTP \u8BF7\u6C42"
+weight: 45
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why? (什么及为什么?)
 在TypeScript中，发送带有基本认证的HTTP请求，意味着将用户名和密码加密后作为请求头部发送，以实现用户认证。程序员这样做是为了安全地访问受保护的资源。

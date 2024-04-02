@@ -8,9 +8,8 @@ model: gpt-4-1106-preview
 summary: "Eliminar caracteres siguiendo un patr\xF3n implica usar filtros para quitar\
   \ ciertos caracteres de strings de texto. Los programadores lo hacen para limpiar\u2026"
 title: "Eliminando caracteres que coinciden con un patr\xF3n"
+weight: 5
 ---
-
-{{< edit_this_page >}}
 
 ## Qué y Por Qué?
 Eliminar caracteres siguiendo un patrón implica usar filtros para quitar ciertos caracteres de strings de texto. Los programadores lo hacen para limpiar datos, formatear salida o para cumplir con requisitos específicos de procesamiento de texto.

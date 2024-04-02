@@ -9,9 +9,8 @@ summary: "Creating a temporary file is making a short-lived file for storing dat
   \ that\u2019s not needed long-term. Programmers do this to handle data that\u2019\
   s only\u2026"
 title: Creating a temporary file
+weight: 21
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 Creating a temporary file is making a short-lived file for storing data that’s not needed long-term. Programmers do this to handle data that’s only relevant during the program’s execution or to avoid clogging up the user's storage with unnecessary files.

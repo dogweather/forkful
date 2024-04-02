@@ -9,9 +9,8 @@ summary: "El manejo de errores es c\xF3mo tu c\xF3digo se ocupa de los problemas
   \ surgen durante la ejecuci\xF3n\u2014como manejar una bola curva sin dejarla caer.\
   \ Los\u2026"
 title: Manejo de errores
+weight: 16
 ---
-
-{{< edit_this_page >}}
 
 ## ¿Qué y por qué?
 El manejo de errores es cómo tu código se ocupa de los problemas que surgen durante la ejecución—como manejar una bola curva sin dejarla caer. Los programadores lo hacen para prevenir fallos y ofrecer a los usuarios una experiencia fluida.

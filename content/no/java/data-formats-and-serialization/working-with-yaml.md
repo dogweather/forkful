@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "YAML, forkortet for \"YAML Ain't Markup Language\", er en menneskelesbar\
   \ standard for data-serialisering som programmerere bruker for konfigurasjonsfiler,\u2026"
 title: Arbeider med YAML
+weight: 41
 ---
-
-{{< edit_this_page >}}
 
 ## Hva & Hvorfor?
 YAML, forkortet for "YAML Ain't Markup Language", er en menneskelesbar standard for data-serialisering som programmerere bruker for konfigurasjonsfiler, data dumping, og datatransmisjon mellom språk. Det er populært på grunn av sin lesbarhet og enkelhet i bruk, noe som gjør det til et vanlig valg for konfigurering av applikasjoner og tjenester.

@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Die Zeichenketteninterpolation in C# erm\xF6glicht es Ihnen, einen neuen\
   \ String zu erstellen, indem Ausdr\xFCcke innerhalb eines Zeichenketten-Literals\u2026"
 title: Interpolation eines Strings
+weight: 8
 ---
-
-{{< edit_this_page >}}
 
 ## Was & Warum?
 Die Zeichenketteninterpolation in C# ermöglicht es Ihnen, einen neuen String zu erstellen, indem Ausdrücke innerhalb eines Zeichenketten-Literals eingefügt werden. Dies erleichtert das Formatieren und Verketten von Strings. Programmierer nutzen dieses Feature, um die Lesbarkeit und Wartbarkeit des Codes zu verbessern, insbesondere wenn sie mit dynamischen Zeichenketteninhalten arbeiten.

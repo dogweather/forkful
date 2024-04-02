@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Stringinterpolatie in C# stelt je in staat om een nieuwe string te cre\xEB\
   ren door expressies binnen een stringliteral op te nemen, waardoor het\u2026"
 title: Een string interpoleren
+weight: 8
 ---
-
-{{< edit_this_page >}}
 
 ## Wat & Waarom?
 Stringinterpolatie in C# stelt je in staat om een nieuwe string te creëren door expressies binnen een stringliteral op te nemen, waardoor het gemakkelijker wordt om strings te formatteren en te concatenaten. Programmeurs gebruiken deze functie om de leesbaarheid en het onderhoud van de code te verbeteren, met name wanneer ze te maken hebben met dynamische stringinhoud.

@@ -7,9 +7,8 @@ model: gpt-4-1106-preview
 summary: "Leer un archivo de texto en PHP implica obtener su contenido para manipulaci\xF3\
   n o an\xE1lisis. Los programadores hacen esto para importar datos,\u2026"
 title: Lectura de un archivo de texto
+weight: 22
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 Leer un archivo de texto en PHP implica obtener su contenido para manipulación o análisis. Los programadores hacen esto para importar datos, configuraciones o simplemente mostrar texto en la web.

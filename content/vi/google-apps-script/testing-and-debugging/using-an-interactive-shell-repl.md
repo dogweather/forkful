@@ -15,9 +15,8 @@ summary: "Giao di\u1EC7n l\u1EADp tr\xECnh t\u01B0\u01A1ng t\xE1c, hay v\xF2ng l
   \u1EA7u v\xE0o \u0111\u01A1n l\u1EBB t\u1EEB ng\u01B0\u1EDDi d\xF9ng (bi\u1EC3u\u2026"
 title: "S\u1EED d\u1EE5ng giao di\u1EC7n d\xF2ng l\u1EC7nh t\u01B0\u01A1ng t\xE1c\
   \ (REPL)"
+weight: 34
 ---
-
-{{< edit_this_page >}}
 
 ## Là gì & Tại sao?
 

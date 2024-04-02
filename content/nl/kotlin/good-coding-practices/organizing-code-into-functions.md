@@ -10,9 +10,8 @@ model: gpt-4-0125-preview
 summary: "Code organiseren in functies betekent dat je jouw programma opdeelt in herbruikbare\
   \ stukken, waarbij elk stuk een specifieke taak afhandelt. We doen dit\u2026"
 title: Code organiseren in functies
+weight: 18
 ---
-
-{{< edit_this_page >}}
 
 ## Wat & Waarom?
 Code organiseren in functies betekent dat je jouw programma opdeelt in herbruikbare stukken, waarbij elk stuk een specifieke taak afhandelt. We doen dit om de code makkelijker leesbaar, debugbaar en bijwerkbaar te maken. Denk aan je code als een voorraadkast: je wilt alles van bakbenodigdheden tot ingeblikte goederen gegroepeerd hebben, zodat je vindt wat je nodig hebt zonder gedoe.

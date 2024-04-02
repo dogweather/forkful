@@ -11,9 +11,8 @@ summary: "Escrever em um arquivo de texto em Haskell trata-se de criar ou atuali
   \ arquivos com conte\xFAdo textual de forma program\xE1tica. Os programadores fazem\
   \ isso\u2026"
 title: Escrevendo um arquivo de texto
+weight: 24
 ---
-
-{{< edit_this_page >}}
 
 ## O Que & Por Que?
 

@@ -9,9 +9,8 @@ summary: "HTTP-pyynt\xF6 perusautentikoinnilla sis\xE4lt\xE4\xE4 k\xE4ytt\xE4j\x
   nimen ja salasanan, joka l\xE4hetet\xE4\xE4n palvelimelle koodattuna. Ohjelmoijat\
   \ k\xE4ytt\xE4v\xE4t t\xE4t\xE4 autentikoimaan\u2026"
 title: "HTTP-pyynn\xF6n l\xE4hett\xE4minen perusautentikoinnilla"
+weight: 45
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why? - Mitä ja miksi?
 HTTP-pyyntö perusautentikoinnilla sisältää käyttäjänimen ja salasanan, joka lähetetään palvelimelle koodattuna. Ohjelmoijat käyttävät tätä autentikoimaan käyttäjiä turvallisesti ennen tietojen välittämistä.

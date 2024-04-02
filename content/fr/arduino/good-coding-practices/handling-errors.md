@@ -9,9 +9,8 @@ summary: "La gestion des erreurs dans vos programmes intercepte les impr\xE9vus 
   \ tentent de vous mettre des b\xE2tons dans les roues. Vous le faites pour \xE9\
   viter \xE0\u2026"
 title: Gestion des erreurs
+weight: 16
 ---
-
-{{< edit_this_page >}}
 
 ## Quoi & Pourquoi ?
 

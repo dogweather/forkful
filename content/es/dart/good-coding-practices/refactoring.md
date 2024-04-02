@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "La refactorizaci\xF3n en Dart es el proceso de reestructurar c\xF3digo existente\
   \ sin cambiar su comportamiento externo, dirigido a mejorar su estructura\u2026"
 title: "Refactorizaci\xF3n"
+weight: 19
 ---
-
-{{< edit_this_page >}}
 
 ## ¿Qué y por qué?
 

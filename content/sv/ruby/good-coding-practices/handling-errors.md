@@ -9,9 +9,8 @@ summary: "Felhantering handlar om att f\xF6rv\xE4nta sig det ov\xE4ntade i kod \
   \ att hantera misstag och problem smidigt utan att krascha. Programmerare g\xF6\
   r det f\xF6r att\u2026"
 title: Hantering av fel
+weight: 16
 ---
-
-{{< edit_this_page >}}
 
 ## Vad & Varför?
 

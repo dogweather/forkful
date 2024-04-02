@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Tests schrijven in programmeren is code maken om te controleren of andere\
   \ code correct werkt. Programmeurs doen dit om vroegtijdig fouten te vinden, te\u2026"
 title: Tests Schrijven
+weight: 36
 ---
-
-{{< edit_this_page >}}
 
 ## Wat & Waarom?
 

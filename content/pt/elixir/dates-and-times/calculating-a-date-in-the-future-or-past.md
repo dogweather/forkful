@@ -7,9 +7,8 @@ model: gpt-4-1106-preview
 summary: "Calcular uma data no futuro ou passado \xE9 exatamente isso: determinar\
   \ uma data al\xE9m ou antes de hoje. Programadores fazem isso para manipular prazos,\u2026"
 title: Calculando uma data no futuro ou passado
+weight: 26
 ---
-
-{{< edit_this_page >}}
 
 ## O Que & Porquê?
 Calcular uma data no futuro ou passado é exatamente isso: determinar uma data além ou antes de hoje. Programadores fazem isso para manipular prazos, agendar eventos, ou simplesmente para logar quando algo aconteceu ou vai acontecer.

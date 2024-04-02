@@ -11,9 +11,8 @@ summary: "Att g\xF6ra f\xF6rsta bokstaven i ett ord eller en hel mening till ver
   \ inneb\xE4r att man \xE4ndrar den f\xF6rsta bokstaven till stor bokstav, medan\
   \ resten av tecknen\u2026"
 title: "G\xF6r om en str\xE4ng till versaler"
+weight: 2
 ---
-
-{{< edit_this_page >}}
 
 ## Vad & Varför?
 

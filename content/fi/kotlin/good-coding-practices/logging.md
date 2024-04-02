@@ -7,9 +7,8 @@ model: gpt-4-1106-preview
 summary: "Lokitus on pohjimmiltaan tapa kirjata tapahtumia ja tietoja ohjelmistosovelluksesta\
   \ ulkoiseen l\xE4hteeseen, kuten tiedostoon tai konsolille. Ohjelmoijat\u2026"
 title: Lokitus
+weight: 17
 ---
-
-{{< edit_this_page >}}
 
 ## Mikä & Miksi?
 

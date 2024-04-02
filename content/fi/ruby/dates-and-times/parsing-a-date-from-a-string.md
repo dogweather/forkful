@@ -11,9 +11,8 @@ summary: "P\xE4iv\xE4m\xE4\xE4r\xE4n j\xE4sent\xE4minen merkkijonosta tarkoittaa
   \ joka esitt\xE4\xE4 p\xE4iv\xE4m\xE4\xE4r\xE4\xE4, muuntamista `Date`- tai `DateTime`-objektiksi,\
   \ jonka Ruby ymm\xE4rt\xE4\xE4.\u2026"
 title: "P\xE4iv\xE4m\xE4\xE4r\xE4n j\xE4sennys merkkijonosta"
+weight: 30
 ---
-
-{{< edit_this_page >}}
 
 ## Mikä & Miksi?
 Päivämäärän jäsentäminen merkkijonosta tarkoittaa tekstin, joka esittää päivämäärää, muuntamista `Date`- tai `DateTime`-objektiksi, jonka Ruby ymmärtää. Ohjelmoijat tekevät tämän suorittaakseen toimenpiteitä, kuten vertailuja, laskelmia tai muotoiluja päivämäärille, jotka ovat yleisiä tehtäviä sovelluksissa, jotka käsittelevät aikataulutusta, analytiikkaa tai datan käsittelyä.

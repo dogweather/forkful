@@ -7,9 +7,8 @@ model: gpt-4-0125-preview
 summary: "Numeroiden py\xF6rist\xE4minen on desimaalipaikkojen karsimista, jotta tiedot\
   \ olisivat yksinkertaisempia tai sopisivat tiettyihin formaatteihin. Ohjelmoijat\u2026"
 title: "Numerojen py\xF6rist\xE4minen"
+weight: 13
 ---
-
-{{< edit_this_page >}}
 
 ## Mitä & Miksi?
 Numeroiden pyöristäminen on desimaalipaikkojen karsimista, jotta tiedot olisivat yksinkertaisempia tai sopisivat tiettyihin formaatteihin. Ohjelmoijat tekevät näin käyttäjäystävällisemmän näytön, tehokkaamman tallennuksen tai kun desimaalitarkkuus ei ole ongelma.

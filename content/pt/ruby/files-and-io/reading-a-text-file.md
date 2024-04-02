@@ -7,9 +7,8 @@ model: gpt-4-1106-preview
 summary: "Ler um arquivo de texto em Ruby significa pegar dados de um arquivo `.txt`\
   \ e us\xE1-los no seu programa. Isso \xE9 crucial quando voc\xEA quer processar\u2026"
 title: Lendo um arquivo de texto
+weight: 22
 ---
-
-{{< edit_this_page >}}
 
 ## O Que & Porquê?
 Ler um arquivo de texto em Ruby significa pegar dados de um arquivo `.txt` e usá-los no seu programa. Isso é crucial quando você quer processar informações armazenadas em arquivos, como configurações, dados de entrada para análise e automatizar tarefas que dependam desses dados.

@@ -8,9 +8,8 @@ model: gpt-4-0125-preview
 summary: "\xC5 avrunde tall er \xE5 justere et desimaltall til n\xE6rmeste hele verdi\
   \ eller til et spesifisert antall desimaler. Programmerere avrunder for \xE5 redusere\u2026"
 title: Avrunding av tall
+weight: 13
 ---
-
-{{< edit_this_page >}}
 
 ## Hva & Hvorfor?
 

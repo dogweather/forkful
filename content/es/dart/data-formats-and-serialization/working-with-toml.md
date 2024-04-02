@@ -11,9 +11,8 @@ summary: "TOML, o Tom's Obvious, Minimal Language (El Lenguaje M\xEDnimo y Obvio
   \ Tom), es un formato de archivo de configuraci\xF3n que es f\xE1cil de leer debido\
   \ a su\u2026"
 title: Trabajando con TOML
+weight: 39
 ---
-
-{{< edit_this_page >}}
 
 ## ¿Qué y Por Qué?
 

@@ -9,9 +9,8 @@ summary: "Convertir une date en cha\xEEne de caract\xE8res permet de la manipule
   \ comme texte, simplifiant l\u2019affichage et le stockage. Les programmeurs font\
   \ cette\u2026"
 title: "Conversion d'une date en cha\xEEne de caract\xE8res"
+weight: 28
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 Convertir une date en chaîne de caractères permet de la manipuler comme texte, simplifiant l’affichage et le stockage. Les programmeurs font cette conversion pour l'interopérabilité et la lisibilité humaine.

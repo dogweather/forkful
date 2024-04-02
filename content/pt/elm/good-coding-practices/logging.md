@@ -9,9 +9,8 @@ summary: "Registrar (logging) \xE9 essencialmente o processo de grava\xE7\xE3o d
   \ eventos e sa\xEDdas de dados de um software enquanto ele est\xE1 em execu\xE7\xE3\
   o, pense nisso como o\u2026"
 title: Registro de Logs
+weight: 17
 ---
-
-{{< edit_this_page >}}
 
 ## O Que & Por Quê?
 Registrar (logging) é essencialmente o processo de gravação de eventos e saídas de dados de um software enquanto ele está em execução, pense nisso como o diário do software. Os programadores usam o registro para acompanhar o que está acontecendo por debaixo dos panos - é inestimável para depurar problemas, monitorar o comportamento do sistema em tempo real e analisar atividades passadas para otimizações de desempenho ou auditorias.

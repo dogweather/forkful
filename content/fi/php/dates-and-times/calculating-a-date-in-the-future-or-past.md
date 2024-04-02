@@ -9,9 +9,8 @@ summary: "Laskemme p\xE4iv\xE4m\xE4\xE4ri\xE4 tulevaisuudessa tai menneisyydess\
   \ hallitaksemme aikatauluja ja m\xE4\xE4ritt\xE4ksemme m\xE4\xE4r\xE4aikoja. Ohjelmoijat\
   \ tekev\xE4t sen\u2026"
 title: "Tulevan tai menneen p\xE4iv\xE4m\xE4\xE4r\xE4n laskeminen"
+weight: 26
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why? - Mitä ja miksi?
 Laskemme päivämääriä tulevaisuudessa tai menneisyydessä hallitaksemme aikatauluja ja määrittäksemme määräaikoja. Ohjelmoijat tekevät sen automatisoidakseen muistutuksia, vanhenemispäiviä ja tapahtumien aikatauluja.

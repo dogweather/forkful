@@ -11,9 +11,8 @@ summary: "Parsowanie HTML oznacza rozbieranie znacznik\xF3w strony internetowej 
   \ co\u015B, co program mo\u017Ce zrozumie\u0107 i manipulowa\u0107. Programi\u015B\
   ci parsuj\u0105 HTML w celu\u2026"
 title: "Analiza sk\u0142adniowa HTML"
+weight: 43
 ---
-
-{{< edit_this_page >}}
 
 ## Co i dlaczego?
 Parsowanie HTML oznacza rozbieranie znaczników strony internetowej na coś, co program może zrozumieć i manipulować. Programiści parsują HTML w celu ekstrakcji danych, automatyzacji interakcji webowych lub migracji treści między systemami.

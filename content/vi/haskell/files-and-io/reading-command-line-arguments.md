@@ -13,9 +13,8 @@ summary: "\u0110\u1ECDc c\xE1c \u0111\u1ED1i s\u1ED1 d\xF2ng l\u1EC7nh trong Has
   i d\xF9ng khi h\u1ECD ch\u1EA1y ch\u01B0\u01A1ng tr\xECnh c\u1EE7a b\u1EA1n. T\u1EA1\
   i sao? \u0110\u1EC3 t\xF9y ch\u1EC9nh h\xE0nh vi\u2026"
 title: "\u0110\u1ECDc c\xE1c \u0111\u1ED1i s\u1ED1 d\xF2ng l\u1EC7nh"
+weight: 23
 ---
-
-{{< edit_this_page >}}
 
 ## Cái gì và Tại sao?
 

@@ -8,9 +8,8 @@ model: gpt-4-1106-preview
 summary: "Extraire des sous-cha\xEEnes, c'est comme sculpter un petit bout de bois\
   \ d'un gros tronc; en PHP, cela signifie prendre une partie d'une cha\xEEne de\u2026"
 title: "Extraction de sous-cha\xEEnes"
+weight: 6
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 Extraire des sous-chaînes, c'est comme sculpter un petit bout de bois d'un gros tronc; en PHP, cela signifie prendre une partie d'une chaîne de caractères. Les développeurs font ça pour analyser des données, valider des entrées ou simplement afficher quelque chose de spécifique à un utilisateur.

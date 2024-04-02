@@ -7,9 +7,8 @@ model: gpt-4-1106-preview
 summary: "Pattern matching on poistaa hahmoja merkkijonosta, jotka vastaavat tietty\xE4\
   \ kaavaa. Ohjelmoijat tekev\xE4t sen, koska se auttaa puhdistamaan ja muokkaamaan\u2026"
 title: Merkkien poistaminen hakemalla osumia kaavaan
+weight: 5
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why? (Mitä & Miksi?)
 Pattern matching on poistaa hahmoja merkkijonosta, jotka vastaavat tiettyä kaavaa. Ohjelmoijat tekevät sen, koska se auttaa puhdistamaan ja muokkaamaan dataa - esimerkiksi käyttäjän syötteestä tai tiedostoista.

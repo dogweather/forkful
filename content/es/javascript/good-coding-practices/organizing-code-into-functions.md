@@ -7,9 +7,8 @@ model: gpt-4-1106-preview
 summary: "Organizar el c\xF3digo en funciones divide las tareas en piezas reutilizables,\
   \ lo que hace que el c\xF3digo sea m\xE1s limpio y mantenible. Hacemos esto para\u2026"
 title: "Organizando c\xF3digo en funciones"
+weight: 18
 ---
-
-{{< edit_this_page >}}
 
 ## ¿Qué y por qué?
 Organizar el código en funciones divide las tareas en piezas reutilizables, lo que hace que el código sea más limpio y mantenible. Hacemos esto para reducir la redundancia, facilitar las pruebas y mejorar la legibilidad.

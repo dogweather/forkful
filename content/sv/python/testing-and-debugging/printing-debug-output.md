@@ -9,9 +9,8 @@ summary: "Att skriva ut debuginformation inneb\xE4r att visa vad som h\xE4nder i
   \ kod under k\xF6rningen. Programmerare g\xF6r detta f\xF6r att f\xF6rst\xE5 fl\xF6\
   det, hitta buggar och\u2026"
 title: "Skriva ut fels\xF6kningsdata"
+weight: 33
 ---
-
-{{< edit_this_page >}}
 
 ## Vad & Varför?
 Att skriva ut debuginformation innebär att visa vad som händer i din kod under körningen. Programmerare gör detta för att förstå flödet, hitta buggar och optimera prestandan.

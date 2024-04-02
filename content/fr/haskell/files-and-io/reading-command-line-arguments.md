@@ -9,9 +9,8 @@ summary: "Lire les arguments de la ligne de commande, c'est r\xE9cup\xE9rer les 
   es que l'utilisateur passe \xE0 votre programme lors de son ex\xE9cution. On le\
   \ fait pour\u2026"
 title: Lecture des arguments de ligne de commande
+weight: 23
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 Lire les arguments de la ligne de commande, c'est récupérer les données que l'utilisateur passe à votre programme lors de son exécution. On le fait pour personnaliser le comportement du programme sans changer le code.

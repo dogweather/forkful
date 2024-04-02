@@ -13,9 +13,8 @@ summary: "Vi\u1EC7c vi\u1EBFt hoa m\u1ED9t chu\u1ED7i trong Visual Basic for App
   a m\u1ED7i t\u1EEB trong m\u1ED9t chu\u1ED7i sang ch\u1EEF hoa v\xE0 \u0111\u1EA3\
   m b\u1EA3o\u2026"
 title: "Vi\u1EBFt hoa m\u1ED9t chu\u1ED7i"
+weight: 2
 ---
-
-{{< edit_this_page >}}
 
 ## Cái Gì & Tại Sao?
 

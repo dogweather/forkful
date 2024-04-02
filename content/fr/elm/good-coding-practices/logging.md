@@ -9,9 +9,8 @@ summary: "Le logging est essentiellement le processus d'enregistrement des \xE9v
   nements et des sorties de donn\xE9es d'un logiciel lors de son ex\xE9cution, pensez-y\
   \ comme\u2026"
 title: Journalisation
+weight: 17
 ---
-
-{{< edit_this_page >}}
 
 ## Quoi et pourquoi ?
 Le logging est essentiellement le processus d'enregistrement des événements et des sorties de données d'un logiciel lors de son exécution, pensez-y comme au journal intime du logiciel. Les programmeurs utilisent les logs pour suivre ce qui se passe sous le capot - cela est inestimable pour le débogage des problèmes, le suivi du comportement du système en temps réel, et l'analyse de l'activité passée pour des optimisations de performance ou des audits.

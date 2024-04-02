@@ -9,9 +9,8 @@ summary: "Stringin pituuden l\xF6yt\xE4minen tarkoittaa merkkijonossa olevien me
   \ lukum\xE4\xE4r\xE4n selvitt\xE4mist\xE4. Ohjelmoijat k\xE4ytt\xE4v\xE4t t\xE4\
   t\xE4 esimerkiksi tietojen\u2026"
 title: "Merkkijonon pituuden selvitt\xE4minen"
+weight: 7
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why? - Mikä & Miksi?
 Stringin pituuden löytäminen tarkoittaa merkkijonossa olevien merkkien lukumäärän selvittämistä. Ohjelmoijat käyttävät tätä esimerkiksi tietojen validoimiseen ja tekstin prosessointiin.

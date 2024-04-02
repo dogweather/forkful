@@ -7,9 +7,8 @@ model: gpt-4-0125-preview
 summary: "Generare numeri casuali in PHP riguarda la produzione di valori imprevedibili\
   \ all'interno di un intervallo specificato, essenziale per compiti come la\u2026"
 title: Generazione di numeri casuali
+weight: 12
 ---
-
-{{< edit_this_page >}}
 
 ## Cosa e perché?
 

@@ -10,9 +10,8 @@ model: gpt-4-0125-preview
 summary: "Een datum ontleden betekent een tekenreeks vertalen naar iets wat de computer\
   \ begrijpt\u2014zoals een echt datumobject. Programmeurs doen dit omdat we vaak\u2026"
 title: Een datum uit een string parsen
+weight: 30
 ---
-
-{{< edit_this_page >}}
 
 ## Wat & Waarom?
 

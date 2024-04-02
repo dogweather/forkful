@@ -8,9 +8,8 @@ model: gpt-4-0125-preview
 summary: "\u2026"
 title: "\u30D1\u30BF\u30FC\u30F3\u306B\u4E00\u81F4\u3059\u308B\u6587\u5B57\u306E\u524A\
   \u9664"
+weight: 5
 ---
-
-{{< edit_this_page >}}
 
 ## 何となぜ?
 

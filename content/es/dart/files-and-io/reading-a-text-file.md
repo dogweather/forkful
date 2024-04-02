@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Leer un archivo de texto en Dart implica acceder y recuperar datos de archivos\
   \ almacenados en el sistema de archivos. Los programadores hacen esto para\u2026"
 title: Leyendo un archivo de texto
+weight: 22
 ---
-
-{{< edit_this_page >}}
 
 ## Qué y por qué?
 

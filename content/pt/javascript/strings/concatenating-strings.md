@@ -8,9 +8,8 @@ model: gpt-4-1106-preview
 summary: "Concatenar strings \xE9 simplesmente juntar dois ou mais peda\xE7os de texto\
   \ em um s\xF3. Programadores fazem isso para montar mensagens, combinar dados e\u2026"
 title: Concatenando strings
+weight: 3
 ---
-
-{{< edit_this_page >}}
 
 ## O Que & Por Quê?
 Concatenar strings é simplesmente juntar dois ou mais pedaços de texto em um só. Programadores fazem isso para montar mensagens, combinar dados e configurar valores dinâmicos de uma forma prática e eficiente.

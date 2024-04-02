@@ -16,9 +16,8 @@ summary: "\uC6F9 \uD398\uC774\uC9C0\uB97C \uB2E4\uC6B4\uB85C\uB4DC\uD558\uB294 \
   \uB9C1, \uC624\uD504\uB77C\uC778 \uC0AC\uC6A9 \uB4F1 \uC5EC\uB7EC \uBAA9\uC801\uC73C\
   \uB85C \uC815\uBCF4\uC5D0 \uC811\uADFC\uD560 \uC218 \uC788\uB2E4."
 title: "\uC6F9 \uD398\uC774\uC9C0 \uB2E4\uC6B4\uB85C\uB4DC\uD558\uAE30"
+weight: 42
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why? (무엇과 왜?)
 웹 페이지를 다운로드하는 것은 웹 콘텐츠를 로컬 컴퓨터로 가져오는 과정이다. 이를 통해 프로그래머들은 데이터 분석, 웹 크롤링, 오프라인 사용 등 여러 목적으로 정보에 접근할 수 있다.

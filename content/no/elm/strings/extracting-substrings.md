@@ -9,9 +9,8 @@ summary: "\xC5 trekke ut delstrenger betyr at vi henter spesifikke deler fra en 
   \ Det gj\xF8r vi for \xE5 bearbeide, analysere eller vise frem informasjon p\xE5\
   \ en\u2026"
 title: Uthenting av delstrenger
+weight: 6
 ---
-
-{{< edit_this_page >}}
 
 ## Hva & Hvorfor?
 Å trekke ut delstrenger betyr at vi henter spesifikke deler fra en tekststreng. Det gjør vi for å bearbeide, analysere eller vise frem informasjon på en mer målrettet måte.

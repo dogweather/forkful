@@ -2,15 +2,16 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 18:09:59.651462-07:00
-description: "Debuggery w j\u0119zyku C to specjalistyczne narz\u0119dzia, kt\xF3\
-  re pozwalaj\u0105 programistom krok po kroku przegl\u0105da\u0107 sw\xF3j kod, inspekcjonowa\u0107\
-  \ zmienne i monitorowa\u0107\u2026"
+description: "GDB (GNU Debugger) jest najcz\u0119\u015Bciej u\u017Cywanym debugerem\
+  \ dla programowania w j\u0119zyku C. Oto kr\xF3tki przewodnik, jak u\u017Cywa\u0107\
+  \ GDB do debugowania prostego\u2026"
 lastmod: '2024-03-13T22:44:35.891468-06:00'
 model: gpt-4-0125-preview
-summary: "Debuggery w j\u0119zyku C to specjalistyczne narz\u0119dzia, kt\xF3re pozwalaj\u0105\
-  \ programistom krok po kroku przegl\u0105da\u0107 sw\xF3j kod, inspekcjonowa\u0107\
-  \ zmienne i monitorowa\u0107\u2026"
+summary: "GDB (GNU Debugger) jest najcz\u0119\u015Bciej u\u017Cywanym debugerem dla\
+  \ programowania w j\u0119zyku C. Oto kr\xF3tki przewodnik, jak u\u017Cywa\u0107\
+  \ GDB do debugowania prostego\u2026"
 title: Korzystanie z debugera
+weight: 35
 ---
 
 ## Jak to zrobić:

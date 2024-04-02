@@ -11,9 +11,8 @@ summary: "Regul\xE4re Ausdr\xFCcke (regex) in PHP sind Muster, die verwendet wer
   \ um Zeichenkombinationen in Zeichenketten abzugleichen, wodurch komplexe Such-\
   \ und\u2026"
 title: "Regul\xE4re Ausdr\xFCcke verwenden"
+weight: 11
 ---
-
-{{< edit_this_page >}}
 
 ## Was & Warum?
 

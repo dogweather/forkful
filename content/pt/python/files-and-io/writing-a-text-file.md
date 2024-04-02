@@ -11,9 +11,8 @@ summary: "Escrever em um arquivo de texto em Python \xE9 uma tarefa fundamental 
   \ envolve criar ou abrir um arquivo e, em seguida, anexar ou sobrescrever texto.\
   \ Essa\u2026"
 title: Escrevendo um arquivo de texto
+weight: 24
 ---
-
-{{< edit_this_page >}}
 
 ## O Que & Porquê?
 Escrever em um arquivo de texto em Python é uma tarefa fundamental que envolve criar ou abrir um arquivo e, em seguida, anexar ou sobrescrever texto. Essa funcionalidade é crucial para o registro de dados, gerenciamento de configurações e armazenamento de saídas geradas por programas, tornando-a uma ferramenta básica, mas essencial, no arsenal de um programador.

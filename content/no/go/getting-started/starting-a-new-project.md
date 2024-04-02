@@ -11,9 +11,8 @@ summary: "\xC5 starte et nytt prosjekt i Go inneb\xE6rer \xE5 sette opp et arbei
   de og initialisere det med de n\xF8dvendige Go-modulene. Programmerere gj\xF8r dette\
   \ for \xE5\u2026"
 title: Starter et nytt prosjekt
+weight: 1
 ---
-
-{{< edit_this_page >}}
 
 ## Hva & Hvorfor?
 

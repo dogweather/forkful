@@ -11,9 +11,8 @@ summary: "Scrivere test in Dart implica la creazione di casi di test per verific
   \ automaticamente che diverse parti del tuo programma funzionino come previsto.\
   \ I\u2026"
 title: Scrivere i test
+weight: 36
 ---
-
-{{< edit_this_page >}}
 
 ## Cosa & Perché?
 

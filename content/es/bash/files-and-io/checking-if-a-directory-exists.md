@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "En la programaci\xF3n Bash, comprobar si un directorio existe es un mecanismo\
   \ de control esencial utilizado para verificar la presencia de un directorio\u2026"
 title: Comprobando si un directorio existe
+weight: 20
 ---
-
-{{< edit_this_page >}}
 
 ## Qué y Por Qué?
 

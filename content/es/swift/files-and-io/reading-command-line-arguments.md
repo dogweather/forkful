@@ -7,9 +7,8 @@ model: gpt-4-1106-preview
 summary: "Leer argumentos de la l\xEDnea de comandos permite que tus programas de\
   \ Swift acepten datos de entrada al ejecutarse, d\xE1ndoles flexibilidad y adaptabilidad.\u2026"
 title: "Lectura de argumentos de l\xEDnea de comandos"
+weight: 23
 ---
-
-{{< edit_this_page >}}
 
 ## ¿Qué y Por Qué?
 Leer argumentos de la línea de comandos permite que tus programas de Swift acepten datos de entrada al ejecutarse, dándoles flexibilidad y adaptabilidad. Los programadores utilizan esto para personalizar la ejecución del programa basándose en las necesidades de los usuarios o en diferentes entornos de ejecución.

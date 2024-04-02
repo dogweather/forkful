@@ -11,9 +11,8 @@ summary: "Ottenere la data corrente in Python \xE8 un'operazione fondamentale pe
   \ molte applicazioni, come la registrazione degli eventi (logging), l'analisi dei\
   \ dati\u2026"
 title: Ottenere la data corrente
+weight: 29
 ---
-
-{{< edit_this_page >}}
 
 ## Cosa & Perché?
 

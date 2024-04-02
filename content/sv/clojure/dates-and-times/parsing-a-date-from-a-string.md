@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Att tolka ett datum fr\xE5n en str\xE4ng i Clojure handlar om att konvertera\
   \ textuella representationer av datum och tider till en mer anv\xE4ndbar form (t.ex.\u2026"
 title: "Analysera ett datum fr\xE5n en str\xE4ng"
+weight: 30
 ---
-
-{{< edit_this_page >}}
 
 ## Vad & Varför?
 Att tolka ett datum från en sträng i Clojure handlar om att konvertera textuella representationer av datum och tider till en mer användbar form (t.ex. Clojures DateTime-objekt). Denna process är grundläggande för databehandling, loggning eller alla applikationer som manipulerar tidsdata, vilket möjliggör för programmerare att utföra operationer, jämförelser eller manipulationer med datum effektivt.

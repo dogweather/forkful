@@ -7,9 +7,8 @@ model: gpt-4-1106-preview
 summary: "Logging is basically leaving a breadcrumb trail through your code - it's\
   \ how you keep tabs on what's happening when your script's running in the wild.\u2026"
 title: Logging
+weight: 17
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 Logging is basically leaving a breadcrumb trail through your code - it's how you keep tabs on what's happening when your script's running in the wild. Programmers log to debug, to track app behavior, to monitor performance, and to keep an eye out for any mischief.

@@ -9,9 +9,8 @@ summary: "REPL to skr\xF3t od Read-Eval-Print Loop, prostego, interaktywnego \u0
   rodowiska programistycznego. Programi\u015Bci u\u017Cywaj\u0105 go do szybkiego\
   \ pisania i testowania\u2026"
 title: Korzystanie z interaktywnego shella (REPL)
+weight: 34
 ---
-
-{{< edit_this_page >}}
 
 ## Co i dlaczego?
 REPL to skrót od Read-Eval-Print Loop, prostego, interaktywnego środowiska programistycznego. Programiści używają go do szybkiego pisania i testowania kodu, eksperymentowania ze składnią oraz nauki koncepcji programowania bez konieczności tworzenia i uruchamiania całych aplikacji.

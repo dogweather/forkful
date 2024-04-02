@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Das Schreiben auf Standardfehler (stderr) in Dart geht darum, Fehlermeldungen\
   \ und Diagnostik in einen separaten Stream zu senden, der sich vom\u2026"
 title: Schreiben auf Standardfehler
+weight: 25
 ---
-
-{{< edit_this_page >}}
 
 ## Was & Warum?
 

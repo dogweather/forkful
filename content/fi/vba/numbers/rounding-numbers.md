@@ -11,9 +11,8 @@ summary: "Numeroiden py\xF6rist\xE4minen ohjelmoinnissa tarkoittaa numeron likim
   \xE4r\xE4ist\xE4 py\xF6rist\xE4mist\xE4 l\xE4himp\xE4\xE4n kokonaislukuun tai tiettyyn\
   \ desimaalipaikkojen m\xE4\xE4r\xE4\xE4n.\u2026"
 title: "Lukujen py\xF6rist\xE4minen"
+weight: 13
 ---
-
-{{< edit_this_page >}}
 
 ## Mikä & Miksi?
 

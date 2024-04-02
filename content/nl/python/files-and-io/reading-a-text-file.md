@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Een tekstbestand lezen in Python betekent het ophalen van gegevens uit een\
   \ bestand dat toegankelijk is op je schijf of over een netwerk. Programmeurs\u2026"
 title: Een tekstbestand lezen
+weight: 22
 ---
-
-{{< edit_this_page >}}
 
 ## Wat & Waarom?
 Een tekstbestand lezen in Python betekent het ophalen van gegevens uit een bestand dat toegankelijk is op je schijf of over een netwerk. Programmeurs lezen bestanden om de opgeslagen gegevens (zoals configuraties, gebruikersinvoer, logs, enz.) binnen hun applicaties te gebruiken.

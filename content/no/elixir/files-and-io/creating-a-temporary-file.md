@@ -9,9 +9,8 @@ summary: "Midlertidige filer brukes for \xE5 midlertidig lagre data som trengs u
   \ en prosess. Programmerere lager slike filer for \xE5 unng\xE5 \xE5 belaste hukommelsen\
   \ og\u2026"
 title: Opprette en midlertidig fil
+weight: 21
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 Midlertidige filer brukes for å midlertidig lagre data som trengs under en prosess. Programmerere lager slike filer for å unngå å belaste hukommelsen og for å ha en sikker lagring i tilfelle en oppgave feiler.

@@ -9,9 +9,8 @@ summary: "Att hantera fel i C# handlar om att hantera det ov\xE4ntade\u2014som a
   \ snubbla p\xE5 sina egna skosn\xF6ren. Program kan snubbla p\xE5 d\xE5liga data\
   \ eller ostadiga\u2026"
 title: Hantering av fel
+weight: 16
 ---
-
-{{< edit_this_page >}}
 
 ## Vad & Varför?
 

@@ -13,9 +13,8 @@ summary: "X\u1EED l\xFD l\u1ED7i l\xE0 vi\u1EC7c d\u1EF1 \u0111o\xE1n nh\u1EEFng
   \ khi c\xF3 \u0111i\u1EC1u g\xEC \u0111\xF3 kh\xF4ng \u0111\xFAng trong code c\u1EE7\
   a m\xECnh. Ch\xFAng ta l\xE0m v\u1EADy \u0111\u1EC3 tr\xE1nh\u2026"
 title: "X\u1EED l\xFD l\u1ED7i"
+weight: 16
 ---
-
-{{< edit_this_page >}}
 
 ## Cái gì & Tại sao?
 Xử lý lỗi là việc dự đoán những điều bất ngờ; đó là cách chúng ta quản lý khi có điều gì đó không đúng trong code của mình. Chúng ta làm vậy để tránh crash và để người dùng có trải nghiệm mượt mà, ngay cả khi điều bất ngờ xảy ra.

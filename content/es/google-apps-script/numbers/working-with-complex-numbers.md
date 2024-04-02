@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Los n\xFAmeros complejos, representados como una combinaci\xF3n de unidades\
   \ reales e imaginarias (por ejemplo, 3 + 4i), son fundamentales en varios problemas\u2026"
 title: "Trabajando con n\xFAmeros complejos"
+weight: 14
 ---
-
-{{< edit_this_page >}}
 
 ## Qué y Por Qué?
 Los números complejos, representados como una combinación de unidades reales e imaginarias (por ejemplo, 3 + 4i), son fundamentales en varios problemas computacionales, especialmente en ingeniería, física y matemáticas aplicadas. Aprender a manipular estos números en Google Apps Script permite a los programadores extender sus capacidades hacia la computación científica, el procesamiento de señales y más allá.

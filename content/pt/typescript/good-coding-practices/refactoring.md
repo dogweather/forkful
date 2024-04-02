@@ -9,9 +9,8 @@ summary: "Refatora\xE7\xE3o \xE9 o processo de reestruturar o c\xF3digo de compu
   \ existente sem alterar seu comportamento externo. Os programadores fazem isso para\
   \ tornar o\u2026"
 title: "Refatora\xE7\xE3o"
+weight: 19
 ---
-
-{{< edit_this_page >}}
 
 ## O Que e Por Que?
 Refatoração é o processo de reestruturar o código de computador existente sem alterar seu comportamento externo. Os programadores fazem isso para tornar o código mais limpo, mais fácil de manter e reduzir a complexidade, o que facilita a compreensão para alguém que mergulha de fresco.

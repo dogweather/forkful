@@ -21,9 +21,8 @@ summary: "PHP\uC5D0\uC11C \uD604\uC7AC \uB0A0\uC9DC\uB97C \uAC00\uC838\uC624\uB2
   \ \uBBFC\uAC10\uD55C \uC791\uC5C5\uC744 \uC218\uD589\uD558\uB294 \uAC83\uACFC \uAC19\
   \uC740 \uAE30\uB2A5\uC5D0 \uC788\uC5B4 \uC911\uC694\uD569\uB2C8\uB2E4."
 title: "\uD604\uC7AC \uB0A0\uC9DC \uAC00\uC838\uC624\uAE30"
+weight: 29
 ---
-
-{{< edit_this_page >}}
 
 ## 무엇 & 왜?
 PHP에서 현재 날짜를 가져오는 것은 시스템의 날짜와 시간을 검색하고 조작할 수 있게 해주는 기본적인 작업입니다. 이는 로깅, 타임스탬프 작성, 이벤트 스케줄링 또는 애플리케이션에서 시간에 민감한 작업을 수행하는 것과 같은 기능에 있어 중요합니다.

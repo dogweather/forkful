@@ -12,9 +12,8 @@ summary: "Parsowanie HTML oznacza ekstrakcj\u0119 danych z dokument\xF3w HTML. P
   ci robi\u0105 to, aby oddzia\u0142ywa\u0107 na zawarto\u015B\u0107 sieciow\u0105\
   \ lub j\u0105 modyfikowa\u0107, automatyzowa\u0107\u2026"
 title: "Analiza sk\u0142adniowa HTML"
+weight: 43
 ---
-
-{{< edit_this_page >}}
 
 ## Co i Dlaczego?
 Parsowanie HTML oznacza ekstrakcję danych z dokumentów HTML. Programiści robią to, aby oddziaływać na zawartość sieciową lub ją modyfikować, automatyzować wydobywanie danych lub w celu web scrapingu.

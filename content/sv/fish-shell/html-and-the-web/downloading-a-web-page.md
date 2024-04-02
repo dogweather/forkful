@@ -9,9 +9,8 @@ summary: "Att ladda ner en webbsida inneb\xE4r att h\xE4mta sidans inneh\xE5ll f
   n internet till din dator. Programmerare g\xF6r detta f\xF6r att analysera sidinneh\xE5\
   llet,\u2026"
 title: "H\xE4mta en webbsida"
+weight: 42
 ---
-
-{{< edit_this_page >}}
 
 ## Vad & Varför?
 Att ladda ner en webbsida innebär att hämta sidans innehåll från internet till din dator. Programmerare gör detta för att analysera sidinnehållet, automatisera datainsamling eller testa webbservrar.

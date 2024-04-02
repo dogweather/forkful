@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "\xC5 lese kommandolinjeargumenter i Go involverer \xE5 trekke ut argumentene\
   \ som er gitt til et program under dets kall fra terminalen eller kommandoprompten.\u2026"
 title: Lese kommandolinjeargumenter
+weight: 23
 ---
-
-{{< edit_this_page >}}
 
 ## Hva og hvorfor?
 

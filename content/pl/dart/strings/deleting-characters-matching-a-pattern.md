@@ -11,9 +11,8 @@ summary: "Usuwanie znak\xF3w pasuj\u0105cych do okre\u015Blonego wzorca w ci\u01
   gach znak\xF3w jest kluczowe dla walidacji danych, ich oczyszczania lub przygotowania\
   \ tekstu do\u2026"
 title: "Usuwanie znak\xF3w pasuj\u0105cych do wzorca"
+weight: 5
 ---
-
-{{< edit_this_page >}}
 
 ## Co i dlaczego?
 

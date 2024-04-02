@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Code in Funktionen in Dart zu organisieren bedeutet, wiederverwendbare Codebl\xF6\
   cke zu definieren, die spezifische Aufgaben ausf\xFChren, typischerweise\u2026"
 title: Organisation von Code in Funktionen
+weight: 18
 ---
-
-{{< edit_this_page >}}
 
 ## Was & Warum?
 Code in Funktionen in Dart zu organisieren bedeutet, wiederverwendbare Codeblöcke zu definieren, die spezifische Aufgaben ausführen, typischerweise Eingaben erhalten, Daten verarbeiten und möglicherweise Ausgaben zurückgeben. Programmierer tun dies, um die Lesbarkeit des Codes zu verbessern, Duplikation zu reduzieren und die Wartung zu erleichtern, was letztendlich zu modulareren und handhabbareren Codebasen führt.

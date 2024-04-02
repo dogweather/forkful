@@ -13,9 +13,8 @@ summary: "JSON (JavaScript Object Notation) l\xE0 m\u1ED9t \u0111\u1ECBnh d\u1EA
   t \u0111\u1ED1i v\u1EDBi con ng\u01B0\u1EDDi, d\u1EC5 ph\xE2n t\xEDch v\xE0 t\u1EA1\
   o ra b\u1EDFi m\xE1y. C\xE1c l\u1EADp tr\xECnh\u2026"
 title: "L\xE0m vi\u1EC7c v\u1EDBi JSON"
+weight: 38
 ---
-
-{{< edit_this_page >}}
 
 ## Cái gì & Tại sao?
 

@@ -11,9 +11,8 @@ summary: "Att skriva om en str\xE4ng med stora bokst\xE4ver i Visual Basic for A
   \ (VBA) inneb\xE4r att konvertera det f\xF6rsta tecknet i varje ord i en str\xE4\
   ng till\u2026"
 title: "G\xF6r om en str\xE4ng till versaler"
+weight: 2
 ---
-
-{{< edit_this_page >}}
 
 ## Vad & Varför?
 

@@ -10,9 +10,8 @@ model: gpt-4-0125-preview
 summary: "Generar n\xFAmeros aleatorios en programaci\xF3n se trata de crear una secuencia\
   \ de n\xFAmeros que no se pueden predecir razonablemente mejor que por casualidad.\u2026"
 title: "Generando n\xFAmeros aleatorios"
+weight: 12
 ---
-
-{{< edit_this_page >}}
 
 ## ¿Qué y por qué?
 

@@ -8,9 +8,8 @@ model: gpt-4-1106-preview
 summary: "Imprimer un d\xE9bogage, c'est afficher des infos dans la console pour suivre\
   \ ce que fait le code. Les d\xE9veloppeurs le font pour rep\xE9rer les bugs et\u2026"
 title: "Affichage des sorties de d\xE9bogage"
+weight: 33
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why? (Quoi et Pourquoi?)
 Imprimer un débogage, c'est afficher des infos dans la console pour suivre ce que fait le code. Les développeurs le font pour repérer les bugs et comprendre le flot du programme.

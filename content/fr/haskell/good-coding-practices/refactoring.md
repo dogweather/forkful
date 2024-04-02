@@ -7,9 +7,8 @@ model: gpt-4-0125-preview
 summary: "Le refactoring est le processus de peaufinement de votre code sans changer\
   \ son comportement externe. Il s'agit de nettoyer et d'organiser votre travail\u2026"
 title: Refactoring
+weight: 19
 ---
-
-{{< edit_this_page >}}
 
 ## Quoi & Pourquoi ?
 Le refactoring est le processus de peaufinement de votre code sans changer son comportement externe. Il s'agit de nettoyer et d'organiser votre travail pour rendre le code plus facile à lire, à maintenir et à étendre. Il peut également aider à éliminer les bugs et améliorer les performances.

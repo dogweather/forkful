@@ -10,9 +10,8 @@ model: gpt-4-0125-preview
 summary: "Ohjelmoinnissa testien kirjoittaminen tarkoittaa pienten, erillisten koodinp\xE4\
   tkien luomista automaattisesti varmistamaan, ett\xE4 sovelluksesi eri osat\u2026"
 title: Testien kirjoittaminen
+weight: 36
 ---
-
-{{< edit_this_page >}}
 
 ## Mikä & Miksi?
 

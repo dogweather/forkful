@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Complexe getallen breiden de re\xEBle getallenlijn uit door de toevoeging\
   \ van een imaginair eenheid, `i`, waarbij `i^2 = -1`. Ze zijn cruciaal in velden\u2026"
 title: Werken met complexe getallen
+weight: 14
 ---
-
-{{< edit_this_page >}}
 
 ## Wat & Waarom?
 

@@ -8,9 +8,8 @@ model: gpt-4-1106-preview
 summary: "L\xE4sa en textfil i Haskell \xE4r att inh\xE4mta data fr\xE5n en fil p\xE5\
   \ din enhet. Vi g\xF6r det f\xF6r att tillgodose program med information som konfigurationer,\u2026"
 title: "L\xE4sa en textfil"
+weight: 22
 ---
-
-{{< edit_this_page >}}
 
 ## Vad & Varför?
 Läsa en textfil i Haskell är att inhämta data från en fil på din enhet. Vi gör det för att tillgodose program med information som konfigurationer, användardata, eller helt enkelt för att hantera in- och utdata.

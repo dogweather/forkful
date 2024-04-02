@@ -11,9 +11,8 @@ summary: "Att skriva en textfil i Go inneb\xE4r att skapa och skriva str\xE4ngar
   \ data till en ny eller befintlig textfil. Programmerare g\xF6r detta f\xF6r att\
   \ bevara data,\u2026"
 title: Att skriva en textfil
+weight: 24
 ---
-
-{{< edit_this_page >}}
 
 ## Vad & Varför?
 

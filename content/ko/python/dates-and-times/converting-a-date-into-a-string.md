@@ -16,9 +16,8 @@ summary: "\uB0A0\uC9DC\uB97C \uBB38\uC790\uC5F4\uB85C \uBCC0\uD658\uD55C\uB2E4\u
   \uC5D0 \uC0AC\uC6A9\uD558\uAC70\uB098, \uC0AC\uC6A9\uC790\uC5D0\uAC8C \uBCF4\uAE30\
   \ \uC88B\uAC8C \uD45C\uD604\uD560 \uB54C \uD544\uC694\uD569\uB2C8\uB2E4."
 title: "\uB0A0\uC9DC\uB97C \uBB38\uC790\uC5F4\uB85C \uBCC0\uD658\uD558\uAE30"
+weight: 28
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why? (무엇과 왜?)
 날짜를 문자열로 변환한다는 것은, 파이썬에서 `datetime` 객체를 텍스트 포맷으로 바꾸는 것을 말합니다. 이 작업은 날짜를 파일 이름에 사용하거나, 사용자에게 보기 좋게 표현할 때 필요합니다.

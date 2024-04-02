@@ -7,9 +7,8 @@ model: gpt-4-1106-preview
 summary: "Das Einlesen einer Textdatei bedeutet, Daten vom Datentr\xE4ger in den Arbeitsspeicher\
   \ zu laden, um sie mit einem Programm zu verarbeiten. Programmierer\u2026"
 title: Textdatei einlesen
+weight: 22
 ---
-
-{{< edit_this_page >}}
 
 ## Was & Warum?
 Das Einlesen einer Textdatei bedeutet, Daten vom Datenträger in den Arbeitsspeicher zu laden, um sie mit einem Programm zu verarbeiten. Programmierer machen das, um Informationen zu nutzen, zu analysieren oder zu manipulieren, die nicht hart in den Quellcode kodiert sind.

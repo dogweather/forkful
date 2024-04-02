@@ -9,9 +9,8 @@ summary: "Redondear n\xFAmeros significa ajustarlos al entero m\xE1s cercano o a
   \ lugar decimal especificado. Los programadores redondean n\xFAmeros para controlar\
   \ la\u2026"
 title: "Redondeo de n\xFAmeros"
+weight: 13
 ---
-
-{{< edit_this_page >}}
 
 ## ¿Qué y por qué?
 

@@ -11,9 +11,8 @@ summary: "Tulevaisuuden tai menneisyyden p\xE4iv\xE4m\xE4\xE4r\xE4n laskeminen l
   \ p\xE4iv\xE4m\xE4\xE4r\xE4objektien manipulointiin l\xF6yt\xE4\xE4kseen tulevia\
   \ tai menneit\xE4 p\xE4iv\xE4m\xE4\xE4ri\xE4 nykyhetkeen\u2026"
 title: "Tulevaisuuden tai menneisyyden p\xE4iv\xE4m\xE4\xE4r\xE4n laskeminen"
+weight: 26
 ---
-
-{{< edit_this_page >}}
 
 ## Mikä & Miksi?
 

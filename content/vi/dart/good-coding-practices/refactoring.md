@@ -13,9 +13,8 @@ summary: "T\xE1i c\u1EA5u tr\xFAc trong Dart l\xE0 qu\xE1 tr\xECnh c\u01A1 c\u1E
   \ b\xEAn ngo\xE0i c\u1EE7a n\xF3, nh\u1EB1m m\u1EE5c \u0111\xEDch c\u1EA3i thi\u1EC7\
   n c\u1EA5u tr\xFAc n\u1ED9i b\u1ED9, kh\u1EA3\u2026"
 title: "T\xE1i c\u1EA5u tr\xFAc code"
+weight: 19
 ---
-
-{{< edit_this_page >}}
 
 ## Cái gì & Tại sao?
 

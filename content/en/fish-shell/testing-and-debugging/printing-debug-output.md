@@ -7,9 +7,8 @@ model: gpt-4-1106-preview
 summary: Printing debug output means spitting out extra info to help you understand
   what your code's doing. Programmers do it to detect and fix bugs more easily.
 title: Printing debug output
+weight: 33
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 Printing debug output means spitting out extra info to help you understand what your code's doing. Programmers do it to detect and fix bugs more easily.

@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Tekst zoeken en vervangen stelt je in staat om specifieke tekens of reeksen\
   \ te vinden in een tekst en deze te vervangen door iets anders. Programmeurs\u2026"
 title: Tekst zoeken en vervangen
+weight: 10
 ---
-
-{{< edit_this_page >}}
 
 ## Wat & Waarom?
 

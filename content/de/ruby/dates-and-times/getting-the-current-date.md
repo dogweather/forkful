@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Das Abrufen des aktuellen Datums ist eine grundlegende Aufgabe in nahezu\
   \ jedem Programmierprojekt - vom Protokollieren von Aktivit\xE4ten in einer Anwendung\u2026"
 title: Den aktuellen Datum abrufen
+weight: 29
 ---
-
-{{< edit_this_page >}}
 
 ## Was & Warum?
 Das Abrufen des aktuellen Datums ist eine grundlegende Aufgabe in nahezu jedem Programmierprojekt - vom Protokollieren von Aktivitäten in einer Anwendung bis hin zum Generieren von Berichten mit Datumsstempeln. In Ruby lässt sich dies leicht mit der Standardbibliothek bewerkstelligen, was Operationen, die Daten involvieren, vereinfacht.

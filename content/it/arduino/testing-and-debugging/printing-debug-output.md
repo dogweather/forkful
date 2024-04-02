@@ -7,9 +7,8 @@ model: gpt-4-1106-preview
 summary: "Stampare l'output di debug aiuta a seguire ci\xF2 che Arduino sta facendo\
   \ e a capire problemi nel codice. Lo facciamo per testare e correggere pi\xF9\u2026"
 title: Stampa dell'output di debug
+weight: 33
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why? (Cosa e Perché?)
 Stampare l'output di debug aiuta a seguire ciò che Arduino sta facendo e a capire problemi nel codice. Lo facciamo per testare e correggere più velocemente il nostro lavoro.

@@ -8,9 +8,8 @@ model: gpt-4-1106-preview
 summary: "Eliminar caracteres que correspondem a um padr\xE3o \xE9 o processo de remover\
   \ seletivamente certos caracteres de uma string com base em crit\xE9rios definidos.\u2026"
 title: "Excluindo caracteres que correspondem a um padr\xE3o"
+weight: 5
 ---
-
-{{< edit_this_page >}}
 
 ## O Que & Porquê?
 

@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "\xC5 jobbe med CSV-filer (Comma Separated Values) involverer lesing fra\
   \ eller skriving til rene tekstfiler der datafeltene er adskilt med kommaer.\u2026"
 title: Arbeide med CSV
+weight: 37
 ---
-
-{{< edit_this_page >}}
 
 ## Hva og hvorfor?
 

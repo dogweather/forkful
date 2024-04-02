@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Gestire gli errori in C comporta il rilevamento e la risposta a condizioni\
   \ anomale che si verificano durante l'esecuzione del programma. I programmatori\u2026"
 title: Gestione degli errori
+weight: 16
 ---
-
-{{< edit_this_page >}}
 
 ## Cosa & Perché?
 

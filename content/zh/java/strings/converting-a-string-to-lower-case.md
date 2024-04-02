@@ -14,9 +14,8 @@ summary: "\u5728Java\u4E2D\u5C06\u5B57\u7B26\u4E32\u8F6C\u6362\u4E3A\u5C0F\u5199
   \u5F0F\uFF0C\u6BD4\u5982\u5728\u6BD4\u8F83\u548C\u641C\u7D22\u65F6\u5FFD\u7565\u5927\
   \u5C0F\u5199\u5DEE\u5F02\u3002"
 title: "\u5C06\u5B57\u7B26\u4E32\u8F6C\u6362\u4E3A\u5C0F\u5199"
+weight: 4
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why? (是什么？为什么？)
 在Java中将字符串转换为小写意味着将其所有字符变为小写字母。程序员这么做为了统一数据格式，比如在比较和搜索时忽略大小写差异。

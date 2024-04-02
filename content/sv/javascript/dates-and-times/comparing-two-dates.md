@@ -9,9 +9,8 @@ summary: "Att j\xE4mf\xF6ra tv\xE5 datum i JavaScript handlar om att se vilket s
   \ \xE4r tidigast eller senast, eller om de \xE4r samma. Det \xE4r anv\xE4ndbart\
   \ f\xF6r att hantera\u2026"
 title: "J\xE4mf\xF6ra tv\xE5 datum"
+weight: 27
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why? (Vad & Varför?)
 Att jämföra två datum i JavaScript handlar om att se vilket som är tidigast eller senast, eller om de är samma. Det är användbart för att hantera deadlines, bokningar och tidslinjer.

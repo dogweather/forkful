@@ -11,9 +11,8 @@ summary: "Escrever em um arquivo de texto em Elixir \xE9 uma habilidade essencia
   \ para desenvolvedores, permitindo a persist\xEAncia de dados, registro (logging)\
   \ ou\u2026"
 title: Escrevendo um arquivo de texto
+weight: 24
 ---
-
-{{< edit_this_page >}}
 
 ## O Que & Por Que?
 

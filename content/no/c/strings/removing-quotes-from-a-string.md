@@ -11,9 +11,8 @@ summary: "\xC5 fjerne anf\xF8rselstegn fra en streng i C inneb\xE6rer \xE5 trekk
   \ ut tekstinnholdet uten de innkapslende enkle (' ') eller doble (\" \") anf\xF8\
   rselstegnene. Denne\u2026"
 title: "Fjerne anf\xF8rselstegn fra en streng"
+weight: 9
 ---
-
-{{< edit_this_page >}}
 
 ## Hva og hvorfor?
 

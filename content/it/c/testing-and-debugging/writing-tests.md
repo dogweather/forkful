@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Scrivere test in C comporta la creazione di programmi o funzioni ausiliari\
   \ pi\xF9 piccoli che verificano automaticamente la funzionalit\xE0 del codice. I\u2026"
 title: Scrivere test
+weight: 36
 ---
-
-{{< edit_this_page >}}
 
 ## Cos'è e Perché?
 Scrivere test in C comporta la creazione di programmi o funzioni ausiliari più piccoli che verificano automaticamente la funzionalità del codice. I programmatori lo fanno per assicurarsi che il loro software funzioni come previsto, per individuare precocemente i bug e per facilitare le future modifiche del codice senza effetti collaterali indesiderati.

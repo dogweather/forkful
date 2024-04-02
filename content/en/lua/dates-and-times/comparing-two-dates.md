@@ -7,9 +7,8 @@ model: gpt-4-1106-preview
 summary: "Comparing two dates means figuring out if one date is earlier, later, or\
   \ the same as another. Programmers do it to track events, schedule tasks, sort\u2026"
 title: Comparing two dates
+weight: 27
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 

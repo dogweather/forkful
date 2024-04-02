@@ -7,9 +7,8 @@ model: gpt-4-0125-preview
 summary: "Regular expressions (regex) in Java allow you to define specific patterns\
   \ to search, manipulate, or validate strings in your code. Programmers use them\u2026"
 title: Using regular expressions
+weight: 11
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 

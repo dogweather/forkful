@@ -13,9 +13,8 @@ summary: "Ghi log c\u01A1 b\u1EA3n l\xE0 ghi l\u1EA1i nh\u1EEFng g\xEC \u1EE9ng 
   \ nh\u1EADt k\xFD, nh\u01B0ng d\xE0nh cho m\xE3. L\u1EADp tr\xECnh vi\xEAn l\xE0\
   m \u0111i\u1EC1u n\xE0y \u0111\u1EC3 theo d\xF5i nh\u1EEFng\u2026"
 title: Ghi log
+weight: 17
 ---
-
-{{< edit_this_page >}}
 
 ## Cái gì và Tại sao?
 Ghi log cơ bản là ghi lại những gì ứng dụng của bạn đang làm – có thể coi đó như nhật ký, nhưng dành cho mã. Lập trình viên làm điều này để theo dõi những chi tiết nhỏ nhặt, như thay đổi trạng thái, sự kiện hệ thống và lỗi khó chịu, đảm bảo không có sự cố nào lọt qua một cách không được chú ý.

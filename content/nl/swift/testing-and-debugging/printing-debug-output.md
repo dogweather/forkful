@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "In Swift betekent het printen van debug-output het weergeven van gegevens\
   \ in een debuggebied, meestal binnen een IDE of een console, om te monitoren wat\u2026"
 title: Debug-output afdrukken
+weight: 33
 ---
-
-{{< edit_this_page >}}
 
 ## Wat & Waarom?
 

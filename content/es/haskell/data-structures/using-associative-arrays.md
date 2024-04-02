@@ -11,9 +11,8 @@ model: gpt-4-0125-preview
 summary: "Los arrays asociativos, o diccionarios, en Haskell tratan sobre mapear claves\
   \ a valores para una b\xFAsqueda r\xE1pida y un manejo eficiente de datos. Los\u2026"
 title: Uso de matrices asociativas
+weight: 15
 ---
-
-{{< edit_this_page >}}
 
 ## ¿Qué y por qué?
 

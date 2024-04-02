@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Kompleksiluvut koostuvat reaaliosasta ja imagin\xE4\xE4riosasta, jotka esitet\xE4\
   \xE4n muodossa `a + bi`, miss\xE4 `i` on luvun `-1` neli\xF6juuri. Ohjelmoijat\u2026"
 title: "Ty\xF6skenteleminen kompleksilukujen kanssa"
+weight: 14
 ---
-
-{{< edit_this_page >}}
 
 ## Mikä ja Miksi?
 

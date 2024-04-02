@@ -9,9 +9,8 @@ summary: "Skapa en tempor\xE4r fil \xE4r som att l\xE4gga upp en tempor\xE4r hyl
   \ f\xF6r data. Vi g\xF6r det f\xF6r att hantera information som beh\xF6ver existera\
   \ under en kort period,\u2026"
 title: "Skapa en tempor\xE4r fil"
+weight: 21
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 Skapa en temporär fil är som att lägga upp en temporär hylla för data. Vi gör det för att hantera information som behöver existera under en kort period, utan att kladda ner vår permanenta lagring.

@@ -11,9 +11,8 @@ summary: "Arrays associativos, conhecidos em outras linguagens como mapas ou dic
   rios, s\xE3o pares de chave-valor usados para a busca e manipula\xE7\xE3o eficiente\
   \ de\u2026"
 title: Utilizando arrays associativos
+weight: 15
 ---
-
-{{< edit_this_page >}}
 
 ## O Que & Por Que?
 

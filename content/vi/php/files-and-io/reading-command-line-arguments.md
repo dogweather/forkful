@@ -13,9 +13,8 @@ summary: "\u0110\u1ECDc c\xE1c \u0111\u1ED1i s\u1ED1 d\xF2ng l\u1EC7nh trong PHP
   n v\xE0o script c\u1EE7a b\u1EA1n khi n\xF3 \u0111\u01B0\u1EE3c ch\u1EA1y trong\
   \ console. L\u1EADp tr\xECnh vi\xEAn l\xE0m \u0111i\u1EC1u n\xE0y\u2026"
 title: "\u0110\u1ECDc c\xE1c \u0111\u1ED1i s\u1ED1 d\xF2ng l\u1EC7nh"
+weight: 23
 ---
-
-{{< edit_this_page >}}
 
 ## Cái gì & Tại sao?
 Đọc các đối số dòng lệnh trong PHP có nghĩa là lấy các đầu vào được truyền vào script của bạn khi nó được chạy trong console. Lập trình viên làm điều này để làm cho các script của họ có tính tương tác và có thể cấu hình mà không cần phải mã hóa cứng các giá trị.

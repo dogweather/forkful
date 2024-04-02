@@ -11,9 +11,8 @@ summary: "Ty\xF6skentely JSONin (JavaScript Object Notation) kanssa Kotlinitssa 
   \ JSON-datamuodon j\xE4sennys- ja luontitoimiin. Ohjelmoijat tekev\xE4t t\xE4m\xE4\
   n\u2026"
 title: "Ty\xF6skentely JSON:n kanssa"
+weight: 38
 ---
-
-{{< edit_this_page >}}
 
 ## Mikä ja miksi?
 Työskentely JSONin (JavaScript Object Notation) kanssa Kotlinitssa liittyy JSON-datamuodon jäsennys- ja luontitoimiin. Ohjelmoijat tekevät tämän helpottaakseen tietojen vaihtoa sovelluksen eri kerrosten välillä tai kommunikoidakseen web-palveluiden kanssa, JSONin kevyen ja ihmisen luettavan muodon ansiosta.

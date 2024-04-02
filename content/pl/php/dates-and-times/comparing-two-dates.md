@@ -9,9 +9,8 @@ summary: "Por\xF3wnywanie dw\xF3ch dat to sprawdzanie, kt\xF3ra z nich jest wcze
   niejsza, p\xF3\u017Aniejsza czy mo\u017Ce identyczna. Programi\u015Bci robi\u0105\
   \ to, by obs\u0142ugiwa\u0107 logik\u0119 zwi\u0105zan\u0105\u2026"
 title: "Por\xF3wnywanie dw\xF3ch dat"
+weight: 27
 ---
-
-{{< edit_this_page >}}
 
 ## Co i Dlaczego?
 

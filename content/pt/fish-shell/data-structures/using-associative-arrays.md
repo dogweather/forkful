@@ -11,9 +11,8 @@ summary: "Arrays associativos, ou tabelas hash, permitem armazenar dados como pa
   \ de chave-valor, facilitando a organiza\xE7\xE3o e recupera\xE7\xE3o de informa\xE7\
   \xF5es por\u2026"
 title: Usando arrays associativos
+weight: 15
 ---
-
-{{< edit_this_page >}}
 
 ## O quê & Por quê?
 

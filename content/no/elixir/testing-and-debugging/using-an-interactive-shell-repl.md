@@ -7,9 +7,8 @@ model: gpt-4-0125-preview
 summary: "En interaktiv skall, eller REPL (Read-Eval-Print Loop), lar deg pr\xF8ve\
   \ ut kodebiter i sanntid. Elixir-programmerere bruker REPL, kalt IEx (Interaktiv\u2026"
 title: Bruke et interaktivt skall (REPL)
+weight: 34
 ---
-
-{{< edit_this_page >}}
 
 ## Hva & Hvorfor?
 En interaktiv skall, eller REPL (Read-Eval-Print Loop), lar deg prøve ut kodebiter i sanntid. Elixir-programmerere bruker REPL, kalt IEx (Interaktiv Elixir), for eksperimentering, feilsøking og læring av språket.

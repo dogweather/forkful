@@ -11,9 +11,8 @@ summary: "\u5728 Elixir \u4E2D\u5904\u7406 XML \u610F\u5473\u7740\u89E3\u6790\u3
   \ XML \u662F\u56E0\u4E3A\u5B83\u5728\u7F51\u7EDC\u670D\u52A1\u3001\u914D\u7F6E\u6587\
   \u4EF6\u548C\u9057\u7559\u7CFB\u7EDF\u4E2D\u5E7F\u6CDB\u5B58\u5728\u3002"
 title: "\u5904\u7406XML"
+weight: 40
 ---
-
-{{< edit_this_page >}}
 
 ## 什么 & 为什么?
 在 Elixir 中处理 XML 意味着解析、创建和操作 XML 数据。程序员处理 XML 是因为它在网络服务、配置文件和遗留系统中广泛存在。

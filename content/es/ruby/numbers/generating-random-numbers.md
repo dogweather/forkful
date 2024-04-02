@@ -9,9 +9,8 @@ summary: "Generar n\xFAmeros aleatorios en Ruby implica crear n\xFAmeros que no 
   \ ser predichos l\xF3gicamente, esencial para escenarios como simulaciones, criptograf\xED\
   a\u2026"
 title: "Generaci\xF3n de n\xFAmeros aleatorios"
+weight: 12
 ---
-
-{{< edit_this_page >}}
 
 ## ¿Qué y Por Qué?
 

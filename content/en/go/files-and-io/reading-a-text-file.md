@@ -8,9 +8,8 @@ model: gpt-4-0125-preview
 summary: "Reading a text file in Go involves accessing and retrieving content from\
   \ a file stored on disk for processing or analysis. Programmers frequently perform\u2026"
 title: Reading a text file
+weight: 22
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 

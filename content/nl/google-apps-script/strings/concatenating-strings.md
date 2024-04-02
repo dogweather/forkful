@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Het aaneenschakelen van strings houdt in dat twee of meer strings worden\
   \ gecombineerd tot \xE9\xE9n enkele string. Programmeurs doen dit om dynamisch berichten,\u2026"
 title: Strings samenvoegen
+weight: 3
 ---
-
-{{< edit_this_page >}}
 
 ## Wat & Waarom?
 

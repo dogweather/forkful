@@ -11,9 +11,8 @@ summary: "Interpola\xE7\xE3o de string em Visual Basic for Applications (VBA) re
   \ ao processo de embutir vari\xE1veis ou express\xF5es dentro de uma literal de\
   \ string,\u2026"
 title: Interpolando uma string
+weight: 8
 ---
-
-{{< edit_this_page >}}
 
 ## O quê & Por quê?
 

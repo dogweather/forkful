@@ -12,9 +12,8 @@ summary: "\u8BFB\u53D6\u547D\u4EE4\u884C\u53C2\u6570\u5141\u8BB8\u7A0B\u5E8F\u68
   \u4E48\u505A\u662F\u4E3A\u4E86\u63D0\u4F9B\u7075\u6D3B\u6027\u548C\u53C2\u6570\u5316\
   \u8FD0\u884C\u9009\u9879\u3002"
 title: "\u8BFB\u53D6\u547D\u4EE4\u884C\u53C2\u6570"
+weight: 23
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why? (是什么？为什么？)
 读取命令行参数允许程序根据用户输入进行操作。程序员这么做是为了提供灵活性和参数化运行选项。

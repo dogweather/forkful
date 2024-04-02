@@ -13,9 +13,8 @@ summary: "N\u1ED9i suy chu\u1ED7i trong C# cho ph\xE9p b\u1EA1n t\u1EA1o m\u1ED9
   \ b\xEAn trong m\u1ED9t chu\u1ED7i k\xFD t\u1EF1, l\xE0m cho vi\u1EC7c \u0111\u1ECB\
   nh d\u1EA1ng v\xE0 n\u1ED1i chu\u1ED7i tr\u1EDF\u2026"
 title: "N\u1ED9i suy chu\u1ED7i k\xFD t\u1EF1"
+weight: 8
 ---
-
-{{< edit_this_page >}}
 
 ## Cái gì và Tại sao?
 Nội suy chuỗi trong C# cho phép bạn tạo một chuỗi mới bằng cách bao gồm các biểu thức bên trong một chuỗi ký tự, làm cho việc định dạng và nối chuỗi trở nên dễ dàng hơn. Các lập trình viên sử dụng tính năng này để cải thiện tính đọc và bảo trì của mã, đặc biệt là khi xử lý nội dung chuỗi động.

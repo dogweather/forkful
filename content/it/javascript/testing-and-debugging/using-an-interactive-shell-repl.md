@@ -7,9 +7,8 @@ model: gpt-4-0125-preview
 summary: "Le shell interattive, o REPL (Read-Eval-Print Loops, Cicli di Lettura-Valutazione-Stampa),\
   \ ti permettono di eseguire codice al volo, testare funzioni,\u2026"
 title: Utilizzo di un interprete interattivo (REPL)
+weight: 34
 ---
-
-{{< edit_this_page >}}
 
 ## Cos'è e Perché?
 Le shell interattive, o REPL (Read-Eval-Print Loops, Cicli di Lettura-Valutazione-Stampa), ti permettono di eseguire codice al volo, testare funzioni, algoritmi o sperimentare con idee. Sono gli appunti veloci della programmazione, rapidi e senza fronzoli, senza dover configurare un intero ambiente di sviluppo.

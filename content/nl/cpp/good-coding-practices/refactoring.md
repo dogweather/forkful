@@ -10,9 +10,8 @@ model: gpt-4-0125-preview
 summary: "Refactoring is het proces van het wijzigen van de interne structuur van\
   \ een computerprogramma zonder het externe gedrag aan te passen. Programmeurs doen\u2026"
 title: Refactoring
+weight: 19
 ---
-
-{{< edit_this_page >}}
 
 ## Wat & Waarom?
 

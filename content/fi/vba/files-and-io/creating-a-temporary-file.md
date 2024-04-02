@@ -11,9 +11,8 @@ summary: "V\xE4liaikaistiedoston luominen Visual Basic for Applicationsissa (VBA
   \ tarkoittaa ohjelmallisesti lyhytaikaiseen k\xE4ytt\xF6\xF6n tarkoitetun tiedoston\
   \ tuottamista,\u2026"
 title: "Tilap\xE4isen tiedoston luominen"
+weight: 21
 ---
-
-{{< edit_this_page >}}
 
 ## Mikä & Miksi?
 

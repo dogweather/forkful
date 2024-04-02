@@ -9,9 +9,8 @@ summary: "Kompleksiluvut koostuvat reaalisesta osasta ja imaginaarisesta osasta.
   \ k\xE4ytt\xE4v\xE4t niit\xE4 aloilla kuten signaalink\xE4sittely, kvanttimekaniikka\
   \ ja\u2026"
 title: "Kompleksilukujen k\xE4sittely"
+weight: 14
 ---
-
-{{< edit_this_page >}}
 
 ## Mitä ja miksi?
 Kompleksiluvut koostuvat reaalisesta osasta ja imaginaarisesta osasta. Ohjelmoijat käyttävät niitä aloilla kuten signaalinkäsittely, kvanttimekaniikka ja aina kun laskelmat vaativat, koska tavalliset reaaliluvut eivät yksinkertaisesti riitä.

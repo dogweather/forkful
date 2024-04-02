@@ -11,9 +11,8 @@ summary: "Capitaliser une cha\xEEne dans Bash consiste \xE0 transformer le premi
   \ caract\xE8re de la cha\xEEne en majuscule tout en laissant le reste de la cha\xEE\
   ne inchang\xE9.\u2026"
 title: "Mettre en majuscule une cha\xEEne"
+weight: 2
 ---
-
-{{< edit_this_page >}}
 
 ## Quoi et pourquoi ?
 Capitaliser une chaîne dans Bash consiste à transformer le premier caractère de la chaîne en majuscule tout en laissant le reste de la chaîne inchangé. Cette technique est couramment utilisée pour formater la sortie ou se conformer aux conventions de codage qui exigent que certaines chaînes commencent par une lettre capitale pour une meilleure lisibilité ou des préférences stylistiques.

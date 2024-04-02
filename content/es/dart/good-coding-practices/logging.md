@@ -11,9 +11,8 @@ summary: "El registro en Dart se refiere al proceso de grabaci\xF3n de varios ni
   \ de informaci\xF3n durante la ejecuci\xF3n de un programa. Los programadores lo\
   \ hacen\u2026"
 title: Registro de Actividades
+weight: 17
 ---
-
-{{< edit_this_page >}}
 
 ## ¿Qué y por qué?
 

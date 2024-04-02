@@ -13,9 +13,8 @@ summary: "Vi\u1EC7c t\u1EA1o ra c\xE1c s\u1ED1 ng\u1EABu nhi\xEAn trong Rust li\
   \u1EC3 t\u1EA1o ra c\xE1c gi\xE1 tr\u1ECB s\u1ED1 kh\xF4ng d\u1EF1 \u0111o\xE1n\
   \ tr\u01B0\u1EDBc, \u0111i\u1EC1u n\xE0y l\xE0 kh\xF4ng th\u1EC3 thi\u1EBFu\u2026"
 title: "Sinh s\u1ED1 ng\u1EABu nhi\xEAn"
+weight: 12
 ---
-
-{{< edit_this_page >}}
 
 ## Là gì và Tại sao?
 

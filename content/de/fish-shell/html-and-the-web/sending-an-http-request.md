@@ -9,9 +9,8 @@ summary: "HTTP-Anfragen sind das Herzst\xFCck des Webs \u2013 sie erm\xF6glichen
   \ Kommunikation zwischen dem Client (dein Rechner) und dem Server. Programmierer\
   \ nutzen sie,\u2026"
 title: Einen HTTP-Request senden
+weight: 44
 ---
-
-{{< edit_this_page >}}
 
 ## Was & Warum?
 HTTP-Anfragen sind das Herzstück des Webs – sie ermöglichen die Kommunikation zwischen dem Client (dein Rechner) und dem Server. Programmierer nutzen sie, um Daten zu holen, zu senden, und Webdienste zu nutzen.

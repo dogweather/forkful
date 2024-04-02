@@ -1,14 +1,15 @@
 ---
 date: 2024-01-26 04:09:50.159908-07:00
-description: "Rubyssa debuggerin k\xE4ytt\xF6 antaa ohjelmoijille supervoiman pys\xE4\
-  ytt\xE4\xE4 koodinsa, tarkastella muuttujia ja k\xE4yd\xE4 l\xE4pi koodiaan rivi\
-  \ rivilt\xE4. Ihmiset tekev\xE4t\u2026"
+description: "Ruby sis\xE4lt\xE4\xE4 sis\xE4\xE4nrakennetun debuggerin nimelt\xE4\
+  \ `byebug`. Lis\xE4\xE4 ensin `byebug` Gemfile-tiedostoosi ja suorita `bundle install`.\
+  \ Sitten, pudota `byebug`\u2026"
 lastmod: '2024-03-13T22:44:57.091293-06:00'
 model: gpt-4-0125-preview
-summary: "Rubyssa debuggerin k\xE4ytt\xF6 antaa ohjelmoijille supervoiman pys\xE4\
-  ytt\xE4\xE4 koodinsa, tarkastella muuttujia ja k\xE4yd\xE4 l\xE4pi koodiaan rivi\
-  \ rivilt\xE4. Ihmiset tekev\xE4t\u2026"
+summary: "Ruby sis\xE4lt\xE4\xE4 sis\xE4\xE4nrakennetun debuggerin nimelt\xE4 `byebug`.\
+  \ Lis\xE4\xE4 ensin `byebug` Gemfile-tiedostoosi ja suorita `bundle install`. Sitten,\
+  \ pudota `byebug`\u2026"
 title: "Debuggerin k\xE4ytt\xF6"
+weight: 35
 ---
 
 ## Kuinka:

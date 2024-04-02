@@ -11,9 +11,8 @@ summary: "Organizzare il codice in funzioni in Visual Basic for Applications (VB
   \ comporta la suddivisione di un programma in pezzi pi\xF9 piccoli e gestibili,\
   \ noti\u2026"
 title: Organizzare il codice in funzioni
+weight: 18
 ---
-
-{{< edit_this_page >}}
 
 ## Cosa & Perché?
 

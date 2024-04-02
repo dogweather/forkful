@@ -11,9 +11,8 @@ summary: "Komplexa tal, representerade som en kombination av reella och imagin\x
   ra enheter (t.ex. 3 + 4i), \xE4r grundl\xE4ggande i olika ber\xE4kningsproblem,\
   \ s\xE4rskilt inom\u2026"
 title: Att arbeta med komplexa tal
+weight: 14
 ---
-
-{{< edit_this_page >}}
 
 ## Vad & Varför?
 Komplexa tal, representerade som en kombination av reella och imaginära enheter (t.ex. 3 + 4i), är grundläggande i olika beräkningsproblem, särskilt inom ingenjörsvetenskap, fysik och tillämpad matematik. Att lära sig hantera dessa tal i Google Apps Script tillåter programmerare att utöka sina förmågor inom vetenskaplig beräkning, signalbehandling och mer.

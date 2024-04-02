@@ -13,9 +13,8 @@ summary: "YAML l\xE0 m\u1ED9t \u0111\u1ECBnh d\u1EA1ng serialization d\u1EEF li\
   n s\u1EED d\u1EE5ng n\xF3 cho c\xE1c t\u1EC7p c\u1EA5u h\xECnh, trao \u0111\u1ED5\
   i d\u1EEF li\u1EC7u gi\u1EEFa c\xE1c ng\xF4n\u2026"
 title: "L\xE0m vi\u1EC7c v\u1EDBi YAML"
+weight: 41
 ---
-
-{{< edit_this_page >}}
 
 ## Cái gì & Tại sao?
 YAML là một định dạng serialization dữ liệu thân thiện với con người. Các lập trình viên sử dụng nó cho các tệp cấu hình, trao đổi dữ liệu giữa các ngôn ngữ, và bởi vì nó dễ đọc và viết so với XML hoặc JSON.

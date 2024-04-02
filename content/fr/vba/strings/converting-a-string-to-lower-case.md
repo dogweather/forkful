@@ -11,9 +11,8 @@ summary: "Convertir une cha\xEEne en minuscules implique de transformer tous les
   res majuscules d'une cha\xEEne en leurs \xE9quivalents minuscules. Ce processus\
   \ est\u2026"
 title: "Convertir une cha\xEEne en minuscules"
+weight: 4
 ---
-
-{{< edit_this_page >}}
 
 ## Quoi & Pourquoi ?
 

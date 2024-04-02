@@ -7,9 +7,8 @@ model: gpt-4-0125-preview
 summary: "Dateien direkt \xFCber die Kommandozeile mit CLI-Einzeilern zu bearbeiten,\
   \ bedeutet, direkt \xC4nderungen an Dateien vorzunehmen, ohne sie in einem Texteditor\u2026"
 title: Bearbeiten von Dateien im Place mit CLI-Einzeilern
+weight: 32
 ---
-
-{{< edit_this_page >}}
 
 ## Was & Warum?
 

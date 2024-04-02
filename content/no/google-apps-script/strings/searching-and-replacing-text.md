@@ -11,9 +11,8 @@ summary: "S\xF8king og erstatning av tekst i Google Apps Script inneb\xE6rer \xE
   \ programmert identifisere spesifikke strenger i et dokument, regneark eller annen\
   \ type\u2026"
 title: "S\xF8ke og erstatte tekst"
+weight: 10
 ---
-
-{{< edit_this_page >}}
 
 ## Hva & Hvorfor?
 

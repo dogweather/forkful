@@ -9,9 +9,8 @@ summary: "Satunnaislukujen tuottaminen Rustissa vaatii kirjastojen k\xE4ytt\xF6\
   \ ennakoimattomien numeeristen arvojen tuottamiseen, mik\xE4 on v\xE4ltt\xE4m\xE4\
   t\xF6nt\xE4 teht\xE4viss\xE4,\u2026"
 title: Satunnaislukujen generointi
+weight: 12
 ---
-
-{{< edit_this_page >}}
 
 ## Mikä ja miksi?
 

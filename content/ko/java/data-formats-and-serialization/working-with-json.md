@@ -21,9 +21,8 @@ summary: "JSON(JavaScript Object Notation)\uC744 \uB2E4\uB8EC\uB2E4\uB294 \uAC83
   , \uB370\uC774\uD130\uB97C \uC27D\uAC8C \uAD6C\uC131\uD558\uACE0 \uC800\uC7A5\uD560\
   \ \uC218 \uC788\uB3C4\uB85D \uC778\uAC04\uC774\u2026"
 title: "JSON\uACFC \uD568\uAED8 \uC77C\uD558\uAE30"
+weight: 38
 ---
-
-{{< edit_this_page >}}
 
 ## 무엇 & 왜?
 JSON(JavaScript Object Notation)을 다룬다는 것은 자바 애플리케이션 내에서 이 경량 데이터 교환 포맷을 처리한다는 것을 의미합니다. 프로그래머들은 구조화된 데이터를 네트워크를 통해 직렬화하고 전송하며, 데이터를 쉽게 구성하고 저장할 수 있도록 인간이 읽을 수 있고 언어에 독립적인 JSON을 선택합니다.

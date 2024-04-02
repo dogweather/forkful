@@ -9,9 +9,8 @@ summary: "La recherche et le remplacement de texte, c'est changer une cha\xEEne 
   \ caract\xE8res par une autre dans une donn\xE9e. Les programmeurs font \xE7a pour\
   \ corriger des\u2026"
 title: Recherche et remplacement de texte
+weight: 10
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 La recherche et le remplacement de texte, c'est changer une chaîne de caractères par une autre dans une donnée. Les programmeurs font ça pour corriger des erreurs, mettre à jour des informations ou manipuler des données.

@@ -7,9 +7,8 @@ model: gpt-4-0125-preview
 summary: "Komplexe Zahlen erweitern unser Zahlensystem um die Quadratwurzeln negativer\
   \ Zahlen, wobei die 'imagin\xE4re' Einheit i gleich der Quadratwurzel von -1 ist.\u2026"
 title: Umgang mit komplexen Zahlen
+weight: 14
 ---
-
-{{< edit_this_page >}}
 
 ## Was & Warum?
 Komplexe Zahlen erweitern unser Zahlensystem um die Quadratwurzeln negativer Zahlen, wobei die 'imaginäre' Einheit i gleich der Quadratwurzel von -1 ist. Programmierer nutzen sie in Bereichen wie Ingenieurwissenschaften, Physik und Signalverarbeitung, da sie hervorragend sind, um Wellen, Schwingungen und alles, was sich dreht, zu modellieren.

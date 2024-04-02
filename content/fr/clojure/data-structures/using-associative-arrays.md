@@ -11,9 +11,8 @@ summary: "Les tableaux associatifs, ou hash maps, dans Clojure vous permettent d
   \ stocker et de r\xE9cup\xE9rer des donn\xE9es avec des paires cl\xE9-valeur. Ils\
   \ sont un choix\u2026"
 title: Utilisation des tableaux associatifs
+weight: 15
 ---
-
-{{< edit_this_page >}}
 
 ## Quoi & Pourquoi ?
 

@@ -11,9 +11,8 @@ summary: "L'analyse HTML dans Google Apps Script consiste \xE0 extraire des donn
   es de contenu HTML, ce qui est particuli\xE8rement utile lors de l'interaction avec\
   \ des\u2026"
 title: Analyse Syntaxique de HTML
+weight: 43
 ---
-
-{{< edit_this_page >}}
 
 ## Quoi et pourquoi ?
 L'analyse HTML dans Google Apps Script consiste à extraire des données de contenu HTML, ce qui est particulièrement utile lors de l'interaction avec des pages web ou des sources de données basées sur le web. Les programmeurs font cela pour automatiser la collecte de données, manipuler le contenu web, ou intégrer des fonctionnalités web avec des applications Google comme Sheets et Docs.

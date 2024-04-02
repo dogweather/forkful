@@ -10,9 +10,8 @@ model: gpt-4-0125-preview
 summary: "Commandoregelargumenten stellen gebruikers in staat het gedrag van een programma\
   \ te be\xEFnvloeden zonder de code te wijzigen. Programma's gebruiken ze om\u2026"
 title: Commandoregelargumenten lezen
+weight: 23
 ---
-
-{{< edit_this_page >}}
 
 ## Wat & Waarom?
 Commandoregelargumenten stellen gebruikers in staat het gedrag van een programma te beïnvloeden zonder de code te wijzigen. Programma's gebruiken ze om invoerparameters, bestandspaden of bedieningsmodi te krijgen, wat tijd bespaart en flexibiliteit biedt.

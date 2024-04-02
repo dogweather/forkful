@@ -7,9 +7,8 @@ model: gpt-4-0125-preview
 summary: "Parsing HTML is about extracting data or information from HTML content,\
   \ a common task when dealing with web data. Programmers do this to automate the\u2026"
 title: Parsing HTML
+weight: 43
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 

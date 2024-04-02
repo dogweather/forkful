@@ -9,9 +9,8 @@ summary: "Les nombres complexes poss\xE8dent une partie r\xE9elle et une partie 
   \ g\xE9n\xE9ralement \xE9crites comme `a + bi`. Ils sont essentiels pour certains\
   \ projets\u2026"
 title: Manipulation des nombres complexes
+weight: 14
 ---
-
-{{< edit_this_page >}}
 
 ## Quoi et pourquoi ?
 Les nombres complexes possèdent une partie réelle et une partie imaginaire, généralement écrites comme `a + bi`. Ils sont essentiels pour certains projets Arduino lourds en mathématiques impliquant le traitement des signaux, l'ingénierie électrique, ou tout autre domaine où les phénomènes sont mieux modélisés dans un plan.

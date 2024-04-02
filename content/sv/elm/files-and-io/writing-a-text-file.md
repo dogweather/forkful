@@ -10,9 +10,8 @@ model: gpt-4-0125-preview
 summary: "Att skriva en textfil i Elm inneb\xE4r att skapa och spara textdata till\
   \ en fil fr\xE5n en Elm-applikation. Programmerare beh\xF6ver ofta generera rapporter,\u2026"
 title: Att skriva en textfil
+weight: 24
 ---
-
-{{< edit_this_page >}}
 
 ## Vad & Varför?
 

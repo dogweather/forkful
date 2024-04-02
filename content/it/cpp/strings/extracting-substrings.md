@@ -9,9 +9,8 @@ summary: "Estrarre sottosequenze di stringhe significa prelevare parti di testo 
   \ una stringa pi\xF9 grande. Questo \xE8 utile per analizzare i dati, manipolare\
   \ il testo\u2026"
 title: Estrazione di sottostringhe
+weight: 6
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why? (Cosa e Perché?)
 Estrarre sottosequenze di stringhe significa prelevare parti di testo da una stringa più grande. Questo è utile per analizzare i dati, manipolare il testo e permettere agli algoritmi di lavorare solo con le informazioni necessarie.

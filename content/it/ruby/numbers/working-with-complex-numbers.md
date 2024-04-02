@@ -7,9 +7,8 @@ model: gpt-4-0125-preview
 summary: "I numeri complessi, costituiti da una parte reale e una immaginaria (come\
   \ 3+4i), sono fondamentali in ingegneria e fisica. I programmatori li utilizzano\u2026"
 title: Lavorare con i numeri complessi
+weight: 14
 ---
-
-{{< edit_this_page >}}
 
 ## Cosa & Perché?
 I numeri complessi, costituiti da una parte reale e una immaginaria (come 3+4i), sono fondamentali in ingegneria e fisica. I programmatori li utilizzano in simulazioni, elaborazione di segnali e nella risoluzione di equazioni che non funzionano bene solo con i numeri reali.

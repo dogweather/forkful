@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Calculer une date dans le futur ou dans le pass\xE9 est une t\xE2che courante\
   \ pour les programmeurs, concernant la planification, les rappels, ou toute\u2026"
 title: "Calculer une date dans le futur ou le pass\xE9"
+weight: 26
 ---
-
-{{< edit_this_page >}}
 
 ## Quoi & Pourquoi ?
 Calculer une date dans le futur ou dans le passé est une tâche courante pour les programmeurs, concernant la planification, les rappels, ou toute fonctionnalité dépendant des calculs de dates. Comprendre comment manipuler les dates est crucial pour les systèmes backend, les interfaces utilisateurs, et l'analyse de données, en particulier pour ceux qui passent à Dart et cherchent à implémenter une logique temporelle de manière efficace.

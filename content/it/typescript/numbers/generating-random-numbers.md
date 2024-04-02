@@ -7,9 +7,8 @@ model: gpt-4-0125-preview
 summary: "Generare numeri casuali in TypeScript consiste nel creare valori numerici\
   \ imprevedibili all'interno di un intervallo specificato. I programmatori\u2026"
 title: Generazione di numeri casuali
+weight: 12
 ---
-
-{{< edit_this_page >}}
 
 ## Cosa e perché?
 

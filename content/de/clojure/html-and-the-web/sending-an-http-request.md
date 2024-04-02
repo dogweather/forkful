@@ -7,9 +7,8 @@ model: gpt-4-1106-preview
 summary: HTTP-Anfragen sind der Weg, wie deine Anwendung mit dem Web spricht. Programmierer
   nutzen sie, um Daten zu holen, zu sendeln, und mit APIs zu interagieren.
 title: Einen HTTP-Request senden
+weight: 44
 ---
-
-{{< edit_this_page >}}
 
 ## Was & Warum?
 HTTP-Anfragen sind der Weg, wie deine Anwendung mit dem Web spricht. Programmierer nutzen sie, um Daten zu holen, zu sendeln, und mit APIs zu interagieren.

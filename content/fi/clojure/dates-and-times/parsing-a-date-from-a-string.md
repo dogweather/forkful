@@ -11,9 +11,8 @@ summary: "P\xE4iv\xE4m\xE4\xE4r\xE4n j\xE4sent\xE4minen merkkijonosta Clojuressa
   \ tekstuaalisten p\xE4iv\xE4m\xE4\xE4r\xE4- ja aikailmaisujen muuntamista k\xE4\
   ytt\xF6kelpoisempaan muotoon (esim. Clojuren\u2026"
 title: "P\xE4iv\xE4m\xE4\xE4r\xE4n j\xE4sennys merkkijonosta"
+weight: 30
 ---
-
-{{< edit_this_page >}}
 
 ## Mikä ja miksi?
 Päivämäärän jäsentäminen merkkijonosta Clojuressa on tekstuaalisten päivämäärä- ja aikailmaisujen muuntamista käyttökelpoisempaan muotoon (esim. Clojuren DateTime-objekti). Tämä prosessi on olennainen datakäsittelylle, lokitiedostoille tai mille tahansa sovellukselle, joka käsittelee ajallista dataa, mahdollistaen ohjelmoijien suorittaa operaatioita, vertailuja tai manipulaatioita päivämäärillä tehokkaasti.

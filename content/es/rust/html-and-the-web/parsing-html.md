@@ -11,9 +11,8 @@ summary: "Analizar HTML en Rust se trata de extraer datos de documentos HTML, lo
   \ es esencial para el web scraping, la extracci\xF3n de datos o la construcci\xF3\
   n de\u2026"
 title: Analizando HTML
+weight: 43
 ---
-
-{{< edit_this_page >}}
 
 ## ¿Qué y por qué?
 

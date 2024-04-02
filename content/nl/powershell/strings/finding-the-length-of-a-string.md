@@ -10,9 +10,8 @@ model: gpt-4-0125-preview
 summary: "In PowerShell betekent het vinden van de lengte van een tekenreeks het tellen\
   \ van het aantal karakters dat het bevat. Programmeurs doen dit om invoer te\u2026"
 title: De lengte van een string vinden
+weight: 7
 ---
-
-{{< edit_this_page >}}
 
 ## Wat & Waarom?
 In PowerShell betekent het vinden van de lengte van een tekenreeks het tellen van het aantal karakters dat het bevat. Programmeurs doen dit om invoer te valideren, tekstgegevens te manipuleren en te zorgen dat gegevens aan bepaalde criteria of formaten voldoen.

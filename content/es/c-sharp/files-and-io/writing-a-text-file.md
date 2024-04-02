@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Escribir un archivo de texto en C# implica crear o modificar program\xE1\
   ticamente archivos de texto en el sistema de archivos - una tarea fundamental para\u2026"
 title: Escribiendo un archivo de texto
+weight: 24
 ---
-
-{{< edit_this_page >}}
 
 ## ¿Qué y Por Qué?
 Escribir un archivo de texto en C# implica crear o modificar programáticamente archivos de texto en el sistema de archivos - una tarea fundamental para muchas aplicaciones, tales como el registro de actividades, exportación de datos o gestión de configuraciones. Los programadores realizan esta operación para preservar datos entre sesiones, compartir información a través de sistemas o almacenar salidas legibles por humanos.

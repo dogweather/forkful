@@ -9,9 +9,8 @@ summary: "Enviar una solicitud HTTP con autenticaci\xF3n b\xE1sica significa ped
   \ datos de un servidor protegido con un usuario y contrase\xF1a. Los programadores\
   \ lo hacen\u2026"
 title: "Enviando una solicitud http con autenticaci\xF3n b\xE1sica"
+weight: 45
 ---
-
-{{< edit_this_page >}}
 
 ## Qué es y Por Qué?
 

@@ -11,9 +11,8 @@ summary: "Obter a data atual na programa\xE7\xE3o \xE9 crucial por uma mir\xEDad
   \ de raz\xF5es, incluindo o registro em log, marca\xE7\xE3o de tempo em eventos\
   \ e agendamento de tarefas.\u2026"
 title: Obtendo a data atual
+weight: 29
 ---
-
-{{< edit_this_page >}}
 
 ## O Que & Por Quê?
 Obter a data atual na programação é crucial por uma miríade de razões, incluindo o registro em log, marcação de tempo em eventos e agendamento de tarefas. Em Clojure, um dialeto Lisp na JVM, essa tarefa aproveita as capacidades de interoperabilidade com Java, permitindo um acesso direto à rica API de Data e Hora do Java.

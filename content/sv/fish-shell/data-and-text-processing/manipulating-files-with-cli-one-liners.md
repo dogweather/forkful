@@ -9,9 +9,8 @@ summary: "I programmeringsv\xE4rlden, s\xE4rskilt n\xE4r man hanterar Linux- ell
   \ Unix-milj\xF6er, \xE4r manipulation av filer direkt fr\xE5n kommandoradsgr\xE4\
   nssnittet (CLI) inte\u2026"
 title: Hantera filer med CLI-engreppskommandon
+weight: 31
 ---
-
-{{< edit_this_page >}}
 
 ## Vad & Varför?
 

@@ -11,9 +11,8 @@ summary: "Att h\xE4mta det aktuella datumet i Bash inneb\xE4r att anv\xE4nda inb
   \ kommandon f\xF6r att visa datum och tid i olika format. Programmerare anv\xE4\
   nder denna\u2026"
 title: "F\xE5 det aktuella datumet"
+weight: 29
 ---
-
-{{< edit_this_page >}}
 
 ## Vad & Varför?
 Att hämta det aktuella datumet i Bash innebär att använda inbyggda kommandon för att visa datum och tid i olika format. Programmerare använder denna funktionalitet för uppgifter som att tidsstämpla loggar, schemalägga uppgifter eller bara som en del av sina systeminformationsskript för att spåra när åtgärder genomfördes.

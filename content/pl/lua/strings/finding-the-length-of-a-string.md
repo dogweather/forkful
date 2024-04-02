@@ -9,9 +9,8 @@ summary: "Znalezienie d\u0142ugo\u015Bci \u0142a\u0144cucha (stringa) to po pros
   \ sprawdzenie, ile znak\xF3w zawiera. Programi\u015Bci robi\u0105 to, aby manipulowa\u0107\
   \ tekstami, walidowa\u0107 dane albo\u2026"
 title: "Znalezienie d\u0142ugo\u015Bci ci\u0105gu znak\xF3w"
+weight: 7
 ---
-
-{{< edit_this_page >}}
 
 ## Co i dlaczego?
 Znalezienie długości łańcucha (stringa) to po prostu sprawdzenie, ile znaków zawiera. Programiści robią to, aby manipulować tekstami, walidować dane albo po prostu, aby wiedzieć, z czym mają do czynienia.

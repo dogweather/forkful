@@ -11,9 +11,8 @@ summary: "Analisar HTML no PowerShell \xE9 sobre desmembrar conte\xFAdo HTML par
   \ extrair dados espec\xEDficos ou automatizar tarefas relacionadas \xE0 web. Os\
   \ programadores\u2026"
 title: Analisando HTML
+weight: 43
 ---
-
-{{< edit_this_page >}}
 
 ## O Que & Por Que?
 Analisar HTML no PowerShell é sobre desmembrar conteúdo HTML para extrair dados específicos ou automatizar tarefas relacionadas à web. Os programadores fazem isso para interagir com páginas da web, fazer raspagem de conteúdo web ou automatizar submissões de formulários e outras interações web sem a necessidade de um navegador.

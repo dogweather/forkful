@@ -11,9 +11,8 @@ summary: "CSV-tiedostojen (pilkuilla erotetut arvot) k\xE4sittely sis\xE4lt\xE4\
   \ tiedostojen j\xE4sent\xE4misen ja luomisen, jotka tallentavat taulukkomuotoista\
   \ dataa\u2026"
 title: "Ty\xF6skentely CSV:n kanssa"
+weight: 37
 ---
-
-{{< edit_this_page >}}
 
 ## Mikä ja miksi?
 

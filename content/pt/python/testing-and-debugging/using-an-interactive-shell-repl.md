@@ -9,9 +9,8 @@ summary: "Um REPL, ou Loop de Leitura-Avalia\xE7\xE3o-Impress\xE3o, \xE9 um ambi
   \ de programa\xE7\xE3o que recebe entradas \xFAnicas do usu\xE1rio, executa-as e\
   \ retorna o resultado ao\u2026"
 title: Usando um shell interativo (REPL)
+weight: 34
 ---
-
-{{< edit_this_page >}}
 
 ## O Que & Por Que?
 Um REPL, ou Loop de Leitura-Avaliação-Impressão, é um ambiente de programação que recebe entradas únicas do usuário, executa-as e retorna o resultado ao usuário. Programadores usam isso para testes rápidos, aprendizado, depuração ou fazer cálculos de imediato.

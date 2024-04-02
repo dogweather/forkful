@@ -11,9 +11,8 @@ summary: "Die Fehlerbehandlung in C umfasst das Erkennen und Reagieren auf anoma
   \ Bedingungen, die w\xE4hrend der Programmausf\xFChrung auftreten. Programmierer\
   \ tun\u2026"
 title: Fehlerbehandlung
+weight: 16
 ---
-
-{{< edit_this_page >}}
 
 ## Was & Warum?
 

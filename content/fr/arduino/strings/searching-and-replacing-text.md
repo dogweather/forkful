@@ -8,9 +8,8 @@ model: gpt-4-1106-preview
 summary: "Rechercher et remplacer du texte, c'est modifier automatiquement une cha\xEE\
   ne de caract\xE8res par une autre. Les programmeurs utilisent cette technique pour\u2026"
 title: Recherche et remplacement de texte
+weight: 10
 ---
-
-{{< edit_this_page >}}
 
 ## Quoi et pourquoi ?
 Rechercher et remplacer du texte, c'est modifier automatiquement une chaîne de caractères par une autre. Les programmeurs utilisent cette technique pour corriger des erreurs, mettre à jour des informations ou refactoriser leur code rapidement.

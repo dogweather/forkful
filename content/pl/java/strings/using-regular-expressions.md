@@ -11,9 +11,8 @@ summary: "Wyra\u017Cenia regularne (regex) w Javie pozwalaj\u0105 definiowa\u010
   \ specyficzne wzorce do wyszukiwania, manipulowania lub walidacji ci\u0105g\xF3\
   w znak\xF3w w twoim kodzie.\u2026"
 title: "Korzystanie z wyra\u017Ce\u0144 regularnych"
+weight: 11
 ---
-
-{{< edit_this_page >}}
 
 ## Co i dlaczego?
 

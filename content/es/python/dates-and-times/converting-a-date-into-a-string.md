@@ -7,9 +7,8 @@ model: gpt-4-1106-preview
 summary: "Convertir una fecha a texto significa transformar un objeto `datetime` en\
   \ Python a un formato de cadena de caracteres (string). Esto se hace para\u2026"
 title: Convirtiendo una fecha en una cadena de texto
+weight: 28
 ---
-
-{{< edit_this_page >}}
 
 ## Qué y Por Qué?
 Convertir una fecha a texto significa transformar un objeto `datetime` en Python a un formato de cadena de caracteres (string). Esto se hace para facilitar la visualización, almacenamiento o para integrarlo en formatos que lo requieren, como JSON o CSV.

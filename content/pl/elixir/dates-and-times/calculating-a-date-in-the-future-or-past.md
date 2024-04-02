@@ -9,9 +9,8 @@ summary: "Co to jest i dlaczego? Obliczanie daty w przysz\u0142o\u015Bci albo pr
   o\u015Bci to ustalanie nowych dat na podstawie zadanej. Programi\u015Bci robi\u0105\
   \ to dla organizacji\u2026"
 title: "Obliczanie daty w przysz\u0142o\u015Bci lub przesz\u0142o\u015Bci"
+weight: 26
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 Co to jest i dlaczego?

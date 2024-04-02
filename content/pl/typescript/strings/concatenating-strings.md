@@ -9,9 +9,8 @@ summary: "\u0141\u0105czymy napisy (stringi), \u017Ceby uformowa\u0107 nowy, wi\
   kszy tekst. Robimy to, by wy\u015Bwietli\u0107 komunikaty, zbudowa\u0107 zapytania\
   \ do bazy danych, albo po prostu\u2026"
 title: "\u0141\u0105czenie \u0142a\u0144cuch\xF3w znak\xF3w"
+weight: 3
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why? (Co i dlaczego?)
 Łączymy napisy (stringi), żeby uformować nowy, większy tekst. Robimy to, by wyświetlić komunikaty, zbudować zapytania do bazy danych, albo po prostu skleić różne kawałki informacji w całość.

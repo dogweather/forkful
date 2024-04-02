@@ -9,9 +9,8 @@ summary: "Att generera slumpm\xE4ssiga nummer i Bash erbjuder ett s\xE4tt att in
   \ of\xF6ruts\xE4gbarhet i skript, vilket \xE4r v\xE4sentligt f\xF6r uppgifter som\
   \ att generera\u2026"
 title: Generera slumptal
+weight: 12
 ---
-
-{{< edit_this_page >}}
 
 ## Vad & Varför?
 Att generera slumpmässiga nummer i Bash erbjuder ett sätt att introducera oförutsägbarhet i skript, vilket är väsentligt för uppgifter som att generera säkra lösenord, simulera data eller för att programmera spel. Programmerare utnyttjar denna möjlighet för att lägga till variabilitet i deras skript eller för att testa deras program under en mängd slumpmässigt genererade förhållanden.

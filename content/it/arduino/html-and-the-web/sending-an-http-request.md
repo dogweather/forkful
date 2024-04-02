@@ -7,9 +7,8 @@ model: gpt-4-1106-preview
 summary: Inviamo una richiesta HTTP per comunicare con server web. Usato per ottenere
   informazioni da servizi internet o inviarne.
 title: Inviare una richiesta http
+weight: 44
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 Inviamo una richiesta HTTP per comunicare con server web. Usato per ottenere informazioni da servizi internet o inviarne.

@@ -9,9 +9,8 @@ summary: "Wypisywanie informacji diagnostycznych to spos\xF3b na wy\u015Bwietlan
   \ danych w trakcie dzia\u0142ania programu, \u017Ceby zrozumie\u0107, co si\u0119\
   \ w nim dzieje. Debugowanie\u2026"
 title: "Drukowanie komunikat\xF3w debugowania"
+weight: 33
 ---
-
-{{< edit_this_page >}}
 
 ## Co i dlaczego?
 Wypisywanie informacji diagnostycznych to sposób na wyświetlanie danych w trakcie działania programu, żeby zrozumieć, co się w nim dzieje. Debugowanie jest nieodłączne od programowania – pomaga znajdować i naprawiać błędy.

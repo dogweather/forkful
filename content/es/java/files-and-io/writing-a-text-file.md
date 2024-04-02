@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Escribir un archivo de texto en Java se trata de utilizar las capacidades\
   \ del lenguaje para crear y escribir contenido en archivos en el sistema de\u2026"
 title: Escribiendo un archivo de texto
+weight: 24
 ---
-
-{{< edit_this_page >}}
 
 ## ¿Qué y por qué?
 

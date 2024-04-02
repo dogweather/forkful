@@ -17,9 +17,8 @@ summary: "TOML\u662FTom's Obvious, Minimal Language\u7684\u9996\u5B57\u6BCD\u7F2
   \u5B83\u5728\u4EBA\u7C7B\u53EF\u8BFB\u6027\u548C\u673A\u5668\u53EF\u89E3\u6790\u6027\
   \u4E4B\u95F4\u53D6\u5F97\u4E86\u5E73\u8861\u3002"
 title: "\u4F7F\u7528TOML"
+weight: 39
 ---
-
-{{< edit_this_page >}}
 
 ## 什么和为什么？
 TOML是Tom's Obvious, Minimal Language的首字母缩写，这是一种易于阅读的配置文件格式，因为它有明确的语义。程序员使用它来编写配置文件，简化系统间的数据交换，并且因为它在人类可读性和机器可解析性之间取得了平衡。

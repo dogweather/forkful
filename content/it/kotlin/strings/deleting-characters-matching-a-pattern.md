@@ -8,9 +8,8 @@ model: gpt-4-1106-preview
 summary: "Rimuovere caratteri che corrispondono a un modello \xE8 il processo di eliminare\
   \ sequenze specifiche di caratteri da una stringa. I programmatori lo fanno\u2026"
 title: Eliminazione di caratteri che corrispondono a un pattern
+weight: 5
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why? (Cosa e Perché?)
 Rimuovere caratteri che corrispondono a un modello è il processo di eliminare sequenze specifiche di caratteri da una stringa. I programmatori lo fanno per pulire dati, manipolare testi o preparare input per altri sistemi.

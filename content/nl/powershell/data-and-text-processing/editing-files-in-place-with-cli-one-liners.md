@@ -10,9 +10,8 @@ model: gpt-4-0125-preview
 summary: "Bestanden ter plaatse bewerken met CLI one-liners in PowerShell gaat over\
   \ het direct wijzigen van bestanden vanaf de opdrachtregel, zonder de noodzaak om\u2026"
 title: Bestanden ter plekke bewerken met CLI one-liners
+weight: 32
 ---
-
-{{< edit_this_page >}}
 
 ## Wat & Waarom?
 

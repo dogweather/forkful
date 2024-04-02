@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Complexe getallen breiden ons getallenstelsel uit met de vierkantswortels\
   \ van negatieve getallen, waarbij de 'imaginaire' eenheid i gelijk staat aan de\u2026"
 title: Werken met complexe getallen
+weight: 14
 ---
-
-{{< edit_this_page >}}
 
 ## Wat & Waarom?
 Complexe getallen breiden ons getallenstelsel uit met de vierkantswortels van negatieve getallen, waarbij de 'imaginaire' eenheid i gelijk staat aan de vierkantswortel van -1. Programmeurs gebruiken ze in domeinen zoals techniek, natuurkunde en signaalverwerking, omdat ze geweldig zijn voor het modelleren van golven, oscillaties en alles dat roteert.

@@ -19,9 +19,8 @@ summary: "JSON(JavaScript Object Notation)\uC740 \uC0AC\uB78C\uC774 \uC77D\uACE0
   \uB97C \uC804\uC1A1\uD558\uAC70\uB098 \uB2E4\uC591\uD55C \uD504\uB85C\uADF8\uB798\
   \uBC0D \uD658\uACBD\uC5D0\uC11C, \uC608\uB97C \uB4E4\uC5B4 Visual Basic\u2026"
 title: "JSON\uACFC \uD568\uAED8 \uC77C\uD558\uAE30"
+weight: 38
 ---
-
-{{< edit_this_page >}}
 
 ## 무엇이며 왜 사용하는가?
 

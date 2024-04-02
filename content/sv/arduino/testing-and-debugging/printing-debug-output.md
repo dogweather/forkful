@@ -9,9 +9,8 @@ summary: "Debugutskrift hj\xE4lper utvecklare att f\xF6rst\xE5 vad deras kod g\x
   r genom att visa meddelanden i realtid. Programmerare g\xF6r detta f\xF6r att enkelt\
   \ hitta och\u2026"
 title: "Skriva ut fels\xF6kningsdata"
+weight: 33
 ---
-
-{{< edit_this_page >}}
 
 ## Vad & Varför?
 Debugutskrift hjälper utvecklare att förstå vad deras kod gör genom att visa meddelanden i realtid. Programmerare gör detta för att enkelt hitta och åtgärda fel under utvecklingen.

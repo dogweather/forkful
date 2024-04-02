@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Het genereren van willekeurige getallen in Elixir is een fundamentele programmeertaak,\
   \ essentieel voor applicaties die onvoorspelbare resultaten nodig\u2026"
 title: Willekeurige getallen genereren
+weight: 12
 ---
-
-{{< edit_this_page >}}
 
 ## Wat & Waarom?
 

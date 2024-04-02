@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "\xC9crire sur l'erreur standard (stderr) en Go implique de diriger les messages\
   \ d'erreur ou les diagnostics qui ne sont pas destin\xE9s au flux de sortie\u2026"
 title: "\xC9criture sur l'erreur standard"
+weight: 25
 ---
-
-{{< edit_this_page >}}
 
 ## Quoi & Pourquoi ?
 

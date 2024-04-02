@@ -8,9 +8,8 @@ model: unknown
 summary: "Skriving til standard feil (stderr) lar deg rapportere feil uten \xE5 blande\
   \ det med hovedutdata. Programmerere bruker det til \xE5 skille normal output fra\u2026"
 title: Skrive til standardfeil
+weight: 25
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 Skriving til standard feil (stderr) lar deg rapportere feil uten å blande det med hovedutdata. Programmerere bruker det til å skille normal output fra feilmeldinger.

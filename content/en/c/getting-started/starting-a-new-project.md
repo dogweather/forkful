@@ -8,9 +8,8 @@ model: gpt-4-0125-preview
 summary: "Starting a new project in C involves setting up a foundational code structure\
   \ and environment to efficiently manage development tasks. Programmers do it\u2026"
 title: Starting a new project
+weight: 1
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 

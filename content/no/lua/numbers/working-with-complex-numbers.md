@@ -7,9 +7,8 @@ model: gpt-4-0125-preview
 summary: "Komplekse tall utvider ideen om den \xE9ndimensjonale tallinjen til det\
   \ todimensjonale planet ved \xE5 inkludere en vinkelrett imagin\xE6r akse. Programmerere\u2026"
 title: "\xC5 jobbe med komplekse tall"
+weight: 14
 ---
-
-{{< edit_this_page >}}
 
 ## Hva & Hvorfor?
 Komplekse tall utvider ideen om den éndimensjonale tallinjen til det todimensjonale planet ved å inkludere en vinkelrett imaginær akse. Programmerere arbeider med dem i felt som signalbehandling, fluiddynamikk og elektroteknikk, der de er essensielle for å representere svingninger og andre fenomener.

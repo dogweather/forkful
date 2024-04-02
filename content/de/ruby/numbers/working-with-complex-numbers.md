@@ -7,9 +7,8 @@ model: gpt-4-0125-preview
 summary: "Komplexe Zahlen, bestehend aus einem realen und einem imagin\xE4ren Teil\
   \ (wie 3+4i), sind ein Grundpfeiler in der Ingenieurwissenschaft und Physik.\u2026"
 title: Umgang mit komplexen Zahlen
+weight: 14
 ---
-
-{{< edit_this_page >}}
 
 ## Was & Warum?
 Komplexe Zahlen, bestehend aus einem realen und einem imaginären Teil (wie 3+4i), sind ein Grundpfeiler in der Ingenieurwissenschaft und Physik. Programmierer arbeiten bei Simulationen, Signalverarbeitung und der Lösung von Gleichungen, die mit rein reellen Zahlen nicht gut funktionieren, mit ihnen.

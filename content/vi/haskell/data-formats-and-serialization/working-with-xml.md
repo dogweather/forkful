@@ -13,9 +13,8 @@ summary: "L\xE0m vi\u1EC7c v\u1EDBi XML trong Haskell bao g\u1ED3m vi\u1EC7c ph\
   c l\u1EADp tr\xECnh vi\xEAn x\u1EED l\xFD XML \u0111\u1EC3 t\u01B0\u01A1ng t\xE1\
   c v\u1EDBi nhi\u1EC1u \u1EE9ng d\u1EE5ng\u2026"
 title: "L\xE0m vi\u1EC7c v\u1EDBi XML"
+weight: 40
 ---
-
-{{< edit_this_page >}}
 
 ## Làm thế nào & Tại sao?
 

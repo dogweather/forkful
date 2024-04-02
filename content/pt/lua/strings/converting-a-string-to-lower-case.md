@@ -9,9 +9,8 @@ summary: "Converter uma string para min\xFAsculas \xE9 o processo de transformar
   \ as letras mai\xFAsculas de uma dada string em min\xFAsculas. Programadores fazem\
   \ isso\u2026"
 title: "Convertendo uma string para min\xFAsculas"
+weight: 4
 ---
-
-{{< edit_this_page >}}
 
 ## O Que & Porquê?
 Converter uma string para minúsculas é o processo de transformar todas as letras maiúsculas de uma dada string em minúsculas. Programadores fazem isso para normalizar dados, facilitar comparações de strings e atender a regras de formatação.

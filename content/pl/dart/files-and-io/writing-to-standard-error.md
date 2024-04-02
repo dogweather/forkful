@@ -11,9 +11,8 @@ summary: "Pisanie do standardowego b\u0142\u0119du (stderr) w Dart polega na wys
   aniu komunikat\xF3w o b\u0142\u0119dach i diagnostyk do oddzielnego strumienia,\
   \ r\xF3\u017Cnego od standardowego\u2026"
 title: "Pisanie do standardowego b\u0142\u0119du"
+weight: 25
 ---
-
-{{< edit_this_page >}}
 
 ## Co i dlaczego?
 

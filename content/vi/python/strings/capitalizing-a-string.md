@@ -13,9 +13,8 @@ summary: "Vi\u1EC7c vi\u1EBFt hoa m\u1ED9t chu\u1ED7i ngh\u0129a l\xE0 chuy\u1EC
   n c\xF2n l\u1EA1i th\xE0nh ch\u1EEF c\xE1i th\u01B0\u1EDDng. C\xE1c l\u1EADp tr\xEC\
   nh vi\xEAn th\u01B0\u1EDDng th\u1EF1c hi\u1EC7n vi\u1EC7c\u2026"
 title: "Vi\u1EBFt hoa m\u1ED9t chu\u1ED7i"
+weight: 2
 ---
-
-{{< edit_this_page >}}
 
 ## Cái gì & Tại sao?
 Việc viết hoa một chuỗi nghĩa là chuyển ký tự đầu tiên thành chữ cái in hoa và phần còn lại thành chữ cái thường. Các lập trình viên thường thực hiện việc này để chuẩn hóa dữ liệu nhập từ người dùng hoặc đảm bảo các danh từ riêng được định dạng một cách chính xác.

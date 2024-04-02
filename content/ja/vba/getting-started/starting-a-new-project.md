@@ -19,9 +19,8 @@ summary: "Visual Basic for Applications\uFF08VBA\uFF09\u3067\u65B0\u3057\u3044\u
   \u542B\u307E\u308C\u307E\u3059\u3002\u30D7\u30ED\u30B0\u30E9\u30DE\u30FC\u306F\u3001\
   Microsoft\u2026"
 title: "\u65B0\u30D7\u30ED\u30B8\u30A7\u30AF\u30C8\u306E\u958B\u59CB"
+weight: 1
 ---
-
-{{< edit_this_page >}}
 
 ## 何となく何故か？
 

@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Lire un fichier texte en C implique d'ouvrir un fichier sur votre syst\xE8\
   me pour extraire des informations et les manipuler ou les afficher selon le besoin.\u2026"
 title: Lire un fichier texte
+weight: 22
 ---
-
-{{< edit_this_page >}}
 
 ## Quoi & Pourquoi ?
 

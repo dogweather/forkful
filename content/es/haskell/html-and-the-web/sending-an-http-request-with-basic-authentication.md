@@ -9,9 +9,8 @@ summary: "Enviar una solicitud HTTP con autenticaci\xF3n b\xE1sica implica inclu
   \ credenciales de usuario (usuario y contrase\xF1a) en una solicitud para acceder\
   \ a recursos\u2026"
 title: "Enviando una solicitud http con autenticaci\xF3n b\xE1sica"
+weight: 45
 ---
-
-{{< edit_this_page >}}
 
 ## ¿Qué y Por Qué?
 

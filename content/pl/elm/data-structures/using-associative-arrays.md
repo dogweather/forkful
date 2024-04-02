@@ -11,9 +11,8 @@ summary: "Tablice asocjacyjne, czy jak m\xF3wi na nie Elm, S\u0142owniki, mapuj\
   \ klucze do warto\u015Bci w spos\xF3b, kt\xF3ry czyni wyszukiwanie, dodawanie i\
   \ usuwanie warto\u015Bci bardzo\u2026"
 title: Korzystanie z tablic asocjacyjnych
+weight: 15
 ---
-
-{{< edit_this_page >}}
 
 ## Co i dlaczego?
 

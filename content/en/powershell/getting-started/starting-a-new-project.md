@@ -7,9 +7,8 @@ model: gpt-4-1106-preview
 summary: "Starting a new project is about laying the groundwork for your coding masterpiece.\
   \ As programmers, we do it to break ground on a fresh idea or implement\u2026"
 title: Starting a new project
+weight: 1
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 Starting a new project is about laying the groundwork for your coding masterpiece. As programmers, we do it to break ground on a fresh idea or implement solutions in an organized, scalable way.

@@ -16,9 +16,8 @@ summary: "(\"What & Why?\") \uD14D\uC2A4\uD2B8 \uAC80\uC0C9 \uBC0F \uAD50\uCCB4\
   \uB958\uB97C \uC218\uC815\uD558\uAE30 \uC704\uD574 \uC774 \uC791\uC5C5\uC744 \uC790\
   \uC8FC \uC2E4\uD589\uD569\uB2C8\uB2E4."
 title: "\uD14D\uC2A4\uD2B8 \uAC80\uC0C9 \uBC0F \uAD50\uCCB4"
+weight: 10
 ---
-
-{{< edit_this_page >}}
 
 ## 무엇과 왜?
 ("What & Why?")

@@ -9,9 +9,8 @@ summary: "Koko koodisi heitt\xE4minen yhteen suureen kasaa? Huono idea. Jakamine
   \ funktioihin? Hyv\xE4 idea. Se pit\xE4\xE4 Elm-koodisi siistin\xE4, uudelleenk\xE4\
   ytett\xE4v\xE4n\xE4 ja\u2026"
 title: "Koodin j\xE4rjest\xE4minen funktioihin"
+weight: 18
 ---
-
-{{< edit_this_page >}}
 
 ## Mitä & Miksi?
 Koko koodisi heittäminen yhteen suureen kasaa? Huono idea. Jakaminen funktioihin? Hyvä idea. Se pitää Elm-koodisi siistinä, uudelleenkäytettävänä ja helpommin testattavana. Organisoimalla koodisi funktioihin ryhmittelet tiettyjä tehtäviä suorittavan koodin yhteen, mikä tekee sovelluksestasi ylläpidettävämmän ja ymmärrettävämmän.

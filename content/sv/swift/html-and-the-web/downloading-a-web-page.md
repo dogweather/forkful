@@ -9,9 +9,8 @@ summary: "H\xE4mtning av en webbsida inneb\xE4r att ladda ner dess HTML-inneh\xE
   ll. Programm\xF6rer g\xF6r detta f\xF6r att l\xE4sa eller bearbeta information fr\xE5\
   n webben."
 title: "H\xE4mta en webbsida"
+weight: 42
 ---
-
-{{< edit_this_page >}}
 
 # Hämta en webbsida med Swift
 

@@ -9,9 +9,8 @@ summary: "\xC5 fjerne anf\xF8rselstegn fra en streng i Rust handler om \xE5 stri
   \ bort un\xF8dvendige ekstra anf\xF8rselstegn som kan v\xE6re pakket rundt tekstdataene\
   \ dine.\u2026"
 title: "Fjerne anf\xF8rselstegn fra en streng"
+weight: 9
 ---
-
-{{< edit_this_page >}}
 
 ## Hva & Hvorfor?
 

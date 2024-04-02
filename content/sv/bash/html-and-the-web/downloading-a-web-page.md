@@ -7,9 +7,8 @@ model: gpt-4-1106-preview
 summary: "Att ladda ned en webbsida inneb\xE4r att h\xE4mta allt inneh\xE5ll fr\xE5\
   n en webbsida till din lokala enhet. Programmerare g\xF6r detta f\xF6r att analysera\u2026"
 title: "H\xE4mta en webbsida"
+weight: 42
 ---
-
-{{< edit_this_page >}}
 
 ## Vad & Varför?
 Att ladda ned en webbsida innebär att hämta allt innehåll från en webbsida till din lokala enhet. Programmerare gör detta för att analysera webbinnehållet, skapa säkerhetskopior eller för att arbeta offline.

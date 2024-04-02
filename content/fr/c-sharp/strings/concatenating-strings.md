@@ -9,9 +9,8 @@ summary: "La concat\xE9nation de cha\xEEnes, c'est simplement coller des bouts d
   \ texte ensemble. On le fait souvent pour g\xE9n\xE9rer des messages, combiner des\
   \ donn\xE9es, ou\u2026"
 title: "Concat\xE9nation de cha\xEEnes de caract\xE8res"
+weight: 3
 ---
-
-{{< edit_this_page >}}
 
 ## Quoi & Pourquoi ?
 

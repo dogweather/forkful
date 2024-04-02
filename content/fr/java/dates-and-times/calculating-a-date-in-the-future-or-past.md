@@ -7,9 +7,8 @@ model: gpt-4-1106-preview
 summary: "Calculer une date dans le futur ou le pass\xE9, c'est trouver une date avant\
   \ ou apr\xE8s une date donn\xE9e. Les programmeurs le font souvent pour des\u2026"
 title: "Calcul d'une date future ou pass\xE9e"
+weight: 26
 ---
-
-{{< edit_this_page >}}
 
 ## Quoi & Pourquoi ?
 Calculer une date dans le futur ou le passé, c'est trouver une date avant ou après une date donnée. Les programmeurs le font souvent pour des fonctionnalités liées à des échéances, des rappels ou de la planification.

@@ -20,9 +20,8 @@ summary: "\uCF54\uB4DC\uB97C \uD568\uC218\uB85C \uAD6C\uC131\uD558\uB294 \uAC83\
   \uB294 \uCF54\uB4DC\uB97C \uAE54\uB054\uD558\uACE0 \uC77D\uAE30 \uC26C\uC6B0\uBA70\
   \ \uC720\uC9C0\uBCF4\uC218\uD558\uAE30 \uC27D\uAC8C \uB9CC\uB4ED\uB2C8\uB2E4."
 title: "\uCF54\uB4DC\uB97C \uD568\uC218\uB85C \uAD6C\uC131\uD558\uAE30"
+weight: 18
 ---
-
-{{< edit_this_page >}}
 
 ## 무엇과 왜?
 코드를 함수로 구성하는 것은 스크립팅을 한 입 크기의 조각으로 나누는 것과 같습니다 – 기능적인 레고 블록을 생각해보세요. 우리는 이를 명확성, 재사용성 및 정신 건강을 위해 수행합니다. 이는 코드를 깔끔하고 읽기 쉬우며 유지보수하기 쉽게 만듭니다.

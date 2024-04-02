@@ -12,9 +12,8 @@ summary: "\xC5 organisere kode i funksjoner handler om \xE5 samle biter av skrip
   \ for \xE5 utf\xF8re spesifikke oppgaver. Vi gj\xF8r det fordi det gj\xF8r koden\
   \ lettere \xE5 lese, teste\u2026"
 title: Organisering av kode i funksjoner
+weight: 18
 ---
-
-{{< edit_this_page >}}
 
 ## Hva & Hvorfor?
 Å organisere kode i funksjoner handler om å samle biter av skript for å utføre spesifikke oppgaver. Vi gjør det fordi det gjør koden lettere å lese, teste og gjenbruke – ingen ønsker å vasse gjennom et sumpområde av kodespagetti.

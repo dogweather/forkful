@@ -13,9 +13,8 @@ summary: "Trong Visual Basic for Applications (VBA), vi\u1EC7c l\u1EA5y ng\xE0y 
   p tr\xECnh vi\xEAn c\xF3 th\u1EC3 l\xE0m vi\u1EC7c v\u1EDBi ng\xE0y m\u1ED9t c\xE1\
   ch linh\u2026"
 title: "L\u1EA5y ng\xE0y hi\u1EC7n t\u1EA1i"
+weight: 29
 ---
-
-{{< edit_this_page >}}
 
 ## Gì và Tại sao?
 

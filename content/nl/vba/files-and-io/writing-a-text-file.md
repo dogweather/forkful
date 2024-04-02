@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Een tekstbestand schrijven in Visual Basic for Applications (VBA) houdt\
   \ in dat je tekstgegevens aanmaakt, wijzigt of toevoegt aan bestanden, een\u2026"
 title: Een tekstbestand schrijven
+weight: 24
 ---
-
-{{< edit_this_page >}}
 
 ## Wat & Waarom?
 

@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Loggen in programmeren is in wezen een spoor van broodkruimels achterlaten\
   \ in de vorm van opgenomen gebeurtenissen of berichten, die gebruikt kunnen\u2026"
 title: Logboekregistratie
+weight: 17
 ---
-
-{{< edit_this_page >}}
 
 ## Wat & Waarom?
 Loggen in programmeren is in wezen een spoor van broodkruimels achterlaten in de vorm van opgenomen gebeurtenissen of berichten, die gebruikt kunnen worden om bij te houden wat je applicatie op elk gegeven moment doet. Programmeurs doen dit om problemen te debuggen, de systeemprestaties te monitoren en het gedrag te auditen voor beveiligings- en nalevingsredenen.

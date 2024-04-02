@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Concatenar strings envolve unir duas ou mais strings de ponta a ponta para\
   \ formar uma nova string. Os programadores fazem isso para gerar texto\u2026"
 title: Concatenando strings
+weight: 3
 ---
-
-{{< edit_this_page >}}
 
 ## O Que & Por Quê?
 

@@ -13,9 +13,8 @@ summary: "T\u1ED5 ch\u1EE9c m\xE3 th\xE0nh c\xE1c h\xE0m trong Haskell c\xF3 ngh
   i \u0111\u01B0\u1EE3c \u0111\u1EB7t t\xEAn, c\xF3 th\u1EC3 t\xE1i s\u1EED d\u1EE5\
   ng. T\u1EA1i sao l\u1EA1i nh\u01B0 v\u1EADy? \u0110i\u1EC1u\u2026"
 title: "S\u1EAFp x\u1EBFp m\xE3 th\xE0nh c\xE1c h\xE0m"
+weight: 18
 ---
-
-{{< edit_this_page >}}
 
 ## Cái gì & Tại sao?
 Tổ chức mã thành các hàm trong Haskell có nghĩa là bạn sẽ phân chia mã của mình thành các khối được đặt tên, có thể tái sử dụng. Tại sao lại như vậy? Điều này giữ cho mã của bạn không bị lặp lại (Don't Repeat Yourself - DRY), khiến nó dễ đọc và dễ gỡ lỗi hơn.

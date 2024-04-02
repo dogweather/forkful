@@ -8,9 +8,8 @@ model: gpt-4-1106-preview
 summary: "Descargar una p\xE1gina web es b\xE1sicamente pedirle a un servidor de internet\
   \ que nos mande los datos de una p\xE1gina. Los programadores hacen esto para obtener\u2026"
 title: "Descargando una p\xE1gina web"
+weight: 42
 ---
-
-{{< edit_this_page >}}
 
 ## Qué & Por Qué?
 Descargar una página web es básicamente pedirle a un servidor de internet que nos mande los datos de una página. Los programadores hacen esto para obtener información útil, actualizar datos en tiempo real o interactuar con servicios web.

@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Arrays associativos em PHP s\xE3o como listas superpoderosas onde cada elemento\
   \ pode ser acessado usando uma chave leg\xEDvel por humanos em vez de apenas\u2026"
 title: Usando arrays associativos
+weight: 15
 ---
-
-{{< edit_this_page >}}
 
 ## O Que & Por Quê?
 

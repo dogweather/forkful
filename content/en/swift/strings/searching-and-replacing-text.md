@@ -7,9 +7,8 @@ model: gpt-4-1106-preview
 summary: "Searching and replacing text in programming is exactly what it sounds like:\
   \ scanning strings for certain patterns and swapping those out for something\u2026"
 title: Searching and replacing text
+weight: 10
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 

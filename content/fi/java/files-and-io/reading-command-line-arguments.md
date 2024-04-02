@@ -9,9 +9,8 @@ summary: "\"Mit\xE4 & Miksi?\" Komennonriviargumentit ovat ohjelmaan ulkoa sy\xF
   tett\xE4vi\xE4 parametreja. Niit\xE4 k\xE4ytet\xE4\xE4n ohjelman toiminnan muokkaamiseen\
   \ lennossa, ilman\u2026"
 title: Komennoriviparametrien lukeminen
+weight: 23
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 "Mitä & Miksi?"

@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "JSON (JavaScript Object Notation) is een tekstformaat voor gegevensuitwisseling.\
   \ Programmeurs gebruiken het vanwege de eenvoud en interoperabiliteit\u2026"
 title: Werken met JSON
+weight: 38
 ---
-
-{{< edit_this_page >}}
 
 ## Wat & Waarom?
 JSON (JavaScript Object Notation) is een tekstformaat voor gegevensuitwisseling. Programmeurs gebruiken het vanwege de eenvoud en interoperabiliteit tussen talen, waardoor het delen van gegevens tussen diensten en applicaties naadloos verloopt.

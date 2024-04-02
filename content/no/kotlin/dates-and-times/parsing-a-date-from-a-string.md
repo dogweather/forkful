@@ -7,9 +7,8 @@ model: unknown
 summary: "Dato-parsing fra en streng betyr \xE5 konvertere tekst til et `Date`-objekt.\
   \ Programmerere gj\xF8r dette for \xE5 h\xE5ndtere datoer og tider p\xE5 en standardisert,\u2026"
 title: Tolke en dato fra en streng
+weight: 30
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 Dato-parsing fra en streng betyr å konvertere tekst til et `Date`-objekt. Programmerere gjør dette for å håndtere datoer og tider på en standardisert, manipulerbar måte i apps og systemer.

@@ -9,9 +9,8 @@ summary: "Att skicka en HTTP-beg\xE4ran med basautentisering inneb\xE4r att du a
   nder anv\xE4ndarnamn och l\xF6senord f\xF6r att f\xE5 tillg\xE5ng till en resurs\
   \ p\xE5 webben.\u2026"
 title: "Skicka en HTTP-f\xF6rfr\xE5gan med Basic-autentisering"
+weight: 45
 ---
-
-{{< edit_this_page >}}
 
 ## Vad och varför?
 Att skicka en HTTP-begäran med basautentisering innebär att du använder användarnamn och lösenord för att få tillgång till en resurs på webben. Programmerare gör detta för att säkerställa åtkomst till skyddade resurser där enkelheten och standardiseringen av metoden är viktig.

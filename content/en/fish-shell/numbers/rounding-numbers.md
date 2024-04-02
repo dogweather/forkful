@@ -7,9 +7,8 @@ model: gpt-4-1106-preview
 summary: "Rounding numbers is about chopping off decimal places to simplify your data\
   \ or fit specific formats. Programmers do it for user-friendly display,\u2026"
 title: Rounding numbers
+weight: 13
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 Rounding numbers is about chopping off decimal places to simplify your data or fit specific formats. Programmers do it for user-friendly display, efficient storage, or when decimal precision is a non-issue.

@@ -9,9 +9,8 @@ summary: "Modifier des fichiers sur place avec des lignes de commande est une pr
   \ qui consiste \xE0 apporter des modifications directement aux fichiers depuis la\u2026"
 title: "Modification de fichiers sur place avec des lignes de commande en une seule\
   \ \xE9tape"
+weight: 32
 ---
-
-{{< edit_this_page >}}
 
 ## Quoi & Pourquoi ?
 

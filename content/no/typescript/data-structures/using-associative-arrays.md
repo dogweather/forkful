@@ -11,9 +11,8 @@ summary: "Assosiative arrays, eller objekter i TypeScript, lar deg bruke strenge
   \ (eller n\xF8kler) for \xE5 f\xE5 tilgang til verdi-par. Programmerere bruker dem\
   \ for mer\u2026"
 title: Bruke associative tabeller
+weight: 15
 ---
-
-{{< edit_this_page >}}
 
 ## Hva & Hvorfor?
 

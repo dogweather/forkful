@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Analisar (parse) uma data de uma string em C# envolve converter representa\xE7\
   \xF5es textuais de datas e horas em um objeto `DateTime`. Isso \xE9 essencial para\u2026"
 title: Analisando uma data a partir de uma string
+weight: 30
 ---
-
-{{< edit_this_page >}}
 
 ## O Que & Por Quê?
 Analisar (parse) uma data de uma string em C# envolve converter representações textuais de datas e horas em um objeto `DateTime`. Isso é essencial para aplicações que precisam manipular, armazenar ou exibir datas e horas em diferentes formatos, como aplicativos de agenda, processadores de log ou qualquer sistema que lida com entrada de data de usuários ou fontes externas.

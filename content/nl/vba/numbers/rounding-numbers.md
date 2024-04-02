@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Afronden van getallen in programmeren gaat over het benaderen van een getal\
   \ tot het dichtstbijzijnde gehele getal of tot een bepaald aantal decimalen.\u2026"
 title: Afronden van getallen
+weight: 13
 ---
-
-{{< edit_this_page >}}
 
 ## Wat & Waarom?
 

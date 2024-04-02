@@ -11,9 +11,8 @@ summary: "Fazer parsing de HTML em projetos Arduino \xE9 sobre extrair informa\x
   \xF5es de p\xE1ginas web. Programadores fazem isso para permitir que seus dispositivos\
   \ Arduino\u2026"
 title: Analisando HTML
+weight: 43
 ---
-
-{{< edit_this_page >}}
 
 ## O Quê & Por Quê?
 

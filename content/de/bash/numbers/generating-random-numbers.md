@@ -8,9 +8,8 @@ model: gpt-4-0125-preview
 summary: "Das Generieren von Zufallszahlen in Bash bietet eine M\xF6glichkeit, Unvorhersehbarkeit\
   \ in Skripten einzuf\xFChren, was f\xFCr Aufgaben wie das Generieren von\u2026"
 title: Generierung von Zufallszahlen
+weight: 12
 ---
-
-{{< edit_this_page >}}
 
 ## Was & Warum?
 Das Generieren von Zufallszahlen in Bash bietet eine Möglichkeit, Unvorhersehbarkeit in Skripten einzuführen, was für Aufgaben wie das Generieren von sicheren Passwörtern, die Simulation von Daten oder für die Programmierung von Spielen unerlässlich ist. Programmierer nutzen diese Fähigkeit, um ihren Skripten Variabilität hinzuzufügen oder ihre Programme unter einer Vielzahl zufällig generierter Bedingungen zu testen.

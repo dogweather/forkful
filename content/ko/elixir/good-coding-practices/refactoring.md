@@ -22,9 +22,8 @@ summary: "\uB9AC\uD329\uD1A0\uB9C1\uC740 \uCF54\uB4DC\uC758 \uC678\uBD80 \uB3D9\
   \uC73C\uB85C \uB9CC\uB4E4\uC5B4 \uBBF8\uB798\uC758 \uC5C5\uB370\uC774\uD2B8\uB97C\
   \ \uC6A9\uC774\uD558\uAC8C \uD558\uACE0 \uBC84\uADF8\uC758 \uC704\uD5D8\uC744\u2026"
 title: "\uB9AC\uD329\uD1A0\uB9C1"
+weight: 19
 ---
-
-{{< edit_this_page >}}
 
 ## 무엇 & 왜?
 리팩토링은 코드의 외부 동작을 변경하지 않고 기존 코드를 재구조화하는 과정으로, 가독성과 유지보수성 같은 비기능적 속성을 개선하는 것을 목표로 합니다. 프로그래머는 코드를 더 깨끗하고 이해하기 쉽게, 그리고 효율적으로 만들어 미래의 업데이트를 용이하게 하고 버그의 위험을 줄이기 위해 이 작업을 수행합니다.

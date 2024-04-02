@@ -13,9 +13,8 @@ summary: "Vi\u1EC7c t\xECm \u0111\u1ED9 d\xE0i c\u1EE7a m\u1ED9t chu\u1ED7i tron
   i \u0111\xF3. C\xE1c l\u1EADp tr\xECnh vi\xEAn th\u01B0\u1EDDng c\u1EA7n th\xF4\
   ng tin n\xE0y \u0111\u1EC3 x\xE1c th\u1EF1c \u0111\u1EA7u v\xE0o, l\u1EB7p\u2026"
 title: "T\xECm chi\u1EC1u d\xE0i c\u1EE7a m\u1ED9t chu\u1ED7i k\xFD t\u1EF1"
+weight: 7
 ---
-
-{{< edit_this_page >}}
 
 ## Cái gì & Tại sao?
 Việc tìm độ dài của một chuỗi trong Clojure trả về số lượng các ký tự trong chuỗi đó. Các lập trình viên thường cần thông tin này để xác thực đầu vào, lặp qua các ký tự, hoặc cho các tác vụ thao tác chuỗi.

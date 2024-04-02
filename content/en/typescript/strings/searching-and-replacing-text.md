@@ -7,9 +7,8 @@ model: gpt-4-1106-preview
 summary: "Searching and replacing text in strings is a common task in programming,\
   \ often used to process and manipulate data. It's crucial for refining content,\u2026"
 title: Searching and replacing text
+weight: 10
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 

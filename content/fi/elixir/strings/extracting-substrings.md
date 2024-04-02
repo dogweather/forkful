@@ -7,9 +7,8 @@ model: gpt-4-1106-preview
 summary: "Substringien irrottaminen tarkoittaa merkkijonon osien poimimista. Ohjelmoijat\
   \ tekev\xE4t t\xE4t\xE4 tietojen j\xE4sentelyyn, tietokantojen k\xE4sittelyyn ja\u2026"
 title: Merkkijonojen osien poimiminen
+weight: 6
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 Substringien irrottaminen tarkoittaa merkkijonon osien poimimista. Ohjelmoijat tekevät tätä tietojen jäsentelyyn, tietokantojen käsittelyyn ja tekstitiedon kohdentamiseen.

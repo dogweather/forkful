@@ -9,9 +9,8 @@ summary: "L'extraction de sous-cha\xEEnes consiste \xE0 prendre des morceaux sp\
   cifiques d'une cha\xEEne de caract\xE8res. Les d\xE9veloppeurs le font pour analyser,\
   \ manipuler ou\u2026"
 title: "Extraction de sous-cha\xEEnes"
+weight: 6
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why? (Quoi et Pourquoi ?)
 L'extraction de sous-chaînes consiste à prendre des morceaux spécifiques d'une chaîne de caractères. Les développeurs le font pour analyser, manipuler ou afficher des données textuelles de manière plus pertinente.

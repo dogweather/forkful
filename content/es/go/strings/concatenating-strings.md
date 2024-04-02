@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Concatenar cadenas implica unir dos o m\xE1s cadenas de extremo a extremo\
   \ para formar una nueva cadena. Los programadores hacen esto para generar texto\u2026"
 title: Concatenando cadenas de texto
+weight: 3
 ---
-
-{{< edit_this_page >}}
 
 ## Qué y Por Qué?
 

@@ -11,9 +11,8 @@ summary: "\xC9crire des tests en Elm consiste \xE0 cr\xE9er des cas de test pour
   rifier la justesse de votre code Elm, en s'assurant qu'il se comporte comme pr\xE9\
   vu. Les\u2026"
 title: "R\xE9daction de tests"
+weight: 36
 ---
-
-{{< edit_this_page >}}
 
 ## Quoi & Pourquoi ?
 

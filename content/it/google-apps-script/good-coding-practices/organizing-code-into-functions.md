@@ -11,9 +11,8 @@ summary: "Organizzare il codice in funzioni riguarda la strutturazione del codic
   \ di Google Apps Script separando i segmenti logici in blocchi distinti, ognuno\
   \ dei\u2026"
 title: Organizzare il codice in funzioni
+weight: 18
 ---
-
-{{< edit_this_page >}}
 
 ## Cos'è e perché?
 

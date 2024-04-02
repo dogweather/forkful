@@ -9,9 +9,8 @@ summary: "TOML, lyhennettyn\xE4 Tom's Obvious, Minimal Language, on data-seriali
   \ Elm-ohjelmoijat k\xE4ytt\xE4v\xE4t sit\xE4 konfiguraatiotiedon hallintaan, koska\
   \ se on\u2026"
 title: "Ty\xF6skentely TOML:n kanssa"
+weight: 39
 ---
-
-{{< edit_this_page >}}
 
 ## Mikä & Miksi?
 TOML, lyhennettynä Tom's Obvious, Minimal Language, on data-serialisointikieli. Elm-ohjelmoijat käyttävät sitä konfiguraatiotiedon hallintaan, koska se on ihmisen luettavissa ja kartoittuu siististi sovellusten tarvitsemiin avain-arvo-pareihin.

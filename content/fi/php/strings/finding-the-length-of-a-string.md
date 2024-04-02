@@ -9,9 +9,8 @@ summary: "Mittaa merkkijonon pituus, selvitt\xE4\xE4 sen merkkien m\xE4\xE4r\xE4
   \ Miksi? Kontrolloidaksesi sy\xF6tett\xE4, tehd\xE4ksesi tietojenk\xE4sittelyst\xE4\
   \ tehokkaampaa tai\u2026"
 title: "Merkkijonon pituuden selvitt\xE4minen"
+weight: 7
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why? / Mitä ja Miksi?
 Mittaa merkkijonon pituus, selvittää sen merkkien määrän. Miksi? Kontrolloidaksesi syötettä, tehdäksesi tietojenkäsittelystä tehokkaampaa tai varmistaakseen, että tietyt ehdot täyttyvät – syystä riippuen se on usein kriittinen operaatio ohjelmoijalle.

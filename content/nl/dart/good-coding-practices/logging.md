@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Loggen in Dart verwijst naar het proces van het vastleggen van informatie\
   \ op verschillende niveaus tijdens de uitvoering van een programma. Programmeurs\u2026"
 title: Loggen
+weight: 17
 ---
-
-{{< edit_this_page >}}
 
 ## Wat & Waarom?
 

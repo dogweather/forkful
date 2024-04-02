@@ -11,9 +11,8 @@ summary: "Les tableaux associatifs, connus sous le nom de dictionnaires en Pytho
   \ associent des cl\xE9s \xE0 des valeurs, ce qui facilite la r\xE9cup\xE9ration,\
   \ la\u2026"
 title: Utilisation des tableaux associatifs
+weight: 15
 ---
-
-{{< edit_this_page >}}
 
 ## Quoi et Pourquoi ?
 

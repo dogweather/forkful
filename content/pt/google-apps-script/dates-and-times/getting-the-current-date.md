@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Obter a data atual no Google Apps Script \xE9 sobre buscar a data e hora\
   \ ao vivo, uma tarefa comum para automatizar tarefas, fazer registros e marcar\u2026"
 title: Obtendo a data atual
+weight: 29
 ---
-
-{{< edit_this_page >}}
 
 ## O Que & Por Que?
 

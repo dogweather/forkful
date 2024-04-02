@@ -9,9 +9,8 @@ summary: "Att ta bort citattecken fr\xE5n en str\xE4ng handlar om att rensa bort
   \ d\xE4r irriterande enkla (' ') eller dubbla (\" \") citationstecknen fr\xE5n din\
   \ textdata.\u2026"
 title: "Ta bort citattecken fr\xE5n en str\xE4ng"
+weight: 9
 ---
-
-{{< edit_this_page >}}
 
 ## Vad och Varför?
 

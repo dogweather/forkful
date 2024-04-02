@@ -9,9 +9,8 @@ summary: "I C# er uttrekk av delstrenger det \xE5 hente ut en spesifikk del av e
   \ tekststreng. Vi gj\xF8r det for \xE5 bearbeide eller analysere visse seksjoner\
   \ av data, som\u2026"
 title: Uthenting av delstrenger
+weight: 6
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why? (Hva & Hvorfor?)
 I C# er uttrekk av delstrenger det å hente ut en spesifikk del av en tekststreng. Vi gjør det for å bearbeide eller analysere visse seksjoner av data, som når vi filtrerer brukerinput eller henter ut databiter for behandling.

@@ -11,9 +11,8 @@ summary: "Att logga i C inneb\xE4r att man registrerar fl\xF6det och betydande h
   ndelser i ett program under dess k\xF6rtid, vilket ger en konkret \xF6versikt av\
   \ dess beteende\u2026"
 title: Loggning
+weight: 17
 ---
-
-{{< edit_this_page >}}
 
 ## Vad & Varför?
 

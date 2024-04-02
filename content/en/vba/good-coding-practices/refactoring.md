@@ -7,9 +7,8 @@ model: gpt-4-0125-preview
 summary: "Refactoring in programming involves modifying the structure of code without\
   \ changing its behavior, to improve aspects like readability, maintainability,\u2026"
 title: Refactoring
+weight: 19
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 

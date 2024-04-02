@@ -7,9 +7,8 @@ model: gpt-4-1106-preview
 summary: "Interpolointi tarkoittaa muuttujien arvojen yhdist\xE4mist\xE4 merkkijonoon.\
   \ Koodarit k\xE4ytt\xE4v\xE4t sit\xE4 dynaamisten viestien luomiseen ja koodin selkeyden\u2026"
 title: Merkkijonon interpolointi
+weight: 8
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why? - Mitä & Miksi?
 Interpolointi tarkoittaa muuttujien arvojen yhdistämistä merkkijonoon. Koodarit käyttävät sitä dynaamisten viestien luomiseen ja koodin selkeyden parantamiseen.

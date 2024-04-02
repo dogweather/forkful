@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "\xC5 skrive til en tekstfil i Elixir er en essensiell ferdighet for utviklere,\
   \ som tillater dataoppbevaring, logging, eller eksportering av menneskelesbart\u2026"
 title: Skrive en tekstfil
+weight: 24
 ---
-
-{{< edit_this_page >}}
 
 ## Hva & Hvorfor?
 

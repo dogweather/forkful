@@ -13,9 +13,8 @@ summary: "L\u1EA5y ng\xE0y hi\u1EC7n t\u1EA1i trong Clojure c\xF3 ngh\u0129a l\x
   \ c\u1EE7a b\u1EA1n \u0111ang ch\u1EA1y. L\u1EADp tr\xECnh vi\xEAn l\u1EA5y ng\xE0\
   y \u0111\u1EC3 \u0111\xF3ng d\u1EA5u th\u1EDDi gian cho\u2026"
 title: "L\u1EA5y ng\xE0y hi\u1EC7n t\u1EA1i"
+weight: 29
 ---
-
-{{< edit_this_page >}}
 
 ## Cái gì & Tại sao?
 

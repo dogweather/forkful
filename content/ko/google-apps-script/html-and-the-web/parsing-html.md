@@ -21,9 +21,8 @@ summary: "Google Apps Script\uC5D0\uC11C HTML \uD30C\uC2F1\uC740 HTML \uCF58\uD1
   \uD558\uACE0, \uC6F9 \uCF58\uD150\uCE20\uB97C \uC870\uC791\uD558\uAC70\uB098, Google\
   \ Apps\uC5D0\u2026"
 title: "HTML \uBD84\uC11D\uD558\uAE30"
+weight: 43
 ---
-
-{{< edit_this_page >}}
 
 ## 무엇 & 왜?
 Google Apps Script에서 HTML 파싱은 HTML 콘텐츠에서 데이터를 추출하는 것을 포함하며, 특히 웹 페이지나 웹 기반 데이터 소스와 상호작용할 때 유용합니다. 프로그래머들은 이 작업을 데이터 수집을 자동화하고, 웹 콘텐츠를 조작하거나, Google Apps에 웹 기능을 통합하기 위해 사용합니다.

@@ -9,9 +9,8 @@ summary: "Virheiden k\xE4sittely ohjelmoinnissa tarkoittaa odottamattomien tilan
   \ hallintaa\u2014asioita, jotka voivat menn\xE4 pieleen. Ohjelmoijat tekev\xE4t\
   \ sit\xE4\u2026"
 title: "Virheiden k\xE4sittely"
+weight: 16
 ---
-
-{{< edit_this_page >}}
 
 ## Mikä & Miksi?
 Virheiden käsittely ohjelmoinnissa tarkoittaa odottamattomien tilanteiden hallintaa—asioita, jotka voivat mennä pieleen. Ohjelmoijat tekevät sitä varmistaakseen, että heidän ohjelmansa pystyvät käsittelemään nämä tilanteet sujuvasti, ilman kaatumisia tai väärien tulosten tuottamista.

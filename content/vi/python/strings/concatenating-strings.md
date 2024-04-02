@@ -14,9 +14,8 @@ summary: "N\u1ED1i chu\u1ED7i c\xF3 ngh\u0129a l\xE0 gh\xE9p ch\xFAng l\u1EA1i v
   nh m\u1ED9t chu\u1ED7i m\u1EDBi. N\xF3 gi\u1ED1ng nh\u01B0 Lego chu\u1ED7i. Ch\xFA\
   ng ta l\xE0m \u0111i\u1EC1u n\xE0y \u0111\u1EC3 x\xE2y d\u1EF1ng v\u0103n\u2026"
 title: "N\u1ED1i chu\u1ED7i k\xFD t\u1EF1"
+weight: 3
 ---
-
-{{< edit_this_page >}}
 
 ## Cái gì và Tại sao?
 Nối chuỗi có nghĩa là ghép chúng lại với nhau từ đầu đến cuối để tạo thành một chuỗi mới. Nó giống như Lego chuỗi. Chúng ta làm điều này để xây dựng văn bản; hãy nghĩ về tên người dùng, thông báo lỗi, và nội dung động.

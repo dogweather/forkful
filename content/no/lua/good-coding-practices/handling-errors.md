@@ -9,9 +9,8 @@ summary: "\xC5 h\xE5ndtere feil i koding handler om \xE5 forvente det uventede. 
   \ er kunsten \xE5 planlegge for n\xE5r ting g\xE5r galt, slik at du kan holde programmet\
   \ ditt i jevn\u2026"
 title: "Feilh\xE5ndtering"
+weight: 16
 ---
-
-{{< edit_this_page >}}
 
 ## Hva & Hvorfor?
 Å håndtere feil i koding handler om å forvente det uventede. Det er kunsten å planlegge for når ting går galt, slik at du kan holde programmet ditt i jevn drift.

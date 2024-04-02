@@ -11,9 +11,8 @@ summary: "Travailler avec JSON (JavaScript Object Notation) implique d'analyser 
   \ cha\xEEnes format\xE9es JSON en objets Python et vice versa. Cela est crucial\
   \ pour le\u2026"
 title: Travailler avec JSON
+weight: 38
 ---
-
-{{< edit_this_page >}}
 
 ## Quoi et pourquoi ?
 

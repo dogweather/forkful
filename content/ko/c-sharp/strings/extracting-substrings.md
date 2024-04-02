@@ -14,9 +14,8 @@ summary: "\uBB38\uC790\uC5F4\uC5D0\uC11C \uD2B9\uC815 \uBD80\uBD84\uC744 \uB044\
   \uC99D, \uD639\uC740 \uBB38\uC790\uC5F4 \uD615\uD0DC\uC18C\uB97C \uBD84\uC11D\uD560\
   \ \uB54C \uD544\uC694\uD569\uB2C8\uB2E4."
 title: "\uBD80\uBD84 \uBB38\uC790\uC5F4 \uCD94\uCD9C"
+weight: 6
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why? (무엇 & 왜?)
 문자열에서 특정 부분을 끄집어내는 것을 '부분 문자열 추출'이라고 합니다. 데이터 처리, 입력 검증, 혹은 문자열 형태소를 분석할 때 필요합니다.

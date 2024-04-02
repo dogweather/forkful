@@ -5,13 +5,14 @@ What and Why: "Debuggers help you understand your program's \"flow\"; making sur
   \ IMO, their helpfulness really depends on the particular language, your personal\
   \ working style, the quality of the debugging tool itself. \u2014Robert"
 date: 2024-01-25 20:50:12.035385-07:00
-description: Debuggers help understand your program's "flow"; making sure its logic
-  plays out as expected.
+description: "Clojure leans on the Java Virtual Machine (JVM), so a lot of debugging\
+  \ happens with Java tools. One such tool is `CIDER`, a powerhouse package for Clojure\u2026"
 lastmod: 2024-03-31
 model: gpt-4-1106-preview
-summary: Debuggers help understand your program's "flow"; making sure its logic plays
-  out as expected.
+summary: "Clojure leans on the Java Virtual Machine (JVM), so a lot of debugging happens\
+  \ with Java tools. One such tool is `CIDER`, a powerhouse package for Clojure\u2026"
 title: Using a debugger
+weight: 35
 ---
 
 ## How to:

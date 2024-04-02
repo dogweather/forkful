@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Een tekstbestand lezen in Swift betekent het ophalen van de inhoud van een\
   \ bestand dat is opgeslagen op schijf. Programmeurs doen dit om te werken met\u2026"
 title: Een tekstbestand lezen
+weight: 22
 ---
-
-{{< edit_this_page >}}
 
 ## Wat & Waarom?
 Een tekstbestand lezen in Swift betekent het ophalen van de inhoud van een bestand dat is opgeslagen op schijf. Programmeurs doen dit om te werken met opgeslagen gegevens zoals configuraties, logs of door gebruikers gegenereerde inhoud.

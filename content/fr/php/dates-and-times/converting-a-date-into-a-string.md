@@ -9,9 +9,8 @@ summary: "Transformer une date en cha\xEEne de caract\xE8res permet de la format
   \ pour l'affichage. Les d\xE9veloppeurs font cela pour des raisons de lisibilit\xE9\
   \ et pour\u2026"
 title: "Conversion d'une date en cha\xEEne de caract\xE8res"
+weight: 28
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why? (Quoi et Pourquoi ?)
 

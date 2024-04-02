@@ -7,9 +7,8 @@ model: gpt-4-1106-preview
 summary: "Starting a new project means setting up the foundation for your codebase.\
   \ Programmers do this to kickstart the development process, guide the project's\u2026"
 title: Starting a new project
+weight: 1
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 Starting a new project means setting up the foundation for your codebase. Programmers do this to kickstart the development process, guide the project's structure, and lay down the groundwork for future code.

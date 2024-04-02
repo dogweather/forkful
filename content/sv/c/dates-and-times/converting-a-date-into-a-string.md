@@ -11,9 +11,8 @@ summary: "Att konvertera ett datum till en str\xE4ng i C inneb\xE4r att \xF6vers
   tta en datumstruktur eller tidsst\xE4mpel till ett l\xE4sbart format f\xF6r m\xE4\
   nniskor. Programmerare\u2026"
 title: "Omvandla ett datum till en str\xE4ng"
+weight: 28
 ---
-
-{{< edit_this_page >}}
 
 ## Vad & Varför?
 

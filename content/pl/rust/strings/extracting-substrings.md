@@ -9,9 +9,8 @@ summary: "Wyodr\u0119bnianie podci\u0105g\xF3w to dzia\u0142anie polegaj\u0105ce
   \ przyw\u0142aszczeniu sobie cz\u0119\u015Bci stringu. Programi\u015Bci robi\u0105\
   \ to, aby pracowa\u0107 tylko z tymi z\u0142otymi kawa\u0142kami\u2026"
 title: "Wycinanie pod\u0142a\u0144cuch\xF3w"
+weight: 6
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why? (Co i Dlaczego?)
 

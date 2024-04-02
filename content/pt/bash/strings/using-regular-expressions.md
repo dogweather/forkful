@@ -10,9 +10,8 @@ model: gpt-4-0125-preview
 summary: "Express\xF5es regulares (regex) no Bash permitem que voc\xEA pesquise, manipule\
   \ e manuseie strings e arquivos com base em padr\xF5es espec\xEDficos. Programadores\u2026"
 title: "Usando express\xF5es regulares"
+weight: 11
 ---
-
-{{< edit_this_page >}}
 
 ## O Que & Por Que?
 

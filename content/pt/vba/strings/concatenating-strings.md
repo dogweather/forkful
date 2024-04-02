@@ -11,9 +11,8 @@ summary: "A concatena\xE7\xE3o no Visual Basic for Applications (VBA) envolve a 
   o de duas ou mais strings em uma \xFAnica entidade. Esta \xE9 uma tarefa fundamental\
   \ na\u2026"
 title: Concatenando strings
+weight: 3
 ---
-
-{{< edit_this_page >}}
 
 ## O Que & Por Quê?
 

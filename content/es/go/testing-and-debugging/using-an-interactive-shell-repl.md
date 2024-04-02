@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Una shell interactiva, o Bucle de Leer-Evaluar-Imprimir (REPL, por sus siglas\
   \ en ingl\xE9s), te permite experimentar con c\xF3digo de Go en tiempo real,\u2026"
 title: Utilizando un shell interactivo (REPL)
+weight: 34
 ---
-
-{{< edit_this_page >}}
 
 ## Qué y Por Qué?
 

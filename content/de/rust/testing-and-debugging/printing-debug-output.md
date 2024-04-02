@@ -9,9 +9,8 @@ summary: "Debug-Ausgabe zu drucken bedeutet, Zwischenergebnisse und Variablenwer
   \ w\xE4hrend der Laufzeit in die Konsole zu schreiben. Programmierer nutzen das,\
   \ um\u2026"
 title: Debug-Ausgaben drucken
+weight: 33
 ---
-
-{{< edit_this_page >}}
 
 ## Was & Warum?
 Debug-Ausgabe zu drucken bedeutet, Zwischenergebnisse und Variablenwerte während der Laufzeit in die Konsole zu schreiben. Programmierer nutzen das, um Fehler zu finden und den Programmfluss nachzuvollziehen.

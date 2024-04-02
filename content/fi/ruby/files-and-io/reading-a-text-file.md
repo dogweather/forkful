@@ -7,9 +7,8 @@ model: gpt-4-1106-preview
 summary: "Tiedostojen lukeminen Rubyssa tarkoittaa tekstitiedostojen sis\xE4ll\xF6\
   n prosessoimista ohjelmallisesti. Ohjelmoijat lukevat tiedostoja, koska se on oleellista\u2026"
 title: Tekstitiedoston lukeminen
+weight: 22
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why - Mitä & Miksi?
 Tiedostojen lukeminen Rubyssa tarkoittaa tekstitiedostojen sisällön prosessoimista ohjelmallisesti. Ohjelmoijat lukevat tiedostoja, koska se on oleellista datan käsittelyyn, joka voi olla sovelluksen konfiguraatiota, käyttäjän syöttämää tietoa tai muuta hyödyllistä.

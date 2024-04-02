@@ -17,9 +17,8 @@ summary: "\u5728C\u8BED\u8A00\u4E2D\u627E\u5230\u4E00\u4E2A\u5B57\u7B26\u4E32\u7
   \u5982\u7F13\u51B2\u533A\u6EA2\u51FA\u7684\u9519\u8BEF\uFF0C\u8FD9\u53EF\u80FD\u5BFC\
   \u81F4\u5B89\u5168\u6F0F\u6D1E\u6216\u7A0B\u5E8F\u5D29\u6E83\u3002"
 title: "\u67E5\u627E\u5B57\u7B26\u4E32\u7684\u957F\u5EA6"
+weight: 7
 ---
-
-{{< edit_this_page >}}
 
 ## 什么及为什么？
 在C语言中找到一个字符串的长度涉及确定在空终止符`\0`之前的字符数量。程序员这么做是为了正确操作字符串，避免遇到例如缓冲区溢出的错误，这可能导致安全漏洞或程序崩溃。

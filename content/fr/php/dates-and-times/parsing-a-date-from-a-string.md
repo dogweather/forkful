@@ -11,9 +11,8 @@ summary: "Analyser une date \xE0 partir d'une cha\xEEne en PHP implique de conve
   \ un texte repr\xE9sentant une date et/ou une heure en un objet `DateTime` de PHP\
   \ ou en\u2026"
 title: "Analyser une date depuis une cha\xEEne de caract\xE8res"
+weight: 30
 ---
-
-{{< edit_this_page >}}
 
 ## Quoi & Pourquoi ?
 

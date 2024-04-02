@@ -11,9 +11,8 @@ summary: "Extraer subcadenas en C implica crear una cadena m\xE1s peque\xF1a (su
   \ a partir de una cadena m\xE1s grande bas\xE1ndose en criterios especificados,\
   \ como la\u2026"
 title: Extrayendo subcadenas
+weight: 6
 ---
-
-{{< edit_this_page >}}
 
 ## Qué y Por Qué?
 

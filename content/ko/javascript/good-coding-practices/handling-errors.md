@@ -19,9 +19,8 @@ summary: "\uC5D0\uB7EC \uCC98\uB9AC(Error handling)\uB780 \uCF54\uB4DC\uAC00 \uC
   \uB2C8\uB2E4. \uADF8\uB0E5 \uCDA9\uB3CC\uD558\uACE0 \uBD88\uD0C0\uB294 \uB300\uC2E0\
   \ \uB9D0\uC774\uC8E0."
 title: "\uC5D0\uB7EC \uCC98\uB9AC\uD558\uAE30"
+weight: 16
 ---
-
-{{< edit_this_page >}}
 
 ## 무엇인가 & 왜 중요한가?
 

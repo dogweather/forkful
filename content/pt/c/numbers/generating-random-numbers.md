@@ -11,9 +11,8 @@ summary: "Gerar n\xFAmeros aleat\xF3rios em C envolve a cria\xE7\xE3o de valores
   \ s\xE3o imprevis\xEDveis e seguem uma distribui\xE7\xE3o espec\xEDfica, como uniforme\
   \ ou normal. Essa\u2026"
 title: "Gerando n\xFAmeros aleat\xF3rios"
+weight: 12
 ---
-
-{{< edit_this_page >}}
 
 ## O Que & Porquê?
 

@@ -10,9 +10,8 @@ model: gpt-4-0125-preview
 summary: "Die Arbeit mit JSON in Elm dreht sich um das Dekodieren von JSON-Daten in\
   \ Elm-Typen und das Kodieren von Elm-Werten zur\xFCck in JSON. Dieser Prozess ist\u2026"
 title: Arbeiten mit JSON
+weight: 38
 ---
-
-{{< edit_this_page >}}
 
 ## Was & Warum?
 Die Arbeit mit JSON in Elm dreht sich um das Dekodieren von JSON-Daten in Elm-Typen und das Kodieren von Elm-Werten zurück in JSON. Dieser Prozess ist entscheidend, damit Webanwendungen mit APIs und externen Datenquellen interagieren können, was einen nahtlosen Datenaustausch zwischen dem Client (Elm) und Servern oder anderen Diensten ermöglicht.

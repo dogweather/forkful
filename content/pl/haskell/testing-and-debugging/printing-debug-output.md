@@ -9,9 +9,8 @@ summary: "Wypisywanie informacji diagnostycznych (debug output) to spos\xF3b na 
   ledzenie tego, co si\u0119 dzieje w programie podczas jego dzia\u0142ania. Programi\u015B\
   ci u\u017Cywaj\u0105\u2026"
 title: "Drukowanie komunikat\xF3w debugowania"
+weight: 33
 ---
-
-{{< edit_this_page >}}
 
 ## Co i Dlaczego?
 Wypisywanie informacji diagnostycznych (debug output) to sposób na śledzenie tego, co się dzieje w programie podczas jego działania. Programiści używają tego do łapania błędów i lepszego zrozumienia przepływu programu.

@@ -23,9 +23,8 @@ summary: "\uC790\uBC14\uC2A4\uD06C\uB9BD\uD2B8\uC5D0\uC11C \uD604\uC7AC \uB0A0\u
   \ \uBBFC\uAC10\uD55C \uB370\uC774\uD130\uB97C \uCC98\uB9AC\uD558\uAE30 \uC704\uD574\
   \ \uC774 \uC791\uC5C5\uC744 \uC218\uD589\uD569\uB2C8\uB2E4."
 title: "\uD604\uC7AC \uB0A0\uC9DC \uAC00\uC838\uC624\uAE30"
+weight: 29
 ---
-
-{{< edit_this_page >}}
 
 ## 무엇과 왜?
 자바스크립트에서 현재 날짜를 얻는 것은 오늘 날짜 및 시간을 검색하고 가능한 경우 조작하는 기본적인 작업입니다. 프로그래머들은 웹사이트나 애플리케이션에 날짜를 표시하거나, 사용자 상호작용을 추적하거나, 시간에 민감한 데이터를 처리하기 위해 이 작업을 수행합니다.

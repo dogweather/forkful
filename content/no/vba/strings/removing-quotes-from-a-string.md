@@ -11,9 +11,8 @@ summary: "\xC5 fjerne anf\xF8rselstegn fra en streng i VBA involverer \xE5 strip
   \ ut forekomster av enkle (`'`) eller doble (`\"`) anf\xF8rselstegn som kan innkapsle\
   \ eller v\xE6re\u2026"
 title: Fjerne sitatmerker fra en streng
+weight: 9
 ---
-
-{{< edit_this_page >}}
 
 ## Hva & Hvorfor?
 

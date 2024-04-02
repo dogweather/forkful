@@ -19,9 +19,8 @@ summary: "YAML\uFF0C\u5373\u201CYAML Ain't Markup Language\uFF08YAML\u4E0D\u662F
   YAML\u6210\u4E3A\u914D\u7F6E\u5E94\u7528\u7A0B\u5E8F\u548C\u670D\u52A1\u7684\u5E38\
   \u7528\u9009\u62E9\u3002"
 title: "\u4F7F\u7528YAML\u5DE5\u4F5C"
+weight: 41
 ---
-
-{{< edit_this_page >}}
 
 ## 什么和为什么？
 YAML，即“YAML Ain't Markup Language（YAML不是标记语言）”，是一种供程序员用于配置文件、数据转储和语言间数据传输的可读性数据序列化标准。由于它的可读性和易用性，YAML成为配置应用程序和服务的常用选择。

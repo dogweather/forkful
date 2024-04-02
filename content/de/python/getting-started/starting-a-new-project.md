@@ -10,9 +10,8 @@ model: gpt-4-0125-preview
 summary: "Ein neues Projekt in Python zu starten bedeutet, von Anfang an ein strukturiertes,\
   \ wartbares Framework einzurichten. Programmierer machen dies, um\u2026"
 title: Ein neues Projekt starten
+weight: 1
 ---
-
-{{< edit_this_page >}}
 
 ## Was & Warum?
 

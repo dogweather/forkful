@@ -19,9 +19,8 @@ summary: "TOML (Tom's Obvious, Minimal Language - \u05E9\u05E4\u05EA \u05D4\u05E
   \u05DE\u05E0\u05D8\u05D9\u05E7\u05D4 \u05D4\u05D1\u05E8\u05D5\u05E8\u05D4 \u05E9\
   \u05DC\u05D4. \u05EA\u05DB\u05E0\u05EA\u05D9\u05DD\u2026"
 title: "\u05E2\u05D1\u05D5\u05D3\u05D4 \u05E2\u05DD TOML"
+weight: 39
 ---
-
-{{< edit_this_page >}}
 
 ## מה ולמה?
 TOML (Tom's Obvious, Minimal Language - שפת התכנות הברורה והמינימלית של טום) היא פורמט סריאליזציה נתונים שנוח לקריאה בזכות הסמנטיקה הברורה שלה. תכנתים משתמשים ב-TOML עבור קבצי קונפיגורציה מכיוון שהיא מציעה איזון בין קריאות אנושית לניתוח מכונה.

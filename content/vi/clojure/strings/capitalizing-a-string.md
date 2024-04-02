@@ -14,9 +14,8 @@ summary: "Chuy\u1EC3n k\xFD t\u1EF1 \u0111\u1EA7u ti\xEAn c\u1EE7a chu\u1ED7i th
   ng \u0111\u01B0\u1EE3c g\u1ECDi l\xE0 vi\u1EC7c vi\u1EBFt hoa chu\u1ED7i. Ch\xFA\
   ng ta th\u1EF1c hi\u1EC7n \u0111i\u1EC1u n\xE0y \u0111\u1EC3 chu\u1EA9n h\xF3a\u2026"
 title: "Vi\u1EBFt hoa m\u1ED9t chu\u1ED7i"
+weight: 2
 ---
-
-{{< edit_this_page >}}
 
 ## Lý do & Tại sao?
 Chuyển ký tự đầu tiên của chuỗi thành chữ hoa và phần còn lại thành chữ thường được gọi là việc viết hoa chuỗi. Chúng ta thực hiện điều này để chuẩn hóa dữ liệu và cải thiện khả năng đọc, như chuyển 'alice' thành 'Alice' cho tên.

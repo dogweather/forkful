@@ -9,9 +9,8 @@ summary: "Arbeid med TOML inneb\xE6rer parsing og generering av TOML (Toms \xC5p
   \ Minimale Spr\xE5k) data med Haskell. Programmerere gj\xF8r dette for enkelt \xE5\
   \ h\xE5ndtere\u2026"
 title: Jobbe med TOML
+weight: 39
 ---
-
-{{< edit_this_page >}}
 
 ## Hva & Hvorfor?
 Arbeid med TOML innebærer parsing og generering av TOML (Toms Åpenbare, Minimale Språk) data med Haskell. Programmerere gjør dette for enkelt å håndtere konfigurasjonsfiler eller datautveksling med sterke typgarantier og minimal syntaksstøy.

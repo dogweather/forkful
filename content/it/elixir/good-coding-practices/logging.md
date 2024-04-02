@@ -9,9 +9,8 @@ summary: "Il logging nello sviluppo software \xE8 la tecnica di registrazione de
   \ eventi che si verificano mentre un programma \xE8 in esecuzione, tipicamente su\
   \ un\u2026"
 title: Registrazione Eventi (Logging)
+weight: 17
 ---
-
-{{< edit_this_page >}}
 
 ## Cos'è & Perché?
 Il logging nello sviluppo software è la tecnica di registrazione degli eventi che si verificano mentre un programma è in esecuzione, tipicamente su un file o un sistema esterno. I programmatori lo fanno per ottenere informazioni sul comportamento del software, risolvere problemi e mantenere un registro della cronologia operativa, che è fondamentale per il debug e il monitoraggio dello stato di salute delle applicazioni.

@@ -10,9 +10,8 @@ model: gpt-4-0125-preview
 summary: "L'analisi (parsing) di HTML comporta l'analisi del codice HTML di una pagina\
   \ web per estrarre informazioni o elementi specifici, un compito comune per lo\u2026"
 title: Analisi del HTML
+weight: 43
 ---
-
-{{< edit_this_page >}}
 
 ## Cosa & Perché?
 L'analisi (parsing) di HTML comporta l'analisi del codice HTML di una pagina web per estrarre informazioni o elementi specifici, un compito comune per lo scraping del web, il data mining o l'automatizzazione delle interazioni con i siti web. I programmatori lo fanno per interagire programmaticamente con i siti web o estrarre dati da essi, automatizzare compiti o testare applicazioni web.

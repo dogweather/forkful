@@ -7,9 +7,8 @@ model: gpt-4-1106-preview
 summary: "Concatenare le stringhe significa unirle insieme, fine a fine, per formarne\
   \ una nuova. I programmatori lo fanno per manipolare il testo, costruire output\u2026"
 title: Concatenazione di stringhe
+weight: 3
 ---
-
-{{< edit_this_page >}}
 
 ## Cos'è e Perché?
 Concatenare le stringhe significa unirle insieme, fine a fine, per formarne una nuova. I programmatori lo fanno per manipolare il testo, costruire output dinamici, e gestire dati che cambiano.

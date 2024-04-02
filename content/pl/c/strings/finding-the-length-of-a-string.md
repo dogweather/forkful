@@ -11,9 +11,8 @@ summary: "Znalezienie d\u0142ugo\u015Bci stringa w C polega na okre\u015Bleniu l
   \ znak\xF3w przed terminator nulowym `\\0`. Programi\u015Bci robi\u0105 to, aby\
   \ poprawnie manipulowa\u0107 ci\u0105gami\u2026"
 title: "Znajdowanie d\u0142ugo\u015Bci \u0142a\u0144cucha"
+weight: 7
 ---
-
-{{< edit_this_page >}}
 
 ## Co i dlaczego?
 Znalezienie długości stringa w C polega na określeniu liczby znaków przed terminator nulowym `\0`. Programiści robią to, aby poprawnie manipulować ciągami znaków, nie napotykając na błędy takie jak przepełnienia bufora, które mogą prowadzić do luk w zabezpieczeniach lub awarii programu.

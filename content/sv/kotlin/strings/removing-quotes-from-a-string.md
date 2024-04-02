@@ -9,9 +9,8 @@ summary: "Att ta bort citattecken fr\xE5n en str\xE4ng inneb\xE4r att man tar bo
   \ alla f\xF6rekomster av citattecken, antingen enkla (' ') eller dubbla (\" \"),\
   \ fr\xE5n textdata\u2026"
 title: "Ta bort citattecken fr\xE5n en str\xE4ng"
+weight: 9
 ---
-
-{{< edit_this_page >}}
 
 ## Vad & Varför?
 

@@ -7,9 +7,8 @@ model: gpt-4-0125-preview
 summary: "Komplekse tall utvider v\xE5rt tallsystem til \xE5 inkludere kvadratroten\
   \ av negative tall, hvor den 'imagin\xE6re' enheten i er lik kvadratroten av -1.\u2026"
 title: "\xC5 jobbe med komplekse tall"
+weight: 14
 ---
-
-{{< edit_this_page >}}
 
 ## Hva & Hvorfor?
 Komplekse tall utvider vårt tallsystem til å inkludere kvadratroten av negative tall, hvor den 'imaginære' enheten i er lik kvadratroten av -1. Programmerere bruker dem innen felt som ingeniørvitenskap, fysikk og signalbehandling, fordi de er flinke til å modellere bølger, svingninger og alt som roterer.

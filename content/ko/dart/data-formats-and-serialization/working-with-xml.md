@@ -23,9 +23,8 @@ summary: "Dart\uC5D0\uC11C XML\uACFC \uC791\uC5C5\uD558\uB294 \uAC83\uC740 XML \
   \ \uAD50\uD658, \uC124\uC815 \uB610\uB294 \uC6D0\uACA9 \uC808\uCC28 \uD638\uCD9C\
   \uC744\u2026"
 title: "XML\uACFC \uD568\uAED8 \uC791\uC5C5\uD558\uAE30"
+weight: 40
 ---
-
-{{< edit_this_page >}}
 
 ## 무엇인가 & 왜인가?
 

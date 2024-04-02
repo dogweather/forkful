@@ -7,9 +7,8 @@ model: gpt-4-1106-preview
 summary: "Das Protokollieren im Kontext der Programmierung ist der Prozess, Ereignisse,\
   \ Zust\xE4nde und Informationen in einer Datei oder einem anderen Ausgabemedium\u2026"
 title: Protokollierung
+weight: 17
 ---
-
-{{< edit_this_page >}}
 
 ## Was & Warum?
 Das Protokollieren im Kontext der Programmierung ist der Prozess, Ereignisse, Zustände und Informationen in einer Datei oder einem anderen Ausgabemedium aufzuzeichnen. Programmierer führen Protokolle, um den Überblick darüber zu behalten, was in ihren Anwendungen passiert, um Probleme zu debuggen und um die Leistung für zukünftige Analysen und Optimierungen zu überwachen.

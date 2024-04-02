@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "L'obtention de la date actuelle en Python est une op\xE9ration essentielle\
   \ pour de nombreuses applications, telles que la journalisation, l'analyse de\u2026"
 title: Obtenir la date actuelle
+weight: 29
 ---
-
-{{< edit_this_page >}}
 
 ## Quoi et Pourquoi ?
 

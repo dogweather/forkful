@@ -7,9 +7,8 @@ model: gpt-4-0125-preview
 summary: "Avrunding av tall er \xE5 beskj\xE6re et tall til en spesifikk presisjon.\
   \ Programmerere gj\xF8r dette for \xE5 kontrollere numerisk utdata for lesbarhet,\u2026"
 title: Avrunding av tall
+weight: 13
 ---
-
-{{< edit_this_page >}}
 
 ## Hva & Hvorfor?
 Avrunding av tall er å beskjære et tall til en spesifikk presisjon. Programmerere gjør dette for å kontrollere numerisk utdata for lesbarhet, visningsformål, eller når spesifikk presisjon er nødvendig etter operasjoner som gir resultat i flyttall.

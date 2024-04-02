@@ -9,9 +9,8 @@ summary: "TOML, abreviatura de Tom's Obvious, Minimal Language (Lenguaje M\xEDni
   \ y Obvio de Tom), es un formato de serializaci\xF3n de datos que es f\xE1cil de\
   \ leer debido\u2026"
 title: Trabajando con TOML
+weight: 39
 ---
-
-{{< edit_this_page >}}
 
 ## ¿Qué y Por Qué?
 

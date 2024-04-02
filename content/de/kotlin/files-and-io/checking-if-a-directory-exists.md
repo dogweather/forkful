@@ -11,9 +11,8 @@ summary: "Das \xDCberpr\xFCfen, ob ein Verzeichnis in Kotlin existiert, beinhalt
   \ die Verifizierung der Pr\xE4senz eines Verzeichnisses an einem spezifizierten\
   \ Pfad.\u2026"
 title: "\xDCberpr\xFCfung, ob ein Verzeichnis existiert"
+weight: 20
 ---
-
-{{< edit_this_page >}}
 
 ## Was & Warum?
 

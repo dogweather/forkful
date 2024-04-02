@@ -23,9 +23,8 @@ summary: "Ruby\uC5D0\uC11C \uD14D\uC2A4\uD2B8 \uD30C\uC77C\uC744 \uC4F0\uB294 \u
   \uB0B4\uB294 \uAC83\uACFC \uAC19\uC740 \uC774\uC720\uB85C \uC790\uC8FC \uC774 \uC791\
   \uC5C5\uC744 \uC218\uD589\uD569\uB2C8\uB2E4."
 title: "\uD14D\uC2A4\uD2B8 \uD30C\uC77C \uC4F0\uAE30"
+weight: 24
 ---
-
-{{< edit_this_page >}}
 
 ## 무엇과 왜?
 Ruby에서 텍스트 파일을 쓰는 것은 출력과 데이터를 영구적으로 저장할 수 있게 하여, 나중에 접근하거나 수정할 수 있게 하는 기본적인 작업입니다. 프로그래머들은 로깅, 설정 저장, 사람이 읽을 수 있는 형식으로 데이터를 내보내는 것과 같은 이유로 자주 이 작업을 수행합니다.

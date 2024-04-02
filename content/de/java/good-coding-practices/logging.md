@@ -8,9 +8,8 @@ model: gpt-4-1106-preview
 summary: "Logging ist im Grunde der Prozess der Aufzeichnung von Ereignissen, die\
   \ innerhalb einer Softwareanwendung auftreten. Programmierer protokollieren diese\u2026"
 title: Protokollierung
+weight: 17
 ---
-
-{{< edit_this_page >}}
 
 ## Was & Warum?
 Logging ist im Grunde der Prozess der Aufzeichnung von Ereignissen, die innerhalb einer Softwareanwendung auftreten. Programmierer protokollieren diese Ereignisse, um Laufzeitinformationen zu erfassen, Probleme zu debuggen, das Systemverhalten zu überwachen und eine Audit-Trail für Sicherheits- und Compliance-Zwecke zu erstellen.

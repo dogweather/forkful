@@ -10,9 +10,8 @@ model: gpt-4-0125-preview
 summary: "Wyszukiwanie i zamiana tekstu w Visual Basic dla Aplikacji (VBA) jest niezb\u0119\
   dne do programistycznego edytowania dokument\xF3w, arkuszy kalkulacyjnych i baz\u2026"
 title: Wyszukiwanie i zamiana tekstu
+weight: 10
 ---
-
-{{< edit_this_page >}}
 
 ## Co i Dlaczego?
 

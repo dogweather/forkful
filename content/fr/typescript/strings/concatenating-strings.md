@@ -7,9 +7,8 @@ model: gpt-4-1106-preview
 summary: "La concat\xE9nation de cha\xEEnes de caract\xE8res, c'est comme coller des\
   \ mots ensemble pour former des phrases. On la fait pour construire des messages\u2026"
 title: "Concat\xE9nation de cha\xEEnes de caract\xE8res"
+weight: 3
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 La concaténation de chaînes de caractères, c'est comme coller des mots ensemble pour former des phrases. On la fait pour construire des messages dynamiques, des requêtes, ou simplement pour afficher du texte de manière logique.

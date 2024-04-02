@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Een tekstbestand schrijven is gegevens opslaan als platte tekst op schijf.\
   \ Programmeurs doen dit voor logboekregistratie, configuratie of het opslaan van\u2026"
 title: Een tekstbestand schrijven
+weight: 24
 ---
-
-{{< edit_this_page >}}
 
 ## Wat & Waarom?
 Een tekstbestand schrijven is gegevens opslaan als platte tekst op schijf. Programmeurs doen dit voor logboekregistratie, configuratie of het opslaan van gebruikersgegevens. Het is basis maar cruciaal voor de meeste applicaties.

@@ -11,9 +11,8 @@ summary: "Uuden projektin aloittaminen Dartissa k\xE4sitt\xE4\xE4 ymp\xE4rist\xF
   n pystytt\xE4misen, joka edesauttaa tehokasta kehityst\xE4, testausta ja julkaisua.\
   \ Ohjelmoijat\u2026"
 title: Uuden projektin aloittaminen
+weight: 1
 ---
-
-{{< edit_this_page >}}
 
 ## Mikä ja miksi?
 

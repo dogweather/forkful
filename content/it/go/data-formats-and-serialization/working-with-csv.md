@@ -10,9 +10,8 @@ model: gpt-4-0125-preview
 summary: "Il formato Valori Separati da Virgola (CSV) \xE8 ubiquitario per lo scambio\
   \ di dati a causa della sua semplicit\xE0 e facilit\xE0 di integrazione con la maggior\u2026"
 title: Lavorare con CSV
+weight: 37
 ---
-
-{{< edit_this_page >}}
 
 ## Cos'è & Perché?
 

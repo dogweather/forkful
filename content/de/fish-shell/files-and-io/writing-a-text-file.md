@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Das Schreiben in eine Textdatei in der Fish Shell erm\xF6glicht es Ihnen,\
   \ Daten dauerhaft zu speichern. Dies erleichtert die Datenwiederherstellung oder\u2026"
 title: Eine Textdatei schreiben
+weight: 24
 ---
-
-{{< edit_this_page >}}
 
 ## Was & Warum?
 

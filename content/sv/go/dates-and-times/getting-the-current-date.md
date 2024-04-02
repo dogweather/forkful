@@ -11,9 +11,8 @@ summary: "Att f\xE5 det aktuella datumet i Go \xE4r en grundl\xE4ggande uppgift 
   r programmerare, lika vanlig som \"Hello, World!\" i sin allm\xE4nhet. Det \xE4\
   r avg\xF6rande f\xF6r\u2026"
 title: "H\xE4mta aktuellt datum"
+weight: 29
 ---
-
-{{< edit_this_page >}}
 
 ## Vad & Varför?
 

@@ -11,9 +11,8 @@ summary: "\xC5 lese kommandolinjeargumenter i Visual Basic for Applications (VBA
   \ inneb\xE6rer \xE5 f\xE5 tilgang til parametere som er sendt til programmet ditt\
   \ ved utf\xF8relse.\u2026"
 title: Lese kommandolinje-argumenter
+weight: 23
 ---
-
-{{< edit_this_page >}}
 
 ## Hva & Hvorfor?
 

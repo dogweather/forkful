@@ -11,9 +11,8 @@ summary: "Praca z plikami CSV w Ruby umo\u017Cliwia proste podej\u015Bcie do obs
   ugi danych tabelarycznych. Programi\u015Bci cz\u0119sto anga\u017Cuj\u0105 si\u0119\
   \ w t\u0119 praktyk\u0119 do parsowania,\u2026"
 title: Praca z plikami CSV
+weight: 37
 ---
-
-{{< edit_this_page >}}
 
 ## Co i dlaczego?
 

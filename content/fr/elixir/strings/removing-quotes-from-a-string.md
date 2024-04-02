@@ -9,9 +9,8 @@ summary: "Enlever les guillemets d'une cha\xEEne de caract\xE8res signifie se d\
   faire de ces enveloppes suppl\xE9mentaires pour obtenir le texte pur \xE0 l'int\xE9\
   rieur. Les\u2026"
 title: "Retirer les guillemets d'une cha\xEEne"
+weight: 9
 ---
-
-{{< edit_this_page >}}
 
 ## Quoi & Pourquoi ?
 Enlever les guillemets d'une chaîne de caractères signifie se défaire de ces enveloppes supplémentaires pour obtenir le texte pur à l'intérieur. Les programmeurs font cela pour assainir l'entrée, éviter les erreurs, et préparer les données pour le traitement où les guillemets sont des nuisances, pas des fonctionnalités.

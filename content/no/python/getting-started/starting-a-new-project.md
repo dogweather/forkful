@@ -12,9 +12,8 @@ summary: "\xC5 starte et nytt prosjekt i Python handler om \xE5 sette opp et str
   \ vedlikeholdbart rammeverk fra starten. Programmerere gj\xF8r dette for \xE5 sikre\
   \ at\u2026"
 title: Starter et nytt prosjekt
+weight: 1
 ---
-
-{{< edit_this_page >}}
 
 ## Hva & Hvorfor?
 

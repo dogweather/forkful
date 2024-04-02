@@ -7,9 +7,8 @@ model: gpt-4-1106-preview
 summary: "Sending av en HTTP-foresp\xF8rsel med grunnleggende autentisering inneb\xE6\
   rer \xE5 inkludere brukernavn og passord for tilgangskontroll hos en server. Programmere\u2026"
 title: "\xC5 sende en HTTP-foresp\xF8rsel med grunnleggende autentisering"
+weight: 45
 ---
-
-{{< edit_this_page >}}
 
 ## Hva & Hvorfor?
 

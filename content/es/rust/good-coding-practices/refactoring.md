@@ -9,9 +9,8 @@ summary: "Refactorizaci\xF3n es el proceso de reestructurar el c\xF3digo computa
   \ existente\u2014cambiando la factorizaci\xF3n\u2014sin alterar su comportamiento\
   \ externo. Los\u2026"
 title: "Refactorizaci\xF3n"
+weight: 19
 ---
-
-{{< edit_this_page >}}
 
 ## ¿Qué y Por Qué?
 

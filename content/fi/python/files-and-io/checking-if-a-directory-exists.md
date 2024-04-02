@@ -11,9 +11,8 @@ summary: "Hakemiston olemassaolon tarkistaminen Pythonissa merkitsee kansion l\x
   sn\xE4olon varmistamista tiedostoj\xE4rjestelm\xE4ss\xE4 ennen sellaisia toimintoja\
   \ kuin\u2026"
 title: Tarkistetaan, onko hakemisto olemassa
+weight: 20
 ---
-
-{{< edit_this_page >}}
 
 ## Mikä ja miksi?
 Hakemiston olemassaolon tarkistaminen Pythonissa merkitsee kansion läsnäolon varmistamista tiedostojärjestelmässä ennen sellaisia toimintoja kuin tiedostojen lukeminen tai kirjoittaminen. Ohjelmoijat tekevät näin välttääkseen virheitä, kuten `FileNotFoundError`, varmistaen, että sovellus toimii luotettavasti eikä kaadu yrittäessään olla vuorovaikutuksessa hakemistojen kanssa.

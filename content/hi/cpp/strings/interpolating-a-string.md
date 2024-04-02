@@ -16,9 +16,8 @@ summary: "String interpolation \u092E\u0947\u0902 \u0939\u092E variables \u0914\
   \ \u091C\u093E\u0924\u093E \u0939\u0948\u0964\u2026"
 title: "\u0938\u094D\u091F\u094D\u0930\u093F\u0902\u0917 \u0907\u0902\u091F\u0930\u092A\
   \u094B\u0932\u0947\u0936\u0928"
+weight: 8
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why? (क्या और क्यों?)
 String interpolation में हम variables और expressions को straightway strings के अंदर mix करते हैं, जिससे कोड read करना और write करना दोनों आसान हो जाता है। Programmers इसे use करते हैं क्योंकि यह कोड को और भी clean और maintainable बनाता है।

@@ -7,9 +7,8 @@ model: gpt-4-1106-preview
 summary: "Il logging \xE8 il processo di registrazione degli eventi di un'applicazione\
   \ mentre questa \xE8 in esecuzione, fornendo una traccia di briciole per analisi\u2026"
 title: "Registrazione delle Attivit\xE0 (Logging)"
+weight: 17
 ---
-
-{{< edit_this_page >}}
 
 ## Cosa e Perché?
 Il logging è il processo di registrazione degli eventi di un'applicazione mentre questa è in esecuzione, fornendo una traccia di briciole per analisi post-mortem e monitoraggio in tempo reale. I programmatori lo fanno perché aiuta a risolvere problemi, monitorare le prestazioni, e tracciare le azioni degli utenti per la sicurezza e fini analitici.

@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Het genereren van willekeurige getallen in PHP gaat over het produceren\
   \ van onvoorspelbare waarden binnen een gespecificeerd bereik, wat essentieel is\u2026"
 title: Willekeurige getallen genereren
+weight: 12
 ---
-
-{{< edit_this_page >}}
 
 ## Wat & Waarom?
 

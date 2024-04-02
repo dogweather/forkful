@@ -18,9 +18,8 @@ summary: "\uB0A0\uC9DC\uB97C \uBB38\uC790\uC5F4\uB85C \uBCC0\uD658\uD558\uB294 \
   \uC73C\uB85C \uC804\uC1A1\uD560 \uB54C \uC774\uB97C \uC218\uD589\uD569\uB2C8\uB2E4\
   ."
 title: "\uB0A0\uC9DC\uB97C \uBB38\uC790\uC5F4\uB85C \uBCC0\uD658\uD558\uAE30"
+weight: 28
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why? (무엇이며 왜?)
 날짜를 문자열로 변환하는 것은 JavaScript의 Date 객체를 읽기 쉬운 텍스트 형식으로 바꾸는 과정입니다. 프로그래머들은 데이터를 로깅, 표시, 저장하거나 다른 시스템으로 전송할 때 이를 수행합니다.

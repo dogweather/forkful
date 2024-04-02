@@ -7,9 +7,8 @@ model: gpt-4-0125-preview
 summary: "Arrotondare i numeri significa adeguarli a un determinato grado di precisione.\
   \ I programmatori lo fanno per semplificare i numeri per leggibilit\xE0, per\u2026"
 title: Arrotondamento dei numeri
+weight: 13
 ---
-
-{{< edit_this_page >}}
 
 ## Cosa e perché?
 Arrotondare i numeri significa adeguarli a un determinato grado di precisione. I programmatori lo fanno per semplificare i numeri per leggibilità, per soddisfare certe specifiche, o per assicurare che i calcoli rientrino entro certi limiti, come evitare errori di precisione nell'aritmetica in virgola mobile.

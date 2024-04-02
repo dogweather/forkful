@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Comprobar si un directorio existe en Google Apps Script implica verificar\
   \ la presencia de una carpeta dentro de Google Drive. Los programadores a menudo\u2026"
 title: Verificando si un directorio existe
+weight: 20
 ---
-
-{{< edit_this_page >}}
 
 ## ¿Qué y Por Qué?
 

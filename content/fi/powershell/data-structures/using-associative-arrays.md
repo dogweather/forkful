@@ -11,9 +11,8 @@ summary: "Assosiatiiviset taulukot, tunnetaan my\xF6s nimell\xE4 hajautustaulut 
   \ sanakirjat PowerShelliss\xE4, mahdollistavat tietojen tallentamisen avain-arvo\
   \ -pareina,\u2026"
 title: "Assosiatiivisten taulukoiden k\xE4ytt\xF6"
+weight: 15
 ---
-
-{{< edit_this_page >}}
 
 ## Mitä & Miksi?
 

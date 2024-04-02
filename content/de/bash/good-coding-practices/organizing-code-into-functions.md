@@ -7,9 +7,8 @@ model: gpt-4-1106-preview
 summary: "Code in Funktionen zu unterteilen bedeutet, Skripte in kleinere, wiederverwendbare\
   \ Bl\xF6cke zu zerlegen, die spezifische Aufgaben erledigen. Das macht den\u2026"
 title: Code in Funktionen organisieren
+weight: 18
 ---
-
-{{< edit_this_page >}}
 
 ## Was & Warum?
 Code in Funktionen zu unterteilen bedeutet, Skripte in kleinere, wiederverwendbare Blöcke zu zerlegen, die spezifische Aufgaben erledigen. Das macht den Code sauberer, verständlicher und einfacher zu debuggen.

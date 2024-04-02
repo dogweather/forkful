@@ -11,9 +11,8 @@ summary: "Enviar uma solicita\xE7\xE3o HTTP envolve criar e despachar uma solici
   \xE3o para um servidor web para recuperar ou submeter dados. Programadores fazem\
   \ isso em C\u2026"
 title: "Enviando uma solicita\xE7\xE3o HTTP"
+weight: 44
 ---
-
-{{< edit_this_page >}}
 
 ## O Quê & Por Quê?
 

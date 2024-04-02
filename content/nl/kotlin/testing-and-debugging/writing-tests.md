@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Testen schrijven betekent code scripten om te checken of andere code goed\
   \ werkt. Programmeurs doen dit om vroegtijdig fouten op te sporen, tijd te\u2026"
 title: Tests Schrijven
+weight: 36
 ---
-
-{{< edit_this_page >}}
 
 ## Wat & Waarom?
 Testen schrijven betekent code scripten om te checken of andere code goed werkt. Programmeurs doen dit om vroegtijdig fouten op te sporen, tijd te besparen en te zorgen dat de software consistent doet wat het moet doen.

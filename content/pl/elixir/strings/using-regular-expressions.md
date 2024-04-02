@@ -11,9 +11,8 @@ summary: "Wyra\u017Cenia regularne (regex) w j\u0119zyku Elixir s\u0105 u\u017Cy
   \ do wyszukiwania, dopasowywania oraz manipulowania ci\u0105gami znak\xF3w na podstawie\
   \ okre\u015Blonych wzorc\xF3w.\u2026"
 title: "Korzystanie z wyra\u017Ce\u0144 regularnych"
+weight: 11
 ---
-
-{{< edit_this_page >}}
 
 ## Co i dlaczego?
 

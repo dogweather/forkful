@@ -11,9 +11,8 @@ summary: "\xC5 lese en tekstfil i Dart inneb\xE6rer \xE5 f\xE5 tilgang til og he
   \ data fra filer lagret p\xE5 filsystemet. Programmerere gj\xF8r dette for \xE5\
   \ h\xE5ndtere inndata,\u2026"
 title: Lese en tekstfil
+weight: 22
 ---
-
-{{< edit_this_page >}}
 
 ## Hva & Hvorfor?
 

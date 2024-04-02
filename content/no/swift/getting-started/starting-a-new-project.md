@@ -9,9 +9,8 @@ summary: "\xC5 starte et nytt prosjekt i Swift handler om \xE5 skape en ren skif
   \ for koden din. Vi gj\xF8r det for \xE5 realisere nye ideer, l\xF8se problemer\
   \ eller l\xE6re noe\u2026"
 title: "\xC5 starte et nytt prosjekt"
+weight: 1
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why? (Hva & Hvorfor?)
 Å starte et nytt prosjekt i Swift handler om å skape en ren skifer for koden din. Vi gjør det for å realisere nye ideer, løse problemer eller lære noe nytt.

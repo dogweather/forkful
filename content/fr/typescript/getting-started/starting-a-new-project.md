@@ -9,9 +9,8 @@ summary: "Quand on d\xE9marre un nouveau projet en TypeScript, on met en place l
   \ bases du code. Les programmeurs font \xE7a pour structurer et organiser leurs\
   \ id\xE9es\u2026"
 title: Lancement d'un nouveau projet
+weight: 1
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 

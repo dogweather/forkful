@@ -9,9 +9,8 @@ summary: "HTTP-Anfragen werden genutzt, um mit Webservern zu kommunizieren \u201
   \ Daten zu holen und zu senden. Programmierer brauchen diese, um Webanwendungen\
   \ zu\u2026"
 title: Einen HTTP-Request senden
+weight: 44
 ---
-
-{{< edit_this_page >}}
 
 ## Was & Warum?
 HTTP-Anfragen werden genutzt, um mit Webservern zu kommunizieren – Daten zu holen und zu senden. Programmierer brauchen diese, um Webanwendungen zu erstellen, die mit Backend-Diensten interagieren.

@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Satunnaislukujen generointi ohjelmoinnissa on kyse sellaisten lukusarjojen\
   \ luomisesta, joita ei voida kohtuullisesti ennustaa paremmin kuin sattumalta.\u2026"
 title: Satunnaisten numeroiden generointi
+weight: 12
 ---
-
-{{< edit_this_page >}}
 
 ## Mitä & Miksi?
 

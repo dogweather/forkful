@@ -8,9 +8,8 @@ model: gpt-4-0125-preview
 summary: "Koodin uudelleenj\xE4rjest\xE4minen (refaktorointi) on prosessi, jossa muutetaan\
   \ tietokoneohjelman sis\xE4ist\xE4 rakennetta muuttamatta sen ulkoista toimintaa.\u2026"
 title: Koodin refaktorointi
+weight: 19
 ---
-
-{{< edit_this_page >}}
 
 ## Mikä & Miksi?
 

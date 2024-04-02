@@ -8,9 +8,8 @@ model: gpt-4-1106-preview
 summary: "Datum-Berechnungen erlauben die Ermittlung vergangener oder zuk\xFCnftiger\
   \ Tage. Programmierer nutzen diese, um Zeitintervalle zu verwalten, Ereignisse zu\u2026"
 title: "Berechnung eines zuk\xFCnftigen oder vergangenen Datums"
+weight: 26
 ---
-
-{{< edit_this_page >}}
 
 ## Was & Warum?
 Datum-Berechnungen erlauben die Ermittlung vergangener oder zukünftiger Tage. Programmierer nutzen diese, um Zeitintervalle zu verwalten, Ereignisse zu planen oder Zeitspannen zu messen.

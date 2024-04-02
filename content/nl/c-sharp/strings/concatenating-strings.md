@@ -10,9 +10,8 @@ model: gpt-4-0125-preview
 summary: "Concatenatie is het proces van het aan elkaar plakken van strings. We doen\
   \ dit omdat we vaak woorden of symbolen moeten combineren om zinnen, berichten te\u2026"
 title: Samenvoegen van strings
+weight: 3
 ---
-
-{{< edit_this_page >}}
 
 ## Wat & Waarom?
 

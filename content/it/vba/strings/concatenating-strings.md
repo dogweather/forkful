@@ -11,9 +11,8 @@ summary: "La concatenazione in Visual Basic for Applications (VBA) implica l'uni
   \ di due o pi\xF9 stringhe in un'unica entit\xE0. Questo \xE8 un compito fondamentale\
   \ nella\u2026"
 title: Concatenazione di stringhe
+weight: 3
 ---
-
-{{< edit_this_page >}}
 
 ## Cosa & Perché?
 

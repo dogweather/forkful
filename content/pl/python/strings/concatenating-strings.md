@@ -9,9 +9,8 @@ summary: "\u0141\u0105czenie ci\u0105g\xF3w znak\xF3w (string\xF3w) to proces tw
   \ jednego ci\u0105gu ze dwojga lub wi\u0119cej. Programi\u015Bci u\u017Cywaj\u0105\
   \ tej techniki do budowania komunikat\xF3w,\u2026"
 title: "\u0141\u0105czenie \u0142a\u0144cuch\xF3w znak\xF3w"
+weight: 3
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why? (Co i Dlaczego?)
 

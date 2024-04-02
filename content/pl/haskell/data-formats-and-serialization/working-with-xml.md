@@ -9,9 +9,8 @@ summary: "Praca z XML w Haskellu obejmuje parsowanie, manipulowanie i generowani
   \ struktur XML. Programi\u015Bci obs\u0142uguj\u0105 XML, aby interakcjonowa\u0107\
   \ z licznymi\u2026"
 title: Praca z XML
+weight: 40
 ---
-
-{{< edit_this_page >}}
 
 ## Co i Dlaczego?
 

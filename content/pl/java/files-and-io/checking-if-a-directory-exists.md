@@ -11,9 +11,8 @@ summary: "Sprawdzanie, czy katalog istnieje w Javie, to podstawowe zadanie poleg
   ce na weryfikacji obecno\u015Bci katalogu w systemie plik\xF3w przed odczytem z\
   \ niego,\u2026"
 title: Sprawdzanie, czy katalog istnieje
+weight: 20
 ---
-
-{{< edit_this_page >}}
 
 ## Co i dlaczego?
 Sprawdzanie, czy katalog istnieje w Javie, to podstawowe zadanie polegające na weryfikacji obecności katalogu w systemie plików przed odczytem z niego, zapisem do niego lub wykonaniem jakichkolwiek operacji wymagających jego istnienia. Jest to kluczowe, aby uniknąć błędów lub wyjątków w programach interaktywnie działających z systemem plików, zapewniając płynniejsze wykonanie i lepsze doświadczenia użytkownika.

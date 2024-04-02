@@ -10,9 +10,8 @@ model: gpt-4-0125-preview
 summary: "Debugoutput afdrukken is informatie op je scherm gooien om te zien wat er\
   \ aan de hand is met je code. Programmeurs doen dit om gremlins in de machine op\u2026"
 title: Debug-output afdrukken
+weight: 33
 ---
-
-{{< edit_this_page >}}
 
 ## Wat & Waarom?
 Debugoutput afdrukken is informatie op je scherm gooien om te zien wat er aan de hand is met je code. Programmeurs doen dit om gremlins in de machine op te sporen - bugs.

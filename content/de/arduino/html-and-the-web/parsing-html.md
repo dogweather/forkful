@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Das Parsen von HTML in Arduino-Projekten bedeutet, Informationen von Webseiten\
   \ zu extrahieren. Programmierer tun dies, um ihre Arduino-Ger\xE4te zur\u2026"
 title: HTML parsen
+weight: 43
 ---
-
-{{< edit_this_page >}}
 
 ## Was & Warum?
 

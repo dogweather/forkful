@@ -11,9 +11,8 @@ summary: "Merkkijonon alkukirjaimen suurentaminen tarkoittaa sy\xF6tteen muuttam
   \ siten, ett\xE4 ensimm\xE4inen merkki on iso kirjain ja loput pieni\xE4 kirjaimia,\
   \ ja t\xE4t\xE4\u2026"
 title: Merkkijonon alkukirjaimen suurentaminen
+weight: 2
 ---
-
-{{< edit_this_page >}}
 
 ## Mikä ja miksi?
 

@@ -13,9 +13,8 @@ summary: "TOML \u662F\u4E00\u79CD\u914D\u7F6E\u6587\u4EF6\u683C\u5F0F\uFF0C\u753
   \u5E8F\u5217\u5316\uFF0C\u65E0\u9700 XML \u7684\u7E41\u91CD\u6216 YAML \u7684\u602A\
   \u7656\u3002"
 title: "\u4F7F\u7528TOML"
+weight: 39
 ---
-
-{{< edit_this_page >}}
 
 ## 什么 & 为什么？
 

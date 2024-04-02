@@ -7,9 +7,8 @@ model: gpt-4-1106-preview
 summary: "Ein neues Projekt zu starten bedeutet, eine leere Leinwand in eine funktionierende\
   \ App umzuwandeln. Entwickler machen das, um Ideen zum Leben zu erwecken\u2026"
 title: Einen neuen Projekt starten
+weight: 1
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why? (Was & Warum?)
 Ein neues Projekt zu starten bedeutet, eine leere Leinwand in eine funktionierende App umzuwandeln. Entwickler machen das, um Ideen zum Leben zu erwecken und Probleme mit maßgeschneiderten Lösungen zu lösen.

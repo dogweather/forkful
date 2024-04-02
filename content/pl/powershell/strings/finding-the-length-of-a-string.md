@@ -9,9 +9,8 @@ summary: "D\u0142ugo\u015B\u0107 \u0142a\u0144cucha znak\xF3w to ilo\u015B\u0107
   w, z kt\xF3rych si\u0119 sk\u0142ada. Programi\u015Bci musz\u0105 to sprawdza\u0107\
   , aby zarz\u0105dza\u0107 tekstem, np. w walidacji, ekstrakcji danych,\u2026"
 title: "Znalezienie d\u0142ugo\u015Bci ci\u0105gu znak\xF3w"
+weight: 7
 ---
-
-{{< edit_this_page >}}
 
 ## Co i Dlaczego?
 Długość łańcucha znaków to ilość znaków, z których się składa. Programiści muszą to sprawdzać, aby zarządzać tekstem, np. w walidacji, ekstrakcji danych, czy manipulacji ciągami.

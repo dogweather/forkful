@@ -9,9 +9,8 @@ summary: "Konkatenering av str\xE4ngar handlar om att smidigt s\xE4tta ihop fler
   \ textstycken till en enda str\xE4ng. Programmerare g\xF6r detta f\xF6r att skapa\
   \ dynamiska\u2026"
 title: "Sammanslagning av str\xE4ngar"
+weight: 3
 ---
-
-{{< edit_this_page >}}
 
 ## Vad & Varför?
 Konkatenering av strängar handlar om att smidigt sätta ihop flera textstycken till en enda sträng. Programmerare gör detta för att skapa dynamiska meddelanden, sökvägar, queries och mer, utan att behöva oroa sig för hårdkodade textvärden.

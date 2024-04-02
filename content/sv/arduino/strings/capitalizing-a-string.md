@@ -11,9 +11,8 @@ summary: "Att skriva med stor bokstav inneb\xE4r att konvertera det f\xF6rsta te
   \ i varje ord i en str\xE4ng till versal samtidigt som resten beh\xE5lls som gemener.\
   \ Denna\u2026"
 title: "G\xF6r om en str\xE4ng till versaler"
+weight: 2
 ---
-
-{{< edit_this_page >}}
 
 ## Vad & Varför?
 Att skriva med stor bokstav innebär att konvertera det första tecknet i varje ord i en sträng till versal samtidigt som resten behålls som gemener. Denna operation är vanlig vid formatering av data och normalisering av användarinmatning för att bibehålla konsekvens och förbättra läsbarheten.

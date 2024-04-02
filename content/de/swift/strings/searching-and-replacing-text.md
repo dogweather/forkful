@@ -9,9 +9,8 @@ summary: "Textsuche und -ersetzung erm\xF6glicht es uns, spezifische Zeichenkett
   \ in einem Text zu finden und sie durch andere zu ersetzen. Das ist n\xFCtzlich,\
   \ um Daten\u2026"
 title: Suchen und Ersetzen von Text
+weight: 10
 ---
-
-{{< edit_this_page >}}
 
 ## Was & Warum?
 Textsuche und -ersetzung ermöglicht es uns, spezifische Zeichenketten in einem Text zu finden und sie durch andere zu ersetzen. Das ist nützlich, um Daten zu aktualisieren, Fehler zu korrigieren oder das Format von Informationen zu ändern.

@@ -13,9 +13,8 @@ summary: "Vi\u1EC7c so s\xE1nh hai ng\xE0y trong l\u1EADp tr\xECnh l\xE0 m\u1ED9
   n \u0111\xE1nh gi\xE1 m\u1ED1i quan h\u1EC7 th\u1EDDi gian gi\u1EEFa c\xE1c ng\xE0\
   y. Nh\u1EEFng so s\xE1nh nh\u01B0\u2026"
 title: "So s\xE1nh hai ng\xE0y"
+weight: 27
 ---
-
-{{< edit_this_page >}}
 
 ## Cái gì & Tại sao?
 

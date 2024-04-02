@@ -9,9 +9,8 @@ summary: "Merkkijonosta lainausmerkkien poistaminen tarkoittaa ylim\xE4\xE4r\xE4
   \ kaksois- tai yksitt\xE4isten lainausmerkkien karsimista, joita et todellisuudessa\
   \ tarvitse\u2026"
 title: Merkkijonosta lainausmerkkien poistaminen
+weight: 9
 ---
-
-{{< edit_this_page >}}
 
 ## Mikä ja miksi?
 Merkkijonosta lainausmerkkien poistaminen tarkoittaa ylimääräisten kaksois- tai yksittäisten lainausmerkkien karsimista, joita et todellisuudessa tarvitse käsitellyssä tekstissä. Ohjelmoijat tekevät tämän puhdistaakseen syötettä, valmistellakseen tietoja tallennusta varten tai tehdäkseen tulosteesta ihmiselle luettavamman, kun lainausmerkit eivät ole välttämättömiä annetussa kontekstissa.

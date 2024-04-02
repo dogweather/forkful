@@ -9,9 +9,8 @@ summary: "Eliminar caracteres que correspondem a um padr\xE3o \xE9 simplesmente 
   \ arte de selecionar certos trechos de uma string baseado em regras e dizer adeus\
   \ a eles.\u2026"
 title: "Excluindo caracteres que correspondem a um padr\xE3o"
+weight: 5
 ---
-
-{{< edit_this_page >}}
 
 ## O Que & Por Quê?
 

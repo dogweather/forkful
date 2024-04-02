@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Associativa arrayer, eller hashmappar, l\xE5ter dig lagra data som nyckel-v\xE4\
   rdepar, vilket g\xF6r det enklare att organisera och h\xE4mta information med nyckeln.\u2026"
 title: "Att anv\xE4nda associativa arrayer"
+weight: 15
 ---
-
-{{< edit_this_page >}}
 
 ## Vad & Varför?
 

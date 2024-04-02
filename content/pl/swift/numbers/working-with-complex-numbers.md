@@ -9,9 +9,8 @@ summary: "Liczby zespolone maj\u0105 cz\u0119\u015B\u0107 rzeczywist\u0105 i cz\
   \u015B\u0107 urojon\u0105 (jak 3 + 4i). Programi\u015Bci u\u017Cywaj\u0105 ich w\
   \ Swift do zada\u0144 takich jak przetwarzanie sygna\u0142\xF3w,\u2026"
 title: Praca z liczbami zespolonymi
+weight: 14
 ---
-
-{{< edit_this_page >}}
 
 ## Co i dlaczego?
 Liczby zespolone mają część rzeczywistą i część urojoną (jak 3 + 4i). Programiści używają ich w Swift do zadań takich jak przetwarzanie sygnałów, rozwiązywanie pewnych problemów matematycznych oraz symulacje fizyczne.

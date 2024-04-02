@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Una shell interattiva, o Loop di Lettura-Valutazione-Stampa (REPL dall'inglese\
   \ Read-Eval-Print Loop), \xE8 un ambiente di programmazione semplice e\u2026"
 title: Utilizzare un shell interattivo (REPL)
+weight: 34
 ---
-
-{{< edit_this_page >}}
 
 ## Cos'è e Perché?
 

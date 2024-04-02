@@ -7,9 +7,8 @@ model: gpt-4-1106-preview
 summary: "Printing debug output is about spitting out information key to understanding\
   \ what's going on under the hood of your code. Programmers do this to track\u2026"
 title: Printing debug output
+weight: 33
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 Printing debug output is about spitting out information key to understanding what's going on under the hood of your code. Programmers do this to track variable values, the flow of execution, and sniff out bugs—sort of like a breadcrumb trail in a digital forest.

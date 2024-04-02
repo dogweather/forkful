@@ -7,9 +7,8 @@ model: unknown
 summary: "Regular expressions, or regex, is a powerful pattern matching and searching\
   \ tool in programming. Programmers use regex for tasks like validating user\u2026"
 title: Using regular expressions
+weight: 11
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 Regular expressions, or regex, is a powerful pattern matching and searching tool in programming. Programmers use regex for tasks like validating user input, searching text, or manipulating strings because it's efficient and versatile.

@@ -9,9 +9,8 @@ summary: "Enviar una solicitud HTTP con autenticaci\xF3n b\xE1sica significa a\x
   adir credenciales de usuario y contrase\xF1a en la cabecera de la petici\xF3n para\
   \ acceder a\u2026"
 title: "Enviando una solicitud http con autenticaci\xF3n b\xE1sica"
+weight: 45
 ---
-
-{{< edit_this_page >}}
 
 ## Qué y Por Qué?
 Enviar una solicitud HTTP con autenticación básica significa añadir credenciales de usuario y contraseña en la cabecera de la petición para acceder a recursos protegidos. Los programadores lo hacen para interactuar de forma segura con APIs o servicios web que requieren autenticación.

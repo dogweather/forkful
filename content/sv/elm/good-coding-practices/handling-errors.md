@@ -9,9 +9,8 @@ summary: "Att hantera fel inneb\xE4r att skriva kod som kan f\xF6rutse och hante
   \ n\xE4r saker g\xE5r fel. Programmerare g\xF6r det f\xF6r att f\xF6rhindra krascher,\
   \ skydda\u2026"
 title: Hantering av fel
+weight: 16
 ---
-
-{{< edit_this_page >}}
 
 ## Vad & Varför?
 Att hantera fel innebär att skriva kod som kan förutse och hantera när saker går fel. Programmerare gör det för att förhindra krascher, skydda dataintegritet och ge användarna smidiga återfallslösningar.

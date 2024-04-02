@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Das Senden einer HTTP-Anfrage in Dart ist der Prozess der Initiierung von\
   \ Kommunikation mit einem Webserver oder einer API aus einer Dart-Anwendung\u2026"
 title: Eine HTTP-Anfrage senden
+weight: 44
 ---
-
-{{< edit_this_page >}}
 
 ## Was & Warum?
 

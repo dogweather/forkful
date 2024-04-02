@@ -9,9 +9,8 @@ summary: "Wyszukiwanie i zamiana tekstu to podstawy manipulacji stringami. Progr
   ci robi\u0105 to, by zmieni\u0107 kod, poprawi\u0107 dane, albo automatycznie aktualizowa\u0107\
   \u2026"
 title: Wyszukiwanie i zamiana tekstu
+weight: 10
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why? (Co i dlaczego?)
 Wyszukiwanie i zamiana tekstu to podstawy manipulacji stringami. Programiści robią to, by zmienić kod, poprawić dane, albo automatycznie aktualizować informacje.

@@ -9,9 +9,8 @@ summary: "Calculer une date future ou pass\xE9e, c'est simplement ajouter ou sou
   \ du temps \xE0 une date existante. Les programmeurs font \xE7a pour des rappels,\
   \ des\u2026"
 title: "Calcul d'une date future ou pass\xE9e"
+weight: 26
 ---
-
-{{< edit_this_page >}}
 
 ## Quoi et Pourquoi ?
 

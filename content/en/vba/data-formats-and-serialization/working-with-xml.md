@@ -7,9 +7,8 @@ model: gpt-4-0125-preview
 summary: "Working with XML in Visual Basic for Applications (VBA) involves parsing,\
   \ creating, and modifying XML documents within the context of Microsoft Office\u2026"
 title: Working with XML
+weight: 40
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 

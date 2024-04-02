@@ -9,9 +9,8 @@ summary: "Um REPL (Read-Eval-Print Loop, ou La\xE7o de Leitura-Avalia\xE7\xE3o-I
   o) \xE9 um shell interativo que processa entradas individuais do usu\xE1rio, executa\
   \ c\xF3digo\u2026"
 title: Usando um shell interativo (REPL)
+weight: 34
 ---
-
-{{< edit_this_page >}}
 
 ## O Que & Por Quê?
 Um REPL (Read-Eval-Print Loop, ou Laço de Leitura-Avaliação-Impressão) é um shell interativo que processa entradas individuais do usuário, executa código e retorna o resultado. Os programadores utilizam-no para experimentos rápidos, depuração ou aprendizado, pois permite um feedback imediato e iteração.

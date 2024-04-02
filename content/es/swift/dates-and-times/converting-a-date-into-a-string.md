@@ -7,9 +7,8 @@ model: gpt-4-1106-preview
 summary: "Convertir una fecha a una cadena de texto significa transformar el objeto\
   \ `Date` de Swift a un formato legible, por ejemplo, \"15 de abril de 2023\". Esto\u2026"
 title: Convirtiendo una fecha en una cadena de texto
+weight: 28
 ---
-
-{{< edit_this_page >}}
 
 ## ¿Qué & Por Qué?
 Convertir una fecha a una cadena de texto significa transformar el objeto `Date` de Swift a un formato legible, por ejemplo, "15 de abril de 2023". Esto es clave para mostrar fechas en la interfaz de usuario o para guardarlas en un formato específico.

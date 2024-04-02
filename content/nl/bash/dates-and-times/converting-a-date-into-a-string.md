@@ -10,9 +10,8 @@ model: gpt-4-0125-preview
 summary: "Een datum omzetten naar een string betekent dat je het omzet in tekst die\
   \ de datum vertegenwoordigt. We doen dit om datums te formatteren voor mensen om\u2026"
 title: Een datum converteren naar een string
+weight: 28
 ---
-
-{{< edit_this_page >}}
 
 ## Wat & Waarom?
 Een datum omzetten naar een string betekent dat je het omzet in tekst die de datum vertegenwoordigt. We doen dit om datums te formatteren voor mensen om te lezen of om ze voor te bereiden voor opslag in tekstformaten zoals CSV of JSON.

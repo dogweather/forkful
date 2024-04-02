@@ -9,9 +9,8 @@ summary: "Koodin j\xE4rjest\xE4minen funktioihin tarkoittaa koodin jaottelua uud
   ytett\xE4viksi lohkoiksi m\xE4\xE4riteltyine tarkoituksineen. Teemme niin pit\xE4\
   \xE4ksemme asiat\u2026"
 title: "Koodin j\xE4rjest\xE4minen funktioihin"
+weight: 18
 ---
-
-{{< edit_this_page >}}
 
 ## Mikä ja miksi?
 Koodin järjestäminen funktioihin tarkoittaa koodin jaottelua uudelleenkäytettäviksi lohkoiksi määriteltyine tarkoituksineen. Teemme niin pitääksemme asiat järjestyksessä, välttääksemme päällekkäisyyksiä ja tehdäksemme virheenjäljityksen helpoksi.

@@ -10,9 +10,8 @@ summary: "L'\xE9dition de fichiers directement avec des lignes de commande (CLI)
   \ les\u2026"
 title: "Modification de fichiers sur place avec des lignes de commande en une seule\
   \ \xE9tape"
+weight: 32
 ---
-
-{{< edit_this_page >}}
 
 ## Quoi et pourquoi ?
 

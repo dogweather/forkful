@@ -11,9 +11,8 @@ summary: "\xC5 sjekke om en mappe eksisterer i Visual Basic for Applications (VB
   \ handler om \xE5 verifisere tilstedev\xE6relsen av en mappe i filsystemet f\xF8\
   r man utf\xF8rer\u2026"
 title: Sjekke om en katalog eksisterer
+weight: 20
 ---
-
-{{< edit_this_page >}}
 
 ## Hva & hvorfor?
 

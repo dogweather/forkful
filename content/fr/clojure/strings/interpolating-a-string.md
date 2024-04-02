@@ -9,9 +9,8 @@ summary: "L'interpolation de cha\xEEnes permet d'ins\xE9rer facilement des varia
   \ ou des expressions dans une cha\xEEne de caract\xE8res. Les programmeurs l'utilisent\
   \ pour\u2026"
 title: "Interpolation de cha\xEEnes de caract\xE8res"
+weight: 8
 ---
-
-{{< edit_this_page >}}
 
 ## Qu'est-ce que c'est et pourquoi ?
 

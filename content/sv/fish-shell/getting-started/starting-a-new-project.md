@@ -9,9 +9,8 @@ summary: "Starta ett nytt projekt inneb\xE4r att skapa en ren arbetsyta f\xF6r a
   \ utveckla dina id\xE9er. Programmerare g\xF6r detta f\xF6r att organisera, f\xF6\
   renkla och\u2026"
 title: "Att p\xE5b\xF6rja ett nytt projekt"
+weight: 1
 ---
-
-{{< edit_this_page >}}
 
 ## Vad & Varför?
 Starta ett nytt projekt innebär att skapa en ren arbetsyta för att utveckla dina idéer. Programmerare gör detta för att organisera, förenkla och effektivisera sitt arbete.

@@ -11,9 +11,8 @@ summary: "Eliminar caracteres que coinciden con un patr\xF3n espec\xEDfico en ca
   \ de texto es crucial para la validaci\xF3n de datos, la sanitizaci\xF3n o cuando\
   \ se prepara\u2026"
 title: "Eliminando caracteres que coinciden con un patr\xF3n"
+weight: 5
 ---
-
-{{< edit_this_page >}}
 
 ## ¿Qué y por qué?
 

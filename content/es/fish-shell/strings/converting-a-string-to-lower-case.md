@@ -8,9 +8,8 @@ model: gpt-4-1106-preview
 summary: "Convertir un string a min\xFAsculas significa cambiar todas las letras de\
   \ may\xFAsculas a min\xFAsculas. Los programadores hacen esto para normalizar texto,\u2026"
 title: "Conversi\xF3n de una cadena de texto a min\xFAsculas"
+weight: 4
 ---
-
-{{< edit_this_page >}}
 
 ## Qué y Por Qué?
 

@@ -9,9 +9,8 @@ summary: "Eliminar caracteres que coinciden con un patr\xF3n es b\xE1sicamente f
   \ tu texto, quitando piezas espec\xEDficas que no quieres. Los programadores hacen\
   \ esto\u2026"
 title: "Eliminando caracteres que coinciden con un patr\xF3n"
+weight: 5
 ---
-
-{{< edit_this_page >}}
 
 ## Qué y Por Qué?
 

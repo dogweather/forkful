@@ -17,9 +17,8 @@ summary: "HTTP request with basic authentication\uC740 \uC11C\uBC84\uC5D0 \uC815
   \ \uC788\uC2B5\uB2C8\uB2E4."
 title: "\uAE30\uBCF8 \uC778\uC99D\uC744 \uC0AC\uC6A9\uD55C HTTP \uC694\uCCAD \uBCF4\
   \uB0B4\uAE30"
+weight: 45
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why? (무엇과 왜?)
 HTTP request with basic authentication은 서버에 정보를 요청하거나 제출할 때 사용자 이름과 비밀번호를 포함합니다. 이렇게 하면 서버가 사용자를 인증하여 데이터 보안을 유지할 수 있습니다.

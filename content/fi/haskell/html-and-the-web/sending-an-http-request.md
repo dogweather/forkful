@@ -9,9 +9,8 @@ summary: "L\xE4hett\xE4m\xE4\xE4n HTTP-pyynn\xF6n tarkoittaa, ett\xE4 pyydet\xE4
   n tietoja verkossa olevasta palvelimesta tai l\xE4hetet\xE4\xE4n dataa sille. Ohjelmoijat\
   \ tekev\xE4t t\xE4m\xE4n, koska se\u2026"
 title: "HTTP-pyynn\xF6n l\xE4hett\xE4minen"
+weight: 44
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why? - Mitä & Miksi?
 Lähettämään HTTP-pyynnön tarkoittaa, että pyydetään tietoja verkossa olevasta palvelimesta tai lähetetään dataa sille. Ohjelmoijat tekevät tämän, koska se on tapa hakea, lähettää ja vaihtaa tietoa eri järjestelmien välillä.

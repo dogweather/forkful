@@ -2,13 +2,14 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:08:43.713165-07:00
-description: "Het gebruiken van een debugger betekent het instellen van breakpoints,\
-  \ stap voor stap door je code heen lopen, variabelen bekijken, en de staat van je\u2026"
+description: "In PowerShell kun je scripts debuggen met de ingebouwde PowerShell Integrated\
+  \ Scripting Environment (ISE) of Visual Studio Code (VS Code) met de\u2026"
 lastmod: '2024-03-13T22:44:51.034166-06:00'
 model: gpt-4-0125-preview
-summary: "Het gebruiken van een debugger betekent het instellen van breakpoints, stap\
-  \ voor stap door je code heen lopen, variabelen bekijken, en de staat van je\u2026"
+summary: "In PowerShell kun je scripts debuggen met de ingebouwde PowerShell Integrated\
+  \ Scripting Environment (ISE) of Visual Studio Code (VS Code) met de\u2026"
 title: Een debugger gebruiken
+weight: 35
 ---
 
 ## Hoe te:

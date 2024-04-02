@@ -10,9 +10,8 @@ model: gpt-4-0125-preview
 summary: "Verificar si existe un directorio en Python se trata de comprobar la presencia\
   \ de una carpeta en el sistema de archivos antes de realizar operaciones como\u2026"
 title: Comprobando si un directorio existe
+weight: 20
 ---
-
-{{< edit_this_page >}}
 
 ## Qué y Por Qué?
 Verificar si existe un directorio en Python se trata de comprobar la presencia de una carpeta en el sistema de archivos antes de realizar operaciones como leer o escribir archivos. Los programadores hacen esto para evitar errores como `FileNotFoundError`, asegurando que la aplicación se comporte de manera confiable y no se cuelgue al intentar interactuar con directorios.

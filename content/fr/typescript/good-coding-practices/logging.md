@@ -9,9 +9,8 @@ summary: "Le logging est le processus d'enregistrement des \xE9v\xE9nements, err
   \ et autres informations importantes pendant l'ex\xE9cution d'un programme sur un\
   \ support\u2026"
 title: Journalisation
+weight: 17
 ---
-
-{{< edit_this_page >}}
 
 ## Quoi & Pourquoi ?
 

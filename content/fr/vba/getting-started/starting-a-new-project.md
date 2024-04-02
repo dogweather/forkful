@@ -10,9 +10,8 @@ model: gpt-4-0125-preview
 summary: "D\xE9marrer un nouveau projet en Visual Basic pour Applications (VBA) implique\
   \ de configurer un environnement au sein d'une application h\xF4te, comme Excel,\u2026"
 title: "D\xE9marrer un nouveau projet"
+weight: 1
 ---
-
-{{< edit_this_page >}}
 
 ## Quoi et pourquoi ?
 

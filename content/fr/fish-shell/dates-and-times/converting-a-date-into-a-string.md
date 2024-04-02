@@ -9,9 +9,8 @@ summary: "\"Quoi et pourquoi ?\" Transformer une date en cha\xEEne de caract\xE8
   \ c'est convertir l'information temporelle en texte. On le fait pour l'afficher,\
   \ la\u2026"
 title: "Conversion d'une date en cha\xEEne de caract\xE8res"
+weight: 28
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 "Quoi et pourquoi ?" Transformer une date en chaîne de caractères, c'est convertir l'information temporelle en texte. On le fait pour l'afficher, la stocker, ou l'utiliser dans des scripts où le format de date brut ne passe pas.

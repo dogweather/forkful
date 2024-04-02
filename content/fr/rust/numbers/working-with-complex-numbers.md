@@ -8,9 +8,8 @@ model: gpt-4-0125-preview
 summary: "Les nombres complexes comportent une partie r\xE9elle et une partie imaginaire\
   \ et sont cruciaux dans divers domaines tels que l'ing\xE9nierie, la physique et\u2026"
 title: Manipulation des nombres complexes
+weight: 14
 ---
-
-{{< edit_this_page >}}
 
 ## Quoi & Pourquoi ?
 Les nombres complexes comportent une partie réelle et une partie imaginaire et sont cruciaux dans divers domaines tels que l'ingénierie, la physique et les graphiques informatiques. Les programmeurs les utilisent pour résoudre des équations que les nombres réels ordinaires ne peuvent pas gérer.

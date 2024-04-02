@@ -1,14 +1,15 @@
 ---
 date: 2024-01-26 03:48:49.784631-07:00
-description: "Att anv\xE4nda en debugger i Elixir inneb\xE4r att stega igenom din\
-  \ kod, inspektera variabler och sp\xE5ra fl\xF6den f\xF6r att krossa buggar. Programmerare\
-  \ g\xF6r det f\xF6r\u2026"
+description: "Elixir levereras med en inbyggd grafisk debugger som heter `:debugger`.\
+  \ F\xF6r att anv\xE4nda den beh\xF6ver du starta den och koppla upp dig mot din\
+  \ k\xF6rande\u2026"
 lastmod: '2024-03-13T22:44:37.571969-06:00'
 model: gpt-4-0125-preview
-summary: "Att anv\xE4nda en debugger i Elixir inneb\xE4r att stega igenom din kod,\
-  \ inspektera variabler och sp\xE5ra fl\xF6den f\xF6r att krossa buggar. Programmerare\
-  \ g\xF6r det f\xF6r\u2026"
+summary: "Elixir levereras med en inbyggd grafisk debugger som heter `:debugger`.\
+  \ F\xF6r att anv\xE4nda den beh\xF6ver du starta den och koppla upp dig mot din\
+  \ k\xF6rande\u2026"
 title: "Att anv\xE4nda en debugger"
+weight: 35
 ---
 
 ## Hur gör man:

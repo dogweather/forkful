@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "YAML, eine zur Datenserialisierung entworfene Sprache, die benutzerfreundlich\
   \ sein soll, wird oft f\xFCr Konfigurationsdateien, Interprozesskommunikation und\u2026"
 title: Arbeiten mit YAML
+weight: 41
 ---
-
-{{< edit_this_page >}}
 
 ## Was & Warum?
 YAML, eine zur Datenserialisierung entworfene Sprache, die benutzerfreundlich sein soll, wird oft für Konfigurationsdateien, Interprozesskommunikation und Datenspeicherung verwendet. Programmierer bevorzugen YAML wegen seiner Lesbarkeit und einfachen Handhabung, besonders beim Umgang mit komplex strukturierten Daten, was es zu einer ausgezeichneten Wahl für in TypeScript entwickelte Anwendungen macht.

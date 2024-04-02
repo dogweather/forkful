@@ -8,9 +8,8 @@ model: gpt-4-0125-preview
 summary: "Organizing code into functions is about structuring your Google Apps Script\
   \ code by separating logical segments into distinct blocks, each performing a\u2026"
 title: Organizing code into functions
+weight: 18
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 

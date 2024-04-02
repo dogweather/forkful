@@ -7,9 +7,8 @@ model: gpt-4-1106-preview
 summary: "Printing debug output to the serial monitor is a way to peek into an Arduino's\
   \ mind. Programmers do it to track down gremlins, test assumptions, and\u2026"
 title: Printing debug output
+weight: 33
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 

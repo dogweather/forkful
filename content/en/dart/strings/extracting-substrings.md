@@ -7,9 +7,8 @@ model: gpt-4-0125-preview
 summary: "Extracting substrings is about retrieving specific portions of a string\
   \ based on their positions or patterns. Programmers do this for tasks such as\u2026"
 title: Extracting substrings
+weight: 6
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 Extracting substrings is about retrieving specific portions of a string based on their positions or patterns. Programmers do this for tasks such as parsing user input, data manipulation, or extracting relevant information from larger text sources.

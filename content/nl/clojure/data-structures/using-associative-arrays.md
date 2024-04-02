@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Associatieve arrays, of hashmap's, in Clojure stellen je in staat om data\
   \ op te slaan en op te halen met sleutel-waardeparen. Ze zijn een voor de hand\u2026"
 title: Gebruik van associatieve arrays
+weight: 15
 ---
-
-{{< edit_this_page >}}
 
 ## Wat & Waarom?
 

@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Iniciar un nuevo proyecto en Go implica configurar un espacio de trabajo\
   \ e inicializarlo con los m\xF3dulos de Go necesarios. Los programadores hacen esto\u2026"
 title: Iniciando un nuevo proyecto
+weight: 1
 ---
-
-{{< edit_this_page >}}
 
 ## Qué y Por Qué?
 

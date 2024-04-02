@@ -10,9 +10,8 @@ model: gpt-4-0125-preview
 summary: "Debugoutput afdrukken in Elm gaat over het weergeven van waarden in de console\
   \ om te begrijpen wat er in je code gebeurt. We doen dit om bugs op te sporen\u2026"
 title: Debug-output afdrukken
+weight: 33
 ---
-
-{{< edit_this_page >}}
 
 ## Wat & Waarom?
 

@@ -11,9 +11,8 @@ summary: "\xC5 skrive tester i Haskell handler om \xE5 sikre at funksjonene dine
   \ som forventet gjennom automatiserte sjekker. Programmerere gj\xF8r det for \xE5\
   \ fange\u2026"
 title: Skrive tester
+weight: 36
 ---
-
-{{< edit_this_page >}}
 
 ## Hva & Hvorfor?
 

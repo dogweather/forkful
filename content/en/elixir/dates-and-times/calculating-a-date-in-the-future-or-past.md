@@ -8,9 +8,8 @@ model: gpt-4-1106-preview
 summary: "Figuring out a future or past date involves computing a date that is so\
   \ many days, months, or years from a specific point in time. Programmers often need\u2026"
 title: Calculating a date in the future or past
+weight: 26
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 Figuring out a future or past date involves computing a date that is so many days, months, or years from a specific point in time. Programmers often need this to track events, schedule jobs, or handle expiry dates.

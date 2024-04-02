@@ -7,9 +7,8 @@ model: gpt-4-0125-preview
 summary: "Komplekse tall har en reell del og en imagin\xE6r del (som `3 + 4i`). De\
   \ brukes i ingeni\xF8rfag, fysikk og visse databehandlingsproblemer. Programmerere\u2026"
 title: "\xC5 jobbe med komplekse tall"
+weight: 14
 ---
-
-{{< edit_this_page >}}
 
 ## Hva & Hvorfor?
 Komplekse tall har en reell del og en imaginær del (som `3 + 4i`). De brukes i ingeniørfag, fysikk og visse databehandlingsproblemer. Programmerere arbeider med dem for simuleringer, signalbehandling og løsning av visse typer matteproblemer effektivt.

@@ -7,9 +7,8 @@ model: gpt-4-1106-preview
 summary: "Eine Datumsberechnung in der Zukunft oder Vergangenheit erm\xF6glicht es,\
   \ mit Zeitintervallen zu arbeiten - zum Beispiel, um Fristen zu setzen oder\u2026"
 title: "Berechnung eines zuk\xFCnftigen oder vergangenen Datums"
+weight: 26
 ---
-
-{{< edit_this_page >}}
 
 ## Was & Warum?
 Eine Datumsberechnung in der Zukunft oder Vergangenheit ermöglicht es, mit Zeitintervallen zu arbeiten - zum Beispiel, um Fristen zu setzen oder Ereignisse zu planen. Programmierer nutzen dies häufig für Features wie Erinnerungen, Ablaufverfolgungen und Terminplanungen.

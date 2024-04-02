@@ -10,9 +10,8 @@ model: gpt-4-0125-preview
 summary: "Capitalizar una cadena en C implica convertir el primer car\xE1cter de cada\
   \ palabra en una cadena dada a may\xFAsculas si es una letra min\xFAscula. Los\u2026"
 title: Capitalizando una cadena de caracteres
+weight: 2
 ---
-
-{{< edit_this_page >}}
 
 ## Qué y Por Qué?
 

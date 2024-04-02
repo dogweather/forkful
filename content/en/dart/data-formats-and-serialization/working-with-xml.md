@@ -7,9 +7,8 @@ model: gpt-4-0125-preview
 summary: "Working with XML in Dart involves parsing, querying, and modifying XML documents,\
   \ a process crucial for applications that interact with web services,\u2026"
 title: Working with XML
+weight: 40
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 

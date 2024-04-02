@@ -9,9 +9,8 @@ summary: "\u0141\u0105czenie \u0142a\u0144cuch\xF3w znak\xF3w (string\xF3w) to p
   \ prostu ich sklejanie. Czynimy to, by stworzy\u0107 zdania, wiadomo\u015Bci czy\
   \ dynamicznie budowane warto\u015Bci tekstowe w\u2026"
 title: "\u0141\u0105czenie \u0142a\u0144cuch\xF3w znak\xF3w"
+weight: 3
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why? (Co i dlaczego?)
 Łączenie łańcuchów znaków (stringów) to po prostu ich sklejanie. Czynimy to, by stworzyć zdania, wiadomości czy dynamicznie budowane wartości tekstowe w naszych aplikacjach.

@@ -10,9 +10,8 @@ model: gpt-4-0125-preview
 summary: "A an\xE1lise de uma data a partir de uma string consiste em reconhecer e\
   \ converter datas escritas em forma de texto para um tipo de dado de data que o\u2026"
 title: Analisando uma data a partir de uma string
+weight: 30
 ---
-
-{{< edit_this_page >}}
 
 ## O Que & Por Quê?
 A análise de uma data a partir de uma string consiste em reconhecer e converter datas escritas em forma de texto para um tipo de dado de data que o PowerShell pode entender e manipular. Programadores fazem isso para manipular, formatar, comparar ou calcular datas, o que são tarefas comuns em scripts que lidam com arquivos de log, entrada de usuário ou processamento de dados.

@@ -7,9 +7,8 @@ model: gpt-4-0125-preview
 summary: "La refactorizaci\xF3n es el proceso de reestructurar c\xF3digo de computadora\
   \ existente sin cambiar su comportamiento externo, con el objetivo de mejorar los\u2026"
 title: "Refactorizaci\xF3n"
+weight: 19
 ---
-
-{{< edit_this_page >}}
 
 ## Qué y Por Qué?
 La refactorización es el proceso de reestructurar código de computadora existente sin cambiar su comportamiento externo, con el objetivo de mejorar los atributos no funcionales del software. Los programadores refactorizan el código para hacerlo más limpio, eficiente y fácil de entender, lo que facilita un mantenimiento más sencillo y mejoras futuras.

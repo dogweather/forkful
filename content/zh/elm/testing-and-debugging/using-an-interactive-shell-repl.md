@@ -15,9 +15,8 @@ summary: "\u8BFB\u53D6-\u6C42\u503C-\u6253\u5370\u5FAA\u73AF\uFF08REPL\uFF09\u66
   \u5E8F\u5458\u4F7F\u7528REPL\u8FDB\u884C\u5FEB\u901F\u5B9E\u9A8C\u3001\u8C03\u8BD5\
   \u6216\u5B66\u4E60\u8BE5\u8BED\u8A00\u3002"
 title: "\u5728\u7F16\u7A0B\u4E2D\u4F7F\u7528\u4EA4\u4E92\u5F0FShell\uFF08REPL\uFF09"
+weight: 34
 ---
-
-{{< edit_this_page >}}
 
 ## 什么和为什么？
 读取-求值-打印循环（REPL）是一个简单的交互式编程环境，它接收用户的单一输入，对其进行求值，并将结果返回给用户。Elm程序员使用REPL进行快速实验、调试或学习该语言。

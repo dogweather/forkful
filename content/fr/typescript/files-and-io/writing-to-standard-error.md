@@ -11,9 +11,8 @@ summary: "En TypeScript, \xE9crire sur l'erreur standard (stderr) est un process
   \ consistant \xE0 envoyer des messages d'erreur ou des journaux directement sur\
   \ le flux\u2026"
 title: "\xC9crire sur l'erreur standard"
+weight: 25
 ---
-
-{{< edit_this_page >}}
 
 ## Quoi & Pourquoi ?
 En TypeScript, écrire sur l'erreur standard (stderr) est un processus consistant à envoyer des messages d'erreur ou des journaux directement sur le flux de sortie d'erreur de l'environnement (par exemple, la console dans node.js ou un navigateur web). Ceci est essentiel pour diagnostiquer des problèmes sans interférer avec la sortie standard (stdout) utilisée généralement pour les données du programme, assurant que la gestion des erreurs et le journalisation soient gérés de manière efficace et cohérente.

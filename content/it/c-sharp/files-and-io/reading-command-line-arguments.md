@@ -8,9 +8,8 @@ model: gpt-4-1106-preview
 summary: "Leggere gli argomenti della linea di comando significa prendere input dall'utente\
   \ quando eseguono il tuo programma da un terminale. I programmatori lo\u2026"
 title: Lettura degli argomenti della riga di comando
+weight: 23
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 Leggere gli argomenti della linea di comando significa prendere input dall'utente quando eseguono il tuo programma da un terminale. I programmatori lo fanno per personalizzare l'esecuzione di un'applicazione senza cambiare il codice.

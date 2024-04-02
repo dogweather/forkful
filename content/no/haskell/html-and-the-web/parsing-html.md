@@ -10,9 +10,8 @@ model: gpt-4-0125-preview
 summary: "\xC5 parse HTML i Haskell gir deg muligheten til \xE5 trekke ut data, manipulere\
   \ HTML-innhold eller interagere med nettsider programmatisk. Denne operasjonen er\u2026"
 title: Analysering av HTML
+weight: 43
 ---
-
-{{< edit_this_page >}}
 
 ## Hva & Hvorfor?
 

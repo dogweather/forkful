@@ -11,9 +11,8 @@ summary: "Schrijven naar standaardfout (stderr) in Haskell laat je fouten en deb
   \ informatie rapporteren, los van de standaarduitvoer (stdout). Dit wordt gedaan\
   \ om\u2026"
 title: Schrijven naar standaardfout
+weight: 25
 ---
-
-{{< edit_this_page >}}
 
 ## Wat & Waarom?
 Schrijven naar standaardfout (stderr) in Haskell laat je fouten en debug informatie rapporteren, los van de standaarduitvoer (stdout). Dit wordt gedaan om de uitvoerstromen georganiseerd te houden, waardoor het gemakkelijker wordt om alleen om te gaan met wat nodig is—zoals het doorvoeren van uitvoer of het loggen van fouten.

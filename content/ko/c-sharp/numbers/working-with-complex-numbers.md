@@ -19,9 +19,8 @@ summary: "\uBCF5\uC18C\uC218\uB294 \uC6B0\uB9AC\uC758 \uC22B\uC790 \uCCB4\uACC4\
   \uC81C \uD574\uACB0\uC744 \uC704\uD574 \uC774 \uC22B\uC790\uB4E4\uC744 \uD544\uC218\
   \uC801\uC73C\uB85C \uB2E4\uB8F9\uB2C8\uB2E4."
 title: "\uBCF5\uC18C\uC218 \uB2E4\uB8E8\uAE30"
+weight: 14
 ---
-
-{{< edit_this_page >}}
 
 ## 무엇과 왜?
 복소수는 우리의 숫자 체계를 확장하여 허수를 포함시킴으로써 실제 해결책이 없는 방정식을 풀 수 있게 해줍니다. 엔지니어링, 물리학, 신호 처리와 같은 분야에서 프로그래머들이 모델링과 문제 해결을 위해 이 숫자들을 필수적으로 다룹니다.

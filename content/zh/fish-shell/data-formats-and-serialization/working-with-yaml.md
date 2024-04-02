@@ -21,9 +21,8 @@ summary: "\u901A\u8FC7Fish Shell\u64CD\u4F5CYAML\u6D89\u53CA\u5230\u89E3\u6790\u
   \uFF0C\u4FBF\u4E8E\u6267\u884C\u914D\u7F6E\u7BA1\u7406\u548C\u8D44\u6E90\u914D\u7F6E\
   \u7B49\u4EFB\u52A1\u3002"
 title: "\u4F7F\u7528YAML\u5DE5\u4F5C"
+weight: 41
 ---
-
-{{< edit_this_page >}}
 
 ## 什么与为什么？
 通过Fish Shell操作YAML涉及到解析和操纵YAML（YAML Ain't Markup Language，YAML不是标记语言）文件，一种用于配置文件的数据序列化格式。程序员这样做是为了在shell环境的背景下有效地自动化和配置应用程序或服务，便于执行配置管理和资源配置等任务。

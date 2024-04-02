@@ -11,9 +11,8 @@ summary: "Escrever para o erro padr\xE3o (stderr) em Dart consiste em enviar men
   \ de erro e diagn\xF3sticos para um fluxo separado, distinto da sa\xEDda padr\xE3\
   o\u2026"
 title: "Escrevendo para o erro padr\xE3o"
+weight: 25
 ---
-
-{{< edit_this_page >}}
 
 ## O Quê & Porquê?
 

@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Il parsing di HTML in PowerShell riguarda l'analisi del contenuto HTML per\
   \ estrarre dati specifici o per automatizzare compiti relativi al web. I\u2026"
 title: Analisi del HTML
+weight: 43
 ---
-
-{{< edit_this_page >}}
 
 ## Cosa & Perché?
 Il parsing di HTML in PowerShell riguarda l'analisi del contenuto HTML per estrarre dati specifici o per automatizzare compiti relativi al web. I programmatori lo fanno per interagire con pagine web, raschiare contenuti web, o automatizzare invii di form e altre interazioni web senza la necessità di un browser web.

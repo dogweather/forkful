@@ -11,9 +11,8 @@ summary: "Stringinterpolatie stelt je in staat waarden in een string in te voege
   \ Het is handig voor het cre\xEBren van aangepaste berichten, het automatiseren\
   \ van\u2026"
 title: Een string interpoleren
+weight: 8
 ---
-
-{{< edit_this_page >}}
 
 ## Wat & Waarom?
 Stringinterpolatie stelt je in staat waarden in een string in te voegen. Het is handig voor het creëren van aangepaste berichten, het automatiseren van commando's en het scripten als een baas.

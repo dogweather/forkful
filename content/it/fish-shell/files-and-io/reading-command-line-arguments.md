@@ -7,9 +7,8 @@ model: gpt-4-1106-preview
 summary: "Leggere gli argomenti da riga di comando permette ai tuoi script di essere\
   \ dinamici e personalizzabili. I programmatori lo fanno per rendere gli script\u2026"
 title: Lettura degli argomenti della riga di comando
+weight: 23
 ---
-
-{{< edit_this_page >}}
 
 ## Che cosa & Perché?
 Leggere gli argomenti da riga di comando permette ai tuoi script di essere dinamici e personalizzabili. I programmatori lo fanno per rendere gli script più versatili e interattivi.

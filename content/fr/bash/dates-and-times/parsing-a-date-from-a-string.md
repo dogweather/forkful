@@ -11,9 +11,8 @@ summary: "L'analyse d'une date \xE0 partir d'une cha\xEEne en Bash consiste \xE0
   \ et convertir les informations de date \xE0 partir de donn\xE9es textuelles en\
   \ un format\u2026"
 title: "Analyser une date depuis une cha\xEEne de caract\xE8res"
+weight: 30
 ---
-
-{{< edit_this_page >}}
 
 ## Quoi et Pourquoi ?
 

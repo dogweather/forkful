@@ -9,9 +9,8 @@ summary: "\xC5 lese en tekstfil i Lua betyr \xE5 hente og bruke data lagret p\xE
   \ disk. Programmerere gj\xF8r dette fordi det ofte er behov for \xE5 behandle informasjon\
   \ som ikke\u2026"
 title: Lese en tekstfil
+weight: 22
 ---
-
-{{< edit_this_page >}}
 
 ## Hva & Hvorfor?
 Å lese en tekstfil i Lua betyr å hente og bruke data lagret på disk. Programmerere gjør dette fordi det ofte er behov for å behandle informasjon som ikke er hardkodet i selve programmet.

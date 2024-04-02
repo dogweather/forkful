@@ -10,9 +10,8 @@ model: gpt-4-0125-preview
 summary: "\xC9crire dans un fichier texte avec Lua implique la cr\xE9ation ou l'ouverture\
   \ d'un fichier en mode \xE9criture, puis l'utilisation d'op\xE9rations sur le fichier\u2026"
 title: "R\xE9diger un fichier texte"
+weight: 24
 ---
-
-{{< edit_this_page >}}
 
 ## Quoi et pourquoi ?
 

@@ -9,9 +9,8 @@ summary: "Zmienianie string\xF3w na ma\u0142e litery to proces konwersji wszystk
   \ znak\xF3w w \u0142a\u0144cuchu tekstowym na ich ma\u0142e odpowiedniki. Programi\u015B\
   ci to robi\u0105 g\u0142\xF3wnie, aby\u2026"
 title: "Konwersja ci\u0105gu znak\xF3w na ma\u0142e litery"
+weight: 4
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why? (Co i Dlaczego?)
 Zmienianie stringów na małe litery to proces konwersji wszystkich znaków w łańcuchu tekstowym na ich małe odpowiedniki. Programiści to robią głównie, aby ujednolicić dane, ułatwić porównywanie i wyszukiwanie tekstu oraz robić case-insensitive matching.

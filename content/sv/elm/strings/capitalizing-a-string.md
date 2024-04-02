@@ -11,9 +11,8 @@ summary: "Att versalisera en str\xE4ng inneb\xE4r att omvandla det inledande tec
   \ i en given str\xE4ng till versal medan resten beh\xE5lls i gemener, ofta f\xF6\
   r standardiserad\u2026"
 title: "G\xF6r om en str\xE4ng till versaler"
+weight: 2
 ---
-
-{{< edit_this_page >}}
 
 ## Vad & Varför?
 

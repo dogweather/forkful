@@ -13,9 +13,8 @@ summary: "REPL\u4EE3\u8868\u8BFB\u53D6-\u6C42\u503C-\u6253\u5370\u5FAA\u73AF\uFF
   \u5458\u4F7F\u7528\u5B83\u6765\u8FDB\u884C\u5B9E\u9A8C\uFF0C\u8C03\u8BD5\u548C\u5B66\
   \u4E60\u8BED\u8A00\u7684\u7279\u6027\u3002"
 title: "\u5728\u7F16\u7A0B\u4E2D\u4F7F\u7528\u4EA4\u4E92\u5F0FShell\uFF08REPL\uFF09"
+weight: 34
 ---
-
-{{< edit_this_page >}}
 
 ## 什么是REPL以及为什么使用它？
 REPL代表读取-求值-打印循环（Read-Eval-Print Loop），这是一个交互式环境，可让你快速测试代码。程序员使用它来进行实验，调试和学习语言的特性。

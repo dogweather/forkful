@@ -9,9 +9,8 @@ summary: "Lire les arguments de la ligne de commande, c'est r\xE9cup\xE9rer des 
   es directement du terminal lors de l'ex\xE9cution d'un script. Les programmeurs\
   \ le font\u2026"
 title: Lecture des arguments de ligne de commande
+weight: 23
 ---
-
-{{< edit_this_page >}}
 
 ## Quoi et Pourquoi ?
 Lire les arguments de la ligne de commande, c'est récupérer des données directement du terminal lors de l'exécution d'un script. Les programmeurs le font pour personnaliser l'exécution sans modifier le code.

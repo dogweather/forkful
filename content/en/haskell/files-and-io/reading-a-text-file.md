@@ -7,9 +7,8 @@ model: gpt-4-1106-preview
 summary: "Reading a text file in programming lets your code absorb data, like pouring\
   \ coffee into your brain in the morning. We do it to feed programs information\u2026"
 title: Reading a text file
+weight: 22
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 Reading a text file in programming lets your code absorb data, like pouring coffee into your brain in the morning. We do it to feed programs information they wouldn't have otherwise, like settings, data to process, or instructions to act upon.

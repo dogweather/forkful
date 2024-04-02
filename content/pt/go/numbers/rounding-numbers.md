@@ -11,9 +11,8 @@ summary: "Arredondar n\xFAmeros \xE9 ajustar o valor de um n\xFAmero para o inte
   \ mais pr\xF3ximo ou para um n\xFAmero espec\xEDfico de casas decimais. Programadores\
   \ fazem isso por\u2026"
 title: "Arredondando n\xFAmeros"
+weight: 13
 ---
-
-{{< edit_this_page >}}
 
 ## O Que & Porquê?
 

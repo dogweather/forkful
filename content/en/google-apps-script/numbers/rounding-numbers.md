@@ -7,9 +7,8 @@ model: gpt-4-0125-preview
 summary: "Rounding numbers, a fundamental concept in computer programming, involves\
   \ adjusting a number to its closest integer or to a specified number of decimal\u2026"
 title: Rounding numbers
+weight: 13
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 

@@ -9,9 +9,8 @@ summary: "Debugowanie, czyli proces \u015Bledzenia i usuwania b\u0142\u0119d\xF3
   \ cz\u0119sto wymaga od programisty wy\u015Bwietlania danych pomocniczych. W Elm\
   \ robimy to, by szybciej\u2026"
 title: "Drukowanie komunikat\xF3w debugowania"
+weight: 33
 ---
-
-{{< edit_this_page >}}
 
 ## Co i Dlaczego?
 

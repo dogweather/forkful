@@ -1,14 +1,13 @@
 ---
 date: 2024-01-26 04:10:41.806608-07:00
-description: "Utiliser un d\xE9bogueur signifie recourir \xE0 des outils sp\xE9cialis\xE9\
-  s pour tester et inspecter votre code pendant son ex\xE9cution. C'est important\
-  \ car cela vous\u2026"
+description: "Pour utiliser le d\xE9bogueur dans Xcode (l'IDE pour Swift), vous pouvez\
+  \ d\xE9finir des points d'arr\xEAt, inspecter des variables et observer des expressions.\u2026"
 lastmod: '2024-03-13T22:44:58.227520-06:00'
 model: gpt-4-0125-preview
-summary: "Utiliser un d\xE9bogueur signifie recourir \xE0 des outils sp\xE9cialis\xE9\
-  s pour tester et inspecter votre code pendant son ex\xE9cution. C'est important\
-  \ car cela vous\u2026"
+summary: "Pour utiliser le d\xE9bogueur dans Xcode (l'IDE pour Swift), vous pouvez\
+  \ d\xE9finir des points d'arr\xEAt, inspecter des variables et observer des expressions.\u2026"
 title: "Utilisation d'un d\xE9bogueur"
+weight: 35
 ---
 
 ## Comment faire :

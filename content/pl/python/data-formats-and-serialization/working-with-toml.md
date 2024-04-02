@@ -9,9 +9,8 @@ summary: "TOML, skr\xF3t od Tom's Obvious, Minimal Language, to format serializa
   \ danych podobny do JSON lub YAML, ale maj\u0105cy na celu prostot\u0119 i czytelno\u015B\
   \u0107.\u2026"
 title: Praca z TOML
+weight: 39
 ---
-
-{{< edit_this_page >}}
 
 ## Co i dlaczego?
 TOML, skrót od Tom's Obvious, Minimal Language, to format serializacji danych podobny do JSON lub YAML, ale mający na celu prostotę i czytelność. Programiści używają TOML do plików konfiguracyjnych, ponieważ jest łatwy do napisania i zrozumienia, a także ładnie mapuje się na struktury danych w językach programowania, takich jak Python.

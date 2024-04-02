@@ -9,9 +9,8 @@ summary: "Convertir une date en cha\xEEne de caract\xE8res permet de la formatte
   \ pour l'affichage. Les d\xE9veloppeurs font cela pour aligner la pr\xE9sentation\
   \ des dates avec\u2026"
 title: "Conversion d'une date en cha\xEEne de caract\xE8res"
+weight: 28
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 Convertir une date en chaîne de caractères permet de la formatter pour l'affichage. Les développeurs font cela pour aligner la présentation des dates avec les besoins linguistiques ou de formatage spécifiques.

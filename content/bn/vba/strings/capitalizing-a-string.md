@@ -23,9 +23,8 @@ summary: "Visual Basic for Applications (VBA) \u098F \u098F\u0995\u099F\u09BF \u
 title: "\u09B8\u09CD\u099F\u09CD\u09B0\u09BF\u0982 \u098F\u09B0 \u09AA\u09CD\u09B0\
   \u09A5\u09AE \u0985\u0995\u09CD\u09B7\u09B0 \u09AC\u09A1\u09BC \u09B9\u09BE\u09A4\
   \u09C7\u09B0 \u0995\u09B0\u09BE"
+weight: 2
 ---
-
-{{< edit_this_page >}}
 
 ## কি এবং কেন?
 

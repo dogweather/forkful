@@ -7,9 +7,8 @@ model: gpt-4-0125-preview
 summary: "Refaktorointi on prosessi, jossa olemassa olevaa koodia uudelleenrakennetaan\
   \ muuttamatta sen ulkoista k\xE4ytt\xE4ytymist\xE4 parantamaan ei-toiminnallisia\u2026"
 title: Koodin refaktorointi
+weight: 19
 ---
-
-{{< edit_this_page >}}
 
 ## Mikä & Miksi?
 Refaktorointi on prosessi, jossa olemassa olevaa koodia uudelleenrakennetaan muuttamatta sen ulkoista käyttäytymistä parantamaan ei-toiminnallisia ominaisuuksia. Ohjelmoijat tekevät näin tehdäkseen koodista luettavampaa, vähentääkseen kompleksisuutta, parantaakseen ylläpidettävyyttä ja tehdäkseen siitä helpommin skaalattavissa tai muokattavissa myöhemmin.

@@ -17,9 +17,8 @@ summary: "\uBCF5\uC18C\uC218\uB294 \uD5C8\uC218 \uCD95\uC744 \uD3EC\uD568\uD558\
   , \uC774\uB294 \uC9C4\uB3D9 \uBC0F \uAE30\uD0C0 \uD604\uC0C1\uC744 \uD45C\uD604\uD558\
   \uAE30 \uC704\uD574 \uD544\uC218\uC801\uC785\uB2C8\uB2E4."
 title: "\uBCF5\uC18C\uC218 \uB2E4\uB8E8\uAE30"
+weight: 14
 ---
-
-{{< edit_this_page >}}
 
 ## 무엇이며 왜인가?
 복소수는 허수 축을 포함하여 일차원 숫자 선을 이차원 평면으로 확장합니다. 프로그래머는 신호 처리, 유체 역학, 전기공학 등의 분야에서 복소수를 작업하는데, 이는 진동 및 기타 현상을 표현하기 위해 필수적입니다.

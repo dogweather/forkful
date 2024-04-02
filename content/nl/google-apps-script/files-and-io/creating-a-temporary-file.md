@@ -11,9 +11,8 @@ summary: "Het cre\xEBren van een tijdelijk bestand in Google Apps Script houdt i
   \ dat je een bestand genereert dat bedoeld is voor kortstondig gebruik, doorgaans\
   \ voor\u2026"
 title: Een tijdelijk bestand aanmaken
+weight: 21
 ---
-
-{{< edit_this_page >}}
 
 ## Wat & Waarom?
 

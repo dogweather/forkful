@@ -9,9 +9,8 @@ summary: "Sammenligning av to datoer handler om \xE5 finne ut om de er like, ell
   \ hvilken som kommer f\xF8r eller etter den andre. Utviklere gj\xF8r dette for \xE5\
   \ h\xE5ndtere\u2026"
 title: Sammenlikning av to datoer
+weight: 27
 ---
-
-{{< edit_this_page >}}
 
 ## Hva & Hvorfor?
 Sammenligning av to datoer handler om å finne ut om de er like, eller hvilken som kommer før eller etter den andre. Utviklere gjør dette for å håndtere frister, events eller datafiltrering i apper.

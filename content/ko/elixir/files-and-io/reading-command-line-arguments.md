@@ -16,9 +16,8 @@ summary: "\uBA85\uB839 \uC904 \uC778\uC218 \uC77D\uAE30\uB294 \uD504\uB85C\uADF8
   \uB7A8\uC5D0\uAC8C \uB3D9\uC791\uC744 \uC9C0\uC2DC\uD558\uAC70\uB098 \uC124\uC815\
   \uC744 \uC804\uB2EC\uD560 \uC218 \uC788\uC5B4\uC694."
 title: "\uBA85\uB839\uC904 \uC778\uC218 \uC77D\uAE30"
+weight: 23
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 명령 줄 인수 읽기는 프로그램이 시작할 때 사용자로부터 입력 데이터를 받는 방법입니다. 이 기능을 사용해서 사용자가 프로그램에게 동작을 지시하거나 설정을 전달할 수 있어요.

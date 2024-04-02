@@ -9,9 +9,8 @@ summary: "Descargar una p\xE1gina web es obtener su contenido completo a trav\xE
   s de Internet. Los programadores lo hacen para analizar datos, verificar disponibilidad\
   \ o\u2026"
 title: "Descargando una p\xE1gina web"
+weight: 42
 ---
-
-{{< edit_this_page >}}
 
 ## ¿Qué y por qué?
 Descargar una página web es obtener su contenido completo a través de Internet. Los programadores lo hacen para analizar datos, verificar disponibilidad o interactuar con servicios en línea.

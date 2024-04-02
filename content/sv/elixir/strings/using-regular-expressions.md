@@ -11,9 +11,8 @@ summary: "Regulj\xE4ra uttryck (regex) i Elixir anv\xE4nds f\xF6r att s\xF6ka, m
   \ och manipulera str\xE4ngar baserat p\xE5 specifika m\xF6nster. Programmerare anv\xE4\
   nder regex f\xF6r\u2026"
 title: "Att anv\xE4nda regulj\xE4ra uttryck"
+weight: 11
 ---
-
-{{< edit_this_page >}}
 
 ## Vad & Varför?
 

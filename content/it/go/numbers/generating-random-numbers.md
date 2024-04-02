@@ -10,9 +10,8 @@ model: gpt-4-0125-preview
 summary: "Generare numeri casuali nella programmazione riguarda la creazione di una\
   \ sequenza di numeri che non pu\xF2 essere prevista ragionevolmente meglio che a\u2026"
 title: Generazione di numeri casuali
+weight: 12
 ---
-
-{{< edit_this_page >}}
 
 ## Cosa & Perché?
 

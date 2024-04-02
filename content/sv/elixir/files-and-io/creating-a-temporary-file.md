@@ -9,9 +9,8 @@ summary: "Skapa en tillf\xE4llig fil inneb\xE4r att du tempor\xE4rt lagrar data 
   \ en s\xE4ker och unik plats. Programmerare g\xF6r detta f\xF6r att hantera data\
   \ som inte beh\xF6ver\u2026"
 title: "Skapa en tempor\xE4r fil"
+weight: 21
 ---
-
-{{< edit_this_page >}}
 
 ## Vad & Varför?
 

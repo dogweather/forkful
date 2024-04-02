@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Het lezen van command line argumenten betekent het ophalen van de data die\
   \ naar een programma wordt doorgegeven wanneer je het start vanuit een terminal\u2026"
 title: Commandoregelargumenten lezen
+weight: 23
 ---
-
-{{< edit_this_page >}}
 
 ## Wat & Waarom?
 Het lezen van command line argumenten betekent het ophalen van de data die naar een programma wordt doorgegeven wanneer je het start vanuit een terminal of command prompt. Programmeurs gebruiken argumenten om het gedrag van een programma aan te passen zonder de code te wijzigen.

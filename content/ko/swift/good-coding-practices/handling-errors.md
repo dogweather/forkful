@@ -15,9 +15,8 @@ summary: "Swift\uC5D0\uC11C\uC758 \uC624\uB958 \uCC98\uB9AC\uB780 \uCF54\uB4DC \
   \uB294 \uAC83\uC744 \uBC29\uC9C0\uD558\uACE0 \uC0AC\uC6A9\uC790\uC5D0\uAC8C \uC6D0\
   \uD65C\uD55C \uACBD\uD5D8\uC744 \uC81C\uACF5\uD569\uB2C8\uB2E4."
 title: "\uC5D0\uB7EC \uCC98\uB9AC\uD558\uAE30"
+weight: 16
 ---
-
-{{< edit_this_page >}}
 
 ## 무엇과 왜?
 Swift에서의 오류 처리란 코드 실행 중 발생하는 문제에 대비하고 대응하는 것을 말합니다. 이를 통해 혼돈을 제어하여 앱이 충돌하는 것을 방지하고 사용자에게 원활한 경험을 제공합니다.

@@ -9,9 +9,8 @@ summary: "Gerar n\xFAmeros aleat\xF3rios em programa\xE7\xE3o \xE9 sobre criar n
   meros que n\xE3o t\xEAm qualquer padr\xE3o previs\xEDvel. Programadores fazem isso\
   \ por v\xE1rias raz\xF5es,\u2026"
 title: "Gera\xE7\xE3o de n\xFAmeros aleat\xF3rios"
+weight: 12
 ---
-
-{{< edit_this_page >}}
 
 ## O Que e Por Quê?
 

@@ -7,9 +7,8 @@ model: gpt-4-0125-preview
 summary: "Tiedostojen k\xE4sittely CLI-yksirivikomennoin PowerShelliss\xE4 tarkoittaa\
   \ tiedostojen nopeaa muuttamista, siirt\xE4mist\xE4 tai tiedon saamista suoraan\u2026"
 title: "Tiedostojen k\xE4sittely yhden rivin komentorivikomennoilla"
+weight: 31
 ---
-
-{{< edit_this_page >}}
 
 ## Mikä & Miksi?
 

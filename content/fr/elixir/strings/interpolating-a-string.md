@@ -7,9 +7,8 @@ model: gpt-4-1106-preview
 summary: "On ins\xE8re des donn\xE9es dans une cha\xEEne de caract\xE8res. On fait\
   \ \xE7a pour dynamiser les messages sans concat\xE9ner \xE0 l'ancienne."
 title: "Interpolation de cha\xEEnes de caract\xE8res"
+weight: 8
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why? | Quoi et Pourquoi ?
 On insère des données dans une chaîne de caractères. On fait ça pour dynamiser les messages sans concaténer à l'ancienne.

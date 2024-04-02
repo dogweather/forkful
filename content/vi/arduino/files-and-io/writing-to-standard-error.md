@@ -13,9 +13,8 @@ summary: "Ghi v\xE0o l\u1ED7i chu\u1EA9n (stderr) b\xE1o c\xE1o l\u1ED7i v\xE0 c
   \ \u0110i\u1EC1u n\xE0y quan tr\u1ECDng cho vi\u1EC7c g\u1EE1 l\u1ED7i v\xE0 l\u01B0\
   u log, gi\xFAp c\xE1c nh\xE0 ph\xE1t\u2026"
 title: "Ghi v\xE0o l\u1ED7i chu\u1EA9n"
+weight: 25
 ---
-
-{{< edit_this_page >}}
 
 ## Gì & Tại sao?
 Ghi vào lỗi chuẩn (stderr) báo cáo lỗi và chẩn đoán riêng biệt từ đầu ra chuẩn (stdout). Điều này quan trọng cho việc gỡ lỗi và lưu log, giúp các nhà phát triển tách biệt vấn đề mà không làm lẫn lộn thông điệp lỗi với đầu ra chương trình bình thường.

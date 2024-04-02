@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Loggning inom programutveckling \xE4r processen att registrera information\
   \ om ett programs utf\xF6rande, avsedd att sp\xE5ra dess beteende och diagnostisera\u2026"
 title: Loggning
+weight: 17
 ---
-
-{{< edit_this_page >}}
 
 ## Vad & Varför?
 

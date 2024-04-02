@@ -11,9 +11,8 @@ summary: "\xC5 starte et nytt prosjekt i Google Apps Script (GAS) inneb\xE6rer \
   \ initialisere en scriptfil innenfor Google-\xF8kosystemet (Google Drive, Docs,\
   \ Ark, etc.) for\u2026"
 title: "\xC5 starte et nytt prosjekt"
+weight: 1
 ---
-
-{{< edit_this_page >}}
 
 ## Hva & Hvorfor?
 

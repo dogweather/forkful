@@ -8,9 +8,8 @@ model: gpt-4-1106-preview
 summary: "Lire un fichier texte, c'est r\xE9cup\xE9rer les donn\xE9es \xE9crites dedans.\
   \ On le fait pour acc\xE9der et manipuler ces donn\xE9es, comme charger des configurations,\u2026"
 title: Lecture d'un fichier texte
+weight: 22
 ---
-
-{{< edit_this_page >}}
 
 ## Quoi & Pourquoi ?
 Lire un fichier texte, c'est récupérer les données écrites dedans. On le fait pour accéder et manipuler ces données, comme charger des configurations, importer des données utilisateurs ou analyser des contenus.

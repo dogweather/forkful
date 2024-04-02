@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Converter uma string para min\xFAsculas em C envolve transformar todas as\
   \ letras mai\xFAsculas de uma string dada em suas correspondentes min\xFAsculas.\u2026"
 title: "Convertendo uma string para letras min\xFAsculas"
+weight: 4
 ---
-
-{{< edit_this_page >}}
 
 ## O Que & Por Que?
 

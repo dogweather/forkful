@@ -11,9 +11,8 @@ summary: "Kahden p\xE4iv\xE4m\xE4\xE4r\xE4n vertailu Google Apps Scriptiss\xE4, 
   \ on JavaScriptin johdannainen Google-sovellusten sarjaa varten, on keskeinen teht\xE4\
   v\xE4 kehitt\xE4jille,\u2026"
 title: "Kahden p\xE4iv\xE4m\xE4\xE4r\xE4n vertailu"
+weight: 27
 ---
-
-{{< edit_this_page >}}
 
 ## Mikä ja miksi?
 Kahden päivämäärän vertailu Google Apps Scriptissä, joka on JavaScriptin johdannainen Google-sovellusten sarjaa varten, on keskeinen tehtävä kehittäjille, jotka käsittelevät aikatauluja, aikajanoja tai mitä tahansa päivämäärään liittyviä tietoja. Päivämäärien tarkan vertailun ymmärtäminen mahdollistaa ohjelmoijille ominaisuuksien, kuten määräaikojen, tapahtumasuunnittelun tai sisällön aikataulutuksen, tehokkaan toteuttamisen.

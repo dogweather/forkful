@@ -9,9 +9,8 @@ summary: "Encontrar la longitud de una cadena de texto en Rust nos dice cu\xE1nt
   \ bytes ocupa. Esto importa al trabajar con textos: validar entradas, limitar tama\xF1\
   o,\u2026"
 title: Calculando la longitud de una cadena
+weight: 7
 ---
-
-{{< edit_this_page >}}
 
 ## ¿Qué & Por Qué?
 Encontrar la longitud de una cadena de texto en Rust nos dice cuántos bytes ocupa. Esto importa al trabajar con textos: validar entradas, limitar tamaño, segmentar datos, entre otros.

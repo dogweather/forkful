@@ -7,9 +7,8 @@ model: gpt-4-0125-preview
 summary: "Das Generieren von Zufallszahlen in C# umfasst die Erstellung von unvorhersehbaren\
   \ numerischen Werten innerhalb eines spezifizierten Bereichs.\u2026"
 title: Generierung von Zufallszahlen
+weight: 12
 ---
-
-{{< edit_this_page >}}
 
 ## Was & Warum?
 

@@ -9,9 +9,8 @@ summary: "Satunnaislukujen tuottaminen TypeScriptill\xE4 tarkoittaa ennalta arva
   \ numeeristen arvojen luomista m\xE4\xE4ritetyll\xE4 v\xE4lill\xE4. Ohjelmoijat\
   \ hy\xF6dynt\xE4v\xE4t\u2026"
 title: Satunnaislukujen generointi
+weight: 12
 ---
-
-{{< edit_this_page >}}
 
 ## Mikä & Miksi?
 

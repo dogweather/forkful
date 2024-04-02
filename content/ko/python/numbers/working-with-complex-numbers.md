@@ -17,9 +17,8 @@ summary: "\uBCF5\uC18C\uC218\uB294 `a + bi` \uD615\uD0DC\uC758 \uC22B\uC790 \uC9
   \ \uAC19\uC740 \uB2E4\uC591\uD55C \uBD84\uC57C\uC758 \uBB38\uC81C\uB97C \uD574\uACB0\
   \uD558\uAE30 \uC704\uD574 \uC0AC\uC6A9\uD569\uB2C8\uB2E4."
 title: "\uBCF5\uC18C\uC218 \uB2E4\uB8E8\uAE30"
+weight: 14
 ---
-
-{{< edit_this_page >}}
 
 ## 무엇이며 왜인가?
 복소수는 `a + bi` 형태의 숫자 집합이며, 여기서 `a`와 `b`는 실수이고, `i`는 허수 단위(`i^2 = -1`)입니다. 프로그래밍에서 우리는 복소수를 전기 공학, 신호 처리, 양자 컴퓨팅과 같은 다양한 분야의 문제를 해결하기 위해 사용합니다.

@@ -11,9 +11,8 @@ summary: "Baixar uma p\xE1gina da web consiste em buscar o conte\xFAdo HTML de u
   \ p\xE1gina da web via protocolo HTTP/HTTPS. Programadores frequentemente fazem\
   \ isso para\u2026"
 title: "Baixando uma p\xE1gina da web"
+weight: 42
 ---
-
-{{< edit_this_page >}}
 
 ## O Que & Por Quê?
 

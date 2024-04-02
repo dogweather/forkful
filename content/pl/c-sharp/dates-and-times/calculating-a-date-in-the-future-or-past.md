@@ -9,9 +9,8 @@ summary: "Co to jest obliczanie daty w przysz\u0142o\u015Bci lub przesz\u0142o\u
   ci? To po prostu wyliczanie nowej daty, dodaj\u0105c lub odejmuj\u0105c czas od\
   \ danej daty pocz\u0105tkowej.\u2026"
 title: "Obliczanie daty w przysz\u0142o\u015Bci lub przesz\u0142o\u015Bci"
+weight: 26
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 Co to jest obliczanie daty w przyszłości lub przeszłości? To po prostu wyliczanie nowej daty, dodając lub odejmując czas od danej daty początkowej. Programiści robią to często – zarządzają terminami, planują zdarzenia, tworzą logi.

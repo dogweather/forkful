@@ -13,9 +13,8 @@ summary: "Vi\u1EBFt test ki\u1EC3m tra xem code c\xF3 th\u1EF1c hi\u1EC7n \u0111
   t l\u1ED7i, h\u1ED7 tr\u1EE3 b\u1EA3o tr\xEC code, v\xE0 \u0111\u1EA3m b\u1EA3o\
   \ c\xE1c thay \u0111\u1ED5i kh\xF4ng\u2026"
 title: "Vi\u1EBFt c\xE1c b\xE0i ki\u1EC3m tra"
+weight: 36
 ---
-
-{{< edit_this_page >}}
 
 ## Gì & Tại sao?
 

@@ -9,9 +9,8 @@ summary: "L\xE4het\xE4mme HTTP-pyynt\xF6j\xE4 perusautentikoinnilla liitt\xE4\xE
   ksemme k\xE4ytt\xE4j\xE4tunnus-salasanapari verkkopalveluihin. T\xE4m\xE4 on vakiomenetelm\xE4\
   \ suojattujen resurssien\u2026"
 title: "HTTP-pyynn\xF6n l\xE4hett\xE4minen perusautentikoinnilla"
+weight: 45
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 

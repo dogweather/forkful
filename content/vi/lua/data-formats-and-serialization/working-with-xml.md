@@ -13,9 +13,8 @@ summary: "L\xE0m vi\u1EC7c v\u1EDBi XML bao g\u1ED3m vi\u1EC7c ph\xE2n t\xEDch c
   \ l\u1EADp tr\xECnh. C\xE1c l\u1EADp tr\xECnh vi\xEAn l\xE0m vi\u1EC7c n\xE0y \u0111\
   \u1EC3 \u0111\u1ECDc, vi\u1EBFt v\xE0 s\u1EEDa \u0111\u1ED5i\u2026"
 title: "L\xE0m vi\u1EC7c v\u1EDBi XML"
+weight: 40
 ---
-
-{{< edit_this_page >}}
 
 ## Gì và Tại sao?
 Làm việc với XML bao gồm việc phân tích cú pháp và thao tác với tài liệu XML sử dụng mã lập trình. Các lập trình viên làm việc này để đọc, viết và sửa đổi dữ liệu trong một định dạng có cấu trúc, dễ di chuyển, được sử dụng rộng rãi cho việc trao đổi và lưu trữ dữ liệu.

@@ -9,9 +9,8 @@ summary: "Muuntaminen p\xE4iv\xE4m\xE4\xE4r\xE4st\xE4 merkkijonoksi on tapa esit
   \xE4 p\xE4iv\xE4m\xE4\xE4r\xE4 helposti luettavassa formaatissa. Ohjelmoijat tekev\xE4\
   t t\xE4m\xE4n, jotta voidaan tallentaa,\u2026"
 title: "P\xE4iv\xE4m\xE4\xE4r\xE4n muuntaminen merkkijonoksi"
+weight: 28
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 Muuntaminen päivämäärästä merkkijonoksi on tapa esittää päivämäärä helposti luettavassa formaatissa. Ohjelmoijat tekevät tämän, jotta voidaan tallentaa, näyttää käyttäjälle tai lähettää päivämäärätietoja.

@@ -10,9 +10,8 @@ model: gpt-4-0125-preview
 summary: "Praca z plikami CSV (Comma-Separated Values), czyli z warto\u015Bciami rozdzielanymi\
   \ przecinkami, polega na odczycie z plik\xF3w CSV oraz zapisywaniu do nich\u2026"
 title: Praca z plikami CSV
+weight: 37
 ---
-
-{{< edit_this_page >}}
 
 ## Co i dlaczego?
 Praca z plikami CSV (Comma-Separated Values), czyli z wartościami rozdzielanymi przecinkami, polega na odczycie z plików CSV oraz zapisywaniu do nich danych, co jest powszechnym formatem przechowywania danych tabelarycznych. Programiści robią to, aby łatwo wymieniać i przechowywać dane w prostym formacie tekstowym, który jest szeroko obsługiwany na różnych platformach i językach.

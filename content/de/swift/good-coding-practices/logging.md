@@ -8,9 +8,8 @@ model: gpt-4-1106-preview
 summary: "Das Loggen ist der Vorgang des Aufzeichnens von Anwendungsverhalten, Fehlern\
   \ und anderen wichtigen Informationen auf ein best\xE4ndiges Medium, wie eine\u2026"
 title: Protokollierung
+weight: 17
 ---
-
-{{< edit_this_page >}}
 
 ## Was & Warum?
 Das Loggen ist der Vorgang des Aufzeichnens von Anwendungsverhalten, Fehlern und anderen wichtigen Informationen auf ein beständiges Medium, wie eine Datei oder Datenbank. Programmierer tun dies, um die Gesundheit und Leistung ihrer Apps zu verfolgen, um Probleme zu debuggen und um ein Auge darauf zu haben, was unter der Haube in Produktivumgebungen passiert.

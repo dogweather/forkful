@@ -8,9 +8,8 @@ model: gpt-4-0125-preview
 summary: "In software development, it's often necessary to check if a directory exists\
   \ to avoid errors when attempting to access, read, or write files. Rust, being\u2026"
 title: Checking if a directory exists
+weight: 20
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 In software development, it's often necessary to check if a directory exists to avoid errors when attempting to access, read, or write files. Rust, being a systems programming language, provides robust methods to perform this task, ensuring your program can handle files and directories safely and efficiently.

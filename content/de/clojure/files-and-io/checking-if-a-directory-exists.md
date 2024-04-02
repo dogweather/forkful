@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Das \xDCberpr\xFCfen, ob ein Verzeichnis in Clojure existiert, umfasst die\
   \ Verifizierung der Existenz eines Dateisystemverzeichnisses von innerhalb Ihrer\u2026"
 title: "\xDCberpr\xFCfung, ob ein Verzeichnis existiert"
+weight: 20
 ---
-
-{{< edit_this_page >}}
 
 ## Was & Warum?
 Das Überprüfen, ob ein Verzeichnis in Clojure existiert, umfasst die Verifizierung der Existenz eines Dateisystemverzeichnisses von innerhalb Ihrer Clojure-Anwendung. Diese Aufgabe ist entscheidend für Dateioperationen, um Fehler beim Lesen von oder Schreiben in Verzeichnisse, die möglicherweise nicht vorhanden sind, zu verhindern, was eine robuste und fehlerfreie Codeausführung gewährleistet.

@@ -9,9 +9,8 @@ summary: "Mettere tutto il tuo codice in un grande mucchio? Brutta idea. Divider
   \ in funzioni? Buona idea. Mantiene il tuo codice Elm pulito, riutilizzabile e pi\xF9\
   \u2026"
 title: Organizzazione del codice in funzioni
+weight: 18
 ---
-
-{{< edit_this_page >}}
 
 ## Che cosa & Perché?
 Mettere tutto il tuo codice in un grande mucchio? Brutta idea. Dividerlo in funzioni? Buona idea. Mantiene il tuo codice Elm pulito, riutilizzabile e più facile da testare. Organizzando il tuo codice in funzioni, raggruppi insieme il codice che svolge compiti specifici, rendendo la tua applicazione più manutenibile e comprensibile.

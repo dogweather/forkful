@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Het verwijderen van aanhalingstekens uit een string gaat over het strippen\
   \ van die lastige enkele (' ') of dubbele (\" \") aanhalingstekens van je\u2026"
 title: Quotes verwijderen uit een string
+weight: 9
 ---
-
-{{< edit_this_page >}}
 
 ## Wat & Waarom?
 

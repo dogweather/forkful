@@ -11,9 +11,8 @@ summary: "Zaokr\u0105glanie liczb w programowaniu polega na przybli\u017Ceniu li
   \ do najbli\u017Cszej liczby ca\u0142kowitej lub do okre\u015Blonej liczby miejsc\
   \ dziesi\u0119tnych.\u2026"
 title: "Zaokr\u0105glanie liczb"
+weight: 13
 ---
-
-{{< edit_this_page >}}
 
 ## Co i dlaczego?
 

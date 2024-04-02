@@ -9,9 +9,8 @@ summary: "O registro de logs \xE9 o processo de gravar comportamentos, erros e o
   \ informa\xE7\xF5es importantes de uma aplica\xE7\xE3o em um meio persistente, como\
   \ um arquivo\u2026"
 title: Registro de Logs
+weight: 17
 ---
-
-{{< edit_this_page >}}
 
 ## O Quê & Por Quê?
 O registro de logs é o processo de gravar comportamentos, erros e outras informações importantes de uma aplicação em um meio persistente, como um arquivo ou banco de dados. Os programadores fazem isso para acompanhar a saúde e o desempenho de seus aplicativos, para depurar problemas e para manter um olho no que está acontecendo por baixo do capô em ambientes de produção.

@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Een nieuw project starten betekent dat je de basis legt voor jouw briljante\
   \ idee. Programmeurs trappen af om concepten om te zetten in code die praktisch\u2026"
 title: Een nieuw project starten
+weight: 1
 ---
-
-{{< edit_this_page >}}
 
 ## Wat & Waarom?
 Een nieuw project starten betekent dat je de basis legt voor jouw briljante idee. Programmeurs trappen af om concepten om te zetten in code die praktisch iets nuttigs doet.

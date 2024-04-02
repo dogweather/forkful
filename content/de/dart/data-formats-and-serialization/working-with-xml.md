@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Die Arbeit mit XML in Dart beinhaltet das Parsen, Abfragen und Modifizieren\
   \ von XML-Dokumenten, ein Prozess, der f\xFCr Applikationen, die mit Webdiensten,\u2026"
 title: Arbeiten mit XML
+weight: 40
 ---
-
-{{< edit_this_page >}}
 
 ## Was & Warum?
 

@@ -9,9 +9,8 @@ summary: "Editar arquivos no local com comandos de linha de comando (CLI) em uma
   \ no PowerShell \xE9 sobre fazer modifica\xE7\xF5es diretas nos arquivos a partir\
   \ da\u2026"
 title: Editando arquivos in loco com comandos de linha de comando
+weight: 32
 ---
-
-{{< edit_this_page >}}
 
 ## O Que & Por Que?
 

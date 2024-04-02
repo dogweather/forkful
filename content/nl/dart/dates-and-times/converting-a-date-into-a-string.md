@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Het omzetten van een datum naar een string in Dart is een veelvoorkomende\
   \ taak wanneer u datum- en tijdinformatie op een voor mensen leesbare manier wilt\u2026"
 title: Een datum omzetten naar een string
+weight: 28
 ---
-
-{{< edit_this_page >}}
 
 ## Wat & Waarom?
 

@@ -17,9 +17,8 @@ summary: "\uC784\uC2DC \uD30C\uC77C\uC744 \uB9CC\uB4DC\uB294 \uAC83\uC740 \uC2DC
   \uD130\uB97C \uC77C\uC2DC\uC801\uC73C\uB85C \uCC98\uB9AC\uD558\uAC70\uB098, \uD14C\
   \uC2A4\uD2B8\uB97C \uC704\uD55C \uBAA9\uC801 \uB54C\uBB38\uC785\uB2C8\uB2E4."
 title: "\uC784\uC2DC \uD30C\uC77C \uC0DD\uC131\uD558\uAE30"
+weight: 21
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why? (무엇이며 왜?)
 임시 파일을 만드는 것은 시스템에서 임시 데이터를 저장할 때 사용합니다. 프로그래머들이 이를 사용하는 이유는 대체로 데이터를 일시적으로 처리하거나, 테스트를 위한 목적 때문입니다.

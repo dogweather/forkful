@@ -10,9 +10,8 @@ model: gpt-4-0125-preview
 summary: "Parsing av HTML i PHP involverer \xE5 trekke ut spesifikk informasjon fra\
   \ HTML-dokumenter. Utviklere utf\xF8rer denne oppgaven for \xE5 automatisere datautvinning,\u2026"
 title: Analysering av HTML
+weight: 43
 ---
-
-{{< edit_this_page >}}
 
 ## Hva & Hvorfor?
 Parsing av HTML i PHP involverer å trekke ut spesifikk informasjon fra HTML-dokumenter. Utviklere utfører denne oppgaven for å automatisere datautvinning, webskraping, eller for å integrere innhold fra ulike nettsider i sine applikasjoner, noe som forbedrer funksjonaliteten uten manuell inngripen.

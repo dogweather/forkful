@@ -11,9 +11,8 @@ summary: "\xC9crire un fichier texte en TypeScript est une comp\xE9tence essenti
   \ pour la persistance des donn\xE9es, la configuration ou la g\xE9n\xE9ration de\
   \ journaux. Les\u2026"
 title: "R\xE9diger un fichier texte"
+weight: 24
 ---
-
-{{< edit_this_page >}}
 
 ## Ce qu'il faut savoir et pourquoi ?
 Écrire un fichier texte en TypeScript est une compétence essentielle pour la persistance des données, la configuration ou la génération de journaux. Les programmeurs effectuent souvent cette tâche pour stocker et manipuler des données en dehors de la mémoire de l'application pour des raisons telles que l'analyse de données, le reporting ou simplement la sauvegarde des paramètres utilisateur entre les sessions.

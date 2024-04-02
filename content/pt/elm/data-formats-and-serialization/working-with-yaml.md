@@ -11,9 +11,8 @@ summary: "Elm n\xE3o possui suporte nativo para YAML, um formato de serializa\xE
   o de dados frequentemente utilizado para arquivos de configura\xE7\xE3o ou compartilhamento\
   \ de\u2026"
 title: Trabalhando com YAML
+weight: 41
 ---
-
-{{< edit_this_page >}}
 
 ## O Que & Por Quê?
 Elm não possui suporte nativo para YAML, um formato de serialização de dados frequentemente utilizado para arquivos de configuração ou compartilhamento de dados, devido à sua forte ênfase em segurança de tipos e resultados previsíveis. No entanto, programadores frequentemente encontram YAML ao lidar com APIs ou configurações no desenvolvimento web, necessitando métodos confiáveis para analisar dados YAML para o ecossistema estritamente tipado de Elm para integração e manipulação sem problemas.

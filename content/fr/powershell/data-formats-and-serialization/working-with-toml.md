@@ -9,9 +9,8 @@ summary: "TOML, abr\xE9viation de Tom's Obvious, Minimal Language, est un format
   \ s\xE9rialisation de donn\xE9es facile \xE0 lire gr\xE2ce \xE0 sa s\xE9mantique\
   \ claire. Les\u2026"
 title: Travailler avec TOML
+weight: 39
 ---
-
-{{< edit_this_page >}}
 
 ## Quoi et Pourquoi ?
 

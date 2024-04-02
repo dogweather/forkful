@@ -8,9 +8,8 @@ model: gpt-4-1106-preview
 summary: "Das Zusammenf\xFCgen von Zeichenketten, auch \"String Concatenation\" genannt,\
   \ ist ziemlich grundlegend: Es geht darum, zwei oder mehrere Strings zu einem\u2026"
 title: "Zeichenketten verkn\xFCpfen"
+weight: 3
 ---
-
-{{< edit_this_page >}}
 
 ## Was & Warum?
 Das Zusammenfügen von Zeichenketten, auch "String Concatenation" genannt, ist ziemlich grundlegend: Es geht darum, zwei oder mehrere Strings zu einem einzigen zu kombinieren. Wir machen dies ständig, um dynamische Texte zu erzeugen, Pfade zu bauen, Mitteilungen für Benutzer zu generieren und so weiter.

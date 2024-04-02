@@ -13,9 +13,8 @@ summary: "N\u1ED1i chu\u1ED7i trong Bash c\xF3 ngh\u0129a l\xE0 gh\xE9p hai ho\u
   nh vi\xEAn th\u1EF1c hi\u1EC7n \u0111i\u1EC1u \u0111\xF3 \u0111\u1EC3 x\xE2y d\u1EF1\
   ng c\xE1c l\u1EC7nh, t\u1EA1o \u0111\u01B0\u1EDDng d\u1EABn t\u1EC7p,\u2026"
 title: "N\u1ED1i chu\u1ED7i k\xFD t\u1EF1"
+weight: 3
 ---
-
-{{< edit_this_page >}}
 
 ## Cái gì & Tại sao?
 

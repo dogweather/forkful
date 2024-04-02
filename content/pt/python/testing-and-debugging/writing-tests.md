@@ -11,9 +11,8 @@ summary: "Escrever testes em Python envolve a cria\xE7\xE3o de scripts automatiz
   \ para validar a corre\xE7\xE3o do seu c\xF3digo. Programadores fazem isso para\
   \ garantir que\u2026"
 title: Escrevendo testes
+weight: 36
 ---
-
-{{< edit_this_page >}}
 
 ## O Que & Por Que?
 Escrever testes em Python envolve a criação de scripts automatizados para validar a correção do seu código. Programadores fazem isso para garantir que suas funções ou classes funcionem conforme esperado sob várias condições, o que ajuda a capturar erros precocemente e facilita a manutenção e refatoração mais fáceis.

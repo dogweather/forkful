@@ -13,9 +13,8 @@ summary: "S\u1ED1 ph\u1EE9c bao g\u1ED3m m\u1ED9t ph\u1EA7n th\u1EF1c v\xE0 m\u1
   \ trong c\xE1c l\u0129nh v\u1EF1c nh\u01B0 x\u1EED l\xFD t\xEDn hi\u1EC7u, c\u01A1\
   \ h\u1ECDc l\u01B0\u1EE3ng t\u1EED v\xE0 b\u1EA5t c\u1EE9 khi n\xE0o\u2026"
 title: "L\xE0m vi\u1EC7c v\u1EDBi s\u1ED1 ph\u1EE9c"
+weight: 14
 ---
-
-{{< edit_this_page >}}
 
 ## Số Phức: Làm Thế Nào và Tại Sao?
 

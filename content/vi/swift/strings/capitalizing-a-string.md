@@ -13,9 +13,8 @@ summary: "Vi\u1EC7c vi\u1EBFt hoa c\xF3 ngh\u0129a l\xE0 thay \u0111\u1ED5i ch\u
   \ chu\u1ED7i k\xFD t\u1EF1, th\u01B0\u1EDDng li\xEAn quan \u0111\u1EBFn vi\u1EC7\
   c \u0111\u1ECBnh d\u1EA1ng ho\u1EB7c l\xE0m cho v\u0103n b\u1EA3n\u2026"
 title: "Vi\u1EBFt hoa m\u1ED9t chu\u1ED7i"
+weight: 2
 ---
-
-{{< edit_this_page >}}
 
 ## Cái Gì & Tại Sao?
 Việc viết hoa có nghĩa là thay đổi chữ cái đầu tiên của từ thành chữ in hoa; trong chuỗi ký tự, thường liên quan đến việc định dạng hoặc làm cho văn bản thân thiện với người dùng hơn. Các lập trình viên viết hoa chuỗi ký tự để tăng tính dễ đọc, tuân thủ quy tắc ngữ pháp, hoặc phù hợp với hướng dẫn về phong cách.

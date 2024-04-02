@@ -9,9 +9,8 @@ summary: "En Rust, afficher des informations de d\xE9bogage, c'est montrer l'\xE
   tat d'une variable ou ce qui se passe dans un programme. \xC7a aide les d\xE9veloppeurs\
   \ \xE0\u2026"
 title: "Affichage des sorties de d\xE9bogage"
+weight: 33
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why? (Quoi et pourquoi ?)
 En Rust, afficher des informations de débogage, c'est montrer l'état d'une variable ou ce qui se passe dans un programme. Ça aide les développeurs à comprendre et à réparer les bugs rapidement.

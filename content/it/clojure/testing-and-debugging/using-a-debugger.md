@@ -1,14 +1,13 @@
 ---
 date: 2024-01-26 03:48:11.517778-07:00
-description: "Usare un debugger significa equipaggiarsi con una lente d'ingrandimento\
-  \ per scrutare il proprio codice. I programmatori fanno ci\xF2 per schiacciare i\
-  \ bug,\u2026"
+description: "Clojure si appoggia alla Java Virtual Machine (JVM), quindi molte operazioni\
+  \ di debug avvengono con strumenti Java. Uno di questi strumenti \xE8 `CIDER`, un\u2026"
 lastmod: '2024-03-13T22:44:43.046642-06:00'
 model: gpt-4-0125-preview
-summary: "Usare un debugger significa equipaggiarsi con una lente d'ingrandimento\
-  \ per scrutare il proprio codice. I programmatori fanno ci\xF2 per schiacciare i\
-  \ bug,\u2026"
+summary: "Clojure si appoggia alla Java Virtual Machine (JVM), quindi molte operazioni\
+  \ di debug avvengono con strumenti Java. Uno di questi strumenti \xE8 `CIDER`, un\u2026"
 title: Utilizzo di un debugger
+weight: 35
 ---
 
 ## Come fare:

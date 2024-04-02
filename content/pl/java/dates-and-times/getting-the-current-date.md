@@ -11,9 +11,8 @@ summary: "Pobranie bie\u017C\u0105cej daty w Java to podstawowa operacja, kt\xF3
   \ pozwala programistom manipulowa\u0107 obiektami dat do operacji takich jak logowanie,\
   \ obliczenia\u2026"
 title: Pobieranie aktualnej daty
+weight: 29
 ---
-
-{{< edit_this_page >}}
 
 ## Co i dlaczego?
 Pobranie bieżącej daty w Java to podstawowa operacja, która pozwala programistom manipulować obiektami dat do operacji takich jak logowanie, obliczenia dat i warunki oparte na czasie. Jest to niezbędne w aplikacjach, gdzie kluczowe są śledzenie, planowanie i analiza danych czasowych.

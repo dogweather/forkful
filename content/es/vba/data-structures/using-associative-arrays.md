@@ -11,9 +11,8 @@ summary: "Los arreglos asociativos, a menudo conocidos como diccionarios en Visu
   \ Basic para Aplicaciones (VBA), permiten a los programadores crear colecciones\
   \ de\u2026"
 title: Utilizando arreglos asociativos
+weight: 15
 ---
-
-{{< edit_this_page >}}
 
 ## ¿Qué y Por Qué?
 

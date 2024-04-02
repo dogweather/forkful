@@ -10,9 +10,8 @@ model: gpt-4-0125-preview
 summary: "Att starta ett nytt projekt i Dart inneb\xE4r att man s\xE4tter upp en milj\xF6\
   \ som fr\xE4mjar en effektiv utveckling, testning och implementering. Programmerare\u2026"
 title: Att starta ett nytt projekt
+weight: 1
 ---
-
-{{< edit_this_page >}}
 
 ## Vad & Varför?
 

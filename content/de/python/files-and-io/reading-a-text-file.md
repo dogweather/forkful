@@ -7,9 +7,8 @@ model: gpt-4-1106-preview
 summary: "Das Lesen einer Textdatei bedeutet, ihren Inhalt in ein Programm zu laden,\
   \ um ihn zu verarbeiten. Programmierer machen das, weil Textdateien oft\u2026"
 title: Textdatei einlesen
+weight: 22
 ---
-
-{{< edit_this_page >}}
 
 ## Was & Warum?
 

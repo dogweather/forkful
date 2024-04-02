@@ -8,9 +8,8 @@ model: gpt-4-1106-preview
 summary: "Starting a new project often means creating a directory structure and initial\
   \ files\u2014kinda like laying the foundation of a house. Programmers do it to\u2026"
 title: Starting a new project
+weight: 1
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 Starting a new project often means creating a directory structure and initial files—kinda like laying the foundation of a house. Programmers do it to organize thoughts, files, and tasks, turning chaos into a neat to-do list.

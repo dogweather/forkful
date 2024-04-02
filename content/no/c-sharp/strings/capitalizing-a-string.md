@@ -11,9 +11,8 @@ summary: "\xC5 gj\xF8re f\xF8rste bokstav i en streng stor i C# inneb\xE6rer \xE
   \ konvertere den f\xF8rste bokstaven i en streng til stor bokstav hvis den ikke\
   \ allerede er det. Denne\u2026"
 title: Sette stor bokstav i en streng
+weight: 2
 ---
-
-{{< edit_this_page >}}
 
 ## Hva & Hvorfor?
 Å gjøre første bokstav i en streng stor i C# innebærer å konvertere den første bokstaven i en streng til stor bokstav hvis den ikke allerede er det. Denne endringen kan være avgjørende for formatering av utdata, håndheving av kodingsstandarder eller gjøre tekst i brukergrensesnitt mer lesbart.

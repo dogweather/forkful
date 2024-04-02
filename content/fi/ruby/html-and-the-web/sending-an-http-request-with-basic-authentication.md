@@ -9,9 +9,8 @@ summary: "HTTP-pyynt\xF6j\xE4 perusautentikaatiolla k\xE4ytet\xE4\xE4n, kun halu
   \ p\xE4\xE4st\xE4 k\xE4siksi suojattuun resurssiin verkossa. Koodaajat k\xE4ytt\xE4\
   v\xE4t t\xE4t\xE4 menetelm\xE4\xE4, jotta\u2026"
 title: "HTTP-pyynn\xF6n l\xE4hett\xE4minen perusautentikoinnilla"
+weight: 45
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why? - Mitä ja Miksi?
 HTTP-pyyntöjä perusautentikaatiolla käytetään, kun halutaan päästä käsiksi suojattuun resurssiin verkossa. Koodaajat käyttävät tätä menetelmää, jotta voivat varmistaa, että käyttäjällä on oikeus nähdä tai muuttaa tietoa.

@@ -9,9 +9,8 @@ summary: "Calcular datas no futuro ou passado \xE9 simplesmente determinar um di
   \ espec\xEDfico antes ou depois de um determinado ponto no tempo. Programadores\
   \ fazem isso\u2026"
 title: Calculando uma data no futuro ou passado
+weight: 26
 ---
-
-{{< edit_this_page >}}
 
 ## O Que & Porquê?
 Calcular datas no futuro ou passado é simplesmente determinar um dia específico antes ou depois de um determinado ponto no tempo. Programadores fazem isso para manipular prazos, agendas, ou até controlar períodos de validade em aplicações.

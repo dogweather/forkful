@@ -9,9 +9,8 @@ summary: "Satunnaislukujen generointi on ohjelmoinnissa perusteht\xE4v\xE4, jota
   ytet\xE4\xE4n kaikessa datan otannasta pelikehitykseen. Fish Shelliss\xE4 j\xE4\
   rjestelm\xE4ty\xF6kalujen\u2026"
 title: Satunnaislukujen generointi
+weight: 12
 ---
-
-{{< edit_this_page >}}
 
 ## Mikä ja miksi?
 

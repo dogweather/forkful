@@ -11,9 +11,8 @@ summary: "\xC9crire des tests dans l'environnement Arduino fait r\xE9f\xE9rence 
   \ processus de cr\xE9ation de tests automatis\xE9s qui valident la fonctionnalit\xE9\
   \ de votre code\u2026"
 title: "R\xE9daction de tests"
+weight: 36
 ---
-
-{{< edit_this_page >}}
 
 ## Quoi et pourquoi ?
 

@@ -11,9 +11,8 @@ summary: "Att j\xE4mf\xF6ra tv\xE5 datum i Visual Basic for Applications (VBA) i
   r att best\xE4mma deras kronologiska f\xF6rh\xE5llande till varandra. Programmerare\
   \ g\xF6r detta f\xF6r\u2026"
 title: "J\xE4mf\xF6ra tv\xE5 datum"
+weight: 27
 ---
-
-{{< edit_this_page >}}
 
 ## Vad & Varför?
 

@@ -11,9 +11,8 @@ summary: "Att l\xE4sa kommandoradens argument i Dart m\xF6jligg\xF6r f\xF6r prog
   \ att direkt mata in data i konsolen n\xE4r ett Dart-program k\xF6rs, vilket f\xF6\
   rb\xE4ttrar dess\u2026"
 title: "L\xE4sa argument fr\xE5n kommandoraden"
+weight: 23
 ---
-
-{{< edit_this_page >}}
 
 ## Vad & Varför?
 

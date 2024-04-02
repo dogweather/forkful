@@ -11,9 +11,8 @@ summary: "Express\xF5es regulares (regex) na programa\xE7\xE3o s\xE3o usadas par
   \ procurar, combinar e manipular strings baseadas em padr\xF5es espec\xEDficos.\
   \ Programadores as\u2026"
 title: "Usando express\xF5es regulares"
+weight: 11
 ---
-
-{{< edit_this_page >}}
 
 ## O Que & Por Que?
 

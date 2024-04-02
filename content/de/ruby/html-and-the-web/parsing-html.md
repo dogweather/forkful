@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "HTML zu parsen bedeutet, ein St\xFCck HTML-Code zu zerlegen, um seine Struktur\
   \ und seinen Inhalt zu erfassen. Programmierer machen das, um Daten zu\u2026"
 title: HTML parsen
+weight: 43
 ---
-
-{{< edit_this_page >}}
 
 ## Was & Warum?
 HTML zu parsen bedeutet, ein Stück HTML-Code zu zerlegen, um seine Struktur und seinen Inhalt zu erfassen. Programmierer machen das, um Daten zu extrahieren, Inhalte zu manipulieren oder Informationen zwischen Formaten und Systemen zu migrieren.

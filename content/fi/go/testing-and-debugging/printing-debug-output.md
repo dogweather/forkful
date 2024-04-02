@@ -11,9 +11,8 @@ summary: "Ohjelmoinnissa \"virhetulostuksen tulostaminen\" k\xE4sitt\xE4\xE4 yks
   \ informatiivisten viestien tuottamisen, jotka auttavat kehitt\xE4ji\xE4 ymm\xE4\
   rt\xE4m\xE4\xE4n\u2026"
 title: "Tulostetaan virheenj\xE4ljitystietoja"
+weight: 33
 ---
-
-{{< edit_this_page >}}
 
 ## Mikä & Miksi?
 

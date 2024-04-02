@@ -8,9 +8,8 @@ model: unknown
 summary: "L'analyse (parsing) du HTML permet de lire et de manipuler le contenu d'une\
   \ page web. Les programmeurs le font pour extraire des donn\xE9es, automatiser des\u2026"
 title: Analyse syntaxique de HTML
+weight: 43
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 L'analyse (parsing) du HTML permet de lire et de manipuler le contenu d'une page web. Les programmeurs le font pour extraire des données, automatiser des tâches ou tester des applications.

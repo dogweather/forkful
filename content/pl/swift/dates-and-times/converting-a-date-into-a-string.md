@@ -9,9 +9,8 @@ summary: "Co i dlaczego? Konwersja daty na ci\u0105g znak\xF3w umo\u017Cliwia \u
   atwy wy\u015Bwietlanie i zapisywanie dat. Programi\u015Bci robi\u0105 to, by formatowa\u0107\
   \ daty w spos\xF3b zrozumia\u0142y\u2026"
 title: "Konwersja daty na \u0142a\u0144cuch znak\xF3w"
+weight: 28
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 Co i dlaczego? Konwersja daty na ciąg znaków umożliwia łatwy wyświetlanie i zapisywanie dat. Programiści robią to, by formatować daty w sposób zrozumiały dla użytkowników i różnych systemów.

@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Calcular una fecha en el futuro o en el pasado se trata de manipular objetos\
   \ de fecha para encontrar fechas m\xE1s all\xE1 o antes de la fecha actual,\u2026"
 title: "C\xE1lculo de una fecha en el futuro o el pasado"
+weight: 26
 ---
-
-{{< edit_this_page >}}
 
 ## ¿Qué y por qué?
 

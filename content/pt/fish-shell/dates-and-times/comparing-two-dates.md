@@ -9,9 +9,8 @@ summary: "Comparar duas datas significa verificar a diferen\xE7a ou a rela\xE7\x
   o temporal entre elas, como qual vem antes ou quanto tempo se passou entre uma e\
   \ outra.\u2026"
 title: Comparando duas datas
+weight: 27
 ---
-
-{{< edit_this_page >}}
 
 ## O Que & Porquê?
 Comparar duas datas significa verificar a diferença ou a relação temporal entre elas, como qual vem antes ou quanto tempo se passou entre uma e outra. Programadores fazem isso para, por exemplo, validar prazos, ordenar eventos ou calcular períodos de tempo em aplicações.

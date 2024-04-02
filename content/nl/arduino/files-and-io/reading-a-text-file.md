@@ -10,9 +10,8 @@ model: gpt-4-0125-preview
 summary: "Een tekstbestand lezen met Arduino stelt je in staat om gegevens op te halen\
   \ die zijn opgeslagen op een SD-kaart of in het geheugen van het apparaat -\u2026"
 title: Een tekstbestand lezen
+weight: 22
 ---
-
-{{< edit_this_page >}}
 
 ## Wat & Waarom?
 

@@ -11,9 +11,8 @@ summary: "Arrays associativos, ou o que Rustaceans chamam de \"hash maps\", s\xE
   o cole\xE7\xF5es que armazenam dados em pares de chave-valor. Programadores os utilizam\
   \ para\u2026"
 title: Usando arrays associativos
+weight: 15
 ---
-
-{{< edit_this_page >}}
 
 ## O Que & Por Quê?
 

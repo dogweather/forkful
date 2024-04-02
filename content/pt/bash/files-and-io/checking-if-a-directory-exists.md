@@ -11,9 +11,8 @@ summary: "Na programa\xE7\xE3o Bash, verificar se um diret\xF3rio existe \xE9 um
   \ de controle essencial usado para verificar a presen\xE7a de um diret\xF3rio antes\
   \ de\u2026"
 title: "Verificando se um diret\xF3rio existe"
+weight: 20
 ---
-
-{{< edit_this_page >}}
 
 ## O que & Por quê?
 

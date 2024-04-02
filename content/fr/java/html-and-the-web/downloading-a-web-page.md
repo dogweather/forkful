@@ -9,9 +9,8 @@ summary: "T\xE9l\xE9charger une page web, c'est r\xE9cup\xE9rer son contenu via 
   \ Les programmeurs font \xE7a pour analyser des donn\xE9es, surveiller des changements\
   \ ou\u2026"
 title: "T\xE9l\xE9chargement d'une page web"
+weight: 42
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 Télécharger une page web, c'est récupérer son contenu via HTTP. Les programmeurs font ça pour analyser des données, surveiller des changements ou alimenter des applications.

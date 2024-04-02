@@ -23,9 +23,8 @@ summary: "\uD504\uB85C\uADF8\uB798\uBC0D\uC5D0\uC11C \uD604\uC7AC \uB0A0\uC9DC\u
   \ \uACC4\uC0B0\uC5D0 \uC774\uB974\uAE30\uAE4C\uC9C0 \uBAA8\uB4E0 \uAC83\uC5D0 \uC911\
   \uC694\uD569\uB2C8\uB2E4."
 title: "\uD604\uC7AC \uB0A0\uC9DC \uAC00\uC838\uC624\uAE30"
+weight: 29
 ---
-
-{{< edit_this_page >}}
 
 ## 무엇 & 왜?
 프로그래밍에서 현재 날짜를 얻는 것은 개발자들이 자신의 애플리케이션 내에서 현재 날짜에 접근하거나, 표시하거나, 조작할 수 있게 하는 기본적인 작업입니다. 이 기능은 로깅 및 시간 스탬핑 이벤트부터 날짜를 기반으로 한 계산에 이르기까지 모든 것에 중요합니다.

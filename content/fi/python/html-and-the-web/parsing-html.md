@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "HTML:n j\xE4sennys tarkoittaa verkkosivun HTML-koodin analysointia tiettyjen\
   \ tietojen tai elementtien erottamiseksi, mik\xE4 on yleinen teht\xE4v\xE4 verkkosivujen\u2026"
 title: "HTML:n j\xE4sennys"
+weight: 43
 ---
-
-{{< edit_this_page >}}
 
 ## Mikä ja miksi?
 HTML:n jäsennys tarkoittaa verkkosivun HTML-koodin analysointia tiettyjen tietojen tai elementtien erottamiseksi, mikä on yleinen tehtävä verkkosivujen kaapimisessa, datan louhinnassa tai automatisoiduissa vuorovaikutuksissa verkkosivustojen kanssa. Ohjelmoijat tekevät sen ohjelmallisesti vuorovaikuttaakseen verkkosivujen kanssa tai noutaakseen niistä tietoja, automatisoimaan tehtäviä tai testaamaan web-sovelluksia.

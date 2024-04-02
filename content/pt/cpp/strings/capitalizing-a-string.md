@@ -11,9 +11,8 @@ summary: "Capitalizar uma string envolve converter o caractere inicial de cada p
   \ na string para mai\xFAscula, caso esteja em min\xFAscula, enquanto mant\xE9m os\
   \ demais\u2026"
 title: Capitalizando uma string
+weight: 2
 ---
-
-{{< edit_this_page >}}
 
 ## O Que e Por Quê?
 Capitalizar uma string envolve converter o caractere inicial de cada palavra na string para maiúscula, caso esteja em minúscula, enquanto mantém os demais caracteres inalterados. Programadores frequentemente realizam essa tarefa para formatar saídas, entradas de usuários ou processamento de dados para garantir consistência na forma como o texto é apresentado ou processado, especialmente em interfaces de usuário ou tarefas de normalização de dados.

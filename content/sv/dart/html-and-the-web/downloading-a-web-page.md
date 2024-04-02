@@ -11,9 +11,8 @@ summary: "Att ladda ner en webbsida inneb\xE4r att h\xE4mta inneh\xE5llet p\xE5 
   \ webbsida via dess URL f\xF6r bearbetning eller lagring. Programmerare g\xF6r detta\
   \ f\xF6r att\u2026"
 title: Ladda ner en webbsida
+weight: 42
 ---
-
-{{< edit_this_page >}}
 
 ## Vad & Varför?
 

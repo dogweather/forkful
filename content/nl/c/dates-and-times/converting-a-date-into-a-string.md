@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Het omzetten van een datum naar een tekenreeks in C betreft het vertalen\
   \ van een datumstructuur of tijdstempel naar een voor mensen leesbaar formaat.\u2026"
 title: Een datum converteren naar een string
+weight: 28
 ---
-
-{{< edit_this_page >}}
 
 ## Wat & Waarom?
 

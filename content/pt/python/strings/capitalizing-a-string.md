@@ -11,9 +11,8 @@ summary: "Capitalizar uma string significa converter o primeiro caractere de uma
   \ para mai\xFAscula e o restante para min\xFAscula. Esta opera\xE7\xE3o \xE9 comumente\
   \ usada\u2026"
 title: Capitalizando uma string
+weight: 2
 ---
-
-{{< edit_this_page >}}
 
 ## O Que & Por Que?
 Capitalizar uma string significa converter o primeiro caractere de uma string para maiúscula e o restante para minúscula. Esta operação é comumente usada no processamento de dados para normalizar entradas ou melhorar a legibilidade de títulos, nomes e similares.

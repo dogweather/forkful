@@ -11,9 +11,8 @@ summary: "\xC5 tolke en dato fra en streng i Elm involverer konvertering av teks
   \ informasjon som representerer datoer og tider til et format som Elm kan forst\xE5\
   \ og\u2026"
 title: Analysering av en dato fra en streng
+weight: 30
 ---
-
-{{< edit_this_page >}}
 
 ## Hva & hvorfor?
 Å tolke en dato fra en streng i Elm involverer konvertering av tekstlig informasjon som representerer datoer og tider til et format som Elm kan forstå og manipulere, spesifikt til `Date`-typen. Denne prosessen er avgjørende for å håndtere brukerinndata, vise datoer korrekt lokalisert og utføre dato-relaterte beregninger, noe som sikrer at Elm-applikasjonene dine kan behandle tidsrelatert data intelligent.

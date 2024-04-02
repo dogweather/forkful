@@ -9,9 +9,8 @@ summary: "Manipulowanie plikami przy u\u017Cyciu jednoliniowych polece\u0144 CLI
   \ Ruby polega na wykonywaniu typowych operacji na plikach bezpo\u015Brednio z poziomu\
   \ terminala za\u2026"
 title: "Manipulowanie plikami za pomoc\u0105 jednolinijkowc\xF3w CLI"
+weight: 31
 ---
-
-{{< edit_this_page >}}
 
 ## Co i dlaczego?
 

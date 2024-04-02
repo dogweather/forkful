@@ -7,9 +7,8 @@ model: gpt-4-1106-preview
 summary: "Starting a new project means setting up a fresh codebase for your brilliant\
   \ ideas. Programmers do it to turn concepts into real, functioning apps or\u2026"
 title: Starting a new project
+weight: 1
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 

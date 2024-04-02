@@ -11,9 +11,8 @@ summary: "Redondear n\xFAmeros es el proceso de ajustar los d\xEDgitos de un n\x
   mero para reducir su precisi\xF3n de acuerdo con ciertas reglas, ya sea hacia el\
   \ n\xFAmero entero\u2026"
 title: "Redondeo de n\xFAmeros"
+weight: 13
 ---
-
-{{< edit_this_page >}}
 
 ## Qué y Por Qué?
 

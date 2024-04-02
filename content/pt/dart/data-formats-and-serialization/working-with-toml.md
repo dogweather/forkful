@@ -11,9 +11,8 @@ summary: "**TOML**, ou *Tom's Obvious, Minimal Language* (Linguagem M\xEDnima e 
   bvia do Tom), \xE9 um formato de arquivo de configura\xE7\xE3o que \xE9 f\xE1cil\
   \ de ler devido \xE0 sua\u2026"
 title: Trabalhando com TOML
+weight: 39
 ---
-
-{{< edit_this_page >}}
 
 ## O que & Por quê?
 

@@ -9,9 +9,8 @@ summary: "Rozpocz\u0119cie nowego projektu oznacza stworzenie podstawy kodu, od 
   rego zaczniemy budowa\u0107 nasze aplikacje. Programi\u015Bci robi\u0105 to, aby\
   \ dopracowa\u0107 pomys\u0142 od\u2026"
 title: Rozpoczynanie nowego projektu
+weight: 1
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why? (Co i Dlaczego?)
 Rozpoczęcie nowego projektu oznacza stworzenie podstawy kodu, od którego zaczniemy budować nasze aplikacje. Programiści robią to, aby dopracować pomysł od zera i zbudować rozwiązania dopasowane do konkretnych potrzeb użytkowników.

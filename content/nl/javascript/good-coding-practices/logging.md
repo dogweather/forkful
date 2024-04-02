@@ -10,9 +10,8 @@ model: gpt-4-0125-preview
 summary: "Loggen is in een notendop als het bijhouden van een dagboek voor je applicatie\
   \ - het registreert gebeurtenissen, fouten en andere belangrijke acties die\u2026"
 title: Logboekregistratie
+weight: 17
 ---
-
-{{< edit_this_page >}}
 
 ## Wat & Waarom?
 Loggen is in een notendop als het bijhouden van een dagboek voor je applicatie - het registreert gebeurtenissen, fouten en andere belangrijke acties die plaatsvinden terwijl de software draait. Programmeurs doen dit niet alleen om te begrijpen wat er onder de motorkap gebeurt in real-time, maar ook om een historisch register te hebben dat cruciaal is voor debugging, auditing en het optimaliseren van prestaties.

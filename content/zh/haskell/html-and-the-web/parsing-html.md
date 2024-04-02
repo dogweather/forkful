@@ -21,9 +21,8 @@ summary: "\u5728 Haskell \u4E2D\u89E3\u6790 HTML \u5141\u8BB8\u4F60\u63D0\u53D6\
   \u5F0F\u7F16\u7A0B\u8303\u4F8B\u6765\u786E\u4FDD\u4EE3\u7801\u7684\u5065\u58EE\u6027\
   \u548C\u7B80\u6D01\u6027\u3002"
 title: "\u89E3\u6790HTML"
+weight: 43
 ---
-
-{{< edit_this_page >}}
 
 ## 什么 & 为什么？
 

@@ -19,9 +19,8 @@ summary: "Bash\uC5D0\uC11C \uD45C\uC900 \uC5D0\uB7EC(stderr)\uB85C \uC4F0\uAE30\
   \ \uB85C\uAE45\uD558\uAC70\uB098 \uC2EC\uC9C0\uC5B4 \uBB34\uC2DC\uD558\uC5EC \uB514\
   \uBC84\uAE45 \uBC0F \uB85C\uAE45 \uACFC\uC815\uC744 \uB3D5\uC2B5\uB2C8\uB2E4."
 title: "\uD45C\uC900 \uC5D0\uB7EC\uC5D0 \uC4F0\uAE30"
+weight: 25
 ---
-
-{{< edit_this_page >}}
 
 ## 무엇과 왜?
 Bash에서 표준 에러(stderr)로 쓰기는 에러 메시지나 중요한 진단 출력을 표준 출력(stdout)과 별도로 지시하는 것입니다. 프로그래머는 이를 통해 에러 메시지를 쉽게 식별, 로깅하거나 심지어 무시하여 디버깅 및 로깅 과정을 돕습니다.

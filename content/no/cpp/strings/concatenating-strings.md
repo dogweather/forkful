@@ -9,9 +9,8 @@ summary: "Strengsammensl\xE5ing handler om \xE5 sette sammen to eller flere teks
   \ for \xE5 danne \xE9n enhet. Programmerere gj\xF8r det for \xE5 bygge opp meldinger,\
   \ lage\u2026"
 title: "Sammensl\xE5ing av strenger"
+weight: 3
 ---
-
-{{< edit_this_page >}}
 
 ## Hva & Hvorfor?
 Strengsammenslåing handler om å sette sammen to eller flere tekststykker for å danne én enhet. Programmerere gjør det for å bygge opp meldinger, lage dynamisk innhold eller strukturert data.

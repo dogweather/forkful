@@ -23,9 +23,8 @@ summary: "C#\uC5D0\uC11C \uBB38\uC790\uC5F4\uC758 \uCCAB \uAE00\uC790\uB97C \uB3
   \uC758 \uAC00\uB3C5\uC131 \uD5A5\uC0C1\uC5D0 \uC911\uC694\uD560 \uC218 \uC788\uC2B5\
   \uB2C8\uB2E4."
 title: "\uBB38\uC790\uC5F4 \uB300\uBB38\uC790\uD654"
+weight: 2
 ---
-
-{{< edit_this_page >}}
 
 ## 무엇 & 왜?
 C#에서 문자열의 첫 글자를 대문자로 변경하는 것은, 그 문자가 이미 대문자가 아닌 경우 문자열의 첫 문자를 대문자로 변환하는 것을 포함합니다. 이러한 변경은 출력 형식 지정, 코딩 표준 강화 또는 사용자 인터페이스 텍스트의 가독성 향상에 중요할 수 있습니다.

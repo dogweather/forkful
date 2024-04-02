@@ -21,9 +21,8 @@ summary: "JSON\uFF08JavaScript Object Notation\uFF09\u3092\u6271\u3046\u3068\u30
   \u5171\u901A\u8A00\u8A9E\u3067\u3042\u308B\u305F\u3081\u3001Web\u3084API\u306E\u958B\
   \u767A\u306B\u4E0D\u53EF\u6B20\u3067\u3059\u3002"
 title: "JSON\u3092\u6D3B\u7528\u3059\u308B"
+weight: 38
 ---
-
-{{< edit_this_page >}}
 
 ## 何となぜ？
 

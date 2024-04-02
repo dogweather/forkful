@@ -9,9 +9,8 @@ summary: "Muuttaminen pieniksi kirjaimiksi tarkoittaa merkkijonon kirjainten muu
   \ pienaakkosiksi. T\xE4m\xE4 helpottaa esimerkiksi k\xE4ytt\xE4j\xE4n sy\xF6tteen\
   \ vertailua,\u2026"
 title: Merkkijonon muuntaminen pieniksi kirjaimiksi
+weight: 4
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 Muuttaminen pieniksi kirjaimiksi tarkoittaa merkkijonon kirjainten muuntamista pienaakkosiksi. Tämä helpottaa esimerkiksi käyttäjän syötteen vertailua, hakutoimintoja ja tietojen yhdenmukaistamista.

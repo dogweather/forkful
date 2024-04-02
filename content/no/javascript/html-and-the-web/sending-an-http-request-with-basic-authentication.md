@@ -5,9 +5,8 @@ lastmod: '2024-03-13T22:44:41.183441-06:00'
 model: gpt-4-1106-preview
 summary: null
 title: "\xC5 sende en HTTP-foresp\xF8rsel med grunnleggende autentisering"
+weight: 45
 ---
-
-{{< edit_this_page >}}
 
 # Hva og hvorfor?
 

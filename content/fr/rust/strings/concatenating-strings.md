@@ -8,9 +8,8 @@ model: gpt-4-1106-preview
 summary: "La concat\xE9nation de cha\xEEnes c'est, simplement, la fusion de deux textes\
   \ en un seul. On le fait souvent pour construire des messages ou combiner des\u2026"
 title: "Concat\xE9nation de cha\xEEnes de caract\xE8res"
+weight: 3
 ---
-
-{{< edit_this_page >}}
 
 ## Quoi & Pourquoi ?
 La concaténation de chaînes c'est, simplement, la fusion de deux textes en un seul. On le fait souvent pour construire des messages ou combiner des données textuelles.

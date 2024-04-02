@@ -8,9 +8,8 @@ model: gpt-4-1106-preview
 summary: "Lire un fichier texte en C++, c'est acc\xE9der au contenu d'un fichier stock\xE9\
   \ sur votre disque dur, ligne par ligne ou en bloc. Les programmeurs le font pour\u2026"
 title: Lecture d'un fichier texte
+weight: 22
 ---
-
-{{< edit_this_page >}}
 
 ## Quoi & Pourquoi ?
 

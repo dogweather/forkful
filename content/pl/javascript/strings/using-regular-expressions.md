@@ -11,9 +11,8 @@ summary: "Wyra\u017Cenia regularne (regex) w JavaScript s\u0105 wzorcami u\u017C
   \ do dopasowywania kombinacji znak\xF3w w ci\u0105gach tekstowych. Programi\u015B\
   ci u\u017Cywaj\u0105 ich do\u2026"
 title: "Korzystanie z wyra\u017Ce\u0144 regularnych"
+weight: 11
 ---
-
-{{< edit_this_page >}}
 
 ## Co i dlaczego?
 

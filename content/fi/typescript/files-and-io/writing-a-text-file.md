@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Tekstitiedoston kirjoittaminen TypeScriptill\xE4 on kriittinen taito datan\
   \ pysyvyyden, konfiguraatioiden tai lokiin kirjoittamisen kannalta. Ohjelmoijat\u2026"
 title: Tekstitiedoston kirjoittaminen
+weight: 24
 ---
-
-{{< edit_this_page >}}
 
 ## Mikä ja miksi?
 Tekstitiedoston kirjoittaminen TypeScriptillä on kriittinen taito datan pysyvyyden, konfiguraatioiden tai lokiin kirjoittamisen kannalta. Ohjelmoijat suorittavat usein tämän tehtävän tallentaakseen ja manipuloidakseen tietoa sovelluksen muistin ulkopuolella syistä kuten datan analysointi, raportointi tai yksinkertaisesti käyttäjäasetusten tallentaminen istuntojen välillä.

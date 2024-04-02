@@ -8,9 +8,8 @@ model: gpt-4-1106-preview
 summary: "Lire les arguments de la ligne de commande, c'est r\xE9cup\xE9rer les infos\
   \ que l'utilisateur passe \xE0 notre programme lorsqu'il le d\xE9marre. Les programmeurs\u2026"
 title: Lecture des arguments de ligne de commande
+weight: 23
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 Lire les arguments de la ligne de commande, c'est récupérer les infos que l'utilisateur passe à notre programme lorsqu'il le démarre. Les programmeurs font ça pour personnaliser l'exécution de l'app directement depuis le terminal.

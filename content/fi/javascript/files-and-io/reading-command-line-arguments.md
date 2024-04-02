@@ -9,9 +9,8 @@ summary: "Komennorivin argumentit ovat ohjelmalle annettuja sy\xF6tteit\xE4, jot
   \ m\xE4\xE4ritell\xE4\xE4n ohjelman k\xE4ynnistyksen yhteydess\xE4. Ohjelmoijat\
   \ k\xE4ytt\xE4v\xE4t niit\xE4, jotta\u2026"
 title: Komennoriviparametrien lukeminen
+weight: 23
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why? (Mitä ja Miksi?)
 Komennorivin argumentit ovat ohjelmalle annettuja syötteitä, jotka määritellään ohjelman käynnistyksen yhteydessä. Ohjelmoijat käyttävät niitä, jotta voivat räätälöidä ohjelman suoritusta lennossa ilman koodin muokkaamista.

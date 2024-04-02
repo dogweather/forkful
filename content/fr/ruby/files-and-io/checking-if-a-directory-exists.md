@@ -11,9 +11,8 @@ summary: "V\xE9rifier si un r\xE9pertoire existe en Ruby permet aux programmeurs
   \ confirmer la pr\xE9sence d'un r\xE9pertoire avant d'effectuer des op\xE9rations\
   \ comme la\u2026"
 title: "V\xE9rifier si un r\xE9pertoire existe"
+weight: 20
 ---
-
-{{< edit_this_page >}}
 
 ## Quoi et Pourquoi ?
 Vérifier si un répertoire existe en Ruby permet aux programmeurs de confirmer la présence d'un répertoire avant d'effectuer des opérations comme la lecture de fichiers ou la création de nouveaux répertoires. C'est crucial pour éviter les erreurs dans la gestion des fichiers et assurer la fiabilité des manipulations du système de fichiers.

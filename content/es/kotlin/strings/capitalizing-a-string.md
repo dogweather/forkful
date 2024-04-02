@@ -11,9 +11,8 @@ summary: "Capitalizar una cadena en programaci\xF3n implica convertir el primer 
   cter de la cadena a may\xFAsculas si a\xFAn no lo est\xE1, lo cual es \xFAtil para\
   \ formatear\u2026"
 title: Capitalizando una cadena de texto
+weight: 2
 ---
-
-{{< edit_this_page >}}
 
 ## Qué y Por Qué?
 

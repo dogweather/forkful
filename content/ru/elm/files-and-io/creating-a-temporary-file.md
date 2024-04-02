@@ -8,9 +8,8 @@ model: gpt-4-0125-preview
 summary: null
 title: "\u0421\u043E\u0437\u0434\u0430\u043D\u0438\u0435 \u0432\u0440\u0435\u043C\u0435\
   \u043D\u043D\u043E\u0433\u043E \u0444\u0430\u0439\u043B\u0430"
+weight: 21
 ---
-
-{{< edit_this_page >}}
 
 # Что и Зачем?
 

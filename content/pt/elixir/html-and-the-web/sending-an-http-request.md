@@ -8,9 +8,8 @@ model: gpt-4-1106-preview
 summary: "Enviar uma requisi\xE7\xE3o HTTP significa pedir informa\xE7\xE3o ou enviar\
   \ dados para um servidor web usando o protocolo HTTP. Programadores fazem isso para\u2026"
 title: "Enviando uma requisi\xE7\xE3o HTTP"
+weight: 44
 ---
-
-{{< edit_this_page >}}
 
 ## O Que é & Porquê?
 Enviar uma requisição HTTP significa pedir informação ou enviar dados para um servidor web usando o protocolo HTTP. Programadores fazem isso para interagir com APIs web, acessar serviços remotos e trocar informações com outras aplicações.

@@ -7,9 +7,8 @@ model: gpt-4-1106-preview
 summary: "Suchen und Ersetzen von Text ist ein Vorgang, bei dem bestimmte Textmuster\
   \ gefunden und durch andere ersetzt werden. Programmierer nutzen diese Technik,\u2026"
 title: Suchen und Ersetzen von Text
+weight: 10
 ---
-
-{{< edit_this_page >}}
 
 ## Was & Warum?
 Suchen und Ersetzen von Text ist ein Vorgang, bei dem bestimmte Textmuster gefunden und durch andere ersetzt werden. Programmierer nutzen diese Technik, um Daten zu aktualisieren oder Code zu korrigieren.

@@ -11,9 +11,8 @@ summary: "S\xE4\xE4nn\xF6lliset lausekkeet (regex) ovat tehokas v\xE4line teksti
   sittelyyn, joka mahdollistaa ohjelmoijien hakea, t\xE4sm\xE4t\xE4 ja manipuloida\
   \ merkkijonoja\u2026"
 title: "S\xE4\xE4nn\xF6llisten lausekkeiden k\xE4ytt\xF6"
+weight: 11
 ---
-
-{{< edit_this_page >}}
 
 ## Mikä & Miksi?
 

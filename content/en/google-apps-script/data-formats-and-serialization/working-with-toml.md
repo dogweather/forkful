@@ -7,9 +7,8 @@ model: gpt-4-0125-preview
 summary: "TOML, which stands for Tom's Obvious, Minimal Language, is a configuration\
   \ file format that's easy to read due to its clear semantics. Programmers often\u2026"
 title: Working with TOML
+weight: 39
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 

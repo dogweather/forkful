@@ -11,9 +11,8 @@ summary: "YAML, joka tarkoittaa \"YAML Ain't Markup Language\", on eritt\xE4in l
   \ oleva datan serialisointimuoto, jota k\xE4ytet\xE4\xE4n usein asetustiedostoissa,\
   \ datan\u2026"
 title: "Ty\xF6skentely YAML:n kanssa"
+weight: 41
 ---
-
-{{< edit_this_page >}}
 
 ## Mikä ja miksi?
 YAML, joka tarkoittaa "YAML Ain't Markup Language", on erittäin luettavissa oleva datan serialisointimuoto, jota käytetään usein asetustiedostoissa, datan tallennuksessa ja prosessien välisessä viestinnässä. Ohjelmoijat työskentelevät usein YAML:n kanssa hallitakseen asetuksia ja määrityksiä rakenteellisella mutta yksinkertaisella tavalla, hyötyen sen selkeydestä ja yksinkertaisuudesta verrattuna JSON:iin tai XML:ään, kun luettavuus on tärkeää.

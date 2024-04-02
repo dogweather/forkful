@@ -9,9 +9,8 @@ summary: "Zaczynanie nowego projektu to stworzenie miejsca na kod, kt\xF3ry p\xF
   niej zamieni si\u0119 w dzia\u0142aj\u0105cy program. Programi\u015Bci robi\u0105\
   \ to, by przekszta\u0142ci\u0107 pomys\u0142y w\u2026"
 title: Rozpoczynanie nowego projektu
+weight: 1
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why? (Czym jest i dlaczego?)
 Zaczynanie nowego projektu to stworzenie miejsca na kod, który później zamieni się w działający program. Programiści robią to, by przekształcić pomysły w konkretne elektroniczne rozwiązania.

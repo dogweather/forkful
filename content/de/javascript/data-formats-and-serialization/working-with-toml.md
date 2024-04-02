@@ -8,9 +8,8 @@ model: gpt-4-0125-preview
 summary: "TOML, eine Abk\xFCrzung f\xFCr Toms Offensichtliche, Minimale Sprache, definiert,\
   \ wie Konfigurationsdateien strukturiert werden sollen. Programmierer arbeiten\u2026"
 title: Arbeiten mit TOML
+weight: 39
 ---
-
-{{< edit_this_page >}}
 
 ## Was & Warum?
 TOML, eine Abkürzung für Toms Offensichtliche, Minimale Sprache, definiert, wie Konfigurationsdateien strukturiert werden sollen. Programmierer arbeiten mit TOML, weil es leicht zu lesen, zu schreiben ist und sich gut auf eine Hashtabelle abbilden lässt, was es zu einer bevorzugten Wahl für Konfigurationen macht.

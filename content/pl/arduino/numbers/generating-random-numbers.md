@@ -9,9 +9,8 @@ summary: "Generowanie losowych liczb w projektach Arduino polega na tworzeniu wa
   ci, kt\xF3re z za\u0142o\u017Cenia s\u0105 nieprzewidywalne, co jest kluczowe dla\
   \ aplikacji takich\u2026"
 title: Generowanie liczb losowych
+weight: 12
 ---
-
-{{< edit_this_page >}}
 
 ## Co i dlaczego?
 Generowanie losowych liczb w projektach Arduino polega na tworzeniu wartości, które z założenia są nieprzewidywalne, co jest kluczowe dla aplikacji takich jak gry, symulacje i systemy bezpieczeństwa. Programiści wykorzystują tę technikę do wprowadzania zmienności lub podejmowania decyzji, które nie powinny być deterministyczne.

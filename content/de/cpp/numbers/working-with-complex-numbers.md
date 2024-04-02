@@ -8,9 +8,8 @@ model: gpt-4-0125-preview
 summary: "Komplexe Zahlen erweitern die reellen Zahlen durch Hinzuf\xFCgen einer imagin\xE4\
   ren Einheit, dargestellt als 'i', wobei i^2 = -1. Programmierer verwenden sie\u2026"
 title: Umgang mit komplexen Zahlen
+weight: 14
 ---
-
-{{< edit_this_page >}}
 
 ## Was & Warum?
 Komplexe Zahlen erweitern die reellen Zahlen durch Hinzufügen einer imaginären Einheit, dargestellt als 'i', wobei i^2 = -1. Programmierer verwenden sie für Simulationen, Signalverarbeitung und die Lösung mathematischer Probleme, die ein Arbeiten in zwei Dimensionen erfordern.

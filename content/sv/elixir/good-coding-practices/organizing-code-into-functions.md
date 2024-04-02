@@ -9,9 +9,8 @@ summary: "Att organisera kod i funktioner inneb\xE4r att gruppera relaterade ope
   \ i \xE5teranv\xE4ndbara block. Vi g\xF6r det f\xF6r att f\xF6rb\xE4ttra l\xE4sbarheten\
   \ och\u2026"
 title: Att organisera kod i funktioner
+weight: 18
 ---
-
-{{< edit_this_page >}}
 
 ## Vad & Varför?
 Att organisera kod i funktioner innebär att gruppera relaterade operationer i återanvändbara block. Vi gör det för att förbättra läsbarheten och underhållbarheten, minska duplication och förenkla testning.

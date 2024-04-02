@@ -9,9 +9,8 @@ summary: "Sammanslagning av str\xE4ngar inneb\xE4r att kl\xE4mma ihop tv\xE5 ell
   \ fler textbitar till en. Programmerare g\xF6r detta f\xF6r att bygga meningar,\
   \ skapa dynamiska\u2026"
 title: "Sammanslagning av str\xE4ngar"
+weight: 3
 ---
-
-{{< edit_this_page >}}
 
 ## Vad & Varför?
 Sammanslagning av strängar innebär att klämma ihop två eller fler textbitar till en. Programmerare gör detta för att bygga meningar, skapa dynamiska meddelanden, eller hantera data där olika bitar kommer från olika källor.

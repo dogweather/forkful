@@ -11,9 +11,8 @@ summary: "I sammanhanget av Arduino-programmering \xE4r det viktigt att kontroll
   \ om en mapp finns p\xE5 ett SD-kort eller liknande lagringsmodul f\xF6r att kunna\
   \ l\xE4sa\u2026"
 title: Kontrollera om en katalog existerar
+weight: 20
 ---
-
-{{< edit_this_page >}}
 
 ## Vad & Varför?
 I sammanhanget av Arduino-programmering är det viktigt att kontrollera om en mapp finns på ett SD-kort eller liknande lagringsmodul för att kunna läsa eller skriva filer utan fel. Denna operation är avgörande för datalogging, konfigurationshantering eller någon uppgift som kräver strukturerad filförvaring, vilket garanterar tillförlitlighet och smidig prestanda i dina applikationer.

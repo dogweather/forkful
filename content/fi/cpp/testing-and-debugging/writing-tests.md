@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Testien kirjoittaminen C++:ssa tarkoittaa pienten, itsen\xE4isten ohjelmien\
   \ luomista, jotka automaattisesti varmistavat koodikannan osien toiminnan.\u2026"
 title: Testien kirjoittaminen
+weight: 36
 ---
-
-{{< edit_this_page >}}
 
 ## Mikä ja miksi?
 

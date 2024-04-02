@@ -9,9 +9,8 @@ summary: "J\xE4mf\xF6ra tv\xE5 datum handlar om att avg\xF6ra vilket datum som k
   \ f\xF6rst, eller om de \xE4r samma. Programmerare g\xF6r detta f\xF6r att hantera\
   \ tidsfrister,\u2026"
 title: "J\xE4mf\xF6ra tv\xE5 datum"
+weight: 27
 ---
-
-{{< edit_this_page >}}
 
 ## Vad & Varför?
 Jämföra två datum handlar om att avgöra vilket datum som kommer först, eller om de är samma. Programmerare gör detta för att hantera tidsfrister, schemalägga händelser eller spåra tidsskillnader.

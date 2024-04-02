@@ -9,9 +9,8 @@ summary: "Tenk deg at du nettopp har funnet ut at du trenger \xE5 gj\xF8re en ma
   \ p\xE5 flere konfigurasjonsfiler som ligger p\xE5 serveren din. Du kunne ha \xE5\
   pnet\u2026"
 title: "Redigering av filer p\xE5 stedet med CLI-enlinjerskommandoer"
+weight: 32
 ---
-
-{{< edit_this_page >}}
 
 ## Hva & Hvorfor?
 

@@ -1,14 +1,13 @@
 ---
 date: 2024-01-26 03:50:23.101377-07:00
-description: "Sukeltaminen debuggerin maailmaan on kaikkea muuta kuin koodisi l\xE4\
-  pik\xE4ynti\xE4 askel askeleelta, koneiston py\xF6ritt\xE4mist\xE4 ja niiden kiusallisten\
-  \ virheiden\u2026"
+description: "T\xE4ss\xE4 on pieni maistiainen Kotlinin debuggaamisesta IntelliJ IDEA:ssa\
+  \ - IDEiden Sherlock Holmes: ```kotlin fun main() { val mysteryNumber = 42 var arvaus\u2026"
 lastmod: '2024-03-13T22:44:56.535234-06:00'
 model: gpt-4-0125-preview
-summary: "Sukeltaminen debuggerin maailmaan on kaikkea muuta kuin koodisi l\xE4pik\xE4\
-  ynti\xE4 askel askeleelta, koneiston py\xF6ritt\xE4mist\xE4 ja niiden kiusallisten\
-  \ virheiden\u2026"
+summary: "T\xE4ss\xE4 on pieni maistiainen Kotlinin debuggaamisesta IntelliJ IDEA:ssa\
+  \ - IDEiden Sherlock Holmes: ```kotlin fun main() { val mysteryNumber = 42 var arvaus\u2026"
 title: "Debuggerin k\xE4ytt\xF6"
+weight: 35
 ---
 
 ## Kuinka:

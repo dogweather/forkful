@@ -13,9 +13,8 @@ summary: "Chuy\u1EC3n \u0111\u1ED5i m\u1ED9t ng\xE0y sang d\u1EA1ng chu\u1ED7i t
   \ d\u1EC5 \u0111\u1ECDc cho con ng\u01B0\u1EDDi. Ch\xFAng ta l\xE0m \u0111i\u1EC1\
   u n\xE0y cho giao di\u1EC7n ng\u01B0\u1EDDi d\xF9ng\u2026"
 title: "Chuy\u1EC3n \u0111\u1ED5i m\u1ED9t ng\xE0y th\xE0nh chu\u1ED7i"
+weight: 28
 ---
-
-{{< edit_this_page >}}
 
 ## Lý Do & Mục Đích
 

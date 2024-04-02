@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Analizzare una data da una stringa in Bash comporta l'estrazione e la conversione\
   \ delle informazioni sulla data da dati testuali in un formato che Bash\u2026"
 title: Analisi di una data da una stringa
+weight: 30
 ---
-
-{{< edit_this_page >}}
 
 ## Cosa & Perché?
 

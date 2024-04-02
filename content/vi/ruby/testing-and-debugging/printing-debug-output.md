@@ -13,9 +13,8 @@ summary: "In \u0111\u1EA7u ra \u0111\u1EC3 g\u1EE1 l\u1ED7i trong Ruby gi\u1ED1n
   a b\u1EA1n \u0111\u1EC3 theo d\xF5i gi\xE1 tr\u1ECB c\u1EE7a bi\u1EBFn v\xE0 d\xF2\
   ng ch\u1EA3y c\u1EE7a ch\u01B0\u01A1ng tr\xECnh. C\xE1c l\u1EADp tr\xECnh\u2026"
 title: "In ra th\xF4ng tin g\u1EE1 l\u1ED7i"
+weight: 33
 ---
-
-{{< edit_this_page >}}
 
 ## Cái gì và Tại sao?
 In đầu ra để gỡ lỗi trong Ruby giống như việc để lại dấu vết trong mã của bạn để theo dõi giá trị của biến và dòng chảy của chương trình. Các lập trình viên làm điều này để phát hiện lỗi bằng cách kiểm tra code của họ đang làm gì ở các điểm khác nhau.

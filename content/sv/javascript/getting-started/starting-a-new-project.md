@@ -9,9 +9,8 @@ summary: "Att starta ett nytt projekt \xE4r att skapa en tom duk f\xF6r att koda
   got fr\xE5n grunden. Programmerare g\xF6r detta f\xF6r att oms\xE4tta id\xE9er i\
   \ verklighet, l\xF6sa\u2026"
 title: "Att p\xE5b\xF6rja ett nytt projekt"
+weight: 1
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why? (Vad & Varför?)
 Att starta ett nytt projekt är att skapa en tom duk för att koda något från grunden. Programmerare gör detta för att omsätta idéer i verklighet, lösa problem eller lära sig nya tekniker.

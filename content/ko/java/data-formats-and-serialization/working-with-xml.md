@@ -15,9 +15,8 @@ summary: "Java\uB97C \uC0AC\uC6A9\uD558\uC5EC XML \uC791\uC5C5\uC740 \uD30C\uC2F
   \ \uC2DC\uC2A4\uD15C \uBC0F API\uAC00 XML\uC744 \uC0AC\uC6A9\uD558\uC5EC \uD1B5\uC2E0\
   \uD558\uAE30 \uB54C\uBB38\uC5D0 \uC774 \uC791\uC5C5\uC744 \uD569\uB2C8\uB2E4."
 title: "XML \uB2E4\uB8E8\uAE30"
+weight: 40
 ---
-
-{{< edit_this_page >}}
 
 ## 무엇 & 왜?
 Java를 사용하여 XML 작업은 파싱, 쿼리, 및 XML 문서의 조작을 포함합니다. 프로그래머는 데이터 교환, 설정 관리, 그리고 많은 레거시 시스템 및 API가 XML을 사용하여 통신하기 때문에 이 작업을 합니다.

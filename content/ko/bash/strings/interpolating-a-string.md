@@ -17,9 +17,8 @@ summary: "\uBB38\uC790\uC5F4 \uBCF4\uAC04\uC740 \uBCC0\uC218\uB098 \uD45C\uD604\
   \ \uBB38\uC790\uC5F4\uC5D0 \uACB0\uD569\uD560 \uC218 \uC788\uAE30 \uB54C\uBB38\uC5D0\
   \ \uD504\uB85C\uADF8\uB798\uBA38\uB4E4\uC774 \uC0AC\uC6A9\uD569\uB2C8\uB2E4."
 title: "\uBB38\uC790\uC5F4 \uBCF4\uAC04\uD558\uAE30"
+weight: 8
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why? (무엇과 왜?)
 문자열 보간은 변수나 표현식의 값을 문자열 안으로 삽입하는 것입니다. 이를 통해 코드의 유연성을 높이고, 동적으로 데이터를 문자열에 결합할 수 있기 때문에 프로그래머들이 사용합니다.

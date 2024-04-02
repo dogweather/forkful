@@ -11,9 +11,8 @@ summary: "Hakemiston olemassaolon tarkistaminen Fish Shelliss\xE4 mahdollistaa s
   \ tehd\xE4 p\xE4\xE4t\xF6ksi\xE4 perustuen hakemistorakenteiden l\xE4sn\xE4oloon\
   \ tai puuttumiseen,\u2026"
 title: Tarkistetaan, onko hakemisto olemassa
+weight: 20
 ---
-
-{{< edit_this_page >}}
 
 ## Mikä ja miksi?
 Hakemiston olemassaolon tarkistaminen Fish Shellissä mahdollistaa skriptien tehdä päätöksiä perustuen hakemistorakenteiden läsnäoloon tai puuttumiseen, mahdollistaen tehtäviä kuten ehdolliset tiedosto-operaatiot, lokitiedot tai ympäristön asetukset. Tämä tekniikka on olennainen osa kestävien skriptien kirjoittamisessa, jotka vuorovaikuttavat tiedostojärjestelmän kanssa ennustettavalla tavalla.

@@ -11,9 +11,8 @@ summary: "P\xE4iv\xE4m\xE4\xE4r\xE4n muuntaminen merkkijonoksi Dart-kieless\xE4 
   \ yleinen teht\xE4v\xE4, kun tarvitsee n\xE4ytt\xE4\xE4 p\xE4iv\xE4m\xE4\xE4r\xE4\
   - ja aikatietoja ihmisluettavassa muodossa tai kun\u2026"
 title: "P\xE4iv\xE4m\xE4\xE4r\xE4n muuttaminen merkkijonoksi"
+weight: 28
 ---
-
-{{< edit_this_page >}}
 
 ## Mikä ja miksi?
 

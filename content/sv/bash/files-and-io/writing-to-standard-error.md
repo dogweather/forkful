@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Att skriva till standardfel (stderr) i Bash handlar om att dirigera felmeddelanden\
   \ eller annan viktig diagnostisk utdata separat fr\xE5n standardutdata\u2026"
 title: Skriva till standardfel
+weight: 25
 ---
-
-{{< edit_this_page >}}
 
 ## Vad & Varför?
 Att skriva till standardfel (stderr) i Bash handlar om att dirigera felmeddelanden eller annan viktig diagnostisk utdata separat från standardutdata (stdout). Programmerare gör detta för att se till att felmeddelanden enkelt kan identifieras, loggas eller till och med ignoreras, vilket hjälper till i felsökning och loggningsprocesser.

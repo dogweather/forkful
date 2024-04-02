@@ -13,9 +13,8 @@ summary: "So s\xE1nh hai ng\xE0y cho ph\xE9p b\u1EA1n x\xE1c \u0111\u1ECBnh ng\x
   \ c\xF9ng m\u1ED9t th\u1EDDi \u0111i\u1EC3m. C\xE1c l\u1EADp tr\xECnh vi\xEAn l\xE0\
   m \u0111i\u1EC1u n\xE0y \u0111\u1EC3 s\u1EAFp x\u1EBFp s\u1EF1\u2026"
 title: "So s\xE1nh hai ng\xE0y"
+weight: 27
 ---
-
-{{< edit_this_page >}}
 
 ## Lý do và Ý nghĩa
 So sánh hai ngày cho phép bạn xác định ngày nào sớm hơn, muộn hơn, hoặc nếu chúng là cùng một thời điểm. Các lập trình viên làm điều này để sắp xếp sự kiện, kích hoạt các hành động theo thời gian, hoặc chỉ đơn giản là theo dõi thời gian đã qua.

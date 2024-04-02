@@ -16,9 +16,8 @@ summary: "\uBB38\uC790\uC5F4 \uC5F0\uACB0\uC740 \uC5EC\uB7EC \uBB38\uC790\uC5F4 
   \uAE30 \uC704\uD574 \uD504\uB85C\uADF8\uB798\uBA38\uB4E4\uC774 \uC0AC\uC6A9\uD569\
   \uB2C8\uB2E4."
 title: "\uBB38\uC790\uC5F4 \uC5F0\uACB0\uD558\uAE30"
+weight: 3
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why? (무엇과 왜?)
 문자열 연결은 여러 문자열 조각들을 하나로 합치는 작업입니다. 데이터를 쉽게 조작하고 사용자에게 정보를 명확하게 보여주기 위해 프로그래머들이 사용합니다.

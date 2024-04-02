@@ -13,9 +13,8 @@ summary: "Ph\xE2n t\xEDch c\xFA ph\xE1p HTML trong l\u1EADp tr\xECnh bao g\u1ED3
   \ L\u1EADp tr\xECnh vi\xEAn l\xE0m \u0111i\u1EC1u n\xE0y \u0111\u1EC3 t\u01B0\u01A1\
   ng t\xE1c v\u1EDBi ho\u1EB7c c\u1EA1o d\u1EEF li\u1EC7u web\u2026"
 title: "Ph\xE2n T\xEDch C\xFA Ph\xE1p HTML"
+weight: 43
 ---
-
-{{< edit_this_page >}}
 
 ## Gì và Tại sao?
 Phân tích cú pháp HTML trong lập trình bao gồm việc trích xuất dữ liệu từ tài liệu HTML. Lập trình viên làm điều này để tương tác với hoặc cạo dữ liệu web để trích xuất thông tin, kiểm tra, hoặc tự động hóa, ngay cả khi không có các API chính thức.

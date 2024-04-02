@@ -11,9 +11,8 @@ summary: "Das \xDCberpr\xFCfen, ob ein Verzeichnis in Python existiert, bedeutet
   \ die Anwesenheit eines Ordners im Dateisystem zu verifizieren, bevor Operationen\
   \ wie das\u2026"
 title: "\xDCberpr\xFCfung, ob ein Verzeichnis existiert"
+weight: 20
 ---
-
-{{< edit_this_page >}}
 
 ## Was & Warum?
 Das Überprüfen, ob ein Verzeichnis in Python existiert, bedeutet, die Anwesenheit eines Ordners im Dateisystem zu verifizieren, bevor Operationen wie das Lesen oder Schreiben von Dateien durchgeführt werden. Programmierer tun dies, um Fehler wie `FileNotFoundError` zu vermeiden und sicherzustellen, dass die Anwendung zuverlässig funktioniert und nicht abstürzt, wenn versucht wird, mit Verzeichnissen zu interagieren.

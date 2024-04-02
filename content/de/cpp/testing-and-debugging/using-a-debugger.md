@@ -1,12 +1,13 @@
 ---
 date: 2024-01-26 03:47:41.210291-07:00
-description: "Einen Debugger zu verwenden bedeutet, ein Werkzeug zu starten, das es\
-  \ Ihnen erm\xF6glicht, in Ihr laufendes Programm zu schauen, um zu verstehen, was\u2026"
+description: "C++ integriert sich mit Debuggern wie GDB oder dem Visual Studio Debugger.\
+  \ Hier ist ein kurzes Beispiel mit GDB: ```C++ #include <iostream> int main() {\u2026"
 lastmod: '2024-03-13T22:44:54.189294-06:00'
 model: gpt-4-0125-preview
-summary: "Einen Debugger zu verwenden bedeutet, ein Werkzeug zu starten, das es Ihnen\
-  \ erm\xF6glicht, in Ihr laufendes Programm zu schauen, um zu verstehen, was\u2026"
+summary: "C++ integriert sich mit Debuggern wie GDB oder dem Visual Studio Debugger.\
+  \ Hier ist ein kurzes Beispiel mit GDB: ```C++ #include <iostream> int main() {\u2026"
 title: Einsatz eines Debuggers
+weight: 35
 ---
 
 ## Wie geht das:

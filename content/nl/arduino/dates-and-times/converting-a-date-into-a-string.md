@@ -10,9 +10,8 @@ model: gpt-4-0125-preview
 summary: "Een datum naar een tekenreeks converteren betekent de weergave van een datum\
   \ veranderen van een formaat dat programmeren begrijpt, zoals dag-, maand- en\u2026"
 title: Een datum converteren naar een string
+weight: 28
 ---
-
-{{< edit_this_page >}}
 
 ## Wat & Waarom?
 

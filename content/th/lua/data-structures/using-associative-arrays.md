@@ -26,9 +26,8 @@ summary: "Associative arrays \u0E43\u0E19 Lua \u0E40\u0E2B\u0E21\u0E37\u0E2D\u0E
   \u0E15\u0E49\u0E2D\u0E07\u0E01\u0E32\u0E23,\u2026"
 title: "\u0E01\u0E32\u0E23\u0E43\u0E0A\u0E49\u0E41\u0E2D\u0E40\u0E23\u0E22\u0E4C\u0E2A\
   \u0E21\u0E32\u0E0A\u0E34\u0E01"
+weight: 15
 ---
-
-{{< edit_this_page >}}
 
 ## อะไรและทำไม?
 

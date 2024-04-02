@@ -11,9 +11,8 @@ summary: "I programmeringsverdenen inneb\xE6rer arbeid med CSV-filer (kommasepar
   \ verdier) \xE5 lese fra og skrive data til tekstfiler organisert i rader, der hver\
   \ rad\u2026"
 title: Arbeide med CSV
+weight: 37
 ---
-
-{{< edit_this_page >}}
 
 ## Hva & Hvorfor?
 

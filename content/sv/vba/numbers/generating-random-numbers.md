@@ -10,9 +10,8 @@ model: gpt-4-0125-preview
 summary: "Att generera slumpm\xE4ssiga nummer i Visual Basic for Applications (VBA)\
   \ m\xF6jligg\xF6r f\xF6r program att simulera processer med inslag av slump eller\u2026"
 title: "Generera slumpm\xE4ssiga nummer"
+weight: 12
 ---
-
-{{< edit_this_page >}}
 
 ## Vad och varför?
 

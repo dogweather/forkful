@@ -23,9 +23,8 @@ summary: "CSVs (Comma-Separated Values) \u09A8\u09BF\u09AF\u09BC\u09C7 \u0995\u0
   \u09BE\u0964 \u09AA\u09CD\u09B0\u09CB\u0997\u09CD\u09B0\u09BE\u09AE\u09BE\u09B0\u09B0\
   \u09BE\u2026"
 title: "CSV \u098F\u09B0 \u09B8\u09BE\u09A5\u09C7 \u0995\u09BE\u099C \u0995\u09B0\u09BE"
+weight: 37
 ---
-
-{{< edit_this_page >}}
 
 ## কি ও কেন?
 

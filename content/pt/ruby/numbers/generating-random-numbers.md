@@ -9,9 +9,8 @@ summary: "Gerar n\xFAmeros aleat\xF3rios em Ruby envolve criar n\xFAmeros que n\
   o podem ser previstos logicamente, essencial para cen\xE1rios como simula\xE7\xF5\
   es, criptografia e\u2026"
 title: "Gera\xE7\xE3o de n\xFAmeros aleat\xF3rios"
+weight: 12
 ---
-
-{{< edit_this_page >}}
 
 ## O Que & Por Que?
 

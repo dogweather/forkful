@@ -12,9 +12,8 @@ summary: "\u5728Swift\u4E2D\u8BFB\u53D6\u547D\u4EE4\u884C\u53C2\u6570\u5141\u8BB
   \u5458\u8FD9\u6837\u505A\u662F\u4E3A\u4E86\u7075\u6D3B\u5730\u63A7\u5236\u7A0B\u5E8F\
   \u884C\u4E3A\uFF0C\u800C\u65E0\u9700\u6539\u53D8\u4EE3\u7801\u3002"
 title: "\u8BFB\u53D6\u547D\u4EE4\u884C\u53C2\u6570"
+weight: 23
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why? (是什么？为什么？)
 在Swift中读取命令行参数允许你的程序接受外部输入数据。程序员这样做是为了灵活地控制程序行为，而无需改变代码。

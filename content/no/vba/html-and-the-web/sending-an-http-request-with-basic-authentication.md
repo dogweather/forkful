@@ -11,9 +11,8 @@ summary: "\xC5 sende en HTTP-foresp\xF8rsel med grunnleggende autentisering i Vi
   \ Basic for Applications (VBA) dreier seg om \xE5 f\xE5 tilgang til webressurser\
   \ som er\u2026"
 title: "\xC5 sende en HTTP-foresp\xF8rsel med grunnleggende autentisering"
+weight: 45
 ---
-
-{{< edit_this_page >}}
 
 ## Hva & Hvorfor?
 

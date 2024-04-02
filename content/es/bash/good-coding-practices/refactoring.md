@@ -9,9 +9,8 @@ summary: "La refactorizaci\xF3n es el proceso de reestructurar c\xF3digo inform\
   tico existente sin cambiar su comportamiento externo. Es una pr\xE1ctica vital para\
   \ reducir\u2026"
 title: "Refactorizaci\xF3n"
+weight: 19
 ---
-
-{{< edit_this_page >}}
 
 ## Qué y Por qué?
 La refactorización es el proceso de reestructurar código informático existente sin cambiar su comportamiento externo. Es una práctica vital para reducir la complejidad, mejorar la mantenibilidad y mantener tu base de código saludable y más fácil de entender para los desarrolladores actuales y futuros.

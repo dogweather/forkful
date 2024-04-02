@@ -9,9 +9,8 @@ summary: "Rozpoczynanie nowego projektu to jak otwieranie pustej ksi\u0105\u017C
   \ \u2014 miejsce, gdzie zaczyna si\u0119 snu\u0107 now\u0105 opowie\u015B\u0107\
   \ kodowania, wprowadzaj\u0105c pomys\u0142y w \u017Cycie.\u2026"
 title: Rozpoczynanie nowego projektu
+weight: 1
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why? (Co i Dlaczego?)
 Rozpoczynanie nowego projektu to jak otwieranie pustej książki — miejsce, gdzie zaczyna się snuć nową opowieść kodowania, wprowadzając pomysły w życie. Programiści biorą się za to, aby rozwiązywać problemy, nauczyć się nowych technologii, lub zrealizować unikatowy pomysł.

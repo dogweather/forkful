@@ -9,9 +9,8 @@ summary: "Opprettelse av en midlertidig fil er lagring av data p\xE5 en flyktig 
   te, som standard slettes n\xE5r programmet avsluttes. Programmerere bruker dette\
   \ for\u2026"
 title: Opprette en midlertidig fil
+weight: 21
 ---
-
-{{< edit_this_page >}}
 
 ## Hva & Hvorfor?
 Opprettelse av en midlertidig fil er lagring av data på en flyktig måte, som standard slettes når programmet avsluttes. Programmerere bruker dette for sikker datalagring, testing, eller å håndtere store datamengder som ikke trenger langtidslagring.

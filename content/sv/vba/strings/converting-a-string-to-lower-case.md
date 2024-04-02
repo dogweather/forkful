@@ -11,9 +11,8 @@ summary: "Att konvertera en str\xE4ng till gemener inneb\xE4r att omvandla alla 
   \ i en str\xE4ng till deras motsvarigheter i gemener. Denna process \xE4r avg\xF6\
   rande f\xF6r\u2026"
 title: "Omvandla en str\xE4ng till gemener"
+weight: 4
 ---
-
-{{< edit_this_page >}}
 
 ## Vad & Varför?
 

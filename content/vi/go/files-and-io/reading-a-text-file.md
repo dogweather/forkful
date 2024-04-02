@@ -15,9 +15,8 @@ summary: "\u0110\u1ECDc m\u1ED9t t\u1EC7p v\u0103n b\u1EA3n trong Go bao g\u1ED3
   \ l\xFD ho\u1EB7c ph\xE2n t\xEDch. C\xE1c l\u1EADp tr\xECnh vi\xEAn th\u01B0\u1EDD\
   ng\u2026"
 title: "\u0110\u1ECDc m\u1ED9t t\u1EC7p v\u0103n b\u1EA3n"
+weight: 22
 ---
-
-{{< edit_this_page >}}
 
 ## Cái gì và Tại sao?
 

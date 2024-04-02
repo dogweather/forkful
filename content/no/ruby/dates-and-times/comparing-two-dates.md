@@ -9,9 +9,8 @@ summary: "Sammenligning av to datoer handler om \xE5 finne ut om en dato kommer 
   r, etter, eller er den samme som en annen dato. Programmerere gj\xF8r dette for\
   \ \xE5\u2026"
 title: Sammenlikning av to datoer
+weight: 27
 ---
-
-{{< edit_this_page >}}
 
 ## Hva & Hvorfor?
 

@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "T\xE9l\xE9charger une page web en C implique d'acc\xE9der programmatiquement\
   \ au contenu d'une page web sur Internet et de le sauvegarder localement pour un\u2026"
 title: "T\xE9l\xE9chargement d'une page web"
+weight: 42
 ---
-
-{{< edit_this_page >}}
 
 ## Quoi & Pourquoi ?
 

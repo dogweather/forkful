@@ -9,9 +9,8 @@ summary: "Saada nykyinen p\xE4iv\xE4m\xE4\xE4r\xE4 tarkoittaa kellonaikaan sidot
   \ p\xE4iv\xE4m\xE4\xE4r\xE4tiedon hy\xF6dynt\xE4mist\xE4. K\xE4yt\xE4mme t\xE4t\xE4\
   \ toiminnallisuutta esimerkiksi lokeissa,\u2026"
 title: "Nykyisen p\xE4iv\xE4m\xE4\xE4r\xE4n hankkiminen"
+weight: 29
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why? ("Mitä & Miksi?")
 Saada nykyinen päivämäärä tarkoittaa kellonaikaan sidotun päivämäärätiedon hyödyntämistä. Käytämme tätä toiminnallisuutta esimerkiksi lokeissa, aikaleimoissa tai käyttäjän toiminnan ajastamisessa.

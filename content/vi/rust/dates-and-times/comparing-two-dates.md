@@ -13,9 +13,8 @@ summary: "So s\xE1nh hai ng\xE0y th\xE1ng c\xF3 ngh\u0129a l\xE0 ki\u1EC3m tra x
   \xF3 di\u1EC5n ra tr\u01B0\u1EDBc ho\u1EB7c sau ng\xE0y kia. L\u1EADp tr\xECnh vi\xEA\
   n s\u1EED d\u1EE5ng\u2026"
 title: "So s\xE1nh hai ng\xE0y"
+weight: 27
 ---
-
-{{< edit_this_page >}}
 
 ## Cái gì & Tại sao?
 So sánh hai ngày tháng có nghĩa là kiểm tra xem chúng có bằng nhau không, hoặc một ngày nào đó diễn ra trước hoặc sau ngày kia. Lập trình viên sử dụng điều này để sắp xếp các sự kiện, xác thực đầu vào, xử lý hết hạn, và theo dõi thời lượng.

@@ -13,9 +13,8 @@ summary: "L\xE0m vi\u1EC7c v\u1EDBi CSV (Comma-Separated Values - Gi\xE1 Tr\u1EC
   n l\u01B0u tr\u1EEF v\xE0 qu\u1EA3n l\xFD d\u1EEF li\u1EC7u d\u01B0\u1EDBi d\u1EA1\
   ng v\u0103n b\u1EA3n. N\xF3 r\u1EBB, d\u1EC5\u2026"
 title: "L\xE0m vi\u1EC7c v\u1EDBi CSV"
+weight: 37
 ---
-
-{{< edit_this_page >}}
 
 ## Gì và Tại Sao?
 Làm việc với CSV (Comma-Separated Values - Giá Trị Tách Biệt Bằng Dấu Phẩy) trên Arduino giúp bạn lưu trữ và quản lý dữ liệu dưới dạng văn bản. Nó rẻ, dễ dàng và phổ quát, làm cho nó trở thành lý tưởng cho việc ghi dữ liệu, tệp cấu hình, hoặc giao tiếp với bảng tính và cơ sở dữ liệu.

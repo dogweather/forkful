@@ -8,9 +8,8 @@ model: gpt-4-1106-preview
 summary: "Searching and replacing text is the process of finding strings within strings\
   \ and swapping them out for something else. Programmers do this to edit data,\u2026"
 title: Searching and replacing text
+weight: 10
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 Searching and replacing text is the process of finding strings within strings and swapping them out for something else. Programmers do this to edit data, refactor code, or automate text manipulation.

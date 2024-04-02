@@ -9,9 +9,8 @@ summary: "Interpolar uma string \xE9 o ato de inserir vari\xE1veis ou express\xF
   es dentro de uma cadeia de texto, de modo a criar um novo valor. Programadores fazem\
   \ isso\u2026"
 title: Interpolando uma string
+weight: 8
 ---
-
-{{< edit_this_page >}}
 
 ## O Que & Porquê?
 

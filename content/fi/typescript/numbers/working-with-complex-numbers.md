@@ -8,9 +8,8 @@ model: gpt-4-0125-preview
 summary: "Kompleksiluvut, jotka koostuvat reaaliosasta ja imagin\xE4\xE4riosasta (yleens\xE4\
   \ kirjoitettu muodossa a + bi), mahdollistavat laskutoimitukset, jotka ovat\u2026"
 title: "Kompleksilukujen k\xE4sittely"
+weight: 14
 ---
-
-{{< edit_this_page >}}
 
 ## Mikä ja miksi?
 Kompleksiluvut, jotka koostuvat reaaliosasta ja imaginääriosasta (yleensä kirjoitettu muodossa a + bi), mahdollistavat laskutoimitukset, jotka ovat käytännössä tai periaatteessa mahdottomia pelkillä reaaliluvuilla. Ohjelmoijat käyttävät niitä aloilla kuten signaalinkäsittely, kvanttilaskenta ja sovellettu matematiikka, joissa kaksiulotteinen numeron esitystapa on olennainen.

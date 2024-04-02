@@ -13,9 +13,8 @@ summary: "G\u1EEDi m\u1ED9t y\xEAu c\u1EA7u HTTP c\xF3 ngh\u0129a l\xE0 y\xEAu c
   p tr\xECnh vi\xEAn l\xE0m \u0111i\u1EC1u n\xE0y \u0111\u1EC3 t\u01B0\u01A1ng t\xE1\
   c v\u1EDBi c\xE1c API, l\u1EA5y d\u1EEF li\u1EC7u t\u1EEB web,\u2026"
 title: "G\u1EEDi m\u1ED9t y\xEAu c\u1EA7u HTTP"
+weight: 44
 ---
-
-{{< edit_this_page >}}
 
 ## Cái gì & Tại sao?
 Gửi một yêu cầu HTTP có nghĩa là yêu cầu dữ liệu từ một tài nguyên trên web. Các lập trình viên làm điều này để tương tác với các API, lấy dữ liệu từ web, hoặc giao tiếp với máy chủ.

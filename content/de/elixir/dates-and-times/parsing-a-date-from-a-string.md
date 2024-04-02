@@ -10,9 +10,8 @@ model: gpt-4-0125-preview
 summary: "Das Parsen eines Datums aus einem String bedeutet, Text wie \u201E2023-04-05\u201C\
   \ zu nehmen und ihn in ein Datumformat umzuwandeln, das Ihr Programm verstehen und\u2026"
 title: Eine Datumsauswertung aus einem String
+weight: 30
 ---
-
-{{< edit_this_page >}}
 
 ## Was & Warum?
 

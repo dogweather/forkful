@@ -7,9 +7,8 @@ model: gpt-4-1106-preview
 summary: "Working with XML means parsing, transforming, and generating XML documents\
   \ in Elm. It's done to interact with many web services and legacy systems that\u2026"
 title: Working with XML
+weight: 40
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 Working with XML means parsing, transforming, and generating XML documents in Elm. It's done to interact with many web services and legacy systems that use XML as their data format.

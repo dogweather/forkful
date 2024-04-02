@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Das Vergleichen von zwei Daten in Dart beinhaltet die Auswertung des zeitlichen\
   \ Unterschieds oder der Reihenfolge zwischen ihnen, eine wesentliche\u2026"
 title: Vergleich von zwei Daten
+weight: 27
 ---
-
-{{< edit_this_page >}}
 
 ## Was & Warum?
 Das Vergleichen von zwei Daten in Dart beinhaltet die Auswertung des zeitlichen Unterschieds oder der Reihenfolge zwischen ihnen, eine wesentliche Funktionalität in Anwendungen, die Ereignisse, Fristen oder zeitkritische Daten verwalten. Programmierer benötigen dies häufig, um die Logiksteuerung, Validierung oder Sortierung von Daten basierend auf Zeitbedingungen zu kontrollieren.

@@ -10,9 +10,8 @@ model: gpt-4-0125-preview
 summary: "Comparar dos fechas en C implica determinar la relaci\xF3n cronol\xF3gica\
   \ entre ellas: si una fecha precede a la otra o si son iguales. Esta capacidad es\u2026"
 title: Comparando dos fechas
+weight: 27
 ---
-
-{{< edit_this_page >}}
 
 ## ¿Qué y Por Qué?
 

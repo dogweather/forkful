@@ -18,9 +18,8 @@ summary: "XML \uC791\uC5C5\uC740 \uCF54\uB4DC\uB97C \uC0AC\uC6A9\uD558\uC5EC XML
   \uC2DD\uC5D0\uC11C \uB370\uC774\uD130\uB97C \uC77D\uACE0, \uC4F0\uACE0, \uC218\uC815\
   \uD558\uAE30 \uC704\uD574 \uC774 \uC791\uC5C5\uC744 \uD569\uB2C8\uB2E4."
 title: "XML \uB2E4\uB8E8\uAE30"
+weight: 40
 ---
-
-{{< edit_this_page >}}
 
 ## 무엇 & 왜?
 XML 작업은 코드를 사용하여 XML 문서를 파싱하고 조작하는 것을 포함합니다. 프로그래머들은 데이터 교환 및 저장을 위해 널리 사용되는 구조화되고 이식 가능한 형식에서 데이터를 읽고, 쓰고, 수정하기 위해 이 작업을 합니다.

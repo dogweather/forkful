@@ -9,9 +9,8 @@ summary: "Comparer deux dates, c'est mesurer la diff\xE9rence de temps entre ell
   \ Les programmeurs le font pour organiser des \xE9v\xE9nements, filtrer des donn\xE9\
   es ou tout\u2026"
 title: Comparer deux dates
+weight: 27
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 Comparer deux dates, c'est mesurer la différence de temps entre elles. Les programmeurs le font pour organiser des événements, filtrer des données ou tout simplement pour suivre le temps. 

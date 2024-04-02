@@ -11,9 +11,8 @@ summary: "Att kontrollera om en katalog finns i Go \xE4r avg\xF6rande f\xF6r app
   \ som interagerar med filsystemet, f\xF6r att undvika fel n\xE4r man f\xF6rs\xF6\
   ker komma \xE5t\u2026"
 title: Kontrollera om en katalog existerar
+weight: 20
 ---
-
-{{< edit_this_page >}}
 
 ## Vad och varför?
 

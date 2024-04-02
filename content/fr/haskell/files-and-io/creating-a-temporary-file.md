@@ -9,9 +9,8 @@ summary: "Cr\xE9er un fichier temporaire, c'est comme \xE9crire une note qu'on j
   \ apr\xE8s usage. Les programmeurs le font pour stocker des donn\xE9es de mani\xE8\
   re transitoire\u2026"
 title: "Cr\xE9ation d'un fichier temporaire"
+weight: 21
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 Créer un fichier temporaire, c'est comme écrire une note qu'on jette après usage. Les programmeurs le font pour stocker des données de manière transitoire sans polluer le système de fichiers permanent.

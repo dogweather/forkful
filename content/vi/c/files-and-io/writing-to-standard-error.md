@@ -13,9 +13,8 @@ summary: "Vi\u1EC7c ghi v\xE0o l\u1ED7i chu\u1EA9n trong C li\xEAn quan \u0111\u
   \ th\xF4ng tin ch\u1EA9n \u0111o\xE1n sang m\u1ED9t lu\u1ED3ng ri\xEAng bi\u1EC7\
   t kh\u1ECFi \u0111\u1EA7u ra ch\xEDnh c\u1EE7a\u2026"
 title: "Ghi v\xE0o l\u1ED7i chu\u1EA9n"
+weight: 25
 ---
-
-{{< edit_this_page >}}
 
 ## Cái gì và Tại sao?
 

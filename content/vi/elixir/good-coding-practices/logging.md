@@ -13,9 +13,8 @@ summary: "Ghi nh\u1EADt k\xFD trong ph\xE1t tri\u1EC3n ph\u1EA7n m\u1EC1m l\xE0 
   t ch\u01B0\u01A1ng tr\xECnh \u0111ang ch\u1EA1y, th\u01B0\u1EDDng l\xE0 v\xE0o m\u1ED9\
   t t\u1EC7p ho\u1EB7c h\u1EC7 th\u1ED1ng b\xEAn\u2026"
 title: Ghi log
+weight: 17
 ---
-
-{{< edit_this_page >}}
 
 ## Ghi nhật ký trong phát triển phần mềm
 

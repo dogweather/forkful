@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Ein neues Projekt in Dart zu starten, erfordert das Einrichten einer Umgebung,\
   \ die eine effiziente Entwicklung, Tests und Bereitstellung f\xF6rdert.\u2026"
 title: Ein neues Projekt starten
+weight: 1
 ---
-
-{{< edit_this_page >}}
 
 ## Was & Warum?
 

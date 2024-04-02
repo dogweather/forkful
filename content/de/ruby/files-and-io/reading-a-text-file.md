@@ -8,9 +8,8 @@ model: gpt-4-1106-preview
 summary: "Lesen einer Textdatei in Ruby ist, wie man die Inhalte einer Datei in den\
   \ Speicher l\xE4dt, um sie zu verarbeiten. Programmierer tun dies, um Daten zu\u2026"
 title: Textdatei einlesen
+weight: 22
 ---
-
-{{< edit_this_page >}}
 
 ## Was & Warum?
 

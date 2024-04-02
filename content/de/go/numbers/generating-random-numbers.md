@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Die Generierung von Zufallszahlen in der Programmierung dreht sich darum,\
   \ eine Zahlenfolge zu erstellen, die nicht besser als durch Zufall vorhergesagt\u2026"
 title: Zufallszahlen generieren
+weight: 12
 ---
-
-{{< edit_this_page >}}
 
 ## Was & Warum?
 

@@ -13,9 +13,8 @@ summary: "M\u1EA3ng k\u1EBFt h\u1EE3p, hay b\u1EA3n \u0111\u1ED3 b\u0103m, trong
   \ b\u1EB1ng c\u1EB7p kh\xF3a-gi\xE1 tr\u1ECB. Ch\xFAng l\xE0 gi\u1EA3i ph\xE1p l\xFD\
   \ t\u01B0\u1EDFng \u0111\u1EC3 qu\u1EA3n l\xFD d\u1EEF\u2026"
 title: "S\u1EED d\u1EE5ng m\u1EA3ng li\xEAn k\u1EBFt"
+weight: 15
 ---
-
-{{< edit_this_page >}}
 
 ## Gì và Tại sao?
 

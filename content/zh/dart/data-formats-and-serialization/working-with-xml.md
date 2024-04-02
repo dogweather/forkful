@@ -19,9 +19,8 @@ summary: "Dart \u7684\u6807\u51C6\u5E93\u4E2D\u6CA1\u6709\u5185\u7F6E\u652F\u630
   \u7528\u53EF\u7528\u7684\u6700\u65B0\u7248\u672C ``` \u7136\u540E\uFF0C\u5728\u4F60\
   \u7684 Dart\u2026"
 title: "\u5904\u7406XML"
+weight: 40
 ---
-
-{{< edit_this_page >}}
 
 # 什么 & 为什么？
 

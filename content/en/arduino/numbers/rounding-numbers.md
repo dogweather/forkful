@@ -9,9 +9,8 @@ summary: "Rounding numbers is trimming a decimal to its closest whole value or t
   \ a set number of decimal places. Programmers round numbers to make them easier\
   \ to\u2026"
 title: Rounding numbers
+weight: 13
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 Rounding numbers is trimming a decimal to its closest whole value or to a set number of decimal places. Programmers round numbers to make them easier to read and handle, especially when precision beyond a certain point is unnecessary or could lead to errors.

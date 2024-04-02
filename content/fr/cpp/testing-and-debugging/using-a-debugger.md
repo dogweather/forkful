@@ -1,14 +1,15 @@
 ---
 date: 2024-01-26 03:47:50.117202-07:00
-description: "Utiliser un d\xE9bogueur signifie lancer un outil qui vous permet de\
-  \ jeter un \u0153il \xE0 l'int\xE9rieur de votre programme en cours d'ex\xE9cution\
-  \ pour comprendre ce\u2026"
+description: "C++ s'int\xE8gre avec des d\xE9bogueurs tels que GDB ou le d\xE9bogueur\
+  \ de Visual Studio. Voici un petit exemple utilisant GDB : ```C++ #include <iostream>\
+  \ int\u2026"
 lastmod: '2024-03-13T22:44:58.167041-06:00'
 model: gpt-4-0125-preview
-summary: "Utiliser un d\xE9bogueur signifie lancer un outil qui vous permet de jeter\
-  \ un \u0153il \xE0 l'int\xE9rieur de votre programme en cours d'ex\xE9cution pour\
-  \ comprendre ce\u2026"
+summary: "C++ s'int\xE8gre avec des d\xE9bogueurs tels que GDB ou le d\xE9bogueur\
+  \ de Visual Studio. Voici un petit exemple utilisant GDB : ```C++ #include <iostream>\
+  \ int\u2026"
 title: "Utilisation d'un d\xE9bogueur"
+weight: 35
 ---
 
 ## Comment faire :

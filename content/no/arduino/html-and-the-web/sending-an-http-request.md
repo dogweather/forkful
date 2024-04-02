@@ -9,9 +9,8 @@ summary: "En HTTP-foresp\xF8rsel lar en Arduino snakke med internett - den sp\xF
   r, og et server svarer. Vi gj\xF8r dette for \xE5 sl\xE5 opp data, styre ting p\xE5\
   \ avstand, eller\u2026"
 title: "\xC5 sende en HTTP-foresp\xF8rsel"
+weight: 44
 ---
-
-{{< edit_this_page >}}
 
 ## Hva & Hvorfor?
 En HTTP-forespørsel lar en Arduino snakke med internett - den spør, og et server svarer. Vi gjør dette for å slå opp data, styre ting på avstand, eller logge informasjon online.

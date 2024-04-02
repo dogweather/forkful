@@ -10,9 +10,8 @@ model: gpt-4-0125-preview
 summary: "Reguliere expressies, of kortweg regex, zijn reeksen van tekens die zoekpatronen\
   \ vormen. Programmeurs gebruiken regex om tekst te zoeken, bewerken of te\u2026"
 title: Reguliere expressies gebruiken
+weight: 11
 ---
-
-{{< edit_this_page >}}
 
 ## Wat & Waarom?
 Reguliere expressies, of kortweg regex, zijn reeksen van tekens die zoekpatronen vormen. Programmeurs gebruiken regex om tekst te zoeken, bewerken of te manipuleren door het matchen van complexe patronen, vaak voor validatie- of parsingdoeleinden.

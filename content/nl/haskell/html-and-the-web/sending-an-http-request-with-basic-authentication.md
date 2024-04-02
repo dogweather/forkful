@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Een HTTP-verzoek met basisauthenticatie verzenden betekent dat je programma\
   \ aanklopt bij de deur van een webdienst, waarbij een gebruikersnaam en\u2026"
 title: Een HTTP-verzoek verzenden met basisauthenticatie
+weight: 45
 ---
-
-{{< edit_this_page >}}
 
 ## Wat & Waarom?
 Een HTTP-verzoek met basisauthenticatie verzenden betekent dat je programma aanklopt bij de deur van een webdienst, waarbij een gebruikersnaam en wachtwoord worden doorgegeven voor toegang. Programmeurs doen dit om toegang te krijgen tot API's die niet toegankelijk zijn voor het grote publiek of om acties namens een gebruiker uit te voeren.

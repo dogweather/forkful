@@ -11,9 +11,8 @@ summary: "Pobieranie bie\u017C\u0105cej daty w j\u0119zyku Go to podstawowe zada
   \ dla programist\xF3w, por\xF3wnywalne z powszechno\u015Bci\u0105 \u201EHello, World!\u201D\
   . Jest niezb\u0119dne do zada\u0144 takich\u2026"
 title: "Pobieranie bie\u017C\u0105cej daty"
+weight: 29
 ---
-
-{{< edit_this_page >}}
 
 ## Co i dlaczego?
 

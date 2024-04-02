@@ -7,9 +7,8 @@ model: gpt-4-1106-preview
 summary: "La journalisation dans la programmation, c'est comme tenir un journal intime\
   \ pour votre application. Il s'agit de l'enregistrement syst\xE9matique\u2026"
 title: Journalisation
+weight: 17
 ---
-
-{{< edit_this_page >}}
 
 ## Quoi & Pourquoi ?
 La journalisation dans la programmation, c'est comme tenir un journal intime pour votre application. Il s'agit de l'enregistrement systématique d'événements, de messages et de points de données qui vous donnent un aperçu de ce que votre application fait et de son comportement. Les développeurs font de la journalisation parce que c'est crucial pour le débogage, la surveillance de la santé de l'application et l'obtention d'indices sur des problèmes potentiels avant qu'ils ne se transforment en problèmes réels.

@@ -9,9 +9,8 @@ summary: "Att radera tecken som matchar ett m\xF6nster inneb\xE4r att du filtrer
   \ ut specifika tecken eller teckenf\xF6ljder fr\xE5n en textstr\xE4ng. Programmerare\
   \ g\xF6r detta f\xF6r\u2026"
 title: "Ta bort tecken som matchar ett m\xF6nster"
+weight: 5
 ---
-
-{{< edit_this_page >}}
 
 ## Vad & Varför?
 Att radera tecken som matchar ett mönster innebär att du filtrerar ut specifika tecken eller teckenföljder från en textsträng. Programmerare gör detta för att sanera data, ta bort oönskat innehåll eller förbereda strängar för vidare bearbetning.

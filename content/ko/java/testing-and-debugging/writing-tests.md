@@ -23,9 +23,8 @@ summary: "\uC790\uBC14\uC5D0\uC11C \uD14C\uC2A4\uD2B8\uB97C \uC791\uC131\uD558\u
   \uCE59\uC744 \uCD09\uC9C4\uD558\uAE30 \uC704\uD574 \uD14C\uC2A4\uD2B8\uB97C \uC791\
   \uC131\uD569\uB2C8\uB2E4."
 title: "\uD14C\uC2A4\uD2B8 \uC791\uC131\uD558\uAE30"
+weight: 36
 ---
-
-{{< edit_this_page >}}
 
 ## 무엇을, 왜?
 자바에서 테스트를 작성하는 것은 다양한 조건에서 코드가 예상대로 동작하는지 확인하는 것에 관한 것입니다. 프로그래머들은 버그를 방지하고, 변경 후에도 기능이 올바르게 유지되도록 보장하며, 좋은 소프트웨어 설계 원칙을 촉진하기 위해 테스트를 작성합니다.

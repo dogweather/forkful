@@ -9,9 +9,8 @@ summary: "Merkkijonon interpolointi tarkoittaa muuttujien tai lausekkeiden sis\x
   llytt\xE4mist\xE4 osaksi merkkijonoa. Ohjelmoijat k\xE4ytt\xE4v\xE4t sit\xE4 dynaamisen\
   \ sis\xE4ll\xF6n\u2026"
 title: Merkkijonon interpolointi
+weight: 8
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why? - Mikä ja Miksi?
 Merkkijonon interpolointi tarkoittaa muuttujien tai lausekkeiden sisällyttämistä osaksi merkkijonoa. Ohjelmoijat käyttävät sitä dynaamisen sisällön muodostamiseen selkeällä ja ylläpidettävällä tavalla.

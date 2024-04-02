@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "JSON eli JavaScript Object Notation on kevyt tiedonvaihtoformaatti, joka\
   \ sopii erinomaisesti sek\xE4 tietojen tallennukseen ett\xE4 kokoonpanotiedostoihin\u2026"
 title: "Ty\xF6skentely JSON:n kanssa"
+weight: 38
 ---
-
-{{< edit_this_page >}}
 
 ## Mikä & Miksi?
 

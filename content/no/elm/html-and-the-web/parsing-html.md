@@ -9,9 +9,8 @@ summary: "Parsing av HTML betyr \xE5 gj\xF8re om HTML-kode til noe et program ka
   \ forst\xE5 og bruke. Programmerere gj\xF8r dette for \xE5 manipulere, hente ut\
   \ data eller generere\u2026"
 title: Analyse av HTML
+weight: 43
 ---
-
-{{< edit_this_page >}}
 
 ## Hva & Hvorfor?
 Parsing av HTML betyr å gjøre om HTML-kode til noe et program kan forstå og bruke. Programmerere gjør dette for å manipulere, hente ut data eller generere dynamisk innhold.

@@ -11,9 +11,8 @@ summary: "Tablice asocjacyjne, znane w innych j\u0119zykach jako mapy lub s\u014
   owniki, s\u0105 parami klucz-warto\u015B\u0107 u\u017Cywanymi do efektywnego wyszukiwania\
   \ i manipulowania danymi.\u2026"
 title: "U\u017Cywanie tablic asocjacyjnych"
+weight: 15
 ---
-
-{{< edit_this_page >}}
 
 ## Co & Dlaczego?
 

@@ -7,9 +7,8 @@ model: gpt-4-1106-preview
 summary: "Lire des arguments de ligne de commande, c'est r\xE9cup\xE9rer les donn\xE9\
   es fournies \xE0 un script lors de son ex\xE9cution. Les programmeurs le font pour\u2026"
 title: Lecture des arguments de ligne de commande
+weight: 23
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 Lire des arguments de ligne de commande, c'est récupérer les données fournies à un script lors de son exécution. Les programmeurs le font pour personnaliser le comportement d'un script sans le modifier directement.

@@ -17,9 +17,8 @@ summary: "\u5728PHP\u4E2D\u89E3\u6790HTML\u6D89\u53CA\u4ECEHTML\u6587\u6863\u4E2
   \u81EA\u5404\u79CD\u7F51\u9875\u7684\u5185\u5BB9\uFF0C\u65E0\u9700\u624B\u52A8\u5E72\
   \u9884\u5373\u53EF\u589E\u5F3A\u529F\u80FD\u3002"
 title: "\u89E3\u6790HTML"
+weight: 43
 ---
-
-{{< edit_this_page >}}
 
 ## 什么 & 为什么？
 在PHP中解析HTML涉及从HTML文档中提取特定信息。程序员执行此任务以自动化数据提取、网络抓取，或者在他们的应用程序中集成来自各种网页的内容，无需手动干预即可增强功能。

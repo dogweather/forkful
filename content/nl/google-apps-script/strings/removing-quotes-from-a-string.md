@@ -10,9 +10,8 @@ model: gpt-4-0125-preview
 summary: "Het verwijderen van aanhalingstekens uit een tekenreeks in Google Apps Script\
   \ gaat over het elimineren van onnodige aanhalingstekens die mogelijk rond uw\u2026"
 title: Quotes uit een string verwijderen
+weight: 9
 ---
-
-{{< edit_this_page >}}
 
 ## Wat & Waarom?
 

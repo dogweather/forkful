@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Het verwijderen van tekens die overeenkomen met een specifiek patroon uit\
   \ strings in C gaat over het verwijderen van alle instanties van bepaalde tekens\u2026"
 title: Karakters verwijderen die overeenkomen met een patroon
+weight: 5
 ---
-
-{{< edit_this_page >}}
 
 ## Wat & Waarom?
 

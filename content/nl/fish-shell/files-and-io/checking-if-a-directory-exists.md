@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Controleren of een map bestaat zorgt ervoor dat een programma werkt met\
   \ geldige paden, wat fouten voorkomt. Het is cruciaal voor taken die specifieke\u2026"
 title: Controleren of een directory bestaat
+weight: 20
 ---
-
-{{< edit_this_page >}}
 
 ## Wat & Waarom?
 Controleren of een map bestaat zorgt ervoor dat een programma werkt met geldige paden, wat fouten voorkomt. Het is cruciaal voor taken die specifieke mappen nodig hebben, zoals het lezen van bestanden of het loggen van gegevens.

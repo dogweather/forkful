@@ -11,9 +11,8 @@ summary: "Testien kirjoittaminen Pythonilla tarkoittaa automatisoitujen skriptie
   \ luomista koodisi oikeellisuuden varmistamiseksi. Ohjelmoijat tekev\xE4t t\xE4\
   m\xE4n\u2026"
 title: Testien kirjoittaminen
+weight: 36
 ---
-
-{{< edit_this_page >}}
 
 ## Mitä ja miksi?
 Testien kirjoittaminen Pythonilla tarkoittaa automatisoitujen skriptien luomista koodisi oikeellisuuden varmistamiseksi. Ohjelmoijat tekevät tämän varmistaakseen, että heidän funktionsa tai luokkansa toimivat odotetusti erilaisissa olosuhteissa, mikä auttaa löytämään virheitä aikaisin ja helpottaa ylläpitoa ja uudelleenmuotoilua.

@@ -10,9 +10,8 @@ model: gpt-4-0125-preview
 summary: "Lavorare con i file CSV (Comma-Separated Values) su Arduino comporta la\
   \ lettura e la scrittura da e verso file CSV generalmente memorizzati su una scheda\u2026"
 title: Lavorare con i CSV
+weight: 37
 ---
-
-{{< edit_this_page >}}
 
 ## Cosa e Perché?
 Lavorare con i file CSV (Comma-Separated Values) su Arduino comporta la lettura e la scrittura da e verso file CSV generalmente memorizzati su una scheda SD, consentendo la registrazione dei dati, la configurazione delle impostazioni e altro ancora. I programmatori spesso gestiscono i CSV per la raccolta dei dati dei sensori, la memorizzazione dei parametri di configurazione o l'interfacciamento con altri sistemi, grazie alla sua semplicità e alla sua ampia adozione su diverse piattaforme.

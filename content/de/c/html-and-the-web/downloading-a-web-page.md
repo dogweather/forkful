@@ -10,9 +10,8 @@ model: gpt-4-0125-preview
 summary: "Das Herunterladen einer Webseite in C beinhaltet den programmatischen Zugriff\
   \ auf den Inhalt einer Webseite \xFCber das Internet und das lokale Speichern zur\u2026"
 title: Herunterladen einer Webseite
+weight: 42
 ---
-
-{{< edit_this_page >}}
 
 ## Was & Warum?
 

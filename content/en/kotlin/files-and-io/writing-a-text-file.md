@@ -7,9 +7,8 @@ model: gpt-4-0125-preview
 summary: "Writing a text file in Kotlin involves creating a file and inputting text\
   \ content into it, a common task for storing data, logging, or configuration\u2026"
 title: Writing a text file
+weight: 24
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 Writing a text file in Kotlin involves creating a file and inputting text content into it, a common task for storing data, logging, or configuration settings. Programmers do it to save and manipulate data outside the volatile memory space, ensuring persistence across sessions.

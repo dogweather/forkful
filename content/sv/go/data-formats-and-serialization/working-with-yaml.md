@@ -10,9 +10,8 @@ model: gpt-4-0125-preview
 summary: "Att arbeta med YAML i Go handlar om att tolka YAML-filer (YAML Ain't Markup\
   \ Language), en m\xE4nniskov\xE4nlig standard f\xF6r data-serialisering, till Go-\u2026"
 title: Att arbeta med YAML
+weight: 41
 ---
-
-{{< edit_this_page >}}
 
 ## Vad & Varför?
 

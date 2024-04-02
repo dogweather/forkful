@@ -8,9 +8,8 @@ model: gpt-4-1106-preview
 summary: "S\xF8k og erstatt lar deg finne tekster og bytte dem ut med noe annet. Programmeringsgjengen\
   \ bruker det for \xE5 raskt oppdatere kode, fikse feil, eller endre\u2026"
 title: "S\xF8king og erstatting av tekst"
+weight: 10
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 Søk og erstatt lar deg finne tekster og bytte dem ut med noe annet. Programmeringsgjengen bruker det for å raskt oppdatere kode, fikse feil, eller endre data.

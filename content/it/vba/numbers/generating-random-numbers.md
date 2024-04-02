@@ -11,9 +11,8 @@ summary: "Generare numeri casuali in Visual Basic for Applications (VBA) consent
   \ ai programmi di simulare processi con elementi di casualit\xE0 o variabilit\xE0\
   , come il\u2026"
 title: Generare numeri casuali
+weight: 12
 ---
-
-{{< edit_this_page >}}
 
 ## Cosa & Perché?
 

@@ -7,9 +7,8 @@ model: gpt-4-1106-preview
 summary: "HTTP-Anfragen mit Basic Authentication senden Nutzernamen und Passwort im\
   \ Base64-codierten Format im `Authorization`-Header, um sich gegen\xFCber einem\u2026"
 title: HTTP-Anfragen mit Basisauthentifizierung senden
+weight: 45
 ---
-
-{{< edit_this_page >}}
 
 ## Was & Warum?
 HTTP-Anfragen mit Basic Authentication senden Nutzernamen und Passwort im Base64-codierten Format im `Authorization`-Header, um sich gegenüber einem Service zu authentifizieren. Programmierer nutzen das, um geschützte Ressourcen über eine API abzurufen oder zu manipulieren.

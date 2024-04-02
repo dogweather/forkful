@@ -9,9 +9,8 @@ summary: "V\xE4liaikaistiedoston luominen on prosessi, jossa tehd\xE4\xE4n tilap
   inen tiedosto datan v\xE4liaikaista s\xE4ilytyst\xE4 tai k\xE4sittely\xE4 varten.\
   \ Ohjelmoijat tekev\xE4t sen,\u2026"
 title: "V\xE4liaikaistiedoston luominen"
+weight: 21
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why? (Mitä & Miksi?)
 Väliaikaistiedoston luominen on prosessi, jossa tehdään tilapäinen tiedosto datan väliaikaista säilytystä tai käsittelyä varten. Ohjelmoijat tekevät sen, jotta voidaan käsitellä tietoja ilman pysyviä muutoksia tai kun luodaan väliaikaisia välimuistitiedostoja, jotka eivät saastuta tiedostojärjestelmää.

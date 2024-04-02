@@ -10,9 +10,8 @@ model: gpt-4-0125-preview
 summary: "Zapis do pliku tekstowego w Pythonie to podstawowe zadanie, kt\xF3re obejmuje\
   \ tworzenie lub otwieranie pliku, a nast\u0119pnie dodawanie do niego tekstu lub\u2026"
 title: Pisanie pliku tekstowego
+weight: 24
 ---
-
-{{< edit_this_page >}}
 
 ## Co i dlaczego?
 Zapis do pliku tekstowego w Pythonie to podstawowe zadanie, które obejmuje tworzenie lub otwieranie pliku, a następnie dodawanie do niego tekstu lub nadpisywanie tekstu. Ta funkcjonalność jest kluczowa dla rejestrowania danych, zarządzania konfiguracją i przechowywania wyników generowanych przez programy, co czyni ją podstawowym, ale niezbędnym narzędziem w arsenale programisty.

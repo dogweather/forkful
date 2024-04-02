@@ -11,9 +11,8 @@ summary: "Travailler avec JSON (JavaScript Object Notation) implique de parser d
   \ donn\xE9es JSON \xE0 partir de cha\xEEnes de caract\xE8res vers des objets Dart\
   \ et vice\u2026"
 title: Travailler avec JSON
+weight: 38
 ---
-
-{{< edit_this_page >}}
 
 ## Quoi et pourquoi ?
 

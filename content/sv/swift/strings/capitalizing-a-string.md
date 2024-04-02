@@ -11,9 +11,8 @@ summary: "Att g\xF6ra f\xF6rsta bokstaven i en str\xE4ng stor i Swift inneb\xE4r
   \ man modifierar den givna str\xE4ngen s\xE5 att dess f\xF6rsta tecken \xE4r versalt,\
   \ och de \xE5terst\xE5ende\u2026"
 title: "G\xF6r om en str\xE4ng till versaler"
+weight: 2
 ---
-
-{{< edit_this_page >}}
 
 ## Vad & Varför?
 

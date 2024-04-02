@@ -7,9 +7,8 @@ model: gpt-4-0125-preview
 summary: "Checking if a directory exists in Ruby allows programmers to verify the\
   \ presence of a directory before performing operations like reading files or\u2026"
 title: Checking if a directory exists
+weight: 20
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 Checking if a directory exists in Ruby allows programmers to verify the presence of a directory before performing operations like reading files or creating new directories. This is crucial for avoiding errors in file handling and ensuring the reliability of file system manipulations.

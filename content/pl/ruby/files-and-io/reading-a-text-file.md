@@ -9,9 +9,8 @@ summary: "Czytanie pliku tekstowego to pobieranie danych zapisanych w pliku zapi
   \ na dysku. Programi\u015Bci robi\u0105 to, by przetwarza\u0107, analizowa\u0107\
   \ dane, konfigurowa\u0107\u2026"
 title: Odczytywanie pliku tekstowego
+weight: 22
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why? (Co i Dlaczego?)
 Czytanie pliku tekstowego to pobieranie danych zapisanych w pliku zapisanego na dysku. Programiści robią to, by przetwarzać, analizować dane, konfigurować aplikacje, czy ładować zasoby.

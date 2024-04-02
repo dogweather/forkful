@@ -7,9 +7,8 @@ model: gpt-4-0125-preview
 summary: "Downloading a web page involves fetching the content of a web page via its\
   \ URL for processing or storage. Programmers do this to extract information,\u2026"
 title: Downloading a web page
+weight: 42
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 

@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Les tableaux associatifs, connus sous le nom d'objets dans Google Apps Script\
   \ (une variante de JavaScript), permettent aux programmeurs de cr\xE9er des\u2026"
 title: Utilisation des tableaux associatifs
+weight: 15
 ---
-
-{{< edit_this_page >}}
 
 ## Quoi & Pourquoi ?
 

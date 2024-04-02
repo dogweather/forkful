@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Die Zeichenketteninterpolation in Google Apps Script erm\xF6glicht das dynamische\
   \ Einbetten von Ausdr\xFCcken in Zeichenketten und erleichtert die Erstellung\u2026"
 title: Interpolation einer Zeichenkette
+weight: 8
 ---
-
-{{< edit_this_page >}}
 
 ## Was & Warum?
 

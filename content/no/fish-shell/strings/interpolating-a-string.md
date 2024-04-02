@@ -8,9 +8,8 @@ model: gpt-4-1106-preview
 summary: "Interpolering av strenger lar deg bake inn variabler eller uttrykk i en\
   \ tekststreng. Det gj\xF8r koden mer fleksibel og lesbar n\xE5r du skal bygge dynamisk\u2026"
 title: Interpolering av en streng
+weight: 8
 ---
-
-{{< edit_this_page >}}
 
 ## Hva & Hvorfor?
 Interpolering av strenger lar deg bake inn variabler eller uttrykk i en tekststreng. Det gjør koden mer fleksibel og lesbar når du skal bygge dynamisk innhold.

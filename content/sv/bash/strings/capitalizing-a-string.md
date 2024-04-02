@@ -11,9 +11,8 @@ summary: "Att g\xF6ra det f\xF6rsta tecknet i en str\xE4ng till versal i Bash in
   \ att omvandla det f\xF6rsta tecknet av str\xE4ngen till stort bokstav medan resten\
   \ av\u2026"
 title: "G\xF6r om en str\xE4ng till versaler"
+weight: 2
 ---
-
-{{< edit_this_page >}}
 
 ## Vad & Varför?
 Att göra det första tecknet i en sträng till versal i Bash involverar att omvandla det första tecknet av strängen till stort bokstav medan resten av strängen lämnas oförändrad. Denna teknik används ofta för att formatera utdata eller för att följa kodkonventioner som kräver att vissa strängar börjar med en stor bokstav för läsbarhet eller stilistiska preferenser.

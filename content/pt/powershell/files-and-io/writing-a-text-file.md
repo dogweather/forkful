@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Escrever um arquivo de texto no PowerShell envolve criar e manipular arquivos\
   \ baseados em texto, o que \xE9 uma opera\xE7\xE3o fundamental para registro,\u2026"
 title: Escrevendo um arquivo de texto
+weight: 24
 ---
-
-{{< edit_this_page >}}
 
 ## O Quê & Porquê?
 Escrever um arquivo de texto no PowerShell envolve criar e manipular arquivos baseados em texto, o que é uma operação fundamental para registro, armazenamento de dados e scripts de configuração. Os programadores aproveitam isso para automatizar tarefas do sistema, análise de dados e integração com outras aplicações ou scripts.

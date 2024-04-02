@@ -7,9 +7,8 @@ model: gpt-4-1106-preview
 summary: "Kalenderdaten in der Zukunft oder Vergangenheit zu berechnen bedeutet, ausgehend\
   \ vom aktuellen Datum ein bestimmtes Datum vor- oder zur\xFCckzurechnen.\u2026"
 title: "Berechnung eines zuk\xFCnftigen oder vergangenen Datums"
+weight: 26
 ---
-
-{{< edit_this_page >}}
 
 ## Was & Warum?
 Kalenderdaten in der Zukunft oder Vergangenheit zu berechnen bedeutet, ausgehend vom aktuellen Datum ein bestimmtes Datum vor- oder zurückzurechnen. Programmiere nutzen das, um Fristen, Jubiläen oder zeitbasierte Aufgaben zu handhaben.

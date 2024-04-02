@@ -13,9 +13,8 @@ summary: "Vi\u1EBFt l\u1ED7i chu\u1EA9n (stderr) l\xE0 xu\u1EA5t th\xF4ng b\xE1o
   ng th\u01B0\u1EDDng. C\xE1c l\u1EADp tr\xECnh vi\xEAn th\u1EF1c hi\u1EC7n \u0111\
   i\u1EC1u n\xE0y \u0111\u1EC3 g\u1EE1 l\u1ED7i v\xE0 theo\u2026"
 title: "Ghi v\xE0o l\u1ED7i chu\u1EA9n"
+weight: 25
 ---
-
-{{< edit_this_page >}}
 
 ## Gì & Tại sao?
 Viết lỗi chuẩn (stderr) là xuất thông báo lỗi và chẩn đoán riêng biệt khỏi đầu ra thông thường. Các lập trình viên thực hiện điều này để gỡ lỗi và theo dõi ứng dụng mà không trộn lẫn thông điệp lỗi với đầu ra chuẩn (stdout).

@@ -22,9 +22,8 @@ summary: "TypeScript\uC5D0\uC11C \uB514\uB809\uD1A0\uB9AC\uAC00 \uC874\uC7AC\uD5
   \ \uD53C\uD558\uB294 \uB370 \uC911\uC694\uD55C \uC791\uC5C5\uC785\uB2C8\uB2E4."
 title: "\uB514\uB809\uD1A0\uB9AC\uAC00 \uC874\uC7AC\uD558\uB294\uC9C0 \uD655\uC778\
   \uD558\uAE30"
+weight: 20
 ---
-
-{{< edit_this_page >}}
 
 ## 무엇인가 & 왜인가?
 TypeScript에서 디렉토리가 존재하는지 확인하는 것은 파일 읽기나 쓰기 등의 파일 관리 작업에 필수적이며, 유효한 디렉토리에서만 작업을 수행함으로써 존재하지 않는 디렉토리에 접근하거나 조작을 시도할 때 발생하는 오류를 피하는 데 중요한 작업입니다.

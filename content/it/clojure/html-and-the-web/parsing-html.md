@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Il parsing di HTML in Clojure consiste nell'estrazione programmatica di\
   \ informazioni dai documenti HTML. I programmatori fanno ci\xF2 per accedere,\u2026"
 title: Analisi del HTML
+weight: 43
 ---
-
-{{< edit_this_page >}}
 
 ## Cosa & Perché?
 

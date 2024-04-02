@@ -16,9 +16,8 @@ summary: "\uC11C\uBE0C\uC2A4\uD2B8\uB9C1 \uCD94\uCD9C\uC774\uB780 \uBB34\uC5C7\u
   \uC758 \uC77C\uBD80\uBD84\uB9CC \uD544\uC694\uB85C \uD558\uAE30 \uB54C\uBB38\uC5D0\
   \ \uC774 \uC791\uC5C5\uC744 \uD569\uB2C8\uB2E4."
 title: "\uBD80\uBD84 \uBB38\uC790\uC5F4 \uCD94\uCD9C"
+weight: 6
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 서브스트링 추출이란 무엇일까요? 간단히 말해서, 문자열 일부를 뽑아내는 것입니다. 프로그래머는 특정 데이터를 다룰 때, 정보의 일부분만 필요로 하기 때문에 이 작업을 합니다.

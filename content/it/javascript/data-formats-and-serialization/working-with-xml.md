@@ -7,9 +7,8 @@ model: gpt-4-0125-preview
 summary: "Lavorare con XML significa analizzare, manipolare e produrre contenuti XML\
   \ mediante codice. I programmatori lo fanno perch\xE9 XML \xE8 ampiamente utilizzato\u2026"
 title: Lavorare con XML
+weight: 40
 ---
-
-{{< edit_this_page >}}
 
 ## Cosa e Perché?
 Lavorare con XML significa analizzare, manipolare e produrre contenuti XML mediante codice. I programmatori lo fanno perché XML è ampiamente utilizzato per file di configurazione, scambio di dati e servizi web grazie alla sua natura leggibile dall'uomo e analizzabile dalla macchina.

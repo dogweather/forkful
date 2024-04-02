@@ -11,9 +11,8 @@ summary: "Assosiative tabeller, mer kjent som hashes i Ruby, gj\xF8r det mulig \
   \ pare unike n\xF8kler med verdier. De er uunnv\xE6rlige n\xE5r du trenger \xE5\
   \ holde styr p\xE5\u2026"
 title: Bruke associative tabeller
+weight: 15
 ---
-
-{{< edit_this_page >}}
 
 ## Hva og hvorfor?
 

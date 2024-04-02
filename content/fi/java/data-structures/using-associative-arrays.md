@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Javassa assosiatiiviset taulukot eli mapit mahdollistavat avain-arvo -parien\
   \ tallentamisen tehokasta datan hakua ja manipulaatiota varten. Ohjelmoijat\u2026"
 title: "Assosiatiivisten taulukoiden k\xE4ytt\xF6"
+weight: 15
 ---
-
-{{< edit_this_page >}}
 
 ## Mikä & Miksi?
 

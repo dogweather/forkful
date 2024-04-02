@@ -11,9 +11,8 @@ summary: "I PowerShell \xE4r kontrollen om en katalog finns en vanlig uppgift so
   \ hj\xE4lper skript att fatta beslut baserat p\xE5 filsystemets struktur\u2014till\
   \ exempel f\xF6r att\u2026"
 title: Kontrollera om en katalog existerar
+weight: 20
 ---
-
-{{< edit_this_page >}}
 
 ## Vad och varför?
 I PowerShell är kontrollen om en katalog finns en vanlig uppgift som hjälper skript att fatta beslut baserat på filsystemets struktur—till exempel för att undvika fel genom att bekräfta att en målkatalog finns på plats innan man försöker läsa från eller skriva till den. Det är avgörande för att säkerställa att ditt skript beter sig pålitligt i olika miljöer.

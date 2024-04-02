@@ -10,9 +10,8 @@ model: gpt-4-0125-preview
 summary: "Inviare una richiesta HTTP con autenticazione di base in Go comporta l'aggiunta\
   \ di un'intestazione di autorizzazione alla tua richiesta che include un\u2026"
 title: Inviare una richiesta HTTP con autenticazione di base
+weight: 45
 ---
-
-{{< edit_this_page >}}
 
 ## Cos'è & Perché?
 

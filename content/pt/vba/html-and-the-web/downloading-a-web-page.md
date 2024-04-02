@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Baixar uma p\xE1gina da web em Visual Basic for Applications (VBA) envolve\
   \ obter o conte\xFAdo HTML de uma p\xE1gina da web da Internet. Programadores\u2026"
 title: "Baixando uma p\xE1gina da web"
+weight: 42
 ---
-
-{{< edit_this_page >}}
 
 ## O quê e Por quê?
 

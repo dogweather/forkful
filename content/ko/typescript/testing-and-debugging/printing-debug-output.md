@@ -14,9 +14,8 @@ summary: "\uB514\uBC84\uADF8 \uCD9C\uB825\uC740 \uCF54\uB4DC\uAC00 \uBB58 \uD558
   \uACE0 \uC774\uD574\uD558\uAE30 \uC27D\uAC8C \uB9CC\uB4E4\uAE30 \uC704\uD574\uC11C\
   \uC8E0."
 title: "\uB514\uBC84\uADF8 \uCD9C\uB825\uC744 \uCC0D\uC5B4\uBCF4\uAE30"
+weight: 33
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why? (무엇 그리고 왜?)
 디버그 출력은 코드가 뭘 하고 있는지 보여줍니다. 프로그래머들이 이를 사용하는 건, 버그를 찾고 이해하기 쉽게 만들기 위해서죠.

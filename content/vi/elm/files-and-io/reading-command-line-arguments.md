@@ -13,9 +13,8 @@ summary: "Tham s\u1ED1 d\xF2ng l\u1EC7nh cho ph\xE9p ng\u01B0\u1EDDi d\xF9ng cun
   \ h\u1ECD kh\u1EDFi ch\u1EA1y n\xF3. C\xE1c l\u1EADp tr\xECnh vi\xEAn \u0111\u1ECD\
   c c\xE1c tham s\u1ED1 n\xE0y \u0111\u1EC3 \u0111i\u1EC1u ch\u1EC9nh\u2026"
 title: "\u0110\u1ECDc c\xE1c \u0111\u1ED1i s\u1ED1 d\xF2ng l\u1EC7nh"
+weight: 23
 ---
-
-{{< edit_this_page >}}
 
 ## Gì và Tại sao?
 Tham số dòng lệnh cho phép người dùng cung cấp dữ liệu cho chương trình của họ khi họ khởi chạy nó. Các lập trình viên đọc các tham số này để điều chỉnh hành vi của chương trình mà không cần phải mã hóa cứng các giá trị.

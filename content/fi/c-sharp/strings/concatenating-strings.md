@@ -9,9 +9,8 @@ summary: "Yhdist\xE4mme merkkijonoja luodaaksemme uusia isompia tekstej\xE4. T\x
   m\xE4 on t\xE4rke\xE4\xE4, kun haluamme n\xE4ytt\xE4\xE4 k\xE4ytt\xE4jille dynaamisia\
   \ viestej\xE4 tai rakennamme\u2026"
 title: "Merkkijonojen yhdist\xE4minen"
+weight: 3
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why? (Mikä & Miksi?)
 Yhdistämme merkkijonoja luodaaksemme uusia isompia tekstejä. Tämä on tärkeää, kun haluamme näyttää käyttäjille dynaamisia viestejä tai rakennamme laajempia tietorakenteita.

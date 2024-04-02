@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Schrijven naar standaard fout (`stderr`) kanalen cruciale berichten naar\
   \ een speciale uitvoerstroom gereserveerd voor fouten, gescheiden van de hoofd\u2026"
 title: Schrijven naar standaardfout
+weight: 25
 ---
-
-{{< edit_this_page >}}
 
 ## Wat & Waarom?
 Schrijven naar standaard fout (`stderr`) kanalen cruciale berichten naar een speciale uitvoerstroom gereserveerd voor fouten, gescheiden van de hoofd uitvoer (`stdout`). Programmeurs gebruiken het voor het loggen van fouten en diagnostische berichten zodat ze gewone programmagegevens niet in de war brengen en gemakkelijk gevolgd of omgeleid kunnen worden.

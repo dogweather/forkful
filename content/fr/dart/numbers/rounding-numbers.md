@@ -11,9 +11,8 @@ summary: "Arrondir des nombres est le processus qui consiste \xE0 ajuster un nom
   \ \xE0 son nombre entier le plus proche ou \xE0 un nombre sp\xE9cifi\xE9 de d\xE9\
   cimales. Les\u2026"
 title: Arrondissement des nombres
+weight: 13
 ---
-
-{{< edit_this_page >}}
 
 ## Quoi & Pourquoi ?
 

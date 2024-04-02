@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Loggen is in wezen de software-equivalent van een scheepsjournaal; het is\
   \ een manier om gebeurtenissen vast te leggen die plaatsvinden terwijl een\u2026"
 title: Logboekregistratie
+weight: 17
 ---
-
-{{< edit_this_page >}}
 
 ## Wat & Waarom?
 Loggen is in wezen de software-equivalent van een scheepsjournaal; het is een manier om gebeurtenissen vast te leggen die plaatsvinden terwijl een applicatie wordt uitgevoerd. Programmeurs doen dit om deze gebeurtenissen bij te houden voor debugging, audit trails, of om inzichten te verkrijgen in het gedrag van een systeem in productie.

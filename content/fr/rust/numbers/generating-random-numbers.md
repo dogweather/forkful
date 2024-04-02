@@ -9,9 +9,8 @@ summary: "G\xE9n\xE9rer des nombres al\xE9atoires en Rust implique l'utilisation
   \ biblioth\xE8ques pour produire des valeurs num\xE9riques impr\xE9vues, ce qui\
   \ est indispensable\u2026"
 title: "G\xE9n\xE9ration de nombres al\xE9atoires"
+weight: 12
 ---
-
-{{< edit_this_page >}}
 
 ## Quoi & Pourquoi ?
 

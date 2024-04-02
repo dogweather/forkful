@@ -11,9 +11,8 @@ summary: "Pobieranie aktualnej daty w Darciu wi\u0105\u017Ce si\u0119 z zapytani
   \ systemu o aktualn\u0105 dat\u0119 i czas. Ta funkcjonalno\u015B\u0107 jest powszechnie\
   \ u\u017Cywana w aplikacjach do\u2026"
 title: "Pobieranie bie\u017C\u0105cej daty"
+weight: 29
 ---
-
-{{< edit_this_page >}}
 
 ## Co i dlaczego?
 Pobieranie aktualnej daty w Darciu wiąże się z zapytaniem systemu o aktualną datę i czas. Ta funkcjonalność jest powszechnie używana w aplikacjach do funkcji takich jak znakowanie czasem zdarzeń, pokazywanie aktualnej daty użytkownikom czy obliczanie okresów czasu. Wiedza o tym, jak efektywnie pobierać i manipulować aktualną datą jest podstawą dla planowania, logowania i funkcji wrażliwych na czas.

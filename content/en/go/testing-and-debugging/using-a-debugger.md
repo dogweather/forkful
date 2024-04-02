@@ -1,14 +1,14 @@
 ---
 date: 2024-02-03 17:50:19.237896-07:00
-description: "Using a debugger in Go programming involves employing tools or features\
-  \ to inspect and modify the state of a running program to understand its behavior\
-  \ or\u2026"
+description: "Go provides a built-in facility for debugging called `delve`. It is\
+  \ a full-featured debugging tool that allows you to execute Go programs step by\
+  \ step,\u2026"
 lastmod: '2024-03-13T22:44:59.635155-06:00'
 model: gpt-4-0125-preview
-summary: "Using a debugger in Go programming involves employing tools or features\
-  \ to inspect and modify the state of a running program to understand its behavior\
-  \ or\u2026"
+summary: "Go provides a built-in facility for debugging called `delve`. It is a full-featured\
+  \ debugging tool that allows you to execute Go programs step by step,\u2026"
 title: Using a debugger
+weight: 35
 ---
 
 ## How to:

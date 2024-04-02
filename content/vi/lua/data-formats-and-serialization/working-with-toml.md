@@ -13,9 +13,8 @@ summary: "L\xE0m vi\u1EC7c v\u1EDBi TOML bao g\u1ED3m vi\u1EC7c ph\xE2n t\xEDch 
   \ b\u1EB1ng Lua. L\u1EADp tr\xECnh vi\xEAn s\u1EED d\u1EE5ng TOML cho c\xE1c t\u1EC7\
   p\u2026"
 title: "L\xE0m vi\u1EC7c v\u1EDBi TOML"
+weight: 39
 ---
-
-{{< edit_this_page >}}
 
 ## Làm Thế Nào và Tại Sao?
 Làm việc với TOML bao gồm việc phân tích cú pháp và tạo dữ liệu TOML (Tom's Obvious, Minimal Language) bằng Lua. Lập trình viên sử dụng TOML cho các tệp cấu hình do tính dễ đọc và cú pháp đơn giản của nó, dễ dàng chuyển đổi thành cấu trúc dữ liệu.

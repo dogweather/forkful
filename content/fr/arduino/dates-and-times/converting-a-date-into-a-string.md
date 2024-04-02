@@ -9,9 +9,8 @@ summary: "Convertir une date en cha\xEEne de caract\xE8res consiste \xE0 transfo
   \ une repr\xE9sentation de date (typiquement num\xE9rique) en texte lisible. Les\
   \ programmeurs\u2026"
 title: "Conversion d'une date en cha\xEEne de caract\xE8res"
+weight: 28
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 Convertir une date en chaîne de caractères consiste à transformer une représentation de date (typiquement numérique) en texte lisible. Les programmeurs font cela pour enregistrer, afficher ou communiquer des dates de façon compréhensible pour les humains.

@@ -21,9 +21,8 @@ summary: "\uC5F0\uAD00 \uBC30\uC5F4\uC740 Python\uC5D0\uC11C \uC0AC\uC804(dictio
   \uC7A1\uD55C \uB370\uC774\uD130 \uAD6C\uC870\uB97C \uD45C\uD604\uD558\uB294 \uC720\
   \uC5F0\uC131\u2026"
 title: "\uC5F0\uAD00 \uBC30\uC5F4 \uC0AC\uC6A9\uD558\uAE30"
+weight: 15
 ---
-
-{{< edit_this_page >}}
 
 ## 무엇이며 왜 사용하는가?
 

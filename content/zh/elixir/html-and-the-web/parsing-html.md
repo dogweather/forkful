@@ -17,9 +17,8 @@ summary: "\u5728 Elixir \u4E2D\u89E3\u6790 HTML \u6D89\u53CA\u5230\u4ECE HTML \u
   \u7528\u7A0B\u5E8F\u80FD\u591F\u52A8\u6001\u7406\u89E3\u548C\u5229\u7528\u7F51\u9875\
   \u5185\u5BB9\u3002"
 title: "\u89E3\u6790HTML"
+weight: 43
 ---
-
-{{< edit_this_page >}}
 
 ## 什么 & 为什么？
 

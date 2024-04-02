@@ -8,9 +8,8 @@ model: gpt-4-0125-preview
 summary: "Die Arbeit mit XML umfasst das Parsen, Extrahieren und Manipulieren von\
   \ Daten im Extensible Markup Language-Format. Programmierer ringen mit XML, da es\u2026"
 title: Arbeiten mit XML
+weight: 40
 ---
-
-{{< edit_this_page >}}
 
 ## Was & Warum?
 Die Arbeit mit XML umfasst das Parsen, Extrahieren und Manipulieren von Daten im Extensible Markup Language-Format. Programmierer ringen mit XML, da es ein weit verbreitetes Datenaustauschformat für Konfigurationen, APIs und mehr ist.

@@ -7,9 +7,8 @@ model: gpt-4-0125-preview
 summary: "Satunnaislukujen tuottaminen ohjelmoinnissa tarkoittaa numerosekvenssien\
   \ luomista, joissa ei ole ennustettavaa j\xE4rjestyst\xE4 tai kaavaa. Ohjelmoijat\u2026"
 title: Satunnaislukujen generointi
+weight: 12
 ---
-
-{{< edit_this_page >}}
 
 ## Mitä & Miksi?
 

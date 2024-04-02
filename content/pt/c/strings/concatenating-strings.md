@@ -11,9 +11,8 @@ summary: "A concatena\xE7\xE3o de strings em C envolve a jun\xE7\xE3o de duas ou
   \ strings de ponta a ponta para formar uma nova string. Os programadores realizam\
   \ essa\u2026"
 title: Concatenando strings
+weight: 3
 ---
-
-{{< edit_this_page >}}
 
 ## O que & Por quê?
 

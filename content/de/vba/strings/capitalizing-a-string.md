@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Das Kapitalisieren eines Strings in Visual Basic for Applications (VBA)\
   \ beinhaltet die Umwandlung des ersten Zeichens jedes Wortes in einem String in\u2026"
 title: "Einen String gro\xDFschreiben"
+weight: 2
 ---
-
-{{< edit_this_page >}}
 
 ## Was & Warum?
 

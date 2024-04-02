@@ -23,9 +23,8 @@ summary: "Dart\uC5D0\uC11C \uBB38\uC790\uC5F4\uC5D0\uC11C \uB0A0\uC9DC\uB97C \uD
   \uB85C\uADF8\uB7A8\uC774 \uB0A0\uC9DC \uAD00\uB828 \uB370\uC774\uD130\uB97C \uC62C\
   \uBC14\uB974\uAC8C\u2026"
 title: "\uBB38\uC790\uC5F4\uC5D0\uC11C \uB0A0\uC9DC \uBD84\uC11D\uD558\uAE30"
+weight: 30
 ---
-
-{{< edit_this_page >}}
 
 ## 무엇이며 왜?
 Dart에서 문자열에서 날짜를 파싱하는 것은 날짜와 시간의 텍스트 표현을 `DateTime` 객체로 변환하는 과정을 포함합니다. 이 작업은 스케줄링, 데이터 분석 또는 날짜 조작이 필요한 모든 기능을 다루는 응용 프로그램에 필수적이며, 프로그램이 날짜 관련 데이터를 올바르게 이해하고 처리할 수 있도록 합니다.

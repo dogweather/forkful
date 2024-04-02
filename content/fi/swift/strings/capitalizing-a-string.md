@@ -10,9 +10,8 @@ model: gpt-4-0125-preview
 summary: "Merkkijonon muuttaminen isokirjaimiseksi Swiftiss\xE4 muokkaa annettua merkkijonoa\
   \ siten, ett\xE4 sen ensimm\xE4inen merkki on isokirjain ja loput merkit ovat\u2026"
 title: Merkkijonon muuttaminen isoiksi kirjaimiksi
+weight: 2
 ---
-
-{{< edit_this_page >}}
 
 ## Mikä & Miksi?
 

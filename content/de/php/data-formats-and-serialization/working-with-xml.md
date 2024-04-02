@@ -9,9 +9,8 @@ summary: "XML ist eine Auszeichnungssprache, die zum Speichern und Transportiere
   \ von Daten verwendet wird. Programmierer arbeiten mit XML, um die Interoperabilit\xE4\
   t\u2026"
 title: Arbeiten mit XML
+weight: 40
 ---
-
-{{< edit_this_page >}}
 
 ## Was & Warum?
 XML ist eine Auszeichnungssprache, die zum Speichern und Transportieren von Daten verwendet wird. Programmierer arbeiten mit XML, um die Interoperabilität zwischen Anwendungen und Systemen zu ermöglichen - denken Sie an Datenübertragung und Konfigurationseinstellungen.

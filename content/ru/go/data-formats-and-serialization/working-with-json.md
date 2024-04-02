@@ -21,9 +21,8 @@ summary: "\u0420\u0430\u0431\u043E\u0442\u0430 \u0441 JSON (JavaScript Object No
   \ Go \u0438 \u0444\u043E\u0440\u043C\u0430\u0442\u043E\u043C JSON. \u042D\u0442\u0430\
   \ \u0437\u0430\u0434\u0430\u0447\u0430\u2026"
 title: "\u0420\u0430\u0431\u043E\u0442\u0430 \u0441 JSON"
+weight: 38
 ---
-
-{{< edit_this_page >}}
 
 ## Что и Почему?
 

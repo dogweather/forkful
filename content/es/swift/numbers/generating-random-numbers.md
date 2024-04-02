@@ -9,9 +9,8 @@ summary: "Generar n\xFAmeros aleatorios en programaci\xF3n se trata de crear val
   \ num\xE9ricos no deterministas o impredecibles. Los programadores utilizan n\xFA\
   meros\u2026"
 title: "Generaci\xF3n de n\xFAmeros aleatorios"
+weight: 12
 ---
-
-{{< edit_this_page >}}
 
 ## Qué y Por Qué?
 

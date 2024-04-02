@@ -9,9 +9,8 @@ summary: "Kompleksiluvuilla on reaaliosa ja imagin\xE4\xE4riosa, ja ne ilmaistaa
   \ yleens\xE4 muodossa `a + bi`. Ne ovat elint\xE4rkeit\xE4 joissakin matematiikkaa\
   \ vaativissa\u2026"
 title: "Kompleksilukujen k\xE4sittely"
+weight: 14
 ---
-
-{{< edit_this_page >}}
 
 ## Mikä & Miksi?
 Kompleksiluvuilla on reaaliosa ja imaginääriosa, ja ne ilmaistaan yleensä muodossa `a + bi`. Ne ovat elintärkeitä joissakin matematiikkaa vaativissa Arduino-projekteissa, jotka liittyvät signaalinkäsittelyyn, sähkötekniikkaan tai mihin tahansa muuhun alaan, jossa ilmiöitä mallinnetaan parhaiten tasossa.

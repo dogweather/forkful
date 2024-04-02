@@ -9,9 +9,8 @@ summary: "Muunnetaan p\xE4iv\xE4m\xE4\xE4r\xE4 merkkijonoksi, jotta sit\xE4 voi 
   ytt\xE4\xE4 tekstiyhteyksiss\xE4, kuten k\xE4ytt\xF6liittymiss\xE4 ja raporteissa.\
   \ Koodarit tekev\xE4t t\xE4m\xE4n esitt\xE4\xE4kseen\u2026"
 title: "P\xE4iv\xE4m\xE4\xE4r\xE4n muuntaminen merkkijonoksi"
+weight: 28
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 Muunnetaan päivämäärä merkkijonoksi, jotta sitä voi käyttää tekstiyhteyksissä, kuten käyttöliittymissä ja raporteissa. Koodarit tekevät tämän esittääkseen päivämääriä ymmärrettävässä muodossa ja suorittaakseen päivämäärien kanssa tehtäviä manipulointeja.

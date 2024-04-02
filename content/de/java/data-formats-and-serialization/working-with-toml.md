@@ -8,9 +8,8 @@ model: gpt-4-0125-preview
 summary: "TOML steht f\xFCr Toms Offensichtliche, Minimalistische Sprache. Es ist\
   \ ein Daten-Serialisierungsformat, das f\xFCr Konfigurationsdateien verwendet wird.\u2026"
 title: Arbeiten mit TOML
+weight: 39
 ---
-
-{{< edit_this_page >}}
 
 ## Was & Warum?
 TOML steht für Toms Offensichtliche, Minimalistische Sprache. Es ist ein Daten-Serialisierungsformat, das für Konfigurationsdateien verwendet wird. Programmierer nutzen es, weil es leicht zu lesen, zu schreiben ist und sich gut auf eine Hash-Tabelle abbilden lässt.

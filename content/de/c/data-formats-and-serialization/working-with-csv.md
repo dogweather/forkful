@@ -10,9 +10,8 @@ model: gpt-4-0125-preview
 summary: "Im Bereich der Programmierung beinhaltet die Arbeit mit CSV-Dateien (Comma-Separated\
   \ Values, d.h. durch Kommas getrennte Werte) das Lesen von und das\u2026"
 title: Arbeiten mit CSV
+weight: 37
 ---
-
-{{< edit_this_page >}}
 
 ## Was & Warum?
 

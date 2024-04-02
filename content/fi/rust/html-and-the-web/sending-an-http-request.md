@@ -9,9 +9,8 @@ summary: "L\xE4het\xE4mme HTTP-pyynn\xF6n vaihtaaksemme tietoja palvelimien kans
   \ Sit\xE4 k\xE4ytet\xE4\xE4n datan hakemiseen, l\xE4hett\xE4miseen ja web-palveluiden\
   \ hy\xF6dynt\xE4miseen."
 title: "HTTP-pyynn\xF6n l\xE4hett\xE4minen"
+weight: 44
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why? - Mitä ja Miksi?
 Lähetämme HTTP-pyynnön vaihtaaksemme tietoja palvelimien kanssa. Sitä käytetään datan hakemiseen, lähettämiseen ja web-palveluiden hyödyntämiseen.

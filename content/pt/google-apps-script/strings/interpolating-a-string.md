@@ -11,9 +11,8 @@ summary: "A interpola\xE7\xE3o de strings no Google Apps Script permite a incorp
   \xE3o din\xE2mica de express\xF5es dentro de strings, facilitando a cria\xE7\xE3\
   o de c\xF3digos mais\u2026"
 title: Interpolando uma string
+weight: 8
 ---
-
-{{< edit_this_page >}}
 
 ## O Que & Por Que?
 

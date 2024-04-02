@@ -14,9 +14,8 @@ summary: "Ch\u1EC9nh s\u1EEDa t\u1EADp tin t\u1EA1i ch\u1ED7 v\u1EDBi CLI (Giao 
   \ c\u1EE7a b\u1EA1n, kh\xF4ng\u2026"
 title: "Ch\u1EC9nh s\u1EEDa file t\u1EA1i ch\u1ED7 v\u1EDBi c\xE2u l\u1EC7nh CLI ng\u1EAF\
   n g\u1ECDn"
+weight: 32
 ---
-
-{{< edit_this_page >}}
 
 ## Cái gì & Tại sao?
 

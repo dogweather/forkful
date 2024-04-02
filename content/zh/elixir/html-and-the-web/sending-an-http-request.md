@@ -12,9 +12,8 @@ summary: "HTTP\u8BF7\u6C42\uFF0C\u5C31\u662F\u4ECE\u4F60\u7684\u5E94\u7528\u53D1
   \u6570\u636E\u3001\u63D0\u4EA4\u8868\u5355\u3001\u8DDF\u5176\u4ED6\u670D\u52A1\u4EA4\
   \u4E92\u3002"
 title: "\u53D1\u51FA HTTP \u8BF7\u6C42"
+weight: 44
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why? (是什么&为什么?)
 HTTP请求，就是从你的应用发向服务器的消息。程序员用它获取数据、提交表单、跟其他服务交互。

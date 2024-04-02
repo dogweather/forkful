@@ -11,9 +11,8 @@ summary: "Att arbeta med komplexa tal i programmering inneb\xE4r att man hantera
   \ tal som har b\xE5de en reell och en imagin\xE4r del, vanligtvis uttryckta som\
   \ `a + bi`.\u2026"
 title: Att arbeta med komplexa tal
+weight: 14
 ---
-
-{{< edit_this_page >}}
 
 ## Vad & Varför?
 

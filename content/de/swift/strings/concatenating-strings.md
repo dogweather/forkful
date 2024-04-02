@@ -7,9 +7,8 @@ model: gpt-4-1106-preview
 summary: "String-Konkatenation verbindet Textst\xFCcke zu einem Ganzen. Entwickler\
   \ nutzen das, um dynamische Nachrichten zu bilden oder Text aus verschiedenen Quellen\u2026"
 title: "Zeichenketten verkn\xFCpfen"
+weight: 3
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 String-Konkatenation verbindet Textstücke zu einem Ganzen. Entwickler nutzen das, um dynamische Nachrichten zu bilden oder Text aus verschiedenen Quellen zusammenzuführen.

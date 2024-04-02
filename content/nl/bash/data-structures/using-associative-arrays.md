@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Associatieve arrays zijn als super-opgeladen arrays die je toestaan om strings\
   \ te gebruiken als indexen in plaats van enkel integers. Programmeurs\u2026"
 title: Gebruik van associatieve arrays
+weight: 15
 ---
-
-{{< edit_this_page >}}
 
 ## Wat & Waarom?
 

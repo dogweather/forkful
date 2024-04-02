@@ -11,9 +11,8 @@ summary: "Trabalhar com JSON no Fish Shell envolve analisar e gerar dados JSON, 
   \ tarefa comum para configurar aplica\xE7\xF5es, interagir com APIs e otimizar fluxos\
   \ de\u2026"
 title: Trabalhando com JSON
+weight: 38
 ---
-
-{{< edit_this_page >}}
 
 ## O Que & Por Quê?
 

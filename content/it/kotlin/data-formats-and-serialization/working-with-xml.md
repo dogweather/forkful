@@ -9,9 +9,8 @@ summary: "Lavorare con XML comporta l'analisi, la creazione e la manipolazione d
   \ documenti XML, un linguaggio di markup per la memorizzazione e il trasferimento\
   \ di\u2026"
 title: Lavorare con XML
+weight: 40
 ---
-
-{{< edit_this_page >}}
 
 ## Cosa e Perché?
 Lavorare con XML comporta l'analisi, la creazione e la manipolazione di documenti XML, un linguaggio di markup per la memorizzazione e il trasferimento di dati. I programmatori lo fanno perché molti sistemi ancora scambiano dati in formato XML, ed è necessario per il supporto legacy e l'integrazione con le tecnologie esistenti.

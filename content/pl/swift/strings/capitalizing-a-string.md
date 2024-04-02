@@ -11,9 +11,8 @@ summary: "Zmiana pierwszej litery ci\u0105gu na wielk\u0105 w Swift polega na mo
   \ danego ci\u0105gu znak\xF3w, tak aby jego pierwsza litera by\u0142a wielka, a\
   \ pozosta\u0142e ma\u0142e.\u2026"
 title: "Zamiana liter na wielkie w \u0142a\u0144cuchu znak\xF3w"
+weight: 2
 ---
-
-{{< edit_this_page >}}
 
 ## Co i dlaczego?
 

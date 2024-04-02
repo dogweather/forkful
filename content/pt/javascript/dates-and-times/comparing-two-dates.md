@@ -9,9 +9,8 @@ summary: "Comparar datas \xE9 verificar se s\xE3o iguais, qual \xE9 anterior ou 
   \ Programadores fazem isso para agendamentos, valida\xE7\xF5es e cronogramas de\
   \ eventos."
 title: Comparando duas datas
+weight: 27
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 Comparar datas é verificar se são iguais, qual é anterior ou posterior. Programadores fazem isso para agendamentos, validações e cronogramas de eventos.

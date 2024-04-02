@@ -9,9 +9,8 @@ summary: "\xC5 generere tilfeldige tall i Rust inneb\xE6rer \xE5 bruke bibliotek
   \ for \xE5 produsere uforutsette numeriske verdier, noe som er uunnv\xE6rlig for\
   \ oppgaver som\u2026"
 title: Generering av tilfeldige tall
+weight: 12
 ---
-
-{{< edit_this_page >}}
 
 ## Hva & Hvorfor?
 

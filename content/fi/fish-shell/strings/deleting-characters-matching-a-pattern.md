@@ -9,9 +9,8 @@ summary: "Poistamme merkkijonoista kuvioita vastaavat merkit, koska haluamme use
   \ puhdistaa sy\xF6tteit\xE4, muotoilla tietoja tai tehd\xE4 merkkijonok\xE4sittely\xE4\
   .\u2026"
 title: Merkkien poistaminen hakemalla osumia kaavaan
+weight: 5
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why? - Mitä & Miksi?
 Poistamme merkkijonoista kuvioita vastaavat merkit, koska haluamme usein puhdistaa syötteitä, muotoilla tietoja tai tehdä merkkijonokäsittelyä. Esimerkiksi tiedostonimistä voidaan poistaa välilyönnit tai erikoismerkit järjestyksen ja yhtenäisyyden vuoksi.

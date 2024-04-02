@@ -11,9 +11,8 @@ summary: "P\xE4iv\xE4m\xE4\xE4r\xE4n j\xE4sent\xE4minen merkkijonosta tarkoittaa
   \ kirjoitettujen p\xE4iv\xE4m\xE4\xE4rien tunnistamista ja muuntamista p\xE4iv\xE4\
   m\xE4\xE4r\xE4tyypiksi, jonka PowerShell\u2026"
 title: "P\xE4iv\xE4m\xE4\xE4r\xE4n j\xE4sennys merkkijonosta"
+weight: 30
 ---
-
-{{< edit_this_page >}}
 
 ## Mikä & Miksi?
 Päivämäärän jäsentäminen merkkijonosta tarkoittaa tekstissä kirjoitettujen päivämäärien tunnistamista ja muuntamista päivämäärätyypiksi, jonka PowerShell ymmärtää ja jolla se voi työskennellä. Ohjelmoijat tekevät tämän manipuloidakseen, muotoillakseen, vertailakseen tai lasketakseen päivämääriä, mikä on yleinen tehtävä skripteissä, jotka käsittelevät lokitiedostoja, käyttäjän syötteitä tai datan prosessointia.

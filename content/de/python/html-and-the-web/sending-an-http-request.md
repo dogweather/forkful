@@ -7,9 +7,8 @@ model: gpt-4-1106-preview
 summary: "HTTP-Anfragen sind das Mittel, um mit Webdiensten zu reden. Programmierer\
   \ nutzen sie, um Daten zu holen oder zu senden, APIs zu nutzen oder Webseiten-\u2026"
 title: Einen HTTP-Request senden
+weight: 44
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why? (Was & Warum?)
 HTTP-Anfragen sind das Mittel, um mit Webdiensten zu reden. Programmierer nutzen sie, um Daten zu holen oder zu senden, APIs zu nutzen oder Webseiten-Inhalte zu scrapen.

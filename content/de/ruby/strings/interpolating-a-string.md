@@ -7,9 +7,8 @@ model: gpt-4-1106-preview
 summary: "String-Interpolation in Ruby erm\xF6glicht es, Variablenwerte innerhalb\
   \ eines Strings einzusetzen. Es macht den Code lesbarer und schafft dynamische\u2026"
 title: Zeichenketten interpolieren
+weight: 8
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why? (Was & Warum?)
 String-Interpolation in Ruby ermöglicht es, Variablenwerte innerhalb eines Strings einzusetzen. Es macht den Code lesbarer und schafft dynamische Textausgaben mit weniger Aufwand.

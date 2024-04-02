@@ -13,9 +13,8 @@ summary: "Chuy\u1EC3n \u0111\u1ED5i m\u1ED9t ng\xE0y th\xE0nh chu\u1ED7i trong D
   \ th\xF4ng tin ng\xE0y v\xE0 gi\u1EDD d\u01B0\u1EDBi d\u1EA1ng c\xF3 th\u1EC3 \u0111\
   \u1ECDc \u0111\u01B0\u1EE3c b\u1EDFi con ng\u01B0\u1EDDi, ho\u1EB7c\u2026"
 title: "Chuy\u1EC3n \u0111\u1ED5i m\u1ED9t ng\xE0y th\xE0nh chu\u1ED7i"
+weight: 28
 ---
-
-{{< edit_this_page >}}
 
 ## Lý do và Mục đích?
 

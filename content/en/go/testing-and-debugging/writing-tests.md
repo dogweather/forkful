@@ -8,9 +8,8 @@ model: gpt-4-0125-preview
 summary: "Writing tests in Go involves creating small, manageable pieces of code that\
   \ validate the functionality and behavior of your application. Programmers write\u2026"
 title: Writing tests
+weight: 36
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 

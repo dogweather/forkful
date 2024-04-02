@@ -14,9 +14,8 @@ summary: "Vi\u1EC7c t\u1EA1o m\u1ED9t t\u1EC7p v\u0103n b\u1EA3n l\xE0 qu\xE1 tr
   ng v\u0103n b\u1EA3n. L\u1EADp tr\xECnh vi\xEAn th\u1EF1c hi\u1EC7n vi\u1EC7c n\xE0\
   y \u0111\u1EC3 l\u01B0u tr\u1EEF c\u1EA5u h\xECnh, nh\u1EADt k\xFD, m\xE3\u2026"
 title: "Vi\u1EBFt m\u1ED9t t\u1EC7p v\u0103n b\u1EA3n"
+weight: 24
 ---
-
-{{< edit_this_page >}}
 
 ## Cái gì và Tại sao?
 

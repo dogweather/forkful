@@ -9,9 +9,8 @@ summary: "Calcular uma data no futuro ou no passado \xE9 basicamente ajustar o c
   rio para ver quando ser\xE1 ou foi um certo dia, m\xEAs e ano. Programadores fazem\
   \ isso\u2026"
 title: Calculando uma data no futuro ou passado
+weight: 26
 ---
-
-{{< edit_this_page >}}
 
 ## O que é & Porquê?
 Calcular uma data no futuro ou no passado é basicamente ajustar o calendário para ver quando será ou foi um certo dia, mês e ano. Programadores fazem isso para agendar eventos, verificar prazos ou criar lembretes automáticos.

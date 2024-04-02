@@ -11,9 +11,8 @@ summary: "Parsing av HTML i Arduino-prosjekter handler om \xE5 trekke ut informa
   \ fra nettsider. Programmerere gj\xF8r dette for \xE5 muliggj\xF8re interaksjon\
   \ mellom deres\u2026"
 title: Analysering av HTML
+weight: 43
 ---
-
-{{< edit_this_page >}}
 
 ## Hva & Hvorfor?
 

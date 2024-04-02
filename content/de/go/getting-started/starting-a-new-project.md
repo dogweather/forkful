@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Ein neues Projekt in Go zu starten, umfasst das Einrichten eines Arbeitsbereichs\
   \ und dessen Initialisierung mit den notwendigen Go-Modulen. Programmierer\u2026"
 title: Ein neues Projekt starten
+weight: 1
 ---
-
-{{< edit_this_page >}}
 
 ## Was & Warum?
 

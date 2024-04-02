@@ -10,9 +10,8 @@ model: gpt-4-0125-preview
 summary: "Les tableaux associatifs, plus commun\xE9ment appel\xE9s hash en Ruby, permettent\
   \ d'associer des cl\xE9s uniques \xE0 des valeurs. Ils sont indispensables lorsque\u2026"
 title: Utilisation des tableaux associatifs
+weight: 15
 ---
-
-{{< edit_this_page >}}
 
 ## Quoi et pourquoi ?
 

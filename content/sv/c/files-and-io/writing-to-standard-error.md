@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Att skriva till standardfel i C inneb\xE4r att styra felmeddelanden och\
   \ diagnostisk information till en separat str\xF6m fr\xE5n programmets huvudutdata.\u2026"
 title: Skriva till standardfel
+weight: 25
 ---
-
-{{< edit_this_page >}}
 
 ## Vad & Varför?
 

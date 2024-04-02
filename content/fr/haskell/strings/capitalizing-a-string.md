@@ -11,9 +11,8 @@ summary: "Mettre une cha\xEEne en capitale implique de transformer la premi\xE8r
   \ lettre d'une cha\xEEne donn\xE9e en majuscule tout en s'assurant que les autres\
   \ lettres\u2026"
 title: "Mettre en majuscule une cha\xEEne"
+weight: 2
 ---
-
-{{< edit_this_page >}}
 
 ## Quoi & Pourquoi ?
 Mettre une chaîne en capitale implique de transformer la première lettre d'une chaîne donnée en majuscule tout en s'assurant que les autres lettres restent en minuscule. Les programmeurs font cela pour formater les sorties, adhérer à la correction grammaticale dans les textes, ou améliorer la lisibilité des données générées.

@@ -9,9 +9,8 @@ summary: "Koodin j\xE4rjest\xE4minen funktioihin jakaa skriptisi uudelleenk\xE4y
   viin osiin. Kaikki on kiinni siit\xE4, ett\xE4 koodisi on siisti\xE4, hallittavaa\
   \ ja v\xE4hemm\xE4n\u2026"
 title: "Koodin j\xE4rjest\xE4minen funktioihin"
+weight: 18
 ---
-
-{{< edit_this_page >}}
 
 ## Mikä ja miksi?
 Koodin järjestäminen funktioihin jakaa skriptisi uudelleenkäytettäviin osiin. Kaikki on kiinni siitä, että koodisi on siistiä, hallittavaa ja vähemmän virhealtista. Modulaarinen koodi on mahtavaa, koska se säästää aikaa, pitää järkesi kasassa ja yksinkertaistaa vianetsintää sekä yksikkötestausta.

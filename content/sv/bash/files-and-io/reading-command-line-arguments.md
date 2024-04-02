@@ -9,9 +9,8 @@ summary: "Att l\xE4sa kommandoradsargument \xE4r att f\xE5nga de v\xE4rden som a
   nds n\xE4r du k\xF6r ett script. Det l\xE5ter dig anpassa scriptets beteende utan\
   \ att \xE4ndra koden."
 title: "L\xE4sa in kommandoradsargument"
+weight: 23
 ---
-
-{{< edit_this_page >}}
 
 ## Vad & Varför?
 Att läsa kommandoradsargument är att fånga de värden som används när du kör ett script. Det låter dig anpassa scriptets beteende utan att ändra koden.

@@ -15,9 +15,8 @@ summary: "\u5728Arduino\u4E0A\u5904\u7406XML\u6D89\u53CA\u89E3\u6790\u548C\u64CD
   \u670D\u52A1\u96C6\u6210\uFF0C\u6216\u8005\u4EE5\u7ED3\u6784\u5316\u3001\u53EF\u8BFB\
   \u7684\u683C\u5F0F\u5B58\u50A8\u6570\u636E\u3002"
 title: "\u5904\u7406XML"
+weight: 40
 ---
-
-{{< edit_this_page >}}
 
 ## 什么 & 为什么？
 在Arduino上处理XML涉及解析和操作XML数据，这些数据通常来自于网络API或配置文件。程序员这样做是为了与使用XML进行数据交换的服务集成，或者以结构化、可读的格式存储数据。

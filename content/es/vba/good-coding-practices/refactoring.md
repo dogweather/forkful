@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "El refactoring en programaci\xF3n implica modificar la estructura del c\xF3\
   digo sin cambiar su comportamiento, para mejorar aspectos como la legibilidad,\u2026"
 title: "Refactorizaci\xF3n"
+weight: 19
 ---
-
-{{< edit_this_page >}}
 
 ## ¿Qué y por qué?
 

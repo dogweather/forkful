@@ -10,9 +10,8 @@ model: gpt-4-0125-preview
 summary: "Att skriva till standardfel (stderr) i Ruby handlar om att dirigera felmeddelanden\
   \ eller diagnostik till en separat utmatningsstr\xF6m, skild fr\xE5n\u2026"
 title: Skriva till standardfel
+weight: 25
 ---
-
-{{< edit_this_page >}}
 
 ## Vad & Varför?
 Att skriva till standardfel (stderr) i Ruby handlar om att dirigera felmeddelanden eller diagnostik till en separat utmatningsström, skild från standardutmatningen (stdout). Programmerare gör detta för att skilja regelbunden programutmatning från fel och felsökningsinformation, vilket underlättar diagnos av problem och parsning av loggar.

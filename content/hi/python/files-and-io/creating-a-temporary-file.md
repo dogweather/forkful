@@ -9,9 +9,8 @@ summary: "Temporary file, yaani asthayi file, ek aisi file hai jo aapko data ke 
   \ storage ke liye chahiye hoti hai. Programmers ise test data, caching, ya\u2026"
 title: "\u0905\u0938\u094D\u0925\u093E\u092F\u0940 \u092B\u093E\u0907\u0932 \u092C\
   \u0928\u093E\u0928\u093E"
+weight: 21
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why? (क्या और क्यों?)
 

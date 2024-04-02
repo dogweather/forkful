@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Extraer subcadenas en Visual Basic para Aplicaciones (VBA) implica aislar\
   \ partes espec\xEDficas de una cadena basadas en criterios dados. Los programadores\u2026"
 title: "Extracci\xF3n de subcadenas"
+weight: 6
 ---
-
-{{< edit_this_page >}}
 
 ## Qué y Por Qué?
 

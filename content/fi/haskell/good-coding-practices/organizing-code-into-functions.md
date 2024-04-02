@@ -9,9 +9,8 @@ summary: "Koodin j\xE4rjest\xE4minen funktioihin Haskellissa tarkoittaa koodin p
   \ uudelleenk\xE4ytett\xE4viin, nimettyihin lohkoihin. Miksi? Se pit\xE4\xE4 koodisi\
   \ DRY:n\xE4\u2026"
 title: "Koodin j\xE4rjest\xE4minen funktioihin"
+weight: 18
 ---
-
-{{< edit_this_page >}}
 
 ## Mikä & Miksi?
 Koodin järjestäminen funktioihin Haskellissa tarkoittaa koodin pilkkomista uudelleenkäytettäviin, nimettyihin lohkoihin. Miksi? Se pitää koodisi DRY:nä (Don't Repeat Yourself, Älä toista itseäsi), tekee siitä luettavampaa ja helpommin debugattavaa.

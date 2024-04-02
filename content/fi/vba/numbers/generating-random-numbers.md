@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Satunnaislukujen tuottaminen Visual Basic for Applications (VBA) -ohjelmissa\
   \ mahdollistaa prosessien, joissa on sattumanvaraisuuden tai muuttuvuuden\u2026"
 title: Sattumanvaraisten numeroiden generointi
+weight: 12
 ---
-
-{{< edit_this_page >}}
 
 ## Mikä ja miksi?
 

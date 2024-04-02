@@ -9,9 +9,8 @@ summary: "Liczby zespolone, sk\u0142adaj\u0105ce si\u0119 z cz\u0119\u015Bci rze
   \ i urojonej (jak 3+4i), s\u0105 podstaw\u0105 w in\u017Cynierii i fizyce. Programi\u015B\
   ci pracuj\u0105 z nimi przy\u2026"
 title: Praca z liczbami zespolonymi
+weight: 14
 ---
-
-{{< edit_this_page >}}
 
 ## Co i dlaczego?
 Liczby zespolone, składające się z części rzeczywistej i urojonej (jak 3+4i), są podstawą w inżynierii i fizyce. Programiści pracują z nimi przy symulacjach, przetwarzaniu sygnałów i rozwiązywaniu równań, które nie współgrają tylko z liczbami rzeczywistymi.

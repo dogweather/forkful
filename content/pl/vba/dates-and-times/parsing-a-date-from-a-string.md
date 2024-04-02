@@ -11,9 +11,8 @@ summary: "Parsowanie daty z ci\u0105gu znak\xF3w w Visual Basic for Applications
   \ polega na konwersji tekstu, kt\xF3ry reprezentuje dat\u0119, na typ danych daty.\
   \ Programi\u015Bci\u2026"
 title: "Analiza sk\u0142adniowa daty z ci\u0105gu znak\xF3w"
+weight: 30
 ---
-
-{{< edit_this_page >}}
 
 ## Co i dlaczego?
 

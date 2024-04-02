@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Buscar y reemplazar texto en Dart implica examinar cadenas para encontrar\
   \ ciertos patrones o secuencias de caracteres y sustituirlos con nuevo contenido.\u2026"
 title: Buscando y reemplazando texto
+weight: 10
 ---
-
-{{< edit_this_page >}}
 
 ## Qué y Por Qué?
 

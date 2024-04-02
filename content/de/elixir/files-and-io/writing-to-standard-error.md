@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Das Schreiben auf Standardfehler (stderr) in Elixir ist eine Methode, Fehlermeldungen\
   \ und Diagnosen getrennt von der Hauptausgabe (stdout) zu lenken.\u2026"
 title: Schreiben auf Standardfehler
+weight: 25
 ---
-
-{{< edit_this_page >}}
 
 ## Was & Warum?
 

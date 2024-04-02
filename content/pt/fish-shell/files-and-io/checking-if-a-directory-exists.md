@@ -11,9 +11,8 @@ summary: "Verificar se um diret\xF3rio existe no Fish Shell permite que scripts 
   \ decis\xF5es com base na presen\xE7a ou aus\xEAncia de estruturas de diret\xF3\
   rios,\u2026"
 title: "Verificando se um diret\xF3rio existe"
+weight: 20
 ---
-
-{{< edit_this_page >}}
 
 ## O Que & Por Que?
 Verificar se um diretório existe no Fish Shell permite que scripts tomem decisões com base na presença ou ausência de estruturas de diretórios, possibilitando tarefas como operações condicionais de arquivos, registro em logs ou configuração do ambiente. Essa técnica é crucial para escrever scripts robustos que interagem com o sistema de arquivos de uma maneira previsível.

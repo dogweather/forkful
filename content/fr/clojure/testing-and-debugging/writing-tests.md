@@ -10,9 +10,8 @@ model: gpt-4-0125-preview
 summary: "\xC9crire des tests en Clojure, tout comme dans d'autres langages de programmation,\
   \ implique de cr\xE9er du code d\xE9di\xE9 pour v\xE9rifier que votre code principal\u2026"
 title: "R\xE9daction de tests"
+weight: 36
 ---
-
-{{< edit_this_page >}}
 
 ## Quoi & Pourquoi ?
 Écrire des tests en Clojure, tout comme dans d'autres langages de programmation, implique de créer du code dédié pour vérifier que votre code principal fonctionne comme prévu. Cela aide à garantir la correction, à faciliter le refactoring et à améliorer la stabilité du code.

@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Escribir un archivo de texto en Bash te permite automatizar el almacenamiento\
   \ de datos, el registro, la configuraci\xF3n de ajustes, y m\xE1s. Es una habilidad\u2026"
 title: Escribiendo un archivo de texto
+weight: 24
 ---
-
-{{< edit_this_page >}}
 
 ## Qué y Por Qué?
 

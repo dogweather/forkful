@@ -8,9 +8,8 @@ model: gpt-4-1106-preview
 summary: "Stampare output di debug significa scrivere informazioni a schermo per capire\
   \ cosa sta succedendo nel tuo codice. I programmatori lo fanno per trovare e\u2026"
 title: Stampa dell'output di debug
+weight: 33
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 Stampare output di debug significa scrivere informazioni a schermo per capire cosa sta succedendo nel tuo codice. I programmatori lo fanno per trovare e risolvere errori velocemente.

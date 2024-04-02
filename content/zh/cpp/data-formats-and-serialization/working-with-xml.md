@@ -13,9 +13,8 @@ summary: "\u4F7F\u7528XML\u6D89\u53CA\u89E3\u6790\u3001\u521B\u5EFA\u548C\u64CD\
   \u6362\u3001\u914D\u7F6E\u7B49\u4EFB\u52A1\uFF0C\u8FD9\u5F52\u529F\u4E8E\u5176\u5E73\
   \u53F0\u4E2D\u7ACB\u7684\u7279\u6027\u3002"
 title: "\u5904\u7406XML"
+weight: 40
 ---
-
-{{< edit_this_page >}}
 
 ## 什么及为什么？
 使用XML涉及解析、创建和操作XML（可扩展标记语言）数据。程序员处理XML以处理结构化数据交换、配置等任务，这归功于其平台中立的特性。

@@ -8,9 +8,8 @@ model: gpt-4-1106-preview
 summary: "In Swift, printing debug output means displaying data in a debug area, typically\
   \ within an IDE or a console, for monitoring what's happening live in your\u2026"
 title: Printing debug output
+weight: 33
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 

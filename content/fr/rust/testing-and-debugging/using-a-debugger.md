@@ -1,14 +1,15 @@
 ---
 date: 2024-01-26 04:10:01.993126-07:00
-description: "Utiliser un d\xE9bogueur, c'est comme se donner une vision aux rayons\
-  \ X pour jeter un coup d'\u0153il \xE0 l'ex\xE9cution de votre code. Les programmeurs\
-  \ le font pour\u2026"
+description: "Rust prend en charge divers d\xE9bogueurs, mais un courant est `gdb`\
+  \ pour GNU/Linux ou `lldb` pour macOS. Vous pourriez \xE9galement utiliser `rust-gdb`\
+  \ ou\u2026"
 lastmod: '2024-03-13T22:44:57.486607-06:00'
 model: gpt-4-0125-preview
-summary: "Utiliser un d\xE9bogueur, c'est comme se donner une vision aux rayons X\
-  \ pour jeter un coup d'\u0153il \xE0 l'ex\xE9cution de votre code. Les programmeurs\
-  \ le font pour\u2026"
+summary: "Rust prend en charge divers d\xE9bogueurs, mais un courant est `gdb` pour\
+  \ GNU/Linux ou `lldb` pour macOS. Vous pourriez \xE9galement utiliser `rust-gdb`\
+  \ ou\u2026"
 title: "Utilisation d'un d\xE9bogueur"
+weight: 35
 ---
 
 ## Comment faire :

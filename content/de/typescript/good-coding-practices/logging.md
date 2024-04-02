@@ -8,9 +8,8 @@ model: gpt-4-1106-preview
 summary: "Logging ist der Prozess des Aufzeichnens von Ereignissen, Fehlern und anderen\
   \ wichtigen Informationen w\xE4hrend der Ausf\xFChrung eines Programms auf ein\u2026"
 title: Protokollierung
+weight: 17
 ---
-
-{{< edit_this_page >}}
 
 ## Was & Warum?
 

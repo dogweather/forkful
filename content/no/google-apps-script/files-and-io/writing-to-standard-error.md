@@ -11,9 +11,8 @@ summary: "\xC5 skrive til standardfeil (stderr) i programmeringsspr\xE5k handler
   \ \xE5 dirigere feilmeldinger og diagnostikk til en separat str\xF8m, bort fra standard\
   \ utgang\u2026"
 title: Skrive til standardfeil
+weight: 25
 ---
-
-{{< edit_this_page >}}
 
 ## Hva & Hvorfor?
 

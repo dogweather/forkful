@@ -9,9 +9,8 @@ summary: "Loggf\xF8ring er prosessen med \xE5 registrere hendelser i en applikas
   \ mens et program kj\xF8rer, og gir en sporlogg for analyse etter hendelsen og overv\xE5\
   kning\u2026"
 title: "Loggf\xF8ring"
+weight: 17
 ---
-
-{{< edit_this_page >}}
 
 ## Hva & Hvorfor?
 Loggføring er prosessen med å registrere hendelser i en applikasjon mens et program kjører, og gir en sporlogg for analyse etter hendelsen og overvåkning i sanntid. Utviklere gjør dette fordi det hjelper med feilsøking, overvåke ytelse, og spore brukerhandlinger for sikkerhet og analyse.

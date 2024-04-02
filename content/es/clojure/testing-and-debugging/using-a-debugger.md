@@ -1,14 +1,15 @@
 ---
 date: 2024-01-26 03:48:33.010311-07:00
-description: "Usar un depurador significa que te est\xE1s equipando con una lupa para\
-  \ escudri\xF1ar tu c\xF3digo. Los programadores hacen esto para aplastar errores,\
-  \ entender el\u2026"
+description: "Clojure se apoya en la M\xE1quina Virtual de Java (JVM), por lo que\
+  \ mucha de la depuraci\xF3n ocurre con herramientas de Java. Una de estas herramientas\
+  \ es\u2026"
 lastmod: '2024-03-13T22:44:58.661314-06:00'
 model: gpt-4-0125-preview
-summary: "Usar un depurador significa que te est\xE1s equipando con una lupa para\
-  \ escudri\xF1ar tu c\xF3digo. Los programadores hacen esto para aplastar errores,\
-  \ entender el\u2026"
+summary: "Clojure se apoya en la M\xE1quina Virtual de Java (JVM), por lo que mucha\
+  \ de la depuraci\xF3n ocurre con herramientas de Java. Una de estas herramientas\
+  \ es\u2026"
 title: Usando un depurador
+weight: 35
 ---
 
 ## Cómo hacerlo:

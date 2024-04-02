@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Escrever testes em C envolve criar programas ou fun\xE7\xF5es auxiliares\
   \ menores que verificam automaticamente a funcionalidade do seu c\xF3digo. Os programadores\u2026"
 title: Escrevendo testes
+weight: 36
 ---
-
-{{< edit_this_page >}}
 
 ## O Quê & Por Quê?
 Escrever testes em C envolve criar programas ou funções auxiliares menores que verificam automaticamente a funcionalidade do seu código. Os programadores fazem isso para garantir que seu software funcione conforme esperado, para capturar bugs precocemente e facilitar futuras modificações no código sem efeitos colaterais indesejados.

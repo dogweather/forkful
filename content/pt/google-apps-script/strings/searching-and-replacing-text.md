@@ -10,9 +10,8 @@ model: gpt-4-0125-preview
 summary: "Buscar e substituir texto em Google Apps Script envolve identificar programaticamente\
   \ strings espec\xEDficas em um documento, planilha ou qualquer outro tipo\u2026"
 title: Pesquisando e substituindo texto
+weight: 10
 ---
-
-{{< edit_this_page >}}
 
 ## O Que & Por Quê?
 

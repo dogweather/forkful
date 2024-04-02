@@ -9,9 +9,8 @@ summary: "Sending HTTP requests is a way to communicate with web servers, fetchi
   \ or sending data as needed. Programmers use HTTP requests to interact with APIs\
   \ or\u2026"
 title: Sending an HTTP request
+weight: 44
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 

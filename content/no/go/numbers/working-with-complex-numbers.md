@@ -11,9 +11,8 @@ summary: "\xC5 arbeide med komplekse tall i programmering inneb\xE6rer \xE5 mani
   \ tall som har b\xE5de en reell og en imagin\xE6r del, som typisk uttrykkes som\
   \ `a + bi`.\u2026"
 title: "\xC5 Arbeide med Komplekse Tall"
+weight: 14
 ---
-
-{{< edit_this_page >}}
 
 ## Hva & Hvorfor?
 

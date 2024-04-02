@@ -21,9 +21,8 @@ summary: "\uB85C\uADF8(Logging)\uB294 \uAE30\uBCF8\uC801\uC73C\uB85C \uCF54\uB4D
   \uC5B4\uB098\uB294\uC9C0 \uCD94\uC801\uD558\uACE0, \uBB38\uC81C\uB97C \uB514\uBC84\
   \uADF8\uD558\uBA70, \uB098\uC911\uC5D0\u2026"
 title: "\uB85C\uAE45"
+weight: 17
 ---
-
-{{< edit_this_page >}}
 
 ## 무엇인가 & 왜 사용하나?
 

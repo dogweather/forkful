@@ -11,9 +11,8 @@ summary: "Gli array associativi in Lua sono come strette di mano segrete per i d
   \ \u2014 invece di avere solo numeri che si allineano diligentemente per indice,\
   \ le tue\u2026"
 title: Utilizzo di array associativi
+weight: 15
 ---
-
-{{< edit_this_page >}}
 
 ## Cosa & Perché?
 

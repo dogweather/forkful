@@ -11,9 +11,8 @@ summary: "Regul\xE6re uttrykk (regex) er sekvenser av tegn som former et s\xF8ke
   nster, prim\xE6rt brukt for strengs\xF8king og manipulasjon. Programmerere utnytter\
   \ regex i\u2026"
 title: "Bruke regul\xE6re uttrykk"
+weight: 11
 ---
-
-{{< edit_this_page >}}
 
 ## Hva & Hvorfor?
 

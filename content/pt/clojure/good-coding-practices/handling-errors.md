@@ -9,9 +9,8 @@ summary: "O tratamento de erros \xE9 sobre gerenciar o inesperado em programas\u
   como um seguran\xE7a lidando com desordeiros. Programadores gostam de fluidez; o\
   \ tratamento\u2026"
 title: Tratamento de erros
+weight: 16
 ---
-
-{{< edit_this_page >}}
 
 ## O Que & Por Quê?
 O tratamento de erros é sobre gerenciar o inesperado em programas—como um segurança lidando com desordeiros. Programadores gostam de fluidez; o tratamento de erros ajuda a manter os problemas sob controle, garantindo que seu código não tropece e caia quando enfrentar o inesperado.

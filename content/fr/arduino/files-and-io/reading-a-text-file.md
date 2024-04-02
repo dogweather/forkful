@@ -9,9 +9,8 @@ summary: "Lire un fichier texte, c'est r\xE9cup\xE9rer son contenu pour l'utilis
   \ dans votre programme. Les programmeurs font \xE7a pour acc\xE9der aux donn\xE9\
   es, configurer des\u2026"
 title: Lecture d'un fichier texte
+weight: 22
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why? (Quoi et Pourquoi ?)
 

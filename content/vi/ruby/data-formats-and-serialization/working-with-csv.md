@@ -13,9 +13,8 @@ summary: "T\u1EC7p CSV (Comma-Separated Values - Gi\xE1 tr\u1ECB ph\xE2n c\xE1ch
   i d\u1EA1ng v\u0103n b\u1EA3n thu\u1EA7n t\xFAy. C\xE1c l\u1EADp tr\xECnh vi\xEA\
   n s\u1EED d\u1EE5ng CSV \u0111\u1EC3\u2026"
 title: "L\xE0m vi\u1EC7c v\u1EDBi CSV"
+weight: 37
 ---
-
-{{< edit_this_page >}}
 
 ## Cái gì & Tại sao?
 Tệp CSV (Comma-Separated Values - Giá trị phân cách bằng dấu phẩy) biểu diễn dữ liệu bảng dưới dạng văn bản thuần túy. Các lập trình viên sử dụng CSV để nhập và xuất bộ dữ liệu bởi vì chúng được hỗ trợ rộng rãi, dễ đọc và dễ dàng phân tích cú pháp.

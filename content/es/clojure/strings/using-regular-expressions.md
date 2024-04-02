@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Las expresiones regulares, una herramienta poderosa para el emparejamiento\
   \ de patrones y la manipulaci\xF3n de datos, son esenciales en tareas de\u2026"
 title: Usando expresiones regulares
+weight: 11
 ---
-
-{{< edit_this_page >}}
 
 ## Qué y Por Qué?
 Las expresiones regulares, una herramienta poderosa para el emparejamiento de patrones y la manipulación de datos, son esenciales en tareas de procesamiento de texto como validar entradas, buscar y reemplazar texto. Los programadores las utilizan extensamente para manejar tareas de análisis y validación de datos complejos de manera eficiente y sucinta.

@@ -9,9 +9,8 @@ summary: "Muunnetaan p\xE4iv\xE4m\xE4\xE4r\xE4 merkkijonoksi. Se puree tiedot ih
   \ luettavaan muotoon tai valmistelee ne tallennusta varten. Tiedon esitt\xE4minen\
   \ tietyss\xE4\u2026"
 title: "P\xE4iv\xE4m\xE4\xE4r\xE4n muuntaminen merkkijonoksi"
+weight: 28
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why? (Mitä & Miksi?)
 Muunnetaan päivämäärä merkkijonoksi. Se puree tiedot ihmisen luettavaan muotoon tai valmistelee ne tallennusta varten. Tiedon esittäminen tietyssä muodossa on tärkeää raporteissa, lokitiedostoissa ja käyttöliittymissä.

@@ -10,9 +10,8 @@ model: gpt-4-0125-preview
 summary: "In Elixir, gli array associativi, chiamati Mappe, sono collezioni di coppie\
   \ chiave-valore dove una chiave unica punta a un valore. Sono estremamente utili\u2026"
 title: Utilizzo di array associativi
+weight: 15
 ---
-
-{{< edit_this_page >}}
 
 ## Cosa & Perché?
 

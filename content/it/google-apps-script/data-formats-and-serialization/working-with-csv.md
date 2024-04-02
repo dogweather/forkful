@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Lavorare con file CSV (Comma-Separated Values - Valori Separati da Virgola)\
   \ in Google Apps Script comporta la lettura, modifica e scrittura di file di\u2026"
 title: Lavorare con CSV
+weight: 37
 ---
-
-{{< edit_this_page >}}
 
 ## Cosa & Perché?
 

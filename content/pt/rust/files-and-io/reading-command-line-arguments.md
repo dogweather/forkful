@@ -7,9 +7,8 @@ model: gpt-4-1106-preview
 summary: "Ler argumentos da linha de comando permite que programas em Rust recebam\
   \ inputs externos ao serem executados. Programadores utilizam essa t\xE9cnica para\u2026"
 title: Lendo argumentos da linha de comando
+weight: 23
 ---
-
-{{< edit_this_page >}}
 
 ## O Que & Porquê?
 Ler argumentos da linha de comando permite que programas em Rust recebam inputs externos ao serem executados. Programadores utilizam essa técnica para tornar os seus programas mais flexíveis e interativos, adaptando o comportamento baseado nos inputs do usuário.

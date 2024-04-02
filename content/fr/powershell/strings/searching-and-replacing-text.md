@@ -8,9 +8,8 @@ model: gpt-4-1106-preview
 summary: "La recherche et le remplacement de texte permettent de modifier des cha\xEE\
   nes en trouvant des motifs sp\xE9cifiques et en les substituant par d'autres. C'est\u2026"
 title: Recherche et remplacement de texte
+weight: 10
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why? (Quoi & Pourquoi ?)
 La recherche et le remplacement de texte permettent de modifier des chaînes en trouvant des motifs spécifiques et en les substituant par d'autres. C'est essentiel pour corriger des erreurs, mettre à jour des informations ou formater des données en masse.

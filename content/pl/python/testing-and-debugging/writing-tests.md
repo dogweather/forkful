@@ -11,9 +11,8 @@ summary: "Pisanie test\xF3w w Pythonie polega na tworzeniu automatycznych skrypt
   w, maj\u0105cych na celu zweryfikowanie poprawno\u015Bci dzia\u0142ania kodu. Programi\u015B\
   ci robi\u0105 to,\u2026"
 title: "Pisanie test\xF3w"
+weight: 36
 ---
-
-{{< edit_this_page >}}
 
 ## Co i dlaczego?
 Pisanie testów w Pythonie polega na tworzeniu automatycznych skryptów, mających na celu zweryfikowanie poprawności działania kodu. Programiści robią to, aby upewnić się, że ich funkcje lub klasy działają zgodnie z oczekiwaniami w różnych warunkach, co pomaga wcześnie wyłapać błędy oraz ułatwia późniejsze konserwowanie i refaktoryzowanie kodu.

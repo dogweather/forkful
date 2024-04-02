@@ -7,9 +7,8 @@ model: gpt-4-0125-preview
 summary: "Die Verwendung einer interaktiven Shell oder einer Read-Eval-Print-Schleife\
   \ (REPL) erm\xF6glicht es Ihnen, interaktiv zu programmieren. Programmierer nutzen\u2026"
 title: Nutzung einer interaktiven Shell (REPL)
+weight: 34
 ---
-
-{{< edit_this_page >}}
 
 ## Was & Warum?
 Die Verwendung einer interaktiven Shell oder einer Read-Eval-Print-Schleife (REPL) ermöglicht es Ihnen, interaktiv zu programmieren. Programmierer nutzen sie, um schnell Swift-Schnipsel zu testen, zu debuggen oder die Sprache zu lernen.

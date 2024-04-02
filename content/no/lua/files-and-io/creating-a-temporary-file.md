@@ -9,9 +9,8 @@ summary: "\xC5 lage en midlertidig fil betyr \xE5 skape en fil som er ment for k
   \ bruk. Programmerere gj\xF8r dette for \xE5 lagre data midlertidig uten \xE5 p\xE5\
   virke den\u2026"
 title: Opprette en midlertidig fil
+weight: 21
 ---
-
-{{< edit_this_page >}}
 
 ## Hva & Hvorfor?
 Å lage en midlertidig fil betyr å skape en fil som er ment for kortvarig bruk. Programmerere gjør dette for å lagre data midlertidig uten å påvirke den permanente lagringen eller bruke overflødig diskplass.

@@ -11,9 +11,8 @@ summary: "Buscar a data atual em Python \xE9 uma opera\xE7\xE3o fundamental para
   \ aplica\xE7\xF5es, como registros (logging), an\xE1lise de dados e tomada de decis\xF5\
   es baseadas\u2026"
 title: Obtendo a data atual
+weight: 29
 ---
-
-{{< edit_this_page >}}
 
 ## O Que & Por Que?
 

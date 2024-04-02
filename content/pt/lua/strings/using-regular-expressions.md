@@ -11,9 +11,8 @@ summary: "Express\xF5es regulares em programa\xE7\xE3o permitem a correspond\xEA
   \ e manipula\xE7\xE3o de strings baseadas em padr\xF5es espec\xEDficos. Programadores\
   \ as usam para\u2026"
 title: "Usando express\xF5es regulares"
+weight: 11
 ---
-
-{{< edit_this_page >}}
 
 ## O Que & Por Que?
 

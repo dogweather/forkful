@@ -7,9 +7,8 @@ model: gpt-4-0125-preview
 summary: "Generare numeri casuali in Rust comporta l'utilizzo di librerie per produrre\
   \ valori numerici imprevedibili, cosa indispensabile per compiti che vanno\u2026"
 title: Generazione di numeri casuali
+weight: 12
 ---
-
-{{< edit_this_page >}}
 
 ## Cosa & Perché?
 

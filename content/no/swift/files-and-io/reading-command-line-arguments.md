@@ -8,9 +8,8 @@ model: gpt-4-1106-preview
 summary: "Lesing av kommandolinjeargumenter lar programmer reagere p\xE5 input de\
   \ f\xE5r n\xE5r de startes fra terminalen. Programmerere bruker dette til \xE5 tilpasse\u2026"
 title: Lese kommandolinjeargumenter
+weight: 23
 ---
-
-{{< edit_this_page >}}
 
 ## Hva & Hvorfor?
 Lesing av kommandolinjeargumenter lar programmer reagere på input de får når de startes fra terminalen. Programmerere bruker dette til å tilpasse kjøringen av programmet uten å hardkode verdier.

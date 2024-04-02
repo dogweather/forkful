@@ -11,9 +11,8 @@ summary: "\xC9crire un fichier texte en Kotlin implique la cr\xE9ation d'un fich
   \ et l'insertion de contenu textuel \xE0 l'int\xE9rieur, une t\xE2che courante pour\
   \ le stockage\u2026"
 title: "R\xE9diger un fichier texte"
+weight: 24
 ---
-
-{{< edit_this_page >}}
 
 ## Quoi & Pourquoi ?
 Écrire un fichier texte en Kotlin implique la création d'un fichier et l'insertion de contenu textuel à l'intérieur, une tâche courante pour le stockage de données, la journalisation ou les paramètres de configuration. Les programmeurs le font pour sauvegarder et manipuler des données en dehors de l'espace mémoire volatile, assurant ainsi la persistance à travers les sessions.

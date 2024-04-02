@@ -9,9 +9,8 @@ summary: "Str\xE4ngsammanslagning inneb\xE4r att man kombinerar tv\xE5 eller fle
   \ textstr\xE4ngar till en enda. Programmerare g\xF6r detta f\xF6r att bygga upp\
   \ meddelanden, skapa\u2026"
 title: "Sammanslagning av str\xE4ngar"
+weight: 3
 ---
-
-{{< edit_this_page >}}
 
 ## Vad & Varför?
 Strängsammanslagning innebär att man kombinerar två eller flera textsträngar till en enda. Programmerare gör detta för att bygga upp meddelanden, skapa dynamiska kommandon eller samla indata i en läsbar format.

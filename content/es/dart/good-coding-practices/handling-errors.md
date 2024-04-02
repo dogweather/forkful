@@ -11,9 +11,8 @@ summary: "Manejar errores en Dart se trata de anticipar y gestionar las excepcio
   \ que surgen durante la ejecuci\xF3n del programa para mejorar la confiabilidad\
   \ y la\u2026"
 title: Manejo de errores
+weight: 16
 ---
-
-{{< edit_this_page >}}
 
 ## Qué y Por Qué
 Manejar errores en Dart se trata de anticipar y gestionar las excepciones que surgen durante la ejecución del programa para mejorar la confiabilidad y la usabilidad. Los programadores implementan el manejo de errores para prevenir fallos y proporcionar retroalimentación significativa a los usuarios, asegurando una experiencia de aplicación más suave y segura.

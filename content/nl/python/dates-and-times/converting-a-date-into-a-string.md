@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Datums omzetten naar strings verandert een datumobject in een tekstformaat.\
   \ Programmeurs doen dit om datums op een gebruikersvriendelijke manier weer te\u2026"
 title: Een datum converteren naar een string
+weight: 28
 ---
-
-{{< edit_this_page >}}
 
 ## Wat & Waarom?
 Datums omzetten naar strings verandert een datumobject in een tekstformaat. Programmeurs doen dit om datums op een gebruikersvriendelijke manier weer te geven of om ze voor te bereiden voor opslag in op tekst gebaseerde formaten zoals CSV of JSON.

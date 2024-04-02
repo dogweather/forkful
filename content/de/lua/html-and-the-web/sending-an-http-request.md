@@ -8,9 +8,8 @@ model: gpt-4-1106-preview
 summary: "HTTP-Anfragen sind der Weg, wie Programme auf das Web zugreifen; sie holen\
   \ oder senden Daten an Server. Programmierer nutzen diese, um mit Web-Diensten zu\u2026"
 title: Einen HTTP-Request senden
+weight: 44
 ---
-
-{{< edit_this_page >}}
 
 ## Was & Warum?
 HTTP-Anfragen sind der Weg, wie Programme auf das Web zugreifen; sie holen oder senden Daten an Server. Programmierer nutzen diese, um mit Web-Diensten zu interagieren, Daten zu synchronisieren oder Inhalte dynamisch zu beziehen.

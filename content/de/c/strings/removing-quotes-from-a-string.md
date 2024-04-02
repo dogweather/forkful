@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Das Entfernen von Anf\xFChrungszeichen aus einem String in C beinhaltet\
   \ das Extrahieren des Textinhalts ohne die einschlie\xDFenden einfachen (' ') oder\u2026"
 title: "Anf\xFChrungszeichen aus einem String entfernen"
+weight: 9
 ---
-
-{{< edit_this_page >}}
 
 ## Was & Warum?
 

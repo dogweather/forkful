@@ -11,9 +11,8 @@ summary: "Inviare una richiesta HTTP con autenticazione di base comporta l'aggiu
   \ di un nome utente e di una password a una richiesta per verificare l'identit\xE0\
   \u2026"
 title: Inviare una richiesta HTTP con autenticazione di base
+weight: 45
 ---
-
-{{< edit_this_page >}}
 
 ## Cosa & Perché?
 

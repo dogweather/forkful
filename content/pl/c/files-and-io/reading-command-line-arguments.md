@@ -11,9 +11,8 @@ summary: "W programowaniu w j\u0119zyku C, odczytywanie argument\xF3w linii pole
   \ pozwala programom na przyjmowanie danych wej\u015Bciowych bezpo\u015Brednio z\
   \ terminala,\u2026"
 title: "Czytanie argument\xF3w z linii polece\u0144"
+weight: 23
 ---
-
-{{< edit_this_page >}}
 
 ## Co i dlaczego?
 

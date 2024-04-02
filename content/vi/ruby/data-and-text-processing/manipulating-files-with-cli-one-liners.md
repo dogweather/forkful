@@ -14,9 +14,8 @@ summary: "Thao t\xE1c v\u1EDBi t\u1EC7p b\u1EB1ng d\xF2ng l\u1EC7nh CLI trong Ru
   ng c\xE1c script Ruby. \u0110\xE2y\u2026"
 title: "Thao t\xE1c v\u1EDBi c\xE1c t\u1EC7p tin b\u1EB1ng c\xE1c l\u1EC7nh CLI ch\u1EC9\
   \ m\u1ED9t d\xF2ng"
+weight: 31
 ---
-
-{{< edit_this_page >}}
 
 ## Cái gì & Tại sao?
 

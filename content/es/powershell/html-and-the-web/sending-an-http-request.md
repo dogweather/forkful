@@ -9,9 +9,8 @@ summary: "Enviar una solicitud HTTP permite a tu programa hablar con otros siste
   \ a trav\xE9s de la web; es como enviar un mensaje que pide datos o que ejecute\
   \ una\u2026"
 title: Enviando una solicitud http
+weight: 44
 ---
-
-{{< edit_this_page >}}
 
 ## ¿Qué y por qué?
 Enviar una solicitud HTTP permite a tu programa hablar con otros sistemas a través de la web; es como enviar un mensaje que pide datos o que ejecute una acción. Los programadores lo hacen para interactuar con servicios web, APIs o para comunicarse entre distintas partes de una aplicación distribuida.

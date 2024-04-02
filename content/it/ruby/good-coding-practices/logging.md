@@ -8,9 +8,8 @@ model: gpt-4-1106-preview
 summary: "Il logging nella programmazione \xE8 come tenere un diario per la tua applicazione.\
   \ \xC8 la registrazione sistematica di eventi, messaggi e punti dati che ti\u2026"
 title: "Registrazione delle Attivit\xE0 (Logging)"
+weight: 17
 ---
-
-{{< edit_this_page >}}
 
 ## Cosa & Perché?
 Il logging nella programmazione è come tenere un diario per la tua applicazione. È la registrazione sistematica di eventi, messaggi e punti dati che ti danno una visione di ciò che la tua applicazione sta facendo e di come si sta comportando. I programmatori fanno logging perché è cruciale per il debugging, il monitoraggio della salute dell'applicazione e l'ottenimento di indizi su potenziali problemi prima che si trasformino in problemi reali.

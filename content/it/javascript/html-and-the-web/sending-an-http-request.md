@@ -7,9 +7,8 @@ model: gpt-4-1106-preview
 summary: "Mandare una richiesta HTTP consente al tuo codice JavaScript di comunicare\
   \ con un server web e scambiare dati. I programmatori lo fanno per ottenere nuovi\u2026"
 title: Inviare una richiesta http
+weight: 44
 ---
-
-{{< edit_this_page >}}
 
 ## Che Cosa & Perché?
 Mandare una richiesta HTTP consente al tuo codice JavaScript di comunicare con un server web e scambiare dati. I programmatori lo fanno per ottenere nuovi contenuti, inviare informazioni e integrare servizi esterni nelle loro applicazioni.

@@ -22,9 +22,8 @@ summary: "REPL \u05DE\u05E6\u05D9\u05D9\u05DF Read-Eval-Print Loop, \u05E1\u05D1
   \u05D3\u05D9\u05D9\u05DD\u2026"
 title: "\u05E9\u05D9\u05DE\u05D5\u05E9 \u05D1\u05DE\u05E2\u05D8\u05E4\u05EA \u05D0\
   \u05D9\u05E0\u05D8\u05E8\u05D0\u05E7\u05D8\u05D9\u05D1\u05D9\u05EA (REPL)"
+weight: 34
 ---
-
-{{< edit_this_page >}}
 
 ## מה ולמה?
 REPL מציין Read-Eval-Print Loop, סביבה אינטראקטיבית שבה ניתן לבדוק קוד במהירות. מתכנתים עושים בה שימוש לניסוי, איתור באגים, וללמוד את התיקונים הייחודיים של שפה.

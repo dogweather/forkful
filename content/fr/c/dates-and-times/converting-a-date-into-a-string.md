@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Convertir une date en cha\xEEne de caract\xE8res en C implique de traduire\
   \ une structure de date ou un horodatage en un format lisible par l'homme. Les\u2026"
 title: "Convertir une date en cha\xEEne de caract\xE8res"
+weight: 28
 ---
-
-{{< edit_this_page >}}
 
 ## Quoi et Pourquoi ?
 

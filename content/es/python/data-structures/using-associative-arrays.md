@@ -11,9 +11,8 @@ summary: "Los arreglos asociativos, conocidos en Python como diccionarios, mapea
   \ claves a valores, facilitando la recuperaci\xF3n, modificaci\xF3n o seguimiento\
   \ de datos\u2026"
 title: Uso de matrices asociativas
+weight: 15
 ---
-
-{{< edit_this_page >}}
 
 ## ¿Qué y por qué?
 

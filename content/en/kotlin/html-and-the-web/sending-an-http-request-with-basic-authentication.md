@@ -7,9 +7,8 @@ model: gpt-4-1106-preview
 summary: Basic authentication slaps a username:password combo onto an HTTP request.
   Devs use it for a quick-and-dirty way to prove who's asking for what on the web.
 title: Sending an HTTP request with basic authentication
+weight: 45
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 

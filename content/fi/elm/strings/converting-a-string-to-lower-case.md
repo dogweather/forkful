@@ -8,9 +8,8 @@ model: gpt-4-1106-preview
 summary: "\"Mit\xE4 & Miksi?\" Muuttaa merkkijonon pieniksi kirjaimiksi. K\xE4ytet\xE4\
   \xE4n yhdenmukaistamaan dataa, esimerkiksi vertailuun tai sy\xF6tteen k\xE4sittelyyn."
 title: Merkkijonon muuntaminen pieniksi kirjaimiksi
+weight: 4
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 "Mitä & Miksi?"

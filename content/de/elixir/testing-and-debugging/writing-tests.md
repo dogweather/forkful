@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Das Schreiben von Tests in Elixir beinhaltet das Erstellen von automatisierten\
   \ Skripten, um das Verhalten Ihres Codes zu validieren. Programmierer tun\u2026"
 title: Tests Schreiben
+weight: 36
 ---
-
-{{< edit_this_page >}}
 
 ## Was & Warum?
 Das Schreiben von Tests in Elixir beinhaltet das Erstellen von automatisierten Skripten, um das Verhalten Ihres Codes zu validieren. Programmierer tun dies, um Qualität zu gewährleisten, Regressionen zu verhindern und das Refactoring von Code zu erleichtern. Dies macht den Entwicklungsprozess zuverlässiger und effizienter.

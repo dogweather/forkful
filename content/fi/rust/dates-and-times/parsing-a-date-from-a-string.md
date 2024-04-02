@@ -11,9 +11,8 @@ summary: "P\xE4iv\xE4m\xE4\xE4r\xE4n j\xE4sent\xE4minen merkkijonosta on yleinen
   v\xE4, kun k\xE4sitell\xE4\xE4n k\xE4ytt\xE4j\xE4n sy\xF6tett\xE4 tai luetaan tietoja\
   \ tiedostoista. T\xE4m\xE4 sis\xE4lt\xE4\xE4\u2026"
 title: "P\xE4iv\xE4m\xE4\xE4r\xE4n j\xE4sennys merkkijonosta"
+weight: 30
 ---
-
-{{< edit_this_page >}}
 
 ## Mikä & Miksi?
 

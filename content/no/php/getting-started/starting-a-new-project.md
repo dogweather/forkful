@@ -9,9 +9,8 @@ summary: "\xC5 starte et nytt prosjekt er som \xE5 slippe l\xF8s kreativiteten d
   \ med kode som lerret. Programmerere gj\xF8r det for \xE5 l\xF8se problemer, utforske\
   \ nye ideer,\u2026"
 title: "\xC5 starte et nytt prosjekt"
+weight: 1
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why? (Hva & Hvorfor?)
 Å starte et nytt prosjekt er som å slippe løs kreativiteten din med kode som lerret. Programmerere gjør det for å løse problemer, utforske nye ideer, eller bygge noe kult.

@@ -24,9 +24,8 @@ summary: "YAML (YAML Ain't Markup Language) \u090F\u0915 \u092E\u0928\u0941\u093
   \u0917\u2026"
 title: "YAML \u0915\u0947 \u0938\u093E\u0925 \u0915\u093E\u092E \u0915\u0930\u0928\
   \u093E"
+weight: 41
 ---
-
-{{< edit_this_page >}}
 
 ## क्या और क्यों?
 

@@ -10,9 +10,8 @@ model: gpt-4-0125-preview
 summary: "Een interactieve shell, of Lees-Evalueer-Print-Lus (REPL), stelt je in staat\
   \ om in real-time met Go-code te experimenteren, commando's uit te voeren en\u2026"
 title: Gebruik van een interactieve shell (REPL)
+weight: 34
 ---
-
-{{< edit_this_page >}}
 
 ## Wat & Waarom?
 

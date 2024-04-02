@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "CSV (Comma-Separated Values) bestanden zijn eenvoudige tekstbestanden voor\
   \ het opslaan van tabelgegevens. Programmeurs gebruiken ze omdat ze gemakkelijk\u2026"
 title: Werken met CSV
+weight: 37
 ---
-
-{{< edit_this_page >}}
 
 ## Wat & Waarom?
 

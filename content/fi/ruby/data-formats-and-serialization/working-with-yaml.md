@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "YAML, joka tarkoittaa YAML Ain't Markup Language, on laajalti k\xE4yt\xF6\
   ss\xE4 Rubyn konfiguraatiotiedostoissa ja datan sarjallistamisessa sen ihmislukuisan\u2026"
 title: "Ty\xF6skentely YAML:n kanssa"
+weight: 41
 ---
-
-{{< edit_this_page >}}
 
 ## Mikä ja miksi?
 YAML, joka tarkoittaa YAML Ain't Markup Language, on laajalti käytössä Rubyn konfiguraatiotiedostoissa ja datan sarjallistamisessa sen ihmislukuisan muodon vuoksi. Ohjelmoijat suosivat YAMLia, kun heidän tarvitsee tallentaa tai siirtää dataobjekteja lukuisassa mutta rakenteellisesti jäsennellyssä muodossa, mikä yksinkertaistaa tehtäviä kuten konfiguraation hallinta, datan tallennus ja kielten välisen datan jakaminen.

@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "\xC5 jobbe med XML i Google Apps Script lar programmerere parse, manipulere\
   \ og generere XML-data, som er essensielt for webtjenester og konfigurasjoner.\u2026"
 title: Arbeide med XML
+weight: 40
 ---
-
-{{< edit_this_page >}}
 
 ## Hva & Hvorfor?
 

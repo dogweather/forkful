@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Parsowanie daty ze stringa polega na konwertowaniu tekstowych reprezentacji\
   \ daty i czasu na obiekt `Date`. Proces ten jest niezb\u0119dny w aplikacjach, w\u2026"
 title: "Analiza sk\u0142adniowa daty z \u0142a\u0144cucha znak\xF3w"
+weight: 30
 ---
-
-{{< edit_this_page >}}
 
 ## Co i dlaczego?
 Parsowanie daty ze stringa polega na konwertowaniu tekstowych reprezentacji daty i czasu na obiekt `Date`. Proces ten jest niezbędny w aplikacjach, w których daty przekazywane są jako ciągi znaków, np. w odpowiedziach API czy wprowadzanych przez użytkownika, co umożliwia łatwiejszą manipulację i formatowanie dat.

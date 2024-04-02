@@ -11,9 +11,8 @@ summary: "Tekstitiedoston kirjoittaminen PowerShelliss\xE4 k\xE4sitt\xE4\xE4 tek
   \ tiedostojen luomisen ja k\xE4sittelyn, mik\xE4 on perustoiminto lokitiedostojen,\
   \ datan\u2026"
 title: Tekstitiedoston kirjoittaminen
+weight: 24
 ---
-
-{{< edit_this_page >}}
 
 ## Mikä ja miksi?
 Tekstitiedoston kirjoittaminen PowerShellissä käsittää tekstipohjaisten tiedostojen luomisen ja käsittelyn, mikä on perustoiminto lokitiedostojen, datan tallennuksen ja konfigurointiskriptien kannalta. Ohjelmoijat hyödyntävät tätä järjestelmätehtävien automatisoimiseen, datan analysointiin ja integroimiseen muiden sovellusten tai skriptien kanssa.

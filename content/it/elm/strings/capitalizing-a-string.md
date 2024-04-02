@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "La capitalizzazione di una stringa comporta la trasformazione del carattere\
   \ iniziale di una stringa data in maiuscolo, mantenendo il resto in minuscolo,\u2026"
 title: Capitalizzare una stringa
+weight: 2
 ---
-
-{{< edit_this_page >}}
 
 ## Cosa e Perché?
 

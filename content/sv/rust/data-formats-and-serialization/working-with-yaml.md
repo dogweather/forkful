@@ -11,9 +11,8 @@ summary: "I Rust-programmering inneb\xE4r arbete med YAML (YAML Ain't Markup Lan
   \ att tolka och generera data i YAML-format, en m\xE4nniskov\xE4nlig standard f\xF6\
   r data-\u2026"
 title: Att Arbeta med YAML
+weight: 41
 ---
-
-{{< edit_this_page >}}
 
 ## Vad & Varför?
 

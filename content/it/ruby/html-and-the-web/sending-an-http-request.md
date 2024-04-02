@@ -9,9 +9,8 @@ summary: "Inviare una richiesta HTTP significa dialogare con un altro sistema vi
   \ web; \xE8 come chiedere a un sito di inviarti dei dati o di accettare i tuoi.\
   \ I\u2026"
 title: Inviare una richiesta http
+weight: 44
 ---
-
-{{< edit_this_page >}}
 
 ## Che Cosa e Perché?
 Inviare una richiesta HTTP significa dialogare con un altro sistema via web; è come chiedere a un sito di inviarti dei dati o di accettare i tuoi. I programmatori lo fanno per interagire con API web, raccogliere informazioni, o inviare dati a un server.

@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Escribir un archivo de texto en Rust implica crear, escribir y, potencialmente,\
   \ a\xF1adir datos a un archivo en el sistema de archivos. Los programadores\u2026"
 title: Escribiendo un archivo de texto
+weight: 24
 ---
-
-{{< edit_this_page >}}
 
 ## Qué & Por qué?
 Escribir un archivo de texto en Rust implica crear, escribir y, potencialmente, añadir datos a un archivo en el sistema de archivos. Los programadores realizan esta operación para persistir datos, como registros de aplicaciones, configuración o contenido generado por usuarios, asegurando la durabilidad de los datos más allá del alcance de la ejecución del programa.

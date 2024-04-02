@@ -7,9 +7,8 @@ model: gpt-4-0125-preview
 summary: "Regular expressions (regex) in Ruby are patterns used to match character\
   \ combinations in strings, enabling developers to search for, match, and manipulate\u2026"
 title: Using regular expressions
+weight: 11
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 Regular expressions (regex) in Ruby are patterns used to match character combinations in strings, enabling developers to search for, match, and manipulate text efficiently. Programmers utilize regex for tasks such as validation, parsing, and string manipulation, making it an indispensable tool for text processing.

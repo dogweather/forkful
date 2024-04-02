@@ -19,9 +19,8 @@ summary: "\u5B57\u7B26\u4E32\u8FDE\u63A5\u662F\u5173\u4E8E\u5C06\u4E24\u4E2A\u62
   \u62ECElixir\uFF0C\u4F7F\u5F00\u53D1\u4EBA\u5458\u80FD\u591F\u8F7B\u677E\u6784\u5EFA\
   \u52A8\u6001\u5B57\u7B26\u4E32\u3002"
 title: "\u5B57\u7B26\u4E32\u8FDE\u63A5"
+weight: 3
 ---
-
-{{< edit_this_page >}}
 
 ## 什么和为什么？
 字符串连接是关于将两个或更多的字符串合并为一个文本片段的操作。生成用户消息、创建文件路径或进行数据序列化过程时，你可能需要合并文本。这是任何编程语言中的基本操作，包括Elixir，使开发人员能够轻松构建动态字符串。

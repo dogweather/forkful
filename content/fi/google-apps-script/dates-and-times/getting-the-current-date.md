@@ -11,9 +11,8 @@ summary: "Nykyisen p\xE4iv\xE4m\xE4\xE4r\xE4n hankkiminen Google Apps Scriptill\
   \ tarkoittaa live-p\xE4iv\xE4m\xE4\xE4r\xE4n ja -ajan hakemista, yleist\xE4 teht\xE4\
   v\xE4\xE4 automaatioteht\xE4viss\xE4,\u2026"
 title: "Nykyisen p\xE4iv\xE4m\xE4\xE4r\xE4n hankkiminen"
+weight: 29
 ---
-
-{{< edit_this_page >}}
 
 ## Mikä & Miksi?
 

@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Die Arbeit mit CSV (Comma-Separated Values, durch Kommas getrennte Werte)\
   \ umfasst das Lesen von und das Schreiben in CSV-Dateien, einem g\xE4ngigen Format\u2026"
 title: Arbeiten mit CSV
+weight: 37
 ---
-
-{{< edit_this_page >}}
 
 ## Was & Warum?
 Die Arbeit mit CSV (Comma-Separated Values, durch Kommas getrennte Werte) umfasst das Lesen von und das Schreiben in CSV-Dateien, einem gängigen Format zur Speicherung von tabellarischen Daten. Programmierer tun dies, um Daten einfach auszutauschen und in einem einfachen, textbasierten Format zu speichern, das auf verschiedenen Plattformen und in verschiedenen Sprachen weit verbreitet unterstützt wird.

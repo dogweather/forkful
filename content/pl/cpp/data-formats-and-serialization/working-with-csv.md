@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Praca z plikami CSV (Comma Separated Values - Warto\u015Bci Oddzielone Przecinkami)\
   \ dotyczy przetwarzania i manipulowania danymi przechowywanymi w prostym\u2026"
 title: Praca z plikami CSV
+weight: 37
 ---
-
-{{< edit_this_page >}}
 
 ## Co i dlaczego?
 

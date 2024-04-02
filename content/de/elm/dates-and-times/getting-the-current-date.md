@@ -7,9 +7,8 @@ model: unknown
 summary: "Das Abrufen des aktuellen Datums ist ein Prozess, bei dem wir die momentane\
   \ Datumswerte (Tag, Monat, Jahr) vom Computer erhalten. Programmierer nutzen\u2026"
 title: Aktuelles Datum abrufen
+weight: 29
 ---
-
-{{< edit_this_page >}}
 
 ## Was & Warum?
 Das Abrufen des aktuellen Datums ist ein Prozess, bei dem wir die momentane Datumswerte (Tag, Monat, Jahr) vom Computer erhalten. Programmierer nutzen diese Funktion für Features wie Kalender, Zeitstempel oder Gültigkeitsprüfungen.

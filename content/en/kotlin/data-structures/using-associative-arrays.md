@@ -7,9 +7,8 @@ model: gpt-4-0125-preview
 summary: "Associative arrays, or maps, in Kotlin are collections that store key-value\
   \ pairs. Programmers use them for efficiently organizing and retrieving data\u2026"
 title: Using associative arrays
+weight: 15
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 

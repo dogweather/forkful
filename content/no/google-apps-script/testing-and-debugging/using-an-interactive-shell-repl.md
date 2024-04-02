@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Et interaktivt skall, eller Lese-Evaluere-Skrive L\xF8kke (REPL), er et\
   \ enkelt, interaktivt programmeringsmilj\xF8 som tar enkelte brukerinndata (uttrykk),\u2026"
 title: "\xC5 bruke et interaktivt skall (REPL)"
+weight: 34
 ---
-
-{{< edit_this_page >}}
 
 ## Hva & Hvorfor?
 

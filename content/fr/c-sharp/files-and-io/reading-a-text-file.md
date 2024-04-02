@@ -7,9 +7,8 @@ model: gpt-4-1106-preview
 summary: "Lire un fichier texte, c'est parcourir son contenu avec votre programme.\
   \ On le fait pour r\xE9cup\xE9rer des donn\xE9es, les analyser ou les transformer."
 title: Lecture d'un fichier texte
+weight: 22
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why? - Quoi et Pourquoi ?
 Lire un fichier texte, c'est parcourir son contenu avec votre programme. On le fait pour récupérer des données, les analyser ou les transformer.

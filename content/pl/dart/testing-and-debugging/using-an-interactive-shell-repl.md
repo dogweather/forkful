@@ -10,9 +10,8 @@ model: gpt-4-0125-preview
 summary: "Interaktywna pow\u0142oka (REPL - Read-Evaluate-Print Loop) dla Dart umo\u017C\
   liwia programistom dynamiczne wpisywanie i wykonywanie linijka po linijce kodu Dart\u2026"
 title: "Korzystanie z interaktywnej pow\u0142oki (REPL)"
+weight: 34
 ---
-
-{{< edit_this_page >}}
 
 ## Co i dlaczego?
 

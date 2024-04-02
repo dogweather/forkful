@@ -9,9 +9,8 @@ summary: "Extraer subcadenas es tomar trozos espec\xEDficos de una cadena de tex
   \ Los programadores lo hacen para analizar y manipular datos, como mostrar solo\
   \ un\u2026"
 title: "Extracci\xF3n de subcadenas"
+weight: 6
 ---
-
-{{< edit_this_page >}}
 
 ## Qué y Por qué?
 

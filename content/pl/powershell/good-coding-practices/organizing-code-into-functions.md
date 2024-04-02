@@ -9,9 +9,8 @@ summary: "Organizowanie kodu w funkcje polega na grupowaniu fragment\xF3w kodu, 
   re wykonuj\u0105 okre\u015Blone zadania i nadawaniu im nazwy. Robi si\u0119 to,\
   \ aby kod by\u0142\u2026"
 title: Organizacja kodu w funkcje
+weight: 18
 ---
-
-{{< edit_this_page >}}
 
 ## Co i dlaczego?
 

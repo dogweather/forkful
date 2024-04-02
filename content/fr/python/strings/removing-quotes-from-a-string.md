@@ -9,9 +9,8 @@ summary: "Supprimer les guillemets d'une cha\xEEne signifie g\xE9n\xE9ralement s
   \ d\xE9barrasser des guillemets doubles (\") ou simples (') superflus. Les programmeurs\
   \ font cela\u2026"
 title: "Retirer les guillemets d'une cha\xEEne"
+weight: 9
 ---
-
-{{< edit_this_page >}}
 
 ## Quoi & Pourquoi ?
 Supprimer les guillemets d'une chaîne signifie généralement se débarrasser des guillemets doubles (") ou simples (') superflus. Les programmeurs font cela pour assainir les entrées ou lorsque les guillemets ne sont pas nécessaires pour un traitement ultérieur — comme lors de l'enregistrement de texte dans une base de données ou sa préparation pour l'affichage.

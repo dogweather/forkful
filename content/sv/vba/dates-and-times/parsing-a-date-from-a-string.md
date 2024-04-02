@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Att tolka ett datum fr\xE5n en str\xE4ng i Visual Basic for Applications\
   \ (VBA) handlar om att konvertera text som representerar ett datum till en datumdatatyp.\u2026"
 title: "Analysera ett datum fr\xE5n en str\xE4ng"
+weight: 30
 ---
-
-{{< edit_this_page >}}
 
 ## Vad & Varför?
 

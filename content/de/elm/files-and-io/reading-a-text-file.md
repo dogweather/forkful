@@ -7,9 +7,8 @@ model: gpt-4-1106-preview
 summary: "Das Einlesen einer Textdatei erm\xF6glicht es Programmen, Textinformationen\
   \ zu verarbeiten \u2013 vom simplen Konfigurationsfile bis zur gro\xDFen Datenanalyse.\u2026"
 title: Textdatei einlesen
+weight: 22
 ---
-
-{{< edit_this_page >}}
 
 ## Was & Warum?
 Das Einlesen einer Textdatei ermöglicht es Programmen, Textinformationen zu verarbeiten – vom simplen Konfigurationsfile bis zur großen Datenanalyse. Programmierer nutzen das Einlesen von Textdaten, um interaktive Anwendungen zu gestalten, die auf Benutzereingaben oder Persistenz setzen.

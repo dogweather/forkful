@@ -7,9 +7,8 @@ model: gpt-4-1106-preview
 summary: "Substringit ovat string-tyypin osajonoja. Ne auttavat meit\xE4 pilkkomaan\
   \ ja analysoimaan teksti\xE4 esim. tietojen kaivamiseksi tai formaatin muuttamiseksi."
 title: Merkkijonojen osien poimiminen
+weight: 6
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why? (Mikä ja Miksi?)
 Substringit ovat string-tyypin osajonoja. Ne auttavat meitä pilkkomaan ja analysoimaan tekstiä esim. tietojen kaivamiseksi tai formaatin muuttamiseksi.

@@ -9,9 +9,8 @@ summary: "Loggning i programmering inneb\xE4r i grund och botten att l\xE4mna et
   \ sp\xE5r av br\xF6dsmulor i form av registrerade h\xE4ndelser eller meddelanden,\
   \ vilka kan\u2026"
 title: Loggning
+weight: 17
 ---
-
-{{< edit_this_page >}}
 
 ## Vad & Varför?
 Loggning i programmering innebär i grund och botten att lämna ett spår av brödsmulor i form av registrerade händelser eller meddelanden, vilka kan användas för att spåra vad din applikation gör vid varje given tidpunkt. Programmerare gör det för att felsöka problem, övervaka systemets prestanda och granska beteende av säkerhets- och efterlevnadsskäl.

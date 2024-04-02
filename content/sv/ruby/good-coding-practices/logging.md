@@ -9,9 +9,8 @@ summary: "Loggning inom programmering \xE4r som att h\xE5lla en dagbok f\xF6r di
   \ applikation. Det \xE4r den systematiska registreringen av h\xE4ndelser, meddelanden\
   \ och\u2026"
 title: Loggning
+weight: 17
 ---
-
-{{< edit_this_page >}}
 
 ## Vad & Varför?
 Loggning inom programmering är som att hålla en dagbok för din applikation. Det är den systematiska registreringen av händelser, meddelanden och datapunkter som ger dig insyn i vad din applikation gör och hur den beter sig. Programmerare loggar eftersom det är avgörande för felsökning, övervakning av applikationens hälsa och för att få ledtrådar om potentiella problem innan de eskalerar till verkliga problem.

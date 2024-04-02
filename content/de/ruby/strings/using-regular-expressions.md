@@ -11,9 +11,8 @@ summary: "Regul\xE4re Ausdr\xFCcke (regex) in Ruby sind Muster, die verwendet we
   \ um Zeichenkombinationen in Strings zu finden. Sie erm\xF6glichen es Entwicklern,\
   \ Text\u2026"
 title: "Regul\xE4re Ausdr\xFCcke verwenden"
+weight: 11
 ---
-
-{{< edit_this_page >}}
 
 ## Was & Warum?
 Reguläre Ausdrücke (regex) in Ruby sind Muster, die verwendet werden, um Zeichenkombinationen in Strings zu finden. Sie ermöglichen es Entwicklern, Text effizient zu suchen, zu vergleichen und zu manipulieren. Programmierer nutzen Reguläre Ausdrücke für Aufgaben wie Validierung, Parsing und String-Manipulation, was sie zu einem unverzichtbaren Werkzeug für die Textverarbeitung macht.

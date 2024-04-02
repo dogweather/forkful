@@ -11,9 +11,8 @@ summary: "Att skicka en HTTP-beg\xE4ran inneb\xE4r att initiera ett anrop fr\xE5
   \ din Go-applikation till en webbserver, API eller n\xE5gon annan HTTP-baserad tj\xE4\
   nst.\u2026"
 title: "Att skicka en HTTP-beg\xE4ran"
+weight: 44
 ---
-
-{{< edit_this_page >}}
 
 ## Vad & Varför?
 

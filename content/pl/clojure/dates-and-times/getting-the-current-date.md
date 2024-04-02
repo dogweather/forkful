@@ -11,9 +11,8 @@ summary: "Pobranie bie\u017C\u0105cej daty w programowaniu jest kluczowe z wielu
   \ w tym logowania, oznaczania czasu zdarze\u0144 i planowania zada\u0144. W Clojure,\
   \ dialekcie\u2026"
 title: Pobieranie aktualnej daty
+weight: 29
 ---
-
-{{< edit_this_page >}}
 
 ## Co i dlaczego?
 Pobranie bieżącej daty w programowaniu jest kluczowe z wielu przyczyn, w tym logowania, oznaczania czasu zdarzeń i planowania zadań. W Clojure, dialekcie Lispu na JVM, to zadanie korzysta z możliwości interop Java, umożliwiając bezproblemowy dostęp do bogatego Java Date-Time API.

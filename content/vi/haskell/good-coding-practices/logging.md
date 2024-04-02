@@ -15,9 +15,8 @@ summary: "Logging trong l\u1EADp tr\xECnh ch\xEDnh l\xE0 \u0111\u1EC3 l\u1EA1i m
   \ d\u1EE5ng \u0111\u1EC3 theo d\xF5i \u1EE9ng d\u1EE5ng c\u1EE7a b\u1EA1n \u0111\
   ang\u2026"
 title: Ghi log
+weight: 17
 ---
-
-{{< edit_this_page >}}
 
 ## Cái gì & Tại sao?
 Logging trong lập trình chính là để lại một dấu vết gồm những sự kiện hoặc thông điệp được ghi lại, có thể được sử dụng để theo dõi ứng dụng của bạn đang làm gì vào bất kỳ thời điểm nào. Lập trình viên làm điều này để gỡ lỗi, theo dõi hiệu suất hệ thống và kiểm toán hành vi cho mục đích bảo mật và tuân thủ.

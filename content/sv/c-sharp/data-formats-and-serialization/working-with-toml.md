@@ -9,9 +9,8 @@ summary: "TOML \xE4r en f\xF6rkortning f\xF6r Toms Obvious, Minimal Language, et
   \ konfigurationsfilsformat som \xE4r l\xE4tt att l\xE4sa p\xE5 grund av dess tydliga\
   \ semantik.\u2026"
 title: Att arbeta med TOML
+weight: 39
 ---
-
-{{< edit_this_page >}}
 
 ## Vad & Varför?
 TOML är en förkortning för Toms Obvious, Minimal Language, ett konfigurationsfilsformat som är lätt att läsa på grund av dess tydliga semantik. Programmerare använder det för konfigurationsfiler, för att förenkla datautbyte mellan system, och eftersom det uppnår en balans mellan mänsklig läsbarhet och maskinell tolkningsbarhet.

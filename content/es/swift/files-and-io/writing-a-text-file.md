@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Escribir un archivo de texto en Swift te permite almacenar de manera persistente\
   \ datos de cadena en el sistema de archivos, lo cual es esencial para\u2026"
 title: Escribiendo un archivo de texto
+weight: 24
 ---
-
-{{< edit_this_page >}}
 
 ## ¿Qué y por qué?
 

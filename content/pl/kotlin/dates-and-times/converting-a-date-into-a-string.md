@@ -9,9 +9,8 @@ summary: "Konwersja daty do formatu tekstowego (string) to proces zamieniania da
   \ o czasie na zrozumia\u0142y i \u0142atwy do zaprezentowania ci\u0105g znak\xF3\
   w. Programi\u015Bci\u2026"
 title: "Konwersja daty na \u0142a\u0144cuch znak\xF3w"
+weight: 28
 ---
-
-{{< edit_this_page >}}
 
 ## Co i Dlaczego?
 

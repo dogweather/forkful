@@ -10,9 +10,8 @@ model: gpt-4-0125-preview
 summary: "Las expresiones regulares, o regex, son secuencias de caracteres que forman\
   \ un patr\xF3n de b\xFAsqueda, a menudo utilizadas para tareas de coincidencia o\u2026"
 title: Usando expresiones regulares
+weight: 11
 ---
-
-{{< edit_this_page >}}
 
 ## ¿Qué & Por qué?
 Las expresiones regulares, o regex, son secuencias de caracteres que forman un patrón de búsqueda, a menudo utilizadas para tareas de coincidencia o manipulación de cadenas. Los programadores las utilizan para todo, desde validación de datos y análisis hasta transformaciones, lo que las convierte en una herramienta indispensable en tareas de procesamiento y manipulación de texto en diversos lenguajes de programación, incluido Swift.

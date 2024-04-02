@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Att skriva tester i Arduino-milj\xF6n h\xE4nvisar till processen att skapa\
   \ automatiserade tester som validerar funktionaliteten hos din kod p\xE5 Arduino-enheter.\u2026"
 title: Skriva tester
+weight: 36
 ---
-
-{{< edit_this_page >}}
 
 ## Vad & Varför?
 

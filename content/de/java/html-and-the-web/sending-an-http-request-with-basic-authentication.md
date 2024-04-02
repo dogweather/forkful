@@ -7,9 +7,8 @@ model: gpt-4-1106-preview
 summary: "Das Senden einer HTTP-Anfrage mit Basic Authentication beinhaltet das \xDC\
   bermitteln von Benutzername und Passwort in einem Base64-codierten Header.\u2026"
 title: HTTP-Anfragen mit Basisauthentifizierung senden
+weight: 45
 ---
-
-{{< edit_this_page >}}
 
 ## Was & Warum?
 Das Senden einer HTTP-Anfrage mit Basic Authentication beinhaltet das Übermitteln von Benutzername und Passwort in einem Base64-codierten Header. Programmierer nutzen dies für den sicheren Zugriff auf geschützte Ressourcen auf einem Server.

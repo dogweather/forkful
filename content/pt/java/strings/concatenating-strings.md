@@ -9,9 +9,8 @@ summary: "Concatenar strings \xE9 juntar duas ou mais sequ\xEAncias de caractere
   \ Programadores fazem isso para montar mensagens, unir dados e gerar sa\xEDdas din\xE2\
   micas."
 title: Concatenando strings
+weight: 3
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 Concatenar strings é juntar duas ou mais sequências de caracteres. Programadores fazem isso para montar mensagens, unir dados e gerar saídas dinâmicas.

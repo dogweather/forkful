@@ -10,9 +10,8 @@ model: gpt-4-0125-preview
 summary: "Die Suche und das Ersetzen von Text in der Programmierung erleichtert die\
   \ Modifikation und Verwaltung von Zeichenketten, was eine grundlegende Aufgabe bei\u2026"
 title: Suchen und Ersetzen von Text
+weight: 10
 ---
-
-{{< edit_this_page >}}
 
 ## Was & Warum?
 

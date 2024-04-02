@@ -9,9 +9,8 @@ summary: "Att logga \xE4r i grund och botten att skriva ned vad din applikation 
   ller p\xE5 med \u2013 som en dagbok, om du s\xE5 vill, men f\xF6r kod. Programmerare\
   \ g\xF6r det f\xF6r\u2026"
 title: Loggning
+weight: 17
 ---
-
-{{< edit_this_page >}}
 
 ## Vad & Varför?
 Att logga är i grund och botten att skriva ned vad din applikation håller på med – som en dagbok, om du så vill, men för kod. Programmerare gör det för att hålla koll på nitty-gritty, såsom tillståndsändringar, systemhändelser och irriterande buggar, och för att säkerställa att inga problem glider förbi obemärkta.

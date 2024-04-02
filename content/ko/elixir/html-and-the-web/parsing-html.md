@@ -23,9 +23,8 @@ summary: "Elixir\uC5D0\uC11C HTML \uD30C\uC2F1\uC740 HTML \uBB38\uC11C\uB85C\uBD
   \ \uD1B5\uD574 \uC560\uD50C\uB9AC\uCF00\uC774\uC158\uC774 \uC6F9 \uCF58\uD150\uCE20\
   \uB97C \uB3D9\uC801\uC73C\uB85C\u2026"
 title: "HTML \uD30C\uC2F1"
+weight: 43
 ---
-
-{{< edit_this_page >}}
 
 ## 무엇 & 왜?
 

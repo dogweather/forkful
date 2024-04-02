@@ -11,9 +11,8 @@ summary: "Eliminar caracteres que coincidan con un patr\xF3n espec\xEDfico se tr
   \ de eliminar ciertos caracteres o secuencias de caracteres de cadenas, basado en\
   \ reglas\u2026"
 title: "Eliminando caracteres que coinciden con un patr\xF3n"
+weight: 5
 ---
-
-{{< edit_this_page >}}
 
 ## Qué y Por Qué?
 

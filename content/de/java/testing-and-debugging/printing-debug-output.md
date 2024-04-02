@@ -7,9 +7,8 @@ model: gpt-4-1106-preview
 summary: "Debugausgaben zu drucken hilft beim Verstehen, was der Code macht und warum\
   \ er es tut. Programmierer nutzen es, um Fehler zu finden und den Ablauf ihrer\u2026"
 title: Debug-Ausgaben drucken
+weight: 33
 ---
-
-{{< edit_this_page >}}
 
 ## Was & Warum?
 Debugausgaben zu drucken hilft beim Verstehen, was der Code macht und warum er es tut. Programmierer nutzen es, um Fehler zu finden und den Ablauf ihrer Programme nachzuvollziehen.

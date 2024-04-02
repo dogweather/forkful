@@ -13,9 +13,8 @@ summary: "So s\xE1nh hai ng\xE0y ngh\u0129a l\xE0 x\xE1c \u0111\u1ECBnh xem ng\x
   i gian gi\u1EEFa ch\xFAng. L\u1EADp tr\xECnh vi\xEAn th\u1EF1c hi\u1EC7n \u0111\
   i\u1EC1u n\xE0y \u0111\u1EC3 x\u1EED l\xFD nh\u01B0\u2026"
 title: "So s\xE1nh hai ng\xE0y"
+weight: 27
 ---
-
-{{< edit_this_page >}}
 
 ## Cái gì & Tại sao?
 So sánh hai ngày nghĩa là xác định xem ngày nào diễn ra trước hoặc xem có bao nhiêu thời gian giữa chúng. Lập trình viên thực hiện điều này để xử lý như hạn chót, lịch trình, hoặc các tính năng dựa trên thời gian.

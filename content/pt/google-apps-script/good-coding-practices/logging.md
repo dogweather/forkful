@@ -11,9 +11,8 @@ summary: "Registrar eventos, erros ou ocorr\xEAncias not\xE1veis durante a execu
   \xE3o de um programa \xE9 o que constitui o logging na programa\xE7\xE3o. Programadores\
   \ fazem isso\u2026"
 title: Registro
+weight: 17
 ---
-
-{{< edit_this_page >}}
 
 ## O Que & Por Que?
 

@@ -7,9 +7,8 @@ model: gpt-4-0125-preview
 summary: "REPL, eller Read-Eval-Print Loop, \xE4r en interaktiv programmeringsmilj\xF6\
   \ som tar enskilda anv\xE4ndarinmatningar, exekverar dem och returnerar resultatet.\u2026"
 title: "Anv\xE4nda en interaktiv skal (REPL)"
+weight: 34
 ---
-
-{{< edit_this_page >}}
 
 ## Vad & Varför?
 REPL, eller Read-Eval-Print Loop, är en interaktiv programmeringsmiljö som tar enskilda användarinmatningar, exekverar dem och returnerar resultatet. Programmerare använder den för omedelbar återkoppling, felsökning och snabb experimentell utforskning av programmeringskoncept utan den overhead som kommer med att kompilera och köra ett fullständigt program.

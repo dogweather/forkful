@@ -18,9 +18,8 @@ summary: "Shell \u0E17\u0E35\u0E48\u0E2A\u0E32\u0E21\u0E32\u0E23\u0E16\u0E42\u0E
   \u0E1A\u0E2A\u0E14\u0E46\u2026"
 title: "\u0E01\u0E32\u0E23\u0E43\u0E0A\u0E49 Shell \u0E41\u0E1A\u0E1A\u0E42\u0E15\u0E49\
   \u0E15\u0E2D\u0E1A (REPL)"
+weight: 34
 ---
-
-{{< edit_this_page >}}
 
 ## อะไร & ทำไม?
 Shell ที่สามารถโต้ตอบได้ หรือ REPL (Read-Eval-Print Loop) ใน Haskell ช่วยให้คุณสามารถรันโค้ดส่วนเล็กๆได้แบบสดๆ มันเป็นสนามเด็กเล่นสำหรับการได้รับข้อเสนอแนะอย่างรวดเร็ว ทดสอบฟังก์ชัน และเรียนรู้ภาษา

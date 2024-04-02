@@ -10,9 +10,8 @@ model: gpt-4-0125-preview
 summary: "Remover caracteres que correspondem a um padr\xE3o espec\xEDfico de strings\
   \ em C trata-se de eliminar todas as inst\xE2ncias de certos caracteres que se encaixam\u2026"
 title: "Deletando caracteres que correspondem a um padr\xE3o"
+weight: 5
 ---
-
-{{< edit_this_page >}}
 
 ## O Que & Por Quê?
 

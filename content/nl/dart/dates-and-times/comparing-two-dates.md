@@ -10,9 +10,8 @@ model: gpt-4-0125-preview
 summary: "Het vergelijken van twee datums in Dart omvat het evalueren van het tijdelijk\
   \ verschil of de volgorde tussen hen, een essenti\xEBle functionaliteit in\u2026"
 title: Twee datums vergelijken
+weight: 27
 ---
-
-{{< edit_this_page >}}
 
 ## Wat & Waarom?
 Het vergelijken van twee datums in Dart omvat het evalueren van het tijdelijk verschil of de volgorde tussen hen, een essentiële functionaliteit in applicaties die gebeurtenissen, deadlines of andere tijdgevoelige gegevens beheren. Programma's vereisen dit vaak om de logica te beheersen, te valideren of gegevens te sorteren op basis van tijdcondities.

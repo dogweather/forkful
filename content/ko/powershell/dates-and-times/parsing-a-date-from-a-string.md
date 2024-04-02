@@ -23,9 +23,8 @@ summary: "\uBB38\uC790\uC5F4\uC5D0\uC11C \uB0A0\uC9DC\uB97C \uD30C\uC2F1\uD55C\u
   \ \uC2A4\uD06C\uB9BD\uD2B8\uC5D0\uC11C \uC77C\uBC18\uC801\uC778 \uC791\uC5C5\uC778\
   \ \uB0A0\uC9DC\uB97C \uC870\uC791\uD558\uACE0,\u2026"
 title: "\uBB38\uC790\uC5F4\uC5D0\uC11C \uB0A0\uC9DC \uBD84\uC11D\uD558\uAE30"
+weight: 30
 ---
-
-{{< edit_this_page >}}
 
 ## 무엇을 하며 왜 하나?
 문자열에서 날짜를 파싱한다는 것은 텍스트 형식으로 작성된 날짜를 PowerShell이 이해하고 작업할 수 있는 날짜 데이터 타입으로 인식하고 변환하는 것을 말합니다. 프로그래머는 로그 파일, 사용자 입력 또는 데이터 처리를 다루는 스크립트에서 일반적인 작업인 날짜를 조작하고, 포맷하고, 비교하거나 계산하기 위해 이 작업을 합니다.

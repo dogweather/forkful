@@ -8,9 +8,8 @@ model: gpt-4-0125-preview
 summary: "Att arbeta med TOML inneb\xE4r att tolka och generera TOML-data (Toms Uppenbara,\
   \ Minimala Spr\xE5k) med Haskell. Programmerare g\xF6r det f\xF6r att enkelt hantera\u2026"
 title: Att arbeta med TOML
+weight: 39
 ---
-
-{{< edit_this_page >}}
 
 ## Vad & Varför?
 Att arbeta med TOML innebär att tolka och generera TOML-data (Toms Uppenbara, Minimala Språk) med Haskell. Programmerare gör det för att enkelt hantera konfigurationsfiler eller datautbyte med starka typgarantier och minimal syntaxkrångel.

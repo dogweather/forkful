@@ -8,9 +8,8 @@ model: gpt-4-1106-preview
 summary: "Leer un archivo de texto en programaci\xF3n implica acceder y obtener el\
   \ contenido almacenado en un archivo. Los programadores lo hacen para procesar o\u2026"
 title: Lectura de un archivo de texto
+weight: 22
 ---
-
-{{< edit_this_page >}}
 
 ## ¿Qué & Por Qué?
 Leer un archivo de texto en programación implica acceder y obtener el contenido almacenado en un archivo. Los programadores lo hacen para procesar o analizar datos, configuraciones, o simplemente recuperar información para usar en sus aplicaciones.

@@ -9,9 +9,8 @@ summary: "Organiser le code en fonctions divise votre script en blocs r\xE9utili
   \ Il s'agit de rendre votre code propre, g\xE9rable et moins sujet aux bugs. Le\
   \ code\u2026"
 title: Organisation du code en fonctions
+weight: 18
 ---
-
-{{< edit_this_page >}}
 
 ## Quoi & Pourquoi ?
 Organiser le code en fonctions divise votre script en blocs réutilisables. Il s'agit de rendre votre code propre, gérable et moins sujet aux bugs. Le code modulaire est génial car il vous fait gagner du temps, préserve votre santé mentale et simplifie le débogage et les tests unitaires.

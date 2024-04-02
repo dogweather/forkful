@@ -7,9 +7,8 @@ model: gpt-4-1106-preview
 summary: "Nedlasting av en nettside betyr \xE5 hente kildekoden for siden til din\
   \ datamaskin. Programmerere gj\xF8r dette for \xE5 analysere innholdet, automatisere\u2026"
 title: Nedlasting av en nettside
+weight: 42
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 Nedlasting av en nettside betyr å hente kildekoden for siden til din datamaskin. Programmerere gjør dette for å analysere innholdet, automatisere datainnsamling eller sjekke tilgjengeligheten til en nettside.

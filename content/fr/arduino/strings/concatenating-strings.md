@@ -9,9 +9,8 @@ summary: "Concat\xE9ner des cha\xEEnes, c'est les assembler bout \xE0 bout. On l
   \ fait pour construire du texte dynamiquement, combiner des donn\xE9es ou cr\xE9\
   er des commandes."
 title: "Concat\xE9nation de cha\xEEnes de caract\xE8res"
+weight: 3
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 Concaténer des chaînes, c'est les assembler bout à bout. On le fait pour construire du texte dynamiquement, combiner des données ou créer des commandes.

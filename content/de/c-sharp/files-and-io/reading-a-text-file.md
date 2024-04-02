@@ -7,9 +7,8 @@ model: gpt-4-1106-preview
 summary: "Dateien lesen bedeutet, Daten aus einer Textdatei in den Speicher zu laden,\
   \ damit Code sie verarbeiten kann. Programmierer machen das, um Inhalte zu\u2026"
 title: Textdatei einlesen
+weight: 22
 ---
-
-{{< edit_this_page >}}
 
 ## Was & Warum?
 Dateien lesen bedeutet, Daten aus einer Textdatei in den Speicher zu laden, damit Code sie verarbeiten kann. Programmierer machen das, um Inhalte zu verarbeiten, Konfigurationen zu laden oder Daten zu speichern.

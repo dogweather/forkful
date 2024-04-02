@@ -11,9 +11,8 @@ summary: "Encontrar la longitud de una cadena en Google Apps Script, un lenguaje
   \ scripting en la nube de JavaScript que permite automatizar tareas a trav\xE9s\
   \ de\u2026"
 title: Encontrando la longitud de una cadena
+weight: 7
 ---
-
-{{< edit_this_page >}}
 
 ## ¿Qué y por qué?
 Encontrar la longitud de una cadena en Google Apps Script, un lenguaje de scripting en la nube de JavaScript que permite automatizar tareas a través de productos de Google, se trata de determinar el número de caracteres que contiene una cadena. Los programadores realizan frecuentemente esta operación para verificar la entrada, recorrer caracteres o manipular cadenas para diversas tareas de automatización dentro de las aplicaciones de Google.

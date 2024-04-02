@@ -9,9 +9,8 @@ summary: "Diviser le code en fonctions signifie d\xE9composer les scripts en blo
   \ plus petits, r\xE9utilisables, qui r\xE9alisent des t\xE2ches sp\xE9cifiques.\
   \ Cela rend le code\u2026"
 title: Organisation du code en fonctions
+weight: 18
 ---
-
-{{< edit_this_page >}}
 
 ## Quoi & Pourquoi ?
 Diviser le code en fonctions signifie décomposer les scripts en blocs plus petits, réutilisables, qui réalisent des tâches spécifiques. Cela rend le code plus propre, plus compréhensible et plus facile à déboguer.

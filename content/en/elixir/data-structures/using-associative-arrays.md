@@ -7,9 +7,8 @@ model: gpt-4-0125-preview
 summary: "In Elixir, associative arrays, called Maps, are collections of key-value\
   \ pairs where a unique key points to a value. They're super handy for storing and\u2026"
 title: Using associative arrays
+weight: 15
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 

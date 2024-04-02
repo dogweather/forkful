@@ -9,9 +9,8 @@ summary: "\xC5 sende en HTTP-foresp\xF8rsel med grunnleggende autentisering bety
   \ \xE5 inkludere brukernavn og passord i foresp\xF8rselen for \xE5 f\xE5 tilgang\
   \ til beskyttede\u2026"
 title: "\xC5 sende en HTTP-foresp\xF8rsel med grunnleggende autentisering"
+weight: 45
 ---
-
-{{< edit_this_page >}}
 
 ## Hva & Hvorfor?
 

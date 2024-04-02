@@ -13,9 +13,8 @@ summary: "S\u1ED1 ph\u1EE9c bao g\u1ED3m m\u1ED9t ph\u1EA7n th\u1EF1c v\xE0 m\u1
   ng `a + bi` trong \u0111\xF3 `i` l\xE0 c\u0103n b\u1EADc hai c\u1EE7a `-1`. C\xE1\
   c l\u1EADp tr\xECnh vi\xEAn l\xE0m vi\u1EC7c v\u1EDBi s\u1ED1\u2026"
 title: "L\xE0m vi\u1EC7c v\u1EDBi s\u1ED1 ph\u1EE9c"
+weight: 14
 ---
-
-{{< edit_this_page >}}
 
 ## Cái gì & Tại sao?
 

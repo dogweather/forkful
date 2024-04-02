@@ -11,9 +11,8 @@ summary: "Merkkijonojen osien poimiminen k\xE4sitt\xE4\xE4 tiettyjen merkkijonoj
   \ osien hakemisen niiden sijaintien perusteella. Ohjelmoijat suorittavat t\xE4t\xE4\
   \ toimenpidett\xE4\u2026"
 title: Alimerkkijonojen erottaminen
+weight: 6
 ---
-
-{{< edit_this_page >}}
 
 ## Mikä & Miksi?
 

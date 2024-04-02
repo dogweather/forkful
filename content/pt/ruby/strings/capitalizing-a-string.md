@@ -12,6 +12,7 @@ summary: "Capitalizar uma string geralmente significa converter o primeiro carac
   \ de uma string para mai\xFAscula e o restante para min\xFAscula. Mas \xE0s vezes\
   \ pode\u2026"
 title: Capitalizando uma string
+weight: 2
 ---
 
 ## O Que & Por Que?

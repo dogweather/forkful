@@ -13,9 +13,8 @@ summary: "Bi\u1EC3u th\u1EE9c ch\xEDnh quy (regex) t\xECm ki\u1EBFm, kh\u1EDBp v
   nh linh ho\u1EA1t v\xE0 hi\u1EC7u qu\u1EA3 trong nhi\u1EC7m v\u1EE5 x\u1EED l\xFD\
   \ v\u0103n b\u1EA3n."
 title: "S\u1EED d\u1EE5ng bi\u1EC3u th\u1EE9c ch\xEDnh quy"
+weight: 11
 ---
-
-{{< edit_this_page >}}
 
 ## Cái gì & Tại sao?
 Biểu thức chính quy (regex) tìm kiếm, khớp và thao tác chuỗi. Chúng được sử dụng vì tính linh hoạt và hiệu quả trong nhiệm vụ xử lý văn bản.

@@ -9,9 +9,8 @@ summary: "\"Travailler avec XML\" se r\xE9f\xE8re au processus de lecture, cr\xE
   ation et modification de fichiers XML (eXtensible Markup Language) en utilisant\
   \ la\u2026"
 title: Travailler avec XML
+weight: 40
 ---
-
-{{< edit_this_page >}}
 
 ## Quoi & Pourquoi ?
 "Travailler avec XML" se réfère au processus de lecture, création et modification de fichiers XML (eXtensible Markup Language) en utilisant la programmation. Les programmeurs le font parce que XML est largement utilisé pour l'échange de données en raison de sa nature indépendante de la plateforme et de son format auto-descriptif.

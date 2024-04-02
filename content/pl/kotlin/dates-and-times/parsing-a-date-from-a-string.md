@@ -11,9 +11,8 @@ summary: "Parsowanie daty z ci\u0105gu znak\xF3w polega na przekszta\u0142ceniu 
   \ na obiekt Daty. Operacja ta jest podstawowa dla aplikacji, kt\xF3re wchodz\u0105\
   \ w interakcje z\u2026"
 title: "Analiza sk\u0142adniowa daty z \u0142a\u0144cucha znak\xF3w"
+weight: 30
 ---
-
-{{< edit_this_page >}}
 
 ## Co i dlaczego?
 Parsowanie daty z ciągu znaków polega na przekształceniu tekstu na obiekt Daty. Operacja ta jest podstawowa dla aplikacji, które wchodzą w interakcje z datami wprowadzonymi przez użytkowników lub pochodzącymi z zewnętrznych zestawów danych, umożliwiając łatwą manipulację i formatowanie zgodnie z potrzebami.

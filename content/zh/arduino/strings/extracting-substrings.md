@@ -12,9 +12,8 @@ summary: "\u63D0\u53D6\u5B50\u4E32\u662F\u6307\u4ECE\u4E00\u4E2A\u5B57\u7B26\u4E
   \u505A\u6765\u5206\u6790\u3001\u5904\u7406\u6216\u6539\u53D8\u6570\u636E\uFF0C\u4EE5\
   \u6EE1\u8DB3\u7279\u5B9A\u9700\u6C42\u3002"
 title: "\u63D0\u53D6\u5B50\u5B57\u7B26\u4E32"
+weight: 6
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why? (是什么 & 为什么?)
 提取子串是指从一个字符串中获取一部分内容。程序员这样做来分析、处理或改变数据，以满足特定需求。

@@ -9,9 +9,8 @@ summary: "Criar um arquivo tempor\xE1rio permite armazenar dados de maneira tran
   ria durante a execu\xE7\xE3o de um programa. Programadores usam arquivos tempor\xE1\
   rios para\u2026"
 title: "Criando um arquivo tempor\xE1rio"
+weight: 21
 ---
-
-{{< edit_this_page >}}
 
 ## O Que é & Por Que Fazer?
 Criar um arquivo temporário permite armazenar dados de maneira transitória durante a execução de um programa. Programadores usam arquivos temporários para lidar com informações que não precisam de armazenamento permanente ou para trabalhar com dados antes de movê-los para um destino final.

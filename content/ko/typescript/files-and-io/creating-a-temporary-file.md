@@ -16,9 +16,8 @@ summary: "\uC784\uC2DC \uD30C\uC77C \uC0DD\uC131\uC740 \uB370\uC774\uD130\uB97C 
   \uCF00\uC774\uC158 \uCDA9\uB3CC \uC2DC \uB370\uC774\uD130 \uBCF5\uAD6C\uB97C \uC704\
   \uD574 \uC784\uC2DC \uD30C\uC77C\uC744 \uB9CC\uB4ED\uB2C8\uB2E4."
 title: "\uC784\uC2DC \uD30C\uC77C \uC0DD\uC131\uD558\uAE30"
+weight: 21
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why? (무엇인가요? 그리고 왜?)
 임시 파일 생성은 데이터를 일시적으로 저장할 때 사용합니다. 프로그래머들은 대용량 처리, 보안 데이터 임시 저장, 또는 애플리케이션 충돌 시 데이터 복구를 위해 임시 파일을 만듭니다.

@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Een HTTP-verzoek verzenden met basisauthenticatie voegt een beveiligingslaag\
   \ toe door om een gebruikersnaam en wachtwoord te vragen. Programmeurs\u2026"
 title: Een HTTP-verzoek verzenden met basisauthenticatie
+weight: 45
 ---
-
-{{< edit_this_page >}}
 
 ## Wat & Waarom?
 Een HTTP-verzoek verzenden met basisauthenticatie voegt een beveiligingslaag toe door om een gebruikersnaam en wachtwoord te vragen. Programmeurs gebruiken dit om toegang te krijgen tot API's of webservices die alleen toegankelijk zijn voor geautoriseerde gebruikers.

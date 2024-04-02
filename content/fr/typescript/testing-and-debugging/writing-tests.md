@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "\xC9crire des tests en TypeScript implique de cr\xE9er des scripts automatis\xE9\
   s pour v\xE9rifier la fonctionnalit\xE9 et la correction de votre code. Les programmeurs\u2026"
 title: "R\xE9daction de tests"
+weight: 36
 ---
-
-{{< edit_this_page >}}
 
 ## Quoi & Pourquoi ?
 Écrire des tests en TypeScript implique de créer des scripts automatisés pour vérifier la fonctionnalité et la correction de votre code. Les programmeurs le font pour assurer la fiabilité, attraper rapidement les bugs, et faciliter une croissance de code maintenable, étant donné que le typage statique de TypeScript ajoute un niveau de prévisibilité aux tests JavaScript.

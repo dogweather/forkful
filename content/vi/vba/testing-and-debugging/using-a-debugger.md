@@ -2,17 +2,18 @@
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 22:04:32.669741-07:00
-description: "S\u1EED d\u1EE5ng m\u1ED9t tr\xECnh g\u1EE1 l\u1ED7i trong Visual Basic\
-  \ for Applications (VBA) bao g\u1ED3m vi\u1EC7c ch\u1EA1y m\xE3 c\u1EE7a b\u1EA1\
-  n t\u1EEBng b\u01B0\u1EDBc m\u1ED9t \u0111\u1EC3 ki\u1EC3m tra lu\u1ED3ng th\u1EF1\
-  c thi v\xE0 tr\u1EA1ng th\xE1i c\u1EE7a\u2026"
+description: "Trong VBA, tr\xECnh g\u1EE1 l\u1ED7i l\xE0 m\u1ED9t ph\u1EA7n kh\xF4\
+  ng th\u1EC3 thi\u1EBFu c\u1EE7a Visual Basic Editor (VBE). D\u01B0\u1EDBi \u0111\
+  \xE2y l\xE0 c\xE1ch b\u1EA1n c\xF3 th\u1EC3 t\u1EADn d\u1EE5ng n\xF3: 1. **\u0110\
+  \u1EB7t \u0110i\u1EC3m D\u1EEBng\u2026"
 lastmod: '2024-03-13T22:44:36.439108-06:00'
 model: gpt-4-0125-preview
-summary: "S\u1EED d\u1EE5ng m\u1ED9t tr\xECnh g\u1EE1 l\u1ED7i trong Visual Basic\
-  \ for Applications (VBA) bao g\u1ED3m vi\u1EC7c ch\u1EA1y m\xE3 c\u1EE7a b\u1EA1\
-  n t\u1EEBng b\u01B0\u1EDBc m\u1ED9t \u0111\u1EC3 ki\u1EC3m tra lu\u1ED3ng th\u1EF1\
-  c thi v\xE0 tr\u1EA1ng th\xE1i c\u1EE7a\u2026"
+summary: "Trong VBA, tr\xECnh g\u1EE1 l\u1ED7i l\xE0 m\u1ED9t ph\u1EA7n kh\xF4ng th\u1EC3\
+  \ thi\u1EBFu c\u1EE7a Visual Basic Editor (VBE). D\u01B0\u1EDBi \u0111\xE2y l\xE0\
+  \ c\xE1ch b\u1EA1n c\xF3 th\u1EC3 t\u1EADn d\u1EE5ng n\xF3: 1. **\u0110\u1EB7t \u0110\
+  i\u1EC3m D\u1EEBng\u2026"
 title: "S\u1EED d\u1EE5ng tr\xECnh g\u1EE1 l\u1ED7i"
+weight: 35
 ---
 
 ## Cách thực hiện:

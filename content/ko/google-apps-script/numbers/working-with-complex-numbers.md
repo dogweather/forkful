@@ -21,9 +21,8 @@ summary: "\uBCF5\uC18C\uC218\uB294 \uC2E4\uC218 \uBD80\uC640 \uD5C8\uC218 \uBD80
   \ \uD504\uB85C\uADF8\uB798\uBA38\uB4E4\uC774 \uACFC\uD559\uC801 \uACC4\uC0B0, \uC2E0\
   \uD638 \uCC98\uB9AC\u2026"
 title: "\uBCF5\uC7A1\uD55C \uC22B\uC790\uB97C \uB2E4\uB8E8\uAE30"
+weight: 14
 ---
-
-{{< edit_this_page >}}
 
 ## 무엇 & 왜?
 복소수는 실수 부와 허수 부의 조합(e.g., 3 + 4i)으로 표현되며, 특히 엔지니어링, 물리학 및 응용 수학에서 다양한 계산 문제에 있어 기본적입니다. Google Apps Script에서 이러한 수를 다루는 방법을 배우는 것은 프로그래머들이 과학적 계산, 신호 처리 등을 포함한 분야로 그들의 능력을 확장할 수 있게 합니다.

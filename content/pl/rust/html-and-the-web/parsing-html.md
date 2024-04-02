@@ -11,9 +11,8 @@ summary: "Parsowanie HTML w Rust polega na wydobywaniu danych z dokument\xF3w HT
   \ co jest kluczowe dla web scrapingu, ekstrakcji danych lub budowania web crawler\xF3\
   w.\u2026"
 title: "Analiza sk\u0142adniowa HTML"
+weight: 43
 ---
-
-{{< edit_this_page >}}
 
 ## Co i dlaczego?
 

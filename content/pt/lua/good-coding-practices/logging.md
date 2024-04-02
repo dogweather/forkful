@@ -8,9 +8,8 @@ model: gpt-4-1106-preview
 summary: "Logging \xE9 a pr\xE1tica de registrar eventos, erros e outros pontos de\
   \ dados significativos que ocorrem no ciclo de vida de uma aplica\xE7\xE3o de software.\u2026"
 title: Registro de Logs
+weight: 17
 ---
-
-{{< edit_this_page >}}
 
 ## O Que é & Por Que?
 

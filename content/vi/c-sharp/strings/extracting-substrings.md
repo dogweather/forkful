@@ -13,9 +13,8 @@ summary: "R\xFAt tr\xEDch c\xE1c chu\u1ED7i con l\xE0 h\xE0nh \u0111\u1ED9ng l\u
   ng nh\u01B0 c\xE1ch b\u1EA1n m\xFAc m\u1ED9t ph\u1EA7n \u01B0a th\xEDch t\u1EEB\
   \ m\u1ED9t chi\u1EBFc b\xE1nh. L\u1EADp tr\xECnh vi\xEAn th\u1EF1c\u2026"
 title: "Tr\xEDch xu\u1EA5t chu\u1ED7i con"
+weight: 6
 ---
-
-{{< edit_this_page >}}
 
 ## Lý do và Lý do tại sao?
 Rút trích các chuỗi con là hành động lấy một phần cụ thể của một chuỗi — giống như cách bạn múc một phần ưa thích từ một chiếc bánh. Lập trình viên thực hiện việc này để thao tác, phân tích, hoặc xác thực các phần nhỏ hơn của một chuỗi lớn mà không cần phải giải quyết toàn bộ chuỗi.

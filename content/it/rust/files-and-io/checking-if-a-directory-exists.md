@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Nello sviluppo software, spesso \xE8 necessario verificare se una directory\
   \ esiste per evitare errori quando si tenta di accedere, leggere o scrivere file.\u2026"
 title: Verifica se una directory esiste
+weight: 20
 ---
-
-{{< edit_this_page >}}
 
 ## Cosa & Perché?
 Nello sviluppo software, spesso è necessario verificare se una directory esiste per evitare errori quando si tenta di accedere, leggere o scrivere file. Rust, essendo un linguaggio di programmazione di sistema, offre metodi robusti per eseguire questo compito, garantendo che il tuo programma possa gestire file e directory in modo sicuro ed efficiente.

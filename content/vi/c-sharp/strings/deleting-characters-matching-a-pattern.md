@@ -13,9 +13,8 @@ summary: "X\xF3a c\xE1c k\xFD t\u1EF1 kh\u1EDBp v\u1EDBi m\u1ED9t m\u1EABu l\xE0
   \ th\u1EC3 t\u1EEB c\xE1c chu\u1ED7i d\u1EF1a tr\xEAn c\xE1c quy t\u1EAFc (nh\u01B0\
   \ regex). L\u1EADp tr\xECnh vi\xEAn th\u1EF1c hi\u1EC7n\u2026"
 title: "X\xF3a c\xE1c k\xFD t\u1EF1 ph\xF9 h\u1EE3p v\u1EDBi m\u1ED9t m\u1EABu"
+weight: 5
 ---
-
-{{< edit_this_page >}}
 
 ## Gì & Tại sao?
 Xóa các ký tự khớp với một mẫu là quá trình tìm và loại bỏ các chuỗi ký tự cụ thể từ các chuỗi dựa trên các quy tắc (như regex). Lập trình viên thực hiện điều này để dọn dẹp dữ liệu, xác nhận đầu vào, hoặc thao tác văn bản cho các mục đích khác nhau.

@@ -10,9 +10,8 @@ model: gpt-4-0125-preview
 summary: "Das \xDCberpr\xFCfen, ob ein Verzeichnis in C# existiert, involviert die\
   \ Verifizierung der Pr\xE4senz eines Ordners in einem spezifizierten Pfad im Dateisystem.\u2026"
 title: "\xDCberpr\xFCfung, ob ein Verzeichnis existiert"
+weight: 20
 ---
-
-{{< edit_this_page >}}
 
 ## Was & Warum?
 

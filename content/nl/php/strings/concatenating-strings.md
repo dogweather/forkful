@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Het samenvoegen van strings is eigenlijk gewoon woorden aan elkaar rijgen.\
   \ Denk erover als het maken van een trein uit woorden in plaats van rijtuigen.\u2026"
 title: Samenvoegen van strings
+weight: 3
 ---
-
-{{< edit_this_page >}}
 
 ## Wat & Waarom?
 

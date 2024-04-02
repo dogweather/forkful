@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Getting the current date in Elixir involves accessing the system's date\
   \ and time information, a common task for logging, data stamping, or any\u2026"
 title: Getting the current date
+weight: 29
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 Getting the current date in Elixir involves accessing the system's date and time information, a common task for logging, data stamping, or any functionality that requires knowledge of the current date. This operation is essential for creating time-aware applications and for tasks like generating reports or timestamps in a web application.

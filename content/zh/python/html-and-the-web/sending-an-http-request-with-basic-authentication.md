@@ -14,9 +14,8 @@ summary: "\u5728Python\u4E2D\u53D1\u9001\u5E26\u6709\u57FA\u672C\u8BA4\u8BC1\u76
   \u8FD9\u4E48\u505A\u662F\u56E0\u4E3A\u4E00\u4E9B\u7F51\u7AD9\u7684API\u8981\u6C42\
   \u4F7F\u7528\u57FA\u672C\u8BA4\u8BC1\u6765\u9A8C\u8BC1\u7528\u6237\u8EAB\u4EFD\u3002"
 title: "\u4F7F\u7528\u57FA\u672C\u8BA4\u8BC1\u53D1\u9001 HTTP \u8BF7\u6C42"
+weight: 45
 ---
-
-{{< edit_this_page >}}
 
 ## 什么 & 为什么？
 在Python中发送带有基本认证的HTTP请求允许你安全地访问需要用户名和密码的网络资源。程序员这么做是因为一些网站的API要求使用基本认证来验证用户身份。

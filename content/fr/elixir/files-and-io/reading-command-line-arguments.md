@@ -9,9 +9,8 @@ summary: "Lire des arguments de la ligne de commande, c'est r\xE9cup\xE9rer les 
   es qu'un utilisateur entre lorsqu'il ex\xE9cute votre programme. Les programmeurs\
   \ font\u2026"
 title: Lecture des arguments de ligne de commande
+weight: 23
 ---
-
-{{< edit_this_page >}}
 
 ## Quoi & Pourquoi ?
 

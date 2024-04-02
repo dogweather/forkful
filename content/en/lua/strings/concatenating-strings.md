@@ -9,9 +9,8 @@ summary: "Concatenating strings means sticking them together end-to-end to make 
   \ new one. Programmers do it to build up text dynamically, like creating messages\
   \ or\u2026"
 title: Concatenating strings
+weight: 3
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 Concatenating strings means sticking them together end-to-end to make a new one. Programmers do it to build up text dynamically, like creating messages or generating code.

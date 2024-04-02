@@ -14,9 +14,8 @@ summary: "\u5728\u7F16\u7A0B\u4E2D\uFF0C\u8BA1\u7B97\u5B57\u7B26\u4E32\u7684\u95
   \u4EE5\u4FBF\u8FDB\u884C\u6587\u672C\u5904\u7406\uFF0C\u5982\u622A\u53D6\u3001\u6BD4\
   \u8F83\u3001\u9A8C\u8BC1\u8F93\u5165\u3002"
 title: "\u83B7\u53D6\u5B57\u7B26\u4E32\u7684\u957F\u5EA6"
+weight: 7
 ---
-
-{{< edit_this_page >}}
 
 ## 什么 & 为什么？
 在编程中，计算字符串的长度就是确定其包含多少个字符。程序员需要知道字符串的长度，以便进行文本处理，如截取、比较、验证输入。

@@ -13,9 +13,8 @@ summary: "TOML\uFF0C\u4EE3\u8868Tom\u7684\u660E\u663E\u3001\u6700\u5C0F\u5316\u8
   \u4E3A\u5B83\u6613\u4E8E\u4EBA\u7C7B\u8BFB\u5199\uFF0C\u4E14\u80FD\u6574\u6D01\u5730\
   \u6620\u5C04\u5230\u5E94\u7528\u7A0B\u5E8F\u6240\u9700\u7684\u952E\u503C\u5BF9\u3002"
 title: "\u4F7F\u7528TOML"
+weight: 39
 ---
-
-{{< edit_this_page >}}
 
 ## 什么 & 为什么？
 TOML，代表Tom的明显、最小化语言，是一种数据序列化语言。Elm程序员使用它来管理配置数据，因为它易于人类读写，且能整洁地映射到应用程序所需的键值对。

@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Regul\xE4re Ausdr\xFCcke (regex) in JavaScript sind Muster, die verwendet\
   \ werden, um Zeichenkombinationen in Zeichenketten abzugleichen. Programmierer nutzen\u2026"
 title: "Regul\xE4re Ausdr\xFCcke verwenden"
+weight: 11
 ---
-
-{{< edit_this_page >}}
 
 ## Was & Warum?
 

@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Obtener la fecha actual en JavaScript es una tarea fundamental, que implica\
   \ recuperar y posiblemente manipular la fecha y hora de hoy. Los programadores\u2026"
 title: Obteniendo la fecha actual
+weight: 29
 ---
-
-{{< edit_this_page >}}
 
 ## Qué y Por Qué?
 Obtener la fecha actual en JavaScript es una tarea fundamental, que implica recuperar y posiblemente manipular la fecha y hora de hoy. Los programadores realizan esto para mostrar fechas en sitios web, en aplicaciones, para rastrear interacciones de usuarios, o para manejar datos sensibles al tiempo.

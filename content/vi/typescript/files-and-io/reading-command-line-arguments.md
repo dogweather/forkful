@@ -13,9 +13,8 @@ summary: "C\xE1c \u0111\u1ED1i s\u1ED1 d\xF2ng l\u1EC7nh cho ph\xE9p ng\u01B0\u1
   \ ch\u1EA1y n\xF3. C\xE1c l\u1EADp tr\xECnh vi\xEAn s\u1EED d\u1EE5ng ch\xFAng \u0111\
   \u1EC3 t\xF9y ch\u1EC9nh h\xE0nh vi c\u1EE7a ch\u01B0\u01A1ng\u2026"
 title: "\u0110\u1ECDc c\xE1c \u0111\u1ED1i s\u1ED1 d\xF2ng l\u1EC7nh"
+weight: 23
 ---
-
-{{< edit_this_page >}}
 
 ## Cái gì & Tại sao?
 Các đối số dòng lệnh cho phép người dùng truyền dữ liệu vào chương trình khi họ chạy nó. Các lập trình viên sử dụng chúng để tùy chỉnh hành vi của chương trình mà không cần thay đổi mã.

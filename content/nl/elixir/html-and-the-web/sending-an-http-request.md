@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Een HTTP-verzoek verzenden is hoe jouw programma data van het web vraagt,\
   \ een beetje zoals je een bibliothecaris om een boek zou vragen. Programmeurs doen\u2026"
 title: Een HTTP-verzoek verzenden
+weight: 44
 ---
-
-{{< edit_this_page >}}
 
 ## Wat & Waarom?
 Een HTTP-verzoek verzenden is hoe jouw programma data van het web vraagt, een beetje zoals je een bibliothecaris om een boek zou vragen. Programmeurs doen dit om externe data op te halen, te verzenden of te manipuleren, van het krijgen van het weer tot het plaatsen van tweets.

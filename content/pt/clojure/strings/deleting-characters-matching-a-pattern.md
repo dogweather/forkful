@@ -9,9 +9,8 @@ summary: "Deletar caracteres que seguem um padr\xE3o \xE9 como tirar ervas danin
   \ do seu jardim de strings; \xE0s vezes, voc\xEA s\xF3 precisa de tulipas, n\xE3\
   o de dente-de-le\xE3o.\u2026"
 title: "Excluindo caracteres que correspondem a um padr\xE3o"
+weight: 5
 ---
-
-{{< edit_this_page >}}
 
 ## O Que & Por Quê?
 Deletar caracteres que seguem um padrão é como tirar ervas daninhas do seu jardim de strings; às vezes, você só precisa de tulipas, não de dente-de-leão. Programadores fazem isso para limpar dados, remover informação desnecessária ou preparar strings para um formato específico.

@@ -11,9 +11,8 @@ summary: "\xC5 konkatenerere strenger i programmering inneb\xE6rer \xE5 kombiner
   \ to eller flere strenger til \xE9n. Programmerere gj\xF8r dette for \xE5 enkelt\
   \ manipulere tekstdata,\u2026"
 title: "Sammensl\xE5ing av strenger"
+weight: 3
 ---
-
-{{< edit_this_page >}}
 
 ## Hva & Hvorfor?
 Å konkatenerere strenger i programmering innebærer å kombinere to eller flere strenger til én. Programmerere gjør dette for å enkelt manipulere tekstdata, konstruere meldinger eller dynamisk sette sammen deler av et brukergrensesnitt.

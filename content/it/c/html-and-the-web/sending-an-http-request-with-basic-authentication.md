@@ -10,9 +10,8 @@ model: gpt-4-0125-preview
 summary: "Inviare una richiesta HTTP con autenticazione di base in C comporta la creazione\
   \ di una richiesta HTTP che include un'intestazione di Autorizzazione con\u2026"
 title: Inviare una richiesta HTTP con autenticazione di base
+weight: 45
 ---
-
-{{< edit_this_page >}}
 
 ## Cosa & Perché?
 Inviare una richiesta HTTP con autenticazione di base in C comporta la creazione di una richiesta HTTP che include un'intestazione di Autorizzazione con le credenziali dell'utente codificate in Base64. Questo è un metodo comune per aggiungere un semplice strato di autenticazione alle richieste HTTP, consentendo di accedere programmaticamente a risorse riservate.

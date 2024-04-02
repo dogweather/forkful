@@ -9,9 +9,8 @@ summary: "Praca z XML w kontek\u015Bcie Swift oznacza analiz\u0119 i generowanie
   \ XML. Programi\u015Bci robi\u0105 to dla wymiany danych, zw\u0142aszcza podczas\
   \ integracji z\u2026"
 title: Praca z XML
+weight: 40
 ---
-
-{{< edit_this_page >}}
 
 ## Co i dlaczego?
 Praca z XML w kontekście Swift oznacza analizę i generowanie danych XML. Programiści robią to dla wymiany danych, zwłaszcza podczas integracji z systemami, gdzie XML jest standardowym formatem.

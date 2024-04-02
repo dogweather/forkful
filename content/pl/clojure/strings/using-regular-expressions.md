@@ -11,9 +11,8 @@ summary: "Wyra\u017Cenia regularne to pot\u0119\u017Cne narz\u0119dzie do dopaso
   \ wzorc\xF3w i manipulowania danymi, niezb\u0119dne w zadaniach przetwarzania tekstu,\
   \ takich jak walidacja\u2026"
 title: "Korzystanie z wyra\u017Ce\u0144 regularnych"
+weight: 11
 ---
-
-{{< edit_this_page >}}
 
 ## Co i dlaczego?
 Wyrażenia regularne to potężne narzędzie do dopasowywania wzorców i manipulowania danymi, niezbędne w zadaniach przetwarzania tekstu, takich jak walidacja danych wejściowych, wyszukiwanie i zamiana tekstu. Programiści używają ich intensywnie do efektywnego i zwięzłego obsługiwania złożonych zadań związanych z analizą ciągów znaków i walidacją danych.

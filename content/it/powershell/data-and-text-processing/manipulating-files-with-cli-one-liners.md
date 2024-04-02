@@ -8,9 +8,8 @@ model: gpt-4-0125-preview
 summary: "La manipolazione di file con one-liner CLI in PowerShell riguarda la modifica,\
   \ lo spostamento o l'ottenimento di dati di file direttamente dalla riga di\u2026"
 title: Manipolazione di file con one-liner da CLI
+weight: 31
 ---
-
-{{< edit_this_page >}}
 
 ## Cosa & Perché?
 

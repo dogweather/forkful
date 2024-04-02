@@ -9,9 +9,8 @@ summary: "Cercare e sostituire del testo \xE8 l'atto di trovare specifiche strin
   \ in un dato testo e scambiarle con altre. I programmatori lo fanno per correzioni\
   \ in\u2026"
 title: Ricerca e sostituzione del testo
+weight: 10
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why? (Cosa e Perché?)
 Cercare e sostituire del testo è l'atto di trovare specifiche stringhe in un dato testo e scambiarle con altre. I programmatori lo fanno per correzioni in massa, refactoring del codice, o per manipolare dati.

@@ -11,9 +11,8 @@ summary: "Associativa arrayer, eller som Elm kallar dem, Ordb\xF6cker, mappar ny
   \ till v\xE4rden p\xE5 ett s\xE4tt som g\xF6r uppslag, infogning och borttagning\
   \ av v\xE4rden\u2026"
 title: "Att anv\xE4nda associativa arrayer"
+weight: 15
 ---
-
-{{< edit_this_page >}}
 
 ## Vad & Varför?
 

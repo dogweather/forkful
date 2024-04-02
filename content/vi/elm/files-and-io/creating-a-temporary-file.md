@@ -13,9 +13,8 @@ summary: "T\u1EA1o m\u1ED9t file t\u1EA1m th\u1EDDi c\xF3 ngh\u0129a l\xE0 t\u1E
   ng ng\u1EAFn h\u1EA1n. C\xE1c l\u1EADp tr\xECnh vi\xEAn l\xE0m \u0111i\u1EC1u n\xE0\
   y v\xEC m\u1ED9t s\u1ED1 l\xFD do nh\u01B0 b\u1EA3o v\u1EC7 d\u1EEF li\u1EC7u\u2026"
 title: "T\u1EA1o m\u1ED9t t\u1EADp tin t\u1EA1m th\u1EDDi"
+weight: 21
 ---
-
-{{< edit_this_page >}}
 
 # Tạo file tạm thời với Elm
 

@@ -9,9 +9,8 @@ summary: "\u0141\u0105czenie napis\xF3w to po prostu sklejanie ich w jeden. Prog
   ci robi\u0105 to, \u017Ceby tworzy\u0107 sensowne komunikaty lub dynamicznie budowa\u0107\
   \ tekst."
 title: "\u0141\u0105czenie \u0142a\u0144cuch\xF3w znak\xF3w"
+weight: 3
 ---
-
-{{< edit_this_page >}}
 
 ## Co i Dlaczego?
 Łączenie napisów to po prostu sklejanie ich w jeden. Programiści robią to, żeby tworzyć sensowne komunikaty lub dynamicznie budować tekst.

@@ -7,9 +7,8 @@ model: gpt-4-1106-preview
 summary: "Logging in programming is essentially leaving a trail of breadcrumbs in\
   \ the form of recorded events or messages, which can be used to track what your\u2026"
 title: Logging
+weight: 17
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 Logging in programming is essentially leaving a trail of breadcrumbs in the form of recorded events or messages, which can be used to track what your application is doing at any given moment. Programmers do it to debug issues, monitor system performance, and audit behavior for security and compliance reasons.

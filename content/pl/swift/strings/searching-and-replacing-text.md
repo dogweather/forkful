@@ -7,9 +7,8 @@ model: gpt-4-1106-preview
 summary: "Szukanie i zamiana tekstu to chleb powszedni w programowaniu: odnajdujemy\
   \ okre\u015Blone frazy i zmieniamy je na inne. Robimy to, gdy potrzebujemy masowo\u2026"
 title: Wyszukiwanie i zamiana tekstu
+weight: 10
 ---
-
-{{< edit_this_page >}}
 
 ## Co i dlaczego?
 Szukanie i zamiana tekstu to chleb powszedni w programowaniu: odnajdujemy określone frazy i zmieniamy je na inne. Robimy to, gdy potrzebujemy masowo poprawić dane, zaktualizować kod lub po prostu zautomatyzować nudne zadania edycyjne.

@@ -7,9 +7,8 @@ model: gpt-4-1106-preview
 summary: "Empezar un nuevo proyecto en TypeScript es como plantar una semilla digital;\
   \ le das los nutrientes b\xE1sicos y la ves crecer. Los programadores arrancan\u2026"
 title: Iniciando un nuevo proyecto
+weight: 1
 ---
-
-{{< edit_this_page >}}
 
 ## Qué es y Por Qué?
 Empezar un nuevo proyecto en TypeScript es como plantar una semilla digital; le das los nutrientes básicos y la ves crecer. Los programadores arrancan proyectos para solucionar problemas, explorar tecnologías o poner en práctica alguna genialidad.

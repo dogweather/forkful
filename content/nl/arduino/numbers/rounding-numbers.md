@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Afronden van getallen betekent het trimmen van een decimaal naar de dichtstbijzijnde\
   \ gehele waarde of naar een vastgesteld aantal decimalen. Programmeurs\u2026"
 title: Afronden van getallen
+weight: 13
 ---
-
-{{< edit_this_page >}}
 
 ## Wat & Waarom?
 Afronden van getallen betekent het trimmen van een decimaal naar de dichtstbijzijnde gehele waarde of naar een vastgesteld aantal decimalen. Programmeurs ronden getallen af om ze makkelijker leesbaar en hanteerbaar te maken, vooral wanneer precisie voorbij een bepaald punt onnodig is of tot fouten kan leiden.

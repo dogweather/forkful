@@ -13,9 +13,8 @@ summary: "So s\xE1nh hai ng\xE0y t\u1EE9c l\xE0 ki\u1EC3m tra xem ch\xFAng c\xF3
   \u1EDBc ho\u1EB7c sau c\xE1i kia. L\u1EADp tr\xECnh vi\xEAn l\xE0m \u0111i\u1EC1\
   u n\xE0y \u0111\u1EC3 theo\u2026"
 title: "So s\xE1nh hai ng\xE0y"
+weight: 27
 ---
-
-{{< edit_this_page >}}
 
 ## Cái gì & Tại sao?
 

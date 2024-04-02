@@ -9,9 +9,8 @@ summary: "Starting a new project means setting up the initial structure and vita
   \ files you\u2019ll need for your application. Programmers initiate new projects\
   \ to kick\u2026"
 title: Starting a new project
+weight: 1
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 

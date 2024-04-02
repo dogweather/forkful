@@ -11,9 +11,8 @@ summary: "Das Schreiben von Tests in Dart umfasst das Erstellen von Testf\xE4lle
   \ um automatisch zu \xFCberpr\xFCfen, ob verschiedene Teile Ihres Programms wie\
   \ erwartet\u2026"
 title: Tests schreiben
+weight: 36
 ---
-
-{{< edit_this_page >}}
 
 ## Was & Warum?
 

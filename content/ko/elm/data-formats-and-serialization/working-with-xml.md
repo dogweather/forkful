@@ -15,9 +15,8 @@ summary: "Elm\uC5D0\uC11C XML\uC744 \uB2E4\uB8EC\uB2E4\uB294 \uAC83\uC740 Elm\uC
   \ \uB808\uAC70\uC2DC \uC2DC\uC2A4\uD15C\uB4E4\uACFC \uC0C1\uD638\uC791\uC6A9\uD558\
   \uAE30 \uC704\uD574 \uC774\uB8E8\uC5B4\uC9D1\uB2C8\uB2E4."
 title: "XML \uB2E4\uB8E8\uAE30"
+weight: 40
 ---
-
-{{< edit_this_page >}}
 
 ## 무엇 & 왜?
 Elm에서 XML을 다룬다는 것은 Elm에서 XML 문서를 파싱, 변환, 생성하는 것을 의미합니다. 많은 웹 서비스와 XML을 데이터 포맷으로 사용하는 레거시 시스템들과 상호작용하기 위해 이루어집니다.

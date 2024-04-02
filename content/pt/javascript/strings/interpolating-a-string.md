@@ -9,9 +9,8 @@ summary: "Interpolar strings \xE9 o processo de misturar vari\xE1veis, express\x
   es e texto dentro de uma string. Programadores fazem isso para tornar o c\xF3digo\
   \ mais\u2026"
 title: Interpolando uma string
+weight: 8
 ---
-
-{{< edit_this_page >}}
 
 ## O Quê & Porquê?
 Interpolar strings é o processo de misturar variáveis, expressões e texto dentro de uma string. Programadores fazem isso para tornar o código mais legível, para evitar a bagunça de concatenar strings e variáveis, e para dinamizar a criação de texto.

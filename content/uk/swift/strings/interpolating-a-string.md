@@ -8,9 +8,8 @@ summary: String interpolation allows us to insert variables into strings. It's a
   clean way to construct strings - essentials in coding.
 title: "\u0406\u043D\u0442\u0435\u0440\u043F\u043E\u043B\u044F\u0446\u0456\u044F \u0440\
   \u044F\u0434\u043A\u0456\u0432"
+weight: 8
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why? (Що та Чому?)
 String interpolation allows us to insert variables into strings. It's a swift, clean way to construct strings - essentials in coding.

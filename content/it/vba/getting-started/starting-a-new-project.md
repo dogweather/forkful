@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "L'avvio di un nuovo progetto in Visual Basic for Applications (VBA) comporta\
   \ l'installazione di un ambiente all'interno di un'applicazione host, come\u2026"
 title: Iniziando un nuovo progetto
+weight: 1
 ---
-
-{{< edit_this_page >}}
 
 ## Cos'è e Perché?
 

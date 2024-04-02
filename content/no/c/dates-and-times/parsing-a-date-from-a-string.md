@@ -11,9 +11,8 @@ summary: "Analysering av en dato fra en tekststreng i C inneb\xE6rer \xE5 konver
   \ tekstuelle representasjoner av datoer til et format som programmer kan manipulere\
   \ og\u2026"
 title: Tolke en dato fra en streng
+weight: 30
 ---
-
-{{< edit_this_page >}}
 
 ## Hva og hvorfor?
 

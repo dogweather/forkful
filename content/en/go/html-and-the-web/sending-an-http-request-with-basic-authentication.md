@@ -9,9 +9,8 @@ summary: "Sending an HTTP request with basic authentication in Go involves addin
   \ an authorization header to your request that includes a username and password\
   \ in\u2026"
 title: Sending an HTTP request with basic authentication
+weight: 45
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 

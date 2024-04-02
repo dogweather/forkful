@@ -2,13 +2,15 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 18:10:12.372901-07:00
-description: "Bij het programmeren in Go gebruikmaken van een debugger houdt in dat\
-  \ je tools of functies gebruikt om de staat van een draaiend programma te inspecteren\u2026"
+description: "Go biedt een ingebouwde faciliteit voor debugging genaamd `delve`. Het\
+  \ is een volledig uitgerust debugginggereedschap waarmee je Go-programma's stap\
+  \ voor\u2026"
 lastmod: '2024-03-13T22:44:50.292283-06:00'
 model: gpt-4-0125-preview
-summary: "Bij het programmeren in Go gebruikmaken van een debugger houdt in dat je\
-  \ tools of functies gebruikt om de staat van een draaiend programma te inspecteren\u2026"
+summary: "Go biedt een ingebouwde faciliteit voor debugging genaamd `delve`. Het is\
+  \ een volledig uitgerust debugginggereedschap waarmee je Go-programma's stap voor\u2026"
 title: Een debugger gebruiken
+weight: 35
 ---
 
 ## Hoe te:

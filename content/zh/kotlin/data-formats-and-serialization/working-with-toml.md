@@ -15,9 +15,8 @@ summary: "TOML \u4EE3\u8868 Tom's Obvious, Minimal Language\uFF08\u6C64\u59C6\u7
   \u8005\u9009\u62E9 TOML \u6765\u907F\u514D XML \u7684\u6742\u4E71\u548C JSON \u7684\
   \u68D8\u624B\uFF0C\u8FDB\u884C\u914D\u7F6E\u7BA1\u7406\u3002"
 title: "\u4F7F\u7528TOML"
+weight: 39
 ---
-
-{{< edit_this_page >}}
 
 ## 什么 & 为什么？
 TOML 代表 Tom's Obvious, Minimal Language（汤姆的明显、最小语言）。它用于配置文件，因为它易于人类阅读和编写，同时也易于机器解析。开发者选择 TOML 来避免 XML 的杂乱和 JSON 的棘手，进行配置管理。

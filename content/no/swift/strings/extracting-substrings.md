@@ -9,9 +9,8 @@ summary: "Utdrag av understrenger betyr \xE5 velge spesifikke deler av en streng
   \ Programmerere gj\xF8r dette for \xE5 manipulere, analysere eller formatere tekstdata\
   \ mer\u2026"
 title: Uthenting av delstrenger
+weight: 6
 ---
-
-{{< edit_this_page >}}
 
 ## Hva & Hvorfor?
 Utdrag av understrenger betyr å velge spesifikke deler av en streng. Programmerere gjør dette for å manipulere, analysere eller formatere tekstdata mer spesifikt.

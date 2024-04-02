@@ -11,9 +11,8 @@ summary: "\xC5 skrive tester i Kotlin inneb\xE6rer \xE5 lage kodeutsnitt som aut
   \ validerer den funksjonelle korrektheten av programvaremodulene dine, og s\xF8\
   rger for at\u2026"
 title: Skrive tester
+weight: 36
 ---
-
-{{< edit_this_page >}}
 
 ## Hva & Hvorfor?
 

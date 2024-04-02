@@ -15,9 +15,8 @@ summary: "Vi\u1EC7c vi\u1EBFt m\u1ED9t t\u1EC7p v\u0103n b\u1EA3n trong C bao g\
   a C \u0111\u1EC3 l\u01B0u d\u1EEF li\u1EC7u v\u0103n b\u1EA3n v\xE0o \u0111\xF3\
   .\u2026"
 title: "Vi\u1EBFt m\u1ED9t t\u1EC7p v\u0103n b\u1EA3n"
+weight: 24
 ---
-
-{{< edit_this_page >}}
 
 ## Gì & Tại sao?
 

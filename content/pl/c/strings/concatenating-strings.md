@@ -13,9 +13,8 @@ summary: "Konkatenacja \u0142a\u0144cuch\xF3w znak\xF3w w C polega na \u0142\u01
   cem, aby utworzy\u0107 nowy \u0142a\u0144cuch. Programi\u015Bci wykonuj\u0105 t\u0119\
   \u2026"
 title: "\u0141\u0105czenie \u0142a\u0144cuch\xF3w znak\xF3w"
+weight: 3
 ---
-
-{{< edit_this_page >}}
 
 ## Co i dlaczego?
 

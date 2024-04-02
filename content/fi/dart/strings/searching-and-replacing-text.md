@@ -11,9 +11,8 @@ summary: "Tekstin etsiminen ja korvaaminen Dartissa k\xE4sitt\xE4\xE4 merkkijono
   \ tutkiskelua tietyt mallit tai merkkijonojen sekvenssit l\xF6yt\xE4\xE4kseen ja\
   \ korvatakseen ne\u2026"
 title: Tekstin etsiminen ja korvaaminen
+weight: 10
 ---
-
-{{< edit_this_page >}}
 
 ## Mikä & Miksi?
 

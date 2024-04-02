@@ -15,9 +15,8 @@ summary: "\uB300\uD654\uD615 \uC258 \uB610\uB294 REPL(Read-Eval-Print Loop)\uC74
   \ \uBD88\uB9AC\uB294 REPL\uC744 \uC2E4\uD5D8, \uB514\uBC84\uAE45 \uBC0F \uC5B8\uC5B4\
   \ \uD559\uC2B5\uC744 \uC704\uD574 \uC0AC\uC6A9\uD569\uB2C8\uB2E4."
 title: "\uC778\uD130\uB799\uD2F0\uBE0C \uC178 (REPL) \uC0AC\uC6A9\uD558\uAE30"
+weight: 34
 ---
-
-{{< edit_this_page >}}
 
 ## 무엇인가 & 왜인가?
 대화형 쉘 또는 REPL(Read-Eval-Print Loop)은 실시간으로 코드 스니펫을 시도해 볼 수 있게 해 줍니다. 엘릭서 프로그래머들은 IEx(Interactive Elixir)라고 불리는 REPL을 실험, 디버깅 및 언어 학습을 위해 사용합니다.

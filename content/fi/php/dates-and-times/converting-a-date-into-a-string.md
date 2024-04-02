@@ -9,9 +9,8 @@ summary: "\"Mik\xE4 & Miksi?\" P\xE4iv\xE4m\xE4\xE4r\xE4n muuntaminen merkkijono
   \ palauttaa aika-arvon luettavassa muodossa. Ohjelmoijat tekev\xE4t t\xE4m\xE4n,\
   \ koska se helpottaa p\xE4iv\xE4m\xE4\xE4r\xE4n\u2026"
 title: "P\xE4iv\xE4m\xE4\xE4r\xE4n muuntaminen merkkijonoksi"
+weight: 28
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 "Mikä & Miksi?"

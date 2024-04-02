@@ -7,9 +7,8 @@ model: gpt-4-1106-preview
 summary: "Il logging \xE8 il processo di registrazione di eventi, errori e altre informazioni\
   \ significative durante l'esecuzione di un programma su un supporto\u2026"
 title: "Registrazione delle Attivit\xE0 (Logging)"
+weight: 17
 ---
-
-{{< edit_this_page >}}
 
 ## Cosa & Perché?
 

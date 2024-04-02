@@ -7,9 +7,8 @@ model: gpt-4-1106-preview
 summary: "La interpolaci\xF3n de cadenas en programaci\xF3n implica insertar din\xE1\
   micamente valores dentro de una cadena de texto. Los programadores la utilizan para\u2026"
 title: "Interpolaci\xF3n de cadenas de texto"
+weight: 8
 ---
-
-{{< edit_this_page >}}
 
 ## Qué y Por Qué?
 La interpolación de cadenas en programación implica insertar dinámicamente valores dentro de una cadena de texto. Los programadores la utilizan para construir mensajes personalizados, combinar datos con texto, o para la manipulación de cadenas en general, haciéndolo de forma legible y eficiente.

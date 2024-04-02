@@ -14,9 +14,8 @@ summary: "\u0110\u1ECDc m\u1ED9t t\u1EC7p v\u0103n b\u1EA3n trong Swift c\xF3 ng
   n \u0111\u0129a. C\xE1c l\u1EADp tr\xECnh vi\xEAn l\xE0m \u0111i\u1EC1u n\xE0y \u0111\
   \u1EC3 l\xE0m vi\u1EC7c v\u1EDBi d\u1EEF li\u1EC7u \u0111\xE3 l\u01B0u nh\u01B0\u2026"
 title: "\u0110\u1ECDc m\u1ED9t t\u1EC7p v\u0103n b\u1EA3n"
+weight: 22
 ---
-
-{{< edit_this_page >}}
 
 ## Gì và Tại sao?
 Đọc một tệp văn bản trong Swift có nghĩa là lấy nội dung từ một tệp lưu trữ trên đĩa. Các lập trình viên làm điều này để làm việc với dữ liệu đã lưu như cấu hình, nhật ký, hoặc nội dung do người dùng tạo.

@@ -26,9 +26,8 @@ summary: "Swift-\u098F JSON \u09A8\u09BF\u09DF\u09C7 \u0995\u09BE\u099C \u0995\u
   \u09A8\u09C7\u09B0\u2026"
 title: "JSON \u098F\u09B0 \u09B8\u09BE\u09A5\u09C7 \u0995\u09BE\u099C \u0995\u09B0\
   \u09BE"
+weight: 38
 ---
-
-{{< edit_this_page >}}
 
 ## কি এবং কেন?
 

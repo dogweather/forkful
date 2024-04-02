@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Code in Go in Funktionen zu organisieren, bedeutet, den Code in wiederverwendbare,\
   \ modulare Bl\xF6cke zu unterteilen, die spezifische Aufgaben ausf\xFChren.\u2026"
 title: Organisation von Code in Funktionen
+weight: 18
 ---
-
-{{< edit_this_page >}}
 
 ## Was & Warum?
 

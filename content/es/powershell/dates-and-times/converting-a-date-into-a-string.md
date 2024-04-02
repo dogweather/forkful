@@ -7,9 +7,8 @@ model: gpt-4-1106-preview
 summary: "Convertir una fecha en cadena permite presentarla en un formato legible\
   \ o espec\xEDfico. Los programadores lo hacen para mejorar la interfaz de usuario,\u2026"
 title: Convirtiendo una fecha en una cadena de texto
+weight: 28
 ---
-
-{{< edit_this_page >}}
 
 ## Qué y Por Qué?
 Convertir una fecha en cadena permite presentarla en un formato legible o específico. Los programadores lo hacen para mejorar la interfaz de usuario, almacenar información de manera uniforme o facilitar comparaciones de fechas.

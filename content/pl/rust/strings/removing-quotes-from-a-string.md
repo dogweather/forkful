@@ -9,9 +9,8 @@ summary: "Usuwanie cudzys\u0142ow\xF3w z ci\u0105gu znak\xF3w w Rust polega na u
   ciu zb\u0119dnych dodatkowych znak\xF3w cudzys\u0142owu, kt\xF3re mog\u0105 otacza\u0107\
   \ dane tekstowe. Programi\u015Bci robi\u0105\u2026"
 title: "Usuwanie cudzys\u0142ow\xF3w z ci\u0105gu znak\xF3w"
+weight: 9
 ---
-
-{{< edit_this_page >}}
 
 ## Co i dlaczego?
 

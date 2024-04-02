@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Lokitus C:ss\xE4 tarkoittaa ohjelman kulun ja merkitt\xE4vien tapahtumien\
   \ tallentamista sen suorituksen aikana, tarjoten konkreettisen katsauksen sen\u2026"
 title: Lokitiedostot
+weight: 17
 ---
-
-{{< edit_this_page >}}
 
 ## Mikä & Miksi?
 

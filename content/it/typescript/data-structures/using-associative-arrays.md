@@ -10,9 +10,8 @@ model: gpt-4-0125-preview
 summary: "Gli array associativi, o oggetti in TypeScript, ti permettono di usare stringhe\
   \ (o chiavi) per accedere a coppie di valori. I programmatori li usano per\u2026"
 title: Utilizzo di array associativi
+weight: 15
 ---
-
-{{< edit_this_page >}}
 
 ## Cosa e perché?
 

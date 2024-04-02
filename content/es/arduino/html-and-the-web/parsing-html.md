@@ -11,9 +11,8 @@ summary: "Analizar HTML en proyectos Arduino trata sobre extraer informaci\xF3n 
   \ p\xE1ginas web. Los programadores hacen esto para permitir que sus dispositivos\
   \ Arduino\u2026"
 title: Analizando HTML
+weight: 43
 ---
-
-{{< edit_this_page >}}
 
 ## ¿Qué y por qué?
 

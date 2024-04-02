@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "En Java, les tableaux associatifs ou les maps, vous permettent de stocker\
   \ des paires cl\xE9-valeur pour une recherche et une manipulation efficaces des\u2026"
 title: Utilisation des tableaux associatifs
+weight: 15
 ---
-
-{{< edit_this_page >}}
 
 ## Quoi & Pourquoi ?
 

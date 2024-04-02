@@ -9,9 +9,8 @@ summary: "Il refactoring \xE8 essenzialmente come fare le pulizie di primavera n
   \ tuo codice\u2014riguarda la ristrutturazione del codice esistente senza modificarne\
   \ il\u2026"
 title: Rifattorizzazione
+weight: 19
 ---
-
-{{< edit_this_page >}}
 
 ## Cosa e Perché?
 Il refactoring è essenzialmente come fare le pulizie di primavera nel tuo codice—riguarda la ristrutturazione del codice esistente senza modificarne il comportamento esterno. I programmatori lo fanno per rendere il codice più leggibile, ridurre la complessità, migliorare la manutenibilità e facilitarne l'estensione.

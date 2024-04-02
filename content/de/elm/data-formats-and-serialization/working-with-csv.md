@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Die Arbeit mit CSV (Comma Separated Values) umfasst das Parsen und Generieren\
   \ von Dateien, die tabellarische Daten in einem einfachen, Klartext-Format\u2026"
 title: Arbeiten mit CSV
+weight: 37
 ---
-
-{{< edit_this_page >}}
 
 ## Was & Warum?
 

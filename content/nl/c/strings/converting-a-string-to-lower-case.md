@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Het omzetten van een tekenreeks naar kleine letters in C houdt in dat alle\
   \ hoofdletters in een gegeven tekenreeks worden getransformeerd naar hun\u2026"
 title: Een string converteren naar kleine letters
+weight: 4
 ---
-
-{{< edit_this_page >}}
 
 ## Wat & Waarom?
 

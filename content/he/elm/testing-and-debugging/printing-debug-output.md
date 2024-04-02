@@ -8,9 +8,8 @@ summary: Printing debug output means showing values in your program for checking
   going on. We do it to find bugs and understand behavior without guessing.
 title: "\u05D4\u05D3\u05E4\u05E1\u05EA \u05E4\u05DC\u05D8 \u05DC\u05E0\u05D9\u05E4\
   \u05D5\u05D9 \u05D1\u05D0\u05D2\u05D9\u05DD"
+weight: 33
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why? (מה ולמה?)
 Printing debug output means showing values in your program for checking what's going on. We do it to find bugs and understand behavior without guessing.

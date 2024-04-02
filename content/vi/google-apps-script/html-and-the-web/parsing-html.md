@@ -13,9 +13,8 @@ summary: "Ph\xE2n t\xEDch c\xFA ph\xE1p HTML trong Google Apps Script bao g\u1ED
   i\u1EC1u n\xE0y \u0111\u1EB7c bi\u1EC7t h\u1EEFu \xEDch khi t\u01B0\u01A1ng t\xE1\
   c v\u1EDBi c\xE1c trang\u2026"
 title: "Ph\xE2n T\xEDch C\xFA Ph\xE1p HTML"
+weight: 43
 ---
-
-{{< edit_this_page >}}
 
 ## Cái gì & Tại sao?
 Phân tích cú pháp HTML trong Google Apps Script bao gồm việc trích xuất dữ liệu từ nội dung HTML, điều này đặc biệt hữu ích khi tương tác với các trang web hoặc nguồn dữ liệu dựa trên web. Các lập trình viên làm điều này để tự động hóa việc thu thập dữ liệu, thao tác nội dung web hoặc tích hợp chức năng web với các ứng dụng Google như Sheets và Docs.

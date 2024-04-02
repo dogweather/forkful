@@ -11,9 +11,8 @@ summary: "Kapitalizacja \u0142a\u0144cucha polega na zamianie pierwszego znaku k
   dego s\u0142owa w ci\u0105gu na wielk\u0105 liter\u0119, je\u015Bli jest ona pisana\
   \ ma\u0142\u0105 liter\u0105, zachowuj\u0105c przy tym\u2026"
 title: "Zamiana liter na wielkie w \u0142a\u0144cuchu znak\xF3w"
+weight: 2
 ---
-
-{{< edit_this_page >}}
 
 ## Co i dlaczego?
 Kapitalizacja łańcucha polega na zamianie pierwszego znaku każdego słowa w ciągu na wielką literę, jeśli jest ona pisana małą literą, zachowując przy tym niezmienione pozostałe znaki. Programiści często wykonują to zadanie w celu formatowania wyjść, wprowadzeń użytkownika lub przetwarzania danych, aby zapewnić spójność w sposobie prezentacji lub przetwarzania tekstu, szczególnie w interfejsach użytkownika czy zadaniach normalizacji danych.

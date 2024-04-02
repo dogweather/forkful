@@ -10,9 +10,8 @@ model: gpt-4-0125-preview
 summary: "Calcolare una data nel futuro o nel passato comporta determinare una data\
   \ che si trova a un numero specificato di giorni, mesi o anni di distanza da una\u2026"
 title: Calcolare una data nel futuro o nel passato
+weight: 26
 ---
-
-{{< edit_this_page >}}
 
 ## Cosa e Perché?
 Calcolare una data nel futuro o nel passato comporta determinare una data che si trova a un numero specificato di giorni, mesi o anni di distanza da una data data. I programmatori spesso hanno bisogno di questa funzionalità per automatizzare promemoria, abbonamenti, date di scadenza e la pianificazione di compiti in varie applicazioni.

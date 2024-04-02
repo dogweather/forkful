@@ -9,9 +9,8 @@ summary: "Att l\xE4sa kommandoradsargument handlar om att extrahera anv\xE4ndari
   \ direkt fr\xE5n terminalen. Programmerare g\xF6r detta f\xF6r att g\xF6ra sina\
   \ skript interaktiva\u2026"
 title: "L\xE4sa in kommandoradsargument"
+weight: 23
 ---
-
-{{< edit_this_page >}}
 
 ## Vad & Varför?
 Att läsa kommandoradsargument handlar om att extrahera användarinput direkt från terminalen. Programmerare gör detta för att göra sina skript interaktiva och flexibla.

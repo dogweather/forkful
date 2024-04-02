@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Das Format der durch Kommas getrennten Werte (CSV) ist aufgrund seiner Einfachheit\
   \ und der einfachen Integration in die meisten Programmiersprachen,\u2026"
 title: Arbeiten mit CSV
+weight: 37
 ---
-
-{{< edit_this_page >}}
 
 ## Was & Warum?
 

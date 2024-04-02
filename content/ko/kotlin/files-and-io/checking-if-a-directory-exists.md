@@ -24,9 +24,8 @@ summary: "Kotlin\uC5D0\uC11C \uB514\uB809\uD1A0\uB9AC\uC758 \uC874\uC7AC \uC5EC\
   \uB9AC \uBC0F \uB370\uC774\uD130 \uAD00\uB9AC\uB97C \uBCF4\uB2E4\u2026"
 title: "\uB514\uB809\uD1A0\uB9AC\uAC00 \uC874\uC7AC\uD558\uB294\uC9C0 \uD655\uC778\
   \uD558\uAE30"
+weight: 20
 ---
-
-{{< edit_this_page >}}
 
 ## 무엇을, 왜?
 Kotlin에서 디렉토리의 존재 여부를 확인하는 것은 지정된 경로에 디렉토리가 있는지 확인하는 과정을 포함합니다. 프로그래머들은 이 작업을 수행하여, 존재하지 않는 디렉토리에서 읽거나 쓰려고 시도하는 등의 오류를 방지하고, 애플리케이션 내에서 파일 처리 및 데이터 관리를 보다 원활하게 하기 위해 진행합니다.

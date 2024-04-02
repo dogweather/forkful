@@ -11,9 +11,8 @@ summary: "Att skriva tester i Haskell handlar om att s\xE4kerst\xE4lla att dina 
   \ fungerar som f\xF6rv\xE4ntat genom automatiserade kontroller. Programmerare g\xF6\
   r det\u2026"
 title: Skriva tester
+weight: 36
 ---
-
-{{< edit_this_page >}}
 
 ## Vad & Varför?
 

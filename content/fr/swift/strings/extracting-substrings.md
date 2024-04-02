@@ -9,9 +9,8 @@ summary: "Extraction de sous-cha\xEEnes signifie r\xE9cup\xE9rer une partie sp\x
   cifique d'une cha\xEEne de caract\xE8res. Les programmeurs le font pour analyser\
   \ des donn\xE9es,\u2026"
 title: "Extraction de sous-cha\xEEnes"
+weight: 6
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why? (Quoi et Pourquoi ?)
 Extraction de sous-chaînes signifie récupérer une partie spécifique d'une chaîne de caractères. Les programmeurs le font pour analyser des données, manipuler du texte ou simplifier des entrées utilisateurs.

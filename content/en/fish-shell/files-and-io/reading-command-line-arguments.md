@@ -7,9 +7,8 @@ model: gpt-4-1106-preview
 summary: "Reading command line arguments is grabbing the extra bits you type after\
   \ your script's name, like secret handshakes to customize a script's behavior.\u2026"
 title: Reading command line arguments
+weight: 23
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 Reading command line arguments is grabbing the extra bits you type after your script's name, like secret handshakes to customize a script's behavior. Programmers do it to make scripts flexible and interactive without a fuss.

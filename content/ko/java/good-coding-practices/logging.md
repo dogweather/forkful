@@ -21,9 +21,8 @@ summary: "\uB85C\uAE45\uC740 \uC18C\uD504\uD2B8\uC6E8\uC5B4 \uC560\uD50C\uB9AC\u
   \ \uCD94\uC801\uC744 \uC0DD\uC131\uD558\uAE30 \uC704\uD574 \uC774\uB7EC\uD55C \uC774\
   \uBCA4\uD2B8\uB97C \uB85C\uADF8\uD569\uB2C8\uB2E4."
 title: "\uB85C\uAE45"
+weight: 17
 ---
-
-{{< edit_this_page >}}
 
 ## 무엇이며, 왜 필요한가?
 로깅은 소프트웨어 애플리케이션 내에서 발생하는 이벤트를 기록하는 과정을 본질적으로 말합니다. 프로그래머는 실행 시간 정보를 캡처하고, 문제를 디버깅하고, 시스템 행위를 모니터하며, 보안 및 준수 목적을 위한 감사 추적을 생성하기 위해 이러한 이벤트를 로그합니다.

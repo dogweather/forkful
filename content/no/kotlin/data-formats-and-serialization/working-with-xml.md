@@ -9,9 +9,8 @@ summary: "\xC5 jobbe med XML inneb\xE6rer parsing, oppretting og manipulering av
   \ \u2013 et markup-spr\xE5k for datalagring og -overf\xF8ring. Programmerere gj\xF8\
   r dette\u2026"
 title: "\xC5 jobbe med XML"
+weight: 40
 ---
-
-{{< edit_this_page >}}
 
 ## Hva & Hvorfor?
 Å jobbe med XML innebærer parsing, oppretting og manipulering av XML-dokumenter – et markup-språk for datalagring og -overføring. Programmerere gjør dette fordi mange systemer fortsatt utveksler data i XML-format, og det er nødvendig for å opprettholde støtten til eldre systemer og for integrering med eksisterende teknologier.

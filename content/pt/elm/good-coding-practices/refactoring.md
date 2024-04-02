@@ -9,9 +9,8 @@ summary: "Refatora\xE7\xE3o \xE9 essencialmente uma limpeza de primavera no seu 
   digo \u2014 trata-se de reestruturar o c\xF3digo existente sem alterar seu comportamento\
   \ externo.\u2026"
 title: "Refatora\xE7\xE3o"
+weight: 19
 ---
-
-{{< edit_this_page >}}
 
 ## O Que & Por Que?
 Refatoração é essencialmente uma limpeza de primavera no seu código — trata-se de reestruturar o código existente sem alterar seu comportamento externo. Os programadores fazem isso para tornar o código mais legível, reduzir a complexidade, melhorar a manutenção e facilitar a extensão.

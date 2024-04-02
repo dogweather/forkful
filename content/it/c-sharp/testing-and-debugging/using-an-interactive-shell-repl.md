@@ -7,9 +7,8 @@ model: gpt-4-0125-preview
 summary: "Un REPL, o Ciclo Leggi-Valuta-Stampa, ti permette di digitare codice C#\
   \ ed eseguirlo interattivamente. I programmatori lo utilizzano per esperimenti\u2026"
 title: Utilizzo di un interprete interattivo (REPL)
+weight: 34
 ---
-
-{{< edit_this_page >}}
 
 ## Cosa & Perché?
 Un REPL, o Ciclo Leggi-Valuta-Stampa, ti permette di digitare codice C# ed eseguirlo interattivamente. I programmatori lo utilizzano per esperimenti rapidi, debugging o per imparare C#, senza l'onere di configurare interi progetti.

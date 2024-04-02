@@ -7,9 +7,8 @@ model: gpt-4-0125-preview
 summary: "Imagine you've just found out you need to make a batch update to several\
   \ configuration files sitting on your server. You could open each file, make the\u2026"
 title: Editing files in-place with CLI one-liners
+weight: 32
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 

@@ -13,9 +13,8 @@ summary: "Vi\u1EC7c l\u1EA5y ng\xE0y hi\u1EC7n t\u1EA1i trong Elm c\xF3 ngh\u012
   ng. Ch\xFAng ta l\xE0m \u0111i\u1EC1u n\xE0y \u0111\u1EC3 \u0111\xE1nh d\u1EA5u\
   \ th\u1EDDi gian cho c\xE1c s\u1EF1 ki\u1EC7n, l\xEAn\u2026"
 title: "L\u1EA5y ng\xE0y hi\u1EC7n t\u1EA1i"
+weight: 29
 ---
-
-{{< edit_this_page >}}
 
 ## Là gì và Tại sao?
 Việc lấy ngày hiện tại trong Elm có nghĩa là truy xuất ngày lịch hiện tại từ hệ thống. Chúng ta làm điều này để đánh dấu thời gian cho các sự kiện, lên lịch cho các công việc, hoặc theo dõi khoảng thời gian.

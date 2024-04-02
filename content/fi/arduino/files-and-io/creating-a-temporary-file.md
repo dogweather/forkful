@@ -9,9 +9,8 @@ summary: "V\xE4liaikaistiedoston luominen on prosessi, jossa tiedosto luodaan ti
   ist\xE4 k\xE4ytt\xF6\xE4 varten. Koodarit k\xE4ytt\xE4v\xE4t v\xE4liaikaistiedostoja\
   \ datan tilap\xE4iseen\u2026"
 title: "V\xE4liaikaistiedoston luominen"
+weight: 21
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why? - Mikä ja Miksi?
 Väliaikaistiedoston luominen on prosessi, jossa tiedosto luodaan tilapäistä käyttöä varten. Koodarit käyttävät väliaikaistiedostoja datan tilapäiseen tallentamiseen, testaukseen tai välimuistina toimimiseen.

@@ -9,9 +9,8 @@ summary: "Lokitus on k\xE4yt\xE4nt\xF6, jossa ohjelman suoritusprosessien tapaht
   \ virheet ja muu merkitt\xE4v\xE4 tieto tallennetaan tiedostoon tai tulostevirtaan.\
   \ Ohjelmoijat\u2026"
 title: Lokitus
+weight: 17
 ---
-
-{{< edit_this_page >}}
 
 ## Mikä & Miksi?
 

@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Leggere un file di testo in Go comporta l'accesso e il recupero del contenuto\
   \ da un file memorizzato su disco per l'elaborazione o l'analisi. I\u2026"
 title: Leggere un file di testo
+weight: 22
 ---
-
-{{< edit_this_page >}}
 
 ## Che cosa & Perché?
 

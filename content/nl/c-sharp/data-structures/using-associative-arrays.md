@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Associatieve arrays, of woordenboeken in C#, laten je paren van sleutels\
   \ en waarden opslaan en beheren. Ze zijn je beste keuze wanneer je snel waarden\u2026"
 title: Gebruik van associatieve arrays
+weight: 15
 ---
-
-{{< edit_this_page >}}
 
 ## Wat & Waarom?
 

@@ -11,9 +11,8 @@ summary: "CSV-Dateien (Comma-Separated Values), also durch Kommata getrennte Wer
   \ sind ein \xFCbliches Datenformat f\xFCr den Austausch, das tabellarische Daten\
   \ in\u2026"
 title: Arbeiten mit CSV
+weight: 37
 ---
-
-{{< edit_this_page >}}
 
 ## Was & Warum?
 CSV-Dateien (Comma-Separated Values), also durch Kommata getrennte Werte, sind ein übliches Datenformat für den Austausch, das tabellarische Daten in reinem Text darstellt, wobei Kommata verwendet werden, um einzelne Werte voneinander zu trennen. Programmierer arbeiten mit CSV-Dateien, um Daten einfach zu importieren, zu exportieren und zu manipulieren, und dies über verschiedene Anwendungen und Dienste hinweg, da es ein einfaches, weit verbreitetes Format ist, das mit Tabellenkalkulationsanwendungen, Datenbanken und Programmiersprachen kompatibel ist.

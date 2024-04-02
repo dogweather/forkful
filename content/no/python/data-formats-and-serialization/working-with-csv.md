@@ -11,9 +11,8 @@ summary: "\xC5 jobbe med CSV (kommaseparerte verdier) inneb\xE6rer lesing fra og
   \ til CSV-filer, et vanlig format for lagring av tabul\xE6re data. Programmerere\
   \ gj\xF8r\u2026"
 title: Arbeide med CSV
+weight: 37
 ---
-
-{{< edit_this_page >}}
 
 ## Hva & Hvorfor?
 Å jobbe med CSV (kommaseparerte verdier) innebærer lesing fra og skriving til CSV-filer, et vanlig format for lagring av tabulære data. Programmerere gjør dette for å enkelt utveksle og lagre data i et enkelt, tekstbasert format som er bredt støttet på tvers av forskjellige plattformer og språk.

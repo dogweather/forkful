@@ -11,9 +11,8 @@ summary: "Trabalhar com arquivos CSV (Comma-Separated Values ou Valores Separado
   \ por V\xEDrgula) \xE9 uma tarefa comum para o gerenciamento e manipula\xE7\xE3\
   o de dados de uma\u2026"
 title: Trabalhando com CSV
+weight: 37
 ---
-
-{{< edit_this_page >}}
 
 ## O Que & Por Quê?
 

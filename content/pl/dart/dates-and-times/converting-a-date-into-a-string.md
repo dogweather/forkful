@@ -11,9 +11,8 @@ summary: "Konwersja daty na \u0142a\u0144cuch znak\xF3w w Dart jest cz\u0119stym
   \ gdy potrzebujemy wy\u015Bwietli\u0107 informacje o dacie i godzinie w formacie\
   \ czytelnym dla\u2026"
 title: "Konwersja daty na ci\u0105g znak\xF3w"
+weight: 28
 ---
-
-{{< edit_this_page >}}
 
 ## Co i dlaczego?
 

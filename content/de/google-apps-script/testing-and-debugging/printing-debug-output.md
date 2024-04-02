@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Das Drucken von Debug-Ausgaben beinhaltet das strategische Platzieren von\
   \ Protokollaussagen in Ihrem Code, um Variablenwerte, Ausf\xFChrungsfluss oder\u2026"
 title: Debug-Ausgabe drucken
+weight: 33
 ---
-
-{{< edit_this_page >}}
 
 ## Was & Warum?
 

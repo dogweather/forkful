@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "HTML parsen in Google Apps Script houdt in dat je gegevens uit HTML-content\
   \ haalt, wat vooral handig is bij interactie met webpagina's of op web\u2026"
 title: HTML Parsen
+weight: 43
 ---
-
-{{< edit_this_page >}}
 
 ## Wat & Waarom?
 HTML parsen in Google Apps Script houdt in dat je gegevens uit HTML-content haalt, wat vooral handig is bij interactie met webpagina's of op web gebaseerde gegevensbronnen. Programmeurs doen dit om gegevensverzameling te automatiseren, webcontent te manipuleren of webfunctionaliteiten te integreren met Google Apps zoals Sheets en Docs.

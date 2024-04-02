@@ -24,9 +24,8 @@ summary: "\uCF54\uD2C0\uB9B0\uC5D0\uC11C \uD14D\uC2A4\uD2B8 \uD30C\uC77C\uC744 \
   \ \uB370\uC774\uD130\uB97C \uC800\uC7A5\uD558\uACE0 \uC870\uC791\uD558\uC5EC \uC138\
   \uC158 \uAC04\uC5D0 \uB370\uC774\uD130\uAC00 \uC9C0\uC18D\uB418\uB3C4\uB85D\u2026"
 title: "\uD14D\uC2A4\uD2B8 \uD30C\uC77C \uC4F0\uAE30"
+weight: 24
 ---
-
-{{< edit_this_page >}}
 
 ## 무엇 & 왜?
 코틀린에서 텍스트 파일을 작성하는 것은 파일을 생성하고 그 안에 텍스트 내용을 입력하는 것을 말하며, 데이터 저장, 로깅 또는 구성 설정을 위한 일반적인 작업입니다. 프로그래머들은 이를 통해 휘발성 메모리 공간 외부에서 데이터를 저장하고 조작하여 세션 간에 데이터가 지속되도록 합니다.

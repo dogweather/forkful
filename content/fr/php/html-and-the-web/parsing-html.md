@@ -11,9 +11,8 @@ summary: "L'analyse (parsing) du HTML en PHP consiste \xE0 extraire des informat
   \ sp\xE9cifiques des documents HTML. Les programmeurs r\xE9alisent cette t\xE2che\
   \ pour\u2026"
 title: Analyse Syntaxique du HTML
+weight: 43
 ---
-
-{{< edit_this_page >}}
 
 ## Quoi & Pourquoi ?
 L'analyse (parsing) du HTML en PHP consiste à extraire des informations spécifiques des documents HTML. Les programmeurs réalisent cette tâche pour automatiser l'extraction de données, le web scraping, ou pour intégrer du contenu de diverses pages web dans leurs applications, améliorant ainsi les fonctionnalités sans intervention manuelle.

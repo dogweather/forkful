@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Refactorizar en programaci\xF3n implica reestructurar el c\xF3digo existente\
   \ sin cambiar su comportamiento externo, con el objetivo de mejorar atributos no\u2026"
 title: "Refactorizaci\xF3n"
+weight: 19
 ---
-
-{{< edit_this_page >}}
 
 ## ¿Qué y por qué?
 

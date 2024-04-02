@@ -16,9 +16,8 @@ summary: "\uBB38\uC790\uC5F4\uC744 \uC18C\uBB38\uC790\uB85C \uBC14\uAFBC\uB2E4\u
   \uC5F4 \uBE44\uAD50\uB098 \uAC80\uC0C9\uC744 \uD560 \uB54C \uC8FC\uB85C \uC0AC\uC6A9\
   \uB429\uB2C8\uB2E4."
 title: "\uBB38\uC790\uC5F4\uC744 \uC18C\uBB38\uC790\uB85C \uBCC0\uD658\uD558\uAE30"
+weight: 4
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why? (무엇과 왜?)
 문자열을 소문자로 바꾼다는 것은, 모든 대문자를 그에 해당하는 소문자로 변경하는 것입니다. 대소문자를 구분하지 않는 문자열 비교나 검색을 할 때 주로 사용됩니다.

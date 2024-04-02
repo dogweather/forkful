@@ -11,9 +11,8 @@ summary: "R\xE9cup\xE9rer la date courante dans PowerShell consiste \xE0 obtenir
   \ date et l'heure actuelles du syst\xE8me. Cette op\xE9ration est fondamentale pour\
   \ des t\xE2ches\u2026"
 title: Obtenir la date actuelle
+weight: 29
 ---
-
-{{< edit_this_page >}}
 
 ## Quoi et Pourquoi ?
 

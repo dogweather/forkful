@@ -7,9 +7,8 @@ model: gpt-4-0125-preview
 summary: "Les nombres complexes \xE9tendent l'id\xE9e de la ligne num\xE9rique unidimensionnelle\
   \ dans le plan bidimensionnel en incluant un axe imaginaire perpendiculaire.\u2026"
 title: Manipulation des nombres complexes
+weight: 14
 ---
-
-{{< edit_this_page >}}
 
 ## Quoi & Pourquoi ?
 Les nombres complexes étendent l'idée de la ligne numérique unidimensionnelle dans le plan bidimensionnel en incluant un axe imaginaire perpendiculaire. Les programmeurs travaillent avec eux dans des domaines tels que le traitement des signaux, la dynamique des fluides et l'ingénierie électrique, où ils sont essentiels pour représenter les oscillations et autres phénomènes.

@@ -10,9 +10,8 @@ model: gpt-4-0125-preview
 summary: "YAML is een door mensen goed leesbare gegevensserialisatiestandaard die\
   \ wordt gebruikt in programmering voor configuratiebestanden, gegevensopslag en\u2026"
 title: Werken met YAML
+weight: 41
 ---
-
-{{< edit_this_page >}}
 
 ## Wat & Waarom?
 YAML is een door mensen goed leesbare gegevensserialisatiestandaard die wordt gebruikt in programmering voor configuratiebestanden, gegevensopslag en meer. Programmeurs gebruiken het vanwege de leesbaarheid en eenvoud in complexe applicaties en systemen.

@@ -7,9 +7,8 @@ model: gpt-4-1106-preview
 summary: "Beim Vergleichen zweier Daten geht es darum, zu ermitteln, ob ein Datum\
   \ vor, nach oder am gleichen Tag wie ein anderes liegt. Programmierer nutzen diesen\u2026"
 title: Vergleich von zwei Daten
+weight: 27
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 Beim Vergleichen zweier Daten geht es darum, zu ermitteln, ob ein Datum vor, nach oder am gleichen Tag wie ein anderes liegt. Programmierer nutzen diesen Vergleich häufig für Aufgaben wie Gültigkeitsprüfungen, Zeitachsendarstellungen und Event-Management.

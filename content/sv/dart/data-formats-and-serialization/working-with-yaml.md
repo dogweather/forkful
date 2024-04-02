@@ -10,9 +10,8 @@ model: gpt-4-0125-preview
 summary: "YAML, en f\xF6rkortning f\xF6r YAML Ain't Markup Language, \xE4r ett l\xE4\
   sbart format f\xF6r dataserialisering. Programmerare anv\xE4nder det f\xF6r konfigurationsfiler,\u2026"
 title: Arbeta med YAML
+weight: 41
 ---
-
-{{< edit_this_page >}}
 
 ## Vad & Varför?
 

@@ -16,9 +16,8 @@ summary: "\u5728TypeScript\u91CC\uFF0C\u63D0\u53D6\u5B50\u5B57\u7B26\u4E32\u5C31
   \uFF0C\u6BD4\u5982\u4ECE\u7528\u6237\u8F93\u5165\u4E2D\u53D6\u5F97\u7279\u5B9A\u6570\
   \u636E\u3002"
 title: "\u63D0\u53D6\u5B50\u5B57\u7B26\u4E32"
+weight: 6
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why? (是什么？为什么？)
 在TypeScript里，提取子字符串就是从一个长的字符串中截取出你想要的部分。程序员这么做是因为有时我们只需要信息的一小部分，比如从用户输入中取得特定数据。

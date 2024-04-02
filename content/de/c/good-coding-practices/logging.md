@@ -10,9 +10,8 @@ model: gpt-4-0125-preview
 summary: "Das Protokollieren in C beinhaltet die Aufzeichnung des Ablaufs und bemerkenswerter\
   \ Ereignisse eines Programms w\xE4hrend seiner Laufzeit und bietet eine\u2026"
 title: Protokollierung
+weight: 17
 ---
-
-{{< edit_this_page >}}
 
 ## Was & Warum?
 

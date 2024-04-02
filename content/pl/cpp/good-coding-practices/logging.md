@@ -9,9 +9,8 @@ summary: "Logowanie w kontek\u015Bcie programowania to proces zapisywania zdarze
   , stan\xF3w i informacji do pliku lub innego medium wyj\u015Bciowego. Programi\u015B\
   ci loguj\u0105, aby\u2026"
 title: "Rejestrowanie zdarze\u0144"
+weight: 17
 ---
-
-{{< edit_this_page >}}
 
 ## Co i Dlaczego?
 Logowanie w kontekście programowania to proces zapisywania zdarzeń, stanów i informacji do pliku lub innego medium wyjściowego. Programiści logują, aby śledzić, co się dzieje w ich aplikacjach, do debugowania problemów oraz monitorowania wydajności do przyszłej analizy i optymalizacji.

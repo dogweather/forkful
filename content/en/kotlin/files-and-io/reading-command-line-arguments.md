@@ -7,9 +7,8 @@ model: gpt-4-1106-preview
 summary: "Reading command line arguments means grabbing data passed to your program\
   \ when it starts. Programmers need this to let users customize a program's\u2026"
 title: Reading command line arguments
+weight: 23
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 Reading command line arguments means grabbing data passed to your program when it starts. Programmers need this to let users customize a program's behavior without changing the code.

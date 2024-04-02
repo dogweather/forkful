@@ -11,9 +11,8 @@ summary: "L'analyse d'une date \xE0 partir d'une cha\xEEne de caract\xE8res cons
   \ \xE0 convertir un texte repr\xE9sentant une date en un objet `Date` ou `DateTime`\
   \ que Ruby\u2026"
 title: "Analyser une date depuis une cha\xEEne de caract\xE8res"
+weight: 30
 ---
-
-{{< edit_this_page >}}
 
 ## Quoi & Pourquoi ?
 L'analyse d'une date à partir d'une chaîne de caractères consiste à convertir un texte représentant une date en un objet `Date` ou `DateTime` que Ruby comprend. Les programmeurs font cela pour effectuer des opérations telles que des comparaisons, des calculs ou des formats sur les dates, qui sont des tâches courantes dans les applications traitant de la planification, de l'analytique ou du traitement des données.

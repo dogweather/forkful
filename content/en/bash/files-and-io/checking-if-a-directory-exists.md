@@ -8,9 +8,8 @@ model: gpt-4-0125-preview
 summary: "In Bash programming, checking if a directory exists is an essential control\
   \ mechanism used to verify the presence of a directory before performing file\u2026"
 title: Checking if a directory exists
+weight: 20
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 

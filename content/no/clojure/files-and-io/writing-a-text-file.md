@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "\xC5 skrive en tekstfil i Clojure inneb\xE6rer \xE5 skape eller modifisere\
   \ filer for \xE5 lagre data utenfor applikasjonen din. Dette muliggj\xF8r lagring,\u2026"
 title: Skrive en tekstfil
+weight: 24
 ---
-
-{{< edit_this_page >}}
 
 ## Hva & Hvorfor?
 

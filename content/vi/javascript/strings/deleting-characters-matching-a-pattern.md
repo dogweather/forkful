@@ -13,9 +13,8 @@ summary: "X\xF3a b\u1ECF c\xE1c k\xFD t\u1EF1 d\u1EF1a tr\xEAn m\u1ED9t m\u1EABu
   t. C\xE1c l\u1EADp tr\xECnh vi\xEAn th\u1EF1c hi\u1EC7n \u0111i\u1EC1u n\xE0y \u0111\
   \u1EC3 \u0111\u1ECBnh d\u1EA1ng, lo\u1EA1i b\u1ECF c\xE1c k\xFD t\u1EF1 kh\xF4ng\u2026"
 title: "X\xF3a c\xE1c k\xFD t\u1EF1 ph\xF9 h\u1EE3p v\u1EDBi m\u1ED9t m\u1EABu"
+weight: 5
 ---
-
-{{< edit_this_page >}}
 
 ## Gì và Tại sao?
 Xóa bỏ các ký tự dựa trên một mẫu làm cho chuỗi trở nên sạch sẽ và đồng nhất. Các lập trình viên thực hiện điều này để định dạng, loại bỏ các ký tự không mong muốn, hoặc đơn giản hóa trước khi xử lý.

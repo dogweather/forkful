@@ -1,14 +1,15 @@
 ---
 date: 2024-01-26 03:50:28.100090-07:00
-description: "Att anv\xE4nda en fels\xF6kare inneb\xE4r att dyka ner i koden med verktyg\
-  \ utformade f\xF6r att inspektera, pausa och manipulera ett program under k\xF6\
-  rning.\u2026"
+description: "L\xE5t oss ta en promenad med GHCi, Haskell's interaktiva milj\xF6 som\
+  \ kan fungera som en grundl\xE4ggande fels\xF6kare. Du startar den med din Haskell-kod\
+  \ och b\xF6rjar\u2026"
 lastmod: '2024-03-13T22:44:37.959491-06:00'
 model: gpt-4-0125-preview
-summary: "Att anv\xE4nda en fels\xF6kare inneb\xE4r att dyka ner i koden med verktyg\
-  \ utformade f\xF6r att inspektera, pausa och manipulera ett program under k\xF6\
-  rning.\u2026"
+summary: "L\xE5t oss ta en promenad med GHCi, Haskell's interaktiva milj\xF6 som kan\
+  \ fungera som en grundl\xE4ggande fels\xF6kare. Du startar den med din Haskell-kod\
+  \ och b\xF6rjar\u2026"
 title: "Att anv\xE4nda en debugger"
+weight: 35
 ---
 
 ## Hur gör man:

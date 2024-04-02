@@ -7,9 +7,8 @@ lastmod: '2024-03-13T22:44:42.094563-06:00'
 model: gpt-4-0125-preview
 summary: "Kotlin\u3067\u306EJSON\uFF08JavaScript Object\u2026"
 title: "JSON\u3092\u6D3B\u7528\u3059\u308B"
+weight: 38
 ---
-
-{{< edit_this_page >}}
 
 ## 何となぜ？
 KotlinでのJSON（JavaScript Object Notation）の扱い方は、JSONデータのパース（解析）と生成を含みます。プログラマーは、JSONの軽量な形式と人間が読みやすい形式のため、異なるアプリケーション層間でデータを簡単に交換したり、Webサービスと通信したりするためにこれを行います。

@@ -7,9 +7,8 @@ model: gpt-4-1106-preview
 summary: "Printing debug output is like having a conversation with your code to figure\
   \ out what it's thinking. Programmers do it to track down gremlins causing\u2026"
 title: Printing debug output
+weight: 33
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 Printing debug output is like having a conversation with your code to figure out what it's thinking. Programmers do it to track down gremlins causing mischief in their programs.

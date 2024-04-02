@@ -13,9 +13,8 @@ summary: "T\xECm ki\u1EBFm v\xE0 thay th\u1EBF v\u0103n b\u1EA3n trong Google Ap
   \ chu\u1ED7i c\u1EE5 th\u1EC3 trong m\u1ED9t t\xE0i li\u1EC7u, b\u1EA3ng t\xEDnh,\
   \ ho\u1EB7c b\u1EA5t k\u1EF3 lo\u1EA1i n\u1ED9i\u2026"
 title: "T\xECm ki\u1EBFm v\xE0 thay th\u1EBF v\u0103n b\u1EA3n"
+weight: 10
 ---
-
-{{< edit_this_page >}}
 
 ## Cái gì & Tại sao?
 

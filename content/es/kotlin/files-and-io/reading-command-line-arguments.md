@@ -7,9 +7,8 @@ model: gpt-4-1106-preview
 summary: "Leer argumentos de la l\xEDnea de comandos permite a tu programa en Kotlin\
   \ recibir datos externos al ejecutarse. Los programadores usan esto para\u2026"
 title: "Lectura de argumentos de l\xEDnea de comandos"
+weight: 23
 ---
-
-{{< edit_this_page >}}
 
 ## Qué y Por Qué?
 Leer argumentos de la línea de comandos permite a tu programa en Kotlin recibir datos externos al ejecutarse. Los programadores usan esto para personalizar la ejecución sin cambiar el código.

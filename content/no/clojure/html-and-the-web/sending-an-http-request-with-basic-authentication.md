@@ -9,9 +9,8 @@ summary: "HTTP-foresp\xF8rsler med grunnleggende autentisering inneb\xE6rer \xE5
   \ brukernavn og passord i en header for tilgang. Programmerere bruker dette for\
   \ \xE5 sikre\u2026"
 title: "\xC5 sende en HTTP-foresp\xF8rsel med grunnleggende autentisering"
+weight: 45
 ---
-
-{{< edit_this_page >}}
 
 ## Hva & Hvorfor?
 HTTP-forespørsler med grunnleggende autentisering innebærer å sende brukernavn og passord i en header for tilgang. Programmerere bruker dette for å sikre endepunkter og begrense tilgangen til autoriserte brukere.

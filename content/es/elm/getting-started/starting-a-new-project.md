@@ -8,9 +8,8 @@ model: gpt-4-1106-preview
 summary: "Iniciar un proyecto nuevo significa configurar el entorno base para escribir\
   \ y ejecutar c\xF3digo. Lo hacemos para proveer una estructura s\xF3lida y un punto\u2026"
 title: Iniciando un nuevo proyecto
+weight: 1
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why? (¿Qué y Por Qué?)
 Iniciar un proyecto nuevo significa configurar el entorno base para escribir y ejecutar código. Lo hacemos para proveer una estructura sólida y un punto de partida claro para nuestros programas en Elm.

@@ -9,9 +9,8 @@ summary: "Last ned en nettside inneb\xE6rer \xE5 hente HTML-innholdet fra URL-en
   \ lagre det lokalt. Programmerere gj\xF8r dette for datainnhenting, web scraping,\
   \ eller\u2026"
 title: Nedlasting av en nettside
+weight: 42
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why? (Hva & Hvorfor?)
 Last ned en nettside innebærer å hente HTML-innholdet fra URL-en og lagre det lokalt. Programmerere gjør dette for datainnhenting, web scraping, eller offline-lesing.

@@ -11,9 +11,8 @@ summary: "Koodin j\xE4rjest\xE4minen funktioihin Visual Basic for Applications (
   \ -ohjelmistossa tarkoittaa ohjelman pilkkomista pienempiin, hallittaviin osiin,\
   \ joita\u2026"
 title: "Koodin j\xE4rjest\xE4minen funktioihin"
+weight: 18
 ---
-
-{{< edit_this_page >}}
 
 ## Mikä ja miksi?
 

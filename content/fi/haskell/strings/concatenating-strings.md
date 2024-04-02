@@ -9,9 +9,8 @@ summary: "Yhdistelemme merkkijonoja (eli teemme konkatenointia) liitt\xE4\xE4kse
   \ tekstinp\xE4tki\xE4 yhteen. Se on peruskauraa kaikessa ohjelmoinnissa: loihdit\
   \ viestej\xE4,\u2026"
 title: "Merkkijonojen yhdist\xE4minen"
+weight: 3
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why? | Mikä & Miksi?
 Yhdistelemme merkkijonoja (eli teemme konkatenointia) liittääksemme tekstinpätkiä yhteen. Se on peruskauraa kaikessa ohjelmoinnissa: loihdit viestejä, teet tulosteista luettavia tai kasaat dataa käsittelyä varten.

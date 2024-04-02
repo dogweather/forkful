@@ -9,9 +9,8 @@ summary: "Pobieranie strony internetowej oznacza \u015Bci\u0105gni\u0119cie jej 
   ci do lokalnej pami\u0119ci komputera. Programi\u015Bci to robi\u0105, by przetworzy\u0107\
   \ dane, zautomatyzowa\u0107\u2026"
 title: Pobieranie strony internetowej
+weight: 42
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 Pobieranie strony internetowej oznacza ściągnięcie jej zawartości do lokalnej pamięci komputera. Programiści to robią, by przetworzyć dane, zautomatyzować zadania lub po prostu zarchiwizować informacje.

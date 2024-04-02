@@ -8,9 +8,8 @@ model: gpt-4-1106-preview
 summary: "Interpolering av strenger er rett og slett \xE5 putte variabler eller uttrykk\
   \ inni en tekststreng. Programmerere bruker det for \xE5 bygge dynamiske meldinger\u2026"
 title: Interpolering av en streng
+weight: 8
 ---
-
-{{< edit_this_page >}}
 
 ## Hva & Hvorfor?
 

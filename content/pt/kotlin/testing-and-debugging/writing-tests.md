@@ -11,9 +11,8 @@ summary: "Escrever testes em Kotlin envolve a cria\xE7\xE3o de trechos de c\xF3d
   \ que validam automaticamente a corre\xE7\xE3o funcional dos seus m\xF3dulos de\
   \ software, garantindo\u2026"
 title: Escrevendo testes
+weight: 36
 ---
-
-{{< edit_this_page >}}
 
 ## O Que & Por Quê?
 

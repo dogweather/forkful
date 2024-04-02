@@ -11,9 +11,8 @@ summary: "Inviare una richiesta HTTP in Dart \xE8 il processo di iniziazione del
   \ comunicazioni con un server web o API da un'applicazione Dart. I programmatori\
   \ lo\u2026"
 title: Inviare una richiesta HTTP
+weight: 44
 ---
-
-{{< edit_this_page >}}
 
 ## Cosa & Perché?
 

@@ -9,9 +9,8 @@ summary: "Imprimir mensajes de depuraci\xF3n (debug output) es como dejar migas 
   \ pan en tu c\xF3digo para entender qu\xE9 est\xE1 pasando. Los programadores lo\
   \ hacen para\u2026"
 title: "Imprimiendo salida de depuraci\xF3n"
+weight: 33
 ---
-
-{{< edit_this_page >}}
 
 ## ¿Qué y Por Qué?
 

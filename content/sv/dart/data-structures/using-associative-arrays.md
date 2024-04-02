@@ -11,9 +11,8 @@ summary: "Associativa arrayer i Dart, som vanligtvis kallas Maps, \xE4r datastru
   \ som lagrar data i nyckel-v\xE4rde-par. De m\xF6jligg\xF6r f\xF6r programmerare\
   \ att n\xE5\u2026"
 title: "Anv\xE4ndning av associativa arrayer"
+weight: 15
 ---
-
-{{< edit_this_page >}}
 
 ## Vad & Varför?
 

@@ -11,9 +11,8 @@ summary: "Capitalizar uma string na programa\xE7\xE3o envolve converter o primei
   \ caractere da string em mai\xFAsculo, caso ele n\xE3o seja, o que \xE9 \xFAtil\
   \ para formatar\u2026"
 title: Capitalizando uma string
+weight: 2
 ---
-
-{{< edit_this_page >}}
 
 ## O Que & Porquê?
 

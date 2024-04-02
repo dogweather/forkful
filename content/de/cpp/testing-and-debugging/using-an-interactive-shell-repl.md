@@ -7,9 +7,8 @@ model: gpt-4-0125-preview
 summary: "Ein REPL (Read-Eval-Print-Loop) ist eine einfache, interaktive Programmierumgebung.\
   \ Programmierer nutzen es f\xFCr Echtzeit-Sprachexperimente, schnelle\u2026"
 title: Nutzung einer interaktiven Shell (REPL)
+weight: 34
 ---
-
-{{< edit_this_page >}}
 
 ## Was & Warum?
 Ein REPL (Read-Eval-Print-Loop) ist eine einfache, interaktive Programmierumgebung. Programmierer nutzen es für Echtzeit-Sprachexperimente, schnelle Aufgaben oder um neue Konzepte ohne den Overhead der Erstellung von vollwertigen Anwendungen zu verstehen.

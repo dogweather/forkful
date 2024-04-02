@@ -9,9 +9,8 @@ summary: "\xC5 finne lengden av en streng betyr \xE5 telle antall tegn i den. Pr
   \ gj\xF8r dette for \xE5 validere input, manipulere tekst eller for \xE5 avgrense\
   \ data f\xF8r\u2026"
 title: "Finn lengden p\xE5 en streng"
+weight: 7
 ---
-
-{{< edit_this_page >}}
 
 ## Hva & Hvorfor?
 

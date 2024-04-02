@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Arbeid med JSON (JavaScript Object Notation) involverer parsing, generering\
   \ og sp\xF8rring av JSON-data, noe som gj\xF8r det til en kritisk ferdighet for\u2026"
 title: Arbeider med JSON
+weight: 38
 ---
-
-{{< edit_this_page >}}
 
 ## Hva & Hvorfor?
 

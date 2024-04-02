@@ -8,9 +8,8 @@ model: gpt-4-1106-preview
 summary: "String-Interpolation erleichtert das Zusammensetzen von Strings, indem Variablen\
   \ oder Ausdr\xFCcke direkt in String-Literale eingebettet werden. Es macht den\u2026"
 title: Zeichenketten interpolieren
+weight: 8
 ---
-
-{{< edit_this_page >}}
 
 ## Was & Warum?
 String-Interpolation erleichtert das Zusammensetzen von Strings, indem Variablen oder Ausdrücke direkt in String-Literale eingebettet werden. Es macht den Code lesbarer und die String-Konstruktion effizienter.

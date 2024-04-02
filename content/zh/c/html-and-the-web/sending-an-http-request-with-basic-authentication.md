@@ -17,9 +17,8 @@ summary: "\u5728 C \u8BED\u8A00\u4E2D\u53D1\u9001\u5E26\u6709\u57FA\u672C\u8BA4\
   \u6DFB\u52A0\u7B80\u5355\u8BA4\u8BC1\u5C42\u7684\u5E38\u89C1\u65B9\u6CD5\uFF0C\u5141\
   \u8BB8\u4EE5\u7F16\u7A0B\u65B9\u5F0F\u8BBF\u95EE\u53D7\u9650\u8D44\u6E90\u3002"
 title: "\u4F7F\u7528\u57FA\u672C\u8BA4\u8BC1\u53D1\u9001HTTP\u8BF7\u6C42"
+weight: 45
 ---
-
-{{< edit_this_page >}}
 
 ## 什么 & 为什么？
 在 C 语言中发送带有基本认证的 HTTP 请求涉及制作一个包括带有用户凭证（以 Base64 编码）的 Authorization 头部的 HTTP 请求。这是给 HTTP 请求添加简单认证层的常见方法，允许以编程方式访问受限资源。

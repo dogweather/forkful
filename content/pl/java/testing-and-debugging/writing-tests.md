@@ -11,9 +11,8 @@ summary: "Pisanie test\xF3w w Java ma na celu weryfikacj\u0119, czy Tw\xF3j kod 
   \ si\u0119 zgodnie z oczekiwaniami w r\xF3\u017Cnych warunkach. Programi\u015Bci\
   \ pisz\u0105 testy, aby\u2026"
 title: "Pisanie test\xF3w"
+weight: 36
 ---
-
-{{< edit_this_page >}}
 
 ## Co i dlaczego?
 Pisanie testów w Java ma na celu weryfikację, czy Twój kod zachowuje się zgodnie z oczekiwaniami w różnych warunkach. Programiści piszą testy, aby zapobiegać błędom, zapewnić poprawność funkcjonalności po zmianach i promować dobre zasady projektowania oprogramowania.

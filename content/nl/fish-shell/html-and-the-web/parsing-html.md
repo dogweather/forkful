@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "HTML parsen is het proces van het decoderen van de lingua franca van het\
   \ web om data te zeven of inhoud te manipuleren. Programmeurs parsen HTML om\u2026"
 title: HTML Parsen
+weight: 43
 ---
-
-{{< edit_this_page >}}
 
 ## Wat & Waarom?
 HTML parsen is het proces van het decoderen van de lingua franca van het web om data te zeven of inhoud te manipuleren. Programmeurs parsen HTML om webscraping te automatiseren, API's te integreren of gegevensformaten te converteren.

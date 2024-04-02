@@ -10,9 +10,8 @@ model: gpt-4-0125-preview
 summary: "Registrar em Visual Basic para Aplica\xE7\xF5es (VBA) envolve gravar informa\xE7\
   \xF5es sobre o comportamento em tempo de execu\xE7\xE3o de um programa em um arquivo,\u2026"
 title: Registro
+weight: 17
 ---
-
-{{< edit_this_page >}}
 
 ## O que & Por quê?
 

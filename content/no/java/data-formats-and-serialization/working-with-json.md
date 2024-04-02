@@ -11,9 +11,8 @@ summary: "\xC5 jobbe med JSON (JavaScript Object Notation) betyr \xE5 h\xE5ndter
   \ dette lette datautvekslingsformatet inne i Java-applikasjonene dine. Programmerere\
   \ velger\u2026"
 title: Arbeider med JSON
+weight: 38
 ---
-
-{{< edit_this_page >}}
 
 ## Hva & Hvorfor?
 Å jobbe med JSON (JavaScript Object Notation) betyr å håndtere dette lette datautvekslingsformatet inne i Java-applikasjonene dine. Programmerere velger JSON for å serialisere og overføre strukturerte data over et nettverk og enkelt konfigurere og lagre data fordi det er menneskelesbart og språkuavhengig.

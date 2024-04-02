@@ -11,9 +11,8 @@ summary: "Pisanie plik\xF3w tekstowych w j\u0119zyku Swift pozwala na trwa\u0142
   \ przechowywanie danych tekstowych w systemie plik\xF3w, co jest niezb\u0119dne\
   \ do zada\u0144 takich jak\u2026"
 title: Pisanie pliku tekstowego
+weight: 24
 ---
-
-{{< edit_this_page >}}
 
 ## Co i Dlaczego?
 

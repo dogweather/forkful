@@ -10,9 +10,8 @@ model: gpt-4-0125-preview
 summary: "Trabalhar com JSON (JavaScript Object Notation) em Kotlin envolve a an\xE1\
   lise e gera\xE7\xE3o de dados JSON. Programadores fazem isso para trocar dados facilmente\u2026"
 title: Trabalhando com JSON
+weight: 38
 ---
-
-{{< edit_this_page >}}
 
 ## O Que & Por Quê?
 Trabalhar com JSON (JavaScript Object Notation) em Kotlin envolve a análise e geração de dados JSON. Programadores fazem isso para trocar dados facilmente entre diferentes camadas de uma aplicação ou se comunicar com serviços web, devido ao formato leve e legível por humanos do JSON.

@@ -13,9 +13,8 @@ summary: "Vi\u1EC7c ph\xE2n t\xEDch (parsing) m\u1ED9t ng\xE0y t\u1EEB m\u1ED9t 
   u di\u1EC5n v\u0103n b\u1EA3n c\u1EE7a ng\xE0y v\xE0 gi\u1EDD th\xE0nh m\u1ED9t\
   \ \u0111\u1ED1i t\u01B0\u1EE3ng `DateTime`.\u2026"
 title: "Ph\xE2n t\xEDch ng\xE0y t\u1EEB chu\u1ED7i k\xFD t\u1EF1"
+weight: 30
 ---
-
-{{< edit_this_page >}}
 
 ## Cái gì & Tại sao?
 Việc phân tích (parsing) một ngày từ một chuỗi trong Dart liên quan đến việc chuyển đổi biểu diễn văn bản của ngày và giờ thành một đối tượng `DateTime`. Thao tác này rất cần thiết cho các ứng dụng liên quan đến lịch trình, phân tích dữ liệu, hoặc bất kỳ tính năng nào đòi hỏi sự thao tác với ngày, đảm bảo rằng dữ liệu liên quan đến ngày được hiểu và xử lý đúng cách bởi chương trình.

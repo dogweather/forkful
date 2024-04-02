@@ -9,9 +9,8 @@ summary: "Leer argumentos de la l\xEDnea de comandos permite a tu programa Lua r
   \ informaci\xF3n externa al momento de ser ejecutado, brind\xE1ndote flexibilidad.\
   \ Los\u2026"
 title: "Lectura de argumentos de l\xEDnea de comandos"
+weight: 23
 ---
-
-{{< edit_this_page >}}
 
 ## ¿Qué es y Por Qué?
 Leer argumentos de la línea de comandos permite a tu programa Lua recibir información externa al momento de ser ejecutado, brindándote flexibilidad. Los programadores lo usamos para personalizar la ejecución sin cambiar el código y para interactuar con el sistema operativo o scripts.

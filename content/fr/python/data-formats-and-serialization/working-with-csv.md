@@ -11,9 +11,8 @@ summary: "Travailler avec les CSV (Valeurs S\xE9par\xE9es par des Virgules) impl
   \ la lecture et l'\xE9criture de donn\xE9es dans des fichiers CSV, un format courant\
   \ pour le\u2026"
 title: Travailler avec CSV
+weight: 37
 ---
-
-{{< edit_this_page >}}
 
 ## Quoi & Pourquoi ?
 Travailler avec les CSV (Valeurs Séparées par des Virgules) implique la lecture et l'écriture de données dans des fichiers CSV, un format courant pour le stockage des données tabulaires. Les programmeurs le font pour échanger et stocker facilement des données dans un format texte simple, largement pris en charge sur différentes plateformes et langages.

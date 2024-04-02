@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "De lengte van een reeks vinden betekent het tellen van het aantal karakters\
   \ erin. Programmeurs doen dit om invoer te valideren, buffers te dimensioneren\u2026"
 title: De lengte van een string vinden
+weight: 7
 ---
-
-{{< edit_this_page >}}
 
 ## Wat & Waarom?
 De lengte van een reeks vinden betekent het tellen van het aantal karakters erin. Programmeurs doen dit om invoer te valideren, buffers te dimensioneren of door karakters te loopen.

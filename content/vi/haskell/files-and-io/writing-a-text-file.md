@@ -13,9 +13,8 @@ summary: "Trong Haskell, vi\u1EC7c ghi m\u1ED9t t\u1EC7p v\u0103n b\u1EA3n l\xE0
   nh vi\xEAn l\xE0m \u0111i\u1EC1u n\xE0y \u0111\u1EC3 duy tr\xEC d\u1EEF li\u1EC7\
   u gi\u1EEFa c\xE1c phi\xEAn l\xE0m vi\u1EC7c, chia\u2026"
 title: "Vi\u1EBFt m\u1ED9t t\u1EC7p v\u0103n b\u1EA3n"
+weight: 24
 ---
-
-{{< edit_this_page >}}
 
 ## Cái gì & Tại sao?
 Trong Haskell, việc ghi một tệp văn bản là về việc lưu dữ liệu vào một tệp. Lập trình viên làm điều này để duy trì dữ liệu giữa các phiên làm việc, chia sẻ thông tin, hoặc ghi lại đầu ra của chương trình.

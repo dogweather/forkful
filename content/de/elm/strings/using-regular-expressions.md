@@ -11,9 +11,8 @@ summary: "Regul\xE4re Ausdr\xFCcke (regex) in der Programmierung sind Muster, di
   \ zum Abgleichen von Zeichenkombinationen in Strings verwendet werden. In Elm, genau\
   \ wie\u2026"
 title: "Regul\xE4re Ausdr\xFCcke verwenden"
+weight: 11
 ---
-
-{{< edit_this_page >}}
 
 ## Was & Warum?
 Reguläre Ausdrücke (regex) in der Programmierung sind Muster, die zum Abgleichen von Zeichenkombinationen in Strings verwendet werden. In Elm, genau wie in anderen Sprachen, verwenden Programmierer regex für Aufgaben wie das Validieren von Eingaben, das Suchen und Ersetzen von Text innerhalb von Strings aufgrund ihrer Flexibilität und Effizienz.

@@ -12,9 +12,8 @@ summary: "\uBB38\uC790\uC5F4\uC5D0\uC11C \uD2B9\uC815 \uBD80\uBD84\uC744 \uCD94\
   \ \uD2B9\uC815 \uC815\uBCF4\uB97C \uC5BB\uAE30 \uC704\uD574\uC11C \uD504\uB85C\uADF8\
   \uB798\uBA38\uB4E4\uC774 \uC0AC\uC6A9\uD569\uB2C8\uB2E4."
 title: "\uBD80\uBD84 \uBB38\uC790\uC5F4 \uCD94\uCD9C"
+weight: 6
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why? (무엇과 왜?)
 문자열에서 특정 부분을 추출하는 것입니다. 데이터 가공이나 특정 정보를 얻기 위해서 프로그래머들이 사용합니다.

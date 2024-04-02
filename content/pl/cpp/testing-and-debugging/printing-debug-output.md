@@ -9,9 +9,8 @@ summary: "Drukowanie informacji debug jest jak dziennik programisty. Pomaga \u01
   ledzi\u0107 co si\u0119 dzieje w kodzie \u2014 kiedy, gdzie i dlaczego. Programi\u015B\
   ci u\u017Cywaj\u0105 tej\u2026"
 title: "Drukowanie komunikat\xF3w debugowania"
+weight: 33
 ---
-
-{{< edit_this_page >}}
 
 ## Co i dlaczego?
 Drukowanie informacji debug jest jak dziennik programisty. Pomaga śledzić co się dzieje w kodzie — kiedy, gdzie i dlaczego. Programiści używają tej techniki, żeby szybko wykrywać błędy i monitorować zachowanie aplikacji.

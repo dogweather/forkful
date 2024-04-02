@@ -9,9 +9,8 @@ summary: "W debugowaniu wypisywanie komunikat\xF3w to jak zostawianie sobie nota
   \ po drodze - \u017Ceby wiedzie\u0107, co si\u0119 dzieje. Programi\u015Bci u\u017C\
   ywaj\u0105 tego, aby zobaczy\u0107\u2026"
 title: "Drukowanie komunikat\xF3w debugowania"
+weight: 33
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why? | Co i dlaczego?
 W debugowaniu wypisywanie komunikatów to jak zostawianie sobie notatek po drodze - żeby wiedzieć, co się dzieje. Programiści używają tego, aby zobaczyć wewnętrzne działanie programu i znaleźć błędy.

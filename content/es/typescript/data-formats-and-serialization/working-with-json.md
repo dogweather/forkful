@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Trabajar con JSON (JavaScript Object Notation) implica analizar datos JSON\
   \ para convertirlos de y hacia un formato utilizable en TypeScript. Los\u2026"
 title: Trabajando con JSON
+weight: 38
 ---
-
-{{< edit_this_page >}}
 
 ## Qué y Por Qué?
 

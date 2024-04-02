@@ -9,9 +9,8 @@ summary: "Liczby zespolone rozszerzaj\u0105 ide\u0119 jednowymiarowej linii licz
   \ na dwuwymiarow\u0105 p\u0142aszczyzn\u0119, poprzez w\u0142\u0105czenie prostopad\u0142\
   ej osi urojonej. Programi\u015Bci\u2026"
 title: Praca z liczbami zespolonymi
+weight: 14
 ---
-
-{{< edit_this_page >}}
 
 ## Co i dlaczego?
 Liczby zespolone rozszerzają ideę jednowymiarowej linii liczbowej na dwuwymiarową płaszczyznę, poprzez włączenie prostopadłej osi urojonej. Programiści pracują z nimi w dziedzinach takich jak przetwarzanie sygnałów, dynamika płynów i elektrotechnika, gdzie są niezbędne do reprezentowania oscylacji i innych zjawisk.

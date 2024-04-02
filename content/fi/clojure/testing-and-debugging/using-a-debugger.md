@@ -1,14 +1,15 @@
 ---
 date: 2024-01-26 03:48:23.573625-07:00
-description: "Debuggerin k\xE4ytt\xE4minen tarkoittaa, ett\xE4 varustaudut suurennuslasilla\
-  \ tarkastelemaan koodiasi. Ohjelmoijat tekev\xE4t t\xE4m\xE4n paikatakseen bugeja,\
-  \ ymm\xE4rt\xE4\xE4kseen\u2026"
+description: "Clojure nojaa Java Virtuaalikoneeseen (JVM), joten suuri osa debuggauksesta\
+  \ tapahtuu Java-ty\xF6kaluilla. Yksi t\xE4llainen ty\xF6kalu on `CIDER`, tehokas\
+  \ paketti\u2026"
 lastmod: '2024-03-13T22:44:56.188818-06:00'
 model: gpt-4-0125-preview
-summary: "Debuggerin k\xE4ytt\xE4minen tarkoittaa, ett\xE4 varustaudut suurennuslasilla\
-  \ tarkastelemaan koodiasi. Ohjelmoijat tekev\xE4t t\xE4m\xE4n paikatakseen bugeja,\
-  \ ymm\xE4rt\xE4\xE4kseen\u2026"
+summary: "Clojure nojaa Java Virtuaalikoneeseen (JVM), joten suuri osa debuggauksesta\
+  \ tapahtuu Java-ty\xF6kaluilla. Yksi t\xE4llainen ty\xF6kalu on `CIDER`, tehokas\
+  \ paketti\u2026"
 title: "Debuggerin k\xE4ytt\xF6"
+weight: 35
 ---
 
 ## Kuinka:

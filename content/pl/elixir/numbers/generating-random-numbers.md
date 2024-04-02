@@ -9,9 +9,8 @@ summary: "Generowanie liczb losowych w Elixirze jest podstawowym zadaniem progra
   \ niezb\u0119dnym dla aplikacji potrzebuj\u0105cych nieprzewidywalnych wynik\xF3\
   w,\u2026"
 title: Generowanie liczb losowych
+weight: 12
 ---
-
-{{< edit_this_page >}}
 
 ## Co i dlaczego?
 

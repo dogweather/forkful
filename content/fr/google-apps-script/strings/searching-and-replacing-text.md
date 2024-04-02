@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "La recherche et le remplacement de texte dans Google Apps Script impliquent\
   \ d'identifier de mani\xE8re programmatique des cha\xEEnes sp\xE9cifiques dans un\u2026"
 title: Recherche et remplacement de texte
+weight: 10
 ---
-
-{{< edit_this_page >}}
 
 ## Quoi & Pourquoi ?
 

@@ -9,9 +9,8 @@ summary: "Wyszukiwanie i zamiana tekstu to proces znajdowania ci\u0105g\xF3w zna
   w i ich podmieniania na inne. Programi\u015Bci to robi\u0105, by szybko aktualizowa\u0107\
   \ kod, dane czy\u2026"
 title: Wyszukiwanie i zamiana tekstu
+weight: 10
 ---
-
-{{< edit_this_page >}}
 
 ## Co i Dlaczego?
 

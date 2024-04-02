@@ -16,9 +16,8 @@ summary: "\u30C6\u30AD\u30B9\u30C8\u30D5\u30A1\u30A4\u30EB\u8AAD\u307F\u8FBC\u30
   \u8FBC\u3093\u3060\u308A\u3059\u308B\u305F\u3081\u306B\u3053\u306E\u64CD\u4F5C\u3092\
   \u884C\u3044\u307E\u3059\u3002"
 title: "\u30C6\u30AD\u30B9\u30C8\u30D5\u30A1\u30A4\u30EB\u306E\u8AAD\u307F\u8FBC\u307F"
+weight: 22
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why? (なにを？どうして？)
 テキストファイル読み込みは、文字が記録されたファイルを読むことです。プログラマはデータを扱ったり、設定を読み込んだりするためにこの操作を行います。

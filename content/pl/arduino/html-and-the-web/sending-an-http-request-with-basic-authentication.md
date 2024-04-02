@@ -9,9 +9,8 @@ summary: "Wysy\u0142anie \u017C\u0105dania HTTP z podstawowym uwierzytelnieniem 
   \ Arduino komunikowa\u0107 si\u0119 z zabezpieczonymi serwerami. Programi\u015B\
   ci u\u017Cywaj\u0105 tej metody, aby\u2026"
 title: "Wysy\u0142anie zapytania http z podstawow\u0105 autoryzacj\u0105"
+weight: 45
 ---
-
-{{< edit_this_page >}}
 
 ## Co i dlaczego?
 

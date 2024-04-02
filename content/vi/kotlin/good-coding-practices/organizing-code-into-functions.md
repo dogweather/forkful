@@ -13,9 +13,8 @@ summary: "T\u1ED5 ch\u1EE9c code v\xE0o trong c\xE1c h\xE0m ngh\u0129a l\xE0 chi
   \ t\xE1i s\u1EED d\u1EE5ng, m\u1ED7i ph\u1EA7n x\u1EED l\xFD m\u1ED9t nhi\u1EC7\
   m v\u1EE5 c\u1EE5 th\u1EC3. Ch\xFAng ta l\xE0m \u0111i\u1EC1u\u2026"
 title: "S\u1EAFp x\u1EBFp m\xE3 th\xE0nh c\xE1c h\xE0m"
+weight: 18
 ---
-
-{{< edit_this_page >}}
 
 ## Cái gì & Tại sao?
 Tổ chức code vào trong các hàm nghĩa là chia chương trình của bạn thành các phần có thể tái sử dụng, mỗi phần xử lý một nhiệm vụ cụ thể. Chúng ta làm điều này để làm cho code dễ đọc, dễ debug và cập nhật hơn. Hãy nghĩ về code của bạn như một căn bếp lưu trữ thực phẩm: bạn muốn mọi thứ từ nguyên liệu làm bánh đến hàng hộp được nhóm lại, để bạn có thể tìm thấy những gì bạn cần một cách dễ dàng.

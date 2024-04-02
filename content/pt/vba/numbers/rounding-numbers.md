@@ -11,9 +11,8 @@ summary: "Arredondar n\xFAmeros em programa\xE7\xE3o \xE9 sobre aproximar um n\x
   mero ao seu n\xFAmero inteiro mais pr\xF3ximo ou a um certo n\xFAmero de casas decimais.\
   \ Programadores\u2026"
 title: "Arredondamento de n\xFAmeros"
+weight: 13
 ---
-
-{{< edit_this_page >}}
 
 ## O Quê e Por Quê?
 

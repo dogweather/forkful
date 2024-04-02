@@ -11,9 +11,8 @@ summary: "Enviar una solicitud HTTP con autenticaci\xF3n b\xE1sica en Go implica
   \ un encabezado de autorizaci\xF3n a tu solicitud que incluya un nombre de usuario\
   \ y\u2026"
 title: "Enviando una solicitud HTTP con autenticaci\xF3n b\xE1sica"
+weight: 45
 ---
-
-{{< edit_this_page >}}
 
 ## ¿Qué y Por Qué?
 

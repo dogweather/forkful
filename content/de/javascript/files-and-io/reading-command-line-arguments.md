@@ -7,9 +7,8 @@ model: gpt-4-1106-preview
 summary: "Kommandozeilenargumente sind die Parameter, die du deinem Programm beim\
   \ Start \xFCbergibst. Programmierer nutzen sie, um ihre Anwendungen flexibel zu\u2026"
 title: Lesen von Kommandozeilenargumenten
+weight: 23
 ---
-
-{{< edit_this_page >}}
 
 ## Was & Warum?
 

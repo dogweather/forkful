@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Een string converteren naar kleine letters betekent het transformeren van\
   \ alle tekens binnenin naar hun kleine letter varianten. Programmeurs doen dit\u2026"
 title: Een string omzetten naar kleine letters
+weight: 4
 ---
-
-{{< edit_this_page >}}
 
 ## Wat & Waarom?
 Een string converteren naar kleine letters betekent het transformeren van alle tekens binnenin naar hun kleine letter varianten. Programmeurs doen dit voor consistentie, vooral voor hoofdletterongevoelige vergelijkingen, zoals bij het normaliseren van gebruikersinvoer of het zoeken in tekstinhoude.

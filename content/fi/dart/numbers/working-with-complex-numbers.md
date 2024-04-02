@@ -10,9 +10,8 @@ model: gpt-4-0125-preview
 summary: "Kompleksiluvut, jotka koostuvat reaalisesta ja imaginaarisesta osasta (yleens\xE4\
   \ merkitty a + bi), laajentavat ulottuvuudettomien lukujen k\xE4sitett\xE4\u2026"
 title: "Ty\xF6skentely kompleksilukujen kanssa"
+weight: 14
 ---
-
-{{< edit_this_page >}}
 
 ## Mikä & Miksi?
 

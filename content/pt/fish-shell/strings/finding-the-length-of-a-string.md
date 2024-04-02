@@ -9,9 +9,8 @@ summary: "Descobrir o comprimento de uma string \xE9 saber quantos caracteres el
   \ tem. Programadores fazem isso para validar dados, limitar input, ou otimizar espa\xE7\
   os\u2026"
 title: Descobrindo o comprimento de uma string
+weight: 7
 ---
-
-{{< edit_this_page >}}
 
 ## O Que & Porquê?
 Descobrir o comprimento de uma string é saber quantos caracteres ela tem. Programadores fazem isso para validar dados, limitar input, ou otimizar espaços de armazenamento.

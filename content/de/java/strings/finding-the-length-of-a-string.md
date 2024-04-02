@@ -8,9 +8,8 @@ model: gpt-4-1106-preview
 summary: "Die L\xE4nge eines Strings zu ermitteln bedeutet, zu z\xE4hlen, wie viele\
   \ Zeichen er enth\xE4lt. Entwickler brauchen diese Information, um Eingaben zu validieren,\u2026"
 title: "Ermittlung der Zeichenkettenl\xE4nge"
+weight: 7
 ---
-
-{{< edit_this_page >}}
 
 ## Was & Warum?
 Die Länge eines Strings zu ermitteln bedeutet, zu zählen, wie viele Zeichen er enthält. Entwickler brauchen diese Information, um Eingaben zu validieren, Daten zu bearbeiten oder einfach die Größe eines Textes zu bestimmen.

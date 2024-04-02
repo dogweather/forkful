@@ -21,9 +21,8 @@ summary: "\u05D4\u05EA\u05E2\u05D3\u05D5\u05E3 \u05D1-Visual Basic for Applicati
   \u05EA\u05DB\u05E0\u05EA\u05D9\u05DD \u05DE\u05E9\u05EA\u05DE\u05E9\u05D9\u05DD\
   \ \u05D1\u05EA\u05E2\u05D3\u05D5\u05E3 \u05DB\u05D3\u05D9\u2026"
 title: "\u05E8\u05D9\u05E9\u05D5\u05DD"
+weight: 17
 ---
-
-{{< edit_this_page >}}
 
 ## מה ולמה?
 

@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "JSON, eller JavaScript Object Notation, er et lettvektsformat for lagring\
   \ og transport av data, ideelt for server-til-klient-kommunikasjon og\u2026"
 title: "\xC5 Arbeide med JSON"
+weight: 38
 ---
-
-{{< edit_this_page >}}
 
 ## Hva og hvorfor?
 

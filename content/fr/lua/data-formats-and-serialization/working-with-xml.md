@@ -9,9 +9,8 @@ summary: "Travailler avec XML implique l'analyse et la manipulation de documents
   \ \xE0 l'aide de code. Les programmeurs font cela pour lire, \xE9crire et modifier\
   \ des\u2026"
 title: Travailler avec XML
+weight: 40
 ---
-
-{{< edit_this_page >}}
 
 ## Quoi & Pourquoi ?
 Travailler avec XML implique l'analyse et la manipulation de documents XML à l'aide de code. Les programmeurs font cela pour lire, écrire et modifier des données dans un format structuré et portable, largement utilisé pour l'échange et le stockage de données.

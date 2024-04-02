@@ -9,9 +9,8 @@ summary: "Merkkijonosta lainausmerkkien poistaminen Rustilla tarkoittaa tarpeett
   \ ylim\xE4\xE4r\xE4isten lainausmerkkien poistamista tekstiaineistosi ymp\xE4rilt\xE4\
   .\u2026"
 title: Merkkijonosta lainausmerkkien poistaminen
+weight: 9
 ---
-
-{{< edit_this_page >}}
 
 ## Mikä & Miksi?
 

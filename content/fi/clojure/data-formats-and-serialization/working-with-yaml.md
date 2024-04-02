@@ -11,9 +11,8 @@ summary: "YAML, rekursiivinen lyhenne sanoista \"YAML Ain't Markup Language\", o
   \ ihmisen luettavissa oleva datan sarjallistamisformaatti, jota k\xE4ytet\xE4\xE4\
   n\u2026"
 title: "Ty\xF6skentely YAML:n kanssa"
+weight: 41
 ---
-
-{{< edit_this_page >}}
 
 ## Mikä & Miksi?
 

@@ -9,9 +9,8 @@ summary: "P\xE4iv\xE4m\xE4\xE4r\xE4n muuttaminen merkkijonoksi tarkoittaa `DateT
   \ esitt\xE4mist\xE4 luettavassa muodossa. Koodaajat tekev\xE4t t\xE4m\xE4n, jotta\
   \ p\xE4iv\xE4m\xE4\xE4r\xE4tietoja\u2026"
 title: "P\xE4iv\xE4m\xE4\xE4r\xE4n muuntaminen merkkijonoksi"
+weight: 28
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why? (Mitä & Miksi?)
 Päivämäärän muuttaminen merkkijonoksi tarkoittaa `DateTime`-olioiden esittämistä luettavassa muodossa. Koodaajat tekevät tämän, jotta päivämäärätietoja voidaan esittää ihmisille ymmärrettävästi ja niitä voi käyttää eri formaateissa.

@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Komplexa tal, som best\xE5r av en reell och en imagin\xE4r del (vanligtvis\
   \ betecknad som a + bi), utvidgar begreppet odimensionella tal till ett\u2026"
 title: Att arbeta med komplexa tal
+weight: 14
 ---
-
-{{< edit_this_page >}}
 
 ## Vad & Varför?
 

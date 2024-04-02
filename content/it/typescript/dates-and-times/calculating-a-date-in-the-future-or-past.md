@@ -8,9 +8,8 @@ model: gpt-4-1106-preview
 summary: "Calcolare una data nel futuro o nel passato significa semplicemente aggiungere\
   \ o sottrarre un certo numero di giorni, mesi o anni da una data specifica. I\u2026"
 title: Calcolo di una data futura o passata
+weight: 26
 ---
-
-{{< edit_this_page >}}
 
 ## Cosa & Perché?
 Calcolare una data nel futuro o nel passato significa semplicemente aggiungere o sottrarre un certo numero di giorni, mesi o anni da una data specifica. I programmatori fanno questo per gestire eventi, scadenze, funzionalità legate al tempo in applicazioni, o per analizzare intervalli temporali.

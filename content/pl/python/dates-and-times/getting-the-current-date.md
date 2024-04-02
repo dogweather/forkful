@@ -11,9 +11,8 @@ summary: "Pobieranie bie\u017C\u0105cej daty w Pythonie to podstawowa operacja d
   \ wielu aplikacji, takich jak logowanie, analiza danych i podejmowanie decyzji opartych\
   \ na\u2026"
 title: Pobieranie aktualnej daty
+weight: 29
 ---
-
-{{< edit_this_page >}}
 
 ## Co i dlaczego?
 

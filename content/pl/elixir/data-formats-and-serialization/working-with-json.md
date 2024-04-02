@@ -11,9 +11,8 @@ summary: "Praca z JSON polega na parsowaniu ci\u0105g\xF3w znak\xF3w w formacie 
   \ na struktury danych, kt\xF3re Elixir mo\u017Ce manipulowa\u0107, oraz na serializacji\
   \ struktur danych\u2026"
 title: Praca z JSON
+weight: 38
 ---
-
-{{< edit_this_page >}}
 
 ## Co i dlaczego?
 

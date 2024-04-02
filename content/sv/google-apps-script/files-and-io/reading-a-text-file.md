@@ -11,9 +11,8 @@ summary: "Att l\xE4sa en textfil i Google Apps Script (GAS) inneb\xE4r att f\xE5
   ng till och extrahera textdata fr\xE5n filer som \xE4r lagrade p\xE5 Google Drive\
   \ eller annan\u2026"
 title: "L\xE4sa en textfil"
+weight: 22
 ---
-
-{{< edit_this_page >}}
 
 ## Vad & Varför?
 

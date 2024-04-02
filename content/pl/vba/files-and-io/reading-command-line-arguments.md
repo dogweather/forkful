@@ -11,9 +11,8 @@ summary: "Odczytywanie argument\xF3w linii komend w Visual Basic for Application
   \ (VBA) polega na dost\u0119pie do parametr\xF3w przekazanych do programu podczas\
   \ jego\u2026"
 title: "Czytanie argument\xF3w z linii polece\u0144"
+weight: 23
 ---
-
-{{< edit_this_page >}}
 
 ## Co i Dlaczego?
 

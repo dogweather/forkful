@@ -7,9 +7,8 @@ model: gpt-4-0125-preview
 summary: "Retrieving the current date in Rust is a common task for tasks such as logging,\
   \ time-based operations, or simply displaying the date. Unlike some\u2026"
 title: Getting the current date
+weight: 29
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 

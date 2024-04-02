@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Testaaminen Rubylla tarkoittaa koodisi toiminnan varmistamista odotetulla\
   \ tavalla erilaisissa olosuhteissa. Ohjelmoijat kirjoittavat testej\xE4\u2026"
 title: Testien kirjoittaminen
+weight: 36
 ---
-
-{{< edit_this_page >}}
 
 ## Mikä & Miksi?
 Testaaminen Rubylla tarkoittaa koodisi toiminnan varmistamista odotetulla tavalla erilaisissa olosuhteissa. Ohjelmoijat kirjoittavat testejä varmistaakseen oikeellisuuden, estääkseen regressiot ja helpottaakseen refaktorointia, tähdäten vankkoihin ja ylläpidettäviin sovelluksiin.

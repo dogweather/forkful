@@ -23,9 +23,8 @@ summary: "JSON\u3001\u307E\u305F\u306FJavaScript\u30AA\u30D6\u30B8\u30A7\u30AF\u
   \u30FC\u30B9\u306E\u74B0\u5883\u5185\u3067\u306E\u7C21\u5358\u306A\u7D71\u5408\u306B\
   \u3088\u308A\u3001Google\u2026"
 title: "JSON\u3068\u306E\u4F5C\u696D"
+weight: 38
 ---
-
-{{< edit_this_page >}}
 
 ## 何とその理由？
 

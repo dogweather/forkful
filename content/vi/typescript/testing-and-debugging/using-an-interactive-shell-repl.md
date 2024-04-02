@@ -13,9 +13,8 @@ summary: "M\u1ED9t V\xF2ng L\u1EB7p \u0110\u1ECDc-\u0110\xE1nh Gi\xE1-In (REPL) 
   \ ng\u01B0\u1EDDi d\xF9ng, th\u1EF1c thi ch\xFAng v\xE0 tr\u1EA3 k\u1EBFt qu\u1EA3\
   \ v\u1EC1 cho ng\u01B0\u1EDDi d\xF9ng. L\u1EADp tr\xECnh\u2026"
 title: "S\u1EED d\u1EE5ng v\u1ECF t\u01B0\u01A1ng t\xE1c (REPL)"
+weight: 34
 ---
-
-{{< edit_this_page >}}
 
 ## Gì & Tại Sao?
 Một Vòng Lặp Đọc-Đánh Giá-In (REPL) là môi trường lập trình nhận các mã nhập từ người dùng, thực thi chúng và trả kết quả về cho người dùng. Lập trình viên sử dụng REPL để thử nghiệm nhanh chóng với đoạn mã, gỡ lỗi và học các tính năng ngôn ngữ mới mà không cần phải tạo một ứng dụng đầy đủ.

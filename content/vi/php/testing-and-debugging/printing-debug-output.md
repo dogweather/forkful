@@ -13,9 +13,8 @@ summary: "In ra th\xF4ng tin g\u1EE1 l\u1ED7i l\xE0 vi\u1EC7c \u0111\u01B0a d\u1
   \u1EC3 hi\u1EC3u xem \u0111ang x\u1EA3y ra \u0111i\u1EC1u g\xEC. C\xE1c l\u1EAD\
   p tr\xECnh vi\xEAn l\xE0m vi\u1EC7c n\xE0y \u0111\u1EC3 ki\u1EC3m tra\u2026"
 title: "In ra th\xF4ng tin g\u1EE1 l\u1ED7i"
+weight: 33
 ---
-
-{{< edit_this_page >}}
 
 ## Gì và Tại sao?
 In ra thông tin gỡ lỗi là việc đưa dữ liệu nội bộ của mã lệnh lên màn hình để hiểu xem đang xảy ra điều gì. Các lập trình viên làm việc này để kiểm tra tính hợp lý, tìm nơi côn trùng ẩn náu hoặc chỉ đơn giản là để xem mã lệnh có đang hoạt động như dự định hay không.

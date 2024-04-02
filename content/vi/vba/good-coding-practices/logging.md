@@ -11,9 +11,8 @@ summary: "Ghi log trong Visual Basic for Applications (VBA) bao g\u1ED3m vi\u1EC
   c ghi l\u1EA1i th\xF4ng tin v\u1EC1 h\xE0nh vi th\u1EF1c thi c\u1EE7a ch\u01B0\u01A1\
   ng tr\xECnh v\xE0o m\u1ED9t t\u1EC7p, console ho\u1EB7c c\u01A1 s\u1EDF d\u1EEF\u2026"
 title: "Ghi nh\u1EADt k\xFD"
+weight: 17
 ---
-
-{{< edit_this_page >}}
 
 ## Gì & Tại sao?
 

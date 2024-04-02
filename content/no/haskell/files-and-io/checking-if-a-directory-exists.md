@@ -11,9 +11,8 @@ summary: "\xC5 sjekke om en mappe eksisterer er en grunnleggende operasjon i man
   \ programmeringsoppgaver, som tillater betingede handlinger basert p\xE5 tilstedev\xE6\
   relsen\u2026"
 title: Sjekker om en mappe eksisterer
+weight: 20
 ---
-
-{{< edit_this_page >}}
 
 ## Hva & Hvorfor?
 Å sjekke om en mappe eksisterer er en grunnleggende operasjon i mange programmeringsoppgaver, som tillater betingede handlinger basert på tilstedeværelsen eller fraværet av katalogstrukturer. Det er avgjørende for filmanipulasjon, automatiserte skript, og under den innledende oppsettet av programvare for å sikre at nødvendige mapper er på plass, eller for å unngå å duplisere mapper.

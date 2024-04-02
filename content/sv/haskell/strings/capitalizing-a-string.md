@@ -11,9 +11,8 @@ summary: "Att f\xF6rstora en str\xE4ng inneb\xE4r att omvandla den f\xF6rsta bok
   \ i en given str\xE4ng till versal medan resten av bokst\xE4verna f\xF6rblir gemener.\
   \ Programmerare\u2026"
 title: "G\xF6r om en str\xE4ng till versaler"
+weight: 2
 ---
-
-{{< edit_this_page >}}
 
 ## Vad & Varför?
 Att förstora en sträng innebär att omvandla den första bokstaven i en given sträng till versal medan resten av bokstäverna förblir gemener. Programmerare gör detta för att formatera utdata, följa grammatisk korrekthet i texter, eller förbättra läsbarheten av genererade data.

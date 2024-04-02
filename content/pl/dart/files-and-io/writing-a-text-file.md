@@ -11,9 +11,8 @@ summary: "Zapisywanie pliku tekstowego w Dart polega na tworzeniu lub modyfikowa
   \ plik\xF3w na dysku w celu przechowywania danych w formacie czytelnym. Programi\u015B\
   ci\u2026"
 title: Pisanie pliku tekstowego
+weight: 24
 ---
-
-{{< edit_this_page >}}
 
 ## Co i dlaczego?
 Zapisywanie pliku tekstowego w Dart polega na tworzeniu lub modyfikowaniu plików na dysku w celu przechowywania danych w formacie czytelnym. Programiści robią to, aby zapisać dane aplikacji, konfiguracje, logi lub jakiekolwiek informacje, które powinny pozostać między uruchomieniami aplikacji lub udostępnić dane innym aplikacjom lub użytkownikom.

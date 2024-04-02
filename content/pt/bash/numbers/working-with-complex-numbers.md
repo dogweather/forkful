@@ -8,9 +8,8 @@ model: gpt-4-0125-preview
 summary: "N\xFAmeros complexos consistem de uma parte real e uma imagin\xE1ria. Programadores\
   \ os utilizam em campos como processamento de sinal, mec\xE2nica qu\xE2ntica, e\u2026"
 title: "Trabalhando com n\xFAmeros complexos"
+weight: 14
 ---
-
-{{< edit_this_page >}}
 
 ## O que & Por quê?
 Números complexos consistem de uma parte real e uma imaginária. Programadores os utilizam em campos como processamento de sinal, mecânica quântica, e sempre que o cálculo exige, porque números reais comuns simplesmente não são suficientes.

@@ -12,6 +12,7 @@ summary: "Capitaliser une cha\xEEne de caract\xE8res signifie g\xE9n\xE9ralement
   \ le premier caract\xE8re d'une cha\xEEne en majuscule et le reste en minuscule.\
   \ Mais\u2026"
 title: "Mettre en majuscule une cha\xEEne de caract\xE8res"
+weight: 2
 ---
 
 ## Quoi & Pourquoi ?

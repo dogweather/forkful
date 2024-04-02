@@ -9,9 +9,8 @@ summary: "TOML \xE4r ett konfigurationsfilformat som \xE4r l\xE4tt att l\xE4sa p
   \ grund av dess tydliga semantik. Programmerare anv\xE4nder TOML f\xF6r att hantera\
   \ appkonfigurationer\u2026"
 title: Att arbeta med TOML
+weight: 39
 ---
-
-{{< edit_this_page >}}
 
 ## Vad & Varför?
 

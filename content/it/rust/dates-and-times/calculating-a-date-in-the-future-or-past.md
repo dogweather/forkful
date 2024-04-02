@@ -9,9 +9,8 @@ summary: "Calcolare una data nel futuro o nel passato significa trovare una data
   \ \xE8 un certo numero di giorni, mesi o anni distante da una data di partenza.\
   \ I\u2026"
 title: Calcolo di una data futura o passata
+weight: 26
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 Calcolare una data nel futuro o nel passato significa trovare una data che è un certo numero di giorni, mesi o anni distante da una data di partenza. I programmatori lo fanno per gestire scadenze, eventi futuri, o per calcolare periodi passati.

@@ -9,9 +9,8 @@ summary: "L\xE4sa en textfil? Det handlar om att f\xE5 fram informationen skrive
   \ i filen och anv\xE4nda den i ditt program. Utvecklare g\xF6r det f\xF6r att ladda\
   \ data,\u2026"
 title: "L\xE4sa en textfil"
+weight: 22
 ---
-
-{{< edit_this_page >}}
 
 ## Vad & Varför?
 Läsa en textfil? Det handlar om att få fram informationen skriven i filen och använda den i ditt program. Utvecklare gör det för att ladda data, konfigurera program eller bearbeta filer skapade av andra program.

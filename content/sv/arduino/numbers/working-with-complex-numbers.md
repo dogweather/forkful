@@ -9,9 +9,8 @@ summary: "Komplexa tal har en reell del och en imagin\xE4r del, vanligtvis skriv
   \ som `a + bi`. De \xE4r avg\xF6rande f\xF6r vissa matematikintensiva Arduino-projekt\
   \ som\u2026"
 title: Att arbeta med komplexa tal
+weight: 14
 ---
-
-{{< edit_this_page >}}
 
 ## Vad och Varför?
 Komplexa tal har en reell del och en imaginär del, vanligtvis skrivet som `a + bi`. De är avgörande för vissa matematikintensiva Arduino-projekt som involverar signalbehandling, elektroteknik eller något annat område där fenomen bäst modelleras i ett plan.

@@ -11,9 +11,8 @@ summary: "\xC5 sette stor forbokstav i en streng betyr \xE5 endre den slik at de
   \ f\xF8rste bokstaven er stor, og resten av strengen er med sm\xE5 bokstaver. Dette\
   \ er en vanlig\u2026"
 title: Sette stor bokstav i en streng
+weight: 2
 ---
-
-{{< edit_this_page >}}
 
 ## Hva & Hvorfor?
 

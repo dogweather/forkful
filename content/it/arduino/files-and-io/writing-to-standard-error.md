@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Scrivere sullo standard error (stderr) nella programmazione Arduino comporta\
   \ indirizzare messaggi di errore e diagnostica su un canale separato,\u2026"
 title: Scrivere sull'errore standard
+weight: 25
 ---
-
-{{< edit_this_page >}}
 
 ## Cosa e Perché?
 

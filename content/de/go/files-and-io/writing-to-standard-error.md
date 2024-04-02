@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Das Schreiben auf die Standardfehlerausgabe (stderr) in Go beinhaltet die\
   \ Weiterleitung von Fehlermeldungen oder Diagnosen, die nicht f\xFCr den\u2026"
 title: Schreiben auf Standardfehler
+weight: 25
 ---
-
-{{< edit_this_page >}}
 
 ## Was & Warum?
 

@@ -7,9 +7,8 @@ model: gpt-4-0125-preview
 summary: "Reading a text file in Google Apps Script (GAS) involves accessing and extracting\
   \ text data from files stored in Google Drive or other accessible cloud-\u2026"
 title: Reading a text file
+weight: 22
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 

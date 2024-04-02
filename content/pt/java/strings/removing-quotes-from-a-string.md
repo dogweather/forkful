@@ -9,9 +9,8 @@ summary: "Remover aspas de uma string significa eliminar quaisquer marcas de cit
   \xE3o\u2014simples (' '), duplas (\" \") ou ambas\u2014dos dados de texto. Programadores\
   \ fazem\u2026"
 title: Removendo aspas de uma string
+weight: 9
 ---
-
-{{< edit_this_page >}}
 
 ## O Que & Por Quê?
 Remover aspas de uma string significa eliminar quaisquer marcas de citação—simples (' '), duplas (" ") ou ambas—dos dados de texto. Programadores fazem isso para sanitizar entradas, preparar dados para armazenamento ou simplificar tarefas de análise em que as aspas são desnecessárias e potencialmente problemáticas.

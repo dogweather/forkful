@@ -11,9 +11,8 @@ summary: "Satunnaislukujen tuottaminen on ohjelmoinnissa perusteht\xE4v\xE4, jot
   \ k\xE4ytet\xE4\xE4n lukuisissa sovelluksissa, kuten simulaatioissa, peleiss\xE4\
   \ ja\u2026"
 title: Sattumanvaraisten numeroiden generointi
+weight: 12
 ---
-
-{{< edit_this_page >}}
 
 ## Mikä & Miksi?
 

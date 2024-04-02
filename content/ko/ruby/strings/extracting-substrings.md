@@ -14,9 +14,8 @@ summary: "\uBB38\uC790\uC5F4\uC5D0\uC11C \uD2B9\uC815 \uBD80\uBD84\uC744 \uBF51\
   \ \uD544\uC694\uD55C \uC815\uBCF4\uB9CC \uBE60\uB974\uAC8C \uCC3E\uAE30 \uC704\uD574\
   \ \uC0AC\uC6A9\uD569\uB2C8\uB2E4."
 title: "\uBD80\uBD84 \uBB38\uC790\uC5F4 \uCD94\uCD9C"
+weight: 6
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why? (무엇이며 왜?)
 문자열에서 특정 부분을 뽑아내는 것을 "서브스트링 추출"이라 합니다. 데이터를 다룰 때 우리가 필요한 정보만 빠르게 찾기 위해 사용합니다.

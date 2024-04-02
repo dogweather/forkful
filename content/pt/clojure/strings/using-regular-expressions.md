@@ -11,9 +11,8 @@ summary: "Express\xF5es regulares, uma ferramenta poderosa para correspond\xEAnc
   \ de padr\xF5es e manipula\xE7\xE3o de dados, s\xE3o essenciais em tarefas de processamento\
   \ de texto\u2026"
 title: "Usando express\xF5es regulares"
+weight: 11
 ---
-
-{{< edit_this_page >}}
 
 ## O Que & Por Quê?
 Expressões regulares, uma ferramenta poderosa para correspondência de padrões e manipulação de dados, são essenciais em tarefas de processamento de texto como validar entrada, pesquisar e substituir texto. Programadores as usam extensivamente para lidar com análise de strings complexas e tarefas de validação de dados de forma eficiente e sucinta.

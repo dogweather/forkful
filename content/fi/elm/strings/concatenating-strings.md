@@ -9,9 +9,8 @@ summary: "Yhdist\xE4\xE4 tekstej\xE4 (stringej\xE4) tarkoittaa niiden liitt\xE4m
   \ per\xE4kk\xE4in. Koodarit yhdist\xE4v\xE4t tekstej\xE4, koska tarvitsevat luoda\
   \ dynaamisia viestej\xE4, rakentaa\u2026"
 title: "Merkkijonojen yhdist\xE4minen"
+weight: 3
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why? - Mikä & Miksi?
 Yhdistää tekstejä (stringejä) tarkoittaa niiden liittämistä peräkkäin. Koodarit yhdistävät tekstejä, koska tarvitsevat luoda dynaamisia viestejä, rakentaa URL-osoitteita tai yksinkertaisesti yhdistellä käyttäjän syötteitä.

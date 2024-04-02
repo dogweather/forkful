@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Een tekstbestand schrijven in Java betekent tekstgegevens opslaan op een\
   \ bestand op schijf. Ontwikkelaars doen dit voor taken zoals loggen, configureren,\u2026"
 title: Een tekstbestand schrijven
+weight: 24
 ---
-
-{{< edit_this_page >}}
 
 ## Wat & Waarom?
 

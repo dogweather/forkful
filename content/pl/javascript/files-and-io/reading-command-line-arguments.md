@@ -9,9 +9,8 @@ summary: "Czytanie argument\xF3w linii polece\u0144 to sposob odbierania danych 
   \ zewn\u0105trz przez twoj\u0105 aplikacj\u0119 Node.js. Robimy to, \u017Ceby elastycznie\
   \ manipulowa\u0107\u2026"
 title: "Odczytywanie argument\xF3w linii polece\u0144"
+weight: 23
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 Czytanie argumentów linii poleceń to sposob odbierania danych z zewnątrz przez twoją aplikację Node.js. Robimy to, żeby elastycznie manipulować zachowaniem programu bez potrzeby zmiany kodu.

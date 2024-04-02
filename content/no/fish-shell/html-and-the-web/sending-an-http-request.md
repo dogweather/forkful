@@ -9,9 +9,8 @@ summary: "\xC5 sende en HTTP-foresp\xF8rsel betyr \xE5 be om data eller \xE5 utl
   se en handling p\xE5 en webserver. Programmerere gj\xF8r dette for \xE5 hente innhold,\
   \ oppdatere data,\u2026"
 title: "\xC5 sende en HTTP-foresp\xF8rsel"
+weight: 44
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 

@@ -11,9 +11,8 @@ summary: "L'analyse d'une date \xE0 partir d'une cha\xEEne de caract\xE8res est 
   \ t\xE2che courante lorsqu'il s'agit de g\xE9rer les entr\xE9es utilisateur ou de\
   \ lire des donn\xE9es\u2026"
 title: "Analyser une date depuis une cha\xEEne de caract\xE8res"
+weight: 30
 ---
-
-{{< edit_this_page >}}
 
 ## Quoi & Pourquoi ?
 

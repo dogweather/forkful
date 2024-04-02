@@ -9,9 +9,8 @@ summary: "Czytanie argument\xF3w linii polece\u0144 to pobieranie danych wej\u01
   ciowych od u\u017Cytkownika podczas wykonywania skryptu PHP w terminalu. Programi\u015B\
   ci wykorzystuj\u0105 t\u0119\u2026"
 title: "Odczytywanie argument\xF3w linii polece\u0144"
+weight: 23
 ---
-
-{{< edit_this_page >}}
 
 ## Co i Dlaczego?
 Czytanie argumentów linii poleceń to pobieranie danych wejściowych od użytkownika podczas wykonywania skryptu PHP w terminalu. Programiści wykorzystują tę technikę, gdy chcą, aby ich skrypt był elastyczny i mógł być łatwo uruchamiany z różnymi parametrami.

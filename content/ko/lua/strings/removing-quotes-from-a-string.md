@@ -21,9 +21,8 @@ summary: "\uBB38\uC790\uC5F4\uC5D0\uC11C \uB530\uC634\uD45C\uB97C \uC81C\uAC70\u
   \uB86D\uAC8C \uB9CC\uB4E4\uAE30 \uC704\uD574 \uC774 \uC791\uC5C5\uC744 \uD569\uB2C8\
   \uB2E4."
 title: "\uBB38\uC790\uC5F4\uC5D0\uC11C \uB530\uC634\uD45C \uC81C\uAC70\uD558\uAE30"
+weight: 9
 ---
-
-{{< edit_this_page >}}
 
 ## 무엇 & 왜?
 문자열에서 따옴표를 제거한다는 것은 텍스트를 감싸고 있는 그 더블 또는 싱글 따옴표 문자를 벗겨내는 것을 의미합니다. 프로그래머들은 입력 값을 정화하거나, 파싱을 용이하게 하거나, 일관성이 없게 인용된 데이터를 조화롭게 만들기 위해 이 작업을 합니다.

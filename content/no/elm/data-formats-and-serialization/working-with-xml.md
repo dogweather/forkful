@@ -9,9 +9,8 @@ summary: "\xC5 jobbe med XML inneb\xE6rer parsing, transformasjon og generering 
   \ XML-dokumenter i Elm. Det gj\xF8res for \xE5 samhandle med mange webtjenester\
   \ og eldre\u2026"
 title: "\xC5 jobbe med XML"
+weight: 40
 ---
-
-{{< edit_this_page >}}
 
 ## Hva & Hvorfor?
 Å jobbe med XML innebærer parsing, transformasjon og generering av XML-dokumenter i Elm. Det gjøres for å samhandle med mange webtjenester og eldre systemer som bruker XML som deres dataformat.

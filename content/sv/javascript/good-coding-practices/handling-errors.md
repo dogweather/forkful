@@ -9,9 +9,8 @@ summary: "Felhantering \xE4r hur du hanterar n\xE4r saker g\xE5r snett i din kod
   \ Det \xE4r viktigt eftersom det hj\xE4lper dina program att misslyckas anst\xE4\
   ndigt och instruerar\u2026"
 title: Hantering av fel
+weight: 16
 ---
-
-{{< edit_this_page >}}
 
 ## Vad och varför?
 

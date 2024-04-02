@@ -13,9 +13,8 @@ summary: "YAML\u3092\u64CD\u4F5C\u3059\u308B\u3068\u306F\u3001\u8A2D\u5B9A\u30D5
   \u30C3\u30C8\u3067\u3042\u308BYAML\uFF08YAML Ain't Markup Language\uFF09\u30D5\u30A1\
   \u30A4\u30EB\u3092\u30D1\u30FC\u30B7\u30F3\u30B0\u3057\u3001Fish\u2026"
 title: "YAML \u3092\u64CD\u4F5C\u3059\u308B"
+weight: 41
 ---
-
-{{< edit_this_page >}}
 
 ## 何となぜ？
 YAMLを操作するとは、設定ファイル用のデータ直列化フォーマットであるYAML（YAML Ain't Markup Language）ファイルをパーシングし、Fish Shell内で操作することを意味します。プログラマーはこれを行うことで、シェル環境の文脈内でアプリケーションやサービスを効率よく自動化、設定することができ、構成管理やリソースのプロビジョニングといったタスクを容易にします。

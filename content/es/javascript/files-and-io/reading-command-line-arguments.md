@@ -8,9 +8,8 @@ model: gpt-4-1106-preview
 summary: "Leer argumentos de la l\xEDnea de comandos permite que tu programa en JavaScript\
   \ reciba informaci\xF3n desde el exterior cuando se inicia. Esto es \xFAtil, por\u2026"
 title: "Lectura de argumentos de l\xEDnea de comandos"
+weight: 23
 ---
-
-{{< edit_this_page >}}
 
 ## Qué y Por Qué?
 Leer argumentos de la línea de comandos permite que tu programa en JavaScript reciba información desde el exterior cuando se inicia. Esto es útil, por ejemplo, para configurar cómo se ejecuta tu script o para pasarle datos sin hardcodear valores.

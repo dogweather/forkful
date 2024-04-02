@@ -11,9 +11,8 @@ summary: "Merkkijonon pituuden selvitt\xE4minen Visual Basic for Applications (V
   \ -ohjelmoinnissa tarkoittaa sen sis\xE4lt\xE4mien merkkien lukum\xE4\xE4r\xE4n\
   \ m\xE4\xE4ritt\xE4mist\xE4.\u2026"
 title: "Merkkijonon pituuden selvitt\xE4minen"
+weight: 7
 ---
-
-{{< edit_this_page >}}
 
 ## Mikä & Miksi?
 

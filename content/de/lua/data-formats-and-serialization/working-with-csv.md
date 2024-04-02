@@ -11,9 +11,8 @@ summary: "Die Arbeit mit CSV-Dateien (Comma-Separated Values, auf Deutsch \u201E
   \ Kommas getrennte Werte\u201C) umfasst das Parsen und Generieren von Textdaten,\
   \ die in\u2026"
 title: Arbeiten mit CSV
+weight: 37
 ---
-
-{{< edit_this_page >}}
 
 ## Was & Warum?
 

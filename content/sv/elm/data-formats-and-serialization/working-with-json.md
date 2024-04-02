@@ -11,9 +11,8 @@ summary: "Att arbeta med JSON i Elm handlar om att avkoda JSON-data till Elm-typ
   \ och koda om Elm-v\xE4rden tillbaka till JSON. Denna process \xE4r avg\xF6rande\
   \ f\xF6r\u2026"
 title: Arbeta med JSON
+weight: 38
 ---
-
-{{< edit_this_page >}}
 
 ## Vad & Varför?
 Att arbeta med JSON i Elm handlar om att avkoda JSON-data till Elm-typer och koda om Elm-värden tillbaka till JSON. Denna process är avgörande för webbapplikationer för att interagera med API:er och externa datakällor, vilket möjliggör ett sömlöst utbyte av data mellan klienten (Elm) och servrar eller andra tjänster.

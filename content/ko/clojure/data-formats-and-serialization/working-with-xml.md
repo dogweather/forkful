@@ -17,9 +17,8 @@ summary: "XML\uC740 \uBB38\uC11C\uB97C \uC778\uCF54\uB529\uD558\uAE30 \uC704\uD5
   \uC870\uD654\uB41C \uACC4\uCE35 \uD615\uC2DD\uC73C\uB85C \uC804\uB2EC\uD569\uB2C8\
   \uB2E4."
 title: "XML \uB2E4\uB8E8\uAE30"
+weight: 40
 ---
-
-{{< edit_this_page >}}
 
 ## 무엇 & 왜?
 XML은 문서를 인코딩하기 위한 마크업 언어로, 사람과 기계 모두가 읽을 수 있는 방식입니다. 웹 서비스, 구성 파일, 데이터 교환에서 중요한 역할을 하며, 데이터를 구조화된 계층 형식으로 전달합니다.

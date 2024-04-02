@@ -23,9 +23,8 @@ summary: "\uD45C\uC900 \uC624\uB958(stderr)\uC5D0 \uC791\uC131\uD55C\uB2E4\uB294
   \ \uC2DD\uBCC4 \uBC0F \uD544\uC694\uD55C \uACBD\uC6B0 \uB9AC\uB514\uB809\uC158 \uD560\
   \u2026"
 title: "\uD45C\uC900 \uC5D0\uB7EC\uC5D0 \uC4F0\uAE30"
+weight: 25
 ---
-
-{{< edit_this_page >}}
 
 ## 무엇 & 왜?
 

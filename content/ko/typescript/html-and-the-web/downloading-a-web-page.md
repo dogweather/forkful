@@ -16,9 +16,8 @@ summary: "\uC6F9 \uD398\uC774\uC9C0 \uB2E4\uC6B4\uB85C\uB4DC\uB294 \uC6D0\uACA9 
   \uAC70\uB098 \uC6F9 \uCF58\uD150\uCE20\uB97C \uBC31\uC5C5\uD558\uAE30 \uC704\uD574\
   \ \uC774\uB97C \uC218\uD589\uD569\uB2C8\uB2E4."
 title: "\uC6F9 \uD398\uC774\uC9C0 \uB2E4\uC6B4\uB85C\uB4DC\uD558\uAE30"
+weight: 42
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why? (무엇과 왜?)
 웹 페이지 다운로드는 원격 서버에서 HTML 파일을 불러와 로컬 시스템에 저장하는 과정입니다. 프로그래머들은 데이터를 추출하거나 웹 콘텐츠를 백업하기 위해 이를 수행합니다.

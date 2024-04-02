@@ -11,9 +11,8 @@ summary: "Att f\xE5 det aktuella datumet i C inneb\xE4r att man utnyttjar det st
   \ C-biblioteket f\xF6r att h\xE4mta och formatera systemets nuvarande datum och\
   \ tid.\u2026"
 title: "H\xE4mta aktuellt datum"
+weight: 29
 ---
-
-{{< edit_this_page >}}
 
 ## Vad & Varför?
 

@@ -20,9 +20,8 @@ summary: "Google Apps Script (GAS) \u092E\u0947\u0902 \u090F\u0915 \u0928\u0908 
   \u0907\u0932 \u0915\u094B\u2026"
 title: "\u0928\u092F\u093E \u092A\u094D\u0930\u094B\u091C\u0947\u0915\u094D\u091F\
   \ \u0936\u0941\u0930\u0942 \u0915\u0930\u0928\u093E"
+weight: 1
 ---
-
-{{< edit_this_page >}}
 
 ## क्या और क्यों?
 

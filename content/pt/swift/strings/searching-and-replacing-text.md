@@ -9,9 +9,8 @@ summary: "Procurar e substituir texto \xE9 basicamente mudar uma string por outr
   \ em um bloco de texto. Programadores fazem isso para atualizar dados, corrigir\
   \ erros,\u2026"
 title: Pesquisando e substituindo texto
+weight: 10
 ---
-
-{{< edit_this_page >}}
 
 ## O Que & Porquê?
 

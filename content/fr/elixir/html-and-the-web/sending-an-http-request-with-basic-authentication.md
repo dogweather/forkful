@@ -9,9 +9,8 @@ summary: "L'envoi d'une requ\xEAte HTTP avec une authentification de base consis
   \ \xE0 fournir un identifiant et un mot de passe pour acc\xE9der \xE0 une ressource\
   \ prot\xE9g\xE9e\u2026"
 title: "Envoi d'une requ\xEAte HTTP avec authentification de base"
+weight: 45
 ---
-
-{{< edit_this_page >}}
 
 ## Quoi & Pourquoi?
 L'envoi d'une requête HTTP avec une authentification de base consiste à fournir un identifiant et un mot de passe pour accéder à une ressource protégée sur le web. Les programmeurs utilisent cette méthode pour sécuriser l'accès aux API et aux services en ligne.

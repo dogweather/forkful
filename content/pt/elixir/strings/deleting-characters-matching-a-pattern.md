@@ -7,9 +7,8 @@ model: gpt-4-1106-preview
 summary: "Eliminar caracteres de uma string que correspondem a um padr\xE3o \xE9 fundamental\
   \ para limpar dados ou modificar texto. Programadores o fazem para simplificar\u2026"
 title: "Excluindo caracteres que correspondem a um padr\xE3o"
+weight: 5
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 Eliminar caracteres de uma string que correspondem a um padrão é fundamental para limpar dados ou modificar texto. Programadores o fazem para simplificar strings, validar entradas ou preparar dados para processamento.

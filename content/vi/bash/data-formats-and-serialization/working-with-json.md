@@ -13,9 +13,8 @@ summary: "L\xE0m vi\u1EC7c v\u1EDBi JSON trong Bash bao g\u1ED3m vi\u1EC7c ph\xE
   c ti\u1EBFp t\u1EEB d\xF2ng l\u1EC7nh. C\xE1c l\u1EADp tr\xECnh vi\xEAn th\u1EF1\
   c hi\u1EC7n \u0111i\u1EC1u n\xE0y cho\u2026"
 title: "L\xE0m vi\u1EC7c v\u1EDBi JSON"
+weight: 38
 ---
-
-{{< edit_this_page >}}
 
 ## Cái gì & Tại sao?
 

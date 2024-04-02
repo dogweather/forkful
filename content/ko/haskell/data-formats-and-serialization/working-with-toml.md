@@ -17,9 +17,8 @@ summary: "Haskell\uC744 \uC0AC\uC6A9\uD55C TOML \uC791\uC5C5\uC740 TOML(Tom's Ob
   \uC77C\uC744 \uC27D\uAC8C \uAD00\uB9AC\uD558\uAC70\uB098 \uB370\uC774\uD130 \uAD50\
   \uD658\uC744 \uD560 \uC218 \uC788\uB3C4\uB85D \uD558\uAE30\u2026"
 title: "\uD504\uB85C\uADF8\uB798\uBA38\uB97C \uC704\uD55C TOML \uB2E4\uB8E8\uAE30"
+weight: 39
 ---
-
-{{< edit_this_page >}}
 
 ## 무엇 & 왜?
 Haskell을 사용한 TOML 작업은 TOML(Tom's Obvious, Minimal Language) 데이터를 파싱하고 생성하는 것을 포함합니다. 프로그래머들이 강력한 타입 보증과 최소한의 문법 번거로움으로 구성 파일을 쉽게 관리하거나 데이터 교환을 할 수 있도록 하기 위해 이 작업을 합니다.

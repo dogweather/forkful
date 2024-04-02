@@ -9,9 +9,8 @@ summary: "Das Lesen von Befehlszeilenargumenten erm\xF6glicht es einem Ruby-Skri
   \ Eingaben direkt aus der Befehlszeile beim Ausf\xFChren des Programms aufzunehmen.\
   \ Das\u2026"
 title: Lesen von Kommandozeilenargumenten
+weight: 23
 ---
-
-{{< edit_this_page >}}
 
 ## Was & Warum?
 Das Lesen von Befehlszeilenargumenten ermöglicht es einem Ruby-Skript, Eingaben direkt aus der Befehlszeile beim Ausführen des Programms aufzunehmen. Das ist praktisch, um Skripte flexibler und interaktiv zu machen, damit sie mit verschiedenen Einstellungen oder Daten ohne Code-Änderung laufen.

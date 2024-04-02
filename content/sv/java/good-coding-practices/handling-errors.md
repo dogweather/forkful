@@ -9,9 +9,8 @@ summary: "Att hantera fel inneb\xE4r att skriva kod som f\xF6rutser och hanterar
   r saker g\xE5r fel. Programmerare g\xF6r det f\xF6r att g\xF6ra programvara robust,\
   \ f\xF6rebygga\u2026"
 title: Hantering av fel
+weight: 16
 ---
-
-{{< edit_this_page >}}
 
 ## Vad & Varför?
 

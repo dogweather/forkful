@@ -13,9 +13,8 @@ summary: "Vi\u1EC7c t\u1EA1o m\u1ED9t t\u1EC7p t\u1EA1m th\u1EDDi trong PHP c\xF
   \ th\u1EDDi gian ng\u1EAFn \u0111\u1EC3 b\u1EA1n s\u1EED d\u1EE5ng, sau \u0111\xF3\
   , c\xE1i t\u1EC7p \u0111\xF3 s\u1EBD bi\u1EBFn m\u1EA5t. T\u1EA1i sao l\u1EA1i\u2026"
 title: "T\u1EA1o m\u1ED9t t\u1EADp tin t\u1EA1m th\u1EDDi"
+weight: 21
 ---
-
-{{< edit_this_page >}}
 
 ## Cái Gì & Tại Sao?
 Việc tạo một tệp tạm thời trong PHP có nghĩa là tạo ra một tệp sẽ tồn tại trong thời gian ngắn để bạn sử dụng, sau đó, cái tệp đó sẽ biến mất. Tại sao lại làm vậy? Điều đó tuyệt vời cho việc xử lý các khối dữ liệu trong quá trình xử lý, giữ thông tin nhạy cảm không bị lưu trữ trên đĩa, và đảm bảo không có dấu vết nào còn lại sau khi script của bạn kết thúc.

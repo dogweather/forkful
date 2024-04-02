@@ -11,9 +11,8 @@ summary: "Enviar uma solicita\xE7\xE3o HTTP em Dart \xE9 o processo de iniciar c
   \xF5es com um servidor web ou API a partir de uma aplica\xE7\xE3o Dart. Programadores\
   \ fazem\u2026"
 title: "Enviando uma solicita\xE7\xE3o HTTP"
+weight: 44
 ---
-
-{{< edit_this_page >}}
 
 ## O quê & Por quê?
 

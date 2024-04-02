@@ -9,9 +9,8 @@ summary: "HTTP-Anfragen sind das Werkzeug, um mit Servern zu kommunizieren \u201
   \ sie senden Daten und holen Antworten. Programmierer nutzen das, um Webinhalte\
   \ dynamisch\u2026"
 title: Einen HTTP-Request senden
+weight: 44
 ---
-
-{{< edit_this_page >}}
 
 ## Was & Warum?
 HTTP-Anfragen sind das Werkzeug, um mit Servern zu kommunizieren – sie senden Daten und holen Antworten. Programmierer nutzen das, um Webinhalte dynamisch zu laden, APIs anzusprechen oder Daten zu synchronisieren.

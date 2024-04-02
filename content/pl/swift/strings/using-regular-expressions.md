@@ -11,9 +11,8 @@ summary: "Wyra\u017Cenia regularne, czyli regex, to sekwencje znak\xF3w, kt\xF3r
   \ tworz\u0105 wzorzec wyszukiwania, cz\u0119sto u\u017Cywane do zada\u0144 dopasowywania\
   \ lub manipulacji ci\u0105gami\u2026"
 title: "Korzystanie z wyra\u017Ce\u0144 regularnych"
+weight: 11
 ---
-
-{{< edit_this_page >}}
 
 ## Co i dlaczego?
 Wyrażenia regularne, czyli regex, to sekwencje znaków, które tworzą wzorzec wyszukiwania, często używane do zadań dopasowywania lub manipulacji ciągami znaków. Programiści wykorzystują je do wszystkiego, począwszy od walidacji danych, analizy, po transformacje, czyniąc je niezbędnym narzędziem w przetwarzaniu i manipulacji tekstem w różnych językach programowania, w tym w Swift.

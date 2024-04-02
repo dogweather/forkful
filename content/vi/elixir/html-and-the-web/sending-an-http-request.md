@@ -13,9 +13,8 @@ summary: "G\u1EEDi m\u1ED9t y\xEAu c\u1EA7u HTTP l\xE0 c\xE1ch ch\u01B0\u01A1ng 
   \ c\xE1ch b\u1EA1n y\xEAu c\u1EA7u m\u1ED9t th\u1EE7 th\u01B0 v\u1EC1 m\u1ED9t quy\u1EC3\
   n s\xE1ch. L\u1EADp tr\xECnh vi\xEAn th\u1EF1c\u2026"
 title: "G\u1EEDi m\u1ED9t y\xEAu c\u1EA7u HTTP"
+weight: 44
 ---
-
-{{< edit_this_page >}}
 
 ## Gì và Tại sao?
 Gửi một yêu cầu HTTP là cách chương trình của bạn yêu cầu dữ liệu từ web, giống như cách bạn yêu cầu một thủ thư về một quyển sách. Lập trình viên thực hiện việc này để tải, gửi hoặc thao túng dữ liệu từ xa, từ việc lấy thông tin thời tiết đến đăng tweet.

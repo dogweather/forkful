@@ -11,9 +11,8 @@ summary: "Att h\xE4mta det aktuella datumet i JavaScript \xE4r en grundl\xE4ggan
   \ uppgift som inneb\xE4r att h\xE4mta och m\xF6jligen manipulera dagens datum och\
   \ tid. Programmerare\u2026"
 title: "F\xE5 det aktuella datumet"
+weight: 29
 ---
-
-{{< edit_this_page >}}
 
 ## Vad & Varför?
 Att hämta det aktuella datumet i JavaScript är en grundläggande uppgift som innebär att hämta och möjligen manipulera dagens datum och tid. Programmerare utför detta för att visa datum på webbplatser, i applikationer, för att spåra användarinteraktioner eller för att hantera tidkänslig data.

@@ -8,9 +8,8 @@ model: gpt-4-1106-preview
 summary: "Logging ist im Grunde das softwaretechnische \xC4quivalent zu einem Schiffslogbuch;\
   \ es ist eine Methode, um Ereignisse aufzuzeichnen, die w\xE4hrend des\u2026"
 title: Protokollierung
+weight: 17
 ---
-
-{{< edit_this_page >}}
 
 ## Was & Warum?
 Logging ist im Grunde das softwaretechnische Äquivalent zu einem Schiffslogbuch; es ist eine Methode, um Ereignisse aufzuzeichnen, die während des Betriebs einer Anwendung geschehen. Programmierer machen dies, um diese Ereignisse für das Debugging, die Überprüfung von Abläufen oder um Einblicke in das Verhalten eines Systems im Produktionsbetrieb zu erhalten.

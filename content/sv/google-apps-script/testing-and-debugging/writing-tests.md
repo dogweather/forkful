@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Att skriva tester i Google Apps Script (GAS) handlar om att skapa automatiserade\
   \ skript f\xF6r att verifiera beteendet hos din kod, och s\xE4kerst\xE4lla att den\u2026"
 title: Skriva tester
+weight: 36
 ---
-
-{{< edit_this_page >}}
 
 ## Vad och varför?
 

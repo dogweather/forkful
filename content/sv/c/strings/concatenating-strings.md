@@ -11,9 +11,8 @@ summary: "Str\xE4ngkonkatenering i C inneb\xE4r att s\xE4tta ihop tv\xE5 eller f
   \ str\xE4ngar slut-i-slut f\xF6r att bilda en ny str\xE4ng. Programmerare utf\xF6\
   r denna operation f\xF6r\u2026"
 title: "Sammanfoga str\xE4ngar"
+weight: 3
 ---
-
-{{< edit_this_page >}}
 
 ## Vad & Varför?
 

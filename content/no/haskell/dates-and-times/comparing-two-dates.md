@@ -9,9 +9,8 @@ summary: "\xC5 sammenligne to datoer betyr \xE5 finne ut hvilken som kommer f\xF
   r eller etter, eller om de er like. Programmerere gj\xF8r dette for \xE5 h\xE5ndtere\
   \ frister,\u2026"
 title: Sammenlikning av to datoer
+weight: 27
 ---
-
-{{< edit_this_page >}}
 
 ## Hva & Hvorfor?
 

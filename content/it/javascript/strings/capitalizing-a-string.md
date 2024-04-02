@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Capitalizzare una stringa significa convertire il primo carattere della\
   \ stringa in maiuscolo, mantenendo invariati i caratteri rimanenti. Questa\u2026"
 title: Capitalizzare una stringa
+weight: 2
 ---
-
-{{< edit_this_page >}}
 
 ## Cosa & Perché?
 Capitalizzare una stringa significa convertire il primo carattere della stringa in maiuscolo, mantenendo invariati i caratteri rimanenti. Questa operazione viene comunemente eseguita in JavaScript per formattare gli input degli utenti, visualizzare nomi o titoli e garantire la coerenza nei testi dell'interfaccia utente.

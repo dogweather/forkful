@@ -7,9 +7,8 @@ model: gpt-4-1106-preview
 summary: "HTTP-Anfragen sind essentiell, um mit Webdiensten zu kommunizieren, indem\
   \ Daten gesendet und empfangen werden. Programmierer nutzen sie, um Informationen\u2026"
 title: Einen HTTP-Request senden
+weight: 44
 ---
-
-{{< edit_this_page >}}
 
 ## Was & Warum?
 HTTP-Anfragen sind essentiell, um mit Webdiensten zu kommunizieren, indem Daten gesendet und empfangen werden. Programmierer nutzen sie, um Informationen von APIs abzurufen, Daten zu übermitteln oder Webinhalte für Apps und Skripte verfügbar zu machen.

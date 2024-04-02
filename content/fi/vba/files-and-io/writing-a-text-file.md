@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Tekstitiedoston kirjoittaminen Visual Basic for Applications (VBA) -ohjelmistolla\
   \ liittyy tiedostoihin tekstidatan luomiseen, muokkaamiseen tai\u2026"
 title: Tekstitiedoston kirjoittaminen
+weight: 24
 ---
-
-{{< edit_this_page >}}
 
 ## Mikä ja Miksi?
 

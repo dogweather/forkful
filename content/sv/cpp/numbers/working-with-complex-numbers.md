@@ -9,9 +9,8 @@ summary: "Komplexa tal utvidgar de reella talen genom att l\xE4gga till en imagi
   r enhet, representerad som 'i', d\xE4r i^2 = -1. Programmerare anv\xE4nder dem f\xF6\
   r\u2026"
 title: Att arbeta med komplexa tal
+weight: 14
 ---
-
-{{< edit_this_page >}}
 
 ## Vad & Varför?
 Komplexa tal utvidgar de reella talen genom att lägga till en imaginär enhet, representerad som 'i', där i^2 = -1. Programmerare använder dem för simuleringar, signalbehandling och att lösa matematiska problem som kräver arbete i två dimensioner.

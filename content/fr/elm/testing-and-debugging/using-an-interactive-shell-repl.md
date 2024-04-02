@@ -7,9 +7,8 @@ model: gpt-4-0125-preview
 summary: "La boucle Lire-\xC9valuer-Imprimer (REPL) est un environnement de programmation\
   \ simple et interactif qui prend en charge les entr\xE9es utilisateur\u2026"
 title: Utilisation d'une console interactive (REPL)
+weight: 34
 ---
-
-{{< edit_this_page >}}
 
 ## Quoi & Pourquoi ?
 La boucle Lire-Évaluer-Imprimer (REPL) est un environnement de programmation simple et interactif qui prend en charge les entrées utilisateur individuelles, les évalue, et renvoie le résultat à l'utilisateur. Les programmeurs Elm utilisent le REPL pour des expériences rapides, le débogage ou pour apprendre le langage.

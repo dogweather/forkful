@@ -7,9 +7,8 @@ model: gpt-4-1106-preview
 summary: "HTTP-Anfragen sind der Austausch von Daten \xFCber das Internet nach dem\
   \ Client-Server-Modell. Programmierer verwenden sie, um mit Webdiensten zu\u2026"
 title: Einen HTTP-Request senden
+weight: 44
 ---
-
-{{< edit_this_page >}}
 
 ## Was & Warum?
 HTTP-Anfragen sind der Austausch von Daten über das Internet nach dem Client-Server-Modell. Programmierer verwenden sie, um mit Webdiensten zu interagieren, Daten abzurufen oder zu senden – etwa, um Web-APIs zu nutzen oder Server-Status zu überprüfen.

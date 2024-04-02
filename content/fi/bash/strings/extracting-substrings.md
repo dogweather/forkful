@@ -9,9 +9,8 @@ summary: "Substringien erottelu tarkoittaa isomman merkkijonon osan leikkaamista
   \ k\xE4ytt\xE4mist\xE4. Ohjelmoijat tekev\xE4t t\xE4t\xE4, kun tarvitsevat t\xF6\
   ihin vain osan datasta."
 title: Merkkijonojen osien poimiminen
+weight: 6
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why - Mitä ja Miksi?
 Substringien erottelu tarkoittaa isomman merkkijonon osan leikkaamista ja käyttämistä. Ohjelmoijat tekevät tätä, kun tarvitsevat töihin vain osan datasta.

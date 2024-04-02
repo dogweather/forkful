@@ -9,9 +9,8 @@ summary: "L\xE4ngden p\xE5 en str\xE4ng \xE4r antalet tecken den inneh\xE5ller. 
   \ m\xE5ste ofta veta detta f\xF6r att validera inmatning, skapa substr\xE4ngar eller\
   \ j\xE4mf\xF6ra\u2026"
 title: "Hitta l\xE4ngden p\xE5 en str\xE4ng"
+weight: 7
 ---
-
-{{< edit_this_page >}}
 
 ## Vad & Varför?
 Längden på en sträng är antalet tecken den innehåller. Programmerare måste ofta veta detta för att validera inmatning, skapa substrängar eller jämföra strängarnas storlekar.

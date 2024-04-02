@@ -21,9 +21,8 @@ summary: "CSV(Comma Separated Values, \uC27C\uD45C\uB85C \uAD6C\uBD84\uB41C \uAC
   \uACE0 \uBD84\uC11D\uD558\uBA70, \uC791\uC5C5\uC744 \uC790\uB3D9\uD654\uD558\uAC70\
   \uB098 \uB2E4\uB978 \uC2DC\uC2A4\uD15C\uACFC\u2026"
 title: "CSV\uC640 \uD568\uAED8 \uC791\uC5C5\uD558\uAE30"
+weight: 37
 ---
-
-{{< edit_this_page >}}
 
 ## 무엇 & 왜?
 

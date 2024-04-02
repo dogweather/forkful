@@ -9,9 +9,8 @@ summary: "Arredondar n\xFAmeros significa ajust\xE1-los a um valor pr\xF3ximo pa
   \ simplicidade ou para corresponder a uma certa precis\xE3o. Isso \xE9 \xFAtil para\
   \ melhorar a\u2026"
 title: "Arredondamento de n\xFAmeros"
+weight: 13
 ---
-
-{{< edit_this_page >}}
 
 ## O Que & Por Que?
 Arredondar números significa ajustá-los a um valor próximo para simplicidade ou para corresponder a uma certa precisão. Isso é útil para melhorar a legibilidade, reduzir espaço de armazenamento ou atender a necessidades específicas de domínio, como cálculos monetários onde se deseja arredondar para o centavo mais próximo.

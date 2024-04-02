@@ -8,9 +8,8 @@ model: gpt-4-0125-preview
 summary: "Nel mondo della programmazione, specialmente quando si ha a che fare con\
   \ ambienti Linux o Unix, manipolare i file direttamente dalla riga di comando (CLI)\u2026"
 title: Manipolazione di file con one-liner da CLI
+weight: 31
 ---
-
-{{< edit_this_page >}}
 
 ## Cosa & Perché?
 

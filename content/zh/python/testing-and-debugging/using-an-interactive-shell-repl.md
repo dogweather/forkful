@@ -15,9 +15,8 @@ summary: "REPL\uFF0C\u6216\u8BFB\u53D6-\u6C42\u503C-\u6253\u5370\u5FAA\u73AF\uFF
   \u901F\u6D4B\u8BD5\u3001\u5B66\u4E60\u3001\u8C03\u8BD5\u6216\u5373\u65F6\u8BA1\u7B97\
   \u3002"
 title: "\u5728\u7F16\u7A0B\u4E2D\u4F7F\u7528\u4EA4\u4E92\u5F0FShell\uFF08REPL\uFF09"
+weight: 34
 ---
-
-{{< edit_this_page >}}
 
 ## 什么 & 为什么？
 REPL，或读取-求值-打印循环，是一种编程环境，它接收单个用户输入，执行它们，并将结果返回给用户。程序员使用它进行快速测试、学习、调试或即时计算。

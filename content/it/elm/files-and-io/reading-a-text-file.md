@@ -7,9 +7,8 @@ model: gpt-4-1106-preview
 summary: "Leggere un file di testo significa caricare e interpretare il suo contenuto\
   \ tramite il nostro codice. Lo facciamo perch\xE9 spesso abbiamo bisogno di\u2026"
 title: Lettura di un file di testo
+weight: 22
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 Leggere un file di testo significa caricare e interpretare il suo contenuto tramite il nostro codice. Lo facciamo perché spesso abbiamo bisogno di accedere a dati, configurazioni, o informazioni salvate in file semplici e accessibili.

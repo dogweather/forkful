@@ -9,9 +9,8 @@ summary: "Parsing HTML inneb\xE4r att omvandla HTML-kod till en struktur som ett
   \ eller skript kan f\xF6rst\xE5 och manipulera. Programmerare g\xF6r detta f\xF6\
   r att\u2026"
 title: Tolka HTML
+weight: 43
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why? (Vad & Varför?)
 Parsing HTML innebär att omvandla HTML-kod till en struktur som ett program eller skript kan förstå och manipulera. Programmerare gör detta för att interagera med webbsidor, extrahera data, automatisera webbuppgifter eller testa webbapplikationer.

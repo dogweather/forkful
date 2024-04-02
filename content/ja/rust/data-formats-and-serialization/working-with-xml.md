@@ -19,9 +19,8 @@ summary: "XML\u306F\u3001\u300CeXtensible Markup Language\u300D\u306E\u7565\u306
   \u306A\u308A\u307E\u3059\u3002XML\u304C\u305D\u306E\u5730\u4F4D\u3092\u5B88\u308B\
   \u30C7\u30FC\u30BF\u4EA4\u63DB\u306B\u306F\u4E0D\u53EF\u6B20\u3067\u3059\u3002"
 title: "XML\u306E\u6271\u3044\u65B9"
+weight: 40
 ---
-
-{{< edit_this_page >}}
 
 ## 何となぜ？
 XMLは、「eXtensible Markup Language」の略で、JSONの冗長ないとこのようなものです。遺産システム、エンタープライズソフトウェア、またはJSONバンドワゴンをスキップしたAPIを扱う際にXMLと格闘することになります。XMLがその地位を守るデータ交換には不可欠です。

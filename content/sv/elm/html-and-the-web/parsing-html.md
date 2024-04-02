@@ -9,9 +9,8 @@ summary: "Parsing HTML handlar om att tolka och omvandla HTML-kod till n\xE5got 
   \ programmets logik kan hantera. Vi g\xF6r det f\xF6r att kunna manipulera, analysera\
   \ och\u2026"
 title: Tolka HTML
+weight: 43
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why? (Vad & Varför?)
 Parsing HTML handlar om att tolka och omvandla HTML-kod till något som programmets logik kan hantera. Vi gör det för att kunna manipulera, analysera och utvinna användbar data från webbsidor.

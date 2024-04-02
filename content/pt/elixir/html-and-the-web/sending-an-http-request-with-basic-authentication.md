@@ -9,9 +9,8 @@ summary: "Enviar uma requisi\xE7\xE3o HTTP com autentica\xE7\xE3o b\xE1sica \xE9
   \ credenciais de acesso (usu\xE1rio e senha) para um servidor via HTTP. Programadores\
   \ fazem isso\u2026"
 title: "Enviando uma requisi\xE7\xE3o HTTP com autentica\xE7\xE3o b\xE1sica"
+weight: 45
 ---
-
-{{< edit_this_page >}}
 
 ## O Quê & Porquê?
 Enviar uma requisição HTTP com autenticação básica é passar credenciais de acesso (usuário e senha) para um servidor via HTTP. Programadores fazem isso para acessar recursos protegidos na web, onde é necessário provar a identidade.

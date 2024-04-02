@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "El manejo de errores en Go implica reconocer y responder a las condiciones\
   \ de error en tu programa. Los programadores se dedican al manejo de errores para\u2026"
 title: Manejando errores
+weight: 16
 ---
-
-{{< edit_this_page >}}
 
 ## ¿Qué y por qué?
 

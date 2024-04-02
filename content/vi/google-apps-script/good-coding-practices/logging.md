@@ -13,9 +13,8 @@ summary: "Logging trong l\u1EADp tr\xECnh bao g\u1ED3m vi\u1EC7c ghi l\u1EA1i c\
   \ ch\xFA \xFD trong qu\xE1 tr\xECnh runtime. L\u1EADp tr\xECnh vi\xEAn l\xE0m \u0111\
   i\u1EC1u n\xE0y \u0111\u1EC3 g\u1EE1\u2026"
 title: "Ghi nh\u1EADt k\xFD"
+weight: 17
 ---
-
-{{< edit_this_page >}}
 
 ## Gì & Tại Sao?
 

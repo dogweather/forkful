@@ -11,9 +11,8 @@ summary: "Att arbeta med JSON (JavaScript Object Notation) inneb\xE4r att tolka 
   \ str\xE4ngar till Python-objekt och tv\xE4rtom. Detta \xE4r avg\xF6rande f\xF6\
   r webb-\u2026"
 title: Arbeta med JSON
+weight: 38
 ---
-
-{{< edit_this_page >}}
 
 ## Vad & Varför?
 

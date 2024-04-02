@@ -21,9 +21,8 @@ summary: "PHP\uC5D0\uC11C\uC758 \uC624\uB958 \uCC98\uB9AC\uB294 \uD504\uB85C\uAD
   \uC5D0\uAC8C \uB354 \uC6D0\uD65C\uD55C \uACBD\uD5D8\uC744 \uC81C\uACF5\uD558\uAE30\
   \ \uC704\uD574 \uB178\uB825\uD569\uB2C8\uB2E4."
 title: "\uC5D0\uB7EC \uCC98\uB9AC\uD558\uAE30"
+weight: 16
 ---
-
-{{< edit_this_page >}}
 
 ## 무엇 & 왜?
 PHP에서의 오류 처리는 프로그램의 정상적인 흐름을 방해하는 조건, 예를 들어 파일이 없거나 잘못된 데이터 입력과 같은 상황을 관리하고 대응하는 것을 말합니다. 프로그래머들은 오류를 처리하여 충돌을 방지하고 사용자에게 더 원활한 경험을 제공하기 위해 노력합니다.

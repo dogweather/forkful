@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Complexe getallen hebben een re\xEBel deel en een imaginair deel, meestal\
   \ geschreven als `a + bi`. Ze zijn cruciaal in geavanceerde wiskunde, natuurkunde,\u2026"
 title: Werken met complexe getallen
+weight: 14
 ---
-
-{{< edit_this_page >}}
 
 ## Wat & Waarom?
 Complexe getallen hebben een reëel deel en een imaginair deel, meestal geschreven als `a + bi`. Ze zijn cruciaal in geavanceerde wiskunde, natuurkunde, techniek en bepaalde computer algoritmes. Programmeurs werken ermee om berekeningen die te maken hebben met wortels van negatieve getallen en oscillerende functies, te kunnen hanteren.

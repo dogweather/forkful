@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Das Lesen einer Textdatei in Go beinhaltet den Zugriff auf und das Abrufen\
   \ von Inhalten aus einer auf dem Datentr\xE4ger gespeicherten Datei zur Verarbeitung\u2026"
 title: Eine Textdatei lesen
+weight: 22
 ---
-
-{{< edit_this_page >}}
 
 ## Was & Warum?
 

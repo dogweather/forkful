@@ -9,9 +9,8 @@ summary: "Wysy\u0142anie \u017C\u0105dania HTTP z podstawowym uwierzytelnieniem 
   \ proces, gdzie przekazujesz swoje dane logowania w formie nag\u0142\xF3wka HTTP,\
   \ aby uzyska\u0107 dost\u0119p do\u2026"
 title: "Wysy\u0142anie zapytania http z podstawow\u0105 autoryzacj\u0105"
+weight: 45
 ---
-
-{{< edit_this_page >}}
 
 ## Co i Dlaczego?
 Wysyłanie żądania HTTP z podstawowym uwierzytelnieniem to proces, gdzie przekazujesz swoje dane logowania w formie nagłówka HTTP, aby uzyskać dostęp do zabezpieczonych zasobów. Programiści używają tej metody do komunikacji z API, które wymaga autoryzacji.

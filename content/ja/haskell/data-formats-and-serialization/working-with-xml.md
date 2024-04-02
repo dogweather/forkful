@@ -19,9 +19,8 @@ summary: "Haskell\u3067\u306EXML\u306E\u53D6\u308A\u6271\u3044\u306F\u3001XML\u6
   \u30C8\u30B3\u30EB\u3068\u5BFE\u8A71\u3059\u308B\u305F\u3081\u306BXML\u3092\u6271\
   \u3044\u307E\u3059\u3002"
 title: "XML\u306E\u6271\u3044\u65B9"
+weight: 40
 ---
-
-{{< edit_this_page >}}
 
 ## はじめに: 何となぜ？
 

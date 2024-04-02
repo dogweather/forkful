@@ -9,9 +9,8 @@ summary: "Interpolering av en str\xE4ng inneb\xE4r att du dynamiskt stoppar in d
   \ i en str\xE4ng. Programmerare g\xF6r detta f\xF6r att skr\xE4ddarsy meddelanden,\
   \ skapa dynamiska\u2026"
 title: "Interpolera en str\xE4ng"
+weight: 8
 ---
-
-{{< edit_this_page >}}
 
 ## Vad & Varför?
 Interpolering av en sträng innebär att du dynamiskt stoppar in data i en sträng. Programmerare gör detta för att skräddarsy meddelanden, skapa dynamiska kommandon eller hantera data mer flexibelt.

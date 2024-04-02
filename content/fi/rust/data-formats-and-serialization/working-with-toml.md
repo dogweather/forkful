@@ -9,9 +9,8 @@ summary: "TOML on ihmisen luettavissa oleva datan serialisointikieli, jota k\xE4
   \xE4n usein konfiguraatioissa. Ohjelmoijat k\xE4ytt\xE4v\xE4t TOMLia sen yksinkertaisuuden\
   \ ja\u2026"
 title: "Ty\xF6skentely TOML:n kanssa"
+weight: 39
 ---
-
-{{< edit_this_page >}}
 
 ## Mikä & Miksi?
 TOML on ihmisen luettavissa oleva datan serialisointikieli, jota käytetään usein konfiguraatioissa. Ohjelmoijat käyttävät TOMLia sen yksinkertaisuuden ja selkeyden vuoksi, mikä kääntyy helposti hajautustauluksi Rustissa.

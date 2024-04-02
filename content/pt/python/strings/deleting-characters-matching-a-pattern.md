@@ -9,9 +9,8 @@ summary: "Deletar caracteres que correspondem a um padr\xE3o \xE9 uma forma de f
   \ strings, preservando s\xF3 o que \xE9 relevante para o seu contexto. Programadores\
   \ fazem\u2026"
 title: "Excluindo caracteres que correspondem a um padr\xE3o"
+weight: 5
 ---
-
-{{< edit_this_page >}}
 
 ## O Que & Por Que?
 Deletar caracteres que correspondem a um padrão é uma forma de filtrar strings, preservando só o que é relevante para o seu contexto. Programadores fazem isso para limpar dados, validar entradas ou simplificar a manipulação de strings.

@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Effettuare il parsing di una data da una stringa in C# implica la conversione\
   \ delle rappresentazioni testuali di date e orari in un oggetto `DateTime`.\u2026"
 title: Analisi di una data da una stringa
+weight: 30
 ---
-
-{{< edit_this_page >}}
 
 ## Cosa e perché?
 Effettuare il parsing di una data da una stringa in C# implica la conversione delle rappresentazioni testuali di date e orari in un oggetto `DateTime`. Questo è fondamentale per le applicazioni che hanno la necessità di manipolare, memorizzare o visualizzare date e orari in formati diversi, come app di pianificazione, processori di log o qualsiasi sistema che gestisca l'input delle date da utenti o fonti esterne.

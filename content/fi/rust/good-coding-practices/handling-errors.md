@@ -9,9 +9,8 @@ summary: "Virheenk\xE4sittely on toimien hallintaa, kun asiat eiv\xE4t mene odot
   \ Ohjelmoijat tekev\xE4t sit\xE4 k\xE4sitell\xE4kseen odottamattomia tilanteita,\
   \ varmistaakseen,\u2026"
 title: "Virheiden k\xE4sittely"
+weight: 16
 ---
-
-{{< edit_this_page >}}
 
 ## Mikä & Miksi?
 

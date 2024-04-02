@@ -21,9 +21,8 @@ summary: "\uBB38\uC790\uC5F4\uC5D0\uC11C \uB0A0\uC9DC\uB97C \uD30C\uC2F1\uD55C\u
   \uD654\uB41C \uD615\uC2DD\uC73C\uB85C \uC800\uC7A5\uD558\uAE30 \uC704\uD574 \uC774\
   \ \uC791\uC5C5\uC744 \uC218\uD589\uD558\uB294\uB370, \uC774\uB294\u2026"
 title: "\uBB38\uC790\uC5F4\uC5D0\uC11C \uB0A0\uC9DC \uBD84\uC11D\uD558\uAE30"
+weight: 30
 ---
-
-{{< edit_this_page >}}
 
 ## 무엇 & 왜?
 문자열에서 날짜를 파싱한다는 것은 날짜와 시간의 텍스트 표현을 `Date` 객체나 더 현대적인 `LocalDateTime` 객체로 변환하는 것을 의미합니다. 프로그래머들은 이를 통해 날짜를 조작, 포맷, 비교하거나 표준화된 형식으로 저장하기 위해 이 작업을 수행하는데, 이는 날짜 계산, 유효성 검사 또는 일관된 국제화를 요구하는 애플리케이션에 필수적입니다.

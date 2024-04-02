@@ -7,9 +7,8 @@ model: gpt-4-1106-preview
 summary: "Working with TOML means you're handling data in a Minimal \"Tom's Obvious,\
   \ Minimal Language\" format, popular for config files due to its easy readability.\u2026"
 title: Working with TOML
+weight: 39
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 Working with TOML means you're handling data in a Minimal "Tom's Obvious, Minimal Language" format, popular for config files due to its easy readability. Programmers use it for straightforward configuration management that works right out of the box with human-friendly syntax.

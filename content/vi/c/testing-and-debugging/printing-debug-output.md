@@ -13,9 +13,8 @@ summary: "Vi\u1EC7c in th\xF4ng \u0111i\u1EC7p g\u1EE1 l\u1ED7i l\xE0 vi\u1EC7c 
   \ th\xF4ng tin gi\xFAp l\u1EADp tr\xECnh vi\xEAn hi\u1EC3u \u0111\u01B0\u1EE3c d\xF2\
   ng ch\u1EA3y v\xE0 tr\u1EA1ng th\xE1i c\u1EE7a\u2026"
 title: "In \u0111\u1EA7u ra debug"
+weight: 33
 ---
-
-{{< edit_this_page >}}
 
 ## Gì và Tại sao?
 

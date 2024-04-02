@@ -9,9 +9,8 @@ summary: "Luemme tekstifailia, kun haluamme ohjelmassamme k\xE4sitell\xE4 failis
   \ olevaa dataa. Se on arkip\xE4iv\xE4inen tapa saada sis\xE4lt\xF6\xE4 ohjelmaan;\
   \ olkoon kyse\u2026"
 title: Tekstitiedoston lukeminen
+weight: 22
 ---
-
-{{< edit_this_page >}}
 
 ## Mikä & Miksi?
 Luemme tekstifailia, kun haluamme ohjelmassamme käsitellä failissa olevaa dataa. Se on arkipäiväinen tapa saada sisältöä ohjelmaan; olkoon kyse konfiguraatiosta, input-datasetistä tai vaikkapa logien purkamisesta.

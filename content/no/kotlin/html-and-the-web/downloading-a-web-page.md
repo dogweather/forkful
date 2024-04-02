@@ -7,9 +7,8 @@ model: gpt-4-1106-preview
 summary: "Nedlasting av nettsider er henting av data fra en URL for \xE5 se eller\
   \ behandle informasjonen. Programmerere gj\xF8r dette for \xE5 trekke ut data, automatisere\u2026"
 title: Nedlasting av en nettside
+weight: 42
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 Nedlasting av nettsider er henting av data fra en URL for å se eller behandle informasjonen. Programmerere gjør dette for å trekke ut data, automatisere oppgaver eller integrere tjenester.

@@ -26,9 +26,8 @@ summary: "\u05DB\u05EA\u05D9\u05D1\u05D4 \u05E9\u05DC \u05E7\u05D5\u05D1\u05E5 \
   \u05DD.\u2026"
 title: "\u05DB\u05EA\u05D9\u05D1\u05EA \u05E7\u05D5\u05D1\u05E5 \u05D8\u05E7\u05E1\
   \u05D8"
+weight: 24
 ---
-
-{{< edit_this_page >}}
 
 ## מה ולמה?
 

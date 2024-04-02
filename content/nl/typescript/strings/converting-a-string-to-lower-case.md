@@ -10,9 +10,8 @@ model: gpt-4-0125-preview
 summary: "Een string omzetten naar kleine letters betekent dat elk teken in de string\
   \ een kleine letter wordt. Programmeurs doen dit voor consistentie, vooral voor\u2026"
 title: Een string omzetten naar kleine letters
+weight: 4
 ---
-
-{{< edit_this_page >}}
 
 ## Wat & Waarom?
 Een string omzetten naar kleine letters betekent dat elk teken in de string een kleine letter wordt. Programmeurs doen dit voor consistentie, vooral voor hoofdletterongevoelige vergelijkingen, zoals bij het controleren van gebruikersinvoer tegen een lijst van commando's of opgeslagen gegevens.

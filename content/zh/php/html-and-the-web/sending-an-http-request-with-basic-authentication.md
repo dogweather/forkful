@@ -14,9 +14,8 @@ summary: "\u5728PHP\u4E2D\u53D1\u9001\u5E26\u6709\u57FA\u672C\u8BA4\u8BC1\u7684H
   \u6570\u636E\u7684\u7B80\u5355\u4FDD\u62A4\u3001API\u7684\u4F7F\u7528\uFF0C\u6216\
   \u8005\u9700\u8981\u9A8C\u8BC1\u6743\u9650\u7684\u573A\u666F\u3002"
 title: "\u4F7F\u7528\u57FA\u672C\u8BA4\u8BC1\u53D1\u9001 HTTP \u8BF7\u6C42"
+weight: 45
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why? 什么与为什么?
 在PHP中发送带有基本认证的HTTP请求，就是客户端提供用户名和密码以获取资源。这种方法常用于数据的简单保护、API的使用，或者需要验证权限的场景。

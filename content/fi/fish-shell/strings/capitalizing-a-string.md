@@ -11,9 +11,8 @@ summary: "Merkkijonon alkukirjaimen suurentaminen tarkoittaa sen muokkaamista si
   \ ett\xE4 ensimm\xE4inen kirjain on isolla ja loput merkkijonosta ovat pienell\xE4\
   . T\xE4m\xE4\u2026"
 title: Merkkijonon muuttaminen isoiksi kirjaimiksi
+weight: 2
 ---
-
-{{< edit_this_page >}}
 
 ## Mikä & Miksi?
 

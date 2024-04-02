@@ -11,9 +11,8 @@ summary: "Att skriva tester i Bash inneb\xE4r att skapa testfall f\xF6r att vali
   \ funktionaliteten hos dina Bash-skript. Programmerare genomf\xF6r tester f\xF6\
   r att\u2026"
 title: Skriva tester
+weight: 36
 ---
-
-{{< edit_this_page >}}
 
 ## Vad & Varför?
 Att skriva tester i Bash innebär att skapa testfall för att validera funktionaliteten hos dina Bash-skript. Programmerare genomför tester för att säkerställa att deras skript fungerar som förväntat under olika förhållanden, vilket fångar fel och buggar innan driftsättning.

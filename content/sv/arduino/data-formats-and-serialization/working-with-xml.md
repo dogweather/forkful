@@ -8,9 +8,8 @@ model: gpt-4-0125-preview
 summary: "Att arbeta med XML p\xE5 Arduino inneb\xE4r att tolka och manipulera XML-data,\
   \ som vanligtvis kommer fr\xE5n webb-API:er eller konfigurationsfiler. Programmerare\u2026"
 title: Att arbeta med XML
+weight: 40
 ---
-
-{{< edit_this_page >}}
 
 ## Vad & Varför?
 Att arbeta med XML på Arduino innebär att tolka och manipulera XML-data, som vanligtvis kommer från webb-API:er eller konfigurationsfiler. Programmerare gör detta för att integrera med tjänster som använder XML för datautbyte eller för att lagra data i ett strukturerat, mänskligt läsbart format.

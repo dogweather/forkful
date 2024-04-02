@@ -10,9 +10,8 @@ model: gpt-4-0125-preview
 summary: "Att tolka HTML i C inneb\xE4r att analysera HTML-dokument f\xF6r att effektivt\
   \ extrahera data, struktur eller specifika delar, ofta som ett f\xF6rsteg till\u2026"
 title: Tolka HTML
+weight: 43
 ---
-
-{{< edit_this_page >}}
 
 ## Vad & Varför?
 

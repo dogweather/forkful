@@ -8,9 +8,8 @@ model: gpt-4-1106-preview
 summary: "Creare un file temporaneo significa far nascere un file destinato ad esistere\
   \ per un breve periodo di tempo. I programmatori creano file temporanei per\u2026"
 title: Creazione di un file temporaneo
+weight: 21
 ---
-
-{{< edit_this_page >}}
 
 ## Cosa & Perché?
 

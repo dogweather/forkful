@@ -9,9 +9,8 @@ summary: "Feilh\xE5ndtering betyr \xE5 planlegge for n\xE5r ting g\xE5r galt. De
   \ er avgj\xF8rende fordi det hjelper med \xE5 unng\xE5 krasjer og gj\xF8r programvaren\
   \ din robust og\u2026"
 title: "Feilh\xE5ndtering"
+weight: 16
 ---
-
-{{< edit_this_page >}}
 
 ## Hva & Hvorfor?
 Feilhåndtering betyr å planlegge for når ting går galt. Det er avgjørende fordi det hjelper med å unngå krasjer og gjør programvaren din robust og brukervennlig.

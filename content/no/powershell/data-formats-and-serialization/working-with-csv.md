@@ -11,9 +11,8 @@ summary: "\xC5 jobbe med CSV-filer (Comma-Separated Values) er en vanlig oppgave
   \ \xE5 h\xE5ndtere og manipulere data i en strukturert, tabellform. Programmerere\
   \ utf\xF8rer\u2026"
 title: Arbeide med CSV
+weight: 37
 ---
-
-{{< edit_this_page >}}
 
 ## Hva og hvorfor?
 

@@ -11,9 +11,8 @@ summary: "Analiza HTML oznacza roz\u0142o\u017Cenie na czynniki pierwsze kawa\u0
   ka kodu HTML, aby zrozumie\u0107 jego struktur\u0119 i zawarto\u015B\u0107. Programi\u015B\
   ci robi\u0105 to w celu wydobycia\u2026"
 title: "Analiza sk\u0142adniowa HTML"
+weight: 43
 ---
-
-{{< edit_this_page >}}
 
 ## Co i dlaczego?
 Analiza HTML oznacza rozłożenie na czynniki pierwsze kawałka kodu HTML, aby zrozumieć jego strukturę i zawartość. Programiści robią to w celu wydobycia danych, manipulacji treścią lub migracji informacji między formatami i systemami.

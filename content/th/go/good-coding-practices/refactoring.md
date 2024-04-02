@@ -28,9 +28,8 @@ summary: "\u0E01\u0E32\u0E23 Refactoring \u0E43\u0E19\u0E01\u0E32\u0E23\u0E40\u0
   \u2026"
 title: "\u0E01\u0E32\u0E23\u0E1B\u0E23\u0E31\u0E1A\u0E42\u0E04\u0E23\u0E07\u0E2A\u0E23\
   \u0E49\u0E32\u0E07\u0E42\u0E04\u0E49\u0E14"
+weight: 19
 ---
-
-{{< edit_this_page >}}
 
 ## อะไร & ทำไม?
 

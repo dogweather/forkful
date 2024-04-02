@@ -9,9 +9,8 @@ summary: "Liczby zespolone, sk\u0142adaj\u0105ce si\u0119 z cz\u0119\u015Bci rze
   \ oraz cz\u0119\u015Bci urojonej (zwykle zapisywane jako a + bi), umo\u017Cliwiaj\u0105\
   \ obliczenia, kt\xF3re by\u0142yby\u2026"
 title: Praca z liczbami zespolonymi
+weight: 14
 ---
-
-{{< edit_this_page >}}
 
 ## Co i dlaczego?
 Liczby zespolone, składające się z części rzeczywistej oraz części urojonej (zwykle zapisywane jako a + bi), umożliwiają obliczenia, które byłyby niepraktyczne lub niemożliwe tylko przy użyciu liczb rzeczywistych. Programiści wykorzystują je w dziedzinach takich jak przetwarzanie sygnałów, informatyka kwantowa i matematyka stosowana, gdzie niezbędne są dwuwymiarowe reprezentacje liczb.

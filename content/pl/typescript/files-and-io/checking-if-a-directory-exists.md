@@ -11,9 +11,8 @@ summary: "Sprawdzanie, czy katalog istnieje w TypeScript, jest kluczowe dla zada
   \ zwi\u0105zanych z zarz\u0105dzaniem plikami, takich jak odczytywanie z plik\xF3\
   w lub\u2026"
 title: Sprawdzanie, czy katalog istnieje
+weight: 20
 ---
-
-{{< edit_this_page >}}
 
 ## Co i dlaczego?
 Sprawdzanie, czy katalog istnieje w TypeScript, jest kluczowe dla zadań związanych z zarządzaniem plikami, takich jak odczytywanie z plików lub zapisywanie do nich danych, zapewniając, że operacje są wykonywane tylko na istniejących katalogach. Ta operacja jest istotna, aby unikać błędów wynikających z prób dostępu lub manipulacji nieistniejącymi katalogami.

@@ -19,9 +19,8 @@ summary: "Google Apps Script\uC5D0\uC11C CSV(Comma-Separated Values, \uC27C\uD45
   \ \uC791\uC131\uD558\uB294 \uAC83\uC744 \uD3EC\uD568\uD569\uB2C8\uB2E4. \uD504\uB85C\
   \uADF8\uB798\uBA38\uB4E4\uC740 CSV\uAC00\u2026"
 title: "CSV \uD30C\uC77C\uB85C \uC791\uC5C5\uD558\uAE30"
+weight: 37
 ---
-
-{{< edit_this_page >}}
 
 ## 무엇 & 왜?
 

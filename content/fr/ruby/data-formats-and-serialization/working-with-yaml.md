@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "YAML, qui signifie \"YAML Ain't Markup Language\" (YAML n'est pas un langage\
   \ de balisage), est largement utilis\xE9 en Ruby pour les fichiers de configuration\u2026"
 title: Travailler avec YAML
+weight: 41
 ---
-
-{{< edit_this_page >}}
 
 ## Quoi et Pourquoi ?
 YAML, qui signifie "YAML Ain't Markup Language" (YAML n'est pas un langage de balisage), est largement utilisé en Ruby pour les fichiers de configuration et la sérialisation des données en raison de son format lisible par l'homme. Les programmeurs se tournent vers YAML lorsqu'ils ont besoin de stocker ou de transmettre des objets de données de manière lisible mais structurée, simplifiant des tâches comme la gestion de configuration, le stockage de données et le partage de données entre langages.

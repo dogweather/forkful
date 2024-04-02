@@ -10,9 +10,8 @@ model: gpt-4-0125-preview
 summary: "Das \xDCberpr\xFCfen, ob ein Verzeichnis in Java existiert, ist eine grundlegende\
   \ Aufgabe, die das Verifizieren der Pr\xE4senz eines Dateisystemverzeichnisses vor\u2026"
 title: "\xDCberpr\xFCfung, ob ein Verzeichnis existiert"
+weight: 20
 ---
-
-{{< edit_this_page >}}
 
 ## Was & Warum?
 Das Überprüfen, ob ein Verzeichnis in Java existiert, ist eine grundlegende Aufgabe, die das Verifizieren der Präsenz eines Dateisystemverzeichnisses vor dem Lesen, Schreiben oder Ausführen jeglicher Operationen, die seine Existenz erfordern, beinhaltet. Dies ist entscheidend, um Fehler oder Ausnahmen in Programmen zu vermeiden, die mit dem Dateisystem interagieren, und gewährleistet eine reibungslosere Ausführung und eine bessere Benutzererfahrung.

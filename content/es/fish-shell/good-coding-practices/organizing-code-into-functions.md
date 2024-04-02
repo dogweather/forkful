@@ -12,9 +12,8 @@ summary: "Organizar el c\xF3digo en funciones trata de agrupar trozos de script 
   \ realizar tareas espec\xEDficas. Lo hacemos porque hace que el c\xF3digo sea m\xE1\
   s f\xE1cil de\u2026"
 title: "Organizando el c\xF3digo en funciones"
+weight: 18
 ---
-
-{{< edit_this_page >}}
 
 ## Qué y Por Qué?
 Organizar el código en funciones trata de agrupar trozos de script para realizar tareas específicas. Lo hacemos porque hace que el código sea más fácil de leer, probar y reutilizar — nadie quiere sortear un pantano de espagueti de código.

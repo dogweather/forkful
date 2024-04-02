@@ -12,9 +12,8 @@ summary: "Organizar o c\xF3digo em fun\xE7\xF5es \xE9 sobre agrupar peda\xE7os d
   \ script para realizar tarefas espec\xEDficas. Fazemos isso porque torna o c\xF3\
   digo mais f\xE1cil de ler,\u2026"
 title: "Organizando c\xF3digo em fun\xE7\xF5es"
+weight: 18
 ---
-
-{{< edit_this_page >}}
 
 ## O quê & Por quê?
 Organizar o código em funções é sobre agrupar pedaços de script para realizar tarefas específicas. Fazemos isso porque torna o código mais fácil de ler, testar e reutilizar — ninguém quer navegar por um pântano de espaguete de código.

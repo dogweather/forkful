@@ -10,9 +10,8 @@ model: gpt-4-0125-preview
 summary: "Escribir un archivo de texto en Go implica crear y escribir cadenas de datos\
   \ en un archivo de texto nuevo o existente. Los programadores hacen esto para\u2026"
 title: Escribiendo un archivo de texto
+weight: 24
 ---
-
-{{< edit_this_page >}}
 
 ## ¿Qué y Por Qué?
 

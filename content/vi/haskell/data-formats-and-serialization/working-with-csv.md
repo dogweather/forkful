@@ -13,9 +13,8 @@ summary: "L\xE0m vi\u1EC7c v\u1EDBi CSV (Gi\xE1 tr\u1ECB T\xE1ch b\u1EB1ng D\u1E
   \u1EDBi d\u1EA1ng b\u1EA3ng. L\u1EADp tr\xECnh vi\xEAn s\u1EED d\u1EE5ng CSV do\
   \ t\xEDnh \u0111\u01A1n gi\u1EA3n v\xE0 s\u1EF1 h\u1ED7 tr\u1EE3 r\u1ED9ng\u2026"
 title: "L\xE0m vi\u1EC7c v\u1EDBi CSV"
+weight: 37
 ---
-
-{{< edit_this_page >}}
 
 ## Gì và Tại sao?
 Làm việc với CSV (Giá trị Tách bằng Dấu phẩy) có nghĩa là đọc và ghi dữ liệu dưới dạng bảng. Lập trình viên sử dụng CSV do tính đơn giản và sự hỗ trợ rộng rãi trên các hệ thống cho việc trao đổi dữ liệu.

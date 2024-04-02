@@ -7,9 +7,8 @@ model: gpt-4-0125-preview
 summary: "Fetching the current date is an essential task in almost any programming\
   \ endeavor, from logging activities in an application to generating reports with\u2026"
 title: Getting the current date
+weight: 29
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 Fetching the current date is an essential task in almost any programming endeavor, from logging activities in an application to generating reports with date stamps. In Ruby, this can be easily accomplished using the standard library, simplifying operations that involve dates.

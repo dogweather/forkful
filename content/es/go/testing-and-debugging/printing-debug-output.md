@@ -11,9 +11,8 @@ summary: "En programaci\xF3n inform\xE1tica, \"Imprimir salida de depuraci\xF3n\
   \ implica producir mensajes informativos detallados que ayudan a los desarrolladores\
   \ a\u2026"
 title: "Imprimiendo salida de depuraci\xF3n"
+weight: 33
 ---
-
-{{< edit_this_page >}}
 
 ## ¿Qué y por qué?
 

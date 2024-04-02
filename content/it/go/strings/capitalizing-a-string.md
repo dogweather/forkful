@@ -11,9 +11,8 @@ summary: "Capitalizzare una stringa comporta trasformare il primo carattere di u
   \ data stringa in maiuscolo se \xE8 in minuscolo, assicurando cos\xEC che la stringa\
   \ si\u2026"
 title: Capitalizzare una stringa
+weight: 2
 ---
-
-{{< edit_this_page >}}
 
 ## Cosa & Perché?
 

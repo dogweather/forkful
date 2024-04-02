@@ -9,9 +9,8 @@ summary: "Znalezienie d\u0142ugo\u015Bci \u0142a\u0144cucha znak\xF3w oznacza us
   \ ile znak\xF3w zawiera dany tekst. Programi\u015Bci robi\u0105 to do walidacji,\
   \ formatowania, oraz by\u2026"
 title: "Znalezienie d\u0142ugo\u015Bci ci\u0105gu znak\xF3w"
+weight: 7
 ---
-
-{{< edit_this_page >}}
 
 ## Co i Dlaczego?
 Znalezienie długości łańcucha znaków oznacza ustalenie, ile znaków zawiera dany tekst. Programiści robią to do walidacji, formatowania, oraz by kontrolować przepływ danych.

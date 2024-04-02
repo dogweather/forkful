@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Travailler avec XML en C implique l'analyse, la requ\xEAte et la manipulation\
   \ de documents XML \xE0 l'aide de diverses biblioth\xE8ques. Les programmeurs se\u2026"
 title: Travailler avec XML
+weight: 40
 ---
-
-{{< edit_this_page >}}
 
 ## Quoi et pourquoi ?
 

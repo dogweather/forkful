@@ -13,9 +13,8 @@ summary: "\u590D\u6570\u6709\u5B9E\u90E8\u548C\u865A\u90E8\uFF0C\u901A\u5E38\u51
   \u5728\u5E73\u9762\u4E2D\u5EFA\u6A21\u7684\u73B0\u8C61\u7684\u6570\u5B66\u5BC6\u96C6\
   \u578BArduino\u9879\u76EE\u81F3\u5173\u91CD\u8981\u3002"
 title: "\u5904\u7406\u590D\u6570"
+weight: 14
 ---
-
-{{< edit_this_page >}}
 
 ## 什么和为什么？
 复数有实部和虚部，通常写作`a + bi`。它们对于一些涉及信号处理、电气工程或任何其他最好在平面中建模的现象的数学密集型Arduino项目至关重要。

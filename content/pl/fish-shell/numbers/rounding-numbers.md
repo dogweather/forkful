@@ -9,9 +9,8 @@ summary: "Zaokr\u0105glanie liczb polega na ucinaniu miejsc dziesi\u0119tnych, a
   \ upraszcza\u0107 dane lub dostosowa\u0107 je do konkretnych format\xF3w. Programi\u015B\
   ci robi\u0105 to dla\u2026"
 title: "Zaokr\u0105glanie liczb"
+weight: 13
 ---
-
-{{< edit_this_page >}}
 
 ## Co i dlaczego?
 Zaokrąglanie liczb polega na ucinaniu miejsc dziesiętnych, aby upraszczać dane lub dostosować je do konkretnych formatów. Programiści robią to dla przyjaznego użytkownikowi wyświetlania, efektywnego przechowywania, lub gdy precyzja dziesiętna nie jest problemem.

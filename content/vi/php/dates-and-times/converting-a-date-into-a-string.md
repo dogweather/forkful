@@ -15,9 +15,8 @@ summary: "Chuy\u1EC3n \u0111\u1ED5i m\u1ED9t ng\xE0y th\xE0nh chu\u1ED7i ngh\u01
   nh vi\xEAn l\xE0m \u0111i\u1EC1u n\xE0y \u0111\u1EC3 d\u1EC5 d\xE0ng \u0111\u1ECD\
   c, l\u01B0u\u2026"
 title: "Chuy\u1EC3n \u0111\u1ED5i m\u1ED9t ng\xE0y th\xE0nh chu\u1ED7i"
+weight: 28
 ---
-
-{{< edit_this_page >}}
 
 ## Lý do và Mục đích
 Chuyển đổi một ngày thành chuỗi nghĩa là biến đổi một đối tượng ngày thành định dạng văn bản thuần túy. Lập trình viên làm điều này để dễ dàng đọc, lưu trữ, hoặc định dạng ngày theo các địa phương và tiêu chuẩn khác nhau.

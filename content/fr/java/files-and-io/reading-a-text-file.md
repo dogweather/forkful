@@ -9,9 +9,8 @@ summary: "Lire un fichier texte, c'est quoi ? C\u2019est parcourir un fichier et
   \ extraire des donn\xE9es pour les utiliser dans votre programme. Pourquoi ? Parce\
   \ qu'on a\u2026"
 title: Lecture d'un fichier texte
+weight: 22
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 Lire un fichier texte, c'est quoi ? C’est parcourir un fichier et en extraire des données pour les utiliser dans votre programme. Pourquoi ? Parce qu'on a souvent besoin de lire des configurations, des données externes ou du contenu à traiter.

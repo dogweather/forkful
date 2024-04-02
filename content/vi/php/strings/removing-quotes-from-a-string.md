@@ -13,9 +13,8 @@ summary: "Lo\u1EA1i b\u1ECF d\u1EA5u ngo\u1EB7c kh\u1ECFi m\u1ED9t chu\u1ED7i tr
   u ngo\u1EB7c k\xE9p (`\"`) ho\u1EB7c d\u1EA5u ngo\u1EB7c \u0111\u01A1n (`'`) c\xF3\
   \ th\u1EC3 l\xE0m r\u1ED1i lo\u1EA1n logic code\u2026"
 title: "Lo\u1EA1i b\u1ECF d\u1EA5u ngo\u1EB7c k\xE9p kh\u1ECFi chu\u1ED7i"
+weight: 9
 ---
-
-{{< edit_this_page >}}
 
 ## Cái gì & Tại sao?
 Loại bỏ dấu ngoặc khỏi một chuỗi trong PHP có nghĩa là loại bỏ những ký tự dấu ngoặc kép (`"`) hoặc dấu ngoặc đơn (`'`) có thể làm rối loạn logic code hoặc truy vấn cơ sở dữ liệu của bạn. Lập trình viên làm điều này để làm sạch hoặc khử trùng dữ liệu đầu vào, đảm bảo rằng chuỗi được sử dụng hoặc lưu trữ một cách an toàn.

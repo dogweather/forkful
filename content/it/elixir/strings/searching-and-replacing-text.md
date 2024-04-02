@@ -7,9 +7,8 @@ model: gpt-4-1106-preview
 summary: "Cercare e sostituire testo \xE8 fondamentale per manipolare stringhe e automatizzare\
   \ l'editing. I programmatori lo fanno per correggere errori, aggiornare\u2026"
 title: Ricerca e sostituzione del testo
+weight: 10
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 Cercare e sostituire testo è fondamentale per manipolare stringhe e automatizzare l'editing. I programmatori lo fanno per correggere errori, aggiornare codici o dati, e semplificare la refactoring.

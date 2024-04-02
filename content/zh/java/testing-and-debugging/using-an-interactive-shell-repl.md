@@ -15,9 +15,8 @@ summary: "REPL\uFF08\u8BFB\u53D6-\u6267\u884C-\u6253\u5370\u5FAA\u73AF\uFF09\u66
   \u5FEB\u901F\u5B9E\u9A8C\u3001\u8C03\u8BD5\u6216\u5B66\u4E60\uFF0C\u56E0\u4E3A\u5B83\
   \u5141\u8BB8\u7ACB\u5373\u53CD\u9988\u548C\u8FED\u4EE3\u3002"
 title: "\u5728\u7F16\u7A0B\u4E2D\u4F7F\u7528\u4EA4\u4E92\u5F0FShell\uFF08REPL\uFF09"
+weight: 34
 ---
-
-{{< edit_this_page >}}
 
 ## 什么与为什么？
 REPL（读取-执行-打印循环）是一个交互式的命令行界面，可以处理单个用户输入、执行代码，并返回结果。程序员使用它进行快速实验、调试或学习，因为它允许立即反馈和迭代。

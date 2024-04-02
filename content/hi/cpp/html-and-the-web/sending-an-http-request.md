@@ -21,9 +21,8 @@ summary: "HTTP \u0905\u0928\u0941\u0930\u094B\u0927 (HTTP Request) \u092D\u0947\
   \u093E\u092A\u094D\u0924 \u0915\u0930\u0928\u0947, API \u0938\u0947 \u0921\u093E\
   \u091F\u093E \u092E\u0948\u0928\u0947\u091C\u2026"
 title: "HTTP \u0905\u0928\u0941\u0930\u094B\u0927 \u092D\u0947\u091C\u0928\u093E"
+weight: 44
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why? (क्या और क्यों?)
 

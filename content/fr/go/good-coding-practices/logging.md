@@ -10,9 +10,8 @@ model: gpt-4-0125-preview
 summary: "Le journalisation dans le d\xE9veloppement logiciel est le processus d'enregistrement\
   \ d'informations sur l'ex\xE9cution d'un programme, con\xE7u pour suivre son\u2026"
 title: Journalisation
+weight: 17
 ---
-
-{{< edit_this_page >}}
 
 ## Quoi & Pourquoi ?
 

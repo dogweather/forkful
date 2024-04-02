@@ -20,9 +20,8 @@ summary: "\u89E3\u6790HTML\u6D89\u53CA\u5206\u6790\u7F51\u9875\u7684HTML\u4EE3\u
   \u4E0E\u7F51\u7AD9\u4E92\u52A8\u6216\u4ECE\u7F51\u7AD9\u63D0\u53D6\u6570\u636E\u3001\
   \u81EA\u52A8\u5316\u4EFB\u52A1\u6216\u6D4B\u8BD5Web\u5E94\u7528\u7A0B\u5E8F\u3002"
 title: "\u89E3\u6790HTML"
+weight: 43
 ---
-
-{{< edit_this_page >}}
 
 ## 什么和为什么？
 解析HTML涉及分析网页的HTML代码以提取特定信息或元素，这是网络抓取、数据挖掘或自动化与网站互动的常见任务。程序员之所以进行解析，是为了以编程方式与网站互动或从网站提取数据、自动化任务或测试Web应用程序。

@@ -23,9 +23,8 @@ summary: "C#\uC5D0\uC11C \uBB38\uC790\uC5F4\uC5D0\uC11C \uB0A0\uC9DC\uB97C \uD30
   \uC904\uB9C1 \uC571, \uB85C\uADF8 \uD504\uB85C\uC138\uC11C, \uC0AC\uC6A9\uC790 \uB610\
   \uB294\u2026"
 title: "\uBB38\uC790\uC5F4\uC5D0\uC11C \uB0A0\uC9DC \uBD84\uC11D\uD558\uAE30"
+weight: 30
 ---
-
-{{< edit_this_page >}}
 
 ## 무엇 & 왜?
 C#에서 문자열에서 날짜를 파싱하는 것은 날짜와 시간의 텍스트 표현을 `DateTime` 객체로 변환하는 것을 포함합니다. 이는 다양한 형식으로 날짜와 시간을 조작, 저장 또는 표시해야 하는 애플리케이션에 필수적입니다. 예를 들어 스케줄링 앱, 로그 프로세서, 사용자 또는 외부 소스로부터 날짜 입력을 처리하는 모든 시스템 등이 있습니다.

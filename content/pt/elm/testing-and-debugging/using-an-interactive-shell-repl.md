@@ -9,9 +9,8 @@ summary: "O La\xE7o Ler-Avaliar-Imprimir (REPL, na sigla em ingl\xEAs) \xE9 um a
   \ de programa\xE7\xE3o interativo e simples que recebe entradas \xFAnicas do usu\xE1\
   rio, avalia-as\u2026"
 title: Usando um shell interativo (REPL)
+weight: 34
 ---
-
-{{< edit_this_page >}}
 
 ## O Que & Porquê?
 O Laço Ler-Avaliar-Imprimir (REPL, na sigla em inglês) é um ambiente de programação interativo e simples que recebe entradas únicas do usuário, avalia-as e retorna o resultado ao usuário. Programadores de Elm usam o REPL para experimentos rápidos, depuração ou aprendizado da linguagem.

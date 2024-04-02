@@ -11,9 +11,8 @@ summary: "Een nieuw project opstarten in Go houdt in dat je een werkruimte opzet
   \ deze initialiseert met de benodigde Go modules. Programmeurs doen dit om code\
   \ te\u2026"
 title: Een nieuw project starten
+weight: 1
 ---
-
-{{< edit_this_page >}}
 
 ## Wat & Waarom?
 

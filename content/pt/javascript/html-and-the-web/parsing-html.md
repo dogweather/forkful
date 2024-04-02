@@ -12,9 +12,8 @@ summary: "Analisar HTML significa extrair dados de documentos HTML. Programadore
   \ fazem isso para interagir com ou manipular conte\xFAdo da web, automatizar a extra\xE7\
   \xE3o\u2026"
 title: Analisando HTML
+weight: 43
 ---
-
-{{< edit_this_page >}}
 
 ## O Que & Porquê?
 Analisar HTML significa extrair dados de documentos HTML. Programadores fazem isso para interagir com ou manipular conteúdo da web, automatizar a extração de dados ou para fins de raspagem da web.

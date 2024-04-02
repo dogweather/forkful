@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Assosiatiiviset taulukot ovat kuin tehostetut taulukot, jotka mahdollistavat\
   \ merkkijonojen k\xE4ytt\xE4misen indeksein\xE4 pelkkien kokonaislukujen sijaan.\u2026"
 title: "Assosiatiivisten taulukoiden k\xE4ytt\xF6"
+weight: 15
 ---
-
-{{< edit_this_page >}}
 
 ## Mikä & Miksi?
 

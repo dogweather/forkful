@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "L'analisi di una data da una stringa implica la conversione di informazioni\
   \ testuali su data e ora in un oggetto datetime o in un formato strutturato\u2026"
 title: Analisi di una data da una stringa
+weight: 30
 ---
-
-{{< edit_this_page >}}
 
 ## Cosa e perché?
 L'analisi di una data da una stringa implica la conversione di informazioni testuali su data e ora in un oggetto datetime o in un formato strutturato equivalente. Questo viene comunemente eseguito per consentire operazioni di aritmetica, confronto e formattazione delle date in modo che siano indipendenti dalla lingua e dalla regione. I programmatori lo fanno per gestire e manipolare efficientemente i dati temporali estratti da log, input dell'utente o fonti esterne.

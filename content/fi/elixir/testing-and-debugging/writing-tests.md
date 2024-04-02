@@ -11,9 +11,8 @@ summary: "Testien kirjoittaminen Elixiriss\xE4 sis\xE4lt\xE4\xE4 automatisoituje
   \ skriptien luomisen koodisi toiminnan varmentamiseksi. Ohjelmoijat tekev\xE4t t\xE4\
   m\xE4n varmistaakseen\u2026"
 title: Testien kirjoittaminen
+weight: 36
 ---
-
-{{< edit_this_page >}}
 
 ## Mitä & Miksi?
 Testien kirjoittaminen Elixirissä sisältää automatisoitujen skriptien luomisen koodisi toiminnan varmentamiseksi. Ohjelmoijat tekevät tämän varmistaakseen laadun, estääkseen regressiot ja helpottaakseen koodin uudelleenjärjestämistä, mikä tekee kehitysprosessista luotettavamman ja tehokkaamman.

@@ -11,9 +11,8 @@ summary: "Trabalhar com n\xFAmeros complexos na programa\xE7\xE3o envolve manipu
   \ n\xFAmeros que possuem tanto uma parte real quanto uma imagin\xE1ria, tipicamente\
   \ expressos\u2026"
 title: "Trabalhando com N\xFAmeros Complexos"
+weight: 14
 ---
-
-{{< edit_this_page >}}
 
 ## O que & Por quê?
 

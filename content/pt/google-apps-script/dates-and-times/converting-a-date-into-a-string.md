@@ -11,9 +11,8 @@ summary: "Converter datas em strings \xE9 uma tarefa fundamental que possibilita
   \ programadores manipular e apresentar informa\xE7\xF5es de data em um formato leg\xED\
   vel por\u2026"
 title: Convertendo uma data em uma string
+weight: 28
 ---
-
-{{< edit_this_page >}}
 
 ## O Que & Por Quê?
 

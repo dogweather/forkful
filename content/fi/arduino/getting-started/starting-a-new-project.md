@@ -7,9 +7,8 @@ model: gpt-4-1106-preview
 summary: "Aloittaa uusi projekti tarkoittaa nollasta alkamista, idean jalostamista\
   \ toimivaksi koodiksi. Koodaajat tekev\xE4t sen oppiakseen, kokeillakseen uusia\u2026"
 title: Uuden projektin aloittaminen
+weight: 1
 ---
-
-{{< edit_this_page >}}
 
 ## Mikä ja Miksi?
 

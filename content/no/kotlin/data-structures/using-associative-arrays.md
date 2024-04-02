@@ -11,9 +11,8 @@ summary: "Assosiative tabeller, eller maps, i Kotlin er samlinger som lagrer n\x
   kkel-verdi par. Programmerere bruker dem til effektivt \xE5 organisere og hente\
   \ data\u2026"
 title: Bruke associative tabeller
+weight: 15
 ---
-
-{{< edit_this_page >}}
 
 ## Hva & Hvorfor?
 

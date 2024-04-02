@@ -11,9 +11,8 @@ summary: "In der Computerprogrammierung bezeichnet \"Drucken von Debug-Ausgaben\
   \ das Erzeugen von detaillierten Informationsnachrichten, die Entwicklern helfen,\
   \ den\u2026"
 title: Ausgabe von Debug-Informationen drucken
+weight: 33
 ---
-
-{{< edit_this_page >}}
 
 ## Was & Warum?
 

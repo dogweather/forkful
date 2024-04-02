@@ -9,9 +9,8 @@ summary: "Att arbeta med TOML inneb\xE4r att tolka och generera TOML-data (Tom's
   \ Minimal Language) med hj\xE4lp av Elixir. Programmerare anv\xE4nder det f\xF6\
   r att\u2026"
 title: Att arbeta med TOML
+weight: 39
 ---
-
-{{< edit_this_page >}}
 
 ## Vad & Varför?
 Att arbeta med TOML innebär att tolka och generera TOML-data (Tom's Obvious, Minimal Language) med hjälp av Elixir. Programmerare använder det för att hantera konfigurationsfiler eftersom TOML är lättläst, enkelt att tolka och mappar bra till en hashdatatstruktur.

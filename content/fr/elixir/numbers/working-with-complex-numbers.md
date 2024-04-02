@@ -7,9 +7,8 @@ model: gpt-4-0125-preview
 summary: "Les nombres complexes ont une partie r\xE9elle et une partie imaginaire\
   \ (comme `3 + 4i`). Ils sont utilis\xE9s en ing\xE9nierie, en physique et pour certains\u2026"
 title: Manipulation des nombres complexes
+weight: 14
 ---
-
-{{< edit_this_page >}}
 
 ## Quoi et pourquoi ?
 Les nombres complexes ont une partie réelle et une partie imaginaire (comme `3 + 4i`). Ils sont utilisés en ingénierie, en physique et pour certains problèmes informatiques. Les programmeurs les utilisent pour les simulations, le traitement des signaux et la résolution efficace de certains types de problèmes mathématiques.

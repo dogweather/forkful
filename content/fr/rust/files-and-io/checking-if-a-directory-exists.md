@@ -11,9 +11,8 @@ summary: "Dans le d\xE9veloppement de logiciels, il est souvent n\xE9cessaire de
   rifier si un r\xE9pertoire existe pour \xE9viter les erreurs lors de la tentative\
   \ d'acc\xE8s, de\u2026"
 title: "V\xE9rifier si un r\xE9pertoire existe"
+weight: 20
 ---
-
-{{< edit_this_page >}}
 
 ## Quoi et Pourquoi ?
 Dans le développement de logiciels, il est souvent nécessaire de vérifier si un répertoire existe pour éviter les erreurs lors de la tentative d'accès, de lecture ou d'écriture de fichiers. Rust, étant un langage de programmation système, fournit des méthodes robustes pour effectuer cette tâche, assurant que votre programme puisse gérer les fichiers et répertoires de manière sûre et efficace.

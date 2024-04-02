@@ -7,9 +7,8 @@ model: gpt-4-0125-preview
 summary: "Las terminales interactivas, o REPLs (Read-Eval-Print Loops, Bucles de Leer-Evaluar-Imprimir),\
   \ te permiten ejecutar c\xF3digo sobre la marcha, probando\u2026"
 title: Usando una shell interactiva (REPL)
+weight: 34
 ---
-
-{{< edit_this_page >}}
 
 ## Qué & Por qué?
 Las terminales interactivas, o REPLs (Read-Eval-Print Loops, Bucles de Leer-Evaluar-Imprimir), te permiten ejecutar código sobre la marcha, probando funciones, algoritmos o jugueteando con ideas. Son los blocs de notas del código, rápidos y sucios, sin necesidad de configurar un entorno de desarrollo completo.

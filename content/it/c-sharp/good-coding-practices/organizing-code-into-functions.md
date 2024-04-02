@@ -8,9 +8,8 @@ model: gpt-4-1106-preview
 summary: "Raggruppare il codice in funzioni \xE8 come ordinare i mattoncini LEGO in\
   \ contenitori\u2014rende pi\xF9 facile trovarli e utilizzarli. Lo facciamo per evitare\u2026"
 title: Organizzazione del codice in funzioni
+weight: 18
 ---
-
-{{< edit_this_page >}}
 
 ## Cosa e perché?
 Raggruppare il codice in funzioni è come ordinare i mattoncini LEGO in contenitori—rende più facile trovarli e utilizzarli. Lo facciamo per evitare ripetizioni, semplificare la comprensione e rendere la manutenzione meno problematica.

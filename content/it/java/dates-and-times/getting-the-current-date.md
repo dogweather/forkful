@@ -10,9 +10,8 @@ model: gpt-4-0125-preview
 summary: "Ottenere la data corrente in Java \xE8 un'operazione fondamentale che consente\
   \ ai programmatori di manipolare gli oggetti data per operazioni quali il\u2026"
 title: Ottenere la data corrente
+weight: 29
 ---
-
-{{< edit_this_page >}}
 
 ## Cosa e Perché?
 Ottenere la data corrente in Java è un'operazione fondamentale che consente ai programmatori di manipolare gli oggetti data per operazioni quali il logging, il calcolo delle date e le condizioni basate sul tempo. È vitale nelle applicazioni in cui il tracciamento, la pianificazione e l'analisi dei dati temporali sono cruciali.

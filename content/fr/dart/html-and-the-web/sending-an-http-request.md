@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Envoyer une requ\xEAte HTTP en Dart est le processus qui initie la communication\
   \ avec un serveur web ou une API depuis une application Dart. Les programmeurs\u2026"
 title: "Envoyer une requ\xEAte HTTP"
+weight: 44
 ---
-
-{{< edit_this_page >}}
 
 ## Quoi & Pourquoi ?
 

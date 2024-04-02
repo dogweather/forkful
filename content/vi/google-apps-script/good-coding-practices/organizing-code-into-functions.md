@@ -13,9 +13,8 @@ summary: "T\u1ED5 ch\u1EE9c m\xE3 th\xE0nh c\xE1c h\xE0m l\xE0 v\u1EC1 vi\u1EC7c
   c ph\xE2n \u0111o\u1EA1n logic th\xE0nh c\xE1c kh\u1ED1i ri\xEAng bi\u1EC7t, m\u1ED7\
   i kh\u1ED1i th\u1EF1c\u2026"
 title: "S\u1EAFp x\u1EBFp m\xE3 l\u1EADp tr\xECnh v\xE0o h\xE0m s\u1ED1"
+weight: 18
 ---
-
-{{< edit_this_page >}}
 
 ## Cái gì & Tại sao?
 

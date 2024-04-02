@@ -23,9 +23,8 @@ summary: "\uC815\uADDC \uD45C\uD604\uC2DD\uC740 \uC785\uB825 \uAC80\uC99D, \uAC8
   \ \uC704\uD574 \uC774\uB97C \uAD11\uBC94\uC704\uD558\uAC8C \uC0AC\uC6A9\uD569\uB2C8\
   \uB2E4."
 title: "\uC815\uADDC \uD45C\uD604\uC2DD \uC0AC\uC6A9\uD558\uAE30"
+weight: 11
 ---
-
-{{< edit_this_page >}}
 
 ## 무엇 & 왜?
 정규 표현식은 입력 검증, 검색, 텍스트 교체와 같은 텍스트 처리 작업에 필수적인 패턴 매칭 및 데이터 조작을 위한 강력한 도구입니다. 프로그래머들은 복잡한 문자열 파싱과 데이터 검증 작업을 효율적이고 간결하게 처리하기 위해 이를 광범위하게 사용합니다.

@@ -11,9 +11,8 @@ summary: "Capitaliser une cha\xEEne consiste \xE0 modifier en majuscule la premi
   re lettre de chaque mot de la cha\xEEne, tout en veillant \xE0 ce que le reste reste\
   \ en\u2026"
 title: "Mettre en majuscule une cha\xEEne"
+weight: 2
 ---
-
-{{< edit_this_page >}}
 
 ## Quoi et pourquoi ?
 Capitaliser une chaîne consiste à modifier en majuscule la première lettre de chaque mot de la chaîne, tout en veillant à ce que le reste reste en minuscules. Cette manipulation de chaînes courante est utile pour formater du texte dans des applications, telles que la préparation des noms d'utilisateur ou des titres pour l'affichage selon la convention ou la correction grammaticale.

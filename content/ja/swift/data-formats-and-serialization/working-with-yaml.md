@@ -7,9 +7,8 @@ lastmod: '2024-03-13T22:44:42.645369-06:00'
 model: gpt-4-0125-preview
 summary: "YAML\u306F\u3001\"YAML Ain't Markup\u2026"
 title: "YAML \u3092\u64CD\u4F5C\u3059\u308B"
+weight: 41
 ---
-
-{{< edit_this_page >}}
 
 ## 何となぜ？
 YAMLは、"YAML Ain't Markup Language"の略で、すべてのプログラミング言語に対する人間に優しいデータシリアライゼーション標準です。プログラマーは、その読みやすさがXMLやJSONなどの他のデータ形式に比べてプレーンな英語により近いため、設定ファイル、プロセス間メッセージング、データストレージ用に使用しています。これにより理解しやすく、書きやすくなっています。

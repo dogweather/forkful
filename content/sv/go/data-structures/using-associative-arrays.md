@@ -11,9 +11,8 @@ summary: "Associerade arrayer, k\xE4nda som maps i Go, g\xF6r det m\xF6jligt f\x
   r dig att lagra nyckel-v\xE4rdepar d\xE4r varje unik nyckel mappas till ett v\xE4\
   rde. Programmerare\u2026"
 title: "Anv\xE4nda associativa arrayer"
+weight: 15
 ---
-
-{{< edit_this_page >}}
 
 ## Vad & Varför?
 

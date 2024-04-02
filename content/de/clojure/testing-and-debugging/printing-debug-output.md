@@ -7,9 +7,8 @@ model: gpt-4-1106-preview
 summary: "Drucken von Debug-Informationen bedeutet, Zwischenergebnisse oder Hinweise\
   \ w\xE4hrend der Programmlaufzeit auszugeben. Entwickler nutzen das, um Fehler zu\u2026"
 title: Debug-Ausgaben drucken
+weight: 33
 ---
-
-{{< edit_this_page >}}
 
 ## Was & Warum?
 Drucken von Debug-Informationen bedeutet, Zwischenergebnisse oder Hinweise während der Programmlaufzeit auszugeben. Entwickler nutzen das, um Fehler zu finden und den Programmfluss zu verstehen.

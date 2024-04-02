@@ -11,9 +11,8 @@ summary: "HTTP-pyynn\xF6n l\xE4hett\xE4minen perusautentikoinnilla sis\xE4lt\xE4
   \ k\xE4ytt\xE4j\xE4nimen ja salasanan liitt\xE4misen pyynt\xF6\xF6n k\xE4ytt\xE4\
   j\xE4n henkil\xF6llisyyden varmistamiseksi.\u2026"
 title: "L\xE4hett\xE4minen HTTP-pyynt\xF6 perustodennuksella"
+weight: 45
 ---
-
-{{< edit_this_page >}}
 
 ## Mikä ja miksi?
 

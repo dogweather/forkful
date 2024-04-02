@@ -9,9 +9,8 @@ summary: "HTTP-beg\xE4ran med grundl\xE4ggande autentisering anv\xE4nds f\xF6r a
   \ s\xE4kert skicka anv\xE4ndarnamn och l\xF6senord \xF6ver n\xE4tet. Programmerare\
   \ g\xF6r detta f\xF6r att\u2026"
 title: "Skicka en HTTP-f\xF6rfr\xE5gan med Basic-autentisering"
+weight: 45
 ---
-
-{{< edit_this_page >}}
 
 ## Vad & Varför?
 HTTP-begäran med grundläggande autentisering används för att säkert skicka användarnamn och lösenord över nätet. Programmerare gör detta för att kontrollera användarens behörighet innan de tillåter åtkomst till skyddade resurser.

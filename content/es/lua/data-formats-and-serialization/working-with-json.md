@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Trabajar con JSON en Lua implica analizar cadenas formateadas en JSON hacia\
   \ y desde tablas de Lua, facilitando el intercambio de datos entre aplicaciones\u2026"
 title: Trabajando con JSON
+weight: 38
 ---
-
-{{< edit_this_page >}}
 
 ## Qué y Por Qué?
 Trabajar con JSON en Lua implica analizar cadenas formateadas en JSON hacia y desde tablas de Lua, facilitando el intercambio de datos entre aplicaciones Lua y servicios web o APIs externas. Los programadores lo hacen para aprovechar el formato ligero y fácil de analizar de JSON para el almacenamiento eficiente de datos, configuración o comunicación con API.

@@ -11,9 +11,8 @@ summary: "\xC5 finne lengden p\xE5 en streng i Go handler om \xE5 bestemme antal
   \ tegn den inneholder. Programmerere utf\xF8rer rutinemessig denne operasjonen for\
   \ \xE5 manipulere\u2026"
 title: "\xC5 finne lengden p\xE5 en streng"
+weight: 7
 ---
-
-{{< edit_this_page >}}
 
 ## Hva & Hvorfor?
 Å finne lengden på en streng i Go handler om å bestemme antall tegn den inneholder. Programmerere utfører rutinemessig denne operasjonen for å manipulere strenger effektivt, enten det er for validering, utdrag av understrenger, eller rett og slett for å håndheve begrensninger i brukerinndata.

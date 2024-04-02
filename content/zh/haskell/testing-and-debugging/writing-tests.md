@@ -17,9 +17,8 @@ summary: "\u5728 Haskell \u4E2D\u7F16\u5199\u6D4B\u8BD5\u662F\u4E3A\u4E86\u901A\
   \u4E3A\uFF0C\u4F7F\u4EE3\u7801\u5E93\u66F4\u6613\u4E8E\u7EF4\u62A4\u548C\u6269\u5C55\
   \u3002"
 title: "\u7F16\u5199\u6D4B\u8BD5"
+weight: 36
 ---
-
-{{< edit_this_page >}}
 
 ## 什么 & 为什么？
 

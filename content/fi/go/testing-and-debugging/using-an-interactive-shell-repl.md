@@ -11,9 +11,8 @@ summary: "Interaktiivinen komentotulkki, eli Read-Eval-Print Loop (REPL), mahdol
   \ Go-koodin kokeilun reaaliajassa, komentojen suorittamisen ja v\xE4litt\xF6m\xE4\
   n\u2026"
 title: "Interaktiivisen kuoren (REPL) k\xE4ytt\xE4minen"
+weight: 34
 ---
-
-{{< edit_this_page >}}
 
 ## Mikä & Miksi?
 

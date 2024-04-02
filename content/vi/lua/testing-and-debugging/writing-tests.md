@@ -15,9 +15,8 @@ summary: "Vi\u1EBFt ki\u1EC3m th\u1EED ngh\u0129a l\xE0 t\u1EA1o ra \u0111o\u1EA
   \u1EC3 ph\xE1t hi\u1EC7n l\u1ED7i s\u1EDBm, \u0111\u1EA3m b\u1EA3o m\xE3 ho\u1EA1\
   t \u0111\u1ED9ng\u2026"
 title: "Vi\u1EBFt c\xE1c b\xE0i ki\u1EC3m tra"
+weight: 36
 ---
-
-{{< edit_this_page >}}
 
 ## Gì & Tại Sao?
 

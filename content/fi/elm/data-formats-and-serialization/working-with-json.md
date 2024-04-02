@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "JSON:n k\xE4sittely Elm:ss\xE4 tarkoittaa JSON-datan dekoodaamista Elm-tyypeiksi\
   \ ja Elm-arvojen enkoodaamista takaisin JSON:ksi. T\xE4m\xE4 prosessi on ratkaisevan\u2026"
 title: "Ty\xF6skentely JSON:n kanssa"
+weight: 38
 ---
-
-{{< edit_this_page >}}
 
 ## Mikä & Miksi?
 JSON:n käsittely Elm:ssä tarkoittaa JSON-datan dekoodaamista Elm-tyypeiksi ja Elm-arvojen enkoodaamista takaisin JSON:ksi. Tämä prosessi on ratkaisevan tärkeä web-sovelluksille vuorovaikutuksessa API:en ja ulkoisten tietolähteiden kanssa, mahdollistaen saumattoman datan vaihdon asiakkaan (Elm) ja palvelimien tai muiden palveluiden välillä.

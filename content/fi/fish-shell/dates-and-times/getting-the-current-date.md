@@ -11,9 +11,8 @@ summary: "Nykyisen p\xE4iv\xE4m\xE4\xE4r\xE4n saaminen ohjelmoinnissa on perusta
   \ laatua oleva teht\xE4v\xE4, joka mahdollistaa j\xE4rjestelm\xE4n p\xE4iv\xE4m\xE4\
   \xE4r\xE4- ja aikatietojen noutamisen ja\u2026"
 title: "Nykyisen p\xE4iv\xE4m\xE4\xE4r\xE4n hankkiminen"
+weight: 29
 ---
-
-{{< edit_this_page >}}
 
 ## Mikä & Miksi?
 Nykyisen päivämäärän saaminen ohjelmoinnissa on perustavaa laatua oleva tehtävä, joka mahdollistaa järjestelmän päivämäärä- ja aikatietojen noutamisen ja manipuloinnin. Käsikirjoituksessa ja automatisoinnissa päivämäärän saaminen on välttämätöntä aikaleimojen luomiseen, tehtävien ajoittamiseen ja lokiin kirjoittamiseen.

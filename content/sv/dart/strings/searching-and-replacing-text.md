@@ -11,9 +11,8 @@ summary: "Att s\xF6ka och ers\xE4tta text i Dart inneb\xE4r att unders\xF6ka str
   ngar f\xF6r att hitta vissa m\xF6nster eller teckenf\xF6ljder och substituera dem\
   \ med nytt inneh\xE5ll.\u2026"
 title: "S\xF6kning och ers\xE4ttning av text"
+weight: 10
 ---
-
-{{< edit_this_page >}}
 
 ## Vad och varför?
 

@@ -9,9 +9,8 @@ summary: "Selvitet\xE4\xE4n merkkijonon pituutta (`length`-ominaisuus) tiet\xE4\
   ksemme, montako merkki\xE4 jono sis\xE4lt\xE4\xE4. Sit\xE4 tarvitaan esimerkiksi\
   \ silloin, kun validoidaan\u2026"
 title: "Merkkijonon pituuden selvitt\xE4minen"
+weight: 7
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why? - Mitä ja Miksi?
 Selvitetään merkkijonon pituutta (`length`-ominaisuus) tietääksemme, montako merkkiä jono sisältää. Sitä tarvitaan esimerkiksi silloin, kun validoidaan käyttäjän syötteitä tai manipuloidaan tekstidataa.

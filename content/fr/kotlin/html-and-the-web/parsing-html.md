@@ -11,9 +11,8 @@ summary: "Parser du HTML signifie diss\xE9quer le balisage d'une page web en que
   \ chose qu'un programme peut comprendre et manipuler. Les programmeurs analysent\
   \ le\u2026"
 title: Analyse Syntaxique du HTML
+weight: 43
 ---
-
-{{< edit_this_page >}}
 
 ## Quoi & Pourquoi ?
 Parser du HTML signifie disséquer le balisage d'une page web en quelque chose qu'un programme peut comprendre et manipuler. Les programmeurs analysent le HTML pour extraire des données, automatiser les interactions web ou migrer du contenu entre des systèmes.

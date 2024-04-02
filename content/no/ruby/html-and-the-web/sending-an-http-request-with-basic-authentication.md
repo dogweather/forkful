@@ -9,9 +9,8 @@ summary: "\xC5 sende en HTTP-foresp\xF8rsel med grunnleggende autentisering bety
   \ \xE5 tilf\xF8ye brukernavn og passord i en foresp\xF8rsel for \xE5 f\xE5 tilgang\
   \ til beskyttede\u2026"
 title: "\xC5 sende en HTTP-foresp\xF8rsel med grunnleggende autentisering"
+weight: 45
 ---
-
-{{< edit_this_page >}}
 
 ## Hva & Hvorfor?
 Å sende en HTTP-forespørsel med grunnleggende autentisering betyr å tilføye brukernavn og passord i en forespørsel for å få tilgang til beskyttede ressurser. Programmerere gjør dette for å sikre at kun autoriserte brukere har tilgang.

@@ -11,9 +11,8 @@ summary: "Regulj\xE4ra uttryck (regex) inom programmering \xE4r m\xF6nster som a
   nds f\xF6r att matcha teckenkombinationer i str\xE4ngar. I Elm, precis som i andra\
   \ spr\xE5k,\u2026"
 title: "Att anv\xE4nda regulj\xE4ra uttryck"
+weight: 11
 ---
-
-{{< edit_this_page >}}
 
 ## Vad & Varför?
 Reguljära uttryck (regex) inom programmering är mönster som används för att matcha teckenkombinationer i strängar. I Elm, precis som i andra språk, använder programmerare regex för uppgifter som att validera inmatning, söka och ersätta text inom strängar på grund av deras flexibilitet och effektivitet.

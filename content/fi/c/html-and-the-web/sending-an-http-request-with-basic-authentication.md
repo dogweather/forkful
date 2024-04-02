@@ -11,9 +11,8 @@ summary: "HTTP-pyynt\xF6 perusautentikaatiolla C-kielell\xE4 l\xE4hett\xE4minen 
   \ HTTP-pyynn\xF6n muodostamista, joka sis\xE4lt\xE4\xE4 Authorization-otsakkeen\
   \ k\xE4ytt\xE4j\xE4tiedot\u2026"
 title: "L\xE4hett\xE4minen HTTP-pyynt\xF6 perustodennuksella"
+weight: 45
 ---
-
-{{< edit_this_page >}}
 
 ## Mikä & Miksi?
 HTTP-pyyntö perusautentikaatiolla C-kielellä lähettäminen tarkoittaa HTTP-pyynnön muodostamista, joka sisältää Authorization-otsakkeen käyttäjätiedot koodattuna Base64-muotoon. Tämä on yleinen metodi yksinkertaisen autentikaatiokerroksen lisäämiseen HTTP-pyyntöihin, mikä mahdollistaa ohjelmallisesti rajoitettujen resurssien käyttämisen.

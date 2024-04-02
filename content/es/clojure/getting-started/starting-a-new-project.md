@@ -9,9 +9,8 @@ summary: "Iniciar un nuevo proyecto es b\xE1sicamente establecer el terreno para
   \ futuro c\xF3digo. Los programadores lo hacen para comenzar con una base estructurada\
   \ y\u2026"
 title: Iniciando un nuevo proyecto
+weight: 1
 ---
-
-{{< edit_this_page >}}
 
 ## Qué y por qué?
 Iniciar un nuevo proyecto es básicamente establecer el terreno para tu futuro código. Los programadores lo hacen para comenzar con una base estructurada y ordenada, lo que facilita el desarrollo y el mantenimiento a largo plazo.

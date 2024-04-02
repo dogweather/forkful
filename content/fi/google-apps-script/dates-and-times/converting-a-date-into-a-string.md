@@ -11,9 +11,8 @@ summary: "P\xE4iv\xE4m\xE4\xE4rien muuntaminen merkkijonoiksi on perustavaa laat
   \ oleva teht\xE4v\xE4, joka mahdollistaa ohjelmoijille p\xE4iv\xE4m\xE4\xE4r\xE4\
   tiedon k\xE4sittelyn ja n\xE4ytt\xE4misen\u2026"
 title: "P\xE4iv\xE4m\xE4\xE4r\xE4n muuntaminen merkkijonoksi"
+weight: 28
 ---
-
-{{< edit_this_page >}}
 
 ## Mikä & Miksi?
 

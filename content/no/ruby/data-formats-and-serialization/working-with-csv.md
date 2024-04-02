@@ -10,9 +10,8 @@ model: gpt-4-0125-preview
 summary: "\xC5 arbeide med CSV-filer i Ruby gir en grei tiln\xE6rming for \xE5 h\xE5\
   ndtere tabelldata. Programmerere engasjerer seg ofte i denne praksisen for dataparsing,\u2026"
 title: Arbeide med CSV
+weight: 37
 ---
-
-{{< edit_this_page >}}
 
 ## Hva & Hvorfor?
 

@@ -9,9 +9,8 @@ summary: "Logowanie to w zasadzie notowanie tego, co robi Twoja aplikacja \u2013
   \ dziennika, ale dla kodu. Programi\u015Bci u\u017Cywaj\u0105 go, aby \u015Bledzi\u0107\
   \ detale, takie jak\u2026"
 title: "Rejestrowanie zdarze\u0144"
+weight: 17
 ---
-
-{{< edit_this_page >}}
 
 ## Co i Dlaczego?
 Logowanie to w zasadzie notowanie tego, co robi Twoja aplikacja – rodzaj dziennika, ale dla kodu. Programiści używają go, aby śledzić detale, takie jak zmiany stanów, zdarzenia systemowe i uporczywe błędy, upewniając się, że żadne zacięcia nie przejdą niezauważone.

@@ -7,9 +7,8 @@ model: gpt-4-1106-preview
 summary: "Medir la longitud de una cadena significa contar cu\xE1ntos caracteres contiene.\
   \ Los programadores lo hacen para validar entradas, recortar textos, o\u2026"
 title: Calculando la longitud de una cadena
+weight: 7
 ---
-
-{{< edit_this_page >}}
 
 ## ¿Qué y Por Qué?
 Medir la longitud de una cadena significa contar cuántos caracteres contiene. Los programadores lo hacen para validar entradas, recortar textos, o simplemente para saber las dimensiones de la información con la que están trabajando.

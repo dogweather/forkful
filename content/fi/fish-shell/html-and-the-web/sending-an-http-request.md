@@ -7,9 +7,8 @@ model: gpt-4-1106-preview
 summary: "HTTP-pyynn\xF6t ovat tapa kommunikoida web-palvelimien kanssa. Ohjelmoijat\
   \ k\xE4ytt\xE4v\xE4t niit\xE4 dataa liikuttaakseen, API-kutsuja tehden ja verkkososiaalisuutta\u2026"
 title: "HTTP-pyynn\xF6n l\xE4hett\xE4minen"
+weight: 44
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why? (Mitä & Miksi?)
 HTTP-pyynnöt ovat tapa kommunikoida web-palvelimien kanssa. Ohjelmoijat käyttävät niitä dataa liikuttaakseen, API-kutsuja tehden ja verkkososiaalisuutta hallinnoidakseen.

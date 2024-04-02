@@ -11,9 +11,8 @@ summary: "Capitaliser une cha\xEEne de caract\xE8res consiste \xE0 transformer e
   \ majuscule le premier caract\xE8re d'une cha\xEEne donn\xE9e s'il est en minuscule,\
   \ pour s'assurer\u2026"
 title: "Mettre une cha\xEEne en majuscules"
+weight: 2
 ---
-
-{{< edit_this_page >}}
 
 ## Quoi et pourquoi ?
 

@@ -8,9 +8,8 @@ model: gpt-4-1106-preview
 summary: "Textsuche und -ersatz erm\xF6glichen es, bestimmte Zeichenketten in einem\
   \ Text zu finden und sie durch andere auszutauschen. Programmierer nutzen diese\u2026"
 title: Suchen und Ersetzen von Text
+weight: 10
 ---
-
-{{< edit_this_page >}}
 
 ## Was & Warum?
 Textsuche und -ersatz ermöglichen es, bestimmte Zeichenketten in einem Text zu finden und sie durch andere auszutauschen. Programmierer nutzen diese Funktion, um Daten zu aktualisieren, Fehler zu korrigieren oder einfach um Inhalte zu manipulieren.

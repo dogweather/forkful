@@ -9,9 +9,8 @@ summary: "Midlertidige filer er filer som styres av systemet, og som slettes aut
   \ n\xE5r de ikke lenger er n\xF8dvendige. Programmerere bruker dem for \xE5 h\xE5\
   ndtere\u2026"
 title: Opprette en midlertidig fil
+weight: 21
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 Midlertidige filer er filer som styres av systemet, og som slettes automatisk når de ikke lenger er nødvendige. Programmerere bruker dem for å håndtere store datamengder, for midlertidige backups, eller for å redusere minnebruk under lange operasjoner.

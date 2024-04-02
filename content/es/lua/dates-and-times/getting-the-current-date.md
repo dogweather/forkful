@@ -11,9 +11,8 @@ summary: "Obtener la fecha actual en la programaci\xF3n es una tarea crucial par
   \ una multitud de aplicaciones, incluyendo el registro de actividades, la estampaci\xF3\
   n\u2026"
 title: Obteniendo la fecha actual
+weight: 29
 ---
-
-{{< edit_this_page >}}
 
 ## ¿Qué y Por Qué?
 

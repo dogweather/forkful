@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Een nieuw C# project starten betekent het opzetten van een nieuwe oplossing\
   \ en projectbestanden die je code structureren. Programmeurs beginnen nieuwe\u2026"
 title: Een nieuw project starten
+weight: 1
 ---
-
-{{< edit_this_page >}}
 
 ## Wat & Waarom?
 Een nieuw C# project starten betekent het opzetten van een nieuwe oplossing en projectbestanden die je code structureren. Programmeurs beginnen nieuwe projecten om ideeën om te zetten in software, problemen op te lossen of technologie te verkennen.

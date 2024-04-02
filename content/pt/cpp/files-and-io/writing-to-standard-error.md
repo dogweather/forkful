@@ -11,9 +11,8 @@ summary: "Escrever para o erro padr\xE3o (`stderr`) em C++ envolve a sa\xEDda de
   \ de erro ou diagn\xF3sticos que s\xE3o separados da sa\xEDda principal do programa.\
   \ Os\u2026"
 title: "Escrevendo para o erro padr\xE3o"
+weight: 25
 ---
-
-{{< edit_this_page >}}
 
 ## O Que & Por Quê?
 

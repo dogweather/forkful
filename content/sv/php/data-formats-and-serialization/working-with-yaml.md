@@ -11,9 +11,8 @@ summary: "YAML, som st\xE5r f\xF6r \"YAML Ain't Markup Language\", \xE4r ett l\x
   sbart data-serialiseringsformat som vanligtvis anv\xE4nds f\xF6r konfigurationsfiler.\
   \ Programmerare\u2026"
 title: Att Arbeta med YAML
+weight: 41
 ---
-
-{{< edit_this_page >}}
 
 ## Vad & Varför?
 

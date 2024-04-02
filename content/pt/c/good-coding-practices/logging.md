@@ -11,9 +11,8 @@ summary: "Registrar logs em C envolve documentar o fluxo e eventos not\xE1veis d
   \ um programa durante sua execu\xE7\xE3o, fornecendo uma revis\xE3o tang\xEDvel\
   \ do seu\u2026"
 title: Registro de Logs
+weight: 17
 ---
-
-{{< edit_this_page >}}
 
 ## O que & Por quê?
 

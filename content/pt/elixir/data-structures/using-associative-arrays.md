@@ -11,9 +11,8 @@ summary: "Em Elixir, os arrays associativos, chamados de Mapas, s\xE3o cole\xE7\
   es de pares chave-valor onde uma chave \xFAnica aponta para um valor. Eles s\xE3\
   o extremamente\u2026"
 title: Usando arrays associativos
+weight: 15
 ---
-
-{{< edit_this_page >}}
 
 ## O que & Por quê?
 

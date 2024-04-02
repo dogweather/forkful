@@ -8,9 +8,8 @@ model: gpt-4-1106-preview
 summary: "Creating a temporary file is the process of making a short-lived file to\
   \ store data that's only needed during the execution of a program. Programmers do\u2026"
 title: Creating a temporary file
+weight: 21
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 Creating a temporary file is the process of making a short-lived file to store data that's only needed during the execution of a program. Programmers do it to avoid cluttering the file system with unnecessary data and to handle sensitive information that shouldn't stick around.

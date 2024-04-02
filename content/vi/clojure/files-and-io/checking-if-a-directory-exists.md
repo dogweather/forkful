@@ -14,9 +14,8 @@ summary: "Ki\u1EC3m tra xem m\u1ED9t th\u01B0 m\u1EE5c c\xF3 t\u1ED3n t\u1EA1i k
   ng d\u1EABn c\xF3 tr\u1ECF \u0111\u1EBFn m\u1ED9t th\u01B0 m\u1EE5c tr\xEAn h\u1EC7\
   \ th\u1ED1ng t\u1EC7p c\u1EE7a b\u1EA1n kh\xF4ng. L\u1EADp tr\xECnh vi\xEAn\u2026"
 title: "Ki\u1EC3m tra xem th\u01B0 m\u1EE5c c\xF3 t\u1ED3n t\u1EA1i kh\xF4ng"
+weight: 20
 ---
-
-{{< edit_this_page >}}
 
 ## Cái gì & Tại sao?
 Kiểm tra xem một thư mục có tồn tại không có nghĩa là xác nhận liệu một đường dẫn có trỏ đến một thư mục trên hệ thống tệp của bạn không. Lập trình viên làm điều này để ngăn chặn lỗi, đảm bảo xử lý tệp chính xác và thiết lập các điều kiện cần thiết trước khi thực hiện các thao tác tệp.

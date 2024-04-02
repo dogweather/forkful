@@ -17,9 +17,8 @@ summary: "TOML\u306F\u3001Tom's Obvious, Minimal Language\u306E\u7565\u3067\u300
   \u63D0\u4F9B\u3059\u308B\u305F\u3081\u3001\u8A2D\u5B9A\u30D5\u30A1\u30A4\u30EB\u306B\
   \u3053\u308C\u3092\u4F7F\u7528\u3057\u307E\u3059\u3002"
 title: "TOML\u3092\u6271\u3046\u65B9\u6CD5"
+weight: 39
 ---
-
-{{< edit_this_page >}}
 
 ## 何となぜ？
 

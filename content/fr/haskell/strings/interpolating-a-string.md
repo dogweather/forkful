@@ -9,9 +9,8 @@ summary: "L'interpolation de cha\xEEnes de caract\xE8res permet d'ins\xE9rer des
   \ ou des expressions directement dans une cha\xEEne. Les programmeurs l'utilisent\
   \ pour\u2026"
 title: "Interpolation de cha\xEEnes de caract\xE8res"
+weight: 8
 ---
-
-{{< edit_this_page >}}
 
 ## Quoi & Pourquoi ?
 L'interpolation de chaînes de caractères permet d'insérer des variables ou des expressions directement dans une chaîne. Les programmeurs l'utilisent pour simplifier la concaténation de chaînes et pour améliorer la lisibilité du code.

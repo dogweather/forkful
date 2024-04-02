@@ -9,9 +9,8 @@ summary: "Trabajar con XML significa analizar, generar y manipular documentos XM
   \ (eXtensible Markup Language) utilizando c\xF3digo. Los programadores lo hacen\
   \ para\u2026"
 title: Trabajando con XML
+weight: 40
 ---
-
-{{< edit_this_page >}}
 
 ## ¿Qué y por qué?
 Trabajar con XML significa analizar, generar y manipular documentos XML (eXtensible Markup Language) utilizando código. Los programadores lo hacen para interactuar con muchos servicios web, archivos de configuración e intercambios de datos donde XML es la lengua franca.

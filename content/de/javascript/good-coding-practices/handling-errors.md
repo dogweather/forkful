@@ -8,9 +8,8 @@ model: gpt-4-1106-preview
 summary: "Fehlerbehandlung ist der Umgang mit Situationen, wenn im Code etwas schiefgeht.\
   \ Sie ist entscheidend, weil sie hilft, dass Programme anmutig scheitern und\u2026"
 title: Fehlerbehandlung
+weight: 16
 ---
-
-{{< edit_this_page >}}
 
 ## Was & Warum?
 

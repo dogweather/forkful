@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "HTML parseren in programmeren betreft het extraheren van gegevens uit HTML-documenten.\
   \ Programmeurs doen dit om te interageren met of webinhoud te\u2026"
 title: HTML Parsen
+weight: 43
 ---
-
-{{< edit_this_page >}}
 
 ## Wat & Waarom?
 HTML parseren in programmeren betreft het extraheren van gegevens uit HTML-documenten. Programmeurs doen dit om te interageren met of webinhoud te schrapen voor informatie-extractie, testen of automatiseringsdoeleinden, zelfs wanneer officiële API's niet beschikbaar zijn.

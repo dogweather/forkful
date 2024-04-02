@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "YAML, en forkortelse for \"YAML Ain't Markup Language\", er en menneskevennlig\
   \ standard for serialisering av data som kan brukes for alle\u2026"
 title: Arbeider med YAML
+weight: 41
 ---
-
-{{< edit_this_page >}}
 
 ## Hva & Hvorfor?
 

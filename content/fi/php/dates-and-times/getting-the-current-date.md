@@ -11,9 +11,8 @@ summary: "Nykyisen p\xE4iv\xE4m\xE4\xE4r\xE4n hakeminen PHP:ssa on perusteht\xE4
   , joka mahdollistaa j\xE4rjestelm\xE4n p\xE4iv\xE4m\xE4\xE4r\xE4n ja ajan hakemisen\
   \ sek\xE4 manipuloinnin. T\xE4m\xE4 on\u2026"
 title: "Nykyisen p\xE4iv\xE4m\xE4\xE4r\xE4n hankkiminen"
+weight: 29
 ---
-
-{{< edit_this_page >}}
 
 ## Mikä & Miksi?
 Nykyisen päivämäärän hakeminen PHP:ssa on perustehtävä, joka mahdollistaa järjestelmän päivämäärän ja ajan hakemisen sekä manipuloinnin. Tämä on elintärkeää toiminnoille, kuten lokitiedostojen kirjaaminen, viestien aikaleimaus, tapahtumien ajoittaminen tai aikaan sidottujen operaatioiden suorittaminen sovelluksissasi.

@@ -9,9 +9,8 @@ summary: "Imprimir salidas de depuraci\xF3n es escupir mensajes desde tu c\xF3di
   \ para ver qu\xE9 est\xE1 pasando. Programadores lo hacen para entender y arreglar\
   \ errores,\u2026"
 title: "Imprimiendo salida de depuraci\xF3n"
+weight: 33
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why? (¿Qué y Por Qué?)
 Imprimir salidas de depuración es escupir mensajes desde tu código para ver qué está pasando. Programadores lo hacen para entender y arreglar errores, casi como una radiografía de tu código en ejecución.

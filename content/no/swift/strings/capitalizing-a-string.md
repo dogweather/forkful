@@ -11,9 +11,8 @@ summary: "\xC5 sette stor forbokstav i en streng i Swift endrer den gitte streng
   \ slik at dens f\xF8rste tegn er med stor bokstav, og de gjenv\xE6rende tegnene\
   \ er med sm\xE5\u2026"
 title: Sette stor bokstav i en streng
+weight: 2
 ---
-
-{{< edit_this_page >}}
 
 ## Hva og hvorfor?
 

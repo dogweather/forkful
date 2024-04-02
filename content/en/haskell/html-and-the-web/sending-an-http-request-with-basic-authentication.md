@@ -7,9 +7,8 @@ model: gpt-4-1106-preview
 summary: "Sending an HTTP request with basic authentication means your program knocks\
   \ on a web service's door, passing a username and password for entry.\u2026"
 title: Sending an HTTP request with basic authentication
+weight: 45
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 Sending an HTTP request with basic authentication means your program knocks on a web service's door, passing a username and password for entry. Programmers do it to access APIs that are off-limits to the general public or to perform actions on behalf of a user.

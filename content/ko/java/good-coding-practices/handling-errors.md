@@ -17,9 +17,8 @@ summary: "\uC624\uB958 \uCC98\uB9AC\uB780 \uC608\uC0C1\uCE58 \uBABB\uD55C \uBB38
   \ \uBC29\uC9C0\uD558\uAE30 \uC704\uD574 \uC774\uB97C \uC218\uD589\uD569\uB2C8\uB2E4\
   ."
 title: "\uC5D0\uB7EC \uCC98\uB9AC\uD558\uAE30"
+weight: 16
 ---
-
-{{< edit_this_page >}}
 
 ## 무엇 & 왜?
 

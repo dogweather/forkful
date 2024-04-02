@@ -9,9 +9,8 @@ summary: "Criar um arquivo tempor\xE1rio serve para ter um espa\xE7o de armazena
   \ seguro e ef\xEAmero, \xF3timo para processamento interm\xE9dio de dados. Programadores\
   \ fazem\u2026"
 title: "Criando um arquivo tempor\xE1rio"
+weight: 21
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 

@@ -7,9 +7,8 @@ model: gpt-4-0125-preview
 summary: "Read-Eval-Print Loppen (REPL) \xE4r en enkel, interaktiv programmeringsmilj\xF6\
   \ som tar emot enskilda anv\xE4ndarinput, utv\xE4rderar dem och returnerar resultatet\u2026"
 title: "Anv\xE4nda en interaktiv skal (REPL)"
+weight: 34
 ---
-
-{{< edit_this_page >}}
 
 ## Vad & Varför?
 Read-Eval-Print Loppen (REPL) är en enkel, interaktiv programmeringsmiljö som tar emot enskilda användarinput, utvärderar dem och returnerar resultatet till användaren. Elm-programmerare använder REPL för snabba experiment, felsökning eller att lära sig språket.

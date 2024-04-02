@@ -10,9 +10,8 @@ model: gpt-4-0125-preview
 summary: "Organizar o c\xF3digo em fun\xE7\xF5es em C envolve dividir tarefas complexas\
   \ em blocos menores e reutiliz\xE1veis de c\xF3digo. Essa pr\xE1tica melhora a legibilidade,\u2026"
 title: "Organizando c\xF3digo em fun\xE7\xF5es"
+weight: 18
 ---
-
-{{< edit_this_page >}}
 
 ## O Que & Por Que?
 

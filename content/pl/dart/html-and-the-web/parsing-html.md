@@ -11,9 +11,8 @@ summary: "Przetwarzanie HTML w programowaniu polega na ekstrakcji danych z dokum
   w HTML. Programi\u015Bci robi\u0105 to, aby wchodzi\u0107 w interakcj\u0119 lub\
   \ scrapowa\u0107 zawarto\u015B\u0107\u2026"
 title: "Analiza sk\u0142adniowa HTML"
+weight: 43
 ---
-
-{{< edit_this_page >}}
 
 ## Co i dlaczego?
 Przetwarzanie HTML w programowaniu polega na ekstrakcji danych z dokumentów HTML. Programiści robią to, aby wchodzić w interakcję lub scrapować zawartość internetową w celu ekstrakcji informacji, testowania lub automatyzacji, nawet kiedy nie są dostępne oficjalne API.

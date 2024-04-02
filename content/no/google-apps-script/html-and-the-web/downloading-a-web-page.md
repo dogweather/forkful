@@ -11,9 +11,8 @@ summary: "\xC5 laste ned en nettside i Google Apps Script inneb\xE6rer \xE5 hent
   \ innholdet p\xE5 en nettside via HTML for ulike form\xE5l, som nettskraping, datautvinning\
   \ eller\u2026"
 title: Nedlasting av en nettside
+weight: 42
 ---
-
-{{< edit_this_page >}}
 
 ## Hva & Hvorfor?
 

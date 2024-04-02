@@ -15,9 +15,8 @@ summary: "Vi\u1EC7c ki\u1EC3m tra s\u1EF1 t\u1ED3n t\u1EA1i c\u1EE7a m\u1ED9t th
   ng d\u1EABn c\u1EE5 th\u1EC3 trong h\u1EC7 th\u1ED1ng t\u1EC7p hay kh\xF4ng. L\u1EAD\
   p\u2026"
 title: "Ki\u1EC3m tra xem th\u01B0 m\u1EE5c c\xF3 t\u1ED3n t\u1EA1i kh\xF4ng"
+weight: 20
 ---
-
-{{< edit_this_page >}}
 
 ## Gì và Tại sao?
 Việc kiểm tra sự tồn tại của một thư mục là để xác nhận liệu có một thư mục nào đó tồn tại tại một đường dẫn cụ thể trong hệ thống tệp hay không. Lập trình viên thực hiện điều này để tránh các lỗi như cố gắng đọc từ hoặc viết vào một thư mục không tồn tại.

@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Een tekenreeks omzetten naar kleine letters betekent dat alle hoofdletters\
   \ worden vervangen door hun kleine letter equivalenten. Programmeurs doen dit\u2026"
 title: Een string omzetten naar kleine letters
+weight: 4
 ---
-
-{{< edit_this_page >}}
 
 ## Wat & Waarom?
 

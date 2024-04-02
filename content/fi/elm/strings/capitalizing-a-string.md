@@ -11,9 +11,8 @@ summary: "Merkkijonon alkukirjaimen muuttaminen isoksi muuttaa annetun merkkijon
   \ ensimm\xE4isen merkin isoksi kirjaimeksi samalla, kun loput merkit j\xE4tet\xE4\
   \xE4n pieniksi\u2026"
 title: Merkkijonon muuttaminen isoiksi kirjaimiksi
+weight: 2
 ---
-
-{{< edit_this_page >}}
 
 ## Mikä & Miksi?
 

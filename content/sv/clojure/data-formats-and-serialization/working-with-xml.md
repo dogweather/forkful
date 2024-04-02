@@ -9,9 +9,8 @@ summary: "XML \xE4r ett m\xE4rkspr\xE5k f\xF6r att koda dokument p\xE5 ett s\xE4
   \ som \xE4r l\xE4sbart b\xE5de f\xF6r m\xE4nniskor och maskiner. Det \xE4r viktigt\
   \ inom webbtj\xE4nster,\u2026"
 title: Att arbeta med XML
+weight: 40
 ---
-
-{{< edit_this_page >}}
 
 ## Vad & Varför?
 XML är ett märkspråk för att koda dokument på ett sätt som är läsbart både för människor och maskiner. Det är viktigt inom webbtjänster, konfigurationsfiler och datautbyte eftersom det överför data i ett strukturerat, hierarkiskt format.

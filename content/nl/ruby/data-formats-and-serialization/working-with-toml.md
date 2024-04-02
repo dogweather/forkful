@@ -10,9 +10,8 @@ model: gpt-4-0125-preview
 summary: "TOML is een configuratiebestandsformaat dat gemakkelijk te lezen is vanwege\
   \ de duidelijke semantiek. Programmeurs gebruiken TOML om app-configuraties en\u2026"
 title: Werken met TOML
+weight: 39
 ---
-
-{{< edit_this_page >}}
 
 ## Wat & Waarom?
 

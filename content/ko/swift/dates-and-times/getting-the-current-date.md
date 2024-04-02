@@ -23,9 +23,8 @@ summary: "Swift\uC5D0\uC11C \uD604\uC7AC \uB0A0\uC9DC\uB97C \uAC00\uC838\uC624\u
   \ \uC774\uC720\uB85C \uD604\uC7AC \uB0A0\uC9DC\uB97C \uAC00\uC838\uC640\uC57C \uD569\
   \uB2C8\uB2E4."
 title: "\uD604\uC7AC \uB0A0\uC9DC \uAC00\uC838\uC624\uAE30"
+weight: 29
 ---
-
-{{< edit_this_page >}}
 
 ## 무엇 & 왜?
 Swift에서 현재 날짜를 가져오는 것은 `Date` 클래스를 사용하여 앱이 실행되는 날짜와 시간에 접근하는 것을 포함합니다. 프로그래머들은 이벤트의 타임스탬프 적용, 날짜 계산 수행, 사용자 인터페이스에 날짜와 시간 표시 등 다양한 이유로 현재 날짜를 가져와야 합니다.

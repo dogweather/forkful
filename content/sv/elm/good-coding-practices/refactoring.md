@@ -9,9 +9,8 @@ summary: "Refaktorisering \xE4r i grund och botten v\xE5rst\xE4dning av din kodb
   \ \u2013 det handlar om att omstrukturera befintlig kod utan att \xE4ndra dess externa\
   \ beteende.\u2026"
 title: Refaktorisering
+weight: 19
 ---
-
-{{< edit_this_page >}}
 
 ## Vad & Varför?
 Refaktorisering är i grund och botten vårstädning av din kodbas – det handlar om att omstrukturera befintlig kod utan att ändra dess externa beteende. Programmerare gör det för att göra koden mer läsbart, reducera komplexitet, förbättra underhållbarheten och göra det lättare att utöka.

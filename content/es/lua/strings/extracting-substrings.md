@@ -7,9 +7,8 @@ model: gpt-4-1106-preview
 summary: "Extraer subcadenas significa sacar partes espec\xEDficas de un texto. Los\
   \ programadores lo hacen para procesar y manejar datos de forma precisa."
 title: "Extracci\xF3n de subcadenas"
+weight: 6
 ---
-
-{{< edit_this_page >}}
 
 ## ¿Qué & Por Qué?
 Extraer subcadenas significa sacar partes específicas de un texto. Los programadores lo hacen para procesar y manejar datos de forma precisa.

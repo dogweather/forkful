@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Lavorare con JSON (JavaScript Object Notation) in Rust consiste nell'analizzare\
   \ i dati JSON per trasformarli in strutture dati Rust e serializzare le\u2026"
 title: Lavorare con JSON
+weight: 38
 ---
-
-{{< edit_this_page >}}
 
 ## Cosa & Perché?
 

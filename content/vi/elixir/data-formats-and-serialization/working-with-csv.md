@@ -13,9 +13,8 @@ summary: "CSV (Comma-Separated Values - Gi\xE1 tr\u1ECB t\xE1ch bi\u1EC7t b\u1EB
   n gi\u1EA3n cho d\u1EEF li\u1EC7u d\u1EA1ng b\u1EA3ng. C\xE1c l\u1EADp tr\xECnh\
   \ vi\xEAn s\u1EED d\u1EE5ng CSV \u0111\u1EC3 d\u1EC5\u2026"
 title: "L\xE0m vi\u1EC7c v\u1EDBi CSV"
+weight: 37
 ---
-
-{{< edit_this_page >}}
 
 ## Cái gì & Tại sao?
 

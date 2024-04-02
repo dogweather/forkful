@@ -14,9 +14,8 @@ summary: "\uBA85\uB839\uC904 \uC778\uC790(command line arguments)\uB97C \uC77D\u
   \uB97C \uD65C\uC6A9\uD574 \uC720\uC5F0\uD558\uACE0 \uC7AC\uC0AC\uC6A9 \uAC00\uB2A5\
   \uD55C \uCF54\uB4DC\uB97C \uC791\uC131\uD569\uB2C8\uB2E4."
 title: "\uBA85\uB839\uC904 \uC778\uC218 \uC77D\uAE30"
+weight: 23
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why? (무엇과 왜?)
 

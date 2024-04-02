@@ -9,9 +9,8 @@ summary: "\"Praca z XML\" odnosi si\u0119 do procesu odczytu, tworzenia i modyfi
   \ plik\xF3w XML (eXtensible Markup Language) za pomoc\u0105 programowania. Programi\u015B\
   ci robi\u0105\u2026"
 title: Praca z XML
+weight: 40
 ---
-
-{{< edit_this_page >}}
 
 ## Co i dlaczego?
 "Praca z XML" odnosi się do procesu odczytu, tworzenia i modyfikacji plików XML (eXtensible Markup Language) za pomocą programowania. Programiści robią to, ponieważ XML jest szeroko stosowany do wymiany danych ze względu na jego niezależność od platformy oraz samoopisowy format.

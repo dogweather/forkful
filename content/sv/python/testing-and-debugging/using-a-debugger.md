@@ -1,14 +1,13 @@
 ---
 date: 2024-01-26 04:08:55.145628-07:00
-description: "\"Att anv\xE4nda en debugger\" inneb\xE4r att stega igenom din Python-kod\
-  \ f\xF6r att hitta buggar och f\xF6rst\xE5 beteenden. Vi g\xF6r det eftersom det\
-  \ \xE4r mycket enklare \xE4n\u2026"
+description: "L\xE5t oss bryta ner anv\xE4ndningen av `pdb`, Pythons inbyggda debugger.\
+  \ F\xF6rest\xE4ll dig en fil, `buggy.py`, med en listig bugg: ```Python def add_one(number):\u2026"
 lastmod: '2024-03-13T22:44:37.487630-06:00'
 model: gpt-4-0125-preview
-summary: "\"Att anv\xE4nda en debugger\" inneb\xE4r att stega igenom din Python-kod\
-  \ f\xF6r att hitta buggar och f\xF6rst\xE5 beteenden. Vi g\xF6r det eftersom det\
-  \ \xE4r mycket enklare \xE4n\u2026"
+summary: "L\xE5t oss bryta ner anv\xE4ndningen av `pdb`, Pythons inbyggda debugger.\
+  \ F\xF6rest\xE4ll dig en fil, `buggy.py`, med en listig bugg: ```Python def add_one(number):\u2026"
 title: "Att anv\xE4nda en debugger"
+weight: 35
 ---
 
 ## Hur man gör:

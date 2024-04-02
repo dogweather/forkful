@@ -8,9 +8,8 @@ model: gpt-4-0125-preview
 summary: "Das Generieren von Zufallszahlen in Ruby beinhaltet das Erstellen von Zahlen,\
   \ die logisch nicht vorhersagbar sind. Dies ist essentiell f\xFCr Szenarien wie\u2026"
 title: Generierung von Zufallszahlen
+weight: 12
 ---
-
-{{< edit_this_page >}}
 
 ## Was & Warum?
 

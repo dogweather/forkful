@@ -7,9 +7,8 @@ model: gpt-4-0125-preview
 summary: "La shell interattiva, o Ciclo Leggi-Valuta-Stampa (REPL, dall'inglese Read-Eval-Print\
   \ Loop), ti consente di digitare comandi PowerShell e ottenere un\u2026"
 title: Utilizzo di un interprete interattivo (REPL)
+weight: 34
 ---
-
-{{< edit_this_page >}}
 
 ## Cosa & Perché?
 La shell interattiva, o Ciclo Leggi-Valuta-Stampa (REPL, dall'inglese Read-Eval-Print Loop), ti consente di digitare comandi PowerShell e ottenere un feedback immediato. I programmatori la utilizzano per testare rapidamente frammenti di codice, per il debug o per imparare nuovi comandi senza dover scrivere uno script completo.

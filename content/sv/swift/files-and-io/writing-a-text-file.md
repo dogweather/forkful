@@ -11,9 +11,8 @@ summary: "Att skriva en textfil i Swift g\xF6r det m\xF6jligt att permanent lagr
   \ str\xE4ngdata p\xE5 filsystemet, vilket \xE4r avg\xF6rande f\xF6r uppgifter s\xE5\
   som att spara\u2026"
 title: Att skriva en textfil
+weight: 24
 ---
-
-{{< edit_this_page >}}
 
 ## Vad & Varför?
 

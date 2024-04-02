@@ -21,9 +21,8 @@ summary: "C\uC5D0\uC11C JSON(JavaScript Object Notation)\uC744 \uB2E4\uB8E8\uB29
   \ \uAD6C\uC131 \uD30C\uC77C\uACFC\uC758 \uD1B5\uC2E0\uC744 \uAC00\uB2A5\uD558\uAC8C\
   \u2026"
 title: "JSON \uC791\uC5C5\uD558\uAE30"
+weight: 38
 ---
-
-{{< edit_this_page >}}
 
 ## 무엇이며 왜?
 

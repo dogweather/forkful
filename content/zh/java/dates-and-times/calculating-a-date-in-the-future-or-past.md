@@ -14,9 +14,8 @@ summary: "\u8BA1\u7B97\u672A\u6765\u6216\u8FC7\u53BB\u7684\u65E5\u671F\u5C31\u66
   \u4E8B\u4EF6\uFF0C\u8BA1\u7B97\u622A\u6B62\u65E5\u671F\uFF0C\u6216\u7BA1\u7406\u65E5\
   \u5386\u4E8B\u4EF6\u3002"
 title: "\u8BA1\u7B97\u672A\u6765\u6216\u8FC7\u53BB\u7684\u65E5\u671F"
+weight: 26
 ---
-
-{{< edit_this_page >}}
 
 ## 什么 & 为什么？
 计算未来或过去的日期就是找出在给定日期前后某天的日期。程序员这么做是为了处理预定事件，计算截止日期，或管理日历事件。

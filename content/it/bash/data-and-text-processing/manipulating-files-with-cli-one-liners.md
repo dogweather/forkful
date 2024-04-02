@@ -7,9 +7,8 @@ model: gpt-4-0125-preview
 summary: "Manipolare file con CLI (Interfaccia a Linea di Comando) one-liners comporta\
   \ l'utilizzo di script o comandi Bash per eseguire azioni sui file, come\u2026"
 title: Manipolazione di file con one-liner da CLI
+weight: 31
 ---
-
-{{< edit_this_page >}}
 
 ## Cos'è & Perché?
 

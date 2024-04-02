@@ -11,9 +11,8 @@ summary: "\xC5 parse HTML betyr \xE5 sile gjennom HTML-kode for \xE5 finne, hent
   \ ut, eller manipulere informasjon. Programmerere gj\xF8r dette for \xE5 samhandle\
   \ med webinnhold \u2013\u2026"
 title: Analysering av HTML
+weight: 43
 ---
-
-{{< edit_this_page >}}
 
 ## Hva & Hvorfor?
 

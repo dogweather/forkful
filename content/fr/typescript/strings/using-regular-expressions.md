@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Les expressions r\xE9guli\xE8res, ou regex, sont un outil puissant de correspondance\
   \ et de recherche de motifs en programmation. Les programmeurs utilisent\u2026"
 title: "Utilisation des expressions r\xE9guli\xE8res"
+weight: 11
 ---
-
-{{< edit_this_page >}}
 
 ## Quoi & Pourquoi ?
 Les expressions régulières, ou regex, sont un outil puissant de correspondance et de recherche de motifs en programmation. Les programmeurs utilisent regex pour des tâches comme valider une entrée utilisateur, rechercher dans un texte ou manipuler des chaînes de caractères car c'est efficace et polyvalent.

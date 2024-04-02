@@ -7,9 +7,8 @@ model: gpt-4-0125-preview
 summary: "Kompleksiluvut ovat lukuja, joilla on todellinen ja imaginaarinen osa (kuten\
   \ 3 + 4i). Ne tulevat esiin monissa ohjelmointiongelmissa, erityisesti\u2026"
 title: "Kompleksilukujen k\xE4sittely"
+weight: 14
 ---
-
-{{< edit_this_page >}}
 
 ## Mitä ja miksi?
 Kompleksiluvut ovat lukuja, joilla on todellinen ja imaginaarinen osa (kuten 3 + 4i). Ne tulevat esiin monissa ohjelmointiongelmissa, erityisesti signaalinkäsittelyssä, kvanttilaskennassa ja polynomiyhtälöiden ratkaisemisessa. Ohjelmoijat käsittelevät niitä näiden tehtävien tehokkaaseen suorittamiseen.

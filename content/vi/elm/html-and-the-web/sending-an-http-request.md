@@ -13,9 +13,8 @@ summary: "Trong Elm, vi\u1EC7c g\u1EEDi m\u1ED9t y\xEAu c\u1EA7u HTTP l\xE0 c\xE
   \ v\u1EE5 web kh\xE1c \u0111\u1EC3 trao \u0111\u1ED5i d\u1EEF li\u1EC7u. L\u1EAD\
   p tr\xECnh vi\xEAn l\xE0m \u0111i\u1EC1u n\xE0y \u0111\u1EC3 t\u1EA3i\u2026"
 title: "G\u1EEDi m\u1ED9t y\xEAu c\u1EA7u HTTP"
+weight: 44
 ---
-
-{{< edit_this_page >}}
 
 ## Gì và Tại sao?
 

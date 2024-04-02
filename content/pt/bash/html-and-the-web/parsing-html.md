@@ -10,9 +10,8 @@ model: gpt-4-0125-preview
 summary: "Analisar HTML significa vasculhar a estrutura e o conte\xFAdo de um arquivo\
   \ HTML para extrair informa\xE7\xF5es. Programadores fazem isso para acessar dados,\u2026"
 title: Analisando HTML
+weight: 43
 ---
-
-{{< edit_this_page >}}
 
 ## O Quê & Por Quê?
 

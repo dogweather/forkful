@@ -7,9 +7,8 @@ model: gpt-4-0125-preview
 summary: "Generating random numbers in TypeScript is about creating unpredictable\
   \ numeric values within a specified range. Programmers leverage these random digits\u2026"
 title: Generating random numbers
+weight: 12
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 

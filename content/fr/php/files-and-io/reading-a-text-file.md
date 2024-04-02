@@ -9,9 +9,8 @@ summary: "Lire un fichier texte, c'est extraire son contenu pour l'utiliser dans
   \ script PHP. On fait \xE7a pour acc\xE9der aux donn\xE9es, configurer des param\xE8\
   tres,\u2026"
 title: Lecture d'un fichier texte
+weight: 22
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why? (Quoi & Pourquoi ?)
 Lire un fichier texte, c'est extraire son contenu pour l'utiliser dans votre script PHP. On fait ça pour accéder aux données, configurer des paramètres, ou lire des logs.

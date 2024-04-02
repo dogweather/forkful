@@ -11,9 +11,8 @@ summary: "L'analyse d'une date \xE0 partir d'une cha\xEEne de caract\xE8res en E
   \ consiste \xE0 convertir des informations textuelles repr\xE9sentant des dates\
   \ et des heures en\u2026"
 title: "Analyser une date depuis une cha\xEEne de caract\xE8res"
+weight: 30
 ---
-
-{{< edit_this_page >}}
 
 ## Quoi & Pourquoi ?
 L'analyse d'une date à partir d'une chaîne de caractères en Elm consiste à convertir des informations textuelles représentant des dates et des heures en un format qu'Elm peut comprendre et manipuler, spécifiquement en le type `Date`. Ce processus est essentiel pour gérer l'entrée utilisateur, afficher correctement les dates localisées et effectuer des calculs liés aux dates, garantissant que vos applications Elm peuvent traiter intelligemment les données temporelles.

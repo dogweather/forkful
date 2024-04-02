@@ -17,9 +17,8 @@ summary: "Visual Basic for Applications(VBA)\uC5D0\uC11C XML\uC744 \uB2E4\uB8E8\
   . \uD504\uB85C\uADF8\uB798\uBA38\uB4E4\uC740 Office \uC751\uC6A9 \uD504\uB85C\uADF8\
   \uB7A8\uC744 XML\uC744 \uC0DD\uC131\uD558\uB294 \uC6F9\u2026"
 title: "XML\uC744 \uD65C\uC6A9\uD55C \uC791\uC5C5\uD558\uAE30"
+weight: 40
 ---
-
-{{< edit_this_page >}}
 
 ## 무엇이며 왜?
 

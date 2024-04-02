@@ -9,9 +9,8 @@ summary: "Yhdist\xE4mme merkkijonoja luodaksemme pidempi\xE4 tekstej\xE4. Ohjelm
   \ tarvitsevat sit\xE4 k\xE4ytt\xF6liittymien tekstien, logiviestien ja datan k\xE4\
   sittelyn yhteydess\xE4."
 title: "Merkkijonojen yhdist\xE4minen"
+weight: 3
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why? (Mitä & Miksi?)
 Yhdistämme merkkijonoja luodaksemme pidempiä tekstejä. Ohjelmoijat tarvitsevat sitä käyttöliittymien tekstien, logiviestien ja datan käsittelyn yhteydessä.

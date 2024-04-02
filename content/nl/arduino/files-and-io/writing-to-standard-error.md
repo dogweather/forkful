@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Schrijven naar standaardfout (stderr) rapporteert fouten en diagnostiek\
   \ gescheiden van standaarduitvoer (stdout). Het is cruciaal voor het debuggen en\u2026"
 title: Schrijven naar standaardfout
+weight: 25
 ---
-
-{{< edit_this_page >}}
 
 ## Wat en Waarom?
 Schrijven naar standaardfout (stderr) rapporteert fouten en diagnostiek gescheiden van standaarduitvoer (stdout). Het is cruciaal voor het debuggen en loggen, waarbij ontwikkelaars problemen kunnen isoleren zonder foutmeldingen te vermengen met reguliere programma-uitvoer.

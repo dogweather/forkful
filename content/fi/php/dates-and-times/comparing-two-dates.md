@@ -9,9 +9,8 @@ summary: "Vertailemme kahta p\xE4iv\xE4m\xE4\xE4r\xE4\xE4, kun haluamme tiet\xE4
   \ niiden ajallisen eron tai selvitt\xE4\xE4 kumpi on aikaisempi tai my\xF6h\xE4\
   isempi. T\xE4m\xE4 on t\xE4rke\xE4\xE4 esimerkiksi\u2026"
 title: "Kahden p\xE4iv\xE4m\xE4\xE4r\xE4n vertailu"
+weight: 27
 ---
-
-{{< edit_this_page >}}
 
 ## Mitä & Miksi?
 Vertailemme kahta päivämäärää, kun haluamme tietää niiden ajallisen eron tai selvittää kumpi on aikaisempi tai myöhäisempi. Tämä on tärkeää esimerkiksi vanhentuneiden tiedostojen karsimisessa tai tapahtumien ajoittamisessa.

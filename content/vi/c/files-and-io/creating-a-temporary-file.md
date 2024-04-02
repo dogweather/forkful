@@ -13,9 +13,8 @@ summary: "Vi\u1EC7c t\u1EA1o m\u1ED9t t\u1EADp tin t\u1EA1m th\u1EDDi trong C ba
   ng \u0111\u1EC3 s\u1EED d\u1EE5ng trong m\u1ED9t kho\u1EA3ng th\u1EDDi gian ng\u1EAF\
   n, th\u01B0\u1EDDng \u0111\u01B0\u1EE3c s\u1EED d\u1EE5ng nh\u01B0 m\u1ED9t\u2026"
 title: "T\u1EA1o m\u1ED9t t\u1EC7p t\u1EA1m th\u1EDDi"
+weight: 21
 ---
-
-{{< edit_this_page >}}
 
 ## Gì và Tại sao?
 Việc tạo một tập tin tạm thời trong C bao gồm việc tạo ra một tập tin được dùng để sử dụng trong một khoảng thời gian ngắn, thường được sử dụng như một không gian tạm thời cho việc xử lý hoặc lưu trữ dữ liệu. Các lập trình viên thực hiện điều này để quản lý dữ liệu tạm thời mà không ảnh hưởng đến bộ nhớ vĩnh viễn của chương trình hoặc để đảm bảo dữ liệu nhạy cảm được xóa sau khi sử dụng.

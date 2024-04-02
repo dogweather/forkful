@@ -8,9 +8,8 @@ model: gpt-4-0125-preview
 summary: "Sending an HTTP request involves creating and dispatching a request to a\
   \ web server to retrieve or submit data. Programmers do this in C to interact with\u2026"
 title: Sending an HTTP request
+weight: 44
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 

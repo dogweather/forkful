@@ -16,9 +16,8 @@ summary: "\uCEE4\uB9E8\uB4DC \uB77C\uC778 \uC778\uC790 \uC77D\uAE30\uB294 \uC0AC
   \uC774\uACE0 \uC0AC\uC6A9\uC790 \uB9DE\uCDA4\uD615 \uB3D9\uC791\uC744 \uAD6C\uD604\
   \uD558\uAE30 \uC704\uD574 \uC774\uB97C \uC0AC\uC6A9\uD569\uB2C8\uB2E4."
 title: "\uBA85\uB839\uC904 \uC778\uC218 \uC77D\uAE30"
+weight: 23
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why? (무엇이며 왜 사용하는가?)
 커맨드 라인 인자 읽기는 사용자가 터미널을 통해 스크립트에 데이터를 전달할 수 있게 해줍니다. 프로그래머들은 유연성을 높이고 사용자 맞춤형 동작을 구현하기 위해 이를 사용합니다.

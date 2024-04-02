@@ -9,9 +9,8 @@ summary: "Tratar erros em programa\xE7\xE3o \xE9 sobre gerenciar o inesperado\u2
   coisas que podem dar errado. Programadores fazem isso para garantir que seus programas\
   \ possam\u2026"
 title: Tratamento de erros
+weight: 16
 ---
-
-{{< edit_this_page >}}
 
 ## O Que e Por Quê?
 Tratar erros em programação é sobre gerenciar o inesperado—coisas que podem dar errado. Programadores fazem isso para garantir que seus programas possam lidar com essas situações de forma elegante, sem quebrar ou produzir resultados errados.

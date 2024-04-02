@@ -11,9 +11,8 @@ summary: "Associerade arrayer \xE4r som hemliga handslag f\xF6r data i Lua\u2014
   llet f\xF6r bara siffror som lydigt st\xE4ller upp efter index, kan dina nycklar\
   \ vara vad du\u2026"
 title: "Att anv\xE4nda associativa arrayer"
+weight: 15
 ---
-
-{{< edit_this_page >}}
 
 ## Vad & Varför?
 

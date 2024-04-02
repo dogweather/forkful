@@ -7,9 +7,8 @@ model: gpt-4-0125-preview
 summary: "Remover aspas de uma string envolve retirar as marcas de aspas que envolvem\
   \ a string. Programadores frequentemente querem fazer isso para sanear dados de\u2026"
 title: Removendo aspas de uma string
+weight: 9
 ---
-
-{{< edit_this_page >}}
 
 ## O Que & Por Quê?
 Remover aspas de uma string envolve retirar as marcas de aspas que envolvem a string. Programadores frequentemente querem fazer isso para sanear dados de entrada, preparar dados para fins de comparação, ou aderir a um formato de dados específico ao interagir com outros programas ou sistemas.

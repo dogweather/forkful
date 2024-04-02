@@ -12,9 +12,8 @@ summary: "\u8BFB\u53D6\u6587\u672C\u6587\u4EF6\u5C31\u662F\u4ECE\u6587\u4EF6\u4E
   \u5904\u7406\u3001\u5206\u6790\u6216\u663E\u793A\u5B58\u50A8\u5728\u6587\u4EF6\u4E2D\
   \u7684\u4FE1\u606F\u3002"
 title: "\u9605\u8BFB\u6587\u672C\u6587\u4EF6"
+weight: 22
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why? (是什么？为什么？)
 读取文本文件就是从文件中提取数据。程序员这么做是为了处理、分析或显示存储在文件中的信息。

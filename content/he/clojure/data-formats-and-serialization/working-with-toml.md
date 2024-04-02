@@ -21,9 +21,8 @@ summary: "\u05E2\u05D1\u05D5\u05D3\u05D4 \u05E2\u05DD TOML \u05D0\u05D5\u05DE\u0
   \u05EA\u05DE\u05E9\u05D9\u05DD \u05D1\u05D5 \u05DC\u05E0\u05D9\u05D4\u05D5\u05DC\
   \u2026"
 title: "\u05E2\u05D1\u05D5\u05D3\u05D4 \u05E2\u05DD TOML"
+weight: 39
 ---
-
-{{< edit_this_page >}}
 
 ## מה ולמה?
 עבודה עם TOML אומרת שאתם מטפלים בנתונים בפורמט מינימלי "Tom's Obvious, Minimal Language", פופולרי לקבצי תצורה בזכות קריאותו הקלה. תכנתים משתמשים בו לניהול תצורה ישיר ופשוט שעובד ישר מהקופסה עם תחביר נוח לבני אדם.

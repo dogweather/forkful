@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Het schrijven van tests verifieert dat code zich gedraagt zoals verwacht.\
   \ Programmeurs testen om bugs vroegtijdig te ontdekken, betrouwbaarheid te\u2026"
 title: Tests Schrijven
+weight: 36
 ---
-
-{{< edit_this_page >}}
 
 ## Wat & Waarom?
 

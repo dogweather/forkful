@@ -9,9 +9,8 @@ summary: "\u0141\u0105czenie string\xF3w to po prostu sklejanie dw\xF3ch lub wi\
   cej tekst\xF3w w jeden. Programi\u015Bci robi\u0105 to, aby budowa\u0107 wiadomo\u015B\
   ci, tworzy\u0107 zapytania SQL, a nawet\u2026"
 title: "\u0141\u0105czenie \u0142a\u0144cuch\xF3w znak\xF3w"
+weight: 3
 ---
-
-{{< edit_this_page >}}
 
 ## Co i Dlaczego?
 Łączenie stringów to po prostu sklejanie dwóch lub więcej tekstów w jeden. Programiści robią to, aby budować wiadomości, tworzyć zapytania SQL, a nawet zarządzać wyświetlanymi adresami URL – w zasadzie wszędzie tam, gdzie dynamika i elastyczność tekstu są potrzebne.

@@ -9,9 +9,8 @@ summary: "\xC5 manipulere filer med CLI en-linjers i Ruby handler om \xE5 utf\xF
   re vanlige filoperasjoner direkte fra terminalen ved \xE5 bruke Ruby-skript. Det\
   \ er en\u2026"
 title: Manipulering av filer med CLI-enkeltkommandoer
+weight: 31
 ---
-
-{{< edit_this_page >}}
 
 ## Hva & Hvorfor?
 

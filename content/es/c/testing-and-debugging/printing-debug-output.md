@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Imprimir mensajes de depuraci\xF3n se trata de generar mensajes registrados\
   \ temporales e informativos que pueden ayudar a los programadores a entender el\u2026"
 title: "Imprimiendo salida de depuraci\xF3n"
+weight: 33
 ---
-
-{{< edit_this_page >}}
 
 ## ¿Qué y por qué?
 

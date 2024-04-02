@@ -7,9 +7,8 @@ model: gpt-4-0125-preview
 summary: "Zahlen zu runden bedeutet, sie an einen einfacheren oder bedeutenderen Wert\
   \ anzun\xE4hern. Programmierer runden Zahlen ab, um Ergebnisse zu vereinfachen,\u2026"
 title: Zahlen runden
+weight: 13
 ---
-
-{{< edit_this_page >}}
 
 ## Was & Warum?
 Zahlen zu runden bedeutet, sie an einen einfacheren oder bedeutenderen Wert anzunähern. Programmierer runden Zahlen ab, um Ergebnisse zu vereinfachen, Dezimalstellen für die Anzeige zu begrenzen oder für bestimmte mathematische Zwecke.

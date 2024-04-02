@@ -13,9 +13,8 @@ summary: "Vi\u1EC7c in th\xF4ng b\xE1o g\u1EE1 r\u1ED1i trong Dart li\xEAn quan 
   u khi\u1EC3n trong qu\xE1 tr\xECnh th\u1EF1c thi, cho ph\xE9p c\xE1c nh\xE0 ph\xE1\
   t tri\u1EC3n theo\u2026"
 title: "In ra th\xF4ng tin g\u1EE1 l\u1ED7i"
+weight: 33
 ---
-
-{{< edit_this_page >}}
 
 ## Cái gì & Tại sao?
 

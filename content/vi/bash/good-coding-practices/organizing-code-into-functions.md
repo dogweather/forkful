@@ -13,9 +13,8 @@ summary: "Ph\xE2n chia m\xE3 th\xE0nh c\xE1c h\xE0m c\xF3 ngh\u0129a l\xE0 chia 
   ng l\u1EA1i \u0111\u01B0\u1EE3c v\xE0 th\u1EF1c hi\u1EC7n c\xE1c nhi\u1EC7m v\u1EE5\
   \ c\u1EE5 th\u1EC3. \u0110i\u1EC1u n\xE0y l\xE0m cho\u2026"
 title: "S\u1EAFp x\u1EBFp m\xE3 th\xE0nh c\xE1c h\xE0m"
+weight: 18
 ---
-
-{{< edit_this_page >}}
 
 ## Cái gì và Tại sao?
 Phân chia mã thành các hàm có nghĩa là chia nhỏ script thành các khối nhỏ hơn, có thể sử dụng lại được và thực hiện các nhiệm vụ cụ thể. Điều này làm cho mã nguồn trở nên sạch sẽ hơn, dễ hiểu hơn và dễ gỡ lỗi hơn.

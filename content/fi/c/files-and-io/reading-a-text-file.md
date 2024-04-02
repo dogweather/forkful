@@ -10,9 +10,8 @@ model: gpt-4-0125-preview
 summary: "Tekstitiedoston lukeminen C-kieless\xE4 tarkoittaa tiedoston avaamista j\xE4\
   rjestelm\xE4ss\xE4si tiedon poimimiseksi ja tarpeen mukaan manipuloimiseksi tai\u2026"
 title: Tekstitiedoston lukeminen
+weight: 22
 ---
-
-{{< edit_this_page >}}
 
 ## Mikä & Miksi?
 

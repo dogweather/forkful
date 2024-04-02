@@ -21,9 +21,8 @@ summary: "Google Apps Script(GAS)\uC5D0\uC11C \uD14D\uC2A4\uD2B8 \uD30C\uC77C\uC
   \ \uC885\uC885 \uC774\uB7EC\uD55C \uD30C\uC77C\uB4E4\uC744 \uC77D\uC5B4\uC11C GAS\
   \ \uD504\uB85C\uC81D\uD2B8 \uB0B4\uC5D0\uC11C\u2026"
 title: "\uD14D\uC2A4\uD2B8 \uD30C\uC77C \uC77D\uAE30"
+weight: 22
 ---
-
-{{< edit_this_page >}}
 
 ## 무엇 & 왜?
 

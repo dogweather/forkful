@@ -9,9 +9,8 @@ summary: "\xC5 starte et nytt prosjekt betyr \xE5 opprette grunnmuren for softwa
   \ Programmerere gj\xF8r dette for \xE5 organisere kode, dele arbeid med andre, og\
   \ for\u2026"
 title: "\xC5 starte et nytt prosjekt"
+weight: 1
 ---
-
-{{< edit_this_page >}}
 
 ## Hva & Hvorfor?
 Å starte et nytt prosjekt betyr å opprette grunnmuren for softwareutvikling. Programmerere gjør dette for å organisere kode, dele arbeid med andre, og for å sette opp et gjennomtenkt rammeverk for applikasjonen de utvikler.

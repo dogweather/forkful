@@ -11,9 +11,8 @@ model: gpt-4-0125-preview
 summary: "Het genereren van willekeurige getallen in Elm houdt het gebruik van de\
   \ `Random` module in om pseudo-willekeurige getallen te produceren, die handig zijn\u2026"
 title: Genereren van willekeurige getallen
+weight: 12
 ---
-
-{{< edit_this_page >}}
 
 ## Wat & Waarom?
 Het genereren van willekeurige getallen in Elm houdt het gebruik van de `Random` module in om pseudo-willekeurige getallen te produceren, die handig zijn voor een verscheidenheid aan taken zoals spellen, simulaties, en zelfs als onderdeel van algoritmen die stochastische processen vereisen. Deze mogelijkheid stelt ontwikkelaars in staat onvoorspelbaarheid en variëteit aan hun applicaties toe te voegen, wat de gebruikerservaring en functionaliteit verbetert.

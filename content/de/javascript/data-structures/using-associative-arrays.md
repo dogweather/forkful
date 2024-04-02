@@ -10,9 +10,8 @@ model: gpt-4-0125-preview
 summary: "Assoziative Arrays, oder wie sie in JavaScript genauer bekannt sind, Objekte,\
   \ erm\xF6glichen es Ihnen, Schl\xFCssel mit Werten zu verbinden. Das ist besonders\u2026"
 title: Verwendung von assoziativen Arrays
+weight: 15
 ---
-
-{{< edit_this_page >}}
 
 ## Was & Warum?
 

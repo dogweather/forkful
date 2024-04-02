@@ -11,9 +11,8 @@ summary: "Associativa arrayer, eller objekt i TypeScript, l\xE5ter dig anv\xE4nd
   \ str\xE4ngar (eller nycklar) f\xF6r att komma \xE5t v\xE4rdepar. Programmerare\
   \ anv\xE4nder dem f\xF6r mer\u2026"
 title: "Att anv\xE4nda associativa arrayer"
+weight: 15
 ---
-
-{{< edit_this_page >}}
 
 ## Vad & varför?
 

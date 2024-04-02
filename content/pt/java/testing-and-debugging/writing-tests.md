@@ -11,9 +11,8 @@ summary: "Escrever testes em Java \xE9 sobre verificar se o seu c\xF3digo se com
   \ conforme esperado sob v\xE1rias condi\xE7\xF5es. Programadores escrevem testes\
   \ para prevenir\u2026"
 title: Escrevendo testes
+weight: 36
 ---
-
-{{< edit_this_page >}}
 
 ## O quê e Por quê?
 Escrever testes em Java é sobre verificar se o seu código se comporta conforme esperado sob várias condições. Programadores escrevem testes para prevenir bugs, garantir que a funcionalidade permaneça correta após mudanças e promover bons princípios de design de software.

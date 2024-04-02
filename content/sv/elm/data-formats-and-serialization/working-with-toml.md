@@ -8,9 +8,8 @@ model: gpt-4-0125-preview
 summary: "TOML, som st\xE5r f\xF6r Toms Uppenbara, Minimala Spr\xE5k, \xE4r ett data-serialiseringsspr\xE5\
   k. Elm-programmerare anv\xE4nder det f\xF6r att hantera konfigurationsdata\u2026"
 title: Att arbeta med TOML
+weight: 39
 ---
-
-{{< edit_this_page >}}
 
 ## Vad & Varför?
 TOML, som står för Toms Uppenbara, Minimala Språk, är ett data-serialiseringsspråk. Elm-programmerare använder det för att hantera konfigurationsdata eftersom det är läsligt för människor och kartlägger snyggt till nyckel-värdepar som behövs i applikationer.

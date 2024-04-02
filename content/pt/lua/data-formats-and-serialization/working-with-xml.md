@@ -8,9 +8,8 @@ model: gpt-4-0125-preview
 summary: "Trabalhar com XML envolve analisar e manipular documentos XML usando c\xF3\
   digo. Programadores fazem isso para ler, escrever e modificar dados em um formato\u2026"
 title: Trabalhando com XML
+weight: 40
 ---
-
-{{< edit_this_page >}}
 
 ## O Que & Por Quê?
 Trabalhar com XML envolve analisar e manipular documentos XML usando código. Programadores fazem isso para ler, escrever e modificar dados em um formato estruturado e portátil, amplamente usado para troca e armazenamento de dados.

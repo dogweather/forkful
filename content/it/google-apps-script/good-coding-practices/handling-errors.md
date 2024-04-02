@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "La gestione degli errori in Google Apps Script riguarda la previsione, l'intercettazione\
   \ e la risposta alle eccezioni o errori che si verificano durante\u2026"
 title: Gestione degli errori
+weight: 16
 ---
-
-{{< edit_this_page >}}
 
 ## Cosa & Perché?
 

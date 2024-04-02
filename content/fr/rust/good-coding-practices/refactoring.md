@@ -7,9 +7,8 @@ model: gpt-4-0125-preview
 summary: "Le remaniement de code (ou refactoring) est le processus de restructuration\
   \ du code informatique existant\u2014changer la facturation\u2014sans modifier son\u2026"
 title: Remaniement de code
+weight: 19
 ---
-
-{{< edit_this_page >}}
 
 ## Quoi et Pourquoi ?
 

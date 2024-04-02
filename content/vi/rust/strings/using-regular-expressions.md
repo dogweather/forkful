@@ -13,9 +13,8 @@ summary: "Bi\u1EC3u th\u1EE9c ch\xEDnh quy, hay c\xF2n g\u1ECDi t\u1EAFt l\xE0 r
   m. L\u1EADp tr\xECnh vi\xEAn s\u1EED d\u1EE5ng regex \u0111\u1EC3 t\xECm ki\u1EBF\
   m, ch\u1EC9nh s\u1EEDa ho\u1EB7c thao\u2026"
 title: "S\u1EED d\u1EE5ng bi\u1EC3u th\u1EE9c ch\xEDnh quy"
+weight: 11
 ---
-
-{{< edit_this_page >}}
 
 ## Cái gì & Tại sao?
 Biểu thức chính quy, hay còn gọi tắt là regex, là chuỗi các ký tự tạo thành mẫu tìm kiếm. Lập trình viên sử dụng regex để tìm kiếm, chỉnh sửa hoặc thao tác văn bản bằng cách khớp các mẫu phức tạp, thường được sử dụng cho mục đích xác minh hoặc phân tích cú pháp.

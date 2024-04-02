@@ -9,9 +9,8 @@ summary: "Zaokr\u0105glanie liczb oznacza odci\u0119cie cz\u0119\u015Bci dziesi\
   tnych do prostszej warto\u015Bci, kt\xF3ra jest wystarczaj\u0105co dobra w danym\
   \ kontek\u015Bcie. Programi\u015Bci zaokr\u0105glaj\u0105\u2026"
 title: "Zaokr\u0105glanie liczb"
+weight: 13
 ---
-
-{{< edit_this_page >}}
 
 ## Co i dlaczego?
 

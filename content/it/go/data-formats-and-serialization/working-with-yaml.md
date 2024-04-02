@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Lavorare con YAML in Go implica l'analisi di file YAML (YAML Ain't Markup\
   \ Language), uno standard di serializzazione di dati amichevole per l'utente,\u2026"
 title: Lavorare con YAML
+weight: 41
 ---
-
-{{< edit_this_page >}}
 
 ## Cosa e perché?
 

@@ -11,9 +11,8 @@ summary: "Capitaliser une cha\xEEne de caract\xE8res consiste \xE0 modifier la p
   re lettre d'un mot ou d'une phrase enti\xE8re en majuscule, tout en gardant le reste\
   \ des\u2026"
 title: "Mettre une cha\xEEne de caract\xE8res en majuscules"
+weight: 2
 ---
-
-{{< edit_this_page >}}
 
 ## Quoi & Pourquoi ?
 

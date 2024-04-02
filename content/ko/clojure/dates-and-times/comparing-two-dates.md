@@ -20,9 +20,8 @@ summary: "\uB0A0\uC9DC\uB97C \uBE44\uAD50\uD558\uB294 \uAC83\uC740 \uB450 \uB0A0
   \uC744 \uC2E4\uD589\uD558\uAE30 \uC704\uD574 \uB0A0\uC9DC\uB97C \uBE44\uAD50\uD569\
   \uB2C8\uB2E4."
 title: "\uB450 \uB0A0\uC9DC \uBE44\uAD50\uD558\uAE30"
+weight: 27
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why? (무엇과 왜?)
 

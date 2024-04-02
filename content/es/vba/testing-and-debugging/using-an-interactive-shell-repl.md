@@ -10,9 +10,8 @@ model: gpt-4-0125-preview
 summary: "Una consola interactiva, o Bucle Leer-Evaluar-Imprimir (REPL por sus siglas\
   \ en ingl\xE9s), permite a los usuarios introducir comandos, ejecutarlos y ver los\u2026"
 title: Usando un shell interactivo (REPL)
+weight: 34
 ---
-
-{{< edit_this_page >}}
 
 ## Qué y Por Qué?
 

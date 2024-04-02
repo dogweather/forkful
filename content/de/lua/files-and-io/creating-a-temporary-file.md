@@ -7,9 +7,8 @@ model: gpt-4-1106-preview
 summary: "Das Erstellen einer tempor\xE4ren Datei erm\xF6glicht es einem Programm,\
   \ Daten kurzzeitig zu speichern, ohne langfristige Spuren im Dateisystem zu hinterlassen.\u2026"
 title: "Erstellung einer tempor\xE4ren Datei"
+weight: 21
 ---
-
-{{< edit_this_page >}}
 
 ## Was & Warum?
 Das Erstellen einer temporären Datei ermöglicht es einem Programm, Daten kurzzeitig zu speichern, ohne langfristige Spuren im Dateisystem zu hinterlassen. Programmierer nutzen dies für Datentransfers, Zwischenspeicherung oder zum Testen, um die Integrität des regulären Dateisystems zu bewahren.

@@ -10,9 +10,8 @@ model: gpt-4-0125-preview
 summary: "TOML, co oznacza Tom's Obvious, Minimal Language (Oczywisty, Minimalny J\u0119\
   zyk Toma), to format pliku konfiguracyjnego, kt\xF3ry jest \u0142atwy do odczytania\u2026"
 title: Praca z TOML
+weight: 39
 ---
-
-{{< edit_this_page >}}
 
 ## Co i dlaczego?
 

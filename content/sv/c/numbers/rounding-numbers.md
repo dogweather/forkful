@@ -11,9 +11,8 @@ summary: "Avrundning av tal \xE4r processen att justera siffrorna i ett tal f\xF
   r att minska dess precision enligt vissa regler, antingen mot det n\xE4rmaste hela\
   \ talet\u2026"
 title: Avrundning av nummer
+weight: 13
 ---
-
-{{< edit_this_page >}}
 
 ## Vad & Varför?
 

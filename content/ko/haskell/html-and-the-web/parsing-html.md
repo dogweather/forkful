@@ -23,9 +23,8 @@ summary: "Haskell\uC5D0\uC11C HTML\uC744 \uD30C\uC2F1\uD558\uB294 \uAC83\uC740 \
   \uD130 \uB9C8\uC774\uB2DD \uB4F1\uC758 \uC791\uC5C5\uC5D0 \uD544\uC218\uC801\uC774\
   \uBA70,\u2026"
 title: "HTML \uD30C\uC2F1"
+weight: 43
 ---
-
-{{< edit_this_page >}}
 
 ## 무엇 & 왜?
 

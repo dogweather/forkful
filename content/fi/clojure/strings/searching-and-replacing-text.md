@@ -9,9 +9,8 @@ summary: "Tekstin etsiminen ja korvaaminen on prosessi, jossa l\xF6ydet\xE4\xE4n
   \ merkkijonot ja korvataan ne toisilla. Ohjelmoijat k\xE4ytt\xE4v\xE4t t\xE4t\xE4\
   \ tekstin\u2026"
 title: Tekstin etsiminen ja korvaaminen
+weight: 10
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 Tekstin etsiminen ja korvaaminen on prosessi, jossa löydetään tietyt merkkijonot ja korvataan ne toisilla. Ohjelmoijat käyttävät tätä tekstin päivittämiseen, virheiden korjaamiseen tai datan muotoiluun.

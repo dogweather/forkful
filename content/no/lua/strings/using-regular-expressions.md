@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Regul\xE6re uttrykk i programmering tillater samsvarss\xF8king og manipulasjon\
   \ av strenger basert p\xE5 spesifikke m\xF8nstre. Programmerere bruker dem til oppgaver\u2026"
 title: "Bruke regul\xE6re uttrykk"
+weight: 11
 ---
-
-{{< edit_this_page >}}
 
 ## Hva og hvorfor?
 

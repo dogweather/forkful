@@ -11,9 +11,8 @@ summary: "I PowerShell er det \xE5 sjekke om en mappe finnes en vanlig oppgave s
   \ hjelper skript \xE5 ta beslutninger basert p\xE5 filsystemets struktur\u2014som\
   \ \xE5 unng\xE5 feil\u2026"
 title: Sjekker om en mappe eksisterer
+weight: 20
 ---
-
-{{< edit_this_page >}}
 
 ## Hva & Hvorfor?
 I PowerShell er det å sjekke om en mappe finnes en vanlig oppgave som hjelper skript å ta beslutninger basert på filsystemets struktur—som å unngå feil ved å bekrefte at en målmappe er på plass før man forsøker å lese fra eller skrive til den. Det er essensielt for å sikre at skriptet ditt oppfører seg pålitelig i ulike miljøer.

@@ -21,9 +21,8 @@ summary: "CSV(Comma-Separated Values, \uC27C\uD45C\uB85C \uAD6C\uBD84\uB41C \uAC
   \uB2A5\uD558\uAC8C \uD558\uAC70\uB098, \uB300\uC6A9\uB7C9 \uB370\uC774\uD130 \uC138\
   \uD2B8\uB97C \uD6A8\uC728\uC801\uC774\uACE0\u2026"
 title: "CSV\uC640 \uD568\uAED8 \uC791\uC5C5\uD558\uAE30"
+weight: 37
 ---
-
-{{< edit_this_page >}}
 
 ## 무엇인가 & 왜인가?
 CSV(Comma-Separated Values, 쉼표로 구분된 값) 파일을 다루는 것은 표 형태의 데이터를 저장하는 일반 텍스트 파일에서 읽거나 쓰는 것을 말합니다. 프로그래머들은 다른 프로그램, 시스템 간의 데이터 공유를 가능하게 하거나, 대용량 데이터 세트를 효율적이고 인간이 읽을 수 있는 형식으로 처리하기 위해 이 작업을 합니다.

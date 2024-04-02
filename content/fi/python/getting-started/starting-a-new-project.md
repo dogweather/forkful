@@ -12,9 +12,8 @@ summary: "Uuden projektin aloittaminen Pythonilla tarkoittaa rakenteellisen, yll
   pidett\xE4v\xE4n kehyksen pystytt\xE4mist\xE4 alusta alkaen. Ohjelmoijat tekev\xE4\
   t n\xE4in\u2026"
 title: Uuden projektin aloittaminen
+weight: 1
 ---
-
-{{< edit_this_page >}}
 
 ## Mikä & Miksi?
 

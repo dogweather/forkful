@@ -8,9 +8,8 @@ model: gpt-4-1106-preview
 summary: "Stringverkettung bedeutet, zwei oder mehr Strings zu einem einzigen zusammenzuf\xFC\
   gen. Programmierer machen das, um dynamische Texte zu erzeugen oder Daten\u2026"
 title: "Zeichenketten verkn\xFCpfen"
+weight: 3
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 Stringverkettung bedeutet, zwei oder mehr Strings zu einem einzigen zusammenzufügen. Programmierer machen das, um dynamische Texte zu erzeugen oder Daten aus verschiedenen Quellen zu kombinieren.

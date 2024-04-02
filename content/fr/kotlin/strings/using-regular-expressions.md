@@ -10,9 +10,8 @@ model: gpt-4-0125-preview
 summary: "Les expressions r\xE9guli\xE8res (regex) sont un outil puissant pour le\
   \ traitement de texte, permettant aux programmeurs de rechercher, correspondre et\u2026"
 title: "Utilisation des expressions r\xE9guli\xE8res"
+weight: 11
 ---
-
-{{< edit_this_page >}}
 
 ## Quoi & Pourquoi ?
 

@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Controleren of een map bestaat in Dart gaat over het verifi\xEBren van de\
   \ aanwezigheid van een map op een gespecificeerd pad op het bestandssysteem voordat\u2026"
 title: Controleren of een map bestaat
+weight: 20
 ---
-
-{{< edit_this_page >}}
 
 ## Wat & Waarom?
 

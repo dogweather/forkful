@@ -8,9 +8,8 @@ model: gpt-4-0125-preview
 summary: "Merkkijonosta lainausmerkkien poistaminen tarkoittaa ymp\xE4r\xF6ivien yksitt\xE4\
   isten (`'`) tai kaksinkertaisten (`\"`) lainausmerkkien poistamista, jotka\u2026"
 title: Merkkijonosta lainausmerkkien poistaminen
+weight: 9
 ---
-
-{{< edit_this_page >}}
 
 ## Mitä & Miksi?
 Merkkijonosta lainausmerkkien poistaminen tarkoittaa ympäröivien yksittäisten (`'`) tai kaksinkertaisten (`"`) lainausmerkkien poistamista, jotka määrittävät merkkijono-literaaleja koodissa. Ohjelmoijat tekevät näin useista syistä, kuten tulosteen muotoilu, käyttäjäsyötteen puhdistaminen tai merkkijonojen valmistelu jäsennykseen tai tallennukseen, joissa lainausmerkit ovat tarpeettomia tai saattavat aiheuttaa virheitä.

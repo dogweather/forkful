@@ -18,9 +18,8 @@ summary: "\uBBF8\uB798 \uB610\uB294 \uACFC\uAC70\uC758 \uB0A0\uC9DC \uACC4\uC0B0
   \ \uAD6C\uD604\uD558\uAE30 \uC704\uD574 \uC774\uB97C \uC0AC\uC6A9\uD569\uB2C8\uB2E4\
   ."
 title: "\uBBF8\uB798\uB098 \uACFC\uAC70\uC758 \uB0A0\uC9DC \uACC4\uC0B0\uD558\uAE30"
+weight: 26
 ---
-
-{{< edit_this_page >}}
 
 ## 무엇 & 왜?
 미래 또는 과거의 날짜 계산은 특정 기간을 더하거나 빼서 새로운 날짜를 얻는 것입니다. 프로그래머들은 예약 시스템, 할인 쿠폰의 만료일 계산 등 다양한 기능을 구현하기 위해 이를 사용합니다.

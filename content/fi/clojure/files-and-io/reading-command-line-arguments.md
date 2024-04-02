@@ -9,9 +9,8 @@ summary: "Komennoriviparametrien lukeminen tarkoittaa argumenttien vastaanottami
   \ suoraan ohjelmalle, kun sen k\xE4ynnist\xE4\xE4 terminaalista. Ohjelmoijat tekev\xE4\
   t sen,\u2026"
 title: Komennoriviparametrien lukeminen
+weight: 23
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 Komennoriviparametrien lukeminen tarkoittaa argumenttien vastaanottamista suoraan ohjelmalle, kun sen käynnistää terminaalista. Ohjelmoijat tekevät sen, jotta voivat antaa dynaamisia syötteitä ja muuttaa ohjelman toimintaa lennosta.

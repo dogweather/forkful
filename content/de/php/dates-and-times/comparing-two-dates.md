@@ -8,9 +8,8 @@ model: gpt-4-1106-preview
 summary: "(Das Was und das Warum) Datumvergleiche? Das ist einfach das Gegen\xFCberstellen\
   \ zweier Zeitpunkte. Wir nutzen das, um Zeitr\xE4ume zu \xFCberpr\xFCfen, Deadlines\u2026"
 title: Vergleich von zwei Daten
+weight: 27
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 (Das Was und das Warum)

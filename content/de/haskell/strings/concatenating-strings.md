@@ -9,9 +9,8 @@ summary: "String-Konkatenation verklebt einfach zwei Textst\xFCcke zu einem l\xE
   ngeren. Programmierer*innen nutzen das, um Nutzerdaten zu verarbeiten, Nachrichten\
   \ zu\u2026"
 title: "Zeichenketten verkn\xFCpfen"
+weight: 3
 ---
-
-{{< edit_this_page >}}
 
 ## Was & Warum?
 String-Konkatenation verklebt einfach zwei Textstücke zu einem längeren. Programmierer*innen nutzen das, um Nutzerdaten zu verarbeiten, Nachrichten zu generieren oder einfach alles dort, wo zusammengesetzte Texte gebraucht werden.

@@ -10,9 +10,8 @@ model: gpt-4-0125-preview
 summary: "Eine interaktive Shell (REPL - Read-Evaluate-Print Loop) f\xFCr Dart erm\xF6\
   glicht es Programmierern, Dart-Code Zeile f\xFCr Zeile dynamisch zu tippen und\u2026"
 title: Verwendung einer interaktiven Shell (REPL)
+weight: 34
 ---
-
-{{< edit_this_page >}}
 
 ## Was & Warum?
 

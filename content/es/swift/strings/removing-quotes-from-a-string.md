@@ -7,9 +7,8 @@ model: gpt-4-0125-preview
 summary: "Eliminar las comillas de una cadena significa quitar cualquier marca de\
   \ comillas que encierre el contenido. Hacemos esto para sanear entradas, preparar\u2026"
 title: Eliminando comillas de una cadena
+weight: 9
 ---
-
-{{< edit_this_page >}}
 
 ## ¿Qué y Por Qué?
 

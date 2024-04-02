@@ -7,9 +7,8 @@ model: gpt-4-1106-preview
 summary: "Envoyer une requ\xEAte HTTP avec une authentification de base, c'est communiquer\
   \ avec un serveur Web en fournissant des identifiants (username/password)\u2026"
 title: "Envoi d'une requ\xEAte HTTP avec authentification de base"
+weight: 45
 ---
-
-{{< edit_this_page >}}
 
 ## Quoi et Pourquoi ?
 Envoyer une requête HTTP avec une authentification de base, c'est communiquer avec un serveur Web en fournissant des identifiants (username/password) encodés en Base64. Les programmeurs l'utilisent pour accéder à des ressources sécurisées via des API ou des services Web.

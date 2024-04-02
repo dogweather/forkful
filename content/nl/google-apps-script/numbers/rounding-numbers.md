@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Afronden van getallen, een fundamenteel concept in computerprogrammering,\
   \ betreft het aanpassen van een getal naar het dichtstbijzijnde gehele getal of\u2026"
 title: Afronden van getallen
+weight: 13
 ---
-
-{{< edit_this_page >}}
 
 ## Wat & Waarom?
 

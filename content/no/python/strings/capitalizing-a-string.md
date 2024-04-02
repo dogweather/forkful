@@ -11,9 +11,8 @@ summary: "\xC5 kapitalisere en streng betyr \xE5 konvertere det f\xF8rste tegnet
   \ en streng til stor bokstav og resten til sm\xE5 bokstaver. Denne operasjonen brukes\
   \ ofte i\u2026"
 title: Sette stor bokstav i en streng
+weight: 2
 ---
-
-{{< edit_this_page >}}
 
 ## Hva & Hvorfor?
 Å kapitalisere en streng betyr å konvertere det første tegnet i en streng til stor bokstav og resten til små bokstaver. Denne operasjonen brukes ofte i databehandling for å normalisere inndata eller forbedre lesbarheten for titler, navn og lignende.

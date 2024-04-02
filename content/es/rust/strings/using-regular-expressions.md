@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Las expresiones regulares, o regex, permiten a los desarrolladores buscar,\
   \ coincidir y manipular cadenas con t\xE9cnicas avanzadas de coincidencia de\u2026"
 title: Usando expresiones regulares
+weight: 11
 ---
-
-{{< edit_this_page >}}
 
 ## Qué y Por Qué?
 

@@ -9,9 +9,8 @@ summary: "Praca z XML obejmuje parsowanie, tworzenie i manipulowanie dokumentami
   \ - j\u0119zykiem znacznik\xF3w do przechowywania i przesy\u0142ania danych. Programi\u015B\
   ci robi\u0105\u2026"
 title: Praca z XML
+weight: 40
 ---
-
-{{< edit_this_page >}}
 
 ## Co i dlaczego?
 Praca z XML obejmuje parsowanie, tworzenie i manipulowanie dokumentami XML - językiem znaczników do przechowywania i przesyłania danych. Programiści robią to, ponieważ wiele systemów nadal wymienia dane w formacie XML, co jest potrzebne do wsparcia dziedziczenia i integracji z istniejącymi technologiami.

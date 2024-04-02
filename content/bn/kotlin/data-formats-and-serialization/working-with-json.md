@@ -22,9 +22,8 @@ summary: "Kotlin-\u098F JSON (JavaScript Object Notation) \u098F\u09B0 \u09B8\u0
   \u09BF\u09AD\u09BF\u09A8\u09CD\u09A8\u2026"
 title: "JSON \u098F\u09B0 \u09B8\u09BE\u09A5\u09C7 \u0995\u09BE\u099C \u0995\u09B0\
   \u09BE"
+weight: 38
 ---
-
-{{< edit_this_page >}}
 
 ## কি এবং কেন?
 Kotlin-এ JSON (JavaScript Object Notation) এর সাথে কাজ করা মানে JSON ডাটা পার্স এবং জেনারেট করা। প্রোগ্রামাররা এটি করে থাকেন একটি অ্যাপ্লিকেশনের বিভিন্ন স্তরের মধ্যে বা ওয়েব সার্ভিস সহ ডাটা আদান-প্রদান সহজ করার জন্য, JSON এর হালকা ও মানব-পাঠযোগ্য ফরম্যাটের কারণে।

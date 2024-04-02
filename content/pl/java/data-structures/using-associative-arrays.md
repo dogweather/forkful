@@ -11,9 +11,8 @@ summary: "W Javie tablice asocjacyjne, czyli mapy, pozwalaj\u0105 przechowywa\u0
   \ pary klucz-warto\u015B\u0107 do wydajnego wyszukiwania i manipulowania danymi.\
   \ Programi\u015Bci u\u017Cywaj\u0105\u2026"
 title: Korzystanie z tablic asocjacyjnych
+weight: 15
 ---
-
-{{< edit_this_page >}}
 
 ## Co i dlaczego?
 

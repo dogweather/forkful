@@ -9,9 +9,8 @@ summary: "(Mit\xE4 & Miksi?) HTML:n j\xE4sent\xE4minen tarkoittaa HTML-koodin ra
   \ lukemista ja sen sis\xE4ll\xF6n muuntamista k\xE4sitelt\xE4v\xE4ksi tietorakenteeksi.\
   \ Ohjelmoijat\u2026"
 title: "HTML:n j\xE4sent\xE4minen"
+weight: 43
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 (Mitä & Miksi?)

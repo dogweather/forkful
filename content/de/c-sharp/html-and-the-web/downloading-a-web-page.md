@@ -7,9 +7,8 @@ model: gpt-4-1106-preview
 summary: "Das Herunterladen einer Webseite bedeutet das Abrufen des Inhalts \xFCber\
   \ das Internet auf deinen Computer. Programmierer tun dies, um Daten zu sammeln,\u2026"
 title: Webseite herunterladen
+weight: 42
 ---
-
-{{< edit_this_page >}}
 
 ## Was & Warum?
 Das Herunterladen einer Webseite bedeutet das Abrufen des Inhalts über das Internet auf deinen Computer. Programmierer tun dies, um Daten zu sammeln, Inhalte zu prüfen oder Webanwendungen zu testen.

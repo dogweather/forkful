@@ -7,9 +7,8 @@ model: gpt-4-0125-preview
 summary: "Manipolare file con one-liner CLI in Ruby consiste nell'eseguire operazioni\
   \ comuni sui file direttamente dal tuo terminale utilizzando script Ruby. \xC8 un\u2026"
 title: Manipolazione di file con one-liner da CLI
+weight: 31
 ---
-
-{{< edit_this_page >}}
 
 ## Cosa & Perché?
 

@@ -11,9 +11,8 @@ summary: "\xC5 analysere en dato fra en streng er en vanlig oppgave n\xE5r man h
   ndterer brukerinndata eller leser data fra filer, som inneb\xE6rer \xE5 konvertere\
   \ strengdata\u2026"
 title: Analysering av en dato fra en streng
+weight: 30
 ---
-
-{{< edit_this_page >}}
 
 ## Hva & Hvorfor?
 

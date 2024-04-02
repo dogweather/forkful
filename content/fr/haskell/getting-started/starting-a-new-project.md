@@ -9,9 +9,8 @@ summary: "Commencer un nouveau projet en Haskell, c'est partir de z\xE9ro pour c
   er un programme. Les programmeurs se lancent dans cette aventure pour concr\xE9\
   tiser une\u2026"
 title: Lancement d'un nouveau projet
+weight: 1
 ---
-
-{{< edit_this_page >}}
 
 ## Quoi & Pourquoi?
 Commencer un nouveau projet en Haskell, c'est partir de zéro pour créer un programme. Les programmeurs se lancent dans cette aventure pour concrétiser une idée, résoudre un problème précis ou par simple curiosité pour explorer un nouveau concept de programmation.

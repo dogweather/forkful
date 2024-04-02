@@ -11,9 +11,8 @@ model: gpt-4-0125-preview
 summary: "Foutafhandeling gaat over het verwachten van het onverwachte in code - fouten\
   \ en problemen gracieus beheren zonder te crashen. Programmeurs doen dit om de\u2026"
 title: Fouten afhandelen
+weight: 16
 ---
-
-{{< edit_this_page >}}
 
 ## Wat & Waarom?
 

@@ -11,9 +11,8 @@ summary: "Rejestrowanie (logowanie) w programowaniu polega na zapisywaniu zdarze
   , b\u0142\u0119d\xF3w lub wybitnych wyst\u0105pie\u0144 podczas dzia\u0142ania programu.\
   \ Programi\u015Bci robi\u0105 to w\u2026"
 title: Rejestrowanie
+weight: 17
 ---
-
-{{< edit_this_page >}}
 
 ## Co i dlaczego?
 

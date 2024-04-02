@@ -13,9 +13,8 @@ summary: "REPL, vi\u1EBFt t\u1EAFt c\u1EE7a Read-Eval-Print Loop (V\xF2ng l\u1EB
   p tr\xECnh l\u1EA5y \u0111\u1EA7u v\xE0o \u0111\u01A1n l\u1EBB t\u1EEB ng\u01B0\u1EDD\
   i d\xF9ng, th\u1EF1c thi ch\xFAng v\xE0 tr\u1EA3\u2026"
 title: "S\u1EED d\u1EE5ng v\u1ECF t\u01B0\u01A1ng t\xE1c (REPL)"
+weight: 34
 ---
-
-{{< edit_this_page >}}
 
 ## Cái gì & Tại sao?
 REPL, viết tắt của Read-Eval-Print Loop (Vòng lặp Đọc-Tính toán-In), là một môi trường lập trình lấy đầu vào đơn lẻ từ người dùng, thực thi chúng và trả lại kết quả cho người dùng. Lập trình viên sử dụng nó để thử nghiệm nhanh, học tập, gỡ lỗi, hoặc thực hiện các phép tính tức thời.

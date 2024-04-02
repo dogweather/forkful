@@ -10,9 +10,8 @@ model: gpt-4-0125-preview
 summary: "Opdrachtregelargumenten stellen gebruikers in staat om data aan jouw programma\
   \ te voeden wanneer ze het starten. Programmeurs lezen deze om het gedrag van\u2026"
 title: Commandoregelargumenten lezen
+weight: 23
 ---
-
-{{< edit_this_page >}}
 
 ## Wat & Waarom?
 Opdrachtregelargumenten stellen gebruikers in staat om data aan jouw programma te voeden wanneer ze het starten. Programmeurs lezen deze om het gedrag van het programma aan te passen zonder waarden hardcoded in te voeren.

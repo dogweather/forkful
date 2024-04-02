@@ -21,9 +21,8 @@ summary: "Visual Basic for Applications(VBA)\uC5D0\uC11C\uC758 \uC5F0\uACB0 \uC7
   \uD558\uBA74, \uC774\uB97C \uD1B5\uD574 \uBB38\uC790\uC5F4 \uB370\uC774\uD130\uC758\
   \u2026"
 title: "\uBB38\uC790\uC5F4 \uC5F0\uACB0\uD558\uAE30"
+weight: 3
 ---
-
-{{< edit_this_page >}}
 
 ## 무엇이며 왜 필요한가?
 

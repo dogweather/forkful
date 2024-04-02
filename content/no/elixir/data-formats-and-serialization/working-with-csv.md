@@ -11,9 +11,8 @@ summary: "\xC5 jobbe med CSV-filer (kommaseparerte verdier) inneb\xE6rer \xE5 le
   \ fra og skrive data til disse filene, noe som er en vanlig n\xF8dvendighet for\
   \ oppgaver som\u2026"
 title: Arbeide med CSV
+weight: 37
 ---
-
-{{< edit_this_page >}}
 
 ## Hva & Hvorfor?
 

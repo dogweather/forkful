@@ -8,9 +8,8 @@ model: gpt-4-1106-preview
 summary: "S\xF6k och ers\xE4tt handlar om att hitta specifika textstr\xE4ngar och\
   \ byta ut dem mot andra. Programmerare g\xF6r detta f\xF6r att effektivisera uppdateringar,\u2026"
 title: "S\xF6kning och ers\xE4ttning av text"
+weight: 10
 ---
-
-{{< edit_this_page >}}
 
 ## Vad & Varför?
 Sök och ersätt handlar om att hitta specifika textsträngar och byta ut dem mot andra. Programmerare gör detta för att effektivisera uppdateringar, korrigera fel, eller manipulera data.

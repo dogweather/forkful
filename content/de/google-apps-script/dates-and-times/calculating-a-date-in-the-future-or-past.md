@@ -11,9 +11,8 @@ summary: "Die Berechnung eines Datums in der Zukunft oder der Vergangenheit hand
   \ vom Manipulieren von Datumsobjekten, um Daten \xFCber das gegenw\xE4rtige Datum\
   \ hinaus\u2026"
 title: "Berechnung eines zuk\xFCnftigen oder vergangenen Datums"
+weight: 26
 ---
-
-{{< edit_this_page >}}
 
 ## Was & Warum?
 

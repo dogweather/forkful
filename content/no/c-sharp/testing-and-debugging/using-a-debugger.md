@@ -1,14 +1,15 @@
 ---
 date: 2024-01-26 03:48:24.443494-07:00
-description: "\xC5 bruke en feils\xF8ker betyr \xE5 ta i bruk spesialiserte verkt\xF8\
-  y for \xE5 teste og diagnostisere kode. Programutviklere gj\xF8r det for \xE5 knuse\
-  \ feil, forst\xE5\u2026"
+description: "Forestil deg at du har et lite program som ikke oppf\xF8rer seg riktig:\
+  \ ```C# static void Main() { int resultat = Sum(1, 2); Console.WriteLine(resultat);\
+  \ }\u2026"
 lastmod: '2024-03-13T22:44:40.800345-06:00'
 model: gpt-4-0125-preview
-summary: "\xC5 bruke en feils\xF8ker betyr \xE5 ta i bruk spesialiserte verkt\xF8\
-  y for \xE5 teste og diagnostisere kode. Programutviklere gj\xF8r det for \xE5 knuse\
-  \ feil, forst\xE5\u2026"
+summary: "Forestil deg at du har et lite program som ikke oppf\xF8rer seg riktig:\
+  \ ```C# static void Main() { int resultat = Sum(1, 2); Console.WriteLine(resultat);\
+  \ }\u2026"
 title: "\xC5 bruke en feils\xF8ker"
+weight: 35
 ---
 
 ## Hvordan:

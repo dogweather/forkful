@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "L'analyse du HTML dans les projets Arduino consiste \xE0 extraire des informations\
   \ des pages Web. Les programmeurs font cela pour permettre \xE0 leurs\u2026"
 title: Analyse Syntaxique du HTML
+weight: 43
 ---
-
-{{< edit_this_page >}}
 
 ## Quoi & Pourquoi ?
 

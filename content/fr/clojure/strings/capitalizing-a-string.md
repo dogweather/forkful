@@ -11,9 +11,8 @@ summary: "La capitalisation d'une cha\xEEne implique de modifier la cha\xEEne af
   \ que son premier caract\xE8re soit en majuscule, tandis que le reste de la cha\xEE\
   ne demeure\u2026"
 title: "Mettre en majuscule une cha\xEEne"
+weight: 2
 ---
-
-{{< edit_this_page >}}
 
 ## Quoi & Pourquoi ?
 La capitalisation d'une chaîne implique de modifier la chaîne afin que son premier caractère soit en majuscule, tandis que le reste de la chaîne demeure inchangé. Les programmeurs réalisent souvent la capitalisation des chaînes pour assurer la cohérence des données, spécialement pour les noms et les lieux, ou pour se conformer aux règles grammaticales dans les interfaces utilisateurs.

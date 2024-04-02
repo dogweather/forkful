@@ -11,9 +11,8 @@ summary: "Escrever para o erro padr\xE3o (stderr) consiste em direcionar mensage
   \ de erro e diagn\xF3sticos para o stream stderr, separando-os da sa\xEDda padr\xE3\
   o (stdout).\u2026"
 title: "Escrevendo para o erro padr\xE3o"
+weight: 25
 ---
-
-{{< edit_this_page >}}
 
 ## O Que & Por Quê?
 Escrever para o erro padrão (stderr) consiste em direcionar mensagens de erro e diagnósticos para o stream stderr, separando-os da saída padrão (stdout). Programadores fazem isso para diferenciar a saída regular do programa das mensagens de erro, permitindo um depuração e registro de logs mais eficazes.

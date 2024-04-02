@@ -7,9 +7,8 @@ model: gpt-4-1106-preview
 summary: "Avviare un nuovo progetto Kotlin significa preparare l'ambiente per scrivere\
   \ codice. Lo facciamo perch\xE9 abbiamo un'idea da trasformare in un'app\u2026"
 title: Avvio di un nuovo progetto
+weight: 1
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why? - Cosa e Perché?
 Avviare un nuovo progetto Kotlin significa preparare l'ambiente per scrivere codice. Lo facciamo perché abbiamo un'idea da trasformare in un'app funzionante.

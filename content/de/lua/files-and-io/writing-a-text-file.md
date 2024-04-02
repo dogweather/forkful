@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Das Schreiben in eine Textdatei in Lua beinhaltet das Erstellen oder \xD6\
   ffnen einer Datei im Schreibmodus und anschlie\xDFend die Verwendung von\u2026"
 title: Eine Textdatei schreiben
+weight: 24
 ---
-
-{{< edit_this_page >}}
 
 ## Was & Warum?
 

@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Lire les arguments de ligne de commande dans Google Apps Script est un peu\
   \ un abus de langage, car contrairement aux interfaces de ligne de commande\u2026"
 title: Lecture des arguments de ligne de commande
+weight: 23
 ---
-
-{{< edit_this_page >}}
 
 ## Quoi & Pourquoi ?
 

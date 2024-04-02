@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "El an\xE1lisis (parseo) de HTML se trata de extraer datos o informaci\xF3\
   n del contenido HTML, una tarea com\xFAn al trabajar con datos web. Los programadores\u2026"
 title: Analizando HTML
+weight: 43
 ---
-
-{{< edit_this_page >}}
 
 ## Qué y Por Qué?
 

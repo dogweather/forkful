@@ -9,9 +9,8 @@ summary: "\xC5 finne lengden p\xE5 en streng betyr \xE5 telle hvor mange tegn de
   \ inneholder. Programmerere gj\xF8r dette for validering, begrensning av input,\
   \ eller for \xE5\u2026"
 title: "Finn lengden p\xE5 en streng"
+weight: 7
 ---
-
-{{< edit_this_page >}}
 
 ## Hva & Hvorfor?
 Å finne lengden på en streng betyr å telle hvor mange tegn den inneholder. Programmerere gjør dette for validering, begrensning av input, eller for å løkke gjennom hver bokstav.

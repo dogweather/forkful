@@ -9,9 +9,8 @@ summary: "Interaktive Shells oder REPLs (Read-Eval-Print Schleifen) erm\xF6glich
   \ es Ihnen, Code spontan auszuf\xFChren, Funktionen, Algorithmen zu testen oder\
   \ mit Ideen\u2026"
 title: Nutzung einer interaktiven Shell (REPL)
+weight: 34
 ---
-
-{{< edit_this_page >}}
 
 ## Was & Warum?
 Interaktive Shells oder REPLs (Read-Eval-Print Schleifen) ermöglichen es Ihnen, Code spontan auszuführen, Funktionen, Algorithmen zu testen oder mit Ideen herumzuspielen. Sie sind die Notizblöcke des Codierens, schnell und unkompliziert, ohne eine vollständige Entwicklungs­umgebung einrichten zu müssen.

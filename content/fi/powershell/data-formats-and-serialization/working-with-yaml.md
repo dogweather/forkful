@@ -11,9 +11,8 @@ summary: "YAML, tai YAML Ain't Markup Language, on ihmisen luettavissa oleva dat
   \ serialisointikieli. Ohjelmoijat k\xE4ytt\xE4v\xE4t sit\xE4 usein konfiguraatiotiedostojen\
   \ ja\u2026"
 title: "Ty\xF6skentely YAML:n kanssa"
+weight: 41
 ---
-
-{{< edit_this_page >}}
 
 ## Mikä ja miksi?
 YAML, tai YAML Ain't Markup Language, on ihmisen luettavissa oleva datan serialisointikieli. Ohjelmoijat käyttävät sitä usein konfiguraatiotiedostojen ja datan siirron eri kielten välillä. Sen yksinkertaisuus ja luettavuus tekevät siitä erityisen suositun tehtäviin, jotka liittyvät ympäristöjen, sovellusten tai palvelujen perustamiseen, joissa konfiguraatioiden on oltava kriittisiä ja niiden tulee olla helposti ymmärrettäviä ja muokattavia.

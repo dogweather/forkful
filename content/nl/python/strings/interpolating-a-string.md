@@ -12,9 +12,8 @@ summary: "String interpolatie is de methode van het invoegen van expressies binn
   \ string literals. Programmeurs gebruiken het om dynamisch waarden in strings in\
   \ te\u2026"
 title: Een string interpoleren
+weight: 8
 ---
-
-{{< edit_this_page >}}
 
 ## Wat & Waarom?
 String interpolatie is de methode van het invoegen van expressies binnen string literals. Programmeurs gebruiken het om dynamisch waarden in strings in te voegen, wat de code leesbaarder en schoner maakt dan traditionele stringconcatenatie.

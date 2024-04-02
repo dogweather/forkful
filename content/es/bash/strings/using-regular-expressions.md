@@ -11,9 +11,8 @@ summary: "Las expresiones regulares (regex) en Bash te permiten buscar, manipula
   \ y manejar cadenas de caracteres y archivos bas\xE1ndote en patrones espec\xED\
   ficos. Los\u2026"
 title: Usando expresiones regulares
+weight: 11
 ---
-
-{{< edit_this_page >}}
 
 ## Qué y Por Qué?
 

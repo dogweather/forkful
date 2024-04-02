@@ -9,9 +9,8 @@ summary: "Nedlasting av en nettside betyr \xE5 hente HTML-koden fra en nettadres
   \ til lokalt lagringsmedium. Programmerere gj\xF8r dette for \xE5 analysere innhold,\
   \ teste\u2026"
 title: Nedlasting av en nettside
+weight: 42
 ---
-
-{{< edit_this_page >}}
 
 ## Hva & Hvorfor?
 Nedlasting av en nettside betyr å hente HTML-koden fra en nettadresse til lokalt lagringsmedium. Programmerere gjør dette for å analysere innhold, teste nettsider eller automatisere datainnsamling.

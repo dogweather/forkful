@@ -8,9 +8,8 @@ model: gpt-4-1106-preview
 summary: "Cr\xE9er un fichier temporaire, c'est comme griffonner une note sur un bout\
   \ de papier pour ne pas oublier quelque chose d'important - sauf qu'on le fait sur\u2026"
 title: "Cr\xE9ation d'un fichier temporaire"
+weight: 21
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why? (Quoi et Pourquoi?)
 Créer un fichier temporaire, c'est comme griffonner une note sur un bout de papier pour ne pas oublier quelque chose d'important - sauf qu'on le fait sur l'ordinateur. Les programmeurs en créent pour tester des bouts de code, gérer des données éphémères ou déboguer sans risquer d'affecter des fichiers permanents.

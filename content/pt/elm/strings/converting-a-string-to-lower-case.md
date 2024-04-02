@@ -7,9 +7,8 @@ model: gpt-4-1106-preview
 summary: "Converter uma string para letras min\xFAsculas significa transformar todas\
   \ as letras mai\xFAsculas da string em sua forma min\xFAscula correspondente.\u2026"
 title: "Convertendo uma string para min\xFAsculas"
+weight: 4
 ---
-
-{{< edit_this_page >}}
 
 ## O Que & Porquê?
 

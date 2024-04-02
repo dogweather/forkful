@@ -9,9 +9,8 @@ summary: "Arrotondare i numeri significa tagliare un numero a una precisione spe
   \ I programmatori lo fanno per controllare l'output numerico per leggibilit\xE0\
   ,\u2026"
 title: Arrotondamento dei numeri
+weight: 13
 ---
-
-{{< edit_this_page >}}
 
 ## Che cosa & Perché?
 Arrotondare i numeri significa tagliare un numero a una precisione specifica. I programmatori lo fanno per controllare l'output numerico per leggibilità, scopi di visualizzazione, o quando è richiesta una precisione specifica dopo operazioni che producono risultati in virgola mobile.

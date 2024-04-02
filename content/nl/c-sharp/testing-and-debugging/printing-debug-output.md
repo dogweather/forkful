@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Debug-output afdrukken gaat over het uitspuwen van informatie die cruciaal\
   \ is om te begrijpen wat er onder de motorkap van je code gebeurt. Programmeurs\u2026"
 title: Debug-output afdrukken
+weight: 33
 ---
-
-{{< edit_this_page >}}
 
 ## Wat & Waarom?
 Debug-output afdrukken gaat over het uitspuwen van informatie die cruciaal is om te begrijpen wat er onder de motorkap van je code gebeurt. Programmeurs doen dit om variabelenwaarden, de stroom van uitvoering te volgen, en om bugs op te sporen—soort van als een spoor van broodkruimels in een digitaal bos.

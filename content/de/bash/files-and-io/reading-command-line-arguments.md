@@ -7,9 +7,8 @@ model: gpt-4-1106-preview
 summary: "Kommandozeilenargumente sind Parameter, die einem Bash-Skript \xFCbergeben\
   \ werden, um sein Verhalten dynamisch anzupassen. Programmierer nutzen dies, um\u2026"
 title: Lesen von Kommandozeilenargumenten
+weight: 23
 ---
-
-{{< edit_this_page >}}
 
 ## Was & Warum?
 Kommandozeilenargumente sind Parameter, die einem Bash-Skript übergeben werden, um sein Verhalten dynamisch anzupassen. Programmierer nutzen dies, um Skripte flexibler und wiederverwendbar zu machen – ganz ohne manuelle Änderungen im Skript selbst.

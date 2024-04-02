@@ -7,9 +7,8 @@ model: gpt-4-1106-preview
 summary: "L'interpolazione di stringhe permette di inserire valori variabili all'interno\
   \ di una stringa. I programmatori la utilizzano per rendere il codice pi\xF9\u2026"
 title: Interpolazione di una stringa
+weight: 8
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 L'interpolazione di stringhe permette di inserire valori variabili all'interno di una stringa. I programmatori la utilizzano per rendere il codice più leggibile e per comporre messaggi dinamicamente.

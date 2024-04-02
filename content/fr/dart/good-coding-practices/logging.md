@@ -11,9 +11,8 @@ summary: "Le journalisation dans Dart fait r\xE9f\xE9rence au processus d\u2019e
   \ de diff\xE9rents niveaux d\u2019information pendant l\u2019ex\xE9cution d\u2019\
   un programme. Les\u2026"
 title: Journalisation
+weight: 17
 ---
-
-{{< edit_this_page >}}
 
 ## Quoi & Pourquoi ?
 

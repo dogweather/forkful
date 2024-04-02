@@ -11,9 +11,8 @@ summary: "Pisanie pliku tekstowego w C# wi\u0105\u017Ce si\u0119 z programowym t
   \ lub modyfikowaniem plik\xF3w tekstowych w systemie plik\xF3w - podstawowym zadaniem\
   \ dla wielu\u2026"
 title: Pisanie pliku tekstowego
+weight: 24
 ---
-
-{{< edit_this_page >}}
 
 ## Co i dlaczego?
 Pisanie pliku tekstowego w C# wiąże się z programowym tworzeniem lub modyfikowaniem plików tekstowych w systemie plików - podstawowym zadaniem dla wielu aplikacji, takich jak logowanie, eksport danych czy zarządzanie konfiguracją. Programiści wykonują tę operację w celu zachowania danych między sesjami, udostępnienia informacji między systemami lub zapisania wyników w formie czytelnej dla człowieka.

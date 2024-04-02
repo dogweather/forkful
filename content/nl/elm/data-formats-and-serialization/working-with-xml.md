@@ -10,9 +10,8 @@ model: gpt-4-0125-preview
 summary: "Werken met XML betekent het parseren, transformeren en genereren van XML-documenten\
   \ in Elm. Dit wordt gedaan om te interageren met veel webdiensten en\u2026"
 title: Werken met XML
+weight: 40
 ---
-
-{{< edit_this_page >}}
 
 ## Wat & Waarom?
 Werken met XML betekent het parseren, transformeren en genereren van XML-documenten in Elm. Dit wordt gedaan om te interageren met veel webdiensten en verouderde systemen die XML gebruiken als hun gegevensformaat.

@@ -11,9 +11,8 @@ summary: "P\xE4iv\xE4m\xE4\xE4r\xE4n j\xE4sennys merkkijonosta tarkoittaa merkki
   \ muodon tulkintaa p\xE4iv\xE4m\xE4\xE4r\xE4n osien, kuten p\xE4iv\xE4n, kuukauden\
   \ ja vuoden, erottamiseksi.\u2026"
 title: "P\xE4iv\xE4m\xE4\xE4r\xE4n j\xE4sennys merkkijonosta"
+weight: 30
 ---
-
-{{< edit_this_page >}}
 
 ## Mikä ja miksi?
 Päivämäärän jäsennys merkkijonosta tarkoittaa merkkijonon muodon tulkintaa päivämäärän osien, kuten päivän, kuukauden ja vuoden, erottamiseksi. Ohjelmoijat tekevät tämän käsitelläkseen käyttäjän syötettä, lukeakseen data-tiedostoja tai ollakseen vuorovaikutuksessa API:en kanssa, jotka välittävät päivämääriä merkkijonomuodossa. Se on olennaista datan käsittelyä, validointia ja päivämäärien aritmetiikan suorittamista varten sovelluksissa.

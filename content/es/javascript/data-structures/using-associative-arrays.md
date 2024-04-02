@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Los arreglos asociativos, o como se conocen m\xE1s precisamente en JavaScript,\
   \ objetos, te permiten mapear claves a valores. Esto es extremadamente \xFAtil\u2026"
 title: Uso de matrices asociativas
+weight: 15
 ---
-
-{{< edit_this_page >}}
 
 ## ¿Qué y Por Qué?
 

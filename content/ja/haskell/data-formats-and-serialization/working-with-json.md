@@ -7,9 +7,8 @@ lastmod: '2024-03-13T22:44:42.215346-06:00'
 model: gpt-4-0125-preview
 summary: "Haskell\u3067\u306EJSON\uFF08JavaScript Object\u2026"
 title: "JSON\u3092\u6D3B\u7528\u3059\u308B"
+weight: 38
 ---
-
-{{< edit_this_page >}}
 
 ## 何となぜ？
 HaskellでのJSON（JavaScript Object Notation）の取り扱いは、JSONデータをHaskellの型に解析（パース）し、Haskellの型をJSONに変換することを含みます。プログラマーは、これを行うことで、HaskellアプリケーションがWebサービスやAPIとシームレスにデータ交換できるようにします。これは、クロスプラットフォームのデータ交換のために、現代のソフトウェア開発で一般的な実践です。

@@ -9,9 +9,8 @@ summary: "G\xE9rer les erreurs consiste \xE0 anticiper l'inattendu ; c'est la fa
   on dont nous r\xE9agissons lorsque les choses tournent mal dans notre code. Nous\
   \ le faisons\u2026"
 title: Gestion des erreurs
+weight: 16
 ---
-
-{{< edit_this_page >}}
 
 ## Quoi & Pourquoi ?
 Gérer les erreurs consiste à anticiper l'inattendu ; c'est la façon dont nous réagissons lorsque les choses tournent mal dans notre code. Nous le faisons pour éviter les plantages et pour offrir aux utilisateurs une expérience fluide, même lorsque l'inattendu se produit.

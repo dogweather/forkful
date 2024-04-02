@@ -11,9 +11,8 @@ summary: "Pobieranie bie\u017C\u0105cej daty w programowaniu to podstawowe zadan
   \ kt\xF3re pozwala na pobieranie i manipulowanie danymi dotycz\u0105cymi daty i\
   \ czasu systemu. W\u2026"
 title: Pobieranie aktualnej daty
+weight: 29
 ---
-
-{{< edit_this_page >}}
 
 ## Co i dlaczego?
 Pobieranie bieżącej daty w programowaniu to podstawowe zadanie, które pozwala na pobieranie i manipulowanie danymi dotyczącymi daty i czasu systemu. W skryptach i zadaniach automatyzacji jest to niezbędne do generowania znaczników czasu, planowania zadań i tworzenia logów.

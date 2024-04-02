@@ -8,9 +8,8 @@ model: gpt-4-1106-preview
 summary: "Das Umwandeln eines Strings in Kleinbuchstaben in Bash bedeutet, alle Gro\xDF\
   buchstaben in einem Text in ihre entsprechenden Kleinbuchstaben zu \xE4ndern.\u2026"
 title: Umformung eines Strings in Kleinbuchstaben
+weight: 4
 ---
-
-{{< edit_this_page >}}
 
 ## Was & Warum?
 

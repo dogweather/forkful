@@ -11,9 +11,8 @@ summary: "\xC5 sjekke om en mappe eksisterer er en grunnleggende operasjon n\xE5
   \ man skriver skript som samhandler med filsystemet, og s\xF8rger for at programmet\
   \ ditt\u2026"
 title: Sjekker om en mappe eksisterer
+weight: 20
 ---
-
-{{< edit_this_page >}}
 
 ## Hva & Hvorfor?
 

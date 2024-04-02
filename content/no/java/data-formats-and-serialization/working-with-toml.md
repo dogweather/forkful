@@ -7,9 +7,8 @@ model: gpt-4-0125-preview
 summary: "TOML st\xE5r for Toms Opplagte, Minimale Spr\xE5k. Det er et data serialiseringsformat\
   \ brukt for konfigurasjonsfiler. Programmerere bruker det fordi det er lett\u2026"
 title: Jobbe med TOML
+weight: 39
 ---
-
-{{< edit_this_page >}}
 
 ## Hva & Hvorfor?
 TOML står for Toms Opplagte, Minimale Språk. Det er et data serialiseringsformat brukt for konfigurasjonsfiler. Programmerere bruker det fordi det er lett å lese, skrive, og kartlegges fint til en hashtabell.

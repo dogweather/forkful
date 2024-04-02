@@ -9,9 +9,8 @@ summary: "Les nombres complexes \xE9largissent notre syst\xE8me num\xE9rique pou
   \ inclure les racines carr\xE9es des nombres n\xE9gatifs, o\xF9 l'unit\xE9 \"imaginaire\"\
   \ i \xE9quivaut \xE0 la\u2026"
 title: Manipulation des nombres complexes
+weight: 14
 ---
-
-{{< edit_this_page >}}
 
 ## Quoi et pourquoi ?
 Les nombres complexes élargissent notre système numérique pour inclure les racines carrées des nombres négatifs, où l'unité "imaginaire" i équivaut à la racine carrée de -1. Les programmeurs les utilisent dans des domaines tels que l'ingénierie, la physique et le traitement du signal, parce qu'ils sont excellents pour modéliser les ondes, les oscillations et tout ce qui tourne.

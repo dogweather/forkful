@@ -7,9 +7,8 @@ model: gpt-4-0125-preview
 summary: "Rounding numbers in programming is about approximating a number to its nearest\
   \ whole number or to a certain number of decimal places. Programmers round\u2026"
 title: Rounding numbers
+weight: 13
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 

@@ -11,9 +11,8 @@ summary: "Att arbeta med CSV-filer (Comma Separated Values) inneb\xE4r att l\xE4
   \ fr\xE5n eller skriva till vanliga textfiler d\xE4r dataf\xE4lten \xE4r separerade\
   \ med kommatecken.\u2026"
 title: Att Arbeta med CSV
+weight: 37
 ---
-
-{{< edit_this_page >}}
 
 ## Vad & Varför?
 

@@ -9,9 +9,8 @@ summary: "Imagine que voc\xEA acabou de descobrir que precisa fazer uma atualiza
   \xE3o em lote em v\xE1rios arquivos de configura\xE7\xE3o no seu servidor. Voc\xEA\
   \ poderia abrir cada\u2026"
 title: Editando arquivos in loco com linhas de comando
+weight: 32
 ---
-
-{{< edit_this_page >}}
 
 ## O Quê & Por Quê?
 

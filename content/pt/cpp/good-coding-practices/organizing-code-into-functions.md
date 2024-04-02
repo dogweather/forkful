@@ -9,9 +9,8 @@ summary: "Dividir o c\xF3digo em fun\xE7\xF5es significa esculpir seu c\xF3digo 
   \ blocos menores e reutiliz\xE1veis. Fazemos isso para evitar repeti\xE7\xE3o, tornar\
   \ nosso c\xF3digo\u2026"
 title: "Organizando o c\xF3digo em fun\xE7\xF5es"
+weight: 18
 ---
-
-{{< edit_this_page >}}
 
 ## O Quê e Por Quê?
 Dividir o código em funções significa esculpir seu código em blocos menores e reutilizáveis. Fazemos isso para evitar repetição, tornar nosso código legível e simplificar a depuração e o teste. Funções bem organizadas podem ser como ter uma caixa de ferramentas ordenadas e devidamente etiquetadas, prontas para usar e compartilhar.

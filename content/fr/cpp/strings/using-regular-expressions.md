@@ -11,9 +11,8 @@ summary: "Les expressions r\xE9guli\xE8res en C++ sont des s\xE9quences de carac
   res qui d\xE9finissent un motif de recherche, utilis\xE9 pour la correspondance\
   \ ou la\u2026"
 title: "Utilisation des expressions r\xE9guli\xE8res"
+weight: 11
 ---
-
-{{< edit_this_page >}}
 
 ## Quoi & Pourquoi ?
 Les expressions régulières en C++ sont des séquences de caractères qui définissent un motif de recherche, utilisé pour la correspondance ou la manipulation de chaînes de caractères. Les programmeurs les utilisent pour des tâches telles que la validation d'entrées, la recherche d'occurrences dans des chaînes de caractères ou la segmentation de chaînes en tokens, ce qui en fait un outil indispensable pour un traitement de texte efficace et efficace.

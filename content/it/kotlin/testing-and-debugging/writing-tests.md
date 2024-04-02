@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Scrivere test in Kotlin implica la creazione di frammenti di codice che\
   \ validano automaticamente la correttezza funzionale dei moduli software,\u2026"
 title: Scrivere test
+weight: 36
 ---
-
-{{< edit_this_page >}}
 
 ## Cosa & Perché?
 

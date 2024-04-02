@@ -12,9 +12,8 @@ summary: "Interpolacja ci\u0105g\xF3w znak\xF3w to metoda osadzania wyra\u017Ce\
   \ wewn\u0105trz litera\u0142\xF3w napis\xF3w. Programi\u015Bci u\u017Cywaj\u0105\
   \ jej do dynamicznego wstawiania warto\u015Bci do ci\u0105g\xF3w\u2026"
 title: "Interpolacja \u0142a\u0144cucha znak\xF3w"
+weight: 8
 ---
-
-{{< edit_this_page >}}
 
 ## Co i Dlaczego?
 Interpolacja ciągów znaków to metoda osadzania wyrażeń wewnątrz literałów napisów. Programiści używają jej do dynamicznego wstawiania wartości do ciągów znaków, co sprawia, że kod jest bardziej czytelny i czystszy niż tradycyjna konkatenacja ciągów znaków.

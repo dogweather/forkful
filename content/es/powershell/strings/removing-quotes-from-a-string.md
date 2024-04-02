@@ -9,9 +9,8 @@ summary: "Eliminar las comillas de una cadena en PowerShell elimina las marcas d
   \ comillas simples (`'`) o dobles (`\"`) que envuelven tu texto. Los programadores\
   \ a\u2026"
 title: Eliminando comillas de una cadena
+weight: 9
 ---
-
-{{< edit_this_page >}}
 
 ## Qué y Por Qué?
 Eliminar las comillas de una cadena en PowerShell elimina las marcas de comillas simples (`'`) o dobles (`"`) que envuelven tu texto. Los programadores a menudo necesitan limpiar cadenas para procesamiento, comparación o propósitos de salida, especialmente cuando se trata con entrada de usuario o análisis de archivos.

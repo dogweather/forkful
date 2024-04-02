@@ -7,9 +7,8 @@ model: gpt-4-1106-preview
 summary: "String interpolation lets us toss variables into strings without a fuss.\
   \ Why? To dynamically construct text\u2014way handier than old-school string\u2026"
 title: Interpolating a string
+weight: 8
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 String interpolation lets us toss variables into strings without a fuss. Why? To dynamically construct text—way handier than old-school string concatenation.

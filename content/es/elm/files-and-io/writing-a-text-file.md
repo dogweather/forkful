@@ -7,9 +7,8 @@ model: unknown
 summary: "Escribir un archivo de texto consiste en guardar datos en un documento que\
   \ puedas leer y editar. Los programadores lo hacen para mantener la\u2026"
 title: Escritura de un archivo de texto
+weight: 24
 ---
-
-{{< edit_this_page >}}
 
 ## Qué & Por Qué?
 Escribir un archivo de texto consiste en guardar datos en un documento que puedas leer y editar. Los programadores lo hacen para mantener la configuración, guardar datos de aplicación o para registrar eventos del sistema.

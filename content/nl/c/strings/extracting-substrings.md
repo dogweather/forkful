@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Het extraheren van substrings in C omvat het cre\xEBren van een kleinere\
   \ string (substring) uit een grotere string op basis van gespecificeerde criteria,\u2026"
 title: Substrings extraheren
+weight: 6
 ---
-
-{{< edit_this_page >}}
 
 ## Wat & Waarom?
 

@@ -17,9 +17,8 @@ summary: "\uB0A0\uC9DC \uB450 \uAC1C\uB97C \uBE44\uAD50\uD55C\uB2E4\uB294 \uAC83
   \ \uC774\uC720\uB294 \uC608\uC57D \uC2DC\uC2A4\uD15C, \uB0A0\uC9DC \uCC28\uC774\
   \ \uACC4\uC0B0, \uC720\uD6A8\uC131 \uAC80\uC0AC \uB54C\uBB38\uC785\uB2C8\uB2E4."
 title: "\uB450 \uB0A0\uC9DC \uBE44\uAD50\uD558\uAE30"
+weight: 27
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why? (무엇과 왜?)
 날짜 두 개를 비교한다는 것은 날짜 시간 값들을 서로 비교해 과거, 현재, 미래 상태를 정하는 것입니다. 프로그래머들이 이를 하는 이유는 예약 시스템, 날짜 차이 계산, 유효성 검사 때문입니다.

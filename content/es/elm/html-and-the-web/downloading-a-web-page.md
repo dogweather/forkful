@@ -9,9 +9,8 @@ summary: "Bajar una p\xE1gina web es el proceso de obtener su contenido HTML a t
   s de internet. Los programadores lo hacen para procesar datos, mostrar contenido\
   \ en\u2026"
 title: "Descargando una p\xE1gina web"
+weight: 42
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 Bajar una página web es el proceso de obtener su contenido HTML a través de internet. Los programadores lo hacen para procesar datos, mostrar contenido en sus aplicaciones o interactuar con servicios web.

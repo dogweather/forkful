@@ -7,9 +7,8 @@ model: gpt-4-1106-preview
 summary: "Leggere gli argomenti della riga di comando permette di passare informazioni\
   \ a un programma all'avvio. I programmatori lo fanno per rendere i loro script\u2026"
 title: Lettura degli argomenti della riga di comando
+weight: 23
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 Leggere gli argomenti della riga di comando permette di passare informazioni a un programma all'avvio. I programmatori lo fanno per rendere i loro script più flessibili e interattivi.

@@ -9,9 +9,8 @@ summary: "TOML to format pliku konfiguracyjnego, kt\xF3ry jest \u0142atwy do odc
   \ dzi\u0119ki swojej jasnej semantyce. Programi\u015Bci u\u017Cywaj\u0105 TOML do\
   \ zarz\u0105dzania konfiguracjami\u2026"
 title: Praca z TOML
+weight: 39
 ---
-
-{{< edit_this_page >}}
 
 ## Co i dlaczego?
 

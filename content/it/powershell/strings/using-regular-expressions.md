@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Le espressioni regolari (regex) sono sequenze di caratteri che formano un\
   \ modello di ricerca, utilizzato principalmente per la ricerca e la manipolazione\u2026"
 title: Utilizzo delle espressioni regolari
+weight: 11
 ---
-
-{{< edit_this_page >}}
 
 ## Cosa e perché?
 

@@ -9,9 +9,8 @@ summary: "Mit\xE4 ja miksi? Lasketaan tulevaisuuden tai menneisyyden p\xE4iv\xE4
   \xE4ri\xE4, koska el\xE4mme kalentereissa ja aikatauluissa. Ohjelmoijina tarvitsemme\
   \ t\xE4t\xE4 toimintoa\u2026"
 title: "Tulevan tai menneen p\xE4iv\xE4m\xE4\xE4r\xE4n laskeminen"
+weight: 26
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 Mitä ja miksi? Lasketaan tulevaisuuden tai menneisyyden päivämääriä, koska elämme kalentereissa ja aikatauluissa. Ohjelmoijina tarvitsemme tätä toimintoa määrittämään eräpäiviä, muistutuksia tai aikavälejä.

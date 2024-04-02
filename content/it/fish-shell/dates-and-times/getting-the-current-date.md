@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Ottenere la data corrente nella programmazione \xE8 un'operazione fondamentale\
   \ che consente di recuperare e manipolare i dati di data e ora del sistema.\u2026"
 title: Ottenere la data corrente
+weight: 29
 ---
-
-{{< edit_this_page >}}
 
 ## Cosa e perché?
 Ottenere la data corrente nella programmazione è un'operazione fondamentale che consente di recuperare e manipolare i dati di data e ora del sistema. Nelle attività di scripting e automazione, è essenziale per generare timestamp, pianificare attività e creare log.

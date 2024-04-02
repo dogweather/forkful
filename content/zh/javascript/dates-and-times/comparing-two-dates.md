@@ -12,9 +12,8 @@ summary: "\u6BD4\u8F83\u4E24\u4E2A\u65E5\u671F\u610F\u5473\u7740\u68C0\u67E5\u5B
   \u505A\u6765\u6392\u5E8F\u4E8B\u4EF6\u3001\u9A8C\u8BC1\u6709\u6548\u671F\u9650\u6216\
   \u8005\u5904\u7406\u9884\u5B9A\u3002"
 title: "\u6BD4\u8F83\u4E24\u4E2A\u65E5\u671F"
+weight: 27
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why? (是什么 & 为何重要?)
 比较两个日期意味着检查它们之间的时间差异。程序员这么做来排序事件、验证有效期限或者处理预定。

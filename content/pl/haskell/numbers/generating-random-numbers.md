@@ -9,9 +9,8 @@ summary: "Generowanie liczb losowych w Haskellu polega na tworzeniu liczb, kt\xF
   re s\u0105 nieprzewidywalne wed\u0142ug ludzkich standard\xF3w. Jest to kluczowe\
   \ w scenariuszach\u2026"
 title: Generowanie liczb losowych
+weight: 12
 ---
-
-{{< edit_this_page >}}
 
 ## Co i dlaczego?
 

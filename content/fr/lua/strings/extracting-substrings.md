@@ -8,9 +8,8 @@ model: gpt-4-1106-preview
 summary: "Extraire des sous-cha\xEEnes, c'est prendre des petits bouts de texte d'une\
   \ cha\xEEne plus grande. On fait \xE7a pour manipuler, chercher ou analyser uniquement\u2026"
 title: "Extraction de sous-cha\xEEnes"
+weight: 6
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 Extraire des sous-chaînes, c'est prendre des petits bouts de texte d'une chaîne plus grande. On fait ça pour manipuler, chercher ou analyser uniquement les parties qui nous intéressent.

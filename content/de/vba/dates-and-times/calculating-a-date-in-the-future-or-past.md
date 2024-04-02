@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Das Berechnen eines Datums in der Zukunft oder Vergangenheit umfasst die\
   \ Bestimmung eines Datums, das eine festgelegte Anzahl von Tagen, Monaten oder\u2026"
 title: "Berechnung eines zuk\xFCnftigen oder vergangenen Datums"
+weight: 26
 ---
-
-{{< edit_this_page >}}
 
 ## Was & Warum?
 Das Berechnen eines Datums in der Zukunft oder Vergangenheit umfasst die Bestimmung eines Datums, das eine festgelegte Anzahl von Tagen, Monaten oder Jahren von einem gegebenen Datum entfernt ist. Programmierer benötigen diese Funktionalität häufig, um Erinnerungen, Abonnements, Ablaufdaten und Planungsaufgaben in verschiedenen Anwendungen zu automatisieren.

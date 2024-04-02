@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Recuperar la fecha actual en Bash implica usar comandos integrados para\
   \ mostrar la fecha y la hora en varios formatos. Los programadores utilizan esta\u2026"
 title: Obteniendo la fecha actual
+weight: 29
 ---
-
-{{< edit_this_page >}}
 
 ## Qué y Por Qué?
 Recuperar la fecha actual en Bash implica usar comandos integrados para mostrar la fecha y la hora en varios formatos. Los programadores utilizan esta funcionalidad para tareas como poner marcas de tiempo en registros, programar tareas o simplemente como parte de sus scripts de información del sistema para rastrear cuándo se realizaron las acciones.

@@ -8,9 +8,8 @@ model: gpt-4-1106-preview
 summary: "XML is a markup language for encoding documents in a way that is both human-\
   \ and machine-readable. It's key in web services, configuration files, and data\u2026"
 title: Working with XML
+weight: 40
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 XML is a markup language for encoding documents in a way that is both human- and machine-readable. It's key in web services, configuration files, and data interchange because it carries data in a structured, hierarchical format.

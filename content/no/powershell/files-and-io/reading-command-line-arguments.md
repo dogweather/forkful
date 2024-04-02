@@ -8,9 +8,8 @@ model: gpt-4-1106-preview
 summary: "Kommandolinjeargumenter lar brukere gi input til et skript n\xE5r de kj\xF8\
   rer det. Programmerere bruker dette for \xE5 lage fleksible og tilpassbare scripts."
 title: Lese kommandolinjeargumenter
+weight: 23
 ---
-
-{{< edit_this_page >}}
 
 ## Hva & Hvorfor?
 Kommandolinjeargumenter lar brukere gi input til et skript når de kjører det. Programmerere bruker dette for å lage fleksible og tilpassbare scripts.

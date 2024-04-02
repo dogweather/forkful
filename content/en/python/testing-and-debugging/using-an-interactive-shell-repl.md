@@ -7,9 +7,8 @@ model: gpt-4-1106-preview
 summary: "A REPL, or Read-Eval-Print Loop, is a programming environment that takes\
   \ single user inputs, executes them, and returns the result to the user.\u2026"
 title: Using an interactive shell (REPL)
+weight: 34
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 A REPL, or Read-Eval-Print Loop, is a programming environment that takes single user inputs, executes them, and returns the result to the user. Programmers use it for quick tests, learning, debugging, or doing calculations on-the-fly. 

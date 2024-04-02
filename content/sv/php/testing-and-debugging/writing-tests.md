@@ -11,9 +11,8 @@ summary: "Att skriva tester i programmering involverar att skapa och k\xF6ra skr
   \ som verifierar att koden beter sig som f\xF6rv\xE4ntat under olika f\xF6rh\xE5\
   llanden.\u2026"
 title: Skriva tester
+weight: 36
 ---
-
-{{< edit_this_page >}}
 
 ## Vad & Varför?
 Att skriva tester i programmering involverar att skapa och köra skript som verifierar att koden beter sig som förväntat under olika förhållanden. Programmerare gör detta för att säkerställa kvalitet, förebygga regressioner och underlätta säker refaktorisering, vilket är avgörande för att underhålla en hälsosam, skalbar och buggfri kodbas.

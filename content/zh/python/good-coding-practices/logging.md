@@ -17,9 +17,8 @@ summary: "\u65E5\u5FD7\u8BB0\u5F55\u662F\u5728\u7A0B\u5E8F\u8FD0\u884C\u65F6\u8B
   \u4E8E\u8C03\u8BD5\u95EE\u9898\u3001\u76D1\u63A7\u6027\u80FD\uFF0C\u5E76\u8FFD\u8E2A\
   \u7528\u6237\u884C\u4E3A\u4EE5\u4FBF\u5B89\u5168\u548C\u5206\u6790\u3002"
 title: "\u65E5\u5FD7\u8BB0\u5F55"
+weight: 17
 ---
-
-{{< edit_this_page >}}
 
 ## 什么和为什么？
 日志记录是在程序运行时记录应用程序事件的过程，提供一个面包屑追踪路径，用于死后分析（post-mortem analysis）和实时监控。程序员进行日志记录是因为它有助于调试问题、监控性能，并追踪用户行为以便安全和分析。

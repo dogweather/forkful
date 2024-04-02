@@ -9,9 +9,8 @@ summary: "G\xE9rer les erreurs signifie \xE9crire du code capable de g\xE9rer le
   \ situations impr\xE9vues. Les programmeurs le font pour emp\xEAcher les plantages\
   \ et pour\u2026"
 title: Gestion des erreurs
+weight: 16
 ---
-
-{{< edit_this_page >}}
 
 ## Quoi & Pourquoi ?
 

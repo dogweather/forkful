@@ -12,9 +12,8 @@ summary: "\u89E3\u6790HTML\u6307\u7684\u662F\u4ECEHTML\u6587\u6863\u63D0\u53D6\u
   \u4E3A\u4E86\u81EA\u52A8\u5316\u5904\u7406\u7F51\u9875\u5185\u5BB9\uFF0C\u6BD4\u5982\
   \u6293\u53D6\u6570\u636E\u6216\u8005\u6D4B\u8BD5\u7F51\u7AD9\u3002"
 title: "\u89E3\u6790HTML"
+weight: 43
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why? (是什么？为什么？)
 解析HTML指的是从HTML文档提取数据或信息。程序员这么做主要是为了自动化处理网页内容，比如抓取数据或者测试网站。

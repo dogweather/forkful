@@ -24,9 +24,8 @@ summary: "REPL\uFF08Read-Eval-Print-Loop; \u8AAD\u307F\u53D6\u308A-\u8A55\u4FA1-
   \u3059\u3002"
 title: "\u30A4\u30F3\u30BF\u30E9\u30AF\u30C6\u30A3\u30D6\u30B7\u30A7\u30EB\uFF08REPL\uFF09\
   \u306E\u4F7F\u7528"
+weight: 34
 ---
-
-{{< edit_this_page >}}
 
 ## 何となぜ？
 REPL（Read-Eval-Print-Loop; 読み取り-評価-出力-ループ）は、シンプルで対話的なプログラミング環境です。プログラマーは、リアルタイムで言語を試す、簡単なタスクを行う、またはフルブローンのアプリケーションを作成するオーバーヘッドなしに新しい概念を理解するためにこれを使用します。

@@ -11,9 +11,8 @@ summary: "Praca z liczbami zespolonymi w programowaniu polega na manipulowaniu l
   \ kt\xF3re maj\u0105 zar\xF3wno cz\u0119\u015B\u0107 rzeczywist\u0105, jak i urojon\u0105\
   , zwykle wyra\u017Cane jako\u2026"
 title: Praca z liczbami zespolonymi
+weight: 14
 ---
-
-{{< edit_this_page >}}
 
 ## Co i dlaczego?
 

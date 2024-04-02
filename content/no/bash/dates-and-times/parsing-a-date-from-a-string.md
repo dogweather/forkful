@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "\xC5 tolke en dato fra en tekststreng i Bash inneb\xE6rer \xE5 ekstrahere\
   \ og konvertere datoinformasjon fra tekstuelle data til et format som Bash kan manipulere\u2026"
 title: Analysering av en dato fra en streng
+weight: 30
 ---
-
-{{< edit_this_page >}}
 
 ## Hva & Hvorfor?
 

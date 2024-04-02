@@ -10,9 +10,8 @@ model: gpt-4-0125-preview
 summary: "Das Testen in Ruby dient dazu, zu verifizieren, dass Ihr Code unter verschiedenen\
   \ Bedingungen wie erwartet funktioniert. Programmierer erstellen Tests, um\u2026"
 title: Tests Schreiben
+weight: 36
 ---
-
-{{< edit_this_page >}}
 
 ## Was & Warum?
 Das Testen in Ruby dient dazu, zu verifizieren, dass Ihr Code unter verschiedenen Bedingungen wie erwartet funktioniert. Programmierer erstellen Tests, um die Korrektheit sicherzustellen, Regressionen zu verhindern und das Refactoring zu erleichtern, mit dem Ziel, robuste und wartbare Anwendungen zu erreichen.

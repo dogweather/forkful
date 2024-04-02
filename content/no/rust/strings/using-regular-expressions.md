@@ -11,9 +11,8 @@ summary: "Regul\xE6re uttrykk, eller regex, lar utviklere s\xF8ke, matche og man
   \ strenger med avanserte m\xF8nsters\xF8kingsteknikker. I Rust bidrar bruk av regex\
   \ til\u2026"
 title: "Bruke regul\xE6re uttrykk"
+weight: 11
 ---
-
-{{< edit_this_page >}}
 
 ## Hva & Hvorfor?
 

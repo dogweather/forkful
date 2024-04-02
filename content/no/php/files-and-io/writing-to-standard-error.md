@@ -10,9 +10,8 @@ model: gpt-4-0125-preview
 summary: "\xC5 skrive til standardfeil (stderr) i PHP handler om \xE5 dirigere feilmeldinger\
   \ eller diagnostikk separat fra standard ut (stdout). Dette lar utviklere bedre\u2026"
 title: Skriving til standardfeil
+weight: 25
 ---
-
-{{< edit_this_page >}}
 
 ## Hva & Hvorfor?
 

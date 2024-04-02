@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Leggere gli argomenti della riga di comando in Google Apps Script \xE8 un\
   \ po' improprio perch\xE9, a differenza delle interfacce a riga di comando tradizionali\u2026"
 title: Leggere gli argomenti della riga di comando
+weight: 23
 ---
-
-{{< edit_this_page >}}
 
 ## Cosa & Perché?
 

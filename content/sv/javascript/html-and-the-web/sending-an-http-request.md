@@ -9,9 +9,8 @@ summary: "HTTP-beg\xE4ran \xE4r hur din kod fr\xE5gar efter data or skickar info
   \ till en server. Programmerare g\xF6r detta f\xF6r att interagera med webbtj\xE4\
   nster, h\xE4mta\u2026"
 title: "Skicka en http-f\xF6rfr\xE5gan"
+weight: 44
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 HTTP-begäran är hur din kod frågar efter data or skickar information till en server. Programmerare gör detta för att interagera med webbtjänster, hämta innehåll eller skicka användardata.

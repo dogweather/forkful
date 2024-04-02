@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Lavorare con file CSV (Valori Separati da Virgola) consiste nel leggere\
   \ e scrivere file di testo semplice che memorizzano dati tabellari. I programmatori\u2026"
 title: Lavorare con i CSV
+weight: 37
 ---
-
-{{< edit_this_page >}}
 
 ## Cosa e Perché?
 Lavorare con file CSV (Valori Separati da Virgola) consiste nel leggere e scrivere file di testo semplice che memorizzano dati tabellari. I programmatori fanno ciò per permettere la condivisione di dati tra diversi programmi, sistemi, o per l'elaborazione di grandi set di dati in un formato efficiente e leggibile dall'uomo.

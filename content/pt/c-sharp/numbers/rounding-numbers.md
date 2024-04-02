@@ -9,9 +9,8 @@ summary: "Arredondar n\xFAmeros significa ajust\xE1-los ao valor de lugar mais p
   ximo\u2014pense em simplific\xE1-los. Programadores arredondam para controlar a\
   \ precis\xE3o,\u2026"
 title: "Arredondamento de n\xFAmeros"
+weight: 13
 ---
-
-{{< edit_this_page >}}
 
 ## O Que & Porquê?
 Arredondar números significa ajustá-los ao valor de lugar mais próximo—pense em simplificá-los. Programadores arredondam para controlar a precisão, aumentar o desempenho ou ao apresentar resultados amigáveis ao usuário—como preços que não precisam de três casas decimais.

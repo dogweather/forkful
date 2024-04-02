@@ -13,9 +13,8 @@ summary: "T\u1ED5 ch\u1EE9c m\xE3 l\u1EC7nh th\xE0nh c\xE1c h\xE0m chia nh\u1ECF
   \ d\u1EE5ng. \u0110i\u1EC1u n\xE0y gi\xFAp cho m\xE3 c\u1EE7a b\u1EA1n tr\u1EDF\
   \ n\xEAn g\u1ECDn g\xE0ng, d\u1EC5 qu\u1EA3n l\xFD v\xE0 \xEDt\u2026"
 title: "S\u1EAFp x\u1EBFp m\xE3 th\xE0nh c\xE1c h\xE0m"
+weight: 18
 ---
-
-{{< edit_this_page >}}
 
 ## Cái gì & Tại sao?
 Tổ chức mã lệnh thành các hàm chia nhỏ kịch bản của bạn thành các khối có thể tái sử dụng. Điều này giúp cho mã của bạn trở nên gọn gàng, dễ quản lý và ít lỗi hơn. Mã modular (mã được tổ chức theo mô đun) tuyệt vời vì nó giúp bạn tiết kiệm thời gian, giữ được sự tỉnh táo và làm đơn giản hóa việc gỡ lỗi và kiểm thử đơn vị.

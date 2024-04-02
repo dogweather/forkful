@@ -7,9 +7,8 @@ model: gpt-4-0125-preview
 summary: "Stripar aspas de uma string significa remover aquelas inc\xF4modas aspas\
   \ duplas ou simples que envolvem nosso texto (' ou \"). Programadores frequentemente\u2026"
 title: Removendo aspas de uma string
+weight: 9
 ---
-
-{{< edit_this_page >}}
 
 ## O que é & Por quê?
 Stripar aspas de uma string significa remover aquelas incômodas aspas duplas ou simples que envolvem nosso texto (' ou "). Programadores frequentemente fazem isso para higienizar a entrada, armazenar texto em um banco de dados, ou preparar strings para mais processamentos sem o embaraço das aspas.

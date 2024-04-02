@@ -10,9 +10,8 @@ model: gpt-4-0125-preview
 summary: "L'analisi dell'HTML consiste nell'estrazione di dati dai documenti HTML.\
   \ I programmatori lo fanno per interagire o manipolare il contenuto web,\u2026"
 title: Analisi sintattica HTML
+weight: 43
 ---
-
-{{< edit_this_page >}}
 
 ## Cosa e perché?
 L'analisi dell'HTML consiste nell'estrazione di dati dai documenti HTML. I programmatori lo fanno per interagire o manipolare il contenuto web, automatizzare l'estrazione di dati o per scopi di web scraping.

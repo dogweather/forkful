@@ -11,9 +11,8 @@ summary: "S\xE4\xE4nn\xF6lliset lausekkeet eli regex ovat tehokas mallin vastaav
   \ etsimisen ja hakemisen ty\xF6kalu ohjelmoinnissa. Ohjelmoijat k\xE4ytt\xE4v\xE4\
   t regexi\xE4 teht\xE4viin\u2026"
 title: "S\xE4\xE4nn\xF6llisten lausekkeiden k\xE4ytt\xF6"
+weight: 11
 ---
-
-{{< edit_this_page >}}
 
 ## Mitä & Miksi?
 Säännölliset lausekkeet eli regex ovat tehokas mallin vastaavuuden etsimisen ja hakemisen työkalu ohjelmoinnissa. Ohjelmoijat käyttävät regexiä tehtäviin kuten käyttäjän syötteen validointiin, tekstin etsimiseen tai merkkijonojen manipulointiin, koska se on tehokasta ja monipuolista.

@@ -8,9 +8,8 @@ model: gpt-4-1106-preview
 summary: "Enviar uma requisi\xE7\xE3o HTTP \xE9 o jeito de o seu programa bater papo\
   \ com um servidor, pedindo ou enviando dados. Programadores fazem isso para buscar\u2026"
 title: "Enviando uma requisi\xE7\xE3o HTTP"
+weight: 44
 ---
-
-{{< edit_this_page >}}
 
 ## O Que & Porquê?
 Enviar uma requisição HTTP é o jeito de o seu programa bater papo com um servidor, pedindo ou enviando dados. Programadores fazem isso para buscar informações, mandar ordens ou simplesmente manter os sistemas conversando.

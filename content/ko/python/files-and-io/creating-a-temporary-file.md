@@ -16,9 +16,8 @@ summary: "\uC784\uC2DC \uD30C\uC77C\uC740 \uB370\uC774\uD130\uB97C \uC77C\uC2DC\
   \ \uAD50\uCCB4 \uB4F1\uC744 \uC704\uD574 \uD504\uB85C\uADF8\uB798\uBA38\uB4E4\uC774\
   \ \uC0DD\uC131\uD569\uB2C8\uB2E4."
 title: "\uC784\uC2DC \uD30C\uC77C \uC0DD\uC131\uD558\uAE30"
+weight: 21
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why? (무엇인가요? 그리고 왜 사용하나요?)
 임시 파일은 데이터를 일시적으로 저장할 때 쓰입니다. 메모리가 아닌 디스크 공간을 사용해 대량의 데이터 처리나 안전한 파일 교체 등을 위해 프로그래머들이 생성합니다.

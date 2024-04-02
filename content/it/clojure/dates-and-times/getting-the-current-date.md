@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Ottenere la data corrente nella programmazione \xE8 cruciale per una miriade\
   \ di motivi, inclusi il logging, il timestamping degli eventi e la pianificazione\u2026"
 title: Ottenere la data corrente
+weight: 29
 ---
-
-{{< edit_this_page >}}
 
 ## Cosa e Perché?
 Ottenere la data corrente nella programmazione è cruciale per una miriade di motivi, inclusi il logging, il timestamping degli eventi e la pianificazione delle attività. In Clojure, un dialetto Lisp sulla JVM, questo compito sfrutta le capacità di interoperabilità con Java, consentendo un accesso diretto all'API Java Date-Time ricca di funzionalità.

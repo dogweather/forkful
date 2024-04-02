@@ -9,9 +9,8 @@ summary: "El registro (logging) es la pr\xE1ctica de documentar eventos, errores
   \ otra informaci\xF3n significativa de los procesos en ejecuci\xF3n de un programa\
   \ en un\u2026"
 title: "Registro de Actividades en Programaci\xF3n"
+weight: 17
 ---
-
-{{< edit_this_page >}}
 
 ## ¿Qué y Por Qué?
 

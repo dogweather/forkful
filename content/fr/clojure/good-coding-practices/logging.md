@@ -8,9 +8,8 @@ model: gpt-4-1106-preview
 summary: "Le logging est en quelque sorte l'\xE9quivalent logiciel du journal de bord\
   \ d'un navire ; c'est un moyen d'enregistrer les \xE9v\xE9nements qui se produisent\u2026"
 title: Journalisation
+weight: 17
 ---
-
-{{< edit_this_page >}}
 
 ## Quoi & Pourquoi ?
 Le logging est en quelque sorte l'équivalent logiciel du journal de bord d'un navire ; c'est un moyen d'enregistrer les événements qui se produisent pendant l'exécution d'une application. Les programmeurs le font pour garder une trace de ces événements pour le débogage, les pistes d'audit ou pour obtenir des informations sur le comportement d'un système en production.

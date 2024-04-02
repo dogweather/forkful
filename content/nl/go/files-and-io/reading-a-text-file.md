@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Het lezen van een tekstbestand in Go omvat het openen en ophalen van inhoud\
   \ uit een bestand opgeslagen op schijf voor verwerking of analyse. Programmeurs\u2026"
 title: Een tekstbestand lezen
+weight: 22
 ---
-
-{{< edit_this_page >}}
 
 ## Wat & Waarom?
 

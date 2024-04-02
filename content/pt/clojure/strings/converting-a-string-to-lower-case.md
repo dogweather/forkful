@@ -8,9 +8,8 @@ model: gpt-4-1106-preview
 summary: "Converter uma string para min\xFAsculas significa transformar todos os caracteres\
   \ mai\xFAsculos em suas correspondentes min\xFAsculas. Programadores fazem isso\u2026"
 title: "Convertendo uma string para min\xFAsculas"
+weight: 4
 ---
-
-{{< edit_this_page >}}
 
 ## O Que & Porquê?
 Converter uma string para minúsculas significa transformar todos os caracteres maiúsculos em suas correspondentes minúsculas. Programadores fazem isso para padronizar dados, facilitar comparações de texto e evitar erros sensíveis a maiúsculas.

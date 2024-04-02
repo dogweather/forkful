@@ -11,9 +11,8 @@ summary: "Att skicka en HTTP-beg\xE4ran med grundl\xE4ggande autentisering i Vis
   \ Basic for Applications (VBA) handlar om att komma \xE5t webbresurser som skyddas\
   \ av\u2026"
 title: "Skicka en HTTP-beg\xE4ran med grundl\xE4ggande autentisering"
+weight: 45
 ---
-
-{{< edit_this_page >}}
 
 ## Vad och varför?
 

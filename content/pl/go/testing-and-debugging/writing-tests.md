@@ -11,9 +11,8 @@ summary: "Pisanie test\xF3w w Go polega na tworzeniu ma\u0142ych, zarz\u0105dzal
   \ fragment\xF3w kodu, kt\xF3re weryfikuj\u0105 funkcjonalno\u015B\u0107 i zachowanie\
   \ aplikacji. Programi\u015Bci pisz\u0105\u2026"
 title: "Pisanie test\xF3w"
+weight: 36
 ---
-
-{{< edit_this_page >}}
 
 ## Co i dlaczego?
 

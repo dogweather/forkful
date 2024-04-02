@@ -7,9 +7,8 @@ model: gpt-4-0125-preview
 summary: "TOML ist ein Konfigurationsdateiformat, das aufgrund seiner klaren Semantik\
   \ leicht zu lesen ist. Programmierer nutzen TOML, um App-Konfigurationen und\u2026"
 title: Arbeiten mit TOML
+weight: 39
 ---
-
-{{< edit_this_page >}}
 
 ## Was & Warum?
 

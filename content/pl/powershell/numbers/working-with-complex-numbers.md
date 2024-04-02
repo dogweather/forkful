@@ -9,9 +9,8 @@ summary: "Liczby zespolone, czyli te posiadaj\u0105ce cz\u0119\u015B\u0107 rzecz
   \ i urojon\u0105 (jak 3 + 4i), s\u0105 niezb\u0119dne w takich dziedzinach jak in\u017C\
   ynieria, fizyka i data science.\u2026"
 title: Praca z liczbami zespolonymi
+weight: 14
 ---
-
-{{< edit_this_page >}}
 
 ## Co i Dlaczego?
 Liczby zespolone, czyli te posiadające część rzeczywistą i urojoną (jak 3 + 4i), są niezbędne w takich dziedzinach jak inżynieria, fizyka i data science. Programiści używają ich do symulacji, przetwarzania sygnałów oraz rozwiązywania specyficznych typów problemów matematycznych.

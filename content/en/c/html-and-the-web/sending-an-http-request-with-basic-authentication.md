@@ -7,9 +7,8 @@ model: gpt-4-0125-preview
 summary: "Sending an HTTP request with basic authentication in C involves crafting\
   \ an HTTP request that includes an Authorization header with user credentials\u2026"
 title: Sending an HTTP request with basic authentication
+weight: 45
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 Sending an HTTP request with basic authentication in C involves crafting an HTTP request that includes an Authorization header with user credentials encoded in Base64. This is a common method for adding a simple authentication layer to HTTP requests, allowing restricted resources to be accessed programmatically.

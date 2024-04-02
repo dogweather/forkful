@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "HTML in PHP zu parsen, bedeutet, spezifische Informationen aus HTML-Dokumenten\
   \ zu extrahieren. Programmierer f\xFChren diese Aufgabe aus, um die\u2026"
 title: HTML parsen
+weight: 43
 ---
-
-{{< edit_this_page >}}
 
 ## Was & Warum?
 HTML in PHP zu parsen, bedeutet, spezifische Informationen aus HTML-Dokumenten zu extrahieren. Programmierer führen diese Aufgabe aus, um die Datenerfassung zu automatisieren, Web-Scraping durchzuführen oder Inhalte verschiedener Webseiten in ihren Anwendungen zu integrieren, um die Funktionalität ohne manuelles Eingreifen zu erweitern.

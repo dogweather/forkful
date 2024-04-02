@@ -9,9 +9,8 @@ summary: "Att hantera fel i Swift inneb\xE4r att f\xF6rutse och svara p\xE5 prob
   \ som dyker upp n\xE4r din kod k\xF6rs. Vi g\xF6r det f\xF6r att kontrollera kaoset\
   \ \u2013 f\xF6r att f\xF6rhindra\u2026"
 title: Hantering av fel
+weight: 16
 ---
-
-{{< edit_this_page >}}
 
 ## Vad och Varför?
 Att hantera fel i Swift innebär att förutse och svara på problem som dyker upp när din kod körs. Vi gör det för att kontrollera kaoset – för att förhindra att appar kraschar och för att ge användaren en smidig upplevelse.

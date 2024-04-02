@@ -9,9 +9,8 @@ summary: "Numeroiden py\xF6rist\xE4minen tarkoittaa niiden s\xE4\xE4t\xE4mist\xE
   \ l\xE4himp\xE4\xE4n m\xE4\xE4riteltyyn paikkakerta-arvoon - ajattele niiden kiinnitt\xE4\
   mist\xE4 yksinkertaisempaan\u2026"
 title: "Numerojen py\xF6rist\xE4minen"
+weight: 13
 ---
-
-{{< edit_this_page >}}
 
 ## Mikä & Miksi?
 Numeroiden pyöristäminen tarkoittaa niiden säätämistä lähimpään määriteltyyn paikkakerta-arvoon - ajattele niiden kiinnittämistä yksinkertaisempaan muotoon. Ohjelmoijat pyöristävät hallitakseen tarkkuutta, parantaakseen suorituskykyä tai näyttääkseen käyttäjäystävällisiä tuloksia - kuten hintoja, jotka eivät tarvitse kolmea desimaalipaikkaa.

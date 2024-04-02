@@ -9,9 +9,8 @@ summary: "Koodin j\xE4senteleminen funktioiksi on kuin LEGO-palikoiden lajittele
   \ bokseihin\u2014se tekee niiden l\xF6yt\xE4misest\xE4 ja k\xE4yt\xF6st\xE4 helpompaa.\
   \ T\xE4m\xE4 tehd\xE4\xE4n\u2026"
 title: "Koodin j\xE4rjest\xE4minen funktioihin"
+weight: 18
 ---
-
-{{< edit_this_page >}}
 
 ## Mikä & Miksi?
 Koodin jäsenteleminen funktioiksi on kuin LEGO-palikoiden lajitteleminen bokseihin—se tekee niiden löytämisestä ja käytöstä helpompaa. Tämä tehdään toiston välttämiseksi, ymmärtämisen yksinkertaistamiseksi ja ylläpidon päänsäryn vähentämiseksi.

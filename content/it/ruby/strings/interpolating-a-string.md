@@ -7,9 +7,8 @@ model: gpt-4-1106-preview
 summary: "L'interpolazione di stringhe in Ruby permette di inserire dinamicamente\
   \ valori all'interno di una stringa. I programmatori la usano per costruire stringhe\u2026"
 title: Interpolazione di una stringa
+weight: 8
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why? (Cosa e Perché?)
 L'interpolazione di stringhe in Ruby permette di inserire dinamicamente valori all'interno di una stringa. I programmatori la usano per costruire stringhe in modo flessibile e leggermente più pulito rispetto alla concatenazione.

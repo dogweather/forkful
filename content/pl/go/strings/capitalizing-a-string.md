@@ -11,9 +11,8 @@ summary: "Zamiana pierwszej litery \u0142a\u0144cucha na wielk\u0105 liter\u0119
   \ na przekszta\u0142ceniu pierwszego znaku danego \u0142a\u0144cucha na wielk\u0105\
   \ liter\u0119, je\u015Bli jest on pisany ma\u0142\u0105\u2026"
 title: "Zamiana liter na wielkie w ci\u0105gu znak\xF3w"
+weight: 2
 ---
-
-{{< edit_this_page >}}
 
 ## Co i dlaczego?
 

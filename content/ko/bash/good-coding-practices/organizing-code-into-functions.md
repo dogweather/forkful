@@ -17,9 +17,8 @@ summary: "\uCF54\uB4DC\uB97C \uD568\uC218\uB85C \uB098\uB204\uAE30\uB780 \uC2A4\
   \uD574\uD558\uAE30 \uC27D\uACE0, \uB514\uBC84\uAE45\uD558\uAE30\uB3C4 \uC26C\uC6CC\
   \uC9D1\uB2C8\uB2E4."
 title: "\uCF54\uB4DC\uB97C \uD568\uC218\uB85C \uAD6C\uC131\uD558\uAE30"
+weight: 18
 ---
-
-{{< edit_this_page >}}
 
 ## 함수로 코드 구성하기 - Bash에서
 코드를 함수로 나누기란 스크립트를 보다 작고, 재사용 가능한 특정 작업을 수행하는 블록으로 나누는 것을 의미합니다. 이 작업은 코드를 더 깨끗하게 만들며, 이해하기 쉽고, 디버깅하기도 쉬워집니다.

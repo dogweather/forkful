@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Gli array associativi, o come sono pi\xF9 correttamente noti in JavaScript,\
   \ gli oggetti, ti permettono di mappare chiavi a valori. Questo \xE8 estremamente\u2026"
 title: Utilizzo di array associativi
+weight: 15
 ---
-
-{{< edit_this_page >}}
 
 ## Cosa e Perché?
 

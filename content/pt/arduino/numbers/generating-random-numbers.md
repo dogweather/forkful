@@ -9,9 +9,8 @@ summary: "Gerar n\xFAmeros aleat\xF3rios em projetos Arduino envolve produzir va
   \ que s\xE3o imprevis\xEDveis por design, crucial para aplica\xE7\xF5es como jogos,\
   \ simula\xE7\xF5es e\u2026"
 title: "Gera\xE7\xE3o de n\xFAmeros aleat\xF3rios"
+weight: 12
 ---
-
-{{< edit_this_page >}}
 
 ## O Que e Por Quê?
 Gerar números aleatórios em projetos Arduino envolve produzir valores que são imprevisíveis por design, crucial para aplicações como jogos, simulações e sistemas de segurança. Os programadores utilizam essa técnica para introduzir variabilidade ou fazer decisões que não devem ser determinísticas.

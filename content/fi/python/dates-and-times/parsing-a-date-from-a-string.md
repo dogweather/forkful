@@ -10,9 +10,8 @@ model: gpt-4-0125-preview
 summary: "P\xE4iv\xE4m\xE4\xE4r\xE4n j\xE4sent\xE4minen merkkijonosta tarkoittaa tekstuaalisen\
   \ p\xE4iv\xE4- ja aikatiedon muuntamista datetime-objektiksi tai vastaavaksi rakenteelliseksi\u2026"
 title: "P\xE4iv\xE4m\xE4\xE4r\xE4n j\xE4sennys merkkijonosta"
+weight: 30
 ---
-
-{{< edit_this_page >}}
 
 ## Mikä ja miksi?
 Päivämäärän jäsentäminen merkkijonosta tarkoittaa tekstuaalisen päivä- ja aikatiedon muuntamista datetime-objektiksi tai vastaavaksi rakenteelliseksi muodoksi. Tämä suoritetaan yleensä mahdollistamaan päivämäärälaskennat, vertailut ja muotoilutoiminnot tavalla, joka on kieli- ja alueagnostista. Ohjelmoijat tekevät näin tehokkaasti käsitelläkseen ja manipuloidakseen aikatietoja, jotka on poimittu lokeista, käyttäjän syötteistä tai ulkoisista lähteistä.

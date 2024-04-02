@@ -12,9 +12,8 @@ summary: "T\u1EA3i m\u1ED9t trang web b\u1EB1ng Visual Basic for Applications (V
   \ bao g\u1ED3m vi\u1EC7c l\u1EA5y n\u1ED9i dung HTML c\u1EE7a m\u1ED9t trang web\
   \ t\u1EEB Internet. C\xE1c l\u1EADp tr\xECnh vi\xEAn th\u01B0\u1EDDng th\u1EF1c\u2026"
 title: "T\u1EA3i v\u1EC1 m\u1ED9t trang web"
+weight: 42
 ---
-
-{{< edit_this_page >}}
 
 ## Cái Gì & Tại Sao?
 

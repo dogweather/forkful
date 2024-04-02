@@ -7,9 +7,8 @@ model: gpt-4-1106-preview
 summary: "I PHP s\xF8ker og erstatter vi tekst for \xE5 oppdatere data eller formatere\
   \ output. Dette sparer tid og automatiserer kjedelige oppgaver."
 title: "S\xF8king og erstatting av tekst"
+weight: 10
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why? (Hva & Hvorfor?)
 I PHP søker og erstatter vi tekst for å oppdatere data eller formatere output. Dette sparer tid og automatiserer kjedelige oppgaver.

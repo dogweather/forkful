@@ -9,9 +9,8 @@ summary: "Substringien poiminta on prosessi, jolla valikoidaan ja otetaan tietty
   \ merkkijonosta. Ohjelmoijat tekev\xE4t t\xE4t\xE4, koska usein tarvitaan vain pala\
   \ dataa\u2026"
 title: Merkkijonojen osien poimiminen
+weight: 6
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why? (Mitä & Miksi?)
 Substringien poiminta on prosessi, jolla valikoidaan ja otetaan tietty osa merkkijonosta. Ohjelmoijat tekevät tätä, koska usein tarvitaan vain pala dataa esimerkiksi analyysia tai formaattia varten.

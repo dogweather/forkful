@@ -11,9 +11,8 @@ summary: "YAML, joka tarkoittaa YAML Ain't Markup Languagea, on ihmisluettava ti
   \ serialisointistandardi, jota voidaan k\xE4ytt\xE4\xE4 asetustiedostoissa sek\xE4\
   \u2026"
 title: "Ty\xF6skentely YAML:n kanssa"
+weight: 41
 ---
-
-{{< edit_this_page >}}
 
 ## Mikä & Miksi?
 

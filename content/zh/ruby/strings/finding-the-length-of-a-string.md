@@ -12,9 +12,8 @@ summary: "\u5728Ruby\u4E2D\u627E\u51FA\u5B57\u7B26\u4E32\u7684\u957F\u5EA6\u5C31
   \u67E5\u8F93\u5165\uFF0C\u622A\u65AD\u6587\u672C\u6216\u8005\u5728\u6570\u636E\u5904\
   \u7406\u4E2D\u4FDD\u6301\u4E00\u81F4\u6027\u5F88\u6709\u7528\u3002"
 title: "\u83B7\u53D6\u5B57\u7B26\u4E32\u7684\u957F\u5EA6"
+weight: 7
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why? (是什么？为什么？)
 在Ruby中找出字符串的长度就是确定它包含多少个字符。这对检查输入，截断文本或者在数据处理中保持一致性很有用。

@@ -7,9 +7,8 @@ model: gpt-4-0125-preview
 summary: "Checking if a directory exists in the filesystem is essential for managing\
   \ file structures from within your Swift applications. This task enables\u2026"
 title: Checking if a directory exists
+weight: 20
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 Checking if a directory exists in the filesystem is essential for managing file structures from within your Swift applications. This task enables developers to verify the presence of directories before attempting to read from or write to them, thus avoiding possible runtime errors.

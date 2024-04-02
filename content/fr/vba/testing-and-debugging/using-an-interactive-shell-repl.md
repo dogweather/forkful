@@ -11,9 +11,8 @@ summary: "Un shell interactif, ou boucle de lecture-\xE9valuation-affichage (REP
   \ pour Read-Eval-Print Loop), permet aux utilisateurs de saisir des commandes, de\
   \ les\u2026"
 title: Utiliser un shell interactif (REPL)
+weight: 34
 ---
-
-{{< edit_this_page >}}
 
 ## Quoi et Pourquoi ?
 

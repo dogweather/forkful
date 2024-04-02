@@ -11,9 +11,8 @@ summary: "\xC5 fjerne anf\xF8rselstegn fra en streng i Google Apps Script handle
   \ om \xE5 eliminere un\xF8dvendige anf\xF8rselstegn som kan omgi string-dataen din,\
   \ vanligvis\u2026"
 title: "Fjerner anf\xF8rselstegn fra en streng"
+weight: 9
 ---
-
-{{< edit_this_page >}}
 
 ## Hva & Hvorfor?
 

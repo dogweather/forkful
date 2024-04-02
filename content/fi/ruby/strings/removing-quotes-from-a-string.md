@@ -7,9 +7,8 @@ model: gpt-4-0125-preview
 summary: "Lainausmerkkien poistaminen merkkijonosta tarkoittaa tekstiarvojen ymp\xE4\
   rille kiedottujen kaksois- tai yksinkertaisten lainausmerkkien kuorimista pois.\u2026"
 title: Merkkijonosta lainausmerkkien poistaminen
+weight: 9
 ---
-
-{{< edit_this_page >}}
 
 ## Mikä & Miksi?
 Lainausmerkkien poistaminen merkkijonosta tarkoittaa tekstiarvojen ympärille kiedottujen kaksois- tai yksinkertaisten lainausmerkkien kuorimista pois. Ohjelmoijat tekevät tämän usein siistiäkseen käyttäjän syötteen, varmistaakseen tiedonkäsittelyn johdonmukaisuuden tai valmistaakseen tiedon järjestelmille, jotka saattavat sekaantua näistä ylimääräisistä merkeistä.

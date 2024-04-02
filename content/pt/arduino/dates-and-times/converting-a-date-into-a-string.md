@@ -7,9 +7,8 @@ model: gpt-4-1106-preview
 summary: "Converter datas em strings permite que voc\xEA exiba ou armazene datas de\
   \ forma leg\xEDvel. Programadores fazem isso para facilitar a leitura e o processamento\u2026"
 title: Convertendo uma data em uma string
+weight: 28
 ---
-
-{{< edit_this_page >}}
 
 ## O Que & Porquê?
 Converter datas em strings permite que você exiba ou armazene datas de forma legível. Programadores fazem isso para facilitar a leitura e o processamento de datas no formato que preferirem.

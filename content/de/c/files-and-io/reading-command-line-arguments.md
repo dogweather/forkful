@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "In der C-Programmierung erm\xF6glicht das Lesen von Befehlszeilenargumenten,\
   \ dass Programme Eingaben direkt aus dem Terminal akzeptieren k\xF6nnen, was\u2026"
 title: Kommandozeilenargumente lesen
+weight: 23
 ---
-
-{{< edit_this_page >}}
 
 ## Was & Warum?
 

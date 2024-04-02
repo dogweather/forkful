@@ -11,9 +11,8 @@ summary: "El registro (logging) en el desarrollo de software es el proceso de gr
   \ informaci\xF3n sobre la ejecuci\xF3n de un programa, dise\xF1ado para rastrear\
   \ su\u2026"
 title: Registro
+weight: 17
 ---
-
-{{< edit_this_page >}}
 
 ## Qué y Por Qué?
 

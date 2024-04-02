@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Regul\xE4re Ausdr\xFCcke, ein m\xE4chtiges Werkzeug zur Mustervergleichung\
   \ und Datenmanipulation, sind unverzichtbar bei Textverarbeitungsaufgaben wie Validierung\u2026"
 title: "Regul\xE4re Ausdr\xFCcke verwenden"
+weight: 11
 ---
-
-{{< edit_this_page >}}
 
 ## Was & Warum?
 Reguläre Ausdrücke, ein mächtiges Werkzeug zur Mustervergleichung und Datenmanipulation, sind unverzichtbar bei Textverarbeitungsaufgaben wie Validierung der Eingabe, Suche und Ersetzung von Text. Programmierer nutzen sie umfangreich für komplexe String-Parsing- und Datenvalidierungsaufgaben auf effiziente und prägnante Weise.

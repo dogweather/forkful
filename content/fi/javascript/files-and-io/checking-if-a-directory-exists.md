@@ -11,9 +11,8 @@ summary: "Tiedoston olemassaolon tarkistaminen JavaScriptill\xE4 on olennainen o
   \ tiedostojen k\xE4sittelyteht\xE4vi\xE4, mik\xE4 mahdollistaa skriptien varmistaa\
   \ kansion\u2026"
 title: Tarkistetaan, onko hakemisto olemassa
+weight: 20
 ---
-
-{{< edit_this_page >}}
 
 ## Mikä ja miksi?
 Tiedoston olemassaolon tarkistaminen JavaScriptillä on olennainen osa tiedostojen käsittelytehtäviä, mikä mahdollistaa skriptien varmistaa kansion olemassaolon ennen siitä lukemista tai siihen kirjoittamista. Tämä toiminto estää virheitä ja varmistaa ohjelman sujuvamman suorituksen, erityisesti sovelluksissa, jotka käsittelevät tiedostoja tai kansioita dynaamisesti käyttäjän syötteen tai ulkoisten tietolähteiden perusteella.

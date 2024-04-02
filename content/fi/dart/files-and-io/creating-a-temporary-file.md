@@ -11,9 +11,8 @@ summary: "V\xE4liaikaisen tiedoston luominen Dartissa tarkoittaa sellaisen tiedo
   \ tuottamista, joka on tarkoitettu lyhytaikaiseen k\xE4ytt\xF6\xF6n, p\xE4\xE4asiassa\
   \ skenaarioihin\u2026"
 title: "Tilap\xE4isen tiedoston luominen"
+weight: 21
 ---
-
-{{< edit_this_page >}}
 
 ## Mikä ja miksi?
 Väliaikaisen tiedoston luominen Dartissa tarkoittaa sellaisen tiedoston tuottamista, joka on tarkoitettu lyhytaikaiseen käyttöön, pääasiassa skenaarioihin kuten tietojen välimuistitus, väliaikainen tallennustila tiedostonkäsittelyä varten tai tietojen säilyttäminen, jotka ovat liian arkaluontoisia pitkäaikaiseen säilytykseen. Ohjelmoijat tekevät sen hallitakseen tietoja, jotka eivät tarvitse pysyvää tallennustilaa, parantaen siten suorituskykyä ja ylläpitäen tietohygieniaa.

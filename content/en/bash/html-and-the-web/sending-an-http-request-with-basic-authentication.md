@@ -7,9 +7,8 @@ model: gpt-4-1106-preview
 summary: "Sending an HTTP request with basic authentication involves transmitting\
   \ a username and password to confirm a user's identity. Programmers do this to\u2026"
 title: Sending an HTTP request with basic authentication
+weight: 45
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 Sending an HTTP request with basic authentication involves transmitting a username and password to confirm a user's identity. Programmers do this to access restricted resources on a server, ensuring some level of security.

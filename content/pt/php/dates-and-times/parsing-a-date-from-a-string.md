@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Analisar uma data a partir de uma string em PHP envolve converter um texto\
   \ que representa uma data e/ou hora em um objeto `DateTime` do PHP ou outros\u2026"
 title: Analisando uma data a partir de uma string
+weight: 30
 ---
-
-{{< edit_this_page >}}
 
 ## O que & Por quê?
 

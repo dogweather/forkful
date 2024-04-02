@@ -7,9 +7,8 @@ model: gpt-4-1106-preview
 summary: "Konvertering av en streng til sm\xE5 bokstaver endrer alle bokstavene i\
   \ strengen til deres sm\xE5bokstav motstykke. Dette gj\xF8res for konsistens i\u2026"
 title: "Konvertere en streng til sm\xE5 bokstaver"
+weight: 4
 ---
-
-{{< edit_this_page >}}
 
 ## Hva & Hvorfor?
 Konvertering av en streng til små bokstaver endrer alle bokstavene i strengen til deres småbokstav motstykke. Dette gjøres for konsistens i sammenligninger og søk, hvor store og små bokstaver skal behandles likt.

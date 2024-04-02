@@ -22,9 +22,8 @@ summary: "TOML, \u09AF\u09BE Tom's Obvious, Minimal Language \u098F\u09B0 \u09B8
   \u09AB\u09BF\u0997\u2026"
 title: "\u099F\u09AE\u09B2 \u09A8\u09BF\u09AF\u09BC\u09C7 \u0995\u09BE\u099C \u0995\
   \u09B0\u09BE"
+weight: 39
 ---
-
-{{< edit_this_page >}}
 
 ## কি এবং কেন?
 TOML, যা Tom's Obvious, Minimal Language এর সংক্ষিপ্ত রূপ, একটি JSON বা YAML এর মতো ডাটা ফরম্যাট কিন্তু মানুষের পক্ষে পড়া সহজ। প্রোগ্রামাররা এটি কনফিগ ফাইল হিসেবে ব্যবহার করে কারণ এটি সরল এবং ডাটা স্ট্রাকচারে ভালোভাবে অনুবাদ করে।

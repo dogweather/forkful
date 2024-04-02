@@ -13,9 +13,8 @@ summary: "C\xE1c m\u1EA3ng k\u1EBFt h\u1EE3p, th\u01B0\u1EDDng \u0111\u01B0\u1EE
   \ cho \u1EE8ng d\u1EE5ng (VBA), cho ph\xE9p c\xE1c l\u1EADp tr\xECnh vi\xEAn t\u1EA1\
   o ra c\xE1c b\u1ED9 s\u01B0u t\u1EADp c\u1EE7a c\xE1c c\u1EB7p\u2026"
 title: "S\u1EED d\u1EE5ng m\u1EA3ng li\xEAn k\u1EBFt"
+weight: 15
 ---
-
-{{< edit_this_page >}}
 
 ## Cái gì & Tại sao?
 

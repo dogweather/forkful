@@ -9,9 +9,8 @@ summary: "Zamiana napisu na ma\u0142e litery to zmiana wszystkich wielkich liter
   \ ich ma\u0142e odpowiedniki. W programowaniu robimy to dla sp\xF3jno\u015Bci danych,\
   \ \u0142atwiejszego\u2026"
 title: "Konwersja ci\u0105gu znak\xF3w na ma\u0142e litery"
+weight: 4
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why? (Co i dlaczego?)
 Zamiana napisu na małe litery to zmiana wszystkich wielkich liter na ich małe odpowiedniki. W programowaniu robimy to dla spójności danych, łatwiejszego porównywania ciągów znaków i wyszukiwania.

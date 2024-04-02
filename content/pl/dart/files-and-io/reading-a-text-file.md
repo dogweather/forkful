@@ -11,9 +11,8 @@ summary: "Odczytywanie pliku tekstowego w Dart polega na dost\u0119pie i pobiera
   \ danych z plik\xF3w zapisanych w systemie plik\xF3w. Programi\u015Bci robi\u0105\
   \ to, aby obs\u0142ugiwa\u0107\u2026"
 title: Czytanie pliku tekstowego
+weight: 22
 ---
-
-{{< edit_this_page >}}
 
 ## Co i dlaczego?
 

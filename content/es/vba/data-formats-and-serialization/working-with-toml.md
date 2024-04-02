@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "TOML, que significa Tom's Obvious, Minimal Language (Lenguaje M\xEDnimo\
   \ y Obvio de Tom), es un formato de serializaci\xF3n de datos utilizado predominantemente\u2026"
 title: Trabajando con TOML
+weight: 39
 ---
-
-{{< edit_this_page >}}
 
 ## Qué & Por qué?
 

@@ -11,9 +11,8 @@ summary: "Att skriva till standardfel (stderr) i Haskell g\xF6r det m\xF6jligt f
   r program att skilja sin utdata mellan normala resultat och felmeddelanden. Detta\
   \ \xE4r\u2026"
 title: Skriva till standardfel
+weight: 25
 ---
-
-{{< edit_this_page >}}
 
 ## Vad & Varför?
 Att skriva till standardfel (stderr) i Haskell gör det möjligt för program att skilja sin utdata mellan normala resultat och felmeddelanden. Detta är avgörande för att signalera problem och felsöka, utan att förväxla den standardutdata (stdout) som ofta bär programmets huvuddata eller resultat.

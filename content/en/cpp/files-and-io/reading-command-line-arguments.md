@@ -7,9 +7,8 @@ model: gpt-4-1106-preview
 summary: "Command line arguments let users influence a program's behavior without\
   \ changing the code. Programs use them to get input params, filepath, or operation\u2026"
 title: Reading command line arguments
+weight: 23
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 Command line arguments let users influence a program's behavior without changing the code. Programs use them to get input params, filepath, or operation mode, saving time and giving flexibility.

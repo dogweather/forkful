@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "La extracci\xF3n de subcadenas implica tomar una porci\xF3n de una cadena,\
   \ esencialmente creando una nueva cadena a partir de una existente. Los programadores\u2026"
 title: "Extracci\xF3n de subcadenas"
+weight: 6
 ---
-
-{{< edit_this_page >}}
 
 ## Qué y Por Qué?
 

@@ -7,9 +7,8 @@ model: gpt-4-0125-preview
 summary: "TOML, lyhenne sanoista Tom's Obvious, Minimal Language, on tiedon serialisointiformaatti,\
   \ joka muistuttaa JSONia tai YAMLia, mutta pyrkii\u2026"
 title: "Ty\xF6skentely TOML:n kanssa"
+weight: 39
 ---
-
-{{< edit_this_page >}}
 
 ## Mikä & Miksi?
 TOML, lyhenne sanoista Tom's Obvious, Minimal Language, on tiedon serialisointiformaatti, joka muistuttaa JSONia tai YAMLia, mutta pyrkii yksinkertaisuuteen ja luettavuuteen. Ohjelmoijat käyttävät TOMLia konfiguraatiotiedostoihin, koska se on helppo kirjoittaa ja ymmärtää, ja se kartoittuu siististi ohjelmointikielten, kuten Pythonin, tietorakenteisiin.

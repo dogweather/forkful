@@ -11,9 +11,8 @@ summary: "Assoziative Arrays, auch bekannt als Hashtabellen oder W\xF6rterb\xFCc
   \ in PowerShell, erm\xF6glichen es Ihnen, Daten in Schl\xFCssel-Wert-Paaren zu speichern,\
   \ was\u2026"
 title: Verwendung von assoziativen Arrays
+weight: 15
 ---
-
-{{< edit_this_page >}}
 
 ## Was & Warum?
 

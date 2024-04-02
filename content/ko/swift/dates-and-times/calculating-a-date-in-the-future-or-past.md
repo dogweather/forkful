@@ -18,9 +18,8 @@ summary: "\uB0A0\uC9DC \uACC4\uC0B0\uC774\uB780 \uD604\uC7AC\uB85C\uBD80\uD130 \
   \uC744 \uAD6C\uCD95\uD560 \uB54C \uD504\uB85C\uADF8\uB798\uBA38\uB4E4\uC774 \uC8FC\
   \uB85C \uC0AC\uC6A9\uD569\uB2C8\uB2E4."
 title: "\uBBF8\uB798\uB098 \uACFC\uAC70\uC758 \uB0A0\uC9DC \uACC4\uC0B0\uD558\uAE30"
+weight: 26
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why? (무엇과 왜?)
 날짜 계산이란 현재로부터 미래나 과거의 특정 날짜를 정하는 걸 말합니다. 앱에서 회원가입 후 30일의 체험 기간을 설정하는 등, 기간을 제한하거나 예약 시스템을 구축할 때 프로그래머들이 주로 사용합니다.

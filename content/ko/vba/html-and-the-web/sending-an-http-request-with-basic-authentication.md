@@ -20,9 +20,8 @@ summary: "Visual Basic for Applications(VBA)\uC5D0\uC11C \uAE30\uBCF8 \uC778\uC9
   \uBE44\uC2A4\uC640 \uC0C1\uD638 \uC791\uC6A9\uD558\uC5EC Excel\uC774\uB098\u2026"
 title: "\uAE30\uBCF8 \uC778\uC99D\uC744 \uC0AC\uC6A9\uD558\uC5EC HTTP \uC694\uCCAD\
   \ \uBCF4\uB0B4\uAE30"
+weight: 45
 ---
-
-{{< edit_this_page >}}
 
 ## 무엇이며 왜 중요한가?
 

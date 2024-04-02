@@ -7,9 +7,8 @@ model: gpt-4-1106-preview
 summary: Reading a text file means loading its content into your program. We do it
   to process, analyze, or display stored data, like settings, logs, or user input.
 title: Reading a text file
+weight: 22
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 

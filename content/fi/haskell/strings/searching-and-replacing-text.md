@@ -9,9 +9,8 @@ summary: "Tekstin etsint\xE4 ja korvaaminen auttaa l\xF6yt\xE4m\xE4\xE4n ja muok
   \ koodissa tai tekstitiedostoissa olevia merkkijonoja. Ohjelmoijat k\xE4ytt\xE4\
   v\xE4t t\xE4t\xE4 toimintoa\u2026"
 title: Tekstin etsiminen ja korvaaminen
+weight: 10
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 Tekstin etsintä ja korvaaminen auttaa löytämään ja muokkaamaan koodissa tai tekstitiedostoissa olevia merkkijonoja. Ohjelmoijat käyttävät tätä toimintoa nopeuttaakseen koodin refaktorointia ja virheiden korjausta.

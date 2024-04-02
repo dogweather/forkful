@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Testien kirjoittaminen Arduino-ymp\xE4rist\xF6ss\xE4 tarkoittaa automatisoitujen\
   \ testien luomista, jotka varmistavat koodisi toimivuuden Arduino-laitteissa.\u2026"
 title: Testien kirjoittaminen
+weight: 36
 ---
-
-{{< edit_this_page >}}
 
 ## Mikä & Miksi?
 

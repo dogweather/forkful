@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "CSV-filer (Comma-Separated Values, verdier skilt med komma) er et vanlig\
   \ datautvekslingsformat som representerer tabelldata i ren tekst ved \xE5 bruke\u2026"
 title: Arbeide med CSV
+weight: 37
 ---
-
-{{< edit_this_page >}}
 
 ## Hva & Hvorfor?
 CSV-filer (Comma-Separated Values, verdier skilt med komma) er et vanlig datautvekslingsformat som representerer tabelldata i ren tekst ved å bruke kommaer for å skille individuelle verdier. Programmerere arbeider med CSV-filer for å importere, eksportere, og manipulere data enkelt på tvers av ulike applikasjoner og tjenester, siden det er et enkelt, bredt støttet format som er kompatibelt med regnearkprogrammer, databaser og programmeringsspråk.

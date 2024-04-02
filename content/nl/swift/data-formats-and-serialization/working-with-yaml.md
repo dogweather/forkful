@@ -10,9 +10,8 @@ model: gpt-4-0125-preview
 summary: "YAML, een afkorting voor \"YAML Ain't Markup Language\", is een voor mensen\
   \ leesbare gegevensserialisatiestandaard die we kunnen gebruiken om bestanden te\u2026"
 title: Werken met YAML
+weight: 41
 ---
-
-{{< edit_this_page >}}
 
 ## Wat & Waarom?
 YAML, een afkorting voor "YAML Ain't Markup Language", is een voor mensen leesbare gegevensserialisatiestandaard die we kunnen gebruiken om bestanden te configureren of gegevensuitwisseling te doen. Programmeurs zijn dol op YAML vanwege de eenvoud en leesbaarheid, vooral in configuratie-instellingen, CI/CD-scripts en containers orchestratiesystemen.

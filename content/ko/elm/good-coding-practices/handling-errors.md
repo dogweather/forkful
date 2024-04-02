@@ -19,9 +19,8 @@ summary: "\uC624\uB958\uB97C \uCC98\uB9AC\uD55C\uB2E4\uB294 \uAC83\uC740 \uC798\
   \uCCB4 \uC218\uB2E8\uC744 \uC81C\uACF5\uD558\uAE30 \uC704\uD574 \uC774\uB97C \uC218\
   \uD589\uD569\uB2C8\uB2E4."
 title: "\uC5D0\uB7EC \uCC98\uB9AC\uD558\uAE30"
+weight: 16
 ---
-
-{{< edit_this_page >}}
 
 ## 무엇을, 왜?
 오류를 처리한다는 것은 잘못될 수 있는 것들을 예측하고 다룰 수 있는 코드를 작성하는 것을 의미합니다. 프로그래머들은 크래시를 방지하고, 데이터 무결성을 보호하고, 사용자에게 우아한 대체 수단을 제공하기 위해 이를 수행합니다.

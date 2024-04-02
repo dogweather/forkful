@@ -7,9 +7,8 @@ model: gpt-4-1106-preview
 summary: "Ein tempor\xE4res File ist eine Datei, die zur kurzzeitigen Datenspeicherung\
   \ w\xE4hrend der Laufzeit eines Programms erstellt wird. Programmierer nutzen solche\u2026"
 title: "Erstellung einer tempor\xE4ren Datei"
+weight: 21
 ---
-
-{{< edit_this_page >}}
 
 ## Was & Warum?
 Ein temporäres File ist eine Datei, die zur kurzzeitigen Datenspeicherung während der Laufzeit eines Programms erstellt wird. Programmierer nutzen solche temporären Dateien für vielfältige Zwecke, beispielsweise zum sicheren Umgang mit großen Datenmengen, die nicht im Hauptspeicher gehalten werden können, oder zum Erstellen von Backup-Kopien.

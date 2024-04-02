@@ -14,9 +14,8 @@ summary: "\u628A\u5B57\u7B26\u4E32\u8F6C\u6362\u6210\u5C0F\u5199\u610F\u5473\u77
   \u3001\u6BD4\u8F83\u64CD\u4F5C\uFF0C\u4EE5\u53CA\u6EE1\u8DB3\u5927\u5C0F\u5199\u4E0D\
   \u654F\u611F\u7684\u641C\u7D22\u9700\u6C42\u3002"
 title: "\u5C06\u5B57\u7B26\u4E32\u8F6C\u6362\u4E3A\u5C0F\u5199"
+weight: 4
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why? (什么以及为什么?)
 把字符串转换成小写意味着将所有大写字符改为小写格式。程序员这么做以实现数据一致性、比较操作，以及满足大小写不敏感的搜索需求。

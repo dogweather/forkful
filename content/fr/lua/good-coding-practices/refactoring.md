@@ -9,9 +9,8 @@ summary: "Le remaniement (ou refactoring) est l'art de retoucher le code existan
   \ pour am\xE9liorer sa structure, sa lisibilit\xE9 et son efficacit\xE9 sans en\
   \ alt\xE9rer le\u2026"
 title: 'Refactoring : Mode d''emploi'
+weight: 19
 ---
-
-{{< edit_this_page >}}
 
 ## Quoi & Pourquoi ?
 Le remaniement (ou refactoring) est l'art de retoucher le code existant pour améliorer sa structure, sa lisibilité et son efficacité sans en altérer le comportement externe. Les programmeurs le font pour rendre leur code plus maintenable, réduire la complexité, et souvent comme une étape préliminaire avant d'ajouter de nouvelles fonctionnalités ou de corriger des bugs.

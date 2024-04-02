@@ -9,9 +9,8 @@ summary: "String in Kleinbuchstaben umwandeln bedeutet, alle Gro\xDFbuchstaben i
   \ einem String in ihre entsprechenden Kleinbuchstaben zu konvertieren. Wir machen\
   \ das\u2026"
 title: Umformung eines Strings in Kleinbuchstaben
+weight: 4
 ---
-
-{{< edit_this_page >}}
 
 ## Was & Warum?
 String in Kleinbuchstaben umwandeln bedeutet, alle Großbuchstaben in einem String in ihre entsprechenden Kleinbuchstaben zu konvertieren. Wir machen das für konsistente Datenverarbeitung und Vergleiche, zum Beispiel bei der Eingabeprüfung.

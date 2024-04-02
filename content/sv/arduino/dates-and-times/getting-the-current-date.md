@@ -11,9 +11,8 @@ summary: "Att f\xE5 det aktuella datumet i Arduino-projekt inneb\xE4r att erh\xE
   lla realtidsinformation som kan vara avg\xF6rande f\xF6r loggning, tidsst\xE4mpling\
   \ eller\u2026"
 title: "F\xE5 det aktuella datumet"
+weight: 29
 ---
-
-{{< edit_this_page >}}
 
 ## Vad & Varför?
 Att få det aktuella datumet i Arduino-projekt innebär att erhålla realtidsinformation som kan vara avgörande för loggning, tidsstämpling eller schemaläggning av uppgifter. Programmerare behöver ofta denna kapacitet för att förbättra funktionaliteten, säkerställa datarelevans och underlätta tidskänsliga operationer i deras IoT- och inbyggda projekt.

@@ -11,9 +11,8 @@ summary: "In Ruby helpt het maken van een tijdelijk bestand om gevoelige gegeven
   \ te beschermen en vluchtige opslagbehoeften te beheren. Programmeurs gebruiken\
   \ het\u2026"
 title: Een tijdelijk bestand aanmaken
+weight: 21
 ---
-
-{{< edit_this_page >}}
 
 ## Wat & Waarom?
 In Ruby helpt het maken van een tijdelijk bestand om gevoelige gegevens te beschermen en vluchtige opslagbehoeften te beheren. Programmeurs gebruiken het voor veilige, kortetermijnbestandsafhandeling die voorkomt dat het bestandssysteem vol raakt.

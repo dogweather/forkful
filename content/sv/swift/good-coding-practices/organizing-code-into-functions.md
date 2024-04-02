@@ -9,9 +9,8 @@ summary: "Att gruppera kod i funktioner inneb\xE4r att bryta ner uppgifter i \xE
   teranv\xE4ndbara delar. Det g\xF6r koden ren, mindre felben\xE4gen och enklare att\
   \ fels\xF6ka eller\u2026"
 title: Organisera kod i funktioner
+weight: 18
 ---
-
-{{< edit_this_page >}}
 
 ## Vad & Varför?
 Att gruppera kod i funktioner innebär att bryta ner uppgifter i återanvändbara delar. Det gör koden ren, mindre felbenägen och enklare att felsöka eller refaktorisera.

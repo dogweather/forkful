@@ -18,9 +18,8 @@ summary: "String interpolation \u090F\u0915 \u0924\u0930\u0940\u0915\u093E \u093
   \u094D\u092F\u094B\u0902\u0915\u093F \u092F\u0939 variable\u2026"
 title: "\u0938\u094D\u091F\u094D\u0930\u093F\u0902\u0917 \u0907\u0902\u091F\u0930\u092A\
   \u094B\u0932\u0947\u0936\u0928"
+weight: 8
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why? (क्या और क्यों?)
 

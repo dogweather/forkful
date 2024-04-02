@@ -11,9 +11,8 @@ summary: "JSON, que significa Notaci\xF3n de Objetos JavaScript, es un formato l
   \ de intercambio de datos, lo que lo hace perfecto para almacenamiento de datos\
   \ o\u2026"
 title: Trabajando con JSON
+weight: 38
 ---
-
-{{< edit_this_page >}}
 
 ## Qué y Por Qué?
 

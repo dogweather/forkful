@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Getallen afronden is het proces waarbij de cijfers van een nummer worden\
   \ aangepast om de precisie volgens bepaalde regels te verminderen, hetzij naar het\u2026"
 title: Afronden van getallen
+weight: 13
 ---
-
-{{< edit_this_page >}}
 
 ## Wat & Waarom?
 

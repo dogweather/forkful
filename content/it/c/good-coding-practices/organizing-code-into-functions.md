@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Organizzare il codice in funzioni in C comporta la suddivisione di compiti\
   \ complessi in blocchi di codice pi\xF9 piccoli e riutilizzabili. Questa pratica\u2026"
 title: Organizzare il codice in funzioni
+weight: 18
 ---
-
-{{< edit_this_page >}}
 
 ## Cosa & Perché?
 

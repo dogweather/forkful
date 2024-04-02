@@ -11,9 +11,8 @@ summary: "\xC5 jobbe med JSON i Bash-programmering inneb\xE6rer parsing, uttrekk
   \ og manipulering av JSON-data direkte fra kommandolinjen. Programmerere gj\xF8\
   r ofte dette\u2026"
 title: Arbeider med JSON
+weight: 38
 ---
-
-{{< edit_this_page >}}
 
 ## Hva & Hvorfor?
 Å jobbe med JSON i Bash-programmering innebærer parsing, uttrekking og manipulering av JSON-data direkte fra kommandolinjen. Programmerere gjør ofte dette for å sømløst integrere shell-skript med web-APIer og moderne datautvekslingsformater, noe som gjør Bash-skripting kraftigere og mer relevant i et JSON-tungt økosystem.

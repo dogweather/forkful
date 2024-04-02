@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "JSON, eller JavaScript Object Notation, er et lettvektig datautvekslingsformat,\
   \ noe som gj\xF8r det perfekt for datalagring eller konfigurasjonsfiler i\u2026"
 title: Arbeider med JSON
+weight: 38
 ---
-
-{{< edit_this_page >}}
 
 ## Hva & Hvorfor?
 

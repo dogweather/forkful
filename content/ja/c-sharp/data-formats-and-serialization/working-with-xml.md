@@ -17,9 +17,8 @@ summary: "XML\uFF08eXtensible Markup Language\uFF09\u306F\u3001\u30C7\u30FC\u30B
   \ API\u3092\u8003\u3048\u3066\u307F\u3066\u304F\u3060\u3055\u3044\uFF09\u3067XML\u3092\
   \u6271\u3044\u307E\u3059\u3002"
 title: "XML\u306E\u6271\u3044\u65B9"
+weight: 40
 ---
-
-{{< edit_this_page >}}
 
 ## 何となぜ？
 XML（eXtensible Markup Language）は、データを読みやすい形式で構造化することについてです。プログラマーは設定、アプリ間のデータ交換、仕様が要求する場合（SOAPやWeb APIを考えてみてください）でXMLを扱います。

@@ -11,9 +11,8 @@ summary: "Hakemiston olemassaolon tarkistaminen on perusteht\xE4v\xE4 PHP-ohjelm
   \ koska se mahdollistaa hakemiston l\xE4sn\xE4olon varmistamisen ennen toimintoja,\
   \ kuten\u2026"
 title: Tarkistetaan, onko hakemisto olemassa
+weight: 20
 ---
-
-{{< edit_this_page >}}
 
 ## Mikä ja miksi?
 

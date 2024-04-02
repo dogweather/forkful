@@ -11,9 +11,8 @@ summary: "Manejar errores en C involucra detectar y responder a condiciones an\x
   malas que surgen durante la ejecuci\xF3n del programa. Los programadores hacen esto\
   \ para\u2026"
 title: Manejando errores
+weight: 16
 ---
-
-{{< edit_this_page >}}
 
 ## Qué y Por Qué?
 

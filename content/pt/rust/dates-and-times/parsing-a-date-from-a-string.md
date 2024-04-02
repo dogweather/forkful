@@ -11,9 +11,8 @@ summary: "Analisar uma data a partir de uma string \xE9 uma tarefa comum ao lida
   \ com entrada de usu\xE1rio ou leitura de dados de arquivos, o que envolve converter\
   \ os\u2026"
 title: Analisando uma data a partir de uma string
+weight: 30
 ---
-
-{{< edit_this_page >}}
 
 ## O Que & Por Quê?
 

@@ -11,9 +11,8 @@ summary: "YAML, eller YAML Ain't Markup Language, \xE4r ett m\xE4nniskol\xE4sbar
   \ dataserieringsspr\xE5k. Programmerare anv\xE4nder det ofta f\xF6r konfigurationsfiler\
   \ och\u2026"
 title: Att Arbeta med YAML
+weight: 41
 ---
-
-{{< edit_this_page >}}
 
 ## Vad & Varför?
 YAML, eller YAML Ain't Markup Language, är ett människoläsbart dataserieringsspråk. Programmerare använder det ofta för konfigurationsfiler och dataöverföring mellan språk. Dess enkelhet och läsbarhet gör det särskilt populärt för uppgifter som involverar att sätta upp miljöer, applikationer eller tjänster där konfigurationer är avgörande och bör vara lättförståeliga och redigerbara.

@@ -9,9 +9,8 @@ summary: "Un REPL (Read-Eval-Print Loop - Ciclo Leggi-Valuta-Stampa) \xE8 una sh
   \ interattiva che elabora input singoli degli utenti, esegue codice e restituisce\
   \ il\u2026"
 title: Utilizzo di un interprete interattivo (REPL)
+weight: 34
 ---
-
-{{< edit_this_page >}}
 
 ## Cosa & Perché?
 Un REPL (Read-Eval-Print Loop - Ciclo Leggi-Valuta-Stampa) è una shell interattiva che elabora input singoli degli utenti, esegue codice e restituisce il risultato. I programmatori lo utilizzano per esperimenti rapidi, per il debug o per l’apprendimento, poiché permette un feedback immediato e iterazioni.

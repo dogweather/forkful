@@ -13,9 +13,8 @@ summary: "Vi\u1EC7c l\xE0m vi\u1EC7c v\u1EDBi XML trong Google Apps Script cho p
   \ v\xE0 t\u1EA1o d\u1EEF li\u1EC7u XML, \u0111\xE2y l\xE0 \u0111i\u1EC1u c\u1EA7\
   n thi\u1EBFt cho c\xE1c\u2026"
 title: "L\xE0m vi\u1EC7c v\u1EDBi XML"
+weight: 40
 ---
-
-{{< edit_this_page >}}
 
 ## Gì & Tại Sao?
 

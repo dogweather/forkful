@@ -9,9 +9,8 @@ summary: "Usuwanie cudzys\u0142ow\xF3w ze stringa w C# oznacza wyeliminowanie ty
   \ uporczywych znak\xF3w podw\xF3jnego (`\"`) lub pojedynczego (`'`) cudzys\u0142\
   owu obejmuj\u0105cych tw\xF3j\u2026"
 title: "Usuwanie cudzys\u0142ow\xF3w z ci\u0105gu znak\xF3w"
+weight: 9
 ---
-
-{{< edit_this_page >}}
 
 ## Co i dlaczego?
 Usuwanie cudzysłowów ze stringa w C# oznacza wyeliminowanie tych uporczywych znaków podwójnego (`"`) lub pojedynczego (`'`) cudzysłowu obejmujących twój tekst. Programiści robią to, aby oczyścić dane, przygotować je do wprowadzenia do bazy danych lub sprawić, żeby stringi były bezpieczne dla dalszego przetwarzania, tak aby nic nie poszło źle, gdy pojawi się przypadkowy cudzysłów.

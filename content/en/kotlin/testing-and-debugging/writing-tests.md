@@ -7,9 +7,8 @@ model: gpt-4-0125-preview
 summary: "Writing tests in Kotlin involves crafting code snippets that automatically\
   \ validate the functional correctness of your software modules, ensuring they\u2026"
 title: Writing tests
+weight: 36
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 

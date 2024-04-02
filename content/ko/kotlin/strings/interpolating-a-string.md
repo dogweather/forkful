@@ -14,9 +14,8 @@ summary: "\uBB38\uC790\uC5F4 \uBCF4\uAC04(string interpolation)\uC740 \uBCC0\uC2
   \ \uBB38\uC790\uC5F4\uACFC \uD569\uCCD0\uC11C \uC77D\uAE30 \uC26C\uC6B4 \uACB0\uACFC\
   \uB97C \uB9CC\uB4E4\uAE30 \uC704\uD574 \uC0AC\uC6A9\uD569\uB2C8\uB2E4."
 title: "\uBB38\uC790\uC5F4 \uBCF4\uAC04\uD558\uAE30"
+weight: 8
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why? (무엇인가요? 왜 사용하나요?)
 문자열 보간(string interpolation)은 변수나 표현식을 문자열 안에 끼워넣는 것입니다. 데이터를 동적으로 문자열과 합쳐서 읽기 쉬운 결과를 만들기 위해 사용합니다.

@@ -9,9 +9,8 @@ summary: "Substringien poiminta tarkoittaa isomman merkkijonon sis\xE4lt\xE4 tie
   \ osan irrottamista. Ohjelmoijat tekev\xE4t t\xE4t\xE4, koska usein tarvitaan vain\
   \ jonkin tiedon\u2026"
 title: Merkkijonojen osien poimiminen
+weight: 6
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why? (Mitä & Miksi?)
 Substringien poiminta tarkoittaa isomman merkkijonon sisältä tietyn osan irrottamista. Ohjelmoijat tekevät tätä, koska usein tarvitaan vain jonkin tiedon palanen, esimerkiksi käyttäjänimi tai tiedostopääte.

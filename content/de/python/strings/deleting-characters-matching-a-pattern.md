@@ -8,9 +8,8 @@ model: gpt-4-1106-preview
 summary: "Das L\xF6schen von Zeichen, die einem Muster entsprechen, bedeutet, bestimmte\
   \ Zeichen aus einer Zeichenkette (String) zu entfernen. Programmierer tun dies,\u2026"
 title: "L\xF6schen von Zeichen, die einem Muster entsprechen"
+weight: 5
 ---
-
-{{< edit_this_page >}}
 
 ## Was & Warum?
 Das Löschen von Zeichen, die einem Muster entsprechen, bedeutet, bestimmte Zeichen aus einer Zeichenkette (String) zu entfernen. Programmierer tun dies, um Daten zu bereinigen, Eingaben zu validieren oder einfach um unerwünschte Informationen zu filtern.

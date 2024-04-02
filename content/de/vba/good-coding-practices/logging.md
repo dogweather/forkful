@@ -10,9 +10,8 @@ model: gpt-4-0125-preview
 summary: "Das Logging in Visual Basic f\xFCr Anwendungen (VBA) beinhaltet das Aufzeichnen\
   \ von Informationen \xFCber das Laufzeitverhalten eines Programms in einer Datei,\u2026"
 title: Protokollierung
+weight: 17
 ---
-
-{{< edit_this_page >}}
 
 ## Was & Warum?
 

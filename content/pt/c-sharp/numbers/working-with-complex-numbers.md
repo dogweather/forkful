@@ -9,9 +9,8 @@ summary: "N\xFAmeros complexos expandem nosso sistema num\xE9rico para incluir n
   meros imagin\xE1rios, permitindo-nos resolver equa\xE7\xF5es que n\xE3o t\xEAm solu\xE7\
   \xF5es reais.\u2026"
 title: "Trabalhando com n\xFAmeros complexos"
+weight: 14
 ---
-
-{{< edit_this_page >}}
 
 ## O Que & Por Que?
 Números complexos expandem nosso sistema numérico para incluir números imaginários, permitindo-nos resolver equações que não têm soluções reais. Programadores trabalham com eles em campos como engenharia, física e processamento de sinais, onde esses números são essenciais para modelagem e resolução de problemas.

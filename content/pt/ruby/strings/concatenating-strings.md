@@ -9,9 +9,8 @@ summary: "Concatenar strings \xE9 o processo de juntar duas ou mais strings para
   \ uma \xFAnica. Programadores fazem isso para construir mensagens, gerar sa\xED\
   das\u2026"
 title: Concatenando strings
+weight: 3
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why? (O Que & Por Quê?)
 Concatenar strings é o processo de juntar duas ou mais strings para formar uma única. Programadores fazem isso para construir mensagens, gerar saídas formatadas, ou simplesmente para organizar dados de forma legível.

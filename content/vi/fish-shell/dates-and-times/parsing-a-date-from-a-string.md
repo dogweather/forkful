@@ -15,9 +15,8 @@ summary: "Chuy\u1EC3n \u0111\u1ED5i m\u1ED9t ng\xE0y t\u1EEB m\u1ED9t chu\u1ED7i
   n v\xE0 chuy\u1EC3n \u0111\u1ED5i n\xF3 th\xE0nh c\u1EA5u tr\xFAc d\u1EEF li\u1EC7\
   u ng\xE0y\u2026"
 title: "Ph\xE2n t\xEDch ng\xE0y t\u1EEB chu\u1ED7i k\xED t\u1EF1"
+weight: 30
 ---
-
-{{< edit_this_page >}}
 
 ## Cái gì & Tại sao?
 

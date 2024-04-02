@@ -9,9 +9,8 @@ summary: "G\xE9n\xE9rer des nombres al\xE9atoires en Haskell consiste \xE0 cr\xE
   er des nombres qui sont impr\xE9visibles selon les normes humaines. Ceci est crucial\
   \ dans des\u2026"
 title: "G\xE9n\xE9ration de nombres al\xE9atoires"
+weight: 12
 ---
-
-{{< edit_this_page >}}
 
 ## Quoi & Pourquoi ?
 

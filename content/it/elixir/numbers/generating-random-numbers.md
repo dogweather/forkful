@@ -7,9 +7,8 @@ model: gpt-4-0125-preview
 summary: "La generazione di numeri casuali in Elixir \xE8 un compito di programmazione\
   \ fondamentale, vitale per applicazioni che necessitano di risultati imprevedibili\u2026"
 title: Generazione di numeri casuali
+weight: 12
 ---
-
-{{< edit_this_page >}}
 
 ## Cosa & Perché?
 

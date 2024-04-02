@@ -10,9 +10,8 @@ model: gpt-4-0125-preview
 summary: "\xC9crire sur l'erreur standard (stderr) en Elixir est une m\xE9thode permettant\
   \ de diriger les messages d'erreur et les diagnostics \xE0 part de la sortie\u2026"
 title: "\xC9crire sur l'erreur standard"
+weight: 25
 ---
-
-{{< edit_this_page >}}
 
 ## Quoi et pourquoi ?
 

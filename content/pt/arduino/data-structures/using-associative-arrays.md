@@ -10,9 +10,8 @@ model: gpt-4-0125-preview
 summary: "No mundo do Arduino, arrays associativos permitem que voc\xEA associe chaves\
   \ a valores, algo como parear meias com seus pares. Eles s\xE3o uma escolha acertada\u2026"
 title: Usando arrays associativos
+weight: 15
 ---
-
-{{< edit_this_page >}}
 
 ## O quê & Por quê?
 No mundo do Arduino, arrays associativos permitem que você associe chaves a valores, algo como parear meias com seus pares. Eles são uma escolha acertada quando você precisa armazenar e recuperar dados usando nomes descritivos, tornando seu código mais limpo e muito mais compreensível.

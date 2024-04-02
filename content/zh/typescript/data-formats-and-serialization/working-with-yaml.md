@@ -21,9 +21,8 @@ summary: "YAML\uFF0C\u4E00\u79CD\u65E8\u5728\u5BF9\u4EBA\u7C7B\u53CB\u597D\u7684
   \u5176\u6210\u4E3ATypeScript\u5F00\u53D1\u7684\u5E94\u7528\u7A0B\u5E8F\u7684\u7EDD\
   \u4F73\u9009\u62E9\u3002"
 title: "\u4F7F\u7528YAML\u5DE5\u4F5C"
+weight: 41
 ---
-
-{{< edit_this_page >}}
 
 ## 什么和为什么？
 YAML，一种旨在对人类友好的数据序列化语言，通常用于配置文件、进程间消息传递和数据存储。程序员之所以依赖YAML，是因为它的可读性和易用性，特别是在处理复杂的结构化数据时，这使其成为TypeScript开发的应用程序的绝佳选择。

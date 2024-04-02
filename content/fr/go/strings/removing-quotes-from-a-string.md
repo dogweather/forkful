@@ -11,9 +11,8 @@ summary: "Retirer les guillemets d'une cha\xEEne en Go consiste \xE0 \xE9liminer
   \ guillemets de d\xE9but et de fin (`\"` ou `'`) d'une cha\xEEne donn\xE9e. Les\
   \ programmeurs ont\u2026"
 title: "Supprimer les guillemets d'une cha\xEEne de caract\xE8res"
+weight: 9
 ---
-
-{{< edit_this_page >}}
 
 ## Quoi & Pourquoi ?
 

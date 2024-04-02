@@ -9,9 +9,8 @@ summary: "\xC5 sende en HTTP-foresp\xF8rsel betyr \xE5 be en webserver om data e
   \ handlinger. Programmerere gj\xF8r dette for \xE5 integrere nettressurser, hente\
   \ informasjon,\u2026"
 title: "\xC5 sende en HTTP-foresp\xF8rsel"
+weight: 44
 ---
-
-{{< edit_this_page >}}
 
 ## Hva & Hvorfor?
 Å sende en HTTP-forespørsel betyr å be en webserver om data eller handlinger. Programmerere gjør dette for å integrere nettressurser, hente informasjon, eller samhandle med andre tjenester.

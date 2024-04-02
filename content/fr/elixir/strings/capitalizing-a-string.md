@@ -11,9 +11,8 @@ summary: "La capitalisation d'une cha\xEEne de caract\xE8res implique de convert
   \ la premi\xE8re lettre de la cha\xEEne en majuscule tout en s'assurant que le reste\
   \ des\u2026"
 title: "Mettre en majuscule une cha\xEEne"
+weight: 2
 ---
-
-{{< edit_this_page >}}
 
 ## Quoi & Pourquoi ?
 

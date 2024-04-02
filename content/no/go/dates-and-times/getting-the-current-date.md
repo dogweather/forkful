@@ -11,9 +11,8 @@ summary: "\xC5 hente den n\xE5v\xE6rende datoen i Go er en grunnleggende oppgave
   \ programmerere, p\xE5 linje med \"Hello, World!\" i sin allestedsv\xE6relse. Det\
   \ er vesentlig for\u2026"
 title: "F\xE5 dagens dato"
+weight: 29
 ---
-
-{{< edit_this_page >}}
 
 ## Hva & Hvorfor?
 

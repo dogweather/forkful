@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Das Abrufen des aktuellen Datums in Python ist eine Grundoperation f\xFC\
   r viele Anwendungen, wie Protokollierung, Datenanalyse und zeitbasierte\u2026"
 title: Den aktuellen Datum abrufen
+weight: 29
 ---
-
-{{< edit_this_page >}}
 
 ## Was & Warum?
 

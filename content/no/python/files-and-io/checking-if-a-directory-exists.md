@@ -11,9 +11,8 @@ summary: "\xC5 sjekke om en mappe eksisterer i Python handler om \xE5 verifisere
   relsen av en mappe i filsystemet f\xF8r man utf\xF8rer operasjoner som \xE5 lese\
   \ eller\u2026"
 title: Sjekker om en mappe eksisterer
+weight: 20
 ---
-
-{{< edit_this_page >}}
 
 ## Hva & Hvorfor?
 Å sjekke om en mappe eksisterer i Python handler om å verifisere tilstedeværelsen av en mappe i filsystemet før man utfører operasjoner som å lese eller skrive filer. Programmerere gjør dette for å unngå feil som `FileNotFoundError`, for å sikre at applikasjonen oppfører seg pålitelig og ikke krasjer når den prøver å interagere med mapper.

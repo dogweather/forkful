@@ -21,9 +21,8 @@ summary: "\u5728 Rust \u7F16\u7A0B\u4E2D\uFF0C\u5904\u7406 YAML\uFF08YAML \u4E0D
   \u683C\u5F0F\u5904\u7406\u590D\u6742\u7684\u6570\u636E\u7ED3\u6784\uFF0C\u5229\u7528\
   \u5176\u76F8\u5BF9\u4E8E JSON \u6216 XML\u2026"
 title: "\u4F7F\u7528YAML\u5DE5\u4F5C"
+weight: 41
 ---
-
-{{< edit_this_page >}}
 
 ## 什么 & 为什么？
 

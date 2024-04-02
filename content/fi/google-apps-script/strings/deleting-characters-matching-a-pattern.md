@@ -11,9 +11,8 @@ summary: "Merkkien poistaminen, jotka vastaavat tietty\xE4 mallia, on tekniikka,
   \ k\xE4ytet\xE4\xE4n merkkijonojen puhdistamiseen tai muotoiluun ohjelmoinnissa.\
   \ Google Apps\u2026"
 title: Mallin mukaisten merkkien poistaminen
+weight: 5
 ---
-
-{{< edit_this_page >}}
 
 ## Mikä & Miksi?
 

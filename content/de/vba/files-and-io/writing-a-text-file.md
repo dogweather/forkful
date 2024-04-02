@@ -10,9 +10,8 @@ model: gpt-4-0125-preview
 summary: "Das Schreiben einer Textdatei in Visual Basic for Applications (VBA) umfasst\
   \ das Erstellen, Modifizieren oder Anh\xE4ngen von Textdaten an Dateien, eine\u2026"
 title: Eine Textdatei schreiben
+weight: 24
 ---
-
-{{< edit_this_page >}}
 
 ## Was & Warum?
 

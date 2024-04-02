@@ -9,9 +9,8 @@ summary: "Oppretting av midlertidige filer lar oss holde data midlertidig under 
   \ kj\xF8ring. Programmerere gj\xF8r dette for sikkerhetskopiering, for \xE5 unng\xE5\
   \u2026"
 title: Opprette en midlertidig fil
+weight: 21
 ---
-
-{{< edit_this_page >}}
 
 ## Hva & Hvorfor?
 Oppretting av midlertidige filer lar oss holde data midlertidig under programmets kjøring. Programmerere gjør dette for sikkerhetskopiering, for å unngå databehandlingstap ved feil, eller når vi trenger et sted å sette fra oss data uten å påvirke permanente filer.

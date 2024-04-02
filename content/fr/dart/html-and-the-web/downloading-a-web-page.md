@@ -11,9 +11,8 @@ summary: "T\xE9l\xE9charger une page web implique de r\xE9cup\xE9rer le contenu 
   \ page web via son URL pour le traitement ou le stockage. Les programmeurs font\
   \ cela pour\u2026"
 title: "T\xE9l\xE9charger une page web"
+weight: 42
 ---
-
-{{< edit_this_page >}}
 
 ## Quoi & Pourquoi ?
 

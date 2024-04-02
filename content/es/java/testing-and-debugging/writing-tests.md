@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Escribir pruebas en Java se trata de verificar que tu c\xF3digo se comporta\
   \ como se espera bajo varias condiciones. Los programadores escriben pruebas para\u2026"
 title: Escribiendo pruebas
+weight: 36
 ---
-
-{{< edit_this_page >}}
 
 ## Qué y Por Qué?
 Escribir pruebas en Java se trata de verificar que tu código se comporta como se espera bajo varias condiciones. Los programadores escriben pruebas para prevenir errores, asegurar que la funcionalidad permanezca correcta después de cambios, y fomentar buenos principios de diseño de software.

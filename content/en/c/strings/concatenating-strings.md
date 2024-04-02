@@ -7,9 +7,8 @@ model: gpt-4-0125-preview
 summary: "String concatenation in C involves joining two or more strings end-to-end\
   \ to form a new string. Programmers perform this operation to dynamically\u2026"
 title: Concatenating strings
+weight: 3
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 

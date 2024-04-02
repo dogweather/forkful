@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Comparer deux dates en programmation est une t\xE2che fondamentale permettant\
   \ aux d\xE9veloppeurs d'\xE9valuer la relation chronologique entre les dates. Ces\u2026"
 title: Comparer deux dates
+weight: 27
 ---
-
-{{< edit_this_page >}}
 
 ## Quoi et pourquoi ?
 

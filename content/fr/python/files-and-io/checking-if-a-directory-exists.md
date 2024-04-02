@@ -11,9 +11,8 @@ summary: "V\xE9rifier si un r\xE9pertoire existe en Python consiste \xE0 confirm
   \ la pr\xE9sence d'un dossier dans le syst\xE8me de fichiers avant d'effectuer des\
   \ op\xE9rations\u2026"
 title: "V\xE9rifier si un r\xE9pertoire existe"
+weight: 20
 ---
-
-{{< edit_this_page >}}
 
 ## Quoi & Pourquoi ?
 

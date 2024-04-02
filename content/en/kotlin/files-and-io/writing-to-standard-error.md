@@ -8,9 +8,8 @@ model: gpt-4-0125-preview
 summary: "Writing to standard error (stderr) is about outputting error messages and\
   \ diagnostics to a separate stream, distinct from standard output (stdout), which\u2026"
 title: Writing to standard error
+weight: 25
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 

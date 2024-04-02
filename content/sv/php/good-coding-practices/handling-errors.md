@@ -8,9 +8,8 @@ model: gpt-4-1106-preview
 summary: "Felhantering i PHP handlar om att hantera och svara p\xE5 tillst\xE5nd som\
   \ st\xF6r det normala programfl\xF6det, som till exempel saknade filer eller felaktig\u2026"
 title: Hantering av fel
+weight: 16
 ---
-
-{{< edit_this_page >}}
 
 ## Vad & Varför?
 Felhantering i PHP handlar om att hantera och svara på tillstånd som stör det normala programflödet, som till exempel saknade filer eller felaktig datainmatning. Programmerare hanterar fel för att förhindra krascher och för att ge användarna en smidigare upplevelse.

@@ -9,9 +9,8 @@ summary: "Das Umwandeln eines Strings in Kleinbuchstaben bedeutet, jeden Gro\xDF
   \ in seiner kleinen Form darzustellen. Programmierer nutzen das, um die Gro\xDF\
   -\u2026"
 title: Umformung eines Strings in Kleinbuchstaben
+weight: 4
 ---
-
-{{< edit_this_page >}}
 
 ## Was & Warum?
 

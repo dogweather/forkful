@@ -8,9 +8,8 @@ model: gpt-4-0125-preview
 summary: "Handling errors in C involves detecting and responding to anomalous conditions\
   \ that arise during program execution. Programmers do this to prevent bugs,\u2026"
 title: Handling errors
+weight: 16
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 

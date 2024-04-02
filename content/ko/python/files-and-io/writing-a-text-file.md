@@ -23,9 +23,8 @@ summary: "Python\uC5D0\uC11C \uD14D\uC2A4\uD2B8 \uD30C\uC77C \uC4F0\uAE30\uB294 
   \uC758 \uAE30\uBCF8\uC801\uC774\uBA74\uC11C\uB3C4 \uD544\uC218\uC801\uC778 \uB3C4\
   \uAD6C\uB85C \uB9CC\uB4ED\uB2C8\uB2E4."
 title: "\uD14D\uC2A4\uD2B8 \uD30C\uC77C \uC4F0\uAE30"
+weight: 24
 ---
-
-{{< edit_this_page >}}
 
 ## 무엇과 왜?
 Python에서 텍스트 파일 쓰기는 파일을 생성하거나 열고 텍스트를 추가하거나 덮어쓰는 것을 포함하는 기본적인 작업입니다. 이 기능은 데이터 로깅, 구성 관리 및 프로그램에 의해 생성된 출력의 저장에 필수적이어서 프로그래머의 기본적이면서도 필수적인 도구로 만듭니다.

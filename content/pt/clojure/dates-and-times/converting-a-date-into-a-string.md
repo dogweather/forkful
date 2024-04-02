@@ -8,9 +8,8 @@ model: gpt-4-1106-preview
 summary: "Converter uma data em uma string permite que voc\xEA a formate para visualiza\xE7\
   \xE3o ou armazenamento. Os programadores frequentemente fazem isso para padronizar\u2026"
 title: Convertendo uma data em uma string
+weight: 28
 ---
-
-{{< edit_this_page >}}
 
 ## O que é & Por quê?
 

@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Het afhandelen van fouten is hoe je code omgaat met problemen die opduiken\
   \ tijdens de uitvoering - zoals een onverwachte wending zonder deze te laten\u2026"
 title: Fouten afhandelen
+weight: 16
 ---
-
-{{< edit_this_page >}}
 
 ## Wat & Waarom?
 Het afhandelen van fouten is hoe je code omgaat met problemen die opduiken tijdens de uitvoering - zoals een onverwachte wending zonder deze te laten vallen. Programmeurs doen dit om crashes te voorkomen en gebruikers een soepele ervaring te geven.

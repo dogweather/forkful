@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Analizzare HTML in Elm implica l'estrazione di informazioni da documenti\
   \ HTML. I programmatori lo fanno per interfacciarsi con contenuti web o API che\u2026"
 title: Analisi del HTML
+weight: 43
 ---
-
-{{< edit_this_page >}}
 
 ## Cosa & Perché?
 Analizzare HTML in Elm implica l'estrazione di informazioni da documenti HTML. I programmatori lo fanno per interfacciarsi con contenuti web o API che restituiscono HTML, consentendo la creazione di applicazioni web più interattive e dinamiche.

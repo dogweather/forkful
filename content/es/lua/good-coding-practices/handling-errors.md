@@ -9,9 +9,8 @@ summary: "Manejar errores en la programaci\xF3n se trata de esperar lo inesperad
   \ Es el arte de planificar para cuando las cosas no salen como se espera y as\xED\
   \ poder\u2026"
 title: Manejo de errores
+weight: 16
 ---
-
-{{< edit_this_page >}}
 
 ## ¿Qué y Por Qué?
 Manejar errores en la programación se trata de esperar lo inesperado. Es el arte de planificar para cuando las cosas no salen como se espera y así poder mantener tu programa funcionando sin problemas.

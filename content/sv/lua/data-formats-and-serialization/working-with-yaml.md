@@ -11,9 +11,8 @@ summary: "YAML, en f\xF6rkortning f\xF6r \"YAML Ain't Markup Language,\" \xE4r e
   \ m\xE4nniskol\xE4sbar standard f\xF6r serialisering av data som ofta anv\xE4nds\
   \ f\xF6r konfigurationsfiler\u2026"
 title: Att Arbeta med YAML
+weight: 41
 ---
-
-{{< edit_this_page >}}
 
 ## Vad & Varför?
 

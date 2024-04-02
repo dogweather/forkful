@@ -7,9 +7,8 @@ model: gpt-4-0125-preview
 summary: "Generating random numbers involves creating numbers that cannot be reasonably\
   \ predicted better than by chance, which is essential for developing\u2026"
 title: Generating random numbers
+weight: 12
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 

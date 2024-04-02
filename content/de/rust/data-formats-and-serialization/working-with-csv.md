@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Die Arbeit mit CSV-Dateien (Werte getrennt durch Kommata) bezieht sich auf\
   \ das Lesen von und Schreiben in einfache Textdateien, die tabellarische Daten\u2026"
 title: Arbeiten mit CSV
+weight: 37
 ---
-
-{{< edit_this_page >}}
 
 ## Was & Warum?
 Die Arbeit mit CSV-Dateien (Werte getrennt durch Kommata) bezieht sich auf das Lesen von und Schreiben in einfache Textdateien, die tabellarische Daten speichern. Programmierer tun dies, um den Datenaustausch zwischen verschiedenen Programmen, Systemen zu ermöglichen oder um große Datensätze effizient in einem für Menschen lesbaren Format zu verarbeiten.

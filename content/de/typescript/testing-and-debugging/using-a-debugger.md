@@ -1,13 +1,13 @@
 ---
 date: 2024-01-26 04:10:51.168303-07:00
-description: "Ein Debugger ist ein Werkzeug, das es Ihnen erm\xF6glicht, die inneren\
-  \ Abl\xE4ufe Ihres Codes w\xE4hrend der Ausf\xFChrung zu untersuchen und zu \xE4\
-  ndern. Programmierer\u2026"
+description: "Um mit einem Debugger in TypeScript durchzustarten, ben\xF6tigen Sie\
+  \ lediglich eine unterst\xFCtzte IDE (wie Visual Studio Code) und eine\u2026"
 lastmod: '2024-03-13T22:44:53.635670-06:00'
 model: gpt-4-0125-preview
-summary: "Ein Debugger ist ein Werkzeug, das es Ihnen erm\xF6glicht, die inneren Abl\xE4\
-  ufe Ihres Codes w\xE4hrend der Ausf\xFChrung zu untersuchen und zu \xE4ndern. Programmierer\u2026"
+summary: "Um mit einem Debugger in TypeScript durchzustarten, ben\xF6tigen Sie lediglich\
+  \ eine unterst\xFCtzte IDE (wie Visual Studio Code) und eine\u2026"
 title: Einsatz eines Debuggers
+weight: 35
 ---
 
 ## Wie geht das:

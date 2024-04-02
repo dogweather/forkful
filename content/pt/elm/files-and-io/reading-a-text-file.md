@@ -7,9 +7,8 @@ model: gpt-4-1106-preview
 summary: "Ler um arquivo de texto \xE9 simplesmente acessar o conte\xFAdo armazenado\
   \ em um arquivo no formato de texto em seu programa. Programadores fazem isso para\u2026"
 title: Lendo um arquivo de texto
+weight: 22
 ---
-
-{{< edit_this_page >}}
 
 ## O Que & Por Que?
 Ler um arquivo de texto é simplesmente acessar o conteúdo armazenado em um arquivo no formato de texto em seu programa. Programadores fazem isso para carregar dados, configurações ou qualquer tipo de informação que possa ser armazenada de forma estruturada e acessível.

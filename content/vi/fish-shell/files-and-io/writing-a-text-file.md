@@ -13,9 +13,8 @@ summary: "Vi\u1EBFt v\xE0o m\u1ED9t t\u1EADp tin v\u0103n b\u1EA3n c\xF3 ngh\u01
   c m\xE3 tr\xEAn m\xE1y t\xEDnh c\u1EE7a b\u1EA1n. C\xE1c l\u1EADp tr\xECnh vi\xEA\
   n l\xE0m \u0111i\u1EC1u n\xE0y \u0111\u1EC3 l\u01B0u tr\u1EEF c\u1EA5u h\xECnh,\u2026"
 title: "Vi\u1EBFt m\u1ED9t t\u1EC7p v\u0103n b\u1EA3n"
+weight: 24
 ---
-
-{{< edit_this_page >}}
 
 ## Cái gì & Tại sao?
 Viết vào một tập tin văn bản có nghĩa là lưu trữ dữ liệu như văn bản hoặc mã trên máy tính của bạn. Các lập trình viên làm điều này để lưu trữ cấu hình, thông tin nhật ký, hoặc lưu dữ liệu để sử dụng sau.

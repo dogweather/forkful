@@ -7,9 +7,8 @@ model: gpt-4-1106-preview
 summary: "Le richieste HTTP con autenticazione di base sono una modalit\xE0 standard\
   \ per accedere a risorse protette da username e password. I programmatori le usano\u2026"
 title: Inviare una richiesta http con autenticazione di base
+weight: 45
 ---
-
-{{< edit_this_page >}}
 
 ## Cosa & Perché?
 Le richieste HTTP con autenticazione di base sono una modalità standard per accedere a risorse protette da username e password. I programmatori le usano per comunicare in maniera sicura con server che richiedono credenziali di accesso.

@@ -9,9 +9,8 @@ summary: "Mik\xE4 ja miksi? Tekstin etsiminen ja korvaaminen tarkoittaa merkkijo
   \ hakuja ja niiden muuttamista ohjelmassa. Ohjelmoijat k\xE4ytt\xE4v\xE4t t\xE4\
   t\xE4 p\xE4ivitt\xE4en\u2026"
 title: Tekstin etsiminen ja korvaaminen
+weight: 10
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 Mikä ja miksi? Tekstin etsiminen ja korvaaminen tarkoittaa merkkijonojen hakuja ja niiden muuttamista ohjelmassa. Ohjelmoijat käyttävät tätä päivittäen tekstidataa ja automatisoiden tylsiä tehtäviä.

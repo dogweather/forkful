@@ -9,9 +9,8 @@ summary: "Leer argumentos de la l\xEDnea de comandos significa acceder a los dat
   \ que el usuario proporciona al ejecutar un programa. Los programadores lo hacen\
   \ para\u2026"
 title: "Lectura de argumentos de l\xEDnea de comandos"
+weight: 23
 ---
-
-{{< edit_this_page >}}
 
 ## Qué y Por Qué?
 Leer argumentos de la línea de comandos significa acceder a los datos que el usuario proporciona al ejecutar un programa. Los programadores lo hacen para personalizar la ejecución sin cambiar el código; dinamismo en estado puro.

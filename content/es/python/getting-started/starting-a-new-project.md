@@ -10,9 +10,8 @@ model: gpt-4-0125-preview
 summary: "Iniciar un nuevo proyecto en Python se trata de establecer un marco estructurado\
   \ y mantenido desde el principio. Los programadores hacen esto para\u2026"
 title: Iniciando un nuevo proyecto
+weight: 1
 ---
-
-{{< edit_this_page >}}
 
 ## Qué y Por Qué?
 

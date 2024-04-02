@@ -9,9 +9,8 @@ summary: "Nedlasting av en nettside betyr \xE5 hente dens innhold over internett
   \ Programmerere gj\xF8r det for \xE5 analysere data, sjekke tilgjengelighet eller\
   \ integrere\u2026"
 title: Nedlasting av en nettside
+weight: 42
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why? (Hva & Hvorfor?)
 Nedlasting av en nettside betyr å hente dens innhold over internett. Programmerere gjør det for å analysere data, sjekke tilgjengelighet eller integrere eksterne data i egne applikasjoner.

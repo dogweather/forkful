@@ -9,9 +9,8 @@ summary: "I programmeringsverdenen, spesielt n\xE5r man h\xE5ndterer Linux- elle
   \ Unix-milj\xF8er, er manipulering av filer direkte fra kommandolinjegrensesnittet\
   \ (CLI) ikke\u2026"
 title: Manipulering av filer med CLI-enkeltkommandoer
+weight: 31
 ---
-
-{{< edit_this_page >}}
 
 ## Hva & Hvorfor?
 

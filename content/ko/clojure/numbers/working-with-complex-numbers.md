@@ -19,9 +19,8 @@ summary: "\uBCF5\uC18C\uC218\uB294 \uC2E4\uC218\uC5D0 \uCD94\uAC00\uC801\uC778 \
   \uC694\uD55C \uB2E4\uC591\uD55C \uB3C4\uBA54\uC778\uC5D0\uC11C \uBCF5\uC18C\uC218\
   \uB97C \uC0AC\uC6A9\uD569\uB2C8\uB2E4."
 title: "\uBCF5\uC18C\uC218 \uB2E4\uB8E8\uAE30"
+weight: 14
 ---
-
-{{< edit_this_page >}}
 
 ## 무엇인가 & 왜인가?
 복소수는 실수에 추가적인 부분, 즉 허수 단위 'i'를 포함하여 실수를 확장합니다. 프로그래머들은 신호 처리, 전자기 이론, 프랙탈 등의 분야에서 음수의 제곱근을 포함하는 계산이 일상적으로 필요한 다양한 도메인에서 복소수를 사용합니다.

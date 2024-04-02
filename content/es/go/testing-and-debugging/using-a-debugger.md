@@ -2,15 +2,15 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 18:09:55.899156-07:00
-description: "Usar un depurador en la programaci\xF3n Go implica emplear herramientas\
-  \ o caracter\xEDsticas para inspeccionar y modificar el estado de un programa en\
-  \ ejecuci\xF3n\u2026"
+description: "Go proporciona una facilidad incorporada para la depuraci\xF3n llamada\
+  \ `delve`. Es una herramienta de depuraci\xF3n completa que te permite ejecutar\
+  \ programas\u2026"
 lastmod: '2024-03-13T22:44:58.472623-06:00'
 model: gpt-4-0125-preview
-summary: "Usar un depurador en la programaci\xF3n Go implica emplear herramientas\
-  \ o caracter\xEDsticas para inspeccionar y modificar el estado de un programa en\
-  \ ejecuci\xF3n\u2026"
+summary: "Go proporciona una facilidad incorporada para la depuraci\xF3n llamada `delve`.\
+  \ Es una herramienta de depuraci\xF3n completa que te permite ejecutar programas\u2026"
 title: Utilizando un depurador
+weight: 35
 ---
 
 ## Cómo hacerlo:

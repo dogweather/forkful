@@ -11,9 +11,8 @@ summary: "\xC5 jobbe med JSON (JavaScript Object Notation) inneb\xE6rer \xE5 ana
   \ JSON-data fra strenger til Dart-objekter og omvendt, en vanlig oppgave i web-\
   \ og\u2026"
 title: Arbeide med JSON
+weight: 38
 ---
-
-{{< edit_this_page >}}
 
 ## Hva & Hvorfor?
 

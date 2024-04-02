@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Concatenatie in Visual Basic for Applications (VBA) houdt in dat twee of\
   \ meer strings worden samengevoegd tot een enkele entiteit. Dit is een fundamentele\u2026"
 title: Strings samenvoegen
+weight: 3
 ---
-
-{{< edit_this_page >}}
 
 ## Wat & Waarom?
 

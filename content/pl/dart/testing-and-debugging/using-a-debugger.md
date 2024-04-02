@@ -2,15 +2,12 @@
 changelog:
 - 2024-03-08, OpenAIModel.GPT_4_TURBO, translated from English
 date: 2024-03-08 21:57:06.532837-07:00
-description: "U\u017Cycie debugera w Darcie pozwala programistom metodycznie zbada\u0107\
-  \ sw\xF3j kod poprzez ustawianie punkt\xF3w przerwania, krokowe przechodzenie przez\
-  \ wykonanie i\u2026"
+description: '#'
 lastmod: '2024-03-13T22:44:35.096452-06:00'
 model: gpt-4-0125-preview
-summary: "U\u017Cycie debugera w Darcie pozwala programistom metodycznie zbada\u0107\
-  \ sw\xF3j kod poprzez ustawianie punkt\xF3w przerwania, krokowe przechodzenie przez\
-  \ wykonanie i\u2026"
+summary: '#'
 title: Korzystanie z debugera
+weight: 35
 ---
 
 ## Jak to zrobić:

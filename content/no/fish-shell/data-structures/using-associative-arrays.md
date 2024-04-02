@@ -11,9 +11,8 @@ summary: "Assosiative arrayer, eller hash-maps, lar deg lagre data som n\xF8kkel
   \ noe som gj\xF8r det enklere \xE5 organisere og hente informasjon via n\xF8kkel.\
   \ De er\u2026"
 title: Bruke associative tabeller
+weight: 15
 ---
-
-{{< edit_this_page >}}
 
 ## Hva & Hvorfor?
 

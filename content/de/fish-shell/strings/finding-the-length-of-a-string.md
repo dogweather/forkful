@@ -8,9 +8,8 @@ model: gpt-4-1106-preview
 summary: "Das Ermitteln der Zeichenkettenl\xE4nge bedeutet, zu z\xE4hlen, wie viele\
   \ Zeichen in einer Zeichenkette vorhanden sind. Programmierer ben\xF6tigen diese\u2026"
 title: "Ermittlung der Zeichenkettenl\xE4nge"
+weight: 7
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why? (Was & Warum?)
 Das Ermitteln der Zeichenkettenlänge bedeutet, zu zählen, wie viele Zeichen in einer Zeichenkette vorhanden sind. Programmierer benötigen diese Information, um Daten zu validieren, Schleifen zu steuern oder Formatierungen vorzunehmen.

@@ -11,9 +11,8 @@ summary: "Eine interaktive Shell oder eine Read-Eval-Print-Schleife (REPL) erm\x
   glicht es Ihnen, in Echtzeit mit Go-Code zu experimentieren, Befehle auszuf\xFC\
   hren und\u2026"
 title: Verwendung einer interaktiven Shell (REPL)
+weight: 34
 ---
-
-{{< edit_this_page >}}
 
 ## Was & Warum?
 

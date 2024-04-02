@@ -1,14 +1,15 @@
 ---
 date: 2024-01-26 03:47:16.467523-07:00
-description: "En feils\xF8ker er et verkt\xF8y som hjelper deg med \xE5 klemme ut\
-  \ feil i koden din ved \xE5 la deg pause, utforske, og finne ut hva som egentlig\
-  \ foreg\xE5r under\u2026"
+description: "Med Arduino IDE kan du bruke serieutskrifter til \xE5 feils\xF8ke, men\
+  \ det er litt som \xE5 bruke en lommelykt for \xE5 utforske en hule. For ekte feils\xF8\
+  king, kan du\u2026"
 lastmod: '2024-03-13T22:44:41.062300-06:00'
 model: gpt-4-0125-preview
-summary: "En feils\xF8ker er et verkt\xF8y som hjelper deg med \xE5 klemme ut feil\
-  \ i koden din ved \xE5 la deg pause, utforske, og finne ut hva som egentlig foreg\xE5\
-  r under\u2026"
+summary: "Med Arduino IDE kan du bruke serieutskrifter til \xE5 feils\xF8ke, men det\
+  \ er litt som \xE5 bruke en lommelykt for \xE5 utforske en hule. For ekte feils\xF8\
+  king, kan du\u2026"
 title: "\xC5 bruke en feils\xF8ker"
+weight: 35
 ---
 
 ## Hvordan:

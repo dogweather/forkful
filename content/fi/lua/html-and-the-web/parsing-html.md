@@ -11,9 +11,8 @@ summary: "HTML:n j\xE4sennys sis\xE4lt\xE4\xE4 tietojen ja datan poimimisen HTML
   \ mik\xE4 on ratkaisevan t\xE4rke\xE4\xE4 verkkosivujen kaapauksessa, datan analysoinnissa\
   \ ja\u2026"
 title: "HTML:n j\xE4sennys"
+weight: 43
 ---
-
-{{< edit_this_page >}}
 
 ## Mikä ja miksi?
 HTML:n jäsennys sisältää tietojen ja datan poimimisen HTML-dokumenteista, mikä on ratkaisevan tärkeää verkkosivujen kaapauksessa, datan analysoinnissa ja automaatiotehtävissä. Ohjelmoijat suorittavat tätä kerätäkseen, analysoidakseen tai manipuloidakseen verkkosisältöä ohjelmallisesti, mahdollistaen automaation, joka muutoin vaatisi manuaalista datan poimintaa verkkosivustoilta.

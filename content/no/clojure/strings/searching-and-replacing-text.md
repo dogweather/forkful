@@ -9,9 +9,8 @@ summary: "\xC5 s\xF8ke og erstatte tekst g\xE5r ut p\xE5 \xE5 finne spesifikke s
   \ i data og bytte dem ut med noe annet. Programmerere bruker dette for \xE5 masseendre\
   \ kode,\u2026"
 title: "S\xF8king og erstatting av tekst"
+weight: 10
 ---
-
-{{< edit_this_page >}}
 
 ## Hva & Hvorfor?
 Å søke og erstatte tekst går ut på å finne spesifikke strenger i data og bytte dem ut med noe annet. Programmerere bruker dette for å masseendre kode, rette feil, eller manipulere data.

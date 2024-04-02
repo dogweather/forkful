@@ -16,9 +16,8 @@ summary: "String \u0915\u0940 length \u091C\u093E\u0928\u0928\u0947 \u0938\u0947
   \u0940 execution\u2026"
 title: "\u0938\u094D\u091F\u094D\u0930\u093F\u0902\u0917 \u0915\u0940 \u0932\u0902\
   \u092C\u093E\u0908 \u091C\u094D\u091E\u093E\u0924 \u0915\u0930\u0928\u093E"
+weight: 7
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why? (क्या और क्यों?)
 String की length जानने से पता चलता है कि उसमें कितने characters हैं। Programmers इसे ज्यादातर data validation, processing text, या loops के सही execution के लिए करते हैं।

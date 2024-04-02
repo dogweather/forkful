@@ -11,9 +11,8 @@ summary: "Rozpocz\u0119cie nowego projektu w Visual Basic for Applications (VBA)
   \u017Ce si\u0119 z konfiguracj\u0105 \u015Brodowiska w aplikacji hosta, takiej jak\
   \ Excel, aby\u2026"
 title: Rozpoczynanie nowego projektu
+weight: 1
 ---
-
-{{< edit_this_page >}}
 
 ## Co i dlaczego?
 

@@ -7,9 +7,8 @@ model: gpt-4-1106-preview
 summary: "Comparar duas datas \xE9 verificar as suas diferen\xE7as, seja em dias,\
   \ meses, anos ou segundos. Programadores fazem isso para realizar tarefas como validar\u2026"
 title: Comparando duas datas
+weight: 27
 ---
-
-{{< edit_this_page >}}
 
 ## O que é & Por quê?
 

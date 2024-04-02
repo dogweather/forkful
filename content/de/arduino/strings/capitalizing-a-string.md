@@ -10,9 +10,8 @@ model: gpt-4-0125-preview
 summary: "Das Kapitalisieren eines Strings bedeutet, den ersten Buchstaben jedes Wortes\
   \ in einem String in Gro\xDFbuchstaben umzuwandeln, w\xE4hrend sichergestellt wird,\u2026"
 title: "Einen String gro\xDFschreiben"
+weight: 2
 ---
-
-{{< edit_this_page >}}
 
 ## Was & Warum?
 Das Kapitalisieren eines Strings bedeutet, den ersten Buchstaben jedes Wortes in einem String in Großbuchstaben umzuwandeln, während sichergestellt wird, dass der Rest klein bleibt. Diese Operation ist bei der Datenformatierung und der Normalisierung der Benutzereingabe üblich, um Konsistenz zu wahren und die Lesbarkeit zu verbessern.

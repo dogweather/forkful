@@ -10,9 +10,8 @@ model: gpt-4-0125-preview
 summary: "Escrever no erro padr\xE3o (stderr) envolve emitir mensagens de erro e diagn\xF3\
   sticos no console ou terminal. Os programadores fazem isso para separar as\u2026"
 title: "Escrevendo para o erro padr\xE3o"
+weight: 25
 ---
-
-{{< edit_this_page >}}
 
 ## O Que & Por Que?
 Escrever no erro padrão (stderr) envolve emitir mensagens de erro e diagnósticos no console ou terminal. Os programadores fazem isso para separar as informações de erro da saída padrão (stdout), facilitando a depuração e análise de logs.

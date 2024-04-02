@@ -7,9 +7,8 @@ model: gpt-4-1106-preview
 summary: "Logging ist im Grunde genommen wie das F\xFChren eines Tagebuchs f\xFCr\
   \ Ihren Code; es ist der Akt des Aufzeichnens von Ereignissen, Fehlern und anderen\u2026"
 title: Protokollierung
+weight: 17
 ---
-
-{{< edit_this_page >}}
 
 ## Was & Warum?
 

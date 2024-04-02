@@ -11,9 +11,8 @@ summary: "YAML, un acronyme r\xE9cursif pour \"YAML Ain't Markup Language\" (YAM
   \ n'est pas un langage de balisage), est un format de s\xE9rialisation de donn\xE9\
   es lisible\u2026"
 title: Travailler avec YAML
+weight: 41
 ---
-
-{{< edit_this_page >}}
 
 ## Quoi & Pourquoi ?
 

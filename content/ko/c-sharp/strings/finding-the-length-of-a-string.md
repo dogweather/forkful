@@ -12,9 +12,8 @@ summary: "\uBB38\uC790\uC5F4 \uAE38\uC774 \uCC3E\uAE30\uB294 \uAE00\uC790 \uC218
   \uC0AC, \uC785\uB825 \uCC98\uB9AC, \uB8E8\uD504 \uC81C\uC5B4\uC5D0\uC11C \uD544\uC218\
   \uC801\uC73C\uB85C \uC0AC\uC6A9\uB429\uB2C8\uB2E4."
 title: "\uBB38\uC790\uC5F4\uC758 \uAE38\uC774 \uCC3E\uAE30"
+weight: 7
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why? (무엇과 왜?)
 문자열 길이 찾기는 글자 수를 세는 것입니다. 데이터 유효성 검사, 입력 처리, 루프 제어에서 필수적으로 사용됩니다.

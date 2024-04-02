@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Att skriva till standardfel (stderr) i JavaScript handlar om att dirigera\
   \ felmeddelanden eller kritisk information till en specifik, separat str\xF6m, vilket\u2026"
 title: Skriva till standardfel
+weight: 25
 ---
-
-{{< edit_this_page >}}
 
 ## Vad & Varför?
 Att skriva till standardfel (stderr) i JavaScript handlar om att dirigera felmeddelanden eller kritisk information till en specifik, separat ström, vilket är särskilt användbart i Unix-lika miljöer för loggning och felsökning. Programmerare gör detta för att skilja normal programutdata från felmeddelanden, vilket möjliggör enklare hantering av utdata och enklare övervakning av fel.

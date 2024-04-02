@@ -7,9 +7,8 @@ model: gpt-4-0125-preview
 summary: "Komplekse tall har en reell del og en imagin\xE6r del og er essensielle\
   \ i forskjellige felt som ingeni\xF8rvitenskap, fysikk, og datagrafikk. Programmerere\u2026"
 title: "\xC5 jobbe med komplekse tall"
+weight: 14
 ---
-
-{{< edit_this_page >}}
 
 ## Hva & Hvorfor?
 Komplekse tall har en reell del og en imaginær del og er essensielle i forskjellige felt som ingeniørvitenskap, fysikk, og datagrafikk. Programmerere bruker dem til å løse ligninger som vanlige reelle tall ikke kan håndtere.

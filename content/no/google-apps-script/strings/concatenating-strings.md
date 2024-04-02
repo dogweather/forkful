@@ -11,9 +11,8 @@ summary: "Konkatenere (sammensl\xE5) strenger inneb\xE6rer \xE5 kombinere to ell
   \ flere strenger til en enkelt streng. Programmerere gj\xF8r dette for \xE5 dynamisk\
   \ konstruere\u2026"
 title: Sammensetting av strenger
+weight: 3
 ---
-
-{{< edit_this_page >}}
 
 ## Hva & Hvorfor?
 

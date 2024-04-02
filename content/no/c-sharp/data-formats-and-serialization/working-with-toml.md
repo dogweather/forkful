@@ -7,9 +7,8 @@ model: gpt-4-0125-preview
 summary: "TOML er et akronym for Toms Opplagte, Minimale Spr\xE5k, et konfigurasjonsfilformat\
   \ som er lett \xE5 lese p\xE5 grunn av sin klare semantikk. Programmerere bruker\u2026"
 title: Jobbe med TOML
+weight: 39
 ---
-
-{{< edit_this_page >}}
 
 ## Hva & Hvorfor?
 TOML er et akronym for Toms Opplagte, Minimale Språk, et konfigurasjonsfilformat som er lett å lese på grunn av sin klare semantikk. Programmerere bruker det for konfigfiler, forenkler datautveksling mellom systemer, og fordi det oppnår en balanse mellom menneskelig lesbarhet og maskinell parserbarhet.

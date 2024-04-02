@@ -8,9 +8,8 @@ summary: "Searching and replacing text lets you find strings within strings and 
   \ them with something else. Programmers do it for tasks like editing user input,\u2026"
 title: "\u041F\u043E\u0448\u0443\u043A \u0442\u0430 \u0437\u0430\u043C\u0456\u043D\
   \u0430 \u0442\u0435\u043A\u0441\u0442\u0443"
+weight: 10
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why? (Що і Чому?)
 Searching and replacing text lets you find strings within strings and swap them with something else. Programmers do it for tasks like editing user input, processing data, or manipulating text files – basically, to make life easier when dealing with lots of text.

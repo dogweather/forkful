@@ -11,9 +11,8 @@ summary: "Pisanie do standardowego b\u0142\u0119du (stderr) w Rust oznacza kiero
   \ komunikat\xF3w o b\u0142\u0119dach i diagnostyki na konsol\u0119 oddzielnie od\
   \ standardowego wyj\u015Bcia\u2026"
 title: "Pisanie do standardowego b\u0142\u0119du"
+weight: 25
 ---
-
-{{< edit_this_page >}}
 
 ## Co i dlaczego?
 Pisanie do standardowego błędu (stderr) w Rust oznacza kierowanie komunikatów o błędach i diagnostyki na konsolę oddzielnie od standardowego wyjścia (stdout). Programiści robią to, aby odróżnić normalne wyjście programu od komunikatów o błędach, co ułatwia odpowiednie obsługiwane błędów lub przekierowywanie ich do dzienników lub plików podczas wykonania.

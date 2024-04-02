@@ -11,9 +11,8 @@ summary: "Travailler avec des fichiers CSV (Comma-Separated Values ou valeurs s\
   par\xE9es par des virgules) est une t\xE2che courante pour g\xE9rer et manipuler\
   \ des donn\xE9es\u2026"
 title: Travailler avec CSV
+weight: 37
 ---
-
-{{< edit_this_page >}}
 
 ## Quoi & Pourquoi ?
 

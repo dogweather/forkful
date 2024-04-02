@@ -11,9 +11,8 @@ summary: "Tekstitiedoston kirjoittaminen Javalla liittyy kielen kyvykkyyksien hy
   dynt\xE4miseen sis\xE4ll\xF6n luomiseen ja kirjoittamiseen tiedostoj\xE4rjestelm\xE4\
   n\u2026"
 title: Tekstitiedoston kirjoittaminen
+weight: 24
 ---
-
-{{< edit_this_page >}}
 
 ## Mikä ja miksi?
 

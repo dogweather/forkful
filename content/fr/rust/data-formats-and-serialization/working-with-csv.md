@@ -11,9 +11,8 @@ summary: "Travailler avec des fichiers CSV (Comma-Separated Values, soit valeurs
   par\xE9es par des virgules) consiste \xE0 lire et \xE0 \xE9crire dans des fichiers\
   \ texte\u2026"
 title: Travailler avec CSV
+weight: 37
 ---
-
-{{< edit_this_page >}}
 
 ## Quoi & Pourquoi ?
 Travailler avec des fichiers CSV (Comma-Separated Values, soit valeurs séparées par des virgules) consiste à lire et à écrire dans des fichiers texte simples qui stockent des données tabulaires. Les programmeurs font cela pour permettre le partage de données entre différents programmes, systèmes, ou pour traiter des ensembles de données volumineux de manière efficace et lisible par l'homme.

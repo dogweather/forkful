@@ -9,9 +9,8 @@ summary: "Refaktoryzacja to w zasadzie wiosenne sprz\u0105tanie w Twojej bazie k
   \ - chodzi o restrukturyzacj\u0119 istniej\u0105cego kodu bez zmiany jego zewn\u0119\
   trznego\u2026"
 title: Refaktoryzacja
+weight: 19
 ---
-
-{{< edit_this_page >}}
 
 ## Co i dlaczego?
 Refaktoryzacja to w zasadzie wiosenne sprzątanie w Twojej bazie kodu - chodzi o restrukturyzację istniejącego kodu bez zmiany jego zewnętrznego zachowania. Programiści robią to, aby kod był czytelniejszy, zredukować złożoność, poprawić możliwości utrzymania oraz aby łatwiej go było rozszerzać.

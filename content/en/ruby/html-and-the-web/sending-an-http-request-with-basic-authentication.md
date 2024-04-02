@@ -8,9 +8,8 @@ model: gpt-4-1106-preview
 summary: "In Ruby, sending an HTTP request with basic authentication involves adding\
   \ a username and password to your request header. Programmers do this to access\u2026"
 title: Sending an HTTP request with basic authentication
+weight: 45
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 

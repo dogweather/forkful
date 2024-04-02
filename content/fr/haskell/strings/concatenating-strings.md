@@ -9,9 +9,8 @@ summary: "Concat\xE9ner des cha\xEEnes signifie les joindre bout \xE0 bout. Les 
   \ font cela pour assembler des textes, des messages, ou des donn\xE9es g\xE9n\xE9\
   r\xE9s\u2026"
 title: "Concat\xE9nation de cha\xEEnes de caract\xE8res"
+weight: 3
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why? (Quoi et Pourquoi?)
 Concaténer des chaînes signifie les joindre bout à bout. Les programmeurs font cela pour assembler des textes, des messages, ou des données générés dynamiquement.

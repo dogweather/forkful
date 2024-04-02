@@ -11,9 +11,8 @@ summary: "Att skriva en textfil i Bash g\xF6r det m\xF6jligt att automatisera la
   \ av data, loggning, konfigurationsinst\xE4llningar och mer. Det \xE4r en grundl\xE4\
   ggande\u2026"
 title: Att skriva en textfil
+weight: 24
 ---
-
-{{< edit_this_page >}}
 
 ## Vad & Varför?
 

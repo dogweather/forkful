@@ -11,9 +11,8 @@ summary: "Koodin j\xE4rjest\xE4minen funktioihin Go:ssa tarkoittaa koodin jakami
   \ uudelleenk\xE4ytett\xE4viksi, modulaarisiksi lohkoiksi, jotka suorittavat tiettyj\xE4\
   \ teht\xE4vi\xE4.\u2026"
 title: "Koodin j\xE4rjest\xE4minen funktioihin"
+weight: 18
 ---
-
-{{< edit_this_page >}}
 
 ## Mikä ja miksi?
 

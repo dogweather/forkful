@@ -13,9 +13,8 @@ summary: "Trong th\u1EBF gi\u1EDBi c\u1EE7a Arduino, m\u1EA3ng k\u1EBFt h\u1EE3p
   u nh\u01B0 c\xE1ch b\u1EA1n gh\xE9p \u0111\xF4i t\u1EA5t v\u1EDBi nhau. Ch\xFAng\
   \ l\xE0 l\u1EF1a ch\u1ECDn t\u1ED1t khi b\u1EA1n\u2026"
 title: "S\u1EED d\u1EE5ng m\u1EA3ng li\xEAn k\u1EBFt"
+weight: 15
 ---
-
-{{< edit_this_page >}}
 
 ## Cái gì & Tại sao?
 Trong thế giới của Arduino, mảng kết hợp cho phép bạn ghép các key với các giá trị, kiểu như cách bạn ghép đôi tất với nhau. Chúng là lựa chọn tốt khi bạn cần lưu trữ và truy xuất dữ liệu sử dụng tên mô tả, giúp mã của bạn sạch sẽ và dễ hiểu hơn nhiều.

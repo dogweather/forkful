@@ -9,9 +9,8 @@ summary: "Por\xF3wnywanie dw\xF3ch dat pozwala zrozumie\u0107, kt\xF3ra jest wcz
   niejsza czy p\xF3\u017Aniejsza. Programi\u015Bci robi\u0105 to, aby zarz\u0105dza\u0107\
   \ terminami, sprawdza\u0107 r\xF3\u017Cnice czasowe\u2026"
 title: "Por\xF3wnywanie dw\xF3ch dat"
+weight: 27
 ---
-
-{{< edit_this_page >}}
 
 ## Co i dlaczego?
 Porównywanie dwóch dat pozwala zrozumieć, która jest wcześniejsza czy późniejsza. Programiści robią to, aby zarządzać terminami, sprawdzać różnice czasowe i wdrażać logikę opartą na czasie.

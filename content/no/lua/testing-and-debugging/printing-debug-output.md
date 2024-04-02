@@ -9,9 +9,8 @@ summary: "\xC5 skrive ut feils\xF8kingsinformasjon betyr at du legger inn ekstra
   \ som hjelper deg \xE5 se hva som skjer i programmet ditt. Programmerere gj\xF8\
   r dette for \xE5\u2026"
 title: "Skrive ut feils\xF8kingsdata"
+weight: 33
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why? - Hva & Hvorfor?
 Å skrive ut feilsøkingsinformasjon betyr at du legger inn ekstra kode som hjelper deg å se hva som skjer i programmet ditt. Programmerere gjør dette for å finne og rette feil enkelt og raskt.

@@ -8,9 +8,8 @@ model: gpt-4-0125-preview
 summary: "TOML, acronimo di Tom's Obvious, Minimal Language, \xE8 un formato di serializzazione\
   \ dei dati che \xE8 facile da leggere grazie alla sua chiara semantica. I\u2026"
 title: Lavorare con TOML
+weight: 39
 ---
-
-{{< edit_this_page >}}
 
 ## Cos'è e Perché?
 

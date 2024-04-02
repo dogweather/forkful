@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Refactoring is het proces van het herstructureren van bestaande computercode\
   \ zonder het externe gedrag ervan te veranderen. Het is een essenti\xEBle praktijk\u2026"
 title: Refactoring
+weight: 19
 ---
-
-{{< edit_this_page >}}
 
 ## Wat & Waarom?
 Refactoring is het proces van het herstructureren van bestaande computercode zonder het externe gedrag ervan te veranderen. Het is een essentiële praktijk om complexiteit te verminderen, onderhoudbaarheid te verbeteren en je codebasis gezond en makkelijker te begrijpen te maken voor zowel huidige als toekomstige ontwikkelaars.

@@ -7,9 +7,8 @@ model: gpt-4-0125-preview
 summary: "Concatenation in Visual Basic for Applications (VBA) involves joining two\
   \ or more strings into a single entity. This is a fundamental task in programming,\u2026"
 title: Concatenating strings
+weight: 3
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 

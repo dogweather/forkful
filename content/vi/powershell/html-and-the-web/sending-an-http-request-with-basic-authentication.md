@@ -14,9 +14,8 @@ summary: "Vi\u1EC7c g\u1EEDi m\u1ED9t y\xEAu c\u1EA7u HTTP v\u1EDBi x\xE1c th\u1
   \ t\xF4i,\" s\u1EED d\u1EE5ng t\xEAn \u0111\u0103ng nh\u1EADp v\xE0 m\u1EADt\u2026"
 title: "G\u1EEDi m\u1ED9t y\xEAu c\u1EA7u HTTP v\u1EDBi x\xE1c th\u1EF1c c\u01A1 b\u1EA3\
   n"
+weight: 45
 ---
-
-{{< edit_this_page >}}
 
 ## Cái gì & Tại sao?
 

@@ -11,9 +11,8 @@ summary: "Praca z XML w Visual Basic for Applications (VBA) wi\u0105\u017Ce si\u
   \ z parsowaniem, tworzeniem i modyfikowaniem dokument\xF3w XML w kontek\u015Bcie\
   \ aplikacji Microsoft\u2026"
 title: Praca z XML
+weight: 40
 ---
-
-{{< edit_this_page >}}
 
 ## Co i dlaczego?
 

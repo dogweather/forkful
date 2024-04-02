@@ -7,9 +7,8 @@ model: gpt-4-1106-preview
 summary: String interpolation is mixing variables with text. Programmers do it to
   build strings on-the-fly, making output dynamic and readable.
 title: Interpolating a string
+weight: 8
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 

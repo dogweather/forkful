@@ -10,9 +10,8 @@ model: gpt-4-0125-preview
 summary: "Das Parsen eines Datums aus einem String beinhaltet die Umwandlung von Text,\
   \ der ein Datum darstellt, in ein Datum-Objekt, was Programmierern erm\xF6glicht,\u2026"
 title: Einen Datum aus einem String auslesen
+weight: 30
 ---
-
-{{< edit_this_page >}}
 
 ## Was & Warum?
 

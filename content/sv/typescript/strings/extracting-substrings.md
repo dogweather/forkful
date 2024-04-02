@@ -8,9 +8,8 @@ model: gpt-4-1106-preview
 summary: "Att extrahera delstr\xE4ngar handlar om att plocka ut specifika delar av\
   \ str\xE4ngar. Programmerare g\xF6r detta f\xF6r att bearbeta, analysera eller manipulera\u2026"
 title: "Extrahera delstr\xE4ngar"
+weight: 6
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 Att extrahera delsträngar handlar om att plocka ut specifika delar av strängar. Programmerare gör detta för att bearbeta, analysera eller manipulera textdata effektivt.

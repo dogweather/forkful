@@ -11,9 +11,8 @@ summary: "Obs\u0142uga b\u0142\u0119d\xF3w w Go polega na rozpoznawaniu i reagow
   \ na sytuacje wyj\u0105tkowe w programie. Programi\u015Bci zajmuj\u0105 si\u0119\
   \ obs\u0142ug\u0105 b\u0142\u0119d\xF3w, aby zapewni\u0107, \u017Ce ich\u2026"
 title: "Obs\u0142uga b\u0142\u0119d\xF3w"
+weight: 16
 ---
-
-{{< edit_this_page >}}
 
 ## Co i dlaczego?
 

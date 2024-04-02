@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "I Rust-programmering handler det \xE5 arbeide med YAML (YAML Ain't Markup\
   \ Language) om \xE5 analysere og generere data i YAML-format, en menneskevennlig\u2026"
 title: Arbeider med YAML
+weight: 41
 ---
-
-{{< edit_this_page >}}
 
 ## Hva & Hvorfor?
 

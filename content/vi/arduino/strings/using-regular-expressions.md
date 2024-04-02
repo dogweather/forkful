@@ -13,9 +13,8 @@ summary: "Bi\u1EC3u th\u1EE9c ch\xEDnh quy (regex) cho ph\xE9p b\u1EA1n t\xECm k
   n b\u1EA3n n\xE2ng cao c\u1EE7a wild card. L\u1EADp tr\xECnh vi\xEAn s\u1EED d\u1EE5\
   ng ch\xFAng \u0111\u1EC3 x\xE1c\u2026"
 title: "S\u1EED d\u1EE5ng bi\u1EC3u th\u1EE9c ch\xEDnh quy"
+weight: 11
 ---
-
-{{< edit_this_page >}}
 
 ## Cái gì & Tại sao?
 

@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Het vinden van de lengte van een string betekent het tellen van de tekens.\
   \ Programmeurs doen dit om invoer te valideren, door tekens te loopen of opslag\u2026"
 title: De lengte van een string vinden
+weight: 7
 ---
-
-{{< edit_this_page >}}
 
 ## Wat & Waarom?
 Het vinden van de lengte van een string betekent het tellen van de tekens. Programmeurs doen dit om invoer te valideren, door tekens te loopen of opslag toe te wijzen.

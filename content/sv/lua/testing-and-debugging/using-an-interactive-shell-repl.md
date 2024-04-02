@@ -9,9 +9,8 @@ summary: "REPL st\xE5r f\xF6r Read-Eval-Print Loop, en interaktiv milj\xF6 d\xE4
   \ du snabbt kan testa kod. Programmerare anv\xE4nder den f\xF6r att experimentera,\
   \ fels\xF6ka och l\xE4ra\u2026"
 title: "Anv\xE4nda en interaktiv skal (REPL)"
+weight: 34
 ---
-
-{{< edit_this_page >}}
 
 ## Vad & Varför?
 REPL står för Read-Eval-Print Loop, en interaktiv miljö där du snabbt kan testa kod. Programmerare använder den för att experimentera, felsöka och lära sig ett språks egenheter.

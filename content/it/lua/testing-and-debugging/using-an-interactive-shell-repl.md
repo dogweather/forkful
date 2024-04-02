@@ -7,9 +7,8 @@ model: gpt-4-0125-preview
 summary: "REPL sta per Read-Eval-Print Loop (Ciclo Leggi-Valuta-Stampa), un ambiente\
   \ interattivo dove si pu\xF2 testare rapidamente del codice. I programmatori lo\u2026"
 title: Utilizzo di un interprete interattivo (REPL)
+weight: 34
 ---
-
-{{< edit_this_page >}}
 
 ## Cos'è & Perché?
 REPL sta per Read-Eval-Print Loop (Ciclo Leggi-Valuta-Stampa), un ambiente interattivo dove si può testare rapidamente del codice. I programmatori lo utilizzano per sperimentare, fare debug e apprendere le peculiarità di un linguaggio.

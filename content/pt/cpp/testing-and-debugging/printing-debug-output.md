@@ -9,9 +9,8 @@ summary: "Imprimir sa\xEDda de depura\xE7\xE3o \xE9 o ato de exibir informa\xE7\
   es de diagn\xF3stico para acompanhar o fluxo e o estado de um programa enquanto\
   \ ele roda.\u2026"
 title: "Exibindo sa\xEDdas de depura\xE7\xE3o"
+weight: 33
 ---
-
-{{< edit_this_page >}}
 
 ## O Que É & Porquê?
 Imprimir saída de depuração é o ato de exibir informações de diagnóstico para acompanhar o fluxo e o estado de um programa enquanto ele roda. Programadores fazem isso para rastrear bugs e garantir que tudo esteja funcionando como esperado.

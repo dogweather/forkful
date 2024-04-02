@@ -20,9 +20,8 @@ summary: "\uCD9C\uB825 \uB514\uBC84\uAE45\uC774\uB780 \uBB34\uC5C7\uC778\uAC00, 
   \uACE0 \uBB38\uC81C\uB97C \uBD84\uC11D\uD560 \uB54C \uD574\uB2F9 \uC815\uBCF4\uB97C\
   \ \uD65C\uC6A9\uD569\uB2C8\uB2E4."
 title: "\uB514\uBC84\uADF8 \uCD9C\uB825\uC744 \uCC0D\uC5B4\uBCF4\uAE30"
+weight: 33
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 출력 디버깅이란 무엇인가, 그리고 왜 프로그래머가 사용하는가?

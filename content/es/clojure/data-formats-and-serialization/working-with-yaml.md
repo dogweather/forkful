@@ -11,9 +11,8 @@ summary: "YAML, un acr\xF3nimo recursivo de \"YAML Ain't Markup Language\" (YAML
   \ es un lenguaje de marcado), es un formato de serializaci\xF3n de datos legible\
   \ por\u2026"
 title: Trabajando con YAML
+weight: 41
 ---
-
-{{< edit_this_page >}}
 
 ## Qué y Por Qué?
 

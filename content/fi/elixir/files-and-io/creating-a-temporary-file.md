@@ -9,9 +9,8 @@ summary: "V\xE4liaikaistiedostot ovat tilap\xE4isi\xE4 tiedostoja, jotka poistuv
   \ usein itsest\xE4\xE4n. Niit\xE4 k\xE4ytet\xE4\xE4n esimerkiksi v\xE4liaikaiseen\
   \ datan k\xE4sittelyyn, testaukseen\u2026"
 title: "V\xE4liaikaistiedoston luominen"
+weight: 21
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why? ("Mitä & Miksi?")
 Väliaikaistiedostot ovat tilapäisiä tiedostoja, jotka poistuvat usein itsestään. Niitä käytetään esimerkiksi väliaikaiseen datan käsittelyyn, testaukseen tai kun halutaan vähentää levyn käyttöä.

@@ -21,9 +21,8 @@ summary: "\u05E2\u05D1\u05D5\u05D3\u05D4 \u05E2\u05DD XML \u05DB\u05D5\u05DC\u05
   \u05EA\u05DE\u05E9\u05D5\u05EA \u05D1-XML \u05DB\u05E4\u05D5\u05E8\u05DE\u05D8 \u05D4\
   \u05E0\u05EA\u05D5\u05E0\u05D9\u05DD \u05E9\u05DC\u05D4\u05DF."
 title: "\u05E2\u05D1\u05D5\u05D3\u05D4 \u05E2\u05DD XML"
+weight: 40
 ---
-
-{{< edit_this_page >}}
 
 ## מה ולמה?
 עבודה עם XML כוללת פירוס, המרה, ויצירת מסמכי XML ב-Elm. מטרת התהליך היא כדי לתקשר עם שירותי אינטרנט רבים ומערכות מורשת שמשתמשות ב-XML כפורמט הנתונים שלהן.

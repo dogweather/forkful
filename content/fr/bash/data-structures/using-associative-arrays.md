@@ -10,9 +10,8 @@ model: gpt-4-0125-preview
 summary: "Les tableaux associatifs sont comme des tableaux surpuissants qui vous permettent\
   \ d'utiliser des cha\xEEnes de caract\xE8res comme indices, au lieu de se\u2026"
 title: Utilisation des tableaux associatifs
+weight: 15
 ---
-
-{{< edit_this_page >}}
 
 ## Quoi & Pourquoi ?
 

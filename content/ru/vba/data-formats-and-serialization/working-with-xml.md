@@ -21,9 +21,8 @@ summary: "\u0420\u0430\u0431\u043E\u0442\u0430 \u0441 XML \u0432 Visual Basic \u
   \u0435\u043A\u0441\u0442\u0435 \u043F\u0440\u0438\u043B\u043E\u0436\u0435\u043D\u0438\
   \u0439 Microsoft Office.\u2026"
 title: "\u0420\u0430\u0431\u043E\u0442\u0430 \u0441 XML"
+weight: 40
 ---
-
-{{< edit_this_page >}}
 
 ## Что и Почему?
 

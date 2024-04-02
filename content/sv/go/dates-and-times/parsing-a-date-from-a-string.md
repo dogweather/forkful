@@ -11,9 +11,8 @@ summary: "Att tolka ett datum fr\xE5n en str\xE4ng i Go inneb\xE4r att konverter
   \ datumet, som representeras som text, till ett mer anv\xE4ndbart format (t.ex.\
   \ `time.Time`).\u2026"
 title: "Analysera ett datum fr\xE5n en str\xE4ng"
+weight: 30
 ---
-
-{{< edit_this_page >}}
 
 ## Vad & Varför?
 

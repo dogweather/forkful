@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Loggen in Visual Basic for Applications (VBA) houdt in dat er informatie\
   \ over het runtimegedrag van een programma wordt vastgelegd in een bestand, console\u2026"
 title: Logboekregistratie
+weight: 17
 ---
-
-{{< edit_this_page >}}
 
 ## Wat & Waarom?
 

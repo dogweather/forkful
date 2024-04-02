@@ -11,9 +11,8 @@ model: gpt-4-0125-preview
 summary: "Satunnaislukujen generointi Elm-kieless\xE4 vaatii `Random`-moduulin k\xE4\
   ytt\xF6\xE4 pseudo-satunnaislukujen tuottamiseen, jotka ovat hy\xF6dyllisi\xE4 monenlaisissa\u2026"
 title: Sattumanvaraisten numeroiden generointi
+weight: 12
 ---
-
-{{< edit_this_page >}}
 
 ## Mitä & Miksi?
 Satunnaislukujen generointi Elm-kielessä vaatii `Random`-moduulin käyttöä pseudo-satunnaislukujen tuottamiseen, jotka ovat hyödyllisiä monenlaisissa tehtävissä kuten peleissä, simulaatioissa ja jopa algoritmeissä, jotka vaativat stokastisia prosesseja. Tämä ominaisuus mahdollistaa kehittäjille lisätä arvaamattomuutta ja monimuotoisuutta sovelluksiinsa, parantaen käyttäjäkokemusta ja toiminnallisuutta.

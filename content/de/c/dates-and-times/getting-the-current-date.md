@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Das Abrufen des aktuellen Datums in C erfordert den Zugriff auf die Standard-C-Bibliothek,\
   \ um das aktuelle Datum und die aktuelle Zeit des Systems\u2026"
 title: Das aktuelle Datum abrufen
+weight: 29
 ---
-
-{{< edit_this_page >}}
 
 ## Was & Warum?
 

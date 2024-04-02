@@ -11,9 +11,8 @@ summary: "Verificar se um diret\xF3rio existe em Java \xE9 uma tarefa fundamenta
   \ que envolve a verifica\xE7\xE3o da presen\xE7a de um diret\xF3rio no sistema de\
   \ arquivos antes de\u2026"
 title: "Verificando se um diret\xF3rio existe"
+weight: 20
 ---
-
-{{< edit_this_page >}}
 
 ## O Que & Por Que?
 Verificar se um diretório existe em Java é uma tarefa fundamental que envolve a verificação da presença de um diretório no sistema de arquivos antes de ler, escrever ou realizar qualquer operação que exija sua existência. Isso é crucial para evitar erros ou exceções em programas que interagem com o sistema de arquivos, garantindo uma execução mais suave e uma melhor experiência do usuário.

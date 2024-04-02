@@ -12,9 +12,8 @@ summary: "L'interpolation de cha\xEEnes est la m\xE9thode permettant d'ins\xE9re
   \ des expressions au sein de litt\xE9raux de cha\xEEne de caract\xE8res. Les programmeurs\
   \ l'utilisent\u2026"
 title: "Interpolation d'une cha\xEEne de caract\xE8res"
+weight: 8
 ---
-
-{{< edit_this_page >}}
 
 ## Quoi et Pourquoi ?
 L'interpolation de chaînes est la méthode permettant d'insérer des expressions au sein de littéraux de chaîne de caractères. Les programmeurs l'utilisent pour insérer dynamiquement des valeurs dans des chaînes, ce qui rend le code plus lisible et plus propre que la concaténation traditionnelle de chaînes.

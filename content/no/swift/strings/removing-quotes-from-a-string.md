@@ -9,9 +9,8 @@ summary: "\xC5 fjerne anf\xF8rselstegn fra en streng betyr \xE5 strippe vekk eve
   \ anf\xF8rselstegn som omslutter innholdet. Dette gj\xF8res for \xE5 sanere inndata,\
   \ forberede\u2026"
 title: "Fjerne anf\xF8rselstegn fra en streng"
+weight: 9
 ---
-
-{{< edit_this_page >}}
 
 ## Hva & Hvorfor?
 

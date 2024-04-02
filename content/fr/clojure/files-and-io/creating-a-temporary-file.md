@@ -9,9 +9,8 @@ summary: "Cr\xE9er un fichier temporaire, c'est produire un fichier destin\xE9 \
   \ une utilisation courte et unique. Les programmeurs le font pour stocker des donn\xE9\
   es\u2026"
 title: "Cr\xE9ation d'un fichier temporaire"
+weight: 21
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 Créer un fichier temporaire, c'est produire un fichier destiné à une utilisation courte et unique. Les programmeurs le font pour stocker des données transitoires sans affecter la persistance des données ou pour tester des morceaux de code.

@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Debugoutput afdrukken in JavaScript gaat over het tonen van variabelen,\
   \ fouten of andere informatie die helpt om snel te begrijpen wat je code doet.\u2026"
 title: Debug-output afdrukken
+weight: 33
 ---
-
-{{< edit_this_page >}}
 
 ## Wat & Waarom?
 

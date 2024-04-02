@@ -1,14 +1,14 @@
 ---
 date: 2024-01-26 03:48:08.619722-07:00
-description: "\xC5 bruke en debugger betyr \xE5 starte et verkt\xF8y som lar deg kikke\
-  \ inn i ditt kj\xF8rende program for \xE5 forst\xE5 hva som egentlig skjer. Programmere\
-  \ gj\xF8r dette\u2026"
+description: "C++ integreres med debuggere som GDB eller Visual Studio-debuggeren.\
+  \ Her er et lite eksempel med bruk av GDB: ```C++ #include <iostream> int main()\
+  \ { int\u2026"
 lastmod: '2024-03-13T22:44:41.104478-06:00'
 model: gpt-4-0125-preview
-summary: "\xC5 bruke en debugger betyr \xE5 starte et verkt\xF8y som lar deg kikke\
-  \ inn i ditt kj\xF8rende program for \xE5 forst\xE5 hva som egentlig skjer. Programmere\
-  \ gj\xF8r dette\u2026"
+summary: "C++ integreres med debuggere som GDB eller Visual Studio-debuggeren. Her\
+  \ er et lite eksempel med bruk av GDB: ```C++ #include <iostream> int main() { int\u2026"
 title: "\xC5 bruke en feils\xF8ker"
+weight: 35
 ---
 
 ## Hvordan:

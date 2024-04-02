@@ -10,9 +10,8 @@ model: gpt-4-0125-preview
 summary: "Redondear n\xFAmeros, un concepto fundamental en la programaci\xF3n de computadoras,\
   \ involucra ajustar un n\xFAmero a su entero m\xE1s cercano o a un n\xFAmero\u2026"
 title: "Redondeo de n\xFAmeros"
+weight: 13
 ---
-
-{{< edit_this_page >}}
 
 ## Qué y Por Qué?
 

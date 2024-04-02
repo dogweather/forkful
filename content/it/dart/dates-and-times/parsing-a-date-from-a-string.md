@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "L'analisi di una data da una stringa in Dart comporta la conversione della\
   \ rappresentazione testuale di date e orari in un oggetto `DateTime`. Questa\u2026"
 title: Analisi di una data da una stringa
+weight: 30
 ---
-
-{{< edit_this_page >}}
 
 ## Cosa & Perché?
 L'analisi di una data da una stringa in Dart comporta la conversione della rappresentazione testuale di date e orari in un oggetto `DateTime`. Questa operazione è essenziale per le applicazioni che si occupano di pianificazione, analisi dei dati o qualsiasi funzionalità che richieda la manipolazione delle date, garantendo che i dati relativi alle date siano correttamente compresi ed elaborati dal programma.

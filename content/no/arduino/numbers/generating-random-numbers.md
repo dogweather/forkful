@@ -9,9 +9,8 @@ summary: "\xC5 generere tilfeldige tall i Arduino-prosjekter inneb\xE6rer \xE5 p
   \ verdier som er uforutsigbare av design, noe som er avgj\xF8rende for applikasjoner\
   \ som\u2026"
 title: Generering av tilfeldige tall
+weight: 12
 ---
-
-{{< edit_this_page >}}
 
 ## Hva & Hvorfor?
 Å generere tilfeldige tall i Arduino-prosjekter innebærer å produsere verdier som er uforutsigbare av design, noe som er avgjørende for applikasjoner som spill, simuleringer og sikkerhetssystemer. Programmerere bruker denne teknikken for å introdusere variabilitet eller ta beslutninger som ikke bør være deterministiske.

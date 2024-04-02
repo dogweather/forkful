@@ -9,9 +9,8 @@ summary: "Logging, eller loggf\xF8ring, er i sin kjerne praksisen med \xE5 regis
   \ hendelser og data fra en programvareapplikasjon til en ekstern utgang, som en\
   \ fil\u2026"
 title: "Loggf\xF8ring"
+weight: 17
 ---
-
-{{< edit_this_page >}}
 
 ## Hva & Hvorfor?
 

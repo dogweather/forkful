@@ -11,9 +11,8 @@ summary: "Sprawdzanie, czy katalog istnieje, to podstawowa operacja w wielu zada
   \ programistycznych, pozwalaj\u0105ca na warunkowe dzia\u0142ania w oparciu o obecno\u015B\
   \u0107 lub\u2026"
 title: Sprawdzanie, czy katalog istnieje
+weight: 20
 ---
-
-{{< edit_this_page >}}
 
 ## Co i dlaczego?
 Sprawdzanie, czy katalog istnieje, to podstawowa operacja w wielu zadaniach programistycznych, pozwalająca na warunkowe działania w oparciu o obecność lub brak struktur katalogów. Jest to kluczowe dla manipulacji plikami, automatycznych skryptów oraz podczas początkowej konfiguracji oprogramowania, aby zapewnić, że niezbędne katalogi są na miejscu, lub aby uniknąć duplikacji katalogów.

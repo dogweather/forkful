@@ -11,9 +11,8 @@ summary: "Zapisywanie do pliku tekstowego w Fish Shell umo\u017Cliwia trwa\u0142
   \ przechowywanie danych, co u\u0142atwia ich p\xF3\u017Aniejsze pobieranie lub manipulowanie,\
   \ zar\xF3wno przez\u2026"
 title: Pisanie pliku tekstowego
+weight: 24
 ---
-
-{{< edit_this_page >}}
 
 ## Co i dlaczego?
 

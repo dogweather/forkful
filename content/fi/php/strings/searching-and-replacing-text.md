@@ -8,9 +8,8 @@ model: gpt-4-1106-preview
 summary: "Tekstin etsiminen ja korvaaminen on prosessi, jossa tekstist\xE4 l\xF6ydettyj\xE4\
   \ osia vaihdetaan toisiin. Ohjelmoijat tarvitsevat t\xE4t\xE4 toimintaa datan\u2026"
 title: Tekstin etsiminen ja korvaaminen
+weight: 10
 ---
-
-{{< edit_this_page >}}
 
 ## Mitä & Miksi?
 Tekstin etsiminen ja korvaaminen on prosessi, jossa tekstistä löydettyjä osia vaihdetaan toisiin. Ohjelmoijat tarvitsevat tätä toimintaa datan siivoukseen, muotoilun muuttamiseen ja automatisoidakseen monotoniset editointitehtävät.

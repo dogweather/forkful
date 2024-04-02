@@ -7,9 +7,8 @@ model: gpt-4-1106-preview
 summary: "Kun puhutaan merkkien poistamisesta tietyll\xE4 kuvioinnilla, tarkoitetaan\
   \ prosessia, jossa valikoidut merkit siivotaan pois merkkijonosta. Ohjelmoijat\u2026"
 title: Merkkien poistaminen hakemalla osumia kaavaan
+weight: 5
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why? / Mitä & Miksi?
 Kun puhutaan merkkien poistamisesta tietyllä kuvioinnilla, tarkoitetaan prosessia, jossa valikoidut merkit siivotaan pois merkkijonosta. Ohjelmoijat tekevät tätä dataa siistiessään, tarpeettoman tiedon karsimiseksi tai datan muotoa muuttaakseen.

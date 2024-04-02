@@ -9,9 +9,8 @@ summary: "(Co i Dlaczego?) Tworzenie tymczasowego pliku to po prostu robienie mi
   \ na dane, kt\xF3re s\u0105 potrzebne tylko na chwil\u0119. Programi\u015Bci robi\u0105\
   \ to, by nie\u2026"
 title: Tworzenie pliku tymczasowego
+weight: 21
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 (Co i Dlaczego?)

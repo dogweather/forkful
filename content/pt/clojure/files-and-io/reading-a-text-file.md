@@ -7,9 +7,8 @@ model: gpt-4-1106-preview
 summary: "Ler um arquivo de texto \xE9 simplesmente acessar e interpretar o conte\xFA\
   do armazenado em um arquivo em seu disco. Programadores fazem isso para manipular\u2026"
 title: Lendo um arquivo de texto
+weight: 22
 ---
-
-{{< edit_this_page >}}
 
 ## O Que & Por Quê?
 

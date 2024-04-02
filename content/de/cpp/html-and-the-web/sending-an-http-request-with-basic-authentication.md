@@ -8,9 +8,8 @@ model: gpt-4-1106-preview
 summary: "Das Senden einer HTTP-Anfrage mit Basis-Authentifizierung bedeutet, dass\
   \ der Client seine Anmeldeinformationen (Benutzername und Passwort) kodiert im\u2026"
 title: HTTP-Anfragen mit Basisauthentifizierung senden
+weight: 45
 ---
-
-{{< edit_this_page >}}
 
 ## Was & Warum?
 Das Senden einer HTTP-Anfrage mit Basis-Authentifizierung bedeutet, dass der Client seine Anmeldeinformationen (Benutzername und Passwort) kodiert im HTTP-Header mitschickt. Programmierer nutzen dies oft, um auf geschützte Ressourcen zuzugreifen, die eine Authentifizierung erfordern.

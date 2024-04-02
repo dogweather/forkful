@@ -7,9 +7,8 @@ model: gpt-4-1106-preview
 summary: "Leggere un file di testo con Arduino significa far s\xEC che il microcontrollore\
   \ recuperi e utilizzi dati da un file conservato su una scheda SD o memoria\u2026"
 title: Lettura di un file di testo
+weight: 22
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 Leggere un file di testo con Arduino significa far sì che il microcontrollore recuperi e utilizzi dati da un file conservato su una scheda SD o memoria simile. I programmatori lo fanno per vari motivi, inclusa la configurazione di dispositivi senza riscrivere il codice e per salvare dati sensibili come password o tokens.

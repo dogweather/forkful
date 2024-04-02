@@ -11,9 +11,8 @@ summary: "Trabalhar com YAML envolve analisar e manipular arquivos YAML (YAML Ai
   \ Markup Language), um formato de serializa\xE7\xE3o de dados usado para arquivos\
   \ de\u2026"
 title: Trabalhando com YAML
+weight: 41
 ---
-
-{{< edit_this_page >}}
 
 ## O Que & Porquê?
 Trabalhar com YAML envolve analisar e manipular arquivos YAML (YAML Ain't Markup Language), um formato de serialização de dados usado para arquivos de configuração, no Fish Shell. Programadores fazem isso para automatizar e configurar aplicações ou serviços de forma eficiente dentro do contexto de ambientes shell, facilitando tarefas como gerenciamento de configurações e provisionamento de recursos.

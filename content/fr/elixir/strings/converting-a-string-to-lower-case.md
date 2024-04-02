@@ -9,9 +9,8 @@ summary: "Convertissez une cha\xEEne de caract\xE8res en minuscules pour unifier
   \ format des donn\xE9es textuelles. Les programmeurs le font souvent pour comparer\
   \ des\u2026"
 title: "Conversion d'une cha\xEEne de caract\xE8res en minuscules"
+weight: 4
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 Convertissez une chaîne de caractères en minuscules pour unifier le format des données textuelles. Les programmeurs le font souvent pour comparer des chaînes de manière insensible à la casse ou pour standardiser les entrées utilisateurs.

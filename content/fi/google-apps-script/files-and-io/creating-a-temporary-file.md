@@ -11,9 +11,8 @@ summary: "Tilap\xE4isen tiedoston luominen Google Apps Scriptill\xE4 tarkoittaa 
   \ k\xE4ytt\xF6\xF6n tarkoitetun tiedoston generoimista, yleens\xE4 v\xE4liaikaista\
   \ datan\u2026"
 title: "Tilap\xE4isen tiedoston luominen"
+weight: 21
 ---
-
-{{< edit_this_page >}}
 
 ## Mikä ja miksi?
 

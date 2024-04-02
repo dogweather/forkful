@@ -10,9 +10,8 @@ model: gpt-4-0125-preview
 summary: "YAML, das f\xFCr \"YAML Ain't Markup Language\" steht, ist ein f\xFCr Menschen\
   \ lesbares Daten-Serialisierungsformat. Programmierer verwenden YAML f\xFCr\u2026"
 title: Arbeiten mit YAML
+weight: 41
 ---
-
-{{< edit_this_page >}}
 
 ## Was & Warum?
 YAML, das für "YAML Ain't Markup Language" steht, ist ein für Menschen lesbares Daten-Serialisierungsformat. Programmierer verwenden YAML für Konfigurationsdateien, interprozessuale Nachrichtenübermittlung und Datenspeicherung aufgrund seiner einfachen Syntax und leichten Lesbarkeit im Vergleich zu anderen Formaten wie XML oder JSON.

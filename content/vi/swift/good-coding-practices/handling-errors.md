@@ -13,9 +13,8 @@ summary: "X\u1EED l\xFD l\u1ED7i trong Swift c\xF3 ngh\u0129a l\xE0 d\u1EF1 \u01
   t sinh khi m\xE3 c\u1EE7a b\u1EA1n \u0111\u01B0\u1EE3c ch\u1EA1y. Ch\xFAng ta l\xE0\
   m \u0111i\u1EC1u n\xE0y \u0111\u1EC3 ki\u1EC3m so\xE1t s\u1EF1 h\u1ED7n\u2026"
 title: "X\u1EED l\xFD l\u1ED7i"
+weight: 16
 ---
-
-{{< edit_this_page >}}
 
 ## Gì & Tại sao?
 Xử lý lỗi trong Swift có nghĩa là dự đoán và phản ứng với những vấn đề phát sinh khi mã của bạn được chạy. Chúng ta làm điều này để kiểm soát sự hỗn loạn—giữ cho ứng dụng không bị sập và mang lại cho người dùng trải nghiệm mượt mà.

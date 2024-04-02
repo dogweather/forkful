@@ -11,9 +11,8 @@ summary: "Trabalhar com CSV (Valores Separados por V\xEDrgula) envolve a leitura
   \ escrita de dados em arquivos CSV, um formato comum para armazenar dados tabulares\
   \ em\u2026"
 title: Trabalhando com CSV
+weight: 37
 ---
-
-{{< edit_this_page >}}
 
 ## O Que & Por Quê?
 

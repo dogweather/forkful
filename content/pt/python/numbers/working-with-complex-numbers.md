@@ -9,9 +9,8 @@ summary: "N\xFAmeros complexos s\xE3o um conjunto de n\xFAmeros do tipo `a + bi`
   \ onde `a` e `b` s\xE3o n\xFAmeros reais, e `i` \xE9 a unidade imagin\xE1ria (`i^2\
   \ = -1`). Na\u2026"
 title: "Trabalhando com n\xFAmeros complexos"
+weight: 14
 ---
-
-{{< edit_this_page >}}
 
 ## O Que & Por Que?
 Números complexos são um conjunto de números do tipo `a + bi`, onde `a` e `b` são números reais, e `i` é a unidade imaginária (`i^2 = -1`). Na programação, nós os usamos para resolver problemas em várias áreas, como engenharia elétrica, processamento de sinais e computação quântica.

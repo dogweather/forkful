@@ -10,9 +10,8 @@ model: gpt-4-0125-preview
 summary: "Das \xDCberpr\xFCfen, ob ein Verzeichnis in TypeScript existiert, ist f\xFC\
   r Dateiverwaltungsaufgaben essentiell, wie zum Beispiel das Lesen aus oder das Schreiben\u2026"
 title: "\xDCberpr\xFCfung, ob ein Verzeichnis existiert"
+weight: 20
 ---
-
-{{< edit_this_page >}}
 
 ## Was & Warum?
 Das Überprüfen, ob ein Verzeichnis in TypeScript existiert, ist für Dateiverwaltungsaufgaben essentiell, wie zum Beispiel das Lesen aus oder das Schreiben von Daten in Dateien, um sicherzustellen, dass Operationen nur auf gültigen Verzeichnissen ausgeführt werden. Diese Operation ist entscheidend, um Fehler zu vermeiden, die durch den Versuch, auf nicht vorhandene Verzeichnisse zuzugreifen oder diese zu manipulieren, entstehen können.

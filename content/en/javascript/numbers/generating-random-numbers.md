@@ -7,9 +7,8 @@ model: gpt-4-0125-preview
 summary: "Generating random numbers in JavaScript is a technique used to create unpredictability\
   \ in applications, from games that need random enemy behavior to\u2026"
 title: Generating random numbers
+weight: 12
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 

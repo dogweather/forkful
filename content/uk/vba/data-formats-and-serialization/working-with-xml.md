@@ -19,9 +19,8 @@ summary: "\u0420\u043E\u0431\u043E\u0442\u0430 \u0437 XML \u0443 Visual Basic fo
   \u0442\u0435\u043A\u0441\u0442\u0456 \u0437\u0430\u0441\u0442\u043E\u0441\u0443\u043D\
   \u043A\u0456\u0432 Microsoft Office.\u2026"
 title: "\u0420\u043E\u0431\u043E\u0442\u0430 \u0437 XML"
+weight: 40
 ---
-
-{{< edit_this_page >}}
 
 ## Що та чому?
 

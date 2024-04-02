@@ -14,9 +14,8 @@ summary: "Node.js\uC5D0\uC11C \uBA85\uB839\uC904 \uC778\uC790\uB97C \uC77D\uB294
   \ \uBC0F \uC791\uC5C5 \uC635\uC158 \uB4F1\uC744 \uB3D9\uC801\uC73C\uB85C \uC9C0\uC815\
   \uD560 \uB54C \uC0AC\uC6A9\uD569\uB2C8\uB2E4."
 title: "\uBA85\uB839\uC904 \uC778\uC218 \uC77D\uAE30"
+weight: 23
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why? (무엇인가요? 왜 사용하나요?)
 Node.js에서 명령줄 인자를 읽는 건 프로그램에 사용자 입력을 전달하는 방법입니다. 설정, 파일 경로 및 작업 옵션 등을 동적으로 지정할 때 사용합니다.

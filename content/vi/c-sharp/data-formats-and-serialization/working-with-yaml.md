@@ -13,9 +13,8 @@ summary: "YAML l\xE0 m\u1ED9t ti\xEAu chu\u1EA9n serial h\xF3a d\u1EEF li\u1EC7u
   ng trong l\u1EADp tr\xECnh cho c\xE1c t\u1EC7p c\u1EA5u h\xECnh, l\u01B0u tr\u1EEF\
   \ d\u1EEF li\u1EC7u v\xE0 h\u01A1n th\u1EBF n\u1EEFa. L\u1EADp\u2026"
 title: "L\xE0m vi\u1EC7c v\u1EDBi YAML"
+weight: 41
 ---
-
-{{< edit_this_page >}}
 
 ## Cái gì & Tại sao?
 YAML là một tiêu chuẩn serial hóa dữ liệu thân thiện với người dùng được sử dụng trong lập trình cho các tệp cấu hình, lưu trữ dữ liệu và hơn thế nữa. Lập trình viên sử dụng nó vì tính dễ đọc và đơn giản trong các ứng dụng và hệ thống phức tạp.

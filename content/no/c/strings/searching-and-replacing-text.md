@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "\xC5 s\xF8ke og erstatte tekst i C inneb\xE6rer \xE5 identifisere spesifikke\
   \ delstrenger innenfor en st\xF8rre streng og erstatte dem med forskjellige delstrenger.\u2026"
 title: "S\xF8king og erstatting av tekst"
+weight: 10
 ---
-
-{{< edit_this_page >}}
 
 ## Hva & Hvorfor?
 

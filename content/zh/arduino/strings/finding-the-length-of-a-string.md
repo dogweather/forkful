@@ -12,9 +12,8 @@ summary: "\u5728Arduino\u7F16\u7A0B\u4E2D\uFF0C\u786E\u5B9A\u5B57\u7B26\u4E32\u9
   \u3002\u8FD9\u5BF9\u4E8E\u5185\u5B58\u7BA1\u7406\u548C\u6027\u80FD\u4F18\u5316\u6765\
   \u8BF4\u975E\u5E38\u91CD\u8981\u3002"
 title: "\u83B7\u53D6\u5B57\u7B26\u4E32\u7684\u957F\u5EA6"
+weight: 7
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why? (是什么以及为什么？)
 在Arduino编程中，确定字符串长度就是找出字符串中有多少字符。这对于内存管理和性能优化来说非常重要。

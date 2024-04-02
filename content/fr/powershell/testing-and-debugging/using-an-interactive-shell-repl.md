@@ -8,9 +8,8 @@ model: gpt-4-0125-preview
 summary: "La coquille interactive, ou Boucle de Lecture-\xC9valuation-Affichage (REPL),\
   \ vous permet de taper des commandes PowerShell et d'obtenir un retour imm\xE9diat.\u2026"
 title: Utilisation d'une console interactive (REPL)
+weight: 34
 ---
-
-{{< edit_this_page >}}
 
 ## Quoi & Pourquoi ?
 La coquille interactive, ou Boucle de Lecture-Évaluation-Affichage (REPL), vous permet de taper des commandes PowerShell et d'obtenir un retour immédiat. Les programmeurs l’utilisent pour tester rapidement des extraits de code, pour déboguer, ou pour apprendre de nouvelles commandes sans avoir à écrire un script complet.

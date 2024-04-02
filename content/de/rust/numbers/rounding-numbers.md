@@ -8,9 +8,8 @@ model: gpt-4-0125-preview
 summary: "Zahlen runden bedeutet, sie auf die n\xE4chste ganze Zahl oder einen Bruchteil\
   \ mit einer bestimmten Genauigkeit anzupassen. Programmierer runden Zahlen, um\u2026"
 title: Zahlen runden
+weight: 13
 ---
-
-{{< edit_this_page >}}
 
 ## Was & Warum?
 Zahlen runden bedeutet, sie auf die nächste ganze Zahl oder einen Bruchteil mit einer bestimmten Genauigkeit anzupassen. Programmierer runden Zahlen, um Werte für die menschliche Lesbarkeit zu vereinfachen, um Spezifikationsanforderungen zu erfüllen oder um den Rechenaufwand bei Fließkommazahl-Operationen zu reduzieren.

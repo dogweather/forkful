@@ -8,9 +8,8 @@ model: gpt-4-1106-preview
 summary: "Virheiden k\xE4sittely ohjelmissasi nappaa kiinni ne odottamattomat asiat,\
   \ jotka yritt\xE4v\xE4t kaataa suunnitelmasi. Sen tarkoitus on est\xE4\xE4 Arduinoasi\u2026"
 title: "Virheiden k\xE4sittely"
+weight: 16
 ---
-
-{{< edit_this_page >}}
 
 ## Mikä & Miksi?
 

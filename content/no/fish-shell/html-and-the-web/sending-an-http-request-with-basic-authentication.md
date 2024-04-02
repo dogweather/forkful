@@ -9,9 +9,8 @@ summary: "\xC5 sende en HTTP-foresp\xF8rsel med grunnleggende godkjenning betyr 
   \ tilgangsautorisere ved \xE5 inkludere brukernavn og passord. Programmerere gj\xF8\
   r dette for \xE5\u2026"
 title: "\xC5 sende en HTTP-foresp\xF8rsel med grunnleggende autentisering"
+weight: 45
 ---
-
-{{< edit_this_page >}}
 
 ## Hva & Hvorfor?
 Å sende en HTTP-forespørsel med grunnleggende godkjenning betyr å tilgangsautorisere ved å inkludere brukernavn og passord. Programmerere gjør dette for å interagere sikkert med webtjenester som krever identifikasjon.

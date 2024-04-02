@@ -7,9 +7,8 @@ model: gpt-4-1106-preview
 summary: "Reading a text file is pulling content from a file that's structured as\
   \ readable text, rather than binary data. Programmers read text files to access\u2026"
 title: Reading a text file
+weight: 22
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 

@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Un shell interattivo, o Ciclo Leggi-Valuta-Stampa (REPL), permette agli\
   \ utenti di inserire comandi, eseguirli e vedere i risultati in tempo reale. I\u2026"
 title: Utilizzare un shell interattivo (REPL)
+weight: 34
 ---
-
-{{< edit_this_page >}}
 
 ## Cosa & Perché?
 

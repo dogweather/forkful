@@ -13,9 +13,8 @@ summary: "G\u1EEDi m\u1ED9t y\xEAu c\u1EA7u HTTP \u0111\u1EC3 l\u1EA5y d\u1EEF l
   y \u0111\u1EC3 t\u01B0\u01A1ng t\xE1c v\u1EDBi c\xE1c d\u1ECBch v\u1EE5 web, thu\
   \ th\u1EADp th\xF4ng tin, ho\u1EB7c giao ti\u1EBFp gi\u1EEFa\u2026"
 title: "G\u1EEDi m\u1ED9t y\xEAu c\u1EA7u HTTP"
+weight: 44
 ---
-
-{{< edit_this_page >}}
 
 ## Gì và Tại sao?
 Gửi một yêu cầu HTTP để lấy dữ liệu từ máy chủ web. Lập trình viên làm điều này để tương tác với các dịch vụ web, thu thập thông tin, hoặc giao tiếp giữa các hệ thống.

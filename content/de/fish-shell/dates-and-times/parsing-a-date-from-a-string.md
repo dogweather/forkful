@@ -11,9 +11,8 @@ summary: "Das Parsen eines Datums aus einem String beinhaltet das Extrahieren vo
   \ Datumsinformationen, die innerhalb von Strings kodiert sind, und die Umwandlung\
   \ in\u2026"
 title: Einen Datum aus einem String analysieren
+weight: 30
 ---
-
-{{< edit_this_page >}}
 
 ## Was & Warum?
 Das Parsen eines Datums aus einem String beinhaltet das Extrahieren von Datumsinformationen, die innerhalb von Strings kodiert sind, und die Umwandlung in ein strukturiertes Format, das von Programmierumgebungen erkannt und manipuliert werden kann. Programmierer tun dies, um Operationen wie Datumsvergleich, Arithmetik, Formatierung und Lokalisierung zu ermöglichen, die für die effiziente Handhabung von Zeitplänen, Zeitstempeln und historischen Daten in Software unerlässlich sind.

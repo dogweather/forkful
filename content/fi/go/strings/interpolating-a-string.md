@@ -11,9 +11,8 @@ summary: "Merkkijonojen interpolaatio on menetelm\xE4, jolla rakennetaan merkkij
   \ joihin sis\xE4llytet\xE4\xE4n muuttujia, mahdollistaen dynaamisen merkkijonon\
   \ luomisen.\u2026"
 title: Merkkijonon interpolaatio
+weight: 8
 ---
-
-{{< edit_this_page >}}
 
 ## Mikä & Miksi?
 

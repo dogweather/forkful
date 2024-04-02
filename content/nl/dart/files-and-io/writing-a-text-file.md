@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Het schrijven van een tekstbestand in Dart houdt in dat bestanden op de\
   \ schijf worden gemaakt of gewijzigd om gegevens op te slaan in een leesbaar\u2026"
 title: Een tekstbestand schrijven
+weight: 24
 ---
-
-{{< edit_this_page >}}
 
 ## Wat & Waarom?
 Het schrijven van een tekstbestand in Dart houdt in dat bestanden op de schijf worden gemaakt of gewijzigd om gegevens op te slaan in een leesbaar formaat. Programmeurs doen dit om applicatiegegevens, configuraties, logs of informatie die tussen applicatieruns moet blijven bestaan of gegevens moet delen met andere applicaties of gebruikers, op te slaan.

@@ -9,9 +9,8 @@ summary: "Strenginterpolasjon lar deg bake variabler og uttrykk rett inn i stren
   \ noe som gj\xF8r koden mer lesbar og skrivbar. Programmerere bruker det for \xE5\
   \ sl\xE5\u2026"
 title: Interpolering av en streng
+weight: 8
 ---
-
-{{< edit_this_page >}}
 
 ## Hva & Hvorfor?
 Strenginterpolasjon lar deg bake variabler og uttrykk rett inn i strenger, noe som gjør koden mer lesbar og skrivbar. Programmerere bruker det for å slå sammen data og tekst på en enkel og feilfri måte.

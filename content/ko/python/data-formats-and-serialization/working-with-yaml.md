@@ -19,9 +19,8 @@ summary: "YAML\uC740 \"YAML Ain't Markup Language\"\uB97C \uC758\uBBF8\uD558\uBA
   \uB294 XML\uC774\uB098 JSON\uAC19\uC740 \uB2E4\uB978 \uD3EC\uB9F7\uB4E4\uC5D0 \uBE44\
   \uD574 \uBB38\uBC95\uC774 \uB2E8\uC21C\uD558\uACE0\u2026"
 title: "YAML\uB85C \uC791\uC5C5\uD558\uAE30"
+weight: 41
 ---
-
-{{< edit_this_page >}}
 
 ## 무엇인가 & 왜인가?
 YAML은 "YAML Ain't Markup Language"를 의미하며, 인간이 읽을 수 있는 데이터 직렬화 포맷입니다. 프로그래머들은 YAML을 설정 파일, 프로세스 간 메시징, 데이터 저장에 사용합니다. 이는 XML이나 JSON같은 다른 포맷들에 비해 문법이 단순하고 읽기 쉽기 때문입니다.

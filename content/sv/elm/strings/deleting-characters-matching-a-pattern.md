@@ -9,9 +9,8 @@ summary: "Att ta bort tecken som matchar ett m\xF6nster \xE4r en process d\xE4r 
   \ teckenstr\xE4ngar rensas bort fr\xE5n data baserat p\xE5 specifika kriterier.\
   \ Programmerare g\xF6r\u2026"
 title: "Ta bort tecken som matchar ett m\xF6nster"
+weight: 5
 ---
-
-{{< edit_this_page >}}
 
 # Elm Programming: Rensa Bort Mönstermatchande Tecken
 

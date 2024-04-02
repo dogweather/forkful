@@ -11,9 +11,8 @@ summary: "Les nombres complexes, repr\xE9sent\xE9s comme une combinaison d'unit\
   s r\xE9elles et imaginaires (par exemple, 3 + 4i), sont fondamentaux dans divers\
   \ probl\xE8mes de\u2026"
 title: Travailler avec des nombres complexes
+weight: 14
 ---
-
-{{< edit_this_page >}}
 
 ## Quoi & Pourquoi ?
 Les nombres complexes, représentés comme une combinaison d'unités réelles et imaginaires (par exemple, 3 + 4i), sont fondamentaux dans divers problèmes de calcul, notamment en ingénierie, en physique et en mathématiques appliquées. Apprendre à manipuler ces nombres dans Google Apps Script permet aux programmeurs d'étendre leurs capacités au calcul scientifique, au traitement du signal, et au-delà.

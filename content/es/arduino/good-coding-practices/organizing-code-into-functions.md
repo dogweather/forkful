@@ -9,9 +9,8 @@ summary: "Organizar el c\xF3digo en funciones significa dividir tu c\xF3digo en 
   \ reutilizables, cada uno realizando una tarea espec\xEDfica. Los programadores\
   \ hacen\u2026"
 title: "Organizando c\xF3digo en funciones"
+weight: 18
 ---
-
-{{< edit_this_page >}}
 
 ## ¿Qué y Por Qué?
 Organizar el código en funciones significa dividir tu código en bloques reutilizables, cada uno realizando una tarea específica. Los programadores hacen esto para hacer el código más fácil de leer, depurar y reutilizar. Es como clasificar Legos en cajas: te ahorra el hurgar a través de un montón caótico cada vez que quieres construir algo.

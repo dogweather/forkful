@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Das Parsen eines Datums aus einem String in Visual Basic for Applications\
   \ (VBA) bedeutet, einen Text, der ein Datum repr\xE4sentiert, in einen Datumsdatentyp\u2026"
 title: Einen Datum aus einem String auslesen
+weight: 30
 ---
-
-{{< edit_this_page >}}
 
 ## Was & Warum?
 

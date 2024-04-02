@@ -8,9 +8,8 @@ model: gpt-4-1106-preview
 summary: "I Swift smelter vi sammen strenger for \xE5 skape nye setninger eller setningselementer.\
   \ Vi gj\xF8r det blant annet for \xE5 dynamisk generere tekst, som\u2026"
 title: "Sammensl\xE5ing av strenger"
+weight: 3
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 I Swift smelter vi sammen strenger for å skape nye setninger eller setningselementer. Vi gjør det blant annet for å dynamisk generere tekst, som brukerinput eller data fra en server.

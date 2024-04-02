@@ -9,9 +9,8 @@ summary: "Zaokr\u0105glanie liczb oznacza dostosowanie ich do najbli\u017Cszej l
   \ ca\u0142kowitej lub okre\u015Blonego miejsca po przecinku. Programi\u015Bci zaokr\u0105\
   glaj\u0105 liczby, aby\u2026"
 title: "Zaokr\u0105glanie liczb"
+weight: 13
 ---
-
-{{< edit_this_page >}}
 
 ## Co i dlaczego?
 

@@ -7,9 +7,8 @@ model: gpt-4-0125-preview
 summary: "Capitalizing a string means converting the first character of a string to\
   \ uppercase and the rest to lowercase. This operation is commonly used in data\u2026"
 title: Capitalizing a string
+weight: 2
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 Capitalizing a string means converting the first character of a string to uppercase and the rest to lowercase. This operation is commonly used in data processing to normalize inputs or enhance readability for titles, names, and such.

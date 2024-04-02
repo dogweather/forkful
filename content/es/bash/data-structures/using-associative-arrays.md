@@ -10,9 +10,8 @@ model: gpt-4-0125-preview
 summary: "Los arreglos asociativos son como arreglos s\xFAper cargados que te permiten\
   \ usar cadenas como \xEDndices en lugar de solo enteros. Los programadores los\u2026"
 title: Uso de matrices asociativas
+weight: 15
 ---
-
-{{< edit_this_page >}}
 
 ## Qué y Por Qué?
 

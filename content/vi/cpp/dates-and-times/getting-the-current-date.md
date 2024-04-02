@@ -13,9 +13,8 @@ summary: "Vi\u1EC7c l\u1EA5y ng\xE0y hi\u1EC7n t\u1EA1i trong ch\u01B0\u01A1ng t
   \ \u0111\u1EBFn vi\u1EC7c ghi log, d\u1EA5u th\u1EDDi gian, ho\u1EB7c c\xE1c t\xED\
   nh n\u0103ng l\xEAn k\u1EBF ho\u1EA1ch. N\xF3\u2026"
 title: "L\u1EA5y ng\xE0y hi\u1EC7n t\u1EA1i"
+weight: 29
 ---
-
-{{< edit_this_page >}}
 
 ## Cái gì & Tại sao?
 Việc lấy ngày hiện tại trong chương trình C++ của bạn có thể rất tiện lợi: hãy nghĩ đến việc ghi log, dấu thời gian, hoặc các tính năng lên kế hoạch. Nó giúp phần mềm của bạn luôn phù hợp với thời điểm hiện tại - phần mềm biết hôm nay là ngày nào, giống như bạn vậy.

@@ -11,9 +11,8 @@ summary: "Att sammanfoga str\xE4ngar inneb\xE4r att man sammanfogar tv\xE5 eller
   \ str\xE4ngar fr\xE5n slut till slut f\xF6r att bilda en ny str\xE4ng. Programmerare\
   \ g\xF6r detta f\xF6r\u2026"
 title: "Sammanfoga str\xE4ngar"
+weight: 3
 ---
-
-{{< edit_this_page >}}
 
 ## Vad & Varför?
 

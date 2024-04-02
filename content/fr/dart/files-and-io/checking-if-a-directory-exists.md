@@ -11,9 +11,8 @@ summary: "V\xE9rifier si un r\xE9pertoire existe en Dart consiste \xE0 v\xE9rifi
   \ la pr\xE9sence d'un r\xE9pertoire \xE0 un chemin sp\xE9cifi\xE9 sur le syst\xE8\
   me de fichiers avant d'effectuer\u2026"
 title: "V\xE9rification de l'existence d'un r\xE9pertoire"
+weight: 20
 ---
-
-{{< edit_this_page >}}
 
 ## Quoi & Pourquoi ?
 

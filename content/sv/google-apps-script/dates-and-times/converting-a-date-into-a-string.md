@@ -11,9 +11,8 @@ summary: "Att konvertera datum till str\xE4ngar \xE4r en grundl\xE4ggande uppgif
   \ som m\xF6jligg\xF6r f\xF6r programmerare att manipulera och visa datuminformation\
   \ i ett l\xE4sbart\u2026"
 title: "Omvandla ett datum till en str\xE4ng"
+weight: 28
 ---
-
-{{< edit_this_page >}}
 
 ## Vad & Varför?
 

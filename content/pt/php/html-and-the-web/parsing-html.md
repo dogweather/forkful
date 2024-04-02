@@ -11,9 +11,8 @@ summary: "Analisar HTML com PHP envolve extrair informa\xE7\xF5es espec\xEDficas
   \ documentos HTML. Programadores realizam essa tarefa para automatizar a extra\xE7\
   \xE3o de dados,\u2026"
 title: Analisando HTML
+weight: 43
 ---
-
-{{< edit_this_page >}}
 
 ## O Que & Porquê?
 Analisar HTML com PHP envolve extrair informações específicas de documentos HTML. Programadores realizam essa tarefa para automatizar a extração de dados, o web scraping, ou para integrar conteúdo de várias páginas da web dentro de suas aplicações, melhorando a funcionalidade sem intervenção manual.

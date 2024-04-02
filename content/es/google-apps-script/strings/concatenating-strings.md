@@ -10,9 +10,8 @@ model: gpt-4-0125-preview
 summary: "Concatenar cadenas implica combinar dos o m\xE1s cadenas en una sola. Los\
   \ programadores hacen esto para construir din\xE1micamente mensajes, URLs o cualquier\u2026"
 title: Concatenando cadenas de texto
+weight: 3
 ---
-
-{{< edit_this_page >}}
 
 ## Qué y Por Qué?
 

@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Sprawdzanie czy katalog istnieje w Clojure polega na weryfikacji obecno\u015B\
   ci katalogu systemu plik\xF3w z poziomu aplikacji Clojure. Zadanie to jest kluczowe\u2026"
 title: Sprawdzanie, czy katalog istnieje
+weight: 20
 ---
-
-{{< edit_this_page >}}
 
 ## Co i dlaczego?
 Sprawdzanie czy katalog istnieje w Clojure polega na weryfikacji obecności katalogu systemu plików z poziomu aplikacji Clojure. Zadanie to jest kluczowe dla operacji na plikach, aby uniknąć błędów podczas odczytu z lub zapisu do katalogów, które mogą nie istnieć, zapewniając niezawodne i wolne od błędów wykonanie kodu.

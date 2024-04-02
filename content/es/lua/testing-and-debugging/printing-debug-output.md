@@ -9,9 +9,8 @@ summary: "Imprimir salida de depuraci\xF3n es mostrar informaci\xF3n \xFAtil par
   \ entender qu\xE9 est\xE1 pasando en tu programa. Los programadores lo hacen para\
   \ rastrear errores\u2026"
 title: "Imprimiendo salida de depuraci\xF3n"
+weight: 33
 ---
-
-{{< edit_this_page >}}
 
 ## ¿Qué y Por Qué?
 Imprimir salida de depuración es mostrar información útil para entender qué está pasando en tu programa. Los programadores lo hacen para rastrear errores más fácilmente y saber cómo fluyen los datos.

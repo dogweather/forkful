@@ -21,9 +21,8 @@ summary: "\uC22B\uC790\uB97C \uBC18\uC62C\uB9BC\uD55C\uB2E4\uB294 \uAC83\uC740 \
   \uB098 \uC778\uAC04\uC758 \uAE30\uB300\uC5D0 \uBD80\uD569\uD558\uAC8C \uD558\uAC70\
   \uB098 \uB2E8\uC21C\uD654\uD558\uAE30 \uC704\uD574 \uC22B\uC790\uB97C\u2026"
 title: "\uC22B\uC790 \uBC18\uC62C\uB9BC\uD558\uAE30"
+weight: 13
 ---
-
-{{< edit_this_page >}}
 
 ## 무엇 & 왜?
 숫자를 반올림한다는 것은 그것들을 가장 가까운 정수 또는 지정된 정도의 정밀도로 조정하는 것을 의미합니다. 프로그래머들은 금융 계산, 그래픽 디스플레이 또는 저장 공간을 줄이는 것과 같은 특정 형식에 데이터를 맞추거나 인간의 기대에 부합하게 하거나 단순화하기 위해 숫자를 반올림합니다.

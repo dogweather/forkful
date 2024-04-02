@@ -7,9 +7,8 @@ model: gpt-4-1106-preview
 summary: "Muuttaa merkkijono pieniksi kirjaimiksi. Tehd\xE4\xE4n johdonmukaisuuden\
   \ ja vertailun helpottamiseksi."
 title: Merkkijonon muuntaminen pieniksi kirjaimiksi
+weight: 4
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why? - Mitä ja Miksi?
 Muuttaa merkkijono pieniksi kirjaimiksi. Tehdään johdonmukaisuuden ja vertailun helpottamiseksi.

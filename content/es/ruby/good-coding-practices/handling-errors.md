@@ -8,9 +8,8 @@ model: gpt-4-1106-preview
 summary: "El manejo de errores es esperar lo inesperado en el c\xF3digo \u2014 gestionar\
   \ los errores y problemas con gracia sin que se caiga la aplicaci\xF3n. Los\u2026"
 title: Manejo de errores
+weight: 16
 ---
-
-{{< edit_this_page >}}
 
 ## ¿Qué y por qué?
 

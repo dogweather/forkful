@@ -7,9 +7,8 @@ model: gpt-4-1106-preview
 summary: "Il logging, in poche parole, \xE8 come tenere un diario per la tua applicazione:\
   \ registra eventi, errori e altre azioni significative che avvengono mentre il\u2026"
 title: "Registrazione delle Attivit\xE0 (Logging)"
+weight: 17
 ---
-
-{{< edit_this_page >}}
 
 ## Cosa e Perché?
 Il logging, in poche parole, è come tenere un diario per la tua applicazione: registra eventi, errori e altre azioni significative che avvengono mentre il software è in esecuzione. I programmatori lo fanno non solo per capire cosa succede sotto il cofano in tempo reale, ma anche per avere una registrazione storica che è fondamentale per il debugging, l'audit e l'ottimizzazione delle prestazioni.

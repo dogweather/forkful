@@ -11,9 +11,8 @@ summary: "Ler um arquivo de texto em Visual Basic para Aplica\xE7\xF5es (VBA) en
   \ acessar e extrair programaticamente o conte\xFAdo de um arquivo de texto de dentro\
   \ de\u2026"
 title: Lendo um arquivo de texto
+weight: 22
 ---
-
-{{< edit_this_page >}}
 
 ## O Que & Por Que?
 

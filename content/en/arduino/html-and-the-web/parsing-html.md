@@ -8,9 +8,8 @@ model: gpt-4-0125-preview
 summary: "Parsing HTML in Arduino projects is about extracting information from web\
   \ pages. Programmers do this to enable their Arduino devices to interact with the\u2026"
 title: Parsing HTML
+weight: 43
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 

@@ -7,9 +7,8 @@ model: gpt-4-1106-preview
 summary: "Logging er praksisen med \xE5 registrere hendelser, feil og andre betydningsfulle\
   \ datapunkter som oppst\xE5r i livssyklusen til en programvareapplikasjon.\u2026"
 title: "Loggf\xF8ring"
+weight: 17
 ---
-
-{{< edit_this_page >}}
 
 ## Hva & Hvorfor?
 

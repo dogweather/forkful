@@ -21,9 +21,8 @@ summary: "TOML (Tom's Obvious, Minimal Language \u2014 \u042F\u0437\u044B\u043A 
   \u043E \u0447\u0438\u0442\u0430\u0435\u0442\u0441\u044F \u0431\u043B\u0430\u0433\
   \u043E\u0434\u0430\u0440\u044F \u0441\u0432\u043E\u0435\u0439\u2026"
 title: "\u0420\u0430\u0431\u043E\u0442\u0430 \u0441 TOML"
+weight: 39
 ---
-
-{{< edit_this_page >}}
 
 ## Что и Почему?
 

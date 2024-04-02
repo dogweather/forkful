@@ -11,9 +11,8 @@ summary: "JSONin k\xE4sittely Luassa k\xE4sitt\xE4\xE4 JSON-muotoiltujen merkkij
   \ j\xE4sent\xE4misen Lua-taulukoihin ja p\xE4invastoin, mik\xE4 mahdollistaa helpon\
   \ datan vaihdon\u2026"
 title: "Ty\xF6skentely JSON:n kanssa"
+weight: 38
 ---
-
-{{< edit_this_page >}}
 
 ## Mikä & Miksi?
 JSONin käsittely Luassa käsittää JSON-muotoiltujen merkkijonojen jäsentämisen Lua-taulukoihin ja päinvastoin, mikä mahdollistaa helpon datan vaihdon Lualla tehtyjen sovellusten ja verkkopalveluiden tai ulkoisten APIen välillä. Ohjelmoijat tekevät tämän hyödyntääkseen JSONin kevyttä ja helposti jäsentävää muotoa tehokkaan datan tallennuksen, konfiguraation tai API-viestinnän kannalta.

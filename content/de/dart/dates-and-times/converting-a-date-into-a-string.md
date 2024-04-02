@@ -10,9 +10,8 @@ model: gpt-4-0125-preview
 summary: "Das Umwandeln eines Datums in einen String in Dart ist eine g\xE4ngige Aufgabe,\
   \ wenn Sie Datum- und Zeitinformationen in einem f\xFCr Menschen lesbaren Format\u2026"
 title: Ein Datum in einen String umwandeln
+weight: 28
 ---
-
-{{< edit_this_page >}}
 
 ## Was & Warum?
 

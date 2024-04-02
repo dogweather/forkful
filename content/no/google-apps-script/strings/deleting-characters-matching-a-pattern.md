@@ -11,9 +11,8 @@ summary: "\xC5 slette tegn som samsvarer med et spesifikt m\xF8nster er en tekni
   \ brukt for \xE5 rense eller formatere strenger i programmering. I konteksten til\
   \ Google\u2026"
 title: "Slette tegn som samsvarer med et m\xF8nster"
+weight: 5
 ---
-
-{{< edit_this_page >}}
 
 ## Hva & Hvorfor?
 

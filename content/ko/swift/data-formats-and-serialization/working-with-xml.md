@@ -15,9 +15,8 @@ summary: "Swift\uC5D0\uC11C XML\uC744 \uB2E4\uB8EC\uB2E4\uB294 \uAC83\uC740 XML 
   \uD569\uD560 \uB54C \uB370\uC774\uD130 \uAD50\uD658\uC744 \uC704\uD574 \uC774 \uC791\
   \uC5C5\uC744 \uD569\uB2C8\uB2E4."
 title: "XML \uB2E4\uB8E8\uAE30"
+weight: 40
 ---
-
-{{< edit_this_page >}}
 
 ## 무엇 & 왜?
 Swift에서 XML을 다룬다는 것은 XML 데이터를 파싱하고 생성하는 것을 의미합니다. 프로그래머들은 특히 XML이 표준 포맷인 시스템과 통합할 때 데이터 교환을 위해 이 작업을 합니다.

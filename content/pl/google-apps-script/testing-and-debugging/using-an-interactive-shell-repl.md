@@ -10,9 +10,8 @@ model: gpt-4-0125-preview
 summary: "Interaktywne \u015Brodowisko, czyli P\u0119tla Odczyt-Wykonanie-Wydruk (REPL),\
   \ to proste, interaktywne \u015Brodowisko programistyczne, kt\xF3re przyjmuje pojedyncze\u2026"
 title: "Korzystanie z interaktywnej pow\u0142oki (REPL)"
+weight: 34
 ---
-
-{{< edit_this_page >}}
 
 ## Co i dlaczego?
 

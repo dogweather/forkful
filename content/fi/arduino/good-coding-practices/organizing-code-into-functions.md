@@ -9,9 +9,8 @@ summary: "Koodin j\xE4rjest\xE4minen funktioihin tarkoittaa sen hajottamista uud
   ytett\xE4viin osiin, joista jokainen hoitaa tietyn teht\xE4v\xE4n. Ohjelmoijat tekev\xE4\
   t\u2026"
 title: "Koodin j\xE4rjest\xE4minen funktioihin"
+weight: 18
 ---
-
-{{< edit_this_page >}}
 
 ## Mitä & Miksi?
 Koodin järjestäminen funktioihin tarkoittaa sen hajottamista uudelleenkäytettäviin osiin, joista jokainen hoitaa tietyn tehtävän. Ohjelmoijat tekevät niin, jotta koodista tulee helpompi lukea, virheenkorjata ja uudelleenkäyttää. Se on kuin Lego-palikoiden laittamista lokeroihin - se säästää sinut penkomasta sekavaa kasaasi joka kerta, kun haluat rakentaa jotain.

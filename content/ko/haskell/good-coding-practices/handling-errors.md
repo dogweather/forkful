@@ -21,9 +21,8 @@ summary: "\uD504\uB85C\uADF8\uB798\uBC0D\uC5D0\uC11C \uC5D0\uB7EC\uB97C \uCC98\u
   \ \uC798\uBABB\uB41C \uACB0\uACFC\uB97C \uB0B4\uC9C0 \uC54A\uB3C4\uB85D \uC774\uB97C\
   \ \uC218\uD589\uD569\uB2C8\uB2E4."
 title: "\uC5D0\uB7EC \uCC98\uB9AC\uD558\uAE30"
+weight: 16
 ---
-
-{{< edit_this_page >}}
 
 ## 무엇인가 & 왜인가?
 프로그래밍에서 에러를 처리하는 것은 예상치 못한 상황을 관리하는 것과 관련이 있습니다—잘못되었을 수 있는 것들. 프로그래머는 그들의 프로그램이 이런 상황들을 우아하게 다룰 수 있도록 보장하기 위해, 충돌 없이 또는 잘못된 결과를 내지 않도록 이를 수행합니다.

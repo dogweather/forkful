@@ -7,9 +7,8 @@ model: gpt-4-1106-preview
 summary: "Enviar una petici\xF3n HTTP es b\xE1sicamente pedirle datos a una p\xE1\
   gina web o servidor. Lo hacemos para interactuar con servicios web, sea para recoger\u2026"
 title: Enviando una solicitud http
+weight: 44
 ---
-
-{{< edit_this_page >}}
 
 ## Qué es y por qué?
 Enviar una petición HTTP es básicamente pedirle datos a una página web o servidor. Lo hacemos para interactuar con servicios web, sea para recoger información o enviarla.

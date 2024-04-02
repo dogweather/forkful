@@ -11,9 +11,8 @@ summary: "\xC5 slette tegn som matcher et spesifikt m\xF8nster handler om \xE5 f
   \ visse tegn eller sekvenser av tegn fra strenger, basert p\xE5 regler definert\
   \ av et\u2026"
 title: "Slette tegn som matcher et m\xF8nster"
+weight: 5
 ---
-
-{{< edit_this_page >}}
 
 ## Hva & Hvorfor?
 

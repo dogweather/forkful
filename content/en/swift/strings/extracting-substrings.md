@@ -9,9 +9,8 @@ summary: "Extracting substrings means grabbing just a piece of a string\u2014lik
   \ snipping a ribbon to the length you need. Programmers do this to isolate, analyze,\
   \ or\u2026"
 title: Extracting substrings
+weight: 6
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 

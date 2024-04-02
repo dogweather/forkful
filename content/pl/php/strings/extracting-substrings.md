@@ -9,9 +9,8 @@ summary: "Wyci\u0105ganie podci\u0105g\xF3w to pobieranie okre\u015Blonych fragm
   w z ca\u0142ego ci\u0105gu znak\xF3w. Programi\u015Bci robi\u0105 to, aby manipulowa\u0107\
   \ danymi, weryfikowa\u0107 formaty lub po\u2026"
 title: "Wycinanie pod\u0142a\u0144cuch\xF3w"
+weight: 6
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why? (Co i dlaczego?)
 Wyciąganie podciągów to pobieranie określonych fragmentów z całego ciągu znaków. Programiści robią to, aby manipulować danymi, weryfikować formaty lub po prostu wyświetlać użytkownikowi tylko istotne informacje.

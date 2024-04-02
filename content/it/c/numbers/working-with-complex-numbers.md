@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "I numeri complessi sono costituiti da una parte reale e una immaginaria,\
   \ rappresentati come `a + bi` dove `i` \xE8 la radice quadrata di `-1`. I\u2026"
 title: Lavorare con i numeri complessi
+weight: 14
 ---
-
-{{< edit_this_page >}}
 
 ## Cosa e Perché?
 

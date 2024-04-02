@@ -11,9 +11,8 @@ summary: "\xC5 sjekke om en katalog eksisterer i filsystemet er essensielt for \
   \ h\xE5ndtere filstrukturer fra dine Swift-applikasjoner. Denne oppgaven gj\xF8\
   r det mulig for\u2026"
 title: Sjekker om en mappe eksisterer
+weight: 20
 ---
-
-{{< edit_this_page >}}
 
 ## Hva & hvorfor?
 Å sjekke om en katalog eksisterer i filsystemet er essensielt for å håndtere filstrukturer fra dine Swift-applikasjoner. Denne oppgaven gjør det mulig for utviklere å verifisere tilstedeværelsen av kataloger før de forsøker å lese fra eller skrive til dem, og dermed unngå mulige kjøretidsfeil.

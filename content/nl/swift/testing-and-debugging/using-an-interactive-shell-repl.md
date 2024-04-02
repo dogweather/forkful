@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Een interactieve shell gebruiken, of een Read-Eval-Print Loop (REPL), stelt\
   \ je in staat om interactief te coderen. Programmeurs gebruiken het om snel\u2026"
 title: Het gebruik van een interactieve shell (REPL)
+weight: 34
 ---
-
-{{< edit_this_page >}}
 
 ## Wat & Waarom?
 Een interactieve shell gebruiken, of een Read-Eval-Print Loop (REPL), stelt je in staat om interactief te coderen. Programmeurs gebruiken het om snel Swift-snippets te testen, te debuggen of de taal te leren.

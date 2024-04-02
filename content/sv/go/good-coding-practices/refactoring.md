@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Refaktorisering i programmering inneb\xE4r omstrukturering av befintlig\
   \ programkod - att \xE4ndra faktoriseringen - utan att \xE4ndra dess externa beteende.\u2026"
 title: Refaktorisering
+weight: 19
 ---
-
-{{< edit_this_page >}}
 
 ## Vad & Varför?
 

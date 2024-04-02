@@ -11,9 +11,8 @@ summary: "Att ta bort citationstecken fr\xE5n en str\xE4ng i VBA inneb\xE4r att 
   \ bort f\xF6rekomster av enkla (`'`) eller dubbla (`\"`) citationstecken som kan\
   \ inkapsla eller\u2026"
 title: "Ta bort citattecken fr\xE5n en str\xE4ng"
+weight: 9
 ---
-
-{{< edit_this_page >}}
 
 ## Vad & Varför?
 

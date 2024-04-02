@@ -8,9 +8,8 @@ model: gpt-4-1106-preview
 summary: "Converter uma data em uma string permite exibir e manipular datas num formato\
   \ leg\xEDvel para humanos. Programadores fazem isso para interagir com usu\xE1rios,\u2026"
 title: Convertendo uma data em uma string
+weight: 28
 ---
-
-{{< edit_this_page >}}
 
 ## O Que & Porquê?
 Converter uma data em uma string permite exibir e manipular datas num formato legível para humanos. Programadores fazem isso para interagir com usuários, salvar datas em um banco de dados ou para facilitar operações de comparação e formatação.

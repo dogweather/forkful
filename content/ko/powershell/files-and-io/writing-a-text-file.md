@@ -23,9 +23,8 @@ summary: "PowerShell\uC5D0\uC11C \uD14D\uC2A4\uD2B8 \uD30C\uC77C\uC744 \uC791\uC
   \uC774\uC158\uC774\uB098 \uC2A4\uD06C\uB9BD\uD2B8\uC640\uC758 \uD1B5\uD569\uC744\
   \ \uC704\uD574\u2026"
 title: "\uD14D\uC2A4\uD2B8 \uD30C\uC77C \uC4F0\uAE30"
+weight: 24
 ---
-
-{{< edit_this_page >}}
 
 ## 무엇 & 왜?
 PowerShell에서 텍스트 파일을 작성하는 것은 로깅, 데이터 저장, 구성 스크립팅을 위한 기본적인 작업으로 텍스트 기반 파일을 만들고 조작하는 것을 포함합니다. 프로그래머들은 이를 시스템 작업 자동화, 데이터 분석, 다른 애플리케이션이나 스크립트와의 통합을 위해 활용합니다.

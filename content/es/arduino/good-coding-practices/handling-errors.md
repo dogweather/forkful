@@ -9,9 +9,8 @@ summary: "El manejo de errores en tus programas detecta los problemas imprevisto
   \ que intentar\xE1n hacerte tropezar. Lo haces para evitar que tu Arduino tenga\
   \ un\u2026"
 title: Manejo de errores
+weight: 16
 ---
-
-{{< edit_this_page >}}
 
 ## ¿Qué y Por Qué?
 

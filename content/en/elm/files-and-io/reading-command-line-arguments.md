@@ -7,9 +7,8 @@ model: gpt-4-1106-preview
 summary: "Command line arguments let users feed data to your program when they launch\
   \ it. Programmers read these to tailor program behavior without hard-coding\u2026"
 title: Reading command line arguments
+weight: 23
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 Command line arguments let users feed data to your program when they launch it. Programmers read these to tailor program behavior without hard-coding values.

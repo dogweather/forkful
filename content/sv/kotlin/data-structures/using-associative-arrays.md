@@ -11,9 +11,8 @@ summary: "Associativa arrayer, eller kartor, i Kotlin \xE4r samlingar som lagrar
   rdepar. Programmerare anv\xE4nder dem f\xF6r att effektivt organisera och h\xE4\
   mta\u2026"
 title: "Att anv\xE4nda associativa arrayer"
+weight: 15
 ---
-
-{{< edit_this_page >}}
 
 ## Vad & Varför?
 

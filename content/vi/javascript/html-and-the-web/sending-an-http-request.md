@@ -13,9 +13,8 @@ summary: "Vi\u1EC7c g\u1EEDi m\u1ED9t y\xEAu c\u1EA7u HTTP l\xE0 c\xE1ch m\xE3 J
   \u01B0\u1EE3c th\u1EF1c hi\u1EC7n \u0111\u1EC3 trao \u0111\u1ED5i d\u1EEF li\u1EC7\
   u, t\u1EA3i ngu\u1ED3n, ho\u1EB7c g\u1EEDi d\u1EEF li\u1EC7u\u2026"
 title: "G\u1EEDi m\u1ED9t y\xEAu c\u1EA7u HTTP"
+weight: 44
 ---
-
-{{< edit_this_page >}}
 
 ## Cái gì & Tại sao?
 

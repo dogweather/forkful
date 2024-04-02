@@ -11,9 +11,8 @@ summary: "YAML, co jest skr\xF3tem od \"YAML Ain't Markup Language\", to standar
   \ serializacji danych czytelnych dla cz\u0142owieka, kt\xF3ry cz\u0119sto u\u017C\
   ywany jest w plikach\u2026"
 title: Praca z YAML
+weight: 41
 ---
-
-{{< edit_this_page >}}
 
 ## Co i dlaczego?
 

@@ -9,9 +9,8 @@ summary: "Converter datas em strings \xE9 uma maneira de formatar as informa\xE7
   es de data e hora em um texto leg\xEDvel ou em um padr\xE3o espec\xEDfico para armazenamento\
   \ e\u2026"
 title: Convertendo uma data em uma string
+weight: 28
 ---
-
-{{< edit_this_page >}}
 
 ## O Que é e Por Que?
 Converter datas em strings é uma maneira de formatar as informações de data e hora em um texto legível ou em um padrão específico para armazenamento e exibição. Programadores fazem isso para facilitar a apresentação de datas ao usuário, para comparação ou armazenagem em banco de dados.

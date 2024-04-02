@@ -11,9 +11,8 @@ summary: "Testien kirjoittaminen Dartissa sis\xE4lt\xE4\xE4 testitapausten luomi
   \ joiden avulla automaattisesti varmistetaan, ett\xE4 ohjelman eri osat toimivat\
   \ odotetusti.\u2026"
 title: Testien kirjoittaminen
+weight: 36
 ---
-
-{{< edit_this_page >}}
 
 ## Mitä & Miksi?
 

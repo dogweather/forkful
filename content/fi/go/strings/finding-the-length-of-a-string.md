@@ -11,9 +11,8 @@ summary: "Merkkijonon pituuden selvitt\xE4minen Go:ssa tarkoittaa sen sis\xE4lt\
   mien merkkien lukum\xE4\xE4r\xE4n m\xE4\xE4ritt\xE4mist\xE4. Ohjelmoijat suorittavat\
   \ t\xE4t\xE4 toimintoa\u2026"
 title: "Merkkijonon pituuden m\xE4\xE4ritt\xE4minen"
+weight: 7
 ---
-
-{{< edit_this_page >}}
 
 ## Mikä & Miksi?
 Merkkijonon pituuden selvittäminen Go:ssa tarkoittaa sen sisältämien merkkien lukumäärän määrittämistä. Ohjelmoijat suorittavat tätä toimintoa säännöllisesti hallitakseen merkkijonoja tehokkaasti, olipa kyse sitten validoinnista, alimerkkijonojen poiminnasta tai yksinkertaisesti käyttäjän syötteiden rajoitusten asettamisesta.

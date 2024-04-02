@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "\xC5 skrive til standardfeil i Visual Basic for Applications (VBA) inneb\xE6\
   rer \xE5 omdirigere feilmeldinger eller diagnostikk bort fra standard utdata, vanligvis\u2026"
 title: Skrive til standardfeil
+weight: 25
 ---
-
-{{< edit_this_page >}}
 
 ## Hva & Hvorfor?
 

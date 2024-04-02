@@ -11,9 +11,8 @@ summary: "Het genereren van willekeurige getallen houdt in dat er getallen worde
   \ gecre\xEBerd die redelijkerwijs niet beter te voorspellen zijn dan bij toeval,\
   \ wat\u2026"
 title: Willekeurige getallen genereren
+weight: 12
 ---
-
-{{< edit_this_page >}}
 
 ## Wat & Waarom?
 

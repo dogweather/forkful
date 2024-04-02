@@ -9,9 +9,8 @@ summary: "Lavorare con YAML significa manipolare un linguaggio di serializzazion
   \ dati che punta sulla leggibilit\xE0 umana. I programmatori lo usano perch\xE9\
   \ \xE8 comodo\u2026"
 title: Lavorare con YAML
+weight: 41
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 Lavorare con YAML significa manipolare un linguaggio di serializzazione dati che punta sulla leggibilità umana. I programmatori lo usano perché è comodo per configurazioni, file di dati e l'interscambio di messaggi tra servizi.

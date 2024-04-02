@@ -12,9 +12,8 @@ summary: "\uBB38\uC790\uC5F4 \uC5F0\uACB0\uC774\uB780, \uB450 \uAC1C \uC774\uC0C
   \uB2E4. \uB370\uC774\uD130\uB97C \uD45C\uD604\uD558\uAC70\uB098 \uCD9C\uB825 \uD615\
   \uC2DD\uC744 \uC870\uC815\uD560 \uB54C \uD544\uC694\uD569\uB2C8\uB2E4."
 title: "\uBB38\uC790\uC5F4 \uC5F0\uACB0\uD558\uAE30"
+weight: 3
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why? (무엇이며, 왜?)
 문자열 연결이란, 두 개 이상의 문자열을 하나로 붙이는 것입니다. 데이터를 표현하거나 출력 형식을 조정할 때 필요합니다.

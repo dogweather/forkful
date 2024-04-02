@@ -9,9 +9,8 @@ summary: "Enviar una solicitud HTTP con autenticaci\xF3n b\xE1sica es usar un m\
   todo para acceder a un recurso en l\xEDnea que requiere nombre de usuario y contrase\xF1\
   a. Los\u2026"
 title: "Enviando una solicitud http con autenticaci\xF3n b\xE1sica"
+weight: 45
 ---
-
-{{< edit_this_page >}}
 
 ## ¿Qué y Por Qué?
 

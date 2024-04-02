@@ -11,9 +11,8 @@ summary: "Att g\xF6ra f\xF6rsta bokstaven i en str\xE4ng stor i Rust inneb\xE4r 
   \ modifiera str\xE4ngen s\xE5 att dess f\xF6rsta tecken blir en stor bokstav om\
   \ det \xE4r en bokstav,\u2026"
 title: "G\xF6r om en str\xE4ng till versaler"
+weight: 2
 ---
-
-{{< edit_this_page >}}
 
 ## Vad & varför?
 

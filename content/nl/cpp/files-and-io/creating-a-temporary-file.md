@@ -10,9 +10,8 @@ model: gpt-4-0125-preview
 summary: "Het cre\xEBren van een tijdelijk bestand betekent het maken van een bestand\
   \ dat is ontworpen om tijdelijk gegevens op te slaan en wordt verwijderd na\u2026"
 title: Een tijdelijk bestand aanmaken
+weight: 21
 ---
-
-{{< edit_this_page >}}
 
 ## Wat & Waarom?
 

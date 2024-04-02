@@ -9,9 +9,8 @@ summary: "Generowanie losowych liczb polega na tworzeniu nieprzewidywalnych sekw
   \ lub pojedynczych warto\u015Bci w okre\u015Blonym zakresie. Programi\u015Bci u\u017C\
   ywaj\u0105 tej\u2026"
 title: Generowanie liczb losowych
+weight: 12
 ---
-
-{{< edit_this_page >}}
 
 ## Co i dlaczego?
 

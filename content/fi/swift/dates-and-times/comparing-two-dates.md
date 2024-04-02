@@ -9,9 +9,8 @@ summary: "Vertaillaan kahta p\xE4iv\xE4m\xE4\xE4r\xE4\xE4 n\xE4hd\xE4ksemme, kum
   \ on aikaisempi tai onko ne samat. T\xE4m\xE4 on t\xE4rke\xE4\xE4, jotta voimme\
   \ j\xE4rjest\xE4\xE4 tapahtumia, tarkistaa\u2026"
 title: "Kahden p\xE4iv\xE4m\xE4\xE4r\xE4n vertailu"
+weight: 27
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why? (Mitä & Miksi?)
 Vertaillaan kahta päivämäärää nähdäksemme, kumpi on aikaisempi tai onko ne samat. Tämä on tärkeää, jotta voimme järjestää tapahtumia, tarkistaa vanhentumisia tai ajastaa tehtäviä.

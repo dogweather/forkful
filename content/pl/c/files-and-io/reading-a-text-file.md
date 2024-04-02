@@ -11,9 +11,8 @@ summary: "Czytanie pliku tekstowego w j\u0119zyku C polega na otwarciu pliku w s
   \ w celu wydobycia informacji oraz ich manipulowania lub wy\u015Bwietlania zgodnie\
   \ z\u2026"
 title: Czytanie pliku tekstowego
+weight: 22
 ---
-
-{{< edit_this_page >}}
 
 ## Co i dlaczego?
 

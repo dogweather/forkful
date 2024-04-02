@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Lavorare con JSON (JavaScript Object Notation) in C implica l'analisi, la\
   \ generazione e la manipolazione delle strutture dati JSON. I programmatori fanno\u2026"
 title: Lavorare con JSON
+weight: 38
 ---
-
-{{< edit_this_page >}}
 
 ## Cosa e Perché?
 

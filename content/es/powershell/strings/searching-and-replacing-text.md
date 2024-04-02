@@ -7,9 +7,8 @@ model: gpt-4-1106-preview
 summary: "Buscar y reemplazar texto es el proceso de encontrar una cadena espec\xED\
   fica y cambiarla por otra. Los programadores lo hacen para corregir errores,\u2026"
 title: Buscando y reemplazando texto
+weight: 10
 ---
-
-{{< edit_this_page >}}
 
 ## Qué y Por Qué?
 Buscar y reemplazar texto es el proceso de encontrar una cadena específica y cambiarla por otra. Los programadores lo hacen para corregir errores, actualizar información o refactorizar código de manera eficiente.

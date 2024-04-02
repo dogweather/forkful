@@ -8,9 +8,8 @@ model: gpt-4-1106-preview
 summary: "Reading a text file means pulling data from a file into your program, typically\
   \ line by line. Programmers do this to process or analyze data that's stored\u2026"
 title: Reading a text file
+weight: 22
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 

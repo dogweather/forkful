@@ -8,9 +8,8 @@ model: gpt-4-0125-preview
 summary: "Comparing two dates in Visual Basic for Applications (VBA) involves determining\
   \ their chronological relationship to each other. Programmers do this to\u2026"
 title: Comparing two dates
+weight: 27
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 

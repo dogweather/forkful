@@ -7,9 +7,8 @@ model: gpt-4-0125-preview
 summary: "Fetching the current date in Python is a staple operation for many applications,\
   \ such as logging, data analysis, and time-based decision-making. It's\u2026"
 title: Getting the current date
+weight: 29
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 

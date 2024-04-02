@@ -15,9 +15,8 @@ summary: "HTTP \uC694\uCCAD\uC740 \uB370\uC774\uD130\uB97C \uC8FC\uACE0\uBC1B\uC
   \uC778\uD569\uB2C8\uB2E4."
 title: "\uAE30\uBCF8 \uC778\uC99D\uC744 \uC0AC\uC6A9\uD55C HTTP \uC694\uCCAD \uBCF4\
   \uB0B4\uAE30"
+weight: 45
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why? (무엇과 왜?)
 HTTP 요청은 데이터를 주고받을 때 씁니다. 기본 인증(basic authentication)은 사용자 이름과 비밀번호를 인코딩해 서버로 보내 안전하게 로그인합니다.

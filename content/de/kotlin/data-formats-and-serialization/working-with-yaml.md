@@ -8,9 +8,8 @@ model: unknown
 summary: "YAML ist ein Format f\xFCr Daten, das auf Menschen ausgerichtet ist. Programmierer\
   \ nutzen es, weil es einfach zu lesen und zu schreiben ist und sich gut f\xFCr\u2026"
 title: Arbeiten mit YAML
+weight: 41
 ---
-
-{{< edit_this_page >}}
 
 ## Was & Warum?
 YAML ist ein Format für Daten, das auf Menschen ausgerichtet ist. Programmierer nutzen es, weil es einfach zu lesen und zu schreiben ist und sich gut für Konfigurationsdateien oder Datenmodellierung eignet.

@@ -2,17 +2,18 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:09:23.963742-07:00
-description: "S\u1EED d\u1EE5ng m\u1ED9t tr\xECnh g\u1EE1 r\u1ED1i c\xF3 ngh\u0129\
-  a l\xE0 \u0111i s\xE2u v\xE0o m\xE3 c\u1EE7a b\u1EA1n v\u1EDBi nh\u1EEFng c\xF4\
-  ng c\u1EE5 \u0111\u01B0\u1EE3c thi\u1EBFt k\u1EBF \u0111\u1EC3 ki\u1EC3m tra, t\u1EA1\
-  m d\u1EEBng v\xE0 thao t\xE1c m\u1ED9t ch\u01B0\u01A1ng tr\xECnh trong qu\xE1\u2026"
+description: "H\xE3y c\xF9ng kh\xE1m ph\xE1 GHCi, m\xF4i tr\u01B0\u1EDDng t\u01B0\u01A1\
+  ng t\xE1c c\u1EE7a Haskell c\xF3 th\u1EC3 ho\u1EA1t \u0111\u1ED9ng nh\u01B0 m\u1ED9\
+  t tr\xECnh g\u1EE1 r\u1ED1i c\u01A1 b\u1EA3n. B\u1EA1n kh\u1EDFi \u0111\u1ED9ng\
+  \ n\xF3 v\u1EDBi m\xE3 Haskell c\u1EE7a m\xECnh v\xE0 b\u1EAFt \u0111\u1EA7u\u2026"
 lastmod: '2024-03-13T22:44:36.717892-06:00'
 model: gpt-4-0125-preview
-summary: "S\u1EED d\u1EE5ng m\u1ED9t tr\xECnh g\u1EE1 r\u1ED1i c\xF3 ngh\u0129a l\xE0\
-  \ \u0111i s\xE2u v\xE0o m\xE3 c\u1EE7a b\u1EA1n v\u1EDBi nh\u1EEFng c\xF4ng c\u1EE5\
-  \ \u0111\u01B0\u1EE3c thi\u1EBFt k\u1EBF \u0111\u1EC3 ki\u1EC3m tra, t\u1EA1m d\u1EEB\
-  ng v\xE0 thao t\xE1c m\u1ED9t ch\u01B0\u01A1ng tr\xECnh trong qu\xE1\u2026"
+summary: "H\xE3y c\xF9ng kh\xE1m ph\xE1 GHCi, m\xF4i tr\u01B0\u1EDDng t\u01B0\u01A1\
+  ng t\xE1c c\u1EE7a Haskell c\xF3 th\u1EC3 ho\u1EA1t \u0111\u1ED9ng nh\u01B0 m\u1ED9\
+  t tr\xECnh g\u1EE1 r\u1ED1i c\u01A1 b\u1EA3n. B\u1EA1n kh\u1EDFi \u0111\u1ED9ng\
+  \ n\xF3 v\u1EDBi m\xE3 Haskell c\u1EE7a m\xECnh v\xE0 b\u1EAFt \u0111\u1EA7u\u2026"
 title: "S\u1EED d\u1EE5ng b\u1ED9 g\u1EE1 l\u1ED7i"
+weight: 35
 ---
 
 ## Làm Thế Nào:

@@ -9,9 +9,8 @@ summary: "\xC5 sammenligne to datoer betyr \xE5 sjekke om de er like, hvilken so
   \ kommer f\xF8rst, eller hvor lang tid det er mellom dem. Programmerere gj\xF8r\
   \ dette for \xE5\u2026"
 title: Sammenlikning av to datoer
+weight: 27
 ---
-
-{{< edit_this_page >}}
 
 ## Hva & Hvorfor?
 Å sammenligne to datoer betyr å sjekke om de er like, hvilken som kommer først, eller hvor lang tid det er mellom dem. Programmerere gjør dette for å håndtere frister, tidslinjer og tidssensitive data.

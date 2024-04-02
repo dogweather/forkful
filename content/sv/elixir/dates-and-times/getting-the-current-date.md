@@ -12,9 +12,8 @@ summary: "Att f\xE5 det aktuella datumet i Elixir inneb\xE4r att man f\xE5r till
   ng till systemets datum- och tidsinformation, en vanlig uppgift f\xF6r loggning,\
   \ datumm\xE4rkning\u2026"
 title: "F\xE5 det aktuella datumet"
+weight: 29
 ---
-
-{{< edit_this_page >}}
 
 ## Vad & Varför?
 Att få det aktuella datumet i Elixir innebär att man får tillgång till systemets datum- och tidsinformation, en vanlig uppgift för loggning, datummärkning eller vilken funktionalitet som helst som kräver kunskap om det aktuella datumet. Denna operation är avgörande för att skapa tidsmedvetna applikationer och för uppgifter som att generera rapporter eller tidsstämplar i en webbapplikation.

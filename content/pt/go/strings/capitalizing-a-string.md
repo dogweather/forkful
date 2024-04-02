@@ -11,9 +11,8 @@ summary: "Capitalizar uma string envolve transformar o primeiro caractere de uma
   \ dada em mai\xFAscula, se ele estiver em min\xFAscula, garantindo que a string\
   \ se\u2026"
 title: Capitalizando uma string
+weight: 2
 ---
-
-{{< edit_this_page >}}
 
 ## O Que & Por Quê?
 

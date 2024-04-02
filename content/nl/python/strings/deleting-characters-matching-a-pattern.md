@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "In programmeren betekent het verwijderen van karakters die overeenkomen\
   \ met een patroon, het vinden van reeksen karakters die passen bij een specifieke\u2026"
 title: Karakters verwijderen die overeenkomen met een patroon
+weight: 5
 ---
-
-{{< edit_this_page >}}
 
 ## Wat & Waarom?
 In programmeren betekent het verwijderen van karakters die overeenkomen met een patroon, het vinden van reeksen karakters die passen bij een specifieke regel - een patroon - en deze uit een string halen. Programmeurs doen dit voor zaken zoals het saniteren van invoer, het verwerken van tekst, of gewoon het opruimen van gegevens voordat deze opgeslagen of weergegeven worden.

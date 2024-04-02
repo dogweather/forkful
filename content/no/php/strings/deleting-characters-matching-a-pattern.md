@@ -9,9 +9,8 @@ summary: "I PHP kan vi slette tegn som passer til et m\xF8nster for \xE5 rense d
   \ eller forenkle behandlingen av tekststrenger. Programmerere gj\xF8r dette for\
   \ \xE5 fjerne\u2026"
 title: "Slette tegn som matcher et m\xF8nster"
+weight: 5
 ---
-
-{{< edit_this_page >}}
 
 ## Hva & Hvorfor?
 I PHP kan vi slette tegn som passer til et mønster for å rense data eller forenkle behandlingen av tekststrenger. Programmerere gjør dette for å fjerne uønskede tegn, formatere data på et ensartet vis, eller forberede strenger for databaselagring og -spørringer.

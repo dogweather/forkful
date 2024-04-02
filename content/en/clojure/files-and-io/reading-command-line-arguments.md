@@ -7,9 +7,8 @@ model: gpt-4-1106-preview
 summary: "Reading command line arguments lets a program grab info straight from the\
   \ user's terminal command. Programmers do it to customize a program's behavior\u2026"
 title: Reading command line arguments
+weight: 23
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 

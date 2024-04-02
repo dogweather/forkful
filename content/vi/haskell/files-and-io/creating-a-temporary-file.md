@@ -14,9 +14,8 @@ summary: "T\u1EA1o m\u1ED9t t\u1EC7p t\u1EA1m th\u1EDDi c\xF3 ngh\u0129a l\xE0 t
   n, th\u01B0\u1EDDng l\xE0 \u0111\u1EC3 qu\u1EA3n l\xFD d\u1EEF li\u1EC7u trong khi\
   \ m\u1ED9t ch\u01B0\u01A1ng tr\xECnh \u0111ang th\u1EF1c thi. L\u1EADp\u2026"
 title: "T\u1EA1o m\u1ED9t t\u1EADp tin t\u1EA1m th\u1EDDi"
+weight: 21
 ---
-
-{{< edit_this_page >}}
 
 ## Gì và Tại sao?
 Tạo một tệp tạm thời có nghĩa là tạo một tệp để sử dụng trong thời gian ngắn, thường là để quản lý dữ liệu trong khi một chương trình đang thực thi. Lập trình viên làm điều này để tránh làm đầy ổ cứng bằng dữ liệu nhất thời và để làm việc với các tệp một cách an toàn mà không gặp phải xung đột hay rò rỉ dữ liệu.

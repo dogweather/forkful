@@ -11,9 +11,8 @@ summary: "Parsowanie HTML w PowerShell to proces analizowania zawarto\u015Bci HT
   \ w celu wyodr\u0119bnienia konkretnych danych lub automatyzacji zada\u0144 zwi\u0105\
   zanych z sieci\u0105.\u2026"
 title: "Analiza sk\u0142adniowa HTML"
+weight: 43
 ---
-
-{{< edit_this_page >}}
 
 ## Co i dlaczego?
 Parsowanie HTML w PowerShell to proces analizowania zawartości HTML w celu wyodrębnienia konkretnych danych lub automatyzacji zadań związanych z siecią. Programiści robią to, aby wchodzić w interakcje ze stronami internetowymi, pobierać zawartość sieciową lub automatyzować wysyłanie formularzy oraz inne interakcje sieciowe bez potrzeby korzystania z przeglądarki internetowej.

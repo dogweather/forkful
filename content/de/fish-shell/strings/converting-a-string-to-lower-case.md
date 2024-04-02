@@ -9,9 +9,8 @@ summary: "Das Umwandeln einer Zeichenkette in Kleinbuchstaben bedeutet, alle Gro
   buchstaben in ihrem Inhalt in die entsprechenden Kleinbuchstaben zu \xFCberf\xFC\
   hren. Wir\u2026"
 title: Umformung eines Strings in Kleinbuchstaben
+weight: 4
 ---
-
-{{< edit_this_page >}}
 
 ## Was & Warum?
 Das Umwandeln einer Zeichenkette in Kleinbuchstaben bedeutet, alle Großbuchstaben in ihrem Inhalt in die entsprechenden Kleinbuchstaben zu überführen. Wir tun dies, um bei Vergleichen oder der Datenverarbeitung Konsistenz zu gewährleisten und Schreibweise-bedingte Probleme zu vermeiden.

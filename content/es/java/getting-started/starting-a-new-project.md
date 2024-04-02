@@ -8,9 +8,8 @@ model: gpt-4-1106-preview
 summary: "Empezar un nuevo proyecto en Java es configurar un entorno desde cero para\
   \ codificar una aplicaci\xF3n fresca. Programadores lo hacen para innovar, resolver\u2026"
 title: Iniciando un nuevo proyecto
+weight: 1
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why? (¿Qué y Por Qué?)
 Empezar un nuevo proyecto en Java es configurar un entorno desde cero para codificar una aplicación fresca. Programadores lo hacen para innovar, resolver problemas, aprender o ganar dinero.

@@ -11,9 +11,8 @@ summary: "Les tableaux associatifs, souvent connus sous le nom de dictionnaires 
   \ Visual Basic pour Applications (VBA), permettent aux programmeurs de cr\xE9er\
   \ des\u2026"
 title: Utilisation des tableaux associatifs
+weight: 15
 ---
-
-{{< edit_this_page >}}
 
 ## Quoi et Pourquoi ?
 

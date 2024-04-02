@@ -11,9 +11,8 @@ summary: "Assosiative tabeller, eller som Elm kaller dem, Ordb\xF8ker, kobler n\
   kler til verdier p\xE5 en m\xE5te som gj\xF8r oppslag, innsetting og sletting av\
   \ verdier super\u2026"
 title: Bruke associative tabeller
+weight: 15
 ---
-
-{{< edit_this_page >}}
 
 ## Hva & Hvorfor?
 

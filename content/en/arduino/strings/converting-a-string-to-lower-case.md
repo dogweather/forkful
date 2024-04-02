@@ -7,9 +7,8 @@ model: gpt-4-1106-preview
 summary: "Converting a string to lower case changes all uppercase letters in the text\
   \ to their lowercase counterparts. Programmers do this for consistency,\u2026"
 title: Converting a string to lower case
+weight: 4
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 Converting a string to lower case changes all uppercase letters in the text to their lowercase counterparts. Programmers do this for consistency, especially when comparing strings or standardizing input data.

@@ -7,9 +7,8 @@ model: gpt-4-0125-preview
 summary: "Calculating a date in the future or past is a common task for programmers,\
   \ dealing with scheduling, reminders, or any feature that depends on date\u2026"
 title: Calculating a date in the future or past
+weight: 26
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 Calculating a date in the future or past is a common task for programmers, dealing with scheduling, reminders, or any feature that depends on date calculations. Understanding how to manipulate dates is crucial for backend systems, user interfaces, and data analysis, especially for those transitioning to Dart and looking to implement temporal logic efficiently.

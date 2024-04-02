@@ -7,9 +7,8 @@ model: gpt-4-0125-preview
 summary: "Komplexa tal utvidgar de reella talen med en ytterligare del, den imagin\xE4\
   ra enheten 'i'. Programmerare anv\xE4nder dem inom olika omr\xE5den, inklusive\u2026"
 title: Att arbeta med komplexa tal
+weight: 14
 ---
-
-{{< edit_this_page >}}
 
 ## Vad & Varför?
 Komplexa tal utvidgar de reella talen med en ytterligare del, den imaginära enheten 'i'. Programmerare använder dem inom olika områden, inklusive signalbehandling, elektromagnetisk teori och fraktaler, där beräkningar som involverar kvadratroten av ett negativt tal är rutin.

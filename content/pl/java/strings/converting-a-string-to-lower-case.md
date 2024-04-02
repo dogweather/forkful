@@ -9,9 +9,8 @@ summary: "Konwersja stringa do ma\u0142ych liter to proces zmiany wszystkich lit
   \ w tek\u015Bcie na ich ma\u0142e odpowiedniki. Robimy to dla jednolito\u015Bci\
   \ danych, \u0142atwiejszego\u2026"
 title: "Konwersja ci\u0105gu znak\xF3w na ma\u0142e litery"
+weight: 4
 ---
-
-{{< edit_this_page >}}
 
 ## Co & Dlaczego?
 

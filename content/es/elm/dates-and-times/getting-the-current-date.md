@@ -7,9 +7,8 @@ model: unknown
 summary: "Obtener la fecha actual significa acceder al valor de la fecha y hora del\
   \ momento presente. Los programadores lo hacen para funciones como registros,\u2026"
 title: Obteniendo la fecha actual
+weight: 29
 ---
-
-{{< edit_this_page >}}
 
 ## Qué & Por Qué?
 

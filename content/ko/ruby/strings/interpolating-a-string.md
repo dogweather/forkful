@@ -14,9 +14,8 @@ summary: "\uC2A4\uD2B8\uB9C1 \uC778\uD130\uD3F4\uB808\uC774\uC158\uC740 \uBB38\u
   \uAE30 \uC27D\uACE0 \uC720\uC9C0\uBCF4\uC218\uD558\uAE30 \uC871\uD558\uAC8C \uD558\
   \uAE30 \uC704\uD574 \uC0AC\uC6A9\uD569\uB2C8\uB2E4."
 title: "\uBB38\uC790\uC5F4 \uBCF4\uAC04\uD558\uAE30"
+weight: 8
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why? (무엇인가요? 왜 사용하나요?)
 스트링 인터폴레이션은 문자열 안에 변수나 표현식의 결과를 삽입하는 것입니다. 코드를 더 읽기 쉽고 유지보수하기 족하게 하기 위해 사용합니다.

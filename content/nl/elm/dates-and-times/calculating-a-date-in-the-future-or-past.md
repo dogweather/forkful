@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Een toekomstige of verleden datum berekenen is gewoon een gegeven datum\
   \ aanpassen met een bepaalde hoeveelheid tijd. Programmeurs doen dit om deadlines,\u2026"
 title: Een datum in de toekomst of het verleden berekenen
+weight: 26
 ---
-
-{{< edit_this_page >}}
 
 ## Wat & Waarom?
 Een toekomstige of verleden datum berekenen is gewoon een gegeven datum aanpassen met een bepaalde hoeveelheid tijd. Programmeurs doen dit om deadlines, evenementen, herinneringen—alles wat met data te maken heeft—te hanteren.

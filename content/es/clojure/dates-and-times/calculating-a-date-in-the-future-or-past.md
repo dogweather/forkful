@@ -9,9 +9,8 @@ summary: "Calcular una fecha en el futuro o pasado es b\xE1sicamente sumar o res
   \ d\xEDas a una fecha dada. Lo hacemos para programar eventos, calcular vencimientos\
   \ o\u2026"
 title: "C\xE1lculo de una fecha en el futuro o el pasado"
+weight: 26
 ---
-
-{{< edit_this_page >}}
 
 ## Qué y Por Qué?
 Calcular una fecha en el futuro o pasado es básicamente sumar o restar días a una fecha dada. Lo hacemos para programar eventos, calcular vencimientos o medir periodos de tiempo.

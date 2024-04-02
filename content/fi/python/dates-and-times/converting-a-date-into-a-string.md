@@ -9,9 +9,8 @@ summary: "Muunnetaan p\xE4iv\xE4m\xE4\xE4r\xE4 merkkijonoksi, jotta voimme n\xE4
   \xE4 p\xE4iv\xE4m\xE4\xE4r\xE4n haluamassamme muodossa. Sit\xE4 tarvitaan lokitiedostoissa,\
   \ k\xE4ytt\xF6liittymiss\xE4 ja datan\u2026"
 title: "P\xE4iv\xE4m\xE4\xE4r\xE4n muuntaminen merkkijonoksi"
+weight: 28
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why? (Mikä & Miksi?)
 Muunnetaan päivämäärä merkkijonoksi, jotta voimme näyttää päivämäärän haluamassamme muodossa. Sitä tarvitaan lokitiedostoissa, käyttöliittymissä ja datan tallennuksessa.

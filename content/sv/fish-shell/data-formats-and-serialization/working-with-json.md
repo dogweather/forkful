@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Att arbeta med JSON i Fish Shell inneb\xE4r att tolka och generera JSON-data,\
   \ en vanlig uppgift f\xF6r att konfigurera applikationer, API-interaktion och\u2026"
 title: Arbeta med JSON
+weight: 38
 ---
-
-{{< edit_this_page >}}
 
 ## Vad & Varför?
 

@@ -9,9 +9,8 @@ summary: "Il debug consiste nel stampare informazioni di output per controllare 
   \ stato del tuo programma. Programmatori fanno ci\xF2 per diagnosticare e sistemare\
   \ i\u2026"
 title: Stampa dell'output di debug
+weight: 33
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 Il debug consiste nel stampare informazioni di output per controllare lo stato del tuo programma. Programmatori fanno ciò per diagnosticare e sistemare i difetti nel codice.

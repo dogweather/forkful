@@ -23,9 +23,8 @@ summary: "\uBD80\uBD84 \uBB38\uC790\uC5F4\uC744 \uCD94\uCD9C\uD558\uB294 \uAC83\
   \uCD9C\uD558\uB294 \uB4F1\uC758 \uC791\uC5C5\uC744 \uC704\uD574 \uC774\uB97C \uC218\
   \uD589\uD569\uB2C8\uB2E4."
 title: "\uBD80\uBD84 \uBB38\uC790\uC5F4 \uCD94\uCD9C\uD558\uAE30"
+weight: 6
 ---
-
-{{< edit_this_page >}}
 
 ## 무엇 & 왜?
 부분 문자열을 추출하는 것은 그들의 위치나 패턴을 기반으로 문자열의 특정 부분을 검색하는 것에 대한 것입니다. 프로그래머들은 사용자 입력을 구문 분석하거나, 데이터를 조작하거나, 더 큰 텍스트 소스에서 관련 정보를 추출하는 등의 작업을 위해 이를 수행합니다.

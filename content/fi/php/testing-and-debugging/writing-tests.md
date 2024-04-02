@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Testien kirjoittaminen ohjelmoinnissa tarkoittaa skriptien luomista ja suorittamista,\
   \ jotka varmistavat koodin toimivan odotetusti eri olosuhteissa.\u2026"
 title: Testien kirjoittaminen
+weight: 36
 ---
-
-{{< edit_this_page >}}
 
 ## Mikä & Miksi?
 Testien kirjoittaminen ohjelmoinnissa tarkoittaa skriptien luomista ja suorittamista, jotka varmistavat koodin toimivan odotetusti eri olosuhteissa. Ohjelmoijat tekevät sen laadun varmistamiseksi, regressioiden estämiseksi ja turvallisen refaktoroinnin mahdollistamiseksi, mikä on ratkaisevan tärkeää terveellisen, skaalautuvan ja bugittoman koodikannan ylläpitämiseksi.

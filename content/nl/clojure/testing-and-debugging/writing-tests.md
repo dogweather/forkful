@@ -11,9 +11,8 @@ summary: "Tests schrijven betekent code cre\xEBren die controleert of andere cod
   \ werkt zoals verwacht. Programmeurs doen dit om bugs te vangen, betrouwbaarheid\
   \ te\u2026"
 title: Tests Schrijven
+weight: 36
 ---
-
-{{< edit_this_page >}}
 
 ## Wat & Waarom?
 Tests schrijven betekent code creëren die controleert of andere code werkt zoals verwacht. Programmeurs doen dit om bugs te vangen, betrouwbaarheid te verzekeren en hoofdpijn later te besparen.

@@ -11,9 +11,8 @@ summary: "Assosiatiiviset taulukot eli niin kuin Javascriptiss\xE4 tarkemmin tun
   \ objektit, mahdollistavat avainten m\xE4\xE4rityksen arvoille. T\xE4m\xE4 on eritt\xE4\
   in\u2026"
 title: "Assosiatiivisten taulukoiden k\xE4ytt\xF6"
+weight: 15
 ---
-
-{{< edit_this_page >}}
 
 ## Mikä ja miksi?
 

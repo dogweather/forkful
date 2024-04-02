@@ -13,9 +13,8 @@ summary: "Ghi log gi\u1ED1ng nh\u01B0 vi\u1EC7c gi\u1EEF m\u1ED9t nh\u1EADt k\xF
   \ l\u1EA1i c\xE1c s\u1EF1 ki\u1EC7n, l\u1ED7i v\xE0 c\xE1c d\u1EEF li\u1EC7u li\xEA\
   n quan kh\xE1c trong qu\xE1 tr\xECnh ch\u1EA1y.\u2026"
 title: Ghi log
+weight: 17
 ---
-
-{{< edit_this_page >}}
 
 ## Gì và Tại Sao?
 

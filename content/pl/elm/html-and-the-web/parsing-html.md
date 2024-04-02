@@ -9,9 +9,8 @@ summary: "Parseowanie HTML to proces przekszta\u0142cania surowego kodu HTML na 
   , z kt\xF3r\u0105 Elm mo\u017Ce pracowa\u0107 programistycznie. Robimy to, \u017C\
   eby m\xF3c manipulowa\u0107 i\u2026"
 title: Przetwarzanie HTML
+weight: 43
 ---
-
-{{< edit_this_page >}}
 
 ## Co i dlaczego?
 Parseowanie HTML to proces przekształcania surowego kodu HTML na strukturę, z którą Elm może pracować programistycznie. Robimy to, żeby móc manipulować i analizować dokumenty HTML w aplikacjach Elm, co jest przydatne w przetwarzaniu i wyświetlaniu danych.

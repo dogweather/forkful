@@ -9,9 +9,8 @@ summary: "Argumenty linii polece\u0144 to parametry przekazywane do programu, ki
   \ jest on uruchamiany z terminala. Programi\u015Bci korzystaj\u0105 z nich, by wp\u0142\
   ywa\u0107 na\u2026"
 title: "Odczytywanie argument\xF3w linii polece\u0144"
+weight: 23
 ---
-
-{{< edit_this_page >}}
 
 ## Co i dlaczego?
 Argumenty linii poleceń to parametry przekazywane do programu, kiedy jest on uruchamiany z terminala. Programiści korzystają z nich, by wpływać na zachowanie programu bez zmiany kodu.

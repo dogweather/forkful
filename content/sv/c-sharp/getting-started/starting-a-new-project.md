@@ -9,9 +9,8 @@ summary: "Att starta ett nytt projekt i C# inneb\xE4r skapandet av en grundl\xE4
   \ struktur f\xF6r din kod d\xE4r allt det roliga kan h\xE4nda. Programmerare g\xF6\
   r detta f\xF6r att\u2026"
 title: "Att p\xE5b\xF6rja ett nytt projekt"
+weight: 1
 ---
-
-{{< edit_this_page >}}
 
 ## Vad & Varför?
 Att starta ett nytt projekt i C# innebär skapandet av en grundläggande struktur för din kod där allt det roliga kan hända. Programmerare gör detta för att organisera idéer, testa nya koncept och bygga upp lösningar från grunden.

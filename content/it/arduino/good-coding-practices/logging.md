@@ -9,9 +9,8 @@ summary: "\"Logging\" significa mantenere un registro degli eventi, delle transa
   \ o delle attivit\xE0 che si verificano nel tempo in un sistema. I programmatori\
   \ lo\u2026"
 title: Registrazione Eventi (Logging)
+weight: 17
 ---
-
-{{< edit_this_page >}}
 
 ## Cos'è e Perché?
 "Logging" significa mantenere un registro degli eventi, delle transazioni o delle attività che si verificano nel tempo in un sistema. I programmatori lo utilizzano per eseguire il debug, monitorare lo stato di salute del sistema, raccogliere statistiche o persino audire l'uso, rendendolo una pratica indispensabile per mantenere e comprendere il comportamento del loro codice in varie condizioni.

@@ -11,9 +11,8 @@ summary: "Capitalizar uma string envolve modificar o primeiro caractere de um te
   \ dado para mai\xFAsculo, garantindo que frases, t\xEDtulos ou nomes pr\xF3prios\
   \ comecem\u2026"
 title: Capitalizando uma string
+weight: 2
 ---
-
-{{< edit_this_page >}}
 
 ## O Quê & Por Quê?
 Capitalizar uma string envolve modificar o primeiro caractere de um texto dado para maiúsculo, garantindo que frases, títulos ou nomes próprios comecem corretamente em um conjunto de dados. Programadores frequentemente executam a capitalização de strings para a normalização de dados, melhorando a legibilidade ou garantindo consistência na entrada de usuário ou no processamento de dados textuais.

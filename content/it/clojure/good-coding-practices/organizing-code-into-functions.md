@@ -9,9 +9,8 @@ summary: "Organizzare il codice in funzioni significa impacchettare blocchi di c
   \ che compiono compiti specifici. Fare ci\xF2 rende il tuo codice pulito, pi\xF9\
   \u2026"
 title: Organizzazione del codice in funzioni
+weight: 18
 ---
-
-{{< edit_this_page >}}
 
 ## Cosa e Perché?
 

@@ -13,9 +13,8 @@ summary: "M\u1EA3ng k\u1EBFt h\u1EE3p, hay t\u1EEB \u0111i\u1EC3n trong C#, cho 
   \ gi\xE1 tr\u1ECB. Ch\xFAng l\xE0 l\u1EF1a ch\u1ECDn h\xE0ng \u0111\u1EA7u khi b\u1EA1\
   n c\u1EA7n l\u1EA5y nhanh gi\xE1 tr\u1ECB d\u1EF1a\u2026"
 title: "S\u1EED d\u1EE5ng m\u1EA3ng li\xEAn k\u1EBFt"
+weight: 15
 ---
-
-{{< edit_this_page >}}
 
 ## Cái gì & Tại sao?
 

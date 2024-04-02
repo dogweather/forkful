@@ -23,9 +23,8 @@ summary: "JSON (JavaScript Object Notation) \u2014 \u044D\u0442\u043E \u0442\u04
   \u0432\u043E\u0439 \u0441\u043E\u0432\u043C\u0435\u0441\u0442\u0438\u043C\u043E\u0441\
   \u0442\u0438,\u2026"
 title: "\u0420\u0430\u0431\u043E\u0442\u0430 \u0441 JSON"
+weight: 38
 ---
-
-{{< edit_this_page >}}
 
 ## Что и Почему?
 

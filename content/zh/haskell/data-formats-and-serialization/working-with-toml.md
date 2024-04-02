@@ -13,9 +13,8 @@ summary: "\u4F7F\u7528TOML\u6D89\u53CA\u4F7F\u7528Haskell\u89E3\u6790\u548C\u751
   \u7F6E\u6587\u4EF6\u6216\u6570\u636E\u4EA4\u6362\uFF0C\u5E76\u63D0\u4F9B\u5F3A\u7C7B\
   \u578B\u4FDD\u8BC1\u548C\u6700\u5C0F\u7684\u8BED\u6CD5\u9EBB\u70E6\u3002"
 title: "\u4F7F\u7528TOML"
+weight: 39
 ---
-
-{{< edit_this_page >}}
 
 ## 什么 & 为什么？
 使用TOML涉及使用Haskell解析和生成TOML（Tom的明显，最小语言）数据。程序员这样做是为了轻松管理配置文件或数据交换，并提供强类型保证和最小的语法麻烦。

@@ -11,9 +11,8 @@ summary: "CSV (Comma-Separated Values) tiedostot ovat yleinen datan vaihtoformaa
   \ joka esitt\xE4\xE4 taulukollista tietoa puhtaana tekstin\xE4 k\xE4ytt\xE4en pilkkuja\
   \ arvojen\u2026"
 title: "Ty\xF6skentely CSV:n kanssa"
+weight: 37
 ---
-
-{{< edit_this_page >}}
 
 ## Mikä & Miksi?
 CSV (Comma-Separated Values) tiedostot ovat yleinen datan vaihtoformaatti, joka esittää taulukollista tietoa puhtaana tekstinä käyttäen pilkkuja arvojen erottamiseen. Ohjelmoijat työskentelevät CSV-tiedostojen parissa tuodakseen, viedäkseen ja muokatakseen dataa vaivattomasti eri sovellusten ja palveluiden välillä, koska kyseessä on yksinkertainen, laajasti tuettu muoto, joka on yhteensopiva taulukkolaskentaohjelmien, tietokantojen ja ohjelmointikielien kanssa.

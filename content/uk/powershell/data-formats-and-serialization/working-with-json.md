@@ -21,9 +21,8 @@ summary: "\u0406\u043D\u0442\u0435\u0433\u0440\u0430\u0446\u0456\u044F PowerShel
   \u0435\u043D\u0438\u043C \u0444\u043E\u0440\u043C\u0430\u0442\u043E\u043C \u0434\
   \u043B\u044F\u2026"
 title: "\u0420\u043E\u0431\u043E\u0442\u0430 \u0437 JSON"
+weight: 38
 ---
-
-{{< edit_this_page >}}
 
 ## Що та Навіщо?
 

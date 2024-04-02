@@ -11,9 +11,8 @@ summary: "\xC5 sjekke om en katalog eksisterer i Clojure inneb\xE6rer \xE5 verif
   \ tilstedev\xE6relsen av en filsystemkatalog fra inne i din Clojure-applikasjon.\
   \ Denne\u2026"
 title: Sjekker om en mappe eksisterer
+weight: 20
 ---
-
-{{< edit_this_page >}}
 
 ## Hva & Hvorfor?
 Å sjekke om en katalog eksisterer i Clojure innebærer å verifisere tilstedeværelsen av en filsystemkatalog fra inne i din Clojure-applikasjon. Denne oppgaven er avgjørende for filoperasjoner, for å forhindre feil når man leser fra eller skriver til kataloger som kanskje ikke er der, og sikrer robust og feilfri kodeutførelse.

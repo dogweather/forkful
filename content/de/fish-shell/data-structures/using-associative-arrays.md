@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Assoziative Arrays oder Hash-Maps erm\xF6glichen es Ihnen, Daten als Schl\xFC\
   ssel-Wert-Paare zu speichern, was die Organisation und das Abrufen von\u2026"
 title: Verwendung von assoziativen Arrays
+weight: 15
 ---
-
-{{< edit_this_page >}}
 
 ## Was & Warum?
 

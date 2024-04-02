@@ -11,9 +11,8 @@ summary: "We halen de huidige datum op om de gegevens van vandaag te kennen. Het
   \ cruciaal voor tal van functies \u2013 denk aan logs, proefversies, evenementen.\
   \ Wat\u2026"
 title: Het huidige datum ophalen
+weight: 29
 ---
-
-{{< edit_this_page >}}
 
 ## Wat & Waarom?
 We halen de huidige datum op om de gegevens van vandaag te kennen. Het is cruciaal voor tal van functies – denk aan logs, proefversies, evenementen. Wat je ook bedenkt, datums zijn vaak van groot belang.

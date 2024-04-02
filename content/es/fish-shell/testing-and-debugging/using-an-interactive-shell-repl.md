@@ -7,9 +7,8 @@ model: gpt-4-0125-preview
 summary: "REPL, o Ciclo de Leer-Evaluar-Imprimir, es un entorno de programaci\xF3\
   n interactivo que toma las entradas de los usuarios, las ejecuta y devuelve el\u2026"
 title: Usando una shell interactiva (REPL)
+weight: 34
 ---
-
-{{< edit_this_page >}}
 
 ## ¿Qué y por qué?
 REPL, o Ciclo de Leer-Evaluar-Imprimir, es un entorno de programación interactivo que toma las entradas de los usuarios, las ejecuta y devuelve el resultado. Los programadores lo utilizan para obtener retroalimentación instantánea, depurar y experimentar rápidamente con conceptos de codificación sin el sobrecoste de compilar y ejecutar un programa completo.

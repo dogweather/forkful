@@ -9,9 +9,8 @@ summary: "I Haskell handler sletting av tegn som matcher et m\xF8nster om \xE5 f
   \ spesifikke tegn fra en tekststreng basert p\xE5 gitte kriterier. Programmerere\
   \ gj\xF8r\u2026"
 title: "Slette tegn som matcher et m\xF8nster"
+weight: 5
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 I Haskell handler sletting av tegn som matcher et mønster om å fjerne spesifikke tegn fra en tekststreng basert på gitte kriterier. Programmerere gjør dette for å rense data, forenkle tekstbehandling eller fjerne unødvendig eller sensitiv informasjon.

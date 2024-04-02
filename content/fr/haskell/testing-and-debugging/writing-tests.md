@@ -11,9 +11,8 @@ summary: "\xC9crire des tests en Haskell, c'est s'assurer que vos fonctions fonc
   \ comme pr\xE9vu gr\xE2ce \xE0 des v\xE9rifications automatis\xE9es. Les programmeurs\
   \ le font\u2026"
 title: "R\xE9daction de tests"
+weight: 36
 ---
-
-{{< edit_this_page >}}
 
 ## Quoi & Pourquoi ?
 

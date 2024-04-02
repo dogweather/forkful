@@ -13,9 +13,8 @@ summary: "L\u1EA5y ng\xE0y hi\u1EC7n t\u1EA1i trong bash l\xE0 vi\u1EC7c l\u1EA5
   \ c\u1EA7n n\xF3 cho vi\u1EC7c ghi nh\u1EADt k\xFD, \u0111\xE1nh d\u1EA5u th\u1EDD\
   i gian, ho\u1EB7c l\xEAn l\u1ECBch c\xE1c t\xE1c\u2026"
 title: "L\u1EA5y ng\xE0y hi\u1EC7n t\u1EA1i"
+weight: 29
 ---
-
-{{< edit_this_page >}}
 
 ## Gì và Tại sao?
 Lấy ngày hiện tại trong bash là việc lấy ngày và giờ của hệ thống. Lập trình viên cần nó cho việc ghi nhật ký, đánh dấu thời gian, hoặc lên lịch các tác vụ.

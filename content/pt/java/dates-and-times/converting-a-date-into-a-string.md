@@ -9,9 +9,8 @@ summary: "Converter uma data em string \xE9 o processo de transformar a represen
   \xE3o de data e hora do seu formato original, geralmente num\xE9rico ou de objeto,\
   \ para\u2026"
 title: Convertendo uma data em uma string
+weight: 28
 ---
-
-{{< edit_this_page >}}
 
 ## O Que & Porquê?
 Converter uma data em string é o processo de transformar a representação de data e hora do seu formato original, geralmente numérico ou de objeto, para uma sequência de caracteres legíveis. Os programadores fazem isso para formatar datas de maneiras personalizadas, para armazenamento, exibição para usuários ou para interoperabilidade entre sistemas e APIs.

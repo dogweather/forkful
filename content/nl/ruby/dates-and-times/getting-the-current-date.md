@@ -10,9 +10,8 @@ model: gpt-4-0125-preview
 summary: "Het huidige datum in Ruby pakken is zo simpel als het klinkt: de datum van\
   \ vandaag ophalen. Programmeurs hebben dit nodig voor taken vari\xEBrend van loggen\u2026"
 title: Het huidige datum ophalen
+weight: 29
 ---
-
-{{< edit_this_page >}}
 
 ## Wat & Waarom?
 Het huidige datum in Ruby pakken is zo simpel als het klinkt: de datum van vandaag ophalen. Programmeurs hebben dit nodig voor taken variërend van loggen en tijdstempelen tot plannen en geldigheidscontroles.

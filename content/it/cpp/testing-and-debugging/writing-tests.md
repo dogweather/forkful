@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Scrivere test in C++ implica creare piccoli programmi autocontenuti che\
   \ verificano automaticamente il comportamento di sezioni del tuo codice. I\u2026"
 title: Scrivere test
+weight: 36
 ---
-
-{{< edit_this_page >}}
 
 ## Cosa e Perché?
 

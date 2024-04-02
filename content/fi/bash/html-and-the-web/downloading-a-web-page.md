@@ -7,9 +7,8 @@ model: gpt-4-1106-preview
 summary: "Ladataan verkkosivun sis\xE4lt\xF6 palvelimelta omalle koneelle. Ohjelmoijat\
   \ tekev\xE4t t\xE4m\xE4n, kun tarvitaan tietoa automaattisesti tai testataan sovelluksia."
 title: Verkkosivun lataaminen
+weight: 42
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why? / Mitä ja miksi?
 Ladataan verkkosivun sisältö palvelimelta omalle koneelle. Ohjelmoijat tekevät tämän, kun tarvitaan tietoa automaattisesti tai testataan sovelluksia.

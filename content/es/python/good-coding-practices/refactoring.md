@@ -8,9 +8,8 @@ model: gpt-4-0125-preview
 summary: "Refactorizar es el proceso de reestructurar c\xF3digo computacional existente\u2014\
   cambiando el factoreo\u2014sin alterar su comportamiento externo. Los programadores\u2026"
 title: "Refactorizaci\xF3n"
+weight: 19
 ---
-
-{{< edit_this_page >}}
 
 ## Qué y Por Qué
 Refactorizar es el proceso de reestructurar código computacional existente—cambiando el factoreo—sin alterar su comportamiento externo. Los programadores lo hacen para limpiar código, mejorar la legibilidad y facilitar su mantenimiento y extensión, todo sin agregar nuevas características.

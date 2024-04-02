@@ -11,9 +11,8 @@ summary: "\xC5 laste ned en nettside inneb\xE6rer \xE5 hente innholdet p\xE5 en 
   \ via dens URL for behandling eller lagring. Programmerere gj\xF8r dette for \xE5\
   \ trekke ut\u2026"
 title: Nedlasting av en nettside
+weight: 42
 ---
-
-{{< edit_this_page >}}
 
 ## Hva & Hvorfor?
 

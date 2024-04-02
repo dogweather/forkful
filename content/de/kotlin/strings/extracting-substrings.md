@@ -9,9 +9,8 @@ summary: "Das Extrahieren von Teil-Strings erm\xF6glicht es, spezifische Segment
   \ aus einem gr\xF6\xDFeren String herauszuschneiden. Programmierer nutzen dies,\
   \ um Daten zu\u2026"
 title: Teilstrings extrahieren
+weight: 6
 ---
-
-{{< edit_this_page >}}
 
 ## Was & Warum?
 Das Extrahieren von Teil-Strings ermöglicht es, spezifische Segmente aus einem größeren String herauszuschneiden. Programmierer nutzen dies, um Daten zu verarbeiten, Texte zu analysieren oder Formatierungen anzupassen.

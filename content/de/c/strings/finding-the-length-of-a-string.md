@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Die Ermittlung der L\xE4nge eines Strings in C beinhaltet die Bestimmung\
   \ der Anzahl der Zeichen vor dem Nullterminator `\\0`. Programmierer tun dies, um\u2026"
 title: "Die L\xE4nge einer Zeichenkette ermitteln"
+weight: 7
 ---
-
-{{< edit_this_page >}}
 
 ## Was & Warum?
 Die Ermittlung der Länge eines Strings in C beinhaltet die Bestimmung der Anzahl der Zeichen vor dem Nullterminator `\0`. Programmierer tun dies, um Strings korrekt manipulieren zu können, ohne auf Fehler wie Pufferüberläufe zu stoßen, die zu Sicherheitsanfälligkeiten oder Programmabstürzen führen können.

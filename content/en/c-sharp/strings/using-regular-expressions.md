@@ -7,9 +7,8 @@ model: gpt-4-0125-preview
 summary: "Regular expressions (regex) in C# are a powerful tool for pattern matching\
   \ within strings, allowing programmers to search, replace, split, or extract data\u2026"
 title: Using regular expressions
+weight: 11
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 Regular expressions (regex) in C# are a powerful tool for pattern matching within strings, allowing programmers to search, replace, split, or extract data efficiently. Programmers utilize regex for tasks ranging from simple validations, like email format checking, to complex text processing tasks because of its flexibility and performance.

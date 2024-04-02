@@ -11,9 +11,8 @@ summary: "\xC5 sende en HTTP-foresp\xF8rsel i Google Apps Script handler om \xE5
   \ utf\xF8re et kall til en ekstern webserver eller API. Programmerere gj\xF8r dette\
   \ for\u2026"
 title: "Sende en HTTP-foresp\xF8rsel"
+weight: 44
 ---
-
-{{< edit_this_page >}}
 
 ## Hva og Hvorfor?
 

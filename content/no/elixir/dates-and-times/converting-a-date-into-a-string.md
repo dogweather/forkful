@@ -9,9 +9,8 @@ summary: "Dato til streng-konvertering tar en dato og gj\xF8r den om til en teks
   \ representasjon. Dette gj\xF8r det enklere \xE5 vise datoen for mennesker eller\
   \ \xE5\u2026"
 title: Konvertere en dato til en streng
+weight: 28
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 Dato til streng-konvertering tar en dato og gjør den om til en tekstbasert representasjon. Dette gjør det enklere å vise datoen for mennesker eller å lagre den i et tekstformat for systemintegrasjoner.

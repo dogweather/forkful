@@ -11,9 +11,8 @@ summary: "Convertir une cha\xEEne en minuscules avec Google Apps Script, un lang
   \ de script bas\xE9 sur le cloud pour automatiser des t\xE2ches \xE0 travers les\
   \ produits\u2026"
 title: "Convertir une cha\xEEne en minuscules"
+weight: 4
 ---
-
-{{< edit_this_page >}}
 
 ## Quoi et Pourquoi ?
 

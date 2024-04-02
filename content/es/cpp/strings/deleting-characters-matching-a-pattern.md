@@ -9,9 +9,8 @@ summary: "Eliminar caracteres que coinciden con un patr\xF3n es sencillamente qu
   \ ciertos caracteres de una cadena de texto bas\xE1ndose en reglas espec\xEDficas\
   \ o\u2026"
 title: "Eliminando caracteres que coinciden con un patr\xF3n"
+weight: 5
 ---
-
-{{< edit_this_page >}}
 
 ## Qué y por qué?
 Eliminar caracteres que coinciden con un patrón es sencillamente quitar ciertos caracteres de una cadena de texto basándose en reglas específicas o patrones. Los programadores hacen esto para limpiar datos, validar entradas, o preparar texto para procesos posteriores como análisis o almacenamiento.

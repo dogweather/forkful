@@ -22,9 +22,8 @@ summary: "\u05E0\u05D9\u05EA\u05D5\u05D7 HTML \u05D1- Google Apps Script \u05DB\
   \u05D8 \u05D0\u05D5 \u05DE\u05E7\u05D5\u05E8\u05D5\u05EA \u05E0\u05EA\u05D5\u05E0\
   \u05D9\u05DD \u05DE\u05D1\u05D5\u05E1\u05E1\u05D9 \u05E8\u05E9\u05EA.\u2026"
 title: "\u05E4\u05D9\u05E2\u05E0\u05D5\u05D7 HTML"
+weight: 43
 ---
-
-{{< edit_this_page >}}
 
 ## מה ולמה?
 ניתוח HTML ב- Google Apps Script כולל איתור נתונים מתוכן HTML, מה שבמיוחד שימושי כאשר מתקיימת אינטראקציה עם דפי אינטרנט או מקורות נתונים מבוססי רשת. מתכנתים עושים זאת כדי לאוטמט את איסוף הנתונים, לתמר תוכן אינטרנטי, או לשלב פונקציונליות מהרשת עם אפליקציות גוגל כמו Sheets ו- Docs.

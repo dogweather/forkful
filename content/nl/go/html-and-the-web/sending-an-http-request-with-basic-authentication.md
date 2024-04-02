@@ -10,9 +10,8 @@ model: gpt-4-0125-preview
 summary: "Het versturen van een HTTP-verzoek met basisauthenticatie in Go houdt in\
   \ dat je een authorisatieheader aan je verzoek toevoegt die een gebruikersnaam en\u2026"
 title: Een HTTP-verzoek verzenden met basisauthenticatie
+weight: 45
 ---
-
-{{< edit_this_page >}}
 
 ## Wat & Waarom?
 

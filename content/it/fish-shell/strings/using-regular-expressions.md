@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Le espressioni regolari (regex) in Fish Shell ti permettono di cercare,\
   \ correlare e manipolare stringhe basate su schemi specifici. I programmatori\u2026"
 title: Utilizzo delle espressioni regolari
+weight: 11
 ---
-
-{{< edit_this_page >}}
 
 ## Cos'è e perché?
 

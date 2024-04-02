@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "I numeri complessi, rappresentati come una combinazione di unit\xE0 reali\
   \ e immaginarie (ad es., 3 + 4i), sono fondamentali in vari problemi computazionali,\u2026"
 title: Lavorare con i numeri complessi
+weight: 14
 ---
-
-{{< edit_this_page >}}
 
 ## Cosa e perché?
 I numeri complessi, rappresentati come una combinazione di unità reali e immaginarie (ad es., 3 + 4i), sono fondamentali in vari problemi computazionali, specialmente in ingegneria, fisica e matematica applicata. Imparare a manipolare questi numeri in Google Apps Script permette ai programmatori di estendere le loro capacità nel calcolo scientifico, nell'elaborazione dei segnali e oltre.

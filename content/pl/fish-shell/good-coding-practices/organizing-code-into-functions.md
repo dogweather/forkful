@@ -12,9 +12,8 @@ summary: "Organizowanie kodu w funkcje polega na grupowaniu fragment\xF3w skrypt
   \ do realizacji konkretnych zada\u0144. Robimy to, poniewa\u017C sprawia to, \u017C\
   e kod jest\u2026"
 title: Organizacja kodu w funkcje
+weight: 18
 ---
-
-{{< edit_this_page >}}
 
 ## Co i dlaczego?
 Organizowanie kodu w funkcje polega na grupowaniu fragmentów skryptu do realizacji konkretnych zadań. Robimy to, ponieważ sprawia to, że kod jest łatwiejszy do przeczytania, przetestowania i ponownego wykorzystania - nikt nie chce przebijać się przez bagno kodu spaghetti.

@@ -19,9 +19,8 @@ summary: "Rust \uD504\uB85C\uADF8\uB798\uBC0D\uC5D0\uC11C YAML(YAML Ain't Markup
   . \uD504\uB85C\uADF8\uB798\uBA38\uB4E4\uC740 \uC751\uC6A9 \uD504\uB85C\uADF8\uB7A8\
   \uC744 \uAD6C\uC131\uD558\uAC70\uB098, \uC124\uC815\uC744\u2026"
 title: "YAML\uB85C \uC791\uC5C5\uD558\uAE30"
+weight: 41
 ---
-
-{{< edit_this_page >}}
 
 ## 무엇 & 왜?
 

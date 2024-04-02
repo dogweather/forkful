@@ -9,9 +9,8 @@ summary: "Trabajar con XML implica analizar, consultar y manipular documentos XM
   \ con Java. Los programadores lo hacen para el intercambio de datos, la gesti\xF3\
   n de\u2026"
 title: Trabajando con XML
+weight: 40
 ---
-
-{{< edit_this_page >}}
 
 ## Qué y Por Qué?
 Trabajar con XML implica analizar, consultar y manipular documentos XML con Java. Los programadores lo hacen para el intercambio de datos, la gestión de configuración y porque muchos sistemas heredados y APIs se comunican usando XML.

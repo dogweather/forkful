@@ -9,9 +9,8 @@ summary: "TOML \xE9 um formato de arquivo de configura\xE7\xE3o, f\xE1cil de ler
   \ escrever para humanos, e f\xE1cil de analisar e gerar para m\xE1quinas. Programadores\
   \ trabalham com\u2026"
 title: Trabalhando com TOML
+weight: 39
 ---
-
-{{< edit_this_page >}}
 
 ## O Que & Por Quê?
 TOML é um formato de arquivo de configuração, fácil de ler e escrever para humanos, e fácil de analisar e gerar para máquinas. Programadores trabalham com TOML para arquivos de configuração claros e hierárquicos em projetos onde a legibilidade é essencial.

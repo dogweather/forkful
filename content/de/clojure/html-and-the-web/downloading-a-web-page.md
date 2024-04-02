@@ -7,9 +7,8 @@ model: gpt-4-1106-preview
 summary: "Das Herunterladen einer Webseite erm\xF6glicht es uns, den Inhalt abzurufen\
   \ und zu nutzen. Programmierer machen dies, um Daten zu analysieren, zu \xFCberwachen,\u2026"
 title: Webseite herunterladen
+weight: 42
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 Das Herunterladen einer Webseite ermöglicht es uns, den Inhalt abzurufen und zu nutzen. Programmierer machen dies, um Daten zu analysieren, zu überwachen, oder um Webinhalte in ihre Anwendungen zu integrieren.

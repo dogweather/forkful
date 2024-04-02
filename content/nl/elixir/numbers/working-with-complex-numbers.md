@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Complexe getallen hebben een re\xEBel deel en een imaginair deel (zoals\
   \ `3 + 4i`). Ze worden gebruikt in de techniek, fysica, en bepaalde computerproblemen.\u2026"
 title: Werken met complexe getallen
+weight: 14
 ---
-
-{{< edit_this_page >}}
 
 ## Wat & Waarom?
 Complexe getallen hebben een reëel deel en een imaginair deel (zoals `3 + 4i`). Ze worden gebruikt in de techniek, fysica, en bepaalde computerproblemen. Programmeurs werken ermee voor simulaties, signaalverwerking, en het efficiënt oplossen van bepaalde soorten wiskundige problemen.

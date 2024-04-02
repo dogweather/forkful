@@ -9,9 +9,8 @@ summary: "Odczytywanie argument\xF3w linii komend to spos\xF3b na przekazywanie 
   \ zewn\u0119trznych do programu przy jego starcie. Programi\u015Bci wykorzystuj\u0105\
   \ to, aby\u2026"
 title: "Odczytywanie argument\xF3w linii polece\u0144"
+weight: 23
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why? (Co i dlaczego?)
 Odczytywanie argumentów linii komend to sposób na przekazywanie danych zewnętrznych do programu przy jego starcie. Programiści wykorzystują to, aby dostosować działanie aplikacji bez interakcji z GUI lub plikami konfiguracyjnymi.

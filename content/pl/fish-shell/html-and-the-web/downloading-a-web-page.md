@@ -9,9 +9,8 @@ summary: "\u015Aci\u0105ganie strony internetowej to proces zapisywania zawarto\
   ci z internetu na lokalnym dysku. Programi\u015Bci to robi\u0105, by analizowa\u0107\
   \ dane, testowa\u0107 aplikacje\u2026"
 title: Pobieranie strony internetowej
+weight: 42
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why? (Co i dlaczego?)
 Ściąganie strony internetowej to proces zapisywania zawartości z internetu na lokalnym dysku. Programiści to robią, by analizować dane, testować aplikacje lub pracować offline.

@@ -1,14 +1,13 @@
 ---
 date: 2024-01-26 04:09:50.906949-07:00
-description: "Usar um depurador (debugger) em Ruby d\xE1 aos programadores o superpoder\
-  \ de pausar o c\xF3digo, inspecionar vari\xE1veis e avan\xE7ar atrav\xE9s do c\xF3\
-  digo linha por\u2026"
+description: "O Ruby vem com um depurador embutido chamado `byebug`. Primeiro, inclua\
+  \ `byebug` no seu Gemfile e execute `bundle install`. Depois, coloque `byebug`\u2026"
 lastmod: '2024-03-13T22:44:47.099852-06:00'
 model: gpt-4-0125-preview
-summary: "Usar um depurador (debugger) em Ruby d\xE1 aos programadores o superpoder\
-  \ de pausar o c\xF3digo, inspecionar vari\xE1veis e avan\xE7ar atrav\xE9s do c\xF3\
-  digo linha por\u2026"
+summary: "O Ruby vem com um depurador embutido chamado `byebug`. Primeiro, inclua\
+  \ `byebug` no seu Gemfile e execute `bundle install`. Depois, coloque `byebug`\u2026"
 title: Usando um depurador
+weight: 35
 ---
 
 ## Como fazer:

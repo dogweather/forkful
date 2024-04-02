@@ -9,9 +9,8 @@ summary: "Le logging est la pratique consistant \xE0 enregistrer des \xE9v\xE9ne
   \ des erreurs et d'autres points de donn\xE9es significatifs qui se produisent tout\
   \ au long\u2026"
 title: Journalisation
+weight: 17
 ---
-
-{{< edit_this_page >}}
 
 Certainly, here is the French translation of the source text titled "Logging with Lua":
 

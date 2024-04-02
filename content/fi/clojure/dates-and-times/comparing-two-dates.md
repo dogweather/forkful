@@ -9,9 +9,8 @@ summary: "Verrataan kahta p\xE4iv\xE4m\xE4\xE4r\xE4\xE4, ymm\xE4rt\xE4\xE4ksemme
   \ ajanhetki sijoittuu ennen toista. Ohjelmoijille se on t\xE4rke\xE4\xE4 ajoitukseen,\
   \ tapahtumien k\xE4sittelyyn ja\u2026"
 title: "Kahden p\xE4iv\xE4m\xE4\xE4r\xE4n vertailu"
+weight: 27
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 Verrataan kahta päivämäärää, ymmärtääksemme kummanko ajanhetki sijoittuu ennen toista. Ohjelmoijille se on tärkeää ajoitukseen, tapahtumien käsittelyyn ja logiikkaan.

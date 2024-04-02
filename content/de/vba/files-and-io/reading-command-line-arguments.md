@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Das Lesen von Befehlszeilenargumenten in Visual Basic for Applications (VBA)\
   \ beinhaltet den Zugriff auf Parameter, die beim Ausf\xFChren Ihres Programms\u2026"
 title: Lesen von Befehlszeilenargumenten
+weight: 23
 ---
-
-{{< edit_this_page >}}
 
 ## Was & Warum?
 

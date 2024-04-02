@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Capitalizzare una stringa significa modificare il primo carattere di ogni\
   \ parola in una frase per renderlo maiuscolo, garantendo che i restanti caratteri\u2026"
 title: Capitalizzare una stringa
+weight: 2
 ---
-
-{{< edit_this_page >}}
 
 ## Cos'è & Perché?
 Capitalizzare una stringa significa modificare il primo carattere di ogni parola in una frase per renderlo maiuscolo, garantendo che i restanti caratteri siano minuscoli. Questa tecnica è comunemente usata per formattare il testo rendendolo più professionale o leggibile, come ad esempio preparare titoli o input degli utenti per la visualizzazione.

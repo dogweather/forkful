@@ -7,9 +7,8 @@ model: gpt-4-1106-preview
 summary: "Code in Funktionen zu organisieren unterteilt Aufgaben in wiederverwendbare\
   \ Teile, macht den Code sauberer und leichter wartbar. Wir tun dies, um\u2026"
 title: Code in Funktionen organisieren
+weight: 18
 ---
-
-{{< edit_this_page >}}
 
 ## Was & Warum?
 Code in Funktionen zu organisieren unterteilt Aufgaben in wiederverwendbare Teile, macht den Code sauberer und leichter wartbar. Wir tun dies, um Redundanz zu reduzieren, das Testen zu erleichtern und die Lesbarkeit zu verbessern.

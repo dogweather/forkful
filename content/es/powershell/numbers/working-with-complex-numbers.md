@@ -9,9 +9,8 @@ summary: "Los n\xFAmeros complejos, aquellos con una parte real y una parte imag
   \ (como 3 + 4i), son vitales en campos como la ingenier\xEDa, f\xEDsica y ciencia\
   \ de\u2026"
 title: "Trabajando con n\xFAmeros complejos"
+weight: 14
 ---
-
-{{< edit_this_page >}}
 
 ## ¿Qué y por qué?
 Los números complejos, aquellos con una parte real y una parte imaginaria (como 3 + 4i), son vitales en campos como la ingeniería, física y ciencia de datos. Los programadores los utilizan para simulaciones, procesamiento de señales y resolver tipos específicos de problemas matemáticos.

@@ -21,9 +21,8 @@ summary: "YAML\uC740 \uC0AC\uB78C \uCE5C\uD654\uC801\uC73C\uB85C \uC124\uACC4\uB
   \ \uC6A9\uC774\uC131 \uB54C\uBB38\uC5D0 YAML\uC5D0 \uC758\uC874\uD558\uB294 \uACBD\
   \uD5A5\uC774 \uC788\uC73C\uBA70, \uC774\uB294 TypeScript\uB85C\u2026"
 title: "YAML\uB85C \uC791\uC5C5\uD558\uAE30"
+weight: 41
 ---
-
-{{< edit_this_page >}}
 
 ## 무엇 & 왜?
 YAML은 사람 친화적으로 설계된 데이터 직렬화 언어로, 설정 파일, 프로세스 간 메시징 및 데이터 저장에 자주 사용됩니다. 프로그래머들은 복잡한 구조화된 데이터를 다룰 때 YAML의 가독성과 사용의 용이성 때문에 YAML에 의존하는 경향이 있으며, 이는 TypeScript로 개발된 애플리케이션에 탁월한 선택이 됩니다.

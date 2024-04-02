@@ -8,9 +8,8 @@ model: gpt-4-1106-preview
 summary: "L'interpolation de cha\xEEnes c'est ins\xE9rer des variables ou des expressions\
   \ dans une cha\xEEne de caract\xE8res. On le fait pour dynamiser les textes et les\u2026"
 title: "Interpolation de cha\xEEnes de caract\xE8res"
+weight: 8
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 L'interpolation de chaînes c'est insérer des variables ou des expressions dans une chaîne de caractères. On le fait pour dynamiser les textes et les rendre plus flexibles.

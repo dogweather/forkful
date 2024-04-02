@@ -11,9 +11,8 @@ summary: "YAML (YAML Ain't Markup Language) est un standard de s\xE9rialisation 
   \ donn\xE9es lisible par l'humain qui peut \xEAtre utilis\xE9 pour les fichiers\
   \ de\u2026"
 title: Travailler avec YAML
+weight: 41
 ---
-
-{{< edit_this_page >}}
 
 ## Quoi et Pourquoi ?
 

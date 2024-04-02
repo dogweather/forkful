@@ -11,9 +11,8 @@ summary: "Att hantera fel i Dart handlar om att f\xF6rutse och hantera undantag 
   \ uppst\xE5r under programk\xF6rning f\xF6r att \xF6ka tillf\xF6rlitligheten och\
   \ anv\xE4ndbarheten.\u2026"
 title: Hantering av fel
+weight: 16
 ---
-
-{{< edit_this_page >}}
 
 ## Vad & Varför?
 Att hantera fel i Dart handlar om att förutse och hantera undantag som uppstår under programkörning för att öka tillförlitligheten och användbarheten. Programmerare implementerar felhantering för att förhindra krascher och ge meningsfull återkoppling till användare, vilket säkerställer en mjukare, säkrare applikationsupplevelse.

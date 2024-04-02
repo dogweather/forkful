@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Il recupero della data corrente in Bash comporta l'utilizzo di comandi integrati\
   \ per visualizzare la data e l'ora in vari formati. I programmatori\u2026"
 title: Ottenere la data corrente
+weight: 29
 ---
-
-{{< edit_this_page >}}
 
 ## Cos'è e perché?
 Il recupero della data corrente in Bash comporta l'utilizzo di comandi integrati per visualizzare la data e l'ora in vari formati. I programmatori utilizzano questa funzionalità per compiti come la marcatura temporale dei log, la pianificazione delle attività, o semplicemente come parte dei loro script di informazioni di sistema per tracciare quando sono state eseguite delle azioni.

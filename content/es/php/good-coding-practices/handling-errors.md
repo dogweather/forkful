@@ -7,9 +7,8 @@ model: gpt-4-1106-preview
 summary: "El manejo de errores en PHP se trata de administrar y responder a condiciones\
   \ que interrumpen el flujo normal de un programa, como archivos que faltan o\u2026"
 title: Manejo de errores
+weight: 16
 ---
-
-{{< edit_this_page >}}
 
 ## ¿Qué y por qué?
 El manejo de errores en PHP se trata de administrar y responder a condiciones que interrumpen el flujo normal de un programa, como archivos que faltan o entradas de datos erróneas. Los programadores manejan errores para prevenir fallos y para ofrecer a los usuarios una experiencia más fluida.

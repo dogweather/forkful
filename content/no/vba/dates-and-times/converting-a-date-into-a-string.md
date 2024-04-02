@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "\xC5 konvertere en dato til en streng i Visual Basic for Applications (VBA)\
   \ er en prosess brukt for \xE5 endre datatypen til en dato til et strengformat.\u2026"
 title: "\xC5 konvertere en dato til en streng"
+weight: 28
 ---
-
-{{< edit_this_page >}}
 
 ## Hva & Hvorfor?
 

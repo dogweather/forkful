@@ -21,9 +21,8 @@ summary: "YAML\uFF0C\u5373 YAML Ain't Markup Language\uFF08YAML\u4E0D\u662F\u680
   \u662F\u5728\u6D89\u53CA\u590D\u6742\u914D\u7F6E\u6216\u9700\u8981\u8F7B\u677E\u7F16\
   \u8F91\u6570\u636E\u7ED3\u6784\u7684\u9879\u76EE\u4E2D\u3002"
 title: "\u4F7F\u7528YAML\u5DE5\u4F5C"
+weight: 41
 ---
-
-{{< edit_this_page >}}
 
 ## 是什么 & 为什么？
 

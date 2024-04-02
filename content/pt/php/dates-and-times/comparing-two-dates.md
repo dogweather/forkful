@@ -8,9 +8,8 @@ model: gpt-4-1106-preview
 summary: "Comparar duas datas \xE9 o processo de avaliar a diferen\xE7a entre elas\
   \ ou determinar qual precede a outra. Programadores fazem isso para manipular eventos\u2026"
 title: Comparando duas datas
+weight: 27
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 Comparar duas datas é o processo de avaliar a diferença entre elas ou determinar qual precede a outra. Programadores fazem isso para manipular eventos baseados em tempo, como verificar a validade de cupons ou controlar prazos.

@@ -9,9 +9,8 @@ summary: "Comparing two dates means figuring out their relationship\u2014are the
   \ the same, is one earlier, or is one later? Programmers need to do this to sort\
   \ events,\u2026"
 title: Sammenlikning av to datoer
+weight: 27
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 Comparing two dates means figuring out their relationship—are they the same, is one earlier, or is one later? Programmers need to do this to sort events, calculate durations, and manage deadlines or schedules.

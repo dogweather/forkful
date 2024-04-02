@@ -9,9 +9,8 @@ summary: "\xC5 jobbe med XML betyr \xE5 parse, generere og manipulere XML (eXten
   \ Markup Language)-dokumenter ved hjelp av kode. Programmerere gj\xF8r dette for\
   \ \xE5\u2026"
 title: "\xC5 jobbe med XML"
+weight: 40
 ---
-
-{{< edit_this_page >}}
 
 ## Hva & Hvorfor?
 Å jobbe med XML betyr å parse, generere og manipulere XML (eXtensible Markup Language)-dokumenter ved hjelp av kode. Programmerere gjør dette for å interagere med mange netttjenester, konfigurasjonsfiler og datautvekslingsformater der XML er lingua franca.

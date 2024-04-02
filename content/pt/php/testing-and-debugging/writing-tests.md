@@ -11,9 +11,8 @@ summary: "Escrever testes em programa\xE7\xE3o envolve criar e executar scripts 
   \ verificam se o c\xF3digo se comporta conforme esperado sob v\xE1rias condi\xE7\
   \xF5es. Os\u2026"
 title: Escrevendo testes
+weight: 36
 ---
-
-{{< edit_this_page >}}
 
 ## O Que & Por Que?
 Escrever testes em programação envolve criar e executar scripts que verificam se o código se comporta conforme esperado sob várias condições. Os programadores fazem isso para garantir a qualidade, prevenir regressões e facilitar a refatoração segura, o que é crucial para manter uma base de código saudável, escalável e livre de bugs.

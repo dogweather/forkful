@@ -11,9 +11,8 @@ summary: "Express\xF5es regulares (regex) no Fish Shell permitem buscar, combina
   \ e manipular strings com base em padr\xF5es espec\xEDficos. Programadores utilizam\
   \ regex\u2026"
 title: "Usando express\xF5es regulares"
+weight: 11
 ---
-
-{{< edit_this_page >}}
 
 ## O Que & Por Que?
 

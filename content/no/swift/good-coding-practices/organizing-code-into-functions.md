@@ -9,9 +9,8 @@ summary: "\xC5 gruppere kode i funksjoner er \xE5 bryte ned oppgaver i gjenbrukb
   \ deler. Det gj\xF8r koden ren, mindre utsatt for feil, og enklere \xE5 feils\xF8\
   ke eller\u2026"
 title: Organisering av kode i funksjoner
+weight: 18
 ---
-
-{{< edit_this_page >}}
 
 ## Hva & Hvorfor?
 Å gruppere kode i funksjoner er å bryte ned oppgaver i gjenbrukbare deler. Det gjør koden ren, mindre utsatt for feil, og enklere å feilsøke eller restrukturere.

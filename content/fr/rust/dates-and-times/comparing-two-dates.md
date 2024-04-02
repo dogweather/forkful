@@ -9,9 +9,8 @@ summary: "Comparer deux dates, c'est \xE9valuer leur ordre chronologique. Les pr
   \ font \xE7a pour trier des \xE9l\xE9ments, v\xE9rifier des \xE9ch\xE9ances, ou\
   \ calculer des\u2026"
 title: Comparer deux dates
+weight: 27
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 Comparer deux dates, c'est évaluer leur ordre chronologique. Les programmeurs font ça pour trier des éléments, vérifier des échéances, ou calculer des durées.

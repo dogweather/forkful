@@ -13,9 +13,8 @@ summary: "L\u1EA5y ng\xE0y hi\u1EC7n t\u1EA1i trong m\xE3 l\u1EC7nh c\u1EE7a b\u
   y ra. \u0110i\u1EC1u n\xE0y r\u1EA5t quan tr\u1ECDng cho vi\u1EC7c ghi nh\u1EAD\
   t k\xFD, theo d\xF5i d\u1EEF li\u1EC7u\u2026"
 title: "L\u1EA5y ng\xE0y hi\u1EC7n t\u1EA1i"
+weight: 29
 ---
-
-{{< edit_this_page >}}
 
 ## Cái gì & Tại sao?
 Lấy ngày hiện tại trong mã lệnh của bạn giúp bạn ghi lại các sự kiện ngay khi chúng xảy ra. Điều này rất quan trọng cho việc ghi nhật ký, theo dõi dữ liệu nhạy cảm về thời gian, và tùy chỉnh trải nghiệm của người dùng dựa trên ngày tháng.

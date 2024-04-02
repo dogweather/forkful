@@ -13,9 +13,8 @@ summary: "Ph\xE2n t\xEDch c\xFA ph\xE1p HTML c\xF3 ngh\u0129a l\xE0 ph\xE1 v\u1E
   nh c\xF3 th\u1EC3 hi\u1EC3u v\xE0 thao t\xE1c \u0111\u01B0\u1EE3c. L\u1EADp tr\xEC\
   nh vi\xEAn l\xE0m \u0111i\u1EC1u n\xE0y \u0111\u1EC3 tr\xEDch\u2026"
 title: "Ph\xE2n T\xEDch C\xFA Ph\xE1p HTML"
+weight: 43
 ---
-
-{{< edit_this_page >}}
 
 ## Điều gì & Tại sao?
 Phân tích cú pháp HTML có nghĩa là phá vỡ nội dung HTML thành cái gì đó mà chương trình có thể hiểu và thao tác được. Lập trình viên làm điều này để trích xuất dữ liệu, thao tác nội dung hoặc tích hợp việc quét web vào ứng dụng của họ.

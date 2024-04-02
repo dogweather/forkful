@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Het vergelijken van twee data betekent beoordelen welke eerder is, later,\
   \ of als ze op hetzelfde moment plaatsvinden. Programmeurs doen dit om evenementen\u2026"
 title: Twee datums vergelijken
+weight: 27
 ---
-
-{{< edit_this_page >}}
 
 ## Wat & Waarom?
 

@@ -17,9 +17,8 @@ summary: "\u5728 Ruby \u4E2D\u8FDB\u884C\u6D4B\u8BD5\uFF0C\u76EE\u7684\u662F\u9A
   \u4FC3\u8FDB\u91CD\u6784\uFF0C\u4EE5\u671F\u671B\u6784\u5EFA\u51FA\u5065\u58EE\u4E14\
   \u53EF\u7EF4\u62A4\u7684\u5E94\u7528\u7A0B\u5E8F\u3002"
 title: "\u7F16\u5199\u6D4B\u8BD5"
+weight: 36
 ---
-
-{{< edit_this_page >}}
 
 ## 什么 & 为什么?
 在 Ruby 中进行测试，目的是验证代码在不同条件下是否按预期工作。程序员编写测试的目的是保证代码正确性，防止回归，并促进重构，以期望构建出健壮且可维护的应用程序。

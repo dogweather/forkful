@@ -13,9 +13,8 @@ summary: "Ghi ch\xE9p (Logging) qu\u1EA3 th\u1EF1c t\u01B0\u01A1ng \u0111\u01B0\
   \ l\u1EA1i c\xE1c s\u1EF1 ki\u1EC7n x\u1EA3y ra khi m\u1ED9t \u1EE9ng d\u1EE5ng\
   \ \u0111ang ch\u1EA1y. C\xE1c l\u1EADp tr\xECnh vi\xEAn l\xE0m\u2026"
 title: Ghi log
+weight: 17
 ---
-
-{{< edit_this_page >}}
 
 ## Cái gì & Tại sao?
 Ghi chép (Logging) quả thực tương đương với nhật ký tàu thủy; nó là cách để ghi lại các sự kiện xảy ra khi một ứng dụng đang chạy. Các lập trình viên làm điều này để theo dõi các sự kiện này cho việc gỡ lỗi, kiểm toán, hoặc để hiểu rõ hơn về hành vi của hệ thống khi ở trong môi trường sản xuất.

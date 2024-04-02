@@ -7,9 +7,8 @@ model: gpt-4-0125-preview
 summary: "Writing tests in Python involves creating automated scripts to validate\
   \ the correctness of your code. Programmers do this to ensure that their functions\u2026"
 title: Writing tests
+weight: 36
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 Writing tests in Python involves creating automated scripts to validate the correctness of your code. Programmers do this to ensure that their functions or classes work as expected under various conditions, which helps to catch errors early and facilitates easier maintenance and refactoring.

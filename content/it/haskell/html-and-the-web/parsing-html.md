@@ -11,9 +11,8 @@ summary: "Parsare HTML in Haskell ti permette di estrarre dati, manipolare il co
   \ HTML o interagire con le pagine web programmaticamente. Questa operazione \xE8\
   \u2026"
 title: Analisi del HTML
+weight: 43
 ---
-
-{{< edit_this_page >}}
 
 ## Cosa & Perché?
 

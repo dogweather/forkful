@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "\xC5 lage en midlertidig fil i Google Apps Script inneb\xE6rer \xE5 generere\
   \ en fil som er ment for kortvarig bruk, typisk for mellomliggende databehandling,\u2026"
 title: Opprette en midlertidig fil
+weight: 21
 ---
-
-{{< edit_this_page >}}
 
 ## Hva & Hvorfor?
 

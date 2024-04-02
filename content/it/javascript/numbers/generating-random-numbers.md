@@ -7,9 +7,8 @@ model: gpt-4-0125-preview
 summary: "Generare numeri casuali in JavaScript \xE8 una tecnica usata per creare\
   \ imprevedibilit\xE0 nelle applicazioni, dai giochi che richiedono un comportamento\u2026"
 title: Generazione di numeri casuali
+weight: 12
 ---
-
-{{< edit_this_page >}}
 
 ## Cosa e Perché?
 

@@ -7,9 +7,8 @@ model: gpt-4-1106-preview
 summary: "Logging in programming is like keeping a diary for your application. It's\
   \ the systematic recording of events, messages, and data points that give you\u2026"
 title: Logging
+weight: 17
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why? 
 Logging in programming is like keeping a diary for your application. It's the systematic recording of events, messages, and data points that give you insight into what your application is doing and how it's behaving. Coders log because it's crucial for debugging, monitoring application health, and getting clues about potential issues before they blow up into real problems.

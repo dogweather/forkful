@@ -9,9 +9,8 @@ summary: "Mandar una petici\xF3n HTTP es como enviar un mensaje a otra computado
   \ pidi\xE9ndole informaci\xF3n o para que realice una acci\xF3n. Los programadores\
   \ lo hacen\u2026"
 title: Enviando una solicitud http
+weight: 44
 ---
-
-{{< edit_this_page >}}
 
 ## ¿Qué y Por Qué?
 

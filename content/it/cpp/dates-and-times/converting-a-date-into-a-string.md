@@ -7,9 +7,8 @@ model: gpt-4-1106-preview
 summary: "Convertire una data in una stringa significa trasformarla da un formato,\
   \ tipicamente numerico, a una rappresentazione testuale. I programmatori lo fanno\u2026"
 title: Conversione di una data in una stringa
+weight: 28
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 Convertire una data in una stringa significa trasformarla da un formato, tipicamente numerico, a una rappresentazione testuale. I programmatori lo fanno per rendere le date leggibili dagli utenti, per salvare in formati standard come JSON, o per inserirle in output testuali.

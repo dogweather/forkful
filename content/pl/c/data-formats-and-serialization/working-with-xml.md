@@ -11,9 +11,8 @@ summary: "Praca z XML w j\u0119zyku C wi\u0105\u017Ce si\u0119 z parsowaniem, wy
   \ i manipulowaniem dokumentami XML za pomoc\u0105 r\xF3\u017Cnych bibliotek. Programi\u015B\
   ci anga\u017Cuj\u0105 si\u0119 w\u2026"
 title: Praca z XML
+weight: 40
 ---
-
-{{< edit_this_page >}}
 
 ## Co i dlaczego?
 

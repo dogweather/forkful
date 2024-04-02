@@ -11,9 +11,8 @@ summary: "Debug-tulosteen tulostaminen sis\xE4lt\xE4\xE4 logilauseiden strategis
   \ sijoittamisen koodiisi n\xE4ytt\xE4m\xE4\xE4n muuttujien arvot, suoritusvirran\
   \ tai virheviestit\u2026"
 title: Debug-tulosteen tulostaminen
+weight: 33
 ---
-
-{{< edit_this_page >}}
 
 ## Mikä & Miksi?
 

@@ -9,9 +9,8 @@ summary: "Ler argumentos da linha de comando \xE9 pegar informa\xE7\xF5es direta
   \ quando iniciamos um programa. Programadores fazem isso para customizar a execu\xE7\
   \xE3o do\u2026"
 title: Lendo argumentos da linha de comando
+weight: 23
 ---
-
-{{< edit_this_page >}}
 
 ## O Que é & Por Quê?
 

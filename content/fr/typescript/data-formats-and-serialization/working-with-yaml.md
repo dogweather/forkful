@@ -11,9 +11,8 @@ summary: "YAML, un langage de s\xE9rialisation de donn\xE9es con\xE7u pour \xEAt
   \ convivial, est souvent utilis\xE9 pour les fichiers de configuration, la messagerie\
   \ entre\u2026"
 title: Travailler avec YAML
+weight: 41
 ---
-
-{{< edit_this_page >}}
 
 ## Quoi et Pourquoi ?
 YAML, un langage de sérialisation de données conçu pour être convivial, est souvent utilisé pour les fichiers de configuration, la messagerie entre processus, et le stockage de données. Les programmeurs se tournent vers YAML pour sa lisibilité et sa facilité d'utilisation, en particulier lorsqu'il s'agit de données structurées complexes, ce qui en fait un excellent choix pour les applications développées en TypeScript.

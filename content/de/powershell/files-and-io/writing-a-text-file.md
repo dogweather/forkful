@@ -11,9 +11,8 @@ summary: "Das Schreiben einer Textdatei in PowerShell beinhaltet das Erstellen u
   \ Manipulieren von textbasierten Dateien, was eine grundlegende Operation f\xFC\
   r\u2026"
 title: Eine Textdatei schreiben
+weight: 24
 ---
-
-{{< edit_this_page >}}
 
 ## Was & Warum?
 Das Schreiben einer Textdatei in PowerShell beinhaltet das Erstellen und Manipulieren von textbasierten Dateien, was eine grundlegende Operation für Logging, Datenspeicherung und Konfigurationsskripting ist. Programmierer nutzen dies zur Automatisierung von Systemaufgaben, Datenanalyse und Integration mit anderen Anwendungen oder Skripten.

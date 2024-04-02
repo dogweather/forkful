@@ -11,9 +11,8 @@ summary: "\xC5 jobbe med JSON i Swift betyr \xE5 h\xE5ndtere et lettvekts datafo
   \ for datautveksling. Programmerere bruker JSON for \xE5 overf\xF8re data mellom\
   \ en server og en\u2026"
 title: Arbeider med JSON
+weight: 38
 ---
-
-{{< edit_this_page >}}
 
 ## Hva & Hvorfor?
 

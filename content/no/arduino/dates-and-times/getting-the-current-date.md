@@ -11,9 +11,8 @@ summary: "\xC5 f\xE5 tak i dagens dato i Arduino-prosjekter inneb\xE6rer \xE5 sk
   \ sanntidsinformasjon som kan v\xE6re avgj\xF8rende for logging, tidsstempling eller\
   \ planlegging av\u2026"
 title: "F\xE5 den gjeldende datoen"
+weight: 29
 ---
-
-{{< edit_this_page >}}
 
 ## Hva & Hvorfor?
 Å få tak i dagens dato i Arduino-prosjekter innebærer å skaffe sanntidsinformasjon som kan være avgjørende for logging, tidsstempling eller planlegging av oppgaver. Programmerere trenger ofte denne funksjonaliteten for å forbedre funksjonalitet, sikre datarelevans og lette tidsfølsomme operasjoner i sine IoT- og innebygde prosjekter.

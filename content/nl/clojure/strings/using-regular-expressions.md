@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Reguliere expressies (regex) zoeken, matchen en manipuleren strings. Ze\
   \ worden gebruikt vanwege hun flexibiliteit en effici\xEBntie bij tekstverwerkingstaken."
 title: Reguliere expressies gebruiken
+weight: 11
 ---
-
-{{< edit_this_page >}}
 
 ## Wat & Waarom?
 Reguliere expressies (regex) zoeken, matchen en manipuleren strings. Ze worden gebruikt vanwege hun flexibiliteit en efficiëntie bij tekstverwerkingstaken.

@@ -9,9 +9,8 @@ summary: "Kompleksiluvut laajentavat reaalilukuja lis\xE4osalla, kuvitteellisell
   \ yksik\xF6ll\xE4 'i'. Ohjelmoijat k\xE4ytt\xE4v\xE4t niit\xE4 useilla alueilla,\
   \ mukaan lukien\u2026"
 title: "Kompleksilukujen k\xE4sittely"
+weight: 14
 ---
-
-{{< edit_this_page >}}
 
 ## Mikä & Miksi?
 Kompleksiluvut laajentavat reaalilukuja lisäosalla, kuvitteellisella yksiköllä 'i'. Ohjelmoijat käyttävät niitä useilla alueilla, mukaan lukien signaalinkäsittely, sähkömagneettinen teoria ja fraktaalit, missä negatiivisen luvun neliöjuuren laskeminen on rutiinia.

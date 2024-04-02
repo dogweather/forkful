@@ -1,12 +1,13 @@
 ---
 date: 2024-01-25 20:50:18.888596-07:00
-description: "Using a debugger means tapping into specialized tools to test and inspect\
-  \ your code as it runs. It's a big deal because it lets you see what's going on\u2026"
+description: "To use the debugger in Xcode (the IDE for Swift), you can set breakpoints,\
+  \ inspect variables, and watch expressions. Here's an example: ```Swift func\u2026"
 lastmod: '2024-03-13T22:45:00.400539-06:00'
 model: gpt-4-1106-preview
-summary: "Using a debugger means tapping into specialized tools to test and inspect\
-  \ your code as it runs. It's a big deal because it lets you see what's going on\u2026"
+summary: "To use the debugger in Xcode (the IDE for Swift), you can set breakpoints,\
+  \ inspect variables, and watch expressions. Here's an example: ```Swift func\u2026"
 title: Using a debugger
+weight: 35
 ---
 
 ## How to:

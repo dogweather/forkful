@@ -7,9 +7,8 @@ model: gpt-4-0125-preview
 summary: "\xC5 jobbe med XML i Elixir inneb\xE6rer \xE5 analysere, opprette og manipulere\
   \ XML-data. Programmerere tar for seg XML fordi det er utbredt i webtjenester,\u2026"
 title: "\xC5 jobbe med XML"
+weight: 40
 ---
-
-{{< edit_this_page >}}
 
 ## Hva & Hvorfor?
 Å jobbe med XML i Elixir innebærer å analysere, opprette og manipulere XML-data. Programmerere tar for seg XML fordi det er utbredt i webtjenester, konfigurasjonsfiler og arvede systemer.

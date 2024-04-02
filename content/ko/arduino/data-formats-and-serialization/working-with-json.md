@@ -23,9 +23,8 @@ summary: "JSON \uB610\uB294 JavaScript \uAC1D\uCCB4 \uD45C\uAE30\uBC95\uC740 \uA
   \ \uB2E4\uB978 \uC2DC\uC2A4\uD15C\uACFC\uC758 \uC6D0\uD65C\uD55C \uB370\uC774\uD130\
   \ \uAD50\uD658\uC744\u2026"
 title: "JSON\uACFC \uD568\uAED8 \uC77C\uD558\uAE30"
+weight: 38
 ---
-
-{{< edit_this_page >}}
 
 ## 무엇 & 왜?
 

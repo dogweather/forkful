@@ -18,9 +18,8 @@ summary: "\u4F7F\u7528TOML\u610F\u5473\u7740\u4F60\u6B63\u5728\u5904\u7406\u6570
   \u63A5\u660E\u4E86\u7684\u914D\u7F6E\u7BA1\u7406\uFF0C\u5B83\u642D\u8F7D\u4E86\u4EBA\
   \u6027\u53CB\u597D\u7684\u8BED\u6CD5\uFF0C\u53EF\u4EE5\u5373\u63D2\u5373\u7528\u3002"
 title: "\u4F7F\u7528TOML"
+weight: 39
 ---
-
-{{< edit_this_page >}}
 
 ## 什么与为什么？
 使用TOML意味着你正在处理数据采用了"Tom的明显的、最小化语言"（Tom's Obvious, Minimal Language）格式，这种格式因其易于阅读而被广泛用于配置文件。程序员使用它来进行直接明了的配置管理，它搭载了人性友好的语法，可以即插即用。

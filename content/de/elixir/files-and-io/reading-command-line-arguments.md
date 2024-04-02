@@ -7,9 +7,8 @@ model: gpt-4-1106-preview
 summary: "Kommandozeilenargumente sind Infos, die du deinem Elixir-Programm beim Start\
   \ \xFCbergibst. Wir nutzen sie, um das Verhalten unserer Programme dynamisch\u2026"
 title: Lesen von Kommandozeilenargumenten
+weight: 23
 ---
-
-{{< edit_this_page >}}
 
 ## Was & Warum?
 Kommandozeilenargumente sind Infos, die du deinem Elixir-Programm beim Start übergibst. Wir nutzen sie, um das Verhalten unserer Programme dynamisch anzupassen, ohne den Code zu ändern.

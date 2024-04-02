@@ -14,9 +14,8 @@ summary: "T\u1ED5 ch\u1EE9c m\xE3 th\xE0nh c\xE1c h\xE0m l\xE0 vi\u1EC7c \u0111\
   \ th\u1EC3 v\xE0 \u0111\u1EB7t cho ch\xFAng m\u1ED9t t\xEAn. Vi\u1EC7c n\xE0y \u0111\
   \u01B0\u1EE3c th\u1EF1c hi\u1EC7n \u0111\u1EC3 l\xE0m cho m\xE3 c\xF3 th\u1EC3\u2026"
 title: "S\u1EAFp x\u1EBFp m\xE3 th\xE0nh c\xE1c h\xE0m"
+weight: 18
 ---
-
-{{< edit_this_page >}}
 
 ## Cái gì và Tại sao?
 Tổ chức mã thành các hàm là việc đóng gói các khối mã thực hiện các nhiệm vụ cụ thể và đặt cho chúng một tên. Việc này được thực hiện để làm cho mã có thể tái sử dụng, dễ đọc và dễ bảo trì. Thay vì viết lại cùng một mã, hãy gọi một hàm. Muốn khắc phục sự cố hoặc nâng cấp? Chỉ cần điều chỉnh hàm mà không cần lục lọi qua đống kịch bản.

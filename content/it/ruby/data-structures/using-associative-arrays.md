@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Gli array associativi, pi\xF9 comunemente noti come hash in Ruby, consentono\
   \ di accoppiare chiavi uniche a valori. Sono indispensabili quando \xE8 necessario\u2026"
 title: Utilizzo di array associativi
+weight: 15
 ---
-
-{{< edit_this_page >}}
 
 ## Cosa & Perché?
 

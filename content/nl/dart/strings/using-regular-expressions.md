@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Reguliere expressies (regex) in Dart bieden een krachtige manier om te zoeken\
   \ en te manipuleren met strings, waardoor programmeurs complexe\u2026"
 title: Reguliere expressies gebruiken
+weight: 11
 ---
-
-{{< edit_this_page >}}
 
 ## Wat & Waarom?
 Reguliere expressies (regex) in Dart bieden een krachtige manier om te zoeken en te manipuleren met strings, waardoor programmeurs complexe tekstverwerkingsopdrachten efficiënt kunnen uitvoeren. Door regex te begrijpen, kunnen ontwikkelaars tekstvalidaties uitvoeren, zoekpatronen vinden en teksttransformaties snel uitvoeren, wat essentieel is voor het verwerken van formulieren, gegevensparsen en algemene tekenreeksmanipulaties in moderne applicaties.

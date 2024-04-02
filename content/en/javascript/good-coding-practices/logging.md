@@ -7,9 +7,8 @@ model: gpt-4-1106-preview
 summary: "Logging, in a nutshell, is like keeping a diary for your application\u2014\
   it records events, errors, and other significant actions that occur while the\u2026"
 title: Logging
+weight: 17
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 Logging, in a nutshell, is like keeping a diary for your application—it records events, errors, and other significant actions that occur while the software runs. Programmers do it not just to understand what's happening under the hood in real-time, but also to have a historical record that's crucial for debugging, auditing, and optimizing performance.

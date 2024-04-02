@@ -9,9 +9,8 @@ summary: "Feilh\xE5ndtering i programmene dine fanger opp de uforutsette tingene
   \ vil pr\xF8ve \xE5 snuble deg opp. Du gj\xF8r det for \xE5 hindre at Arduinoen\
   \ din f\xE5r et\u2026"
 title: "Feilh\xE5ndtering"
+weight: 16
 ---
-
-{{< edit_this_page >}}
 
 ## Hva & Hvorfor?
 

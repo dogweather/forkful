@@ -11,9 +11,8 @@ summary: "Zaokr\u0105glanie liczb to proces dopasowywania liczby do jej najbli\u
   szej liczby ca\u0142kowitej lub do okre\u015Blonej liczby miejsc dziesi\u0119tnych.\
   \ Programi\u015Bci cz\u0119sto\u2026"
 title: "Zaokr\u0105glanie liczb"
+weight: 13
 ---
-
-{{< edit_this_page >}}
 
 ## Co i dlaczego?
 

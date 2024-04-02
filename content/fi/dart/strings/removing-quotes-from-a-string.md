@@ -10,9 +10,8 @@ model: gpt-4-0125-preview
 summary: "Lainausmerkkien poistaminen merkkijonosta Dart-kieless\xE4 tarkoittaa kaksois-\
   \ (\") tai yksitt\xE4isten (') lainausmerkkien karsimista merkkijonon alusta ja\u2026"
 title: Lainausmerkkien poistaminen merkkijonosta
+weight: 9
 ---
-
-{{< edit_this_page >}}
 
 ## Mikä & Miksi?
 Lainausmerkkien poistaminen merkkijonosta Dart-kielessä tarkoittaa kaksois- (") tai yksittäisten (') lainausmerkkien karsimista merkkijonon alusta ja lopusta, joka on hyödyllistä tietojen puhdistuksessa tai merkkijonojen valmistelussa jatkokäsittelyä varten. Ohjelmoijat tekevät tämän normalisoidakseen datan syötteitä, varmistaakseen yhtenäisyyden datan tallennuksessa, tai kun ollaan vuorovaikutuksessa API:en kanssa, jotka saattavat palauttaa datan lainatussa muodossa.

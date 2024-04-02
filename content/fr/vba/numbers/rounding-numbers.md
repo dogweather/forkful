@@ -11,9 +11,8 @@ summary: "Arrondir les nombres en programmation consiste \xE0 approximer un nomb
   \ \xE0 son entier le plus proche ou \xE0 un certain nombre de d\xE9cimales. Les\
   \ programmeurs\u2026"
 title: Arrondissement des nombres
+weight: 13
 ---
-
-{{< edit_this_page >}}
 
 ## Quoi & Pourquoi ?
 

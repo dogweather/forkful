@@ -9,9 +9,8 @@ summary: "In programming, deleting characters matching a pattern means finding s
   \ of characters that fit a specific rule\u2014a pattern\u2014and removing them from\
   \ a\u2026"
 title: Deleting characters matching a pattern
+weight: 5
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 In programming, deleting characters matching a pattern means finding sequences of characters that fit a specific rule—a pattern—and removing them from a string. Programmers do this for things like sanitizing inputs, processing text, or just cleaning up data before storing or displaying it.

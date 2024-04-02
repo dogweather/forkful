@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Das Parsen eines Datums aus einem String in Haskell beinhaltet die Umwandlung\
   \ von textuellen Darstellungen von Daten in ein strukturiertes Format, das das\u2026"
 title: Einen Datum aus einem String analysieren
+weight: 30
 ---
-
-{{< edit_this_page >}}
 
 ## Was & Warum?
 

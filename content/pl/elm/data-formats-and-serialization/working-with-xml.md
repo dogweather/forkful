@@ -9,9 +9,8 @@ summary: "Praca z XML oznacza analizowanie, transformowanie i generowanie dokume
   w XML w Elm. Robi si\u0119 to, aby wsp\xF3\u0142dzia\u0142a\u0107 z wieloma serwisami\
   \ internetowymi i\u2026"
 title: Praca z XML
+weight: 40
 ---
-
-{{< edit_this_page >}}
 
 ## Co i dlaczego?
 Praca z XML oznacza analizowanie, transformowanie i generowanie dokumentów XML w Elm. Robi się to, aby współdziałać z wieloma serwisami internetowymi i starszymi systemami, które używają XML jako swój format danych.

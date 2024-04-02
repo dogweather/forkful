@@ -23,9 +23,8 @@ summary: "C\uC5D0\uC11C \uD14C\uC2A4\uD2B8\uB97C \uC791\uC131\uD55C\uB2E4\uB294 
   \ \uC54A\uC740 \uBD80\uC791\uC6A9 \uC5C6\uC774 \uBBF8\uB798\uC758 \uCF54\uB4DC \uC218\
   \uC815\uC744 \uC6A9\uC774\uD558\uAC8C \uD558\uAE30 \uC704\uD574 \uC774\u2026"
 title: "\uD14C\uC2A4\uD2B8 \uC791\uC131\uD558\uAE30"
+weight: 36
 ---
-
-{{< edit_this_page >}}
 
 ## 무엇을, 왜?
 C에서 테스트를 작성한다는 것은 코드의 기능을 자동으로 검증하는 작은 보조 프로그램이나 함수를 만드는 것을 의미합니다. 프로그래머들은 소프트웨어가 예상대로 작동하는지 확인하고, 버그를 조기에 발견하며, 의도하지 않은 부작용 없이 미래의 코드 수정을 용이하게 하기 위해 이 작업을 수행합니다.

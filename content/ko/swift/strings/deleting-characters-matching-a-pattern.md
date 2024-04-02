@@ -18,9 +18,8 @@ summary: "\uBB38\uC790\uC5F4\uC5D0\uC11C \uD2B9\uC815 \uD328\uD134\uC5D0 \uC77C\
   \uC790\uB97C \uC81C\uAC70\uD560 \uC77C\uC774 \uC790\uC8FC \uBC1C\uC0DD\uD569\uB2C8\
   \uB2E4."
 title: "\uD328\uD134\uC5D0 \uC77C\uCE58\uD558\uB294 \uBB38\uC790 \uC0AD\uC81C"
+weight: 5
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why? (무엇과 왜?)
 문자열에서 특정 패턴에 일치하는 문자를 삭제하는 것은 데이터를 정제하거나 형식을 맞추기 위해 필요합니다. 코딩을 하다 보면 불필요하거나 방해가 되는 문자를 제거할 일이 자주 발생합니다.

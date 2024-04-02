@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Associatieve arrays zijn als geheime handdrukken voor data in Lua\u2014\
   \ in plaats van alleen nummers die keurig op index in de rij staan, kunnen je sleutels\u2026"
 title: Gebruik van associatieve arrays
+weight: 15
 ---
-
-{{< edit_this_page >}}
 
 ## Wat & Waarom?
 

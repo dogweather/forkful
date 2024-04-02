@@ -8,9 +8,8 @@ model: gpt-4-0125-preview
 summary: "Checking if a directory exists is about determining the presence of a directory\
   \ at a specified path before performing operations like reading from or\u2026"
 title: Checking if a directory exists
+weight: 20
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 Checking if a directory exists is about determining the presence of a directory at a specified path before performing operations like reading from or writing to files within it. Programmers do it to avoid errors related to file operations, ensuring a smoother and more reliable execution of file handling tasks in their applications.

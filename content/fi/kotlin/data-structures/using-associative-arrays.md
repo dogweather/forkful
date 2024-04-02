@@ -10,9 +10,8 @@ model: gpt-4-0125-preview
 summary: "Assosiatiiviset taulukot eli mapit Kotlinissa ovat kokoelmia, jotka tallentavat\
   \ avain-arvo -pareja. Ohjelmoijat k\xE4ytt\xE4v\xE4t niit\xE4 dataan tehokkaasti\u2026"
 title: "Assosiatiivisten taulukoiden k\xE4ytt\xF6"
+weight: 15
 ---
-
-{{< edit_this_page >}}
 
 ## Mikä & Miksi?
 

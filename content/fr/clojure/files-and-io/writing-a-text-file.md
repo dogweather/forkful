@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "\xC9crire un fichier texte en Clojure implique de cr\xE9er ou de modifier\
   \ des fichiers pour sauvegarder des donn\xE9es en dehors de votre application, permettant\u2026"
 title: "R\xE9diger un fichier texte"
+weight: 24
 ---
-
-{{< edit_this_page >}}
 
 ## Quoi & Pourquoi ?
 

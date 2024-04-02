@@ -9,9 +9,8 @@ summary: "Tempor\xE4ra filer \xE4r tempor\xE4ra lagerplatser f\xF6r data som anv
   nds under programk\xF6rningen och som ofta raderas efter\xE5t. Programmerare skapar\
   \ dem f\xF6r att\u2026"
 title: "Skapa en tempor\xE4r fil"
+weight: 21
 ---
-
-{{< edit_this_page >}}
 
 ## Vad & Varför?
 Temporära filer är temporära lagerplatser för data som används under programkörningen och som ofta raderas efteråt. Programmerare skapar dem för att hantera data volatilt, undvika att kladda ned hårddisken med testdata och för att skydda privat information.

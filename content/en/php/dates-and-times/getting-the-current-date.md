@@ -7,9 +7,8 @@ model: gpt-4-0125-preview
 summary: "Getting the current date in PHP is a fundamental task that allows you to\
   \ retrieve and manipulate the system's date and time. This is crucial for functions\u2026"
 title: Getting the current date
+weight: 29
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 Getting the current date in PHP is a fundamental task that allows you to retrieve and manipulate the system's date and time. This is crucial for functions such as logging, time-stamping posts, scheduling events, or performing time-sensitive operations in your applications.

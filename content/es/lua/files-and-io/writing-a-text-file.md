@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Escribir en un archivo de texto en Lua implica crear o abrir un archivo\
   \ en modo de escritura, utilizando operaciones de archivo para insertar texto. Esta\u2026"
 title: Escribiendo un archivo de texto
+weight: 24
 ---
-
-{{< edit_this_page >}}
 
 ## ¿Qué y Por Qué?
 

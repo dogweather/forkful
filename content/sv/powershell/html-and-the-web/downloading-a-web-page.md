@@ -8,9 +8,8 @@ model: gpt-4-1106-preview
 summary: "Att ladda ner en webbsida inneb\xE4r att h\xE4mta dess inneh\xE5ll, som\
   \ HTML, CSS och bilder, till din dator. Programmerare g\xF6r det f\xF6r att automatisera\u2026"
 title: "H\xE4mta en webbsida"
+weight: 42
 ---
-
-{{< edit_this_page >}}
 
 ## Vad & Varför?
 Att ladda ner en webbsida innebär att hämta dess innehåll, som HTML, CSS och bilder, till din dator. Programmerare gör det för att automatisera datainsamling, testa webbsidor eller övervaka innehållsförändringar.

@@ -23,9 +23,8 @@ summary: "\uBB38\uC790\uC5F4\uC758 \uCCAB \uAE00\uC790\uB97C \uB300\uBB38\uC790\
   \uBCF4\uD558\uAE30 \uC704\uD574 \uC790\uBC14\uC2A4\uD06C\uB9BD\uD2B8\uC5D0\uC11C\
   \ \uD754\uD788 \uC218\uD589\uB429\uB2C8\uB2E4."
 title: "\uBB38\uC790\uC5F4 \uB300\uBB38\uC790\uD654"
+weight: 2
 ---
-
-{{< edit_this_page >}}
 
 ## 무엇인가 & 왜인가?
 문자열의 첫 글자를 대문자로 변환하면서 나머지 문자들은 그대로 유지하는 작업을 문자열 대문자화라고 합니다. 이 작업은 사용자 입력을 포맷팅하거나, 이름이나 제목을 표시하고 사용자 인터페이스 텍스트의 일관성을 확보하기 위해 자바스크립트에서 흔히 수행됩니다.

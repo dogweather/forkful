@@ -11,9 +11,8 @@ summary: "Pobieranie bie\u017C\u0105cej daty to kluczowe zadanie w niemal ka\u01
   dym projekcie programistycznym, od rejestrowania aktywno\u015Bci w aplikacji po\
   \ generowanie raport\xF3w\u2026"
 title: Pobieranie aktualnej daty
+weight: 29
 ---
-
-{{< edit_this_page >}}
 
 ## Co i dlaczego?
 Pobieranie bieżącej daty to kluczowe zadanie w niemal każdym projekcie programistycznym, od rejestrowania aktywności w aplikacji po generowanie raportów ze znacznikami czasowymi. W Ruby można to łatwo osiągnąć, korzystając z biblioteki standardowej, co upraszcza operacje związane z datami.

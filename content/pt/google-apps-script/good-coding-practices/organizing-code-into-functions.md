@@ -11,9 +11,8 @@ summary: "Organizar o c\xF3digo em fun\xE7\xF5es \xE9 sobre estruturar o seu c\x
   digo do Google Apps Script separando segmentos l\xF3gicos em blocos distintos, cada\
   \ um realizando\u2026"
 title: "Organizando c\xF3digo em fun\xE7\xF5es"
+weight: 18
 ---
-
-{{< edit_this_page >}}
 
 ## O Que & Por Quê?
 

@@ -7,9 +7,8 @@ model: gpt-4-1106-preview
 summary: "Concatenating strings means sticking them together end-to-end. Programmers\
   \ do it to combine text, like building a full sentence from words or creating\u2026"
 title: Concatenating strings
+weight: 3
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 Concatenating strings means sticking them together end-to-end. Programmers do it to combine text, like building a full sentence from words or creating file paths.

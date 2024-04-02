@@ -7,9 +7,8 @@ model: unknown
 summary: "Le parsing HTML, c'est lire et convertir du code HTML en quelque chose qu'une\
   \ application peut comprendre et manipuler. Les programmeurs le font pour\u2026"
 title: Analyse syntaxique de HTML
+weight: 43
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 Le parsing HTML, c'est lire et convertir du code HTML en quelque chose qu'une application peut comprendre et manipuler. Les programmeurs le font pour extraire des données, manipuler le contenu et intégrer des fonctionnalités web dans leurs applications.

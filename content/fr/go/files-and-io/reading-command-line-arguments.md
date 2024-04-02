@@ -10,9 +10,8 @@ model: gpt-4-0125-preview
 summary: "Lire les arguments de ligne de commande en Go implique d'extraire les arguments\
   \ fournis \xE0 un programme lors de son invocation depuis le terminal ou\u2026"
 title: Lecture des arguments de ligne de commande
+weight: 23
 ---
-
-{{< edit_this_page >}}
 
 ## Quoi & Pourquoi ?
 

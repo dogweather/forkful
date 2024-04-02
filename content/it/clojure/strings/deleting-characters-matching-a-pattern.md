@@ -7,9 +7,8 @@ model: gpt-4-1106-preview
 summary: "Tagliare via i caratteri seguendo una certa regola \xE8 come fare pulizia\
   \ nel testo, togliendo ci\xF2 che non serve. I programmatori lo fanno per semplificare\u2026"
 title: Eliminazione di caratteri che corrispondono a un pattern
+weight: 5
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 Tagliare via i caratteri seguendo una certa regola è come fare pulizia nel testo, togliendo ciò che non serve. I programmatori lo fanno per semplificare stringhe, per l'analisi dati, o per normalizzare e validare input.

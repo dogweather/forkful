@@ -16,9 +16,8 @@ summary: "\uC0C8 \uD504\uB85C\uC81D\uD2B8\uB97C \uC2DC\uC791\uD55C\uB2E4\uB294 \
   \uAE30 \uC704\uD574\uC11C \uD504\uB85C\uC81D\uD2B8\uB97C \uC2DC\uC791\uD574\uC694\
   ."
 title: "\uC0C8 \uD504\uB85C\uC81D\uD2B8 \uC2DC\uC791\uD558\uAE30"
+weight: 1
 ---
-
-{{< edit_this_page >}}
 
 ## 시작은 뭘까? 왜 해야 할까?
 새 프로젝트를 시작한다는 건 깨끗한 캔버스에 그림을 그리는 것 같아요. 개발자들은 새로운 아이디어나 해결책을 현실로 만들기 위해서 프로젝트를 시작해요.

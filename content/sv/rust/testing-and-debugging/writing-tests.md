@@ -11,9 +11,8 @@ summary: "Att skriva tester i Rust inneb\xE4r att skapa automatiserade kontrolle
   \ f\xF6r att s\xE4kerst\xE4lla att din kod fungerar som f\xF6rv\xE4ntat. Programmerare\
   \ g\xF6r detta f\xF6r\u2026"
 title: Skriva tester
+weight: 36
 ---
-
-{{< edit_this_page >}}
 
 ## Vad & Varför?
 

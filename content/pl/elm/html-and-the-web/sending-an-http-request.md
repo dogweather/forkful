@@ -9,9 +9,8 @@ summary: "W Elm, wysy\u0142anie zapytania HTTP to spos\xF3b na po\u0142\u0105cze
   \ si\u0119 z serwerem i pobranie lub wys\u0142anie danych. Programi\u015Bci robi\u0105\
   \ to, aby ich aplikacje mog\u0142y\u2026"
 title: "Wysy\u0142anie \u017C\u0105dania HTTP"
+weight: 44
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why? / Co i Dlaczego?
 W Elm, wysyłanie zapytania HTTP to sposób na połączenie się z serwerem i pobranie lub wysłanie danych. Programiści robią to, aby ich aplikacje mogły komunikować się z zewnętrznymi API, pobierać aktualizacje lub przekazywać informacje.

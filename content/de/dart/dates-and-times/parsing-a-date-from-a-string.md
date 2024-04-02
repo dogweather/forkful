@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Das Parsen eines Datums aus einer Zeichenkette in Dart beinhaltet die Umwandlung\
   \ von textueller Darstellung von Daten und Zeiten in ein `DateTime`-Objekt.\u2026"
 title: Einen Datum aus einem String analysieren
+weight: 30
 ---
-
-{{< edit_this_page >}}
 
 ## Was & Warum?
 Das Parsen eines Datums aus einer Zeichenkette in Dart beinhaltet die Umwandlung von textueller Darstellung von Daten und Zeiten in ein `DateTime`-Objekt. Diese Operation ist essentiell für Anwendungen, die sich mit Planung, Datenanalyse oder jeder Funktion, die Datummanipulation benötigt, befassen, und stellt sicher, dass datumsbezogene Daten korrekt verstanden und vom Programm verarbeitet werden.

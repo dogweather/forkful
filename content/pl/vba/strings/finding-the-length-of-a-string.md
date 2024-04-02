@@ -11,9 +11,8 @@ summary: "Znalezienie d\u0142ugo\u015Bci \u0142a\u0144cucha znak\xF3w w Visual B
   \ for Applications (VBA) polega na okre\u015Bleniu liczby znak\xF3w, jakie zawiera.\
   \ Programi\u015Bci cz\u0119sto wykonuj\u0105\u2026"
 title: "Znajdowanie d\u0142ugo\u015Bci \u0142a\u0144cucha znak\xF3w"
+weight: 7
 ---
-
-{{< edit_this_page >}}
 
 ## Co i Dlaczego?
 

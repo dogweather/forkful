@@ -7,9 +7,8 @@ model: gpt-4-1106-preview
 summary: "Substring on osajono, pala isompaa merkkijonoa. Koodarit kaivavat substringeja\
   \ datan parsimiseen, tietojen n\xE4ytt\xE4miseen tai yksinkertaisesti, koska\u2026"
 title: Merkkijonojen osien poimiminen
+weight: 6
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 Substring on osajono, pala isompaa merkkijonoa. Koodarit kaivavat substringeja datan parsimiseen, tietojen näyttämiseen tai yksinkertaisesti, koska tarvitaan vain tietty pätkä tekstiä.

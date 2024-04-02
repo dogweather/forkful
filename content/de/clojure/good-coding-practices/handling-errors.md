@@ -9,9 +9,8 @@ summary: "Fehlerbehandlung geht darum, das Unerwartete in Programmen zu managen 
   \ wie ein T\xFCrsteher, der sich um Unruhestifter k\xFCmmert. Programmierer m\xF6\
   gen es\u2026"
 title: Fehlerbehandlung
+weight: 16
 ---
-
-{{< edit_this_page >}}
 
 ## Was & Warum?
 Fehlerbehandlung geht darum, das Unerwartete in Programmen zu managen – wie ein Türsteher, der sich um Unruhestifter kümmert. Programmierer mögen es reibungslos; Fehlerbehandlung hilft dabei, die Problemfälle in Schach zu halten, um sicherzustellen, dass ihr Code nicht stolpert und fällt, wenn er mit dem Unerwarteten konfrontiert wird.

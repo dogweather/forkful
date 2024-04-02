@@ -7,9 +7,8 @@ model: gpt-4-0125-preview
 summary: "Avrunding av tall betyr \xE5 justere dem til n\xE6rmeste heltall eller angitt\
   \ desimalplass. Det er en grunnpilar i programmering for \xE5 redusere kompleksitet,\u2026"
 title: Avrunding av tall
+weight: 13
 ---
-
-{{< edit_this_page >}}
 
 ## Hva & Hvorfor?
 Avrunding av tall betyr å justere dem til nærmeste heltall eller angitt desimalplass. Det er en grunnpilar i programmering for å redusere kompleksitet, forbedre ytelse, og for når presisjon utover et visst punkt ikke tilfører verdi.

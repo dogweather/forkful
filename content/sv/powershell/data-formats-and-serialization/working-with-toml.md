@@ -9,9 +9,8 @@ summary: "TOML, en f\xF6rkortning f\xF6r Toms Uppenbara, Minimala Spr\xE5k, \xE4
   \ ett data-serialiseringsformat som \xE4r l\xE4tt att l\xE4sa tack vare dess klara\
   \ semantik.\u2026"
 title: Att arbeta med TOML
+weight: 39
 ---
-
-{{< edit_this_page >}}
 
 ## Vad & Varför?
 

@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Werken met XML houdt in: het parsen, extraheren en manipuleren van gegevens\
   \ in het Extensible Markup Language-formaat. Programmeurs worstelen met XML,\u2026"
 title: Werken met XML
+weight: 40
 ---
-
-{{< edit_this_page >}}
 
 ## Wat & Waarom?
 Werken met XML houdt in: het parsen, extraheren en manipuleren van gegevens in het Extensible Markup Language-formaat. Programmeurs worstelen met XML, aangezien het een veelgebruikt gegevensuitwisselingsformaat is voor configuraties, API's en meer.

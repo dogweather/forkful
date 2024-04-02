@@ -9,9 +9,8 @@ summary: "Lokitus on lyhyesti sanottuna kuin p\xE4iv\xE4kirjan pit\xE4mist\xE4 s
   \ - se tallentaa tapahtumia, virheit\xE4 ja muita merkitt\xE4vi\xE4 toimia, jotka\
   \ tapahtuvat\u2026"
 title: Lokitus
+weight: 17
 ---
-
-{{< edit_this_page >}}
 
 ## Mikä & Miksi?
 Lokitus on lyhyesti sanottuna kuin päiväkirjan pitämistä sovelluksellesi - se tallentaa tapahtumia, virheitä ja muita merkittäviä toimia, jotka tapahtuvat ohjelmiston suorituksen aikana. Ohjelmoijat tekevät sitä ei ainoastaan ymmärtääkseen, mitä konepellin alla tapahtuu reaaliajassa, vaan myös historiatietojen saamiseksi, mikä on ratkaisevan tärkeää virheenkorjauksessa, auditoinnissa ja suorituskyvyn optimoinnissa.

@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Convertire una data in una stringa in C comporta la traduzione di una struttura\
   \ di data o timestamp in un formato leggibile dall'uomo. I programmatori\u2026"
 title: Convertire una data in una stringa
+weight: 28
 ---
-
-{{< edit_this_page >}}
 
 ## Cosa e Perché?
 

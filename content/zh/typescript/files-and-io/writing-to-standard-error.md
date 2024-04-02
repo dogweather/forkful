@@ -23,9 +23,8 @@ summary: "\u5728TypeScript\u4E2D\uFF0C\u5411\u6807\u51C6\u9519\u8BEF\uFF08stderr
   \u5904\u7406\u548C\u65E5\u5FD7\u8BB0\u5F55\u5F97\u5230\u9AD8\u6548\u3001\u7EDF\u4E00\
   \u7684\u7BA1\u7406\u3002"
 title: "\u5199\u5165\u6807\u51C6\u9519\u8BEF"
+weight: 25
 ---
-
-{{< edit_this_page >}}
 
 ## 什么 & 为什么？
 在TypeScript中，向标准错误（stderr）写入是将错误消息或日志直接发送到环境的错误输出流的过程（例如，node.js或Web浏览器中的控制台）。这对于在不干扰通常用于程序数据的标准输出（stdout）的情况下诊断问题至关重要，确保错误处理和日志记录得到高效、统一的管理。

@@ -11,9 +11,8 @@ summary: "Nykyisen p\xE4iv\xE4m\xE4\xE4r\xE4n hakeminen Rustissa on yleinen teht
   v\xE4 lokitusta, aikaan perustuvia operaatioita tai yksinkertaisesti p\xE4iv\xE4\
   m\xE4\xE4r\xE4n n\xE4ytt\xE4mist\xE4 varten.\u2026"
 title: "Nykyisen p\xE4iv\xE4m\xE4\xE4r\xE4n hankkiminen"
+weight: 29
 ---
-
-{{< edit_this_page >}}
 
 ## Mikä & Miksi?
 

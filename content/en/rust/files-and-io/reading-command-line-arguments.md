@@ -7,9 +7,8 @@ model: gpt-4-1106-preview
 summary: Reading command line arguments in Rust lets programs take user input on launch.
   It's key for custom behavior without a GUI.
 title: Reading command line arguments
+weight: 23
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 

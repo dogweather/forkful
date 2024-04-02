@@ -11,9 +11,8 @@ summary: "Das Runden von Zahlen in der Programmierung geht darum, eine Zahl auf 
   \ n\xE4chstgelegene ganze Zahl oder auf eine bestimmte Anzahl von Dezimalstellen\
   \ zu\u2026"
 title: Runden von Zahlen
+weight: 13
 ---
-
-{{< edit_this_page >}}
 
 ## Was & Warum?
 

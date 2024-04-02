@@ -9,9 +9,8 @@ summary: "Arrondir les nombres consiste \xE0 ajuster un d\xE9cimal \xE0 sa valeu
   \ enti\xE8re la plus proche ou \xE0 un nombre sp\xE9cifi\xE9 de chiffres fractionnaires.\
   \ Les programmeurs\u2026"
 title: Arrondir les nombres
+weight: 13
 ---
-
-{{< edit_this_page >}}
 
 ## Quoi & Pourquoi ?
 

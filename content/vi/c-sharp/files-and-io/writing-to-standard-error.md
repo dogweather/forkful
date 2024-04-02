@@ -13,9 +13,8 @@ summary: "Vi\u1EC7c g\u1EEDi c\xE1c th\xF4ng b\xE1o l\u1ED7i t\u1EDBi standard e
   i\u1EC7p l\u1ED7i c\u1EE7a m\xECnh ra kh\u1ECFi \u0111\u1EA7u ra th\xF4ng th\u01B0\
   \u1EDDng (stdout). C\xE1c l\u1EADp\u2026"
 title: "Ghi v\xE0o l\u1ED7i chu\u1EA9n"
+weight: 25
 ---
-
-{{< edit_this_page >}}
 
 ## Gì và Tại Sao?
 

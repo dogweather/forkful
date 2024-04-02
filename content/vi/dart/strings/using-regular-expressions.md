@@ -13,9 +13,8 @@ summary: "Bi\u1EC3u th\u1EE9c ch\xEDnh quy (regex) trong Dart cung c\u1EA5p m\u1
   i chu\u1ED7i k\xFD t\u1EF1, cho ph\xE9p l\u1EADp tr\xECnh vi\xEAn th\u1EF1c hi\u1EC7\
   n c\xE1c t\xE1c v\u1EE5 x\u1EED\u2026"
 title: "S\u1EED d\u1EE5ng bi\u1EC3u th\u1EE9c ch\xEDnh quy"
+weight: 11
 ---
-
-{{< edit_this_page >}}
 
 ## Cái gì & Tại sao?
 Biểu thức chính quy (regex) trong Dart cung cấp một cách mạnh mẽ để tìm kiếm và thao tác với chuỗi ký tự, cho phép lập trình viên thực hiện các tác vụ xử lý văn bản phức tạp một cách hiệu quả. Bằng cách hiểu biểu thức chính quy, các nhà phát triển có thể thực hiện kiểm tra văn bản, tìm kiếm mẫu và biến đổi văn bản nhanh chóng, điều này rất cần thiết cho việc xử lý biểu mẫu, phân tích dữ liệu và thao tác chuỗi chung trong ứng dụng hiện đại.

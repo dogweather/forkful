@@ -9,9 +9,8 @@ summary: "Changer une cha\xEEne en minuscules, c'est transformer tous ses caract
   res en leur \xE9quivalent en lettre minuscule. Les programmeurs font \xE7a pour\
   \ uniformiser\u2026"
 title: "Conversion d'une cha\xEEne de caract\xE8res en minuscules"
+weight: 4
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 Changer une chaîne en minuscules, c'est transformer tous ses caractères en leur équivalent en lettre minuscule. Les programmeurs font ça pour uniformiser les entrées des utilisateurs, faciliter les comparaisons de texte et éviter les problèmes de casse sensibles.

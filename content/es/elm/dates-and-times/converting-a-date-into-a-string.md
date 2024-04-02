@@ -9,9 +9,8 @@ summary: "Convertir una fecha en un texto significa transformar la representaci\
   n de tiempo (como `Date`) en una cadena de caracteres legible (como `\"2021-12-31\"\
   `).\u2026"
 title: Convirtiendo una fecha en una cadena de texto
+weight: 28
 ---
-
-{{< edit_this_page >}}
 
 ## ¿Qué y Por Qué?
 

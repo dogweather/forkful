@@ -7,9 +7,8 @@ model: gpt-4-0125-preview
 summary: "Um REPL (Read-Eval-Print Loop - Ciclo de Ler-Avaliar-Imprimir) \xE9 um ambiente\
   \ de programa\xE7\xE3o de computadores interativo e simples. Os programadores\u2026"
 title: Usando um shell interativo (REPL)
+weight: 34
 ---
-
-{{< edit_this_page >}}
 
 ## O Que & Por Que?
 Um REPL (Read-Eval-Print Loop - Ciclo de Ler-Avaliar-Imprimir) é um ambiente de programação de computadores interativo e simples. Os programadores utilizam-no para testes rápidos de codificação, experimentação de trechos de código ou aprendizado da sintaxe de uma linguagem sem a necessidade de criar uma aplicação completa.

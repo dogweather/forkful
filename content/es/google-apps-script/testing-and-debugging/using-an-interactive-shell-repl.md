@@ -10,9 +10,8 @@ model: gpt-4-0125-preview
 summary: "Una shell interactiva, o Bucle de Leer-Evaluar-Imprimir (REPL, por sus siglas\
   \ en ingl\xE9s), es un entorno de programaci\xF3n simple e interactivo que toma\u2026"
 title: Usando un shell interactivo (REPL)
+weight: 34
 ---
-
-{{< edit_this_page >}}
 
 ## ¿Qué y por qué?
 

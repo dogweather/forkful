@@ -12,9 +12,8 @@ summary: "\u5728Bash\u4E2D\u5220\u9664\u5339\u914D\u6A21\u5F0F\u7684\u5B57\u7B26
   \u7F16\u7A0B\u8FC7\u7A0B\u4E2D\u505A\u8FD9\u4E2A\u5E38\u662F\u56E0\u4E3A\u8981\u5904\
   \u7406\u8F93\u5165\u6216\u6574\u7406\u6570\u636E\u3002"
 title: "\u5339\u914D\u6A21\u5F0F\u5220\u9664\u5B57\u7B26"
+weight: 5
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why? 什么与为什么？
 在Bash中删除匹配模式的字符能帮助我们清理和格式化字符串。编程过程中做这个常是因为要处理输入或整理数据。

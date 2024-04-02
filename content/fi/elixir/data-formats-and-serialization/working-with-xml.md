@@ -9,9 +9,8 @@ summary: "XML:n k\xE4sittely Elixiriss\xE4 tarkoittaa XML-tietojen j\xE4sent\xE4
   , luomista ja manipulointia. Ohjelmoijat k\xE4sittelev\xE4t XML:\xE4\xE4, koska\
   \ se on laajalti k\xE4yt\xF6ss\xE4\u2026"
 title: "XML:n k\xE4sittely"
+weight: 40
 ---
-
-{{< edit_this_page >}}
 
 ## Mitä & Miksi?
 XML:n käsittely Elixirissä tarkoittaa XML-tietojen jäsentämistä, luomista ja manipulointia. Ohjelmoijat käsittelevät XML:ää, koska se on laajalti käytössä web-palveluissa, konfiguraatiotiedostoissa ja vanhoissa järjestelmissä.

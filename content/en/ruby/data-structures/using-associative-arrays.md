@@ -7,9 +7,8 @@ model: gpt-4-0125-preview
 summary: "Associative arrays, more commonly known as hashes in Ruby, allow pairing\
   \ unique keys to values. They're indispensable when you need to keep track of\u2026"
 title: Using associative arrays
+weight: 15
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 

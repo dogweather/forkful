@@ -9,9 +9,8 @@ summary: "Calculer une date dans le futur ou le pass\xE9 consiste \xE0 d\xE9term
   \ une date relative \xE0 un point de r\xE9f\xE9rence. Les programmeurs le font souvent\
   \ pour des\u2026"
 title: "Calcul d'une date future ou pass\xE9e"
+weight: 26
 ---
-
-{{< edit_this_page >}}
 
 ## Quoi & Pourquoi ?
 Calculer une date dans le futur ou le passé consiste à déterminer une date relative à un point de référence. Les programmeurs le font souvent pour des rappels, des échéances ou pour suivre des événements.

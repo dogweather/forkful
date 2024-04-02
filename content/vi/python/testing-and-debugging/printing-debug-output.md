@@ -14,9 +14,8 @@ summary: "In \u0111\u1EA7u ra \u0111\u1EC3 g\u1EE1 l\u1ED7i gi\u1ED1ng nh\u01B0 
   \ t\xECm hi\u1EC3u n\xF3 \u0111ang ngh\u0129 g\xEC. C\xE1c l\u1EADp tr\xECnh vi\xEA\
   n l\xE0m \u0111i\u1EC1u n\xE0y \u0111\u1EC3 theo d\xF5i v\xE0 kh\u1EAFc\u2026"
 title: "In ra th\xF4ng tin g\u1EE1 l\u1ED7i"
+weight: 33
 ---
-
-{{< edit_this_page >}}
 
 ## Gì & Tại Sao?
 In đầu ra để gỡ lỗi giống như việc bạn đang trò chuyện với mã của mình để tìm hiểu nó đang nghĩ gì. Các lập trình viên làm điều này để theo dõi và khắc phục những lỗi nghiêm trọng xảy ra trong chương trình của họ.

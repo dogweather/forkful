@@ -11,9 +11,8 @@ summary: "Att arbeta med JSON (JavaScript Object Notation) inneb\xE4r att tolka 
   \ till och fr\xE5n ett anv\xE4ndbart format i TypeScript. Programmerare g\xF6r detta\
   \ f\xF6r\u2026"
 title: Arbeta med JSON
+weight: 38
 ---
-
-{{< edit_this_page >}}
 
 ## Vad & Varför?
 

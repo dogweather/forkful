@@ -21,9 +21,8 @@ summary: "\u5728 Google Apps \u811A\u672C\u4E2D\u627E\u5230\u4E00\u4E2A\u5B57\u7
   \u5165\u3001\u904D\u5386\u5B57\u7B26\u6216\u4E3A\u5404\u79CD\u81EA\u52A8\u5316\u4EFB\
   \u52A1\u64CD\u4F5C\u5B57\u7B26\u4E32\uFF0C\u8FD9\u4E9B\u4EFB\u52A1\u5728 Google\u2026"
 title: "\u5BFB\u627E\u5B57\u7B26\u4E32\u7684\u957F\u5EA6"
+weight: 7
 ---
-
-{{< edit_this_page >}}
 
 ## 什么 & 为什么？
 在 Google Apps 脚本中找到一个字符串的长度，Google Apps 脚本是一种 JavaScript 云脚本语言，它让您可以自动执行跨 Google 产品的任务，其目的是确定字符串包含的字符数量。程序员经常执行此操作来验证输入、遍历字符或为各种自动化任务操作字符串，这些任务在 Google 应用程序中进行。

@@ -7,9 +7,8 @@ model: gpt-4-1106-preview
 summary: "En TypeScript, hallar la longitud de una cadena implica contar la cantidad\
   \ de caracteres que contiene. Saber esto es clave cuando manipulamos texto: para\u2026"
 title: Calculando la longitud de una cadena
+weight: 7
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 En TypeScript, hallar la longitud de una cadena implica contar la cantidad de caracteres que contiene. Saber esto es clave cuando manipulamos texto: para validar entradas, subcadenas, o simplemente medir la información.

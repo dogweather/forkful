@@ -9,9 +9,8 @@ summary: "Interpolacja string\xF3w pozwala wstawia\u0107 zmienne lub wyra\u017Ce
   \ bezpo\u015Brednio do \u0142a\u0144cuch\xF3w znak\xF3w. Programi\u015Bci u\u017C\
   ywaj\u0105 jej dla czytelno\u015Bci i wygody, unikaj\u0105c\u2026"
 title: "Interpolacja \u0142a\u0144cuch\xF3w znak\xF3w"
+weight: 8
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why? (Co i Dlaczego?)
 Interpolacja stringów pozwala wstawiać zmienne lub wyrażenia bezpośrednio do łańcuchów znaków. Programiści używają jej dla czytelności i wygody, unikając ciągłego łączenia stringów.

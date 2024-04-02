@@ -17,9 +17,8 @@ summary: "\uBCF5\uC18C\uC218\uB294 \uC2E4\uC218\uBD80\uC640 \uD5C8\uC218\uBD80\u
   \ \uAC19\uC740 \uC218\uD559\uC774 \uB9CE\uC774 \uD3EC\uD568\uB41C \uC544\uB450\uC774\
   \uB178 \uD504\uB85C\uC81D\uD2B8\uC5D0 \uD544\uC218\uC801\uC785\uB2C8\uB2E4."
 title: "\uBCF5\uC18C\uC218 \uB2E4\uB8E8\uAE30"
+weight: 14
 ---
-
-{{< edit_this_page >}}
 
 ## 무엇이며 왜인가?
 복소수는 실수부와 허수부를 갖고 있으며, 일반적으로 `a + bi`로 표현됩니다. 그들은 신호 처리, 전기 공학 또는 현상이 평면에서 가장 잘 모델링되는 다른 분야와 같은 수학이 많이 포함된 아두이노 프로젝트에 필수적입니다.

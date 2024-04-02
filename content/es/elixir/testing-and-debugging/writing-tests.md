@@ -11,9 +11,8 @@ summary: "Escribir pruebas en Elixir implica crear scripts automatizados para va
   \ el comportamiento de tu c\xF3digo. Los programadores hacen esto para asegurar\
   \ la\u2026"
 title: Escribiendo pruebas
+weight: 36
 ---
-
-{{< edit_this_page >}}
 
 ## ¿Qué y Por Qué?
 Escribir pruebas en Elixir implica crear scripts automatizados para validar el comportamiento de tu código. Los programadores hacen esto para asegurar la calidad, prevenir regresiones y facilitar la refactorización del código, haciendo el proceso de desarrollo más confiable y eficiente.

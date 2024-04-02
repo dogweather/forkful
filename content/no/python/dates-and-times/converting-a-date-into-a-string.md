@@ -8,9 +8,8 @@ model: gpt-4-1106-preview
 summary: "Konvertering av dato til streng handler om \xE5 endre et datoobjekt til\
   \ en tekstrepresentasjon. Dette er nyttig for \xE5 vise datoer lesevennlig for brukere\u2026"
 title: Konvertere en dato til en streng
+weight: 28
 ---
-
-{{< edit_this_page >}}
 
 ## Hva & Hvorfor?
 Konvertering av dato til streng handler om å endre et datoobjekt til en tekstrepresentasjon. Dette er nyttig for å vise datoer lesevennlig for brukere eller lagre i databaser som ikke støtter datoobjekter.

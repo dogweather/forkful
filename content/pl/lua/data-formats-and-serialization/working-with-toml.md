@@ -8,9 +8,8 @@ model: gpt-4-0125-preview
 summary: "Praca z TOML polega na analizowaniu i generowaniu danych TOML (Tom's Obvious,\
   \ Minimal Language - Oczywisty, Minimalny J\u0119zyk Toma) za pomoc\u0105 Lua.\u2026"
 title: Praca z TOML
+weight: 39
 ---
-
-{{< edit_this_page >}}
 
 ## Co i dlaczego?
 Praca z TOML polega na analizowaniu i generowaniu danych TOML (Tom's Obvious, Minimal Language - Oczywisty, Minimalny Język Toma) za pomocą Lua. Programiści wykorzystują TOML do plików konfiguracyjnych ze względu na jego czytelność i prostą składnię, która łatwo przekłada się na strukturę danych.

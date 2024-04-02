@@ -15,9 +15,8 @@ summary: "REPL \u4EE3\u8868\u8BFB\u53D6-\u6C42\u503C-\u6253\u5370\u5FAA\u73AF\uF
   \u4E0D\u9700\u8981\u521B\u5EFA\u548C\u8FD0\u884C\u6574\u4E2A\u5E94\u7528\u7A0B\u5E8F\
   \u7684\u60C5\u51B5\u4E0B\u5B66\u4E60\u7F16\u7A0B\u6982\u5FF5\u3002"
 title: "\u5728\u7F16\u7A0B\u4E2D\u4F7F\u7528\u4EA4\u4E92\u5F0FShell\uFF08REPL\uFF09"
+weight: 34
 ---
-
-{{< edit_this_page >}}
 
 ## 什么 & 为什么？
 REPL 代表读取-求值-打印循环，这是一个简单的交互式计算机编程环境。编码者使用它来快速编写和测试代码，实验语法，并在不需要创建和运行整个应用程序的情况下学习编程概念。

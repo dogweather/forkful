@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Zoeken en vervangen van tekst in bestanden: het is het verwisselen van woorden\
   \ of zinsdelen door anderen. Programmeurs gebruiken het om code bij te\u2026"
 title: Tekst zoeken en vervangen
+weight: 10
 ---
-
-{{< edit_this_page >}}
 
 ## Wat & Waarom?
 Zoeken en vervangen van tekst in bestanden: het is het verwisselen van woorden of zinsdelen door anderen. Programmeurs gebruiken het om code bij te werken, fouten te herstellen of gegevens snel over meerdere bestanden aan te passen zonder handmatig elk bestand door te hoeven nemen.

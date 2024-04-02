@@ -11,9 +11,8 @@ summary: "Parsowanie HTML w Haskellu pozwala na ekstrakcj\u0119 danych, manipulo
   \ zawarto\u015Bci\u0105 HTML lub programistyczne interakcje ze stronami internetowymi.\
   \ Operacja\u2026"
 title: "Analiza sk\u0142adniowa HTML"
+weight: 43
 ---
-
-{{< edit_this_page >}}
 
 ## Co & Dlaczego?
 

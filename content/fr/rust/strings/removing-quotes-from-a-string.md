@@ -9,9 +9,8 @@ summary: "Supprimer les guillemets d'une cha\xEEne en Rust consiste \xE0 \xE9lim
   \ les caract\xE8res de guillemets superflus qui pourraient \xEAtre imbriqu\xE9s\
   \ autour de vos\u2026"
 title: "Retirer les guillemets d'une cha\xEEne"
+weight: 9
 ---
-
-{{< edit_this_page >}}
 
 ## Quoi & Pourquoi ?
 

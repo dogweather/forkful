@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Standardivirheeseen (stderr) kirjoittaminen JavaScriptill\xE4 tarkoittaa\
   \ virheilmoitusten tai mink\xE4 tahansa kriittisen tiedon ohjaamista tiettyyn, erilliseen\u2026"
 title: Kirjoittaminen standardivirheeseen
+weight: 25
 ---
-
-{{< edit_this_page >}}
 
 ## Mikä & Miksi?
 Standardivirheeseen (stderr) kirjoittaminen JavaScriptillä tarkoittaa virheilmoitusten tai minkä tahansa kriittisen tiedon ohjaamista tiettyyn, erilliseen virtaan, mikä on erityisen hyödyllistä Unix-tyyppisissä ympäristöissä lokiin kirjaamisen ja virheenkorjauksen kannalta. Ohjelmoijat tekevät näin erottaakseen normaalin ohjelman tulosteen virheilmoituksista, mahdollistaen selkeämmän tulostuksen hallinnan ja helpomman virheiden seurannan.

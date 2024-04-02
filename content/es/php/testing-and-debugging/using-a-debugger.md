@@ -1,14 +1,13 @@
 ---
 date: 2024-01-26 03:50:35.687650-07:00
-description: "Un depurador es una herramienta que ayuda a los programadores a entender\
-  \ qu\xE9 est\xE1 haciendo su c\xF3digo realmente mientras se ejecuta. Es la lupa\
-  \ que nos\u2026"
+description: "PHP viene con un depurador interactivo llamado Xdebug. As\xED es como\
+  \ se usa. Primero, aseg\xFArate de tener Xdebug instalado y configurado en tu archivo\u2026"
 lastmod: '2024-03-13T22:44:59.165350-06:00'
 model: gpt-4-0125-preview
-summary: "Un depurador es una herramienta que ayuda a los programadores a entender\
-  \ qu\xE9 est\xE1 haciendo su c\xF3digo realmente mientras se ejecuta. Es la lupa\
-  \ que nos\u2026"
+summary: "PHP viene con un depurador interactivo llamado Xdebug. As\xED es como se\
+  \ usa. Primero, aseg\xFArate de tener Xdebug instalado y configurado en tu archivo\u2026"
 title: Usando un depurador
+weight: 35
 ---
 
 ## Cómo hacerlo:

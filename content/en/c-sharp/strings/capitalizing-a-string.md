@@ -7,9 +7,8 @@ model: gpt-4-0125-preview
 summary: "Capitalizing a string in C# involves converting the first character of a\
   \ string to uppercase if it isn't already. This alteration can be crucial for\u2026"
 title: Capitalizing a string
+weight: 2
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 Capitalizing a string in C# involves converting the first character of a string to uppercase if it isn't already. This alteration can be crucial for formatting outputs, enforcing coding standards, or making user interface texts more readable.

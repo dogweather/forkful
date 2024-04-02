@@ -18,9 +18,8 @@ summary: "HTML \uD30C\uC2F1\uC740 HTML \uBB38\uC11C\uC5D0\uC11C \uB370\uC774\uD1
   \uCD9C \uB610\uB294 \uC6F9 \uC2A4\uD06C\uB798\uD551 \uBAA9\uC801\uC73C\uB85C \uC774\
   \uB97C \uC218\uD589\uD569\uB2C8\uB2E4."
 title: "HTML \uD30C\uC2F1"
+weight: 43
 ---
-
-{{< edit_this_page >}}
 
 ## 무엇과 왜?
 HTML 파싱은 HTML 문서에서 데이터를 추출하는 것을 의미합니다. 프로그래머들은 웹 콘텐츠와 상호 작용하거나 조작, 자동 데이터 추출 또는 웹 스크래핑 목적으로 이를 수행합니다.

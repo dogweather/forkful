@@ -7,9 +7,8 @@ model: gpt-4-1106-preview
 summary: "Convertire una stringa in minuscolo significa trasformare tutti i caratteri\
   \ di un testo da maiuscolo a minuscolo. Questo \xE8 spesso necessario per\u2026"
 title: Conversione di una stringa in minuscolo
+weight: 4
 ---
-
-{{< edit_this_page >}}
 
 ## Cosa & Perché?
 Convertire una stringa in minuscolo significa trasformare tutti i caratteri di un testo da maiuscolo a minuscolo. Questo è spesso necessario per uniformare i dati, per esempio, per comparare stringhe in modo insensibile alle maiuscole.

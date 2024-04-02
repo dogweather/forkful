@@ -13,9 +13,8 @@ summary: "N\u1ED9i suy chu\u1ED7i bao g\u1ED3m vi\u1EC7c ch\xE8n c\xE1c bi\u1EBF
   c hi\u1EC7n \u0111i\u1EC1u n\xE0y \u0111\u1EC3 t\u1EA1o ra chu\u1ED7i m\u1ED9t c\xE1\
   ch \u0111\u1ED9ng, l\xE0m cho vi\u1EC7c bao g\u1ED3m\u2026"
 title: "N\u1ED9i suy chu\u1ED7i k\xFD t\u1EF1"
+weight: 8
 ---
-
-{{< edit_this_page >}}
 
 ## Gì và Tại sao?
 Nội suy chuỗi bao gồm việc chèn các biến vào trong một chuỗi ký tự. Lập trình viên thực hiện điều này để tạo ra chuỗi một cách động, làm cho việc bao gồm dữ liệu biến trong đầu ra trở nên dễ dàng hơn.

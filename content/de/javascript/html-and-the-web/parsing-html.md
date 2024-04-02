@@ -10,9 +10,8 @@ model: gpt-4-0125-preview
 summary: "HTML zu parsen bedeutet, Daten aus HTML-Dokumenten zu extrahieren. Programmierer\
   \ tun dies, um mit Webinhalten zu interagieren oder diese zu manipulieren,\u2026"
 title: HTML parsen
+weight: 43
 ---
-
-{{< edit_this_page >}}
 
 ## Was & Warum?
 HTML zu parsen bedeutet, Daten aus HTML-Dokumenten zu extrahieren. Programmierer tun dies, um mit Webinhalten zu interagieren oder diese zu manipulieren, die Datenextraktion zu automatisieren oder für Web-Scraping-Zwecke.

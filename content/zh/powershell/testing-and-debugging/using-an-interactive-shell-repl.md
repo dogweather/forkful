@@ -15,9 +15,8 @@ summary: "\u4EA4\u4E92\u5F0Fshell\uFF0C\u6216\u8BFB\u53D6-\u6C42\u503C-\u6253\u5
   \u5728\u4E0D\u7F16\u5199\u5B8C\u6574\u811A\u672C\u7684\u60C5\u51B5\u4E0B\u5B66\u4E60\
   \u65B0\u547D\u4EE4\u3002"
 title: "\u5728\u7F16\u7A0B\u4E2D\u4F7F\u7528\u4EA4\u4E92\u5F0FShell\uFF08REPL\uFF09"
+weight: 34
 ---
-
-{{< edit_this_page >}}
 
 ## 什么和为什么？
 交互式shell，或读取-求值-打印循环（REPL），让你能够输入PowerShell命令并立即获取反馈。程序员使用它来快速测试代码片段、调试或在不编写完整脚本的情况下学习新命令。

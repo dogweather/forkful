@@ -9,9 +9,8 @@ summary: "Tekstin etsiminen ja korvaaminen tarkoittaa jonkin merkkijonon l\xF6yt
   mist\xE4 ja muuttamista toiseksi. Ohjelmoijat k\xE4ytt\xE4v\xE4t t\xE4t\xE4 toimintoa\
   \ p\xE4ivitt\xE4ess\xE4\xE4n\u2026"
 title: Tekstin etsiminen ja korvaaminen
+weight: 10
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why? (Mitä ja miksi?)
 Tekstin etsiminen ja korvaaminen tarkoittaa jonkin merkkijonon löytämistä ja muuttamista toiseksi. Ohjelmoijat käyttävät tätä toimintoa päivittäessään koodia, muokatessaan dataa tai tehdessään massamuutoksia.

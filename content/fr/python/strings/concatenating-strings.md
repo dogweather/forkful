@@ -8,9 +8,8 @@ model: gpt-4-1106-preview
 summary: "Concat\xE9ner des cha\xEEnes de caract\xE8res, c'est les coller bout \xE0\
   \ bout pour en faire une seule. Les programmeurs font \xE7a pour afficher des messages\u2026"
 title: "Concat\xE9nation de cha\xEEnes de caract\xE8res"
+weight: 3
 ---
-
-{{< edit_this_page >}}
 
 ## Quoi et Pourquoi ?
 Concaténer des chaînes de caractères, c'est les coller bout à bout pour en faire une seule. Les programmeurs font ça pour afficher des messages personnalisés, composer des URL, ou gérer du texte dynamique.

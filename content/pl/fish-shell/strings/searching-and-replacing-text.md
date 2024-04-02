@@ -9,9 +9,8 @@ summary: "Wyszukiwanie i zamiana tekstu to zmiana jednego ci\u0105gu znak\xF3w n
   \ inny. Programi\u015Bci robi\u0105 to, aby szybko poprawia\u0107 b\u0142\u0119\
   dy, aktualizowa\u0107 kod lub zmienia\u0107 dane."
 title: Wyszukiwanie i zamiana tekstu
+weight: 10
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why? - Co i dlaczego?
 Wyszukiwanie i zamiana tekstu to zmiana jednego ciągu znaków na inny. Programiści robią to, aby szybko poprawiać błędy, aktualizować kod lub zmieniać dane.

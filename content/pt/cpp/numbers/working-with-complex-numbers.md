@@ -9,9 +9,8 @@ summary: "N\xFAmeros complexos estendem os n\xFAmeros reais adicionando uma unid
   \ imagin\xE1ria, representada como 'i', onde i^2 = -1. Programadores os utilizam\
   \ para\u2026"
 title: "Trabalhando com n\xFAmeros complexos"
+weight: 14
 ---
-
-{{< edit_this_page >}}
 
 ## O Quê & Por Quê?
 Números complexos estendem os números reais adicionando uma unidade imaginária, representada como 'i', onde i^2 = -1. Programadores os utilizam para simulações, processamento de sinal e resolução de problemas matemáticos que exigem trabalhar em duas dimensões.

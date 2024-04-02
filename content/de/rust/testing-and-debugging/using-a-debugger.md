@@ -1,14 +1,15 @@
 ---
 date: 2024-01-26 04:10:03.292124-07:00
-description: "Ein Debugger zu verwenden ist, als w\xFCrde man sich selbst R\xF6ntgenblick\
-  \ geben, um einen Blick in die Ausf\xFChrung seines Codes zu werfen. Programmierer\
-  \ tun\u2026"
+description: "Rust unterst\xFCtzt verschiedene Debugger, aber ein g\xE4ngiger ist\
+  \ `gdb` f\xFCr GNU/Linux oder `lldb` f\xFCr macOS. Man k\xF6nnte auch `rust-gdb`\
+  \ oder `rust-lldb`\u2026"
 lastmod: '2024-03-13T22:44:53.677256-06:00'
 model: gpt-4-0125-preview
-summary: "Ein Debugger zu verwenden ist, als w\xFCrde man sich selbst R\xF6ntgenblick\
-  \ geben, um einen Blick in die Ausf\xFChrung seines Codes zu werfen. Programmierer\
-  \ tun\u2026"
+summary: "Rust unterst\xFCtzt verschiedene Debugger, aber ein g\xE4ngiger ist `gdb`\
+  \ f\xFCr GNU/Linux oder `lldb` f\xFCr macOS. Man k\xF6nnte auch `rust-gdb` oder\
+  \ `rust-lldb`\u2026"
 title: Einsatz eines Debuggers
+weight: 35
 ---
 
 ## Wie:

@@ -13,9 +13,8 @@ summary: "Vi\u1EC7c vi\u1EBFt hoa m\u1ED9t chu\u1ED7i c\xF3 ngh\u0129a l\xE0 vi\
   p tr\xECnh vi\xEAn vi\u1EBFt hoa chu\u1ED7i \u0111\u1EC3 \u0111\u1EA3m b\u1EA3o\
   \ t\xEDnh nh\u1EA5t qu\xE1n v\u1EC1 m\u1EB7t h\xECnh th\u1EE9c,\u2026"
 title: "Vi\u1EBFt hoa m\u1ED9t chu\u1ED7i"
+weight: 2
 ---
-
-{{< edit_this_page >}}
 
 ## Cái gì & Tại sao?
 Việc viết hoa một chuỗi có nghĩa là viết hoa chữ cái đầu tiên của mỗi từ. Các lập trình viên viết hoa chuỗi để đảm bảo tính nhất quán về mặt hình thức, thương hiệu, hoặc thiết kế trải nghiệm người dùng.

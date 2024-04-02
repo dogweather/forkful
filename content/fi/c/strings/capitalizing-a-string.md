@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Merkkijonon muuttaminen alkukirjaimin isoksi C-kieless\xE4 tarkoittaa annetun\
   \ merkkijonon jokaisen sanan ensimm\xE4isen merkin muuntamista isoksi kirjaimeksi,\u2026"
 title: Merkkijonon suuraakkostaminen
+weight: 2
 ---
-
-{{< edit_this_page >}}
 
 ## Mitä & Miksi?
 

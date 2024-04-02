@@ -7,9 +7,8 @@ model: gpt-4-0125-preview
 summary: "Zufallszahlen in Elixir zu erzeugen, ist eine grundlegende Programmieraufgabe,\
   \ die f\xFCr Anwendungen unerl\xE4sslich ist, die unvorhersehbare Ergebnisse\u2026"
 title: Generierung von Zufallszahlen
+weight: 12
 ---
-
-{{< edit_this_page >}}
 
 ## Was & Warum?
 

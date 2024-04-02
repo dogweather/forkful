@@ -8,9 +8,8 @@ model: gpt-4-0125-preview
 summary: "Parsing HTML refers to the process of breaking down and interpreting the\
   \ structure of HTML content, typically to extract specific data or manipulate this\u2026"
 title: Parsing HTML
+weight: 43
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 Parsing HTML refers to the process of breaking down and interpreting the structure of HTML content, typically to extract specific data or manipulate this content programmatically. Programmers engage in HTML parsing for web scraping, data mining, automated testing, and content migration tasks, enabling applications to interact with and process web documents efficiently.

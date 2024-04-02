@@ -11,9 +11,8 @@ summary: "U\u017Cycie wielkiej litery w ci\u0105gu znak\xF3w w PowerShellu poleg
   \ na przekszta\u0142ceniu pierwszego znaku danego ci\u0105gu na wielk\u0105 liter\u0119\
   , pozostawiaj\u0105c reszt\u0119 ci\u0105gu\u2026"
 title: "Zamiana liter na wielkie w \u0142a\u0144cuchu znak\xF3w"
+weight: 2
 ---
-
-{{< edit_this_page >}}
 
 ## Co i dlaczego?
 Użycie wielkiej litery w ciągu znaków w PowerShellu polega na przekształceniu pierwszego znaku danego ciągu na wielką literę, pozostawiając resztę ciągu niezmienioną. Programiści często wykonują to zadanie w celach formatowania, takich jak przygotowanie tekstu do wyświetlenia w interfejsach użytkownika lub przestrzeganie reguł gramatycznych w generowanych dokumentach.

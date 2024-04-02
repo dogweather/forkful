@@ -14,9 +14,8 @@ summary: "\u4F5C\u696D\u4E2D\u30C7\u30FC\u30BF\u306E\u4E00\u6642\u4FDD\u5B58\u30
   \u30C7\u30FC\u30BF\u3092\u5B88\u308A\u3064\u3064\u3001\u5F8C\u51E6\u7406\u306E\u697D\
   \u306A\u7BA1\u7406\u3092\u5B9F\u73FE\u3059\u308B\u305F\u3081\u3002"
 title: "\u4E00\u6642\u30D5\u30A1\u30A4\u30EB\u306E\u4F5C\u6210"
+weight: 21
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why? (「何となぜ？」)
 作業中データの一時保存に使う「一時ファイル」を作る。プログラムがクラッシュしてもデータを守りつつ、後処理の楽な管理を実現するため。

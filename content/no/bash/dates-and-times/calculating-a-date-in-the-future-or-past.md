@@ -9,9 +9,8 @@ summary: "Dato-beregning er \xE5 finne en fremtidig eller tidligere dato basert 
   \ en gitt dato. Programmerere gj\xF8r dette for \xE5 h\xE5ndtere frister, planlegge\
   \ hendelser\u2026"
 title: Beregning av en dato i fremtiden eller fortiden
+weight: 26
 ---
-
-{{< edit_this_page >}}
 
 ## Hva & Hvorfor?
 Dato-beregning er å finne en fremtidig eller tidligere dato basert på en gitt dato. Programmerere gjør dette for å håndtere frister, planlegge hendelser og automatisere påminnelser.

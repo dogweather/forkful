@@ -10,9 +10,8 @@ model: gpt-4-0125-preview
 summary: "S\xE4\xE4nn\xF6lliset lausekkeet (regex) Dart-kieless\xE4 tarjoavat tehokkaan\
   \ tavan etsi\xE4 ja manipuloida merkkijonoja, mahdollistaen ohjelmoijien suorittaa\u2026"
 title: "S\xE4\xE4nn\xF6llisten lausekkeiden k\xE4ytt\xF6"
+weight: 11
 ---
-
-{{< edit_this_page >}}
 
 ## Mikä & Miksi?
 Säännölliset lausekkeet (regex) Dart-kielessä tarjoavat tehokkaan tavan etsiä ja manipuloida merkkijonoja, mahdollistaen ohjelmoijien suorittaa monimutkaisia tekstinkäsittelytehtäviä tehokkaasti. Regexin ymmärtämisen avulla kehittäjät voivat suorittaa tekstivalidointeja, etsiä kaavoja ja muuntaa tekstiä nopeasti, mikä on olennaista lomakkeiden käsittelyssä, datan jäsentämisessä ja yleisissä merkkijonojen manipulaatioissa moderneissa sovelluksissa.

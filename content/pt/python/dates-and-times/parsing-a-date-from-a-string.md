@@ -11,9 +11,8 @@ summary: "Analisar uma data de uma string envolve converter informa\xE7\xF5es te
   \ de data e hora em um objeto datetime ou formato estruturado equivalente. Isso\
   \ \xE9\u2026"
 title: Analisando uma data a partir de uma string
+weight: 30
 ---
-
-{{< edit_this_page >}}
 
 ## O que & Por quê?
 Analisar uma data de uma string envolve converter informações textuais de data e hora em um objeto datetime ou formato estruturado equivalente. Isso é comumente realizado para permitir operações de aritmética de datas, comparações e formatações de uma maneira que seja independente de idioma e região. Programadores fazem isso para manipular e tratar eficientemente dados temporais extraídos de logs, entradas de usuários ou fontes externas.

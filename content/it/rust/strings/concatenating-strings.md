@@ -7,9 +7,8 @@ model: gpt-4-1106-preview
 summary: "La concatenazione di stringhe \xE8 il processo di unione di due o pi\xF9\
   \ stringhe in un'unica stringa. I programmatori la utilizzano per creare messaggi\u2026"
 title: Concatenazione di stringhe
+weight: 3
 ---
-
-{{< edit_this_page >}}
 
 ## Che cos'è & Perché?
 La concatenazione di stringhe è il processo di unione di due o più stringhe in un'unica stringa. I programmatori la utilizzano per creare messaggi dinamici, elaborare input degli utenti, costruire path di file, e per altre operazioni di manipolazione del testo.

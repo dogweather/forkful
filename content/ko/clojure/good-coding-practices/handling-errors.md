@@ -21,9 +21,8 @@ summary: "\uC5D0\uB7EC \uCC98\uB9AC\uB294 \uD504\uB85C\uADF8\uB7A8\uC5D0\uC11C \
   \uC9C0\uACE0 \uC2E4\uC218\uD558\uB294 \uAC83\uC744 \uBC29\uC9C0\uD558\uC5EC \uBB38\
   \uC81C\uB97C \uD1B5\uC81C\uC5D0 \uB3C4\uC6C0\uC744 \uC90D\uB2C8\uB2E4."
 title: "\uC5D0\uB7EC \uCC98\uB9AC\uD558\uAE30"
+weight: 16
 ---
-
-{{< edit_this_page >}}
 
 ## 무엇 & 왜?
 에러 처리는 프로그램에서 예상치 못한 상황을 다루는 것입니다—문제를 일으키는 손님들을 처리하는 바운서처럼 말이죠. 프로그래머들은 원활한 것을 좋아합니다; 에러 처리는 예상치 못한 상황에 직면했을 때 코드가 넘어지고 실수하는 것을 방지하여 문제를 통제에 도움을 줍니다.

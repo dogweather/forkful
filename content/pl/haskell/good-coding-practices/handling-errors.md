@@ -9,9 +9,8 @@ summary: "Obs\u0142uga b\u0142\u0119d\xF3w w programowaniu polega na zarz\u0105d
   \ niespodziewanymi sytuacjami\u2014rzeczami, kt\xF3re mog\u0105 p\xF3j\u015B\u0107\
   \ nie tak. Programi\u015Bci robi\u0105 to, aby zapewni\u0107,\u2026"
 title: "Obs\u0142uga b\u0142\u0119d\xF3w"
+weight: 16
 ---
-
-{{< edit_this_page >}}
 
 ## Co i dlaczego?
 Obsługa błędów w programowaniu polega na zarządzaniu niespodziewanymi sytuacjami—rzeczami, które mogą pójść nie tak. Programiści robią to, aby zapewnić, że ich programy mogą radzić sobie z tymi sytuacjami w elegancki sposób, bez awarii lub generowania błędnych wyników.

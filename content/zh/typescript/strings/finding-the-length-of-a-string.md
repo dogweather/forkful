@@ -12,9 +12,8 @@ summary: "\u83B7\u53D6\u5B57\u7B26\u4E32\u957F\u5EA6\u5C31\u662F\u786E\u5B9A\u5B
   \u4E2A\u4FE1\u606F\u6765\u5904\u7406\u6587\u672C\uFF0C\u6BD4\u5982\u9A8C\u8BC1\u8F93\
   \u5165\u6216\u622A\u53D6\u5B57\u7B26\u4E32\u3002"
 title: "\u83B7\u53D6\u5B57\u7B26\u4E32\u7684\u957F\u5EA6"
+weight: 7
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why? (是什么 & 为什么？)
 获取字符串长度就是确定它包含多少个字符。程序员需要这个信息来处理文本，比如验证输入或截取字符串。

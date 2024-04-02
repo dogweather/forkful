@@ -1,14 +1,15 @@
 ---
 date: 2024-01-26 04:09:04.557774-07:00
-description: "\"U\u017Cywanie debugera\" polega na krok po kroku przegl\u0105daniu\
-  \ kodu Pythona, aby odkrywa\u0107 b\u0142\u0119dy i rozumie\u0107 zachowanie. Robimy\
-  \ to, poniewa\u017C jest to znacznie\u2026"
+description: "Przedstawmy spos\xF3b u\u017Cycia `pdb`, wbudowanego debugera Pythona.\
+  \ Wyobra\u017A sobie plik, `buggy.py`, z trudnym do zauwa\u017Cenia b\u0142\u0119\
+  dem: ```Python def\u2026"
 lastmod: '2024-03-13T22:44:34.954160-06:00'
 model: gpt-4-0125-preview
-summary: "\"U\u017Cywanie debugera\" polega na krok po kroku przegl\u0105daniu kodu\
-  \ Pythona, aby odkrywa\u0107 b\u0142\u0119dy i rozumie\u0107 zachowanie. Robimy\
-  \ to, poniewa\u017C jest to znacznie\u2026"
+summary: "Przedstawmy spos\xF3b u\u017Cycia `pdb`, wbudowanego debugera Pythona. Wyobra\u017A\
+  \ sobie plik, `buggy.py`, z trudnym do zauwa\u017Cenia b\u0142\u0119dem: ```Python\
+  \ def\u2026"
 title: Korzystanie z debugera
+weight: 35
 ---
 
 ## Jak to zrobić:

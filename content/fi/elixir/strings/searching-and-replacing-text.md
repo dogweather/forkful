@@ -8,9 +8,8 @@ model: gpt-4-1106-preview
 summary: "Tekstin etsiminen ja korvaaminen tarkoittaa merkkijonojen vaihtamista toisiksi.\
   \ Ohjelmoijat tekev\xE4t sit\xE4, koska se on nopea keino muuttaa dataa, korjata\u2026"
 title: Tekstin etsiminen ja korvaaminen
+weight: 10
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why? (Mitä & Miksi?)
 Tekstin etsiminen ja korvaaminen tarkoittaa merkkijonojen vaihtamista toisiksi. Ohjelmoijat tekevät sitä, koska se on nopea keino muuttaa dataa, korjata virheitä tai parantaa koodin luettavuutta.

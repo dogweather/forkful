@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Das Parsen von HTML beinhaltet die Analyse des HTML-Codes einer Webseite,\
   \ um spezifische Informationen oder Elemente zu extrahieren. Es ist eine g\xE4ngige\u2026"
 title: HTML parsen
+weight: 43
 ---
-
-{{< edit_this_page >}}
 
 ## Was & Warum?
 Das Parsen von HTML beinhaltet die Analyse des HTML-Codes einer Webseite, um spezifische Informationen oder Elemente zu extrahieren. Es ist eine gängige Aufgabe beim Web Scraping, Data Mining oder Automatisieren von Interaktionen mit Websites. Programmierer tun dies, um programmatisch mit Websites zu interagieren oder Daten von ihnen zu extrahieren, Aufgaben zu automatisieren oder Webanwendungen zu testen.

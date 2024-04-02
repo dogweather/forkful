@@ -7,9 +7,8 @@ model: gpt-4-0125-preview
 summary: "Tiedostojen suoraan muokkaaminen CLI-yksirivikomennoin tarkoittaa muutosten\
   \ tekemist\xE4 suoraan tiedostoihin komentorivilt\xE4, ilman niiden avaamista\u2026"
 title: "Tiedostojen muokkaaminen paikan p\xE4\xE4ll\xE4 komentorivin yhden rivin komennoilla"
+weight: 32
 ---
-
-{{< edit_this_page >}}
 
 ## Mikä & Miksi?
 

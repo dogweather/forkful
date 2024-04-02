@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Creare un file temporaneo in C comporta la generazione di un file destinato\
   \ a essere utilizzato per una breve durata, solitamente come spazio temporaneo\u2026"
 title: Creazione di un file temporaneo
+weight: 21
 ---
-
-{{< edit_this_page >}}
 
 ## Cos'è e perché?
 Creare un file temporaneo in C comporta la generazione di un file destinato a essere utilizzato per una breve durata, solitamente come spazio temporaneo per l'elaborazione o la memorizzazione dei dati. I programmatori lo fanno per gestire i dati temporanei senza influire sulla memoria permanente del programma o per assicurarsi che i dati sensibili vengano cancellati dopo l'uso.

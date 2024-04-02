@@ -8,9 +8,8 @@ model: gpt-4-1106-preview
 summary: "Att skicka en HTTP-beg\xE4ran med Basic-autentisering inneb\xE4r att man\
   \ legitimerar sig mot en server med anv\xE4ndarnamn och l\xF6senord kodat i base64.\u2026"
 title: "Skicka en HTTP-f\xF6rfr\xE5gan med Basic-autentisering"
+weight: 45
 ---
-
-{{< edit_this_page >}}
 
 ## Vad & Varför?
 Att skicka en HTTP-begäran med Basic-autentisering innebär att man legitimerar sig mot en server med användarnamn och lösenord kodat i base64. Programmerare gör detta för att säkerställa att endast auktoriserade användare kan få tillgång till vissa resurser på servern.

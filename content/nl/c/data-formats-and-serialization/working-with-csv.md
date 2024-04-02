@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "In de wereld van het programmeren omvat het werken met CSV (Comma-Separated\
   \ Values) bestanden het lezen van en schrijven naar tekstbestanden die zijn\u2026"
 title: Werken met CSV
+weight: 37
 ---
-
-{{< edit_this_page >}}
 
 ## Wat & Waarom?
 

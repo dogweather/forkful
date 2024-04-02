@@ -7,9 +7,8 @@ model: gpt-4-0125-preview
 summary: "Komplexa tal, de med en reell del och en imagin\xE4r del (som 3 + 4i), \xE4\
   r avg\xF6rande inom omr\xE5den som ingenj\xF6rsvetenskap, fysik och data vetenskap.\u2026"
 title: Att arbeta med komplexa tal
+weight: 14
 ---
-
-{{< edit_this_page >}}
 
 ## Vad & Varför?
 Komplexa tal, de med en reell del och en imaginär del (som 3 + 4i), är avgörande inom områden som ingenjörsvetenskap, fysik och data vetenskap. Programmerare använder dem för simuleringar, signalbehandling och för att lösa specifika typer av matematiska problem.

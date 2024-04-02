@@ -11,9 +11,8 @@ summary: "Obtenir la date actuelle en programmation est une t\xE2che fondamental
   \ qui permet de r\xE9cup\xE9rer et de manipuler les donn\xE9es de date et d'heure\
   \ du syst\xE8me.\u2026"
 title: Obtenir la date actuelle
+weight: 29
 ---
-
-{{< edit_this_page >}}
 
 ## Quoi et pourquoi ?
 Obtenir la date actuelle en programmation est une tâche fondamentale qui permet de récupérer et de manipuler les données de date et d'heure du système. Dans les tâches de script et d'automatisation, c'est essentiel pour générer des horodatages, planifier des tâches et créer des journaux.

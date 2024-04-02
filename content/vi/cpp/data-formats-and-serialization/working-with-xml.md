@@ -13,9 +13,8 @@ summary: "L\xE0m vi\u1EC7c v\u1EDBi XML c\xF3 ngh\u0129a l\xE0 ph\xE2n t\xEDch c
   \ - Ng\xF4n ng\u1EEF \u0110\xE1nh d\u1EA5u M\u1EDF r\u1ED9ng). C\xE1c l\u1EADp tr\xEC\
   nh vi\xEAn\u2026"
 title: "L\xE0m vi\u1EC7c v\u1EDBi XML"
+weight: 40
 ---
-
-{{< edit_this_page >}}
 
 ## Gì và Tại Sao?
 Làm việc với XML có nghĩa là phân tích cú pháp, tạo và thao tác dữ liệu XML (eXtensible Markup Language - Ngôn ngữ Đánh dấu Mở rộng). Các lập trình viên quản lý XML để xử lý trao đổi dữ liệu có cấu trúc, cấu hình và nhiều hơn nữa, do bản chất không phụ thuộc vào nền tảng của nó.

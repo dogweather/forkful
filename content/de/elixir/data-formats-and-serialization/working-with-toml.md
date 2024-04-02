@@ -7,9 +7,8 @@ model: gpt-4-0125-preview
 summary: "Mit TOML arbeiten bedeutet, TOML-Daten (Toms Obvious, Minimal Language)\
   \ in Elixir zu parsen und zu generieren. Programmierer nutzen es, um\u2026"
 title: Arbeiten mit TOML
+weight: 39
 ---
-
-{{< edit_this_page >}}
 
 ## Was & Warum?
 Mit TOML arbeiten bedeutet, TOML-Daten (Toms Obvious, Minimal Language) in Elixir zu parsen und zu generieren. Programmierer nutzen es, um Konfigurationsdateien zu verwalten, da TOML lesbar, einfach zu parsen ist und gut auf eine Hash-Datenstruktur abgebildet werden kann.

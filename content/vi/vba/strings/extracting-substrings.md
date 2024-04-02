@@ -13,9 +13,8 @@ summary: "Tr\xEDch xu\u1EA5t chu\u1ED7i con trong Visual Basic cho \u1EE8ng d\u1
   a m\u1ED9t chu\u1ED7i d\u1EF1a tr\xEAn c\xE1c ti\xEAu ch\xED \u0111\xE3 cho. C\xE1\
   c l\u1EADp tr\xECnh\u2026"
 title: "Tr\xEDch xu\u1EA5t chu\u1ED7i con"
+weight: 6
 ---
-
-{{< edit_this_page >}}
 
 ## Cái gì & Tại sao?
 

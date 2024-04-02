@@ -7,9 +7,8 @@ model: gpt-4-1106-preview
 summary: "I programmering er det \xE5 sette sammen strenger, kalt konkatenering, rett\
   \ og slett \xE5 smelte sammen tekster. Vi gj\xF8r det for \xE5 bygge opp dynamiske\u2026"
 title: "Sammensl\xE5ing av strenger"
+weight: 3
 ---
-
-{{< edit_this_page >}}
 
 ## Hva & Hvorfor?
 I programmering er det å sette sammen strenger, kalt konkatenering, rett og slett å smelte sammen tekster. Vi gjør det for å bygge opp dynamiske meldinger, lage filstier, eller behandle brukerinput.

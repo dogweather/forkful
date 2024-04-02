@@ -11,9 +11,8 @@ summary: "Calcular una fecha en el futuro o en el pasado implica determinar una 
   \ que est\xE9 a un n\xFAmero especificado de d\xEDas, meses o a\xF1os de distancia\
   \ desde una\u2026"
 title: "C\xE1lculo de una fecha futura o pasada"
+weight: 26
 ---
-
-{{< edit_this_page >}}
 
 ## ¿Qué y Por Qué?
 Calcular una fecha en el futuro o en el pasado implica determinar una fecha que esté a un número especificado de días, meses o años de distancia desde una fecha dada. Los programadores a menudo necesitan esta funcionalidad para automatizar recordatorios, suscripciones, fechas de caducidad y tareas de programación en diversas aplicaciones.

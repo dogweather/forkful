@@ -9,9 +9,8 @@ summary: "H\xE5ndtering av feil er hvordan koden din takler problemer som oppst\
   r under utf\xF8relse\u2014som \xE5 fange en kurveball uten \xE5 miste den. Programmerere\
   \ gj\xF8r dette\u2026"
 title: "Feilh\xE5ndtering"
+weight: 16
 ---
-
-{{< edit_this_page >}}
 
 ## Hva & Hvorfor?
 Håndtering av feil er hvordan koden din takler problemer som oppstår under utførelse—som å fange en kurveball uten å miste den. Programmerere gjør dette for å forhindre krasj og gi brukerne en jevn opplevelse.

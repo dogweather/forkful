@@ -10,9 +10,8 @@ model: gpt-4-0125-preview
 summary: "Een webpagina downloaden in C houdt in dat je programmatisch toegang krijgt\
   \ tot de inhoud van een webpagina via het internet en deze lokaal opslaat voor\u2026"
 title: Een webpagina downloaden
+weight: 42
 ---
-
-{{< edit_this_page >}}
 
 ## Wat & Waarom?
 

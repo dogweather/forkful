@@ -6,9 +6,8 @@ model: gpt-4-1106-preview
 summary: ''
 title: "\u041F\u0435\u0440\u0435\u0442\u0432\u043E\u0440\u0435\u043D\u043D\u044F \u0434\
   \u0430\u0442\u0438 \u0432 \u0440\u044F\u0434\u043E\u043A"
+weight: 28
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 ## Що і Чому?

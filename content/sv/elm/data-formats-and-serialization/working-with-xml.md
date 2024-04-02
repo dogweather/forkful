@@ -9,9 +9,8 @@ summary: "Att arbeta med XML inneb\xE4r att tolka, omvandla och generera XML-dok
   \ i Elm. Det g\xF6rs f\xF6r att interagera med m\xE5nga webbtj\xE4nster och \xE4\
   ldre system som\u2026"
 title: Att arbeta med XML
+weight: 40
 ---
-
-{{< edit_this_page >}}
 
 ## Vad & Varför?
 Att arbeta med XML innebär att tolka, omvandla och generera XML-dokument i Elm. Det görs för att interagera med många webbtjänster och äldre system som använder XML som sitt dataformat.

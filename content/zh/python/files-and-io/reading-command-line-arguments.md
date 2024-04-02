@@ -14,9 +14,8 @@ summary: "\u547D\u4EE4\u884C\u53C2\u6570\u8BA9\u6211\u4EEC\u7684\u7A0B\u5E8F\u53
   \u6211\u4EEC\u53EF\u4EE5\u8BA9\u7A0B\u5E8F\u66F4\u52A0\u7075\u6D3B\uFF0C\u6839\u636E\
   \u7528\u6237\u7684\u9700\u6C42\u6267\u884C\u4E0D\u540C\u7684\u4EFB\u52A1\u3002"
 title: "\u8BFB\u53D6\u547D\u4EE4\u884C\u53C2\u6570"
+weight: 23
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why? 什么是命令行参数，以及我们为什么要读取它们？
 命令行参数让我们的程序可以接收用户在终端或命令提示符中输入的信息。利用这些参数，我们可以让程序更加灵活，根据用户的需求执行不同的任务。

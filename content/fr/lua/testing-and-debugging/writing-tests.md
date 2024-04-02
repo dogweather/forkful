@@ -11,9 +11,8 @@ summary: "\xC9crire des tests en programmation implique de cr\xE9er de petits mo
   \ de code s\xE9par\xE9s pour v\xE9rifier automatiquement que diff\xE9rentes parties\
   \ de votre\u2026"
 title: "R\xE9daction de tests"
+weight: 36
 ---
-
-{{< edit_this_page >}}
 
 ## Quoi & Pourquoi ?
 

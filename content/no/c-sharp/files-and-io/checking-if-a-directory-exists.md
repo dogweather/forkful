@@ -11,9 +11,8 @@ summary: "\xC5 sjekke om en mappe eksisterer i C# inneb\xE6rer \xE5 verifisere t
   relsen av en mappe p\xE5 en spesifisert bane i filsystemet. Programmerere gj\xF8\
   r dette\u2026"
 title: Sjekker om en mappe eksisterer
+weight: 20
 ---
-
-{{< edit_this_page >}}
 
 ## Hva & hvorfor?
 

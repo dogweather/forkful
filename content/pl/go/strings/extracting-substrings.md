@@ -11,9 +11,8 @@ summary: "Wyodr\u0119bnianie podci\u0105g\xF3w polega na pobieraniu okre\u015Blo
   \ fragment\xF3w ci\u0105gu na podstawie ich pozycji. Programi\u015Bci cz\u0119sto\
   \ wykonuj\u0105 t\u0119 operacj\u0119, aby\u2026"
 title: "Wydobywanie podci\u0105g\xF3w"
+weight: 6
 ---
-
-{{< edit_this_page >}}
 
 ## Co i dlaczego?
 

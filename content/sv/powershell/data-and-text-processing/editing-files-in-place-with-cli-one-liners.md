@@ -9,9 +9,8 @@ summary: "Att redigera filer direkt med CLI enradskommandon i PowerShell handlar
   \ att g\xF6ra direkta \xE4ndringar i filer fr\xE5n kommandoraden, utan att beh\xF6\
   va \xF6ppna dem\u2026"
 title: "Redigera filer p\xE5 plats med kommandoradsenradare"
+weight: 32
 ---
-
-{{< edit_this_page >}}
 
 ## Vad & Varför?
 

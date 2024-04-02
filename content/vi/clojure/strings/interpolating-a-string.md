@@ -13,9 +13,8 @@ summary: "N\u1ED9i suy chu\u1ED7i cho ph\xE9p ch\xFAng ta n\xE9m bi\u1EBFn v\xE0
   \u1EC3 x\xE2y d\u1EF1ng v\u0103n b\u1EA3n m\u1ED9t c\xE1ch linh ho\u1EA1t\u2014\
   ti\u1EC7n l\u1EE3i h\u01A1n nhi\u1EC1u so v\u1EDBi\u2026"
 title: "N\u1ED9i suy chu\u1ED7i k\xFD t\u1EF1"
+weight: 8
 ---
-
-{{< edit_this_page >}}
 
 ## Điều gì và Tại sao?
 Nội suy chuỗi cho phép chúng ta ném biến vào trong chuỗi mà không mất công sức. Tại sao? Để xây dựng văn bản một cách linh hoạt—tiện lợi hơn nhiều so với cách ghép chuỗi kiểu cũ.

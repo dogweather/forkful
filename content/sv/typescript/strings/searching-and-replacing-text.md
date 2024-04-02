@@ -9,9 +9,8 @@ summary: "Att s\xF6ka och ers\xE4tta text \xE4r grundl\xE4ggande: vi letar efter
   \ textstr\xE4ng och byter ut den mot en annan. Programmerare g\xF6r detta f\xF6\
   r att uppdatera data,\u2026"
 title: "S\xF6kning och ers\xE4ttning av text"
+weight: 10
 ---
-
-{{< edit_this_page >}}
 
 ## Vad & Varför?
 Att söka och ersätta text är grundläggande: vi letar efter en textsträng och byter ut den mot en annan. Programmerare gör detta för att uppdatera data, redigera kod snabbt eller automatisera textbaserade ändringar.

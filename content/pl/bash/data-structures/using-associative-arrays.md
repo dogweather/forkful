@@ -11,9 +11,8 @@ summary: "Tablice asocjacyjne to jakby na\u0142adowane tablice, kt\xF3re pozwala
   \ u\u017Cywa\u0107 ci\u0105g\xF3w znak\xF3w jako indeks\xF3w zamiast samych liczb\
   \ ca\u0142kowitych. Programi\u015Bci u\u017Cywaj\u0105\u2026"
 title: Korzystanie z tablic asocjacyjnych
+weight: 15
 ---
-
-{{< edit_this_page >}}
 
 ## Co i dlaczego?
 

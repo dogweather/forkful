@@ -9,9 +9,8 @@ summary: "Komplexa tal, som best\xE5r av en reell och en imagin\xE4r del (som 3+
   \ \xE4r grundl\xE4ggande inom ingenj\xF6rsvetenskap och fysik. Programmerare arbetar\
   \ med dem i\u2026"
 title: Att arbeta med komplexa tal
+weight: 14
 ---
-
-{{< edit_this_page >}}
 
 ## Vad & Varför?
 Komplexa tal, som består av en reell och en imaginär del (som 3+4i), är grundläggande inom ingenjörsvetenskap och fysik. Programmerare arbetar med dem i simuleringar, signalbehandling och för att lösa ekvationer som inte fungerar bra enbart med reella tal.

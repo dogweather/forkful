@@ -9,9 +9,8 @@ summary: "Lokitus on kuin p\xE4iv\xE4kirjan pit\xE4mist\xE4 sovelluksellesi; se 
   \ tapa tallentaa tapahtumat, virheet ja muut olennaiset tiedot ohjelman suorituksen\
   \ aikana.\u2026"
 title: Lokitus
+weight: 17
 ---
-
-{{< edit_this_page >}}
 
 ## Mikä ja miksi?
 

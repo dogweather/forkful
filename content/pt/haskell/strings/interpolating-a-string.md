@@ -7,9 +7,8 @@ model: gpt-4-1106-preview
 summary: "Interpolar uma string significa inserir valores de vari\xE1veis ou express\xF5\
   es dentro dela para formar uma nova string. Programadores fazem isso para\u2026"
 title: Interpolando uma string
+weight: 8
 ---
-
-{{< edit_this_page >}}
 
 ## O Que & Por Que?
 Interpolar uma string significa inserir valores de variáveis ou expressões dentro dela para formar uma nova string. Programadores fazem isso para construir mensagens dinâmicas e customizadas sem a necessidade de concatenar pedaços de strings manualmente.

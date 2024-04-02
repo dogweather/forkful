@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Een tijdelijk bestand maken betekent een bestand maken voor kortdurend gebruik.\
   \ Programmeurs doen dit om gegevens op te slaan die alleen nodig zijn\u2026"
 title: Een tijdelijk bestand aanmaken
+weight: 21
 ---
-
-{{< edit_this_page >}}
 
 ## Wat & Waarom?
 

@@ -9,9 +9,8 @@ summary: "\xC5 organisere kode i funksjoner er som \xE5 sortere LEGO-klosser i b
   \ \u2013 det gj\xF8r det enklere \xE5 finne og bruke dem. Vi gj\xF8r dette for \xE5\
   \ unng\xE5 gjentakelse,\u2026"
 title: Organisering av kode i funksjoner
+weight: 18
 ---
-
-{{< edit_this_page >}}
 
 ## Hva & Hvorfor?
 Å organisere kode i funksjoner er som å sortere LEGO-klosser i bokser – det gjør det enklere å finne og bruke dem. Vi gjør dette for å unngå gjentakelse, for å forenkle forståelsen og for å gjøre vedlikeholdet mindre hodebry.

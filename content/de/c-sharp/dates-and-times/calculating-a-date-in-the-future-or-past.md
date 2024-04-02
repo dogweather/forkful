@@ -9,9 +9,8 @@ summary: "Berechnungen von zuk\xFCnftigen oder vergangenen Daten erm\xF6glichen 
   \ Zeitabst\xE4nde zu erfassen, wie zum Beispiel Liefertermine oder Jubil\xE4en.\
   \ Programmierer\u2026"
 title: "Berechnung eines zuk\xFCnftigen oder vergangenen Datums"
+weight: 26
 ---
-
-{{< edit_this_page >}}
 
 ## Was & Warum?
 

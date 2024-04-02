@@ -8,9 +8,8 @@ model: gpt-4-1106-preview
 summary: "Misurare la lunghezza di una stringa significa contare i caratteri che la\
   \ compongono. I programmatori lo fanno per validare input, manipolare testi, o\u2026"
 title: Trovare la lunghezza di una stringa
+weight: 7
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 Misurare la lunghezza di una stringa significa contare i caratteri che la compongono. I programmatori lo fanno per validare input, manipolare testi, o semplicemente per sapere "quanto è lungo".

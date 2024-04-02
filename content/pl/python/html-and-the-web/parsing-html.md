@@ -11,9 +11,8 @@ summary: "Parsowanie HTML-a polega na analizowaniu kodu HTML strony internetowej
   \ celu wyodr\u0119bnienia okre\u015Blonych informacji lub element\xF3w, co jest\
   \ powszechnym\u2026"
 title: "Analiza sk\u0142adniowa HTML"
+weight: 43
 ---
-
-{{< edit_this_page >}}
 
 ## Co i dlaczego?
 Parsowanie HTML-a polega na analizowaniu kodu HTML strony internetowej w celu wyodrębnienia określonych informacji lub elementów, co jest powszechnym zadaniem przy web scrapingu, wydobywaniu danych lub automatyzowaniu interakcji ze stronami internetowymi. Programiści wykonują to, aby programistycznie wchodzić w interakcje z witrynami internetowymi, automatyzować zadania lub testować aplikacje internetowe.

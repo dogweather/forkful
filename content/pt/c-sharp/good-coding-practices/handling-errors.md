@@ -9,9 +9,8 @@ summary: "O tratamento de erros em C# \xE9 sobre gerenciar o inesperado\u2014com
   \ trope\xE7ar nos pr\xF3prios cadar\xE7os. Programas podem trope\xE7ar em dados\
   \ ruins ou conex\xF5es\u2026"
 title: Tratamento de erros
+weight: 16
 ---
-
-{{< edit_this_page >}}
 
 ## O Quê e Por Quê?
 

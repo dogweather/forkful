@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Escribir en el error est\xE1ndar (`stderr`) en C++ implica sacar mensajes\
   \ de error o diagn\xF3sticos que est\xE1n separados de la salida principal del programa.\u2026"
 title: "Escribiendo en el error est\xE1ndar"
+weight: 25
 ---
-
-{{< edit_this_page >}}
 
 ## Qué y Por Qué?
 

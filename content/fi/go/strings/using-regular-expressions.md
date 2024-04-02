@@ -11,9 +11,8 @@ summary: "Ohjelmoinnissa s\xE4\xE4nn\xF6llisi\xE4 lausekkeita (regex) k\xE4ytet\
   \xE4n etsim\xE4\xE4n, vastaamaan ja manipuloimaan merkkijonoja tiettyjen mallien\
   \ perusteella. Ohjelmoijat\u2026"
 title: "S\xE4\xE4nn\xF6llisten lausekkeiden k\xE4ytt\xF6"
+weight: 11
 ---
-
-{{< edit_this_page >}}
 
 ## Mikä ja miksi?
 

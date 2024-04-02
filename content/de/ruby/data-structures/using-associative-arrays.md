@@ -10,9 +10,8 @@ model: gpt-4-0125-preview
 summary: "Assoziative Arrays, bekannter als Hashes in Ruby, erm\xF6glichen die Zuordnung\
   \ eindeutiger Schl\xFCssel zu Werten. Sie sind unverzichtbar, wenn es darum geht,\u2026"
 title: Verwendung von assoziativen Arrays
+weight: 15
 ---
-
-{{< edit_this_page >}}
 
 ## Was & Warum?
 

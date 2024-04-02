@@ -7,9 +7,8 @@ model: gpt-4-0125-preview
 summary: "Reading a text file in C involves opening a file on your system to extract\
   \ information and manipulate or display it as needed. Programmers often do this\u2026"
 title: Reading a text file
+weight: 22
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 

@@ -8,9 +8,8 @@ model: gpt-4-0125-preview
 summary: "TOML, acronimo di Tom's Obvious, Minimal Language, \xE8 un formato di serializzazione\
   \ dei dati simile a JSON o YAML. I programmatori lo utilizzano per la sua\u2026"
 title: Lavorare con TOML
+weight: 39
 ---
-
-{{< edit_this_page >}}
 
 ## Cos'è e perché?
 TOML, acronimo di Tom's Obvious, Minimal Language, è un formato di serializzazione dei dati simile a JSON o YAML. I programmatori lo utilizzano per la sua leggibilità umana e per il mapping diretto ai tipi di dati, rendendolo una scelta prediletta per i file di configurazione e lo scambio di dati.

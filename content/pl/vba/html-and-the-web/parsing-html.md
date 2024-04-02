@@ -11,9 +11,8 @@ summary: "Przetwarzanie (parsing) HTML w Visual Basic for Applications (VBA) pol
   \ na ekstrakcji okre\u015Blonych informacji z dokumentu HTML. Programi\u015Bci robi\u0105\
   \ to, aby\u2026"
 title: "Analiza Sk\u0142adniowa HTML"
+weight: 43
 ---
-
-{{< edit_this_page >}}
 
 ## Co i dlaczego?
 

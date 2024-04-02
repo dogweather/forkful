@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Werken met complexe getallen in programmeren betreft het manipuleren van\
   \ getallen die zowel een re\xEBel als een imaginair deel hebben, doorgaans uitgedrukt\u2026"
 title: Werken met complexe getallen
+weight: 14
 ---
-
-{{< edit_this_page >}}
 
 ## Wat & Waarom?
 

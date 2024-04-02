@@ -11,9 +11,8 @@ summary: "\xC5 finne lengden p\xE5 en streng i C inneb\xE6rer \xE5 bestemme anta
   \ tegn f\xF8r nullterminatoren `\\0`. Programmerere gj\xF8r dette for \xE5 kunne\
   \ manipulere strenger\u2026"
 title: "\xC5 finne lengden p\xE5 en streng"
+weight: 7
 ---
-
-{{< edit_this_page >}}
 
 ## Hva & Hvorfor?
 Å finne lengden på en streng i C innebærer å bestemme antall tegn før nullterminatoren `\0`. Programmerere gjør dette for å kunne manipulere strenger korrekt uten å støte på feil som bufferoverløp, som kan føre til sikkerhetssårbarheter eller krasj i programmet.

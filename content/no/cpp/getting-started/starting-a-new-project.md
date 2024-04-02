@@ -8,9 +8,8 @@ model: gpt-4-1106-preview
 summary: "Et nytt prosjekt er en fersk kodebase skapt fra grunnen. Programmerere starter\
   \ nye prosjekter for \xE5 bygge unike applikasjoner, eksperimentere med ideer,\u2026"
 title: "\xC5 starte et nytt prosjekt"
+weight: 1
 ---
-
-{{< edit_this_page >}}
 
 ## Hva & Hvorfor?
 Et nytt prosjekt er en fersk kodebase skapt fra grunnen. Programmerere starter nye prosjekter for å bygge unike applikasjoner, eksperimentere med ideer, eller lære nye teknologier.

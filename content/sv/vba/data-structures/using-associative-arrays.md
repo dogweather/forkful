@@ -10,9 +10,8 @@ model: gpt-4-0125-preview
 summary: "Associativa arrayer, ofta k\xE4nda som ordb\xF6cker i Visual Basic for Applications\
   \ (VBA), g\xF6r det m\xF6jligt f\xF6r programmerare att skapa samlingar av nyckel-\u2026"
 title: "Anv\xE4nda associativa arrayer"
+weight: 15
 ---
-
-{{< edit_this_page >}}
 
 ## Vad & Varför?
 

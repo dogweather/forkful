@@ -11,9 +11,8 @@ summary: "Regul\xE4re Ausdr\xFCcke, oder Regex, sind ein m\xE4chtiges Werkzeug f
   r Mustererkennung und -suche in der Programmierung. Programmierer nutzen Regex f\xFC\
   r Aufgaben\u2026"
 title: "Regul\xE4re Ausdr\xFCcke verwenden"
+weight: 11
 ---
-
-{{< edit_this_page >}}
 
 ## Was & Warum?
 Reguläre Ausdrücke, oder Regex, sind ein mächtiges Werkzeug für Mustererkennung und -suche in der Programmierung. Programmierer nutzen Regex für Aufgaben wie die Validierung von Benutzereingaben, das Durchsuchen von Texten oder das Manipulieren von Zeichenketten, weil es effizient und vielseitig ist.

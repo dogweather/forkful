@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Het aanmaken van een tijdelijk bestand in Visual Basic for Applications\
   \ (VBA) houdt in dat je programmatisch een bestand genereert voor kortstondig\u2026"
 title: Een tijdelijk bestand aanmaken
+weight: 21
 ---
-
-{{< edit_this_page >}}
 
 ## Wat en Waarom?
 

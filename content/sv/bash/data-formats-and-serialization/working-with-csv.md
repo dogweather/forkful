@@ -11,9 +11,8 @@ summary: "Att arbeta med CSV-filer (kommaseparerade v\xE4rden) i Bash handlar om
   \ bearbeta och manipulera tabellformaterade data lagrade i ren textformat. Detta\
   \ \xE4r\u2026"
 title: Arbeta med CSV
+weight: 37
 ---
-
-{{< edit_this_page >}}
 
 ## Vad & Varför?
 Att arbeta med CSV-filer (kommaseparerade värden) i Bash handlar om att bearbeta och manipulera tabellformaterade data lagrade i ren textformat. Detta är avgörande för programmerare eftersom det möjliggör automatisering av uppgifter relaterade till datatransformering, analys och integration direkt från kommandoraden, utan behovet av tyngre verktyg eller programmeringsmiljöer.

@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Les tableaux associatifs, ou maps, vous permettent de stocker des donn\xE9\
   es sous forme de paires cl\xE9-valeur, facilitant ainsi l'organisation et la\u2026"
 title: Utilisation des tableaux associatifs
+weight: 15
 ---
-
-{{< edit_this_page >}}
 
 ## Quoi & Pourquoi ?
 

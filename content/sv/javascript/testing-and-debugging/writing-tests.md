@@ -11,9 +11,8 @@ summary: "Att skriva tester i JavaScript avser praktiken att skapa automatiserad
   \ skript som k\xF6r din kod f\xF6r att s\xE4kerst\xE4lla att den fungerar som f\xF6\
   rv\xE4ntat, vilket\u2026"
 title: Skriva tester
+weight: 36
 ---
-
-{{< edit_this_page >}}
 
 ## Vad & Varför?
 

@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Getallen afronden betekent dat je ze aanpast naar een nabijgelegen waarde\
   \ voor eenvoud of om te voldoen aan een bepaalde precisie. Het is nuttig voor het\u2026"
 title: Afronden van getallen
+weight: 13
 ---
-
-{{< edit_this_page >}}
 
 ## Wat & Waarom?
 Getallen afronden betekent dat je ze aanpast naar een nabijgelegen waarde voor eenvoud of om te voldoen aan een bepaalde precisie. Het is nuttig voor het verbeteren van de leesbaarheid, het verminderen van opslagruimte, of om te voldoen aan domeinspecifieke behoeften, zoals geldberekeningen waarbij je wilt afronden op de dichtstbijzijnde cent.

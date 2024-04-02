@@ -21,9 +21,8 @@ summary: "HTML \uD30C\uC2F1\uC740 \uB9C8\uD06C\uC5C5\uC744 \uBD84\uC11D\uD558\uC
   \ \uC6F9 \uC571\uC744 \uD14C\uC2A4\uD2B8\uD558\uAE30 \uC704\uD574 \uC218\uD589\uB429\
   \uB2C8\uB2E4."
 title: "HTML \uD30C\uC2F1"
+weight: 43
 ---
-
-{{< edit_this_page >}}
 
 ## 무엇을, 왜?
 

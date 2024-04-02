@@ -8,9 +8,8 @@ model: gpt-4-1106-preview
 summary: "N\xE5r du konverterer en streng til sm\xE5 bokstaver, endrer du alle bokstavene\
   \ til deres miniatyr versjoner. Programmerere gj\xF8r dette for \xE5 forenkle\u2026"
 title: "Konvertere en streng til sm\xE5 bokstaver"
+weight: 4
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 Når du konverterer en streng til små bokstaver, endrer du alle bokstavene til deres miniatyr versjoner. Programmerere gjør dette for å forenkle sammenligninger og søk, siden store og små bokstaver da betraktes likt.

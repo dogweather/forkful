@@ -7,9 +7,8 @@ model: gpt-4-0125-preview
 summary: "I numeri complessi, costituiti da una parte reale e una immaginaria, sono\
   \ essenziali in vari campi del calcolo come l'ingegneria, la fisica e\u2026"
 title: Lavorare con i numeri complessi
+weight: 14
 ---
-
-{{< edit_this_page >}}
 
 ## Cos'è & Perché?
 

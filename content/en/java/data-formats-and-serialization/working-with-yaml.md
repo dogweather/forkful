@@ -8,9 +8,8 @@ model: gpt-4-0125-preview
 summary: "YAML, short for \"YAML Ain't Markup Language,\" is a human-readable data\
   \ serialization standard that programmers use for configuration files, data dumping,\u2026"
 title: Working with YAML
+weight: 41
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 YAML, short for "YAML Ain't Markup Language," is a human-readable data serialization standard that programmers use for configuration files, data dumping, and data transmission between languages. It's popular due to its readability and ease of use, making it a common choice for configuring applications and services.

@@ -10,9 +10,8 @@ model: gpt-4-0125-preview
 summary: "Het genereren van willekeurige getallen in Rust omvat het gebruik van bibliotheken\
   \ om onvoorspelde numerieke waarden te produceren, wat onmisbaar is voor\u2026"
 title: Willekeurige getallen genereren
+weight: 12
 ---
-
-{{< edit_this_page >}}
 
 ## Wat & Waarom?
 

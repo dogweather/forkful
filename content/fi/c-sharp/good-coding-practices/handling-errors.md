@@ -9,9 +9,8 @@ summary: "Virheiden k\xE4sittely C#:ssa on yll\xE4tt\xE4v\xE4n hallintaa\u2014ku
   \ kompastuminen omiin keng\xE4nnauhoihisi. Ohjelmat voivat kompastua huonoihin tietoihin\
   \ tai\u2026"
 title: "Virheiden k\xE4sittely"
+weight: 16
 ---
-
-{{< edit_this_page >}}
 
 ## Mikä ja miksi?
 

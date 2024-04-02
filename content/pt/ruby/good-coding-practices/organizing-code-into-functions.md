@@ -9,9 +9,8 @@ summary: "Organizar o c\xF3digo em fun\xE7\xF5es divide seu script em partes reu
   veis. \xC9 tudo sobre tornar o c\xF3digo limpo, gerenci\xE1vel e menos propenso\
   \ a erros. C\xF3digo\u2026"
 title: "Organizando o c\xF3digo em fun\xE7\xF5es"
+weight: 18
 ---
-
-{{< edit_this_page >}}
 
 ## O Quê & Porquê?
 Organizar o código em funções divide seu script em partes reutilizáveis. É tudo sobre tornar o código limpo, gerenciável e menos propenso a erros. Código modular é fantástico porque economiza tempo, mantém sua sanidade e simplifica a depuração e os testes unitários.

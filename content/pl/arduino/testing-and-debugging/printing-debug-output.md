@@ -9,9 +9,8 @@ summary: "Wypisywanie informacji diagnostycznych (debug) pomaga \u015Bledzi\u010
   , co si\u0119 dzieje w programie. U\u017Cywamy tego, by szybko znale\u017A\u0107\
   \ i naprawi\u0107 b\u0142\u0119dy."
 title: "Drukowanie komunikat\xF3w debugowania"
+weight: 33
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why? (Co i Dlaczego?)
 Wypisywanie informacji diagnostycznych (debug) pomaga śledzić, co się dzieje w programie. Używamy tego, by szybko znaleźć i naprawić błędy.

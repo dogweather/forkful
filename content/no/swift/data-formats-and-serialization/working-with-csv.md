@@ -11,9 +11,8 @@ summary: "\xC5 jobbe med CSV-filer (kommaseparerte verdier) inneb\xE6rer parsing
   \ generering av strukturerte data fra tekstfiler der hver linje representerer en\
   \ post og\u2026"
 title: Arbeide med CSV
+weight: 37
 ---
-
-{{< edit_this_page >}}
 
 ## Hva & Hvorfor?
 

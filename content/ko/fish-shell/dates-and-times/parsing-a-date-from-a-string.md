@@ -23,9 +23,8 @@ summary: "\uBB38\uC790\uC5F4\uC5D0\uC11C \uB0A0\uC9DC\uB97C \uD30C\uC2F1\uD558\u
   \uD654\uC640 \uAC19\uC740 \uC791\uC5C5\uC744 \uAC00\uB2A5\uD558\uAC8C \uD558\uC5EC\
   \ \uC18C\uD504\uD2B8\uC6E8\uC5B4\uC5D0\uC11C \uC2A4\uCF00\uC904\uB9C1,\u2026"
 title: "\uBB38\uC790\uC5F4\uC5D0\uC11C \uB0A0\uC9DC \uBD84\uC11D\uD558\uAE30"
+weight: 30
 ---
-
-{{< edit_this_page >}}
 
 ## 무엇 & 왜?
 문자열에서 날짜를 파싱하는 것은 문자열 내에 인코딩된 날짜 정보를 추출하고 프로그래밍 환경에서 인식하고 조작할 수 있는 구조화된 형식으로 변환하는 작업을 포함합니다. 프로그래머는 날짜 비교, 연산, 포맷팅 및 지역화와 같은 작업을 가능하게 하여 소프트웨어에서 스케줄링, 타임스탬프 및 역사적 데이터를 효율적으로 처리할 수 있도록 이 작업을 수행합니다.

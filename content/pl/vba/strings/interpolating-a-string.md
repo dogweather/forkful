@@ -11,9 +11,8 @@ summary: "Interpolacja ci\u0105g\xF3w w Visual Basic for Applications (VBA) odno
   \ si\u0119 do procesu osadzania zmiennych lub wyra\u017Ce\u0144 w dos\u0142ownym\
   \ ci\u0105gu znak\xF3w, co umo\u017Cliwia\u2026"
 title: "Interpolacja ci\u0105gu znak\xF3w"
+weight: 8
 ---
-
-{{< edit_this_page >}}
 
 ## Co i dlaczego?
 

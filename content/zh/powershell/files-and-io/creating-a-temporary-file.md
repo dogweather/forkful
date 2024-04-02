@@ -16,9 +16,8 @@ summary: "\u521B\u5EFA\u4E34\u65F6\u6587\u4EF6\u5728\u7F16\u7A0B\u4E2D\u5F88\u5E
   \u505A\u662F\u4E3A\u4E86\u4E0D\u5E72\u6270\u6B63\u5F0F\u6587\u4EF6\uFF0C\u5904\u7406\
   \u5B8C\u5C31\u4E22\u6389\uFF0C\u4FDD\u6301\u73AF\u5883\u6E05\u6D01\u3002"
 title: "\u521B\u5EFA\u4E34\u65F6\u6587\u4EF6"
+weight: 21
 ---
-
-{{< edit_this_page >}}
 
 ## 什么 & 为什么？
 创建临时文件在编程中很常见，它就是制作一个短暂存在的文件，用来处理临时数据或者当作一个操作的备份。程序员这么做是为了不干扰正式文件，处理完就丢掉，保持环境清洁。

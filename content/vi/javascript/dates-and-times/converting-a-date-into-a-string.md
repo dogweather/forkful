@@ -13,9 +13,8 @@ summary: "Chuy\u1EC3n \u0111\u1ED5i t\u1EEB ng\xE0y sang chu\u1ED7i bi\u1EBFn m\
   \ b\u1EA3n d\u1EC5 \u0111\u1ECDc, b\u1EDFi v\xEC con ng\u01B0\u1EDDi th\xEDch \"\
   Ng\xE0y 1 Th\xE1ng 4, 2023\" h\u01A1n l\xE0 nh\u1EEFng d\u1EA5u th\u1EDDi\u2026"
 title: "Chuy\u1EC3n \u0111\u1ED5i m\u1ED9t ng\xE0y th\xE0nh chu\u1ED7i"
+weight: 28
 ---
-
-{{< edit_this_page >}}
 
 ## Lý do và vì sao?
 Chuyển đổi từ ngày sang chuỗi biến một đối tượng Date thành định dạng văn bản dễ đọc, bởi vì con người thích "Ngày 1 Tháng 4, 2023" hơn là những dấu thời gian khó hiểu. Các lập trình viên thực hiện điều này để làm rõ trong giao diện người dùng và để định dạng ngày tháng cho việc lưu trữ hoặc chuyển giao mạng.

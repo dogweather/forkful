@@ -13,9 +13,8 @@ summary: "\"L\xE0m vi\u1EC7c v\u1EDBi XML\" ch\u1EC9 qu\xE1 tr\xECnh \u0111\u1EC
   \ Language) b\u1EB1ng c\xE1ch s\u1EED d\u1EE5ng l\u1EADp tr\xECnh. C\xE1c l\u1EAD\
   p tr\xECnh vi\xEAn th\u1EF1c hi\u1EC7n\u2026"
 title: "L\xE0m vi\u1EC7c v\u1EDBi XML"
+weight: 40
 ---
-
-{{< edit_this_page >}}
 
 ## Gì & Tại Sao?
 "Làm việc với XML" chỉ quá trình đọc, tạo và sửa đổi các tệp XML (eXtensible Markup Language) bằng cách sử dụng lập trình. Các lập trình viên thực hiện điều này bởi vì XML được sử dụng rộng rãi cho trao đổi dữ liệu do bản chất không phụ thuộc vào nền tảng và định dạng tự mô tả của nó.

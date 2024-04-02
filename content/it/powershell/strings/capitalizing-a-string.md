@@ -10,9 +10,8 @@ model: gpt-4-0125-preview
 summary: "Capitalizzare una stringa in PowerShell comporta la trasformazione del primo\
   \ carattere di una determinata stringa in maiuscolo, lasciando inalterata il\u2026"
 title: Capitalizzare una stringa
+weight: 2
 ---
-
-{{< edit_this_page >}}
 
 ## Cosa e perché?
 Capitalizzare una stringa in PowerShell comporta la trasformazione del primo carattere di una determinata stringa in maiuscolo, lasciando inalterata il resto della stringa. I programmatori spesso eseguono questo compito per scopi di formattazione, come preparare testi per la visualizzazione nelle interfacce utente o seguire regole grammaticali nei documenti generati.

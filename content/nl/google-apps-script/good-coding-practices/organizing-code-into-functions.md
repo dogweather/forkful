@@ -10,9 +10,8 @@ model: gpt-4-0125-preview
 summary: "Code organiseren in functies gaat over het structureren van je Google Apps\
   \ Script code door logische segmenten te scheiden in duidelijke blokken, elk met\u2026"
 title: Code organiseren in functies
+weight: 18
 ---
-
-{{< edit_this_page >}}
 
 ## Wat & Waarom?
 

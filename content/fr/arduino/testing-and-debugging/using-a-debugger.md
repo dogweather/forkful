@@ -1,14 +1,14 @@
 ---
 date: 2024-01-26 03:47:20.321423-07:00
-description: "Un d\xE9bogueur est un outil qui vous aide \xE0 \xE9liminer les bugs\
-  \ de votre code en vous permettant de faire une pause, de fouiller un peu partout\
-  \ et de\u2026"
+description: "Avec l'IDE Arduino, vous pouvez utiliser des impressions s\xE9rie pour\
+  \ d\xE9boguer, mais c'est un peu comme utiliser une lampe de poche pour explorer\
+  \ une\u2026"
 lastmod: '2024-03-13T22:44:58.115979-06:00'
 model: gpt-4-0125-preview
-summary: "Un d\xE9bogueur est un outil qui vous aide \xE0 \xE9liminer les bugs de\
-  \ votre code en vous permettant de faire une pause, de fouiller un peu partout et\
-  \ de\u2026"
+summary: "Avec l'IDE Arduino, vous pouvez utiliser des impressions s\xE9rie pour d\xE9\
+  boguer, mais c'est un peu comme utiliser une lampe de poche pour explorer une\u2026"
 title: "Utilisation d'un d\xE9bogueur"
+weight: 35
 ---
 
 ## Comment faire :

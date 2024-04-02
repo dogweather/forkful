@@ -10,9 +10,8 @@ model: gpt-4-0125-preview
 summary: "Tekstitiedostoon kirjoittaminen Fish Shelliss\xE4 mahdollistaa datan pysyv\xE4\
   n tallentamisen, mik\xE4 helpottaa tiedon noutamista tai manipulointia joko samalla\u2026"
 title: Tekstitiedoston kirjoittaminen
+weight: 24
 ---
-
-{{< edit_this_page >}}
 
 ## Mikä & Miksi?
 

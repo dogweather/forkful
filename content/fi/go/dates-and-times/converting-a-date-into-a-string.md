@@ -11,9 +11,8 @@ summary: "P\xE4iv\xE4m\xE4\xE4r\xE4n muuntaminen merkkijonoksi Go:ssa k\xE4sitt\
   \xE4 `time.Time` -oliomuunnoksen luettavaan merkkijonomuotoon. Ohjelmoijat suorittavat\
   \ usein t\xE4m\xE4n\u2026"
 title: "P\xE4iv\xE4m\xE4\xE4r\xE4n muuttaminen merkkijonoksi"
+weight: 28
 ---
-
-{{< edit_this_page >}}
 
 ## Mikä & Miksi?
 

@@ -9,9 +9,8 @@ summary: "Vertaillaan kahta p\xE4iv\xE4m\xE4\xE4r\xE4\xE4 tiet\xE4\xE4ksemme, ku
   \ on ensin tai paljonko aikaa on kulunut niiden v\xE4lill\xE4. Ohjelmoijat tekev\xE4\
   t t\xE4m\xE4n hallitakseen\u2026"
 title: "Kahden p\xE4iv\xE4m\xE4\xE4r\xE4n vertailu"
+weight: 27
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why? (Mitä & Miksi?)
 Vertaillaan kahta päivämäärää tietääksemme, kumpi on ensin tai paljonko aikaa on kulunut niiden välillä. Ohjelmoijat tekevät tämän hallitakseen aikatauluja, ajoituksia ja määräaikoja.

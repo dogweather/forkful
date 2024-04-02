@@ -9,9 +9,8 @@ summary: "Att dela upp kod i funktioner \xE4r som att sortera LEGO-bitar i l\xE5
   \ \u2013 det g\xF6r det l\xE4ttare att hitta och anv\xE4nda dem. Vi g\xF6r detta\
   \ f\xF6r att undvika\u2026"
 title: Att organisera kod i funktioner
+weight: 18
 ---
-
-{{< edit_this_page >}}
 
 ## Vad & Varför?
 Att dela upp kod i funktioner är som att sortera LEGO-bitar i lådor – det gör det lättare att hitta och använda dem. Vi gör detta för att undvika upprepning, för att förenkla förståelsen, och för att underhållet ska bli mindre av en huvudvärk.

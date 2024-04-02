@@ -11,9 +11,8 @@ summary: "HTML parsen in Visual Basic for Applications (VBA) houdt in dat specif
   \ informatie uit een HTML-document wordt ge\xEBxtraheerd. Programmeurs doen dit\
   \ om\u2026"
 title: HTML Parsen
+weight: 43
 ---
-
-{{< edit_this_page >}}
 
 ## Wat & Waarom?
 

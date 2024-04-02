@@ -13,9 +13,8 @@ summary: "YAML, m\u1ED9t ti\xEAu chu\u1EA9n m\xE3 h\xF3a d\u1EEF li\u1EC7u th\xE
   \ cho c\xE1c file c\u1EA5u h\xECnh v\xE0 trao \u0111\u1ED5i d\u1EEF li\u1EC7u. C\xE1\
   c l\u1EADp tr\xECnh vi\xEAn \u01B0a th\xEDch n\xF3 v\xEC n\xF3\u2026"
 title: "L\xE0m vi\u1EC7c v\u1EDBi YAML"
+weight: 41
 ---
-
-{{< edit_this_page >}}
 
 ## Cái gì & Tại sao?
 

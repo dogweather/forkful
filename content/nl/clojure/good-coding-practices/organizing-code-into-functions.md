@@ -10,9 +10,8 @@ model: gpt-4-0125-preview
 summary: "Code in functies opdelen gaat over het inpakken van codeblokken die specifieke\
   \ taken uitvoeren. Dit maakt je code schoon, makkelijker te onderhouden, en\u2026"
 title: Code organiseren in functies
+weight: 18
 ---
-
-{{< edit_this_page >}}
 
 ## Wat & Waarom?
 

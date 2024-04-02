@@ -11,9 +11,8 @@ summary: "V\xE9rifier si un r\xE9pertoire existe en TypeScript est essentiel pou
   \ les t\xE2ches de gestion de fichiers, telles que lire ou \xE9crire des donn\xE9\
   es dans des\u2026"
 title: "V\xE9rifier si un r\xE9pertoire existe"
+weight: 20
 ---
-
-{{< edit_this_page >}}
 
 ## Quoi & Pourquoi ?
 Vérifier si un répertoire existe en TypeScript est essentiel pour les tâches de gestion de fichiers, telles que lire ou écrire des données dans des fichiers, en s'assurant que les opérations sont effectuées uniquement sur des répertoires valides. Cette opération est cruciale pour éviter les erreurs découlant de la tentative d'accès ou de manipulation de répertoires inexistants.

@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Associatieve arrays, vaak bekend als woordenboeken in Visual Basic for Applications\
   \ (VBA), stellen programmeurs in staat om collecties van sleutel-\u2026"
 title: Gebruik van associatieve arrays
+weight: 15
 ---
-
-{{< edit_this_page >}}
 
 ## Wat & Waarom?
 

@@ -8,9 +8,8 @@ model: gpt-4-1106-preview
 summary: "Convertir una cadena a min\xFAsculas significa transformar todos los caracteres\
   \ alfab\xE9ticos en dicha cadena a su equivalente en min\xFAsculas. Los programadores\u2026"
 title: "Conversi\xF3n de una cadena de texto a min\xFAsculas"
+weight: 4
 ---
-
-{{< edit_this_page >}}
 
 ## ¿Qué y Por Qué?
 

@@ -7,9 +7,8 @@ model: gpt-4-1106-preview
 summary: "La interpolaci\xF3n de cadenas es insertar valores de variables en medio\
   \ de una cadena de texto. En Bash, los programamos para ahorrar tiempo y evitar\u2026"
 title: "Interpolaci\xF3n de cadenas de texto"
+weight: 8
 ---
-
-{{< edit_this_page >}}
 
 ## ¿Qué y por qué?
 La interpolación de cadenas es insertar valores de variables en medio de una cadena de texto. En Bash, los programamos para ahorrar tiempo y evitar errores, facilitando leer y mantener el código.

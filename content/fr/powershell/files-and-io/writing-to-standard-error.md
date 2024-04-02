@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "\xC9crire sur l'erreur standard (stderr) dans PowerShell implique d'envoyer\
   \ des messages d'erreur ou des diagnostics directement sur le flux stderr, distinct\u2026"
 title: "\xC9crire sur l'erreur standard"
+weight: 25
 ---
-
-{{< edit_this_page >}}
 
 ## Quoi & Pourquoi ?
 

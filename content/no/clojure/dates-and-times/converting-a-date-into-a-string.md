@@ -9,9 +9,8 @@ summary: "Konvertering av dato til streng betyr \xE5 transformere et datoobjekt 
   \ en lesbar tekstform. Programmerere gj\xF8r dette fordi datoer ofte m\xE5 vises\
   \ til\u2026"
 title: Konvertere en dato til en streng
+weight: 28
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 Konvertering av dato til streng betyr å transformere et datoobjekt til en lesbar tekstform. Programmerere gjør dette fordi datoer ofte må vises til brukere eller lagres i tekstformat.

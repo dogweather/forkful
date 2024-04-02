@@ -16,9 +16,8 @@ summary: "\u4EC0\u4E48\u662F\u63D0\u53D6\u5B50\u5B57\u7B26\u4E32\uFF1F\u7B80\u53
   \u4EEC\u7ECF\u5E38\u9700\u8981\u8BBF\u95EE\u3001\u4FEE\u6539\u6216\u5206\u6790\u5B57\
   \u7B26\u4E32\u7684\u7279\u5B9A\u90E8\u5206\u3002"
 title: "\u63D0\u53D6\u5B50\u5B57\u7B26\u4E32"
+weight: 6
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 什么是提取子字符串？简单地说，就是从一个更长的字符串中取出一部分。程序员为什么要这么做？因为在处理文本时，我们经常需要访问、修改或分析字符串的特定部分。

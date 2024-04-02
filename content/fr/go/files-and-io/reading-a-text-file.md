@@ -11,9 +11,8 @@ summary: "Lire un fichier texte en Go implique d'acc\xE9der et de r\xE9cup\xE9re
   \ le contenu d'un fichier stock\xE9 sur disque pour le traiter ou l'analyser. Les\
   \ programmeurs\u2026"
 title: Lire un fichier texte
+weight: 22
 ---
-
-{{< edit_this_page >}}
 
 ## Quoi & Pourquoi ?
 

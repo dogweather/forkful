@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Le espressioni regolari, o regex, sono sequenze di caratteri che formano\
   \ un modello di ricerca, spesso utilizzate per compiti di confronto o manipolazione\u2026"
 title: Utilizzo delle espressioni regolari
+weight: 11
 ---
-
-{{< edit_this_page >}}
 
 ## Cosa e Perché?
 Le espressioni regolari, o regex, sono sequenze di caratteri che formano un modello di ricerca, spesso utilizzate per compiti di confronto o manipolazione di stringhe. I programmatori le utilizzano per varie operazioni, dalla validazione dei dati all'analisi, fino alle trasformazioni, rendendole uno strumento indispensabile nel processo e nella manipolazione del testo attraverso vari linguaggi di programmazione, inclusi Swift.

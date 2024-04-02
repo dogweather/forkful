@@ -7,9 +7,8 @@ model: gpt-4-1106-preview
 summary: "Reading command line arguments means grabbing the extra bits you type after\
   \ your script\u2019s name in the console. Programmers do this to tweak a program's\u2026"
 title: Reading command line arguments
+weight: 23
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 

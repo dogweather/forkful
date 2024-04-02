@@ -11,9 +11,8 @@ summary: "Obtener la fecha actual en Python es una operaci\xF3n b\xE1sica para m
   \ aplicaciones, tales como el registro de actividades, an\xE1lisis de datos y la\
   \ toma de\u2026"
 title: Obteniendo la fecha actual
+weight: 29
 ---
-
-{{< edit_this_page >}}
 
 ## ¿Qué y Por Qué?
 

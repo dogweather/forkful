@@ -9,9 +9,8 @@ summary: "Un shell interactif Rust, ou REPL (Read-Eval-Print Loop, Boucle Lire-\
   valuer-Imprimer), vous permet d'ex\xE9cuter du code Rust \xE0 la vol\xE9e, en voyant\
   \ des\u2026"
 title: Utilisation d'une console interactive (REPL)
+weight: 34
 ---
-
-{{< edit_this_page >}}
 
 ## Quoi & Pourquoi ?
 Un shell interactif Rust, ou REPL (Read-Eval-Print Loop, Boucle Lire-Évaluer-Imprimer), vous permet d'exécuter du code Rust à la volée, en voyant des résultats instantanés, parfait pour l'expérimentation ou l'apprentissage. Les programmeurs l'utilisent pour tester des extraits de code, déboguer ou simplement jouer avec les fonctionnalités du langage sans la surcharge de compiler un projet complet.

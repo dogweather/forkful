@@ -9,9 +9,8 @@ summary: "Los n\xFAmeros complejos expanden la l\xEDnea de n\xFAmeros reales a t
   s de la adici\xF3n de una unidad imaginaria, `i`, donde `i^2 = -1`. Son cruciales\
   \ en campos\u2026"
 title: "Trabajando con n\xFAmeros complejos"
+weight: 14
 ---
-
-{{< edit_this_page >}}
 
 ## ¿Qué y por qué?
 

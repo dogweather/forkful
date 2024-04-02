@@ -9,9 +9,8 @@ summary: "Kommandoradsargument l\xE5ter dig mata in data till ditt Java-program 
   r du startar det. Programmerare anv\xE4nder detta f\xF6r att g\xF6ra programmen\
   \ flexibla och\u2026"
 title: "L\xE4sa in kommandoradsargument"
+weight: 23
 ---
-
-{{< edit_this_page >}}
 
 ## Vad & Varför?
 

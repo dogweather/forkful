@@ -9,9 +9,8 @@ summary: "\xC5 skrive ut debug-informasjon inneb\xE6rer \xE5 vise verdier og mel
   \ under kj\xF8ring av programmet, for \xE5 forst\xE5 hva som skjer \"under hetta\"\
   . Vi gj\xF8r dette\u2026"
 title: "Skrive ut feils\xF8kingsdata"
+weight: 33
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why? (Hva & Hvorfor?)
 Å skrive ut debug-informasjon innebærer å vise verdier og meldinger under kjøring av programmet, for å forstå hva som skjer "under hetta". Vi gjør dette for å finne og fikse feil mer effektivt.

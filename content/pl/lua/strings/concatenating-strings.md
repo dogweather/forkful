@@ -9,9 +9,8 @@ summary: "\u0141\u0105czenie napis\xF3w (string concatenation) to po\u0142\u0105
   \ dw\xF3ch czy wi\u0119cej napis\xF3w w jeden d\u0142u\u017Cszy. Programi\u015B\
   ci robi\u0105 to, aby tworzy\u0107 wiadomo\u015Bci, zestawia\u0107\u2026"
 title: "\u0141\u0105czenie \u0142a\u0144cuch\xF3w znak\xF3w"
+weight: 3
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why? ("Co i dlaczego?")
 Łączenie napisów (string concatenation) to połączenie dwóch czy więcej napisów w jeden dłuższy. Programiści robią to, aby tworzyć wiadomości, zestawiać dane do wyświetlenia albo budować kody i komendy dynamicznie.

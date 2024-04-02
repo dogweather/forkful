@@ -9,9 +9,8 @@ summary: "Kompleksiluvut laajentavat lukuj\xE4rjestelm\xE4\xE4mme sis\xE4lt\xE4m
   \xE4n imaginaarisia lukuja, mik\xE4 mahdollistaa yht\xE4l\xF6iden ratkaisun, kun\
   \ todellisia ratkaisuja ei ole.\u2026"
 title: "Kompleksilukujen k\xE4sittely"
+weight: 14
 ---
-
-{{< edit_this_page >}}
 
 ## Mikä ja miksi?
 Kompleksiluvut laajentavat lukujärjestelmäämme sisältämään imaginaarisia lukuja, mikä mahdollistaa yhtälöiden ratkaisun, kun todellisia ratkaisuja ei ole. Ohjelmoijat työskentelevät niiden parissa aloilla, kuten insinööritiede, fysiikka ja signaalinkäsittely, missä nämä luvut ovat olennaisia mallintamisessa ja ongelmanratkaisussa.

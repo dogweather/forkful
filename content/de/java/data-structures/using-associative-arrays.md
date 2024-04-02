@@ -11,9 +11,8 @@ summary: "In Java erm\xF6glichen assoziative Arrays, oder Maps, das Speichern vo
   \ Schl\xFCssel-Wert-Paaren f\xFCr eine effiziente Datensuche und -manipulation.\
   \ Programmierer\u2026"
 title: Verwendung von assoziativen Arrays
+weight: 15
 ---
-
-{{< edit_this_page >}}
 
 ## Was & Warum?
 

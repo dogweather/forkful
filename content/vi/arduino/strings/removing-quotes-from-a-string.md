@@ -13,9 +13,8 @@ summary: "X\xF3a d\u1EA5u ngo\u1EB7c kh\u1ECFi m\u1ED9t chu\u1ED7i ngh\u0129a l\
   n (`'`) ho\u1EB7c d\u1EA5u ngo\u1EB7c k\xE9p (`\"`) n\xE0o bao quanh v\u0103n b\u1EA3\
   n. C\xE1c l\u1EADp tr\xECnh vi\xEAn th\u01B0\u1EDDng\u2026"
 title: "Lo\u1EA1i b\u1ECF d\u1EA5u ngo\u1EB7c k\xE9p kh\u1ECFi chu\u1ED7i"
+weight: 9
 ---
-
-{{< edit_this_page >}}
 
 ## Mục đích & Lý do?
 Xóa dấu ngoặc khỏi một chuỗi nghĩa là loại bỏ bất kỳ ký tự dấu ngoặc đơn (`'`) hoặc dấu ngoặc kép (`"`) nào bao quanh văn bản. Các lập trình viên thường làm điều này để làm sạch đầu vào, chuẩn bị chuỗi cho việc so sánh, hoặc xử lý dữ liệu văn bản có thể vô tình bao gồm dấu ngoặc như một phần của nội dung chuỗi.

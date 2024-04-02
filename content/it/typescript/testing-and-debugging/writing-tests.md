@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Scrivere test in TypeScript comporta la creazione di script automatizzati\
   \ per verificare la funzionalit\xE0 e la correttezza del proprio codice. I\u2026"
 title: Scrivere test
+weight: 36
 ---
-
-{{< edit_this_page >}}
 
 ## Cosa & Perché?
 Scrivere test in TypeScript comporta la creazione di script automatizzati per verificare la funzionalità e la correttezza del proprio codice. I programmatori lo fanno per garantire affidabilità, individuare rapidamente i bug e facilitare la crescita del codice mantenibile, poiché la digitazione statica di TypeScript aggiunge un livello di prevedibilità ai test JavaScript.

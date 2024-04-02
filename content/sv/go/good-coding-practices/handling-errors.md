@@ -11,9 +11,8 @@ summary: "Att hantera fel i Go inneb\xE4r att k\xE4nna igen och svara p\xE5 felv
   \ i ditt program. Programmerare \xE4gnar sig \xE5t felhantering f\xF6r att s\xE4\
   kerst\xE4lla att deras\u2026"
 title: Hantera fel
+weight: 16
 ---
-
-{{< edit_this_page >}}
 
 ## Vad och varför?
 

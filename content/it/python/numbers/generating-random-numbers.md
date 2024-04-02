@@ -8,9 +8,8 @@ model: gpt-4-0125-preview
 summary: "La generazione di numeri casuali comporta la creazione di numeri che non\
   \ possono essere previsti in modo ragionevole meglio che per caso, il che \xE8\u2026"
 title: Generazione di numeri casuali
+weight: 12
 ---
-
-{{< edit_this_page >}}
 
 ## Cosa & Perché?
 

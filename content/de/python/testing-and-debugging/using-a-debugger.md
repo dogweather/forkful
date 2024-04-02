@@ -1,14 +1,14 @@
 ---
 date: 2024-01-26 04:08:54.596903-07:00
-description: "\"Ein Debugger verwenden\" bedeutet, Schritt f\xFCr Schritt durch Ihren\
-  \ Python-Code zu gehen, um Bugs zu entdecken und das Verhalten zu verstehen. Wir\
-  \ tun das,\u2026"
+description: "Lassen Sie uns die Verwendung von `pdb`, dem eingebauten Debugger von\
+  \ Python, durchgehen. Stellen Sie sich eine Datei, `buggy.py`, mit einem schwer\
+  \ zu\u2026"
 lastmod: '2024-03-13T22:44:53.383469-06:00'
 model: gpt-4-0125-preview
-summary: "\"Ein Debugger verwenden\" bedeutet, Schritt f\xFCr Schritt durch Ihren\
-  \ Python-Code zu gehen, um Bugs zu entdecken und das Verhalten zu verstehen. Wir\
-  \ tun das,\u2026"
+summary: "Lassen Sie uns die Verwendung von `pdb`, dem eingebauten Debugger von Python,\
+  \ durchgehen. Stellen Sie sich eine Datei, `buggy.py`, mit einem schwer zu\u2026"
 title: Einsatz eines Debuggers
+weight: 35
 ---
 
 ## Wie geht das:

@@ -10,9 +10,8 @@ model: gpt-4-0125-preview
 summary: "Die Umwandlung eines Strings in Kleinbuchstaben in C bedeutet, alle Gro\xDF\
   buchstaben in einem gegebenen String in ihre entsprechenden Kleinbuchstaben zu\u2026"
 title: Konvertierung eines Strings in Kleinbuchstaben
+weight: 4
 ---
-
-{{< edit_this_page >}}
 
 ## Was & Warum?
 

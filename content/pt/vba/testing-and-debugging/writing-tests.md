@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Escrever testes em programa\xE7\xE3o envolve criar procedimentos espec\xED\
   ficos para validar a funcionalidade e o desempenho dos seus segmentos de c\xF3digo,\u2026"
 title: Escrevendo testes
+weight: 36
 ---
-
-{{< edit_this_page >}}
 
 ## O Que & Por Que?
 

@@ -11,9 +11,8 @@ summary: "Escribir un archivo de texto en JavaScript a menudo se refiere a crear
   \ guardar datos en un formato simple y legible para el registro, exportaci\xF3n\
   \ de\u2026"
 title: Escribiendo un archivo de texto
+weight: 24
 ---
-
-{{< edit_this_page >}}
 
 ## Qué y Por Qué?
 Escribir un archivo de texto en JavaScript a menudo se refiere a crear y guardar datos en un formato simple y legible para el registro, exportación de entradas del usuario o fines de configuración. Esta funcionalidad es crucial para las aplicaciones que necesitan persistir datos más allá del tiempo de vida del proceso de la aplicación, proporcionando una manera de almacenar y posteriormente recuperar o compartir información.

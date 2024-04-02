@@ -11,9 +11,8 @@ summary: "Parsowanie HTML polega na wydobywaniu danych lub informacji z tre\u015
   ci HTML, co jest powszechnym zadaniem podczas pracy z danymi internetowymi. Programi\u015B\
   ci\u2026"
 title: "Analiza sk\u0142adniowa HTML"
+weight: 43
 ---
-
-{{< edit_this_page >}}
 
 ## Co i dlaczego?
 

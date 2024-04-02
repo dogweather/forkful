@@ -11,9 +11,8 @@ summary: "YAML, ett rekursivt akronym f\xF6r \"YAML Ain't Markup Language\", \xE
   r ett m\xE4nniskol\xE4sbart data-serialiseringsformat som anv\xE4nds f\xF6r konfigurationsfiler\
   \ och\u2026"
 title: Att Arbeta med YAML
+weight: 41
 ---
-
-{{< edit_this_page >}}
 
 ## Vad & Varför?
 

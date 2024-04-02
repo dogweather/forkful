@@ -13,9 +13,8 @@ summary: "In th\xF4ng tin \u0111\u1EC3 g\u1EE1 l\u1ED7i (debug output) cho ph\xE
   ng c\u1EA7n ph\u1EA3i s\u1EED d\u1EE5ng m\u1ED9t tr\xECnh g\u1EE1 l\u1ED7i \u0111\
   \u1EA7y \u0111\u1EE7. N\xF3 nhanh ch\xF3ng,\u2026"
 title: "In ra th\xF4ng tin g\u1EE1 l\u1ED7i"
+weight: 33
 ---
-
-{{< edit_this_page >}}
 
 ## Điều gì & Tại sao?
 In thông tin để gỡ lỗi (debug output) cho phép bạn xem qua trạng thái của chương trình mà không cần phải sử dụng một trình gỡ lỗi đầy đủ. Nó nhanh chóng, không cầu kỳ, và hoàn hảo để truy tìm những lỗi phức tạp khi bạn không cần sức mạnh của một công cụ gỡ lỗi chuyên dụng.

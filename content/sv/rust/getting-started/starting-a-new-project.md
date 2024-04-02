@@ -9,9 +9,8 @@ summary: "Att b\xF6rja ett nytt projekt inneb\xE4r att skapa en grund f\xF6r din
   \ Programmerare tar detta steg f\xF6r att organisera sina id\xE9er och bygga en\
   \ h\xE5llbar\u2026"
 title: "Att p\xE5b\xF6rja ett nytt projekt"
+weight: 1
 ---
-
-{{< edit_this_page >}}
 
 ## Vad & Varför?
 Att börja ett nytt projekt innebär att skapa en grund för din kodstruktur. Programmerare tar detta steg för att organisera sina idéer och bygga en hållbar bas för applikationsutveckling.

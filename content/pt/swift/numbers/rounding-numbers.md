@@ -7,9 +7,8 @@ model: gpt-4-0125-preview
 summary: "Arredondar n\xFAmeros significa aproximar um valor num\xE9rico a uma precis\xE3\
   o espec\xEDfica, tipicamente para remover decimais indesejados. Programadores\u2026"
 title: "Arredondamento de n\xFAmeros"
+weight: 13
 ---
-
-{{< edit_this_page >}}
 
 ## O que & Por quê?
 

@@ -9,9 +9,8 @@ summary: "Das Senden einer HTTP-Anfrage mit Basisauthentifizierung bedeutet, das
   \ wir unseren Nutzernamen und unser Passwort im Klartext (base64-kodiert) \xFCber\
   \ das\u2026"
 title: HTTP-Anfragen mit Basisauthentifizierung senden
+weight: 45
 ---
-
-{{< edit_this_page >}}
 
 ## Was & Warum?
 Das Senden einer HTTP-Anfrage mit Basisauthentifizierung bedeutet, dass wir unseren Nutzernamen und unser Passwort im Klartext (base64-kodiert) über das Netzwerk senden, um uns gegenüber dem Server zu authentifizieren. Programmierer nutzen dies für eine einfache Sicherheitsüberprüfung, besonders, wenn sie APIs oder andere Webdienste ansprechen, die eine Authentifizierung erfordern.

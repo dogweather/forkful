@@ -9,9 +9,8 @@ summary: "Error handling is about managing the unexpected in programs\u2014like 
   \ bouncer dealing with troublemakers. Programmers like it smooth; error handling\
   \ helps\u2026"
 title: Handling errors
+weight: 16
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 Error handling is about managing the unexpected in programs—like a bouncer dealing with troublemakers. Programmers like it smooth; error handling helps keep the trouble in line, ensuring their code doesn't trip and fall when faced with the unexpected.

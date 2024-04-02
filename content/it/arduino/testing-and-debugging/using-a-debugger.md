@@ -1,12 +1,13 @@
 ---
 date: 2024-01-26 03:47:35.221448-07:00
-description: "Un debugger \xE8 uno strumento che ti aiuta a schiacciare i bug nel\
-  \ tuo codice permettendoti di mettere in pausa, indagare, e scoprire cosa sta realmente\u2026"
+description: "Con l'IDE di Arduino, puoi usare le stampe Seriali per fare debugging,\
+  \ ma \xE8 un po' come usare una torcia per esplorare una caverna. Per un vero debugging,\u2026"
 lastmod: '2024-03-13T22:44:43.687057-06:00'
 model: gpt-4-0125-preview
-summary: "Un debugger \xE8 uno strumento che ti aiuta a schiacciare i bug nel tuo\
-  \ codice permettendoti di mettere in pausa, indagare, e scoprire cosa sta realmente\u2026"
+summary: "Con l'IDE di Arduino, puoi usare le stampe Seriali per fare debugging, ma\
+  \ \xE8 un po' come usare una torcia per esplorare una caverna. Per un vero debugging,\u2026"
 title: Utilizzo di un debugger
+weight: 35
 ---
 
 ## Come fare:

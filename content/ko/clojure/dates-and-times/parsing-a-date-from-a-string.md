@@ -23,9 +23,8 @@ summary: "\uD074\uB85C\uC800\uC5D0\uC11C \uBB38\uC790\uC5F4\uB85C\uBD80\uD130 \u
   \uD50C\uB9AC\uCF00\uC774\uC158\uC5D0 \uC788\uC5B4 \uAE30\uBCF8\uC801\uC774\uBA70\
   , \uD504\uB85C\uADF8\uB798\uBA38\uAC00\u2026"
 title: "\uBB38\uC790\uC5F4\uC5D0\uC11C \uB0A0\uC9DC \uBD84\uC11D\uD558\uAE30"
+weight: 30
 ---
-
-{{< edit_this_page >}}
 
 ## 무엇 & 왜?
 클로저에서 문자열로부터 날짜를 파싱하는 것은 날짜와 시간의 텍스트 표현을 더 사용하기 좋은 형태(예: 클로저의 DateTime 객체)로 변환하는 것에 대한 것입니다. 이 과정은 데이터 처리, 로깅 또는 시간 데이터를 조작하는 모든 애플리케이션에 있어 기본적이며, 프로그래머가 날짜에 대해 효율적으로 연산, 비교 또는 조작 작업을 수행할 수 있게 합니다.

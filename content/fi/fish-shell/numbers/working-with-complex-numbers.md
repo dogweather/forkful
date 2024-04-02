@@ -8,9 +8,8 @@ model: gpt-4-0125-preview
 summary: "Kompleksiluvut laajentavat ajatusta yksiulotteisista numeroviivoista kaksiulotteiseen\
   \ kompleksitasoon. Ohjelmoijat k\xE4ytt\xE4v\xE4t niit\xE4 aloilla kuten\u2026"
 title: "Kompleksilukujen k\xE4sittely"
+weight: 14
 ---
-
-{{< edit_this_page >}}
 
 ## Mikä & Miksi?
 Kompleksiluvut laajentavat ajatusta yksiulotteisista numeroviivoista kaksiulotteiseen kompleksitasoon. Ohjelmoijat käyttävät niitä aloilla kuten insinööritiede, fysiikka ja grafiikka laskelmissa, jotka vaativat kahta komponenttia, kuten signaaleja tai kiertoliikkeitä.

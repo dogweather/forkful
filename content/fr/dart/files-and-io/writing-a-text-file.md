@@ -10,9 +10,8 @@ model: gpt-4-0125-preview
 summary: "\xC9crire un fichier texte en Dart implique de cr\xE9er ou de modifier des\
   \ fichiers sur le disque pour stocker des donn\xE9es dans un format lisible. Les\u2026"
 title: "\xC9crire un fichier texte"
+weight: 24
 ---
-
-{{< edit_this_page >}}
 
 ## Quoi & Pourquoi ?
 Écrire un fichier texte en Dart implique de créer ou de modifier des fichiers sur le disque pour stocker des données dans un format lisible. Les programmeurs le font pour sauvegarder des données d'application, des configurations, des journaux, ou toute information devant persister entre les exécutions de l'application ou partager des données avec d'autres applications ou utilisateurs.

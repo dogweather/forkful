@@ -7,9 +7,8 @@ model: gpt-4-1106-preview
 summary: "Enviar una solicitud HTTP permite a tu script interactuar con servicios\
   \ web, obtener datos o invocar operaciones remotas. Los programadores hacen esto\u2026"
 title: Enviando una solicitud http
+weight: 44
 ---
-
-{{< edit_this_page >}}
 
 ## Qué y Por Qué?
 Enviar una solicitud HTTP permite a tu script interactuar con servicios web, obtener datos o invocar operaciones remotas. Los programadores hacen esto para integrar aplicaciones, automatizar tareas o acceder a APIs.

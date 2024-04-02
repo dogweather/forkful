@@ -11,9 +11,8 @@ summary: "Usuwanie cudzys\u0142ow\xF3w z ci\u0105gu znak\xF3w w j\u0119zyku C po
   \ na wyodr\u0119bnieniu zawarto\u015Bci tekstowej bez otaczaj\u0105cych pojedynczych\
   \ (' ') lub podw\xF3jnych (\" \")\u2026"
 title: "Usuwanie cudzys\u0142ow\xF3w z ci\u0105gu znak\xF3w"
+weight: 9
 ---
-
-{{< edit_this_page >}}
 
 ## Co i dlaczego?
 

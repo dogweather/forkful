@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Foutenafhandeling in programmeren gaat over het beheren van het onverwachte\u2014\
   zaken die mis kunnen gaan. Programmeurs doen dit om ervoor te zorgen dat hun\u2026"
 title: Fouten afhandelen
+weight: 16
 ---
-
-{{< edit_this_page >}}
 
 ## Wat & Waarom?
 Foutenafhandeling in programmeren gaat over het beheren van het onverwachte—zaken die mis kunnen gaan. Programmeurs doen dit om ervoor te zorgen dat hun programma’s deze situaties op een elegante manier kunnen afhandelen, zonder te crashen of verkeerde resultaten te produceren.

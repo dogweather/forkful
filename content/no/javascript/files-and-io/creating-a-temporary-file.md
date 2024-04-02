@@ -9,9 +9,8 @@ summary: "\xC5 lage en midlertidig fil er prosessen med \xE5 opprette en fil som
   \ skal brukes midlertidig. Programmerere gj\xF8r dette for \xE5 lagre data midlertidig\
   \ uten \xE5\u2026"
 title: Opprette en midlertidig fil
+weight: 21
 ---
-
-{{< edit_this_page >}}
 
 ## Hva & Hvorfor?
 Å lage en midlertidig fil er prosessen med å opprette en fil som kun skal brukes midlertidig. Programmerere gjør dette for å lagre data midlertidig uten å påvirke de permanente datasystemene, noe som er nyttig for ting som å håndtere store datamengder, foreta komplekse beregninger, eller holde på en fil så lenge en applikasjon kjører.

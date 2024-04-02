@@ -13,9 +13,8 @@ summary: "Vi\u1EC7c lo\u1EA1i b\u1ECF d\u1EA5u nh\xE1y kh\u1ECFi m\u1ED9t chu\u1
   \ ho\u1EB7c d\u1EA5u nh\xE1y k\xE9p (`\"`) bao quanh v\u0103n b\u1EA3n c\u1EE7a\
   \ b\u1EA1n. L\u1EADp tr\xECnh vi\xEAn\u2026"
 title: "Lo\u1EA1i b\u1ECF d\u1EA5u ngo\u1EB7c k\xE9p kh\u1ECFi chu\u1ED7i"
+weight: 9
 ---
-
-{{< edit_this_page >}}
 
 ## Cái gì & Tại sao?
 Việc loại bỏ dấu nháy khỏi một chuỗi trong PowerShell giúp loại bỏ dấu nháy đơn (`'`) hoặc dấu nháy kép (`"`) bao quanh văn bản của bạn. Lập trình viên thường cần phải làm sạch chuỗi cho việc xử lý, so sánh, hoặc mục đích xuất ra, đặc biệt khi xử lí đầu vào từ người dùng hoặc phân tích tệp.

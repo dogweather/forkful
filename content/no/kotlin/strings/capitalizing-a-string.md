@@ -11,9 +11,8 @@ summary: "\xC5 gj\xF8re om en streng til stor forbokstav i programmering inneb\x
   rer \xE5 konvertere det f\xF8rste tegnet i strengen til en stor bokstav hvis det\
   \ ikke allerede er\u2026"
 title: Sette stor bokstav i en streng
+weight: 2
 ---
-
-{{< edit_this_page >}}
 
 ## Hva & Hvorfor?
 

@@ -9,9 +9,8 @@ summary: "Gerar n\xFAmeros aleat\xF3rios no PowerShell \xE9 sobre criar valores 
   ricos imprevis\xEDveis dentro de uma faixa especificada. Programadores utilizam\
   \ essa\u2026"
 title: "Gera\xE7\xE3o de n\xFAmeros aleat\xF3rios"
+weight: 12
 ---
-
-{{< edit_this_page >}}
 
 ## O Que & Por Quê?
 Gerar números aleatórios no PowerShell é sobre criar valores numéricos imprevisíveis dentro de uma faixa especificada. Programadores utilizam essa capacidade por uma miríade de razões, incluindo testes, simulação e propósitos de segurança, onde a imprevisibilidade ou a imitação de aleatoriedade do mundo real é crucial.

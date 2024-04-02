@@ -13,9 +13,8 @@ summary: "L\xE0m vi\u1EC7c v\u1EDBi c\xE1c t\u1EC7p CSV (Comma-Separated Values 
   \ l\xE0 \u0111\u1ECDc t\u1EEB v\xE0 ghi d\u1EEF li\u1EC7u v\xE0o c\xE1c t\u1EC7\
   p v\u0103n b\u1EA3n \u0111\u01A1n gi\u1EA3n, n\u01A1i m\u1ED7i\u2026"
 title: "L\xE0m vi\u1EC7c v\u1EDBi CSV"
+weight: 37
 ---
-
-{{< edit_this_page >}}
 
 ## Làm việc và Lý do?
 Làm việc với các tệp CSV (Comma-Separated Values - Giá trị Phân cách bởi Dấu phẩy) có nghĩa là đọc từ và ghi dữ liệu vào các tệp văn bản đơn giản, nơi mỗi hàng là một bản ghi dữ liệu. Các lập trình viên thích CSV vì chúng nhẹ, dễ đọc và có thể hoạt động được với hầu hết các công cụ xử lý dữ liệu.

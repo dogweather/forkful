@@ -11,9 +11,8 @@ summary: "\xC5 tolke HTML i Clojure inneb\xE6rer \xE5 programmelt trekke ut info
   \ fra HTML-dokumenter. Programmerere gj\xF8r dette for \xE5 f\xE5 tilgang til, manipulere\
   \ eller\u2026"
 title: Analysering av HTML
+weight: 43
 ---
-
-{{< edit_this_page >}}
 
 ## Hva og hvorfor?
 

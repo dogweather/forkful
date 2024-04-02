@@ -19,9 +19,8 @@ summary: "\uBCF5\uC18C\uC218\uB294 \uC2E4\uC218\uBD80\uC640 \uD5C8\uC218\uBD80\u
   \ \uC9C4\uB3D9\uD558\uB294 \uD568\uC218\uB4E4\uC744 \uB2E4\uB8E8\uB294 \uACC4\uC0B0\
   \uC5D0 \uADF8\uAC83\uB4E4\uC744 \uC0AC\uC6A9\uD569\uB2C8\uB2E4."
 title: "\uBCF5\uC18C\uC218 \uB2E4\uB8E8\uAE30"
+weight: 14
 ---
-
-{{< edit_this_page >}}
 
 ## 무엇인가 & 왜인가?
 복소수는 실수부와 허수부로 구성되며, 주로 `a + bi`로 표기됩니다. 복소수는 고급 수학, 물리학, 공학, 그리고 특정 컴퓨터 알고리즘에서 중요한 역할을 합니다. 프로그래머들은 음수의 제곱근 및 진동하는 함수들을 다루는 계산에 그것들을 사용합니다.

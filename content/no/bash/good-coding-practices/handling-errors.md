@@ -9,9 +9,8 @@ summary: "H\xE5ndtering av feil i Bash-skripting handler om \xE5 forutse hvor ti
   \ kan g\xE5 galt og h\xE5ndtere det p\xE5 en god m\xE5te. Hvorfor? Vel, det holder\
   \ skriptet ditt\u2026"
 title: "Feilh\xE5ndtering"
+weight: 16
 ---
-
-{{< edit_this_page >}}
 
 ## Hva & Hvorfor?
 

@@ -23,9 +23,8 @@ summary: "Clojure\uC5D0\uC11C \uD14C\uC2A4\uD2B8\uB97C \uC791\uC131\uD558\uB294 
   \uC131\uC744 \uD5A5\uC0C1\uC2DC\uD0A4\uB294 \uB370 \uB3C4\uC6C0\uC774 \uB429\uB2C8\
   \uB2E4."
 title: "\uD14C\uC2A4\uD2B8 \uC791\uC131\uD558\uAE30"
+weight: 36
 ---
-
-{{< edit_this_page >}}
 
 ## 무엇 & 왜?
 Clojure에서 테스트를 작성하는 것은 다른 프로그래밍 언어에서처럼, 주 코드베이스가 예상대로 작동하는지 검증하기 위해 전용 코드를 생성하는 과정을 포함합니다. 이는 정확성을 보장하고 리팩토링을 용이하게 하며 코드 안정성을 향상시키는 데 도움이 됩니다.

@@ -11,9 +11,8 @@ summary: "YAML, acronyme de \"YAML Ain't Markup Language\", est un format de s\x
   rialisation de donn\xE9es lisible par l'humain. Les programmeurs l'utilisent pour\
   \ des\u2026"
 title: Travailler avec YAML
+weight: 41
 ---
-
-{{< edit_this_page >}}
 
 ## Quoi & Pourquoi ?
 

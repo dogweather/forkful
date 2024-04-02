@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Citaten uit een string verwijderen betekent die extra verpakkingen wegnemen\
   \ om de schone tekst binnenin te krijgen. Programmeurs doen dit om invoer te\u2026"
 title: Quotes verwijderen uit een string
+weight: 9
 ---
-
-{{< edit_this_page >}}
 
 ## Wat & Waarom?
 Citaten uit een string verwijderen betekent die extra verpakkingen wegnemen om de schone tekst binnenin te krijgen. Programmeurs doen dit om invoer te zuiveren, fouten te vermijden en data voor te bereiden voor verwerking waar citaten hinderlijk zijn, geen functies.

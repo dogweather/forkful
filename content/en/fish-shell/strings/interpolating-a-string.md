@@ -7,9 +7,8 @@ model: gpt-4-1106-preview
 summary: "Interpolating a string means blending variables or expressions within a\
   \ string. It saves time and enhances readability by allowing dynamic content without\u2026"
 title: Interpolating a string
+weight: 8
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 

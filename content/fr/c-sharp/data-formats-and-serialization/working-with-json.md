@@ -11,9 +11,8 @@ summary: "Travailler avec le JSON (JavaScript Object Notation) implique l'analys
   \ la g\xE9n\xE9ration et l'interrogation de donn\xE9es JSON, ce qui en fait une\
   \ comp\xE9tence\u2026"
 title: Travailler avec JSON
+weight: 38
 ---
-
-{{< edit_this_page >}}
 
 ## Quoi et pourquoi ?
 

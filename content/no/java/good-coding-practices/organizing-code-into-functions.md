@@ -9,9 +9,8 @@ summary: "\xC5 organisere kode i funksjoner betyr \xE5 bryte ned et stort progra
   \ inn i h\xE5ndterbare deler, hvor hver gj\xF8r en distinkt oppgave. Programmerere\
   \ gj\xF8r dette\u2026"
 title: Organisering av kode i funksjoner
+weight: 18
 ---
-
-{{< edit_this_page >}}
 
 ## Hva & Hvorfor?
 Å organisere kode i funksjoner betyr å bryte ned et stort program inn i håndterbare deler, hvor hver gjør en distinkt oppgave. Programmerere gjør dette for å gjøre koden lesbar, gjenbrukbar og vedlikeholdbar.

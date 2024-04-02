@@ -9,9 +9,8 @@ model: gpt-4-1106-preview
 summary: "Every project starts with a single step. For programmers, that means setting\
   \ up the initial structure and writing kick-off code. We do this to transform\u2026"
 title: Starting a new project
+weight: 1
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 Every project starts with a single step. For programmers, that means setting up the initial structure and writing kick-off code. We do this to transform ideas into a concrete foundation, ready for expansion and innovation.

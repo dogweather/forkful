@@ -19,9 +19,8 @@ summary: "\uAE30\uBCF8 \uC778\uC99D\uC744 \uC0AC\uC6A9\uD558\uB294 HTTP \uC694\u
   \uC694\uD560 \uB54C \uC0AC\uC6A9\uB429\uB2C8\uB2E4."
 title: "\uAE30\uBCF8 \uC778\uC99D\uC744 \uC0AC\uC6A9\uD55C HTTP \uC694\uCCAD \uBCF4\
   \uB0B4\uAE30"
+weight: 45
 ---
-
-{{< edit_this_page >}}
 
 # Bash로 HTTP 요청과 기본 인증하기
 

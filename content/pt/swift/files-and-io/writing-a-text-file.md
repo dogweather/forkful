@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Escrever um arquivo de texto em Swift permite armazenar persistentemente\
   \ dados em string no sistema de arquivos, o que \xE9 essencial para tarefas como\u2026"
 title: Escrevendo um arquivo de texto
+weight: 24
 ---
-
-{{< edit_this_page >}}
 
 ## O que e Por quê?
 

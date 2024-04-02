@@ -9,9 +9,8 @@ summary: "HTTP-pyynt\xF6 on verkkoresurssin (yleens\xE4 web-sivun tai API:n) hak
   \ Ohjelmoijat l\xE4hett\xE4v\xE4t n\xE4it\xE4 pyynt\xF6j\xE4 tietojen noutamiseksi,\
   \ l\xE4hett\xE4miseksi,\u2026"
 title: "HTTP-pyynn\xF6n l\xE4hett\xE4minen"
+weight: 44
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why? (Mikä & Miksi?)
 HTTP-pyyntö on verkkoresurssin (yleensä web-sivun tai API:n) hakemiskutsu. Ohjelmoijat lähettävät näitä pyyntöjä tietojen noutamiseksi, lähettämiseksi, päivittämiseksi tai poistamiseksi.

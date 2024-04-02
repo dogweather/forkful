@@ -21,9 +21,8 @@ summary: "\uCF54\uB4DC\uB97C \uD568\uC218\uB85C \uAD6C\uC131\uD55C\uB2E4\uB294 \
   \uAC01\uD574\uBCF4\uC138\uC694: \uAD7D\uAE30 \uC7AC\uB8CC\uBD80\uD130 \uD1B5\uC870\
   \uB9BC \uC2DD\uD488\uAE4C\uC9C0 \uBAA8\uB4E0 \uAC83\uC774\u2026"
 title: "\uCF54\uB4DC\uB97C \uD568\uC218\uB85C \uAD6C\uC131\uD558\uAE30"
+weight: 18
 ---
-
-{{< edit_this_page >}}
 
 ## 무엇 & 왜?
 코드를 함수로 구성한다는 것은 프로그램을 재사용 가능한 부분으로 나누어 각각 특정 작업을 처리하는 것을 의미합니다. 우리는 코드를 읽고, 디버그하며, 업데이트하기 쉽게 만들기 위해 이렇게 합니다. 코드를 팬트리처럼 생각해보세요: 굽기 재료부터 통조림 식품까지 모든 것이 그룹화되어 있어 필요한 것을 손쉽게 찾고 싶어합니다.

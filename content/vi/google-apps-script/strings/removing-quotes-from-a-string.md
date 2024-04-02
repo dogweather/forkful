@@ -13,9 +13,8 @@ summary: "Vi\u1EC7c lo\u1EA1i b\u1ECF d\u1EA5u ngo\u1EB7c k\xE9p kh\u1ECFi m\u1E
   ng d\u1EA5u ngo\u1EB7c k\xE9p kh\xF4ng c\u1EA7n thi\u1EBFt c\xF3 th\u1EC3 bao quanh\
   \ d\u1EEF li\u1EC7u chu\u1ED7i c\u1EE7a\u2026"
 title: "Lo\u1EA1i b\u1ECF d\u1EA5u ngo\u1EB7c k\xE9p kh\u1ECFi chu\u1ED7i k\xFD t\u1EF1"
+weight: 9
 ---
-
-{{< edit_this_page >}}
 
 ## Gì và Tại sao?
 

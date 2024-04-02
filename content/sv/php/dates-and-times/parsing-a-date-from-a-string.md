@@ -11,9 +11,8 @@ summary: "Att tolka ett datum fr\xE5n en str\xE4ng i PHP inneb\xE4r att konverte
   \ text som representerar ett datum och/eller tid till ett PHP `DateTime`-objekt\
   \ eller andra\u2026"
 title: "Analysera ett datum fr\xE5n en str\xE4ng"
+weight: 30
 ---
-
-{{< edit_this_page >}}
 
 ## Vad & Varför?
 

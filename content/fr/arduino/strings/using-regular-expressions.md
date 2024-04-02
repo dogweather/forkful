@@ -11,9 +11,8 @@ summary: "Les expressions r\xE9guli\xE8res (regex) sont des s\xE9quences de cara
   res qui d\xE9finissent des mod\xE8les de recherche, principalement utilis\xE9es\
   \ pour la\u2026"
 title: "Utilisation des expressions r\xE9guli\xE8res"
+weight: 11
 ---
-
-{{< edit_this_page >}}
 
 ## Quoi & Pourquoi ?
 Les expressions régulières (regex) sont des séquences de caractères qui définissent des modèles de recherche, principalement utilisées pour la correspondance et la manipulation de chaînes de caractères. Les programmeurs utilisent les regex dans les projets Arduino pour analyser les entrées sérielles, valider les entrées utilisateur ou extraire des données des chaînes, améliorant ainsi l'efficacité et la flexibilité du traitement des données.

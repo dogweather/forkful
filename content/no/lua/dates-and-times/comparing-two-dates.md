@@ -9,9 +9,8 @@ summary: "Sammenligning av to datoer betyr rett og slett \xE5 sjekke hvilken dat
   \ kommer f\xF8r eller etter en annen. Programmerere gj\xF8r dette for \xE5 h\xE5\
   ndtere tidslinjer,\u2026"
 title: Sammenlikning av to datoer
+weight: 27
 ---
-
-{{< edit_this_page >}}
 
 ## Hva & Hvorfor?
 Sammenligning av to datoer betyr rett og slett å sjekke hvilken dato kommer før eller etter en annen. Programmerere gjør dette for å håndtere tidslinjer, frister, og tidssensitive funksjoner.

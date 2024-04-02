@@ -9,9 +9,8 @@ summary: "Teilstrings extrahieren bedeutet, bestimmte Abschnitte aus einem l\xE4
   \ String herauszuschneiden. Programmierer machen das, um Daten zu manipulieren,\
   \ zu\u2026"
 title: Teilstrings extrahieren
+weight: 6
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 Teilstrings extrahieren bedeutet, bestimmte Abschnitte aus einem längeren String herauszuschneiden. Programmierer machen das, um Daten zu manipulieren, zu validieren oder Features wie Suchen und Ersetzen zu implementieren.

@@ -17,9 +17,8 @@ summary: "\u5728 Haskell \u4E2D\u7EC4\u7EC7\u4EE3\u7801\u8FDB\u5165\u51FD\u6570\
   \u4F7F\u4EE3\u7801\u53EF\u8BFB\u6027\u66F4\u5F3A\uFF0C\u4E14\u66F4\u6613\u4E8E\u8C03\
   \u8BD5\u3002"
 title: "\u5C06\u4EE3\u7801\u7EC4\u7EC7\u6210\u51FD\u6570"
+weight: 18
 ---
-
-{{< edit_this_page >}}
 
 ## 何为之 & 为何之?
 在 Haskell 中组织代码进入函数意味着将你的代码分解成可复用的、有名称的代码块。为什么这么做？它能使你的代码遵循"不要重复自己"(Don't Repeat Yourself，即 DRY)原则，使代码可读性更强，且更易于调试。

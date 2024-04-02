@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Karakters verwijderen die overeenkomen met een patroon betekent specifieke\
   \ sequenties uit een string verwijderen. Programmeurs doen dit om gegevens te\u2026"
 title: Karakters verwijderen die overeenkomen met een patroon
+weight: 5
 ---
-
-{{< edit_this_page >}}
 
 ## Wat & Waarom?
 Karakters verwijderen die overeenkomen met een patroon betekent specifieke sequenties uit een string verwijderen. Programmeurs doen dit om gegevens te schonen, formaten af te dwingen, of ongewenste informatie te verwijderen.

@@ -9,9 +9,8 @@ summary: "\xC5 h\xE5ndtere feil betyr \xE5 skrive kode som kan forutse og h\xE5n
   \ n\xE5r ting g\xE5r galt. Utviklere gj\xF8r dette for \xE5 forhindre krasj, beskytte\
   \ dataintegritet og\u2026"
 title: "Feilh\xE5ndtering"
+weight: 16
 ---
-
-{{< edit_this_page >}}
 
 ## Hva & Hvorfor?
 Å håndtere feil betyr å skrive kode som kan forutse og håndtere når ting går galt. Utviklere gjør dette for å forhindre krasj, beskytte dataintegritet og tilby brukere smidige tilbakefallsløsninger.

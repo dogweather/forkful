@@ -23,9 +23,8 @@ summary: "YAML\u306F\u300CYAML Ain't Markup Language\u300D\u306E\u7565\u3067\u30
   \u30FC\u30BF\u5F62\u5F0F\u3068\u6BD4\u3079\u3066YAML\u3092\u3088\u304F\u4F7F\u7528\
   \u3057\u307E\u3059\u3002"
 title: "YAML \u3092\u64CD\u4F5C\u3059\u308B"
+weight: 41
 ---
-
-{{< edit_this_page >}}
 
 ## 何となぜ？
 YAMLは「YAML Ain't Markup Language」の略で、人間が読めるデータシリアライゼーション形式です。そのシンプルさと読みやすさから、プログラマーは設定ファイル、プロセス間メッセージング、データストレージにXMLやJSONなどの他のデータ形式と比べてYAMLをよく使用します。

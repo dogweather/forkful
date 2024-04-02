@@ -21,9 +21,8 @@ summary: "\u5728Clojure\u4E2D\u5904\u7406JSON\uFF08JavaScript\u5BF9\u8C61\u8868\
   \u672C\u7684\uFF0C\u56E0\u4E3AJSON\u5728\u4E0D\u540C\u7684\u7F16\u7A0B\u73AF\u5883\
   \u4E2D\u88AB\u666E\u904D\u8BA4\u53EF\u5E76\u652F\u6301\u3002"
 title: "\u4F7F\u7528JSON\u8FDB\u884C\u7F16\u7A0B"
+weight: 38
 ---
-
-{{< edit_this_page >}}
 
 ## 什么与为什么？
 在Clojure中处理JSON（JavaScript对象表示法）包括将JSON字符串解析成Clojure数据结构（映射，向量）及其相反操作。这项任务对于需要用结构化、基于文本的格式通信数据的网络服务、API以及应用来说是基本的，因为JSON在不同的编程环境中被普遍认可并支持。

@@ -19,9 +19,8 @@ summary: "\u0420\u043E\u0431\u043E\u0442\u0430 \u0437 JSON (JavaScript Object No
   \ \u0441\u0442\u0440\u0443\u043A\u0442\u0443\u0440 \u0434\u0430\u043D\u0438\u0445\
   \ Rust \u043D\u0430\u0437\u0430\u0434 \u0443 JSON.\u2026"
 title: "\u0420\u043E\u0431\u043E\u0442\u0430 \u0437 JSON"
+weight: 38
 ---
-
-{{< edit_this_page >}}
 
 ## Що і Чому?
 

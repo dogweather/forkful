@@ -11,9 +11,8 @@ summary: "Trabalhar com JSON em Lua envolve a an\xE1lise de strings formatadas e
   \ JSON para tabelas Lua e vice-versa, possibilitando uma f\xE1cil troca de dados\
   \ entre\u2026"
 title: Trabalhando com JSON
+weight: 38
 ---
-
-{{< edit_this_page >}}
 
 ## O que & Por quê?
 

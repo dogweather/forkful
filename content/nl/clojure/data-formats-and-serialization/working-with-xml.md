@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "XML is een opmaaktaal voor het coderen van documenten op een wijze die zowel\
   \ door mensen als machines gelezen kan worden. Het is cruciaal in webservices,\u2026"
 title: Werken met XML
+weight: 40
 ---
-
-{{< edit_this_page >}}
 
 ## Wat & Waarom?
 XML is een opmaaktaal voor het coderen van documenten op een wijze die zowel door mensen als machines gelezen kan worden. Het is cruciaal in webservices, configuratiebestanden en gegevensuitwisseling omdat het gegevens draagt in een gestructureerd, hiërarchisch formaat.

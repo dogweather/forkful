@@ -8,9 +8,8 @@ model: gpt-4-1106-preview
 summary: "Cosa \xE8 e perch\xE9 si usa il debug? Stampare output per il debug significa\
   \ visualizzare messaggi interni al programma durante l'esecuzione per capire cosa\u2026"
 title: Stampa dell'output di debug
+weight: 33
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 Cosa è e perché si usa il debug? Stampare output per il debug significa visualizzare messaggi interni al programma durante l'esecuzione per capire cosa sta succedendo. Si fa per individuare e risolvere problemi nel codice, come un chirurgo che monitora i segnali vitali durante un'operazione.

@@ -7,9 +7,8 @@ model: gpt-4-0125-preview
 summary: "Numeroiden py\xF6rist\xE4minen tarkoittaa desimaalien karsimista yksinkertaisempaan\
   \ arvoon, joka on riitt\xE4v\xE4n hyv\xE4 tietyss\xE4 kontekstissa. Ohjelmoijat\u2026"
 title: "Numerojen py\xF6rist\xE4minen"
+weight: 13
 ---
-
-{{< edit_this_page >}}
 
 ## Mikä & Miksi?
 

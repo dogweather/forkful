@@ -10,9 +10,8 @@ model: gpt-4-0125-preview
 summary: "Regul\xE4re Ausdr\xFCcke (regex) sind Zeichenfolgen, die Suchmuster definieren,\
   \ die haupts\xE4chlich f\xFCr die Zeichenkettenabgleichung und -manipulation verwendet\u2026"
 title: "Regul\xE4re Ausdr\xFCcke verwenden"
+weight: 11
 ---
-
-{{< edit_this_page >}}
 
 ## Was & Warum?
 Reguläre Ausdrücke (regex) sind Zeichenfolgen, die Suchmuster definieren, die hauptsächlich für die Zeichenkettenabgleichung und -manipulation verwendet werden. Programmierer nutzen regex in Arduino-Projekten, um serielle Eingaben zu parsen, Benutzereingaben zu validieren oder Daten aus Zeichenketten zu extrahieren, was die Effizienz und Flexibilität der Datenverarbeitung steigert.

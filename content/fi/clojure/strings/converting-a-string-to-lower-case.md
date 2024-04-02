@@ -7,9 +7,8 @@ model: gpt-4-1106-preview
 summary: Muuttaa merkkijonon kaikki kirjaimet pieniksi. Teemme sen datan yhdenmukaistamiseen,
   vertailuihin ja haun yksinkertaistamiseen.
 title: Merkkijonon muuntaminen pieniksi kirjaimiksi
+weight: 4
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why? (Mikä ja Miksi?)
 Muuttaa merkkijonon kaikki kirjaimet pieniksi. Teemme sen datan yhdenmukaistamiseen, vertailuihin ja haun yksinkertaistamiseen.

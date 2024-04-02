@@ -11,9 +11,8 @@ summary: "W \u015Bwiecie programowania praca z plikami CSV (Comma-Separated Valu
   \ obejmuje odczyt z plik\xF3w tekstowych oraz zapis danych do nich, zorganizowanych\
   \ w\u2026"
 title: Praca z plikami CSV
+weight: 37
 ---
-
-{{< edit_this_page >}}
 
 ## Co i dlaczego?
 

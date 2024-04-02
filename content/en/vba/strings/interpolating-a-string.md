@@ -7,9 +7,8 @@ model: gpt-4-0125-preview
 summary: "String interpolation in Visual Basic for Applications (VBA) refers to the\
   \ process of embedding variables or expressions within a string literal, allowing\u2026"
 title: Interpolating a string
+weight: 8
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 

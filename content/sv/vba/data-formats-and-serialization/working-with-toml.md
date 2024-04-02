@@ -10,9 +10,8 @@ model: gpt-4-0125-preview
 summary: "TOML, som st\xE5r f\xF6r Toms uppenbara, minimala spr\xE5k, \xE4r ett data-serialiseringsformat\
   \ som fr\xE4mst anv\xE4nds f\xF6r konfigurationsfiler. Programmerare utnyttjar\u2026"
 title: Arbeta med TOML
+weight: 39
 ---
-
-{{< edit_this_page >}}
 
 ## Vad & Varför?
 

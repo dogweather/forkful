@@ -7,9 +7,8 @@ model: gpt-4-1106-preview
 summary: "Nedlasting av en nettside betyr \xE5 hente ned HTML-innholdet s\xE5 det\
   \ kan analyseres eller manipuleres lokalt. Programmerere gj\xF8r dette for datainnsamling,\u2026"
 title: Nedlasting av en nettside
+weight: 42
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 Nedlasting av en nettside betyr å hente ned HTML-innholdet så det kan analyseres eller manipuleres lokalt. Programmerere gjør dette for datainnsamling, testing eller for å integrere informasjon i sine applikasjoner.

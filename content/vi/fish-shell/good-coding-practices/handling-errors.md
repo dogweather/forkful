@@ -13,9 +13,8 @@ summary: "X\u1EED l\xFD l\u1ED7i cho ph\xE9p k\u1ECBch b\u1EA3n c\u1EE7a b\u1EA1
   i m\u1ED9t c\xE1ch nh\u1EB9 nh\xE0ng. Ch\xFAng ta l\xE0m \u0111i\u1EC1u n\xE0y \u0111\
   \u1EC3 qu\u1EA3n l\xFD s\u1EF1 c\u1ED1 m\xE0 kh\xF4ng l\xE0m\u2026"
 title: "X\u1EED l\xFD l\u1ED7i"
+weight: 16
 ---
-
-{{< edit_this_page >}}
 
 ## Gì và Tại sao?
 Xử lý lỗi cho phép kịch bản của bạn giải quyết những tình huống không mong đợi một cách nhẹ nhàng. Chúng ta làm điều này để quản lý sự cố mà không làm người dùng của chúng ta phải nhức đầu.

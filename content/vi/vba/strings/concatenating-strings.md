@@ -13,9 +13,8 @@ summary: "Vi\u1EC7c n\u1ED1i chu\u1ED7i trong Visual Basic for Applications (VBA
   i th\xE0nh m\u1ED9t th\u1EF1c th\u1EC3 duy nh\u1EA5t. \u0110\xE2y l\xE0 m\u1ED9\
   t nhi\u1EC7m v\u1EE5 c\u01A1\u2026"
 title: "N\u1ED1i chu\u1ED7i k\xFD t\u1EF1"
+weight: 3
 ---
-
-{{< edit_this_page >}}
 
 ## Cái gì & Tại sao?
 

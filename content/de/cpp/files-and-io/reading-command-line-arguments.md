@@ -8,9 +8,8 @@ model: gpt-4-1106-preview
 summary: "Kommandozeilenargumente erm\xF6glichen es einem Programm, beim Start Eingaben\
   \ zu empfangen. Das ist praktisch, um dem Programm zu sagen, was es tun soll,\u2026"
 title: Lesen von Kommandozeilenargumenten
+weight: 23
 ---
-
-{{< edit_this_page >}}
 
 ## Was & Warum?
 Kommandozeilenargumente ermöglichen es einem Programm, beim Start Eingaben zu empfangen. Das ist praktisch, um dem Programm zu sagen, was es tun soll, ohne dass der Benutzer das Programm selbst ändern muss.

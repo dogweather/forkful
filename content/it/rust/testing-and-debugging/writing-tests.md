@@ -10,9 +10,8 @@ model: gpt-4-0125-preview
 summary: "Scrivere test in Rust prevede la creazione di controlli automatizzati per\
   \ garantire che il codice funzioni come previsto. I programmatori fanno ci\xF2 per\u2026"
 title: Scrivere test
+weight: 36
 ---
-
-{{< edit_this_page >}}
 
 ## Cos'è & Perché?
 

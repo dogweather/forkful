@@ -8,9 +8,8 @@ model: gpt-4-1106-preview
 summary: "Leer argumentos de la l\xEDnea de comandos permite que los programas reciban\
   \ datos del usuario al iniciarse. Los programadores utilizan esta t\xE9cnica para\u2026"
 title: "Lectura de argumentos de l\xEDnea de comandos"
+weight: 23
 ---
-
-{{< edit_this_page >}}
 
 ## ¿Qué y Por Qué?
 Leer argumentos de la línea de comandos permite que los programas reciban datos del usuario al iniciarse. Los programadores utilizan esta técnica para personalizar la ejecución de un programa sin la necesidad de una interfaz de usuario gráfica.

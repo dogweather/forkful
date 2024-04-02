@@ -11,9 +11,8 @@ summary: "\xC5 gj\xF8re om en streng til stor forbokstav inneb\xE6rer \xE5 endre
   \ f\xF8rste tegnet i gitt tekst til stor bokstav, for \xE5 sikre at setninger, titler\
   \ eller\u2026"
 title: Sette stor bokstav i en streng
+weight: 2
 ---
-
-{{< edit_this_page >}}
 
 ## Hva & Hvorfor?
 Å gjøre om en streng til stor forbokstav innebærer å endre det første tegnet i gitt tekst til stor bokstav, for å sikre at setninger, titler eller egennavn starter korrekt i et datasett. Programmerere utfører ofte kapitalisering av strenger for datanormalisering, for å forbedre lesbarheten eller sikre konsistens i brukerinndata eller tekstlig databehandling.

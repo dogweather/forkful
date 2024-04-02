@@ -9,9 +9,8 @@ summary: "Ler argumentos da linha de comando permite aos scripts em Bash pegar d
   \ externos sem serem est\xE1ticos. Os programadores utilizam essas informa\xE7\xF5\
   es para\u2026"
 title: Lendo argumentos da linha de comando
+weight: 23
 ---
-
-{{< edit_this_page >}}
 
 ## O que é e por quê?
 Ler argumentos da linha de comando permite aos scripts em Bash pegar dados externos sem serem estáticos. Os programadores utilizam essas informações para condicionar a execução e adaptar o comportamento dos scripts conforme a necessidade.

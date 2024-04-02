@@ -11,9 +11,8 @@ summary: "Pisanie do standardowego b\u0142\u0119du (stderr) w Fish Shell polega 
   \ kierowaniu komunikat\xF3w o b\u0142\u0119dach lub diagnostyki osobno od standardowego\
   \ wyj\u015Bcia (stdout).\u2026"
 title: "Pisanie do standardowego b\u0142\u0119du"
+weight: 25
 ---
-
-{{< edit_this_page >}}
 
 ## Co i dlaczego?
 

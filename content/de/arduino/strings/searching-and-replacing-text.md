@@ -9,9 +9,8 @@ summary: "Text suchen und ersetzen bedeutet, bestimmte Zeichenfolgen in einem Te
   \ zu finden und sie durch andere zu ersetzen. Programmierer nutzen es, um Fehler\
   \ zu\u2026"
 title: Suchen und Ersetzen von Text
+weight: 10
 ---
-
-{{< edit_this_page >}}
 
 ## Was & Warum?
 Text suchen und ersetzen bedeutet, bestimmte Zeichenfolgen in einem Text zu finden und sie durch andere zu ersetzen. Programmierer nutzen es, um Fehler zu beheben, Daten zu aktualisieren oder Code schnell anzupassen.

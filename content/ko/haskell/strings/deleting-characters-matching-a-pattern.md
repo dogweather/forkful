@@ -18,9 +18,8 @@ summary: "\uD328\uD134\uACFC \uC77C\uCE58\uD558\uB294 \uBB38\uC790 \uC0AD\uC81C\
   \uB85C\uADF8\uB7A8\uC758 \uC785\uB825\uC744 \uAE54\uB054\uD558\uAC8C \uB2E4\uB4EC\
   \uAE30 \uC704\uD574 \uC218\uD589\uB429\uB2C8\uB2E4."
 title: "\uD328\uD134\uC5D0 \uC77C\uCE58\uD558\uB294 \uBB38\uC790 \uC0AD\uC81C"
+weight: 5
 ---
-
-{{< edit_this_page >}}
 
 ## 무엇 & 왜?
 패턴과 일치하는 문자 삭제는 특정 기준에 맞는 문자들을 문자열에서 제거하는 것을 의미합니다. 이 작업은 데이터를 정제하거나, 불필요한 부분을 제거하여 프로그램의 입력을 깔끔하게 다듬기 위해 수행됩니다.

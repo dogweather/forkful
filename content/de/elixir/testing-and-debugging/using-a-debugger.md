@@ -1,12 +1,13 @@
 ---
 date: 2024-01-26 03:48:19.903448-07:00
-description: "Ein Debugger in Elixir zu verwenden, bedeutet, durch Ihren Code zu gehen,\
-  \ Variablen zu inspizieren und Fl\xFCsse zu verfolgen, um Fehler zu beseitigen.\u2026"
+description: "Elixir wird mit einem integrierten grafischen Debugger namens `:debugger`\
+  \ geliefert. Um ihn zu nutzen, m\xFCssen Sie ihn starten und sich an Ihren laufenden\u2026"
 lastmod: '2024-03-13T22:44:53.538222-06:00'
 model: gpt-4-0125-preview
-summary: "Ein Debugger in Elixir zu verwenden, bedeutet, durch Ihren Code zu gehen,\
-  \ Variablen zu inspizieren und Fl\xFCsse zu verfolgen, um Fehler zu beseitigen.\u2026"
+summary: "Elixir wird mit einem integrierten grafischen Debugger namens `:debugger`\
+  \ geliefert. Um ihn zu nutzen, m\xFCssen Sie ihn starten und sich an Ihren laufenden\u2026"
 title: Einsatz eines Debuggers
+weight: 35
 ---
 
 ## Wie geht das:

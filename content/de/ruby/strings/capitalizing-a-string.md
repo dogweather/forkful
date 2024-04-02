@@ -10,6 +10,7 @@ model: gpt-4-0125-preview
 summary: "Das Gro\xDFschreiben eines Strings bedeutet normalerweise, das erste Zeichen\
   \ eines Strings in Gro\xDFbuchstaben umzuwandeln und den Rest in Kleinbuchstaben.\u2026"
 title: "Gro\xDFschreibung eines Strings"
+weight: 2
 ---
 
 ## Was & Warum?

@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Werken met complexe getallen houdt in dat je wiskundige bewerkingen uitvoert\
   \ op getallen die zowel een re\xEBel deel als een imaginair deel hebben.\u2026"
 title: Werken met complexe getallen
+weight: 14
 ---
-
-{{< edit_this_page >}}
 
 ## Wat & Waarom?
 

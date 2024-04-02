@@ -8,9 +8,8 @@ model: gpt-4-1106-preview
 summary: "Temporary files er midlertidige lagringssteder for data som kun trengs under\
   \ kj\xF8ring av et script eller program. Disse brukes for \xE5 unng\xE5 \xE5 forstyrre\u2026"
 title: Opprette en midlertidig fil
+weight: 21
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 Temporary files er midlertidige lagringssteder for data som kun trengs under kjøring av et script eller program. Disse brukes for å unngå å forstyrre andre filer og for å holde på data som kan være for stort eller sensitivt for å plasseres i minnet.

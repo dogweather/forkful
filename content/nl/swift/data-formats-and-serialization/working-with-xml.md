@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Werken met XML betekent het parseren en genereren van XML-gegevens in Swift.\
   \ Programmeurs doen dit voor gegevensuitwisseling, vooral wanneer ze integreren\u2026"
 title: Werken met XML
+weight: 40
 ---
-
-{{< edit_this_page >}}
 
 ## Wat & Waarom?
 Werken met XML betekent het parseren en genereren van XML-gegevens in Swift. Programmeurs doen dit voor gegevensuitwisseling, vooral wanneer ze integreren met systemen waar XML het standaardformaat is.

@@ -11,9 +11,8 @@ summary: "JSON (JavaScript Object Notation) er et lettvekts datautvekslingsforma
   \ som er lett for mennesker \xE5 lese og skrive, og for maskiner \xE5 analysere\
   \ og\u2026"
 title: "\xC5 Arbeide med JSON"
+weight: 38
 ---
-
-{{< edit_this_page >}}
 
 ## Hva & Hvorfor?
 

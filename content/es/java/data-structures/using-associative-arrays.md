@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "En Java, los arreglos asociativos, o mapas, te permiten almacenar pares\
   \ de clave-valor para una b\xFAsqueda y manipulaci\xF3n de datos eficiente. Los\u2026"
 title: Uso de matrices asociativas
+weight: 15
 ---
-
-{{< edit_this_page >}}
 
 ## Qué y por qué?
 

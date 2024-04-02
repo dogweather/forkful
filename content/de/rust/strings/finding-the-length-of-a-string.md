@@ -9,9 +9,8 @@ summary: "In Rust, die L\xE4nge eines Strings zu ermitteln bedeutet, herauszufin
   \ wie viele Zeichen der String enth\xE4lt. Programmierer m\xFCssen das oft wissen,\
   \ um\u2026"
 title: "Ermittlung der Zeichenkettenl\xE4nge"
+weight: 7
 ---
-
-{{< edit_this_page >}}
 
 ## Was & Warum?
 

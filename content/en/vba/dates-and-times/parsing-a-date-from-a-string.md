@@ -8,9 +8,8 @@ model: gpt-4-0125-preview
 summary: "Parsing a date from a string in Visual Basic for Applications (VBA) is about\
   \ converting text that represents a date into a date data type. Programmers do\u2026"
 title: Parsing a date from a string
+weight: 30
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 

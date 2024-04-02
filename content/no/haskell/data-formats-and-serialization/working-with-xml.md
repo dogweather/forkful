@@ -8,9 +8,8 @@ model: gpt-4-0125-preview
 summary: "\xC5 arbeide med XML i Haskell inneb\xE6rer parsing, manipulering og generering\
   \ av XML-strukturer. Programmerere h\xE5ndterer XML for \xE5 samhandle med tallrike\u2026"
 title: "\xC5 jobbe med XML"
+weight: 40
 ---
-
-{{< edit_this_page >}}
 
 ## Hva & Hvorfor?
 

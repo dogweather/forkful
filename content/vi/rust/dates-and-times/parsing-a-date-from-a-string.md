@@ -13,9 +13,8 @@ summary: "Ph\xE2n t\xEDch c\xFA ph\xE1p ng\xE0y th\xE1ng t\u1EEB m\u1ED9t chu\u1
   nh d\u1EA1ng ng\xE0y m\xE0 m\xE3 c\u1EE7a b\u1EA1n c\xF3 th\u1EC3 hi\u1EC3u. Ch\xFA\
   ng ta th\u1EF1c hi\u1EC7n vi\u1EC7c n\xE0y v\xEC ng\xE0y\u2026"
 title: "Ph\xE2n t\xEDch ng\xE0y t\u1EEB chu\u1ED7i k\xED t\u1EF1"
+weight: 30
 ---
-
-{{< edit_this_page >}}
 
 ## Cái gì và Tại sao?
 Phân tích cú pháp ngày tháng từ một chuỗi nghĩa là chuyển đổi văn bản thành định dạng ngày mà mã của bạn có thể hiểu. Chúng ta thực hiện việc này vì ngày tháng thường được truyền đến dưới dạng chuỗi từ đầu vào của người dùng hoặc nguồn dữ liệu bên ngoài và chúng ta cần chúng ở dạng cấu trúc để tính toán và lưu trữ.

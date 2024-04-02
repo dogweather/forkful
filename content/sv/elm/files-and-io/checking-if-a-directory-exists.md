@@ -9,9 +9,8 @@ summary: "Att kontrollera om en katalog finns \xE4r processen att verifiera en s
   kv\xE4gs existens i filsystemet. Programmerare g\xF6r detta f\xF6r att f\xF6rs\xE4\
   kra sig om att\u2026"
 title: Kontrollera om en katalog finns
+weight: 20
 ---
-
-{{< edit_this_page >}}
 
 ## Vad & Varför?
 Att kontrollera om en katalog finns är processen att verifiera en sökvägs existens i filsystemet. Programmerare gör detta för att försäkra sig om att filoperationer, som att läsa eller skriva filer, inte misslyckas på grund av saknade kataloger.

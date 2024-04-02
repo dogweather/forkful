@@ -11,9 +11,8 @@ summary: "La recherche et le remplacement de texte en programmation facilitent l
   \ modification et la gestion des cha\xEEnes de caract\xE8res, qui constituent une\
   \ t\xE2che\u2026"
 title: Rechercher et remplacer du texte
+weight: 10
 ---
-
-{{< edit_this_page >}}
 
 ## Quoi et pourquoi ?
 

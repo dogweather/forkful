@@ -11,9 +11,8 @@ summary: "Virhetulostuksen (stderr) kirjoittaminen Go:ssa tarkoittaa virheviesti
   \ tai diagnostiikkojen ohjaamista pois p\xE4\xE4ulostulovirrasta. Ohjelmoijat k\xE4\
   ytt\xE4v\xE4t\u2026"
 title: Kirjoittaminen standardivirheeseen
+weight: 25
 ---
-
-{{< edit_this_page >}}
 
 ## Mikä ja miksi?
 

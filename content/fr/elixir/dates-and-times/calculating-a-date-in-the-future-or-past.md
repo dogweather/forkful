@@ -8,9 +8,8 @@ model: gpt-4-1106-preview
 summary: "Calculer une date dans le futur ou le pass\xE9, c'est ajuster une date donn\xE9\
   e en y ajoutant ou soustrayant des jours, des mois, etc. Les programmeurs le font\u2026"
 title: "Calcul d'une date future ou pass\xE9e"
+weight: 26
 ---
-
-{{< edit_this_page >}}
 
 ## Quoi et Pourquoi ?
 Calculer une date dans le futur ou le passé, c'est ajuster une date donnée en y ajoutant ou soustrayant des jours, des mois, etc. Les programmeurs le font pour gérer des échéances, des périodes d'abonnement, des rappels, et d'autres fonctionnalités liées au temps.

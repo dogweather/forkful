@@ -9,9 +9,8 @@ summary: "Liczby zespolone maj\u0105 cz\u0119\u015B\u0107 rzeczywist\u0105 i cz\
   \u015B\u0107 urojon\u0105 (takie jak `3 + 4i`). S\u0105 u\u017Cywane w in\u017C\
   ynierii, fizyce i w pewnych problemach obliczeniowych.\u2026"
 title: Praca z liczbami zespolonymi
+weight: 14
 ---
-
-{{< edit_this_page >}}
 
 ## Co i dlaczego?
 Liczby zespolone mają część rzeczywistą i część urojoną (takie jak `3 + 4i`). Są używane w inżynierii, fizyce i w pewnych problemach obliczeniowych. Programiści pracują z nimi przy symulacjach, przetwarzaniu sygnałów oraz rozwiązywaniu pewnych typów problemów matematycznych efektywnie.

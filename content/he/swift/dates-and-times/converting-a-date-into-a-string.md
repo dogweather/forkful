@@ -21,9 +21,8 @@ summary: "\u05D4\u05DE\u05E8\u05EA \u05EA\u05D0\u05E8\u05D9\u05DA \u05DC\u05DE\u
   \u05D4\u05DE\u05D5\u05D1\u05DF \u05DC\u05DE\u05E9\u05EA\u05DE\u05E9\u05D9\u05DD."
 title: "\u05D4\u05DE\u05E8\u05EA \u05EA\u05D0\u05E8\u05D9\u05DA \u05DC\u05DE\u05D7\
   \u05E8\u05D5\u05D6\u05EA"
+weight: 28
 ---
-
-{{< edit_this_page >}}
 
 ## מה ולמה?
 המרת תאריך למחרוזת היא פעולה שמשנה את פורמט התאריך לטקסט. מתכנתים מבצעים זאת כדי להציג תאריכים בפורמט הנקרא והמובן למשתמשים.

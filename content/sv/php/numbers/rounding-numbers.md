@@ -9,9 +9,8 @@ summary: "Att avrunda tal inneb\xE4r att klippa av decimalerna till en inst\xE4l
   \ precision, ofta till hela tal. Programmerare avrundar f\xF6r att f\xF6renkla ber\xE4\
   kningar,\u2026"
 title: Avrundning av tal
+weight: 13
 ---
-
-{{< edit_this_page >}}
 
 ## Vad & Varför?
 Att avrunda tal innebär att klippa av decimalerna till en inställd precision, ofta till hela tal. Programmerare avrundar för att förenkla beräkningar, förbättra prestanda eller göra utdata användarvänliga.

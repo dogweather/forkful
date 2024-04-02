@@ -11,9 +11,8 @@ summary: "\xC5 trekke ut delstrenger inneb\xE6rer \xE5 hente spesifikke deler av
   \ streng basert p\xE5 deres posisjoner. Programmerere utf\xF8rer ofte denne operasjonen\
   \ for \xE5\u2026"
 title: Utdrag av delstrenger
+weight: 6
 ---
-
-{{< edit_this_page >}}
 
 ## Hva & Hvorfor?
 

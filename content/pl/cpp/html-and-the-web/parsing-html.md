@@ -11,9 +11,8 @@ summary: "Parsowanie HTML polega na rozbijaniu zawarto\u015Bci HTML na co\u015B,
   \ program mo\u017Ce zrozumie\u0107 i manipulowa\u0107. Programi\u015Bci robi\u0105\
   \ to w celu wyodr\u0119bniania danych,\u2026"
 title: "Analiza sk\u0142adniowa HTML"
+weight: 43
 ---
-
-{{< edit_this_page >}}
 
 ## Co i dlaczego?
 Parsowanie HTML polega na rozbijaniu zawartości HTML na coś, co program może zrozumieć i manipulować. Programiści robią to w celu wyodrębniania danych, manipulowania treścią lub integracji z zadaniami web scrapingu w ich aplikacjach.

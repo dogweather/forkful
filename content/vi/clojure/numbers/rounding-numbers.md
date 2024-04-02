@@ -15,9 +15,8 @@ summary: "L\xE0m tr\xF2n s\u1ED1 l\xE0 vi\u1EC7c \u0111i\u1EC1u ch\u1EC9nh m\u1E
   \u1ECBnh. Ch\xFAng ta l\xE0m tr\xF2n s\u1ED1 \u0111\u1EC3 \u0111\u01A1n gi\u1EA3\
   n h\xF3a ch\xFAng\u2026"
 title: "L\xE0m tr\xF2n s\u1ED1"
+weight: 13
 ---
-
-{{< edit_this_page >}}
 
 ## Làm gì & Tại sao?
 Làm tròn số là việc điều chỉnh một số để gần với số nguyên hơn, hoặc đến một độ chính xác thập phân nhất định. Chúng ta làm tròn số để đơn giản hóa chúng cho việc đọc của con người, giảm tải tính toán, hoặc đáp ứng các yêu cầu số lượng cụ thể.

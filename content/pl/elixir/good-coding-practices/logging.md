@@ -9,9 +9,8 @@ summary: "Logowanie w rozwoju oprogramowania to technika rejestrowania wydarze\u
   , kt\xF3re zachodz\u0105 podczas dzia\u0142ania programu, zazwyczaj do pliku lub\
   \ zewn\u0119trznego\u2026"
 title: "Rejestrowanie zdarze\u0144"
+weight: 17
 ---
-
-{{< edit_this_page >}}
 
 ## Co i dlaczego?
 Logowanie w rozwoju oprogramowania to technika rejestrowania wydarzeń, które zachodzą podczas działania programu, zazwyczaj do pliku lub zewnętrznego systemu. Programiści stosują ją, aby zdobyć wgląd w zachowanie oprogramowania, rozwiązać problemy i utrzymać zapis historii operacyjnej, co jest kluczowe dla debugowania i monitorowania zdrowia aplikacji.

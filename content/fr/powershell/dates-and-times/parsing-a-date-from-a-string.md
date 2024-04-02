@@ -11,9 +11,8 @@ summary: "Analyser une date \xE0 partir d'une cha\xEEne de caract\xE8res consist
   \ \xE0 reconna\xEEtre et \xE0 convertir des dates \xE9crites sous forme de texte\
   \ en un type de donn\xE9es\u2026"
 title: "Analyser une date depuis une cha\xEEne de caract\xE8res"
+weight: 30
 ---
-
-{{< edit_this_page >}}
 
 ## Quoi & Pourquoi ?
 Analyser une date à partir d'une chaîne de caractères consiste à reconnaître et à convertir des dates écrites sous forme de texte en un type de données date que PowerShell peut comprendre et traiter. Les programmeurs font cela pour manipuler, formater, comparer ou calculer des dates, des tâches courantes dans les scripts traitant des fichiers journaux, des entrées utilisateur ou du traitement de données.

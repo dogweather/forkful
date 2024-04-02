@@ -11,9 +11,8 @@ summary: "TOML (Tom's Obvious, Minimal Language) to format pliku konfiguracyjneg
   \ kt\xF3ry jest \u0142atwy do odczytania dzi\u0119ki swojej prostej sk\u0142adni.\
   \ Programi\u015Bci u\u017Cywaj\u0105\u2026"
 title: Praca z TOML
+weight: 39
 ---
-
-{{< edit_this_page >}}
 
 ## Co i dlaczego?
 

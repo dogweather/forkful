@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Fouten afhandelen in PowerShell betekent het voorspellen van ongelukken\
   \ en deze soepel beheren. Programmeurs doen dit om crashes te voorkomen en\u2026"
 title: Fouten afhandelen
+weight: 16
 ---
-
-{{< edit_this_page >}}
 
 ## Wat & Waarom?
 Fouten afhandelen in PowerShell betekent het voorspellen van ongelukken en deze soepel beheren. Programmeurs doen dit om crashes te voorkomen en gebruikers van nuttige feedback te voorzien.

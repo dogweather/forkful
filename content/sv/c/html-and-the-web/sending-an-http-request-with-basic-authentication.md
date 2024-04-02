@@ -10,9 +10,8 @@ model: gpt-4-0125-preview
 summary: "Att skicka en HTTP-beg\xE4ran med grundl\xE4ggande autentisering i C inneb\xE4\
   r att man skapar en HTTP-beg\xE4ran som inkluderar en autentiseringsheader med\u2026"
 title: "S\xE4nda en HTTP-f\xF6rfr\xE5gan med grundl\xE4ggande autentisering"
+weight: 45
 ---
-
-{{< edit_this_page >}}
 
 ## Vad och varför?
 Att skicka en HTTP-begäran med grundläggande autentisering i C innebär att man skapar en HTTP-begäran som inkluderar en autentiseringsheader med användaruppgifter kodade i Base64. Detta är en vanlig metod för att lägga till ett enkelt autentiseringsskikt till HTTP-begäranden, vilket möjliggör programmatisk åtkomst till begränsade resurser.

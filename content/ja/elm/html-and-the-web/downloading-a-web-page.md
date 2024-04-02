@@ -18,9 +18,8 @@ summary: "Web\u30DA\u30FC\u30B8\u306E\u30C0\u30A6\u30F3\u30ED\u30FC\u30C9\u306F\
   \u30A4\u30F3\u3067\u306E\u8AAD\u307F\u8FBC\u307F\u306E\u305F\u3081\u306B\u3053\u308C\
   \u3092\u884C\u3044\u307E\u3059\u3002"
 title: "\u30A6\u30A7\u30D6\u30DA\u30FC\u30B8\u306E\u30C0\u30A6\u30F3\u30ED\u30FC\u30C9"
+weight: 42
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why? (なにとなぜ？)
 Webページのダウンロードは、インターネット上のHTMLコンテンツをローカルに保存すること。プログラマーは、データの処理や分析のため、あるいはオフラインでの読み込みのためにこれを行います。

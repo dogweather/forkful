@@ -11,9 +11,8 @@ summary: "Travailler avec JSON en Lua implique de parser des cha\xEEnes format\x
   es en JSON en tables Lua et inversement, permettant un \xE9change de donn\xE9es\
   \ facile entre\u2026"
 title: Travailler avec JSON
+weight: 38
 ---
-
-{{< edit_this_page >}}
 
 ## Quoi & Pourquoi?
 Travailler avec JSON en Lua implique de parser des chaînes formatées en JSON en tables Lua et inversement, permettant un échange de données facile entre applications Lua et services web ou APIs externes. Les programmeurs le font pour tirer parti du format léger et facile à parser de JSON pour un stockage de données efficace, une configuration ou une communication API.

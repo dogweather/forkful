@@ -9,9 +9,8 @@ summary: "Att skapa en tillf\xE4llig fil \xE4r att skapa en fil som \xE4r \xE4mn
   \ att endast finnas under programmets k\xF6rning. Programmerare anv\xE4nder detta\
   \ f\xF6r att hantera\u2026"
 title: "Skapa en tempor\xE4r fil"
+weight: 21
 ---
-
-{{< edit_this_page >}}
 
 ## Vad & Varför?
 Att skapa en tillfällig fil är att skapa en fil som är ämnad att endast finnas under programmets körning. Programmerare använder detta för att hantera data som inte behöver bli permanent eller för att minska skrivningar till långsammare lagringsmedier.

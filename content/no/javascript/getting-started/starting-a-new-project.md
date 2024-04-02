@@ -9,9 +9,8 @@ summary: "Starte et nytt prosjekt betyr \xE5 sette opp grunnlaget for en ny kode
   \ Programmerere gj\xF8r det for \xE5 skape nye applikasjoner, l\xF8se problemer\
   \ eller\u2026"
 title: "\xC5 starte et nytt prosjekt"
+weight: 1
 ---
-
-{{< edit_this_page >}}
 
 ## Hva & Hvorfor?
 Starte et nytt prosjekt betyr å sette opp grunnlaget for en ny kodebase. Programmerere gjør det for å skape nye applikasjoner, løse problemer eller utforske ideer.

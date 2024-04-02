@@ -7,9 +7,8 @@ model: gpt-4-1106-preview
 summary: "Aloitettaessa uusi projekti, luot pohjan koodille. Programmoijat aloittavat\
   \ uusia projekteja testatakseen ideoita, ratkaistakseen ongelmia tai\u2026"
 title: Uuden projektin aloittaminen
+weight: 1
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why? - Mitä & Miksi?
 Aloitettaessa uusi projekti, luot pohjan koodille. Programmoijat aloittavat uusia projekteja testatakseen ideoita, ratkaistakseen ongelmia tai kehittääkseen taitojaan.

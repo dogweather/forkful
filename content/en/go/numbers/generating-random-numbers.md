@@ -9,9 +9,8 @@ summary: "Generating random numbers in programming is about creating a sequence 
   \ numbers that cannot be reasonably predicted better than by chance. Programmers\
   \ do\u2026"
 title: Generating random numbers
+weight: 12
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 

@@ -10,9 +10,8 @@ summary: "D\u0142ugo\u015B\u0107 ci\u0105gu znak\xF3w \u2013 to ile znak\xF3w za
   \ Programi\u015Bci musz\u0105 to wiedzie\u0107, aby np. weryfikowa\u0107 dane wej\u015B\
   ciowe czy obs\u0142ugiwa\u0107 teksty o zmiennej d\u0142ugo\u015Bci."
 title: "Znalezienie d\u0142ugo\u015Bci ci\u0105gu znak\xF3w"
+weight: 7
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 Długość ciągu znaków – to ile znaków zawiera. Programiści muszą to wiedzieć, aby np. weryfikować dane wejściowe czy obsługiwać teksty o zmiennej długości.

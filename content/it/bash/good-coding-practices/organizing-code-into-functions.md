@@ -7,9 +7,8 @@ model: gpt-4-1106-preview
 summary: "Dividere il codice in funzioni significa suddividere gli script in blocchi\
   \ pi\xF9 piccoli e riutilizzabili che svolgono compiti specifici. Rende il codice\u2026"
 title: Organizzazione del codice in funzioni
+weight: 18
 ---
-
-{{< edit_this_page >}}
 
 ## Cosa e Perché?
 Dividere il codice in funzioni significa suddividere gli script in blocchi più piccoli e riutilizzabili che svolgono compiti specifici. Rende il codice più pulito, più comprensibile e più facile da correggere.

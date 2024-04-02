@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Escrever um arquivo de texto em Go envolve criar e escrever strings de dados\
   \ em um novo ou existente arquivo de texto. Programadores fazem isso para\u2026"
 title: Escrevendo um arquivo de texto
+weight: 24
 ---
-
-{{< edit_this_page >}}
 
 ## O Que & Por Quê?
 

@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Refactoring in de programmeertaal verwijst naar het proces van het herstructureren\
   \ van bestaande computercode\u2014het veranderen van de factoring zonder het\u2026"
 title: Refactoring
+weight: 19
 ---
-
-{{< edit_this_page >}}
 
 ## Wat & Waarom?
 

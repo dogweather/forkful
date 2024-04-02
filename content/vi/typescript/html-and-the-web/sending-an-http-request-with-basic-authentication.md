@@ -14,9 +14,8 @@ summary: "Trong TypeScript, vi\u1EC7c g\u1EEDi m\u1ED9t y\xEAu c\u1EA7u HTTP v\u
   \u1EDDi d\xF9ng:m\u1EADt kh\u1EA9u \u0111\u1EC3\u2026"
 title: "G\u1EEDi m\u1ED9t y\xEAu c\u1EA7u HTTP v\u1EDBi x\xE1c th\u1EF1c c\u01A1 b\u1EA3\
   n"
+weight: 45
 ---
-
-{{< edit_this_page >}}
 
 ## Gì và Tại sao?
 

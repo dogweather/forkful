@@ -9,9 +9,8 @@ summary: "TOML steht f\xFCr Toms Offensichtliche, Minimale Sprache. Es wird f\xF
   r Konfigurationsdateien verwendet, weil es f\xFCr Menschen leicht zu lesen und zu\
   \ schreiben\u2026"
 title: Arbeiten mit TOML
+weight: 39
 ---
-
-{{< edit_this_page >}}
 
 ## Was & Warum?
 TOML steht für Toms Offensichtliche, Minimale Sprache. Es wird für Konfigurationsdateien verwendet, weil es für Menschen leicht zu lesen und zu schreiben ist, während es gleichzeitig einfach von Maschinen geparst werden kann. Entwickler greifen zu TOML, um dem Durcheinander von XML und der Kniffligkeit von JSON bei der Verwaltung von Konfigurationen zu entgehen.

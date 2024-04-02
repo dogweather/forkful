@@ -7,9 +7,8 @@ model: gpt-4-1106-preview
 summary: "Complex numbers have a real part and an imaginary part, usually written\
   \ as `a + bi`. They're crucial in advanced math, physics, engineering, and certain\u2026"
 title: Working with complex numbers
+weight: 14
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 Complex numbers have a real part and an imaginary part, usually written as `a + bi`. They're crucial in advanced math, physics, engineering, and certain computer algorithms. Programmers work with them to handle calculations that involve square roots of negative numbers and oscillating functions.

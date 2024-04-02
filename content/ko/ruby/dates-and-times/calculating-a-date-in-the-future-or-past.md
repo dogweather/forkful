@@ -18,9 +18,8 @@ summary: "\uBBF8\uB798\uB098 \uACFC\uAC70\uC758 \uD2B9\uC815 \uB0A0\uC9DC\uB97C 
   \ \uAE30\uB2A5\uC744 \uAD6C\uD604\uD560 \uB54C \uC774\uB97C \uD65C\uC6A9\uD569\uB2C8\
   \uB2E4."
 title: "\uBBF8\uB798\uB098 \uACFC\uAC70\uC758 \uB0A0\uC9DC \uACC4\uC0B0\uD558\uAE30"
+weight: 26
 ---
-
-{{< edit_this_page >}}
 
 ## 무엇 & 왜?
 미래나 과거의 특정 날짜를 계산한다는 것은 날짜에 일정 기간을 더하거나 빼는 것을 말합니다. 프로그래머는 예약 시스템, 기한 설정, 날짜 기반 리마인더와 같은 기능을 구현할 때 이를 활용합니다.

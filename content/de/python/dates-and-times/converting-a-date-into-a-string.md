@@ -9,9 +9,8 @@ summary: "Die Umwandlung eines Datums in einen String bedeutet einfach, ein Datu
   \ von einem Format, das von einem Computer verstanden wird, in Text umzuwandeln,\
   \ den\u2026"
 title: Datum in einen String umwandeln
+weight: 28
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why? (Was & Warum?)
 Die Umwandlung eines Datums in einen String bedeutet einfach, ein Datum von einem Format, das von einem Computer verstanden wird, in Text umzuwandeln, den Menschen leicht lesen können. Programmierer machen das, um Datumsangaben benutzerfreundlich in der UI darzustellen oder um sie in einer Datenbank oder einem Dateinamen zu speichern.

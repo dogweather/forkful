@@ -9,9 +9,8 @@ summary: "Arredondar n\xFAmeros \xE9 cortar um decimal para o seu valor inteiro 
   \ pr\xF3ximo ou para um n\xFAmero determinado de casas decimais. Os programadores\
   \ arredondam\u2026"
 title: "Arredondamento de n\xFAmeros"
+weight: 13
 ---
-
-{{< edit_this_page >}}
 
 ## O Que & Por Quê?
 Arredondar números é cortar um decimal para o seu valor inteiro mais próximo ou para um número determinado de casas decimais. Os programadores arredondam números para torná-los mais fáceis de ler e manusear, especialmente quando a precisão além de um certo ponto é desnecessária ou poderia levar a erros.

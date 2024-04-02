@@ -9,9 +9,8 @@ summary: "Konkatenacja \u0142a\u0144cuch\xF3w to klejenie razem dw\xF3ch lub wi\
   cej tekst\xF3w. Robimy to, by budowa\u0107 komunikaty, tworzy\u0107 dynamiczne tre\u015B\
   ci czy po prostu \u0142\u0105czy\u0107 info."
 title: "\u0141\u0105czenie \u0142a\u0144cuch\xF3w znak\xF3w"
+weight: 3
 ---
-
-{{< edit_this_page >}}
 
 ## Co i dlaczego?
 

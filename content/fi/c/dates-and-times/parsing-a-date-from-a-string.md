@@ -11,9 +11,8 @@ summary: "P\xE4iv\xE4m\xE4\xE4r\xE4n j\xE4sent\xE4minen merkkijonosta C-kieless\
   \ tarkoittaa tekstuaalisten p\xE4iv\xE4m\xE4\xE4r\xE4esitysten muuntamista muotoon,\
   \ jonka ohjelmat voivat tehokkaammin\u2026"
 title: "P\xE4iv\xE4m\xE4\xE4r\xE4n j\xE4sennys merkkijonosta"
+weight: 30
 ---
-
-{{< edit_this_page >}}
 
 ## Mikä ja miksi?
 

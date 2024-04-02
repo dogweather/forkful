@@ -7,9 +7,8 @@ model: gpt-4-1106-preview
 summary: "Text suchen und ersetzen erm\xF6glicht es uns, Inhalte in Dateien schnell\
   \ zu finden und zu modifizieren. Programmierer nutzen dies h\xE4ufig, um Bugs zu\u2026"
 title: Suchen und Ersetzen von Text
+weight: 10
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 Text suchen und ersetzen ermöglicht es uns, Inhalte in Dateien schnell zu finden und zu modifizieren. Programmierer nutzen dies häufig, um Bugs zu beheben, Code zu aktualisieren oder Daten zu formatieren.

@@ -10,9 +10,8 @@ model: gpt-4-0125-preview
 summary: "Das Senden einer HTTP-Anfrage in Visual Basic for Applications (VBA) beinhaltet\
   \ den programmatischen Zugriff auf Webressourcen oder Webservices durch das\u2026"
 title: Eine HTTP-Anfrage senden
+weight: 44
 ---
-
-{{< edit_this_page >}}
 
 ## Was & Warum?
 

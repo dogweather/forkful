@@ -7,9 +7,8 @@ model: gpt-4-1106-preview
 summary: "Suchen und Ersetzen von Text ist ein Basiskonzept, bei dem Zeichenketten\
   \ innerhalb einer gr\xF6\xDFeren Textmenge gefunden und durch andere ersetzt werden.\u2026"
 title: Suchen und Ersetzen von Text
+weight: 10
 ---
-
-{{< edit_this_page >}}
 
 ## Was & Warum?
 Suchen und Ersetzen von Text ist ein Basiskonzept, bei dem Zeichenketten innerhalb einer größeren Textmenge gefunden und durch andere ersetzt werden. Programmierer verwenden es zum effizienten Ändern von Code, Datenaktualisierungen oder zum Verarbeiten von Textdaten.

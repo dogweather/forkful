@@ -11,9 +11,8 @@ summary: "Verificar se um diret\xF3rio existe em Clojure envolve verificar a pre
   a de um diret\xF3rio no sistema de arquivos a partir de sua aplica\xE7\xE3o Clojure.\
   \ Esta\u2026"
 title: "Verificando se um diret\xF3rio existe"
+weight: 20
 ---
-
-{{< edit_this_page >}}
 
 ## O Que & Por Quê?
 Verificar se um diretório existe em Clojure envolve verificar a presença de um diretório no sistema de arquivos a partir de sua aplicação Clojure. Esta tarefa é crucial para operações com arquivos, para prevenir erros ao ler ou escrever em diretórios que podem não estar presentes, garantindo execução de código robusta e livre de erros.

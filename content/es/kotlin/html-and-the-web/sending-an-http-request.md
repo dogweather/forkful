@@ -9,9 +9,8 @@ summary: "Enviar una solicitud HTTP es c\xF3mo tu programa en Kotlin habla con e
   \ mundo, pidiendo y recibiendo datos de servicios web. Los programadores lo hacen\
   \ para\u2026"
 title: Enviando una solicitud http
+weight: 44
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 Enviar una solicitud HTTP es cómo tu programa en Kotlin habla con el mundo, pidiendo y recibiendo datos de servicios web. Los programadores lo hacen para interactuar con APIs, servicios de microservicios o incluso para raspado web.

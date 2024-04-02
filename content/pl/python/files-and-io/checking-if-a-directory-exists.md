@@ -10,9 +10,8 @@ model: gpt-4-0125-preview
 summary: "Sprawdzanie, czy katalog istnieje w Pythonie, polega na weryfikacji obecno\u015B\
   ci folderu w systemie plik\xF3w przed wykonaniem operacji takich jak czytanie czy\u2026"
 title: Sprawdzanie, czy katalog istnieje
+weight: 20
 ---
-
-{{< edit_this_page >}}
 
 ## Co i dlaczego?
 Sprawdzanie, czy katalog istnieje w Pythonie, polega na weryfikacji obecności folderu w systemie plików przed wykonaniem operacji takich jak czytanie czy zapisywanie plików. Programiści robią to, aby uniknąć błędów takich jak `FileNotFoundError`, zapewniając, że aplikacja działa niezawodnie i nie zawiesza się podczas próby interakcji z katalogami.

@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "YAML, som st\xE5r for \"YAML Ain't Markup Language,\" er en menneskelesbar\
   \ standard for data-serialisering som kan brukes til alle slags applikasjoner, fra\u2026"
 title: "\xC5 Arbeide med YAML"
+weight: 41
 ---
-
-{{< edit_this_page >}}
 
 ## Hva & Hvorfor?
 

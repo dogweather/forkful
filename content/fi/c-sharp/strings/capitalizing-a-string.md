@@ -11,9 +11,8 @@ summary: "Merkkijonon alkukirjaimen muuttaminen isoksi C#:ssa tarkoittaa merkkij
   \ ensimm\xE4isen merkin muuttamista isoksi kirjaimeksi, jos se ei jo ole. T\xE4\
   m\xE4\u2026"
 title: Merkkijonon muuttaminen isoiksi kirjaimiksi
+weight: 2
 ---
-
-{{< edit_this_page >}}
 
 ## Mikä & Miksi?
 Merkkijonon alkukirjaimen muuttaminen isoksi C#:ssa tarkoittaa merkkijonon ensimmäisen merkin muuttamista isoksi kirjaimeksi, jos se ei jo ole. Tämä muutos voi olla ratkaisevan tärkeä tulosteiden muotoilussa, koodausstandardien noudattamisessa tai käyttöliittymätekstien luettavuuden parantamisessa.

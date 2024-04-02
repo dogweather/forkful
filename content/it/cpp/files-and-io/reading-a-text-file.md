@@ -7,9 +7,8 @@ model: gpt-4-1106-preview
 summary: "Leggere un file di testo in C++ significa estrarre dati da un documento\
   \ salvato sul tuo disco. I programmatori fanno questo per processare le\u2026"
 title: Lettura di un file di testo
+weight: 22
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why? (Cosa & Perché?)
 Leggere un file di testo in C++ significa estrarre dati da un documento salvato sul tuo disco. I programmatori fanno questo per processare le informazioni, configurare software, o alimentare dati nelle loro applicazioni.

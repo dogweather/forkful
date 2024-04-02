@@ -8,9 +8,8 @@ model: gpt-4-1106-preview
 summary: "Il logging \xE8 essenzialmente l'equivalente software di un registro di\
   \ bordo di una nave; \xE8 un modo per registrare gli eventi che si verificano mentre\u2026"
 title: Registrazione Eventi (Logging)
+weight: 17
 ---
-
-{{< edit_this_page >}}
 
 ## Cosa e Perché?
 Il logging è essenzialmente l'equivalente software di un registro di bordo di una nave; è un modo per registrare gli eventi che si verificano mentre un'applicazione è in esecuzione. I programmatori lo fanno per tenere traccia di questi eventi per il debug, le tracce di audit o per ottenere intuizioni sul comportamento di un sistema in produzione.

@@ -9,9 +9,8 @@ summary: "(Mit\xE4 & Miksi?) Debug-tulostus auttaa ymm\xE4rt\xE4m\xE4\xE4n, mit\
   \ ohjelmassasi tapahtuu. Ohjelmoijat k\xE4ytt\xE4v\xE4t sit\xE4 virheiden paikallistamiseen\
   \ ja oman koodin\u2026"
 title: "Virheenj\xE4ljitystulosteiden tulostaminen"
+weight: 33
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 (Mitä & Miksi?)

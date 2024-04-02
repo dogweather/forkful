@@ -8,9 +8,8 @@ model: gpt-4-1106-preview
 summary: "Das Berechnen eines zuk\xFCnftigen oder vergangenen Datums erlaubt es uns,\
   \ Zeitabst\xE4nde zu handhaben. Programmierer nutzen diese Funktion f\xFCr Erinnerungen,\u2026"
 title: "Berechnung eines zuk\xFCnftigen oder vergangenen Datums"
+weight: 26
 ---
-
-{{< edit_this_page >}}
 
 ## Was & Warum?
 

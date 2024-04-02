@@ -9,9 +9,8 @@ summary: "\"Co i dlaczego?\" Szukanie i zamiana tekstu to podstawowe operacje po
   ce na lokalizowanie wzorc\xF3w w tek\u015Bcie oraz ich modyfikacj\u0119. Programi\u015B\
   ci u\u017Cywaj\u0105\u2026"
 title: Wyszukiwanie i zamiana tekstu
+weight: 10
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 "Co i dlaczego?"

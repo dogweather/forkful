@@ -7,9 +7,8 @@ model: gpt-4-1106-preview
 summary: "Ein neues Projekt zu starten bedeutet, den Grundstein f\xFCr eine frische\
   \ Code-Basis zu legen. Programmierer tun dies, um Ideen in funktionale Software\u2026"
 title: Einen neuen Projekt starten
+weight: 1
 ---
-
-{{< edit_this_page >}}
 
 ## Was & Warum?
 Ein neues Projekt zu starten bedeutet, den Grundstein für eine frische Code-Basis zu legen. Programmierer tun dies, um Ideen in funktionale Software umzusetzen und Probleme mit maßgeschneiderten Lösungen zu bewältigen.

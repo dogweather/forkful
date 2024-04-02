@@ -9,9 +9,8 @@ summary: "Uuden Swift-projektin aloittaminen tarkoittaa uuden sovelluksen tai oh
   \ kehityksen k\xE4ynnist\xE4mist\xE4. Ohjelmoijat tekev\xE4t t\xE4m\xE4n luodakseen\
   \ ratkaisuja\u2026"
 title: Uuden projektin aloittaminen
+weight: 1
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why? (Mitä & Miksi?)
 Uuden Swift-projektin aloittaminen tarkoittaa uuden sovelluksen tai ohjelman kehityksen käynnistämistä. Ohjelmoijat tekevät tämän luodakseen ratkaisuja ongelmiin, kehittääkseen työkaluja käyttäjille tai oppiakseen uusia teknologioita.

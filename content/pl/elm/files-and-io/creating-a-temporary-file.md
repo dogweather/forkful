@@ -9,9 +9,8 @@ summary: "Tworzenie tymczasowego pliku to proces generowania pliku, kt\xF3ry ist
   \ tylko na czas dzia\u0142ania aplikacji. Programi\u015Bci u\u017Cywaj\u0105 tej\
   \ techniki, aby\u2026"
 title: Tworzenie pliku tymczasowego
+weight: 21
 ---
-
-{{< edit_this_page >}}
 
 ## Co i dlaczego?
 Tworzenie tymczasowego pliku to proces generowania pliku, który istnieje tylko na czas działania aplikacji. Programiści używają tej techniki, aby przechowywać dane tymczasowe bez ryzyka zakłócenia stałej struktury danych lub kiedy chcą zapewnić bezpieczeństwo informacje poprzez ich samozniszczenie po użyciu.

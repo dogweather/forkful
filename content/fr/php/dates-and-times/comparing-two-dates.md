@@ -9,9 +9,8 @@ summary: "Comparer deux dates, c'est voir si elles sont identiques, quelle est l
   \ plus r\xE9cente, etc. En PHP, on fait \xE7a souvent pour valider des \xE9v\xE9\
   nements, des\u2026"
 title: Comparer deux dates
+weight: 27
 ---
-
-{{< edit_this_page >}}
 
 ## Quoi & Pourquoi ?
 Comparer deux dates, c'est voir si elles sont identiques, quelle est la plus récente, etc. En PHP, on fait ça souvent pour valider des événements, des périodes de promotions, des abonnements, et tout ce qui est lié au temps.

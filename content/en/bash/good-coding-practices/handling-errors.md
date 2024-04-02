@@ -7,9 +7,8 @@ model: gpt-4-1106-preview
 summary: "Handling errors in Bash scripting is about anticipating where things might\
   \ go sideways and dealing with it gracefully. Why? Well, it keeps your script\u2026"
 title: Handling errors
+weight: 16
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 

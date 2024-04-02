@@ -11,9 +11,8 @@ summary: "Associativa arrayer, k\xE4nda i Python som dictionaries, kopplar nyckl
   \ till v\xE4rden, vilket g\xF6r det enkelt att h\xE4mta, modifiera eller sp\xE5\
   ra data med ett\u2026"
 title: "Att anv\xE4nda associativa arrayer"
+weight: 15
 ---
-
-{{< edit_this_page >}}
 
 ## Vad & varför?
 

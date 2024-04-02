@@ -9,9 +9,8 @@ summary: "Interaktywna pow\u0142oka, czyli REPL (Read-Eval-Print Loop), w Haskel
   \ pozwala na uruchamianie fragment\xF3w kodu na \u017Cywo. Jest to plac zabaw dla\
   \ szybkiego\u2026"
 title: Korzystanie z interaktywnego shella (REPL)
+weight: 34
 ---
-
-{{< edit_this_page >}}
 
 ## Co i dlaczego?
 Interaktywna powłoka, czyli REPL (Read-Eval-Print Loop), w Haskellu pozwala na uruchamianie fragmentów kodu na żywo. Jest to plac zabaw dla szybkiego uzyskiwania informacji zwrotnych, testowania funkcji i nauki języka.

@@ -9,9 +9,8 @@ summary: "Tulostus debug-viestinn\xE4ss\xE4 tarkoittaa koodin suorituksen aikana
   \ viestien n\xE4ytt\xE4mist\xE4. Kehitt\xE4j\xE4t k\xE4ytt\xE4v\xE4t sit\xE4 virheiden\
   \ j\xE4ljitt\xE4miseen ja\u2026"
 title: "Virheenj\xE4ljitystulosteiden tulostaminen"
+weight: 33
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why? (Mitä ja miksi?)
 Tulostus debug-viestinnässä tarkoittaa koodin suorituksen aikana tuotettujen viestien näyttämistä. Kehittäjät käyttävät sitä virheiden jäljittämiseen ja ohjelman toiminnan ymmärtämiseen.

@@ -17,9 +17,8 @@ summary: "Rust \u4EA4\u4E92\u5F0F shell\uFF0C\u6216 REPL\uFF08\u8BFB\u53D6-\u6C4
   \u5F04\u8BED\u8A00\u7279\u6027\uFF0C\u65E0\u9700\u7F16\u8BD1\u6574\u4E2A\u9879\u76EE\
   \u7684\u5F00\u9500\u3002"
 title: "\u5728\u7F16\u7A0B\u4E2D\u4F7F\u7528\u4EA4\u4E92\u5F0FShell\uFF08REPL\uFF09"
+weight: 34
 ---
-
-{{< edit_this_page >}}
 
 ## 什么与为何？
 Rust 交互式 shell，或 REPL（读取-求值-打印 循环），让你能即时运行 Rust 代码，看到即时结果，非常适合实验或学习。程序员使用它来测试代码片段、调试，或只是玩弄语言特性，无需编译整个项目的开销。

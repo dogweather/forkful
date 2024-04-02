@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "In PowerShell, verificare l'esistenza di una directory \xE8 un compito comune\
   \ che aiuta gli script a prendere decisioni basate sulla struttura dei file\u2026"
 title: Verifica se una directory esiste
+weight: 20
 ---
-
-{{< edit_this_page >}}
 
 ## Cosa e Perché?
 In PowerShell, verificare l'esistenza di una directory è un compito comune che aiuta gli script a prendere decisioni basate sulla struttura dei file system—come evitare errori confermando che una directory di destinazione sia presente prima di tentare di leggerla o scriverci. È essenziale per garantire che lo script si comporti in modo affidabile in ambienti diversi.

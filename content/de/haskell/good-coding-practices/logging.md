@@ -7,9 +7,8 @@ model: gpt-4-1106-preview
 summary: "Protokollierung in der Programmierung bedeutet im Grunde, eine Spur von\
   \ Brotkrumen in Form von aufgezeichneten Ereignissen oder Nachrichten zu\u2026"
 title: Protokollierung
+weight: 17
 ---
-
-{{< edit_this_page >}}
 
 ## Was & Warum?
 Protokollierung in der Programmierung bedeutet im Grunde, eine Spur von Brotkrumen in Form von aufgezeichneten Ereignissen oder Nachrichten zu hinterlassen, die verwendet werden können, um zu verfolgen, was Ihre Anwendung zu jedem gegebenen Zeitpunkt tut. Programmierer machen dies, um Probleme zu debuggen, die Systemleistung zu überwachen und das Verhalten aus Sicherheitsgründen und zur Einhaltung von Compliance zu prüfen.

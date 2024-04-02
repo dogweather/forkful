@@ -11,9 +11,8 @@ summary: "Comparar duas datas em C envolve determinar a rela\xE7\xE3o cronol\xF3
   \ entre elas -- se uma data precede a outra ou se s\xE3o iguais. Essa capacidade\
   \ \xE9 crucial em\u2026"
 title: Comparando duas datas
+weight: 27
 ---
-
-{{< edit_this_page >}}
 
 ## O Que & Por Que?
 

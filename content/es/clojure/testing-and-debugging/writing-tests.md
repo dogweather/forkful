@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Escribir pruebas en Clojure, al igual que en otros lenguajes de programaci\xF3\
   n, implica crear c\xF3digo dedicado para verificar que tu c\xF3digo principal\u2026"
 title: Escribiendo pruebas
+weight: 36
 ---
-
-{{< edit_this_page >}}
 
 ## Qué y Por Qué?
 Escribir pruebas en Clojure, al igual que en otros lenguajes de programación, implica crear código dedicado para verificar que tu código principal funciona como se espera. Ayuda a asegurar la corrección, facilita la refactorización y mejora la estabilidad del código.

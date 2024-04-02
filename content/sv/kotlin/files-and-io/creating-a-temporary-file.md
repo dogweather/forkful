@@ -9,9 +9,8 @@ summary: "Tillf\xE4lliga filer \xE4r tempor\xE4ra storage-enheter som program an
   nder f\xF6r att hantera data under k\xF6rning. Programmerare skapar dem f\xF6r att\
   \ f\xF6rhindra\u2026"
 title: "Skapa en tempor\xE4r fil"
+weight: 21
 ---
-
-{{< edit_this_page >}}
 
 ## Vad & Varför?
 Tillfälliga filer är temporära storage-enheter som program använder för att hantera data under körning. Programmerare skapar dem för att förhindra dataförlust vid oförutsedda avbrott och för att minska minnesanvändningen på huvudlagringsmediet.

@@ -7,9 +7,8 @@ model: gpt-4-1106-preview
 summary: "Le journalisation, c'est essentiellement consigner ce que fait votre application\
   \ - un journal intime, si vous voulez, mais pour le code. Les programmeurs\u2026"
 title: Journalisation
+weight: 17
 ---
-
-{{< edit_this_page >}}
 
 ## Quoi & Pourquoi ?
 Le journalisation, c'est essentiellement consigner ce que fait votre application - un journal intime, si vous voulez, mais pour le code. Les programmeurs le font pour garder une trace des détails techniques, comme les changements d'état, les événements systèmes et les bugs agaçants, en s'assurant qu'aucun accroc ne passe inaperçu.

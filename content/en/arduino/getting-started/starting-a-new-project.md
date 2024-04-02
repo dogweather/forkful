@@ -8,9 +8,8 @@ model: gpt-4-1106-preview
 summary: "Starting a new project on Arduino means initializing a fresh sketch, the\
   \ canvas for your code. Programmers do this to breathe life into new gadgets, from\u2026"
 title: Starting a new project
+weight: 1
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 

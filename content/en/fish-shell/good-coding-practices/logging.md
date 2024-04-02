@@ -7,9 +7,8 @@ model: gpt-4-1106-preview
 summary: "Logging is essentially jotting down what your application is up to\u2014\
   a diary, if you will, but for code. Programmers do it to keep track of the nitty-\u2026"
 title: Logging
+weight: 17
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 Logging is essentially jotting down what your application is up to—a diary, if you will, but for code. Programmers do it to keep track of the nitty-gritty, like state changes, system events, and pesky bugs, making sure no hiccups slip past unnoticed.

@@ -20,9 +20,8 @@ summary: "\uBCF5\uC18C\uC218\uB294 \uC74C\uC218\uC758 \uC81C\uACF1\uADFC\uC744 \
   \uD559, \uBB3C\uB9AC\uD559, \uC2E0\uD638 \uCC98\uB9AC\uC640 \uAC19\uC740 \uBD84\uC57C\
   \uC5D0\uC11C \uBCF5\uC18C\uC218\uB97C \uC0AC\uC6A9\uD569\uB2C8\uB2E4."
 title: "\uBCF5\uC18C\uC218 \uB2E4\uB8E8\uAE30"
+weight: 14
 ---
-
-{{< edit_this_page >}}
 
 ## 무엇이며 왜인가?
 복소수는 음수의 제곱근을 포함하도록 숫자 체계를 확장시킨 것으로, '허수' 단위 i는 -1의 제곱근과 같습니다. 프로그래머들은 파동, 진동, 회전하는 모든 것을 모델링하는데 이상적이기 때문에 공학, 물리학, 신호 처리와 같은 분야에서 복소수를 사용합니다.

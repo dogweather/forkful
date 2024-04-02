@@ -1,14 +1,15 @@
 ---
 date: 2024-01-26 03:49:50.074976-07:00
-description: "Plonger dans un d\xE9bogueur, c'est tout simplement parcourir votre\
-  \ code pas \xE0 pas, observer les rouages en action et attraper ces ennuyeux bugs\
-  \ sur le fait.\u2026"
+description: "Voici un petit avant-go\xFBt du d\xE9bogage en Kotlin avec IntelliJ\
+  \ IDEA - le Sherlock Holmes des IDEs : ```kotlin fun main() { val mysteryNumber\
+  \ = 42 var guess\u2026"
 lastmod: '2024-03-13T22:44:57.744233-06:00'
 model: gpt-4-0125-preview
-summary: "Plonger dans un d\xE9bogueur, c'est tout simplement parcourir votre code\
-  \ pas \xE0 pas, observer les rouages en action et attraper ces ennuyeux bugs sur\
-  \ le fait.\u2026"
+summary: "Voici un petit avant-go\xFBt du d\xE9bogage en Kotlin avec IntelliJ IDEA\
+  \ - le Sherlock Holmes des IDEs : ```kotlin fun main() { val mysteryNumber = 42\
+  \ var guess\u2026"
 title: "Utilisation d'un d\xE9bogueur"
+weight: 35
 ---
 
 ## Comment faire :

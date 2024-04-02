@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "TOML is een configuratiebestandsformaat, makkelijk voor mensen om te lezen\
   \ en schrijven en eenvoudig voor machines om te parsen en genereren. Programmeurs\u2026"
 title: Werken met TOML
+weight: 39
 ---
-
-{{< edit_this_page >}}
 
 ## Wat & Waarom?
 TOML is een configuratiebestandsformaat, makkelijk voor mensen om te lezen en schrijven en eenvoudig voor machines om te parsen en genereren. Programmeurs werken met TOML voor duidelijke, hiërarchische configuratiebestanden in projecten waar leesbaarheid cruciaal is.

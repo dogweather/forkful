@@ -13,9 +13,8 @@ summary: "YAML l\xE0 vi\u1EBFt t\u1EAFt c\u1EE7a \"YAML Ain't Markup Language\" 
   \ l\xE0 m\u1ED9t \u0111\u1ECBnh d\u1EA1ng tu\u1EA7n t\u1EF1 h\xF3a d\u1EEF li\u1EC7\
   u d\u1EC5 \u0111\u1ECDc cho con ng\u01B0\u1EDDi.\u2026"
 title: "L\xE0m vi\u1EC7c v\u1EDBi YAML"
+weight: 41
 ---
-
-{{< edit_this_page >}}
 
 ## Gì và Tại sao?
 YAML là viết tắt của "YAML Ain't Markup Language" (YAML không phải là Ngôn ngữ Đánh dấu). Đây là một định dạng tuần tự hóa dữ liệu dễ đọc cho con người. Các lập trình viên sử dụng nó cho các tệp cấu hình, trao đổi dữ liệu giữa các ngôn ngữ, và bởi vì nó dễ đọc hơn JSON hoặc XML đối với các cấu trúc dữ liệu phức tạp.

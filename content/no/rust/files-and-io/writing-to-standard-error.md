@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "\xC5 skrive til standard feil (stderr) i Rust handler om \xE5 dirigere feilmeldinger\
   \ og diagnostikk til konsollen separat fra standard utdata (stdout).\u2026"
 title: Skriving til standardfeil
+weight: 25
 ---
-
-{{< edit_this_page >}}
 
 ## Hva & hvorfor?
 Å skrive til standard feil (stderr) i Rust handler om å dirigere feilmeldinger og diagnostikk til konsollen separat fra standard utdata (stdout). Programmerere gjør dette for å skille normalt programutdata fra feilmeldinger, noe som gjør det lettere å håndtere feil på en passende måte eller omdirigere dem til logger eller filer under utførelse.

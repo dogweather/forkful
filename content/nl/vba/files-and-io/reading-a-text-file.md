@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Een tekstbestand lezen in Visual Basic for Applications (VBA) betekent programmatisch\
   \ toegang krijgen tot en het extraheren van de inhoud van een\u2026"
 title: Een tekstbestand lezen
+weight: 22
 ---
-
-{{< edit_this_page >}}
 
 ## Wat & Waarom?
 

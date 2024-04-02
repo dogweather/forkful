@@ -11,9 +11,8 @@ summary: "Deletar caracteres que correspondem a um padr\xE3o espec\xEDfico \xE9 
   \ remover certos caracteres ou sequ\xEAncias de caracteres de strings, com base\
   \ em regras\u2026"
 title: "Deletando caracteres que correspondem a um padr\xE3o"
+weight: 5
 ---
-
-{{< edit_this_page >}}
 
 ## O Que & Por Que?
 

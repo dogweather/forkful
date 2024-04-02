@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "En interaktiv skal, eller Read-Eval-Print Loop (REPL), till\xE5ter anv\xE4\
   ndare att mata in kommandon, exekvera dem och se resultaten i realtid. Programmerare\u2026"
 title: "Anv\xE4nda en interaktiv skal (REPL)"
+weight: 34
 ---
-
-{{< edit_this_page >}}
 
 ## Vad & Varför?
 

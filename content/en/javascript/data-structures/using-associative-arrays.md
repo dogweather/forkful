@@ -7,9 +7,8 @@ model: gpt-4-0125-preview
 summary: "Associative arrays, or as they're more accurately known in JavaScript, objects,\
   \ let you map keys to values. This is super handy for when you need a\u2026"
 title: Using associative arrays
+weight: 15
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 

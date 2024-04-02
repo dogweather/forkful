@@ -8,9 +8,8 @@ model: gpt-4-0125-preview
 summary: "Generare numeri casuali nei progetti Arduino implica la produzione di valori\
   \ che sono imprevedibili per progettazione, fondamentale per applicazioni come\u2026"
 title: Generazione di numeri casuali
+weight: 12
 ---
-
-{{< edit_this_page >}}
 
 ## Cosa e Perché?
 Generare numeri casuali nei progetti Arduino implica la produzione di valori che sono imprevedibili per progettazione, fondamentale per applicazioni come giochi, simulazioni e sistemi di sicurezza. I programmatori utilizzano questa tecnica per introdurre variabilità o prendere decisioni che non dovrebbero essere deterministiche.

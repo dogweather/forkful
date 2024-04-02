@@ -7,9 +7,8 @@ model: gpt-4-1106-preview
 summary: "Trouver la longueur d'une cha\xEEne signifie compter le nombre de caract\xE8\
   res qu'elle contient. C'est essentiel pour valider des donn\xE9es, trancher des\u2026"
 title: "Trouver la longueur d'une cha\xEEne de caract\xE8res"
+weight: 7
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why? (Quoi et Pourquoi ?)
 Trouver la longueur d'une chaîne signifie compter le nombre de caractères qu'elle contient. C'est essentiel pour valider des données, trancher des algorithmes ou optimiser des performances.

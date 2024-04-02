@@ -9,9 +9,8 @@ summary: "Arredondar n\xFAmeros \xE9 ajustar um decimal para o seu valor inteiro
   \ pr\xF3ximo ou para um n\xFAmero espec\xEDfico de casas decimais. Os programadores\
   \ arredondam\u2026"
 title: "Arredondamento de n\xFAmeros"
+weight: 13
 ---
-
-{{< edit_this_page >}}
 
 ## O Quê & Por Quê?
 

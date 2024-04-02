@@ -1,12 +1,13 @@
 ---
 date: 2024-01-26 04:10:00.652408-07:00
-description: "Utilizzare un debugger \xE8 come dotarsi di una visione a raggi X per\
-  \ sbirciare nell'esecuzione del proprio codice. I programmatori lo fanno per individuare\u2026"
+description: "Rust supporta vari debugger, ma quelli comuni sono `gdb` per GNU/Linux\
+  \ o `lldb` per macOS. Potresti anche usare `rust-gdb` o `rust-lldb`, che sono wrapper\u2026"
 lastmod: '2024-03-13T22:44:43.222469-06:00'
 model: gpt-4-0125-preview
-summary: "Utilizzare un debugger \xE8 come dotarsi di una visione a raggi X per sbirciare\
-  \ nell'esecuzione del proprio codice. I programmatori lo fanno per individuare\u2026"
+summary: "Rust supporta vari debugger, ma quelli comuni sono `gdb` per GNU/Linux o\
+  \ `lldb` per macOS. Potresti anche usare `rust-gdb` o `rust-lldb`, che sono wrapper\u2026"
 title: Utilizzo di un debugger
+weight: 35
 ---
 
 ## Come fare:

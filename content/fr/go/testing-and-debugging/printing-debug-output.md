@@ -11,9 +11,8 @@ summary: "En programmation informatique, \"Imprimer les sorties de d\xE9bogage\"
   \ \xE0 produire des messages d'information d\xE9taill\xE9s qui aident les d\xE9\
   veloppeurs \xE0\u2026"
 title: "Impression de sortie de d\xE9bogage"
+weight: 33
 ---
-
-{{< edit_this_page >}}
 
 ## Quoi & Pourquoi ?
 

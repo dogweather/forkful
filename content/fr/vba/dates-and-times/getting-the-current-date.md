@@ -11,9 +11,8 @@ summary: "Dans Visual Basic pour Applications (VBA), r\xE9cup\xE9rer la date act
   \ est une t\xE2che courante qui permet aux programmeurs de travailler dynamiquement\
   \ avec\u2026"
 title: Obtenir la date actuelle
+weight: 29
 ---
-
-{{< edit_this_page >}}
 
 ## Quoi et Pourquoi ?
 

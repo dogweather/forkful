@@ -11,9 +11,8 @@ summary: "Testien kirjoittaminen Swiftill\xE4 sis\xE4lt\xE4\xE4 koodin luomista 
   \ suorittamista, joka varmistaa muiden sovelluksesi koodiyksik\xF6iden oikeellisuuden.\
   \ Ohjelmoijat\u2026"
 title: Testien kirjoittaminen
+weight: 36
 ---
-
-{{< edit_this_page >}}
 
 ## Mikä & Miksi?
 Testien kirjoittaminen Swiftillä sisältää koodin luomista ja suorittamista, joka varmistaa muiden sovelluksesi koodiyksiköiden oikeellisuuden. Ohjelmoijat tekevät sen varmistaakseen luotettavuuden, havaitakseen virheet varhaisessa kehitysvaiheessa ja helpottaakseen tulevia koodin uudelleenjärjestelyjä ilman tahattomia seurauksia.

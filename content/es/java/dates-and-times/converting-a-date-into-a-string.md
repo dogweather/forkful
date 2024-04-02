@@ -8,9 +8,8 @@ model: gpt-4-1106-preview
 summary: "(\xBFQu\xE9 y Por Qu\xE9?) Convertir una fecha en una cadena de texto significa\
   \ transformar un objeto `Date` a una representaci\xF3n legible para humanos. Los\u2026"
 title: Convirtiendo una fecha en una cadena de texto
+weight: 28
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 (¿Qué y Por Qué?)

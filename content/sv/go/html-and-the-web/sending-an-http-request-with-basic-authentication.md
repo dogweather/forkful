@@ -11,9 +11,8 @@ summary: "Att skicka en HTTP-f\xF6rfr\xE5gan med grundl\xE4ggande autentisering 
   \ Go inneb\xE4r att l\xE4gga till en auktoriseringsheader till din f\xF6rfr\xE5\
   gan som inkluderar ett\u2026"
 title: "Skicka en HTTP-f\xF6rfr\xE5gan med grundl\xE4ggande autentisering"
+weight: 45
 ---
-
-{{< edit_this_page >}}
 
 ## Vad och varför?
 

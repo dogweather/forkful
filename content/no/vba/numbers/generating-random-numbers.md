@@ -11,9 +11,8 @@ summary: "\xC5 generere tilfeldige tall i Visual Basic for Applications (VBA) gi
   \ muligheten til \xE5 simulere prosesser med elementer av sjanse eller variabilitet,\
   \ som\u2026"
 title: Generere tilfeldige tall
+weight: 12
 ---
-
-{{< edit_this_page >}}
 
 ## Hva & Hvorfor?
 

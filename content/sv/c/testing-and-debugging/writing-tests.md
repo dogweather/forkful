@@ -11,9 +11,8 @@ summary: "Att skriva tester i C inneb\xE4r att skapa mindre, hj\xE4lpprogram ell
   \ funktioner som automatiskt verifierar din kods funktionalitet. Programmerare g\xF6\
   r detta\u2026"
 title: Skriva tester
+weight: 36
 ---
-
-{{< edit_this_page >}}
 
 ## Vad & Varför?
 Att skriva tester i C innebär att skapa mindre, hjälpprogram eller funktioner som automatiskt verifierar din kods funktionalitet. Programmerare gör detta för att säkerställa att deras programvara fungerar som förväntat, för att upptäcka buggar tidigt och för att underlätta framtida kodmodifieringar utan oavsiktliga sidoeffekter.

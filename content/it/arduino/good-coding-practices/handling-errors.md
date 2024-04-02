@@ -8,9 +8,8 @@ model: gpt-4-1106-preview
 summary: "La gestione degli errori nei tuoi programmi cattura gli imprevisti che cercheranno\
   \ di farti inciampare. Si fa per evitare che il tuo Arduino vada in tilt\u2026"
 title: Gestione degli errori
+weight: 16
 ---
-
-{{< edit_this_page >}}
 
 ## Cosa e Perché?
 

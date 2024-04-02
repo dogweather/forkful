@@ -7,9 +7,8 @@ model: gpt-4-0125-preview
 summary: "YAML, short for \"YAML Ain't Markup Language\", is a human-friendly data\
   \ serialization standard that can be used for all programming languages. Programmers\u2026"
 title: Working with YAML
+weight: 41
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 

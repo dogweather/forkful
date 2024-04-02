@@ -7,9 +7,8 @@ model: gpt-4-1106-preview
 summary: "String interpolation lets you insert variables or computations into a string.\
   \ It's handy for building strings dynamically without the mess of\u2026"
 title: Interpolating a string
+weight: 8
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 String interpolation lets you insert variables or computations into a string. It's handy for building strings dynamically without the mess of concatenation.

@@ -7,9 +7,8 @@ model: gpt-4-0125-preview
 summary: "Calculating a date in the future or past in Go involves manipulating date\
   \ and time values to determine a specific point relative to a given date.\u2026"
 title: Calculating a date in the future or past
+weight: 26
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 

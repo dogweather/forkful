@@ -7,9 +7,8 @@ model: gpt-4-1106-preview
 summary: "HTTP-Requests mit Basisauthentifizierung schicken Daten sicher \xFCber das\
   \ Netz. Entwickler nutzen das, um vertrauliche Daten wie Benutzernamen und\u2026"
 title: HTTP-Anfragen mit Basisauthentifizierung senden
+weight: 45
 ---
-
-{{< edit_this_page >}}
 
 ## Was & Warum?
 HTTP-Requests mit Basisauthentifizierung schicken Daten sicher über das Netz. Entwickler nutzen das, um vertrauliche Daten wie Benutzernamen und Passwörter zu schützen.

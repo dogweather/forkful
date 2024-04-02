@@ -9,9 +9,8 @@ summary: "Merkkijonosta lainausmerkkien poistaminen C#:ss\xE4 tarkoittaa sit\xE4
   \ ett\xE4 poistat teksti\xE4si ymp\xE4r\xF6iv\xE4t \xE4rsytt\xE4v\xE4t kaksois-\
   \ (`\"`) tai yksinkertaiset (`'`)\u2026"
 title: Merkkijonosta lainausmerkkien poistaminen
+weight: 9
 ---
-
-{{< edit_this_page >}}
 
 ## Mitä & Miksi?
 Merkkijonosta lainausmerkkien poistaminen C#:ssä tarkoittaa sitä, että poistat tekstiäsi ympäröivät ärsyttävät kaksois- (`"`) tai yksinkertaiset (`'`) lainausmerkit. Ohjelmoijat tekevät tämän puhdistaakseen dataa, valmistellakseen tietokantamerkintää varten tai tehdäkseen merkkijonoista turvallisia jatkokäsittelyä varten, jotta asiat eivät mene sekaisin, kun eksynyt lainausmerkki ilmaantuu.

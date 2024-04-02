@@ -9,9 +9,8 @@ summary: "Att organisera kod i funktioner inneb\xE4r att dela upp koden i \xE5te
   ndbara delar, d\xE4r varje del utf\xF6r ett specifikt jobb. Programmerare g\xF6\
   r detta f\xF6r att\u2026"
 title: Att organisera kod i funktioner
+weight: 18
 ---
-
-{{< edit_this_page >}}
 
 ## Vad & Varför?
 Att organisera kod i funktioner innebär att dela upp koden i återanvändbara delar, där varje del utför ett specifikt jobb. Programmerare gör detta för att göra koden lättare att läsa, felsöka och återanvända. Det är som att sortera Lego i lådor - det sparar dig från att rota igenom en kaotisk hög varje gång du vill bygga något.

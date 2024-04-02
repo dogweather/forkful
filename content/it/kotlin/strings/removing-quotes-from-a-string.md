@@ -8,9 +8,8 @@ model: gpt-4-0125-preview
 summary: "Rimuovere le virgolette da una stringa significa eliminare qualsiasi istanza\
   \ di caratteri di virgoletta, sia singole (' ') che doppie (\" \"), dai dati di\u2026"
 title: Rimuovere le virgolette da una stringa
+weight: 9
 ---
-
-{{< edit_this_page >}}
 
 ## Cosa e Perché?
 

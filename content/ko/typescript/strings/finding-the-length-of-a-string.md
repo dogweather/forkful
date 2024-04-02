@@ -12,9 +12,8 @@ summary: "\uBB38\uC790\uC5F4 \uAE38\uC774 \uCE21\uC815\uC740 \uBB38\uC790\uC758 
   \uB825 \uC720\uD6A8\uC131 \uAC80\uC0AC, UI \uB514\uC790\uC778 \uC870\uC815\uC5D0\
   \ \uD544\uC694\uD558\uB2E4."
 title: "\uBB38\uC790\uC5F4\uC758 \uAE38\uC774 \uCC3E\uAE30"
+weight: 7
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why? (무엇과 왜?)
 문자열 길이 측정은 문자의 개수를 센다. 저장된 데이터 관리, 입력 유효성 검사, UI 디자인 조정에 필요하다.

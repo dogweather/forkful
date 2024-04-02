@@ -8,9 +8,8 @@ model: gpt-4-1106-preview
 summary: "String interpolation lets you inject variable values directly into a string.\
   \ Programmers use it to weave variables into text, making the code cleaner and\u2026"
 title: Interpolating a string
+weight: 8
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 

@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Controleren of een map bestaat gaat helemaal over het verifi\xEBren van\
   \ de aanwezigheid van een map op je opslag voordat je er iets mee doet. Programmeurs\u2026"
 title: Controleren of een directory bestaat
+weight: 20
 ---
-
-{{< edit_this_page >}}
 
 ## Wat & Waarom?
 Controleren of een map bestaat gaat helemaal over het verifiëren van de aanwezigheid van een map op je opslag voordat je er iets mee doet. Programmeurs doen dit om fouten te voorkomen, zoals proberen een map te maken die er al is, of toegang proberen te krijgen tot een die er niet is.

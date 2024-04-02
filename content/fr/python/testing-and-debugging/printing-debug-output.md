@@ -9,9 +9,8 @@ summary: "Le \"print debugging\" consiste \xE0 afficher des infos dans la consol
   \ pour comprendre ce qui se passe dans le code. On l'utilise parce que c'est simple\
   \ et\u2026"
 title: "Affichage des sorties de d\xE9bogage"
+weight: 33
 ---
-
-{{< edit_this_page >}}
 
 # Debuggage avec print(): Comment ça marche?
 

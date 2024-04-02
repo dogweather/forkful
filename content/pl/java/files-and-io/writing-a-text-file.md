@@ -11,9 +11,8 @@ summary: "Zapisywanie pliku tekstowego w Javie dotyczy wykorzystywania mo\u017Cl
   ci j\u0119zyka do tworzenia plik\xF3w i zapisywania w nich tre\u015Bci na systemie\
   \ plik\xF3w.\u2026"
 title: Pisanie pliku tekstowego
+weight: 24
 ---
-
-{{< edit_this_page >}}
 
 ## Co i dlaczego?
 

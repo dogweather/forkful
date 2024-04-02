@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Das Abrufen des aktuellen Datums in Google Apps Script handelt vom Abrufen\
   \ des aktuellen Datums und der Uhrzeit, einer g\xE4ngigen Aufgabe zur\u2026"
 title: Das aktuelle Datum abrufen
+weight: 29
 ---
-
-{{< edit_this_page >}}
 
 ## Was & Warum?
 

@@ -23,9 +23,8 @@ summary: "\uBB38\uC790\uC5F4\uC758 \uCCAB \uAE00\uC790\uB97C \uB300\uBB38\uC790\
   \ \uC81C\uBAA9\uC774\uB098 \uC0AC\uC6A9\uC790 \uC785\uB825\uC744 \uD45C\uC2DC \uC900\
   \uBE44\uC5D0 \uC0AC\uC6A9\uB429\uB2C8\uB2E4."
 title: "\uBB38\uC790\uC5F4 \uB300\uBB38\uC790\uD654"
+weight: 2
 ---
-
-{{< edit_this_page >}}
 
 ## 무엇이며 왜인가?
 문자열의 첫 글자를 대문자로 변경하고 나머지는 소문자로 유지하여 문자열의 첫 글자를 대문자화하는 것을 말합니다. 이 기술은 텍스트 형식을 더 전문적이거나 읽기 쉬운 출력물로 준비하는 데 자주 사용됩니다. 예를 들어 제목이나 사용자 입력을 표시 준비에 사용됩니다.

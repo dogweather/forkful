@@ -7,9 +7,8 @@ model: gpt-4-0125-preview
 summary: "Downloading a web page is about fetching the HTML content of a web page\
   \ via HTTP/HTTPS protocol. Programmers often do this for web scraping, data\u2026"
 title: Downloading a web page
+weight: 42
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 

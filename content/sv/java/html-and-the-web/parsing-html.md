@@ -11,9 +11,8 @@ summary: "Att tolka HTML inneb\xE4r att gr\xE4va igenom m\xE4rkspr\xE5ket f\xF6r
   \ extrahera data som text, l\xE4nkar eller andra element. Vi g\xF6r det f\xF6r att\
   \ interagera med eller\u2026"
 title: Tolka HTML
+weight: 43
 ---
-
-{{< edit_this_page >}}
 
 ## Vad & Varför?
 

@@ -7,9 +7,8 @@ model: gpt-4-1106-preview
 summary: "Cr\xE9er un fichier temporaire, c'est comme prendre une feuille de papier\
   \ pour gribouiller une id\xE9e avant de la jeter. Les programmeurs font cela pour\u2026"
 title: "Cr\xE9ation d'un fichier temporaire"
+weight: 21
 ---
-
-{{< edit_this_page >}}
 
 # Création de fichiers temporaires avec Elm
 

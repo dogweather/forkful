@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Satunnaislukujen generointi C-kieless\xE4 tarkoittaa arvojen luomista, jotka\
   \ ovat ennalta arvaamattomia ja noudattavat tietty\xE4 jakaumaa, kuten tasajakaumaa\u2026"
 title: Satunnaisten numeroiden generointi
+weight: 12
 ---
-
-{{< edit_this_page >}}
 
 ## Mitä & Miksi?
 

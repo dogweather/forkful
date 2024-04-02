@@ -11,9 +11,8 @@ summary: "Die Erstellung einer tempor\xE4ren Datei in Dart beinhaltet das Generi
   \ einer Datei, die f\xFCr die kurzfristige Nutzung vorgesehen ist, haupts\xE4chlich\
   \ f\xFCr\u2026"
 title: "Eine tempor\xE4re Datei erstellen"
+weight: 21
 ---
-
-{{< edit_this_page >}}
 
 ## Was & Warum?
 Die Erstellung einer temporären Datei in Dart beinhaltet das Generieren einer Datei, die für die kurzfristige Nutzung vorgesehen ist, hauptsächlich für Szenarien wie das Zwischenspeichern von Daten, temporäre Speicherung zur Dateiverarbeitung oder das Halten von Informationen, die zu sensibel sind, um sie lange zu behalten. Programmierer tun dies, um Daten zu verwalten, die keine dauerhafte Speicherung benötigen, wodurch die Leistung verbessert und die Datenhygiene aufrechterhalten wird.

@@ -9,9 +9,8 @@ summary: "G\xE9rer les erreurs avec PowerShell signifie anticiper les incidents 
   \ les g\xE9rer en douceur. Les programmeurs font cela pour \xE9viter les plantages\
   \ et\u2026"
 title: Gestion des erreurs
+weight: 16
 ---
-
-{{< edit_this_page >}}
 
 ## Quoi et Pourquoi ?
 Gérer les erreurs avec PowerShell signifie anticiper les incidents et les gérer en douceur. Les programmeurs font cela pour éviter les plantages et fournir un retour utile aux utilisateurs.

@@ -9,9 +9,8 @@ summary: "Organiser le code en fonctions signifie d\xE9couper votre code en bloc
   \ r\xE9utilisables et modulaires. Nous faisons cela pour respecter le principe DRY\
   \ (Don't\u2026"
 title: Organisation du code en fonctions
+weight: 18
 ---
-
-{{< edit_this_page >}}
 
 ## Quoi & Pourquoi ?
 Organiser le code en fonctions signifie découper votre code en blocs réutilisables et modulaires. Nous faisons cela pour respecter le principe DRY (Don't Repeat Yourself, ou Ne vous répétez pas), cela rend le code plus clair, plus facile à lire et simple à déboguer.

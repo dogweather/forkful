@@ -21,9 +21,8 @@ summary: "Google Apps Script\uC5D0\uC11C \uBB38\uC790\uC5F4\uC758 \uAE38\uC774\u
   \uB85C\uADF8\uB798\uBA38\uB4E4\uC740 \uC785\uB825\uC744 \uAC80\uC99D\uD558\uAC70\
   \uB098,\u2026"
 title: "\uBB38\uC790\uC5F4\uC758 \uAE38\uC774 \uCC3E\uAE30"
+weight: 7
 ---
-
-{{< edit_this_page >}}
 
 ## 무엇 & 왜?
 Google Apps Script에서 문자열의 길이를 찾는 것은 JavaScript 클라우드 스크립팅 언어로, Google 제품에서 작업을 자동화할 수 있게 해줍니다. 이 작업은 문자열에 포함된 문자의 수를 결정하는 것에 관한 것입니다. 프로그래머들은 입력을 검증하거나, 문자를 순회하거나, Google 앱 내 다양한 자동화 작업을 위해 문자열을 조작하기 위해 이 연산을 자주 수행합니다.

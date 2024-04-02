@@ -7,9 +7,8 @@ model: gpt-4-0125-preview
 summary: "TOML, lyhenne sanoista Tom's Obvious, Minimal Language, on datan serialisointiformaatti,\
   \ joka on helppo lukea sen selke\xE4n semantiikan ansiosta.\u2026"
 title: "Ty\xF6skentely TOML:n kanssa"
+weight: 39
 ---
-
-{{< edit_this_page >}}
 
 ## Mikä ja miksi?
 

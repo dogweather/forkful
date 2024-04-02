@@ -11,9 +11,8 @@ summary: "Lire un fichier texte en Dart implique l'acc\xE8s et la r\xE9cup\xE9ra
   \ de donn\xE9es \xE0 partir de fichiers stock\xE9s sur le syst\xE8me de fichiers.\
   \ Les programmeurs\u2026"
 title: Lecture d'un fichier texte
+weight: 22
 ---
-
-{{< edit_this_page >}}
 
 ## Quoi & Pourquoi ?
 

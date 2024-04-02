@@ -21,9 +21,8 @@ summary: "Visual Basic for Applications (VBA) \u4E2D\u7684\u9519\u8BEF\u5904\u74
   \uFF0C\u65E0\u9700\u5BFC\u81F4\u7A81\u7136\u5D29\u6E83\u6216\u6570\u636E\u4E22\u5931\
   \u3002"
 title: "\u5904\u7406\u9519\u8BEF"
+weight: 16
 ---
-
-{{< edit_this_page >}}
 
 ## 什么与为什么？
 

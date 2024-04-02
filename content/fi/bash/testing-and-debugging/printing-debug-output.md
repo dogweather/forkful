@@ -9,9 +9,8 @@ summary: "Debug-tulosteiden tulostaminen on viestien n\xE4ytt\xE4mist\xE4 konsol
   \ joka auttaa koodin toiminnan ymm\xE4rt\xE4misess\xE4. Ohjelmoijat tekev\xE4t sit\xE4\
   , koska se on\u2026"
 title: "Virheenj\xE4ljitystulosteiden tulostaminen"
+weight: 33
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why? | Mikä & Miksi?
 Debug-tulosteiden tulostaminen on viestien näyttämistä konsolissa, joka auttaa koodin toiminnan ymmärtämisessä. Ohjelmoijat tekevät sitä, koska se on nopea tapa löytää ja ratkaista ongelmat koodissa.

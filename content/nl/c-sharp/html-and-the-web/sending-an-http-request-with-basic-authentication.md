@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "We sturen een HTTP-verzoek met basisauthenticatie om toegang te krijgen\
   \ tot beschermde bronnen door gebruikersgegevens in de aanvraagheader op te nemen.\u2026"
 title: Een HTTP-verzoek verzenden met basisauthenticatie
+weight: 45
 ---
-
-{{< edit_this_page >}}
 
 ## Wat & Waarom?
 We sturen een HTTP-verzoek met basisauthenticatie om toegang te krijgen tot beschermde bronnen door gebruikersgegevens in de aanvraagheader op te nemen. Programmeurs gebruiken dit voor eenvoudige authenticatiesystemen, voornamelijk waar een snelle en eenvoudige oplossing geschikt is.

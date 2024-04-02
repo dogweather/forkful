@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Sammenligning av to datoer i programmering er en grunnleggende oppgave som\
   \ lar utviklere evaluere den kronologiske relasjonen mellom datoer. Slike\u2026"
 title: Sammenligne to datoer
+weight: 27
 ---
-
-{{< edit_this_page >}}
 
 ## Hva & Hvorfor?
 

@@ -11,9 +11,8 @@ summary: "S\xE4\xE4nn\xF6lliset lausekkeet (regex) ovat malleja, joita k\xE4ytet
   \xE4n merkkiyhdistelmien etsimiseen merkkijonoista. Ohjelmoijat k\xE4ytt\xE4v\xE4\
   t niit\xE4 tekstin\u2026"
 title: "S\xE4\xE4nn\xF6llisten lausekkeiden k\xE4ytt\xF6"
+weight: 11
 ---
-
-{{< edit_this_page >}}
 
 ## Mikä ja miksi?
 Säännölliset lausekkeet (regex) ovat malleja, joita käytetään merkkiyhdistelmien etsimiseen merkkijonoista. Ohjelmoijat käyttävät niitä tekstin etsimiseen, muokkaamiseen tai manipulointiin määriteltyjen mallien perusteella, mikä tekee niistä välttämättömiä tehtävissä kuten datan validointi, jäsentäminen tai muuntaminen.

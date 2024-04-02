@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Virheiden kirjoittaminen Visual Basic for Applications (VBA) -ohjelmassa\
   \ tarkoittaa virheilmoitusten tai diagnostiikan ohjaamista erilleen\u2026"
 title: Kirjoittaminen vakiovirheeseen
+weight: 25
 ---
-
-{{< edit_this_page >}}
 
 ## Mikä ja Miksi?
 

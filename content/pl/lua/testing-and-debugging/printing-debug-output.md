@@ -9,9 +9,8 @@ summary: "Drukowanie komunikat\xF3w debugowania to wy\u015Bwietlanie informacji 
   \ dzia\u0142aniu programu podczas jego wykonania. Programi\u015Bci to robi\u0105\
   , by \u0142atwiej zrozumie\u0107\u2026"
 title: "Drukowanie komunikat\xF3w debugowania"
+weight: 33
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why? (Co i dlaczego?)
 Drukowanie komunikatów debugowania to wyświetlanie informacji o działaniu programu podczas jego wykonania. Programiści to robią, by łatwiej zrozumieć błędy i śledzić działanie aplikacji.

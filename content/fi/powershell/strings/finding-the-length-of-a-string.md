@@ -9,9 +9,8 @@ summary: "Merkkijonon pituuden selvitt\xE4misess\xE4 saadaan tietoon kuinka mont
   \ merkki\xE4 merkkijonossa on. T\xE4m\xE4 on hy\xF6dyllist\xE4 esimerkiksi datan\
   \ validoinnissa, tekstin\u2026"
 title: "Merkkijonon pituuden selvitt\xE4minen"
+weight: 7
 ---
-
-{{< edit_this_page >}}
 
 ## Mitä & Miksi?
 Merkkijonon pituuden selvittämisessä saadaan tietoon kuinka monta merkkiä merkkijonossa on. Tämä on hyödyllistä esimerkiksi datan validoinnissa, tekstin käsittelyssä ja käyttöliittymän suunnittelussa.

@@ -9,9 +9,8 @@ summary: "Edycja plik\xF3w bezpo\u015Brednio z linii polece\u0144 za pomoc\u0105
   w CLI polega na dokonywaniu zmian bezpo\u015Brednio w plikach, bez otwierania ich\
   \ w\u2026"
 title: "Edycja plik\xF3w w miejscu przy u\u017Cyciu jednolinijkowc\xF3w CLI"
+weight: 32
 ---
-
-{{< edit_this_page >}}
 
 ## Co i dlaczego?
 

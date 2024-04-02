@@ -9,9 +9,8 @@ summary: "Organiser le code en fonctions consiste \xE0 envelopper des blocs de c
   \ qui accomplissent des t\xE2ches sp\xE9cifiques et \xE0 leur attribuer un nom.\
   \ Cela est fait\u2026"
 title: Organisation du code en fonctions
+weight: 18
 ---
-
-{{< edit_this_page >}}
 
 ## Quoi et Pourquoi ?
 Organiser le code en fonctions consiste à envelopper des blocs de code qui accomplissent des tâches spécifiques et à leur attribuer un nom. Cela est fait pour rendre le code réutilisable, lisible et maintenable. Au lieu de réécrire le même code, appelez une fonction. Vous souhaitez dépanner ou mettre à niveau ? Ajustez la fonction sans avoir à fouiller dans des tas de scripts.

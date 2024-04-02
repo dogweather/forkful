@@ -9,9 +9,8 @@ summary: "Eliminar las comillas de una cadena en C# significa que est\xE1s sacan
   \ esos molestos caracteres de comillas dobles (`\"`) o simples (`'`) que envuelven\
   \ tu\u2026"
 title: Eliminando comillas de una cadena
+weight: 9
 ---
-
-{{< edit_this_page >}}
 
 ## Qué y Por Qué?
 Eliminar las comillas de una cadena en C# significa que estás sacando esos molestos caracteres de comillas dobles (`"`) o simples (`'`) que envuelven tu texto. Los programadores hacen esto para limpiar datos, prepararlos para la entrada en la base de datos o hacer que las cadenas sean seguras para un procesamiento posterior y así evitar que las cosas se descontrolen cuando aparece una comilla perdida.

@@ -9,9 +9,8 @@ summary: "\"S\xF8k og erstatt\" er en grunnstein i programmering. Det brukes for
   \ finne og bytte ut spesifikke tekststrenger, noe som gir oss muligheten til \xE5\
   \ oppdatere\u2026"
 title: "S\xF8king og erstatting av tekst"
+weight: 10
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 "Søk og erstatt" er en grunnstein i programmering. Det brukes for å finne og bytte ut spesifikke tekststrenger, noe som gir oss muligheten til å oppdatere data raskt og effektivt.

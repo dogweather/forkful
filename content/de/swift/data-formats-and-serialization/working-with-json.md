@@ -7,9 +7,8 @@ model: unknown
 summary: "JSON (JavaScript Object Notation) ist ein Datenformat zum Austausch von\
   \ Datenobjekten. Programmierer nutzen es, weil es leichtgewichtig, textbasiert,\u2026"
 title: Arbeiten mit JSON
+weight: 38
 ---
-
-{{< edit_this_page >}}
 
 ## Was & Warum?
 JSON (JavaScript Object Notation) ist ein Datenformat zum Austausch von Datenobjekten. Programmierer nutzen es, weil es leichtgewichtig, textbasiert, lesbar und einfach zu verarbeiten ist.

@@ -9,9 +9,8 @@ summary: "Working with XML in Go involves parsing (reading) and generating (writ
   \ XML documents\u2014a standard format for structured data interchange. Programmers\
   \ do\u2026"
 title: Working with XML
+weight: 40
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 

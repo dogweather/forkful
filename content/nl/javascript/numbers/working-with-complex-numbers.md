@@ -10,9 +10,8 @@ model: gpt-4-0125-preview
 summary: "Complexe getallen zijn getallen met een re\xEBel en een imaginair deel (zoals\
   \ 3 + 4i). Ze komen voor in verschillende programmeerproblemen, met name in\u2026"
 title: Werken met complexe getallen
+weight: 14
 ---
-
-{{< edit_this_page >}}
 
 ## Wat & Waarom?
 Complexe getallen zijn getallen met een reëel en een imaginair deel (zoals 3 + 4i). Ze komen voor in verschillende programmeerproblemen, met name in signaalverwerking, quantumcomputing en het oplossen van polynomiale vergelijkingen. Programmeurs jongleren ermee om dit soort taken effectief aan te pakken.

@@ -7,9 +7,8 @@ model: gpt-4-1106-preview
 summary: "Text suchen und ersetzen ist grundlegendes Werkzeug in der Programmierung;\
   \ es erm\xF6glicht uns, bestimmte Zeichen oder Zeichenfolgen zu finden und sie durch\u2026"
 title: Suchen und Ersetzen von Text
+weight: 10
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 Text suchen und ersetzen ist grundlegendes Werkzeug in der Programmierung; es ermöglicht uns, bestimmte Zeichen oder Zeichenfolgen zu finden und sie durch andere zu ersetzen. Programmierer benutzen es häufig, um Daten zu bereinigen, Code zu refaktorisieren oder einfach Fehler zu korrigieren.

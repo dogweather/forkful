@@ -7,9 +7,8 @@ model: gpt-4-0125-preview
 summary: "Komplekse tall, de som har en reell del og en imagin\xE6r del (som 3 + 4i),\
   \ er essensielle i felt som ingeni\xF8rvitenskap, fysikk og datavitenskap.\u2026"
 title: "\xC5 jobbe med komplekse tall"
+weight: 14
 ---
-
-{{< edit_this_page >}}
 
 ## Hva og hvorfor?
 Komplekse tall, de som har en reell del og en imaginær del (som 3 + 4i), er essensielle i felt som ingeniørvitenskap, fysikk og datavitenskap. Programmerere bruker dem for simuleringer, signalbehandling og løsning av spesifikke typer matematiske problemer.

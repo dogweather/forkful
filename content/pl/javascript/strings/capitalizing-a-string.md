@@ -11,9 +11,8 @@ summary: "Wielk\u0105 liter\u0105 na pocz\u0105tku ci\u0105gu znak\xF3w (ang. ca
   \ a string) rozumiemy zamian\u0119 pierwszej litery ci\u0105gu na du\u017C\u0105\
   , pozostawiaj\u0105c pozosta\u0142e znaki bez\u2026"
 title: "Zamiana liter na wielkie w \u0142a\u0144cuchu znak\xF3w"
+weight: 2
 ---
-
-{{< edit_this_page >}}
 
 ## Co i dlaczego?
 Wielką literą na początku ciągu znaków (ang. capitalizing a string) rozumiemy zamianę pierwszej litery ciągu na dużą, pozostawiając pozostałe znaki bez zmian. Operacja ta jest często wykonywana w JavaScript w celu formatowania danych wejściowych użytkownika, wyświetlania nazw lub tytułów oraz zapewnienia spójności tekstów interfejsu użytkownika.

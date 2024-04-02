@@ -9,9 +9,8 @@ summary: "La concat\xE9nation de cha\xEEnes de caract\xE8res consiste \xE0 joind
   \ deux ou plusieurs cha\xEEnes pour former un seul texte. Vous pourriez avoir besoin\
   \ de fusionner\u2026"
 title: "Concat\xE9nation de cha\xEEnes de caract\xE8res"
+weight: 3
 ---
-
-{{< edit_this_page >}}
 
 ## Quoi et Pourquoi ?
 La concaténation de chaînes de caractères consiste à joindre deux ou plusieurs chaînes pour former un seul texte. Vous pourriez avoir besoin de fusionner des textes pour générer des messages utilisateurs, créer des chemins de fichier ou pour des processus de sérialisation de données. C'est une opération fondamentale dans n'importe quel langage de programmation, y compris Elixir, permettant aux développeurs de construire des chaînes dynamiques facilement.

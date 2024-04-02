@@ -11,9 +11,8 @@ summary: "Wyszukiwanie i zamiana tekstu w j\u0119zyku Dart polega na badaniu ci\
   g\xF3w znak\xF3w w celu znalezienia okre\u015Blonych wzorc\xF3w lub sekwencji znak\xF3\
   w i zast\u0105pieniu ich\u2026"
 title: "Wyszukiwanie i zast\u0119powanie tekstu"
+weight: 10
 ---
-
-{{< edit_this_page >}}
 
 ## Co i dlaczego?
 

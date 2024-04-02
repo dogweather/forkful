@@ -16,9 +16,8 @@ summary: "HTTP \uC694\uCCAD\uC740 \uC6F9 \uC11C\uBC84\uC5D0 \uC815\uBCF4\uB97C \
   \ \uC11C\uBE44\uC2A4\uC640 \uC5F0\uB3D9\uD558\uAE30 \uC704\uD574 \uC774\uB97C \uC0AC\
   \uC6A9\uD569\uB2C8\uB2E4."
 title: "HTTP \uC694\uCCAD \uBCF4\uB0B4\uAE30"
+weight: 44
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why? (무엇과 왜?)
 

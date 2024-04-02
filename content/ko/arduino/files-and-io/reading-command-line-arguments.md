@@ -18,9 +18,8 @@ summary: "\uCEE4\uB9E8\uB4DC \uB77C\uC778 \uC778\uC218\uB97C \uC77D\uB294\uB2E4\
   \ \uB3D9\uC791\uC744 \uC870\uC815\uD558\uAE30 \uC704\uD574 \uC774\uB97C \uC0AC\uC6A9\
   \uD569\uB2C8\uB2E4."
 title: "\uBA85\uB839\uC904 \uC778\uC218 \uC77D\uAE30"
+weight: 23
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why? (무엇인가요? 왜 사용하나요?)
 커맨드 라인 인수를 읽는다는 것은 사용자가 프로그램 실행 시 명령어로 추가 정보를 제공하는 것입니다. 프로그래머들은 설정을 빠르게 변경하거나 프로그램 동작을 조정하기 위해 이를 사용합니다.

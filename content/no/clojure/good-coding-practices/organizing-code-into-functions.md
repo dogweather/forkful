@@ -9,9 +9,8 @@ summary: "\xC5 organisere kode i funksjoner handler om \xE5 pakke inn kodeblokke
   \ som utf\xF8rer spesifikke oppgaver. Dette gj\xF8r at koden din blir ryddigere,\
   \ lettere \xE5\u2026"
 title: Organisering av kode i funksjoner
+weight: 18
 ---
-
-{{< edit_this_page >}}
 
 ## Hva & Hvorfor?
 

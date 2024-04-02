@@ -9,9 +9,8 @@ summary: "Hakeminen ja korvaaminen tekstiss\xE4 tarkoittaa jotakin merkkijonoa t
   \ korvaamista. Ohjelmoijat tekev\xE4t t\xE4t\xE4 koodin virheit\xE4 korjatessaan\
   \ tai\u2026"
 title: Tekstin etsiminen ja korvaaminen
+weight: 10
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why? (Mitä & Miksi?)
 Hakeminen ja korvaaminen tekstissä tarkoittaa jotakin merkkijonoa toisella korvaamista. Ohjelmoijat tekevät tätä koodin virheitä korjatessaan tai päivittäessään ohjelmiston toimintaa.

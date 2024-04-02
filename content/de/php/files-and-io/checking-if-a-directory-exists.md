@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Das \xDCberpr\xFCfen, ob ein Verzeichnis existiert, ist eine grundlegende\
   \ Aufgabe in der PHP-Programmierung, da es Ihnen erm\xF6glicht, die Pr\xE4senz eines\u2026"
 title: "\xDCberpr\xFCfung, ob ein Verzeichnis existiert"
+weight: 20
 ---
-
-{{< edit_this_page >}}
 
 ## Was & Warum?
 

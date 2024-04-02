@@ -11,9 +11,8 @@ summary: "\xC5 analysere en dato fra en tekststreng handler om \xE5 gjenkjenne o
   \ konvertere skrevne datoer i tekstform til en datatype dato som PowerShell kan\
   \ forst\xE5 og\u2026"
 title: Analysering av en dato fra en streng
+weight: 30
 ---
-
-{{< edit_this_page >}}
 
 ## Hva & hvorfor?
 Å analysere en dato fra en tekststreng handler om å gjenkjenne og konvertere skrevne datoer i tekstform til en datatype dato som PowerShell kan forstå og arbeide med. Programmerere gjør dette for å manipulere, formatere, sammenligne eller beregne datoer, noe som er vanlige oppgaver i skript som håndterer loggfiler, brukerinndata eller databehandling.

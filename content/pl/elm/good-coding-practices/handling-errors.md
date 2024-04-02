@@ -9,9 +9,8 @@ summary: "Obs\u0142uga b\u0142\u0119d\xF3w polega na pisaniu kodu, kt\xF3ry mo\u
   e przewidzie\u0107 i poradzi\u0107 sobie z sytuacjami awaryjnymi. Programi\u015B\
   ci robi\u0105 to, aby zapobiega\u0107 awariom,\u2026"
 title: "Obs\u0142uga b\u0142\u0119d\xF3w"
+weight: 16
 ---
-
-{{< edit_this_page >}}
 
 ## Co i dlaczego?
 Obsługa błędów polega na pisaniu kodu, który może przewidzieć i poradzić sobie z sytuacjami awaryjnymi. Programiści robią to, aby zapobiegać awariom, chronić integralność danych i zapewniać użytkownikom łagodne rozwiązania awaryjne.

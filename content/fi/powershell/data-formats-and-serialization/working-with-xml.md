@@ -7,9 +7,8 @@ model: gpt-4-0125-preview
 summary: "XML:n (eXtensible Markup Language) kanssa ty\xF6skentely sis\xE4lt\xE4\xE4\
   \ tietojen manipuloinnin ja k\xE4ytt\xE4misen, jotka on j\xE4rjestetty Laajennettavassa\u2026"
 title: "XML:n k\xE4sittely"
+weight: 40
 ---
-
-{{< edit_this_page >}}
 
 ## Mikä & Miksi?
 XML:n (eXtensible Markup Language) kanssa työskentely sisältää tietojen manipuloinnin ja käyttämisen, jotka on järjestetty Laajennettavassa Merkintäkielessä. Ohjelmoijat työskentelevät XML:n parissa mahdollistaakseen yhteistoiminnallisuuden muiden järjestelmien kanssa tai lukeakseen ja kirjoittaakseen asetustiedostoja, datalähteitä ja muita web-palveluissa yleisiä jäsenneltyjä asiakirjoja.

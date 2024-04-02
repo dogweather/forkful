@@ -11,9 +11,8 @@ summary: "Att s\xF6ka och ers\xE4tta text i programmering underl\xE4ttar modifie
   \ och hantering av str\xE4ngar, vilket \xE4r en grundl\xE4ggande uppgift i datahantering\
   \ och\u2026"
 title: "S\xF6kning och ers\xE4ttning av text"
+weight: 10
 ---
-
-{{< edit_this_page >}}
 
 ## Vad & Varför?
 

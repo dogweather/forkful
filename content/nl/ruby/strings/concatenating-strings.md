@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Strings aan elkaar plakken is gewoon een chique manier om te zeggen 'ze\
   \ achter elkaar plakken'. Programmeurs doen dit om woorden en zinnen te combineren,\u2026"
 title: Samenvoegen van strings
+weight: 3
 ---
-
-{{< edit_this_page >}}
 
 ## Wat & Waarom?
 Strings aan elkaar plakken is gewoon een chique manier om te zeggen 'ze achter elkaar plakken'. Programmeurs doen dit om woorden en zinnen te combineren, om berichten op te bouwen, of om dynamisch waarden in tekst in te voegen.

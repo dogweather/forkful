@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Complexe getallen zijn een combinatie van re\xEBle en imaginaire getallen,\
   \ zoals `a + bi` waarbij `i` de vierkantswortel van -1 is. Ze zijn cruciaal in\u2026"
 title: Werken met complexe getallen
+weight: 14
 ---
-
-{{< edit_this_page >}}
 
 ## Wat & Waarom?
 Complexe getallen zijn een combinatie van reële en imaginaire getallen, zoals `a + bi` waarbij `i` de vierkantswortel van -1 is. Ze zijn cruciaal in vakgebieden zoals engineering en natuurkunde om problemen op te lossen die met gewone getallen niet aangepakt kunnen worden.

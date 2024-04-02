@@ -11,9 +11,8 @@ summary: "Usuwanie cudzys\u0142ow\xF3w z ci\u0105gu znak\xF3w w Go polega na eli
   \ pocz\u0105tkowych i ko\u0144cowych znak\xF3w cudzys\u0142owu (`\"` lub `'`) z\
   \ danego ci\u0105gu znak\xF3w. Programi\u015Bci\u2026"
 title: "Usuwanie cudzys\u0142ow\xF3w z ci\u0105gu znak\xF3w"
+weight: 9
 ---
-
-{{< edit_this_page >}}
 
 ## Co & Dlaczego?
 

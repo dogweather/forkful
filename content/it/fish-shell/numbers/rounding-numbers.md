@@ -7,9 +7,8 @@ model: gpt-4-0125-preview
 summary: "Arrotondare i numeri consiste nel tagliare le cifre decimali per semplificare\
   \ i dati o adattarli a formati specifici. I programmatori lo fanno per\u2026"
 title: Arrotondamento dei numeri
+weight: 13
 ---
-
-{{< edit_this_page >}}
 
 ## Cos'è & Perché?
 Arrotondare i numeri consiste nel tagliare le cifre decimali per semplificare i dati o adattarli a formati specifici. I programmatori lo fanno per visualizzare i dati in modo user-friendly, per un'archiviazione efficiente, o quando la precisione decimale non è rilevante.

@@ -10,9 +10,8 @@ model: gpt-4-0125-preview
 summary: "Escribir pruebas en Kotlin implica elaborar fragmentos de c\xF3digo que\
   \ validan autom\xE1ticamente la correcci\xF3n funcional de tus m\xF3dulos de software,\u2026"
 title: Escribiendo pruebas
+weight: 36
 ---
-
-{{< edit_this_page >}}
 
 ## ¿Qué y por qué?
 

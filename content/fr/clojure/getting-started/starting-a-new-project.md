@@ -9,9 +9,8 @@ summary: "Commencer un nouveau projet, c'est cr\xE9er une structure de base pour
   velopper une application. Les programmeurs font \xE7a pour organiser le code, g\xE9\
   rer les\u2026"
 title: Lancement d'un nouveau projet
+weight: 1
 ---
-
-{{< edit_this_page >}}
 
 ## Quoi & Pourquoi ?
 Commencer un nouveau projet, c'est créer une structure de base pour développer une application. Les programmeurs font ça pour organiser le code, gérer les dépendances et faciliter le démarrage rapide.

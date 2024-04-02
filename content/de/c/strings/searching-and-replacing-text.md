@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Das Suchen und Ersetzen von Text in C beinhaltet das Identifizieren spezifischer\
   \ Teilstrings innerhalb eines gr\xF6\xDFeren Strings und deren Substituierung\u2026"
 title: Suchen und Ersetzen von Text
+weight: 10
 ---
-
-{{< edit_this_page >}}
 
 ## Was & Warum?
 

@@ -11,9 +11,8 @@ summary: "Das L\xF6schen von Zeichen, die einem bestimmten Muster in Visual Basi
   \ for Applications (VBA) entsprechen, umfasst das Identifizieren und anschlie\xDF\
   ende\u2026"
 title: "Zeichen, die einem Muster entsprechen, l\xF6schen"
+weight: 5
 ---
-
-{{< edit_this_page >}}
 
 ## Was & Warum?
 

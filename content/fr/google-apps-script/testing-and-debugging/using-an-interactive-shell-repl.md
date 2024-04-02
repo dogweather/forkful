@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Une coquille interactive ou Read-Eval-Print Loop (REPL), est un environnement\
   \ de programmation simple et interactif qui prend des entr\xE9es d'utilisateur\u2026"
 title: Utiliser un shell interactif (REPL)
+weight: 34
 ---
-
-{{< edit_this_page >}}
 
 ## Quoi & Pourquoi ?
 

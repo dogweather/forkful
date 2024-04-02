@@ -11,9 +11,8 @@ summary: "Imprimir sa\xEDda de depura\xE7\xE3o trata de gerar mensagens de log t
   rias e informativas que podem ajudar os programadores a entender o fluxo e o estado\
   \ de\u2026"
 title: "Imprimindo sa\xEDda de depura\xE7\xE3o"
+weight: 33
 ---
-
-{{< edit_this_page >}}
 
 ## O que & Por quê?
 

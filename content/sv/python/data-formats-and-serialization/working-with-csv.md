@@ -11,9 +11,8 @@ summary: "Att arbeta med CSV (Comma-Separated Values) inneb\xE4r att l\xE4sa fr\
   n och skriva data till CSV-filer, ett vanligt format f\xF6r att lagra tabul\xE4\
   r data.\u2026"
 title: Arbeta med CSV
+weight: 37
 ---
-
-{{< edit_this_page >}}
 
 ## Vad & Varför?
 Att arbeta med CSV (Comma-Separated Values) innebär att läsa från och skriva data till CSV-filer, ett vanligt format för att lagra tabulär data. Programmerare gör det för att enkelt utbyta och lagra data i ett enkelt, textbaserat format som är brett stöttat över olika plattformar och språk.

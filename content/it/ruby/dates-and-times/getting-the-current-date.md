@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Ottenere la data corrente \xE8 un compito essenziale in quasi ogni impresa\
   \ di programmazione, dal registrare le attivit\xE0 in un'applicazione al generare\u2026"
 title: Ottenere la data corrente
+weight: 29
 ---
-
-{{< edit_this_page >}}
 
 ## Che cosa & Perché?
 Ottenere la data corrente è un compito essenziale in quasi ogni impresa di programmazione, dal registrare le attività in un'applicazione al generare report con timbri di data. In Ruby, ciò può essere facilmente realizzato usando la libreria standard, semplificando le operazioni che coinvolgono le date.

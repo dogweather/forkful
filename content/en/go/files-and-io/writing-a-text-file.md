@@ -7,9 +7,8 @@ model: gpt-4-0125-preview
 summary: "Writing a text file in Go involves creating and writing strings of data\
   \ into a new or existing text file. Programmers do this to persist data, such as\u2026"
 title: Writing a text file
+weight: 24
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 

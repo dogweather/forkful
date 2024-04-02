@@ -9,9 +9,8 @@ summary: "Czasami potrzebujemy reprezentowa\u0107 dat\u0119 tekstowo - do wy\u01
   wietlenia, logowania czy zapisywania. Robimy to, przekszta\u0142caj\u0105c obiekty\
   \ daty (`Date`) w\u2026"
 title: "Konwersja daty na \u0142a\u0144cuch znak\xF3w"
+weight: 28
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 Czasami potrzebujemy reprezentować datę tekstowo - do wyświetlenia, logowania czy zapisywania. Robimy to, przekształcając obiekty daty (`Date`) w JavaScript na ciągi znaków (stringi), aby były czytelne dla ludzi i kompatybilne z innymi systemami.

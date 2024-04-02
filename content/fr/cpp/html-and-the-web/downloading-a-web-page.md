@@ -8,9 +8,8 @@ model: gpt-4-1106-preview
 summary: "T\xE9l\xE9charger une page web, c'est r\xE9cup\xE9rer son contenu via internet.\
   \ Les programmeurs le font pour automatiser la collecte d'informations, tester la\u2026"
 title: "T\xE9l\xE9chargement d'une page web"
+weight: 42
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 Télécharger une page web, c'est récupérer son contenu via internet. Les programmeurs le font pour automatiser la collecte d'informations, tester la disponibilité d'un site ou analyser des données web.

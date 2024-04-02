@@ -23,9 +23,8 @@ summary: "\u05E2\u05D1\u05D5\u05D3\u05D4 \u05E2\u05DD JSON (\u05EA\u05E1\u05D3\u
   \u05D8 \u05D5-API \u05DE\u05DB\u05D9\u05D5\u05D5\u05DF \u05E9-JSON \u05D4\u05D5\u05D0\
   \u2026"
 title: "\u05E2\u05D1\u05D5\u05D3\u05D4 \u05E2\u05DD JSON"
+weight: 38
 ---
-
-{{< edit_this_page >}}
 
 ## מה ולמה?
 

@@ -10,9 +10,8 @@ model: gpt-4-0125-preview
 summary: "Le espressioni regolari (regex) in JavaScript sono pattern utilizzati per\
   \ abbinare combinazioni di caratteri nelle stringhe. I programmatori le usano per\u2026"
 title: Utilizzo delle espressioni regolari
+weight: 11
 ---
-
-{{< edit_this_page >}}
 
 ## Cosa & Perché?
 

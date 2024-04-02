@@ -11,9 +11,8 @@ summary: "Analyser du HTML en Rust consiste \xE0 extraire des donn\xE9es de docu
   \ HTML, ce qui est essentiel pour le web scraping, l'extraction de donn\xE9es ou\
   \ la\u2026"
 title: Analyse Syntaxique du HTML
+weight: 43
 ---
-
-{{< edit_this_page >}}
 
 ## Quoi & Pourquoi ?
 

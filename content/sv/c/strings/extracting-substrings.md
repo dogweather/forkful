@@ -11,9 +11,8 @@ summary: "Att extrahera delstr\xE4ngar i C inneb\xE4r att skapa en mindre str\xE
   ng (delstr\xE4ng) fr\xE5n en st\xF6rre str\xE4ng baserat p\xE5 specificerade kriterier,\
   \ s\xE5som position och\u2026"
 title: "Extrahera delstr\xE4ngar"
+weight: 6
 ---
-
-{{< edit_this_page >}}
 
 ## Vad & Varför?
 

@@ -10,9 +10,8 @@ model: gpt-4-0125-preview
 summary: "Trabajar con archivos CSV (Valores Separados por Comas) es una tarea com\xFA\
   n para administrar y manipular datos de una forma estructurada y tabulada. Los\u2026"
 title: Trabajando con CSV
+weight: 37
 ---
-
-{{< edit_this_page >}}
 
 ## ¿Qué & Por qué?
 

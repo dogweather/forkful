@@ -9,9 +9,8 @@ summary: "Encontrar la longitud de una cadena significa saber cu\xE1ntos caracte
   \ contiene. Los programadores lo hacen para validar entradas, controlar bucles,\
   \ y\u2026"
 title: Calculando la longitud de una cadena
+weight: 7
 ---
-
-{{< edit_this_page >}}
 
 ## ¿Qué y Por Qué?
 Encontrar la longitud de una cadena significa saber cuántos caracteres contiene. Los programadores lo hacen para validar entradas, controlar bucles, y manejar datos de texto precisamente.

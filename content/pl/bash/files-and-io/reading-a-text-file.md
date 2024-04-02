@@ -9,9 +9,8 @@ summary: "Przeczytanie pliku tekstowego w Bashu to po prostu wy\u015Bwietlenie j
   \ zawarto\u015Bci w terminalu. Programi\u015Bci robi\u0105 to do analizy danych,\
   \ debugowania i\u2026"
 title: Odczytywanie pliku tekstowego
+weight: 22
 ---
-
-{{< edit_this_page >}}
 
 ## Co i dlaczego?
 Przeczytanie pliku tekstowego w Bashu to po prostu wyświetlenie jego zawartości w terminalu. Programiści robią to do analizy danych, debugowania i automatyzacji zadań.

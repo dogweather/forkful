@@ -11,9 +11,8 @@ summary: "Att tolka ett datum fr\xE5n en str\xE4ng handlar om att k\xE4nna igen 
   \ konvertera skrivna datum i textform till en datatyp som PowerShell kan f\xF6rst\xE5\
   \ och arbeta\u2026"
 title: "Analysera ett datum fr\xE5n en str\xE4ng"
+weight: 30
 ---
-
-{{< edit_this_page >}}
 
 ## Vad & Varför?
 Att tolka ett datum från en sträng handlar om att känna igen och konvertera skrivna datum i textform till en datatyp som PowerShell kan förstå och arbeta med. Programmerare gör detta för att manipulera, formatera, jämföra eller beräkna datum, vilket är vanliga uppgifter i skript som hanterar loggfiler, användarinmatning eller databehandling.

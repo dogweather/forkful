@@ -11,9 +11,8 @@ summary: "\xC5 beregne en dato i fremtiden eller fortiden handler om \xE5 manipu
   \ datoomr\xE5der for \xE5 finne datoer utover eller f\xF8r den n\xE5v\xE6rende datoen,\
   \ henholdsvis.\u2026"
 title: Beregning av en dato i fremtiden eller fortiden
+weight: 26
 ---
-
-{{< edit_this_page >}}
 
 ## Hva & Hvorfor?
 

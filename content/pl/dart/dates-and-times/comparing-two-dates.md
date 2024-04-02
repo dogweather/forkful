@@ -11,9 +11,8 @@ summary: "Por\xF3wnywanie dw\xF3ch dat w Dart polega na ocenie r\xF3\u017Cnicy c
   \ lub kolejno\u015Bci mi\u0119dzy nimi, co jest kluczow\u0105 funkcjonalno\u015B\
   ci\u0105 w aplikacjach zarz\u0105dzaj\u0105cych\u2026"
 title: "Por\xF3wnywanie dw\xF3ch dat"
+weight: 27
 ---
-
-{{< edit_this_page >}}
 
 ## Co i dlaczego?
 Porównywanie dwóch dat w Dart polega na ocenie różnicy czasowej lub kolejności między nimi, co jest kluczową funkcjonalnością w aplikacjach zarządzających wydarzeniami, terminami czy jakimikolwiek danymi czasowymi. Programiści często wymagają tego do kontrolowania logiki przepływu, weryfikacji lub sortowania danych na podstawie warunków czasowych.

@@ -8,9 +8,8 @@ model: gpt-4-1106-preview
 summary: "Crear un archivo temporal es hacer un fichero que s\xF3lo necesitas durante\
   \ el tiempo de ejecuci\xF3n de tu programa. Los programadores lo hacen para almacenar\u2026"
 title: Creando un archivo temporal
+weight: 21
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 Crear un archivo temporal es hacer un fichero que sólo necesitas durante el tiempo de ejecución de tu programa. Los programadores lo hacen para almacenar datos temporalmente sin afectar el sistema de archivos permanente.

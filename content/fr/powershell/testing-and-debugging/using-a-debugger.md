@@ -1,14 +1,15 @@
 ---
 date: 2024-01-26 03:50:51.027779-07:00
-description: "Utiliser un d\xE9bogueur signifie d\xE9finir des points d'arr\xEAt,\
-  \ parcourir votre code pas \xE0 pas, observer les variables et inspecter l'\xE9\
-  tat de votre programme\u2026"
+description: "Dans PowerShell, vous pouvez d\xE9boguer des scripts en utilisant l'Environnement\
+  \ de Scripting Int\xE9gr\xE9 de PowerShell (ISE) int\xE9gr\xE9 ou Visual Studio\
+  \ Code (VS\u2026"
 lastmod: '2024-03-13T22:44:58.053511-06:00'
 model: gpt-4-0125-preview
-summary: "Utiliser un d\xE9bogueur signifie d\xE9finir des points d'arr\xEAt, parcourir\
-  \ votre code pas \xE0 pas, observer les variables et inspecter l'\xE9tat de votre\
-  \ programme\u2026"
+summary: "Dans PowerShell, vous pouvez d\xE9boguer des scripts en utilisant l'Environnement\
+  \ de Scripting Int\xE9gr\xE9 de PowerShell (ISE) int\xE9gr\xE9 ou Visual Studio\
+  \ Code (VS\u2026"
 title: "Utilisation d'un d\xE9bogueur"
+weight: 35
 ---
 
 ## Comment faire :

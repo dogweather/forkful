@@ -11,9 +11,8 @@ summary: "Web-sivun lataaminen C-kielell\xE4 sis\xE4lt\xE4\xE4 ohjelmallisesti i
   \ sis\xE4ll\xF6n k\xE4sittelemisen ja paikallisesti tallentamisen k\xE4sittely\xE4\
   \ tai offline-\u2026"
 title: Web-sivun lataaminen
+weight: 42
 ---
-
-{{< edit_this_page >}}
 
 ## Mikä & Miksi?
 

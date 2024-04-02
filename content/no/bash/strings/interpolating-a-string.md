@@ -9,9 +9,8 @@ summary: "Interpolering av en streng betyr \xE5 sette inn variabler eller uttryk
   \ inni en tekststreng. Programmere bruker det for \xE5 bygge dynamisk innhold og\
   \ meldinger."
 title: Interpolering av en streng
+weight: 8
 ---
-
-{{< edit_this_page >}}
 
 ## Hva & Hvorfor?
 Interpolering av en streng betyr å sette inn variabler eller uttrykk inni en tekststreng. Programmere bruker det for å bygge dynamisk innhold og meldinger.

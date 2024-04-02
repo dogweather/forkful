@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Das L\xF6schen von Zeichen, die einem spezifischen Muster in Strings in\
   \ C entsprechen, bedeutet, alle Instanzen bestimmter Zeichen zu entfernen, die\u2026"
 title: "Zeichen l\xF6schen, die einem Muster entsprechen"
+weight: 5
 ---
-
-{{< edit_this_page >}}
 
 ## Was & Warum?
 

@@ -10,9 +10,8 @@ model: gpt-4-0125-preview
 summary: "Een datum omzetten naar een string in Elixir verandert de datum van een\
   \ struct naar een leesbare reeks tekens voor weergave of opslag. Programmeurs doen\u2026"
 title: Een datum converteren naar een string
+weight: 28
 ---
-
-{{< edit_this_page >}}
 
 ## Wat & Waarom?
 

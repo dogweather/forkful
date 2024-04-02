@@ -17,9 +17,8 @@ summary: "TOML, \u05E8\u05D0\u05E9\u05D9 \u05EA\u05D9\u05D1\u05D5\u05EA \u05E9\u
   \u05DD. \u05DE\u05EA\u05DB\u05E0\u05EA\u05D9\u05DD \u05DE\u05E9\u05EA\u05DE\u05E9\
   \u05D9\u05DD \u05D1\u05D5 \u05DC\u05E7\u05D1\u05E6\u05D9\u2026"
 title: "\u05E2\u05D1\u05D5\u05D3\u05D4 \u05E2\u05DD TOML"
+weight: 39
 ---
-
-{{< edit_this_page >}}
 
 ## מה ולמה?
 TOML, ראשי תיבות של Tom's Obvious, Minimal Language, הוא פורמט נתונים דומה ל-JSON או ל-YAML, אך קל יותר לקריאה עבור בני אדם. מתכנתים משתמשים בו לקבצי תצורה כי הוא פשוט ומתרגם היטב למבני נתונים.

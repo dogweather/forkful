@@ -9,9 +9,8 @@ summary: "Ein Read-Eval-Print-Loop (REPL) ist eine Programmierumgebung, die einz
   \ Benutzereingaben annimmt, ausf\xFChrt und das Ergebnis an den Benutzer zur\xFC\
   ckgibt.\u2026"
 title: Nutzung einer interaktiven Shell (REPL)
+weight: 34
 ---
-
-{{< edit_this_page >}}
 
 ## Was & Warum?
 Ein Read-Eval-Print-Loop (REPL) ist eine Programmierumgebung, die einzelne Benutzereingaben annimmt, ausführt und das Ergebnis an den Benutzer zurückgibt. Programmierer verwenden ein REPL, um schnell mit Code-Snippets zu experimentieren, Fehler zu suchen und neue Sprachfunktionen ohne den Overhead der Erstellung einer vollständigen Anwendung zu lernen.

@@ -11,9 +11,8 @@ summary: "Extraire des sous-cha\xEEnes dans Visual Basic pour Applications (VBA)
   \ \xE0 isoler des parties sp\xE9cifiques d'une cha\xEEne en fonction de crit\xE8\
   res donn\xE9s.\u2026"
 title: "Extraction de sous-cha\xEEnes"
+weight: 6
 ---
-
-{{< edit_this_page >}}
 
 ## Quoi et Pourquoi ?
 

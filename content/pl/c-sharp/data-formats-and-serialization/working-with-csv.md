@@ -11,9 +11,8 @@ summary: "Pliki CSV (Comma-Separated Values, warto\u015Bci rozdzielane przecinka
   \ s\u0105 powszechnym formatem wymiany danych, kt\xF3ry przedstawia dane tabelaryczne\
   \ w postaci\u2026"
 title: Praca z plikami CSV
+weight: 37
 ---
-
-{{< edit_this_page >}}
 
 ## Co i dlaczego?
 Pliki CSV (Comma-Separated Values, wartości rozdzielane przecinkami) są powszechnym formatem wymiany danych, który przedstawia dane tabelaryczne w postaci zwykłego tekstu, używając przecinków do oddzielania poszczególnych wartości. Programiści pracują z plikami CSV, aby importować, eksportować i manipulować danymi z łatwością między różnymi aplikacjami i usługami, ponieważ jest to prosty format obsługiwany powszechnie, kompatybilny z aplikacjami arkuszy kalkulacyjnych, bazami danych i językami programowania.

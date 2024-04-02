@@ -9,9 +9,8 @@ summary: "\xC5 kalkulere en dato i fremtiden eller fortiden betyr \xE5 finne en 
   \ dato f\xF8r eller etter en kjent dato. Programmerere gj\xF8r dette for \xE5 h\xE5\
   ndtere\u2026"
 title: Beregning av en dato i fremtiden eller fortiden
+weight: 26
 ---
-
-{{< edit_this_page >}}
 
 ## Hva & Hvorfor?
 Å kalkulere en dato i fremtiden eller fortiden betyr å finne en spesifikk dato før eller etter en kjent dato. Programmerere gjør dette for å håndtere frister, planlegge hendelser, eller spore tidslinjer.

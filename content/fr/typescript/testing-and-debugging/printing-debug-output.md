@@ -8,9 +8,8 @@ model: gpt-4-1106-preview
 summary: "Imprimer des informations de d\xE9bogage, c'est afficher des valeurs internes\
   \ du programme pour comprendre son comportement. Les programmeurs le font pour\u2026"
 title: "Affichage des sorties de d\xE9bogage"
+weight: 33
 ---
-
-{{< edit_this_page >}}
 
 ## Quoi et Pourquoi ?
 Imprimer des informations de débogage, c'est afficher des valeurs internes du programme pour comprendre son comportement. Les programmeurs le font pour traquer les bugs plus facilement.

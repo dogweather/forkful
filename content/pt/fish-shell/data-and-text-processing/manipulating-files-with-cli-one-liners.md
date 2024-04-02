@@ -9,9 +9,8 @@ summary: "No mundo da programa\xE7\xE3o, especialmente ao lidar com ambientes Li
   \ ou Unix, manipular arquivos diretamente da interface de linha de comando (CLI)\
   \ n\xE3o \xE9\u2026"
 title: Manipulando arquivos com one-liners de CLI
+weight: 31
 ---
-
-{{< edit_this_page >}}
 
 ## O que & Por quê?
 

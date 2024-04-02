@@ -9,9 +9,8 @@ summary: "Kun muunnetaan merkkijono pieniksi kirjaimiksi, tekstiin sovelletaan y
   ist\xE4 muotoilua, joka on kaikki pienill\xE4 kirjaimilla. Koodarit tekev\xE4t t\xE4\
   t\xE4\u2026"
 title: Merkkijonon muuntaminen pieniksi kirjaimiksi
+weight: 4
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why? - Mitä ja Miksi?
 Kun muunnetaan merkkijono pieniksi kirjaimiksi, tekstiin sovelletaan yhtenäistä muotoilua, joka on kaikki pienillä kirjaimilla. Koodarit tekevät tätä helpottaakseen vertailua ja prosessointia, sekä poistaakseen kirjainkokoon liittyvä ongelmat, kuten käyttäjäsyötteen johdonmukaisuuden.

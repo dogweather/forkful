@@ -10,9 +10,8 @@ model: gpt-4-0125-preview
 summary: "Das aktuelle Datum in JavaScript zu erhalten, ist eine grundlegende Aufgabe,\
   \ die das Abrufen und m\xF6glicherweise Manipulieren des heutigen Datums und der\u2026"
 title: Den aktuellen Datum abrufen
+weight: 29
 ---
-
-{{< edit_this_page >}}
 
 ## Was & Warum?
 Das aktuelle Datum in JavaScript zu erhalten, ist eine grundlegende Aufgabe, die das Abrufen und möglicherweise Manipulieren des heutigen Datums und der Uhrzeit umfasst. Programmierer führen dies durch, um Datumsangaben auf Websites, in Applikationen anzuzeigen, Benutzerinteraktionen zu verfolgen oder zeitkritische Daten zu verarbeiten.

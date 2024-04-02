@@ -9,9 +9,8 @@ summary: "V\xE4liaikainen tiedosto on tilap\xE4inen, usein automaattisesti poist
   \ tiedosto, jota k\xE4ytet\xE4\xE4n datan v\xE4liaikaiseen tallentamiseen. Ohjelmoijat\
   \ luovat\u2026"
 title: "V\xE4liaikaistiedoston luominen"
+weight: 21
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why? (Mitä ja Miksi?)
 Väliaikainen tiedosto on tilapäinen, usein automaattisesti poistettava tiedosto, jota käytetään datan väliaikaiseen tallentamiseen. Ohjelmoijat luovat niitä, jotta voidaan käsitellä väliaikaisia datamassoja turvallisesti, minimoimalla riski datan vuotoon tai vahingossa tapahtuvaan tallentamiseen pysyviin tiedostoihin.

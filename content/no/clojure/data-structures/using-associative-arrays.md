@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Assosiative tabeller, eller hashmaper, i Clojure lar deg lagre og hente\
   \ data med n\xF8kkel-verdi-par. De er et f\xF8rstevalg for h\xE5ndtering av strukturerte\u2026"
 title: Bruke associative tabeller
+weight: 15
 ---
-
-{{< edit_this_page >}}
 
 ## Hva & Hvorfor?
 

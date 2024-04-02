@@ -10,9 +10,8 @@ model: gpt-4-0125-preview
 summary: "Een tekstbestand schrijven houdt in dat gegevens worden opgeslagen als leesbare\
   \ tekst, met behulp van een karaktercodering zoals UTF-8. Programmeurs doen\u2026"
 title: Een tekstbestand schrijven
+weight: 24
 ---
-
-{{< edit_this_page >}}
 
 ## Wat & Waarom?
 Een tekstbestand schrijven houdt in dat gegevens worden opgeslagen als leesbare tekst, met behulp van een karaktercodering zoals UTF-8. Programmeurs doen dit voor logboekregistratie, gegevensbehoud of configuratie.

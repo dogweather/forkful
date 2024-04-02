@@ -9,9 +9,8 @@ summary: "Kommandoradsargument l\xE5ter anv\xE4ndare ge input direkt n\xE4r de k
   r ett Python-program. Det \xE4r viktigt f\xF6r att skapa flexibla program som kan\
   \ anpassas vid\u2026"
 title: "L\xE4sa in kommandoradsargument"
+weight: 23
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why? (Vad & Varför?)
 Kommandoradsargument låter användare ge input direkt när de kör ett Python-program. Det är viktigt för att skapa flexibla program som kan anpassas vid varje körning utan att ändra koden.

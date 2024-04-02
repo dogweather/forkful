@@ -11,9 +11,8 @@ summary: "Arrays associativos, mais conhecidos como hashes no Ruby, permitem ass
   \ chaves \xFAnicas a valores. Eles s\xE3o indispens\xE1veis quando voc\xEA precisa\
   \ rastrear\u2026"
 title: Usando arrays associativos
+weight: 15
 ---
-
-{{< edit_this_page >}}
 
 ## O que & Por quê?
 

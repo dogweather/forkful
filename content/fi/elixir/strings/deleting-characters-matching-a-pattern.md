@@ -7,9 +7,8 @@ model: gpt-4-1106-preview
 summary: "\"Mik\xE4 ja miksi?\" Kun puhutaan merkkien poistamisesta kuvion mukaisesti\
   \ Elixiriss\xE4, tarkoitamme tiettyjen merkkijonojen tai merkkiryhmien poistamista\u2026"
 title: Merkkien poistaminen hakemalla osumia kaavaan
+weight: 5
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 "Mikä ja miksi?"

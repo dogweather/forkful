@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Registrar en Visual Basic para Aplicaciones (VBA) implica grabar informaci\xF3\
   n sobre el comportamiento en tiempo de ejecuci\xF3n de un programa en un archivo,\u2026"
 title: "Registro de Informaci\xF3n"
+weight: 17
 ---
-
-{{< edit_this_page >}}
 
 ## Qué y Por Qué
 

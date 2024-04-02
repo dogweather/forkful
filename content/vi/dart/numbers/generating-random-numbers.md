@@ -13,9 +13,8 @@ summary: "T\u1EA1o s\u1ED1 ng\u1EABu nhi\xEAn trong Dart li\xEAn quan \u0111\u1E
   \ \u0111o\xE1n tr\u01B0\u1EDBc v\xE0 kh\xE1c nhau m\u1ED7i khi th\u1EF1c thi. L\u1EAD\
   p tr\xECnh vi\xEAn t\u1EADn d\u1EE5ng ch\u1EE9c\u2026"
 title: "Sinh s\u1ED1 ng\u1EABu nhi\xEAn"
+weight: 12
 ---
-
-{{< edit_this_page >}}
 
 ## Cái gì & Tại sao?
 Tạo số ngẫu nhiên trong Dart liên quan đến việc tạo các giá trị số mà không thể dự đoán trước và khác nhau mỗi khi thực thi. Lập trình viên tận dụng chức năng này cho nhiều mục đích, từ mô phỏng các tình huống thế giới thực trong môi trường kiểm tra đến việc kích hoạt cơ chế trò chơi và đảm bảo an ninh thông qua sự ngẫu nhiên trong các hoạt động mã hóa.

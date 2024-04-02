@@ -9,9 +9,8 @@ summary: "Registrar (logging) \xE9, essencialmente, anotar o que seu aplicativo 
   \ fazendo \u2014 um di\xE1rio, por assim dizer, mas para o c\xF3digo. Os programadores\
   \ fazem\u2026"
 title: Registro de Logs
+weight: 17
 ---
-
-{{< edit_this_page >}}
 
 ## O que & Por quê?
 Registrar (logging) é, essencialmente, anotar o que seu aplicativo está fazendo — um diário, por assim dizer, mas para o código. Os programadores fazem isso para acompanhar os detalhes, como mudanças de estado, eventos do sistema e bugs irritantes, garantindo que nenhum contratempo passe despercebido.

@@ -7,9 +7,8 @@ model: gpt-4-0125-preview
 summary: "Writing a text file in Bash allows you to automate data storage, logging,\
   \ configuration settings, and more. It's a fundamental skill for shell scripting,\u2026"
 title: Writing a text file
+weight: 24
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 

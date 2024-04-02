@@ -11,9 +11,8 @@ summary: "YAML, b\u0119d\u0105cy skr\xF3tem od \"YAML Ain't Markup Language\", t
   \ format serializacji danych, kt\xF3ry jest czytelny dla cz\u0142owieka. Programi\u015B\
   ci cz\u0119sto u\u017Cywaj\u0105 go do\u2026"
 title: Praca z YAML
+weight: 41
 ---
-
-{{< edit_this_page >}}
 
 ## Co i dlaczego?
 

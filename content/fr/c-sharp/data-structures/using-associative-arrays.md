@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Les tableaux associatifs, ou dictionnaires en C#, vous permettent de stocker\
   \ et de g\xE9rer des paires de cl\xE9s et de valeurs. Ils sont votre solution\u2026"
 title: Utilisation des tableaux associatifs
+weight: 15
 ---
-
-{{< edit_this_page >}}
 
 ## Quoi & Pourquoi ?
 

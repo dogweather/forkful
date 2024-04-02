@@ -11,9 +11,8 @@ summary: "Capitalizar una cadena en Rust implica modificar la cadena para que su
   \ car\xE1cter est\xE9 en may\xFAscula si es una letra, mientras que el resto de\
   \ la\u2026"
 title: Capitalizando una cadena de texto
+weight: 2
 ---
-
-{{< edit_this_page >}}
 
 ## Qué y Por Qué?
 

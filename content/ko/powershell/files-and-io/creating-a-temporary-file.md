@@ -16,9 +16,8 @@ summary: "\uD504\uB85C\uADF8\uB798\uBA38\uAC00 \uC784\uC2DC \uD30C\uC77C\uC744 \
   \uC6A9 \uD504\uB85C\uADF8\uB7A8 \uAC04 \uB370\uC774\uD130\uB97C \uC804\uC1A1\uD558\
   \uB294 \uB370 \uC4F0\uC9C0\uC694."
 title: "\uC784\uC2DC \uD30C\uC77C \uC0DD\uC131\uD558\uAE30"
+weight: 21
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why? (무엇과 왜?)
 프로그래머가 임시 파일을 만드는 건 데이터를 일시적으로 저장하기 위해서예요. 작업 중간에 필요한 데이터를 보관하거나, 응용 프로그램 간 데이터를 전송하는 데 쓰지요.

@@ -9,9 +9,8 @@ summary: "Interpolar uma string significa incorporar vari\xE1veis ou express\xF5
   \ em meio a um texto fixo para criar mensagens din\xE2micas. Programadores fazem\
   \ isso para\u2026"
 title: Interpolando uma string
+weight: 8
 ---
-
-{{< edit_this_page >}}
 
 ## O Que é & Porquê?
 Interpolar uma string significa incorporar variáveis ou expressões em meio a um texto fixo para criar mensagens dinâmicas. Programadores fazem isso para personalizar saídas, automatizar mensagens, e tornar o código mais legível e manutenível.

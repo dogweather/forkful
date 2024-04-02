@@ -2,17 +2,18 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:09:48.709262-07:00
-description: "S\u1EED d\u1EE5ng debugger c\xF3 ngh\u0129a l\xE0 s\u1EED d\u1EE5ng\
-  \ m\u1ED9t c\xF4ng c\u1EE5 \u0111\u1EC3 ki\u1EC3m tra v\xE0 s\u1EEDa l\u1ED7i trong\
-  \ m\xE3 c\u1EE7a b\u1EA1n. L\u1EADp tr\xECnh vi\xEAn l\xE0m \u0111i\u1EC1u n\xE0\
-  y \u0111\u1EC3 hi\u1EC3u d\xF2ng ch\u1EA3y c\u1EE7a \u1EE9ng d\u1EE5ng c\u1EE7a\u2026"
+description: "Gi\u1EA3 s\u1EED b\u1EA1n c\xF3 m\u1ED9t ch\u01B0\u01A1ng tr\xECnh Java\
+  \ \u0111\u01A1n gi\u1EA3n \u0111ang g\u1EB7p s\u1EF1 c\u1ED1, v\xE0 b\u1EA1n kh\xF4\
+  ng th\u1EC3 hi\u1EC3u t\u1EA1i sao. D\u01B0\u1EDBi \u0111\xE2y l\xE0 c\xE1ch b\u1EA1\
+  n kh\u1EDFi \u0111\u1ED9ng m\u1ED9t debugger s\u1EED d\u1EE5ng Eclipse,\u2026"
 lastmod: '2024-03-13T22:44:36.495401-06:00'
 model: gpt-4-0125-preview
-summary: "S\u1EED d\u1EE5ng debugger c\xF3 ngh\u0129a l\xE0 s\u1EED d\u1EE5ng m\u1ED9\
-  t c\xF4ng c\u1EE5 \u0111\u1EC3 ki\u1EC3m tra v\xE0 s\u1EEDa l\u1ED7i trong m\xE3\
-  \ c\u1EE7a b\u1EA1n. L\u1EADp tr\xECnh vi\xEAn l\xE0m \u0111i\u1EC1u n\xE0y \u0111\
-  \u1EC3 hi\u1EC3u d\xF2ng ch\u1EA3y c\u1EE7a \u1EE9ng d\u1EE5ng c\u1EE7a\u2026"
+summary: "Gi\u1EA3 s\u1EED b\u1EA1n c\xF3 m\u1ED9t ch\u01B0\u01A1ng tr\xECnh Java\
+  \ \u0111\u01A1n gi\u1EA3n \u0111ang g\u1EB7p s\u1EF1 c\u1ED1, v\xE0 b\u1EA1n kh\xF4\
+  ng th\u1EC3 hi\u1EC3u t\u1EA1i sao. D\u01B0\u1EDBi \u0111\xE2y l\xE0 c\xE1ch b\u1EA1\
+  n kh\u1EDFi \u0111\u1ED9ng m\u1ED9t debugger s\u1EED d\u1EE5ng Eclipse,\u2026"
 title: "S\u1EED d\u1EE5ng b\u1ED9 g\u1EE1 l\u1ED7i"
+weight: 35
 ---
 
 ## Cách thực hiện:

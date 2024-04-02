@@ -11,9 +11,8 @@ summary: "Att starta ett nytt projekt i Visual Basic for Applications (VBA) inne
   r att man inr\xE4ttar en milj\xF6 inom ett v\xE4rdprogram, som Excel, f\xF6r att\
   \ automatisera\u2026"
 title: Att starta ett nytt projekt
+weight: 1
 ---
-
-{{< edit_this_page >}}
 
 ## Vad & Varför?
 

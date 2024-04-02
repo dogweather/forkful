@@ -9,9 +9,8 @@ summary: "Uuden projektin aloittaminen PHP:ss\xE4 on kuin tyhj\xE4lt\xE4 p\xF6yd
   lt\xE4 aloittamista; uutta luovaa prosessia. Koodarit tekev\xE4t sen paketoidakseen\
   \ ideoita ja\u2026"
 title: Uuden projektin aloittaminen
+weight: 1
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why? (Mitä & Miksi?)
 Uuden projektin aloittaminen PHP:ssä on kuin tyhjältä pöydältä aloittamista; uutta luovaa prosessia. Koodarit tekevät sen paketoidakseen ideoita ja ratkaistakseen ongelmia.

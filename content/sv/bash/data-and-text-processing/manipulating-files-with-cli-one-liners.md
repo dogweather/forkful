@@ -9,9 +9,8 @@ summary: "Att manipulera filer med CLI (kommandoradsgr\xE4nssnitt) one-liners in
   r att anv\xE4nda Bash-skript eller kommandon f\xF6r att utf\xF6ra \xE5tg\xE4rder\
   \ p\xE5 filer, som att\u2026"
 title: Hantera filer med CLI-engreppskommandon
+weight: 31
 ---
-
-{{< edit_this_page >}}
 
 ## Vad & Varför?
 

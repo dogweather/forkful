@@ -9,9 +9,8 @@ summary: "Trouver la longueur d'une cha\xEEne de caract\xE8res, c'est d\xE9termi
   \ le nombre de caract\xE8res qu'elle contient. Les programmeurs font \xE7a pour\
   \ valider des\u2026"
 title: "Trouver la longueur d'une cha\xEEne de caract\xE8res"
+weight: 7
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 Trouver la longueur d'une chaîne de caractères, c'est déterminer le nombre de caractères qu'elle contient. Les programmeurs font ça pour valider des entrées, formater du texte, ou simplement pour interagir avec les données de manière contrôlée.

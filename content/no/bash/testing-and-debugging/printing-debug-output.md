@@ -9,9 +9,8 @@ summary: "\xC5 skrive ut feils\xF8kingsdata i terminalen hjelper programmerere \
   \ forst\xE5 hva som foreg\xE5r under hetta. Det er som \xE5 ha et kart n\xE5r du\
   \ navigerer i en ny by -\u2026"
 title: "Skrive ut feils\xF8kingsdata"
+weight: 33
 ---
-
-{{< edit_this_page >}}
 
 ## Hva & Hvorfor?
 Å skrive ut feilsøkingsdata i terminalen hjelper programmerere å forstå hva som foregår under hetta. Det er som å ha et kart når du navigerer i en ny by - essensielt for å finne ut hvor og hvordan ting går galt.

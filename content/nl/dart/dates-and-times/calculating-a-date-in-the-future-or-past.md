@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Een datum in de toekomst of het verleden berekenen is een veelvoorkomende\
   \ taak voor programmeurs die bezig zijn met planning, herinneringen of elke\u2026"
 title: Een datum in de toekomst of het verleden berekenen
+weight: 26
 ---
-
-{{< edit_this_page >}}
 
 ## Wat & Waarom?
 Een datum in de toekomst of het verleden berekenen is een veelvoorkomende taak voor programmeurs die bezig zijn met planning, herinneringen of elke functie die afhankelijk is van datumcalculaties. Het begrijpen van hoe je data kunt manipuleren is cruciaal voor backend systemen, gebruikersinterfaces en data-analyse, speciaal voor degenen die overstappen naar Dart en op zoek zijn naar een efficiënte implementatie van tijdslogica.

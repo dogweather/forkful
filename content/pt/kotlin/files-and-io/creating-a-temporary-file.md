@@ -9,9 +9,8 @@ summary: "Criar um arquivo tempor\xE1rio \xE9 o processo de gerar um arquivo que
   \ \xE9 necess\xE1rio durante a execu\xE7\xE3o tempor\xE1ria de um programa. Os programadores\
   \ fazem isso\u2026"
 title: "Criando um arquivo tempor\xE1rio"
+weight: 21
 ---
-
-{{< edit_this_page >}}
 
 ## O Que & Por Quê?
 

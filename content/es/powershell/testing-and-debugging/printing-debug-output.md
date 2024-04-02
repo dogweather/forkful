@@ -9,9 +9,8 @@ summary: "Imprimir mensajes de depuraci\xF3n es mostrar info temporal en la cons
   \ para entender qu\xE9 est\xE1 pasando en el c\xF3digo. Los programadores lo hacen\
   \ para\u2026"
 title: "Imprimiendo salida de depuraci\xF3n"
+weight: 33
 ---
-
-{{< edit_this_page >}}
 
 ## Qué y Por Qué?
 Imprimir mensajes de depuración es mostrar info temporal en la consola para entender qué está pasando en el código. Los programadores lo hacen para rastrear errores fácilmente y ver el flujo de su programa.

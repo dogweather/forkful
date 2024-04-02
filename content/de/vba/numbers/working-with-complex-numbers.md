@@ -11,9 +11,8 @@ summary: "Die Arbeit mit komplexen Zahlen umfasst das Ausf\xFChren mathematische
   \ Operationen mit Zahlen, die sowohl einen Realteil als auch einen Imagin\xE4rteil\
   \ haben.\u2026"
 title: Arbeiten mit komplexen Zahlen
+weight: 14
 ---
-
-{{< edit_this_page >}}
 
 ## Was & Warum?
 

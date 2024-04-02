@@ -13,9 +13,8 @@ summary: "Trong Swift, vi\u1EC7c l\u1EA5y ng\xE0y hi\u1EC7n t\u1EA1i \u0111\xF2i
   a h\u1EC7 th\u1ED1ng. L\u1EADp tr\xECnh vi\xEAn th\u1EF1c hi\u1EC7n \u0111i\u1EC1\
   u n\xE0y \u0111\u1EC3 ghi th\u1EDDi gian c\u1EE7a s\u1EF1\u2026"
 title: "L\u1EA5y ng\xE0y hi\u1EC7n t\u1EA1i"
+weight: 29
 ---
-
-{{< edit_this_page >}}
 
 ## Cái gì & Tại sao?
 Trong Swift, việc lấy ngày hiện tại đòi hỏi truy cập vào cài đặt thời gian và ngày của hệ thống. Lập trình viên thực hiện điều này để ghi thời gian của sự kiện, lập lịch nhiệm vụ hoặc đơn giản chỉ là hiển thị ngày và giờ trong ứng dụng của họ.

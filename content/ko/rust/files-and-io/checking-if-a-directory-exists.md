@@ -24,9 +24,8 @@ summary: "\uC18C\uD504\uD2B8\uC6E8\uC5B4 \uAC1C\uBC1C\uC5D0\uC11C\uB294 \uD30C\u
   \uACE0 \uD6A8\uC728\uC801\uC73C\uB85C \uCC98\uB9AC\uD560 \uC218\u2026"
 title: "\uB514\uB809\uD1A0\uB9AC\uAC00 \uC874\uC7AC\uD558\uB294\uC9C0 \uD655\uC778\
   \uD558\uAE30"
+weight: 20
 ---
-
-{{< edit_this_page >}}
 
 ## 무엇 & 왜?
 소프트웨어 개발에서는 파일에 접근, 읽기, 쓰기를 시도할 때 오류를 피하기 위해 디렉토리가 존재하는지 확인하는 것이 종종 필요합니다. 시스템 프로그래밍 언어인 Rust는 이 작업을 수행하는 강력한 방법을 제공하여 프로그램이 파일과 디렉토리를 안전하고 효율적으로 처리할 수 있도록 합니다.

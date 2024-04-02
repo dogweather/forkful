@@ -8,9 +8,8 @@ model: gpt-4-1106-preview
 summary: "Debug-Ausgaben zu drucken, bedeutet, Informationen zum Codeablauf in der\
   \ Entwicklungskonsole anzuzeigen, um zu verstehen, was das Programm macht. Es hilft\u2026"
 title: Debug-Ausgaben drucken
+weight: 33
 ---
-
-{{< edit_this_page >}}
 
 ## Was & Warum?
 Debug-Ausgaben zu drucken, bedeutet, Informationen zum Codeablauf in der Entwicklungskonsole anzuzeigen, um zu verstehen, was das Programm macht. Es hilft Entwicklern, Fehler zu finden und die inne liegende Magie des Codes zu entwirren.

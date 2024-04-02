@@ -12,9 +12,8 @@ summary: "Pobieranie bie\u017C\u0105cej daty w Elixirze wi\u0105\u017Ce si\u0119
   \ dost\u0119pem do informacji o dacie i czasie systemu, co jest cz\u0119stym zadaniem\
   \ przy logowaniu, znakowaniu\u2026"
 title: Pobieranie aktualnej daty
+weight: 29
 ---
-
-{{< edit_this_page >}}
 
 ## Co i dlaczego?
 Pobieranie bieżącej daty w Elixirze wiąże się z dostępem do informacji o dacie i czasie systemu, co jest częstym zadaniem przy logowaniu, znakowaniu danych lub w dowolnej funkcji, która wymaga wiedzy o bieżącej dacie. Operacja ta jest niezbędna do tworzenia aplikacji świadomych czasu oraz do zadań takich jak generowanie raportów lub znaczników czasu w aplikacji internetowej.

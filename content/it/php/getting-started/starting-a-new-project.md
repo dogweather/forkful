@@ -7,9 +7,8 @@ model: gpt-4-1106-preview
 summary: "Iniziare un nuovo progetto PHP significa mettere su tela bianca le basi\
   \ del tuo codice. I programmatori lo fanno per dare vita a nuove idee e risolvere\u2026"
 title: Avvio di un nuovo progetto
+weight: 1
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why? (Cosa e Perché?)
 Iniziare un nuovo progetto PHP significa mettere su tela bianca le basi del tuo codice. I programmatori lo fanno per dare vita a nuove idee e risolvere problemi con soluzioni su misura.

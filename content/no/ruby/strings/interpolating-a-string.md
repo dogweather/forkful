@@ -7,9 +7,8 @@ model: gpt-4-1106-preview
 summary: "Interpolering av strenger i Ruby lar deg sette variabler eller Ruby-kode\
   \ inn i en streng. Vi gj\xF8r det for \xE5 bygge dynamiske strenger raskt og rent."
 title: Interpolering av en streng
+weight: 8
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 Interpolering av strenger i Ruby lar deg sette variabler eller Ruby-kode inn i en streng. Vi gjør det for å bygge dynamiske strenger raskt og rent.

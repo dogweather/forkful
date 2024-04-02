@@ -10,9 +10,8 @@ model: gpt-4-0125-preview
 summary: "\xC9crire des tests en Bash implique de scripter des cas de test pour valider\
   \ la fonctionnalit\xE9 de vos scripts Bash. Les programmeurs effectuent des tests\u2026"
 title: "R\xE9daction de tests"
+weight: 36
 ---
-
-{{< edit_this_page >}}
 
 ## Quoi & Pourquoi ?
 Écrire des tests en Bash implique de scripter des cas de test pour valider la fonctionnalité de vos scripts Bash. Les programmeurs effectuent des tests pour s'assurer que leurs scripts fonctionnent comme prévu dans diverses conditions, capturant les erreurs et les bugs avant le déploiement.

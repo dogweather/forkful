@@ -1,14 +1,14 @@
 ---
 date: 2024-01-26 03:50:39.876341-07:00
-description: "Ein Debugger ist ein Werkzeug, das Programmierern hilft zu verstehen,\
-  \ was ihr Code tats\xE4chlich macht, w\xE4hrend er ausgef\xFChrt wird. Es ist die\
-  \ Lupe, die uns\u2026"
+description: "PHP wird mit einem interaktiven Debugger namens Xdebug geliefert. So\
+  \ verwenden Sie ihn. Zuerst stellen Sie sicher, dass Sie Xdebug installiert und\
+  \ in\u2026"
 lastmod: '2024-03-13T22:44:53.976934-06:00'
 model: gpt-4-0125-preview
-summary: "Ein Debugger ist ein Werkzeug, das Programmierern hilft zu verstehen, was\
-  \ ihr Code tats\xE4chlich macht, w\xE4hrend er ausgef\xFChrt wird. Es ist die Lupe,\
-  \ die uns\u2026"
+summary: "PHP wird mit einem interaktiven Debugger namens Xdebug geliefert. So verwenden\
+  \ Sie ihn. Zuerst stellen Sie sicher, dass Sie Xdebug installiert und in\u2026"
 title: Einsatz eines Debuggers
+weight: 35
 ---
 
 ## Wie geht das:

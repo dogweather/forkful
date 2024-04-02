@@ -11,9 +11,8 @@ summary: "JSON (JavaScript Object Notation) on kevyt datanvaihtoformaatti, joka 
   \ ihmisten luettavissa ja kirjoitettavissa sek\xE4 koneiden j\xE4sent\xE4m\xE4ss\xE4\
   \ ja\u2026"
 title: "Ty\xF6skentely JSON:n kanssa"
+weight: 38
 ---
-
-{{< edit_this_page >}}
 
 ## Mikä & Miksi?
 

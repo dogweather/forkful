@@ -9,9 +9,8 @@ summary: "Calcular una fecha en el futuro o pasado es determinar qu\xE9 d\xEDa s
   \ o fue despu\xE9s o antes de un per\xEDodo espec\xEDfico de tiempo. Los programadores\
   \ hacen esto\u2026"
 title: Calcular una fecha en el futuro o pasado
+weight: 26
 ---
-
-{{< edit_this_page >}}
 
 ## ¿Qué & Por qué?
 Calcular una fecha en el futuro o pasado es determinar qué día será o fue después o antes de un período específico de tiempo. Los programadores hacen esto para manejar eventos, recordatorios, o simplemente para calcular intervalos de tiempo para aplicaciones logísticas, financieras o de cualquier naturaleza temporal.

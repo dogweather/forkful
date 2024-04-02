@@ -9,9 +9,8 @@ summary: "Slettes matchende tegn er \xE5 fjerne bestemte sekvenser av tegn fra e
   \ streng, basert p\xE5 et m\xF8nster. Programmerere gj\xF8r dette for \xE5 rense\
   \ data, forenkle\u2026"
 title: "Slette tegn som matcher et m\xF8nster"
+weight: 5
 ---
-
-{{< edit_this_page >}}
 
 ## Hva & Hvorfor?
 Slettes matchende tegn er å fjerne bestemte sekvenser av tegn fra en streng, basert på et mønster. Programmerere gjør dette for å rense data, forenkle behandling eller fjerne unødvendig informasjon.

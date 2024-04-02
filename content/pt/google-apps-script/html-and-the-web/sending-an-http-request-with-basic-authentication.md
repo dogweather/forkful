@@ -11,9 +11,8 @@ summary: "Enviar uma solicita\xE7\xE3o HTTP com autentica\xE7\xE3o b\xE1sica env
   \ codificar um nome de usu\xE1rio e senha em um cabe\xE7alho de solicita\xE7\xE3\
   o para acessar recursos\u2026"
 title: "Enviando uma solicita\xE7\xE3o HTTP com autentica\xE7\xE3o b\xE1sica"
+weight: 45
 ---
-
-{{< edit_this_page >}}
 
 ## O Que & Porquê?
 

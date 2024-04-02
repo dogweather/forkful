@@ -13,9 +13,8 @@ summary: "In th\xF4ng tin l\u1ED7i \u0111\u1EC3 g\u1EE1 r\u1ED1i bao g\u1ED3m vi
   \ k\xFD trong m\xE3 c\u1EE7a b\u1EA1n \u0111\u1EC3 hi\u1EC3n th\u1ECB gi\xE1 tr\u1ECB\
   \ bi\u1EBFn, d\xF2ng th\u1EF1c thi, ho\u1EB7c th\xF4ng b\xE1o\u2026"
 title: "In ra th\xF4ng tin debug"
+weight: 33
 ---
-
-{{< edit_this_page >}}
 
 ## Gì & Tại Sao?
 

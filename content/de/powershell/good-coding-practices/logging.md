@@ -7,9 +7,8 @@ model: gpt-4-1106-preview
 summary: "Logging ist im Grunde das Hinterlassen einer Spur innerhalb Ihres Codes\
   \ - es ist die Art und Weise, wie Sie verfolgen, was passiert, wenn Ihr Skript in\u2026"
 title: Protokollierung
+weight: 17
 ---
-
-{{< edit_this_page >}}
 
 ## Was & Warum?
 Logging ist im Grunde das Hinterlassen einer Spur innerhalb Ihres Codes - es ist die Art und Weise, wie Sie verfolgen, was passiert, wenn Ihr Skript in der Praxis läuft. Entwickler nutzen das Logging, um Fehler zu finden, das Verhalten von Anwendungen zu verfolgen, die Leistung zu überwachen und um nach Unregelmäßigkeiten Ausschau zu halten.

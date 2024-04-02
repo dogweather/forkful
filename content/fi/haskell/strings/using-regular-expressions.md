@@ -11,9 +11,8 @@ summary: "Ohjelmoinnissa s\xE4\xE4nn\xF6lliset lausekkeet ovat merkkijonoja, jot
   \ m\xE4\xE4rittelev\xE4t hakukaavan, ja niit\xE4 k\xE4ytet\xE4\xE4n yleens\xE4 merkkijonojen\
   \ etsimiseen ja\u2026"
 title: "S\xE4\xE4nn\xF6llisten lausekkeiden k\xE4ytt\xF6"
+weight: 11
 ---
-
-{{< edit_this_page >}}
 
 ## Mitä & Miksi?
 Ohjelmoinnissa säännölliset lausekkeet ovat merkkijonoja, jotka määrittelevät hakukaavan, ja niitä käytetään yleensä merkkijonojen etsimiseen ja käsittelyyn. Haskell-ohjelmoijat hyödyntävät säännöllisiä lausekkeita tehtävissä, jotka vaihtelevat yksinkertaisesta merkkijonon vastaavuuden tarkistamisesta monimutkaiseen tekstinkäsittelyyn, hyödyntäen niiden tehokkuutta ja monipuolisuutta tekstidataa käsiteltäessä.

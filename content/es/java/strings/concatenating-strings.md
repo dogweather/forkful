@@ -7,9 +7,8 @@ model: gpt-4-1106-preview
 summary: "La concatenaci\xF3n de cadenas de texto (strings) en Java es simplemente\
   \ el proceso de unir dos o m\xE1s cadenas para formar una nueva. Los programadores\u2026"
 title: "Concatenaci\xF3n de cadenas de texto"
+weight: 3
 ---
-
-{{< edit_this_page >}}
 
 ## Qué y Por Qué?
 

@@ -11,9 +11,8 @@ summary: "Converter uma string para letras min\xFAsculas no Google Apps Script, 
   \ linguagem de script baseada na nuvem para automatiza\xE7\xE3o de tarefas atrav\xE9\
   s dos\u2026"
 title: "Convertendo uma string para min\xFAsculas"
+weight: 4
 ---
-
-{{< edit_this_page >}}
 
 ## O Que & Por Quê?
 

@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Das aktuelle Datum in Swift zu bekommen, erfordert die Verwendung der `Date`-Klasse,\
   \ um auf das Datum und die Uhrzeit zuzugreifen, zu denen die App\u2026"
 title: Den aktuellen Datum abrufen
+weight: 29
 ---
-
-{{< edit_this_page >}}
 
 ## Was & Warum?
 Das aktuelle Datum in Swift zu bekommen, erfordert die Verwendung der `Date`-Klasse, um auf das Datum und die Uhrzeit zuzugreifen, zu denen die App ausgeführt wird. Programmierer müssen aus einer Vielzahl von Gründen das aktuelle Datum abrufen, die von der Zeitstempelung von Ereignissen, der Durchführung von Datumsberechnungen bis hin zur Anzeige von Daten und Uhrzeiten in einer Benutzeroberfläche reichen.

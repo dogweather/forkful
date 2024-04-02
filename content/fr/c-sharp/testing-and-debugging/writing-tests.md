@@ -11,9 +11,8 @@ summary: "\xC9crire des tests en C# implique de cr\xE9er des scripts automatis\x
   s pour valider la fonctionnalit\xE9 de votre code, s'assurant qu'il se comporte\
   \ comme pr\xE9vu.\u2026"
 title: "R\xE9daction de tests"
+weight: 36
 ---
-
-{{< edit_this_page >}}
 
 ## Quoi & Pourquoi ?
 

@@ -11,9 +11,8 @@ summary: "Konwersja daty na ci\u0105g znak\xF3w w Go polega na przekszta\u0142ce
   \ obiektu `time.Time` na czytelny format ci\u0105gu znak\xF3w. Programi\u015Bci\
   \ cz\u0119sto wykonuj\u0105 t\u0119 operacj\u0119,\u2026"
 title: "Konwersja daty na ci\u0105g znak\xF3w"
+weight: 28
 ---
-
-{{< edit_this_page >}}
 
 ## Co i dlaczego?
 

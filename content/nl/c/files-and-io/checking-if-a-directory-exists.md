@@ -10,9 +10,8 @@ model: gpt-4-0125-preview
 summary: "Controleren of een directory bestaat in C betekent het opvragen van het\
   \ bestandssysteem om te verifi\xEBren of een specifiek pad naar een directory leidt.\u2026"
 title: Controleren of een directory bestaat
+weight: 20
 ---
-
-{{< edit_this_page >}}
 
 ## Wat & Waarom?
 

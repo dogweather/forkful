@@ -11,9 +11,8 @@ summary: "Usuwanie cudzys\u0142ow\xF3w z ci\u0105gu znak\xF3w w Google Apps Scri
   \ dotyczy eliminacji niepotrzebnych znak\xF3w cudzys\u0142owia, kt\xF3re mog\u0105\
   \ otacza\u0107 dane Twojego ci\u0105gu,\u2026"
 title: "Usuwanie cudzys\u0142ow\xF3w z ci\u0105gu znak\xF3w"
+weight: 9
 ---
-
-{{< edit_this_page >}}
 
 ## Co i Dlaczego?
 

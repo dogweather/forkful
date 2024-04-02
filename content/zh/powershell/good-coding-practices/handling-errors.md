@@ -13,9 +13,8 @@ summary: "\u5728PowerShell\u4E2D\u5904\u7406\u9519\u8BEF\u610F\u5473\u7740\u9884
   \u6B62\u7A0B\u5E8F\u5D29\u6E83\u5E76\u4E3A\u7528\u6237\u63D0\u4F9B\u6709\u7528\u7684\
   \u53CD\u9988\u3002"
 title: "\u5904\u7406\u9519\u8BEF"
+weight: 16
 ---
-
-{{< edit_this_page >}}
 
 ## 什么 & 为什么？
 在PowerShell中处理错误意味着预测可能发生的问题并平滑地管理这些问题。程序员这样做是为了防止程序崩溃并为用户提供有用的反馈。

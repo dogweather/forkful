@@ -8,9 +8,8 @@ model: gpt-4-1106-preview
 summary: "\xC5 s\xF8ke og erstatte tekst lar oss finne strenger i data og bytte dem\
   \ ut med nye strenger. Programmererne trenger dette for \xE5 oppdatere data, korrigere\u2026"
 title: "S\xF8king og erstatting av tekst"
+weight: 10
 ---
-
-{{< edit_this_page >}}
 
 ## Hva & Hvorfor?
 Å søke og erstatte tekst lar oss finne strenger i data og bytte dem ut med nye strenger. Programmererne trenger dette for å oppdatere data, korrigere feil, eller endre formatet på informasjon.

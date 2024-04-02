@@ -7,9 +7,8 @@ model: gpt-4-1106-preview
 summary: "TOML is a config file format that's easy to read due to its clear semantics.\
   \ Programmers use TOML to manage app configs and data serialization without the\u2026"
 title: Working with TOML
+weight: 39
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 

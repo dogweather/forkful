@@ -8,9 +8,8 @@ model: gpt-4-0125-preview
 summary: "Organizar el c\xF3digo en funciones significa dividir tu c\xF3digo en bloques\
   \ modulares reutilizables. Hacemos esto para mantener las cosas DRY (Don't Repeat\u2026"
 title: "Organizando el c\xF3digo en funciones"
+weight: 18
 ---
-
-{{< edit_this_page >}}
 
 ## Qué y Por Qué?
 Organizar el código en funciones significa dividir tu código en bloques modulares reutilizables. Hacemos esto para mantener las cosas DRY (Don't Repeat Yourself, No Te Repitas), haciendo que el código sea más limpio, fácil de leer y sencillo de depurar.

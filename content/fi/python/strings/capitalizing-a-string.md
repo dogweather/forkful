@@ -11,9 +11,8 @@ summary: "Merkkijonon alkukirjaimen suurentaminen tarkoittaa merkkijonon ensimm\
   isen merkin muuttamista isoksi kirjaimeksi ja lopun pieniksi kirjaimiksi. T\xE4\
   t\xE4\u2026"
 title: Merkkijonon muuttaminen isoiksi kirjaimiksi
+weight: 2
 ---
-
-{{< edit_this_page >}}
 
 ## Mikä ja miksi?
 Merkkijonon alkukirjaimen suurentaminen tarkoittaa merkkijonon ensimmäisen merkin muuttamista isoksi kirjaimeksi ja lopun pieniksi kirjaimiksi. Tätä toimintoa käytetään yleisesti datan käsittelyssä syötteiden normalisointiin tai otsikoiden, nimien yms. luettavuuden parantamiseen.

@@ -10,9 +10,8 @@ model: gpt-4-0125-preview
 summary: "Code organiseren in functies verdeelt taken in herbruikbare stukken, waardoor\
   \ de code schoner en beter onderhoudbaar wordt. Dit doen we om redundantie te\u2026"
 title: Code organiseren in functies
+weight: 18
 ---
-
-{{< edit_this_page >}}
 
 ## Wat & Waarom?
 Code organiseren in functies verdeelt taken in herbruikbare stukken, waardoor de code schoner en beter onderhoudbaar wordt. Dit doen we om redundantie te verminderen, het testen te vereenvoudigen en de leesbaarheid te verbeteren.

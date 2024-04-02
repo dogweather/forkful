@@ -9,9 +9,8 @@ summary: "L'affichage des informations de d\xE9bogage, c'est \xE9crire des donn\
   es dans la console pour comprendre ce qui se passe dans le code. Les d\xE9veloppeurs\
   \ le font\u2026"
 title: "Affichage des sorties de d\xE9bogage"
+weight: 33
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why? (Quoi et Pourquoi ?)
 L'affichage des informations de débogage, c'est écrire des données dans la console pour comprendre ce qui se passe dans le code. Les développeurs le font pour traquer les bogues plus facilement.

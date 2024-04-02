@@ -7,9 +7,8 @@ model: gpt-4-0125-preview
 summary: "Usar una shell interactiva, o un Bucle de Leer-Evaluar-Imprimir (REPL, por\
   \ sus siglas en ingl\xE9s), te permite programar de manera interactiva. Los\u2026"
 title: Usando una shell interactiva (REPL)
+weight: 34
 ---
-
-{{< edit_this_page >}}
 
 ## ¿Qué y por qué?
 Usar una shell interactiva, o un Bucle de Leer-Evaluar-Imprimir (REPL, por sus siglas en inglés), te permite programar de manera interactiva. Los programadores lo utilizan para probar fragmentos de Swift rápidamente, depurar o aprender el lenguaje.

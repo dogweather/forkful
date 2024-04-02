@@ -12,9 +12,8 @@ summary: "\u6BD4\u8F83\u4E24\u4E2A\u65E5\u671F\u5C31\u662F\u770B\u54EA\u4E2A\u65
   \u5458\u8FD9\u4E48\u505A\u901A\u5E38\u662F\u4E3A\u4E86\u6392\u5E8F\u3001\u9A8C\u8BC1\
   \u6216\u8DDF\u8E2A\u65F6\u95F4\u6D41\u3002"
 title: "\u6BD4\u8F83\u4E24\u4E2A\u65E5\u671F"
+weight: 27
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why? 为什么以及为什么？
 比较两个日期就是看哪个早、哪个晚或它们是否相同。程序员这么做通常是为了排序、验证或跟踪时间流。

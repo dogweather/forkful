@@ -9,9 +9,8 @@ summary: "Parsing HTML \xE9 o processo de analisar o c\xF3digo de uma p\xE1gina 
   \ web para extrair informa\xE7\xF5es espec\xEDficas. Programadores fazem isso para\
   \ automatizar a\u2026"
 title: "An\xE1lise de HTML"
+weight: 43
 ---
-
-{{< edit_this_page >}}
 
 ## O Que é & Por Que?
 

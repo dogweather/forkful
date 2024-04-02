@@ -9,9 +9,8 @@ summary: "Loggning \xE4r i grund och botten att l\xE4mna ett sp\xE5r genom din k
   \ - det \xE4r hur du h\xE5ller koll p\xE5 vad som h\xE4nder n\xE4r ditt skript k\xF6\
   rs i det vilda.\u2026"
 title: Loggning
+weight: 17
 ---
-
-{{< edit_this_page >}}
 
 ## Vad & Varför?
 Loggning är i grund och botten att lämna ett spår genom din kod - det är hur du håller koll på vad som händer när ditt skript körs i det vilda. Programmerare loggar för att felsöka, för att spåra appbeteende, för att övervaka prestanda och för att hålla ett öga på eventuella skumraskaffärer.

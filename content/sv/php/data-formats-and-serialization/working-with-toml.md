@@ -9,9 +9,8 @@ summary: "TOML, kort f\xF6r Toms Uppenbara, Minimala Spr\xE5k, \xE4r ett datafor
   \ liknande JSON eller YAML, men l\xE4ttare att l\xE4sa f\xF6r m\xE4nniskor. Programmerare\
   \ anv\xE4nder det\u2026"
 title: Att arbeta med TOML
+weight: 39
 ---
-
-{{< edit_this_page >}}
 
 ## Vad & Varför?
 TOML, kort för Toms Uppenbara, Minimala Språk, är ett dataformat liknande JSON eller YAML, men lättare att läsa för människor. Programmerare använder det för konfigurationsfiler eftersom det är enkelt och översätter väl till datastrukturer.

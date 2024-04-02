@@ -9,9 +9,8 @@ summary: "\xC5 generere tilfeldige tall i programmering handler om \xE5 skape ve
   \ som ikke kan forutses logisk p\xE5 forh\xE5nd. Programmerere gj\xF8r dette av\
   \ en rekke\u2026"
 title: Generering av tilfeldige tall
+weight: 12
 ---
-
-{{< edit_this_page >}}
 
 ## Hva & Hvorfor?
 

@@ -9,9 +9,8 @@ summary: "Arrondir des nombres signifie les ajuster au nombre entier le plus pro
   \ ou \xE0 un degr\xE9 de pr\xE9cision sp\xE9cifi\xE9. Les programmeurs le font pour\
   \ am\xE9liorer la\u2026"
 title: Arrondir les nombres
+weight: 13
 ---
-
-{{< edit_this_page >}}
 
 ## Quoi & Pourquoi ?
 

@@ -9,9 +9,8 @@ summary: "\"Logging\" \xE9 a pr\xE1tica de manter um registro de eventos, transa
   \xF5es ou atividades que acontecem ao longo do tempo em um sistema. Programadores\
   \ o utilizam\u2026"
 title: Registro de Logs
+weight: 17
 ---
-
-{{< edit_this_page >}}
 
 ## O Quê & Porquê?
 "Logging" é a prática de manter um registro de eventos, transações ou atividades que acontecem ao longo do tempo em um sistema. Programadores o utilizam para depurar, monitorar a saúde do sistema, coletar estatísticas ou mesmo auditar o uso, tornando-o uma prática indispensável para manter e compreender o comportamento de seu código sob várias condições.

@@ -23,9 +23,8 @@ summary: "C\uC5D0\uC11C \uBB38\uC790\uC5F4\uC758 \uAE38\uC774\uB97C \uCC3E\uB294
   \ \uBCF4\uC548 \uCDE8\uC57D\uC810\uC774\uB098 \uD504\uB85C\uADF8\uB7A8 \uCDA9\uB3CC\
   \uB85C \uC774\uC5B4\uC9C8 \uC218\u2026"
 title: "\uBB38\uC790\uC5F4\uC758 \uAE38\uC774 \uCC3E\uAE30"
+weight: 7
 ---
-
-{{< edit_this_page >}}
 
 ## 무엇 & 왜?
 C에서 문자열의 길이를 찾는 것은 널 종료 문자 `\0` 전의 문자 수를 결정하는 것을 포함합니다. 프로그래머는 버퍼 오버플로와 같은 오류에 직면하지 않고 문자열을 올바르게 조작하기 위해 이 작업을 수행합니다. 버퍼 오버플로는 보안 취약점이나 프로그램 충돌로 이어질 수 있습니다.

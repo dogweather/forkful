@@ -11,9 +11,8 @@ summary: "\xC9crire des tests en C implique de cr\xE9er des programmes ou des fo
   \ auxiliaires plus petits qui v\xE9rifient automatiquement la fonctionnalit\xE9\
   \ de votre\u2026"
 title: "R\xE9daction de tests"
+weight: 36
 ---
-
-{{< edit_this_page >}}
 
 ## Quoi & Pourquoi ?
 Écrire des tests en C implique de créer des programmes ou des fonctions auxiliaires plus petits qui vérifient automatiquement la fonctionnalité de votre code. Les programmeurs le font pour s'assurer que leur logiciel fonctionne comme prévu, pour attraper les bugs tôt et pour faciliter les modifications futures du code sans effets secondaires non désirés.

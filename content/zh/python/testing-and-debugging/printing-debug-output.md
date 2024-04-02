@@ -14,9 +14,8 @@ summary: "\u8F93\u51FA\u8C03\u8BD5\u4FE1\u606F\u662F\u5728\u4EE3\u7801\u4E2D\u62
   \u8FD0\u884C\u8FC7\u7A0B\u4E2D\u7684\u884C\u4E3A\uFF0C\u5E2E\u52A9\u627E\u51FA\u95EE\
   \u9898\u6240\u5728\u3002"
 title: "\u6253\u5370\u8C03\u8BD5\u8F93\u51FA"
+weight: 33
 ---
-
-{{< edit_this_page >}}
 
 ## 什么 & 为什么？
 输出调试信息是在代码中打印变量、状态或错误信息的过程，程序员这么做是为了跟踪程序运行过程中的行为，帮助找出问题所在。

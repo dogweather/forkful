@@ -7,9 +7,8 @@ model: gpt-4-1106-preview
 summary: String interpolation lets you inject variables directly into strings. It
   makes code cleaner and easier to read by avoiding clunky string concatenation.
 title: Interpolating a string
+weight: 8
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 String interpolation lets you inject variables directly into strings. It makes code cleaner and easier to read by avoiding clunky string concatenation.

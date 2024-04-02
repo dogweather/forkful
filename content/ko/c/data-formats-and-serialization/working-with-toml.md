@@ -20,9 +20,8 @@ summary: "TOML(Tom's Obvious, Minimal Language)\uC740 \uADF8 \uBA85\uD655\uD55C 
   \uC2DD\uB4E4\uBCF4\uB2E4 \uD2B9\uC815 \uC0C1\uD669\uC5D0\uC11C \uB6F0\uC5B4\uB09C\
   \ \uC120\uD0DD\uC73C\uB85C \uC560\uD50C\uB9AC\uCF00\uC774\uC158\uC758\u2026"
 title: "TOML\uACFC \uD568\uAED8 \uC791\uC5C5\uD558\uAE30"
+weight: 39
 ---
-
-{{< edit_this_page >}}
 
 ## 무엇이며 왜 사용하는가?
 

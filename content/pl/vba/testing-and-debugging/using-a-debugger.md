@@ -2,13 +2,16 @@
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 22:03:30.504801-07:00
-description: "U\u017Cycie debugera w Visual Basic dla Aplikacji (VBA) polega na krokowym\
-  \ uruchamianiu kodu w celu inspekcji jego przep\u0142ywu wykonania i stan\xF3w zmiennych.\u2026"
+description: "W VBA debugger jest integraln\u0105 cz\u0119\u015Bci\u0105 Edytora Visual\
+  \ Basic (VBE). Oto jak mo\u017Cesz z niego korzysta\u0107: 1. **Ustawianie punkt\xF3\
+  w przerwania**: Kliknij w lewym\u2026"
 lastmod: '2024-03-13T22:44:35.236950-06:00'
 model: gpt-4-0125-preview
-summary: "U\u017Cycie debugera w Visual Basic dla Aplikacji (VBA) polega na krokowym\
-  \ uruchamianiu kodu w celu inspekcji jego przep\u0142ywu wykonania i stan\xF3w zmiennych.\u2026"
+summary: "W VBA debugger jest integraln\u0105 cz\u0119\u015Bci\u0105 Edytora Visual\
+  \ Basic (VBE). Oto jak mo\u017Cesz z niego korzysta\u0107: 1. **Ustawianie punkt\xF3\
+  w przerwania**: Kliknij w lewym\u2026"
 title: Korzystanie z debuggera
+weight: 35
 ---
 
 ## Jak to zrobić:

@@ -25,9 +25,8 @@ summary: "\u0987\u09A8\u09CD\u099F\u09BE\u09B0\u09C7\u0995\u09CD\u099F\u09BF\u09
 title: "\u0987\u09A8\u09CD\u099F\u09BE\u09B0\u09AF\u09BC\u09BE\u0995\u09CD\u099F\u09BF\
   \u09AD \u09B6\u09C7\u09B2 (REPL) \u09AC\u09CD\u09AF\u09AC\u09B9\u09BE\u09B0 \u0995\
   \u09B0\u09BE"
+weight: 34
 ---
-
-{{< edit_this_page >}}
 
 ## কি এবং কেন?
 ইন্টারেক্টিভ শেল, বা REPL (Read-Eval-Print Loop), আপনাকে রিয়েল-টাইমে কোড স্নিপেট ট্রাই করার সুযোগ দেয়। এলিক্সির প্রোগ্রামাররা REPL ব্যবহার করে, যাকে বলা হয় IEx (Interactive Elixir), পরীক্ষা নিরীক্ষা, ডিবাগিং এবং ভাষা শেখার জন্য।

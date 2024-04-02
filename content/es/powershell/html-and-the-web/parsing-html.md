@@ -9,9 +9,8 @@ summary: "El parseo de HTML implica descomponer el c\xF3digo HTML en componentes
   \ manipularlo o extraer informaci\xF3n espec\xEDfica. Los programadores lo hacen\
   \ para\u2026"
 title: "An\xE1lisis de HTML"
+weight: 43
 ---
-
-{{< edit_this_page >}}
 
 ## Qué y Por Qué?
 El parseo de HTML implica descomponer el código HTML en componentes para manipularlo o extraer información específica. Los programadores lo hacen para interactuar con sitios web, extraer datos, automatizar tareas de navegación o realizar pruebas.

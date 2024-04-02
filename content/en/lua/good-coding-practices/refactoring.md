@@ -7,9 +7,8 @@ model: gpt-4-1106-preview
 summary: "Refactoring is the art of tweaking existing code to improve its structure,\
   \ readability, and efficiency without altering its external behavior. Programmers\u2026"
 title: Refactoring
+weight: 19
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 Refactoring is the art of tweaking existing code to improve its structure, readability, and efficiency without altering its external behavior. Programmers do it to make their code more maintainable, reduce complexity, and often as a preliminary step before adding new features or fixing bugs.

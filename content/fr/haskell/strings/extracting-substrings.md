@@ -9,9 +9,8 @@ summary: "Extraire des sous-cha\xEEnes, c'est comme prendre un biscuit dans la b
   te : vous choisissez une partie sp\xE9cifique d'une cha\xEEne de caract\xE8res.\
   \ Les\u2026"
 title: "Extraction de sous-cha\xEEnes"
+weight: 6
 ---
-
-{{< edit_this_page >}}
 
 ## Quoi et Pourquoi ?
 Extraire des sous-chaînes, c'est comme prendre un biscuit dans la boîte : vous choisissez une partie spécifique d'une chaîne de caractères. Les programmeurs font ça pour manipuler des données, valider des entrées, ou simplement afficher ce qu'ils veulent.

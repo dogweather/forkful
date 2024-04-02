@@ -7,9 +7,8 @@ model: gpt-4-0125-preview
 summary: "Att ta bort citattecken fr\xE5n en str\xE4ng betyder att ta bort alla f\xF6\
   rekomster av enkla (`'`) eller dubbla (`\"`) citattecken som omsluter texten.\u2026"
 title: "Ta bort citattecken fr\xE5n en str\xE4ng"
+weight: 9
 ---
-
-{{< edit_this_page >}}
 
 ## Vad & Varför?
 Att ta bort citattecken från en sträng betyder att ta bort alla förekomster av enkla (`'`) eller dubbla (`"`) citattecken som omsluter texten. Programmerare gör ofta detta för att sanera indata, förbereda strängar för jämförelse eller bearbeta textdata som av misstag kan inkludera citattecken som en del av stränginnehållet.

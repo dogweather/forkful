@@ -18,9 +18,8 @@ summary: "Rust\uC5D0\uC11C JSON(JavaScript Object Notation)\uC744 \uB2E4\uB8E8\u
   \uB2C8\uB2E4. \uD504\uB85C\uADF8\uB798\uBA38\uB4E4\uC740 \uC6F9 API, \uC124\uC815\
   \ \uD30C\uC77C \uB610\uB294 JSON\uC774 \uC0AC\uC6A9\uB418\uB294 \uBAA8\uB4E0\u2026"
 title: "JSON\uACFC \uD568\uAED8 \uC77C\uD558\uAE30"
+weight: 38
 ---
-
-{{< edit_this_page >}}
 
 ## 무엇을, 왜?
 

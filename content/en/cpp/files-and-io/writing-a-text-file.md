@@ -8,9 +8,8 @@ model: gpt-4-0125-preview
 summary: "Writing to a text file in C++ involves creating or opening a file and then\
   \ writing data to it, which is a fundamental task for applications that need to\u2026"
 title: Writing a text file
+weight: 24
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 Writing to a text file in C++ involves creating or opening a file and then writing data to it, which is a fundamental task for applications that need to persist data, such as logs, user-generated content, or configuration settings. Programmers do this to save data generated during a program’s execution or to export data for use by other programs or users.

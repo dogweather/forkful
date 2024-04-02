@@ -9,9 +9,8 @@ summary: "\xC5 lage en midlertidig fil i Java betyr \xE5 skape en fille som er t
   \ \xE5 v\xE6re kortvarig, ofte for \xE5 h\xE5ndtere data midlertidig under applikasjonens\
   \ kj\xF8retid.\u2026"
 title: Opprette en midlertidig fil
+weight: 21
 ---
-
-{{< edit_this_page >}}
 
 ## Hva & Hvorfor?
 

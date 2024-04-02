@@ -9,9 +9,8 @@ summary: "Refactoring is essentially spring cleaning your code base\u2014it's ab
   \ restructuring existing code without changing its external behavior. Programmers\
   \ do it\u2026"
 title: Refactoring
+weight: 19
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 Refactoring is essentially spring cleaning your code base—it's about restructuring existing code without changing its external behavior. Programmers do it to make the code more readable, reduce complexity, improve maintainability, and make it easier to extend.

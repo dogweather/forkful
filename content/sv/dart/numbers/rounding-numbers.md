@@ -11,9 +11,8 @@ summary: "Att avrunda tal \xE4r processen att justera ett tal till dess n\xE4rma
   \ hela tal eller till ett angivet antal decimaler. Programmerare avrundar ofta tal\
   \ f\xF6r\u2026"
 title: Avrundning av nummer
+weight: 13
 ---
-
-{{< edit_this_page >}}
 
 ## Vad & Varför?
 

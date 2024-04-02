@@ -9,9 +9,8 @@ summary: "Komplexe Zahlen erweitern unser Zahlensystem um imagin\xE4re Zahlen un
   \ erm\xF6glichen es uns, Gleichungen zu l\xF6sen, die keine reellen L\xF6sungen\
   \ haben.\u2026"
 title: Umgang mit komplexen Zahlen
+weight: 14
 ---
-
-{{< edit_this_page >}}
 
 ## Was & Warum?
 Komplexe Zahlen erweitern unser Zahlensystem um imaginäre Zahlen und ermöglichen es uns, Gleichungen zu lösen, die keine reellen Lösungen haben. Programmierer arbeiten in Bereichen wie Ingenieurwesen, Physik und Signalverarbeitung mit ihnen, wo diese Zahlen für die Modellierung und Problemlösung unverzichtbar sind.

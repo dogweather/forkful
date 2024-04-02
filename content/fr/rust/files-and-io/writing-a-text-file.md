@@ -10,9 +10,8 @@ model: gpt-4-0125-preview
 summary: "\xC9crire un fichier texte en Rust implique de cr\xE9er, \xE9crire et potentiellement\
   \ ajouter des donn\xE9es \xE0 un fichier sur le syst\xE8me de fichiers. Les programmeurs\u2026"
 title: "R\xE9diger un fichier texte"
+weight: 24
 ---
-
-{{< edit_this_page >}}
 
 ## Quoi & Pourquoi ?
 Écrire un fichier texte en Rust implique de créer, écrire et potentiellement ajouter des données à un fichier sur le système de fichiers. Les programmeurs effectuent cette opération pour persister des données, comme des journaux d'applications, des configurations ou du contenu généré par l'utilisateur, assurant la durabilité des données au-delà de la portée de l'exécution du programme.

@@ -9,9 +9,8 @@ summary: "Generar n\xFAmeros aleatorios en Rust implica utilizar bibliotecas par
   \ producir valores num\xE9ricos imprevistos, lo cual es indispensable para tareas\
   \ que van\u2026"
 title: "Generaci\xF3n de n\xFAmeros aleatorios"
+weight: 12
 ---
-
-{{< edit_this_page >}}
 
 ## Qué y Por Qué
 

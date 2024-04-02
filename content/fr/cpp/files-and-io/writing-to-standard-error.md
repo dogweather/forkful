@@ -11,9 +11,8 @@ summary: "\xC9crire sur l'erreur standard (`stderr`) en C++ implique de sortir l
   \ messages d'erreur ou les diagnostics qui sont s\xE9par\xE9s de la sortie principale\
   \ du\u2026"
 title: "\xC9crire sur l'erreur standard"
+weight: 25
 ---
-
-{{< edit_this_page >}}
 
 ## Quoi & Pourquoi ?
 

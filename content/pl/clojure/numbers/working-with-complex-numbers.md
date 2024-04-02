@@ -9,9 +9,8 @@ summary: "Liczby zespolone rozszerzaj\u0105 liczby rzeczywiste o dodatkow\u0105 
   \u015B\u0107, jednostk\u0119 urojon\u0105 'i'. Programi\u015Bci u\u017Cywaj\u0105\
   \ ich w r\xF3\u017Cnych dziedzinach, w tym w\u2026"
 title: Praca z liczbami zespolonymi
+weight: 14
 ---
-
-{{< edit_this_page >}}
 
 ## Co i Dlaczego?
 Liczby zespolone rozszerzają liczby rzeczywiste o dodatkową część, jednostkę urojoną 'i'. Programiści używają ich w różnych dziedzinach, w tym w przetwarzaniu sygnałów, teorii elektromagnetyzmu i fraktalach, gdzie obliczenia związane z pierwiastkiem kwadratowym z liczby ujemnej są rutyną.

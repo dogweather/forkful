@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Het afhandelen van fouten in Python (of elke programmeertaal) gaat over\
   \ het verwachten van het onverwachte - het is de kunst van het gracieus omgaan met\u2026"
 title: Fouten afhandelen
+weight: 16
 ---
-
-{{< edit_this_page >}}
 
 ## Wat & Waarom?
 

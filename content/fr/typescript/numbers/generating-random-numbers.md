@@ -9,9 +9,8 @@ summary: "La g\xE9n\xE9ration de nombres al\xE9atoires en TypeScript consiste \x
   \ cr\xE9er des valeurs num\xE9riques impr\xE9visibles dans une plage sp\xE9cifi\xE9\
   e. Les programmeurs\u2026"
 title: "G\xE9n\xE9ration de nombres al\xE9atoires"
+weight: 12
 ---
-
-{{< edit_this_page >}}
 
 ## Quoi & Pourquoi ?
 

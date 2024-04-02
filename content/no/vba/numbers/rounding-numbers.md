@@ -11,9 +11,8 @@ summary: "Avrunding av tall i programmering handler om \xE5 tiln\xE6rme et tall 
   \ n\xE6rmeste hele tall eller til et bestemt antall desimalplasser. Programmerere\
   \ runder av\u2026"
 title: Avrunding av tall
+weight: 13
 ---
-
-{{< edit_this_page >}}
 
 ## Hva & Hvorfor?
 

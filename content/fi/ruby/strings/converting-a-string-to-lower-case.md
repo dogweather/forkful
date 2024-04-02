@@ -9,9 +9,8 @@ summary: "Muutetaan merkkijonot pieniksi kirjaimiksi. T\xE4m\xE4 on hy\xF6dyllis
   \ kun haluamme vertailla tekstej\xE4 riippumatta kirjainkoosta tai yhdenmukaistaa\
   \ tietoja."
 title: Merkkijonon muuntaminen pieniksi kirjaimiksi
+weight: 4
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 Muutetaan merkkijonot pieniksi kirjaimiksi. Tämä on hyödyllistä kun haluamme vertailla tekstejä riippumatta kirjainkoosta tai yhdenmukaistaa tietoja.

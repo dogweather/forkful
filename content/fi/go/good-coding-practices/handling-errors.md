@@ -11,9 +11,8 @@ summary: "Virheiden k\xE4sittely Go:ssa tarkoittaa virhetilanteiden tunnistamist
   \ ja niihin vastaamista ohjelmassasi. Ohjelmoijat k\xE4ytt\xE4v\xE4t virheenk\xE4\
   sittely\xE4\u2026"
 title: "Virheiden k\xE4sittely"
+weight: 16
 ---
-
-{{< edit_this_page >}}
 
 ## Mikä & Miksi?
 

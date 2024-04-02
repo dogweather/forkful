@@ -2,15 +2,15 @@
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 22:03:36.744808-07:00
-description: "\xC5 bruke en feils\xF8ker i Visual Basic for Applications (VBA) inneb\xE6\
-  rer \xE5 kj\xF8re koden din steg for steg for \xE5 inspisere utf\xF8relsesflyten\
-  \ og\u2026"
+description: "I VBA er feils\xF8keren en integrert del av Visual Basic Editor (VBE).\
+  \ Slik kan du utnytte den: 1. **\xC5 sette brytepunkter**: Klikk i venstre marg\
+  \ ved siden\u2026"
 lastmod: '2024-03-13T22:44:40.625382-06:00'
 model: gpt-4-0125-preview
-summary: "\xC5 bruke en feils\xF8ker i Visual Basic for Applications (VBA) inneb\xE6\
-  rer \xE5 kj\xF8re koden din steg for steg for \xE5 inspisere utf\xF8relsesflyten\
-  \ og\u2026"
+summary: "I VBA er feils\xF8keren en integrert del av Visual Basic Editor (VBE). Slik\
+  \ kan du utnytte den: 1. **\xC5 sette brytepunkter**: Klikk i venstre marg ved siden\u2026"
 title: Bruker en debugger
+weight: 35
 ---
 
 ## Hvordan:

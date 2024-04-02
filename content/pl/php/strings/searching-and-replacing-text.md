@@ -7,9 +7,8 @@ model: gpt-4-1106-preview
 summary: "Szukanie i zamiana tekstu to chleb powszedni w programowaniu: lokalizujemy\
   \ fragmenty ci\u0105g\xF3w znak\xF3w i podmieniamy je na inne. Czemu? By automatycznie\u2026"
 title: Wyszukiwanie i zamiana tekstu
+weight: 10
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why? (Co i Dlaczego?)
 Szukanie i zamiana tekstu to chleb powszedni w programowaniu: lokalizujemy fragmenty ciągów znaków i podmieniamy je na inne. Czemu? By automatycznie korygować błędy, aktualizować dane czy dostosowywać treści.

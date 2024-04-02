@@ -10,9 +10,8 @@ model: gpt-4-0125-preview
 summary: "Het verwijderen van aanhalingstekens uit een string in Go gaat over het\
   \ elimineren van de leidende en sluitende aanhalingstekens (`\"` of `'`) van een\u2026"
 title: Quotes uit een string verwijderen
+weight: 9
 ---
-
-{{< edit_this_page >}}
 
 ## Wat & Waarom?
 

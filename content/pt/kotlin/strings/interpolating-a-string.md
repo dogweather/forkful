@@ -9,9 +9,8 @@ summary: "Interpola\xE7\xE3o de strings \xE9 a substitui\xE7\xE3o de vari\xE1vei
   \ ou express\xF5es dentro de uma string por seus valores. Programadores fazem isso\
   \ para montar strings\u2026"
 title: Interpolando uma string
+weight: 8
 ---
-
-{{< edit_this_page >}}
 
 ## O Que & Por Quê?
 Interpolação de strings é a substituição de variáveis ou expressões dentro de uma string por seus valores. Programadores fazem isso para montar strings dinâmicas de forma prática e legível.

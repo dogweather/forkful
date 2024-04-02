@@ -9,9 +9,8 @@ summary: "Das Einlesen von Textdateien erm\xF6glicht es, Inhalt von der Festplat
   \ in eine Anwendung zu laden. Programmierer ben\xF6tigen diese Funktionalit\xE4\
   t, um Datei-\u2026"
 title: Textdatei einlesen
+weight: 22
 ---
-
-{{< edit_this_page >}}
 
 ## Was & Warum?
 Das Einlesen von Textdateien ermöglicht es, Inhalt von der Festplatte in eine Anwendung zu laden. Programmierer benötigen diese Funktionalität, um Datei-basierte Daten zu verarbeiten, zu analysieren oder um Konfigurationen zu laden.

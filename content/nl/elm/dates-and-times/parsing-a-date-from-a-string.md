@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Het parseren van een datum uit een tekenreeks betekent het converteren van\
   \ tekst die een datum voorstelt naar een formaat waarmee een programma kan\u2026"
 title: Een datum uit een string parsen
+weight: 30
 ---
-
-{{< edit_this_page >}}
 
 ## Wat & Waarom?
 Het parseren van een datum uit een tekenreeks betekent het converteren van tekst die een datum voorstelt naar een formaat waarmee een programma kan werken. Programmeurs doen dit om datums te manipuleren—denk aan het sorteren van evenementen of het berekenen van tijdsduren—in apps die gaan over planning, deadlines, en meer.

@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Nella programmazione C, leggere gli argomenti della riga di comando permette\
   \ ai programmi di accettare input direttamente dal terminale, migliorando\u2026"
 title: Lettura degli argomenti da linea di comando
+weight: 23
 ---
-
-{{< edit_this_page >}}
 
 ## Cosa & Perché?
 

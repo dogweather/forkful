@@ -11,9 +11,8 @@ summary: "Att h\xE4mta aktuellt datum i Python \xE4r en grundl\xE4ggande operati
   \ f\xF6r m\xE5nga applikationer, s\xE5som loggning, dataanalys och tidsbaserat beslutsfattande.\
   \ Det\u2026"
 title: "F\xE5 det aktuella datumet"
+weight: 29
 ---
-
-{{< edit_this_page >}}
 
 ## Vad & Varför?
 

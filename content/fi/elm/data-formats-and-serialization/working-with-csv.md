@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "CSV:n (pilkuilla erotetut arvot) k\xE4sittelyyn kuuluu tiedostojen j\xE4\
   sent\xE4minen ja tuottaminen, jotka tallentavat taulukollisia tietoja yksinkertaisessa,\u2026"
 title: "Ty\xF6skentely CSV:n kanssa"
+weight: 37
 ---
-
-{{< edit_this_page >}}
 
 ## Mikä ja miksi?
 

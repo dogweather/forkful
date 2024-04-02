@@ -11,9 +11,8 @@ summary: "Organiser le code en fonctions en C consiste \xE0 d\xE9composer des t\
   ches complexes en blocs de code plus petits et r\xE9utilisables. Cette pratique\
   \ am\xE9liore la\u2026"
 title: Organiser le code en fonctions
+weight: 18
 ---
-
-{{< edit_this_page >}}
 
 ## Quoi & Pourquoi ?
 

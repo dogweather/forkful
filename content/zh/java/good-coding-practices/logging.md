@@ -15,9 +15,8 @@ summary: "\u65E5\u5FD7\u8BB0\u5F55\u672C\u8D28\u4E0A\u662F\u8BB0\u5F55\u53D1\u75
   \u7EDF\u884C\u4E3A\uFF0C\u5E76\u4E3A\u5B89\u5168\u548C\u5408\u89C4\u76EE\u7684\u521B\
   \u5EFA\u5BA1\u8BA1\u8FF9\u8C61\u3002"
 title: "\u65E5\u5FD7\u8BB0\u5F55"
+weight: 17
 ---
-
-{{< edit_this_page >}}
 
 ## 什么 & 为什么？
 日志记录本质上是记录发生在软件应用程序内部的事件的过程。程序员记录这些事件以捕获运行时信息、调试问题、监控系统行为，并为安全和合规目的创建审计迹象。

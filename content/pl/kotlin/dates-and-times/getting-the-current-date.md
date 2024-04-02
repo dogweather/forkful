@@ -11,9 +11,8 @@ summary: "W programowaniu, uzyskanie aktualnej daty to podstawowe zadanie, kt\xF
   re umo\u017Cliwia programistom dost\u0119p, wy\u015Bwietlanie lub manipulowanie\
   \ bie\u017C\u0105c\u0105 dat\u0105 w ich\u2026"
 title: Pobieranie aktualnej daty
+weight: 29
 ---
-
-{{< edit_this_page >}}
 
 ## Co i Dlaczego?
 W programowaniu, uzyskanie aktualnej daty to podstawowe zadanie, które umożliwia programistom dostęp, wyświetlanie lub manipulowanie bieżącą datą w ich aplikacjach. Ta możliwość jest kluczowa dla wszystkiego, od logowania i znakowania czasu zdarzeń po obliczenia na podstawie dat.

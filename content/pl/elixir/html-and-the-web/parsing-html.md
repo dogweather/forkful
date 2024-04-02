@@ -11,9 +11,8 @@ summary: "Parsowanie HTML w Elixirze polega na ekstrakcji informacji z dokument\
   w HTML. Programi\u015Bci robi\u0105 to, aby programowo wsp\xF3\u0142dzia\u0142a\u0107\
   \ ze stronami internetowymi,\u2026"
 title: "Analiza sk\u0142adniowa HTML"
+weight: 43
 ---
-
-{{< edit_this_page >}}
 
 ## Co i dlaczego?
 

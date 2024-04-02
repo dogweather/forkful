@@ -13,9 +13,8 @@ summary: "\"Ghi ch\xE9p\" l\xE0 vi\u1EC7c l\u01B0u l\u1EA1i c\xE1c s\u1EF1 ki\u1
   i gian trong m\u1ED9t h\u1EC7 th\u1ED1ng. L\u1EADp tr\xECnh vi\xEAn s\u1EED d\u1EE5\
   ng n\xF3 \u0111\u1EC3 g\u1EE1 l\u1ED7i, gi\xE1m s\xE1t\u2026"
 title: Ghi log
+weight: 17
 ---
-
-{{< edit_this_page >}}
 
 ## Ghi chép với Arduino: Là gì & Tại sao?
 

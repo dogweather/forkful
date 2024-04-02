@@ -7,9 +7,8 @@ model: gpt-4-0125-preview
 summary: "Working with CSV (Comma-Separated Values) in JavaScript entails parsing\
   \ or generating CSV files to either ingest tabular data from external sources or\u2026"
 title: Working with CSV
+weight: 37
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 Working with CSV (Comma-Separated Values) in JavaScript entails parsing or generating CSV files to either ingest tabular data from external sources or export data for use in other programs. Programmers do this because it enables easy, lightweight data interchange between applications, databases, and systems where more complex formats like JSON might be overkill.

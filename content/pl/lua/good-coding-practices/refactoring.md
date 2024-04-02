@@ -9,9 +9,8 @@ summary: "Refaktoryzacja to sztuka modyfikowania istniej\u0105cego kodu aby popr
   \ jego struktur\u0119, czytelno\u015B\u0107 oraz wydajno\u015B\u0107, nie zmieniaj\u0105\
   c przy tym jego zewn\u0119trznego\u2026"
 title: Refaktoryzacja
+weight: 19
 ---
-
-{{< edit_this_page >}}
 
 ## Co i dlaczego?
 Refaktoryzacja to sztuka modyfikowania istniejącego kodu aby poprawić jego strukturę, czytelność oraz wydajność, nie zmieniając przy tym jego zewnętrznego zachowania. Programiści poddają kod refaktoryzacji, by uczynić go bardziej łatwym w utrzymaniu, zredukować złożoność, a często również jako wstępny krok przed dodaniem nowych funkcji lub naprawieniem błędów.

@@ -10,9 +10,8 @@ model: gpt-4-0125-preview
 summary: "HTTP-pyynn\xF6n l\xE4hett\xE4minen Dartissa tarkoittaa kommunikoinnin aloittamista\
   \ web-palvelimen tai API:n kanssa Dart-sovelluksesta. Ohjelmoijat tekev\xE4t sen\u2026"
 title: "L\xE4hett\xE4m\xE4ss\xE4 HTTP-pyynt\xF6"
+weight: 44
 ---
-
-{{< edit_this_page >}}
 
 ## Mikä & Miksi?
 

@@ -23,9 +23,8 @@ summary: "\u5728JavaScript\u4E2D\u5199\u5165\u6807\u51C6\u9519\u8BEF\uFF08stderr
   \u7684\u8F93\u51FA\u7BA1\u7406\u548C\u66F4\u5BB9\u6613\u7684\u9519\u8BEF\u76D1\u63A7\
   \u3002"
 title: "\u5199\u5165\u6807\u51C6\u9519\u8BEF"
+weight: 25
 ---
-
-{{< edit_this_page >}}
 
 ## 什么 & 为什么？
 在JavaScript中写入标准错误（stderr）是指将错误消息或任何关键信息引导至一个特定的、独立的流中，这在Unix类环境中对于日志记录和调试目的尤其有用。程序员这样做是为了将正常程序输出与错误消息区分开，从而实现更清晰的输出管理和更容易的错误监控。

@@ -14,9 +14,8 @@ summary: "\u5728Java\u7A0B\u5E8F\u4E2D\u8BFB\u53D6\u547D\u4EE4\u884C\u53C2\u6570
   \u66F4\u7075\u6D3B\uFF0C\u80FD\u6839\u636E\u4E0D\u540C\u8F93\u5165\u6267\u884C\u4E0D\
   \u540C\u4EFB\u52A1\u3002"
 title: "\u8BFB\u53D6\u547D\u4EE4\u884C\u53C2\u6570"
+weight: 23
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why? (是什么？为什么？)
 在Java程序中读取命令行参数就是获取用户在启动程序时传入的信息。我们这么做是为了让程序更灵活，能根据不同输入执行不同任务。

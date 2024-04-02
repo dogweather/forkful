@@ -9,9 +9,8 @@ summary: "L'envoi d'une requ\xEAte HTTP avec authentification de base c'est tran
   \ des identifiants via une requ\xEAte pour acc\xE9der \xE0 des ressources prot\xE9\
   g\xE9es. Les\u2026"
 title: "Envoi d'une requ\xEAte HTTP avec authentification de base"
+weight: 45
 ---
-
-{{< edit_this_page >}}
 
 ## Quoi & Pourquoi ?
 L'envoi d'une requête HTTP avec authentification de base c'est transmettre des identifiants via une requête pour accéder à des ressources protégées. Les programmeurs utilisent cette méthode pour interagir de manière sécurisée avec des API ou des services web qui exigent une vérification d'identité.

@@ -19,9 +19,8 @@ summary: "Kotlin\uC5D0\uC11C JSON(JavaScript Object Notation)\uC744 \uC0AC\uC6A9
   \uB85C \uB2E4\uB978 \uACC4\uCE35 \uC0AC\uC774 \uB610\uB294 \uC6F9 \uC11C\uBE44\uC2A4\
   \uC640 \uD1B5\uC2E0\uD560 \uB54C \uB370\uC774\uD130\uB97C\u2026"
 title: "JSON\uACFC \uD568\uAED8 \uC77C\uD558\uAE30"
+weight: 38
 ---
-
-{{< edit_this_page >}}
 
 ## 무엇 & 왜?
 Kotlin에서 JSON(JavaScript Object Notation)을 사용하는 것은 JSON 데이터를 파싱하고 생성하는 것을 포함합니다. 프로그래머는 JSON의 경량이며 읽기 쉬운 형식 덕분에 애플리케이션의 서로 다른 계층 사이 또는 웹 서비스와 통신할 때 데이터를 쉽게 교환하기 위해 이 작업을 수행합니다.

@@ -7,9 +7,8 @@ model: gpt-4-1106-preview
 summary: "Gestire gli errori nella scrittura di script Bash significa anticipare dove\
   \ le cose potrebbero andare storte e affrontare la situazione con grazia.\u2026"
 title: Gestione degli errori
+weight: 16
 ---
-
-{{< edit_this_page >}}
 
 ## Cosa e Perché?
 

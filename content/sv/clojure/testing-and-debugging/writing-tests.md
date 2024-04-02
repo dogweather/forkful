@@ -11,9 +11,8 @@ summary: "Att skriva tester i Clojure, precis som i andra programmeringsspr\xE5k
   \ inneb\xE4r att skapa s\xE4rskild kod f\xF6r att verifiera att din huvudkod fungerar\
   \ som\u2026"
 title: Skriva tester
+weight: 36
 ---
-
-{{< edit_this_page >}}
 
 ## Vad & Varför?
 Att skriva tester i Clojure, precis som i andra programmeringsspråk, innebär att skapa särskild kod för att verifiera att din huvudkod fungerar som förväntat. Det hjälper till att säkerställa korrekthet, underlätta refaktorering och förbättra kodstabiliteten.

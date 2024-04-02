@@ -7,9 +7,8 @@ model: gpt-4-0125-preview
 summary: "\"Arbeiten mit XML\" bezieht sich auf den Prozess des Lesens, Erstellens\
   \ und Modifizierens von XML (eXtensible Markup Language)-Dateien mittels\u2026"
 title: Arbeiten mit XML
+weight: 40
 ---
-
-{{< edit_this_page >}}
 
 ## Was & Warum?
 "Arbeiten mit XML" bezieht sich auf den Prozess des Lesens, Erstellens und Modifizierens von XML (eXtensible Markup Language)-Dateien mittels Programmierung. Programmierer tun dies, weil XML aufgrund seiner plattformunabhängigen Natur und seines selbstbeschreibenden Formats weit verbreitet für den Datenaustausch verwendet wird.

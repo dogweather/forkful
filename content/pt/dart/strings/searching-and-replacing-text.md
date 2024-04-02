@@ -11,9 +11,8 @@ summary: "Buscar e substituir texto em Dart envolve examinar strings para encont
   \ padr\xF5es ou sequ\xEAncias de caracteres e substitu\xED-los por novo conte\xFA\
   do. Essa\u2026"
 title: Pesquisando e substituindo texto
+weight: 10
 ---
-
-{{< edit_this_page >}}
 
 ## O quê & Por quê?
 

@@ -7,9 +7,8 @@ model: gpt-4-0125-preview
 summary: "Die Arbeit mit XML bedeutet das Parsen, Generieren und Manipulieren von\
   \ XML (eXtensible Markup Language)-Dokumenten unter Verwendung von Code.\u2026"
 title: Arbeiten mit XML
+weight: 40
 ---
-
-{{< edit_this_page >}}
 
 ## Was & Warum?
 Die Arbeit mit XML bedeutet das Parsen, Generieren und Manipulieren von XML (eXtensible Markup Language)-Dokumenten unter Verwendung von Code. Programmierer tun dies, um mit vielen Webdiensten, Konfigurationsdateien und Datenübertragungsformaten zu interagieren, bei denen XML die Lingua Franca ist.

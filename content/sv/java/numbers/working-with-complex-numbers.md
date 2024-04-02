@@ -9,9 +9,8 @@ summary: "Komplexa tal utvidgar den reella talaxeln genom till\xE4gget av en ima
   r enhet, `i`, d\xE4r `i^2 = -1`. De \xE4r avg\xF6rande inom omr\xE5den som ingenj\xF6\
   rsvetenskap,\u2026"
 title: Att arbeta med komplexa tal
+weight: 14
 ---
-
-{{< edit_this_page >}}
 
 ## Vad & Varför?
 

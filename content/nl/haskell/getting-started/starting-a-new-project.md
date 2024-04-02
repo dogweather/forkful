@@ -12,9 +12,8 @@ summary: "Elk project begint met een eerste stap. Voor programmeurs betekent dat
   \ opzetten van de initi\xEBle structuur en het schrijven van startcode. We doen\
   \ dit\u2026"
 title: Een nieuw project starten
+weight: 1
 ---
-
-{{< edit_this_page >}}
 
 ## Wat & Waarom?
 Elk project begint met een eerste stap. Voor programmeurs betekent dat het opzetten van de initiële structuur en het schrijven van startcode. We doen dit om ideeën om te zetten in een concrete basis, klaar voor uitbreiding en innovatie.

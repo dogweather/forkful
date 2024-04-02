@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Tekst in strings zoeken en vervangen stelt je in staat gegevens te updaten\
   \ zonder handmatige wijzigingen. Programmeurs hebben dit nodig om\u2026"
 title: Tekst zoeken en vervangen
+weight: 10
 ---
-
-{{< edit_this_page >}}
 
 ## Wat & Waarom?
 Tekst in strings zoeken en vervangen stelt je in staat gegevens te updaten zonder handmatige wijzigingen. Programmeurs hebben dit nodig om gebruikersinvoer correcties, gegevensformatting of batchupdates efficiënt af te handelen.

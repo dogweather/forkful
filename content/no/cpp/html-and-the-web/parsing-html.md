@@ -11,9 +11,8 @@ summary: "\xC5 parse HTML betyr \xE5 bryte ned HTML-innhold til noe et program k
   \ forst\xE5 og manipulere. Utviklere gj\xF8r dette for \xE5 trekke ut data, manipulere\
   \ innhold\u2026"
 title: Analysering av HTML
+weight: 43
 ---
-
-{{< edit_this_page >}}
 
 ## Hva & Hvorfor?
 Å parse HTML betyr å bryte ned HTML-innhold til noe et program kan forstå og manipulere. Utviklere gjør dette for å trekke ut data, manipulere innhold eller integrere web scraping i applikasjonene sine.

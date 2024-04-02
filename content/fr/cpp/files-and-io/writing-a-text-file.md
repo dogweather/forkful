@@ -11,9 +11,8 @@ summary: "\xC9crire dans un fichier texte en C++ implique de cr\xE9er ou d'ouvri
   \ un fichier, puis d'y \xE9crire des donn\xE9es, ce qui est une t\xE2che fondamentale\
   \ pour les\u2026"
 title: "R\xE9diger un fichier texte"
+weight: 24
 ---
-
-{{< edit_this_page >}}
 
 ## Quoi et Pourquoi ?
 Écrire dans un fichier texte en C++ implique de créer ou d'ouvrir un fichier, puis d'y écrire des données, ce qui est une tâche fondamentale pour les applications nécessitant de conserver des données, telles que des journaux, du contenu généré par les utilisateurs ou des paramètres de configuration. Les programmeurs font cela pour sauvegarder les données générées pendant l'exécution d'un programme ou pour exporter des données à utiliser par d'autres programmes ou utilisateurs.

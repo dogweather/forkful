@@ -23,9 +23,8 @@ summary: "CSV(\uC27C\uD45C\uB85C \uAD6C\uBD84\uB41C \uAC12)\uB97C \uB2E4\uB8E8\u
   \uC2DD\uC73C\uB85C \uB370\uC774\uD130\uB97C \uC27D\uAC8C \uAD50\uD658\uD558\uACE0\
   \ \uC800\uC7A5\uD558\uAE30 \uC704\uD574 \uC774\u2026"
 title: "CSV\uC640 \uD568\uAED8 \uC791\uC5C5\uD558\uAE30"
+weight: 37
 ---
-
-{{< edit_this_page >}}
 
 ## 무엇을, 왜?
 CSV(쉼표로 구분된 값)를 다루는 것은 CSV 파일에서 데이터를 읽고 쓰는 작업을 포함하며, 이는 표 데이터를 저장하기 위한 일반적인 형식입니다. 프로그래머들은 다양한 플랫폼과 언어에서 널리 지원되는 간단한 텍스트 기반 형식으로 데이터를 쉽게 교환하고 저장하기 위해 이 작업을 합니다.

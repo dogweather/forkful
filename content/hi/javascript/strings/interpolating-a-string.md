@@ -14,9 +14,8 @@ summary: "String interpolation \u090F\u0915 method \u0939\u0948 \u091C\u093F\u09
   \ repetitive string\u2026"
 title: "\u0938\u094D\u091F\u094D\u0930\u093F\u0902\u0917 \u0907\u0902\u091F\u0930\u092A\
   \u094B\u0932\u0947\u0936\u0928"
+weight: 8
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why? (क्या और क्यों?)
 String interpolation एक method है जिससे हम variables और expressions को strings में directly इन्सर्ट कर सकते हैं. ये programmers को repetitive string concatenation से बचाता है और code को अधिक readable और maintainable बनाता है.

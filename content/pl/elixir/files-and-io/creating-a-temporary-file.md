@@ -9,9 +9,8 @@ summary: "Tworzymy tymczasowy plik, by obrabia\u0107 dane, kt\xF3re nie musz\u01
   \ trwa\u0107 d\u0142ugo. Programi\u015Bci robi\u0105 to, by testowa\u0107 kod, przechowywa\u0107\
   \ dane sekwencyjnie, lub\u2026"
 title: Tworzenie pliku tymczasowego
+weight: 21
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 Tworzymy tymczasowy plik, by obrabiać dane, które nie muszą trwać długo. Programiści robią to, by testować kod, przechowywać dane sekwencyjnie, lub ograniczyć zużycie pamięci.

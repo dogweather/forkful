@@ -11,9 +11,8 @@ summary: "Pobieranie bie\u017C\u0105cej daty w Google Apps Script dotyczy uzyska
   \ aktualnej daty i godziny, co jest powszechnym zadaniem przy automatyzacji zada\u0144\
   ,\u2026"
 title: Pobieranie aktualnej daty
+weight: 29
 ---
-
-{{< edit_this_page >}}
 
 ## Co i dlaczego?
 

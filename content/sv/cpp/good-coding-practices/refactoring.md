@@ -9,9 +9,8 @@ summary: "Refaktorisering \xE4r processen att \xE4ndra en dators programs intern
   \ struktur utan att f\xF6r\xE4ndra dess externa beteende. Programmerare g\xF6r det\
   \ f\xF6r att st\xE4da\u2026"
 title: Refaktorisering
+weight: 19
 ---
-
-{{< edit_this_page >}}
 
 ## Vad & Varför?
 

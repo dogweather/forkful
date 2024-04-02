@@ -11,9 +11,8 @@ summary: "Testien kirjoittaminen Elm-kielell\xE4 k\xE4sitt\xE4\xE4 testitapauste
   \ laatimisen Elm-koodisi oikeellisuuden varmistamiseksi, jotta se toimii odotetusti.\
   \ Ohjelmoijat\u2026"
 title: Testien kirjoittaminen
+weight: 36
 ---
-
-{{< edit_this_page >}}
 
 ## Mikä ja miksi?
 

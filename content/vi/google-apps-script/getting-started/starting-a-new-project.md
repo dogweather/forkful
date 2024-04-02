@@ -11,9 +11,8 @@ summary: "Kh\u1EDFi \u0111\u1EA7u m\u1ED9t d\u1EF1 \xE1n m\u1EDBi tr\xEAn Google
   \ Script (GAS) bao g\u1ED3m vi\u1EC7c kh\u1EDFi t\u1EA1o m\u1ED9t file script b\xEA\
   n trong h\u1EC7 sinh th\xE1i c\u1EE7a Google (Google Drive, Docs, Sheets,\u2026"
 title: "Kh\u1EDFi \u0111\u1EA7u m\u1ED9t d\u1EF1 \xE1n m\u1EDBi"
+weight: 1
 ---
-
-{{< edit_this_page >}}
 
 ## Bản Chất & Lý do?
 

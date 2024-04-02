@@ -7,9 +7,8 @@ model: gpt-4-1106-preview
 summary: "Datum-Vergleiche erlauben uns, zwei Zeitpunkte zu vergleichen. Sie sind\
   \ wichtig, um Zeitabschnitte zu \xFCberwachen, Abl\xE4ufe zu steuern und Deadlines\u2026"
 title: Vergleich von zwei Daten
+weight: 27
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 Datum-Vergleiche erlauben uns, zwei Zeitpunkte zu vergleichen. Sie sind wichtig, um Zeitabschnitte zu überwachen, Abläufe zu steuern und Deadlines einzuhalten.

@@ -8,9 +8,8 @@ model: gpt-4-1106-preview
 summary: "Att organisera kod i funktioner delar upp ditt script i \xE5teranv\xE4ndbara\
   \ delar. Det handlar allt om att g\xF6ra din kod ren, hanterbar och mindre buggig.\u2026"
 title: Att organisera kod i funktioner
+weight: 18
 ---
-
-{{< edit_this_page >}}
 
 ## Vad & Varför?
 Att organisera kod i funktioner delar upp ditt script i återanvändbara delar. Det handlar allt om att göra din kod ren, hanterbar och mindre buggig. Modulär kod är fantastiskt eftersom den sparar tid, bevarar ditt förstånd och förenklar felsökning och enhetstestning.

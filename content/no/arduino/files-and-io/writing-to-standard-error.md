@@ -11,9 +11,8 @@ summary: "\xC5 skrive til standard feil (stderr) i Arduino-programmering inneb\x
   rer \xE5 dirigere feilmeldinger og diagnostikk til en separat kanal, slik at de\
   \ ikke\u2026"
 title: Skriving til standardfeil
+weight: 25
 ---
-
-{{< edit_this_page >}}
 
 ## Hva & hvorfor?
 

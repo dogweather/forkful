@@ -9,9 +9,8 @@ summary: "Organizowanie kodu w funkcje jest jak sortowanie klock\xF3w LEGO do po
   w \u2013 u\u0142atwia to ich znalezienie i u\u017Cycie. Robimy to, aby unika\u0107\
   \ powt\xF3rze\u0144,\u2026"
 title: Organizacja kodu w funkcje
+weight: 18
 ---
-
-{{< edit_this_page >}}
 
 ## Co i dlaczego?
 Organizowanie kodu w funkcje jest jak sortowanie klocków LEGO do pojemników – ułatwia to ich znalezienie i użycie. Robimy to, aby unikać powtórzeń, upraszczać rozumienie i uczynić konserwację mniej bolesną.

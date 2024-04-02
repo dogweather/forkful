@@ -14,9 +14,8 @@ summary: "Trong l\u0129nh v\u1EF1c l\u1EADp tr\xECnh, \u0111\u1EB7c bi\u1EC7t l\
   nh (CLI) kh\xF4ng ch\u1EC9\u2026"
 title: "Thao t\xE1c v\u1EDBi c\xE1c t\u1EC7p tin b\u1EB1ng c\xE1c l\u1EC7nh CLI ch\u1EC9\
   \ m\u1ED9t d\xF2ng"
+weight: 31
 ---
-
-{{< edit_this_page >}}
 
 ## Gì & Tại sao?
 

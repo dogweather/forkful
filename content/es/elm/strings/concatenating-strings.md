@@ -7,9 +7,8 @@ model: gpt-4-1106-preview
 summary: "Concatenar strings es unir dos o m\xE1s cadenas de texto en una sola. Los\
   \ programadores lo hacen para combinar datos o crear mensajes din\xE1micos."
 title: "Concatenaci\xF3n de cadenas de texto"
+weight: 3
 ---
-
-{{< edit_this_page >}}
 
 ## ¿Qué y Por Qué?
 Concatenar strings es unir dos o más cadenas de texto en una sola. Los programadores lo hacen para combinar datos o crear mensajes dinámicos. 

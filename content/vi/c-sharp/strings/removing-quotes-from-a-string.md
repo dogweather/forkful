@@ -13,9 +13,8 @@ summary: "X\xF3a b\u1ECF c\xE1c d\u1EA5u ngo\u1EB7c k\xE9p (`\"`) ho\u1EB7c d\u1
   a l\xE0 b\u1EA1n \u0111ang lo\u1EA1i b\u1ECF nh\u1EEFng k\xFD t\u1EF1 d\u1EA5u ngo\u1EB7\
   c bao quanh v\u0103n b\u1EA3n c\u1EE7a b\u1EA1n.\u2026"
 title: "Lo\u1EA1i b\u1ECF d\u1EA5u ngo\u1EB7c k\xE9p kh\u1ECFi chu\u1ED7i"
+weight: 9
 ---
-
-{{< edit_this_page >}}
 
 ## Cái gì & Tại sao?
 Xóa bỏ các dấu ngoặc kép (`"`) hoặc dấu ngoặc đơn (`'`) khỏi một chuỗi trong C# nghĩa là bạn đang loại bỏ những ký tự dấu ngoặc bao quanh văn bản của bạn. Các lập trình viên làm điều này để làm sạch dữ liệu, chuẩn bị cho việc nhập vào cơ sở dữ liệu, hoặc làm cho chuỗi an toàn hơn cho việc xử lý tiếp theo để mọi thứ không trở nên hỗn loạn khi một dấu ngoặc lạc lõng xuất hiện.

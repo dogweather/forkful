@@ -16,9 +16,8 @@ summary: "HTTP\u30EA\u30AF\u30A8\u30B9\u30C8\u3092\u9001\u308B\u3068\u306F\u3001
   \u3092\u53D6\u5F97\u3057\u305F\u308A\u3001\u30A6\u30A7\u30D6\u30B5\u30FC\u30D3\u30B9\
   \u3068\u901A\u4FE1\u3057\u305F\u308A\u3057\u307E\u3059\u3002"
 title: "HTTP\u30EA\u30AF\u30A8\u30B9\u30C8\u306E\u9001\u4FE1"
+weight: 44
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why? (何となぜ？)
 HTTPリクエストを送るとは、サーバにデータを要求することです。プログラマーはこのプロセスを通じて、ウェブAPIから情報を取得したり、ウェブサービスと通信したりします。

@@ -11,9 +11,8 @@ summary: "Loggning i programmering inneb\xE4r att man registrerar h\xE4ndelser, 
   \ eller anm\xE4rkningsv\xE4rda f\xF6reteelser under k\xF6rning. Programmerare g\xF6\
   r detta f\xF6r att\u2026"
 title: Loggning
+weight: 17
 ---
-
-{{< edit_this_page >}}
 
 ## Vad & Varför?
 

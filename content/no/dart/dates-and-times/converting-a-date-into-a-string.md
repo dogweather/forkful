@@ -11,9 +11,8 @@ summary: "\xC5 konvertere en dato til en streng i Dart er en vanlig oppgave n\xE
   r du trenger \xE5 vise datoen og tidspunktet i et format som er leselig for mennesker,\
   \ eller\u2026"
 title: Konvertere en dato til en streng
+weight: 28
 ---
-
-{{< edit_this_page >}}
 
 ## Hva & Hvorfor?
 

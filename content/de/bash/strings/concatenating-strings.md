@@ -8,9 +8,8 @@ model: gpt-4-1106-preview
 summary: "String-Konkatenation ist das Aneinanderh\xE4ngen von Zeichenketten. Programmierer\
   \ nutzen das, um Inhalte dynamisch zu generieren, Daten zu formatieren oder\u2026"
 title: "Zeichenketten verkn\xFCpfen"
+weight: 3
 ---
-
-{{< edit_this_page >}}
 
 ## Was & Warum?
 

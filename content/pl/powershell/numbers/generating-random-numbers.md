@@ -9,9 +9,8 @@ summary: "Generowanie losowych liczb w PowerShellu polega na tworzeniu nieprzewi
   \ warto\u015Bci liczbowych w okre\u015Blonym zakresie. Programi\u015Bci wykorzystuj\u0105\
   \ t\u0119\u2026"
 title: Generowanie liczb losowych
+weight: 12
 ---
-
-{{< edit_this_page >}}
 
 ## Co i dlaczego?
 Generowanie losowych liczb w PowerShellu polega na tworzeniu nieprzewidywalnych wartości liczbowych w określonym zakresie. Programiści wykorzystują tę możliwość z wielu powodów, w tym do testowania, symulacji i celów związanych z bezpieczeństwem, gdzie nieprzewidywalność lub naśladowanie rzeczywistej losowości jest kluczowe.

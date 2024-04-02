@@ -11,9 +11,8 @@ summary: "Associativa arrayer i PHP \xE4r som superladdade listor d\xE4r varje e
   \ kan n\xE5s genom att anv\xE4nda ett l\xE4sbart nyckelv\xE4rde ist\xE4llet f\xF6\
   r bara siffror.\u2026"
 title: "Att anv\xE4nda associativa arrayer"
+weight: 15
 ---
-
-{{< edit_this_page >}}
 
 ## Vad & Varför?
 

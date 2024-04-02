@@ -9,9 +9,8 @@ summary: "Feilh\xE5ndtering betyr \xE5 skrive kode som forventer og h\xE5ndterer
   \ ting g\xE5r galt. Programm\xF8rer gj\xF8r dette for \xE5 gj\xF8re programvaren\
   \ robust, for \xE5 forhindre\u2026"
 title: "Feilh\xE5ndtering"
+weight: 16
 ---
-
-{{< edit_this_page >}}
 
 ## Hva & Hvorfor?
 

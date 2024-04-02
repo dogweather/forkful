@@ -10,9 +10,8 @@ model: gpt-4-0125-preview
 summary: "Praca z plikami CSV (warto\u015Bci oddzielone przecinkami) polega na parsowaniu\
   \ i generowaniu strukturalnych danych z plik\xF3w tekstowych, gdzie ka\u017Cda linia\u2026"
 title: Praca z plikami CSV
+weight: 37
 ---
-
-{{< edit_this_page >}}
 
 ## Co i dlaczego?
 

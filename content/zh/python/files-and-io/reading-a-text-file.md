@@ -12,9 +12,8 @@ summary: "\u9605\u8BFB\u6587\u672C\u6587\u4EF6\u5C31\u662F\u8BA9\u7A0B\u5E8F\u4E
   \u4E3B\u8981\u662F\u4E3A\u4E86\u5229\u7528\u6587\u4EF6\u4E2D\u7684\u6570\u636E\u8FDB\
   \u884C\u5206\u6790\u3001\u8F6C\u6362\u6216\u8F93\u51FA\u3002"
 title: "\u9605\u8BFB\u6587\u672C\u6587\u4EF6"
+weight: 22
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why? (是什么 & 为什么?)
 阅读文本文件就是让程序从文件中提取数据。程序员这样做主要是为了利用文件中的数据进行分析、转换或输出。

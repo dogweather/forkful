@@ -9,9 +9,8 @@ summary: "Working with JSON (JavaScript Object Notation) in Rust is about parsin
   \ JSON data into Rust data structures and serializing Rust data structures back\
   \ into\u2026"
 title: Working with JSON
+weight: 38
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 

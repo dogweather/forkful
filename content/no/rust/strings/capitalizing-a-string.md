@@ -11,9 +11,8 @@ summary: "\xC5 kapitalisere en streng i Rust inneb\xE6rer \xE5 endre strengen sl
   \ at dens f\xF8rste bokstav er stor hvis det er en bokstav, mens resten av strengen\
   \ forblir\u2026"
 title: Sette stor bokstav i en streng
+weight: 2
 ---
-
-{{< edit_this_page >}}
 
 ## Hva & Hvorfor?
 

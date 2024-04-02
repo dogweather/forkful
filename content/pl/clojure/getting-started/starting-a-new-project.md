@@ -9,9 +9,8 @@ summary: "Rozpoczynanie nowego projektu to stworzenie podstawy pod przysz\u0142\
   \ aplikacj\u0119. Programi\u015Bci tworz\u0105 nowe projekty, aby rozwi\u0105zywa\u0107\
   \ problemy, eksplorowa\u0107 nowe\u2026"
 title: Rozpoczynanie nowego projektu
+weight: 1
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why? | Co i dlaczego?
 Rozpoczynanie nowego projektu to stworzenie podstawy pod przyszłą aplikację. Programiści tworzą nowe projekty, aby rozwiązywać problemy, eksplorować nowe pomysły lub uczyć się nowych technik.

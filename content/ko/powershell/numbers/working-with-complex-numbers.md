@@ -17,9 +17,8 @@ summary: "\uBCF5\uC18C\uC218(complex numbers), \uC989 \uC2E4\uC218\uBD80\uC640 \
   \uC815 \uC720\uD615\uC758 \uC218\uD559 \uBB38\uC81C \uD574\uACB0\uC5D0 \uC0AC\uC6A9\
   \uD569\uB2C8\uB2E4."
 title: "\uBCF5\uC18C\uC218 \uB2E4\uB8E8\uAE30"
+weight: 14
 ---
-
-{{< edit_this_page >}}
 
 ## 무엇 & 왜?
 복소수(complex numbers), 즉 실수부와 허수부(예: 3 + 4i)를 가진 수는 공학, 물리학, 데이터 과학과 같은 분야에서 필수적입니다. 프로그래머들은 이를 시뮬레이션, 신호 처리, 특정 유형의 수학 문제 해결에 사용합니다.

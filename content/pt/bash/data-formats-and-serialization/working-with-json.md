@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Trabalhar com JSON em programa\xE7\xE3o Bash envolve analisar, extrair e\
   \ manipular dados JSON diretamente da linha de comando. Programadores frequentemente\u2026"
 title: Trabalhando com JSON
+weight: 38
 ---
-
-{{< edit_this_page >}}
 
 ## O que é & Por quê?
 Trabalhar com JSON em programação Bash envolve analisar, extrair e manipular dados JSON diretamente da linha de comando. Programadores frequentemente fazem isso para integrar de forma transparente scripts shell com APIs web e formatos modernos de troca de dados, tornando a programação em Bash mais poderosa e relevante em um ecossistema pesado de JSON.

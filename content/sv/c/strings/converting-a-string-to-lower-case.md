@@ -11,9 +11,8 @@ summary: "Att konvertera en str\xE4ng till gemener i C inneb\xE4r att omvandla a
   \ versaler i en given str\xE4ng till motsvarande gemener. Programmerare utf\xF6\
   r ofta denna\u2026"
 title: "Omvandla en str\xE4ng till gemener"
+weight: 4
 ---
-
-{{< edit_this_page >}}
 
 ## Vad & Varför?
 

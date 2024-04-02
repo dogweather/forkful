@@ -11,9 +11,8 @@ summary: "JSON (JavaScript Object Notation) \xE4r ett l\xE4tt format f\xF6r att 
   \ och transportera data, vilket g\xF6r det till ett utm\xE4rkt medium f\xF6r datatransport\
   \ mellan\u2026"
 title: Arbeta med JSON
+weight: 38
 ---
-
-{{< edit_this_page >}}
 
 ## Vad och varför?
 

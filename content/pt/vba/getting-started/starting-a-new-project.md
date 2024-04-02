@@ -10,9 +10,8 @@ model: gpt-4-0125-preview
 summary: "Iniciar um novo projeto em Visual Basic para Aplica\xE7\xF5es (VBA) envolve\
   \ configurar um ambiente dentro de um aplicativo host, como o Excel, para automatizar\u2026"
 title: Iniciando um novo projeto
+weight: 1
 ---
-
-{{< edit_this_page >}}
 
 ## O Que & Por Quê?
 

@@ -11,9 +11,8 @@ summary: "Imprimir sa\xEDdas de depura\xE7\xE3o em Dart consiste em exibir infor
   \xF5es no console durante a execu\xE7\xE3o, permitindo que os desenvolvedores acompanhem\
   \ o fluxo da\u2026"
 title: "Imprimindo a sa\xEDda de depura\xE7\xE3o"
+weight: 33
 ---
-
-{{< edit_this_page >}}
 
 ## O Que & Por Quê?
 

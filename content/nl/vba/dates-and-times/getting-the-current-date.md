@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "In Visual Basic for Applications (VBA), is het ophalen van de huidige datum\
   \ een veelvoorkomende taak die programmeurs in staat stelt om dynamisch met\u2026"
 title: Het verkrijgen van de huidige datum
+weight: 29
 ---
-
-{{< edit_this_page >}}
 
 ## Wat & Waarom?
 

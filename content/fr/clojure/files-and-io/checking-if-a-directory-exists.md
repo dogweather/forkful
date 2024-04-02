@@ -11,9 +11,8 @@ summary: "V\xE9rifier si un r\xE9pertoire existe en Clojure consiste \xE0 confir
   \ la pr\xE9sence d'un r\xE9pertoire dans le syst\xE8me de fichiers depuis votre\
   \ application Clojure.\u2026"
 title: "V\xE9rifier si un r\xE9pertoire existe"
+weight: 20
 ---
-
-{{< edit_this_page >}}
 
 ## Quoi & Pourquoi ?
 Vérifier si un répertoire existe en Clojure consiste à confirmer la présence d'un répertoire dans le système de fichiers depuis votre application Clojure. Cette tâche est cruciale pour les opérations sur les fichiers, afin de prévenir les erreurs lors de la lecture ou de l'écriture dans des répertoires qui pourraient ne pas exister, garantissant ainsi une exécution de code robuste et sans erreur.

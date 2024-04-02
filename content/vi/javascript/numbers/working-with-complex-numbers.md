@@ -13,9 +13,8 @@ summary: "S\u1ED1 ph\u1EE9c l\xE0 nh\u1EEFng s\u1ED1 c\xF3 m\u1ED9t ph\u1EA7n th
   n trong nhi\u1EC1u v\u1EA5n \u0111\u1EC1 l\u1EADp tr\xECnh, \u0111\u1EB7c bi\u1EC7\
   t l\xE0 trong x\u1EED l\xFD t\xEDn hi\u1EC7u, t\xEDnh\u2026"
 title: "L\xE0m vi\u1EC7c v\u1EDBi s\u1ED1 ph\u1EE9c"
+weight: 14
 ---
-
-{{< edit_this_page >}}
 
 ## Cái gì & Tại sao?
 Số phức là những số có một phần thực và một phần ảo (như 3 + 4i). Chúng xuất hiện trong nhiều vấn đề lập trình, đặc biệt là trong xử lý tín hiệu, tính toán lượng tử, và giải các phương trình đa thức. Các lập trình viên xử lý chúng để hiệu quả hóa việc giải quyết các loại nhiệm vụ này.

@@ -11,9 +11,8 @@ summary: "Parsing av HTML betyr \xE5 rive fra hverandre en bit HTML-kode for \xE
   \ forst\xE5 dens struktur og innhold. Programmerere gj\xF8r dette for \xE5 ekstrahere\
   \ data,\u2026"
 title: Analysering av HTML
+weight: 43
 ---
-
-{{< edit_this_page >}}
 
 ## Hva & Hvorfor?
 Parsing av HTML betyr å rive fra hverandre en bit HTML-kode for å forstå dens struktur og innhold. Programmerere gjør dette for å ekstrahere data, manipulere innhold, eller migrere informasjon mellom formater og systemer.

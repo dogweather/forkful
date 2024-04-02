@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "\xC5 generere tilfeldige numre i programmering handler om \xE5 skape en\
   \ sekvens av numre som ikke kan forutses med rimelighet bedre enn ved tilfeldighet.\u2026"
 title: Genererer tilfeldige tall
+weight: 12
 ---
-
-{{< edit_this_page >}}
 
 ## Hva & Hvorfor?
 

@@ -7,9 +7,8 @@ model: gpt-4-1106-preview
 summary: "\"Logging\" is keeping a record of events, transactions, or activities that\
   \ happen over time in a system. Programmers use it to debug, monitor system\u2026"
 title: Logging
+weight: 17
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 "Logging" is keeping a record of events, transactions, or activities that happen over time in a system. Programmers use it to debug, monitor system health, gather statistics, or even audit usage, making it an indispensable practice for maintaining and understanding the behavior of their code under various conditions.

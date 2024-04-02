@@ -9,9 +9,8 @@ summary: "Tekstin etsiminen ja korvaaminen on vakiintunut keino manipuloida stri
   : l\xF6yd\xE4t ja korvaat m\xE4\xE4ritetty\xE4 teksti\xE4. K\xE4yt\xE4mme t\xE4\
   t\xE4 nopeuttaaksemme\u2026"
 title: Tekstin etsiminen ja korvaaminen
+weight: 10
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why? (Mitä & Miksi?)
 

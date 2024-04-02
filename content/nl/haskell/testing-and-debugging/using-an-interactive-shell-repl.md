@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Een interactieve shell, of REPL (Read-Eval-Print Loop), in Haskell laat\
   \ je codefragmenten live uitvoeren. Het is een speeltuin voor snelle feedback, het\u2026"
 title: Het gebruik van een interactieve shell (REPL)
+weight: 34
 ---
-
-{{< edit_this_page >}}
 
 ## Wat & Waarom?
 Een interactieve shell, of REPL (Read-Eval-Print Loop), in Haskell laat je codefragmenten live uitvoeren. Het is een speeltuin voor snelle feedback, het testen van functies en het leren van de taal.

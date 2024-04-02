@@ -7,9 +7,8 @@ model: gpt-4-1106-preview
 summary: "Complex numbers, consisting of a real part and an imaginary part (usually\
   \ written as a + bi), unlock calculations impractical or impossible with just\u2026"
 title: Working with complex numbers
+weight: 14
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 Complex numbers, consisting of a real part and an imaginary part (usually written as a + bi), unlock calculations impractical or impossible with just reals. Programmers use them in fields like signal processing, quantum computing, and applied mathematics, where two-dimensional number representations are essential.

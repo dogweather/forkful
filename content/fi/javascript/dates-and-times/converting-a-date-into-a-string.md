@@ -9,9 +9,8 @@ summary: "Muuntaminen p\xE4iv\xE4m\xE4\xE4r\xE4st\xE4 merkkijonoksi on prosessi,
   \ `Date`-objekti muutetaan luettavaan tekstiformaattiin. T\xE4m\xE4 on hy\xF6dyllist\xE4\
   , koska n\xE4in\u2026"
 title: "P\xE4iv\xE4m\xE4\xE4r\xE4n muuntaminen merkkijonoksi"
+weight: 28
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 Muuntaminen päivämäärästä merkkijonoksi on prosessi, jossa `Date`-objekti muutetaan luettavaan tekstiformaattiin. Tämä on hyödyllistä, koska näin päivämäärät voidaan esittää ymmärrettävässä muodossa käyttöliittymissä tai tallentaa tietokantoihin.

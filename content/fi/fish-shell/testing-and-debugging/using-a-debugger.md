@@ -1,14 +1,15 @@
 ---
 date: 2024-01-26 03:50:07.117440-07:00
-description: "Debuggerin k\xE4ytt\xF6 on kaikki virheiden\u2014\xE4rsytt\xE4vien,\
-  \ aikaa vievien koodivirheiden\u2014poistamista. Ohjelmoijat k\xE4ytt\xE4v\xE4t\
-  \ vianetsint\xE4\xE4, koska he haluavat l\xF6yt\xE4\xE4\u2026"
+description: "Fish ei sis\xE4ll\xE4 sis\xE4\xE4nrakennettua debuggeria kuten jotkin\
+  \ muut komentorivitulkki, mutta voit k\xE4ytt\xE4\xE4 ulkoisia ty\xF6kaluja kuten\
+  \ `gdb` kompiloitujen\u2026"
 lastmod: '2024-03-13T22:44:56.999277-06:00'
 model: gpt-4-0125-preview
-summary: "Debuggerin k\xE4ytt\xF6 on kaikki virheiden\u2014\xE4rsytt\xE4vien, aikaa\
-  \ vievien koodivirheiden\u2014poistamista. Ohjelmoijat k\xE4ytt\xE4v\xE4t vianetsint\xE4\
-  \xE4, koska he haluavat l\xF6yt\xE4\xE4\u2026"
+summary: "Fish ei sis\xE4ll\xE4 sis\xE4\xE4nrakennettua debuggeria kuten jotkin muut\
+  \ komentorivitulkki, mutta voit k\xE4ytt\xE4\xE4 ulkoisia ty\xF6kaluja kuten `gdb`\
+  \ kompiloitujen\u2026"
 title: "Debuggerin k\xE4ytt\xF6"
+weight: 35
 ---
 
 ## Kuinka:

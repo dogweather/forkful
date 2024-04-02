@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Een string met hoofdletters schrijven in C houdt in dat je het eerste teken\
   \ van elk woord in een gegeven string omzet naar een hoofdletter als het een\u2026"
 title: Een string kapitaliseren
+weight: 2
 ---
-
-{{< edit_this_page >}}
 
 ## Wat & Waarom?
 

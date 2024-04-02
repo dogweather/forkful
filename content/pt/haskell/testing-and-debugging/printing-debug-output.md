@@ -9,9 +9,8 @@ summary: "A impress\xE3o de sa\xEDda de depura\xE7\xE3o envolve exibir valores i
   rios para entender o comportamento do programa. Programadores o fazem para encontrar\
   \ e\u2026"
 title: "Exibindo sa\xEDdas de depura\xE7\xE3o"
+weight: 33
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 A impressão de saída de depuração envolve exibir valores intermediários para entender o comportamento do programa. Programadores o fazem para encontrar e corrigir erros mais facilmente.

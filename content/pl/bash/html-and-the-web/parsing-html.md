@@ -11,9 +11,8 @@ summary: "Parsowanie HTML oznacza przeszukiwanie struktury i zawarto\u015Bci pli
   \ HTML w celu wydobycia informacji. Programi\u015Bci robi\u0105 to, aby uzyska\u0107\
   \ dost\u0119p do danych,\u2026"
 title: "Analiza sk\u0142adniowa HTML"
+weight: 43
 ---
-
-{{< edit_this_page >}}
 
 ## Co i dlaczego?
 

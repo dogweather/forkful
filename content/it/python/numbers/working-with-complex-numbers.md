@@ -7,9 +7,8 @@ model: gpt-4-0125-preview
 summary: "I numeri complessi sono un insieme di numeri della forma `a + bi`, dove\
   \ `a` e `b` sono numeri reali, e `i` \xE8 l'unit\xE0 immaginaria (`i^2 = -1`). In\u2026"
 title: Lavorare con i numeri complessi
+weight: 14
 ---
-
-{{< edit_this_page >}}
 
 ## Cosa & Perché?
 I numeri complessi sono un insieme di numeri della forma `a + bi`, dove `a` e `b` sono numeri reali, e `i` è l'unità immaginaria (`i^2 = -1`). In programmazione, li usiamo per risolvere problemi in vari domini, come l'ingegneria elettrica, l'elaborazione dei segnali e il calcolo quantistico.

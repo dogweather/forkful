@@ -11,9 +11,8 @@ model: gpt-4-0125-preview
 summary: "Das Generieren von Zufallszahlen in Elm erfordert die Verwendung des `Random`-Moduls,\
   \ um Pseudozufallszahlen zu erzeugen, die f\xFCr eine Vielzahl von\u2026"
 title: Zufallszahlen generieren
+weight: 12
 ---
-
-{{< edit_this_page >}}
 
 ## Was & Warum?
 Das Generieren von Zufallszahlen in Elm erfordert die Verwendung des `Random`-Moduls, um Pseudozufallszahlen zu erzeugen, die für eine Vielzahl von Aufgaben wie Spiele, Simulationen und sogar als Teil von Algorithmen, die stochastische Prozesse benötigen, nützlich sind. Diese Fähigkeit ermöglicht es Entwicklern, Unvorhersehbarkeit und Vielfalt in ihre Anwendungen zu bringen, was die Benutzererfahrung und Funktionalität verbessert.

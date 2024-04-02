@@ -11,9 +11,8 @@ summary: "Ty\xF6skentely JSON:n (JavaScript Object Notation) parissa tarkoittaa 
   m\xE4n kevyen datanvaihtoformaatista hy\xF6dynt\xE4mist\xE4 Java-sovelluksissasi.\
   \ Ohjelmoijat\u2026"
 title: "Ty\xF6skentely JSON:n kanssa"
+weight: 38
 ---
-
-{{< edit_this_page >}}
 
 ## Mikä & Miksi?
 Työskentely JSON:n (JavaScript Object Notation) parissa tarkoittaa tämän kevyen datanvaihtoformaatista hyödyntämistä Java-sovelluksissasi. Ohjelmoijat suosivat JSONia rakenneellisen datan sarjoittamiseen ja siirtämiseen verkon yli sekä datan helppoon konfigurointiin ja tallentamiseen, koska se on ihmisen luettavissa ja kielestä riippumaton.

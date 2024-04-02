@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Capitalizzare una stringa in Bash comporta la trasformazione del primo carattere\
   \ della stringa in maiuscolo lasciando inalterata il resto della stringa.\u2026"
 title: Capitalizzare una stringa
+weight: 2
 ---
-
-{{< edit_this_page >}}
 
 ## Cosa e Perché?
 Capitalizzare una stringa in Bash comporta la trasformazione del primo carattere della stringa in maiuscolo lasciando inalterata il resto della stringa. Questa tecnica è comunemente utilizzata per formattare l'output o per conformarsi a convenzioni di codifica che richiedono che certe stringhe inizino con una lettera maiuscola per leggibilità o preferenze stilistiche.

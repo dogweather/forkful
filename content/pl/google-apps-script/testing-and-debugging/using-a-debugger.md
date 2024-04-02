@@ -2,15 +2,16 @@
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 22:03:16.732987-07:00
-description: "Debugowanie w Google Apps Script (GAS) polega na identyfikacji i usuwaniu\
-  \ b\u0142\u0119d\xF3w ze skrypt\xF3w maj\u0105cych na celu automatyzacj\u0119 Google\
-  \ Apps lub budow\u0119\u2026"
+description: "Google Apps Script zapewnia wbudowany debugger w Edytorze Apps Script,\
+  \ pomagaj\u0105c w rozwi\u0105zywaniu problem\xF3w ze skryptami. Oto, jak zainicjowa\u0107\
+  \ i u\u017Cywa\u0107\u2026"
 lastmod: '2024-03-13T22:44:34.907981-06:00'
 model: gpt-4-0125-preview
-summary: "Debugowanie w Google Apps Script (GAS) polega na identyfikacji i usuwaniu\
-  \ b\u0142\u0119d\xF3w ze skrypt\xF3w maj\u0105cych na celu automatyzacj\u0119 Google\
-  \ Apps lub budow\u0119\u2026"
+summary: "Google Apps Script zapewnia wbudowany debugger w Edytorze Apps Script, pomagaj\u0105\
+  c w rozwi\u0105zywaniu problem\xF3w ze skryptami. Oto, jak zainicjowa\u0107 i u\u017C\
+  ywa\u0107\u2026"
 title: Korzystanie z debuggera
+weight: 35
 ---
 
 ## Jak to zrobić:

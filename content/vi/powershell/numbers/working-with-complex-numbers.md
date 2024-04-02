@@ -13,9 +13,8 @@ summary: "S\u1ED1 ph\u1EE9c, nh\u1EEFng s\u1ED1 c\xF3 m\u1ED9t ph\u1EA7n th\u1EF
   \ c\xE1c l\u0129nh v\u1EF1c nh\u01B0 k\u1EF9 thu\u1EADt, v\u1EADt l\xFD, v\xE0 khoa\
   \ h\u1ECDc d\u1EEF li\u1EC7u. C\xE1c l\u1EADp tr\xECnh\u2026"
 title: "L\xE0m vi\u1EC7c v\u1EDBi s\u1ED1 ph\u1EE9c"
+weight: 14
 ---
-
-{{< edit_this_page >}}
 
 ## Điều gì & Tại sao?
 Số phức, những số có một phần thực và một phần ảo (như 3 + 4i), rất quan trọng trong các lĩnh vực như kỹ thuật, vật lý, và khoa học dữ liệu. Các lập trình viên sử dụng chúng cho mô phỏng, xử lý tín hiệu, và giải quyết các loại bài toán toán học cụ thể.

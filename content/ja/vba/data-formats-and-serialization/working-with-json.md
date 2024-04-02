@@ -7,9 +7,8 @@ lastmod: '2024-03-13T22:44:41.915971-06:00'
 model: gpt-4-0125-preview
 summary: "JSON\uFF08JavaScript Object\u2026"
 title: "JSON\u3068\u306E\u4F5C\u696D"
+weight: 38
 ---
-
-{{< edit_this_page >}}
 
 ## 何となぜ？
 

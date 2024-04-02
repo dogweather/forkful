@@ -23,9 +23,8 @@ summary: "\u05E2\u05D1\u05D5\u05D3\u05D4 \u05E2\u05DD CSV (Comma-Separated Value
   \u05DD \u05D1\u05D8\u05E7\u05E1\u05D8 \u05E4\u05E9\u05D5\u05D8. \u05DE\u05EA\u05DB\
   \u05E0\u05EA\u05D9\u05DD\u2026"
 title: "\u05E2\u05D5\u05D1\u05D3\u05D9\u05DD \u05E2\u05DD CSV"
+weight: 37
 ---
-
-{{< edit_this_page >}}
 
 ## מה ולמה?
 

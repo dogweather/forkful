@@ -17,9 +17,8 @@ summary: "HTTP \uC694\uCCAD\uC744 \uAE30\uBCF8 \uC778\uC99D\uACFC \uD568\uAED8 \
   \uAC8C \uAD50\uD658\uD560 \uC218 \uC788\uC2B5\uB2C8\uB2E4."
 title: "\uAE30\uBCF8 \uC778\uC99D\uC744 \uC0AC\uC6A9\uD55C HTTP \uC694\uCCAD \uBCF4\
   \uB0B4\uAE30"
+weight: 45
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why? (무엇인가요? 왜 사용하나요?)
 HTTP 요청을 기본 인증과 함께 보내면 사용자 이름과 비밀번호를 전송하여 서버 자원에 접근할 수 있습니다. 이를 통해 개발자들은 보안이 필요한 데이터를 안전하게 교환할 수 있습니다.

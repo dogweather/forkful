@@ -7,9 +7,8 @@ model: gpt-4-0125-preview
 summary: "Concatenating strings involves joining two or more strings end-to-end to\
   \ form a new string. Programmers do this to dynamically generate text, such as\u2026"
 title: Concatenating strings
+weight: 3
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 

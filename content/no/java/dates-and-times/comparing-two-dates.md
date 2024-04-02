@@ -8,9 +8,8 @@ model: gpt-4-1106-preview
 summary: "Sammenligne to datoer betyr \xE5 finne ut om de er identiske, eller hvilken\
   \ som kommer f\xF8r eller etter den andre. Dette er kritisk i oppgaver som sortering\u2026"
 title: Sammenlikning av to datoer
+weight: 27
 ---
-
-{{< edit_this_page >}}
 
 ## Hva & Hvorfor?
 Sammenligne to datoer betyr å finne ut om de er identiske, eller hvilken som kommer før eller etter den andre. Dette er kritisk i oppgaver som sortering av hendelser, utløp av frister, og tidstyringslogikk i applikasjoner.

@@ -10,9 +10,8 @@ model: gpt-4-0125-preview
 summary: "Refaktorering i programmering inneb\xE6rer \xE5 endre strukturen p\xE5 koden\
   \ uten \xE5 endre dens oppf\xF8rsel, for \xE5 forbedre aspekter som lesbarhet, vedlikeholdbarhet\u2026"
 title: Refaktorering
+weight: 19
 ---
-
-{{< edit_this_page >}}
 
 ## Hva & Hvorfor?
 

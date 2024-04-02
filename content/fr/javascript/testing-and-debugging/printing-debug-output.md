@@ -8,9 +8,8 @@ model: gpt-4-1106-preview
 summary: "L'affichage de messages de d\xE9bogage, c'est \xE9crire des infos dans la\
   \ console pour comprendre ce qui se passe dans le code. On le fait parce que personne\u2026"
 title: "Affichage des sorties de d\xE9bogage"
+weight: 33
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why? (Quoi & Pourquoi ?)
 L'affichage de messages de débogage, c'est écrire des infos dans la console pour comprendre ce qui se passe dans le code. On le fait parce que personne n'aime chercher une aiguille dans une botte de foin sans indice.

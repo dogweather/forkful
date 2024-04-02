@@ -8,9 +8,8 @@ model: gpt-4-1106-preview
 summary: "Crear un archivo temporal es simplemente generar un fichero que solo necesitas\
   \ durante la ejecuci\xF3n de tu script PHP. Los programadores lo hacen para no\u2026"
 title: Creando un archivo temporal
+weight: 21
 ---
-
-{{< edit_this_page >}}
 
 ## Qué & Por Qué?
 Crear un archivo temporal es simplemente generar un fichero que solo necesitas durante la ejecución de tu script PHP. Los programadores lo hacen para no dejar rastro en el sistema de archivos permanente o para manejar datos que solo son relevantes de forma transitoria.

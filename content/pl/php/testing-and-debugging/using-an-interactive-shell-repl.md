@@ -9,9 +9,8 @@ summary: "Interaktywna pow\u0142oka, czyli REPL (Read-Eval-Print Loop - P\u0119t
   \ Czytaj-Ewaluuj-Wypisz) pozwala na pisania i uruchamianie kodu PHP na bie\u017C\
   \u0105co. Jest to\u2026"
 title: Korzystanie z interaktywnego shella (REPL)
+weight: 34
 ---
-
-{{< edit_this_page >}}
 
 ## Co i dlaczego?
 Interaktywna powłoka, czyli REPL (Read-Eval-Print Loop - Pętla Czytaj-Ewaluuj-Wypisz) pozwala na pisania i uruchamianie kodu PHP na bieżąco. Jest to idealne do eksperymentów, debugowania czy nauki, ponieważ można testować fragmenty kodu bez konieczności tworzenia pełnego skryptu.

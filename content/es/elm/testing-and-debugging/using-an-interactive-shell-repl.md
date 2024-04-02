@@ -9,9 +9,8 @@ summary: "El Bucle Leer-Evaluar-Imprimir (REPL, por sus siglas en ingl\xE9s) es 
   \ entorno de programaci\xF3n interactivo y sencillo que toma entradas individuales\
   \ del\u2026"
 title: Usando una shell interactiva (REPL)
+weight: 34
 ---
-
-{{< edit_this_page >}}
 
 ## ¿Qué y por qué?
 El Bucle Leer-Evaluar-Imprimir (REPL, por sus siglas en inglés) es un entorno de programación interactivo y sencillo que toma entradas individuales del usuario, las evalúa y devuelve el resultado al usuario. Los programadores de Elm utilizan el REPL para experimentos rápidos, depuración o aprendizaje del lenguaje.

@@ -10,9 +10,8 @@ model: gpt-4-0125-preview
 summary: "Enviar una solicitud HTTP implica crear y enviar una solicitud a un servidor\
   \ web para recuperar o enviar datos. Los programadores hacen esto en C para\u2026"
 title: Enviando una solicitud HTTP
+weight: 44
 ---
-
-{{< edit_this_page >}}
 
 ## Qué y Por Qué?
 

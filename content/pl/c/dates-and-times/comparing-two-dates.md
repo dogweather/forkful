@@ -11,9 +11,8 @@ summary: "Por\xF3wnywanie dw\xF3ch dat w j\u0119zyku C polega na ustaleniu, kt\x
   ra z nich jest wcze\u015Bniejsza, a kt\xF3ra p\xF3\u017Aniejsza, lub czy s\u0105\
   \ takie same. Mo\u017Cliwo\u015B\u0107 ta jest\u2026"
 title: "Por\xF3wnywanie dw\xF3ch dat"
+weight: 27
 ---
-
-{{< edit_this_page >}}
 
 ## Co i dlaczego?
 

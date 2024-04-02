@@ -7,9 +7,8 @@ model: gpt-4-1106-preview
 summary: "Logging er prosessen med \xE5 registrere applikasjonsatferd, feil, og annen\
   \ viktig informasjon til et vedvarende medium, som en fil eller database.\u2026"
 title: "Loggf\xF8ring"
+weight: 17
 ---
-
-{{< edit_this_page >}}
 
 ## Hva & Hvorfor?
 Logging er prosessen med å registrere applikasjonsatferd, feil, og annen viktig informasjon til et vedvarende medium, som en fil eller database. Programmerere gjør dette for å spore helsen og ytelsen til appene sine, for å feilsøke problemer, og for å holde et øye med hva som skjer under panseret i produksjonsmiljøer.

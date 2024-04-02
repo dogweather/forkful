@@ -9,9 +9,8 @@ summary: "Editar archivos en el lugar con l\xEDneas de comando (CLI) de una sola
   nea en PowerShell se trata de hacer modificaciones directas a los archivos desde\
   \ la\u2026"
 title: "Editando archivos directamente con l\xEDneas de comandos"
+weight: 32
 ---
-
-{{< edit_this_page >}}
 
 ## Qué y Por Qué?
 

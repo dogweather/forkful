@@ -9,9 +9,8 @@ summary: "Loggning \xE4r i grunden mjukvarans motsvarighet till ett skeppsloggbo
   \ det \xE4r ett s\xE4tt att registrera h\xE4ndelser som intr\xE4ffar medan en applikation\
   \ k\xF6rs.\u2026"
 title: Loggning
+weight: 17
 ---
-
-{{< edit_this_page >}}
 
 ## Vad & Varför?
 Loggning är i grunden mjukvarans motsvarighet till ett skeppsloggbok; det är ett sätt att registrera händelser som inträffar medan en applikation körs. Programmerare gör detta för att hålla reda på dessa händelser för felsökning, revisionsspår, eller för att få insikter om hur ett system beter sig i produktion.

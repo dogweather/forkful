@@ -9,9 +9,8 @@ summary: "Zaczynanie nowego projektu to tworzenie podstaw pod twoj\u0105 przysz\
   \u0105 aplikacj\u0119 lub skrypt. Robimy to, aby uporz\u0105dkowa\u0107 nasze pomys\u0142\
   y i zapewni\u0107 im solidne\u2026"
 title: Rozpoczynanie nowego projektu
+weight: 1
 ---
-
-{{< edit_this_page >}}
 
 ## Co i Dlaczego?
 Zaczynanie nowego projektu to tworzenie podstaw pod twoją przyszłą aplikację lub skrypt. Robimy to, aby uporządkować nasze pomysły i zapewnić im solidne fundamenty od samego początku.

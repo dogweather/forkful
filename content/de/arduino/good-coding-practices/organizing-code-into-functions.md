@@ -7,9 +7,8 @@ model: gpt-4-1106-preview
 summary: "Code in Funktionen zu organisieren bedeutet, den Code in wiederverwendbare\
   \ Einheiten aufzuteilen, wobei jede Einheit eine spezifische Aufgabe erledigt.\u2026"
 title: Code in Funktionen organisieren
+weight: 18
 ---
-
-{{< edit_this_page >}}
 
 ## Was & Warum?
 Code in Funktionen zu organisieren bedeutet, den Code in wiederverwendbare Einheiten aufzuteilen, wobei jede Einheit eine spezifische Aufgabe erledigt. Programmierer tun dies, um den Code leichter lesbar, debuggbar und wiederverwendbar zu machen. Es ist wie das Sortieren von Legosteinen in Behälter - es erspart Ihnen das Durcheinanderkramen in einem chaotischen Haufen, jedes Mal wenn Sie etwas bauen wollen.

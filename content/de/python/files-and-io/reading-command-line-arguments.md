@@ -9,9 +9,8 @@ summary: "Das Lesen von Befehlszeilenargumenten erm\xF6glicht es Programmen, bei
   \ Start Parameter von au\xDFen zu empfangen. Diese Flexibilit\xE4t ist essentiell,\
   \ um\u2026"
 title: Lesen von Kommandozeilenargumenten
+weight: 23
 ---
-
-{{< edit_this_page >}}
 
 ## Was & Warum?
 Das Lesen von Befehlszeilenargumenten ermöglicht es Programmen, beim Start Parameter von außen zu empfangen. Diese Flexibilität ist essentiell, um Programme anpassbar und für verschiedene Szenarien nützlich zu gestalten.

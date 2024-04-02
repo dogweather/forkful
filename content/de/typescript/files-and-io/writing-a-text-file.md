@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Eine Textdatei in TypeScript zu schreiben, ist eine entscheidende F\xE4\
   higkeit f\xFCr das Persistieren von Daten, Konfigurationen oder das Generieren von\u2026"
 title: Eine Textdatei schreiben
+weight: 24
 ---
-
-{{< edit_this_page >}}
 
 ## Was & Warum?
 Eine Textdatei in TypeScript zu schreiben, ist eine entscheidende Fähigkeit für das Persistieren von Daten, Konfigurationen oder das Generieren von Protokollen. Programmierer führen diese Aufgabe oft durch, um Daten außerhalb des Anwendungsspeichers zu speichern und zu manipulieren, beispielsweise für Datenanalysen, Berichterstattung oder einfach zum Speichern von Benutzereinstellungen über Sitzungen hinweg.

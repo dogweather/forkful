@@ -11,9 +11,8 @@ summary: "Descargar una p\xE1gina web trata de obtener el contenido HTML de una 
   gina web a trav\xE9s del protocolo HTTP/HTTPS. Los programadores a menudo hacen\
   \ esto\u2026"
 title: "Descargando una p\xE1gina web"
+weight: 42
 ---
-
-{{< edit_this_page >}}
 
 ## Qué y Por Qué?
 

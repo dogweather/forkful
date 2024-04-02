@@ -9,9 +9,8 @@ summary: "Das Starten eines neuen Projekts bedeutet, Grundsteine f\xFCr etwas Gr
   artiges zu legen. Entwickler tun dies, um ihre Ideen in die Realit\xE4t umzusetzen\
   \ oder\u2026"
 title: Einen neuen Projekt starten
+weight: 1
 ---
-
-{{< edit_this_page >}}
 
 ## Was & Warum?
 Das Starten eines neuen Projekts bedeutet, Grundsteine für etwas Großartiges zu legen. Entwickler tun dies, um ihre Ideen in die Realität umzusetzen oder um neue Techniken zu lernen.

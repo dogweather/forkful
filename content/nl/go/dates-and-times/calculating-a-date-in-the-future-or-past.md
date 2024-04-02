@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Het berekenen van een datum in de toekomst of het verleden in Go omvat het\
   \ manipuleren van datum- en tijdwaarden om een specifiek punt ten opzichte van\u2026"
 title: Een datum in de toekomst of verleden berekenen
+weight: 26
 ---
-
-{{< edit_this_page >}}
 
 ## Wat & Waarom?
 

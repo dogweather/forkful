@@ -11,9 +11,8 @@ summary: "Lavorare con JSON in Lua comporta l'analisi di stringhe in formato JSO
   \ per trasformarle in tabelle Lua e viceversa, consentendo un facile scambio di\
   \ dati\u2026"
 title: Lavorare con JSON
+weight: 38
 ---
-
-{{< edit_this_page >}}
 
 ## Cosa & Perché?
 Lavorare con JSON in Lua comporta l'analisi di stringhe in formato JSON per trasformarle in tabelle Lua e viceversa, consentendo un facile scambio di dati tra applicazioni Lua e servizi web o API esterne. I programmatori lo fanno per sfruttare il formato leggero e facile da analizzare di JSON per un'efficiente memorizzazione dei dati, configurazione o comunicazione API.

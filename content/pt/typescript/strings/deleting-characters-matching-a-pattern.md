@@ -7,9 +7,8 @@ model: gpt-4-1106-preview
 summary: "Deletar caracteres que correspondem a um padr\xE3o significa usar algoritmos\
   \ para encontrar e remover certos caracteres de uma string. Fazemos isso para\u2026"
 title: "Excluindo caracteres que correspondem a um padr\xE3o"
+weight: 5
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 Deletar caracteres que correspondem a um padrão significa usar algoritmos para encontrar e remover certos caracteres de uma string. Fazemos isso para limpar dados, preparar texto para processamento ou remover informações desnecessárias ou sensíveis.

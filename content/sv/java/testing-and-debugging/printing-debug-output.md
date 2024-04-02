@@ -9,9 +9,8 @@ summary: "Att printa debug-output inneb\xE4r att skriva ut information till kons
   \ f\xF6r att f\xF6rst\xE5 vad som h\xE4nder i koden. Programmerare g\xF6r det f\xF6\
   r att sp\xE5ra buggar\u2026"
 title: "Skriva ut fels\xF6kningsdata"
+weight: 33
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 Att printa debug-output innebär att skriva ut information till konsolen för att förstå vad som händer i koden. Programmerare gör det för att spåra buggar och monitorera programflödet.

@@ -11,9 +11,8 @@ summary: "Die L\xE4nge eines Strings in Go zu finden, bedeutet, die Anzahl der Z
   \ zu bestimmen, die er enth\xE4lt. Programmierer f\xFChren diese Operation routinem\xE4\
   \xDFig\u2026"
 title: "Die L\xE4nge einer Zeichenkette ermitteln"
+weight: 7
 ---
-
-{{< edit_this_page >}}
 
 ## Was & Warum?
 Die Länge eines Strings in Go zu finden, bedeutet, die Anzahl der Zeichen zu bestimmen, die er enthält. Programmierer führen diese Operation routinemäßig durch, um Strings effektiv zu manipulieren, sei es zur Validierung, zum Extrahieren von Teilstrings oder einfach, um Einschränkungen bei Benutzereingaben durchzusetzen.

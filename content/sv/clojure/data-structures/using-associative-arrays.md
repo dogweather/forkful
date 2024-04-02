@@ -11,9 +11,8 @@ summary: "Associativa arrayer, eller hashkartor, i Clojure l\xE5ter dig lagra oc
   \ h\xE4mta data med nyckel-v\xE4rde-par. De \xE4r en g\xE5-till-l\xF6sning f\xF6\
   r att hantera\u2026"
 title: "Att anv\xE4nda associativa arrayer"
+weight: 15
 ---
-
-{{< edit_this_page >}}
 
 ## Vad & Varför?
 

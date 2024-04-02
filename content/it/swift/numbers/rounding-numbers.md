@@ -7,9 +7,8 @@ model: gpt-4-0125-preview
 summary: "Arrotondare i numeri significa approssimare un valore numerico a una precisione\
   \ specifica, tipicamente per rimuovere decimali indesiderati. I\u2026"
 title: Arrotondamento dei numeri
+weight: 13
 ---
-
-{{< edit_this_page >}}
 
 ## Cosa & Perché?
 

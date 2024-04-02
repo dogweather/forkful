@@ -7,9 +7,8 @@ model: gpt-4-1106-preview
 summary: "HTTP-Anfragen sind das Herzst\xFCck der Kommunikation im Web. Programmierer\
   \ verwenden sie, um Daten von Servern zu holen oder an diese zu senden \u2013\u2026"
 title: Einen HTTP-Request senden
+weight: 44
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why? (Was & Warum?)
 HTTP-Anfragen sind das Herzstück der Kommunikation im Web. Programmierer verwenden sie, um Daten von Servern zu holen oder an diese zu senden – essentiell, um lebendige, interaktive Applikationen zu erstellen.

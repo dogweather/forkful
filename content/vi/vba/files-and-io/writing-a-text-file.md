@@ -13,9 +13,8 @@ summary: "Vi\u1EC7c vi\u1EBFt m\u1ED9t t\u1EC7p v\u0103n b\u1EA3n b\u1EB1ng Visu
   a, ho\u1EB7c th\xEAm d\u1EEF li\u1EC7u v\u0103n b\u1EA3n v\xE0o c\xE1c t\u1EC7p,\
   \ m\u1ED9t nhi\u1EC7m v\u1EE5 c\u01A1 b\u1EA3n\u2026"
 title: "Vi\u1EBFt m\u1ED9t t\u1EC7p v\u0103n b\u1EA3n"
+weight: 24
 ---
-
-{{< edit_this_page >}}
 
 ## Gì & Tại sao?
 

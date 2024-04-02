@@ -11,9 +11,8 @@ summary: "Tarkistaminen, onko kansio olemassa Dartissa, liittyy kansion olemassa
   \ varmistamiseen m\xE4\xE4ritetyss\xE4 polussa tiedostoj\xE4rjestelm\xE4ss\xE4 ennen\
   \ tiedostojen\u2026"
 title: Tarkistetaan, onko hakemisto olemassa
+weight: 20
 ---
-
-{{< edit_this_page >}}
 
 ## Mikä & Miksi?
 

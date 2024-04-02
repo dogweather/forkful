@@ -7,9 +7,8 @@ model: gpt-4-0125-preview
 summary: "Getting the current date in C involves tapping into the standard C library\
   \ to fetch and format the system's current date and time. Programmers often need\u2026"
 title: Getting the current date
+weight: 29
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 

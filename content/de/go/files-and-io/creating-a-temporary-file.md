@@ -11,9 +11,8 @@ summary: "Das Erstellen einer tempor\xE4ren Datei in Go erm\xF6glicht die Generi
   \ einer nicht-persistenten Datei, die f\xFCr den kurzfristigen Gebrauch bestimmt\
   \ ist,\u2026"
 title: "Erstellung einer tempor\xE4ren Datei"
+weight: 21
 ---
-
-{{< edit_this_page >}}
 
 ## Was & Warum?
 

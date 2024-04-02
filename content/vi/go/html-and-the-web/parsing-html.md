@@ -13,9 +13,8 @@ summary: "Ph\xE2n t\xEDch c\xFA ph\xE1p HTML trong Go bao g\u1ED3m vi\u1EC7c ph\
   \ xu\u1EA5t d\u1EEF li\u1EC7u, thao t\xE1c c\u1EA5u tr\xFAc, ho\u1EB7c chuy\u1EC3\
   n \u0111\u1ED5i HTML sang\u2026"
 title: "Ph\xE2n T\xEDch HTML"
+weight: 43
 ---
-
-{{< edit_this_page >}}
 
 ## Cái gì và Tại sao?
 

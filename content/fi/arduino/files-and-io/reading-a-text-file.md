@@ -9,9 +9,8 @@ summary: "Lukemalla tekstitiedostoa Arduino ker\xE4\xE4 ja k\xE4sittelee tietoa.
   m\xE4 on olennaista sensoridatasta aina konfiguraatioasetuksiin; se mahdollistaa\
   \ dynaamisen\u2026"
 title: Tekstitiedoston lukeminen
+weight: 22
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why? (Mitä ja Miksi?)
 Lukemalla tekstitiedostoa Arduino kerää ja käsittelee tietoa. Tämä on olennaista sensoridatasta aina konfiguraatioasetuksiin; se mahdollistaa dynaamisen toiminnan muuttuvien tietojen mukaan.

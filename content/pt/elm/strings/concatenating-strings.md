@@ -9,9 +9,8 @@ summary: "Concatenar strings \xE9 juntar dois ou mais textos em um s\xF3. Progra
   \ fazem isso para montar senten\xE7as, mensagens, ou combinar dados de forma din\xE2\
   mica."
 title: Concatenando strings
+weight: 3
 ---
-
-{{< edit_this_page >}}
 
 ## O Que É & Por Que?
 Concatenar strings é juntar dois ou mais textos em um só. Programadores fazem isso para montar sentenças, mensagens, ou combinar dados de forma dinâmica.

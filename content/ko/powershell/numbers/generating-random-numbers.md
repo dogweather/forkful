@@ -21,9 +21,8 @@ summary: "PowerShell\uC5D0\uC11C \uBB34\uC791\uC704 \uC218\uB97C \uC0DD\uC131\uD
   \uC744 \uD3EC\uD568\uD558\uC5EC \uB2E4\uC591\uD55C \uC774\uC720\uB85C \uC774 \uAE30\
   \uB2A5\uC744\u2026"
 title: "\uB09C\uC218 \uC0DD\uC131"
+weight: 12
 ---
-
-{{< edit_this_page >}}
 
 ## 무엇 & 왜?
 PowerShell에서 무작위 수를 생성하는 것은 지정된 범위 내에서 예측할 수 없는 숫자 값을 만드는 것입니다. 프로그래머들은 예측 불가능성이 중요하거나 실제 세계의 무작위성을 모방하는 것과 같이 테스트, 시뮬레이션 및 보안 목적을 포함하여 다양한 이유로 이 기능을 활용합니다.

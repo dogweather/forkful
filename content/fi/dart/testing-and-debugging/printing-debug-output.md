@@ -10,9 +10,8 @@ model: gpt-4-0125-preview
 summary: "Debug-tulosteen tulostaminen Dartissa tarkoittaa tietojen n\xE4ytt\xE4mist\xE4\
   \ konsolissa suorituksen aikana, mik\xE4 mahdollistaa kehitt\xE4jien seurata suorituksen\u2026"
 title: Debug-tulosteen tulostaminen
+weight: 33
 ---
-
-{{< edit_this_page >}}
 
 ## Mikä & Miksi?
 

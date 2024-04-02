@@ -11,9 +11,8 @@ summary: "Scrivere un file di testo in Elm comporta la creazione e il salvataggi
   \ di dati testuali in un file da un'applicazione Elm. Spesso, ai programmatori \xE8\
   \u2026"
 title: Scrivere un file di testo
+weight: 24
 ---
-
-{{< edit_this_page >}}
 
 ## Cosa & Perché?
 

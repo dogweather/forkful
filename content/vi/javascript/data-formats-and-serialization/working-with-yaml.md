@@ -13,9 +13,8 @@ summary: "YAML (YAML ain't Markup Language), hay c\xF2n g\u1ECDi l\xE0 YAML, l\x
   i con ng\u01B0\u1EDDi d\xE0nh cho t\u1EA5t c\u1EA3 c\xE1c ng\xF4n ng\u1EEF l\u1EAD\
   p tr\xECnh. L\u1EADp\u2026"
 title: "L\xE0m vi\u1EC7c v\u1EDBi YAML"
+weight: 41
 ---
-
-{{< edit_this_page >}}
 
 ## Làm thế nào & Tại sao?
 YAML (YAML ain't Markup Language), hay còn gọi là YAML, là một tiêu chuẩn hóa dữ liệu thân thiện với con người dành cho tất cả các ngôn ngữ lập trình. Lập trình viên làm việc với YAML bởi vì nó dễ đọc và viết, thường được sử dụng cho các tệp cấu hình, và trao đổi dữ liệu giữa các ngôn ngữ hoặc dịch vụ.

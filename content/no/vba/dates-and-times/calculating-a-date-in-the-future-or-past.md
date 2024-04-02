@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "\xC5 beregne en dato i fremtiden eller fortiden inneb\xE6rer \xE5 bestemme\
   \ en dato som er et spesifikt antall dager, m\xE5neder eller \xE5r fra en gitt dato.\u2026"
 title: Beregning av en dato i fremtiden eller fortiden
+weight: 26
 ---
-
-{{< edit_this_page >}}
 
 ## Hva & Hvorfor?
 Å beregne en dato i fremtiden eller fortiden innebærer å bestemme en dato som er et spesifikt antall dager, måneder eller år fra en gitt dato. Programmerere trenger ofte denne funksjonaliteten for å automatisere påminnelser, abonnementer, utløpsdatoer og planleggingsoppgaver i ulike applikasjoner.

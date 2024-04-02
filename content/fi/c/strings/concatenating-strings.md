@@ -11,9 +11,8 @@ summary: "Merkkijonojen yhdist\xE4minen C-kieless\xE4 tarkoittaa kahden tai usea
   \ merkkijonon liitt\xE4mist\xE4 per\xE4kk\xE4in uuden merkkijonon muodostamiseksi.\
   \ Ohjelmoijat\u2026"
 title: "Merkkijonojen yhdist\xE4minen"
+weight: 3
 ---
-
-{{< edit_this_page >}}
 
 ## Mitä & Miksi?
 

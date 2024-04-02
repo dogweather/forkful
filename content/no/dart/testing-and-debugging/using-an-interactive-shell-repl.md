@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "En interaktiv shell (REPL - Read-Evaluate-Print Loop) for Dart lar programmerere\
   \ dynamisk skrive inn og kj\xF8re Dart-kode linje for linje uten \xE5 m\xE5tte\u2026"
 title: "\xC5 bruke et interaktivt skall (REPL)"
+weight: 34
 ---
-
-{{< edit_this_page >}}
 
 ## Hva & Hvorfor?
 

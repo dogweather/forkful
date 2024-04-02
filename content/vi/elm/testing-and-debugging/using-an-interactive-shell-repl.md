@@ -15,9 +15,8 @@ summary: "V\xF2ng l\u1EB7p \u0110\u1ECDc-\u0110\xE1nh gi\xE1-In (REPL) l\xE0 m\u
   i d\xF9ng, \u0111\xE1nh gi\xE1 ch\xFAng, v\xE0 tr\u1EA3 k\u1EBFt qu\u1EA3 v\u1EC1\
   \ cho\u2026"
 title: "S\u1EED d\u1EE5ng v\u1ECF t\u01B0\u01A1ng t\xE1c (REPL)"
+weight: 34
 ---
-
-{{< edit_this_page >}}
 
 ## Cái gì & Tại sao?
 

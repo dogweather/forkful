@@ -9,9 +9,8 @@ summary: "Arrondir les nombres consiste \xE0 supprimer les d\xE9cimales pour sim
   \ vos donn\xE9es ou les adapter \xE0 des formats sp\xE9cifiques. Les programmeurs\
   \ le font\u2026"
 title: Arrondir les nombres
+weight: 13
 ---
-
-{{< edit_this_page >}}
 
 ## Quoi & Pourquoi ?
 Arrondir les nombres consiste à supprimer les décimales pour simplifier vos données ou les adapter à des formats spécifiques. Les programmeurs le font pour un affichage convivial, un stockage efficace, ou lorsque la précision décimale n'est pas un problème.

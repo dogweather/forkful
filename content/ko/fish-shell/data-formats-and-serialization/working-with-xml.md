@@ -21,9 +21,8 @@ summary: "XML\uACFC \uC791\uC5C5\uD55C\uB2E4\uB294 \uAC83\uC740 \uAD6C\uC131, \u
   \ \uC6B4\uC6A9\uC131\uC744 \uC704\uD574 XML\uC744 \uC870\uC791\uD569\uB2C8\uB2E4\
   ."
 title: "XML \uB2E4\uB8E8\uAE30"
+weight: 40
 ---
-
-{{< edit_this_page >}}
 
 ## 무엇 & 왜?
 XML과 작업한다는 것은 구성, 메시징 등에서 사용되는 보편적이고 구조화된 형식의 데이터를 처리하는 것을 의미합니다. 프로그래머들은 데이터를 읽고, 쓰고, 업데이트하고, 조회하는 작업을 통해 수많은 앱과 서비스에서 상호 운용성을 위해 XML을 조작합니다.

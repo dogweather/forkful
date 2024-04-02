@@ -9,9 +9,8 @@ summary: "\xC5 beregne en dato i fremtiden eller fortiden handler om \xE5 finne 
   \ bestemt dag f\xF8r eller etter et utgangspunkt. Utviklere bruker dette for \xE5\
   \ h\xE5ndtere\u2026"
 title: Beregning av en dato i fremtiden eller fortiden
+weight: 26
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 Å beregne en dato i fremtiden eller fortiden handler om å finne en bestemt dag før eller etter et utgangspunkt. Utviklere bruker dette for å håndtere tidsfrister, planlegge events eller sjekke perioder.

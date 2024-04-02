@@ -11,9 +11,8 @@ summary: "Att f\xE5 det aktuella datumet i programmering \xE4r avg\xF6rande av e
   \ m\xE4ngd sk\xE4l, inklusive loggning, tidsst\xE4mpling av h\xE4ndelser och schemal\xE4\
   ggning av uppgifter.\u2026"
 title: "F\xE5 det aktuella datumet"
+weight: 29
 ---
-
-{{< edit_this_page >}}
 
 ## Vad & Varför?
 Att få det aktuella datumet i programmering är avgörande av en mängd skäl, inklusive loggning, tidsstämpling av händelser och schemaläggning av uppgifter. I Clojure, en Lisp-dialekt på JVM, utnyttjar denna uppgift Java-interoperabilitetsförmågor, vilket ger omedelbar tillgång till det rika Java Date-Time API:et.

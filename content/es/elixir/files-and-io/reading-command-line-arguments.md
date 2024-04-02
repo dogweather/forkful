@@ -9,9 +9,8 @@ summary: "Leer argumentos de la l\xEDnea de comandos permite que tus programas d
   \ Elixir reciban informaci\xF3n externa al ser ejecutados, habilit\xE1ndote para\
   \ construir\u2026"
 title: "Lectura de argumentos de l\xEDnea de comandos"
+weight: 23
 ---
-
-{{< edit_this_page >}}
 
 ## Qué y Por Qué?
 Leer argumentos de la línea de comandos permite que tus programas de Elixir reciban información externa al ser ejecutados, habilitándote para construir aplicaciones dinámicas que se adapten según los insumos del usuario. Los programadores usan esto para personalizar la ejecución o configurar opciones sin tener que cambiar el código.

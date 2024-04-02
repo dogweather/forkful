@@ -11,9 +11,8 @@ summary: "Organizowanie kodu w funkcje w Visual Basic for Applications (VBA) pol
   \ na podziale programu na mniejsze, zarz\u0105dzalne cz\u0119\u015Bci znane jako\
   \ funkcje.\u2026"
 title: Organizacja kodu w funkcje
+weight: 18
 ---
-
-{{< edit_this_page >}}
 
 ## Co i dlaczego?
 

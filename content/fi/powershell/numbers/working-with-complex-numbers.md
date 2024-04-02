@@ -7,9 +7,8 @@ model: gpt-4-0125-preview
 summary: "Kompleksiluvut, ne joilla on reaaliosa ja imaginaariosa (kuten 3 + 4i),\
   \ ovat elint\xE4rkeit\xE4 aloilla kuten insin\xF6\xF6ritiede, fysiikka ja data-analytiikka.\u2026"
 title: "Kompleksilukujen k\xE4sittely"
+weight: 14
 ---
-
-{{< edit_this_page >}}
 
 ## Mitä & Miksi?
 Kompleksiluvut, ne joilla on reaaliosa ja imaginaariosa (kuten 3 + 4i), ovat elintärkeitä aloilla kuten insinööritiede, fysiikka ja data-analytiikka. Ohjelmoijat käyttävät niitä simulaatioihin, signaalinkäsittelyyn ja erityisten matemaattisten ongelmien ratkaisuun.

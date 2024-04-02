@@ -9,9 +9,8 @@ summary: "Converting a string to lower case means changing all the uppercase let
 title: "\u041F\u0435\u0440\u0435\u0442\u0432\u043E\u0440\u0435\u043D\u043D\u044F \u0440\
   \u044F\u0434\u043A\u0430 \u0443 \u043D\u0438\u0436\u043D\u0456\u0439 \u0440\u0435\
   \u0433\u0456\u0441\u0442\u0440"
+weight: 4
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why? (Що і Чому?)
 

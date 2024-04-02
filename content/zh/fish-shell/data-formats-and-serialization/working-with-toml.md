@@ -15,9 +15,8 @@ summary: "TOML \u662F\u4E00\u79CD\u914D\u7F6E\u6587\u4EF6\u683C\u5F0F\uFF0C\u5BF
   \u5904\u7406\u6E05\u6670\u3001\u5C42\u6B21\u5206\u660E\u7684\u914D\u7F6E\u6587\u4EF6\
   \u3002"
 title: "\u4F7F\u7528TOML"
+weight: 39
 ---
-
-{{< edit_this_page >}}
 
 ## 什么以及为什么?
 TOML 是一种配置文件格式，对人类来说易于读写，对机器来说易于解析和生成。当项目中可读性至关重要时，程序员会使用 TOML 来处理清晰、层次分明的配置文件。

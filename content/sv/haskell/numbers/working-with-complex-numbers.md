@@ -8,9 +8,8 @@ model: gpt-4-0125-preview
 summary: "Komplexa tal, som best\xE5r av en reell och en imagin\xE4r del, \xE4r grundl\xE4\
   ggande inom olika ber\xE4kningsf\xE4lt som teknik, fysik och signalbehandling. Programmerare\u2026"
 title: Att arbeta med komplexa tal
+weight: 14
 ---
-
-{{< edit_this_page >}}
 
 ## Vad & Varför?
 

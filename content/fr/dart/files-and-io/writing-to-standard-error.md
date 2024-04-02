@@ -11,9 +11,8 @@ summary: "\xC9crire sur la sortie standard d'erreur (stderr) en Dart consiste \x
   \ envoyer des messages d'erreur et des diagnostics vers un flux s\xE9par\xE9, distinct\
   \ de la\u2026"
 title: "\xC9crire sur l'erreur standard"
+weight: 25
 ---
-
-{{< edit_this_page >}}
 
 ## Quoi & Pourquoi ?
 

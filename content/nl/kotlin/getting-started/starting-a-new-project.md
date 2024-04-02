@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Een nieuw project starten betekent het opzetten van de initi\xEBle structuur\
   \ en essenti\xEBle bestanden die je nodig hebt voor je applicatie. Programmeurs\u2026"
 title: Een nieuw project starten
+weight: 1
 ---
-
-{{< edit_this_page >}}
 
 ## Wat & Waarom?
 

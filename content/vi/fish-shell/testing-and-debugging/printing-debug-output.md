@@ -13,9 +13,8 @@ summary: "In \u1EA5n d\u1EEF li\u1EC7u g\u1EE1 r\u1ED1i (debug output) t\u1EE9c 
   n hi\u1EC3u code c\u1EE7a m\xECnh \u0111ang l\xE0m g\xEC. L\u1EADp tr\xECnh vi\xEA\
   n l\xE0m vi\u1EC7c n\xE0y \u0111\u1EC3 ph\xE1t\u2026"
 title: "In ra th\xF4ng tin g\u1EE1 l\u1ED7i"
+weight: 33
 ---
-
-{{< edit_this_page >}}
 
 ## Cái gì & Tại sao?
 In ấn dữ liệu gỡ rối (debug output) tức là việc phát ra thông tin phụ trợ để giúp bạn hiểu code của mình đang làm gì. Lập trình viên làm việc này để phát hiện và sửa lỗi dễ dàng hơn.

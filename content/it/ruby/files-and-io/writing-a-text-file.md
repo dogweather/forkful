@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Scrivere su un file di testo in Ruby \xE8 un'operazione fondamentale che\
   \ consente di conservare output e dati in modo persistente, rendendo possibili\u2026"
 title: Scrivere un file di testo
+weight: 24
 ---
-
-{{< edit_this_page >}}
 
 ## Cosa & Perché?
 Scrivere su un file di testo in Ruby è un'operazione fondamentale che consente di conservare output e dati in modo persistente, rendendo possibili l'accesso o la modifica dei dati in seguito. I programmatori spesso eseguono questa attività per motivi come la registrazione (logging), il salvataggio delle configurazioni o l'esportazione dei dati in un formato leggibile dall'uomo.

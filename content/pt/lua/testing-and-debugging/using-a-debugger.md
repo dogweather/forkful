@@ -1,14 +1,13 @@
 ---
 date: 2024-01-26 03:50:18.606575-07:00
-description: "Um depurador \xE9 uma ferramenta que permite inspecionar e controlar\
-  \ a execu\xE7\xE3o de um programa, facilitando a identifica\xE7\xE3o de onde as\
-  \ coisas d\xE3o errado. Os\u2026"
+description: "O Lua n\xE3o vem com um depurador embutido, mas voc\xEA pode usar depuradores\
+  \ externos, como o ZeroBrane Studio. Aqui est\xE1 um gostinho de como voc\xEA trabalharia\u2026"
 lastmod: '2024-03-13T22:44:46.713415-06:00'
 model: gpt-4-0125-preview
-summary: "Um depurador \xE9 uma ferramenta que permite inspecionar e controlar a execu\xE7\
-  \xE3o de um programa, facilitando a identifica\xE7\xE3o de onde as coisas d\xE3\
-  o errado. Os\u2026"
+summary: "O Lua n\xE3o vem com um depurador embutido, mas voc\xEA pode usar depuradores\
+  \ externos, como o ZeroBrane Studio. Aqui est\xE1 um gostinho de como voc\xEA trabalharia\u2026"
 title: Usando um depurador
+weight: 35
 ---
 
 ## Como fazer:

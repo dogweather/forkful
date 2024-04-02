@@ -7,9 +7,8 @@ model: gpt-4-1106-preview
 summary: "Searching and replacing text in bash means swapping out words or patterns\
   \ in a string or file with something else. It's a day-to-day task for cleaning\u2026"
 title: Searching and replacing text
+weight: 10
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 Searching and replacing text in bash means swapping out words or patterns in a string or file with something else. It's a day-to-day task for cleaning data, fixing code, or automating edits.

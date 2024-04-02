@@ -21,9 +21,8 @@ summary: "PHP\uC5D0\uC11C \uD14D\uC2A4\uD2B8 \uD30C\uC77C\uC744 \uC791\uC131\uD5
   \uB97C \uC9C0\uC18D\uC2DC\uD0A4\uAE30 \uC704\uD574 \uC774 \uC791\uC5C5\uC744 \uD569\
   \uB2C8\uB2E4."
 title: "\uD14D\uC2A4\uD2B8 \uD30C\uC77C \uC4F0\uAE30"
+weight: 24
 ---
-
-{{< edit_this_page >}}
 
 ## 무엇 & 왜?
 PHP에서 텍스트 파일을 작성하는 것은 파일을 생성하거나 열고 그 안에 내용을 넣는 것을 포함합니다. 프로그래머들은 프로그램의 수명을 넘어서 사용자가 생성한 콘텐츠나 로그와 같은 데이터를 지속시키기 위해 이 작업을 합니다.

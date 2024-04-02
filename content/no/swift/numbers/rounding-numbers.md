@@ -9,9 +9,8 @@ summary: "\xC5 avrunde tall betyr \xE5 tiln\xE6rme en numerisk verdi til en spes
   \ presisjon, typisk for \xE5 fjerne u\xF8nskede desimaler. Programmerere avrunder\
   \ for \xE5\u2026"
 title: Avrunding av tall
+weight: 13
 ---
-
-{{< edit_this_page >}}
 
 ## Hva & Hvorfor?
 

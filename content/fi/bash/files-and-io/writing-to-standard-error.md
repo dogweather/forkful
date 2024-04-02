@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Kirjoittaminen vakiovirheeseen (stderr) Bashissa tarkoittaa virheviestien\
   \ tai muiden t\xE4rkeiden diagnostisten tulosteiden ohjaamista erilleen\u2026"
 title: Kirjoittaminen standardivirheeseen
+weight: 25
 ---
-
-{{< edit_this_page >}}
 
 ## Mikä ja miksi?
 Kirjoittaminen vakiovirheeseen (stderr) Bashissa tarkoittaa virheviestien tai muiden tärkeiden diagnostisten tulosteiden ohjaamista erilleen vakiotulosteesta (stdout). Ohjelmoijat tekevät näin varmistaakseen, että virheviestit voidaan helposti tunnistaa, lokittaa tai jopa ohittaa, mikä auttaa vianetsintä- ja lokitusprosesseissa.

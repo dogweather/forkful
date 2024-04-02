@@ -14,9 +14,8 @@ summary: "\u641C\u7D22\u548C\u66FF\u6362\u6587\u672C\u662F\u5728\u6587\u4EF6\u4E
   \u4E3A\u4E86\u5FEB\u901F\u4FEE\u6B63\u9519\u8BEF\u3001\u66F4\u65B0\u4FE1\u606F\u6216\
   \u6539\u8FDB\u4EE3\u7801\u3002"
 title: "\u641C\u7D22\u548C\u66FF\u6362\u6587\u672C"
+weight: 10
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why? 什么和为什么?
 搜索和替换文本是在文件中找特定字符或字符串，然后换成别的内容。程序员这么做通常是为了快速修正错误、更新信息或改进代码。

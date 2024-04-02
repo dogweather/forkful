@@ -9,9 +9,8 @@ summary: "Midlertidige filer er som papptallerkener; du bruker dem en gang, s\xE
   \ kaster du dem vekk. Programmerere lager slike filer for \xE5 lagre data midlertidig\
   \ uten\u2026"
 title: Opprette en midlertidig fil
+weight: 21
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 Midlertidige filer er som papptallerkener; du bruker dem en gang, så kaster du dem vekk. Programmerere lager slike filer for å lagre data midlertidig uten å påvirke permanent lagring eller for å unngå kompleks håndtering av datastrømmer.

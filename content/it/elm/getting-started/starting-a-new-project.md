@@ -7,9 +7,8 @@ model: gpt-4-1106-preview
 summary: Creare un nuovo progetto Elm significa mettere su qualcosa di fresco. Lo
   facciamo per sperimentare, imparare o per costruire qualcosa di utilizzabile.
 title: Avvio di un nuovo progetto
+weight: 1
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why? (Che cos'è e perché?)
 Creare un nuovo progetto Elm significa mettere su qualcosa di fresco. Lo facciamo per sperimentare, imparare o per costruire qualcosa di utilizzabile.

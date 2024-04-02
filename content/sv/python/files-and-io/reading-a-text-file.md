@@ -9,9 +9,8 @@ summary: "Att l\xE4sa en textfil i Python inneb\xE4r att \xF6ppna och extrahera 
   llet fr\xE5n en fil p\xE5 din dator till ditt program. Programmerare g\xF6r detta\
   \ f\xF6r att\u2026"
 title: "L\xE4sa en textfil"
+weight: 22
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why? (Vad & Varför?)
 Att läsa en textfil i Python innebär att öppna och extrahera innehållet från en fil på din dator till ditt program. Programmerare gör detta för att behandla data, konfigurera program eller helt enkelt för att lagra information som ska användas senare.

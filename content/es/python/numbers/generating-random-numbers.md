@@ -7,9 +7,8 @@ model: gpt-4-0125-preview
 summary: "Generar n\xFAmeros aleatorios implica crear n\xFAmeros que no pueden ser\
   \ predecidos razonablemente mejor que por casualidad, lo cual es esencial para\u2026"
 title: "Generaci\xF3n de n\xFAmeros aleatorios"
+weight: 12
 ---
-
-{{< edit_this_page >}}
 
 ## Qué y Por Qué
 

@@ -21,9 +21,8 @@ summary: "\uD504\uB85C\uADF8\uB798\uBC0D\uC5D0\uC11C \uB85C\uAE45\uC740 \uAE30\u
   \uD130\uB9C1\uD558\uBA70, \uBCF4\uC548\uACFC \uC900\uC218 \uC0AC\uC720\uB85C \uD589\
   \uC704\uB97C \uAC10\uC0AC\uD558\uAE30 \uC704\uD574 \uB85C\uAE45\uC744\u2026"
 title: "\uB85C\uAE45"
+weight: 17
 ---
-
-{{< edit_this_page >}}
 
 ## 무엇과 왜?
 프로그래밍에서 로깅은 기록된 이벤트 또는 메시지의 형태로 남겨진 일련의 흔적으로, 주어진 순간에 어플리케이션이 무엇을 하는지 추적하는 데 사용할 수 있습니다. 프로그래머들은 문제를 디버깅하고, 시스템 성능을 모니터링하며, 보안과 준수 사유로 행위를 감사하기 위해 로깅을 수행합니다.

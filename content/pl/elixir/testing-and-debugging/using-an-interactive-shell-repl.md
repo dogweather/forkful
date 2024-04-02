@@ -8,9 +8,8 @@ model: gpt-4-0125-preview
 summary: "Interaktywna pow\u0142oka, czyli REPL (Read-Eval-Print Loop - P\u0119tla\
   \ Czytaj-Ewaluuj-Wydrukuj), pozwala na testowanie fragment\xF3w kodu w czasie rzeczywistym.\u2026"
 title: Korzystanie z interaktywnego shella (REPL)
+weight: 34
 ---
-
-{{< edit_this_page >}}
 
 ## Co i dlaczego?
 Interaktywna powłoka, czyli REPL (Read-Eval-Print Loop - Pętla Czytaj-Ewaluuj-Wydrukuj), pozwala na testowanie fragmentów kodu w czasie rzeczywistym. Programiści Elixira używają REPL, zwanego IEx (Interaktywny Elixir), do eksperymentowania, debugowania i uczenia się języka.

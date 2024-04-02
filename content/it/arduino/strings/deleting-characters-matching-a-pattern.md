@@ -7,9 +7,8 @@ model: gpt-4-1106-preview
 summary: "Eliminare caratteri che corrispondono a un certo schema significa rimuovere\
   \ specifici elementi da una stringa, per pulirla o per estrarre dati essenziali.\u2026"
 title: Eliminazione di caratteri che corrispondono a un pattern
+weight: 5
 ---
-
-{{< edit_this_page >}}
 
 ## Cosa & Perché?
 Eliminare caratteri che corrispondono a un certo schema significa rimuovere specifici elementi da una stringa, per pulirla o per estrarre dati essenziali. I programmatori lo fanno per gestire meglio le informazioni e ridurre errori.

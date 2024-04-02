@@ -12,9 +12,8 @@ summary: "\u5F00\u59CB\u4E00\u4E2A\u65B0\u9879\u76EE\u5C31\u662F\u4ECE\u96F6\u54
   \u4E48\u505A\u662F\u4E3A\u4E86\u89E3\u51B3\u95EE\u9898\uFF0C\u5236\u4F5C\u5DE5\u5177\
   \uFF0C\u6216\u8005\u8868\u73B0\u521B\u610F\u3002"
 title: "\u5F00\u59CB\u4E00\u4E2A\u65B0\u9879\u76EE"
+weight: 1
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why? 什么与为什么？
 开始一个新项目就是从零启动你的软件创作过程。程序员这么做是为了解决问题，制作工具，或者表现创意。

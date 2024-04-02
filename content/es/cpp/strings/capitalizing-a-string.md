@@ -11,9 +11,8 @@ summary: "Capitalizar un string implica convertir el car\xE1cter inicial de cada
   \ en el string a may\xFAscula si est\xE1 en min\xFAscula, manteniendo sin cambio\
   \ los\u2026"
 title: Capitalizando una cadena de texto
+weight: 2
 ---
-
-{{< edit_this_page >}}
 
 ## ¿Qué y por qué?
 Capitalizar un string implica convertir el carácter inicial de cada palabra en el string a mayúscula si está en minúscula, manteniendo sin cambio los caracteres restantes. Los programadores a menudo realizan esta tarea para el formateo de salidas, entradas de usuario o procesamiento de datos para asegurar consistencia en cómo se presenta o procesa el texto, especialmente en interfaces de usuario o tareas de normalización de datos.

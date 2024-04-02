@@ -26,9 +26,8 @@ summary: "REPL \u098F\u09B0 \u09AA\u09C2\u09B0\u09CD\u09A3\u09B0\u09C2\u09AA \u0
 title: "\u0987\u09A8\u09CD\u099F\u09BE\u09B0\u09AF\u09BC\u09BE\u0995\u09CD\u099F\u09BF\
   \u09AD \u09B6\u09C7\u09B2 (REPL) \u09AC\u09CD\u09AF\u09AC\u09B9\u09BE\u09B0 \u0995\
   \u09B0\u09BE"
+weight: 34
 ---
-
-{{< edit_this_page >}}
 
 ## কি ও কেন?
 REPL এর পূর্ণরূপ হল Read-Eval-Print Loop, একটি ইন্টারেক্টিভ পরিবেশ যেখানে আপনি দ্রুত কোড পরীক্ষা করতে পারেন। প্রোগ্রামারগণ এটি পরীক্ষা করা, ডিবাগিং, এবং একটি ভাষার বৈশিষ্ট্যগুলি শিখতে ব্যবহার করে থাকেন।

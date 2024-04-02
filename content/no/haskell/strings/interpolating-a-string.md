@@ -8,9 +8,8 @@ model: gpt-4-1106-preview
 summary: "Strenginterpolering lar deg sette inn variabler eller uttrykk inni en tekststreng.\
   \ Det gj\xF8r det enklere \xE5 bygge dynamiske tekster, og holder koden ryddig\u2026"
 title: Interpolering av en streng
+weight: 8
 ---
-
-{{< edit_this_page >}}
 
 ## Hva & Hvorfor?
 Strenginterpolering lar deg sette inn variabler eller uttrykk inni en tekststreng. Det gjør det enklere å bygge dynamiske tekster, og holder koden ryddig og leselig.

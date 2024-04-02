@@ -1,14 +1,15 @@
 ---
 date: 2024-01-26 03:49:55.315463-07:00
-description: "Sumergirse en un depurador trata sobre avanzar paso a paso por tu c\xF3\
-  digo, observando c\xF3mo funcionan los engranajes y atrapando esos molestos errores\
-  \ con\u2026"
+description: "Aqu\xED tienes un peque\xF1o adelanto de c\xF3mo depurar en Kotlin con\
+  \ IntelliJ IDEA - el Sherlock Holmes de los IDEs: ```kotlin fun main() { val mysteryNumber\
+  \ =\u2026"
 lastmod: '2024-03-13T22:44:59.040422-06:00'
 model: gpt-4-0125-preview
-summary: "Sumergirse en un depurador trata sobre avanzar paso a paso por tu c\xF3\
-  digo, observando c\xF3mo funcionan los engranajes y atrapando esos molestos errores\
-  \ con\u2026"
+summary: "Aqu\xED tienes un peque\xF1o adelanto de c\xF3mo depurar en Kotlin con IntelliJ\
+  \ IDEA - el Sherlock Holmes de los IDEs: ```kotlin fun main() { val mysteryNumber\
+  \ =\u2026"
 title: Usando un depurador
+weight: 35
 ---
 
 ## Cómo hacerlo:

@@ -11,9 +11,8 @@ summary: "Att h\xE4mta det aktuella datumet i Dart inneb\xE4r att man fr\xE5gar 
   \ efter det aktuella datumet och tiden. Denna funktionalitet anv\xE4nds vanligtvis\
   \ i\u2026"
 title: "H\xE4mta aktuellt datum"
+weight: 29
 ---
-
-{{< edit_this_page >}}
 
 ## Vad & Varför?
 Att hämta det aktuella datumet i Dart innebär att man frågar systemet efter det aktuella datumet och tiden. Denna funktionalitet används vanligtvis i applikationer för funktioner som att tidsstämpla händelser, visa det aktuella datumet för användare eller beräkna varaktigheter. Att veta hur man effektivt hämtar och manipulerar det aktuella datumet är grundläggande för schemaläggning, loggning och tidskänsliga funktioner.

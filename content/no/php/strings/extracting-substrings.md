@@ -9,9 +9,8 @@ summary: "Utdrag av substringer er n\xE5r du henter en del av en streng. Program
   \ gj\xF8r dette for \xE5 manipulere og analysere tekst, som \xE5 hente ut et brukernavn\
   \ fra\u2026"
 title: Uthenting av delstrenger
+weight: 6
 ---
-
-{{< edit_this_page >}}
 
 ## Hva & Hvorfor?
 

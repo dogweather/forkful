@@ -11,9 +11,8 @@ summary: "Pisanie test\xF3w w JavaScript odnosi si\u0119 do praktyki tworzenia a
   \ skrypt\xF3w, kt\xF3re uruchamiaj\u0105 tw\xF3j kod, aby upewni\u0107 si\u0119\
   , \u017Ce dzia\u0142a on zgodnie z\u2026"
 title: "Pisanie test\xF3w"
+weight: 36
 ---
-
-{{< edit_this_page >}}
 
 ## Co i dlaczego?
 

@@ -9,9 +9,8 @@ summary: "\xC5 konvertere en dato til en streng er \xE5 omdanne et Date-objekt t
   \ en tekstrepresentasjon. Vi gj\xF8r dette for \xE5 gj\xF8re datoer leselige for\
   \ mennesker eller\u2026"
 title: Konvertere en dato til en streng
+weight: 28
 ---
-
-{{< edit_this_page >}}
 
 ## Hva & Hvorfor?
 Å konvertere en dato til en streng er å omdanne et Date-objekt til en tekstrepresentasjon. Vi gjør dette for å gjøre datoer leselige for mennesker eller for å formatere dem for databaser eller filer.

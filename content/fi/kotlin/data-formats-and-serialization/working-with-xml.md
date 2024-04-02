@@ -9,9 +9,8 @@ summary: "XML:n k\xE4sittelyyn kuuluu XML-dokumenttien j\xE4sent\xE4minen, luomi
   \ ja manipulointi \u2013 merkint\xE4kieli datan tallennukseen ja siirtoon. Ohjelmoijat\
   \ tekev\xE4t\u2026"
 title: "XML:n k\xE4sittely"
+weight: 40
 ---
-
-{{< edit_this_page >}}
 
 ## Mikä & Miksi?
 XML:n käsittelyyn kuuluu XML-dokumenttien jäsentäminen, luominen ja manipulointi – merkintäkieli datan tallennukseen ja siirtoon. Ohjelmoijat tekevät tätä, koska monet järjestelmät vaihtavat edelleen tietoja XML-muodossa, ja sitä tarvitaan vanhojen järjestelmien tukemiseen ja olemassa olevien teknologioiden kanssa integroimiseen.

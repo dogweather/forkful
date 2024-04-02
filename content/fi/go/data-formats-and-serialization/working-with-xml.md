@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "XML:n k\xE4sittely Go:ssa kattaa XML-dokumenttien j\xE4sennyksen (lukemisen)\
   \ ja luonnin (kirjoittaminen) \u2013 vakiomuodon rakenteelliselle tietojenvaihdolle.\u2026"
 title: "Ty\xF6skentely XML:n kanssa"
+weight: 40
 ---
-
-{{< edit_this_page >}}
 
 ## Mikä ja miksi?
 

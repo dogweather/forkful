@@ -14,9 +14,8 @@ summary: "Bi\u1EC3u th\u1EE9c ch\xEDnh quy, th\u01B0\u1EDDng \u0111\u01B0\u1EE3c
   \u1EE3c s\u1EED d\u1EE5ng \u0111\u1EC3 kh\u1EDBp c\xE1c k\u1EBFt h\u1EE3p k\xFD\
   \ t\u1EF1 trong chu\u1ED7i. L\u1EADp tr\xECnh vi\xEAn s\u1EED d\u1EE5ng ch\xFAng\u2026"
 title: "S\u1EED d\u1EE5ng bi\u1EC3u th\u1EE9c ch\xEDnh quy"
+weight: 11
 ---
-
-{{< edit_this_page >}}
 
 ## Là gì & Tại sao?
 Biểu thức chính quy, thường được biết đến với tên gọi regex, là các mẫu được sử dụng để khớp các kết hợp ký tự trong chuỗi. Lập trình viên sử dụng chúng để tìm kiếm, chỉnh sửa và thao tác văn bản một cách chính xác và hiệu quả.

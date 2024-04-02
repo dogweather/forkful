@@ -13,9 +13,8 @@ summary: "L\xE0m vi\u1EC7c v\u1EDBi CSV, vi\u1EBFt t\u1EAFt c\u1EE7a Comma-Separ
   a l\xE0 x\u1EED l\xFD d\u1EEF li\u1EC7u d\u01B0\u1EDBi d\u1EA1ng v\u0103n b\u1EA3\
   n thu\u1EA7n t\xFAy, trong \u0111\xF3\u2026"
 title: "L\xE0m vi\u1EC7c v\u1EDBi CSV"
+weight: 37
 ---
-
-{{< edit_this_page >}}
 
 ## Cái gì & Tại sao?
 

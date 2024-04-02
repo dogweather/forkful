@@ -23,9 +23,8 @@ summary: "HTML \u092A\u093E\u0930\u094D\u0938 \u0915\u0930\u0928\u0947 \u0915\u0
   \u093E \u092F\u093E \u0938\u0902\u0936\u094B\u0927\u093F\u0924 \u0915\u093F\u092F\
   \u093E\u2026"
 title: "HTML \u092A\u093E\u0930\u094D\u0938 \u0915\u0930\u0928\u093E"
+weight: 43
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why? (क्या और क्यों?)
 

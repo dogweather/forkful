@@ -11,9 +11,8 @@ summary: "Trabalhar com n\xFAmeros complexos envolve realizar opera\xE7\xF5es ma
   ticas em n\xFAmeros que possuem tanto uma parte real quanto uma parte imagin\xE1\
   ria.\u2026"
 title: "Trabalhando com n\xFAmeros complexos"
+weight: 14
 ---
-
-{{< edit_this_page >}}
 
 ## O que & Por quê?
 

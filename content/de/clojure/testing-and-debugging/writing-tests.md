@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Tests in Clojure zu schreiben, \xE4hnlich wie in anderen Programmiersprachen,\
   \ umfasst das Erstellen von dediziertem Code, um zu verifizieren, dass Ihre\u2026"
 title: Tests Schreiben
+weight: 36
 ---
-
-{{< edit_this_page >}}
 
 ## Was & Warum?
 Tests in Clojure zu schreiben, ähnlich wie in anderen Programmiersprachen, umfasst das Erstellen von dediziertem Code, um zu verifizieren, dass Ihre Hauptcodebasis wie erwartet funktioniert. Es hilft dabei, die Korrektheit zu gewährleisten, das Refactoring zu erleichtern und die Code-Stabilität zu verbessern.

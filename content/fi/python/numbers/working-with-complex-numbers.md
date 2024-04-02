@@ -9,9 +9,8 @@ summary: "Kompleksiluvut ovat lukujoukko muotoa `a + bi`, miss\xE4 `a` ja `b` ov
   \ reaalilukuja, ja `i` on imaginaariyksikk\xF6 (`i^2 = -1`). Ohjelmoinnissa niit\xE4\
   \u2026"
 title: "Kompleksilukujen k\xE4sittely"
+weight: 14
 ---
-
-{{< edit_this_page >}}
 
 ## Mikä ja miksi?
 Kompleksiluvut ovat lukujoukko muotoa `a + bi`, missä `a` ja `b` ovat reaalilukuja, ja `i` on imaginaariyksikkö (`i^2 = -1`). Ohjelmoinnissa niitä käytetään ratkaisemaan ongelmia eri aloilla, kuten sähkötekniikassa, signaalinkäsittelyssä ja kvanttilaskennassa.

@@ -9,9 +9,8 @@ summary: "Misurare la lunghezza di una stringa significa contare i caratteri che
   \ compongono. I programmatori lo fanno per validare l\u2019input, troncare il testo\
   \ o\u2026"
 title: Trovare la lunghezza di una stringa
+weight: 7
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 Misurare la lunghezza di una stringa significa contare i caratteri che la compongono. I programmatori lo fanno per validare l’input, troncare il testo o semplicemente per analisi.

@@ -11,9 +11,8 @@ summary: "Capitalizzare una stringa in Rust comporta la modifica della stringa i
   \ modo che il suo primo carattere sia una lettera maiuscola, lasciando inalterata\
   \ il\u2026"
 title: Capitalizzare una stringa
+weight: 2
 ---
-
-{{< edit_this_page >}}
 
 ## Cosa e Perché?
 

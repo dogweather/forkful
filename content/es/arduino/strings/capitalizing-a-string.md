@@ -11,9 +11,8 @@ summary: "Capitalizar una cadena implica convertir el primer car\xE1cter de cada
   \ en una cadena a may\xFAsculas mientras se asegura de que el resto permanezcan\
   \ en\u2026"
 title: Capitalizando una cadena de texto
+weight: 2
 ---
-
-{{< edit_this_page >}}
 
 ## Qué y Por Qué?
 Capitalizar una cadena implica convertir el primer carácter de cada palabra en una cadena a mayúsculas mientras se asegura de que el resto permanezcan en minúsculas. Esta operación es común en el formateo de datos y la normalización de entradas de usuarios para mantener la consistencia y mejorar la legibilidad.

@@ -11,9 +11,8 @@ summary: "L'interpolation de cha\xEEnes dans Google Apps Script permet d'incorpo
   \ dynamiquement des expressions au sein des cha\xEEnes, facilitant ainsi la cr\xE9\
   ation\u2026"
 title: "Interpolation d'une cha\xEEne de caract\xE8res"
+weight: 8
 ---
-
-{{< edit_this_page >}}
 
 ## Quoi & Pourquoi ?
 

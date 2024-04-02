@@ -11,9 +11,8 @@ summary: "JSONin (JavaScript Object Notation) k\xE4sittely Clojuressa sis\xE4lt\
   \xE4 JSON-merkkijonojen j\xE4sent\xE4misen Clojure-tietorakenteiksi (hajautustaulut,\
   \ vektorit) ja\u2026"
 title: "Ty\xF6skentely JSON:n kanssa"
+weight: 38
 ---
-
-{{< edit_this_page >}}
 
 ## Mikä ja Miksi?
 JSONin (JavaScript Object Notation) käsittely Clojuressa sisältää JSON-merkkijonojen jäsentämisen Clojure-tietorakenteiksi (hajautustaulut, vektorit) ja päinvastoin. Tämä tehtävä on perustavaa laatua web-palveluille, API:lle ja sovelluksille, jotka tarvitsevat viestiä tietoja rakenteellisessa, tekstipohjaisessa muodossa, koska JSON on yleisesti tunnustettu ja tuettu eri ohjelmointiympäristöissä.

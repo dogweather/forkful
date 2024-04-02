@@ -7,9 +7,8 @@ model: gpt-4-1106-preview
 summary: "Tekstitiedoston lukeminen tarkoittaa tiedon hakemista tavallisen tekstimuotoisen\
   \ tiedoston sis\xE4lt\xE4. Ohjelmoijat lukevat tekstitiedostoja, koska monet\u2026"
 title: Tekstitiedoston lukeminen
+weight: 22
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why? (Mitä ja Miksi?)
 Tekstitiedoston lukeminen tarkoittaa tiedon hakemista tavallisen tekstimuotoisen tiedoston sisältä. Ohjelmoijat lukevat tekstitiedostoja, koska monet sovellukset tallentavat dataa näihin tiedostoihin, ja niitä on helppo muokata sekä lukea ilman erikoisohjelmia.

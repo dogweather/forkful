@@ -7,9 +7,8 @@ model: gpt-4-0125-preview
 summary: "TOML, acronimo di Tom's Obvious, Minimal Language, definisce come strutturare\
   \ i file di configurazione. I programmatori lavorano con TOML perch\xE9 \xE8 facile\u2026"
 title: Lavorare con TOML
+weight: 39
 ---
-
-{{< edit_this_page >}}
 
 ## Cosa & Perché?
 TOML, acronimo di Tom's Obvious, Minimal Language, definisce come strutturare i file di configurazione. I programmatori lavorano con TOML perché è facile da leggere, scrivere e mappa bene su una tabella hash, rendendolo una scelta preferenziale per le configurazioni.

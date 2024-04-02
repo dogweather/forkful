@@ -11,9 +11,8 @@ summary: "Att tolka HTML i programmering inneb\xE4r att analysera en HTML-dokume
   \ struktur, vilket m\xF6jligg\xF6r f\xF6r dig att extrahera, manipulera och interagera\
   \ med\u2026"
 title: Tolka HTML
+weight: 43
 ---
-
-{{< edit_this_page >}}
 
 ## Vad & Varför?
 

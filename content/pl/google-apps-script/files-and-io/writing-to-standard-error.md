@@ -11,9 +11,8 @@ summary: "Pisanie do standardowego b\u0142\u0119du (stderr) w j\u0119zykach prog
   \ dotyczy kierowania komunikat\xF3w o b\u0142\u0119dach i diagnostyki do oddzielnego\
   \ strumienia,\u2026"
 title: "Pisanie do standardowego b\u0142\u0119du"
+weight: 25
 ---
-
-{{< edit_this_page >}}
 
 ## Co i dlaczego?
 

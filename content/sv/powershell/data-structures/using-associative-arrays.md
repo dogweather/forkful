@@ -11,9 +11,8 @@ summary: "Associativa arrayer, \xE4ven k\xE4nda som hashtabeller eller ordb\xF6c
   \ i PowerShell, l\xE5ter dig lagra data i nyckel-v\xE4rdepar, vilket g\xF6r data\xE5\
   tertagning enkel\u2026"
 title: "Att anv\xE4nda associativa arrayer"
+weight: 15
 ---
-
-{{< edit_this_page >}}
 
 ## Vad & Varför?
 

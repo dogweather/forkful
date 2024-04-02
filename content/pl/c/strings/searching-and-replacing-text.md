@@ -11,9 +11,8 @@ summary: "Wyszukiwanie i zamienianie tekstu w C polega na identyfikacji okre\u01
   lonych podci\u0105g\xF3w w obr\u0119bie wi\u0119kszego ci\u0105gu i zast\u0105pieniu\
   \ ich innymi podci\u0105gami.\u2026"
 title: Wyszukiwanie i zamienianie tekstu
+weight: 10
 ---
-
-{{< edit_this_page >}}
 
 ## Co i dlaczego?
 

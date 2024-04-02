@@ -8,9 +8,8 @@ model: gpt-4-1106-preview
 summary: "Calcular datas no futuro ou no passado \xE9 basicamente adicionar ou subtrair\
   \ dias, meses ou anos a uma data espec\xEDfica. Programadores fazem isso para\u2026"
 title: Calculando uma data no futuro ou passado
+weight: 26
 ---
-
-{{< edit_this_page >}}
 
 ## O Que & Porquê?
 Calcular datas no futuro ou no passado é basicamente adicionar ou subtrair dias, meses ou anos a uma data específica. Programadores fazem isso para gerenciar prazos, calcular idades ou definir cronogramas em aplicativos.

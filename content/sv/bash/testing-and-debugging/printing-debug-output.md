@@ -9,9 +9,8 @@ summary: "Att skriva ut fels\xF6kningsdata (\"debug output\") \xE4r som att l\xE
   gga sm\xE5 post-it-lappar i din kod f\xF6r att se vad som faktiskt h\xE4nder. Programmerare\
   \ g\xF6r det f\xF6r\u2026"
 title: "Skriva ut fels\xF6kningsdata"
+weight: 33
 ---
-
-{{< edit_this_page >}}
 
 ## Vad & Varför?
 Att skriva ut felsökningsdata ("debug output") är som att lägga små post-it-lappar i din kod för att se vad som faktiskt händer. Programmerare gör det för att spåra buggar och kontrollera programmets flöde snabbt och enkelt.

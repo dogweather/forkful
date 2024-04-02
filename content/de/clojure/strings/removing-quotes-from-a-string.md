@@ -9,9 +9,8 @@ summary: "Das Entfernen von Anf\xFChrungszeichen aus einem String bedeutet, sich
   \ diesen l\xE4stigen doppelten oder einfachen Anf\xFChrungszeichen zu befreien,\
   \ die Ihren\u2026"
 title: "Anf\xFChrungszeichen aus einem String entfernen"
+weight: 9
 ---
-
-{{< edit_this_page >}}
 
 ## Was & Warum?
 Das Entfernen von Anführungszeichen aus einem String bedeutet, sich von diesen lästigen doppelten oder einfachen Anführungszeichen zu befreien, die Ihren Text umschließen. Programmierer tun dies, um Daten zu säubern, Einheitlichkeit zu gewährleisten oder Strings für die Verarbeitung vorzubereiten, bei denen Anführungszeichen unerwünscht sind oder Fehler verursachen können.

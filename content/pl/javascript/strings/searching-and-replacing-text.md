@@ -7,9 +7,8 @@ model: gpt-4-1106-preview
 summary: "Szukanie i zamiana tekstu to zmiana fragment\xF3w tekstu na inne. Programi\u015B\
   ci robi\u0105 to dla automatyzacji, edycji danych i naprawy b\u0142\u0119d\xF3w."
 title: Wyszukiwanie i zamiana tekstu
+weight: 10
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why? (Co i Dlaczego?)
 Szukanie i zamiana tekstu to zmiana fragmentów tekstu na inne. Programiści robią to dla automatyzacji, edycji danych i naprawy błędów.

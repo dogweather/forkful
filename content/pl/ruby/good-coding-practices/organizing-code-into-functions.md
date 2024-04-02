@@ -9,9 +9,8 @@ summary: "Organizowanie kodu w funkcje dzieli skrypt na wielokrotnie u\u017Cytec
   \ fragmenty. Chodzi o to, by kod by\u0142 czytelny, \u0142atwy w zarz\u0105dzaniu\
   \ i mniej podatny na\u2026"
 title: Organizacja kodu w funkcje
+weight: 18
 ---
-
-{{< edit_this_page >}}
 
 ## Co i dlaczego?
 Organizowanie kodu w funkcje dzieli skrypt na wielokrotnie użyteczne fragmenty. Chodzi o to, by kod był czytelny, łatwy w zarządzaniu i mniej podatny na błędy. Modularny kod jest świetny, ponieważ oszczędza czas, chroni zdrowie psychiczne i upraszcza debugowanie oraz testowanie jednostkowe.

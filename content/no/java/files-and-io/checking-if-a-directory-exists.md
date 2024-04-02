@@ -11,9 +11,8 @@ summary: "\xC5 sjekke om en mappe eksisterer i Java er en grunnleggende oppgave 
   \ involverer \xE5 verifisere tilstedev\xE6relsen av en mappe i filsystemet f\xF8\
   r man leser\u2026"
 title: Sjekker om en mappe eksisterer
+weight: 20
 ---
-
-{{< edit_this_page >}}
 
 ## Hva & Hvorfor?
 Å sjekke om en mappe eksisterer i Java er en grunnleggende oppgave som involverer å verifisere tilstedeværelsen av en mappe i filsystemet før man leser fra den, skriver til den eller utfører andre operasjoner som krever at den eksisterer. Dette er avgjørende for å unngå feil eller unntak i programmer som samhandler med filsystemet, noe som sikrer en jevnere utførelse og en bedre brukeropplevelse.

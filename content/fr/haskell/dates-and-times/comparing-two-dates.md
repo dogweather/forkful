@@ -9,9 +9,8 @@ summary: "Comparer deux dates permet de d\xE9terminer laquelle est la plus ancie
   \ ou de calculer la dur\xE9e entre elles. C\u2019est crucial dans les t\xE2ches\
   \ comme\u2026"
 title: Comparer deux dates
+weight: 27
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 Comparer deux dates permet de déterminer laquelle est la plus ancienne ou de calculer la durée entre elles. C’est crucial dans les tâches comme l’organisation d’événements, la gestion de réservations ou le suivi de délais.

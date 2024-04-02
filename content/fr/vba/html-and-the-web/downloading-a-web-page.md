@@ -10,9 +10,8 @@ model: gpt-4-0125-preview
 summary: "T\xE9l\xE9charger une page web en Visual Basic pour Applications (VBA) consiste\
   \ \xE0 r\xE9cup\xE9rer le contenu HTML d'une page web depuis Internet. Les programmeurs\u2026"
 title: "T\xE9l\xE9charger une page web"
+weight: 42
 ---
-
-{{< edit_this_page >}}
 
 ## Quoi & Pourquoi ?
 

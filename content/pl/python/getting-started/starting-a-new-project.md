@@ -12,9 +12,8 @@ summary: "Rozpoczynaj\u0105c nowy projekt w Pythonie chodzi o to, aby od samego 
   tku ustawi\u0107 zorganizowan\u0105 i \u0142atw\u0105 w utrzymaniu struktur\u0119\
   . Programi\u015Bci robi\u0105 to, aby\u2026"
 title: Rozpoczynanie nowego projektu
+weight: 1
 ---
-
-{{< edit_this_page >}}
 
 ## Co i dlaczego?
 

@@ -7,9 +7,8 @@ model: gpt-4-1106-preview
 summary: "Extraer substrings (subcadenas) significa tomar un pedazo espec\xEDfico\
   \ de una cadena de texto. Los programadores lo hacen para aislar datos, limpiar\u2026"
 title: "Extracci\xF3n de subcadenas"
+weight: 6
 ---
-
-{{< edit_this_page >}}
 
 ## ¿Qué y Por Qué?
 Extraer substrings (subcadenas) significa tomar un pedazo específico de una cadena de texto. Los programadores lo hacen para aislar datos, limpiar entradas o simplemente para trabajar con un fragmento de información relevante.

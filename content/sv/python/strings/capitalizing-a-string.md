@@ -11,9 +11,8 @@ summary: "Att g\xF6ra en str\xE4ng med stor begynnelsebokstav inneb\xE4r att kon
   \ det f\xF6rsta tecknet i en str\xE4ng till versal och resten till gemener. Denna\
   \ operation\u2026"
 title: "G\xF6r om en str\xE4ng till versaler"
+weight: 2
 ---
-
-{{< edit_this_page >}}
 
 ## Vad och varför?
 Att göra en sträng med stor begynnelsebokstav innebär att konvertera det första tecknet i en sträng till versal och resten till gemener. Denna operation används ofta i databehandling för att normalisera inmatningar eller förbättra läsbarheten för titlar, namn och dyligt.

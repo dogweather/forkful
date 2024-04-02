@@ -9,9 +9,8 @@ summary: "\"Mik\xE4 ja Miksi?\" Tekstitiedoston lukeminen tarkoittaa tiedon hake
   \ tekstimuotoisista tiedostoista. Ohjelmoijat tekev\xE4t t\xE4t\xE4 datan k\xE4\
   sittelyn,\u2026"
 title: Tekstitiedoston lukeminen
+weight: 22
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 "Mikä ja Miksi?"

@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Het organiseren van code in functies in Go omvat het opsplitsen van code\
   \ in herbruikbare, modulaire blokken die specifieke taken uitvoeren. Deze aanpak\u2026"
 title: Code organiseren in functies
+weight: 18
 ---
-
-{{< edit_this_page >}}
 
 ## Wat & Waarom?
 

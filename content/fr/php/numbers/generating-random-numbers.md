@@ -9,9 +9,8 @@ summary: "G\xE9n\xE9rer des nombres al\xE9atoires en PHP consiste \xE0 produire 
   \ valeurs impr\xE9visibles dans une plage sp\xE9cifi\xE9e, ce qui est essentiel\
   \ pour des t\xE2ches comme\u2026"
 title: "G\xE9n\xE9ration de nombres al\xE9atoires"
+weight: 12
 ---
-
-{{< edit_this_page >}}
 
 ## Quoi & Pourquoi ?
 

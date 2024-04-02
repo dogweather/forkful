@@ -20,9 +20,8 @@ summary: "Command line arguments \u0935\u094B \u092A\u0948\u0930\u093E\u092E\u09
   \ \u0938\u0947 \u0939\u092E program\u2026"
 title: "\u0915\u092E\u093E\u0902\u0921 \u0932\u093E\u0907\u0928 \u0906\u0930\u094D\
   \u0917\u0941\u092E\u0947\u0902\u091F\u094D\u0938 \u092A\u0922\u093C\u0928\u093E"
+weight: 23
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why? (क्या और क्यों?)
 

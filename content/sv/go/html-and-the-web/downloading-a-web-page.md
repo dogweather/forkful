@@ -11,9 +11,8 @@ summary: "Att ladda ner en webbsida handlar om att h\xE4mta HTML-inneh\xE5llet p
   \ en webbsida via HTTP/HTTPS-protokollet. Programmerare g\xF6r ofta detta f\xF6\
   r webbskrapning,\u2026"
 title: Ladda ner en webbsida
+weight: 42
 ---
-
-{{< edit_this_page >}}
 
 ## Vad & Varför?
 

@@ -8,9 +8,8 @@ model: gpt-4-1106-preview
 summary: "Trouver la longueur d'une cha\xEEne en PHP, c'est compter le nombre de caract\xE8\
   res qu'elle contient. Les programmeurs en ont besoin pour valider des saisies,\u2026"
 title: "Trouver la longueur d'une cha\xEEne de caract\xE8res"
+weight: 7
 ---
-
-{{< edit_this_page >}}
 
 ## Quoi & Pourquoi?
 Trouver la longueur d'une chaîne en PHP, c'est compter le nombre de caractères qu'elle contient. Les programmeurs en ont besoin pour valider des saisies, manipuler des textes ou pour tout simplement savoir où ils en sont.

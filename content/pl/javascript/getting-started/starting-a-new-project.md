@@ -9,9 +9,8 @@ summary: "Zaczynanie nowego projektu to stawianie pierwszych krok\xF3w w kodzie.
   \ to, by rozwi\u0105za\u0107 problem, nauczy\u0107 si\u0119 czego\u015B nowego lub\
   \ stworzy\u0107 co\u015B\u2026"
 title: Rozpoczynanie nowego projektu
+weight: 1
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 

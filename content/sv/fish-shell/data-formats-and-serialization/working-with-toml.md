@@ -9,9 +9,8 @@ summary: "TOML \xE4r ett config-filformat, enkelt f\xF6r m\xE4nniskor att l\xE4s
   \ och skriva, samt enkelt f\xF6r maskiner att tolka och generera. Programmerare\
   \ arbetar med TOML\u2026"
 title: Att arbeta med TOML
+weight: 39
 ---
-
-{{< edit_this_page >}}
 
 ## Vad & Varför?
 TOML är ett config-filformat, enkelt för människor att läsa och skriva, samt enkelt för maskiner att tolka och generera. Programmerare arbetar med TOML för tydliga, hierarkiska config-filer i projekt där läsbarheten är avgörande.

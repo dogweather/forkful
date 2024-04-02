@@ -9,9 +9,8 @@ summary: "Refaktoryzacja to proces zmiany wewn\u0119trznej struktury programu ko
   \ bez zmiany jego zewn\u0119trznego zachowania. Programi\u015Bci robi\u0105 to,\
   \ aby oczy\u015Bci\u0107\u2026"
 title: Refaktoryzacja
+weight: 19
 ---
-
-{{< edit_this_page >}}
 
 ## Co i dlaczego?
 

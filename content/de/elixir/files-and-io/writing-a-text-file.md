@@ -11,9 +11,8 @@ summary: "Das Schreiben in eine Textdatei in Elixir ist eine wesentliche F\xE4hi
   \ f\xFCr Entwickler, die es erm\xF6glicht, Daten zu persistieren, zu protokollieren\
   \ oder\u2026"
 title: Eine Textdatei schreiben
+weight: 24
 ---
-
-{{< edit_this_page >}}
 
 ## Was & Warum?
 

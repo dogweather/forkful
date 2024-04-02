@@ -7,9 +7,8 @@ model: gpt-4-1106-preview
 summary: L'interpolazione di stringhe permette di inserire valori dinamici in una
   stringa. Programmatori la usano per creare testo flessibile e leggibile.
 title: Interpolazione di una stringa
+weight: 8
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 L'interpolazione di stringhe permette di inserire valori dinamici in una stringa. Programmatori la usano per creare testo flessibile e leggibile.

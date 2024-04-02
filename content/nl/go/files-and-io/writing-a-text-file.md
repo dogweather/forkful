@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Een tekstbestand schrijven in Go omvat het cre\xEBren en schrijven van datareeksen\
   \ in een nieuw of bestaand tekstbestand. Programmeurs doen dit om gegevens\u2026"
 title: Een tekstbestand schrijven
+weight: 24
 ---
-
-{{< edit_this_page >}}
 
 ## Wat & Waarom?
 

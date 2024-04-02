@@ -11,9 +11,8 @@ summary: "Pisanie test\xF3w w Elixirze polega na tworzeniu zautomatyzowanych skr
   w w celu weryfikacji zachowania Twojego kodu. Programi\u015Bci robi\u0105 to, aby\
   \ zapewni\u0107\u2026"
 title: "Pisanie test\xF3w"
+weight: 36
 ---
-
-{{< edit_this_page >}}
 
 ## Co i dlaczego?
 Pisanie testów w Elixirze polega na tworzeniu zautomatyzowanych skryptów w celu weryfikacji zachowania Twojego kodu. Programiści robią to, aby zapewnić jakość, zapobiec regresji i ułatwić refaktoryzację kodu, czyniąc proces rozwoju bardziej niezawodnym i efektywnym.

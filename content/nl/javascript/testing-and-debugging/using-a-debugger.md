@@ -2,15 +2,14 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:08:45.299623-07:00
-description: "Een debugger gebruiken betekent dat je gespecialiseerde tools inzet\
-  \ die je een kijkje onder de motorkap van je code geven, door het stap voor stap\
-  \ uit te\u2026"
+description: "Hier is een stukje JavaScript-code dat zich niet gedraagt zoals verwacht:\
+  \ ```javascript function buggyMultiply(a, b) { return a + b; // Oeps! Dit zou een\u2026"
 lastmod: '2024-03-13T22:44:51.206348-06:00'
 model: gpt-4-0125-preview
-summary: "Een debugger gebruiken betekent dat je gespecialiseerde tools inzet die\
-  \ je een kijkje onder de motorkap van je code geven, door het stap voor stap uit\
-  \ te\u2026"
+summary: "Hier is een stukje JavaScript-code dat zich niet gedraagt zoals verwacht:\
+  \ ```javascript function buggyMultiply(a, b) { return a + b; // Oeps! Dit zou een\u2026"
 title: Een debugger gebruiken
+weight: 35
 ---
 
 ## Hoe:

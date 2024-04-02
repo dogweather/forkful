@@ -7,9 +7,8 @@ model: gpt-4-0125-preview
 summary: "Editar arquivos in-place com one-liners de CLI (Interface de Linha de Comando)\
   \ em Ruby permite modificar arquivos diretamente do seu terminal, sem a\u2026"
 title: Editando arquivos in loco com linhas de comando
+weight: 32
 ---
-
-{{< edit_this_page >}}
 
 ## O Que & Por Quê?
 

@@ -19,9 +19,8 @@ summary: "\u05E2\u05D1\u05D5\u05D3\u05D4 \u05E2\u05DD XML \u05DB\u05D5\u05DC\u05
   \u05E4\u05E8\u05D1\u05D9\u05DC\u05D9\u05D5\u05EA \u05E2\u05DD \u05DE\u05E2\u05E8\
   \u05DB\u05D5\u05EA \u05D0\u05D7\u05E8\u05D5\u05EA \u05D0\u05D5\u2026"
 title: "\u05E2\u05D1\u05D5\u05D3\u05D4 \u05E2\u05DD XML"
+weight: 40
 ---
-
-{{< edit_this_page >}}
 
 ## מה ולמה?
 עבודה עם XML כוללת עיבוד וגישה לנתונים מובנים בשפת  ה-eXtensible Markup Language. מתכנתים עובדים עם XML על מנת לאפשר אינטרופרביליות עם מערכות אחרות או לקרוא ולכתוב קבצי תצורה, הזנות נתונים, ומסמכים מובנים אחרים הנפוצים בשירותי רשת.

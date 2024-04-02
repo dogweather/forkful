@@ -11,9 +11,8 @@ summary: "Kapitalizacja ci\u0105gu znak\xF3w oznacza przekszta\u0142cenie pierws
   \ znaku ci\u0105gu na wielk\u0105 liter\u0119, a reszt\u0119 na ma\u0142e litery.\
   \ Operacja ta jest powszechnie\u2026"
 title: "Zamiana liter na wielkie w \u0142a\u0144cuchu znak\xF3w"
+weight: 2
 ---
-
-{{< edit_this_page >}}
 
 ## Co i dlaczego?
 Kapitalizacja ciągu znaków oznacza przekształcenie pierwszego znaku ciągu na wielką literę, a resztę na małe litery. Operacja ta jest powszechnie stosowana w przetwarzaniu danych w celu normalizacji danych wejściowych lub poprawy czytelności tytułów, nazwisk itp.

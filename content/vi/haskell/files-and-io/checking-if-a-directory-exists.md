@@ -13,9 +13,8 @@ summary: "Vi\u1EC7c ki\u1EC3m tra xem m\u1ED9t th\u01B0 m\u1EE5c c\xF3 t\u1ED3n 
   \xF3 c\xF3 th\u1EF1c s\u1EF1 n\u1EB1m \u1EDF v\u1ECB tr\xED b\u1EA1n ngh\u0129 trong\
   \ h\u1EC7 th\u1ED1ng t\u1EC7p hay kh\xF4ng. C\xE1c l\u1EADp\u2026"
 title: "Ki\u1EC3m tra xem th\u01B0 m\u1EE5c c\xF3 t\u1ED3n t\u1EA1i kh\xF4ng"
+weight: 20
 ---
-
-{{< edit_this_page >}}
 
 ## Cái gì & Tại sao?
 Việc kiểm tra xem một thư mục có tồn tại không có nghĩa là xác nhận liệu thư mục đó có thực sự nằm ở vị trí bạn nghĩ trong hệ thống tệp hay không. Các lập trình viên làm điều này để tránh những lỗi như cố gắng đọc từ một thư mục không tồn tại hoặc vô tình tạo ra các thư mục trùng lặp.

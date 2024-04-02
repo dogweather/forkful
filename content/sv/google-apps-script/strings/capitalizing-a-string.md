@@ -11,9 +11,8 @@ summary: "Att g\xF6ra om en str\xE4ng s\xE5 att f\xF6rsta bokstaven \xE4r stor o
   \ resten sm\xE5 \xE4r en vanlig metoder f\xF6r att formatera namn eller titlar.\
   \ Det inneb\xE4r att man \xE4ndrar\u2026"
 title: "G\xF6r om en str\xE4ng till versaler"
+weight: 2
 ---
-
-{{< edit_this_page >}}
 
 ## Vad & Varför?
 

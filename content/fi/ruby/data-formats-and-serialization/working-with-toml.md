@@ -7,9 +7,8 @@ model: gpt-4-0125-preview
 summary: "TOML on konfiguraatiotiedostomuoto, joka on helppo lukea sen selkeiden semantiikkojen\
   \ ansiosta. Ohjelmoijat k\xE4ytt\xE4v\xE4t TOML:\xE4\xE4 sovellusten\u2026"
 title: "Ty\xF6skentely TOML:n kanssa"
+weight: 39
 ---
-
-{{< edit_this_page >}}
 
 ## Mikä & Miksi?
 

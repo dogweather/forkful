@@ -9,9 +9,8 @@ summary: "Iniziamo nuovi progetti per trasformare idee in software. \xC8 il prim
   \ passo per sviluppare applicazioni che risolvono problemi o realizzano qualcosa\
   \ di\u2026"
 title: Avvio di un nuovo progetto
+weight: 1
 ---
-
-{{< edit_this_page >}}
 
 ## Che cosa & Perché?
 Iniziamo nuovi progetti per trasformare idee in software. È il primo passo per sviluppare applicazioni che risolvono problemi o realizzano qualcosa di nuovo.

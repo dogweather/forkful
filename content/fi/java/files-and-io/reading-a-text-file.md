@@ -7,9 +7,8 @@ model: gpt-4-1106-preview
 summary: "Tekstitiedoston lukeminen tarkoittaa tiedon hakemista tiedostosta ohjelmallasi.\
   \ Koodarit tekev\xE4t t\xE4t\xE4 datan k\xE4sittelyyn, analyysiin ja tiedonsiirtoon."
 title: Tekstitiedoston lukeminen
+weight: 22
 ---
-
-{{< edit_this_page >}}
 
 ## Mitä & Miksi?
 Tekstitiedoston lukeminen tarkoittaa tiedon hakemista tiedostosta ohjelmallasi. Koodarit tekevät tätä datan käsittelyyn, analyysiin ja tiedonsiirtoon.

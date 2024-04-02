@@ -11,9 +11,8 @@ summary: "YAML, ett dataserialiseringsspr\xE5k designat f\xF6r att vara anv\xE4n
   nligt, anv\xE4nds ofta f\xF6r konfigurationsfiler, mellanprocessmeddelanden och\
   \ datalagring.\u2026"
 title: Att Arbeta med YAML
+weight: 41
 ---
-
-{{< edit_this_page >}}
 
 ## Vad & Varför?
 YAML, ett dataserialiseringsspråk designat för att vara användarvänligt, används ofta för konfigurationsfiler, mellanprocessmeddelanden och datalagring. Programmerare lutar sig mot YAML för dess läsbarhet och användarvänlighet, särskilt när man hanterar komplex strukturerad data, vilket gör det till ett utmärkt val för applikationer utvecklade i TypeScript.

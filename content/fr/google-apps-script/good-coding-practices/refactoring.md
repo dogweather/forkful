@@ -11,9 +11,8 @@ summary: "Le refactoring, dans le lexique de la programmation, d\xE9signe le pro
   \ de restructuration du code informatique existant \u2013 modifier la facturation\
   \ sans\u2026"
 title: Refonte
+weight: 19
 ---
-
-{{< edit_this_page >}}
 
 ## Quoi & Pourquoi ?
 

@@ -19,9 +19,8 @@ summary: "\uD558\uC2A4\uCF08\uC5D0\uC11C \uCF54\uB4DC\uB97C \uD568\uC218\uB85C \
   \uC774\uBA70, \uB514\uBC84\uAE45\uC744 \uB354 \uC27D\uAC8C \uB9CC\uB4ED\uB2C8\uB2E4\
   ."
 title: "\uCF54\uB4DC\uB97C \uD568\uC218\uB85C \uAD6C\uC131\uD558\uAE30"
+weight: 18
 ---
-
-{{< edit_this_page >}}
 
 ## 무엇과 왜?
 하스켈에서 코드를 함수로 구성하는 것은 코드를 재사용 가능하고 이름이 있는 블록으로 분해하는 것을 의미합니다. 왜 그럴까요? 코드를 DRY(Do not Repeat Yourself, 반복하지 않기)하게 유지하고, 가독성을 높이며, 디버깅을 더 쉽게 만듭니다.

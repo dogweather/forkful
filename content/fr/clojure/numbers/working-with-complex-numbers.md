@@ -8,9 +8,8 @@ model: gpt-4-0125-preview
 summary: "Les nombres complexes \xE9tendent les nombres r\xE9els avec une partie suppl\xE9\
   mentaire, l'unit\xE9 imaginaire 'i'. Les programmeurs les utilisent dans divers\u2026"
 title: Manipulation des nombres complexes
+weight: 14
 ---
-
-{{< edit_this_page >}}
 
 ## Quoi et pourquoi ?
 Les nombres complexes étendent les nombres réels avec une partie supplémentaire, l'unité imaginaire 'i'. Les programmeurs les utilisent dans divers domaines, notamment le traitement du signal, la théorie électromagnétique et les fractales, où les calculs impliquant la racine carrée d'un nombre négatif sont courants.

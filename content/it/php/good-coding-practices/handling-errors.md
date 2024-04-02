@@ -8,9 +8,8 @@ model: gpt-4-1106-preview
 summary: "La gestione degli errori in PHP riguarda la gestione e la risposta a condizioni\
   \ che interrompono il flusso normale di un programma, come file mancanti o\u2026"
 title: Gestione degli errori
+weight: 16
 ---
-
-{{< edit_this_page >}}
 
 ## Cosa e perché?
 La gestione degli errori in PHP riguarda la gestione e la risposta a condizioni che interrompono il flusso normale di un programma, come file mancanti o input di dati errati. I programmatori gestiscono gli errori per prevenire crash e per offrire agli utenti un'esperienza più fluida.

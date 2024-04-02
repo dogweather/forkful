@@ -10,9 +10,8 @@ model: gpt-4-0125-preview
 summary: "Analisar HTML na programa\xE7\xE3o envolve analisar a estrutura de um documento\
   \ HTML, permitindo extrair, manipular e interagir com seu conte\xFAdo de forma\u2026"
 title: Analisando HTML
+weight: 43
 ---
-
-{{< edit_this_page >}}
 
 ## O Que & Por Quê?
 

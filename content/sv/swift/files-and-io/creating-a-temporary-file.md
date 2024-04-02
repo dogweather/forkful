@@ -9,9 +9,8 @@ summary: "I Swift inneb\xE4r att skapa en tempor\xE4r fil att du skapar en fil s
   \ bara ska finnas d\xE4r under ett kort \xF6gonblick, ofta inom ramen f\xF6r en\
   \ process eller\u2026"
 title: "Skapa en tempor\xE4r fil"
+weight: 21
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why? (Vad & Varför?)
 I Swift innebär att skapa en temporär fil att du skapar en fil som bara ska finnas där under ett kort ögonblick, ofta inom ramen för en process eller session. Programmerare gör detta för att hantera data som inte behöver vara permanent lagrade, för cacheändamål eller när man hanterar stora datamängder där minneseffektivitet är kritisk.

@@ -11,9 +11,8 @@ summary: "C++:n s\xE4\xE4nn\xF6lliset lausekkeet ovat merkkijonoja, jotka m\xE4\
   rittelev\xE4t hakukaavan, ja niit\xE4 k\xE4ytet\xE4\xE4n merkkijonojen vastaavuuksien\
   \ etsint\xE4\xE4n tai\u2026"
 title: "S\xE4\xE4nn\xF6llisten lausekkeiden k\xE4ytt\xF6"
+weight: 11
 ---
-
-{{< edit_this_page >}}
 
 ## Mitä & Miksi?
 C++:n säännölliset lausekkeet ovat merkkijonoja, jotka määrittelevät hakukaavan, ja niitä käytetään merkkijonojen vastaavuuksien etsintään tai manipulointiin. Ohjelmoijat käyttävät niitä tehtäviin, kuten syötteen validointiin, esiintymien etsimiseen merkkijonoista tai merkkijonojen pilkkomiseen tokeniksi, mikä tekee niistä korvaamattoman työkalun tehokkaaseen ja vaikuttavaan tekstin käsittelyyn.

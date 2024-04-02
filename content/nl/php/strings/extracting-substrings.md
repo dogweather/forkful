@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Het extraheren van substrings betekent het trekken van specifieke delen\
   \ uit een string. Programmeurs doen dit om gegevens te verwerken of te manipuleren,\u2026"
 title: Substrings extraheren
+weight: 6
 ---
-
-{{< edit_this_page >}}
 
 ## Wat & Waarom?
 Het extraheren van substrings betekent het trekken van specifieke delen uit een string. Programmeurs doen dit om gegevens te verwerken of te manipuleren, zoals het ophalen van een gebruikersnaam uit een e-mailadres of een bestandsextensie uit een bestandsnaam.

@@ -9,9 +9,8 @@ summary: "Parsing av HTML handler om \xE5 tolke og trekke ut data fra HTML-koder
   \ Programmerere gj\xF8r dette for \xE5 automatisere prosesser, h\xF8ste data eller\
   \ integrere\u2026"
 title: Analyse av HTML
+weight: 43
 ---
-
-{{< edit_this_page >}}
 
 ## Hva & Hvorfor?
 Parsing av HTML handler om å tolke og trekke ut data fra HTML-koder. Programmerere gjør dette for å automatisere prosesser, høste data eller integrere nettsider i apps.

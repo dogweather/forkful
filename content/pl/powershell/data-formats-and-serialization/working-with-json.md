@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Integracja PowerShell z JSON (JavaScript Object Notation) dotyczy parsowania\
   \ (odczytu) oraz generowania (zapisu) danych JSON, co jest powszechnym formatem\u2026"
 title: Praca z JSON
+weight: 38
 ---
-
-{{< edit_this_page >}}
 
 ## Co i dlaczego?
 

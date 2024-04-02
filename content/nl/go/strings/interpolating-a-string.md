@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Stringinterpolatie is een methode om strings te construeren die variabelen\
   \ bevatten, waardoor dynamische stringcreatie mogelijk is. Programmeurs doen dit\u2026"
 title: Een string interpoleren
+weight: 8
 ---
-
-{{< edit_this_page >}}
 
 ## Wat & Waarom?
 

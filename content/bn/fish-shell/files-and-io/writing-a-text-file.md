@@ -26,9 +26,8 @@ summary: "Fish Shell-\u098F \u098F\u0995\u099F\u09BF \u099F\u09C7\u0995\u09CD\u0
   \u2026"
 title: "\u098F\u0995\u099F\u09BF \u099F\u09C7\u0995\u09CD\u09B8\u099F \u09AB\u09BE\
   \u0987\u09B2 \u09B2\u09BF\u0996\u09BE"
+weight: 24
 ---
-
-{{< edit_this_page >}}
 
 ## কি এবং কেন?
 

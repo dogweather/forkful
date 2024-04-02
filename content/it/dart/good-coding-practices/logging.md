@@ -10,9 +10,8 @@ model: gpt-4-0125-preview
 summary: "Il logging in Dart si riferisce al processo di registrazione di vari livelli\
   \ di informazioni durante l'esecuzione di un programma. I programmatori lo\u2026"
 title: Registrazione
+weight: 17
 ---
-
-{{< edit_this_page >}}
 
 ## Cosa e Perché?
 

@@ -13,9 +13,8 @@ summary: "Vi\u1EC7c ghi v\xE0o k\xEAnh l\u1ED7i chu\u1EA9n (`stderr`) chuy\u1EC3
   ng xu\u1EA5t ra \u0111\u1EB7c bi\u1EC7t \u0111\u01B0\u1EE3c d\xE0nh ri\xEAng cho\
   \ l\u1ED7i, t\xE1ch bi\u1EC7t kh\u1ECFi lu\u1ED3ng xu\u1EA5t\u2026"
 title: "Ghi v\xE0o l\u1ED7i chu\u1EA9n"
+weight: 25
 ---
-
-{{< edit_this_page >}}
 
 ## Gì & Tại Sao?
 Việc ghi vào kênh lỗi chuẩn (`stderr`) chuyển các thông điệp quan trọng đến một luồng xuất ra đặc biệt được dành riêng cho lỗi, tách biệt khỏi luồng xuất chính (`stdout`). Các lập trình viên sử dụng nó để ghi lại lỗi và thông điệp chẩn đoán để chúng không lẫn vào dữ liệu chương trình bình thường và có thể dễ dàng được theo dõi hoặc chuyển hướng.

@@ -14,9 +14,8 @@ summary: "T\xECm ki\u1EBFm v\xE0 thay th\u1EBF v\u0103n b\u1EA3n l\xE0 vi\u1EC7c
   c l\u1EF1a ch\u1ECDn kh\xE1c trong m\u1ED9t chu\u1ED7i. C\xE1c l\u1EADp tr\xECnh\
   \ vi\xEAn th\u1EF1c hi\u1EC7n \u0111i\u1EC1u n\xE0y \u0111\u1EC3 c\u1EADp\u2026"
 title: "T\xECm ki\u1EBFm v\xE0 thay th\u1EBF v\u0103n b\u1EA3n"
+weight: 10
 ---
-
-{{< edit_this_page >}}
 
 ## Cái gì và Tại sao?
 Tìm kiếm và thay thế văn bản là việc đổi các từ hoặc cụm từ cụ thể thành các lựa chọn khác trong một chuỗi. Các lập trình viên thực hiện điều này để cập nhật dữ liệu, sửa lỗi, hoặc thay đổi định dạng - nó giữ cho mọi thứ chính xác và ngăn nắp.

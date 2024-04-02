@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Het organiseren van code in functies in Haskell betekent het opsplitsen\
   \ van je code in herbruikbare, benoemde blokken. Waarom? Het houdt je code DRY\u2026"
 title: Code organiseren in functies
+weight: 18
 ---
-
-{{< edit_this_page >}}
 
 ## Wat & Waarom?
 Het organiseren van code in functies in Haskell betekent het opsplitsen van je code in herbruikbare, benoemde blokken. Waarom? Het houdt je code DRY (Don't Repeat Yourself), maakt het leesbaar en gemakkelijker om te debuggen.

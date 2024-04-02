@@ -7,9 +7,8 @@ model: gpt-4-1106-preview
 summary: "Ladataan nettisivua ohjelmassa, eli haetaan sen sis\xE4lt\xF6\xE4 koodilla.\
   \ Se on hy\xF6dyllist\xE4, kun tarvitaan automaattista tiedonkeruuta tai halutaan\u2026"
 title: Verkkosivun lataaminen
+weight: 42
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why? (Mikä & Miksi?)
 Ladataan nettisivua ohjelmassa, eli haetaan sen sisältöä koodilla. Se on hyödyllistä, kun tarvitaan automaattista tiedonkeruuta tai halutaan interaktiivisia toimintoja.

@@ -11,9 +11,8 @@ summary: "Na programa\xE7\xE3o, obter a data atual \xE9 uma tarefa fundamental q
   \ permite aos desenvolvedores acessar, exibir ou manipular a data atual dentro de\
   \ suas\u2026"
 title: Obtendo a data atual
+weight: 29
 ---
-
-{{< edit_this_page >}}
 
 ## O Que & Por Quê?
 Na programação, obter a data atual é uma tarefa fundamental que permite aos desenvolvedores acessar, exibir ou manipular a data atual dentro de suas aplicações. Essa capacidade é crucial para tudo, desde registrar e marcar eventos com data e hora até cálculos baseados em datas.

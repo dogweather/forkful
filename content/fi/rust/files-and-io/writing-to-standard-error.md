@@ -10,9 +10,8 @@ model: gpt-4-0125-preview
 summary: "Virheilmoitusten kirjoittaminen standardivirheeseen (stderr) Rustissa tarkoittaa\
   \ virheilmoitusten ja diagnostiikkatietojen ohjaamista konsoliin erill\xE4\xE4n\u2026"
 title: Kirjoittaminen standardivirheeseen
+weight: 25
 ---
-
-{{< edit_this_page >}}
 
 ## Mikä & Miksi?
 Virheilmoitusten kirjoittaminen standardivirheeseen (stderr) Rustissa tarkoittaa virheilmoitusten ja diagnostiikkatietojen ohjaamista konsoliin erillään standarditulosteesta (stdout). Ohjelmoijat tekevät näin erottaakseen ohjelman normaalin tulosteen virheilmoituksista, mikä helpottaa virheiden asianmukaista käsittelyä tai niiden ohjaamista lokiin tai tiedostoihin suorituksen aikana.

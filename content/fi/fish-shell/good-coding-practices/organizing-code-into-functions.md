@@ -12,9 +12,8 @@ summary: "Koodin j\xE4rjest\xE4minen funktioihin on osioiden kasaamista skriptis
   \ tiettyj\xE4 teht\xE4vi\xE4 varten. Teemme sen, koska se tekee koodista helpommin\
   \ luettavaa,\u2026"
 title: "Koodin j\xE4rjest\xE4minen funktioiksi"
+weight: 18
 ---
-
-{{< edit_this_page >}}
 
 ## Mikä & Miksi?
 Koodin järjestäminen funktioihin on osioiden kasaamista skriptistä tiettyjä tehtäviä varten. Teemme sen, koska se tekee koodista helpommin luettavaa, testattavaa ja uudelleenkäytettävää – kukaan ei halua kahlata läpi koodispagetin suota.

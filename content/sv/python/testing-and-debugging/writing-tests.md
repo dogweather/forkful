@@ -11,9 +11,8 @@ summary: "Att skriva tester i Python inneb\xE4r att skapa automatiserade skript 
   r att validera korrektheten i din kod. Programmerare g\xF6r detta f\xF6r att s\xE4\
   kerst\xE4lla\u2026"
 title: Skriva tester
+weight: 36
 ---
-
-{{< edit_this_page >}}
 
 ## Vad & Varför?
 Att skriva tester i Python innebär att skapa automatiserade skript för att validera korrektheten i din kod. Programmerare gör detta för att säkerställa att deras funktioner eller klasser fungerar som förväntat under olika förhållanden, vilket hjälper till att fånga upp fel tidigt och underlättar enklare underhåll och refaktorisering.

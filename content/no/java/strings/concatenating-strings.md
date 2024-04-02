@@ -9,9 +9,8 @@ summary: "I Java smelter vi sammen tekststrenger ved \xE5 konkatere dem. Dette g
   r vi for \xE5 bygge setninger, dynamiske meldinger eller for \xE5 sl\xE5 sammen\
   \ data til en\u2026"
 title: "Sammensl\xE5ing av strenger"
+weight: 3
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 I Java smelter vi sammen tekststrenger ved å konkatere dem. Dette gjør vi for å bygge setninger, dynamiske meldinger eller for å slå sammen data til en enkelt, håndterbar streng.

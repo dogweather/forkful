@@ -9,9 +9,8 @@ summary: "\"Lokin pit\xE4minen\" tarkoittaa tapahtumien, transaktioiden tai toim
   \ kirjaamista, jotka tapahtuvat ajan kuluessa j\xE4rjestelm\xE4ss\xE4. Ohjelmoijat\
   \ k\xE4ytt\xE4v\xE4t\u2026"
 title: Lokitus
+weight: 17
 ---
-
-{{< edit_this_page >}}
 
 ## Mikä & Miksi?
 "Lokin pitäminen" tarkoittaa tapahtumien, transaktioiden tai toimintojen kirjaamista, jotka tapahtuvat ajan kuluessa järjestelmässä. Ohjelmoijat käyttävät sitä vianetsintään, järjestelmän terveyden seurantaan, tilastojen keräämiseen tai jopa käytön valvomiseen, mikä tekee siitä välttämättömän käytännön ylläpitämään ja ymmärtämään koodin käyttäytymistä erilaisissa olosuhteissa.

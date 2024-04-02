@@ -21,9 +21,8 @@ summary: "JSON, \u05D0\u05D5 JavaScript Object Notation, \u05D4\u05D5\u05D0 \u05
   \u05DD \u05E9\u05DC Arduino. \u05EA\u05DB\u05E0\u05EA\u05D9\u05DD \u05DE\u05E9\u05EA\
   \u05DE\u05E9\u05D9\u05DD \u05D1\u05D5\u2026"
 title: "\u05E2\u05D1\u05D5\u05D3\u05D4 \u05E2\u05DD JSON"
+weight: 38
 ---
-
-{{< edit_this_page >}}
 
 ## מה ולמה?
 

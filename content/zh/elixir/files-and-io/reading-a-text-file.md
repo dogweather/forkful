@@ -12,9 +12,8 @@ summary: "\u8BFB\u53D6\u6587\u672C\u6587\u4EF6\u8BA9\u7A0B\u5E8F\u80FD\u83B7\u53
   \u505A\u662F\u4E3A\u4E86\u5206\u6790\uFF0C\u8F6C\u6362\u6216\u5229\u7528\u8FD9\u4E9B\
   \u4FE1\u606F\u3002"
 title: "\u9605\u8BFB\u6587\u672C\u6587\u4EF6"
+weight: 22
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why? / 什么和为什么?
 读取文本文件让程序能获取和处理存储的数据。程序员这样做是为了分析，转换或利用这些信息。

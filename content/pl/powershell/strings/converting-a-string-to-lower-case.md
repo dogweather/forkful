@@ -9,9 +9,8 @@ summary: "Konwersja stringa do ma\u0142ych liter polega na zmianie ka\u017Cdej w
   \ litery na odpowiadaj\u0105c\u0105 jej ma\u0142\u0105. Programi\u015Bci robi\u0105\
   \ to, by ujednolici\u0107 dane \u2013 na\u2026"
 title: "Konwersja ci\u0105gu znak\xF3w na ma\u0142e litery"
+weight: 4
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 Konwersja stringa do małych liter polega na zmianie każdej wielkiej litery na odpowiadającą jej małą. Programiści robią to, by ujednolicić dane – na przykład, w sytuacjach, gdy wielkość liter nie ma znaczenia, jak przy porównywaniu tekstów.

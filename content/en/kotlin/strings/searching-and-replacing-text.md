@@ -7,9 +7,8 @@ model: gpt-4-1106-preview
 summary: "Searching and replacing text is like playing hide and seek with strings,\
   \ then swapping the hider with someone else. It's a common programming task, vital\u2026"
 title: Searching and replacing text
+weight: 10
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 Searching and replacing text is like playing hide and seek with strings, then swapping the hider with someone else. It's a common programming task, vital for tasks like bulk editing, data sanitization, and automating the boring stuff.

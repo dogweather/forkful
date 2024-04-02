@@ -11,9 +11,8 @@ summary: "Baixar uma p\xE1gina da web em C envolve acessar programaticamente o c
   do de uma p\xE1gina da web pela internet e salv\xE1-lo localmente para processamento\
   \ ou\u2026"
 title: "Baixando uma p\xE1gina da web"
+weight: 42
 ---
-
-{{< edit_this_page >}}
 
 ## O Que & Por Quê?
 

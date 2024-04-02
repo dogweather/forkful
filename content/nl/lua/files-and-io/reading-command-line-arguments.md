@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Commandoregelargumenten lezen betekent het oppakken van de extra stukjes\
   \ die je na de naam van je script in de console typt. Programmeurs doen dit om het\u2026"
 title: Commandoregelargumenten lezen
+weight: 23
 ---
-
-{{< edit_this_page >}}
 
 ## Wat & Waarom?
 

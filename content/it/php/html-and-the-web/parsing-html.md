@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "L'analisi dell'HTML in PHP coinvolge l'estrazione di informazioni specifiche\
   \ dai documenti HTML. I programmatori svolgono questo compito per automatizzare\u2026"
 title: Analisi del HTML
+weight: 43
 ---
-
-{{< edit_this_page >}}
 
 ## Cosa & Perché?
 L'analisi dell'HTML in PHP coinvolge l'estrazione di informazioni specifiche dai documenti HTML. I programmatori svolgono questo compito per automatizzare l'estrazione dei dati, il web scraping, o per integrare contenuti da varie pagine web nelle loro applicazioni, migliorando la funzionalità senza interventi manuali.

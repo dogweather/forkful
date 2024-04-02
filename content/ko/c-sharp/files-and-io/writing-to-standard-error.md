@@ -23,9 +23,8 @@ summary: "C#\uC5D0\uC11C \uD45C\uC900 \uC624\uB958(stderr)\uB85C \uC4F0\uAE30\uB
   \uD50C\uB9AC\uCF00\uC774\uC158\uC758 \uC6D0\uD65C\uD55C \uC6B4\uC601\uACFC \uC720\
   \uC9C0\u2026"
 title: "\uD45C\uC900 \uC5D0\uB7EC\uC5D0 \uC4F0\uAE30"
+weight: 25
 ---
-
-{{< edit_this_page >}}
 
 ## 무엇 & 왜?
 C#에서 표준 오류(stderr)로 쓰기는 에러 메시지와 진단을 정규 출력(stdout)과 별도로 지시하여 사용자와 개발자가 정상 프로그램 출력과 오류 알림을 구별할 수 있도록 합니다. 프로그래머들은 디버깅과 로깅을 보다 효율적으로 하여 애플리케이션의 원활한 운영과 유지 관리를 가능하게 하기 위해 이렇게 합니다.

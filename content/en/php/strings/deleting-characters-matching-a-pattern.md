@@ -7,9 +7,8 @@ model: gpt-4-1106-preview
 summary: "Deleting characters matching a pattern in PHP is about finding specific\
   \ sequences of characters in strings and removing them. Programmers do this to clean\u2026"
 title: Deleting characters matching a pattern
+weight: 5
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 

@@ -7,9 +7,8 @@ model: gpt-4-1106-preview
 summary: "Logging i programmeringssammenheng er prosessen med \xE5 registrere hendelser,\
   \ tilstander og informasjon til en fil eller annet utgangsmedium. Programmerere\u2026"
 title: "Loggf\xF8ring"
+weight: 17
 ---
-
-{{< edit_this_page >}}
 
 ## Hva & Hvorfor?
 Logging i programmeringssammenheng er prosessen med å registrere hendelser, tilstander og informasjon til en fil eller annet utgangsmedium. Programmerere logger for å holde oversikt over hva som skjer i applikasjonene sine, for å feilsøke problemer, og for å overvåke ytelse til fremtidig analyse og optimalisering.

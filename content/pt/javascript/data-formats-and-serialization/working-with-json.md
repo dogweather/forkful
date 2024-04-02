@@ -8,9 +8,8 @@ model: unknown
 summary: "JSON, ou JavaScript Object Notation, \xE9 um formato leve de troca de dados.\
   \ Programadores utilizam JSON para transferir e armazenar dados de maneira simples\u2026"
 title: Trabalhando com JSON
+weight: 38
 ---
-
-{{< edit_this_page >}}
 
 ## O que é & Por quê?
 JSON, ou JavaScript Object Notation, é um formato leve de troca de dados. Programadores utilizam JSON para transferir e armazenar dados de maneira simples e rápida entre o servidor e o cliente e porque é fácil de ler e escrever para humanos.

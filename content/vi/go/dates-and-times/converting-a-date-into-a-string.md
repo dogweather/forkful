@@ -13,9 +13,8 @@ summary: "Chuy\u1EC3n \u0111\u1ED5i m\u1ED9t ng\xE0y th\xE0nh m\u1ED9t chu\u1ED7
   ng `time.Time` th\xE0nh \u0111\u1ECBnh d\u1EA1ng chu\u1ED7i d\u1EC5 \u0111\u1ECD\
   c. L\u1EADp tr\xECnh vi\xEAn th\u01B0\u1EDDng th\u1EF1c hi\u1EC7n\u2026"
 title: "Chuy\u1EC3n \u0111\u1ED5i ng\xE0y th\xE0nh chu\u1ED7i"
+weight: 28
 ---
-
-{{< edit_this_page >}}
 
 ## Cái gì & Tại sao?
 

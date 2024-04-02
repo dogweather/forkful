@@ -11,9 +11,8 @@ summary: "En programmation Rust, travailler avec YAML (YAML Ain't Markup Languag
   \ consiste \xE0 analyser et \xE0 g\xE9n\xE9rer des donn\xE9es au format YAML, un\
   \ standard de\u2026"
 title: Travailler avec YAML
+weight: 41
 ---
-
-{{< edit_this_page >}}
 
 ## Quoi & Pourquoi ?
 

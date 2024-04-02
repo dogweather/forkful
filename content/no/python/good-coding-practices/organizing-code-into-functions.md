@@ -9,9 +9,8 @@ summary: "\xC5 organisere kode i funksjoner handler om \xE5 dele opp koden din i
   \ biter med spesifikke form\xE5l. Vi gj\xF8r det for \xE5 gj\xF8re koden renere,\
   \ enklere \xE5\u2026"
 title: Organisering av kode i funksjoner
+weight: 18
 ---
-
-{{< edit_this_page >}}
 
 ## Hva & Hvorfor?
 Å organisere kode i funksjoner handler om å dele opp koden din i gjenbrukbare biter med spesifikke formål. Vi gjør det for å gjøre koden renere, enklere å lese, feilsøke, og oppdatere.

@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "YAML (YAML Ain't Markup Language) ist ein f\xFCr Menschen lesbarer Datenserialisierungsstandard,\
   \ der f\xFCr Konfigurationsdateien, Kommunikation zwischen\u2026"
 title: Arbeiten mit YAML
+weight: 41
 ---
-
-{{< edit_this_page >}}
 
 ## Was & Warum?
 

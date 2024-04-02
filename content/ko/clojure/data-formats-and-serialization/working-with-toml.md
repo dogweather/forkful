@@ -19,9 +19,8 @@ summary: "TOML\uC744 \uC0AC\uC6A9\uD55C\uB2E4\uB294 \uAC83\uC740 \"Tom's Obvious
   \uC2A4 \uBC14\uAE65\uC5D0\uC11C \uBC14\uB85C \uC791\uB3D9\uD558\uB294 \uAC04\uB2E8\
   \uD55C \uAD6C\uC131\u2026"
 title: "\uD504\uB85C\uADF8\uB798\uBA38\uB97C \uC704\uD55C TOML \uB2E4\uB8E8\uAE30"
+weight: 39
 ---
-
-{{< edit_this_page >}}
 
 ## 무엇 & 왜?
 TOML을 사용한다는 것은 "Tom's Obvious, Minimal Language"의 최소한 형태로 데이터를 처리한다는 것을 의미하며, 읽기 쉬움 때문에 설정 파일에 인기가 있습니다. 프로그래머들은 사람이 읽기 친화적인 문법으로 박스 바깥에서 바로 작동하는 간단한 구성 관리를 위해 사용합니다.

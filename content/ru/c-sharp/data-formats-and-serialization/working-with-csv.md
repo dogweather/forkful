@@ -23,9 +23,8 @@ summary: "\u0420\u0430\u0431\u043E\u0442\u0430 \u0441 CSV (Comma-Separated Value
   \u0435 \u0444\u043E\u0440\u043C\u0430\u0442\u0435 \u2014 \u0442\u0430\u043A\u043E\
   \u043C,\u2026"
 title: "\u0420\u0430\u0431\u043E\u0442\u0430 \u0441 CSV"
+weight: 37
 ---
-
-{{< edit_this_page >}}
 
 ## Что и Почему?
 

@@ -10,9 +10,8 @@ summary: "Por\u0456vnyannya dvokh dat - tse sposib vstanovlennya chasovoyi r\u04
   plyuvaty podiyi v chas\u0456, zapuskaty\u2026"
 title: "\u041F\u043E\u0440\u0456\u0432\u043D\u044F\u043D\u043D\u044F \u0434\u0432\u043E\
   \u0445 \u0434\u0430\u0442"
+weight: 27
 ---
-
-{{< edit_this_page >}}
 
 ## Що і Чому?
 Porіvnyannya dvokh dat - tse sposib vstanovlennya chasovoyi rіznitsі mіzh nimi. Programіsti robyatʹ tse, shchob vіdkrіplyuvaty podiyi v chasі, zapuskaty terminovі zadachi, abo perevіryaty chinnіstʹ danih.

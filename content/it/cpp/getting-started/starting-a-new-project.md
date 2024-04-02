@@ -7,9 +7,8 @@ model: gpt-4-1106-preview
 summary: "Iniziamo un nuovo progetto per trasformare le idee in codice funzionante.\
   \ I programmatori lo fanno per risolvere problemi, esplorare nuove tecnologie o\u2026"
 title: Avvio di un nuovo progetto
+weight: 1
 ---
-
-{{< edit_this_page >}}
 
 ## Cosa & Perché?
 Iniziamo un nuovo progetto per trasformare le idee in codice funzionante. I programmatori lo fanno per risolvere problemi, esplorare nuove tecnologie o semplicemente per imparare.

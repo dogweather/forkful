@@ -9,9 +9,8 @@ summary: "Virheiden k\xE4sittely on odottamattoman odottamista; kyse on siit\xE4
   \ miten selvit\xE4\xE4n, kun koodissamme tapahtuu odottamattomia virheit\xE4. Sen\
   \ avulla pyrimme\u2026"
 title: "Virheiden k\xE4sittely"
+weight: 16
 ---
-
-{{< edit_this_page >}}
 
 ## Mikä & Miksi?
 Virheiden käsittely on odottamattoman odottamista; kyse on siitä, miten selvitään, kun koodissamme tapahtuu odottamattomia virheitä. Sen avulla pyrimme välttämään kaatumisia ja takaamaan käyttäjille sujuvan kokemuksen, vaikka yllättäviä tilanteita ilmenisikin.

@@ -11,9 +11,8 @@ summary: "Komplexa tal best\xE5r av en reell del och en imagin\xE4r del, represe
   \ som `a + bi` d\xE4r `i` \xE4r kvadratroten av `-1`. Programmerare arbetar med\
   \ komplexa\u2026"
 title: Att arbeta med komplexa tal
+weight: 14
 ---
-
-{{< edit_this_page >}}
 
 ## Vad & Varför?
 

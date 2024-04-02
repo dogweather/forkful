@@ -11,9 +11,8 @@ summary: "XML:n k\xE4sittely Visual Basic for Applicationsissa (VBA) sis\xE4lt\x
   \xE4 XML-dokumenttien j\xE4sent\xE4misen, luomisen ja muokkaamisen Microsoft Office\
   \ -sovellusten\u2026"
 title: "Ty\xF6skentely XML:n kanssa"
+weight: 40
 ---
-
-{{< edit_this_page >}}
 
 ## Mikä & Miksi?
 

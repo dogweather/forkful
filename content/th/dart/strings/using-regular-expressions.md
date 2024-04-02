@@ -16,9 +16,8 @@ summary: "Regular expressions (regex) \u0E43\u0E19 Dart \u0E19\u0E33\u0E40\u0E2A
   \u0E23\u0E34\u0E07\u2026"
 title: "\u0E01\u0E32\u0E23\u0E43\u0E0A\u0E49\u0E19\u0E34\u0E1E\u0E08\u0E19\u0E4C\u0E1B\
   \u0E01\u0E15\u0E34"
+weight: 11
 ---
-
-{{< edit_this_page >}}
 
 ## คืออะไร & ทำไม?
 

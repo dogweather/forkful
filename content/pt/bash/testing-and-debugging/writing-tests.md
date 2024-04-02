@@ -10,9 +10,8 @@ model: gpt-4-0125-preview
 summary: "Escrever testes em Bash envolve criar scripts de casos de teste para validar\
   \ a funcionalidade dos seus scripts Bash. Os programadores realizam testes para\u2026"
 title: Escrevendo testes
+weight: 36
 ---
-
-{{< edit_this_page >}}
 
 ## O Que & Por Que?
 Escrever testes em Bash envolve criar scripts de casos de teste para validar a funcionalidade dos seus scripts Bash. Os programadores realizam testes para garantir que seus scripts funcionem conforme esperado sob várias condições, capturando erros e bugs antes do lançamento.

@@ -10,9 +10,8 @@ model: gpt-4-0125-preview
 summary: "Organiser le code en fonctions dans Go implique de diviser le code en blocs\
   \ r\xE9utilisables et modulaires qui effectuent des t\xE2ches sp\xE9cifiques. Cette\u2026"
 title: Organiser le code en fonctions
+weight: 18
 ---
-
-{{< edit_this_page >}}
 
 ## Quoi & Pourquoi ?
 

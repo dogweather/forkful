@@ -9,9 +9,8 @@ summary: "(Ekstrakcja podci\u0105g\xF3w - o co chodzi i dlaczego to robimy?) Szu
   \ fragmentu tekstu w szerszym ci\u0105gu znak\xF3w? To ekstrakcja podci\u0105g\xF3\
   w. Programi\u015Bci\u2026"
 title: "Wycinanie pod\u0142a\u0144cuch\xF3w"
+weight: 6
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 (Ekstrakcja podciągów - o co chodzi i dlaczego to robimy?)

@@ -10,9 +10,8 @@ summary: "Extracting substrings means pulling out specific parts of a string bas
   say, to\u2026"
 title: "\u0412\u0438\u0434\u0456\u043B\u0435\u043D\u043D\u044F \u043F\u0456\u0434\u0440\
   \u044F\u0434\u043A\u0456\u0432"
+weight: 6
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why? (Що і Чому?)
 Extracting substrings means pulling out specific parts of a string based on position or pattern. Programmers do it to process or manipulate text—say, to grab a username from an email address or to pull out data from a string.

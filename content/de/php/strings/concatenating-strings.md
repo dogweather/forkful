@@ -7,9 +7,8 @@ model: gpt-4-1106-preview
 summary: "String-Konkatenation verbindet einfach zwei oder mehr Strings zu einem.\
   \ Programmierer nutzen das, um dynamische Textausgaben zu erzeugen oder Daten aus\u2026"
 title: "Zeichenketten verkn\xFCpfen"
+weight: 3
 ---
-
-{{< edit_this_page >}}
 
 ## Was & Warum?
 String-Konkatenation verbindet einfach zwei oder mehr Strings zu einem. Programmierer nutzen das, um dynamische Textausgaben zu erzeugen oder Daten aus verschiedenen Quellen zu kombinieren.

@@ -7,9 +7,8 @@ model: gpt-4-1106-preview
 summary: "Ohjelmoinnin yhteydess\xE4 lokiin kirjaaminen tarkoittaa tapahtumien, tilojen\
   \ ja tiedon tallentamista tiedostoon tai muuhun ulostuloalustaan. Ohjelmoijat\u2026"
 title: Lokitus
+weight: 17
 ---
-
-{{< edit_this_page >}}
 
 ## Mikä & Miksi?
 Ohjelmoinnin yhteydessä lokiin kirjaaminen tarkoittaa tapahtumien, tilojen ja tiedon tallentamista tiedostoon tai muuhun ulostuloalustaan. Ohjelmoijat kirjaavat lokiin pysyäkseen kärryillä siitä, mitä heidän sovelluksissaan tapahtuu, debugatakseen ongelmia ja seuratakseen suorituskykyä tulevaa analyysia ja optimointia varten.

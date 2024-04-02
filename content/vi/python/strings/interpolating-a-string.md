@@ -14,9 +14,8 @@ summary: "N\u1ED9i suy chu\u1ED7i l\xE0 ph\u01B0\u01A1ng ph\xE1p nh\xFAng c\xE1c
   n s\u1EED d\u1EE5ng n\xF3 \u0111\u1EC3 ch\xE8n \u0111\u1ED9ng c\xE1c gi\xE1 tr\u1ECB\
   \ v\xE0o chu\u1ED7i, l\xE0m cho m\xE3\u2026"
 title: "N\u1ED9i suy chu\u1ED7i k\xFD t\u1EF1"
+weight: 8
 ---
-
-{{< edit_this_page >}}
 
 ## Gì & Tại sao?
 Nội suy chuỗi là phương pháp nhúng các biểu thức vào bên trong các chuỗi literan. Lập trình viên sử dụng nó để chèn động các giá trị vào chuỗi, làm cho mã lệnh trở nên dễ đọc và sạch sẽ hơn so với nối chuỗi truyền thống.

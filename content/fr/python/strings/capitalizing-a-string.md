@@ -11,9 +11,8 @@ summary: "Mettre une cha\xEEne en capitales signifie convertir le premier caract
   re d'une cha\xEEne en majuscule et le reste en minuscule. Cette op\xE9ration est\
   \ couramment\u2026"
 title: "Mettre en majuscule une cha\xEEne"
+weight: 2
 ---
-
-{{< edit_this_page >}}
 
 ## Quoi & Pourquoi ?
 Mettre une chaîne en capitales signifie convertir le premier caractère d'une chaîne en majuscule et le reste en minuscule. Cette opération est couramment utilisée dans le traitement des données pour normaliser les entrées ou améliorer la lisibilité pour les titres, noms, et autres.

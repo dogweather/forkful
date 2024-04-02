@@ -7,9 +7,8 @@ model: gpt-4-1106-preview
 summary: "Suchen und Ersetzen ist die Aktion, Textmuster in einem String zu finden\
   \ und sie durch neue Inhalte zu ersetzen. Programmierer nutzen diese Funktion, um\u2026"
 title: Suchen und Ersetzen von Text
+weight: 10
 ---
-
-{{< edit_this_page >}}
 
 ## Was & Warum?
 Suchen und Ersetzen ist die Aktion, Textmuster in einem String zu finden und sie durch neue Inhalte zu ersetzen. Programmierer nutzen diese Funktion, um Daten zu korrigieren, zu aktualisieren oder spezifische Muster in einer großen Menge von Text effizient zu bearbeiten.

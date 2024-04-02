@@ -9,9 +9,8 @@ summary: "(Po co i dlaczego?) Por\xF3wnywanie dat pozwala okre\u015Bli\u0107, kt
   ra z nich jest wcze\u015Bniejsza, a kt\xF3ra p\xF3\u017Aniejsza. Programi\u015B\
   ci robi\u0105 to, by zarz\u0105dza\u0107 czasem i\u2026"
 title: "Por\xF3wnywanie dw\xF3ch dat"
+weight: 27
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 (Po co i dlaczego?)

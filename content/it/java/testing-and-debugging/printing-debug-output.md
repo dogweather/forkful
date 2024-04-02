@@ -9,9 +9,8 @@ summary: "Stampare output di debug significa mostrare informazioni temporanee di
   \ mentre un programma \xE8 in esecuzione. Programmatori lo fanno per capire cosa\
   \ sta\u2026"
 title: Stampa dell'output di debug
+weight: 33
 ---
-
-{{< edit_this_page >}}
 
 ## Cosa & Perché?
 Stampare output di debug significa mostrare informazioni temporanee di log mentre un programma è in esecuzione. Programmatori lo fanno per capire cosa sta succedendo "sotto il cofano", per risolvere i bug o per monitorare lo stato del programma.

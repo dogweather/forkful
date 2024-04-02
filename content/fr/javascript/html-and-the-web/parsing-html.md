@@ -10,9 +10,8 @@ model: gpt-4-0125-preview
 summary: "L'analyse (parsing) HTML consiste \xE0 extraire des donn\xE9es des documents\
   \ HTML. Les programmeurs le font pour interagir avec ou manipuler le contenu web,\u2026"
 title: Analyse Syntaxique du HTML
+weight: 43
 ---
-
-{{< edit_this_page >}}
 
 ## Quoi & Pourquoi ?
 L'analyse (parsing) HTML consiste à extraire des données des documents HTML. Les programmeurs le font pour interagir avec ou manipuler le contenu web, automatiser l'extraction de données, ou pour des fins de scraping web.

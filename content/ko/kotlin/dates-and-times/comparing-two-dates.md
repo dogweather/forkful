@@ -14,9 +14,8 @@ summary: "\uB0A0\uC9DC \uBE44\uAD50\uD558\uAE30, \uC989 \uB450 \uB0A0\uC9DC\uAC0
   , \uB370\uC774\uD130 \uC815\uB82C \uB4F1 \uD504\uB85C\uADF8\uB798\uBC0D\uC5D0\uC11C\
   \ \uC790\uC8FC \uC0AC\uC6A9\uB429\uB2C8\uB2E4."
 title: "\uB450 \uB0A0\uC9DC \uBE44\uAD50\uD558\uAE30"
+weight: 27
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why? (무엇을 왜?)
 날짜 비교하기, 즉 두 날짜가 같고, 더 이른지, 늦은지 확인하는 것입니다. 일정 관리, 기간 계산, 데이터 정렬 등 프로그래밍에서 자주 사용됩니다.

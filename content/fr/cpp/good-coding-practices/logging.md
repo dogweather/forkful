@@ -9,9 +9,8 @@ summary: "La journalisation, dans le contexte de la programmation, est le proces
   \ d'enregistrement des \xE9v\xE9nements, des \xE9tats et des informations dans un\
   \ fichier\u2026"
 title: Journalisation
+weight: 17
 ---
-
-{{< edit_this_page >}}
 
 ## Quoi & Pourquoi ?
 La journalisation, dans le contexte de la programmation, est le processus d'enregistrement des événements, des états et des informations dans un fichier ou un autre support de sortie. Les programmeurs créent des journaux pour suivre ce qui se passe dans leurs applications, pour déboguer les problèmes et pour surveiller la performance pour des analyses et optimisations futures.

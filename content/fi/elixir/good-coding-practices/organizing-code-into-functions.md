@@ -9,9 +9,8 @@ summary: "Koodin j\xE4rjest\xE4minen funktioiksi tarkoittaa, ett\xE4 liittyv\xE4
   \ operaatiot ryhmitell\xE4\xE4n uudelleenk\xE4ytett\xE4viksi lohkoiksi. T\xE4m\xE4\
   \ tehd\xE4\xE4n luettavuuden ja\u2026"
 title: "Koodin j\xE4rjest\xE4minen funktioihin"
+weight: 18
 ---
-
-{{< edit_this_page >}}
 
 ## Mikä & Miksi?
 Koodin järjestäminen funktioiksi tarkoittaa, että liittyvät operaatiot ryhmitellään uudelleenkäytettäviksi lohkoiksi. Tämä tehdään luettavuuden ja ylläpidettävyyden parantamiseksi, toiston vähentämiseksi ja testauksen yksinkertaistamiseksi.

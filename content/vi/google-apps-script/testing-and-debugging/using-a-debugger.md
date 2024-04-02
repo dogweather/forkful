@@ -2,17 +2,18 @@
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 22:03:47.487104-07:00
-description: "Qu\xE1 tr\xECnh g\u1EE1 l\u1ED7i trong Google Apps Script (GAS) bao\
-  \ g\u1ED3m vi\u1EC7c x\xE1c \u0111\u1ECBnh v\xE0 lo\u1EA1i b\u1ECF l\u1ED7i t\u1EEB\
-  \ c\xE1c k\u1ECBch b\u1EA3n \u0111\u01B0\u1EE3c thi\u1EBFt k\u1EBF \u0111\u1EC3\
-  \ t\u1EF1 \u0111\u1ED9ng h\xF3a Google Apps ho\u1EB7c x\xE2y\u2026"
+description: "Google Apps Script cung c\u1EA5p m\u1ED9t tr\xECnh g\u1EE1 l\u1ED7i\
+  \ t\xEDch h\u1EE3p s\u1EB5n trong Tr\xECnh Bi\xEAn T\u1EADp Apps Script \u0111\u1EC3\
+  \ gi\xFAp kh\u1EAFc ph\u1EE5c s\u1EF1 c\u1ED1 k\u1ECBch b\u1EA3n. D\u01B0\u1EDB\
+  i \u0111\xE2y l\xE0 c\xE1ch kh\u1EDFi ch\u1EA1y v\xE0\u2026"
 lastmod: '2024-03-13T22:44:36.046551-06:00'
 model: gpt-4-0125-preview
-summary: "Qu\xE1 tr\xECnh g\u1EE1 l\u1ED7i trong Google Apps Script (GAS) bao g\u1ED3\
-  m vi\u1EC7c x\xE1c \u0111\u1ECBnh v\xE0 lo\u1EA1i b\u1ECF l\u1ED7i t\u1EEB c\xE1\
-  c k\u1ECBch b\u1EA3n \u0111\u01B0\u1EE3c thi\u1EBFt k\u1EBF \u0111\u1EC3 t\u1EF1\
-  \ \u0111\u1ED9ng h\xF3a Google Apps ho\u1EB7c x\xE2y\u2026"
+summary: "Google Apps Script cung c\u1EA5p m\u1ED9t tr\xECnh g\u1EE1 l\u1ED7i t\xED\
+  ch h\u1EE3p s\u1EB5n trong Tr\xECnh Bi\xEAn T\u1EADp Apps Script \u0111\u1EC3 gi\xFA\
+  p kh\u1EAFc ph\u1EE5c s\u1EF1 c\u1ED1 k\u1ECBch b\u1EA3n. D\u01B0\u1EDBi \u0111\xE2\
+  y l\xE0 c\xE1ch kh\u1EDFi ch\u1EA1y v\xE0\u2026"
 title: "S\u1EED d\u1EE5ng tr\xECnh g\u1EE1 l\u1ED7i"
+weight: 35
 ---
 
 ## Làm thế nào:

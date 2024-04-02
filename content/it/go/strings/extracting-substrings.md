@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Estrarre sottosequenze implica il recupero di porzioni specifiche di una\
   \ stringa basate sulle loro posizioni. I programmatori eseguono frequentemente\u2026"
 title: Estrazione di sottosequenze
+weight: 6
 ---
-
-{{< edit_this_page >}}
 
 ## Cosa & Perché?
 

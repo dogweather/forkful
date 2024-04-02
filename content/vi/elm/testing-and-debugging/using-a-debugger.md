@@ -2,19 +2,18 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:10:07.139945-07:00
-description: "G\u1EE1 l\u1ED7i trong Elm bao g\u1ED3m vi\u1EC7c x\xE1c \u0111\u1ECB\
-  nh v\xE0 lo\u1EA1i b\u1ECF l\u1ED7i t\u1EEB code c\u1EE7a b\u1EA1n. L\u1EADp tr\xEC\
-  nh vi\xEAn th\u1EF1c hi\u1EC7n \u0111i\u1EC1u n\xE0y \u0111\u1EC3 \u0111\u1EA3m\
-  \ b\u1EA3o r\u1EB1ng c\xE1c \u1EE9ng d\u1EE5ng c\u1EE7a h\u1ECD ho\u1EA1t \u0111\
-  \u1ED9ng\u2026"
+description: "Elm kh\xF4ng c\xF3 b\u1ED9 g\u1EE1 l\u1ED7i t\xEDch h\u1EE3p trong b\u1EA3\
+  n th\xE2n n\xF3 theo ngh\u0129a truy\u1EC1n th\u1ED1ng nh\u01B0, v\xED d\u1EE5,\
+  \ JavaScript v\u1EDBi c\xF4ng c\u1EE5 ph\xE1t tri\u1EC3n tr\xECnh duy\u1EC7t. Tuy\
+  \ nhi\xEAn, c\u1ED9ng \u0111\u1ED3ng\u2026"
 lastmod: '2024-03-13T22:44:36.550301-06:00'
 model: gpt-4-0125-preview
-summary: "G\u1EE1 l\u1ED7i trong Elm bao g\u1ED3m vi\u1EC7c x\xE1c \u0111\u1ECBnh\
-  \ v\xE0 lo\u1EA1i b\u1ECF l\u1ED7i t\u1EEB code c\u1EE7a b\u1EA1n. L\u1EADp tr\xEC\
-  nh vi\xEAn th\u1EF1c hi\u1EC7n \u0111i\u1EC1u n\xE0y \u0111\u1EC3 \u0111\u1EA3m\
-  \ b\u1EA3o r\u1EB1ng c\xE1c \u1EE9ng d\u1EE5ng c\u1EE7a h\u1ECD ho\u1EA1t \u0111\
-  \u1ED9ng\u2026"
+summary: "Elm kh\xF4ng c\xF3 b\u1ED9 g\u1EE1 l\u1ED7i t\xEDch h\u1EE3p trong b\u1EA3\
+  n th\xE2n n\xF3 theo ngh\u0129a truy\u1EC1n th\u1ED1ng nh\u01B0, v\xED d\u1EE5,\
+  \ JavaScript v\u1EDBi c\xF4ng c\u1EE5 ph\xE1t tri\u1EC3n tr\xECnh duy\u1EC7t. Tuy\
+  \ nhi\xEAn, c\u1ED9ng \u0111\u1ED3ng\u2026"
 title: "S\u1EED d\u1EE5ng b\u1ED9 g\u1EE1 l\u1ED7i"
+weight: 35
 ---
 
 ## Cách thức:

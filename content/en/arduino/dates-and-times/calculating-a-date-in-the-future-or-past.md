@@ -7,9 +7,8 @@ model: gpt-4-1106-preview
 summary: "Calculating a date in the future or past involves determining a specific\
   \ day before or after a given date. Programmers do this for functions like\u2026"
 title: Calculating a date in the future or past
+weight: 26
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 Calculating a date in the future or past involves determining a specific day before or after a given date. Programmers do this for functions like scheduling events, reminders, or calculating deadlines.

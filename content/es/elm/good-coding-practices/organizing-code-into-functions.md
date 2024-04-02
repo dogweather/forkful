@@ -9,9 +9,8 @@ summary: "\xBFVolcar todo tu c\xF3digo en un gran mont\xF3n? Mala idea. \xBFDivi
   \ en funciones? Buena idea. Mantiene tu c\xF3digo Elm limpio, reutilizable y m\xE1\
   s f\xE1cil de\u2026"
 title: "Organizando c\xF3digo en funciones"
+weight: 18
 ---
-
-{{< edit_this_page >}}
 
 ## ¿Qué y Por Qué?
 ¿Volcar todo tu código en un gran montón? Mala idea. ¿Dividirlo en funciones? Buena idea. Mantiene tu código Elm limpio, reutilizable y más fácil de probar. Al organizar tu código en funciones, agrupas el código que realiza tareas específicas, lo que hace que tu aplicación sea más mantenible y comprensible.

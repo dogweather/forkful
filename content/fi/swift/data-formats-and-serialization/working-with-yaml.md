@@ -11,9 +11,8 @@ summary: "YAML, joka tulee sanoista YAML Ain't Markup Language, on ihmisl\xE4hei
   \ tiedon sarjallistamisstandardi kaikille ohjelmointikielille. Ohjelmoijat k\xE4\
   ytt\xE4v\xE4t\u2026"
 title: "Ty\xF6skentely YAML:n kanssa"
+weight: 41
 ---
-
-{{< edit_this_page >}}
 
 ## Mikä & Miksi?
 YAML, joka tulee sanoista YAML Ain't Markup Language, on ihmisläheinen tiedon sarjallistamisstandardi kaikille ohjelmointikielille. Ohjelmoijat käyttävät sitä konfiguraatiotiedostoihin, prosessien väliseen viestintään ja datan tallennukseen, koska sen luettavuus on huomattavasti lähempänä tavallista englantia verrattuna muihin datamuotoihin kuten XML tai JSON, mikä tekee siitä yksinkertaisemman ymmärtää ja kirjoittaa.

@@ -11,9 +11,8 @@ summary: "Obliczanie daty w przysz\u0142o\u015Bci lub przesz\u0142o\u015Bci pole
   \ na okre\u015Bleniu daty, kt\xF3ra jest okre\u015Blon\u0105 liczb\u0119 dni, miesi\u0119\
   cy lub lat dalej od danej daty.\u2026"
 title: "Obliczanie daty w przysz\u0142o\u015Bci lub przesz\u0142o\u015Bci"
+weight: 26
 ---
-
-{{< edit_this_page >}}
 
 ## Co i dlaczego?
 Obliczanie daty w przyszłości lub przeszłości polega na określeniu daty, która jest określoną liczbę dni, miesięcy lub lat dalej od danej daty. Programiści często potrzebują tej funkcjonalności do automatyzowania przypomnień, subskrypcji, dat wygaśnięcia i planowania zadań w różnych aplikacjach.

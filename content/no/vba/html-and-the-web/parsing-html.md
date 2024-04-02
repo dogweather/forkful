@@ -11,9 +11,8 @@ summary: "\xC5 analysere HTML i Visual Basic for Applications (VBA) inneb\xE6rer
   \ trekke ut spesifikk informasjon fra et HTML-dokument. Programmerere gj\xF8r dette\
   \ for \xE5\u2026"
 title: Analysering av HTML
+weight: 43
 ---
-
-{{< edit_this_page >}}
 
 ## Hva & Hvorfor?
 

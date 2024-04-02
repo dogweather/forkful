@@ -9,9 +9,8 @@ summary: "Felhantering handlar om att hantera saker n\xE4r de inte g\xE5r som pl
   \ Programmerare g\xF6r det f\xF6r att hantera det ov\xE4ntade och s\xE4kerst\xE4\
   lla att deras Rust-\u2026"
 title: Hantering av fel
+weight: 16
 ---
-
-{{< edit_this_page >}}
 
 ## Vad & Varför?
 

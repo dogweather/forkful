@@ -7,9 +7,8 @@ model: gpt-4-1106-preview
 summary: "Leggere un file di testo in Elixir significa accedere al contenuto di un\
   \ file salvato sul disco per manipolarlo o analizzarlo. I programmatori lo fanno\u2026"
 title: Lettura di un file di testo
+weight: 22
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 Leggere un file di testo in Elixir significa accedere al contenuto di un file salvato sul disco per manipolarlo o analizzarlo. I programmatori lo fanno per elaborare dati, configurazioni o input esterni all'applicazione.

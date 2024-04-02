@@ -9,9 +9,8 @@ summary: "Le logging, c'est fondamentalement laisser une tra\xEEn\xE9e de miette
   \ \xE0 travers votre code - c'est la mani\xE8re de garder un \u0153il sur ce qui\
   \ se passe lorsque\u2026"
 title: Journalisation
+weight: 17
 ---
-
-{{< edit_this_page >}}
 
 ## Quoi et Pourquoi ?
 Le logging, c'est fondamentalement laisser une traînée de miettes à travers votre code - c'est la manière de garder un œil sur ce qui se passe lorsque votre script est exécuté en production. Les programmeurs font des logs pour débugger, suivre le comportement des applications, surveiller la performance, et être à l'affût de toute malice.

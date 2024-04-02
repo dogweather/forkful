@@ -9,9 +9,8 @@ summary: "Fehlerbehandlung ist die Art und Weise, wie Ihr Code Probleme bew\xE4l
   \ die w\xE4hrend der Ausf\xFChrung auftreten - wie das Fangen eines unerwarteten\
   \ Balls,\u2026"
 title: Fehlerbehandlung
+weight: 16
 ---
-
-{{< edit_this_page >}}
 
 ## Was & Warum?
 Fehlerbehandlung ist die Art und Weise, wie Ihr Code Probleme bewältigt, die während der Ausführung auftreten - wie das Fangen eines unerwarteten Balls, ohne ihn fallen zu lassen. Programmierer tun dies, um Abstürze zu verhindern und Benutzern eine reibungslose Erfahrung zu bieten.

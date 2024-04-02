@@ -9,9 +9,8 @@ summary: "Concatenation to \u0142\u0105czenie kilku string\xF3w w jeden. Program
   ci robi\u0105 to, by sk\u0142ada\u0107 tekst z r\xF3\u017Cnych cz\u0119\u015Bci,\
   \ np. tworz\u0105c wiadomo\u015Bci czy dynamiczne tre\u015Bci."
 title: "\u0141\u0105czenie \u0142a\u0144cuch\xF3w znak\xF3w"
+weight: 3
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why? (Co i dlaczego?)
 Concatenation to łączenie kilku stringów w jeden. Programiści robią to, by składać tekst z różnych części, np. tworząc wiadomości czy dynamiczne treści.

@@ -9,9 +9,8 @@ summary: "En interaktiv skall, eller REPL (Read-Eval-Print Loop), lar deg skrive
   \ kj\xF8re PHP-kode p\xE5 stedet. Det er ideelt for eksperimentering, feils\xF8\
   king eller\u2026"
 title: Bruke et interaktivt skall (REPL)
+weight: 34
 ---
-
-{{< edit_this_page >}}
 
 ## Hva & Hvorfor?
 En interaktiv skall, eller REPL (Read-Eval-Print Loop), lar deg skrive og kjøre PHP-kode på stedet. Det er ideelt for eksperimentering, feilsøking eller læring, da du kan teste utdrag uten overheaden av å lage et fullt skript.

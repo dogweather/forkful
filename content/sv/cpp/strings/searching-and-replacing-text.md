@@ -9,9 +9,8 @@ summary: "S\xF6k och ers\xE4tt inneb\xE4r att hitta specifik text och byta ut de
   \ mot n\xE5got annat. Programmerare anv\xE4nder det f\xF6r att snabbt \xE4ndra kod,\
   \ data eller dokument,\u2026"
 title: "S\xF6kning och ers\xE4ttning av text"
+weight: 10
 ---
-
-{{< edit_this_page >}}
 
 ## Vad & Varför?
 Sök och ersätt innebär att hitta specifik text och byta ut den mot något annat. Programmerare använder det för att snabbt ändra kod, data eller dokument, ofta för att förbättra, korrigera eller uppdatera innehåll.

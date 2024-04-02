@@ -22,9 +22,8 @@ summary: "\uCF54\uB4DC\uB97C \uD568\uC218\uB85C \uAD6C\uC131\uD558\uB294 \uAC83\
   \ \uD568\uC218\uB97C \uD638\uCD9C\uD558\uC2ED\uC2DC\uC624. \uBB38\uC81C\uB97C \uD574\
   \uACB0\uD558\uAC70\uB098 \uC5C5\uADF8\uB808\uC774\uB4DC\uD558\uACE0\u2026"
 title: "\uCF54\uB4DC\uB97C \uD568\uC218\uB85C \uAD6C\uC131\uD558\uAE30"
+weight: 18
 ---
-
-{{< edit_this_page >}}
 
 ## 무엇이며 왜 사용하는가?
 코드를 함수로 구성하는 것은 특정 작업을 수행하는 코드 덩어리를 감싸고 이름을 지어주는 것입니다. 이것은 코드를 재사용 가능하고, 읽기 쉽고, 유지 보수하기 쉽도록 하기 위해 수행됩니다. 동일한 코드를 다시 작성하는 대신 함수를 호출하십시오. 문제를 해결하거나 업그레이드하고 싶으신가요? 스크립트 더미를 뒤져볼 필요 없이 함수만 조정하면 됩니다.

@@ -8,9 +8,8 @@ model: gpt-4-0125-preview
 summary: "Parsing a date from a string is a common task when dealing with user input\
   \ or reading data from files, which involves converting string data into a date\u2026"
 title: Parsing a date from a string
+weight: 30
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 

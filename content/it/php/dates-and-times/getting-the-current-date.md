@@ -10,9 +10,8 @@ model: gpt-4-0125-preview
 summary: "Ottenere la data corrente in PHP \xE8 un'attivit\xE0 fondamentale che permette\
   \ di recuperare e manipolare la data e l'ora del sistema. Questo \xE8 cruciale per\u2026"
 title: Ottenere la data corrente
+weight: 29
 ---
-
-{{< edit_this_page >}}
 
 ## Cosa e Perché?
 Ottenere la data corrente in PHP è un'attività fondamentale che permette di recuperare e manipolare la data e l'ora del sistema. Questo è cruciale per funzioni come il logging, l'impostazione di timestamp nei post, la programmazione di eventi o l'esecuzione di operazioni sensibili al tempo nelle tue applicazioni.

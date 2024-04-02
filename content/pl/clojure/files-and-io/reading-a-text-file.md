@@ -9,9 +9,8 @@ summary: "(Co i dlaczego?) Czytanie pliku tekstowego to pobieranie jego zawarto\
   ci do pami\u0119ci programu. Programi\u015Bci robi\u0105 to, by manipulowa\u0107\
   \ danymi, wy\u015Bwietli\u0107 je\u2026"
 title: Odczytywanie pliku tekstowego
+weight: 22
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 (Co i dlaczego?)

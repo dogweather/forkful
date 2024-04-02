@@ -9,9 +9,8 @@ summary: "Debugging er prosessen med \xE5 finne og fikse feil i koden. Vi printe
   \ debug output for \xE5 se hva som faktisk skjer n\xE5r koden kj\xF8rer, noe som\
   \ hjelper oss \xE5\u2026"
 title: "Skrive ut feils\xF8kingsdata"
+weight: 33
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 Debugging er prosessen med å finne og fikse feil i koden. Vi printer debug output for å se hva som faktisk skjer når koden kjører, noe som hjelper oss å forstå og rette feil raskt.

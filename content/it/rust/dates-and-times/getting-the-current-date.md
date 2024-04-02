@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Il recupero della data corrente in Rust \xE8 un compito comune per attivit\xE0\
   \ come la registrazione, operazioni basate sul tempo o semplicemente per\u2026"
 title: Ottenere la data corrente
+weight: 29
 ---
-
-{{< edit_this_page >}}
 
 ## Cosa & Perché?
 

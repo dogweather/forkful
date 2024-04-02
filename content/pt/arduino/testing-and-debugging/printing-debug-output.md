@@ -9,9 +9,8 @@ summary: "Debugar escrevendo sa\xEDdas \xE9 como dar uma espiada no c\xE9rebro d
   \ seu Arduino \u2013 voc\xEA usa mensagens para descobrir o que est\xE1 acontecendo\
   \ dentro do c\xF3digo.\u2026"
 title: "Exibindo sa\xEDdas de depura\xE7\xE3o"
+weight: 33
 ---
-
-{{< edit_this_page >}}
 
 ## O Que é & Por Que?
 Debugar escrevendo saídas é como dar uma espiada no cérebro do seu Arduino – você usa mensagens para descobrir o que está acontecendo dentro do código. Programadores fazem isso para corrigir erros e entender melhor o comportamento do programa.

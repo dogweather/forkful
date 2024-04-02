@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Estrarre sottostringhe in C comporta la creazione di una stringa pi\xF9\
   \ piccola (sottostringa) da una stringa pi\xF9 grande basandosi su criteri specificati,\u2026"
 title: Estrazione di sottosequenze
+weight: 6
 ---
-
-{{< edit_this_page >}}
 
 ## Cosa e Perché?
 

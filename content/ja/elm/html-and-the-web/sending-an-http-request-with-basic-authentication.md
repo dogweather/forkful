@@ -19,9 +19,8 @@ summary: "HTTP\u30EA\u30AF\u30A8\u30B9\u30C8\u3067\u30D9\u30FC\u30B7\u30C3\u30AF
   \u3081\u3067\u3059\u3002"
 title: "\u57FA\u672C\u8A8D\u8A3C\u3092\u4F7F\u7528\u3057\u305FHTTP\u30EA\u30AF\u30A8\
   \u30B9\u30C8\u306E\u9001\u4FE1"
+weight: 45
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why? (何となぜ？)
 HTTPリクエストでベーシック認証を送るとは、ユーザー名とパスワードをエンコードしてサーバーにアクセスすることです。これを行う理由は、リソースへの安全なアクセスを確保するためです。

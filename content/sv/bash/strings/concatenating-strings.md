@@ -9,9 +9,8 @@ summary: "Sammanfogning av str\xE4ngar handlar om att sm\xE4lla ihop textbitar t
   \ en enda l\xE4ngre text. Programmerare g\xF6r det f\xF6r att bygga upp meddelanden,\
   \ kommandon\u2026"
 title: "Sammanslagning av str\xE4ngar"
+weight: 3
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why? 
 Sammanfogning av strängar handlar om att smälla ihop textbitar till en enda längre text. Programmerare gör det för att bygga upp meddelanden, kommandon eller för att hantera data dynamiskt.

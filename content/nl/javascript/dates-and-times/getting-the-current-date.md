@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "De huidige datum in JavaScript verkrijgen, is het vastleggen van de datum\
   \ en tijd van de huidige dag. Programmeurs doen dit voor zaken zoals tijdstempels,\u2026"
 title: Het huidige datum ophalen
+weight: 29
 ---
-
-{{< edit_this_page >}}
 
 ## Wat & Waarom?
 De huidige datum in JavaScript verkrijgen, is het vastleggen van de datum en tijd van de huidige dag. Programmeurs doen dit voor zaken zoals tijdstempels, schema's en tijdgebonden logica.

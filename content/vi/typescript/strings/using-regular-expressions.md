@@ -13,9 +13,8 @@ summary: "Bi\u1EC3u th\u1EE9c ch\xEDnh quy, hay c\xF2n g\u1ECDi l\xE0 regex, l\x
   \ kh\u1EDBp m\u1EABu trong l\u1EADp tr\xECnh. C\xE1c l\u1EADp tr\xECnh vi\xEAn s\u1EED\
   \ d\u1EE5ng regex cho nh\u1EEFng t\xE1c\u2026"
 title: "S\u1EED d\u1EE5ng bi\u1EC3u th\u1EE9c ch\xEDnh quy"
+weight: 11
 ---
-
-{{< edit_this_page >}}
 
 ## Gì và Tại sao?
 Biểu thức chính quy, hay còn gọi là regex, là một công cụ mạnh mẽ để tìm kiếm và khớp mẫu trong lập trình. Các lập trình viên sử dụng regex cho những tác vụ như xác minh dữ liệu người dùng, tìm kiếm trong văn bản, hoặc thao tác với chuỗi vì nó hiệu quả và đa năng.

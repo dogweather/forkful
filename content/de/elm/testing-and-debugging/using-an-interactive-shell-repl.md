@@ -7,9 +7,8 @@ model: gpt-4-0125-preview
 summary: "Die Read-Eval-Print-Schleife (REPL) ist eine einfache, interaktive Programmierumgebung,\
   \ die einzelne Benutzereingaben annimmt, auswertet und das Ergebnis\u2026"
 title: Nutzung einer interaktiven Shell (REPL)
+weight: 34
 ---
-
-{{< edit_this_page >}}
 
 ## Was & Warum?
 Die Read-Eval-Print-Schleife (REPL) ist eine einfache, interaktive Programmierumgebung, die einzelne Benutzereingaben annimmt, auswertet und das Ergebnis an den Benutzer zurückgibt. Elm-Programmierer nutzen REPL für schnelle Experimente, zum Debuggen oder zum Erlernen der Sprache.

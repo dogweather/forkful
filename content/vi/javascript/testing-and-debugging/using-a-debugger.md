@@ -2,17 +2,18 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:09:20.703807-07:00
-description: "S\u1EED d\u1EE5ng debugger c\xF3 ngh\u0129a l\xE0 t\u1EADn d\u1EE5ng\
-  \ c\xE1c c\xF4ng c\u1EE5 chuy\xEAn bi\u1EC7t gi\xFAp b\u1EA1n c\xF3 c\xE1i nh\xEC\
-  n s\xE2u v\xE0o b\xEAn trong m\xE3 c\u1EE7a m\xECnh, theo d\xF5i n\xF3 ch\u1EA1\
-  y t\u1EEBng b\u01B0\u1EDBc m\u1ED9t. L\u1EADp\u2026"
+description: "D\u01B0\u1EDBi \u0111\xE2y l\xE0 m\u1ED9t \u0111o\u1EA1n m\xE3 JavaScript\
+  \ kh\xF4ng ho\u1EA1t \u0111\u1ED9ng nh\u01B0 mong \u0111\u1EE3i: ```javascript function\
+  \ buggyMultiply(a, b) { return a + b; // \xD4i! \u0110\xE2y ph\u1EA3i l\xE0 ph\xE9\
+  p nh\xE2n,\u2026"
 lastmod: '2024-03-13T22:44:37.159192-06:00'
 model: gpt-4-0125-preview
-summary: "S\u1EED d\u1EE5ng debugger c\xF3 ngh\u0129a l\xE0 t\u1EADn d\u1EE5ng c\xE1\
-  c c\xF4ng c\u1EE5 chuy\xEAn bi\u1EC7t gi\xFAp b\u1EA1n c\xF3 c\xE1i nh\xECn s\xE2\
-  u v\xE0o b\xEAn trong m\xE3 c\u1EE7a m\xECnh, theo d\xF5i n\xF3 ch\u1EA1y t\u1EEB\
-  ng b\u01B0\u1EDBc m\u1ED9t. L\u1EADp\u2026"
+summary: "D\u01B0\u1EDBi \u0111\xE2y l\xE0 m\u1ED9t \u0111o\u1EA1n m\xE3 JavaScript\
+  \ kh\xF4ng ho\u1EA1t \u0111\u1ED9ng nh\u01B0 mong \u0111\u1EE3i: ```javascript function\
+  \ buggyMultiply(a, b) { return a + b; // \xD4i! \u0110\xE2y ph\u1EA3i l\xE0 ph\xE9\
+  p nh\xE2n,\u2026"
 title: "S\u1EED d\u1EE5ng b\u1ED9 g\u1EE1 l\u1ED7i"
+weight: 35
 ---
 
 ## Cách thực hiện:

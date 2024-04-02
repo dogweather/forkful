@@ -7,9 +7,8 @@ model: gpt-4-1106-preview
 summary: "La gestione degli errori riguarda il controllo dell'inaspettato nei programmi,\
   \ proprio come un buttafuori che si occupa dei guastafeste. Ai programmatori\u2026"
 title: Gestione degli errori
+weight: 16
 ---
-
-{{< edit_this_page >}}
 
 ## Cosa & Perché?
 La gestione degli errori riguarda il controllo dell'inaspettato nei programmi, proprio come un buttafuori che si occupa dei guastafeste. Ai programmatori piace che tutto fili liscio; la gestione degli errori aiuta a tenere i problemi sotto controllo, assicurandosi che il loro codice non inciampi e cada di fronte all'imprevisto.

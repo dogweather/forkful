@@ -11,9 +11,8 @@ summary: "Odczytywanie argument\xF3w linii polece\u0144 w Dart umo\u017Cliwia pr
   \ bezpo\u015Brednie wprowadzanie danych do konsoli podczas wykonywania programu\
   \ Dart,\u2026"
 title: "Czytanie argument\xF3w z linii polece\u0144"
+weight: 23
 ---
-
-{{< edit_this_page >}}
 
 ## Co i dlaczego?
 

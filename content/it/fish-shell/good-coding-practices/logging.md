@@ -9,9 +9,8 @@ summary: "Il logging, essenzialmente, consiste nell'annotare ci\xF2 che la tua a
   \ sta facendo \u2013 potremmo dire un diario, ma per il codice. I programmatori\
   \ lo\u2026"
 title: Registrazione Eventi (Logging)
+weight: 17
 ---
-
-{{< edit_this_page >}}
 
 ## Cosa e Perché?
 Il logging, essenzialmente, consiste nell'annotare ciò che la tua applicazione sta facendo – potremmo dire un diario, ma per il codice. I programmatori lo fanno per tenere traccia dei dettagli, come cambiamenti di stato, eventi di sistema e fastidiosi bug, assicurandosi che nessun inconveniente passi inosservato.

@@ -18,9 +18,8 @@ summary: "\uC22B\uC790 \uBC18\uC62C\uB9BC\uC740 \uAC12\uC744 \uAC00\uC7A5 \uAC00
   \uD55C \uC815\uBC00\uB3C4\uB97C \uC81C\uAC70\uD568\uC73C\uB85C\uC368 \uC131\uB2A5\
   \uC744 \uD5A5\uC0C1\uC2DC\uD0A4\uAE30 \uC704\uD574 \uC0AC\uC6A9\uD55C\uB2E4."
 title: "\uC22B\uC790 \uBC18\uC62C\uB9BC\uD558\uAE30"
+weight: 13
 ---
-
-{{< edit_this_page >}}
 
 ## 무엇인가 & 왜인가?
 숫자 반올림은 값을 가장 가까운 정수나 지정된 정밀도로 조정하는 것을 말한다. 개발자들은 이를 통해 단순화하거나, 실제 세계의 제약 사항에 맞추거나, 불필요한 정밀도를 제거함으로써 성능을 향상시키기 위해 사용한다.

@@ -9,9 +9,8 @@ summary: "Debugar \xE9 tipo um GPS para desenvolvedores: ajuda a encontrar onde 
   \ coisas d\xE3o errado. Imprimir sa\xEDdas de debug \xE9 deixar migalhas de p\xE3\
   o pelo c\xF3digo,\u2026"
 title: "Exibindo sa\xEDdas de depura\xE7\xE3o"
+weight: 33
 ---
-
-{{< edit_this_page >}}
 
 ## O Que é & Porquê?
 

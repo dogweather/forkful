@@ -9,9 +9,8 @@ summary: "Zamiana daty na \u0142a\u0144cuch znak\xF3w (string) to proces przeksz
   cania obiektu daty w czytelny tekst. Programi\u015Bci robi\u0105 to, \u017Ceby u\u0142\
   atwi\u0107 wy\u015Bwietlanie dat\u2026"
 title: "Konwersja daty na \u0142a\u0144cuch znak\xF3w"
+weight: 28
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why? (Co i Dlaczego?)
 Zamiana daty na łańcuch znaków (string) to proces przekształcania obiektu daty w czytelny tekst. Programiści robią to, żeby ułatwić wyświetlanie dat użytkownikom i przechowywanie dat w bazach danych w ustandaryzowanym formacie.

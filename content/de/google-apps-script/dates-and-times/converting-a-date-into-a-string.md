@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Die Umwandlung von Daten in Zeichenketten ist eine grundlegende Aufgabe,\
   \ die es Programmierern erm\xF6glicht, Datumsinformationen in einem f\xFCr Menschen\u2026"
 title: Ein Datum in einen String umwandeln
+weight: 28
 ---
-
-{{< edit_this_page >}}
 
 ## Was & Warum?
 

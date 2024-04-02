@@ -11,9 +11,8 @@ summary: "Obtenir la date actuelle en C# consiste \xE0 r\xE9cup\xE9rer les d\xE9
   \ de la date et de l'heure actuelles du syst\xE8me. Les programmeurs ont souvent\
   \ besoin\u2026"
 title: Obtenir la date actuelle
+weight: 29
 ---
-
-{{< edit_this_page >}}
 
 ## Quoi & Pourquoi ?
 Obtenir la date actuelle en C# consiste à récupérer les détails de la date et de l'heure actuelles du système. Les programmeurs ont souvent besoin d'accéder à cette information pour la journalisation, le marquage temporel des opérations ou la planification des tâches au sein des applications, garantissant que les actions sont chronométrées avec précision et que les données sont marquées avec des horodatages précis.

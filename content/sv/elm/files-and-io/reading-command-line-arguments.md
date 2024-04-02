@@ -9,9 +9,8 @@ summary: "Att l\xE4sa kommandoradsargument inneb\xE4r att tolka data som anv\xE4
   \ anger n\xE4r de startar ett program fr\xE5n terminalen. Programmerare g\xF6r detta\
   \ f\xF6r att\u2026"
 title: "L\xE4sa in kommandoradsargument"
+weight: 23
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 Att läsa kommandoradsargument innebär att tolka data som användarna anger när de startar ett program från terminalen. Programmerare gör detta för att tillåta dynamiskt beteende beroende på användarinput.

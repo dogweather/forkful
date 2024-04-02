@@ -11,9 +11,8 @@ summary: "L'analisi dell'HTML in Google Apps Script comporta l'estrazione di dat
   \ da contenuti HTML, il che \xE8 particolarmente utile quando si interagisce con\
   \ pagine\u2026"
 title: Analisi del HTML
+weight: 43
 ---
-
-{{< edit_this_page >}}
 
 ## Cosa & Perché?
 L'analisi dell'HTML in Google Apps Script comporta l'estrazione di dati da contenuti HTML, il che è particolarmente utile quando si interagisce con pagine web o fonti di dati basate sul web. I programmatori fanno ciò per automatizzare la raccolta dei dati, manipolare i contenuti web o integrare le funzionalità web con Google Apps come Fogli e Documenti.

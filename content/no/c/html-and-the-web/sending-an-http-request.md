@@ -11,9 +11,8 @@ summary: "\xC5 sende en HTTP-foresp\xF8rsel inneb\xE6rer \xE5 opprette og sende 
   \ foresp\xF8rsel til en webserver for \xE5 hente eller sende inn data. Programmerere\
   \ gj\xF8r dette i C\u2026"
 title: "Sende en HTTP-foresp\xF8rsel"
+weight: 44
 ---
-
-{{< edit_this_page >}}
 
 ## Hva & Hvorfor?
 

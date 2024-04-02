@@ -11,9 +11,8 @@ summary: "Recuperar a data atual em Rust \xE9 uma tarefa comum para atividades c
   \ registro (logging), opera\xE7\xF5es baseadas em tempo, ou simplesmente para exibir\
   \ a\u2026"
 title: Obtendo a data atual
+weight: 29
 ---
-
-{{< edit_this_page >}}
 
 ## O quê & Por quê?
 

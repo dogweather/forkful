@@ -11,9 +11,8 @@ summary: "\xC5 h\xE5ndtere feil i C inneb\xE6rer \xE5 oppdage og respondere p\xE
   \ unormale tilstander som oppst\xE5r under kj\xF8ring av programmet. Programmerere\
   \ gj\xF8r dette for \xE5\u2026"
 title: "H\xE5ndtering av feil"
+weight: 16
 ---
-
-{{< edit_this_page >}}
 
 ## Hva & Hvorfor?
 

@@ -7,9 +7,8 @@ model: gpt-4-0125-preview
 summary: "Komplekse tall har en reel del og en imagin\xE6r del (som 3 + 4i). Programmerere\
   \ bruker dem i Swift for oppgaver som signalbehandling, l\xF8sning av visse\u2026"
 title: "\xC5 jobbe med komplekse tall"
+weight: 14
 ---
-
-{{< edit_this_page >}}
 
 ## Hva & Hvorfor?
 Komplekse tall har en reel del og en imaginær del (som 3 + 4i). Programmerere bruker dem i Swift for oppgaver som signalbehandling, løsning av visse matematiske problemer, og simulering av fysikk.

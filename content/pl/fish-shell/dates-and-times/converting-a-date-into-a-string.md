@@ -9,9 +9,8 @@ summary: "Przekszta\u0142canie daty w ci\u0105g znak\xF3w to proces zamiany repr
   \ daty na tekst. Programi\u015Bci to robi\u0105, by \u0142atwo zapisa\u0107 lub\
   \ wy\u015Bwietli\u0107 dat\u0119 w czytelnej\u2026"
 title: "Konwersja daty na \u0142a\u0144cuch znak\xF3w"
+weight: 28
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why? (Co i Dlaczego?)
 Przekształcanie daty w ciąg znaków to proces zamiany reprezentacji daty na tekst. Programiści to robią, by łatwo zapisać lub wyświetlić datę w czytelnej formie dla ludzi.

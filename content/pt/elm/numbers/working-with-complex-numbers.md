@@ -9,9 +9,8 @@ summary: "N\xFAmeros complexos s\xE3o uma combina\xE7\xE3o de n\xFAmeros reais e
   rios, como `a + bi`, onde `i` \xE9 a raiz quadrada de -1. Eles s\xE3o essenciais\
   \ em campos como\u2026"
 title: "Trabalhando com n\xFAmeros complexos"
+weight: 14
 ---
-
-{{< edit_this_page >}}
 
 ## O Que & Porquê?
 Números complexos são uma combinação de números reais e imaginários, como `a + bi`, onde `i` é a raiz quadrada de -1. Eles são essenciais em campos como engenharia e física para resolver problemas que números regulares não conseguem.

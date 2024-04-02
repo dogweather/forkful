@@ -10,9 +10,8 @@ model: gpt-4-0125-preview
 summary: "Regul\xE6re uttrykk (regex) er m\xF8nstre som brukes til \xE5 finne kombinasjoner\
   \ av tegn i strenger. Programmerere benytter dem for s\xF8k, redigering eller\u2026"
 title: "Bruke regul\xE6re uttrykk"
+weight: 11
 ---
-
-{{< edit_this_page >}}
 
 ## Hva & Hvorfor?
 Regulære uttrykk (regex) er mønstre som brukes til å finne kombinasjoner av tegn i strenger. Programmerere benytter dem for søk, redigering eller manipulasjon av tekst basert på definerte mønstre, noe som gjør dem uunnværlige for oppgaver som datavalidering, parsing eller transformasjon.

@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Het afdrukken van debugoutput stelt je in staat om een kijkje te nemen in\
   \ de staat van je programma zonder een volwaardige debugger. Het is snel,\u2026"
 title: Debug-output afdrukken
+weight: 33
 ---
-
-{{< edit_this_page >}}
 
 ## Wat & Waarom?
 Het afdrukken van debugoutput stelt je in staat om een kijkje te nemen in de staat van je programma zonder een volwaardige debugger. Het is snel, ongepolijst en perfect voor het traceren van lastige bugs wanneer je niet de vuurkracht van een specifieke debugtool nodig hebt.

@@ -10,9 +10,8 @@ model: gpt-4-0125-preview
 summary: "Calculer une date dans le futur ou dans le pass\xE9 en Go implique de manipuler\
   \ des valeurs de date et d'heure pour d\xE9terminer un point sp\xE9cifique par\u2026"
 title: "Calculer une date dans le futur ou le pass\xE9"
+weight: 26
 ---
-
-{{< edit_this_page >}}
 
 ## Quoi & Pourquoi ?
 

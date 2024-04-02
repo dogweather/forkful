@@ -11,9 +11,8 @@ summary: "Konwersja \u0142a\u0144cucha znak\xF3w na ma\u0142e litery w j\u0119zy
   \ C polega na przekszta\u0142ceniu wszystkich wielkich liter w danym \u0142a\u0144\
   cuchu na odpowiadaj\u0105ce im ma\u0142e litery.\u2026"
 title: "Konwersja \u0142a\u0144cucha znak\xF3w na ma\u0142e litery"
+weight: 4
 ---
-
-{{< edit_this_page >}}
 
 ## Co i dlaczego?
 

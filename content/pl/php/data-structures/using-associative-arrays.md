@@ -11,9 +11,8 @@ summary: "Asocjacyjne tablice w PHP s\u0105 jak na\u0142adowane mo\u017Cliwo\u01
   ciami listy, gdzie ka\u017Cdy element mo\u017Cna uzyska\u0107 przy u\u017Cyciu klucza\
   \ zrozumia\u0142ego dla cz\u0142owieka zamiast\u2026"
 title: Korzystanie z tablic asocjacyjnych
+weight: 15
 ---
-
-{{< edit_this_page >}}
 
 ## Co i dlaczego?
 

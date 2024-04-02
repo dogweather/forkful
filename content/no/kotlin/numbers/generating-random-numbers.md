@@ -9,9 +9,8 @@ summary: "Generering av tilfeldige tall i programmering handler om \xE5 skape ta
   \ som mangler ethvert forutsigbart m\xF8nster. Programmerere gj\xF8r dette av ulike\
   \ grunner,\u2026"
 title: Generering av tilfeldige tall
+weight: 12
 ---
-
-{{< edit_this_page >}}
 
 ## Hva & Hvorfor?
 

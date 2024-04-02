@@ -9,9 +9,8 @@ summary: "TOML \xE9 uma linguagem de serializa\xE7\xE3o de dados leg\xEDvel por 
   \ frequentemente utilizada para configura\xE7\xF5es. Programadores usam TOML pela\
   \ sua\u2026"
 title: Trabalhando com TOML
+weight: 39
 ---
-
-{{< edit_this_page >}}
 
 ## O Que e Por Que?
 TOML é uma linguagem de serialização de dados legível por humanos, frequentemente utilizada para configurações. Programadores usam TOML pela sua simplicidade e clareza, traduzindo-se facilmente em um hash map em Rust.

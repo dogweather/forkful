@@ -14,9 +14,8 @@ summary: "Vi\u1EC7c t\u1EA1o s\u1ED1 ng\u1EABu nhi\xEAn trong Elm bao g\u1ED3m v
   \ ng\u1EABu nhi\xEAn, r\u1EA5t h\u1EEFu \xEDch cho nhi\u1EC1u t\xE1c v\u1EE5 nh\u01B0\
   \ tr\xF2 ch\u01A1i, m\xF4 ph\u1ECFng,\u2026"
 title: "Sinh s\u1ED1 ng\u1EABu nhi\xEAn"
+weight: 12
 ---
-
-{{< edit_this_page >}}
 
 ## Cái gì & Tại sao?
 Việc tạo số ngẫu nhiên trong Elm bao gồm việc sử dụng module `Random` để sản xuất số giả ngẫu nhiên, rất hữu ích cho nhiều tác vụ như trò chơi, mô phỏng, và thậm chí là một phần của các thuật toán yêu cầu quá trình ngẫu nhiên học. Khả năng này cho phép các nhà phát triển thêm tính không chắc chắn và đa dạng vào ứng dụng của họ, nâng cao trải nghiệm và chức năng cho người dùng.

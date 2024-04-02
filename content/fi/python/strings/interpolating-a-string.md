@@ -12,9 +12,8 @@ summary: "Merkkijonon interpolaatio on menetelm\xE4, jossa lausekkeita sis\xE4ll
   \xE4n osaksi merkkijonoliteraaleja. Ohjelmoijat k\xE4ytt\xE4v\xE4t sit\xE4 dynaamisesti\
   \ arvojen\u2026"
 title: Merkkijonon interpolointi
+weight: 8
 ---
-
-{{< edit_this_page >}}
 
 ## Mikä & Miksi?
 Merkkijonon interpolaatio on menetelmä, jossa lausekkeita sisällytetään osaksi merkkijonoliteraaleja. Ohjelmoijat käyttävät sitä dynaamisesti arvojen lisäämiseen merkkijonoihin, mikä tekee koodista luettavampaa ja siistimpää kuin perinteinen merkkijonojen yhdistäminen.

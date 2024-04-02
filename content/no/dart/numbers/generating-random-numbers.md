@@ -10,9 +10,8 @@ model: gpt-4-0125-preview
 summary: "Generering av tilfeldige tall i Dart inneb\xE6rer \xE5 skape numeriske verdier\
   \ som er uforutsigbare og varierer ved hver kj\xF8ring. Programmerere utnytter denne\u2026"
 title: Genererer tilfeldige tall
+weight: 12
 ---
-
-{{< edit_this_page >}}
 
 ## Hva og hvorfor?
 Generering av tilfeldige tall i Dart innebærer å skape numeriske verdier som er uforutsigbare og varierer ved hver kjøring. Programmerere utnytter denne funksjonaliteten av flere grunner, fra å simulere virkelige scenarioer i testmiljøer til å muliggjøre spillmekanikker og sikre sikkerhet gjennom tilfeldighet i kryptografiske operasjoner.

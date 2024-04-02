@@ -7,9 +7,8 @@ model: gpt-4-1106-preview
 summary: "Le journalisation (logging en anglais) est essentiellement le processus\
   \ d'enregistrement d\u2019\xE9v\xE9nements qui se produisent au sein d'une application\u2026"
 title: Journalisation
+weight: 17
 ---
-
-{{< edit_this_page >}}
 
 ## Quoi & Pourquoi ?
 Le journalisation (logging en anglais) est essentiellement le processus d'enregistrement d’événements qui se produisent au sein d'une application logicielle. Les programmeurs enregistrent ces événements pour capturer des informations en temps d'exécution, déboguer des problèmes, surveiller le comportement du système et créer un historique d'audit pour des raisons de sécurité et de conformité.

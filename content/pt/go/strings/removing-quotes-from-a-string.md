@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Remover aspas de uma string em Go \xE9 sobre eliminar as aspas de abertura\
   \ e fechamento (`\"` ou `'`) de uma determinada string. Programadores frequentemente\u2026"
 title: Removendo aspas de uma string
+weight: 9
 ---
-
-{{< edit_this_page >}}
 
 ## O Que & Por Quê?
 

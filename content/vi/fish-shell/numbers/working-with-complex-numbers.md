@@ -14,9 +14,8 @@ summary: "S\u1ED1 ph\u1EE9c m\u1EDF r\u1ED9ng \xFD t\u01B0\u1EDFng v\u1EC1 \u011
   c t\u1EA1p hai chi\u1EC1u. L\u1EADp tr\xECnh vi\xEAn s\u1EED d\u1EE5ng ch\xFAng\
   \ trong c\xE1c l\u0129nh v\u1EF1c nh\u01B0 k\u1EF9 thu\u1EADt, v\u1EADt l\xFD\u2026"
 title: "L\xE0m vi\u1EC7c v\u1EDBi s\u1ED1 ph\u1EE9c"
+weight: 14
 ---
-
-{{< edit_this_page >}}
 
 ## Cái gì & Tại sao?
 Số phức mở rộng ý tưởng về đường số một chiều thành một mặt phẳng phức tạp hai chiều. Lập trình viên sử dụng chúng trong các lĩnh vực như kỹ thuật, vật lý và đồ họa cho các tính toán yêu cầu hai thành phần, như tín hiệu hoặc xoay vòng.

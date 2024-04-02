@@ -11,9 +11,8 @@ summary: "YAML, que significa YAML Ain't Markup Language (YAML N\xE3o \xE9 Uma L
   \ de Marca\xE7\xE3o), \xE9 um padr\xE3o de serializa\xE7\xE3o de dados leg\xEDvel\
   \ por humanos que pode\u2026"
 title: Trabalhando com YAML
+weight: 41
 ---
-
-{{< edit_this_page >}}
 
 ## O Que & Por Quê?
 

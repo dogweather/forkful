@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Associatieve arrays, in Python bekend als woordenboeken, koppelen sleutels\
   \ aan waarden, waardoor het gemakkelijk is om data op te halen, te wijzigen of te\u2026"
 title: Gebruik van associatieve arrays
+weight: 15
 ---
-
-{{< edit_this_page >}}
 
 ## Wat & Waarom?
 

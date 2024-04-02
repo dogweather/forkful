@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Tworzenie tymczasowego pliku w Dart polega na generowaniu pliku przeznaczonego\
   \ do kr\xF3tkoterminowego u\u017Cytku, przede wszystkim w scenariuszach takich jak\u2026"
 title: Tworzenie tymczasowego pliku
+weight: 21
 ---
-
-{{< edit_this_page >}}
 
 ## Co i dlaczego?
 Tworzenie tymczasowego pliku w Dart polega na generowaniu pliku przeznaczonego do krótkoterminowego użytku, przede wszystkim w scenariuszach takich jak przechowywanie danych w pamięci podręcznej, tymczasowe przechowanie danych podczas przetwarzania plików lub przechowywanie informacji, które są zbyt wrażliwe, aby zachować je na dłużej. Programiści robią to, aby zarządzać danymi, które nie wymagają stałego przechowywania, co z kolei zwiększa wydajność i pomaga w utrzymaniu higieny danych.

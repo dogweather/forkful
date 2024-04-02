@@ -17,9 +17,8 @@ summary: "\u5728JavaScript\u4E2D\u83B7\u53D6\u5F53\u524D\u65E5\u671F\u662F\u4E00
   \u4E2D\u663E\u793A\u65E5\u671F\uFF0C\u8DDF\u8E2A\u7528\u6237\u4E92\u52A8\uFF0C\u6216\
   \u5904\u7406\u65F6\u95F4\u654F\u611F\u6570\u636E\u3002"
 title: "\u83B7\u53D6\u5F53\u524D\u65E5\u671F"
+weight: 29
 ---
-
-{{< edit_this_page >}}
 
 ## 什么 & 为什么？
 在JavaScript中获取当前日期是一项基本任务，涉及检索和可能操纵今天的日期和时间。程序员执行此操作是为了在网站、应用程序中显示日期，跟踪用户互动，或处理时间敏感数据。

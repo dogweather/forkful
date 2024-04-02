@@ -21,9 +21,8 @@ summary: "\u5728 Haskell \u4E2D\u5904\u7406 JSON\uFF08JavaScript \u5BF9\u8C61\u8
   \u5F00\u53D1\u4E2D\u662F\u8DE8\u5E73\u53F0\u6570\u636E\u4EA4\u6362\u7684\u5E38\u89C1\
   \u505A\u6CD5\u3002"
 title: "\u4F7F\u7528JSON\u8FDB\u884C\u7F16\u7A0B"
+weight: 38
 ---
-
-{{< edit_this_page >}}
 
 ## 什么 & 为什么？
 在 Haskell 中处理 JSON（JavaScript 对象表示法）涉及到将 JSON 数据解析成 Haskell 类型以及将 Haskell 类型反向转换成 JSON。程序员这样做是为了使他们的 Haskell 应用能够与网络服务或 API 无缝交换数据，这在现代软件开发中是跨平台数据交换的常见做法。

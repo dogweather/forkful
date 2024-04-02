@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Att f\xE5 det aktuella datumet i Google Apps Script handlar om att h\xE4\
   mta det levande datumet och tiden, en vanlig uppgift f\xF6r att automatisera uppgifter,\u2026"
 title: "H\xE4mta aktuellt datum"
+weight: 29
 ---
-
-{{< edit_this_page >}}
 
 ## Vad & Varför?
 

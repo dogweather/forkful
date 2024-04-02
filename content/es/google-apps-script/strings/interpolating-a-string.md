@@ -11,9 +11,8 @@ summary: "La interpolaci\xF3n de cadenas en Google Apps Script permite la incrus
   n din\xE1mica de expresiones dentro de las cadenas, facilitando la creaci\xF3n de\
   \ c\xF3digo\u2026"
 title: Interpolando una cadena de texto
+weight: 8
 ---
-
-{{< edit_this_page >}}
 
 ## Qué y por qué?
 

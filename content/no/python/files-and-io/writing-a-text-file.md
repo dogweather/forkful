@@ -10,9 +10,8 @@ model: gpt-4-0125-preview
 summary: "\xC5 skrive til en tekstfil i Python er en grunnleggende oppgave som inneb\xE6\
   rer \xE5 opprette eller \xE5pne en fil og deretter legge til eller overskrive tekst.\u2026"
 title: Skrive en tekstfil
+weight: 24
 ---
-
-{{< edit_this_page >}}
 
 ## Hva & Hvorfor?
 Å skrive til en tekstfil i Python er en grunnleggende oppgave som innebærer å opprette eller åpne en fil og deretter legge til eller overskrive tekst. Denne funksjonaliteten er avgjørende for datalogging, konfigurasjonsstyring og lagring av utdata generert av programmer, noe som gjør det til et grunnleggende, men essensielt verktøy i en programmerers verktøykasse.

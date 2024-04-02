@@ -10,9 +10,8 @@ model: gpt-4-0125-preview
 summary: "Lokitus ohjelmistokehityksess\xE4 on prosessi, jossa kirjataan tietoa ohjelman\
   \ suorituksesta, jonka tarkoituksena on seurata sen k\xE4ytt\xE4ytymist\xE4 ja\u2026"
 title: Lokitiedostot
+weight: 17
 ---
-
-{{< edit_this_page >}}
 
 ## Mikä & Miksi?
 

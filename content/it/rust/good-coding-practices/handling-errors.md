@@ -7,9 +7,8 @@ model: gpt-4-1106-preview
 summary: "La gestione degli errori riguarda il come affrontare le situazioni quando\
   \ le cose non vanno come previsto. I programmatori lo fanno per gestire\u2026"
 title: Gestione degli errori
+weight: 16
 ---
-
-{{< edit_this_page >}}
 
 ## Cosa & Perché?
 

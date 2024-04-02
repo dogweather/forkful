@@ -9,9 +9,8 @@ summary: "Wyszukiwanie i zamiana tekstu to podstawa przetwarzania ci\u0105g\xF3w
   w, umo\u017Cliwiaj\u0105ca podmian\u0119 okre\u015Blonych fragment\xF3w na nowe.\
   \ Programi\u015Bci korzystaj\u0105 z\u2026"
 title: Wyszukiwanie i zamiana tekstu
+weight: 10
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why? (Co i dlaczego?)
 Wyszukiwanie i zamiana tekstu to podstawa przetwarzania ciągów znaków, umożliwiająca podmianę określonych fragmentów na nowe. Programiści korzystają z tych operacji, by modyfikować dane, automatyzować refaktoryzację kodu i usprawniać pracę z tekstami.

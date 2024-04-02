@@ -11,9 +11,8 @@ summary: "Att arbeta med XML i Dart omfattar analys, f\xF6rfr\xE5gan och modifie
   \ av XML-dokument, en process som \xE4r avg\xF6rande f\xF6r applikationer som interagerar\
   \ med\u2026"
 title: Arbeta med XML
+weight: 40
 ---
-
-{{< edit_this_page >}}
 
 ## Vad & Varför?
 

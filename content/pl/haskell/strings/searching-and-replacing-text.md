@@ -9,9 +9,8 @@ summary: "Wyszukiwanie i zamiana tekstu to podstawa edycji: zmieniasz jedno prze
   \ drugie, proste. Programi\u015Bci to robi\u0105, by szybko poprawia\u0107 kody\
   \ i aktualizowa\u0107 dane."
 title: Wyszukiwanie i zamiana tekstu
+weight: 10
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 Wyszukiwanie i zamiana tekstu to podstawa edycji: zmieniasz jedno przez drugie, proste. Programiści to robią, by szybko poprawiać kody i aktualizować dane.

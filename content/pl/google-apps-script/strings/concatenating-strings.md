@@ -11,9 +11,8 @@ summary: "Konkatenacja \u0142a\u0144cuch\xF3w polega na \u0142\u0105czeniu dw\xF
   ch lub wi\u0119cej \u0142a\u0144cuch\xF3w w jeden \u0142a\u0144cuch. Programi\u015B\
   ci robi\u0105 to, aby dynamicznie konstruowa\u0107 wiadomo\u015Bci, adresy\u2026"
 title: "Konkatenacja ci\u0105g\xF3w znak\xF3w"
+weight: 3
 ---
-
-{{< edit_this_page >}}
 
 ## Co i dlaczego?
 

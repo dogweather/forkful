@@ -11,9 +11,8 @@ summary: "La stampa di output per il debug riguarda la generazione di messaggi d
   \ log temporanei e informativi che possono aiutare i programmatori a comprendere\
   \ il\u2026"
 title: Stampa dell'output di debug
+weight: 33
 ---
-
-{{< edit_this_page >}}
 
 ## Cosa & Perché?
 

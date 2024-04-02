@@ -11,9 +11,8 @@ summary: "Encontrar o comprimento de uma string em Go trata-se de determinar o n
   mero de caracteres que ela cont\xE9m. Programadores realizam essa opera\xE7\xE3\
   o\u2026"
 title: Encontrando o comprimento de uma string
+weight: 7
 ---
-
-{{< edit_this_page >}}
 
 ## O Quê & Por Quê?
 Encontrar o comprimento de uma string em Go trata-se de determinar o número de caracteres que ela contém. Programadores realizam essa operação rotineiramente para manipular strings de forma eficaz, seja para validação, extração de substrings ou simplesmente para impor restrições nas entradas do usuário.

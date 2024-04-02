@@ -13,9 +13,8 @@ summary: "L\xE0m tr\xF2n l\xE0 vi\u1EC7c c\u1EAFt b\u1ECF ph\u1EA7n th\u1EEBa sa
   nh vi\xEAn l\xE0m tr\xF2n \u0111\u1EC3 ki\u1EC3m so\xE1t \u0111\u1ED9 ch\xEDnh x\xE1\
   c, qu\u1EA3n l\xFD b\u1ED9 nh\u1EDB, ho\u1EB7c t\u1EA1o ra \u0111\u1EA7u ra\u2026"
 title: "L\xE0m tr\xF2n s\u1ED1"
+weight: 13
 ---
-
-{{< edit_this_page >}}
 
 ## Định Nghĩa & Lý Do?
 Làm tròn là việc cắt bỏ phần thừa sau một điểm nhất định trong số. Lập trình viên làm tròn để kiểm soát độ chính xác, quản lý bộ nhớ, hoặc tạo ra đầu ra thân thiện với người dùng—như biến 2.998 thành một con số sạch đẹp là 3.

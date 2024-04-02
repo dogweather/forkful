@@ -7,9 +7,8 @@ model: gpt-4-0125-preview
 summary: "N\xFAmeros complexos expandem a ideia de linhas num\xE9ricas unidimensionais\
   \ para um plano complexo bidimensional. Programadores os usam em campos como\u2026"
 title: "Trabalhando com n\xFAmeros complexos"
+weight: 14
 ---
-
-{{< edit_this_page >}}
 
 ## O Que & Por Quê?
 Números complexos expandem a ideia de linhas numéricas unidimensionais para um plano complexo bidimensional. Programadores os usam em campos como engenharia, física e gráficos para cálculos que requerem dois componentes, como sinais ou rotações.

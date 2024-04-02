@@ -9,9 +9,8 @@ summary: "En REPL, eller L\xE4s-Utv\xE4rdera-Skriv Loop, \xE4r en programmerings
   \ som tar emot enskilda anv\xE4ndarinput, exekverar dem och returnerar resultatet\
   \ till\u2026"
 title: "Anv\xE4nda en interaktiv skal (REPL)"
+weight: 34
 ---
-
-{{< edit_this_page >}}
 
 ## Vad & Varför?
 En REPL, eller Läs-Utvärdera-Skriv Loop, är en programmeringsmiljö som tar emot enskilda användarinput, exekverar dem och returnerar resultatet till användaren. Programmerare använder den för snabba tester, lärande, felsökning eller att göra beräkningar på flygande fot.

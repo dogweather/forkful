@@ -9,9 +9,8 @@ summary: "G\xE9rer les erreurs en programmation, c'est anticiper l'impr\xE9vu. C
   \ l'art de planifier pour quand les choses d\xE9rapent afin de pouvoir maintenir\
   \ votre\u2026"
 title: Gestion des erreurs
+weight: 16
 ---
-
-{{< edit_this_page >}}
 
 ## Quoi & Pourquoi ?
 Gérer les erreurs en programmation, c'est anticiper l'imprévu. C'est l'art de planifier pour quand les choses dérapent afin de pouvoir maintenir votre programme en fonctionnement fluide.

@@ -10,9 +10,8 @@ model: gpt-4-0125-preview
 summary: "YAML, co rozszyfrowuje si\u0119 jako YAML Ain't Markup Language, to wysoce\
   \ czytelny format serializacji danych, cz\u0119sto u\u017Cywany do plik\xF3w konfiguracyjnych,\u2026"
 title: Praca z YAML
+weight: 41
 ---
-
-{{< edit_this_page >}}
 
 ## Co i dlaczego?
 YAML, co rozszyfrowuje się jako YAML Ain't Markup Language, to wysoce czytelny format serializacji danych, często używany do plików konfiguracyjnych, przechowywania danych oraz komunikacji międzyprocesowej. Programiści często pracują z YAML, aby zarządzać konfiguracjami i ustawieniami w sposób uporządkowany, a zarazem prosty, korzystając z jego przejrzystości i prostoty nad JSON lub XML, gdy ważna jest czytelność.

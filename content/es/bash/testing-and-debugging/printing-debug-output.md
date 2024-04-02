@@ -9,9 +9,8 @@ summary: "Imprimir mensajes de depuraci\xF3n significa mostrar informaci\xF3n in
   \ de tu script mientras se ejecuta. Los programadores lo hacen para rastrear errores\
   \ y\u2026"
 title: "Imprimiendo salida de depuraci\xF3n"
+weight: 33
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why? / ¿Qué y Por Qué?
 Imprimir mensajes de depuración significa mostrar información interna de tu script mientras se ejecuta. Los programadores lo hacen para rastrear errores y entender mejor qué está pasando bajo el capó, en tiempo real.

@@ -8,9 +8,8 @@ model: gpt-4-1106-preview
 summary: "Procurar e substituir texto \xE9 a arte de achar certas palavras ou frases\
   \ e troc\xE1-las por outras. Programadores fazem isso para corrigir erros, atualizar\u2026"
 title: Pesquisando e substituindo texto
+weight: 10
 ---
-
-{{< edit_this_page >}}
 
 ## O Quê & Por Quê?
 Procurar e substituir texto é a arte de achar certas palavras ou frases e trocá-las por outras. Programadores fazem isso para corrigir erros, atualizar código ou dados, e tornar o conteúdo consistente sem perder tempo.

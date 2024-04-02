@@ -7,9 +7,8 @@ model: gpt-4-1106-preview
 summary: "HTTP-Anfragen senden bedeutet, mit einem Webserver zu kommunizieren \u2013\
   \ so holt man Daten oder schickt sie. Programmierer nutzen das, um ihre Arduino-\u2026"
 title: Einen HTTP-Request senden
+weight: 44
 ---
-
-{{< edit_this_page >}}
 
 ## Was & Warum?
 HTTP-Anfragen senden bedeutet, mit einem Webserver zu kommunizieren – so holt man Daten oder schickt sie. Programmierer nutzen das, um ihre Arduino-Projekte mit dem Internet zu verbinden, damit sie Informationen austauschen können.

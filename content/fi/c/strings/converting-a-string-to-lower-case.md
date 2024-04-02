@@ -11,9 +11,8 @@ summary: "Merkkijonon muuntaminen pieniksi kirjaimiksi C-kieless\xE4 sis\xE4lt\x
   \xE4 sen, ett\xE4 kaikki annetun merkkijonon isot kirjaimet muunnetaan vastaaviksi\
   \ pieniksi\u2026"
 title: Merkkijonon muuntaminen pieniksi kirjaimiksi
+weight: 4
 ---
-
-{{< edit_this_page >}}
 
 ## Mikä ja miksi?
 

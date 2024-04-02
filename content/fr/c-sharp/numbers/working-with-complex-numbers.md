@@ -9,9 +9,8 @@ summary: "Les nombres complexes \xE9largissent notre syst\xE8me de nombres pour 
   \ les nombres imaginaires, nous permettant de r\xE9soudre des \xE9quations qui n'ont\
   \ pas\u2026"
 title: Manipulation des nombres complexes
+weight: 14
 ---
-
-{{< edit_this_page >}}
 
 ## Quoi & Pourquoi ?
 Les nombres complexes élargissent notre système de nombres pour inclure les nombres imaginaires, nous permettant de résoudre des équations qui n'ont pas de solutions réelles. Les programmeurs travaillent avec eux dans des domaines comme l'ingénierie, la physique et le traitement des signaux où ces nombres sont essentiels pour la modélisation et la résolution de problèmes.

@@ -10,9 +10,8 @@ model: gpt-4-0125-preview
 summary: "Het converteren van data naar tekstreeksen is een fundamentele taak die\
   \ programmeurs in staat stelt om datumgegevens te manipuleren en weer te geven in\u2026"
 title: Een datum omzetten naar een string
+weight: 28
 ---
-
-{{< edit_this_page >}}
 
 ## Wat & Waarom?
 

@@ -9,9 +9,8 @@ summary: "Konwersja daty na ci\u0105g znak\xF3w to proces zmiany formatu repreze
   \ czasu na \u0142atwy do odczytania tekst. Programi\u015Bci robi\u0105 to, aby wy\u015B\
   wietla\u0107 daty w\u2026"
 title: "Konwersja daty na \u0142a\u0144cuch znak\xF3w"
+weight: 28
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why? (Co i dlaczego?)
 Konwersja daty na ciąg znaków to proces zmiany formatu reprezentacji czasu na łatwy do odczytania tekst. Programiści robią to, aby wyświetlać daty w sposób zrozumiały dla użytkowników lub do zapisu w logach i bazach danych.

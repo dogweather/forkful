@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Regul\xE4re Ausdr\xFCcke (regex) sind ein m\xE4chtiges Werkzeug zur Textverarbeitung,\
   \ das es Programmierern erm\xF6glicht, mit fortgeschrittenen\u2026"
 title: "Regul\xE4re Ausdr\xFCcke verwenden"
+weight: 11
 ---
-
-{{< edit_this_page >}}
 
 ## Was & Warum?
 

@@ -9,9 +9,8 @@ summary: "Partire con un nuovo progetto \xE8 eccitante; \xE8 l'atto di creare un
   \ di codice da zero. I programmatori lo fanno perch\xE9 vogliono trasformare le\
   \ idee\u2026"
 title: Avvio di un nuovo progetto
+weight: 1
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 Partire con un nuovo progetto è eccitante; è l'atto di creare un ambiente di codice da zero. I programmatori lo fanno perché vogliono trasformare le idee in codice strutturato e funzionante, spesso per risolvere un problema o esplorare nuove tecnologie.

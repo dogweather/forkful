@@ -7,9 +7,8 @@ model: gpt-4-0125-preview
 summary: "YAML, which stands for YAML Ain't Markup Language, is a human-readable data\
   \ serialization format. Programmers use YAML for configuration files, inter-\u2026"
 title: Working with YAML
+weight: 41
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 YAML, which stands for YAML Ain't Markup Language, is a human-readable data serialization format. Programmers use YAML for configuration files, inter-process messaging, and data storage because of its simple syntax and easy readability compared to other formats like XML or JSON.

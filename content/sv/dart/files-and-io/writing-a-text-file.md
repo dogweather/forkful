@@ -11,9 +11,8 @@ summary: "Att skriva en textfil i Dart inneb\xE4r att skapa eller \xE4ndra filer
   \ disken f\xF6r att lagra data i ett l\xE4sbart format. Programmerare g\xF6r det\
   \ f\xF6r att spara\u2026"
 title: Att skriva en textfil
+weight: 24
 ---
-
-{{< edit_this_page >}}
 
 ## Vad & Varför?
 Att skriva en textfil i Dart innebär att skapa eller ändra filer på disken för att lagra data i ett läsbart format. Programmerare gör det för att spara applikationsdata, konfigurationer, loggar eller någon information som ska bestå mellan applikationskörningar eller dela data med andra applikationer eller användare.

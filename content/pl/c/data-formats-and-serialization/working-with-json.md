@@ -11,9 +11,8 @@ summary: "Praca z JSON (JavaScript Object Notation) w j\u0119zyku C obejmuje par
   \ generowanie i manipulowanie strukturami danych JSON. Programi\u015Bci robi\u0105\
   \ to, aby\u2026"
 title: Praca z JSON
+weight: 38
 ---
-
-{{< edit_this_page >}}
 
 ## Co i dlaczego?
 

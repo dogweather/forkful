@@ -7,9 +7,8 @@ model: gpt-4-1106-preview
 summary: "In Swift bestimmt die L\xE4nge eines Strings, wie viele Zeichen er enth\xE4\
   lt. Das ist wichtig, weil viele Programmieraufgaben, wie die Validierung von Eingaben\u2026"
 title: "Ermittlung der Zeichenkettenl\xE4nge"
+weight: 7
 ---
-
-{{< edit_this_page >}}
 
 ## Was & Warum?
 

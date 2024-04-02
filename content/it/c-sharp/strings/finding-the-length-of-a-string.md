@@ -7,9 +7,8 @@ model: gpt-4-1106-preview
 summary: "Trova la lunghezza di una stringa per sapere quanti caratteri contiene.\
   \ Utile per validazione input, manipolazione testi, e generazione dinamica di\u2026"
 title: Trovare la lunghezza di una stringa
+weight: 7
 ---
-
-{{< edit_this_page >}}
 
 ## Cos'è e Perché?
 Trova la lunghezza di una stringa per sapere quanti caratteri contiene. Utile per validazione input, manipolazione testi, e generazione dinamica di contenuti.

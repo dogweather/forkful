@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Analizar una fecha desde una cadena permite a los programadores convertir\
   \ representaciones textuales de fechas en objetos `Date` de JavaScript,\u2026"
 title: Analizando una fecha a partir de una cadena de texto
+weight: 30
 ---
-
-{{< edit_this_page >}}
 
 ## ¿Qué y Por Qué?
 Analizar una fecha desde una cadena permite a los programadores convertir representaciones textuales de fechas en objetos `Date` de JavaScript, facilitando manipulaciones, comparaciones y operaciones de formato de fechas. Este proceso es esencial para manejar la entrada del usuario, procesar datos de bases de datos o trabajar con APIs que comunican fechas en formatos de cadena.

@@ -9,9 +9,8 @@ summary: "Konwersja tekstu do ma\u0142ych liter polega na zmianie wszystkich wie
   \ liter w ci\u0105gu znak\xF3w na ich ma\u0142e odpowiedniki. Programi\u015Bci u\u017C\
   ywaj\u0105 tej operacji, by\u2026"
 title: "Konwersja ci\u0105gu znak\xF3w na ma\u0142e litery"
+weight: 4
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why? (Co i dlaczego?)
 Konwersja tekstu do małych liter polega na zmianie wszystkich wielkich liter w ciągu znaków na ich małe odpowiedniki. Programiści używają tej operacji, by ujednolicić dane, szczególnie w przypadku porównań, wyszukiwania i walidacji.

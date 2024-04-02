@@ -9,9 +9,8 @@ summary: "Wycinanie pod\u0142a\u0144cuch\xF3w to proces wyodr\u0119bniania fragm
   w tekstu z wi\u0119kszego ci\u0105gu znak\xF3w. Programi\u015Bci robi\u0105 to,\
   \ aby manipulowa\u0107 i analizowa\u0107 dane\u2026"
 title: "Wycinanie pod\u0142a\u0144cuch\xF3w"
+weight: 6
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 Wycinanie podłańcuchów to proces wyodrębniania fragmentów tekstu z większego ciągu znaków. Programiści robią to, aby manipulować i analizować dane tekstowe, weryfikować wprowadzone informacje oraz ułatwić przetwarzanie komunikatów.

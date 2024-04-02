@@ -11,9 +11,8 @@ summary: "Ottenere la data corrente in JavaScript \xE8 un compito fondamentale, 
   \ comporta il recupero e, eventualmente, la manipolazione della data e dell'ora\
   \ di\u2026"
 title: Ottenere la data corrente
+weight: 29
 ---
-
-{{< edit_this_page >}}
 
 ## Cosa e Perché?
 Ottenere la data corrente in JavaScript è un compito fondamentale, che comporta il recupero e, eventualmente, la manipolazione della data e dell'ora di oggi. I programmatori effettuano questa operazione per visualizzare le date sui siti web, nelle applicazioni, per monitorare le interazioni degli utenti o per gestire dati sensibili al tempo.

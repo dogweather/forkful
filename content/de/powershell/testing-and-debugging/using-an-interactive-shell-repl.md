@@ -8,9 +8,8 @@ model: gpt-4-0125-preview
 summary: "Die interaktive Shell oder die Lese-Auswertungs-Druck-Schleife (REPL) erm\xF6\
   glicht es Ihnen, PowerShell-Befehle einzugeben und sofortiges Feedback zu\u2026"
 title: Nutzung einer interaktiven Shell (REPL)
+weight: 34
 ---
-
-{{< edit_this_page >}}
 
 ## Was & Warum?
 Die interaktive Shell oder die Lese-Auswertungs-Druck-Schleife (REPL) ermöglicht es Ihnen, PowerShell-Befehle einzugeben und sofortiges Feedback zu erhalten. Programmierer nutzen sie, um Code-Schnipsel schnell zu testen, zu debuggen oder neue Befehle zu lernen, ohne ein vollständiges Skript zu schreiben.

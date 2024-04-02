@@ -9,9 +9,8 @@ summary: "Liczby zespolone, sk\u0142adaj\u0105ce si\u0119 z cz\u0119\u015Bci rze
   \ i urojonej, s\u0105 niezb\u0119dne w r\xF3\u017Cnych dziedzinach obliczeniowych,\
   \ takich jak in\u017Cynieria, fizyka i\u2026"
 title: Praca z liczbami zespolonymi
+weight: 14
 ---
-
-{{< edit_this_page >}}
 
 ## Co i Dlaczego?
 

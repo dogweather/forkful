@@ -11,9 +11,8 @@ summary: "\xC5 slette tegn som matcher et spesifikt m\xF8nster i Visual Basic fo
   \ Applications (VBA) involverer \xE5 identifisere og deretter fjerne tegn eller\
   \ strenger som\u2026"
 title: "Slette tegn som samsvarer med et m\xF8nster"
+weight: 5
 ---
-
-{{< edit_this_page >}}
 
 ## Hva & Hvorfor?
 

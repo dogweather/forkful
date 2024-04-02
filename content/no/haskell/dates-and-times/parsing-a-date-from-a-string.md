@@ -11,9 +11,8 @@ summary: "\xC5 analysere en dato fra en streng i Haskell inneb\xE6rer \xE5 konve
   \ tekstuelle representasjoner av datoer til et strukturert format som programmet\
   \ kan\u2026"
 title: Analysering av en dato fra en streng
+weight: 30
 ---
-
-{{< edit_this_page >}}
 
 ## Hva & Hvorfor?
 

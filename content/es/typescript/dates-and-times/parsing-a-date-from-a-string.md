@@ -10,9 +10,8 @@ model: gpt-4-0125-preview
 summary: "Analizar una fecha desde una cadena implica convertir representaciones textuales\
   \ de fechas y horas en un formato que pueda ser manipulado y analizado por\u2026"
 title: Analizando una fecha a partir de una cadena de texto
+weight: 30
 ---
-
-{{< edit_this_page >}}
 
 ## ¿Qué y por qué?
 Analizar una fecha desde una cadena implica convertir representaciones textuales de fechas y horas en un formato que pueda ser manipulado y analizado por el programa. Esta es una tarea común en la programación, ya que permite el manejo de entradas del usuario, almacenamiento de datos con sello de tiempo e interacciones con APIs, lo que resulta en aplicaciones más funcionales y amigables para el usuario.

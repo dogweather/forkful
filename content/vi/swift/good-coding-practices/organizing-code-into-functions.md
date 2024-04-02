@@ -13,9 +13,8 @@ summary: "Nh\xF3m m\xE3 l\u1EC7nh th\xE0nh c\xE1c h\xE0m l\xE0 vi\u1EC7c chia nh
   i s\u1EED d\u1EE5ng. \u0110i\u1EC1u n\xE0y l\xE0m cho m\xE3 l\u1EC7nh tr\u1EDF n\xEA\
   n g\u1ECDn g\xE0ng, \xEDt l\u1ED7i v\xE0 d\u1EC5 debug\u2026"
 title: "S\u1EAFp x\u1EBFp m\xE3 th\xE0nh c\xE1c h\xE0m"
+weight: 18
 ---
-
-{{< edit_this_page >}}
 
 ## Gì và Tại sao?
 Nhóm mã lệnh thành các hàm là việc chia nhỏ các nhiệm vụ thành các đoạn có thể tái sử dụng. Điều này làm cho mã lệnh trở nên gọn gàng, ít lỗi và dễ debug hoặc cải tiến hơn.

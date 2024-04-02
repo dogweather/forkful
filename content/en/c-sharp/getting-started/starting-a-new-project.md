@@ -7,9 +7,8 @@ model: gpt-4-1106-preview
 summary: "Starting a new C# project means setting up a fresh solution and project\
   \ files that structure your code. Programmers kick off new projects to turn ideas\u2026"
 title: Starting a new project
+weight: 1
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 Starting a new C# project means setting up a fresh solution and project files that structure your code. Programmers kick off new projects to turn ideas into software, solve problems, or explore tech.

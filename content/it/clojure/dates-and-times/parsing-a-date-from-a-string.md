@@ -11,9 +11,8 @@ summary: "L'analisi di una data da una stringa in Clojure consiste nel convertir
   \ le rappresentazioni testuali di date ed orari in una forma pi\xF9 utilizzabile\
   \ (ad\u2026"
 title: Analisi di una data da una stringa
+weight: 30
 ---
-
-{{< edit_this_page >}}
 
 ## Cosa e Perché?
 L'analisi di una data da una stringa in Clojure consiste nel convertire le rappresentazioni testuali di date ed orari in una forma più utilizzabile (ad esempio, l'oggetto DateTime di Clojure). Questo processo è fondamentale per l'elaborazione dei dati, la registrazione o qualsiasi applicazione che manipola dati temporali, consentendo ai programmatori di eseguire operazioni, comparazioni o manipolazioni su date in modo efficiente.

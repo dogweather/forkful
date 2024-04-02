@@ -9,9 +9,8 @@ summary: "Imprimir sa\xEDdas de debug \xE9 simplesmente mostrar na tela o estado
   \ vari\xE1veis ou o fluxo do c\xF3digo. Programadores fazem isso para entender e\
   \ corrigir\u2026"
 title: "Exibindo sa\xEDdas de depura\xE7\xE3o"
+weight: 33
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 Imprimir saídas de debug é simplesmente mostrar na tela o estado de variáveis ou o fluxo do código. Programadores fazem isso para entender e corrigir problemas – é o famoso debbugar.

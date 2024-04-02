@@ -9,9 +9,8 @@ summary: "La gestion des erreurs en PHP consiste \xE0 g\xE9rer et r\xE9pondre \x
   \ des conditions qui perturbent le d\xE9roulement normal d\u2019un programme, telles\
   \ que des fichiers\u2026"
 title: Gestion des erreurs
+weight: 16
 ---
-
-{{< edit_this_page >}}
 
 ## Quoi et pourquoi ?
 La gestion des erreurs en PHP consiste à gérer et répondre à des conditions qui perturbent le déroulement normal d’un programme, telles que des fichiers manquants ou des entrées de données incorrectes. Les programmeurs traitent les erreurs pour éviter les plantages et offrir une expérience plus fluide aux utilisateurs.

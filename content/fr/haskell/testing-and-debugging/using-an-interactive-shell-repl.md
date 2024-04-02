@@ -7,9 +7,8 @@ model: gpt-4-0125-preview
 summary: "Un shell interactif, ou REPL (Read-Eval-Print Loop), en Haskell vous permet\
   \ d'ex\xE9cuter des extraits de code en direct. C'est un terrain de jeu pour\u2026"
 title: Utilisation d'une console interactive (REPL)
+weight: 34
 ---
-
-{{< edit_this_page >}}
 
 ## Quoi & Pourquoi ?
 Un shell interactif, ou REPL (Read-Eval-Print Loop), en Haskell vous permet d'exécuter des extraits de code en direct. C'est un terrain de jeu pour obtenir des retours rapides, tester des fonctions et apprendre le langage.

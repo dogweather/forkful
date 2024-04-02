@@ -9,9 +9,8 @@ summary: "Das Entfernen von Anf\xFChrungszeichen aus einem String in Rust geht d
   \ unn\xF6tige zus\xE4tzliche Anf\xFChrungszeichen, die m\xF6glicherweise um Ihre\
   \ Textdaten\u2026"
 title: "Anf\xFChrungszeichen aus einem String entfernen"
+weight: 9
 ---
-
-{{< edit_this_page >}}
 
 ## Was & Warum?
 

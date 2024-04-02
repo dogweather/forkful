@@ -11,9 +11,8 @@ summary: "Arrays associativos, conhecidos como objetos no Google Apps Script (um
   \ variante do JavaScript), permitem que programadores criem cole\xE7\xF5es de pares\
   \ chave-\u2026"
 title: Usando arrays associativos
+weight: 15
 ---
-
-{{< edit_this_page >}}
 
 ## O quê & Por quê?
 

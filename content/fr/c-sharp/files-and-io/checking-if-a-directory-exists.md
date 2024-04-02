@@ -11,9 +11,8 @@ summary: "V\xE9rifier l'existence d'un r\xE9pertoire en C# consiste \xE0 confirm
   \ la pr\xE9sence d'un dossier \xE0 un chemin sp\xE9cifique dans le syst\xE8me de\
   \ fichiers. Les\u2026"
 title: "V\xE9rifier si un r\xE9pertoire existe"
+weight: 20
 ---
-
-{{< edit_this_page >}}
 
 ## Quoi et Pourquoi ?
 

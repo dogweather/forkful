@@ -7,9 +7,8 @@ model: gpt-4-1106-preview
 summary: "Interpolare una stringa significa inserire dinamicamente valori specifici\
   \ all'interno di una stringa predefinita. I programmatori lo usano per creare\u2026"
 title: Interpolazione di una stringa
+weight: 8
 ---
-
-{{< edit_this_page >}}
 
 ## Cosa & Perché?
 Interpolare una stringa significa inserire dinamicamente valori specifici all'interno di una stringa predefinita. I programmatori lo usano per creare messaggi personalizzati, per esempio, mostrando il nome di un utente o i risultati del calcolo.

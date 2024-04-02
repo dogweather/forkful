@@ -7,9 +7,8 @@ model: gpt-4-1106-preview
 summary: "Virheenk\xE4sittely on tapasi hallita tilanteita, kun koodissasi tapahtuu\
   \ odottamattomia virheit\xE4. Se on keskeist\xE4, koska se auttaa ohjelmiasi kaatumaan\u2026"
 title: "Virheiden k\xE4sittely"
+weight: 16
 ---
-
-{{< edit_this_page >}}
 
 ## Mikä ja Miksi?
 

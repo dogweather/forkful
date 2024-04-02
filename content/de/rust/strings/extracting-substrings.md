@@ -9,9 +9,8 @@ summary: "Das Extrahieren von Teilzeichenketten ist der Prozess, spezifische Tei
   \ aus einem String herauszuschneiden. Programmierer nutzen dies f\xFCr Aufgaben\
   \ wie\u2026"
 title: Teilstrings extrahieren
+weight: 6
 ---
-
-{{< edit_this_page >}}
 
 ## Was & Warum?
 Das Extrahieren von Teilzeichenketten ist der Prozess, spezifische Teile aus einem String herauszuschneiden. Programmierer nutzen dies für Aufgaben wie Datenanalyse, Formatierung oder wenn nur ein Teil des Strings weiterverarbeitet werden soll.

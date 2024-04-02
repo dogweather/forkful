@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Getallen afronden betekent ze aanpassen naar het dichtstbijzijnde geheel\
   \ getal of gespecificeerde decimale plaats. Programmeurs ronden getallen af om de\u2026"
 title: Afronden van getallen
+weight: 13
 ---
-
-{{< edit_this_page >}}
 
 ## Wat & Waarom?
 

@@ -10,9 +10,8 @@ model: gpt-4-0125-preview
 summary: "Att kontrollera om en mapp finns i Google Apps Script inneb\xE4r att verifiera\
   \ n\xE4rvaron av en mapp inom Google Drive. Programmerare utf\xF6r ofta denna kontroll\u2026"
 title: Kontroll om en katalog existerar
+weight: 20
 ---
-
-{{< edit_this_page >}}
 
 ## Vad & Varför?
 

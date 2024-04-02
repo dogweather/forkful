@@ -11,9 +11,8 @@ summary: "HTTP-pyynn\xF6n l\xE4hett\xE4minen Visual Basic for Applications (VBA)
   \ tarkoittaa web-resurssien tai -palveluiden ohjelmallista k\xE4ytt\xF6\xE4 tekem\xE4\
   ll\xE4\u2026"
 title: "HTTP-pyynn\xF6n l\xE4hett\xE4minen"
+weight: 44
 ---
-
-{{< edit_this_page >}}
 
 ## Mikä ja miksi?
 

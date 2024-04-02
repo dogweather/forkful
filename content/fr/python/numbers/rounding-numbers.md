@@ -7,9 +7,8 @@ model: gpt-4-0125-preview
 summary: "Arrondir des nombres signifie les ajuster pour les rapprocher d'une valeur\
   \ plus simple ou plus significative. Les programmeurs arrondissent les nombres\u2026"
 title: Arrondir les nombres
+weight: 13
 ---
-
-{{< edit_this_page >}}
 
 ## Quoi & Pourquoi ?
 Arrondir des nombres signifie les ajuster pour les rapprocher d'une valeur plus simple ou plus significative. Les programmeurs arrondissent les nombres pour simplifier les résultats, limiter le nombre de décimales à afficher, ou pour certaines fins mathématiques.

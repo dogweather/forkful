@@ -11,9 +11,8 @@ summary: "Capitalizzare una stringa nella programmazione comporta la conversione
   \ primo carattere della stringa in maiuscolo, se non lo \xE8 gi\xE0, il che \xE8\
   \ utile per\u2026"
 title: Capitalizzare una stringa
+weight: 2
 ---
-
-{{< edit_this_page >}}
 
 ## Cosa & Perché?
 

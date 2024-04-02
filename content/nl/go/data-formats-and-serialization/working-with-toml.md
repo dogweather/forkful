@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "TOML (Tom's Obvious, Minimal Language) is een configuratiebestandsformaat\
   \ dat gemakkelijk te lezen is vanwege zijn eenvoudige syntaxis. Programmeurs\u2026"
 title: Werken met TOML
+weight: 39
 ---
-
-{{< edit_this_page >}}
 
 ## Wat & Waarom?
 

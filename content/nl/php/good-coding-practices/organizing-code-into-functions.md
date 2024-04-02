@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Het organiseren van code in functies gaat over het opsplitsen van je code\
   \ in herbruikbare blokken met gedefinieerde doeleinden. We doen dit om dingen\u2026"
 title: Code organiseren in functies
+weight: 18
 ---
-
-{{< edit_this_page >}}
 
 ## Wat & Waarom?
 Het organiseren van code in functies gaat over het opsplitsen van je code in herbruikbare blokken met gedefinieerde doeleinden. We doen dit om dingen netjes te houden, redundantie te voorkomen en het debuggen een fluitje van een cent te maken.

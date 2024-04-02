@@ -11,9 +11,8 @@ summary: "\u5904\u7406 XML \u610F\u5473\u7740\u5728 Elm \u4E2D\u89E3\u6790\u3001
   \u4E0E\u8BB8\u591A\u4F7F\u7528 XML \u4F5C\u4E3A\u6570\u636E\u683C\u5F0F\u7684\u7F51\
   \u7EDC\u670D\u52A1\u548C\u9057\u7559\u7CFB\u7EDF\u8FDB\u884C\u4EA4\u4E92\u3002"
 title: "\u5904\u7406XML"
+weight: 40
 ---
-
-{{< edit_this_page >}}
 
 ## 什么和为什么？
 处理 XML 意味着在 Elm 中解析、转换和生成 XML 文档。这样做是为了与许多使用 XML 作为数据格式的网络服务和遗留系统进行交互。

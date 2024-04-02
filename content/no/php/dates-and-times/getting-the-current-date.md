@@ -11,9 +11,8 @@ summary: "\xC5 hente den gjeldende datoen i PHP er en grunnleggende oppgave som 
   \ deg hente og manipulere systemets dato og klokkeslett. Dette er avgj\xF8rende\
   \ for\u2026"
 title: "F\xE5 dagens dato"
+weight: 29
 ---
-
-{{< edit_this_page >}}
 
 ## Hva & Hvorfor?
 Å hente den gjeldende datoen i PHP er en grunnleggende oppgave som lar deg hente og manipulere systemets dato og klokkeslett. Dette er avgjørende for funksjoner som logging, tidsstemplinger av innlegg, planlegging av hendelser, eller utføring av tidsfølsomme operasjoner i applikasjonene dine.

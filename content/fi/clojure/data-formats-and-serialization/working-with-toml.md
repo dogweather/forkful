@@ -7,9 +7,8 @@ model: gpt-4-0125-preview
 summary: "Ty\xF6skentely TOML:n kanssa tarkoittaa, ett\xE4 k\xE4sittelet dataa Minimaalisessa\
   \ \"Tom's Obvious, Minimal Language\" -formaatissa, mik\xE4 on suosittua\u2026"
 title: "Ty\xF6skentely TOML:n kanssa"
+weight: 39
 ---
-
-{{< edit_this_page >}}
 
 ## Mikä & Miksi?
 Työskentely TOML:n kanssa tarkoittaa, että käsittelet dataa Minimaalisessa "Tom's Obvious, Minimal Language" -formaatissa, mikä on suosittua konfiguraatiotiedostoissa sen helpon luettavuuden vuoksi. Ohjelmoijat käyttävät sitä suoraviivaiseen konfiguraationhallintaan, joka toimii heti laatikosta otettuna ihmisläheisellä syntaksilla.

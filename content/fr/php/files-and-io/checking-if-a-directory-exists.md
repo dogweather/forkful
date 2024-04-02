@@ -11,9 +11,8 @@ summary: "V\xE9rifier si un r\xE9pertoire existe est une t\xE2che fondamentale e
   \ programmation PHP, car cela permet de v\xE9rifier la pr\xE9sence d'un r\xE9pertoire\
   \ avant\u2026"
 title: "V\xE9rifier si un r\xE9pertoire existe"
+weight: 20
 ---
-
-{{< edit_this_page >}}
 
 ## Quoi & Pourquoi ?
 

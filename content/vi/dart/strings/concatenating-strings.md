@@ -13,9 +13,8 @@ summary: "Trong l\u1EADp tr\xECnh, n\u1ED1i chu\u1ED7i l\xE0 qu\xE1 tr\xECnh k\u
   nh vi\xEAn l\xE0m \u0111i\u1EC1u n\xE0y \u0111\u1EC3 d\u1EC5 d\xE0ng thao t\xE1\
   c v\u1EDBi d\u1EEF li\u1EC7u v\u0103n b\u1EA3n, x\xE2y\u2026"
 title: "N\u1ED1i chu\u1ED7i k\xFD t\u1EF1"
+weight: 3
 ---
-
-{{< edit_this_page >}}
 
 ## Gì và Tại sao?
 Trong lập trình, nối chuỗi là quá trình kết hợp hai hoặc nhiều chuỗi thành một. Lập trình viên làm điều này để dễ dàng thao tác với dữ liệu văn bản, xây dựng thông điệp, hoặc lắp ráp các phần của giao diện người dùng một cách linh hoạt.

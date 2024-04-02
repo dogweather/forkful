@@ -7,9 +7,8 @@ model: gpt-4-0125-preview
 summary: "Getting the current date in JavaScript is a fundamental task, involving\
   \ retrieving and possibly manipulating today's date and time. Programmers perform\u2026"
 title: Getting the current date
+weight: 29
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 Getting the current date in JavaScript is a fundamental task, involving retrieving and possibly manipulating today's date and time. Programmers perform this to display dates on websites, in applications, to track user interactions, or to handle time-sensitive data.

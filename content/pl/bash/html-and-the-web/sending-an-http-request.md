@@ -9,9 +9,8 @@ summary: "(Co i dlaczego?) Wysy\u0142anie zapytania HTTP to komunikacja mi\u0119
   \ twoim komputerem a serwerem; m\xF3wi\u0105c pro\u015Bciej, to tak, jakby\u015B\
   \ wys\u0142a\u0142 list z pro\u015Bb\u0105 do\u2026"
 title: "Wysy\u0142anie \u017C\u0105dania HTTP"
+weight: 44
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 (Co i dlaczego?)

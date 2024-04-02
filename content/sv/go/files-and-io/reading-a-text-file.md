@@ -11,9 +11,8 @@ summary: "Att l\xE4sa en textfil i Go inneb\xE4r att f\xE5 tillg\xE5ng till och 
   mta inneh\xE5ll fr\xE5n en fil som \xE4r lagrad p\xE5 disk f\xF6r bearbetning eller\
   \ analys. Programmerare\u2026"
 title: "L\xE4sa en textfil"
+weight: 22
 ---
-
-{{< edit_this_page >}}
 
 ## Vad & Varför?
 

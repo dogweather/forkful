@@ -7,9 +7,8 @@ model: gpt-4-1106-preview
 summary: "Working with XML involves manipulating and accessing data structured in\
   \ the eXtensible Markup Language. Programmers work with XML to enable\u2026"
 title: Working with XML
+weight: 40
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 Working with XML involves manipulating and accessing data structured in the eXtensible Markup Language. Programmers work with XML to enable interoperability with other systems or to read and write configuration files, data feeds, and other structured documents common in web services.

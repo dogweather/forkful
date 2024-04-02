@@ -9,9 +9,8 @@ summary: "Generare numeri casuali \xE8 un compito fondamentale nella programmazi
   \ utilizzato per tutto, dalla campionatura dei dati allo sviluppo di giochi. In\
   \ Fish\u2026"
 title: Generazione di numeri casuali
+weight: 12
 ---
-
-{{< edit_this_page >}}
 
 ## Cosa e perché?
 

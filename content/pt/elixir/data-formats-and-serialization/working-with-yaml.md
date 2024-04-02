@@ -11,9 +11,8 @@ summary: "YAML, abrevia\xE7\xE3o de YAML Ain't Markup Language, \xE9 um padr\xE3
   \ de serializa\xE7\xE3o de dados leg\xEDvel por humanos comumente usado para arquivos\
   \ de configura\xE7\xE3o e\u2026"
 title: Trabalhando com YAML
+weight: 41
 ---
-
-{{< edit_this_page >}}
 
 ## O quê e Por quê?
 

@@ -11,9 +11,8 @@ summary: "Asocjacyjne tablice, czyli obiekty w TypeScript, pozwalaj\u0105 u\u017
   ywa\u0107 ci\u0105g\xF3w znak\xF3w (lub kluczy) do dost\u0119pu do par warto\u015B\
   ci. Programi\u015Bci u\u017Cywaj\u0105 ich do\u2026"
 title: Korzystanie z tablic asocjacyjnych
+weight: 15
 ---
-
-{{< edit_this_page >}}
 
 ## Co i dlaczego?
 

@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Das \xDCberpr\xFCfen, ob ein Verzeichnis in Fish Shell existiert, erm\xF6\
   glicht es Skripten, Entscheidungen basierend auf der An- oder Abwesenheit von\u2026"
 title: "\xDCberpr\xFCfung, ob ein Verzeichnis existiert"
+weight: 20
 ---
-
-{{< edit_this_page >}}
 
 ## Was & Warum?
 Das Überprüfen, ob ein Verzeichnis in Fish Shell existiert, ermöglicht es Skripten, Entscheidungen basierend auf der An- oder Abwesenheit von Verzeichnisstrukturen zu treffen. Dies ermöglicht Aufgaben wie bedingte Dateioperationen, Protokollierung oder das Einrichten von Umgebungen. Diese Technik ist entscheidend für das Schreiben von robusten Skripten, die auf vorhersehbare Weise mit dem Dateisystem interagieren.

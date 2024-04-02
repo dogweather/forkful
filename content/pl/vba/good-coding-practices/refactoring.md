@@ -11,9 +11,8 @@ summary: "Refaktoryzacja w programowaniu polega na modyfikowaniu struktury kodu 
   \ zmiany jego zachowania, aby poprawi\u0107 aspekty takie jak czytelno\u015B\u0107\
   , \u0142atwo\u015B\u0107\u2026"
 title: Refaktoryzacja
+weight: 19
 ---
-
-{{< edit_this_page >}}
 
 ## Co i dlaczego?
 

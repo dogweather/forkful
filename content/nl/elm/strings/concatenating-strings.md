@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Het concatenen van strings betekent het aan elkaar plakken van twee of meer\
   \ stukken tekst. Het is net zo basisch en essentieel als het gebruik van\u2026"
 title: Samenvoegen van strings
+weight: 3
 ---
-
-{{< edit_this_page >}}
 
 ## Wat & Waarom?
 Het concatenen van strings betekent het aan elkaar plakken van twee of meer stukken tekst. Het is net zo basisch en essentieel als het gebruik van ducttape, waardoor je ter plekke nieuwe strings kunt maken voor het weergeven van berichten, het creëren van sjablonen en meer.

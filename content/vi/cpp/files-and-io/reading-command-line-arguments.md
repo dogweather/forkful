@@ -13,9 +13,8 @@ summary: "C\xE1c \u0111\u1ED1i s\u1ED1 d\xF2ng l\u1EC7nh cho ph\xE9p ng\u01B0\u1
   \u01A1ng tr\xECnh m\xE0 kh\xF4ng c\u1EA7n thay \u0111\u1ED5i m\xE3. C\xE1c ch\u01B0\
   \u01A1ng tr\xECnh s\u1EED d\u1EE5ng ch\xFAng \u0111\u1EC3 nh\u1EADn c\xE1c\u2026"
 title: "\u0110\u1ECDc c\xE1c \u0111\u1ED1i s\u1ED1 d\xF2ng l\u1EC7nh"
+weight: 23
 ---
-
-{{< edit_this_page >}}
 
 ## Cái gì & Tại sao?
 Các đối số dòng lệnh cho phép người dùng ảnh hưởng đến hành vi của một chương trình mà không cần thay đổi mã. Các chương trình sử dụng chúng để nhận các tham số đầu vào, đường dẫn tệp, hoặc chế độ hoạt động, giúp tiết kiệm thời gian và tăng tính linh hoạt.

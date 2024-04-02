@@ -9,9 +9,8 @@ summary: "Iniciar um novo projeto em Swift \xE9 como abrir um livro em branco: v
   \ come\xE7a a construir algo do zero. Programadores fazem isso para transformar\
   \ ideias\u2026"
 title: Iniciando um novo projeto
+weight: 1
 ---
-
-{{< edit_this_page >}}
 
 ## O Que & Porquê?
 Iniciar um novo projeto em Swift é como abrir um livro em branco: você começa a construir algo do zero. Programadores fazem isso para transformar ideias em apps funcionais, seja para solucionar problemas, explorar novas tecnologias ou simplesmente por diversão.

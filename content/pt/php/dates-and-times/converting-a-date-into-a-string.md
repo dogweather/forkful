@@ -7,9 +7,8 @@ model: gpt-4-1106-preview
 summary: "Converter uma data para uma string significa transform\xE1-la de um formato\
   \ de data, como UNIX Timestamp ou DateTime, para uma sequ\xEAncia de caracteres\u2026"
 title: Convertendo uma data em uma string
+weight: 28
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 Converter uma data para uma string significa transformá-la de um formato de data, como UNIX Timestamp ou DateTime, para uma sequência de caracteres legíveis. Os programadores fazem isso para exibir datas de maneira mais amigável ao usuário ou para armazenar datas em um banco de dados em um formato específico.

@@ -9,9 +9,8 @@ summary: "Liczby zespolone to liczby maj\u0105ce cz\u0119\u015B\u0107 rzeczywist
   \ i urojon\u0105 (jak 3 + 4i). Pojawiaj\u0105 si\u0119 one w r\xF3\u017Cnych problemach\
   \ programistycznych, zw\u0142aszcza w\u2026"
 title: Praca z liczbami zespolonymi
+weight: 14
 ---
-
-{{< edit_this_page >}}
 
 ## Co i dlaczego?
 Liczby zespolone to liczby mające część rzeczywistą i urojoną (jak 3 + 4i). Pojawiają się one w różnych problemach programistycznych, zwłaszcza w przetwarzaniu sygnałów, obliczeniach kwantowych i rozwiązywaniu równań wielomianowych. Programiści żonglują nimi, by skutecznie rozwiązywać tego typu zadania.

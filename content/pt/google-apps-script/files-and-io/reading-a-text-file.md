@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Ler um arquivo de texto com o Google Apps Script (GAS) envolve acessar e\
   \ extrair dados de texto de arquivos armazenados no Google Drive ou outro\u2026"
 title: Lendo um arquivo de texto
+weight: 22
 ---
-
-{{< edit_this_page >}}
 
 ## O Que & Por Quê?
 

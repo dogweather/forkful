@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Verificare se una directory esiste in Kotlin comporta la verifica della\
   \ presenza di una directory in un percorso specificato. I programmatori eseguono\u2026"
 title: Verifica se una directory esiste
+weight: 20
 ---
-
-{{< edit_this_page >}}
 
 ## Cos'è & Perché?
 Verificare se una directory esiste in Kotlin comporta la verifica della presenza di una directory in un percorso specificato. I programmatori eseguono questo compito per prevenire errori, come tentare di leggere o scrivere in una directory che non esiste, garantendo una gestione dei file e dei dati più fluida all'interno delle applicazioni.

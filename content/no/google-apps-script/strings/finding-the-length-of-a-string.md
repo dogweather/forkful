@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "\xC5 finne lengden p\xE5 en streng i Google Apps Script, et JavaScript-skyskriptspr\xE5\
   k som lar deg automatisere oppgaver p\xE5 tvers av Googles produkter, handler\u2026"
 title: "Finner lengden p\xE5 en streng"
+weight: 7
 ---
-
-{{< edit_this_page >}}
 
 ## Hva & Hvorfor?
 Å finne lengden på en streng i Google Apps Script, et JavaScript-skyskriptspråk som lar deg automatisere oppgaver på tvers av Googles produkter, handler om å bestemme antall tegn en streng inneholder. Programmerere utfører ofte denne operasjonen for å verifisere inndata, løkke gjennom tegn eller manipulere strenger for ulike automatiseringsoppgaver innen Google Apps.

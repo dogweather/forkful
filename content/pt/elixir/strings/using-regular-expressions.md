@@ -11,9 +11,8 @@ summary: "Express\xF5es regulares (regex) em Elixir s\xE3o usadas para buscar, c
   \ e manipular strings baseadas em padr\xF5es espec\xEDficos. Programadores utilizam\
   \ regex\u2026"
 title: "Usando express\xF5es regulares"
+weight: 11
 ---
-
-{{< edit_this_page >}}
 
 ## O que & Por quê?
 

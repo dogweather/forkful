@@ -16,9 +16,8 @@ summary: "\uB0A0\uC9DC\uB97C \uC11C\uB85C \uBE44\uAD50\uD55C\uB2E4\uB294 \uAC83\
   \uD2B8 \uC21C\uC11C\uB97C \uC815\uB9AC\uD558\uAC70\uB098, \uAE30\uD55C\uC744 \uAC80\
   \uC0AC\uD560 \uB54C \uC774\uB97C \uC218\uD589\uD569\uB2C8\uB2E4."
 title: "\uB450 \uB0A0\uC9DC \uBE44\uAD50\uD558\uAE30"
+weight: 27
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why? (무엇이며 왜?)
 날짜를 서로 비교한다는 것은 간단히 두 날짜가 얼마나 다른지를 확인하는 것입니다. 프로그래머들은 기간을 계산하거나, 이벤트 순서를 정리하거나, 기한을 검사할 때 이를 수행합니다.

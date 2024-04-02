@@ -8,9 +8,8 @@ model: gpt-4-1106-preview
 summary: "La journalisation, dans son essence, est la pratique d'enregistrer des \xE9\
   v\xE9nements et des donn\xE9es provenant d'une application logicielle vers une sortie\u2026"
 title: Journalisation
+weight: 17
 ---
-
-{{< edit_this_page >}}
 
 ## Quoi et pourquoi ?
 

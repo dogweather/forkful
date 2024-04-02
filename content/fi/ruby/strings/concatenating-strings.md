@@ -9,9 +9,8 @@ summary: "Yhdist\xE4mme merkkijonoja eli \"stringej\xE4\" saumattomasti yhteen. 
   h\xE4n on syyns\xE4: n\xE4ytet\xE4\xE4n k\xE4ytt\xE4j\xE4lle kustomoituja viestej\xE4\
   , rakennetaan dynaamista dataa\u2026"
 title: "Merkkijonojen yhdist\xE4minen"
+weight: 3
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why? / Mikä & Miksi?
 Yhdistämme merkkijonoja eli "stringejä" saumattomasti yhteen. Tähän on syynsä: näytetään käyttäjälle kustomoituja viestejä, rakennetaan dynaamista dataa tai muodostetaan koodin sisällä olevia hakulauseita.

@@ -9,9 +9,8 @@ summary: "Das Senden einer HTTP-Anfrage ist ein zentraler Bestandteil des Web, b
   \ dem Daten von oder zu einem Server \xFCbertragen werden. Programmierer nutzen\
   \ das,\u2026"
 title: Einen HTTP-Request senden
+weight: 44
 ---
-
-{{< edit_this_page >}}
 
 ## Was & Warum?
 Das Senden einer HTTP-Anfrage ist ein zentraler Bestandteil des Web, bei dem Daten von oder zu einem Server übertragen werden. Programmierer nutzen das, um mit Webdiensten zu interagieren, Ressourcen abzurufen oder Daten zu übermitteln.

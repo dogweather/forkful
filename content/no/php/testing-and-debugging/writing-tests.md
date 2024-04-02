@@ -10,9 +10,8 @@ model: gpt-4-0125-preview
 summary: "\xC5 skrive tester i programmering inneb\xE6rer \xE5 lage og kj\xF8re skript\
   \ som verifiserer at koden oppf\xF8rer seg som forventet under ulike forhold. Programmerere\u2026"
 title: Skrive tester
+weight: 36
 ---
-
-{{< edit_this_page >}}
 
 ## Hva & Hvorfor?
 Å skrive tester i programmering innebærer å lage og kjøre skript som verifiserer at koden oppfører seg som forventet under ulike forhold. Programmerere gjør dette for å sikre kvalitet, forhindre regresjoner og legge til rette for sikker refaktorering, noe som er avgjørende for å opprettholde en sunn, skalerbar og feilfri kodebase.

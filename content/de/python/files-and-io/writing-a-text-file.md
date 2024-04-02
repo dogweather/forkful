@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Das Schreiben in eine Textdatei in Python ist eine grundlegende Aufgabe,\
   \ die das Erstellen oder \xD6ffnen einer Datei und dann das Anh\xE4ngen oder\u2026"
 title: Eine Textdatei schreiben
+weight: 24
 ---
-
-{{< edit_this_page >}}
 
 ## Was & Warum?
 Das Schreiben in eine Textdatei in Python ist eine grundlegende Aufgabe, die das Erstellen oder Öffnen einer Datei und dann das Anhängen oder Überschreiben von Text umfasst. Diese Funktionalität ist entscheidend für die Datenaufzeichnung, Konfigurationsverwaltung und die Speicherung von Ausgaben, die durch Programme generiert werden, und macht sie zu einem grundlegenden, aber wesentlichen Werkzeug im Arsenal eines Programmierers.

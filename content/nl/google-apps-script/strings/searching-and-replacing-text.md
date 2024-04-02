@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Zoeken en vervangen van tekst in Google Apps Script houdt in het programmatisch\
   \ identificeren van specifieke strings in een document, spreadsheet of elk\u2026"
 title: Zoeken en vervangen van tekst
+weight: 10
 ---
-
-{{< edit_this_page >}}
 
 ## Wat & Waarom?
 

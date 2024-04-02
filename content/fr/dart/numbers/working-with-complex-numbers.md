@@ -11,9 +11,8 @@ summary: "Les nombres complexes, constitu\xE9s d'une partie r\xE9elle et d'une p
   \ imaginaire (g\xE9n\xE9ralement not\xE9s sous la forme a + bi), \xE9tendent le\
   \ concept des\u2026"
 title: Travailler avec des nombres complexes
+weight: 14
 ---
-
-{{< edit_this_page >}}
 
 ## Quoi & Pourquoi ?
 

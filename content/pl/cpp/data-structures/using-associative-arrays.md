@@ -11,9 +11,8 @@ summary: "Tablice asocjacyjne, znane w C++ jako `std::map` lub `std::unordered_m
   \ wype\u0142niaj\u0105 luk\u0119 mi\u0119dzy indeksami tablic a danymi z realnego\
   \ \u015Bwiata, pozwalaj\u0105c\u2026"
 title: Korzystanie z tablic asocjacyjnych
+weight: 15
 ---
-
-{{< edit_this_page >}}
 
 ## Co i dlaczego?
 

@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "\xC9crire des tests en Python implique la cr\xE9ation de scripts automatis\xE9\
   s pour valider la correction de votre code. Les programmeurs font cela pour s'assurer\u2026"
 title: "R\xE9daction de tests"
+weight: 36
 ---
-
-{{< edit_this_page >}}
 
 ## Quoi et Pourquoi ?
 Écrire des tests en Python implique la création de scripts automatisés pour valider la correction de votre code. Les programmeurs font cela pour s'assurer que leurs fonctions ou leurs classes fonctionnent comme prévu sous diverses conditions, ce qui aide à détecter les erreurs tôt et facilite la maintenance et le refactoring.

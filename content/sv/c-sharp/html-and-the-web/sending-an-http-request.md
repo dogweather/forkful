@@ -9,9 +9,8 @@ summary: "HTTP-request \xE4r hur dina appar pratar med omv\xE4rlden \u2013 de sk
   \ och tar emot data via internet. Programmerare anv\xE4nder dem f\xF6r att interagera\
   \ med webb-\u2026"
 title: "Skicka en http-f\xF6rfr\xE5gan"
+weight: 44
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 HTTP-request är hur dina appar pratar med omvärlden – de skickar och tar emot data via internet. Programmerare använder dem för att interagera med webb-tjänster, API:er och att hämta resurser på distans.

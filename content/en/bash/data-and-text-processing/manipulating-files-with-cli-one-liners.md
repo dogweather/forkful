@@ -7,9 +7,8 @@ model: gpt-4-0125-preview
 summary: "Manipulating files with CLI (Command Line Interface) one-liners involves\
   \ using Bash scripts or commands to perform actions on files, like creating,\u2026"
 title: Manipulating files with CLI one-liners
+weight: 31
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 

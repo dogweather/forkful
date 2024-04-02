@@ -9,9 +9,8 @@ summary: "Att j\xE4mf\xF6ra tv\xE5 datum inneb\xE4r att granska deras ordning oc
   \ tidsintervall \u2013 \xE4r det ena f\xF6re det andra, samtidigt, eller hur l\xE5\
   ng tid \xE4r det emellan?\u2026"
 title: "J\xE4mf\xF6ra tv\xE5 datum"
+weight: 27
 ---
-
-{{< edit_this_page >}}
 
 ## Vad & Varför?
 Att jämföra två datum innebär att granska deras ordning och tidsintervall – är det ena före det andra, samtidigt, eller hur lång tid är det emellan? Programmerare behöver detta för att hantera tidsbaserade data, som utgångsdatum, händelser i kalendrar eller tidsgränser i projektplanering.

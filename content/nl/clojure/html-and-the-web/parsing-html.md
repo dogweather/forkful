@@ -10,9 +10,8 @@ model: gpt-4-0125-preview
 summary: "HTML-parseren is het proces van het omzetten van een HTML-string naar een\
   \ datastructuur die je programma kan begrijpen en manipuleren. Programmeurs doen\u2026"
 title: HTML Parsen
+weight: 43
 ---
-
-{{< edit_this_page >}}
 
 ## Wat & Waarom?
 

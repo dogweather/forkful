@@ -9,9 +9,8 @@ summary: "Satunnaislukujen generointi Haskellissa tarkoittaa ennustamattomien lu
   \ luomista ihmisten mittapuiden mukaan. T\xE4m\xE4 on kriittist\xE4 skenaarioissa,\
   \ jotka\u2026"
 title: Satunnaislukujen generointi
+weight: 12
 ---
-
-{{< edit_this_page >}}
 
 ## Mikä ja Miksi?
 

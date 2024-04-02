@@ -9,9 +9,8 @@ summary: "Um einen String in Kleinbuchstaben umzuwandeln, ver\xE4ndert man jeden
   buchstaben in seinem \xC4quivalent in Kleinbuchstaben. Dies ist n\xFCtzlich f\xFC\
   r die\u2026"
 title: Umformung eines Strings in Kleinbuchstaben
+weight: 4
 ---
-
-{{< edit_this_page >}}
 
 ## Was & Warum?
 Um einen String in Kleinbuchstaben umzuwandeln, verändert man jeden Großbuchstaben in seinem Äquivalent in Kleinbuchstaben. Dies ist nützlich für die Normalisierung von Textdaten, z.B. bei Suchoperationen oder beim Vergleich zweier Zeichenketten, um Groß- und Kleinschreibung zu ignorieren.

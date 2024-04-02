@@ -11,9 +11,8 @@ summary: "JSON eli JavaScript Object Notation on kevyt tiedonvaihtoformaatti, jo
   \ on ihmisten luettavissa ja kirjoitettavissa helposti, sek\xE4 koneiden j\xE4sent\xE4\
   m\xE4 ja\u2026"
 title: "Ty\xF6skentely JSON:n kanssa"
+weight: 38
 ---
-
-{{< edit_this_page >}}
 
 ## Mikä ja miksi?
 JSON eli JavaScript Object Notation on kevyt tiedonvaihtoformaatti, joka on ihmisten luettavissa ja kirjoitettavissa helposti, sekä koneiden jäsentämä ja tuottama vaivattomasti. Ohjelmoijat työskentelevät usein JSONin kanssa vaihtaakseen tietoja palvelimien ja web-sovellusten välillä sen yksinkertaisuuden ja kieliriippumattomuuden ansiosta, mikä tekee siitä kulmakiven nykyaikaisessa web-kehityksessä ja API:ssa.

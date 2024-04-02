@@ -11,9 +11,8 @@ summary: "Logging i programmering involverer opptak av hendelser, feil eller mer
   \ forekomster under kj\xF8retid. Programmerere gj\xF8r det for \xE5 feils\xF8ke\
   \ problemer,\u2026"
 title: Logging
+weight: 17
 ---
-
-{{< edit_this_page >}}
 
 ## Hva & Hvorfor?
 

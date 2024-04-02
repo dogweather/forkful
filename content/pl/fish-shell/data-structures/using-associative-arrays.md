@@ -11,9 +11,8 @@ summary: "Tablice asocjacyjne, czyli mapy haszowe, pozwalaj\u0105 przechowywa\u0
   \ dane jako pary klucz-warto\u015B\u0107, co u\u0142atwia organizowanie i odzyskiwanie\
   \ informacji za pomoc\u0105\u2026"
 title: Korzystanie z tablic asocjacyjnych
+weight: 15
 ---
-
-{{< edit_this_page >}}
 
 ## Co i Dlaczego?
 

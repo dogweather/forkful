@@ -9,9 +9,8 @@ summary: "Lesing av kommandolinjeargumenter lar deg ta imot data n\xE5r du start
   \ et Java-program. Programmererne gj\xF8r dette for \xE5 gj\xF8re programmene fleksible\
   \ og\u2026"
 title: Lese kommandolinjeargumenter
+weight: 23
 ---
-
-{{< edit_this_page >}}
 
 ## Hva & Hvorfor?
 Lesing av kommandolinjeargumenter lar deg ta imot data når du starter et Java-program. Programmererne gjør dette for å gjøre programmene fleksible og tilpasse kjøringen uten å endre koden.

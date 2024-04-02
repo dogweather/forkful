@@ -11,9 +11,8 @@ summary: "Convertir una fecha en una cadena en C implica traducir una estructura
   \ fecha o marcar una fecha en un formato legible por humanos. Los programadores\
   \ a\u2026"
 title: Convirtiendo una fecha en una cadena de texto
+weight: 28
 ---
-
-{{< edit_this_page >}}
 
 ## Qué y Por Qué?
 

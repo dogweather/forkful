@@ -9,9 +9,8 @@ summary: "Pobieranie strony internetowej to proces \u015Bci\u0105gania jej tre\u
   ci, by m\xF3c z ni\u0105 interaktywnie pracowa\u0107 poza przegl\u0105dark\u0105\
   . Programi\u015Bci robi\u0105 to, aby analizowa\u0107\u2026"
 title: Pobieranie strony internetowej
+weight: 42
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why? (Co i Dlaczego?)
 Pobieranie strony internetowej to proces ściągania jej treści, by móc z nią interaktywnie pracować poza przeglądarką. Programiści robią to, aby analizować dane, testować wydajność lub archiwizować zawartość.

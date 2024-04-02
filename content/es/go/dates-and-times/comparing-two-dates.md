@@ -11,9 +11,8 @@ summary: "Comparar dos fechas en programaci\xF3n es una tarea fundamental que pe
   \ a los desarrolladores evaluar la relaci\xF3n cronol\xF3gica entre las fechas.\
   \ Tales\u2026"
 title: Comparando dos fechas
+weight: 27
 ---
-
-{{< edit_this_page >}}
 
 ## ¿Qué y por qué?
 

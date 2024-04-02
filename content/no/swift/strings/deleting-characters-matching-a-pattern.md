@@ -8,9 +8,8 @@ model: gpt-4-1106-preview
 summary: "Sletting av tegn som matcher et m\xF8nster er prosessen der vi fjerner spesifikke\
   \ tegn eller sekvenser av tegn fra en streng. Vi gj\xF8r dette for \xE5 rense data,\u2026"
 title: "Slette tegn som matcher et m\xF8nster"
+weight: 5
 ---
-
-{{< edit_this_page >}}
 
 ## Hva & Hvorfor?
 Sletting av tegn som matcher et mønster er prosessen der vi fjerner spesifikke tegn eller sekvenser av tegn fra en streng. Vi gjør dette for å rense data, forenkle strenger eller forme tekst til et ønsket format.

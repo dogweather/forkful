@@ -13,9 +13,8 @@ summary: "N\u1ED9i suy chu\u1ED7i cho ph\xE9p b\u1EA1n ch\xE8n c\xE1c bi\u1EBFn 
   c hi\u1EC7n \u0111\u1EC3 x\xE2y d\u1EF1ng \u0111\u1ED9ng c\xE1c chu\u1ED7i v\xE0\
   \ gi\u1EEF cho m\xE3 ngu\u1ED3n g\u1ECDn g\xE0ng."
 title: "N\u1ED9i suy chu\u1ED7i k\xFD t\u1EF1"
+weight: 8
 ---
-
-{{< edit_this_page >}}
 
 ## Gì và Tại sao?
 Nội suy chuỗi cho phép bạn chèn các biến trực tiếp vào chuỗi. Điều này được thực hiện để xây dựng động các chuỗi và giữ cho mã nguồn gọn gàng.

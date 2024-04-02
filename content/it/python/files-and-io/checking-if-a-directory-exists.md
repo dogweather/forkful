@@ -10,9 +10,8 @@ model: gpt-4-0125-preview
 summary: "Controllare se una directory esiste in Python significa verificare la presenza\
   \ di una cartella nel filesystem prima di eseguire operazioni come leggere o\u2026"
 title: Verifica se una directory esiste
+weight: 20
 ---
-
-{{< edit_this_page >}}
 
 ## Che cos'è e Perché?
 Controllare se una directory esiste in Python significa verificare la presenza di una cartella nel filesystem prima di eseguire operazioni come leggere o scrivere file. I programmatori fanno ciò per evitare errori come `FileNotFoundError`, assicurando che l'applicazione si comporti in modo affidabile e non si interrompa quando tenta di interagire con le directory.

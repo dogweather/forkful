@@ -7,9 +7,8 @@ model: gpt-4-0125-preview
 summary: "Lavorare con XML significa analizzare, trasformare e generare documenti\
   \ XML in Elm. Si fa per interagire con molti servizi web e sistemi legacy che usano\u2026"
 title: Lavorare con XML
+weight: 40
 ---
-
-{{< edit_this_page >}}
 
 ## Cosa & Perché?
 Lavorare con XML significa analizzare, trasformare e generare documenti XML in Elm. Si fa per interagire con molti servizi web e sistemi legacy che usano XML come formato dei dati.

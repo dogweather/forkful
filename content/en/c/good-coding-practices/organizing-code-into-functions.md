@@ -7,9 +7,8 @@ model: gpt-4-0125-preview
 summary: "Organizing code into functions in C involves breaking down complex tasks\
   \ into smaller, reusable blocks of code. This practice enhances readability,\u2026"
 title: Organizing code into functions
+weight: 18
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 

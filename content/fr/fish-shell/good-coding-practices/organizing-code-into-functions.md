@@ -12,9 +12,8 @@ summary: "Organiser le code en fonctions consiste \xE0 regrouper des morceaux de
   \ pour r\xE9aliser des t\xE2ches sp\xE9cifiques. Nous le faisons parce que cela\
   \ rend le\u2026"
 title: Organiser le code en fonctions
+weight: 18
 ---
-
-{{< edit_this_page >}}
 
 ## Quoi et Pourquoi ?
 Organiser le code en fonctions consiste à regrouper des morceaux de script pour réaliser des tâches spécifiques. Nous le faisons parce que cela rend le code plus facile à lire, à tester et à réutiliser - personne ne veut se perdre dans un marécage de codes spaghetti.

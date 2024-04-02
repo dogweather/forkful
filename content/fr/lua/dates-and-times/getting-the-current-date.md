@@ -11,9 +11,8 @@ summary: "R\xE9cup\xE9rer la date actuelle en programmation est une t\xE2che cru
   \ pour de nombreuses applications, y compris la journalisation, le marquage temporel\
   \ des\u2026"
 title: Obtenir la date actuelle
+weight: 29
 ---
-
-{{< edit_this_page >}}
 
 ## Quoi et Pourquoi ?
 

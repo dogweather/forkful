@@ -13,9 +13,8 @@ summary: "Ghi log trong C bao g\u1ED3m vi\u1EC7c ghi l\u1EA1i d\xF2ng ch\u1EA3y 
   ng tr\xECnh trong qu\xE1 tr\xECnh th\u1EF1c thi, cung c\u1EA5p m\u1ED9t c\xE1i nh\xEC\
   n c\u1EE5 th\u1EC3 v\u1EC1\u2026"
 title: "Ghi nh\u1EADt k\xFD"
+weight: 17
 ---
-
-{{< edit_this_page >}}
 
 ## Gì & Tại sao?
 

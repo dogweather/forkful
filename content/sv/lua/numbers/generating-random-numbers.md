@@ -9,9 +9,8 @@ summary: "Att generera slumpm\xE4ssiga tal i programmering handlar om att produc
   \ of\xF6ruts\xE4gbara numeriska v\xE4rden som kan anv\xE4ndas f\xF6r en m\xE4ngd\
   \ olika \xE4ndam\xE5l s\xE5som\u2026"
 title: Generera slumptal
+weight: 12
 ---
-
-{{< edit_this_page >}}
 
 ## Vad & Varför?
 

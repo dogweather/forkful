@@ -11,9 +11,8 @@ summary: "\xC5 analysere en dato fra en streng inneb\xE6rer \xE5 konvertere teks
   \ som representerer en dato, til et datoomsjekt, noe som muliggj\xF8r at programmerere\
   \ kan\u2026"
 title: Analysering av en dato fra en streng
+weight: 30
 ---
-
-{{< edit_this_page >}}
 
 ## Hva & Hvorfor?
 

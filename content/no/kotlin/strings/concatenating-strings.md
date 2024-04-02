@@ -9,9 +9,8 @@ summary: "I programmering, \xE5 sl\xE5 sammen strenger (concatenating strings) e
   \ rett og slett \xE5 sette dem sammen i \xE9n. Vi gj\xF8r det for \xE5 bygge setninger,\
   \ lage meldinger\u2026"
 title: "Sammensl\xE5ing av strenger"
+weight: 3
 ---
-
-{{< edit_this_page >}}
 
 ## Hva & Hvorfor?
 I programmering, å slå sammen strenger (concatenating strings) er rett og slett å sette dem sammen i én. Vi gjør det for å bygge setninger, lage meldinger eller sette sammen data på en meningsfylt måte.

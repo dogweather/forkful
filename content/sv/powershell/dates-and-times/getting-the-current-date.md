@@ -11,9 +11,8 @@ summary: "Att h\xE4mta det aktuella datumet i PowerShell handlar om att h\xE4mta
   \ aktuella datum och tid. Denna operation \xE4r grundl\xE4ggande f\xF6r uppgifter\
   \ som\u2026"
 title: "F\xE5 det aktuella datumet"
+weight: 29
 ---
-
-{{< edit_this_page >}}
 
 ## Vad & Varför?
 

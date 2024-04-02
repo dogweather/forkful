@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "JSON, czyli Notacja Obiekt\xF3w JavaScript, to lekki format wymiany danych,\
   \ idealny do przechowywania danych lub plik\xF3w konfiguracyjnych w projektach\u2026"
 title: Praca z JSON
+weight: 38
 ---
-
-{{< edit_this_page >}}
 
 ## Co i dlaczego?
 

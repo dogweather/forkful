@@ -11,9 +11,8 @@ summary: "Het berekenen van een datum in de toekomst of het verleden betekent he
   \ bepalen van een specifieke dag voor of na een gegeven datum. Programmeurs doen\
   \ dit\u2026"
 title: Een datum in de toekomst of het verleden berekenen
+weight: 26
 ---
-
-{{< edit_this_page >}}
 
 ## Wat & Waarom?
 Het berekenen van een datum in de toekomst of het verleden betekent het bepalen van een specifieke dag voor of na een gegeven datum. Programmeurs doen dit voor functies zoals het plannen van evenementen, herinneringen of het berekenen van deadlines.

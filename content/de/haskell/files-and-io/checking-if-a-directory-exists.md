@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Das \xDCberpr\xFCfen, ob ein Verzeichnis existiert, ist eine grundlegende\
   \ Operation bei vielen Programmieraufgaben. Es erm\xF6glicht bedingte Aktionen basierend\u2026"
 title: "\xDCberpr\xFCfung, ob ein Verzeichnis existiert"
+weight: 20
 ---
-
-{{< edit_this_page >}}
 
 ## Was & Warum?
 Das Überprüfen, ob ein Verzeichnis existiert, ist eine grundlegende Operation bei vielen Programmieraufgaben. Es ermöglicht bedingte Aktionen basierend auf der An- oder Abwesenheit von Verzeichnisstrukturen. Dies ist entscheidend für die Dateimanipulation, automatisierte Skripte und während der Erstinstallation von Software, um sicherzustellen, dass die notwendigen Verzeichnisse vorhanden sind oder um die Duplizierung von Verzeichnissen zu vermeiden.

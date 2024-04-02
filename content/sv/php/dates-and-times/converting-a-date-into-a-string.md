@@ -9,9 +9,8 @@ summary: "Omformningen av ett datum till en textstr\xE4ng m\xF6jligg\xF6r smidig
   \ och lagring. Programmerare g\xF6r detta f\xF6r att f\xF6rb\xE4ttra anv\xE4ndarupplevelse\
   \ eller\u2026"
 title: "Omvandla ett datum till en str\xE4ng"
+weight: 28
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 Omformningen av ett datum till en textsträng möjliggör smidig presentation och lagring. Programmerare gör detta för att förbättra användarupplevelse eller för att datumformatet ska passa olika systemkrav.

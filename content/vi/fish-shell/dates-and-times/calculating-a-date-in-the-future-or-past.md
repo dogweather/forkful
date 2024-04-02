@@ -13,9 +13,8 @@ summary: "T\xEDnh to\xE1n m\u1ED9t ng\xE0y trong t\u01B0\u01A1ng lai ho\u1EB7c q
   y \u0111\u1EC3 t\xECm ra ng\xE0y n\xE0o \u0111\xF3 \u0111\xE3 qua ho\u1EB7c s\u1EBD\
   \ \u0111\u1EBFn. C\xE1c l\u1EADp tr\xECnh vi\xEAn l\xE0m\u2026"
 title: "T\xEDnh to\xE1n ng\xE0y trong t\u01B0\u01A1ng lai ho\u1EB7c qu\xE1 kh\u1EE9"
+weight: 26
 ---
-
-{{< edit_this_page >}}
 
 ## Gì và Tại Sao?
 Tính toán một ngày trong tương lai hoặc quá khứ liên quan đến việc thao tác với các ngày để tìm ra ngày nào đó đã qua hoặc sẽ đến. Các lập trình viên làm điều này cho việc lập lịch, nhắc nhở, hoặc xác định thời hạn và kỳ hạn.

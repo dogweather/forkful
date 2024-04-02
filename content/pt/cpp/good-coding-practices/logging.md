@@ -9,9 +9,8 @@ summary: "A \"logging\" em programa\xE7\xE3o \xE9 o processo de registrar evento
   \ estados e informa\xE7\xF5es em um arquivo ou em outro meio de sa\xEDda. Os programadores\
   \ fazem logs\u2026"
 title: Registro de Logs
+weight: 17
 ---
-
-{{< edit_this_page >}}
 
 ## O Quê & Por Quê?
 A "logging" em programação é o processo de registrar eventos, estados e informações em um arquivo ou em outro meio de saída. Os programadores fazem logs para acompanhar o que está acontecendo em suas aplicações, para depurar problemas e para monitorar o desempenho para futuras análises e otimizações.

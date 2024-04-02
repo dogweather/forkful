@@ -7,9 +7,8 @@ model: gpt-4-1106-preview
 summary: "Das Drucken von Debug-Ausgaben ist das Anzeigen von Variablen, Zwischenst\xE4\
   nden oder Hinweisnachrichten w\xE4hrend des Programmablaufs. Programmierer nutzen\u2026"
 title: Debug-Ausgaben drucken
+weight: 33
 ---
-
-{{< edit_this_page >}}
 
 ## Was & Warum?
 Das Drucken von Debug-Ausgaben ist das Anzeigen von Variablen, Zwischenständen oder Hinweisnachrichten während des Programmablaufs. Programmierer nutzen dies, um das Verhalten ihres Codes zu verstehen und Fehler zu finden.

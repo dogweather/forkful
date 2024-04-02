@@ -9,9 +9,8 @@ summary: "Iniciar un proyecto nuevo significa crear la base desde la que crecer\
   \ tu aplicaci\xF3n o script. Los programadores lo hacen para organizar sus ideas\
   \ y\u2026"
 title: Iniciando un nuevo proyecto
+weight: 1
 ---
-
-{{< edit_this_page >}}
 
 ## ¿Qué & Por Qué?
 Iniciar un proyecto nuevo significa crear la base desde la que crecerá tu aplicación o script. Los programadores lo hacen para organizar sus ideas y asegurarse de que tienen todo lo necesario para empezar a trabajar eficientemente.

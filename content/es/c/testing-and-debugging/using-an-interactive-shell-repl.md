@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Un shell interactivo, tambi\xE9n conocido como un bucle Leer-Evaluar-Imprimir\
   \ (REPL, por sus siglas en ingl\xE9s), permite a los programadores escribir\u2026"
 title: Utilizando un shell interactivo (REPL)
+weight: 34
 ---
-
-{{< edit_this_page >}}
 
 ## ¿Qué y por qué?
 

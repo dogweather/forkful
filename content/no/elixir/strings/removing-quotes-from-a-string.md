@@ -9,9 +9,8 @@ summary: "\xC5 strippe anf\xF8rselstegn fra en streng inneb\xE6rer \xE5 fjerne d
   \ ekstra innpakningene for \xE5 f\xE5 tak i den rene teksten inni. Programmerere\
   \ gj\xF8r dette for \xE5\u2026"
 title: "Fjerne anf\xF8rselstegn fra en streng"
+weight: 9
 ---
-
-{{< edit_this_page >}}
 
 ## Hva og hvorfor?
 Å strippe anførselstegn fra en streng innebærer å fjerne de ekstra innpakningene for å få tak i den rene teksten inni. Programmerere gjør dette for å sanere input, unngå feil og forberede data til bearbeiding der anførselstegn er hinder, ikke funksjoner.

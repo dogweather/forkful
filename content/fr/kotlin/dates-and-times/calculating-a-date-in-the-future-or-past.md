@@ -7,9 +7,8 @@ model: gpt-4-1106-preview
 summary: "Calculer une date dans le futur ou le pass\xE9, c'est intentionnellement\
   \ ajuster la date et l'heure actuelles pour obtenir un moment pr\xE9cis. Les programmeurs\u2026"
 title: "Calcul d'une date future ou pass\xE9e"
+weight: 26
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why? (Quoi et Pourquoi ?)
 

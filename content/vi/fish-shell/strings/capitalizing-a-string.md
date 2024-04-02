@@ -15,9 +15,8 @@ summary: "Vi\u1EC7c vi\u1EBFt hoa m\u1ED9t chu\u1ED7i c\xF3 ngh\u0129a l\xE0 chu
   o t\xEDnh nh\u1EA5t qu\xE1n, d\u1EC5 \u0111\u1ECDc ho\u1EB7c \u0111\u1EC3 \u0111\
   \xE1p\u2026"
 title: "Vi\u1EBFt hoa m\u1ED9t chu\u1ED7i"
+weight: 2
 ---
-
-{{< edit_this_page >}}
 
 ## Gì & Tại Sao?
 Việc viết hoa một chuỗi có nghĩa là chuyển tất cả các ký tự thành chữ hoa. Lập trình viên thực hiện việc này để đảm bảo tính nhất quán, dễ đọc hoặc để đáp ứng một số tiêu chuẩn viết mã nào đó.

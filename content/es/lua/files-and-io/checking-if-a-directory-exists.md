@@ -10,9 +10,8 @@ model: gpt-4-0125-preview
 summary: "Verificar si un directorio existe es una operaci\xF3n fundamental al escribir\
   \ scripts que interact\xFAan con el sistema de archivos, asegurando que tu programa\u2026"
 title: Comprobando si un directorio existe
+weight: 20
 ---
-
-{{< edit_this_page >}}
 
 ## Qué y Por Qué?
 

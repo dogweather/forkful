@@ -13,9 +13,8 @@ summary: "Vi\u1EC7c t\u1EA1o m\u1ED9t t\u1EC7p t\u1EA1m th\u1EDDi trong Google A
   \ cho vi\u1EC7c s\u1EED d\u1EE5ng trong ng\u1EAFn h\u1EA1n, th\u01B0\u1EDDng l\xE0\
   \ cho vi\u1EC7c x\u1EED l\xFD d\u1EEF li\u1EC7u\u2026"
 title: "T\u1EA1o m\u1ED9t t\u1EC7p t\u1EA1m th\u1EDDi"
+weight: 21
 ---
-
-{{< edit_this_page >}}
 
 ## Gì và Tại sao?
 

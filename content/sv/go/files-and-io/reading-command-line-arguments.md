@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Att l\xE4sa kommandoradsargument i Go inneb\xE4r att extrahera argumenten\
   \ som tillhandah\xE5lls till ett program vid dess anrop fr\xE5n terminalen eller\u2026"
 title: "L\xE4ser in kommandoradsargument"
+weight: 23
 ---
-
-{{< edit_this_page >}}
 
 ## Vad & Varför?
 

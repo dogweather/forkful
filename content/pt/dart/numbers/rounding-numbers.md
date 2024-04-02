@@ -10,9 +10,8 @@ model: gpt-4-0125-preview
 summary: "Arredondar n\xFAmeros \xE9 o processo de ajustar um n\xFAmero para o seu\
   \ inteiro mais pr\xF3ximo ou para um n\xFAmero especificado de casas decimais. Programadores\u2026"
 title: "Arredondamento de n\xFAmeros"
+weight: 13
 ---
-
-{{< edit_this_page >}}
 
 ## O Que & Porquê?
 

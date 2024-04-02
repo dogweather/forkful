@@ -10,9 +10,8 @@ model: gpt-4-0125-preview
 summary: "Pisanie pliku tekstowego w JavaScript cz\u0119sto odnosi si\u0119 do tworzenia\
   \ i zapisywania danych w prostym, czytelnym formacie dla cel\xF3w logowania, eksportowania\u2026"
 title: Pisanie pliku tekstowego
+weight: 24
 ---
-
-{{< edit_this_page >}}
 
 ## Co i dlaczego?
 Pisanie pliku tekstowego w JavaScript często odnosi się do tworzenia i zapisywania danych w prostym, czytelnym formacie dla celów logowania, eksportowania danych użytkownika lub konfiguracji. Ta funkcjonalność jest kluczowa dla aplikacji, które muszą zachować dane poza czasem życia procesu aplikacji, dostarczając sposób na przechowywanie i późniejsze pobieranie lub udostępnianie informacji.

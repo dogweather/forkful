@@ -7,9 +7,8 @@ model: gpt-4-1106-preview
 summary: "En HTTP-foresp\xF8rsel lar oss snakke med en webserver. Vi gj\xF8r dette\
   \ for \xE5 hente data, sende informasjon, eller starte handlinger p\xE5 nett."
 title: "\xC5 sende en HTTP-foresp\xF8rsel"
+weight: 44
 ---
-
-{{< edit_this_page >}}
 
 ## Hva & Hvorfor?
 En HTTP-forespørsel lar oss snakke med en webserver. Vi gjør dette for å hente data, sende informasjon, eller starte handlinger på nett.

@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Het parsen van een datum uit een string betekent het converteren van tekst\
   \ die een datum en tijd vertegenwoordigt naar een programmeerbaar formaat.\u2026"
 title: Een datum uit een string parsen
+weight: 30
 ---
-
-{{< edit_this_page >}}
 
 ## Wat & Waarom?
 Het parsen van een datum uit een string betekent het converteren van tekst die een datum en tijd vertegenwoordigt naar een programmeerbaar formaat. Programmeurs doen dit om datums te manipuleren, te vergelijken of ze efficiënt in een database op te slaan.

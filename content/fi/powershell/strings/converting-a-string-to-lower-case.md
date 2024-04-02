@@ -9,9 +9,8 @@ summary: "Muuttamalla merkkijonon pieniksi kirjaimiksi varmistetaan, ett\xE4 tie
   \ vertailu ja k\xE4sittely on yhdenmukaista, tapahtuipa se sitten k\xE4ytt\xF6liittym\xE4\
   ss\xE4 tai\u2026"
 title: Merkkijonon muuntaminen pieniksi kirjaimiksi
+weight: 4
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why? | Mikä & Miksi?
 Muuttamalla merkkijonon pieniksi kirjaimiksi varmistetaan, että tiedon vertailu ja käsittely on yhdenmukaista, tapahtuipa se sitten käyttöliittymässä tai tietokannassa. Ohjelmoijat tekevät tämän esimerkiksi poistaakseen syötteiden kirjainkokoriippuvuuden, mikä vähentää virheitä ja parantaa käyttäjäkokemusta.

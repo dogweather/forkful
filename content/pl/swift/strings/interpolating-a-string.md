@@ -9,9 +9,8 @@ summary: "Interpolacja string\xF3w to wstawienie warto\u015Bci zmiennych lub wyr
   e\u0144 wewn\u0105trz stringu. Robimy to, by \u0142atwo tworzy\u0107 personalizowane\
   \ wiadomo\u015Bci i dynamicznie\u2026"
 title: "Interpolacja \u0142a\u0144cuch\xF3w znak\xF3w"
+weight: 8
 ---
-
-{{< edit_this_page >}}
 
 ## Co i dlaczego?
 Interpolacja stringów to wstawienie wartości zmiennych lub wyrażeń wewnątrz stringu. Robimy to, by łatwo tworzyć personalizowane wiadomości i dynamicznie konstruować tekst w aplikacjach.

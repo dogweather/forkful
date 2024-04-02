@@ -11,9 +11,8 @@ summary: "Fehlerbehandlung in Dart geht darum, Ausnahmen, die w\xE4hrend der Aus
   hrung des Programms auftreten, vorherzusehen und zu verwalten, um die Zuverl\xE4\
   ssigkeit\u2026"
 title: Fehlerbehandlung
+weight: 16
 ---
-
-{{< edit_this_page >}}
 
 ## Was & Warum?
 Fehlerbehandlung in Dart geht darum, Ausnahmen, die während der Ausführung des Programms auftreten, vorherzusehen und zu verwalten, um die Zuverlässigkeit und Benutzerfreundlichkeit zu erhöhen. Programmierer implementieren Fehlerbehandlung, um Abstürze zu verhindern und den Benutzern aussagekräftiges Feedback zu geben, um eine reibungslosere, sicherere Anwendungserfahrung zu gewährleisten.

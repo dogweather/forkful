@@ -21,9 +21,8 @@ summary: "TypeScript\uC5D0\uC11C \uD45C\uC900 \uC624\uB958(stderr)\uC5D0 \uC4F0\
   \ \uCD9C\uB825(stdout)\uACFC \uAC04\uC12D\uD558\uC9C0 \uC54A\uACE0 \uBB38\uC81C\uB97C\
   \u2026"
 title: "\uD45C\uC900 \uC5D0\uB7EC\uC5D0 \uC4F0\uAE30"
+weight: 25
 ---
-
-{{< edit_this_page >}}
 
 ## 무엇이며 왜인가?
 TypeScript에서 표준 오류(stderr)에 쓰기는 환경의 오류 출력 스트림(예: node.js 또는 웹 브라우저의 콘솔)으로 직접 오류 메시지나 로그를 보내는 과정입니다. 이는 프로그램 데이터에 일반적으로 사용되는 표준 출력(stdout)과 간섭하지 않고 문제를 진단하는 데 필수적이며, 오류 처리와 로깅을 효율적이고 일관되게 관리할 수 있도록 보장합니다.

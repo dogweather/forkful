@@ -11,9 +11,8 @@ summary: "Capitalizar uma string significa modific\xE1-la para que a primeira le
   \ fique em mai\xFAscula e o restante da string em min\xFAscula. Essa \xE9 uma tarefa\
   \ comum no\u2026"
 title: Capitalizando uma string
+weight: 2
 ---
-
-{{< edit_this_page >}}
 
 ## O que & Por quê?
 

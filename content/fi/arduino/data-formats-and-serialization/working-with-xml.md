@@ -7,9 +7,8 @@ model: gpt-4-0125-preview
 summary: "Ty\xF6skentely XML:n kanssa Arduinolla k\xE4sitt\xE4\xE4 XML-datan j\xE4\
   sent\xE4mist\xE4 ja manipulointia, joka usein tulee web-API:sta tai konfiguraatiotiedostoista.\u2026"
 title: "XML:n k\xE4sittely"
+weight: 40
 ---
-
-{{< edit_this_page >}}
 
 ## Mikä & Miksi?
 Työskentely XML:n kanssa Arduinolla käsittää XML-datan jäsentämistä ja manipulointia, joka usein tulee web-API:sta tai konfiguraatiotiedostoista. Ohjelmoijat tekevät tämän integroitumiseen palveluihin, jotka käyttävät XML:ää datanvaihtoon tai tallentaakseen dataa rakenteelliseen, ihmisen luettavissa olevaan muotoon.

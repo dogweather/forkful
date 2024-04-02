@@ -23,9 +23,8 @@ summary: "\uD504\uB85C\uADF8\uB798\uBC0D\uC5D0\uC11C \uC815\uADDC \uD45C\uD604\u
   \uC2DD\uC744 \uD65C\uC6A9\uD558\uC5EC, \uD14D\uC2A4\uD2B8 \uB370\uC774\uD130\uB97C\
   \ \uB2E4\uB8E8\uB294 \uB370 \uC788\uC5B4 \uADF8\u2026"
 title: "\uC815\uADDC \uD45C\uD604\uC2DD \uC0AC\uC6A9\uD558\uAE30"
+weight: 11
 ---
-
-{{< edit_this_page >}}
 
 ## 무엇이며 왜 사용하는가?
 프로그래밍에서 정규 표현식은 검색 패턴을 정의하는 문자의 연속으로, 일반적으로 문자열 검색 및 조작에 사용됩니다. Haskell 프로그래머들은 단순한 문자열 일치부터 복잡한 텍스트 처리에 이르기까지 다양한 작업에 정규 표현식을 활용하여, 텍스트 데이터를 다루는 데 있어 그 효율성과 다양성을 최대한 활용합니다.

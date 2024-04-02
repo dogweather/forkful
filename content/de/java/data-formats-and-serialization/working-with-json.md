@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Mit JSON (JavaScript Object Notation) zu arbeiten bedeutet, dieses leichte\
   \ Datenaustauschformat in Ihren Java-Anwendungen zu handhaben. Programmierer\u2026"
 title: Arbeiten mit JSON
+weight: 38
 ---
-
-{{< edit_this_page >}}
 
 ## Was & Warum?
 Mit JSON (JavaScript Object Notation) zu arbeiten bedeutet, dieses leichte Datenaustauschformat in Ihren Java-Anwendungen zu handhaben. Programmierer entscheiden sich für JSON, um strukturierte Daten über ein Netzwerk zu serialisieren und zu übertragen sowie Daten leicht zu konfigurieren und zu speichern, da es menschenlesbar und sprachunabhängig ist.

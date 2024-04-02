@@ -7,9 +7,8 @@ model: gpt-4-1106-preview
 summary: "Iniciar um novo projeto de programa\xE7\xE3o \xE9 como colocar uma semente\
   \ na terra esperando que cres\xE7a e se transforme em uma \xE1rvore robusta. Programadores\u2026"
 title: Iniciando um novo projeto
+weight: 1
 ---
-
-{{< edit_this_page >}}
 
 ## O Que & Por Quê?
 Iniciar um novo projeto de programação é como colocar uma semente na terra esperando que cresça e se transforme em uma árvore robusta. Programadores embarcam nessa jornada para transformar ideias em realidade, resolver problemas, aprender e também, por que não, para se divertirem um pouco.

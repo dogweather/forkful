@@ -11,9 +11,8 @@ summary: "Tablice asocjacyjne, cz\u0119sto nazywane s\u0142ownikami w Visual Bas
   \ dla Aplikacji (VBA), pozwalaj\u0105 programistom na tworzenie kolekcji par klucz-warto\u015B\
   \u0107. Ta\u2026"
 title: Korzystanie z tablic asocjacyjnych
+weight: 15
 ---
-
-{{< edit_this_page >}}
 
 ## Co i dlaczego?
 

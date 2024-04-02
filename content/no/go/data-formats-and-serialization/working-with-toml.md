@@ -11,9 +11,8 @@ summary: "TOML (Tom's Obvious, Minimal Language) er et konfigurasjonsfilformat s
   \ er enkelt \xE5 lese p\xE5 grunn av sin enkle syntaks. Programmerere bruker TOML\
   \ for \xE5\u2026"
 title: "\xC5 jobbe med TOML"
+weight: 39
 ---
-
-{{< edit_this_page >}}
 
 ## Hva & Hvorfor?
 

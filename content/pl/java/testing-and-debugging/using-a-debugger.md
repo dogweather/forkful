@@ -1,14 +1,15 @@
 ---
 date: 2024-01-26 03:49:52.247658-07:00
-description: "U\u017Cycie debugera oznacza wykorzystanie narz\u0119dzia do testowania\
-  \ i naprawiania b\u0142\u0119d\xF3w w kodzie. Programi\u015Bci robi\u0105 to, aby\
-  \ zrozumie\u0107 przep\u0142yw swoich\u2026"
+description: "Za\u0142\xF3\u017Cmy, \u017Ce masz prosty program Java, kt\xF3ry dzia\u0142\
+  a niepoprawnie, i nie mo\u017Cesz zrozumie\u0107 dlaczego. Oto jak uruchomi\u0107\
+  \ debuger przy u\u017Cyciu Eclipse, jednego z\u2026"
 lastmod: '2024-03-13T22:44:35.281815-06:00'
 model: gpt-4-0125-preview
-summary: "U\u017Cycie debugera oznacza wykorzystanie narz\u0119dzia do testowania\
-  \ i naprawiania b\u0142\u0119d\xF3w w kodzie. Programi\u015Bci robi\u0105 to, aby\
-  \ zrozumie\u0107 przep\u0142yw swoich\u2026"
+summary: "Za\u0142\xF3\u017Cmy, \u017Ce masz prosty program Java, kt\xF3ry dzia\u0142\
+  a niepoprawnie, i nie mo\u017Cesz zrozumie\u0107 dlaczego. Oto jak uruchomi\u0107\
+  \ debuger przy u\u017Cyciu Eclipse, jednego z\u2026"
 title: Korzystanie z debugera
+weight: 35
 ---
 
 ## Jak to zrobić:

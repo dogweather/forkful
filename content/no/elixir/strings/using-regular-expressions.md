@@ -11,9 +11,8 @@ summary: "Regul\xE6re uttrykk (regex) i Elixir brukes for \xE5 s\xF8ke, matche o
   \ manipulere strenger basert p\xE5 spesifikke m\xF8nstre. Programmerere benytter\
   \ seg av regex for\u2026"
 title: "Bruke regul\xE6re uttrykk"
+weight: 11
 ---
-
-{{< edit_this_page >}}
 
 ## Hva & Hvorfor?
 

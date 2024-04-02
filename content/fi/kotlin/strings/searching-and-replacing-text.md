@@ -9,9 +9,8 @@ summary: "Tekstin etsiminen ja korvaaminen on yksinkertaisesti tekstijonon vaiht
   \ toiseen. Koodareille t\xE4m\xE4 on t\xE4rke\xE4\xE4, koska koodin muokkaaminen,\
   \ virheiden\u2026"
 title: Tekstin etsiminen ja korvaaminen
+weight: 10
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why? (Mitä & Miksi?)
 Tekstin etsiminen ja korvaaminen on yksinkertaisesti tekstijonon vaihtamista toiseen. Koodareille tämä on tärkeää, koska koodin muokkaaminen, virheiden korjaaminen ja datan muokkaus vaativat usein nopeita tekstioperaatioita.

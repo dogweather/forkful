@@ -8,9 +8,8 @@ model: gpt-4-1106-preview
 summary: "Envoyer une requ\xEAte HTTP permet \xE0 votre programme d'obtenir ou d'envoyer\
   \ des donn\xE9es sur le web. C'est essentiel pour interagir avec des API, des services\u2026"
 title: "Envoi d'une requ\xEAte HTTP"
+weight: 44
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 Envoyer une requête HTTP permet à votre programme d'obtenir ou d'envoyer des données sur le web. C'est essentiel pour interagir avec des API, des services web ou tout simplement pour récupérer du contenu en ligne.

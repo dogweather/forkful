@@ -10,9 +10,8 @@ model: gpt-4-0125-preview
 summary: "Assosiatiiviset taulukot, jotka Visual Basic for Applications (VBA) -ymp\xE4\
   rist\xF6ss\xE4 tunnetaan usein sanakirjoina, mahdollistavat ohjelmoijien luoda avain-\u2026"
 title: "Assosiatiivisten taulukoiden k\xE4ytt\xF6"
+weight: 15
 ---
-
-{{< edit_this_page >}}
 
 ## Mikä & Miksi?
 

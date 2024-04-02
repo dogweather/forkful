@@ -9,9 +9,8 @@ summary: "Rozpoczynanie nowego projektu to jak otwieranie nowego rozdzia\u0142u:
   \ \u015Bwie\u017Ce, czyste i wszystko jest mo\u017Cliwe. Programi\u015Bci zaczynaj\u0105\
   \ nowe projekty, by\u2026"
 title: Rozpoczynanie nowego projektu
+weight: 1
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why (Co i Dlaczego?)
 Rozpoczynanie nowego projektu to jak otwieranie nowego rozdziału: jest świeże, czyste i wszystko jest możliwe. Programiści zaczynają nowe projekty, by stworzyć coś unikalnego lub rozwiązać problem, każdorazowo kształtując kod do swoich potrzeb.

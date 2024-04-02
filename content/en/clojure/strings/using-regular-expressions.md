@@ -7,9 +7,8 @@ model: gpt-4-0125-preview
 summary: "Regular expressions, a powerful tool for pattern matching and data manipulation,\
   \ are essential in text processing tasks such as validating input,\u2026"
 title: Using regular expressions
+weight: 11
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 Regular expressions, a powerful tool for pattern matching and data manipulation, are essential in text processing tasks such as validating input, searching, and replacing text. Programmers use them extensively for handling complex string parsing and data validation tasks efficiently and succinctly.

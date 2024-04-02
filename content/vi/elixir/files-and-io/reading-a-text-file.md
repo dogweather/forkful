@@ -15,9 +15,8 @@ summary: "\u0110\u1ECDc m\u1ED9t t\u1EC7p v\u0103n b\u1EA3n c\xF3 ngh\u0129a l\x
   y \u0111\u1EC3 x\u1EED l\xFD ho\u1EB7c ph\xE2n t\xEDch n\u1ED9i dung, nh\u01B0 \u0111\
   \u1ECDc c\u1EA5u\u2026"
 title: "\u0110\u1ECDc m\u1ED9t t\u1EC7p v\u0103n b\u1EA3n"
+weight: 22
 ---
-
-{{< edit_this_page >}}
 
 ## Cái gì & Tại sao?
 

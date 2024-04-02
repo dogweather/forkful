@@ -14,9 +14,8 @@ summary: "H\xE3y t\u01B0\u1EDFng t\u01B0\u1EE3ng b\u1EA1n v\u1EEBa ph\xE1t hi\u1
   y ch\u1EE7 c\u1EE7a m\xECnh. B\u1EA1n c\xF3 th\u1EC3 m\u1EDF t\u1EEBng t\u1EC7p,\u2026"
 title: "Ch\u1EC9nh s\u1EEDa file t\u1EA1i ch\u1ED7 v\u1EDBi c\xE2u l\u1EC7nh CLI ng\u1EAF\
   n g\u1ECDn"
+weight: 32
 ---
-
-{{< edit_this_page >}}
 
 ## Gì & Tại Sao?
 

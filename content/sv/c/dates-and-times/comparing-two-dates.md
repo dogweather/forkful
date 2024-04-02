@@ -11,9 +11,8 @@ summary: "Att j\xE4mf\xF6ra tv\xE5 datum i C inneb\xE4r att fastst\xE4lla den kr
   \ relationen mellan dem \u2013 om ett datum f\xF6reg\xE5r det andra eller om de\
   \ \xE4r samma. Denna\u2026"
 title: "J\xE4mf\xF6ra tv\xE5 datum"
+weight: 27
 ---
-
-{{< edit_this_page >}}
 
 ## Vad & Varför?
 

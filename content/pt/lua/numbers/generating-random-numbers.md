@@ -9,9 +9,8 @@ summary: "Gerar n\xFAmeros aleat\xF3rios na programa\xE7\xE3o trata de produzir 
   \ num\xE9ricos imprevis\xEDveis que podem ser usados para uma variedade de prop\xF3\
   sitos, como\u2026"
 title: "Gera\xE7\xE3o de n\xFAmeros aleat\xF3rios"
+weight: 12
 ---
-
-{{< edit_this_page >}}
 
 ## O Que & Por Quê?
 

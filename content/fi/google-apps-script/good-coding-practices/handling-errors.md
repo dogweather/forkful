@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Virheenk\xE4sittely Google Apps Scriptiss\xE4 tarkoittaa poikkeustilanteiden\
   \ tai virheiden ennakointia, kiinniottamista ja niihin vastaamista koodin suorituksen\u2026"
 title: "Virheiden k\xE4sittely"
+weight: 16
 ---
-
-{{< edit_this_page >}}
 
 ## Mitä & Miksi?
 

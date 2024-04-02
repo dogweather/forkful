@@ -9,9 +9,8 @@ summary: "D\u0142ugo\u015B\u0107 ci\u0105gu to po prostu liczba znak\xF3w w tek\
   cie. Programi\u015Bci licz\u0105 znaki, by zarz\u0105dza\u0107 danymi - na przyk\u0142\
   ad sprawdzaj\u0105c has\u0142a czy ograniczaj\u0105c\u2026"
 title: "Znalezienie d\u0142ugo\u015Bci ci\u0105gu znak\xF3w"
+weight: 7
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why? (Co i dlaczego?)
 Długość ciągu to po prostu liczba znaków w tekście. Programiści liczą znaki, by zarządzać danymi - na przykład sprawdzając hasła czy ograniczając wprowadzany tekst.

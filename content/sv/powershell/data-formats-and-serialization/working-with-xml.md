@@ -9,9 +9,8 @@ summary: "Att arbeta med XML inneb\xE4r att manipulera och komma \xE5t data stru
   \ i det utvidgbara m\xE4rkspr\xE5ket. Programmerare arbetar med XML f\xF6r att m\xF6\
   jligg\xF6ra\u2026"
 title: Att arbeta med XML
+weight: 40
 ---
-
-{{< edit_this_page >}}
 
 ## Vad & Varför?
 Att arbeta med XML innebär att manipulera och komma åt data strukturerad i det utvidgbara märkspråket. Programmerare arbetar med XML för att möjliggöra interoperabilitet med andra system eller för att läsa och skriva konfigurationsfiler, datakällor och andra strukturerade dokument som är vanliga i webbtjänster.

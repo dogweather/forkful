@@ -7,9 +7,8 @@ model: gpt-4-0125-preview
 summary: "Writing a text file in TypeScript is a critical skill for data persistence,\
   \ configurations, or log generation. Programmers often perform this task to\u2026"
 title: Writing a text file
+weight: 24
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 Writing a text file in TypeScript is a critical skill for data persistence, configurations, or log generation. Programmers often perform this task to store and manipulate data outside the application memory for reasons like data analysis, reporting, or simply saving user settings across sessions.

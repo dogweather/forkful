@@ -11,9 +11,8 @@ summary: "Att ta bort tecken som matchar ett specifikt m\xF6nster \xE4r en tekni
   \ som anv\xE4nds f\xF6r att rensa eller formatera str\xE4ngar i programmering. I\
   \ sammanhanget av\u2026"
 title: "Ta bort tecken som matchar ett m\xF6nster"
+weight: 5
 ---
-
-{{< edit_this_page >}}
 
 ## Vad & Varför?
 

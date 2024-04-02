@@ -9,9 +9,8 @@ summary: "Supprimer des caract\xE8res selon un patron, c'est filtrer une cha\xEE
   \ de caract\xE8res pour en \xE9liminer certains \xE9l\xE9ments. Les programmeurs\
   \ le font pour\u2026"
 title: "Suppression de caract\xE8res correspondant \xE0 un motif"
+weight: 5
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why? (Quoi et Pourquoi ?)
 Supprimer des caractères selon un patron, c'est filtrer une chaîne de caractères pour en éliminer certains éléments. Les programmeurs le font pour nettoyer les données, valider des entrées ou formater des informations.

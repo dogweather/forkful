@@ -9,9 +9,8 @@ summary: "Refactoring is the process of restructuring existing computer code\u20
   changing the factoring\u2014without changing its external behavior. Programmers\
   \ do it to\u2026"
 title: Refactoring
+weight: 19
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 Refactoring is the process of restructuring existing computer code—changing the factoring—without changing its external behavior. Programmers do it to improve the nonfunctional attributes of the software, enhancing readability, reducing complexity, and making the code more maintainable for future ventures.

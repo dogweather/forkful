@@ -9,9 +9,8 @@ summary: "REPL tarkoittaa Lue-Arvo-Tulosta-Toista -silmukkaa, yksinkertaista, in
   \ ohjelmointiymp\xE4rist\xF6\xE4. Koodaajat k\xE4ytt\xE4v\xE4t sit\xE4 kirjoittaakseen\
   \ ja\u2026"
 title: "Interaktiivisen komentotulkin (REPL) k\xE4ytt\xF6"
+weight: 34
 ---
-
-{{< edit_this_page >}}
 
 ## Mikä & Miksi?
 REPL tarkoittaa Lue-Arvo-Tulosta-Toista -silmukkaa, yksinkertaista, interaktiivista ohjelmointiympäristöä. Koodaajat käyttävät sitä kirjoittaakseen ja testatakseen koodia nopeasti, kokeillakseen syntaksia ja oppiakseen ohjelmointikonsepteja ilman kokonaisten sovellusten luomisen ja suorittamisen vaivaa.

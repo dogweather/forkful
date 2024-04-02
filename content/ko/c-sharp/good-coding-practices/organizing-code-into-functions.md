@@ -17,9 +17,8 @@ summary: "\uCF54\uB4DC\uB97C \uD568\uC218\uB85C \uB098\uB204\uB294 \uAC83\uC740 
   \ \uBC88\uAC70\uB86D\uAC8C \uD558\uAE30 \uC704\uD574\uC11C \uC774\uB807\uAC8C \uD569\
   \uB2C8\uB2E4."
 title: "\uCF54\uB4DC\uB97C \uD568\uC218\uB85C \uAD6C\uC131\uD558\uAE30"
+weight: 18
 ---
-
-{{< edit_this_page >}}
 
 ## 무엇이며 왜 그런가?
 코드를 함수로 나누는 것은 LEGO 블록을 상자에 정리하는 것과 같아서, 찾고 사용하기가 더 쉬워집니다. 우리는 반복을 피하고, 이해를 단순하게 하며, 유지보수를 덜 번거롭게 하기 위해서 이렇게 합니다.

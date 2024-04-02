@@ -10,9 +10,8 @@ model: gpt-4-0125-preview
 summary: "Analisar uma data a partir de uma string em Haskell envolve converter representa\xE7\
   \xF5es textuais de datas em um formato estruturado que o programa pode\u2026"
 title: Analisando uma data a partir de uma string
+weight: 30
 ---
-
-{{< edit_this_page >}}
 
 ## O Que & Por Quê?
 

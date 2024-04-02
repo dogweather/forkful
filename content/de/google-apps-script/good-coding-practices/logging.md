@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Das Logging in der Programmierung beinhaltet das Erfassen von Ereignissen,\
   \ Fehlern oder bemerkenswerten Vorkommnissen w\xE4hrend der Laufzeit. Programmierer\u2026"
 title: Protokollierung
+weight: 17
 ---
-
-{{< edit_this_page >}}
 
 ## Was & Warum?
 

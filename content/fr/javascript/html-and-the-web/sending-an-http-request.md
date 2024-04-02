@@ -9,9 +9,8 @@ summary: "Envoyer une requ\xEAte HTTP, c'est demander quelque chose \xE0 un autr
   \ serveur web. On le fait pour r\xE9cup\xE9rer des donn\xE9es, soumettre des formulaires\
   \ ou\u2026"
 title: "Envoi d'une requ\xEAte HTTP"
+weight: 44
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 Envoyer une requête HTTP, c'est demander quelque chose à un autre serveur web. On le fait pour récupérer des données, soumettre des formulaires ou intéragir avec des services web.

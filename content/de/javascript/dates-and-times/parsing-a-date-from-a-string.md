@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Das Parsen eines Datums aus einem String erm\xF6glicht es Programmierern,\
   \ textuelle Datumsdarstellungen in JavaScript `Date`-Objekte umzuwandeln. Dies\u2026"
 title: Einen Datum aus einem String analysieren
+weight: 30
 ---
-
-{{< edit_this_page >}}
 
 ## Was & Warum?
 Das Parsen eines Datums aus einem String ermöglicht es Programmierern, textuelle Datumsdarstellungen in JavaScript `Date`-Objekte umzuwandeln. Dies erleichtert Manipulationen, Vergleiche und Formatierungen von Daten. Dieser Prozess ist essentiell für die Verarbeitung von Benutzereingaben, die Bearbeitung von Daten aus Datenbanken oder die Arbeit mit APIs, die Daten in Stringformaten übermitteln.

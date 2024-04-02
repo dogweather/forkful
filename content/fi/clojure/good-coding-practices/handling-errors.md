@@ -9,9 +9,8 @@ summary: "Virheenk\xE4sittely on ohjelmien odottamattomien tilanteiden hallintaa
   kuin j\xE4rjestyksenvalvoja, joka kohtaa h\xE4irik\xF6it\xE4. Ohjelmoijat pit\xE4\
   v\xE4t sujuvuudesta;\u2026"
 title: "Virheiden k\xE4sittely"
+weight: 16
 ---
-
-{{< edit_this_page >}}
 
 ## Mikä & Miksi?
 Virheenkäsittely on ohjelmien odottamattomien tilanteiden hallintaa—kuin järjestyksenvalvoja, joka kohtaa häiriköitä. Ohjelmoijat pitävät sujuvuudesta; virheenkäsittely auttaa pitämään ongelmat kurissa ja varmistaa, että koodi ei kompastu ja kaadu kohdatessaan odottamatonta.

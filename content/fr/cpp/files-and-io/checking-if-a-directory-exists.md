@@ -11,9 +11,8 @@ summary: "V\xE9rifier si un r\xE9pertoire existe consiste \xE0 d\xE9terminer la 
   sence d'un r\xE9pertoire \xE0 un chemin sp\xE9cifi\xE9 avant de r\xE9aliser des\
   \ op\xE9rations telles que lire\u2026"
 title: "V\xE9rifier si un r\xE9pertoire existe"
+weight: 20
 ---
-
-{{< edit_this_page >}}
 
 ## Quoi et Pourquoi ?
 Vérifier si un répertoire existe consiste à déterminer la présence d'un répertoire à un chemin spécifié avant de réaliser des opérations telles que lire ou écrire dans des fichiers à l'intérieur de celui-ci. Les programmeurs le font pour éviter les erreurs liées aux opérations de fichiers, assurant ainsi une exécution plus fluide et plus fiable des tâches de gestion des fichiers dans leurs applications.

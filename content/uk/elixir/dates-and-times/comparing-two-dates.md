@@ -8,9 +8,8 @@ summary: "Comparing two dates means checking how they relate to each other\u2014
   \ they the same, is one earlier, or is it later. Programmers need this for scheduling\u2026"
 title: "\u041F\u043E\u0440\u0456\u0432\u043D\u044F\u043D\u043D\u044F \u0434\u0432\u043E\
   \u0445 \u0434\u0430\u0442"
+weight: 27
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why? (Що та Чому?)
 Comparing two dates means checking how they relate to each other—are they the same, is one earlier, or is it later. Programmers need this for scheduling events, data validity, timelines, expiries, and the logic of everyday life infiltrating code.

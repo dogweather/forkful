@@ -17,9 +17,8 @@ summary: "Clojure\u3067\u306F\u3001\u4E71\u6570\u751F\u6210\u306F\u975E\u5E38\u3
   \u308B\u306B\u306F\u3001`rand`\u95A2\u6570\u3092\u4F7F\u7528\u3067\u304D\u307E\u3059\
   \uFF1A ```Clojure (rand) ;; \u4F8B\u306E\u51FA\u529B: 0.7094245047062917 ```\u2026"
 title: "\u4E71\u6570\u306E\u751F\u6210"
+weight: 12
 ---
-
-{{< edit_this_page >}}
 
 # 何となぜ？
 

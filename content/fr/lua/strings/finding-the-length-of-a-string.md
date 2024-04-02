@@ -9,9 +9,8 @@ summary: "La longueur d'une cha\xEEne, c'est combien de caract\xE8res elle conti
   \ Pourquoi s'en soucier? Parce qu'on a souvent besoin de savoir o\xF9 on en est,\
   \ comme\u2026"
 title: "Trouver la longueur d'une cha\xEEne de caract\xE8res"
+weight: 7
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 La longueur d'une chaîne, c'est combien de caractères elle contient. Pourquoi s'en soucier? Parce qu'on a souvent besoin de savoir où on en est, comme pour valider une saisie ou couper une chaîne trop longue.

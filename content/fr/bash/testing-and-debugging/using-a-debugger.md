@@ -1,14 +1,15 @@
 ---
 date: 2024-01-26 03:47:31.296164-07:00
-description: "Utiliser un d\xE9bogueur en Bash signifie utiliser des outils pour tester\
-  \ et trouver des probl\xE8mes dans vos scripts, comme pi\xE9ger des bugs qui font\
-  \ planter\u2026"
+description: "Bash n'est pas fourni avec un d\xE9bogueur int\xE9gr\xE9 comme certains\
+  \ autres langages, mais vous pouvez utiliser des commandes int\xE9gr\xE9es comme\
+  \ `set -x` pour\u2026"
 lastmod: '2024-03-13T22:44:58.001354-06:00'
 model: gpt-4-0125-preview
-summary: "Utiliser un d\xE9bogueur en Bash signifie utiliser des outils pour tester\
-  \ et trouver des probl\xE8mes dans vos scripts, comme pi\xE9ger des bugs qui font\
-  \ planter\u2026"
+summary: "Bash n'est pas fourni avec un d\xE9bogueur int\xE9gr\xE9 comme certains\
+  \ autres langages, mais vous pouvez utiliser des commandes int\xE9gr\xE9es comme\
+  \ `set -x` pour\u2026"
 title: "Utilisation d'un d\xE9bogueur"
+weight: 35
 ---
 
 ## Comment faire :

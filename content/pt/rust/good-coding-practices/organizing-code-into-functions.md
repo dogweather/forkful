@@ -9,9 +9,8 @@ summary: "Organizar o c\xF3digo em fun\xE7\xF5es trata de dividir seu programa e
   \ partes reutiliz\xE1veis e modulares, identificadas por um nome. Fazemos isso para\
   \ tornar nosso\u2026"
 title: "Organizando o c\xF3digo em fun\xE7\xF5es"
+weight: 18
 ---
-
-{{< edit_this_page >}}
 
 ## O Que e Por Quê?
 Organizar o código em funções trata de dividir seu programa em partes reutilizáveis e modulares, identificadas por um nome. Fazemos isso para tornar nosso código mais limpo, legível e fácil de depurar. Trata-se de não repetir a nós mesmos e simplificar atualizações.

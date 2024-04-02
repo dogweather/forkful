@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Capitalizar una cadena implica modificar la primera letra de cada palabra\
   \ en la cadena a may\xFAsculas, asegurando que el resto permanezcan en min\xFAsculas.\u2026"
 title: Capitalizando una cadena de texto
+weight: 2
 ---
-
-{{< edit_this_page >}}
 
 ## ¿Qué y por qué?
 Capitalizar una cadena implica modificar la primera letra de cada palabra en la cadena a mayúsculas, asegurando que el resto permanezcan en minúsculas. Esta tarea común de manipulación de cadenas es útil para formatear texto en aplicaciones, como preparar nombres de usuarios o títulos para ser mostrados de acuerdo a la convención o corrección gramatical.

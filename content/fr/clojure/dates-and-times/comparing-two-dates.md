@@ -9,9 +9,8 @@ summary: "Comparer deux dates, c'est \xE9valuer leur ordre chronologique relatif
   \ Les d\xE9veloppeurs le font pour trier des \xE9v\xE9nements, g\xE9rer des d\xE9\
   lais ou v\xE9rifier des\u2026"
 title: Comparer deux dates
+weight: 27
 ---
-
-{{< edit_this_page >}}
 
 ## Quoi et Pourquoi ?
 Comparer deux dates, c'est évaluer leur ordre chronologique relatif. Les développeurs le font pour trier des événements, gérer des délais ou vérifier des périodes de validité.

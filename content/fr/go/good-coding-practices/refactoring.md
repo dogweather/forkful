@@ -11,9 +11,8 @@ summary: "Le refactoring en programmation implique de restructurer le code infor
   \ existant \u2014 changer le fa\xE7onnage \u2014 sans modifier son comportement\
   \ externe.\u2026"
 title: Refonte de Code
+weight: 19
 ---
-
-{{< edit_this_page >}}
 
 ## Quoi & Pourquoi ?
 

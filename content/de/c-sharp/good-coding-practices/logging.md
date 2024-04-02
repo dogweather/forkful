@@ -8,9 +8,8 @@ model: gpt-4-1106-preview
 summary: "Logging ist der Vorgang des Aufzeichnens von Anwendungsereignissen und Datenausgaben\
   \ w\xE4hrend der Laufzeit. Programmierer verwenden Logging, um Fehler zu\u2026"
 title: Protokollierung
+weight: 17
 ---
-
-{{< edit_this_page >}}
 
 ## Was & Warum?
 Logging ist der Vorgang des Aufzeichnens von Anwendungsereignissen und Datenausgaben während der Laufzeit. Programmierer verwenden Logging, um Fehler zu diagnostizieren, die Softwareleistung zu überwachen, Benutzeraktionen zu verfolgen und die Einhaltung von Sicherheits- und Geschäftsstandards zu gewährleisten.

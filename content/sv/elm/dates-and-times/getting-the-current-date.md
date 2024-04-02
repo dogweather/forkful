@@ -9,9 +9,8 @@ summary: "Att f\xE5 tag p\xE5 det aktuella datumet inneb\xE4r att vi hittar dage
   \ datum i realtid. Programmerare g\xF6r detta f\xF6r funktioner som loggar, tidsst\xE4\
   mplar och\u2026"
 title: "Att h\xE4mta aktuellt datum"
+weight: 29
 ---
-
-{{< edit_this_page >}}
 
 ## Vad & Varför?
 Att få tag på det aktuella datumet innebär att vi hittar dagens datum i realtid. Programmerare gör detta för funktioner som loggar, tidsstämplar och datumvalidering.

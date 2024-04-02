@@ -11,9 +11,8 @@ summary: "Kapitalizacja ci\u0105gu znak\xF3w polega na zmodyfikowaniu ci\u0105gu
   \ aby jego pierwszy znak by\u0142 wielk\u0105 liter\u0105, podczas gdy reszta ci\u0105\
   gu pozostaje niezmieniona.\u2026"
 title: "Zamiana liter na wielkie w \u0142a\u0144cuchu znak\xF3w"
+weight: 2
 ---
-
-{{< edit_this_page >}}
 
 ## Co i dlaczego?
 Kapitalizacja ciągu znaków polega na zmodyfikowaniu ciągu tak, aby jego pierwszy znak był wielką literą, podczas gdy reszta ciągu pozostaje niezmieniona. Programiści często wykonują kapitalizację ciągów, aby zapewnić spójność danych, szczególnie dla nazw i miejsc, lub aby przestrzegać reguł gramatycznych w interfejsach użytkownika.

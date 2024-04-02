@@ -13,9 +13,8 @@ summary: "B\u1EAFt \u0111\u1EA7u m\u1ED9t d\u1EF1 \xE1n m\u1EDBi b\u1EB1ng TypeS
   ng ch\u1EAFc \u0111\u1EC3 l\u1EADp tr\xECnh. C\xE1c l\u1EADp tr\xECnh vi\xEAn kh\u1EDF\
   i x\u01B0\u1EDBng d\u1EF1 \xE1n m\u1EDBi \u0111\u1EC3 bi\u1EBFn nh\u1EEFng \xFD\u2026"
 title: "B\u1EAFt \u0111\u1EA7u m\u1ED9t d\u1EF1 \xE1n m\u1EDBi"
+weight: 1
 ---
-
-{{< edit_this_page >}}
 
 ## Cái gì & Tại sao?
 Bắt đầu một dự án mới bằng TypeScript chính là việc thiết lập một nền tảng vững chắc để lập trình. Các lập trình viên khởi xướng dự án mới để biến những ý tưởng mới thành phần mềm hoạt động, thử nghiệm các khái niệm, hoặc học hỏi điều mới.

@@ -11,9 +11,8 @@ summary: "Merkkijonon ensimm\xE4isen kirjaimen muuttaminen isoksi kirjaimeksi pi
   en loput merkit ennallaan tarkoittaa merkkijonon alkukirjaimen suurentamista. T\xE4\
   t\xE4\u2026"
 title: Merkkijonon muuttaminen isoiksi kirjaimiksi
+weight: 2
 ---
-
-{{< edit_this_page >}}
 
 ## Mikä ja miksi?
 Merkkijonon ensimmäisen kirjaimen muuttaminen isoksi kirjaimeksi pitäen loput merkit ennallaan tarkoittaa merkkijonon alkukirjaimen suurentamista. Tätä toimintoa käytetään yleisesti JavaScriptissä käyttäjän syötteiden muotoiluun, nimien tai otsikoiden näyttämiseen ja käyttöliittymätekstien johdonmukaisuuden varmistamiseen.

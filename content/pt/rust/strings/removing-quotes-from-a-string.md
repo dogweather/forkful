@@ -7,9 +7,8 @@ model: gpt-4-0125-preview
 summary: "Remover aspas de uma string no Rust \xE9 sobre eliminar caracteres de aspas\
   \ extras desnecess\xE1rios que podem estar envolvendo seus dados de texto.\u2026"
 title: Removendo aspas de uma string
+weight: 9
 ---
-
-{{< edit_this_page >}}
 
 ## O Que e Por quê?
 

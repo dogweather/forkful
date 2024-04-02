@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Das Herunterladen einer Webseite in Visual Basic for Applications (VBA)\
   \ beinhaltet das Abrufen des HTML-Inhalts einer Webseite aus dem Internet.\u2026"
 title: Herunterladen einer Webseite
+weight: 42
 ---
-
-{{< edit_this_page >}}
 
 ## Was & Warum?
 

@@ -14,9 +14,8 @@ summary: "\u8BA1\u7B97\u672A\u6765\u6216\u8FC7\u53BB\u7684\u65E5\u671F\u662F\u78
   \u6BD4\u5982\uFF0C\u4E3A\u4E86\u9A8C\u8BC1\u4F18\u60E0\u5238\u6709\u6548\u671F\u3001\
   \u8BA1\u5212\u4EFB\u52A1\u6216\u9884\u6D4B\u4E8B\u4EF6\u3002"
 title: "\u8BA1\u7B97\u672A\u6765\u6216\u8FC7\u53BB\u7684\u65E5\u671F"
+weight: 26
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why? (是什么 & 为什么？)
 计算未来或过去的日期是确定从特定日期开始之前或之后的具体日期。程序员经常这么做，比如，为了验证优惠券有效期、计划任务或预测事件。

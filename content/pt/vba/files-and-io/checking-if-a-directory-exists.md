@@ -11,9 +11,8 @@ summary: "Verificar se um diret\xF3rio existe no Visual Basic for Applications (
   \ trata de confirmar a presen\xE7a de uma pasta dentro do sistema de arquivos antes\
   \ de\u2026"
 title: "Verificando se um diret\xF3rio existe"
+weight: 20
 ---
-
-{{< edit_this_page >}}
 
 ## O Que & Por Que?
 

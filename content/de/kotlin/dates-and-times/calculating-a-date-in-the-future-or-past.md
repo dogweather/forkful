@@ -9,9 +9,8 @@ summary: "Das Berechnen eines zuk\xFCnftigen oder vergangenen Datums hei\xDFt ei
   \ ein Datum basierend auf einem anderen Datum zu ermitteln. Programmierer nutzen\
   \ das\u2026"
 title: "Berechnung eines zuk\xFCnftigen oder vergangenen Datums"
+weight: 26
 ---
-
-{{< edit_this_page >}}
 
 ## Was & Warum?
 Das Berechnen eines zukünftigen oder vergangenen Datums heißt einfach, ein Datum basierend auf einem anderen Datum zu ermitteln. Programmierer nutzen das für Features wie Erinnerungen, Verfallsdaten oder Zeitreisen in Apps.

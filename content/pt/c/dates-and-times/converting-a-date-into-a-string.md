@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Converter uma data em uma string em C envolve traduzir uma estrutura de\
   \ data ou carimbo de tempo para um formato leg\xEDvel por humanos. Programadores\u2026"
 title: Convertendo uma data em uma string
+weight: 28
 ---
-
-{{< edit_this_page >}}
 
 ## O Que e Por Quê?
 

@@ -12,9 +12,8 @@ summary: "Een datum uit een string parsen gaat over het nemen van tekst, zoals \
   2023-04-05\", en het omzetten naar een datumformaat dat je programma kan begrijpen\
   \ en\u2026"
 title: Een datum uit een string parsen
+weight: 30
 ---
-
-{{< edit_this_page >}}
 
 ## Wat & Waarom?
 

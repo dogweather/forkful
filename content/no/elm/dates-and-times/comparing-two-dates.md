@@ -5,9 +5,8 @@ lastmod: '2024-03-13T22:44:40.721584-06:00'
 model: gpt-4-1106-preview
 summary: '"'
 title: Sammenlikning av to datoer
+weight: 27
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 "## Hva & Hvorfor?"

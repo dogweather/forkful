@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Merkkijonon alkukirjaimen muuttaminen isoksi Bashissa tarkoittaa merkkijonon\
   \ ensimm\xE4isen merkin muuttamista isoksi kirjaimeksi, samalla kun loput\u2026"
 title: Merkkijonon muuttaminen isoiksi kirjaimiksi
+weight: 2
 ---
-
-{{< edit_this_page >}}
 
 ## Mikä ja miksi?
 Merkkijonon alkukirjaimen muuttaminen isoksi Bashissa tarkoittaa merkkijonon ensimmäisen merkin muuttamista isoksi kirjaimeksi, samalla kun loput merkkijonosta jätetään muuttumattomiksi. Tätä tekniikkaa käytetään yleisesti tulosteiden muotoiluun tai koodauskonventioiden noudattamiseen, jotka edellyttävät tiettyjen merkkijonojen alkavan isolla alkukirjaimella luettavuuden tai tyylillisten mieltymysten vuoksi.

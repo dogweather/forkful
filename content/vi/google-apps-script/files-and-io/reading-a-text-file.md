@@ -13,9 +13,8 @@ summary: "Vi\u1EC7c \u0111\u1ECDc m\u1ED9t t\u1EC7p v\u0103n b\u1EA3n trong Goog
   t d\u1EEF li\u1EC7u v\u0103n b\u1EA3n t\u1EEB c\xE1c t\u1EC7p \u0111\u01B0\u1EE3\
   c l\u01B0u tr\u1EEF tr\xEAn Google Drive ho\u1EB7c\u2026"
 title: "\u0110\u1ECDc m\u1ED9t t\u1EC7p v\u0103n b\u1EA3n"
+weight: 22
 ---
-
-{{< edit_this_page >}}
 
 ## Cái gì & Tại sao?
 

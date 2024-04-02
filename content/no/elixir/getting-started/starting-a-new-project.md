@@ -9,9 +9,8 @@ summary: "\xC5 starte et nytt prosjekt i Elixir inneb\xE6rer \xE5 sette opp en n
   \ mix-applikasjon. Programmerere gj\xF8r dette for \xE5 lage en organisert, modul\xE6\
   r base for \xE5\u2026"
 title: "\xC5 starte et nytt prosjekt"
+weight: 1
 ---
-
-{{< edit_this_page >}}
 
 ## Hva & Hvorfor?
 Å starte et nytt prosjekt i Elixir innebærer å sette opp en ny mix-applikasjon. Programmerere gjør dette for å lage en organisert, modulær base for å bygge applikasjoner og biblioteker.

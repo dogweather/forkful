@@ -10,9 +10,8 @@ model: gpt-4-0125-preview
 summary: "Parsowanie daty ze stringa polega na ekstrahowaniu informacji o dacie zakodowanej\
   \ w ci\u0105gach znak\xF3w i konwersji jej na strukturyzowany format, kt\xF3ry\u2026"
 title: "Analiza sk\u0142adniowa daty z \u0142a\u0144cucha znak\xF3w"
+weight: 30
 ---
-
-{{< edit_this_page >}}
 
 ## Co i dlaczego?
 Parsowanie daty ze stringa polega na ekstrahowaniu informacji o dacie zakodowanej w ciągach znaków i konwersji jej na strukturyzowany format, który środowiska programistyczne mogą rozpoznawać i manipulować. Programiści robią to, aby umożliwić operacje takie jak porównywanie dat, arytmetykę, formatowanie i lokalizację, które są niezbędne do efektywnego obsługiwania planowania, znaczników czasu i danych historycznych w oprogramowaniu.

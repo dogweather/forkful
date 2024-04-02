@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Merkkijonoista tietty\xE4 mallia vastaavien merkkien poistaminen C-kieless\xE4\
   \ tarkoittaa kaikkien tiettyihin ennalta m\xE4\xE4riteltyihin kriteereihin sopivien\u2026"
 title: Merkkien poistaminen vastaavan mallin mukaan
+weight: 5
 ---
-
-{{< edit_this_page >}}
 
 ## Mitä & Miksi?
 

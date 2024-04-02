@@ -9,9 +9,8 @@ summary: "Das L\xF6schen von Zeichen, die einem Muster entsprechen, erm\xF6glich
   \ es, Strings in Bash effizient zu bearbeiten. Programmierer nutzen dies, um Eingaben\
   \ zu\u2026"
 title: "L\xF6schen von Zeichen, die einem Muster entsprechen"
+weight: 5
 ---
-
-{{< edit_this_page >}}
 
 ## Was & Warum?
 Das Löschen von Zeichen, die einem Muster entsprechen, ermöglicht es, Strings in Bash effizient zu bearbeiten. Programmierer nutzen dies, um Eingaben zu validieren, Daten zu säubern oder spezifische Formate zu erzeugen.

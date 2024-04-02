@@ -9,9 +9,8 @@ summary: "\xC5 skrive ut feils\xF8kingsdata (\"debug output\") handler om \xE5 v
   \ programdata og -tilstander til skjermen for \xE5 forst\xE5 hva koden faktisk gj\xF8\
   r. Programmerere\u2026"
 title: "Skrive ut feils\xF8kingsdata"
+weight: 33
 ---
-
-{{< edit_this_page >}}
 
 ## Hva & Hvorfor?
 Å skrive ut feilsøkingsdata ("debug output") handler om å vise programdata og -tilstander til skjermen for å forstå hva koden faktisk gjør. Programmerere gjør dette for å finne og rette feil effektivt.

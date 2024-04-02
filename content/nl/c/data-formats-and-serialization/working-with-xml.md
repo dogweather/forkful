@@ -10,9 +10,8 @@ model: gpt-4-0125-preview
 summary: "Werken met XML in C houdt in dat je XML-documenten parseert, opvraagt en\
   \ manipuleert met behulp van verschillende bibliotheken. Programmeurs werken met\u2026"
 title: Werken met XML
+weight: 40
 ---
-
-{{< edit_this_page >}}
 
 ## Wat & Waarom?
 

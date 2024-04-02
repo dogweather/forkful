@@ -1,14 +1,15 @@
 ---
 date: 2024-01-26 04:10:31.875153-07:00
-description: "Att anv\xE4nda en fels\xF6kare \xE4r som att ge dig sj\xE4lv r\xF6ntgensyn\
-  \ f\xF6r att kika in i din kods utf\xF6rande. Programmerare g\xF6r detta f\xF6r\
-  \ att hitta buggar, f\xF6rst\xE5\u2026"
+description: "Rust st\xF6djer olika fels\xF6kare, men en vanlig \xE4r `gdb` f\xF6\
+  r GNU/Linux eller `lldb` f\xF6r macOS. Du kan ocks\xE5 anv\xE4nda `rust-gdb` eller\
+  \ `rust-lldb` som \xE4r\u2026"
 lastmod: '2024-03-13T22:44:37.702970-06:00'
 model: gpt-4-0125-preview
-summary: "Att anv\xE4nda en fels\xF6kare \xE4r som att ge dig sj\xE4lv r\xF6ntgensyn\
-  \ f\xF6r att kika in i din kods utf\xF6rande. Programmerare g\xF6r detta f\xF6r\
-  \ att hitta buggar, f\xF6rst\xE5\u2026"
+summary: "Rust st\xF6djer olika fels\xF6kare, men en vanlig \xE4r `gdb` f\xF6r GNU/Linux\
+  \ eller `lldb` f\xF6r macOS. Du kan ocks\xE5 anv\xE4nda `rust-gdb` eller `rust-lldb`\
+  \ som \xE4r\u2026"
 title: "Att anv\xE4nda en debugger"
+weight: 35
 ---
 
 ## Hur man gör:

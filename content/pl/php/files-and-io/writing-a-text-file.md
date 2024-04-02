@@ -11,9 +11,8 @@ summary: "Zapisywanie pliku tekstowego w PHP polega na utworzeniu lub otwarciu p
   \ i wstawieniu do niego zawarto\u015Bci. Programi\u015Bci robi\u0105 to, aby zachowa\u0107\
   \ dane,\u2026"
 title: Pisanie pliku tekstowego
+weight: 24
 ---
-
-{{< edit_this_page >}}
 
 ## Co i dlaczego?
 Zapisywanie pliku tekstowego w PHP polega na utworzeniu lub otwarciu pliku i wstawieniu do niego zawartości. Programiści robią to, aby zachować dane, takie jak treści generowane przez użytkowników lub logi, poza cyklem życia programu.

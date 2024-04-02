@@ -10,9 +10,8 @@ model: gpt-4-0125-preview
 summary: "Et interaktivt skall, eller Read-Eval-Print Loop (REPL), lar brukere skrive\
   \ inn kommandoer, utf\xF8re dem og se resultatene i sanntid. Programmerere benytter\u2026"
 title: "\xC5 bruke et interaktivt skall (REPL)"
+weight: 34
 ---
-
-{{< edit_this_page >}}
 
 ## Hva & Hvorfor?
 

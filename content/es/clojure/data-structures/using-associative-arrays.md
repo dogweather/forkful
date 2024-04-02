@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Los arreglos asociativos, o mapas hash, en Clojure te permiten almacenar\
   \ y recuperar datos con pares clave-valor. Son una opci\xF3n predilecta para manejar\u2026"
 title: Uso de matrices asociativas
+weight: 15
 ---
-
-{{< edit_this_page >}}
 
 ## Qué y Por Qué
 

@@ -11,9 +11,8 @@ summary: "YAML, som st\xE5r f\xF6r YAML Ain't Markup Language, anv\xE4nds flitig
   \ i Ruby f\xF6r konfigurationsfiler och data-serialisering p\xE5 grund av sitt l\xE4\
   ttl\xE4sta format.\u2026"
 title: Att Arbeta med YAML
+weight: 41
 ---
-
-{{< edit_this_page >}}
 
 ## Vad & Varför?
 YAML, som står för YAML Ain't Markup Language, används flitigt i Ruby för konfigurationsfiler och data-serialisering på grund av sitt lättlästa format. Programmerare vänder sig till YAML när de behöver lagra eller överföra dataobjekt på ett läsligt men strukturerat sätt, vilket förenklar uppgifter som konfigurationshantering, datalagring och datadelning mellan språk.

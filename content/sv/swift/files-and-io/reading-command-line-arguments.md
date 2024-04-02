@@ -9,9 +9,8 @@ summary: "Kommandoradsargument \xE4r parametrar som skickas till ett program vid
   \ Programmerare anv\xE4nder dem f\xF6r att styra programbeteendet utan att \xE4\
   ndra koden."
 title: "L\xE4sa in kommandoradsargument"
+weight: 23
 ---
-
-{{< edit_this_page >}}
 
 ## Vad & Varför?
 Kommandoradsargument är parametrar som skickas till ett program vid start. Programmerare använder dem för att styra programbeteendet utan att ändra koden.

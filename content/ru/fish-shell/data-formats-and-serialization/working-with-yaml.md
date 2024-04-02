@@ -21,9 +21,8 @@ summary: "YAML, \"YAML Ain't Markup Language\" (YAML \u2014 \u044D\u0442\u043E \
   \u0438\u0438 \u0434\u0430\u043D\u043D\u044B\u0445, \u043A\u043E\u0442\u043E\u0440\
   \u044B\u0439 \u043F\u043E \u043D\u043E\u0442\u0430\u0446\u0438\u0438\u2026"
 title: "\u0420\u0430\u0431\u043E\u0442\u0430 \u0441 YAML"
+weight: 41
 ---
-
-{{< edit_this_page >}}
 
 ## Что и Почему?
 

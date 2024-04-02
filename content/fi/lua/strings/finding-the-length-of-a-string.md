@@ -9,9 +9,8 @@ summary: "Mittauksella tarkoitetaan merkkijonon pituuden selvitt\xE4mist\xE4. Oh
   \ tarvitsevat t\xE4t\xE4 toimintoa, jotta voivat k\xE4sitell\xE4 tekstidataa tehokkaasti\
   \ ja\u2026"
 title: "Merkkijonon pituuden selvitt\xE4minen"
+weight: 7
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 Mittauksella tarkoitetaan merkkijonon pituuden selvittämistä. Ohjelmoijat tarvitsevat tätä toimintoa, jotta voivat käsitellä tekstidataa tehokkaasti ja tehdä päätöksiä ohjelmissaan.

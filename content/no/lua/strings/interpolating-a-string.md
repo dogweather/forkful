@@ -9,9 +9,8 @@ summary: "Interpolering av en streng involverer \xE5 sette inn verdier inn i en 
   \ tekststreng. Programmerere gj\xF8r dette for \xE5 dynamisk generere tekst, for\
   \ eksempel\u2026"
 title: Interpolering av en streng
+weight: 8
 ---
-
-{{< edit_this_page >}}
 
 ## Hva & Hvorfor?
 Interpolering av en streng involverer å sette inn verdier inn i en fast tekststreng. Programmerere gjør dette for å dynamisk generere tekst, for eksempel å bygge brukermeldinger eller generere kode.

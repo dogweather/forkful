@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Crear un archivo temporal en Dart implica generar un archivo que est\xE1\
   \ destinado para uso a corto plazo, principalmente para escenarios como almacenamiento\u2026"
 title: Creando un archivo temporal
+weight: 21
 ---
-
-{{< edit_this_page >}}
 
 ## ¿Qué y por qué?
 Crear un archivo temporal en Dart implica generar un archivo que está destinado para uso a corto plazo, principalmente para escenarios como almacenamiento en caché de datos, almacenamiento temporal para el procesamiento de archivos o mantener información que es demasiado sensible para retener durante mucho tiempo. Los programadores lo hacen para gestionar datos que no necesitan almacenamiento permanente, mejorando así el rendimiento y manteniendo la higiene de los datos.

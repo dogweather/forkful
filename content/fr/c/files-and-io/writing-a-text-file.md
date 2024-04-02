@@ -10,9 +10,8 @@ model: gpt-4-0125-preview
 summary: "\xC9crire un fichier texte en C implique de cr\xE9er ou d'ouvrir un fichier\
   \ en mode \xE9criture, puis d'utiliser les fonctions d'E/S de fichier de C pour\u2026"
 title: "\xC9crire un fichier texte"
+weight: 24
 ---
-
-{{< edit_this_page >}}
 
 ## Quoi & Pourquoi ?
 

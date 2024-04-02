@@ -9,9 +9,8 @@ summary: "En elm, encontrar la longitud de una cadena significa contar cu\xE1nto
   \ caracteres contiene. Los programadores lo hacen para validar entradas, limitar\
   \ texto\u2026"
 title: Calculando la longitud de una cadena
+weight: 7
 ---
-
-{{< edit_this_page >}}
 
 ## Qué y Por Qué?
 En elm, encontrar la longitud de una cadena significa contar cuántos caracteres contiene. Los programadores lo hacen para validar entradas, limitar texto en la interfaz de usuario, o simplemente para manejar datos de manera más precisa.

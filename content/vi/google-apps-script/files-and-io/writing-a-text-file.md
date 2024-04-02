@@ -13,9 +13,8 @@ summary: "Vi\u1EC7c vi\u1EBFt m\u1ED9t t\u1EC7p v\u0103n b\u1EA3n trong Google A
   \ d\u1EEF li\u1EC7u m\u1ED9t c\xE1ch b\u1EC1n v\u1EEFng, khi\u1EBFn n\xF3 c\xF3\
   \ th\u1EC3 truy c\u1EADp \u0111\u1EC3 s\u1EED d\u1EE5ng\u2026"
 title: "Vi\u1EBFt m\u1ED9t t\u1EC7p v\u0103n b\u1EA3n"
+weight: 24
 ---
-
-{{< edit_this_page >}}
 
 ## Cái gì & Tại sao?
 

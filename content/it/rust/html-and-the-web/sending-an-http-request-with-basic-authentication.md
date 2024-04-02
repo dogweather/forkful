@@ -9,9 +9,8 @@ summary: "Mandare una richiesta HTTP con autenticazione di base significa inseri
   \ username e password per accedere a risorse protette. I programmatori lo fanno\
   \ per\u2026"
 title: Inviare una richiesta http con autenticazione di base
+weight: 45
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 Mandare una richiesta HTTP con autenticazione di base significa inserire username e password per accedere a risorse protette. I programmatori lo fanno per interagire con API che richiedono sicurezza.

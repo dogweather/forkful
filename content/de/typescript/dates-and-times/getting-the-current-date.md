@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Das Abrufen des aktuellen Datums in TypeScript, einer auf JavaScript aufbauenden\
   \ Sprache, erm\xF6glicht den Zugriff auf und die Manipulation von aktuellen\u2026"
 title: Den aktuellen Datum abrufen
+weight: 29
 ---
-
-{{< edit_this_page >}}
 
 ## Was & Warum?
 Das Abrufen des aktuellen Datums in TypeScript, einer auf JavaScript aufbauenden Sprache, ermöglicht den Zugriff auf und die Manipulation von aktuellen Datums- und Zeitinformationen. Programmierer benötigen diese Funktionalität oft, um Zeitstempel zu erstellen, Planungen vorzunehmen und andere zeitkritische Funktionen in ihren Anwendungen zu implementieren.

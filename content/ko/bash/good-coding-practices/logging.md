@@ -23,9 +23,8 @@ summary: "\uB85C\uAE45\uC740 \uD504\uB85C\uADF8\uB7A8\uC758 \uC2E4\uD589 \uD504\
   \uC9C0\uD558\uAE30 \uC704\uD574 \uB85C\uAE45\uC744 \uC2E4\uC2DC\uD569\uB2C8\uB2E4\
   ."
 title: "\uB85C\uAE45"
+weight: 17
 ---
-
-{{< edit_this_page >}}
 
 ## 무엇 & 왜?
 

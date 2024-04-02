@@ -11,9 +11,8 @@ summary: "No mundo da programa\xE7\xE3o, trabalhar com arquivos CSV (Valores Sep
   \ por V\xEDrgula) envolve ler e escrever dados em arquivos de texto organizados\
   \ por\u2026"
 title: Trabalhando com CSV
+weight: 37
 ---
-
-{{< edit_this_page >}}
 
 ## O Que & Por Que?
 

@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Een HTTP-verzoek verzenden in Visual Basic for Applications (VBA) houdt\
   \ in dat je programmatisch toegang krijgt tot webbronnen of webservices door\u2026"
 title: Een HTTP-verzoek verzenden
+weight: 44
 ---
-
-{{< edit_this_page >}}
 
 ## Wat & Waarom?
 

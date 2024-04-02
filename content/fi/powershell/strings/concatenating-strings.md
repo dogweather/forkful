@@ -9,9 +9,8 @@ summary: "Yhdist\xE4mme merkkijonoja luodaksemme uusia, kokonaisia tekstej\xE4. 
   m\xE4 on tarpeen, kun ker\xE4\xE4mme eri l\xE4hteist\xE4 tulevia tietoja tai haluamme\
   \ muodostaa\u2026"
 title: "Merkkijonojen yhdist\xE4minen"
+weight: 3
 ---
-
-{{< edit_this_page >}}
 
 ## Mitä & Miksi?
 Yhdistämme merkkijonoja luodaksemme uusia, kokonaisia tekstejä. Tämä on tarpeen, kun keräämme eri lähteistä tulevia tietoja tai haluamme muodostaa dynaamisia viestejä.

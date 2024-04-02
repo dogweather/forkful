@@ -9,9 +9,8 @@ summary: "Generering av tilfeldige tall i programmering inneb\xE6rer \xE5 skape 
   \ av tall som mangler forutsigbar rekkef\xF8lge eller m\xF8nster. Programmerere\
   \ bruker\u2026"
 title: Generering av tilfeldige tall
+weight: 12
 ---
-
-{{< edit_this_page >}}
 
 ## Hva & Hvorfor?
 

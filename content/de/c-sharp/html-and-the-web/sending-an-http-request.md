@@ -7,9 +7,8 @@ model: gpt-4-1106-preview
 summary: "HTTP-Anfragen erm\xF6glichen die Kommunikation zwischen deiner Software\
   \ und Webdiensten. Programmierer senden diese Anfragen, um Daten zu holen oder zu\u2026"
 title: Einen HTTP-Request senden
+weight: 44
 ---
-
-{{< edit_this_page >}}
 
 ## Was & Warum?
 HTTP-Anfragen ermöglichen die Kommunikation zwischen deiner Software und Webdiensten. Programmierer senden diese Anfragen, um Daten zu holen oder zu senden, APIs zu nutzen und auf Webressourcen zuzugreifen.

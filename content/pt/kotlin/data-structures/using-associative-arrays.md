@@ -11,9 +11,8 @@ summary: "Arrays associativos, ou mapas, em Kotlin s\xE3o cole\xE7\xF5es que arm
   \ pares de chave-valor. Os programadores os usam para organizar e recuperar dados\
   \ de\u2026"
 title: Usando arrays associativos
+weight: 15
 ---
-
-{{< edit_this_page >}}
 
 ## O quê & Por quê?
 

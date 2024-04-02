@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Het schrijven van tests in programmeren omvat het cre\xEBren van specifieke\
   \ procedures om de functionaliteit en prestaties van je code segmenten te\u2026"
 title: Tests Schrijven
+weight: 36
 ---
-
-{{< edit_this_page >}}
 
 ## Wat & Waarom?
 

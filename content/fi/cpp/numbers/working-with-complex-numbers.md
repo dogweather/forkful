@@ -9,9 +9,8 @@ summary: "Kompleksiluvut laajentavat reaalilukuja lis\xE4\xE4m\xE4ll\xE4 imagina
   n, joka esitet\xE4\xE4n 'i':n\xE4, miss\xE4 i^2 = -1. Ohjelmoijat k\xE4ytt\xE4v\xE4\
   t niit\xE4 simulaatioissa,\u2026"
 title: "Kompleksilukujen k\xE4sittely"
+weight: 14
 ---
-
-{{< edit_this_page >}}
 
 ## Mikä & Miksi?
 Kompleksiluvut laajentavat reaalilukuja lisäämällä imaginaariyksikön, joka esitetään 'i':nä, missä i^2 = -1. Ohjelmoijat käyttävät niitä simulaatioissa, signaalinkäsittelyssä ja matemaattisten ongelmien ratkaisemisessa, jotka vaativat työskentelyä kahdessa ulottuvuudessa.

@@ -11,9 +11,8 @@ summary: "Nykyisen p\xE4iv\xE4m\xE4\xE4r\xE4n saaminen Swiftille tarkoittaa `Dat
   \ luokan k\xE4ytt\xE4mist\xE4 p\xE4\xE4st\xE4ksesi k\xE4siksi p\xE4iv\xE4m\xE4\xE4\
   r\xE4\xE4n ja aikaan, jolloin sovellusta ajetaan.\u2026"
 title: "Nykyisen p\xE4iv\xE4m\xE4\xE4r\xE4n hankkiminen"
+weight: 29
 ---
-
-{{< edit_this_page >}}
 
 ## Mikä ja miksi?
 Nykyisen päivämäärän saaminen Swiftille tarkoittaa `Date` luokan käyttämistä päästäksesi käsiksi päivämäärään ja aikaan, jolloin sovellusta ajetaan. Ohjelmoijien on tarpeen hakea nykyinen päivämäärä monista syistä, jotka vaihtelevat tapahtumien aikaleimaamisesta, päivämäärälaskentojen suorittamiseen, päivämäärien ja aikojen näyttämiseen käyttöliittymässä.

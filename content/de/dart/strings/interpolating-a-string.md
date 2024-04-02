@@ -10,9 +10,8 @@ model: gpt-4-0125-preview
 summary: "String-Interpolation ist der Prozess, Variablenwerte direkt in Strings einzuf\xFC\
   gen, oft um aussagekr\xE4ftige Nachrichten ohne umst\xE4ndliche Verkettungen zu\u2026"
 title: Interpolation eines Strings
+weight: 8
 ---
-
-{{< edit_this_page >}}
 
 ## Was & Warum?
 

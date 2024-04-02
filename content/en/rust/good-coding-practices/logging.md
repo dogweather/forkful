@@ -7,9 +7,8 @@ model: gpt-4-1106-preview
 summary: "Logging is like keeping a journal for your application; it's the practice\
   \ of recording events, errors, and other pertinent data during runtime. Developers\u2026"
 title: Logging
+weight: 17
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 

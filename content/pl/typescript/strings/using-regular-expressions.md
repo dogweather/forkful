@@ -11,9 +11,8 @@ summary: "Wyra\u017Cenia regularne, zwane r\xF3wnie\u017C regex, to pot\u0119\u0
   ne narz\u0119dzie do dopasowywania wzorc\xF3w i wyszukiwania w programowaniu. Programi\u015B\
   ci u\u017Cywaj\u0105 wyra\u017Ce\u0144\u2026"
 title: "Korzystanie z wyra\u017Ce\u0144 regularnych"
+weight: 11
 ---
-
-{{< edit_this_page >}}
 
 ## Co i dlaczego?
 Wyrażenia regularne, zwane również regex, to potężne narzędzie do dopasowywania wzorców i wyszukiwania w programowaniu. Programiści używają wyrażeń regularnych do zadań takich jak walidacja danych wejściowych użytkownika, przeszukiwanie tekstu czy manipulowanie ciągami, ponieważ jest to efektywne i wszechstronne.

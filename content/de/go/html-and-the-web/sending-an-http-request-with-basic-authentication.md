@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Das Senden einer HTTP-Anfrage mit Basisauthentifizierung in Go beinhaltet\
   \ das Hinzuf\xFCgen eines Autorisierungs-Headers zu Ihrer Anfrage, der einen\u2026"
 title: Eine HTTP-Anfrage mit Basisauthentifizierung senden
+weight: 45
 ---
-
-{{< edit_this_page >}}
 
 ## Was & Warum?
 

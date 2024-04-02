@@ -9,9 +9,8 @@ summary: "Att skicka en HTTP-beg\xE4ran med grundl\xE4ggande autentisering inneb
   r att inkludera anv\xE4ndarnamn och l\xF6senord i en HTTP-header f\xF6r att f\xE5\
   \ tillg\xE5ng till\u2026"
 title: "Skicka en HTTP-f\xF6rfr\xE5gan med Basic-autentisering"
+weight: 45
 ---
-
-{{< edit_this_page >}}
 
 ## Vad & Varför?
 Att skicka en HTTP-begäran med grundläggande autentisering innebär att inkludera användarnamn och lösenord i en HTTP-header för att få tillgång till skyddade resurser. Programmerare gör detta för att interagera med webbtjänster som kräver användarverifiering.

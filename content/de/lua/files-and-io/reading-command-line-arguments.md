@@ -9,9 +9,8 @@ summary: "Kommandozeilenargumente sind Parameter, die ein Programm beim Start \x
   ber die Konsole erh\xE4lt. Sie erm\xF6glichen es dem Benutzer, das Verhalten des\
   \ Programms\u2026"
 title: Lesen von Kommandozeilenargumenten
+weight: 23
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 Kommandozeilenargumente sind Parameter, die ein Programm beim Start über die Konsole erhält. Sie ermöglichen es dem Benutzer, das Verhalten des Programms zu steuern und spezifische Aktionen durchzuführen.

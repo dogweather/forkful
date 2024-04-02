@@ -10,9 +10,8 @@ model: gpt-4-0125-preview
 summary: "Een nieuw PHP-project starten betekent een basis opzetten om je webapp of\
   \ script op te bouwen. We doen dit om fris te starten, onze idee\xEBn in code te\u2026"
 title: Een nieuw project starten
+weight: 1
 ---
-
-{{< edit_this_page >}}
 
 ## Wat & Waarom?
 Een nieuw PHP-project starten betekent een basis opzetten om je webapp of script op te bouwen. We doen dit om fris te starten, onze ideeën in code te structureren, en nieuwe problemen op te lossen.

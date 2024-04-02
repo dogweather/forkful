@@ -11,9 +11,8 @@ summary: "Associativa arrayer, k\xE4nda som `std::map` eller `std::unordered_map
   \ i C++, \xF6verbryggar klyftan mellan arrayindex och verkliga data, vilket l\xE5\
   ter dig\u2026"
 title: "Att anv\xE4nda associativa arrayer"
+weight: 15
 ---
-
-{{< edit_this_page >}}
 
 ## Vad & Varför?
 

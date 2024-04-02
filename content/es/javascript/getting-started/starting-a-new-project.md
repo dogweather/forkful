@@ -7,9 +7,8 @@ model: gpt-4-1106-preview
 summary: "Comenzar un proyecto nuevo es como plantar una semilla digital, esperando\
   \ que crezca y se convierta en algo incre\xEDble. Los programadores iniciamos\u2026"
 title: Iniciando un nuevo proyecto
+weight: 1
 ---
-
-{{< edit_this_page >}}
 
 ## ¿Qué y Por Qué?
 Comenzar un proyecto nuevo es como plantar una semilla digital, esperando que crezca y se convierta en algo increíble. Los programadores iniciamos proyectos para solucionar problemas, experimentar con nuevas ideas o mejorar habilidades. Es nuestro lienzo en blanco.

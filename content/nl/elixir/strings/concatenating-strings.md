@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Het samenvoegen van strings gaat over het aan elkaar koppelen van twee of\
   \ meer strings om \xE9\xE9n enkel stuk tekst te vormen. Je zou tekst moeten samenvoegen\u2026"
 title: Samenvoegen van strings
+weight: 3
 ---
-
-{{< edit_this_page >}}
 
 ## Wat & Waarom?
 Het samenvoegen van strings gaat over het aan elkaar koppelen van twee of meer strings om één enkel stuk tekst te vormen. Je zou tekst moeten samenvoegen voor het genereren van gebruikersberichten, het creëren van bestandspaden of voor data serialisatieprocessen. Het is een fundamentele operatie in elke programmeertaal, inclusief Elixir, waarmee ontwikkelaars gemakkelijk dynamische strings kunnen construeren.

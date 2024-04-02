@@ -11,9 +11,8 @@ summary: "Att konvertera ett datum till en str\xE4ng i Dart \xE4r en vanlig uppg
   \ n\xE4r du beh\xF6ver visa datum- och tidsinformation i ett l\xE4ttl\xE4st format,\
   \ eller n\xE4r du\u2026"
 title: "Att konvertera ett datum till en str\xE4ng"
+weight: 28
 ---
-
-{{< edit_this_page >}}
 
 ## Vad & Varför?
 

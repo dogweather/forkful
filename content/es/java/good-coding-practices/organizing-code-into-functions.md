@@ -8,9 +8,8 @@ model: gpt-4-1106-preview
 summary: "Organizar el c\xF3digo en funciones significa descomponer la bestia de un\
   \ programa en bloques manejables, cada uno realizando una tarea distinta. Los\u2026"
 title: "Organizando c\xF3digo en funciones"
+weight: 18
 ---
-
-{{< edit_this_page >}}
 
 ## ¿Qué y Por Qué?
 Organizar el código en funciones significa descomponer la bestia de un programa en bloques manejables, cada uno realizando una tarea distinta. Los programadores hacen esto para que el código sea legible, reutilizable y mantenible.

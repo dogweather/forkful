@@ -9,9 +9,8 @@ summary: "Chercher et remplacer du texte, c'est un peu comme jouer \xE0 cache-ca
   \ puis redessiner ce qui \xE9tait cach\xE9. Les programmeurs le font pour mettre\
   \ \xE0 jour des\u2026"
 title: Recherche et remplacement de texte
+weight: 10
 ---
-
-{{< edit_this_page >}}
 
 ## Quoi & Pourquoi ?
 

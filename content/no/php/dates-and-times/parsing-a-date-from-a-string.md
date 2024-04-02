@@ -11,9 +11,8 @@ summary: "\xC5 analysere en dato fra en tekststreng i PHP inneb\xE6rer \xE5 konv
   \ tekst som representerer en dato og/eller tid til et PHP `DateTime`-objekt eller\
   \ andre\u2026"
 title: Analysering av en dato fra en streng
+weight: 30
 ---
-
-{{< edit_this_page >}}
 
 ## Hva & Hvorfor?
 

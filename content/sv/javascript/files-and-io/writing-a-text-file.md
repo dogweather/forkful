@@ -11,9 +11,8 @@ summary: "Att skriva en textfil i JavaScript handlar ofta om att skapa och spara
   \ i ett enkelt, l\xE4sbart format f\xF6r loggning, export av anv\xE4ndarinmatning\
   \ eller\u2026"
 title: Att skriva en textfil
+weight: 24
 ---
-
-{{< edit_this_page >}}
 
 ## Vad & Varför?
 Att skriva en textfil i JavaScript handlar ofta om att skapa och spara data i ett enkelt, läsbart format för loggning, export av användarinmatning eller konfigurationsändamål. Denna funktionalitet är avgörande för applikationer som behöver bevara data utöver applikationsprocessens livstid, genom att erbjuda ett sätt att lagra och senare hämta eller dela information.

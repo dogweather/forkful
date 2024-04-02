@@ -11,9 +11,8 @@ summary: "Att skriva till standardfel (stderr) i C# inneb\xE4r att rikta felmedd
   \ och diagnostik separat fr\xE5n regulj\xE4r utdata (stdout) f\xF6r att hj\xE4lpa\
   \ anv\xE4ndare\u2026"
 title: Skriva till standardfel
+weight: 25
 ---
-
-{{< edit_this_page >}}
 
 ## Vad & Varför?
 Att skriva till standardfel (stderr) i C# innebär att rikta felmeddelanden och diagnostik separat från reguljär utdata (stdout) för att hjälpa användare och utvecklare att skilja mellan normal programutdata och felnotifikationer. Programmerare gör detta för att göra felsökning och loggning mer effektiv, vilket möjliggör smidigare drift och underhåll av applikationer.

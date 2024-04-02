@@ -7,9 +7,8 @@ model: gpt-4-0125-preview
 summary: "Komplexe Zahlen bestehen aus einem Realteil und einem Imagin\xE4rteil und\
   \ sind in verschiedenen Bereichen wie Ingenieurwesen, Physik und Computergrafik\u2026"
 title: Umgang mit komplexen Zahlen
+weight: 14
 ---
-
-{{< edit_this_page >}}
 
 ## Was & Warum?
 Komplexe Zahlen bestehen aus einem Realteil und einem Imaginärteil und sind in verschiedenen Bereichen wie Ingenieurwesen, Physik und Computergrafik unerlässlich. Programmierer verwenden sie, um Gleichungen zu lösen, die mit gewöhnlichen reellen Zahlen nicht lösbar sind.

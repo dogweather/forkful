@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "De huidige datum in je code krijgen betekent het vastleggen van het huidige\
   \ moment tot op de dag. Programmeurs doen dit om gebeurtenissen te\u2026"
 title: Het huidige datum ophalen
+weight: 29
 ---
-
-{{< edit_this_page >}}
 
 ## Wat & Waarom?
 De huidige datum in je code krijgen betekent het vastleggen van het huidige moment tot op de dag. Programmeurs doen dit om gebeurtenissen te tijdstempelen, planningen te beheren, en de duur of intervallen bij te houden.

@@ -11,9 +11,8 @@ summary: "Zmiana pierwszej litery ci\u0105gu znak\xF3w na wielk\u0105 w j\u0119z
   \ Rust polega na modyfikacji ci\u0105gu tak, aby jego pierwszy znak by\u0142 du\u017C\
   \u0105 liter\u0105, je\u015Bli jest liter\u0105,\u2026"
 title: "Zamiana liter na wielkie w \u0142a\u0144cuchu znak\xF3w"
+weight: 2
 ---
-
-{{< edit_this_page >}}
 
 ## Co i dlaczego?
 

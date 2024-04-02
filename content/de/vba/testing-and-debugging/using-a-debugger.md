@@ -2,15 +2,14 @@
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 22:03:59.994039-07:00
-description: "Die Verwendung eines Debuggers in Visual Basic f\xFCr Anwendungen (VBA)\
-  \ beinhaltet das schrittweise Ausf\xFChren Ihres Codes, um dessen Ausf\xFChrungsfluss\
-  \ und\u2026"
+description: "In VBA ist der Debugger ein integraler Bestandteil des Visual Basic\
+  \ Editors (VBE). Hier erfahren Sie, wie Sie ihn nutzen k\xF6nnen: 1. **Setzen von\u2026"
 lastmod: '2024-03-13T22:44:53.723101-06:00'
 model: gpt-4-0125-preview
-summary: "Die Verwendung eines Debuggers in Visual Basic f\xFCr Anwendungen (VBA)\
-  \ beinhaltet das schrittweise Ausf\xFChren Ihres Codes, um dessen Ausf\xFChrungsfluss\
-  \ und\u2026"
+summary: "In VBA ist der Debugger ein integraler Bestandteil des Visual Basic Editors\
+  \ (VBE). Hier erfahren Sie, wie Sie ihn nutzen k\xF6nnen: 1. **Setzen von\u2026"
 title: Einen Debugger verwenden
+weight: 35
 ---
 
 ## Wie geht das:

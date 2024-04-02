@@ -7,9 +7,8 @@ model: gpt-4-0125-preview
 summary: "Komplekse tall utvider de reelle tallene ved \xE5 legge til en imagin\xE6\
   r enhet, representert som 'i', hvor i^2 = -1. Programm\xF8rer bruker dem for simuleringer,\u2026"
 title: "\xC5 jobbe med komplekse tall"
+weight: 14
 ---
-
-{{< edit_this_page >}}
 
 ## Hva & Hvorfor?
 Komplekse tall utvider de reelle tallene ved å legge til en imaginær enhet, representert som 'i', hvor i^2 = -1. Programmører bruker dem for simuleringer, signalbehandling og å løse matteproblemer som krever arbeid i to dimensjoner.

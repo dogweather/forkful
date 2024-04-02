@@ -11,9 +11,8 @@ summary: "Att skriva tester i Java handlar om att verifiera att din kod beter si
   \ som f\xF6rv\xE4ntat under olika f\xF6rh\xE5llanden. Programmerare skriver tester\
   \ f\xF6r att\u2026"
 title: Skriva tester
+weight: 36
 ---
-
-{{< edit_this_page >}}
 
 ## Vad & Varför?
 Att skriva tester i Java handlar om att verifiera att din kod beter sig som förväntat under olika förhållanden. Programmerare skriver tester för att förhindra buggar, säkerställa att funktionaliteten förblir korrekt efter ändringar och främja goda principer för mjukvarudesign.

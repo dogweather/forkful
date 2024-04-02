@@ -9,9 +9,8 @@ summary: "L\xE4sning av textfiler handlar om att f\xE5 tillg\xE5ng till informat
   \ sparad p\xE5 servern. Programmerare g\xF6r det f\xF6r att hantera data, konfigurera\
   \ system eller\u2026"
 title: "L\xE4sa en textfil"
+weight: 22
 ---
-
-{{< edit_this_page >}}
 
 ## Vad & Varför?
 Läsning av textfiler handlar om att få tillgång till information sparad på servern. Programmerare gör det för att hantera data, konfigurera system eller helt enkelt läsa innehåll dynamiskt.

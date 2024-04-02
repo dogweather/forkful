@@ -7,9 +7,8 @@ model: gpt-4-0125-preview
 summary: "Redondear n\xFAmeros se trata de ajustar un valor al entero m\xE1s cercano\
   \ o al lugar decimal especificado. Los programadores redondean n\xFAmeros para simplificar\u2026"
 title: "Redondeo de n\xFAmeros"
+weight: 13
 ---
-
-{{< edit_this_page >}}
 
 ## Qué y Por Qué
 Redondear números se trata de ajustar un valor al entero más cercano o al lugar decimal especificado. Los programadores redondean números para simplificar datos, mejorar la legibilidad o cumplir ciertos requisitos matemáticos durante los cálculos.

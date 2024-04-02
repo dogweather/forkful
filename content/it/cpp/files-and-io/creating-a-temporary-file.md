@@ -7,9 +7,8 @@ model: gpt-4-1106-preview
 summary: "Creare un file temporaneo serve a immagazzinare dati che non necessitano\
   \ di persistenza a lungo termine. I programmatori li utilizzano per memorizzare\u2026"
 title: Creazione di un file temporaneo
+weight: 21
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why? (Cosa e Perché?)
 

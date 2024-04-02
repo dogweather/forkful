@@ -9,9 +9,8 @@ summary: "Usuwanie cudzys\u0142ow\xF3w z ci\u0105gu znak\xF3w polega na pozbyciu
   \ tych irytuj\u0105cych pojedynczych (' ') lub podw\xF3jnych (\" \") znak\xF3w cudzys\u0142\
   owu z danych tekstowych.\u2026"
 title: "Usuwanie cudzys\u0142ow\xF3w z ci\u0105gu znak\xF3w"
+weight: 9
 ---
-
-{{< edit_this_page >}}
 
 ## Co i dlaczego?
 

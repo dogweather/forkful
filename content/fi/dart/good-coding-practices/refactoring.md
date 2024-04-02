@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Uudelleenj\xE4rjest\xE4minen (Refactoring) Dart-kieless\xE4 on olemassa\
   \ olevan koodin uudelleenrakenteellistamisen prosessi muuttamatta sen ulkoista\u2026"
 title: "Koodin uudelleenj\xE4rjest\xE4minen"
+weight: 19
 ---
-
-{{< edit_this_page >}}
 
 ## Mikä & Miksi?
 

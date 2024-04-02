@@ -7,9 +7,8 @@ model: gpt-4-0125-preview
 summary: "Checking whether a directory exists in C involves querying the file system\
   \ to verify if a specific path leads to a directory. Programmers often perform\u2026"
 title: Checking if a directory exists
+weight: 20
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 

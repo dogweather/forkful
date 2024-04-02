@@ -13,9 +13,8 @@ summary: "L\xE0m vi\u1EC7c v\u1EDBi JSON (JavaScript Object Notation) bao g\u1ED
   i th\xE0nh c\xE1c \u0111\u1ED1i t\u01B0\u1EE3ng Dart v\xE0 ng\u01B0\u1EE3c l\u1EA1\
   i, m\u1ED9t nhi\u1EC7m v\u1EE5\u2026"
 title: "L\xE0m vi\u1EC7c v\u1EDBi JSON"
+weight: 38
 ---
-
-{{< edit_this_page >}}
 
 ## Gì & Tại sao?
 

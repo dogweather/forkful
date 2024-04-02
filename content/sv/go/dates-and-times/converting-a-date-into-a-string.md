@@ -11,9 +11,8 @@ summary: "Att konvertera ett datum till en str\xE4ng i Go inneb\xE4r att omvandl
   \ ett `time.Time`-objekt till ett l\xE4sbart str\xE4ngformat. Programmerare utf\xF6\
   r ofta denna\u2026"
 title: "Omvandla ett datum till en str\xE4ng"
+weight: 28
 ---
-
-{{< edit_this_page >}}
 
 ## Vad & Varför?
 

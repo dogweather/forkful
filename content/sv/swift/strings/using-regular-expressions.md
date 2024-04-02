@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Regulj\xE4ra uttryck, eller regex, \xE4r sekvenser av tecken som bildar\
   \ ett s\xF6km\xF6nster, ofta anv\xE4nda f\xF6r str\xE4ngmatchning eller manipuleringsuppgifter.\u2026"
 title: "Att anv\xE4nda regulj\xE4ra uttryck"
+weight: 11
 ---
-
-{{< edit_this_page >}}
 
 ## Vad och varför?
 Reguljära uttryck, eller regex, är sekvenser av tecken som bildar ett sökmönster, ofta använda för strängmatchning eller manipuleringsuppgifter. Programmerare använder dem för allt från datavalidering och tolkning till transformationer, vilket gör dem till ett ovärderligt verktyg i textbehandling och manipuleringsuppgifter över olika programmeringsspråk, inklusive Swift.

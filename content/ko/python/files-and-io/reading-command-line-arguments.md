@@ -18,9 +18,8 @@ summary: "(\uBB34\uC5C7\uACFC \uC65C?) \uCEE4\uB9E8\uB4DC \uB77C\uC778 \uC778\uC
   \ \uC785\uB825\uC744 \uCEE4\uC2A4\uD140\uD560 \uC218 \uC788\uAC8C \uD574\uC8FC\uC8E0\
   ."
 title: "\uBA85\uB839\uC904 \uC778\uC218 \uC77D\uAE30"
+weight: 23
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 (무엇과 왜?)

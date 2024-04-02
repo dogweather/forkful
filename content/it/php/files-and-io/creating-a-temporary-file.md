@@ -7,9 +7,8 @@ model: gpt-4-1106-preview
 summary: "Creare un file temporaneo significa generare un file che \xE8 destinato\
   \ a essere usato per un breve periodo di tempo. Lo si fa per scrivere dati che non\u2026"
 title: Creazione di un file temporaneo
+weight: 21
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 Creare un file temporaneo significa generare un file che è destinato a essere usato per un breve periodo di tempo. Lo si fa per scrivere dati che non necessitano di un archivio permanente o per evitare conflitti di accesso ai file in operazioni concorrenti.

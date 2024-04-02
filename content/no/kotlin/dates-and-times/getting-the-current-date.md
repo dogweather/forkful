@@ -11,9 +11,8 @@ summary: "I programmering er det \xE5 f\xE5 tak i dagens dato en grunnleggende o
   \ som gj\xF8r det mulig for utviklere \xE5 f\xE5 tilgang til, vise eller manipulere\
   \ dagens\u2026"
 title: "F\xE5 dagens dato"
+weight: 29
 ---
-
-{{< edit_this_page >}}
 
 ## Hva og hvorfor?
 I programmering er det å få tak i dagens dato en grunnleggende oppgave som gjør det mulig for utviklere å få tilgang til, vise eller manipulere dagens dato innenfor applikasjonene deres. Denne evnen er avgjørende for alt fra logging og tidsstempling av hendelser til beregninger basert på datoer.

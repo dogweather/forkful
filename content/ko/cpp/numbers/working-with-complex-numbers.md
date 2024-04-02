@@ -17,9 +17,8 @@ summary: "\uBCF5\uC18C\uC218\uB294 \uC2E4\uC218\uC5D0 \uAC00\uC0C1 \uB2E8\uC704\
   \ \uBB38\uC81C\uB97C \uD574\uACB0\uD558\uAE30 \uC704\uD574 \uC774\uB97C \uC0AC\uC6A9\
   \uD569\uB2C8\uB2E4."
 title: "\uBCF5\uC18C\uC218 \uB2E4\uB8E8\uAE30"
+weight: 14
 ---
-
-{{< edit_this_page >}}
 
 ## 무엇 & 왜?
 복소수는 실수에 가상 단위인 'i'를 추가함으로써 확장된 수입니다. 여기서 i^2 = -1입니다. 프로그래머들은 두 차원에서 작업을 요구하는 시뮬레이션, 신호 처리, 수학 문제를 해결하기 위해 이를 사용합니다.

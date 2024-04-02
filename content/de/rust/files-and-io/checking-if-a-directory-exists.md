@@ -11,9 +11,8 @@ summary: "In der Softwareentwicklung ist es oft notwendig zu \xFCberpr\xFCfen, o
   \ ein Verzeichnis existiert, um Fehler zu vermeiden, wenn versucht wird, Dateien\
   \ zu\u2026"
 title: "\xDCberpr\xFCfung, ob ein Verzeichnis existiert"
+weight: 20
 ---
-
-{{< edit_this_page >}}
 
 ## Was & Warum?
 In der Softwareentwicklung ist es oft notwendig zu überprüfen, ob ein Verzeichnis existiert, um Fehler zu vermeiden, wenn versucht wird, Dateien zu öffnen, zu lesen oder zu schreiben. Rust, als eine Systemprogrammiersprache, bietet robuste Methoden, um diese Aufgabe auszuführen und sicherzustellen, dass Ihr Programm Dateien und Verzeichnisse sicher und effizient handhaben kann.

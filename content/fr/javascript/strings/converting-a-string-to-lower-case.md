@@ -9,9 +9,8 @@ summary: "Convertir une cha\xEEne en minuscules, c'est transformer tous les cara
   res alphab\xE9tiques en leur \xE9quivalent minuscule. C'est utile pour uniformiser\
   \ les\u2026"
 title: "Conversion d'une cha\xEEne de caract\xE8res en minuscules"
+weight: 4
 ---
-
-{{< edit_this_page >}}
 
 ## Quoi et Pourquoi ?
 

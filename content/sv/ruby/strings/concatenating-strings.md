@@ -9,9 +9,8 @@ summary: "Att konkatenera str\xE4ngar inneb\xE4r att sammanfoga tv\xE5 eller fle
   \ textstycken till en. Programmerare g\xF6r detta f\xF6r att bygga dynamiska texter\
   \ eller\u2026"
 title: "Sammanslagning av str\xE4ngar"
+weight: 3
 ---
-
-{{< edit_this_page >}}
 
 ## Vad & Varför?
 Att konkatenera strängar innebär att sammanfoga två eller flera textstycken till en. Programmerare gör detta för att bygga dynamiska texter eller sammansätta data på ett smidigt sätt.

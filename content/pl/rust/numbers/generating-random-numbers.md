@@ -9,9 +9,8 @@ summary: "Generowanie losowych liczb w Rust polega na korzystaniu z bibliotek do
   \ nieprzewidywalnych warto\u015Bci liczbowych, co jest niezb\u0119dne do zada\u0144\
   \ z\u2026"
 title: Generowanie liczb losowych
+weight: 12
 ---
-
-{{< edit_this_page >}}
 
 ## Co i dlaczego?
 

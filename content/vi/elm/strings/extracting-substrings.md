@@ -13,9 +13,8 @@ summary: "Vi\u1EC7c tr\xEDch xu\u1EA5t c\xE1c chu\u1ED7i con ngh\u0129a l\xE0 l\
   p tr\xECnh vi\xEAn th\u1EF1c hi\u1EC7n \u0111i\u1EC1u n\xE0y \u0111\u1EC3 c\xF4\
   \ l\u1EADp, thao t\xE1c, ho\u1EB7c ph\xE2n t\xEDch\u2026"
 title: "Tr\xEDch xu\u1EA5t chu\u1ED7i con"
+weight: 6
 ---
-
-{{< edit_this_page >}}
 
 ## Cái gì & Tại sao?
 Việc trích xuất các chuỗi con nghĩa là lấy các phần cụ thể ra khỏi một chuỗi. Các lập trình viên thực hiện điều này để cô lập, thao tác, hoặc phân tích các phần dữ liệu văn bản.

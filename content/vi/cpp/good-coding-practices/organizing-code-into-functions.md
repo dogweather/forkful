@@ -13,9 +13,8 @@ summary: "Chia code th\xE0nh c\xE1c h\xE0m ngh\u0129a l\xE0 t\xE1ch code c\u1EE7
   \ d\u1EE5ng. Ch\xFAng ta l\xE0m nh\u01B0 v\u1EADy \u0111\u1EC3 tr\xE1nh l\u1EB7\
   p l\u1EA1i, l\xE0m cho code c\u1EE7a\u2026"
 title: "S\u1EAFp x\u1EBFp m\xE3 th\xE0nh c\xE1c h\xE0m"
+weight: 18
 ---
-
-{{< edit_this_page >}}
 
 ## Cái Gì & Tại Sao?
 Chia code thành các hàm nghĩa là tách code của bạn thành các phần nhỏ hơn, có thể tái sử dụng. Chúng ta làm như vậy để tránh lặp lại, làm cho code của mình dễ đọc hơn, và đơn giản hóa việc gỡ lỗi và kiểm thử. Các hàm được sắp xếp tốt có thể giống như việc có một hộp công cụ được ghi nhãn gọn gàng, sẵn sàng sử dụng và chia sẻ.

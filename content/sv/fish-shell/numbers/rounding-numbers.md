@@ -9,9 +9,8 @@ summary: "Att avrunda tal handlar om att kapa decimalplatser f\xF6r att f\xF6ren
   \ dina data eller passa specifika format. Programmerare g\xF6r detta f\xF6r anv\xE4\
   ndarv\xE4nlig\u2026"
 title: Avrundning av tal
+weight: 13
 ---
-
-{{< edit_this_page >}}
 
 ## Vad & Varför?
 Att avrunda tal handlar om att kapa decimalplatser för att förenkla dina data eller passa specifika format. Programmerare gör detta för användarvänlig visning, effektiv lagring, eller när decimalprecision inte är ett problem.

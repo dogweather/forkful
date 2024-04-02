@@ -11,9 +11,8 @@ summary: "Assosiative tabeller, eller det Rust-utviklere kaller \"hash maps\", e
   \ samlinger som lagrer data i n\xF8kkel-verdi par. Programmerere bruker dem til\
   \ rask\u2026"
 title: Bruke associative tabeller
+weight: 15
 ---
-
-{{< edit_this_page >}}
 
 ## Hva & Hvorfor?
 

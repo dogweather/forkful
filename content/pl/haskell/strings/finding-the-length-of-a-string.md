@@ -9,9 +9,8 @@ summary: "Liczenie d\u0142ugo\u015Bci \u0142a\u0144cucha to ustalenie, ile znak\
   w zawiera tekst. Programi\u015Bci robi\u0105 to, \u017Ceby wiedzie\u0107, jak du\u017C\
   o danych przetwarzaj\u0105 i by zarz\u0105dza\u0107 nimi\u2026"
 title: "Znalezienie d\u0142ugo\u015Bci ci\u0105gu znak\xF3w"
+weight: 7
 ---
-
-{{< edit_this_page >}}
 
 ## Co i dlaczego?
 

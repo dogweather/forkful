@@ -7,9 +7,8 @@ model: gpt-4-1106-preview
 summary: "Rounding is chopping off the noise after a certain point in a number. Programmers\
   \ round to control precision, manage memory, or make output user-\u2026"
 title: Rounding numbers
+weight: 13
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 Rounding is chopping off the noise after a certain point in a number. Programmers round to control precision, manage memory, or make output user-friendly—like turning 2.998 into a clean 3.

@@ -13,9 +13,8 @@ summary: "So s\xE1nh hai ng\xE0y t\u1EE9c l\xE0 t\xECm ra xem m\u1ED9t ng\xE0y \
   \xF3. L\u1EADp tr\xECnh vi\xEAn l\xE0m \u0111i\u1EC1u n\xE0y \u0111\u1EC3 x\u1EED\
   \ l\xFD l\u1ECBch tr\xECnh, h\u1EA1n ch\xF3t, s\u1EAFp\u2026"
 title: "So s\xE1nh hai ng\xE0y"
+weight: 27
 ---
-
-{{< edit_this_page >}}
 
 ## Cái gì và Tại sao?
 So sánh hai ngày tức là tìm ra xem một ngày đến trước, sau, hay trùng khớp với ngày nào đó. Lập trình viên làm điều này để xử lý lịch trình, hạn chót, sắp xếp theo thứ tự thời gian, và nhiều hơn nữa.

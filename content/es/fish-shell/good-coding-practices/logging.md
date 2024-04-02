@@ -9,9 +9,8 @@ summary: "Registrar es esencialmente anotar lo que tu aplicaci\xF3n est\xE1 haci
   \ un diario, por as\xED decirlo, pero para el c\xF3digo. Los programadores lo hacen\
   \ para\u2026"
 title: "Registro de Actividades en Programaci\xF3n"
+weight: 17
 ---
-
-{{< edit_this_page >}}
 
 ## ¿Qué y por qué?
 Registrar es esencialmente anotar lo que tu aplicación está haciendo: un diario, por así decirlo, pero para el código. Los programadores lo hacen para llevar un seguimiento de los detalles, como los cambios de estado, eventos del sistema y errores molestos, asegurándose de que ningún contratiempo pase desapercibido.

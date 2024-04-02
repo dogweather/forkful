@@ -14,9 +14,8 @@ summary: "Bi\u1EBFn m\u1ED7i k\xFD t\u1EF1 c\u1EE7a m\u1ED9t chu\u1ED7i th\xE0nh
   \ th\xE0nh ch\u1EEF in hoa. C\xE1c l\u1EADp tr\xECnh vi\xEAn l\xE0m \u0111i\u1EC1\
   u n\xE0y \u0111\u1EC3 \u0111\u1EA1t \u0111\u01B0\u1EE3c s\u1EF1 nh\u1EA5t\u2026"
 title: "Vi\u1EBFt hoa m\u1ED9t chu\u1ED7i"
+weight: 2
 ---
-
-{{< edit_this_page >}}
 
 ## Cái gì & Tại sao?
 

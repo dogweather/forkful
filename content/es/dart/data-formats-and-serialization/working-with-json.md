@@ -11,9 +11,8 @@ summary: "Trabajar con JSON (Notaci\xF3n de Objeto de JavaScript) implica analiz
   \ datos JSON desde cadenas hacia objetos Dart y viceversa, una tarea com\xFAn en\
   \ el\u2026"
 title: Trabajando con JSON
+weight: 38
 ---
-
-{{< edit_this_page >}}
 
 ## ¿Qué y por qué?
 

@@ -11,9 +11,8 @@ summary: "P\xE4iv\xE4m\xE4\xE4rien vertailu C-kieless\xE4 tarkoittaa niiden kron
   \ suhteen m\xE4\xE4ritt\xE4mist\xE4 - onko toinen p\xE4iv\xE4m\xE4\xE4r\xE4 ennen\
   \ toista tai ovatko ne samat. T\xE4m\xE4 kyky\u2026"
 title: "Kahden p\xE4iv\xE4m\xE4\xE4r\xE4n vertailu"
+weight: 27
 ---
-
-{{< edit_this_page >}}
 
 ## Mikä & Miksi?
 

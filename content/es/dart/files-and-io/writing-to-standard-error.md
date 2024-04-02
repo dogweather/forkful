@@ -11,9 +11,8 @@ summary: "Escribir en el error est\xE1ndar (stderr) en Dart se trata de enviar m
   \ de error y diagn\xF3sticos a un flujo separado, distinto de la salida est\xE1\
   ndar\u2026"
 title: "Escribiendo al error est\xE1ndar"
+weight: 25
 ---
-
-{{< edit_this_page >}}
 
 ## ¿Qué y por qué?
 

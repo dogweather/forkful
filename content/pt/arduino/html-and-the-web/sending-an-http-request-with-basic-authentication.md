@@ -7,9 +7,8 @@ model: gpt-4-1106-preview
 summary: "Enviar uma requisi\xE7\xE3o HTTP com autentica\xE7\xE3o b\xE1sica significa\
   \ solicitar acesso a um recurso na web que \xE9 protegido por um username e password.\u2026"
 title: "Enviando uma requisi\xE7\xE3o HTTP com autentica\xE7\xE3o b\xE1sica"
+weight: 45
 ---
-
-{{< edit_this_page >}}
 
 ## O Que & Porquê?
 Enviar uma requisição HTTP com autenticação básica significa solicitar acesso a um recurso na web que é protegido por um username e password. Programadores fazem isso para interagir com APIs ou serviços protegidos que requiram credenciais para acesso.

@@ -7,9 +7,8 @@ model: gpt-4-0125-preview
 summary: "Generating random numbers in Elixir is a fundamental programming task, vital\
   \ for applications needing unpredictable results such as in generating secure\u2026"
 title: Generating random numbers
+weight: 12
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 

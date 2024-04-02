@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Die Arbeit mit XML in Go umfasst das Parsen (Lesen) und Generieren (Schreiben)\
   \ von XML-Dokumenten \u2013 ein Standardformat f\xFCr den strukturierten\u2026"
 title: Arbeiten mit XML
+weight: 40
 ---
-
-{{< edit_this_page >}}
 
 ## Was & Warum?
 

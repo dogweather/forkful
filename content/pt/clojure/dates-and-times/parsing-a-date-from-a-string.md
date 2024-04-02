@@ -11,9 +11,8 @@ summary: "Analisar uma data a partir de uma string em Clojure trata-se de conver
   \ representa\xE7\xF5es textuais de datas e horas em uma forma mais utiliz\xE1vel\
   \ (por\u2026"
 title: Analisando uma data a partir de uma string
+weight: 30
 ---
-
-{{< edit_this_page >}}
 
 ## O Que & Por Que?
 Analisar uma data a partir de uma string em Clojure trata-se de converter representações textuais de datas e horas em uma forma mais utilizável (por exemplo, o objeto DateTime do Clojure). Esse processo é fundamental para o processamento de dados, registro ou qualquer aplicação que manipule dados temporais, permitindo que os programadores realizem tarefas de operação, comparação ou manipulação de datas de maneira eficiente.

@@ -11,9 +11,8 @@ summary: "Pobieranie bie\u017C\u0105cej daty w PHP to podstawowe zadanie, kt\xF3
   \ umo\u017Cliwia pobieranie i manipulowanie dat\u0105 i czasem systemowym. Jest\
   \ to kluczowe dla funkcji\u2026"
 title: Pobieranie aktualnej daty
+weight: 29
 ---
-
-{{< edit_this_page >}}
 
 ## Co i dlaczego?
 Pobieranie bieżącej daty w PHP to podstawowe zadanie, które umożliwia pobieranie i manipulowanie datą i czasem systemowym. Jest to kluczowe dla funkcji takich jak logowanie, znakowanie czasowe postów, planowanie wydarzeń czy wykonywanie operacji czasowo wrażliwych w twoich aplikacjach.

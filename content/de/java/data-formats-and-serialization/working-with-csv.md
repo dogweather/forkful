@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Die Arbeit mit CSV-Dateien umfasst das Lesen von und das Schreiben in Dateien\
   \ mit kommaseparierten Werten (CSV), einem beliebten Format f\xFCr den\u2026"
 title: Arbeiten mit CSV
+weight: 37
 ---
-
-{{< edit_this_page >}}
 
 ## Was & Warum?
 

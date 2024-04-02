@@ -21,9 +21,8 @@ summary: "\uCF54\uB4DC\uB97C \uD568\uC218\uB85C \uAD6C\uC131\uD55C\uB2E4\uB294 \
   \uB294 \uAC83\uACFC \uAC19\uC544\uC11C, \uBB34\uC5B8\uAC00\uB97C \uB9CC\uB4E4\uACE0\
   \ \uC2F6\uC744 \uB54C\uB9C8\uB2E4 \uD63C\uB3C8\uC2A4\uB7EC\uC6B4\u2026"
 title: "\uCF54\uB4DC\uB97C \uD568\uC218\uB85C \uAD6C\uC131\uD558\uAE30"
+weight: 18
 ---
-
-{{< edit_this_page >}}
 
 ## 무엇이며 왜 필요할까?
 코드를 함수로 구성한다는 것은 코드를 특정 작업을 수행하는 재사용 가능한 덩어리로 나누는 것을 의미합니다. 프로그래머들은 코드를 읽고, 디버깅하며, 재사용하기 쉽게 만들기 위해서 이렇게 합니다. 레고를 상자에 분류하는 것과 같아서, 무언가를 만들고 싶을 때마다 혼돈스러운 더미를 뒤지지 않게 해줍니다.

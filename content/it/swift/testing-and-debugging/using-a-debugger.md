@@ -1,12 +1,13 @@
 ---
 date: 2024-01-26 04:10:40.698006-07:00
-description: "Usare un debugger significa utilizzare strumenti specializzati per testare\
-  \ e ispezionare il tuo codice mentre viene eseguito. \xC8 importante perch\xE9 ti\u2026"
+description: "Per utilizzare il debugger in Xcode (l'IDE per Swift), puoi impostare\
+  \ breakpoint, ispezionare variabili ed esaminare espressioni. Eccoti un esempio:\u2026"
 lastmod: '2024-03-13T22:44:43.774661-06:00'
 model: gpt-4-0125-preview
-summary: "Usare un debugger significa utilizzare strumenti specializzati per testare\
-  \ e ispezionare il tuo codice mentre viene eseguito. \xC8 importante perch\xE9 ti\u2026"
+summary: "Per utilizzare il debugger in Xcode (l'IDE per Swift), puoi impostare breakpoint,\
+  \ ispezionare variabili ed esaminare espressioni. Eccoti un esempio:\u2026"
 title: Utilizzo di un debugger
+weight: 35
 ---
 
 ## Come fare:

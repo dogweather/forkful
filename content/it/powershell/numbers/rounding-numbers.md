@@ -7,9 +7,8 @@ model: gpt-4-0125-preview
 summary: "Arrotondare i numeri significa regolare un valore all'intero pi\xF9 vicino\
   \ o al punto decimale specificato. I programmatori arrotondano i numeri per\u2026"
 title: Arrotondamento dei numeri
+weight: 13
 ---
-
-{{< edit_this_page >}}
 
 ## Cosa & Perché?
 Arrotondare i numeri significa regolare un valore all'intero più vicino o al punto decimale specificato. I programmatori arrotondano i numeri per semplificare i dati, migliorare la leggibilità o soddisfare determinati requisiti matematici durante i calcoli.

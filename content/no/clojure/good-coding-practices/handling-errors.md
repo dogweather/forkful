@@ -7,9 +7,8 @@ model: gpt-4-1106-preview
 summary: "Feilh\xE5ndtering dreier seg om \xE5 h\xE5ndtere det uventede i programmer\u2014\
   ligner p\xE5 en d\xF8rvakt som takler br\xE5kmakere. Programmerere liker det problemfritt;\u2026"
 title: "Feilh\xE5ndtering"
+weight: 16
 ---
-
-{{< edit_this_page >}}
 
 ## Hva & Hvorfor?
 Feilhåndtering dreier seg om å håndtere det uventede i programmer—ligner på en dørvakt som takler bråkmakere. Programmerere liker det problemfritt; feilhåndtering hjelper med å holde trøbbel i sjakk og sikrer at koden deres ikke snubler og faller når den står overfor det uventede.

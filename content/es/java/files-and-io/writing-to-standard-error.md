@@ -11,9 +11,8 @@ summary: "Escribir en el error est\xE1ndar (stderr) implica enviar mensajes de e
   \ y diagn\xF3sticos a la consola o terminal. Los programadores lo hacen para separar\
   \ la\u2026"
 title: "Escribiendo en el error est\xE1ndar"
+weight: 25
 ---
-
-{{< edit_this_page >}}
 
 ## ¿Qué y por qué?
 Escribir en el error estándar (stderr) implica enviar mensajes de error y diagnósticos a la consola o terminal. Los programadores lo hacen para separar la información de error de la salida estándar (stdout), facilitando la depuración y el análisis de logs.

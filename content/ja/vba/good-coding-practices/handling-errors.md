@@ -7,9 +7,8 @@ lastmod: '2024-03-13T22:44:41.897481-06:00'
 model: gpt-4-0125-preview
 summary: "Visual Basic for\u2026"
 title: "\u30A8\u30E9\u30FC\u306E\u51E6\u7406"
+weight: 16
 ---
-
-{{< edit_this_page >}}
 
 ## 何となぜ？
 

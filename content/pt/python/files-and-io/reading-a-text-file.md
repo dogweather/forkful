@@ -9,9 +9,8 @@ summary: "Ler um arquivo de texto \xE9 o processo de carregar o conte\xFAdo de u
   \ arquivo em texto puro na mem\xF3ria do seu programa. Programadores fazem isso\
   \ para\u2026"
 title: Lendo um arquivo de texto
+weight: 22
 ---
-
-{{< edit_this_page >}}
 
 ## O Que & Porquê?
 Ler um arquivo de texto é o processo de carregar o conteúdo de um arquivo em texto puro na memória do seu programa. Programadores fazem isso para processar ou analisar dados, configurar programas, ou até para importar e exportar informações.

@@ -12,6 +12,7 @@ summary: "Capitalizacja stringa oznacza zwykle przekszta\u0142cenie pierwszego z
   \ stringa na wielk\u0105 liter\u0119, a reszty na ma\u0142e litery. Ale czasami\
   \ mo\u017Ce to oznacza\u0107 po\u2026"
 title: "Zamiana ma\u0142ych liter na wielkie w \u0142a\u0144cuchu znak\xF3w"
+weight: 2
 ---
 
 ## Co i Dlaczego?

@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Praca z CSV (Comma-Separated Values, warto\u015Bci oddzielone przecinkami)\
   \ w JavaScript obejmuje parsowanie lub generowanie plik\xF3w CSV w celu zaimportowania\u2026"
 title: Praca z plikami CSV
+weight: 37
 ---
-
-{{< edit_this_page >}}
 
 ## Co i Dlaczego?
 Praca z CSV (Comma-Separated Values, wartości oddzielone przecinkami) w JavaScript obejmuje parsowanie lub generowanie plików CSV w celu zaimportowania danych tabelarycznych z zewnętrznych źródeł lub eksportu danych do użycia w innych programach. Programiści robią to, ponieważ umożliwia to łatwą, lekką wymianę danych między aplikacjami, bazami danych i systemami, gdzie bardziej złożone formaty takie jak JSON mogą być nadmierną komplikacją.

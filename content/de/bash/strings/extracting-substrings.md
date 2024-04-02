@@ -7,9 +7,8 @@ model: gpt-4-1106-preview
 summary: "Das Extrahieren von Teilstrings erm\xF6glicht es dir, bestimmte Textabschnitte\
   \ aus l\xE4ngeren Strings herauszul\xF6sen. Das ist n\xFCtzlich, wenn du Daten bearbeiten\u2026"
 title: Teilstrings extrahieren
+weight: 6
 ---
-
-{{< edit_this_page >}}
 
 ## Was & Warum?
 Das Extrahieren von Teilstrings ermöglicht es dir, bestimmte Textabschnitte aus längeren Strings herauszulösen. Das ist nützlich, wenn du Daten bearbeiten oder spezifische Informationen analysieren möchtest.

@@ -7,9 +7,8 @@ model: gpt-4-1106-preview
 summary: "Concatenar strings significa juntar duas ou mais sequ\xEAncias de caracteres\
   \ para formar uma \xFAnica. Programadores fazem isso para manipular textos, como\u2026"
 title: Concatenando strings
+weight: 3
 ---
-
-{{< edit_this_page >}}
 
 ## O Que É & Porquê?
 Concatenar strings significa juntar duas ou mais sequências de caracteres para formar uma única. Programadores fazem isso para manipular textos, como montar mensagens personalizadas ou construir dados para enviar a alguma API.

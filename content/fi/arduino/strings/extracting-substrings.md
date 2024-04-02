@@ -9,9 +9,8 @@ summary: "Subjektit ovat osajonoja alkuper\xE4isest\xE4 tekstijonosta. Ohjelmoij
   \ k\xE4ytt\xE4v\xE4t niit\xE4 tiedon rajaamiseen ja k\xE4sittelyyn pienemmiss\xE4\
   \ p\xE4tkiss\xE4."
 title: Merkkijonojen osien poimiminen
+weight: 6
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 Subjektit ovat osajonoja alkuperäisestä tekstijonosta. Ohjelmoijat käyttävät niitä tiedon rajaamiseen ja käsittelyyn pienemmissä pätkissä.

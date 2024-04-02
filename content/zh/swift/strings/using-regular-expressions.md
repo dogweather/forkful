@@ -19,9 +19,8 @@ summary: "\u6B63\u5219\u8868\u8FBE\u5F0F\uFF08\u6216\u79F0regex\uFF09\u662F\u5F6
   \u79CD\u7F16\u7A0B\u8BED\u8A00\u4E2D\u6587\u672C\u5904\u7406\u548C\u64CD\u7EB5\u4EFB\
   \u52A1\u4E0D\u53EF\u6216\u7F3A\u7684\u5DE5\u5177\uFF0C\u5305\u62ECSwift\u3002"
 title: "\u4F7F\u7528\u6B63\u5219\u8868\u8FBE\u5F0F"
+weight: 11
 ---
-
-{{< edit_this_page >}}
 
 ## 是什么 & 为什么?
 正则表达式（或称regex）是形成搜索模式的字符序列，常用于字符串匹配或操纵任务。程序员利用它们进行从数据验证和解析到转换的各种任务，使它们成为各种编程语言中文本处理和操纵任务不可或缺的工具，包括Swift。

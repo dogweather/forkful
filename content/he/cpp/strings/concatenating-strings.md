@@ -21,9 +21,8 @@ summary: "\u05D4\u05E6\u05DE\u05D3\u05EA \u05DE\u05D7\u05E8\u05D5\u05D6\u05D5\u0
   \u05DD, \u05D4\u05D5\u05D3\u05E2\u05D5\u05EA \u05D5\u05EA\u05E6\u05D5\u05E8\u05D5\
   \u05EA \u05D8\u05E7\u05E1\u05D8\u2026"
 title: "\u05E9\u05E8\u05E9\u05D5\u05E8 \u05DE\u05D7\u05E8\u05D5\u05D6\u05D5\u05EA"
+weight: 3
 ---
-
-{{< edit_this_page >}}
 
 ## מה ולמה?
 הצמדת מחרוזות (Concatenating Strings) היא תהליך שבו מחברים שתי מחרוזות או יותר למחרוזת אחת. מתכנתים מבצעים הצמדה כדי ליצור משפטים, הודעות ותצורות טקסט מורכבות.

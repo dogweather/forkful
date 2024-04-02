@@ -10,9 +10,8 @@ model: gpt-4-0125-preview
 summary: "Controleren of een map bestaat in Rust is het verifi\xEBren of een map aanwezig\
   \ is op het bestandssysteem. Programmeurs doen dit om fouten te voorkomen bij\u2026"
 title: Controleren of een directory bestaat
+weight: 20
 ---
-
-{{< edit_this_page >}}
 
 ## Wat & Waarom?
 

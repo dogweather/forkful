@@ -8,9 +8,8 @@ model: gpt-4-1106-preview
 summary: "Tempor\xE4re Dateien sind kurzlebige Datenbeh\xE4lter, die w\xE4hrend der\
   \ Laufzeit eines Programms f\xFCr Datentransfer, Zwischenspeicherungen oder Sicherheitszwecke\u2026"
 title: "Erstellung einer tempor\xE4ren Datei"
+weight: 21
 ---
-
-{{< edit_this_page >}}
 
 ## Was & Warum?
 Temporäre Dateien sind kurzlebige Datenbehälter, die während der Laufzeit eines Programms für Datentransfer, Zwischenspeicherungen oder Sicherheitszwecke genutzt werden. Programmierer verwenden sie, um den Arbeitsspeicher zu entlasten, Datenkonflikte zu vermeiden und um sensible Informationen nicht dauerhaft zu speichern.

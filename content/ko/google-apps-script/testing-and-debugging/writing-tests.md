@@ -23,9 +23,8 @@ summary: "Google Apps \uC2A4\uD06C\uB9BD\uD2B8(GAS)\uC5D0\uC11C \uD14C\uC2A4\uD2
   \uD558\uBA70, \uC5C5\uB370\uC774\uD2B8\uC640 \uC720\uC9C0\uBCF4\uC218\uB97C \uC27D\
   \uAC8C \uD560 \uC218\u2026"
 title: "\uD14C\uC2A4\uD2B8 \uC791\uC131\uD558\uAE30"
+weight: 36
 ---
-
-{{< edit_this_page >}}
 
 ## 무엇을, 왜?
 

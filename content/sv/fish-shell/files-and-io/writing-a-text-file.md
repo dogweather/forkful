@@ -11,9 +11,8 @@ summary: "Att skriva till en textfil i Fish Shell g\xF6r att du kan lagra data p
   \ ett best\xE4ndigt s\xE4tt, vilket m\xF6jligg\xF6r enkel h\xE4mtning eller manipulation\
   \ av data\u2026"
 title: Att skriva en textfil
+weight: 24
 ---
-
-{{< edit_this_page >}}
 
 ## Vad & Varför?
 

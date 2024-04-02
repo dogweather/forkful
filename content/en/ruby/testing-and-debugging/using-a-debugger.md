@@ -1,13 +1,14 @@
 ---
 date: 2024-01-25 20:50:23.941247-07:00
-description: "Using a debugger in Ruby gives programmers a superpower to pause their\
-  \ code, inspect variables, and step through their code line by line. Folks do it\
-  \ to\u2026"
+description: "Ruby comes with a built-in debugger called `byebug`. First, include\
+  \ `byebug` in your Gemfile and run `bundle install`. Then, plop `byebug` right where\
+  \ you\u2026"
 lastmod: '2024-03-13T22:45:00.555036-06:00'
 model: gpt-4-1106-preview
-summary: "Using a debugger in Ruby gives programmers a superpower to pause their code,\
-  \ inspect variables, and step through their code line by line. Folks do it to\u2026"
+summary: "Ruby comes with a built-in debugger called `byebug`. First, include `byebug`\
+  \ in your Gemfile and run `bundle install`. Then, plop `byebug` right where you\u2026"
 title: Using a debugger
+weight: 35
 ---
 
 ## How to:

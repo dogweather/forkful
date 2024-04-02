@@ -7,9 +7,8 @@ model: gpt-4-1106-preview
 summary: "Error handling is how you manage when things go sideways in your code. It's\
   \ key because it helps your programs fail gracefully and instructs users\u2026"
 title: Handling errors
+weight: 16
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 

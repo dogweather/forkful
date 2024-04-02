@@ -9,9 +9,8 @@ summary: "Generowanie losowych liczb w C# polega na tworzeniu nieprzewidywalnych
   ci numerycznych w okre\u015Blonym zakresie. Programi\u015Bci u\u017Cywaj\u0105 tych\
   \ metod do\u2026"
 title: Generowanie liczb losowych
+weight: 12
 ---
-
-{{< edit_this_page >}}
 
 ## Co i Dlaczego?
 

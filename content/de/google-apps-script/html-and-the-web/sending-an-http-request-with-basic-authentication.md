@@ -10,9 +10,8 @@ model: gpt-4-0125-preview
 summary: "Das Senden einer HTTP-Anfrage mit Basis-Authentifizierung beinhaltet das\
   \ Kodieren eines Benutzernamens und eines Passworts in einen Anfrage-Header, um\u2026"
 title: Eine HTTP-Anfrage mit einfacher Authentifizierung senden
+weight: 45
 ---
-
-{{< edit_this_page >}}
 
 ## Was & Warum?
 

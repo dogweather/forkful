@@ -9,9 +9,8 @@ summary: "Zaczynamy nowy projekt, gdy mamy \u015Bwie\u017Cy pomys\u0142 lub potr
   \ rozwi\u0105zania. Programi\u015Bci robi\u0105 to, aby przekszta\u0142ci\u0107\
   \ koncepcje w dzia\u0142aj\u0105ce aplikacje, ucz\u0105c\u2026"
 title: Rozpoczynanie nowego projektu
+weight: 1
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why? (Co i Dlaczego?)
 Zaczynamy nowy projekt, gdy mamy świeży pomysł lub potrzebę rozwiązania. Programiści robią to, aby przekształcić koncepcje w działające aplikacje, ucząc się po drodze nowych rzeczy i udoskonalając swoje umiejętności.

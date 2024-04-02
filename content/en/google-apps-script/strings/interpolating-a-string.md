@@ -7,9 +7,8 @@ model: gpt-4-0125-preview
 summary: "String interpolation in Google Apps Script allows for dynamic embedding\
   \ of expressions within strings, facilitating the creation of more readable and\u2026"
 title: Interpolating a string
+weight: 8
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 

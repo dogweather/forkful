@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Regul\xE4re Ausdr\xFCcke oder Regex sind Zeichenfolgen, die ein Suchmuster\
   \ bilden und h\xE4ufig f\xFCr die \xDCbereinstimmung oder Manipulation von Zeichenketten\u2026"
 title: "Regul\xE4re Ausdr\xFCcke verwenden"
+weight: 11
 ---
-
-{{< edit_this_page >}}
 
 ## Was & Warum?
 Reguläre Ausdrücke oder Regex sind Zeichenfolgen, die ein Suchmuster bilden und häufig für die Übereinstimmung oder Manipulation von Zeichenketten verwendet werden. Programmierer nutzen sie für alles von der Datenvalidierung und -analyse bis zu Transformationen, was sie zu einem unverzichtbaren Werkzeug bei der Textverarbeitung und -manipulation in verschiedenen Programmiersprachen, einschließlich Swift, macht.

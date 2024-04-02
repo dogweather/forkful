@@ -11,9 +11,8 @@ summary: "Regulj\xE4ra uttryck (regex) i Bash g\xF6r det m\xF6jligt att s\xF6ka,
   \ och hantera str\xE4ngar och filer baserat p\xE5 s\xE4rskilda m\xF6nster. Programmerare\
   \ anv\xE4nder\u2026"
 title: "Att anv\xE4nda regulj\xE4ra uttryck"
+weight: 11
 ---
-
-{{< edit_this_page >}}
 
 ## Vad & Varför?
 

@@ -11,9 +11,8 @@ summary: "\xDCberpr\xFCfen, ob ein Verzeichnis existiert, bedeutet zu best\xE4ti
   \ ob ein spezifischer Ordnerpfad im Dateisystem vorhanden ist. Programmierer machen\
   \ dies,\u2026"
 title: "\xDCberpr\xFCfung, ob ein Verzeichnis existiert"
+weight: 20
 ---
-
-{{< edit_this_page >}}
 
 ## Was & Warum?
 Überprüfen, ob ein Verzeichnis existiert, bedeutet zu bestätigen, ob ein spezifischer Ordnerpfad im Dateisystem vorhanden ist. Programmierer machen dies, um Fehler beim Zugriff, Lesen oder Schreiben von Dateien zu vermeiden.

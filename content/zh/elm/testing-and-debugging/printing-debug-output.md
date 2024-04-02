@@ -14,9 +14,8 @@ summary: "\u6253\u5370\u8C03\u8BD5\u8F93\u51FA\u662F\u6307\u5728\u4EE3\u7801\u62
   \u5458\u8FD9\u4E48\u505A\u662F\u4E3A\u4E86\u5FEB\u901F\u5B9A\u4F4D\u95EE\u9898\u548C\
   \u7406\u89E3\u7A0B\u5E8F\u884C\u4E3A\u3002"
 title: "\u6253\u5370\u8C03\u8BD5\u8F93\u51FA"
+weight: 33
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why? (是什么以及为什么？)
 打印调试输出是指在代码执行时显示变量或计算结果，帮助开发者了解程序运行状况。程序员这么做是为了快速定位问题和理解程序行为。

@@ -9,9 +9,8 @@ summary: "V\xE4liaikaistiedosto on v\xE4liaikaisessa k\xE4yt\xF6ss\xE4 oleva tie
   \ joka katoaa, kun se ei ole en\xE4\xE4 tarpeen. Ohjelmoijat luovat niit\xE4 tallentamaan\
   \ dataa, joka\u2026"
 title: "V\xE4liaikaistiedoston luominen"
+weight: 21
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 Väliaikaistiedosto on väliaikaisessa käytössä oleva tiedosto, joka katoaa, kun se ei ole enää tarpeen. Ohjelmoijat luovat niitä tallentamaan dataa, joka on tarpeellista vain hetkellisesti, esimerkiksi suorituksen aikana tai testattaessa.

@@ -8,9 +8,8 @@ model: gpt-4-0125-preview
 summary: "Los n\xFAmeros complejos tienen una parte real y una parte imaginaria, usualmente\
   \ escritos como `a + bi`. Son cruciales en matem\xE1ticas avanzadas, f\xEDsica,\u2026"
 title: "Trabajando con n\xFAmeros complejos"
+weight: 14
 ---
-
-{{< edit_this_page >}}
 
 ## ¿Qué y por qué?
 Los números complejos tienen una parte real y una parte imaginaria, usualmente escritos como `a + bi`. Son cruciales en matemáticas avanzadas, física, ingeniería y ciertos algoritmos de computación. Los programadores trabajan con ellos para manejar cálculos que involucran raíces cuadradas de números negativos y funciones oscilantes.

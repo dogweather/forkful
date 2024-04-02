@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Trabajar con JSON (JavaScript Object Notation) implica analizar, generar\
   \ y consultar datos JSON, lo que lo convierte en una habilidad cr\xEDtica para la\u2026"
 title: Trabajando con JSON
+weight: 38
 ---
-
-{{< edit_this_page >}}
 
 ## Qué y Por Qué?
 

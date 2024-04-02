@@ -9,9 +9,8 @@ summary: "La concatenaci\xF3n de cadenas es unir dos o m\xE1s strings para forma
   \ uno nuevo. Los programadores la usan para construir mensajes, combinar datos y\
   \ generar\u2026"
 title: "Concatenaci\xF3n de cadenas de texto"
+weight: 3
 ---
-
-{{< edit_this_page >}}
 
 ## Qué y Por Qué?
 

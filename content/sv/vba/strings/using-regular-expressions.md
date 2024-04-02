@@ -11,9 +11,8 @@ summary: "Regular expressions (regulj\xE4ra uttryck) i Visual Basic for Applicat
   \ (VBA) erbjuder ett kraftfullt s\xE4tt att s\xF6ka, matcha och manipulera str\xE4\
   ngar.\u2026"
 title: "Anv\xE4nda regulj\xE4ra uttryck"
+weight: 11
 ---
-
-{{< edit_this_page >}}
 
 ## Vad och varför?
 

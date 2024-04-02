@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Het aanmaken van een tijdelijk bestand in Go maakt de creatie van een niet-persistent\
   \ bestand mogelijk dat ontworpen is voor kortetermijngebruik,\u2026"
 title: Een tijdelijk bestand aanmaken
+weight: 21
 ---
-
-{{< edit_this_page >}}
 
 ## Wat & Waarom?
 

@@ -9,9 +9,8 @@ summary: "Cr\xE9er un fichier temporaire c'est un peu comme prendre des notes su
   \ une napkin; \xE7a sert \xE0 stocker des infos de fa\xE7on \xE9ph\xE9m\xE8re. Les\
   \ d\xE9veloppeurs font \xE7a\u2026"
 title: "Cr\xE9ation d'un fichier temporaire"
+weight: 21
 ---
-
-{{< edit_this_page >}}
 
 ## Quoi & Pourquoi ?
 

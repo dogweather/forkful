@@ -7,9 +7,8 @@ model: gpt-4-1106-preview
 summary: "Att ta bort tecken som matchar ett m\xF6nster inneb\xE4r att man systematiskt\
   \ hittar specifika sekvenser av tecken i en textstr\xE4ng och tar bort dem.\u2026"
 title: "Ta bort tecken som matchar ett m\xF6nster"
+weight: 5
 ---
-
-{{< edit_this_page >}}
 
 ## Vad & Varför?
 Att ta bort tecken som matchar ett mönster innebär att man systematiskt hittar specifika sekvenser av tecken i en textsträng och tar bort dem. Programmerare gör detta för att rensa data, manipulera text, eller forma output till ett önskat format.

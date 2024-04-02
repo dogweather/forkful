@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Analisar uma data de uma string permite que programadores convertam representa\xE7\
   \xF5es textuais de datas em objetos `Date` do JavaScript, facilitando\u2026"
 title: Analisando uma data a partir de uma string
+weight: 30
 ---
-
-{{< edit_this_page >}}
 
 ## O que & Por quê?
 Analisar uma data de uma string permite que programadores convertam representações textuais de datas em objetos `Date` do JavaScript, facilitando manipulações, comparações e operações de formatação de datas. Este processo é essencial para lidar com entrada de usuários, processamento de dados de bancos de dados ou trabalhando com APIs que comunicam datas em formatos de strings.

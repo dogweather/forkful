@@ -7,9 +7,8 @@ model: gpt-4-0125-preview
 summary: "Sending an HTTP request with basic authentication involves encoding a username\
   \ and password into a request header to access protected resources.\u2026"
 title: Sending an HTTP request with basic authentication
+weight: 45
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 

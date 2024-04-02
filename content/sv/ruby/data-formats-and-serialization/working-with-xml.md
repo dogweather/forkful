@@ -8,9 +8,8 @@ model: gpt-4-0125-preview
 summary: "Att arbeta med XML inneb\xE4r att tolka, generera och manipulera XML (eXtensible\
   \ Markup Language)-dokument med kod. Programmerare g\xF6r det f\xF6r att interagera\u2026"
 title: Att arbeta med XML
+weight: 40
 ---
-
-{{< edit_this_page >}}
 
 ## Vad & Varför?
 Att arbeta med XML innebär att tolka, generera och manipulera XML (eXtensible Markup Language)-dokument med kod. Programmerare gör det för att interagera med många webbtjänster, konfigurationsfiler och datautbytesformat där XML är det gemensamma språket.

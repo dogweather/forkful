@@ -16,9 +16,8 @@ summary: "HTTP \uC694\uCCAD \uC2DC \uAE30\uBCF8 \uC778\uC99D\uC740 \uC0AC\uC6A9\
   \ \uAC1C\uBC1C\uC790\uB4E4\uC774 \uC790\uC8FC \uC0AC\uC6A9\uD569\uB2C8\uB2E4."
 title: "\uAE30\uBCF8 \uC778\uC99D\uC744 \uC0AC\uC6A9\uD55C HTTP \uC694\uCCAD \uBCF4\
   \uB0B4\uAE30"
+weight: 45
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why? (무엇과 왜?)
 HTTP 요청 시 기본 인증은 사용자 이름과 패스워드를 서버에 보내 로그인하는 방법입니다. 서버 리소스에 안전하게 접근할 수 있어 개발자들이 자주 사용합니다.

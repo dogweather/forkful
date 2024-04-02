@@ -9,9 +9,8 @@ summary: "I Elm handler det om \xE5 slette tegn som matcher et m\xF8nster for \x
   \ rense data eller formatere strenger for spesifikke brukstilfeller. Det hjelper\
   \ \xE5 holde\u2026"
 title: "Slette tegn som matcher et m\xF8nster"
+weight: 5
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 I Elm handler det om å slette tegn som matcher et mønster for å rense data eller formatere strenger for spesifikke brukstilfeller. Det hjelper å holde dataene konsistente og letter lesbarheten.

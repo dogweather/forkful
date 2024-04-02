@@ -13,9 +13,8 @@ summary: "Vi\u1EC7c so s\xE1nh hai ng\xE0y trong Visual Basic cho \u1EE8ng d\u1E
   \ th\u1EE9 t\u1EF1 th\u1EDDi gian gi\u1EEFa ch\xFAng. C\xE1c l\u1EADp tr\xECnh vi\xEA\
   n th\u1EF1c\u2026"
 title: "So s\xE1nh hai ng\xE0y"
+weight: 27
 ---
-
-{{< edit_this_page >}}
 
 ## Cái gì và Tại sao?
 

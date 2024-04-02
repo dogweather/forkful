@@ -19,9 +19,8 @@ summary: "Visual Basic for Applications(VBA)\uC5D0\uC11C \uC6F9 \uD398\uC774\uC9
   \ \uC751\uC6A9 \uD504\uB85C\uADF8\uB7A8 \uB0B4\uC5D0\uC11C \uC6F9\uC0AC\uC774\uD2B8\
   \uC758 \uCF58\uD150\uCE20\uB97C\u2026"
 title: "\uC6F9 \uD398\uC774\uC9C0 \uB2E4\uC6B4\uB85C\uB4DC\uD558\uAE30"
+weight: 42
 ---
-
-{{< edit_this_page >}}
 
 ## 무엇 & 왜?
 

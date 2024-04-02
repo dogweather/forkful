@@ -21,9 +21,8 @@ summary: "\uB9AC\uD329\uD130\uB9C1\uC740 \uAE30\uC874 \uCEF4\uD4E8\uD130 \uCF54\
   \uBA70, \uC720\uC9C0 \uBCF4\uC218\uD558\uAE30 \uC27D\uAC8C \uB9CC\uB4ED\uB2C8\uB2E4\
   ."
 title: "\uB9AC\uD329\uD130\uB9C1"
+weight: 19
 ---
-
-{{< edit_this_page >}}
 
 ## 무엇 & 왜?
 

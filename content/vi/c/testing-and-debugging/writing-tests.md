@@ -13,9 +13,8 @@ summary: "Vi\u1EBFt test trong C bao g\u1ED3m vi\u1EC7c t\u1EA1o ra c\xE1c ch\u0
   p t\u1EF1 \u0111\u1ED9ng ki\u1EC3m tra t\xEDnh n\u0103ng c\u1EE7a m\xE3 l\u1EC7\
   nh. L\u1EADp tr\xECnh vi\xEAn l\xE0m \u0111i\u1EC1u n\xE0y\u2026"
 title: "Vi\u1EBFt ki\u1EC3m th\u1EED"
+weight: 36
 ---
-
-{{< edit_this_page >}}
 
 ## Cái gì và Tại sao?
 Viết test trong C bao gồm việc tạo ra các chương trình phụ hoặc chức năng nhỏ hơn giúp tự động kiểm tra tính năng của mã lệnh. Lập trình viên làm điều này để đảm bảo phần mềm của họ hoạt động như mong đợi, bắt lỗi sớm và để thuận tiện cho việc chỉnh sửa mã sau này mà không gây ra hiệu ứng phụ không mong muốn.

@@ -9,9 +9,8 @@ summary: "Ler um arquivo de texto em Rust \xE9 o processo de acessar e interpret
   \ dados armazenados em arquivos no seu sistema de arquivos. Programadores fazem\
   \ isso\u2026"
 title: Lendo um arquivo de texto
+weight: 22
 ---
-
-{{< edit_this_page >}}
 
 ## O Que & Por Quê?
 Ler um arquivo de texto em Rust é o processo de acessar e interpretar dados armazenados em arquivos no seu sistema de arquivos. Programadores fazem isso para manipular, processar ou analisar o conteúdo durante a execução de um programa.

@@ -8,9 +8,8 @@ model: gpt-4-0125-preview
 summary: "\xC5 generere tilfeldige tall i Ruby inneb\xE6rer \xE5 skape tall som ikke\
   \ kan forutsies logisk, noe som er essensielt for scenarioer som simuleringer, kryptografi\u2026"
 title: Generering av tilfeldige tall
+weight: 12
 ---
-
-{{< edit_this_page >}}
 
 ## Hva & Hvorfor?
 

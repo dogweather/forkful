@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "\xC9crire un fichier texte en JavaScript concerne souvent la cr\xE9ation\
   \ et la sauvegarde de donn\xE9es dans un format simple et lisible pour la journalisation,\u2026"
 title: "R\xE9diger un fichier texte"
+weight: 24
 ---
-
-{{< edit_this_page >}}
 
 ## Quoi & Pourquoi ?
 Écrire un fichier texte en JavaScript concerne souvent la création et la sauvegarde de données dans un format simple et lisible pour la journalisation, l'exportation des saisies utilisateur, ou des fins de configuration. Cette fonctionnalité est cruciale pour les applications qui ont besoin de persister les données au-delà de la durée de vie du processus de l'application, offrant un moyen de stocker et de récupérer ou partager l'information plus tard.

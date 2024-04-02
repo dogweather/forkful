@@ -11,9 +11,8 @@ summary: "Les expressions r\xE9guli\xE8res en programmation sont des s\xE9quence
   \ de caract\xE8res qui d\xE9finissent un motif de recherche, g\xE9n\xE9ralement\
   \ employ\xE9 pour la recherche\u2026"
 title: "Utilisation des expressions r\xE9guli\xE8res"
+weight: 11
 ---
-
-{{< edit_this_page >}}
 
 ## Quoi & Pourquoi ?
 Les expressions régulières en programmation sont des séquences de caractères qui définissent un motif de recherche, généralement employé pour la recherche et la manipulation de chaînes de caractères. Les programmeurs Haskell utilisent les expressions régulières pour des tâches allant de la simple correspondance de chaînes à des traitements de texte complexes, profitant de leur efficacité et de leur polyvalence dans le traitement des données textuelles.

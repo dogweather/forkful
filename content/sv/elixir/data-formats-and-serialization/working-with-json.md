@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Att arbeta med JSON inneb\xE4r att tolka JSON-formaterade str\xE4ngar till\
   \ datastrukturer som Elixir kan manipulera, och serialisera Elixir datastrukturer\u2026"
 title: Arbeta med JSON
+weight: 38
 ---
-
-{{< edit_this_page >}}
 
 ## Vad och varför?
 

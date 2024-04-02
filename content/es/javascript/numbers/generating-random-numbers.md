@@ -7,9 +7,8 @@ model: gpt-4-0125-preview
 summary: "Generar n\xFAmeros aleatorios en JavaScript es una t\xE9cnica usada para\
   \ crear imprevisibilidad en aplicaciones, desde juegos que necesitan comportamientos\u2026"
 title: "Generaci\xF3n de n\xFAmeros aleatorios"
+weight: 12
 ---
-
-{{< edit_this_page >}}
 
 ## ¿Qué y Por Qué?
 

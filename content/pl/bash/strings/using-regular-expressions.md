@@ -11,9 +11,8 @@ summary: "Wyra\u017Cenia regularne (regex) w Bashu pozwalaj\u0105 na przeszukiwa
   \ manipulowanie i obs\u0142ug\u0119 ci\u0105g\xF3w znak\xF3w oraz plik\xF3w na podstawie\
   \ okre\u015Blonych wzorc\xF3w.\u2026"
 title: "Korzystanie z wyra\u017Ce\u0144 regularnych"
+weight: 11
 ---
-
-{{< edit_this_page >}}
 
 ## Co i dlaczego?
 

@@ -11,9 +11,8 @@ summary: "La journalisation en programmation consiste \xE0 enregistrer des \xE9v
   nements, des erreurs ou des occurrences notables pendant l'ex\xE9cution. Les programmeurs\
   \ le\u2026"
 title: Journalisation
+weight: 17
 ---
-
-{{< edit_this_page >}}
 
 ## Quoi & Pourquoi ?
 

@@ -10,9 +10,8 @@ model: gpt-4-0125-preview
 summary: "Tekst zoeken en vervangen is het vinden van specifieke reeksen en deze omwisselen\
   \ met iets anders. Programmeurs doen dit om code bij te werken, fouten te\u2026"
 title: Zoeken en vervangen van tekst
+weight: 10
 ---
-
-{{< edit_this_page >}}
 
 ## Wat & Waarom?
 Tekst zoeken en vervangen is het vinden van specifieke reeksen en deze omwisselen met iets anders. Programmeurs doen dit om code bij te werken, fouten te corrigeren, of om gegevens te herformatteren — het is een enorme tijdsbesparing.

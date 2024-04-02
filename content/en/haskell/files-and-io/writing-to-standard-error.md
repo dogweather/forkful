@@ -7,9 +7,8 @@ model: gpt-4-0125-preview
 summary: "Writing to standard error (stderr) in Haskell allows programs to differentiate\
   \ their output between normal results and error messages. This is crucial for\u2026"
 title: Writing to standard error
+weight: 25
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 Writing to standard error (stderr) in Haskell allows programs to differentiate their output between normal results and error messages. This is crucial for signaling problems and debugging, without cluttering the standard output (stdout) that often carries the program's primary data or result.

@@ -9,9 +9,8 @@ summary: "Yksinkertaisesti sanottuna, merkkijonojen yhdist\xE4minen tarkoittaa n
   \ liitt\xE4mist\xE4 per\xE4kk\xE4in uudeksi merkkijonoksi. Koodarit tekev\xE4t t\xE4\
   t\xE4, koska se\u2026"
 title: "Merkkijonojen yhdist\xE4minen"
+weight: 3
 ---
-
-{{< edit_this_page >}}
 
 ## Mikä & Miksi?
 Yksinkertaisesti sanottuna, merkkijonojen yhdistäminen tarkoittaa niiden liittämistä peräkkäin uudeksi merkkijonoksi. Koodarit tekevät tätä, koska se auttaa luomaan dynaamisia tekstejä, esimerkiksi käyttäjän tervehtimiseen nimellä tai tiedon yhdistämiseen yhdeksi lausekkeeksi.

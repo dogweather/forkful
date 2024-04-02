@@ -7,9 +7,8 @@ model: gpt-4-1106-preview
 summary: "Kun puhumme merkkien poistamisesta kuvioon pohjautuen, tarkoitamme tietynlaisen\
   \ datan siivoamista sy\xF6tteest\xE4. Ohjelmoijat tekev\xE4t t\xE4t\xE4 datan\u2026"
 title: Merkkien poistaminen hakemalla osumia kaavaan
+weight: 5
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why? - Mitä ja Miksi?
 Kun puhumme merkkien poistamisesta kuvioon pohjautuen, tarkoitamme tietynlaisen datan siivoamista syötteestä. Ohjelmoijat tekevät tätä datan puhdistamiseksi ja välttääkseen ei-toivottuja merkkejä, jotka voivat sotkea tulosteet tai aiheuttaa virheitä.

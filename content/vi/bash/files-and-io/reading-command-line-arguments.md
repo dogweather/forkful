@@ -13,9 +13,8 @@ summary: "\u0110\u1ECDc c\xE1c \u0111\u1ED1i s\u1ED1 d\xF2ng l\u1EC7nh cho ph\xE
   p li\u1EC7u c\u1EE7a ng\u01B0\u1EDDi d\xF9ng. \u0110\xF3 l\xE0 c\xE1ch m\xE0 c\xE1\
   c k\u1ECBch b\u1EA3n c\xF3 th\u1EC3 linh ho\u1EA1t v\xE0 kh\xF4ng\u2026"
 title: "\u0110\u1ECDc c\xE1c \u0111\u1ED1i s\u1ED1 d\xF2ng l\u1EC7nh"
+weight: 23
 ---
-
-{{< edit_this_page >}}
 
 ## Gì & Tại sao?
 

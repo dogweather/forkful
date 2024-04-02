@@ -9,9 +9,8 @@ summary: "Ler um arquivo de texto em PHP \xE9 basicamente extrair o conte\xFAdo 
   \ um arquivo armazenado em seu sistema para utiliz\xE1-lo no seu c\xF3digo. Programadores\
   \ fazem\u2026"
 title: Lendo um arquivo de texto
+weight: 22
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 Ler um arquivo de texto em PHP é basicamente extrair o conteúdo de um arquivo armazenado em seu sistema para utilizá-lo no seu código. Programadores fazem isso para acessar dados, configurar aplicações ou manipular informações sem a necessidade de digitar tudo manualmente.

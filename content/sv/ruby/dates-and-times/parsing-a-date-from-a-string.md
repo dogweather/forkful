@@ -11,9 +11,8 @@ summary: "Att tolka ett datum fr\xE5n en str\xE4ng handlar om att konvertera tex
   \ som representerar ett datum till ett `Date` eller `DateTime` objekt som Ruby f\xF6\
   rst\xE5r.\u2026"
 title: "Analysera ett datum fr\xE5n en str\xE4ng"
+weight: 30
 ---
-
-{{< edit_this_page >}}
 
 ## Vad & Varför?
 Att tolka ett datum från en sträng handlar om att konvertera text som representerar ett datum till ett `Date` eller `DateTime` objekt som Ruby förstår. Programmerare gör detta för att utföra operationer som jämförelser, beräkningar eller formatering på datum, vilket är vanliga uppgifter i applikationer som hanterar schemaläggning, analys eller databehandling.

@@ -7,9 +7,8 @@ model: gpt-4-1106-preview
 summary: "Leer un archivo de texto en C++ significa extracci\xF3n de datos desde un\
   \ archivo en tu disco hacia tu programa. Programadores lo hacen para manejar\u2026"
 title: Lectura de un archivo de texto
+weight: 22
 ---
-
-{{< edit_this_page >}}
 
 ## Qué & Por Qué?
 Leer un archivo de texto en C++ significa extracción de datos desde un archivo en tu disco hacia tu programa. Programadores lo hacen para manejar información persistente o compartir datos entre procesos o incluso entre diferentes ejecuciones de programas.

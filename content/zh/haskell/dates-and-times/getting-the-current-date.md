@@ -17,9 +17,8 @@ summary: "\u5728 Haskell \u4E2D\u83B7\u53D6\u5F53\u524D\u65E5\u671F\u6D89\u53CA\
   \u5982\u65E5\u5FD7\u8BB0\u5F55\u3001\u8C03\u5EA6\u4EFB\u52A1\u6216\u5728\u5E94\u7528\
   \u7A0B\u5E8F\u4E2D\u7ED9\u4E8B\u4EF6\u52A0\u65F6\u95F4\u6233\u3002"
 title: "\u83B7\u53D6\u5F53\u524D\u65E5\u671F"
+weight: 29
 ---
-
-{{< edit_this_page >}}
 
 ## 什么 & 为什么？
 在 Haskell 中获取当前日期涉及获取系统的当前时间，并将其转换为可读的日期格式。程序员这样做是为了基于日期执行操作，例如日志记录、调度任务或在应用程序中给事件加时间戳。

@@ -11,9 +11,8 @@ summary: "\xC5 sjekke om en mappe eksisterer i Google Apps Script inneb\xE6rer \
   \ bekrefte tilstedev\xE6relsen av en mappe inne i Google Drive. Programmerere utf\xF8\
   rer ofte\u2026"
 title: Sjekke om en katalog eksisterer
+weight: 20
 ---
-
-{{< edit_this_page >}}
 
 ## Hva & Hvorfor?
 

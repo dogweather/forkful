@@ -9,9 +9,8 @@ summary: "Das Berechnen eines zuk\xFCnftigen oder vergangenen Datums erm\xF6glic
   \ es uns, Zeitintervalle zu bestimmen und automatische Erinnerungen oder Fristen\
   \ in\u2026"
 title: "Berechnung eines zuk\xFCnftigen oder vergangenen Datums"
+weight: 26
 ---
-
-{{< edit_this_page >}}
 
 ## Was & Warum?
 Das Berechnen eines zukünftigen oder vergangenen Datums ermöglicht es uns, Zeitintervalle zu bestimmen und automatische Erinnerungen oder Fristen in Skripten zu setzen. Programmierer nutzen diese Funktion für Features wie Ablaufüberwachungen, Terminplanungen und Zeitreisen in Datenbanken.

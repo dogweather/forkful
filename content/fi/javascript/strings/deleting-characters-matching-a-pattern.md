@@ -9,9 +9,8 @@ summary: "JavaScriptissa merkkien poistaminen tietyll\xE4 kaavalla tarkoittaa ei
   \ merkkien tai merkkijonojen karsimista tekstist\xE4 k\xE4ytt\xE4m\xE4ll\xE4 s\xE4\
   \xE4nn\xF6llisi\xE4\u2026"
 title: Merkkien poistaminen hakemalla osumia kaavaan
+weight: 5
 ---
-
-{{< edit_this_page >}}
 
 ## Mitä & Miksi?
 JavaScriptissa merkkien poistaminen tietyllä kaavalla tarkoittaa ei-toivottujen merkkien tai merkkijonojen karsimista tekstistä käyttämällä säännöllisiä lausekkeita tai metodeja. Ohjelmoijat tekevät tämän siistiäkseen dataa, kuten käyttäjän syötettä tai tiedostosta luetun tekstin.

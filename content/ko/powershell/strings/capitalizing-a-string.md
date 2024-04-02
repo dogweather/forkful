@@ -23,9 +23,8 @@ summary: "PowerShell\uC5D0\uC11C \uBB38\uC790\uC5F4\uC744 \uB300\uBB38\uC790\uB8
   \uC5D0\uC11C \uBB38\uBC95 \uADDC\uCE59\uC744 \uB530\uB974\uAE30 \uC704\uD574 \uC774\
   \uB7EC\uD55C \uC791\uC5C5\uC744 \uC218\uD589\uD569\uB2C8\uB2E4."
 title: "\uBB38\uC790\uC5F4 \uB300\uBB38\uC790\uD654"
+weight: 2
 ---
-
-{{< edit_this_page >}}
 
 ## 무엇을, 왜?
 PowerShell에서 문자열을 대문자로 만드는 것은 주어진 문자열의 첫 글자를 대문자로 변환하면서 나머지 문자열은 변경하지 않는 작업을 말합니다. 프로그래머들은 종종 사용자 인터페이스에서 텍스트를 표시하거나 생성된 문서에서 문법 규칙을 따르기 위해 이러한 작업을 수행합니다.

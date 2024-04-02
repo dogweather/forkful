@@ -8,9 +8,8 @@ model: gpt-4-0125-preview
 summary: "Manipular arquivos com comandos de uma linha no PowerShell \xE9 sobre alterar,\
   \ mover, ou obter dados de arquivos diretamente da linha de comando de forma\u2026"
 title: Manipulando arquivos com one-liners de CLI
+weight: 31
 ---
-
-{{< edit_this_page >}}
 
 ## O que & Por quê?
 

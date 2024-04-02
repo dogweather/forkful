@@ -9,9 +9,8 @@ summary: "Enviar uma requisi\xE7\xE3o HTTP com autentica\xE7\xE3o b\xE1sica sign
   \ incluir credenciais de usu\xE1rio e senha codificadas em base64 no cabe\xE7alho\
   \ da requisi\xE7\xE3o.\u2026"
 title: "Enviando uma requisi\xE7\xE3o HTTP com autentica\xE7\xE3o b\xE1sica"
+weight: 45
 ---
-
-{{< edit_this_page >}}
 
 ## O Que & Por Quê?
 Enviar uma requisição HTTP com autenticação básica significa incluir credenciais de usuário e senha codificadas em base64 no cabeçalho da requisição. Programadores fazem isso para acessar recursos protegidos em um servidor.

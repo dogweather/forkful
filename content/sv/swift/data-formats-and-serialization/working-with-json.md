@@ -11,9 +11,8 @@ summary: "Att arbeta med JSON i Swift inneb\xE4r att hantera ett l\xE4ttviktigt 
   \ f\xF6r datautbyte. Programmerare anv\xE4nder JSON f\xF6r att \xF6verf\xF6ra data\
   \ mellan en\u2026"
 title: Arbeta med JSON
+weight: 38
 ---
-
-{{< edit_this_page >}}
 
 ## Vad & Varför?
 

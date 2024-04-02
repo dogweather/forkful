@@ -11,9 +11,8 @@ summary: "Tablice asocjacyjne, znane bardziej jako hashe w Ruby, umo\u017Cliwiaj
   \ parowanie unikalnych kluczy z warto\u015Bciami. S\u0105 niezast\u0105pione, kiedy\
   \ potrzebujesz \u015Bledzi\u0107\u2026"
 title: Korzystanie z tablic asocjacyjnych
+weight: 15
 ---
-
-{{< edit_this_page >}}
 
 ## Co i dlaczego?
 

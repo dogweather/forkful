@@ -9,9 +9,8 @@ summary: "Luodaan tilap\xE4isi\xE4 tiedostoja, kun tarvitsemme v\xE4liaikaisen s
   ilytyspaikan datalle, joka h\xE4vi\xE4\xE4 ohjelman suorituksen p\xE4\xE4tytty\xE4\
   . T\xE4m\xE4 on k\xE4tev\xE4\xE4, koska\u2026"
 title: "V\xE4liaikaistiedoston luominen"
+weight: 21
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 Luodaan tilapäisiä tiedostoja, kun tarvitsemme väliaikaisen säilytyspaikan datalle, joka häviää ohjelman suorituksen päätyttyä. Tämä on kätevää, koska säästämme levytilaa ja teemme datan käsittelystä turvallisempaa.

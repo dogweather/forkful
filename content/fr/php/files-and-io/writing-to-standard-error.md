@@ -10,9 +10,8 @@ model: gpt-4-0125-preview
 summary: "\xC9crire sur l'erreur standard (stderr) en PHP consiste \xE0 diriger les\
   \ messages d'erreur ou les diagnostics s\xE9par\xE9ment de la sortie standard (stdout),\u2026"
 title: "\xC9crire sur l'erreur standard"
+weight: 25
 ---
-
-{{< edit_this_page >}}
 
 ## Quoi & Pourquoi ?
 

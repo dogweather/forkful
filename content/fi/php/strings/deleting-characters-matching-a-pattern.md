@@ -9,9 +9,8 @@ summary: "Merkkien poistaminen kuvion mukaan tarkoittaa sellaisten merkkijonojen
   \ h\xE4vitt\xE4mist\xE4, jotka vastaavat tietty\xE4 kaavaa. Ohjelmoijat tekev\xE4\
   t t\xE4t\xE4\u2026"
 title: Merkkien poistaminen hakemalla osumia kaavaan
+weight: 5
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why? - Mikä ja Miksi?
 Merkkien poistaminen kuvion mukaan tarkoittaa sellaisten merkkijonojen osien hävittämistä, jotka vastaavat tiettyä kaavaa. Ohjelmoijat tekevät tätä syistä, kuten datan puhdistaminen, tietoturva, tai syötteen käsittelyn yksinkertaistaminen.

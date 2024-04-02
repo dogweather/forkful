@@ -11,9 +11,8 @@ summary: "Uuden projektin aloittaminen C-kielell\xE4 sis\xE4lt\xE4\xE4 perustava
   \ koodirakenteen ja ymp\xE4rist\xF6n pystytt\xE4misen, jotta kehitysteht\xE4v\xE4\
   t voidaan hallita\u2026"
 title: Uuden projektin aloittaminen
+weight: 1
 ---
-
-{{< edit_this_page >}}
 
 ## Mikä & Miksi?
 

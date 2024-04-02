@@ -17,9 +17,8 @@ summary: "\u5728Swift\u4E2D\u83B7\u53D6\u5F53\u524D\u65E5\u671F\u6D89\u53CA\u4F7
   \u65F6\u95F4\u6233\u4E8B\u4EF6\uFF0C\u6267\u884C\u65E5\u671F\u8BA1\u7B97\uFF0C\u5230\
   \u5728\u7528\u6237\u754C\u9762\u663E\u793A\u65E5\u671F\u548C\u65F6\u95F4\u3002"
 title: "\u83B7\u53D6\u5F53\u524D\u65E5\u671F"
+weight: 29
 ---
-
-{{< edit_this_page >}}
 
 ## 什么和为什么？
 在Swift中获取当前日期涉及使用`Date`类来访问应用程序正在运行时的日期和时间。程序员需要获取当前日期的原因有很多，范围从时间戳事件，执行日期计算，到在用户界面显示日期和时间。

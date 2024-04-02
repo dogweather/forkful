@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Complexe getallen, gerepresenteerd als een combinatie van re\xEBle en imaginaire\
   \ eenheden (bijv. 3 + 4i), zijn fundamenteel in verschillende computationele\u2026"
 title: Werken met complexe getallen
+weight: 14
 ---
-
-{{< edit_this_page >}}
 
 ## Wat & Waarom?
 Complexe getallen, gerepresenteerd als een combinatie van reële en imaginaire eenheden (bijv. 3 + 4i), zijn fundamenteel in verschillende computationele problemen, vooral in engineering, natuurkunde en toegepaste wiskunde. Leren hoe je deze getallen kunt manipuleren in Google Apps Script stelt programmeurs in staat hun mogelijkheden uit te breiden naar wetenschappelijk rekenen, signaalverwerking en meer.

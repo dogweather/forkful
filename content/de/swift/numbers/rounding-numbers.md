@@ -7,9 +7,8 @@ model: gpt-4-0125-preview
 summary: "Das Runden von Zahlen bedeutet, einen numerischen Wert auf eine spezifische\
   \ Genauigkeit zu approximieren, typischerweise, um unerw\xFCnschte Dezimalstellen\u2026"
 title: Zahlen runden
+weight: 13
 ---
-
-{{< edit_this_page >}}
 
 ## Was & Warum?
 

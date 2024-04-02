@@ -13,9 +13,8 @@ summary: "Vi\u1EC7c t\u1EA1o ra s\u1ED1 ng\u1EABu nhi\xEAn trong c\xE1c d\u1EF1 
   \ tr\u1ECB kh\xF4ng th\u1EC3 d\u1EF1 \u0111o\xE1n tr\u01B0\u1EDBc \u0111\u01B0\u1EE3\
   c theo thi\u1EBFt k\u1EBF, r\u1EA5t quan tr\u1ECDng cho\u2026"
 title: "Sinh s\u1ED1 ng\u1EABu nhi\xEAn"
+weight: 12
 ---
-
-{{< edit_this_page >}}
 
 ## Cái gì & Tại sao?
 Việc tạo ra số ngẫu nhiên trong các dự án Arduino liên quan đến việc sản xuất các giá trị không thể dự đoán trước được theo thiết kế, rất quan trọng cho các ứng dụng như trò chơi, mô phỏng, và hệ thống bảo mật. Lập trình viên sử dụng kỹ thuật này để giới thiệu sự biến đổi hoặc đưa ra các quyết định không nên là quyết định xác định.

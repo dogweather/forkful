@@ -7,9 +7,8 @@ model: gpt-4-0125-preview
 summary: "Writing tests in Java is about verifying that your code behaves as expected\
   \ under various conditions. Programmers write tests to prevent bugs, ensure\u2026"
 title: Writing tests
+weight: 36
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 Writing tests in Java is about verifying that your code behaves as expected under various conditions. Programmers write tests to prevent bugs, ensure functionality remains correct after changes, and foster good software design principles. 

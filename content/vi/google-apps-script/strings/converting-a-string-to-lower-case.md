@@ -13,9 +13,8 @@ summary: "Chuy\u1EC3n \u0111\u1ED5i m\u1ED9t chu\u1ED7i th\xE0nh ch\u1EEF th\u01
   a tr\xEAn \u0111\xE1m m\xE2y \u0111\u1EC3 t\u1EF1 \u0111\u1ED9ng h\xF3a c\xE1c t\xE1\
   c v\u1EE5 tr\xEAn c\xE1c s\u1EA3n ph\u1EA9m c\u1EE7a\u2026"
 title: "Chuy\u1EC3n \u0111\u1ED5i chu\u1ED7i th\xE0nh ch\u1EEF th\u01B0\u1EDDng"
+weight: 4
 ---
-
-{{< edit_this_page >}}
 
 ## Cái gì & Tại sao?
 

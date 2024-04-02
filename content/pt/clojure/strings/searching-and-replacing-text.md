@@ -9,9 +9,8 @@ summary: "Pesquisar e substituir texto \xE9 a arte de encontrar certas palavras 
   \ padr\xF5es e troc\xE1-los por algo novo. Programadores fazem isso para corrigir\
   \ erros,\u2026"
 title: Pesquisando e substituindo texto
+weight: 10
 ---
-
-{{< edit_this_page >}}
 
 ## O Que É & Por Que?
 Pesquisar e substituir texto é a arte de encontrar certas palavras ou padrões e trocá-los por algo novo. Programadores fazem isso para corrigir erros, atualizar dados ou refatorar código de maneira eficiente.

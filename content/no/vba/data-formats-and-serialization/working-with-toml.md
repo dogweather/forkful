@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "TOML, som st\xE5r for Toms Opplagte, Minimale Spr\xE5k, er et data-serieliseringsformat\
   \ som hovedsakelig brukes for konfigurasjonsfiler. Programmerere benytter\u2026"
 title: Arbeider med TOML
+weight: 39
 ---
-
-{{< edit_this_page >}}
 
 ## Hva & Hvorfor?
 

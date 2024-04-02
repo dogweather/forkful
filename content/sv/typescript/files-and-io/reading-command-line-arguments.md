@@ -9,9 +9,8 @@ summary: "Att l\xE4sa in kommandoradsargument \xE4r metoden att f\xE5nga anv\xE4
   \ fr\xE5n konsolen i ditt program. Programmerare g\xF6r det f\xF6r att till\xE5\
   ta anv\xE4ndare att\u2026"
 title: "L\xE4sa in kommandoradsargument"
+weight: 23
 ---
-
-{{< edit_this_page >}}
 
 ## Vad & Varför?
 Att läsa in kommandoradsargument är metoden att fånga användarinput från konsolen i ditt program. Programmerare gör det för att tillåta användare att skräddarsy exekveringen av applikationen genom att ge olika värden vid start.

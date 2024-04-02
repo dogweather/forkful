@@ -13,9 +13,8 @@ summary: "Vi\u1EC7c t\u1EA1o ra c\xE1c s\u1ED1 ng\u1EABu nhi\xEAn trong Visual B
   ng c\xE1c quy tr\xECnh v\u1EDBi c\xE1c y\u1EBFu t\u1ED1 may r\u1EE7i ho\u1EB7c bi\u1EBF\
   n\u2026"
 title: "Sinh s\u1ED1 ng\u1EABu nhi\xEAn"
+weight: 12
 ---
-
-{{< edit_this_page >}}
 
 ## Cái gì & Tại sao?
 

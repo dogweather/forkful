@@ -11,9 +11,8 @@ summary: "\xC5 lese en tekstfil i Go inneb\xE6rer \xE5 f\xE5 tilgang til og hent
   \ innhold fra en fil lagret p\xE5 disk for bearbeiding eller analyse. Programmerere\
   \ utf\xF8rer ofte\u2026"
 title: Lese en tekstfil
+weight: 22
 ---
-
-{{< edit_this_page >}}
 
 ## Hva og hvorfor?
 

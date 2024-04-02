@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Getallen afronden betekent het aanpassen ervan naar een gespecificeerde\
   \ precisiegraad. Programmeurs doen dit om getallen te vereenvoudigen voor\u2026"
 title: Afronden van getallen
+weight: 13
 ---
-
-{{< edit_this_page >}}
 
 ## Wat & Waarom?
 Getallen afronden betekent het aanpassen ervan naar een gespecificeerde precisiegraad. Programmeurs doen dit om getallen te vereenvoudigen voor leesbaarheid, om aan bepaalde specificaties te voldoen, of om ervoor te zorgen dat berekeningen binnen bepaalde grenzen passen, zoals het vermijden van precisiefouten in floating-point rekenkunde.

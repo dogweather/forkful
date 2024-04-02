@@ -11,9 +11,8 @@ summary: "Arrays associativos s\xE3o como arrays superpotentes que permitem o us
   \ de strings como \xEDndices, ao inv\xE9s de apenas inteiros. Programadores os utilizam\
   \ para\u2026"
 title: Usando arrays associativos
+weight: 15
 ---
-
-{{< edit_this_page >}}
 
 ## O Que & Por Que?
 

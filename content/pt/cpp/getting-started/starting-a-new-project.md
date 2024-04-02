@@ -9,9 +9,8 @@ summary: "Iniciar um novo projeto em C++ \xE9 criar um espa\xE7o de trabalho lim
   \ para desenvolver c\xF3digo desde o come\xE7o. Programadores fazem isso para organizar\
   \ melhor\u2026"
 title: Iniciando um novo projeto
+weight: 1
 ---
-
-{{< edit_this_page >}}
 
 ## O Que é & Porquê?
 Iniciar um novo projeto em C++ é criar um espaço de trabalho limpo para desenvolver código desde o começo. Programadores fazem isso para organizar melhor suas ideias e garantir que todas as dependências estejam corretas desde o início.

@@ -16,9 +16,8 @@ summary: "\u30D5\u30A1\u30A4\u30EB\u8AAD\u307F\u8FBC\u307F\u3068\u306F\u3001\u30
   \u308C\u3001\u3069\u3093\u306A\u30D7\u30ED\u30B0\u30E9\u30E0\u306B\u3082\u57FA\u672C\
   \u3068\u306A\u308B\u6A5F\u80FD\u3067\u3059\u3002"
 title: "\u30C6\u30AD\u30B9\u30C8\u30D5\u30A1\u30A4\u30EB\u306E\u8AAD\u307F\u8FBC\u307F"
+weight: 22
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why? (何となぜ？)
 ファイル読み込みとは、テキストファイルの内容をプログラムに取り込むことです。データ処理や設定の読み出しに使われ、どんなプログラムにも基本となる機能です。

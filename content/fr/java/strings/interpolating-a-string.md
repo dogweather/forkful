@@ -9,9 +9,8 @@ summary: "(L'interpolation de cha\xEEnes : Quoi et Pourquoi ?) L'interpolation d
   \ cha\xEEnes permet d'ins\xE9rer des valeurs variables dans des textes fixes. C'est\
   \ pratique\u2026"
 title: "Interpolation de cha\xEEnes de caract\xE8res"
+weight: 8
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 (L'interpolation de chaînes : Quoi et Pourquoi ?)

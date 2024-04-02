@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Parsear una fecha de un string en Go implica convertir la fecha representada\
   \ como texto en un formato m\xE1s utilizable (por ejemplo, `time.Time`). Los\u2026"
 title: Interpretando una fecha de una cadena de texto
+weight: 30
 ---
-
-{{< edit_this_page >}}
 
 ## ¿Qué y Por Qué?
 

@@ -7,9 +7,8 @@ model: gpt-4-1106-preview
 summary: "TOML stands for Tom's Obvious, Minimal Language. It's used for configuration\
   \ files because it's easy to read and write for humans, while still being easy\u2026"
 title: Working with TOML
+weight: 39
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 TOML stands for Tom's Obvious, Minimal Language. It's used for configuration files because it's easy to read and write for humans, while still being easy to parse for machines. Devs reach for TOML to avoid the clutter of XML and the trickiness of JSON when slinging configs.

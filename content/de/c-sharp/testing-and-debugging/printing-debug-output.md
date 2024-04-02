@@ -7,9 +7,8 @@ model: gpt-4-1106-preview
 summary: "Beim Debuggen von C# Programmen ist das Ausgeben von Zwischenergebnissen\
   \ und Fehlersuchinformationen essenziell. Es hilft Entwicklerinnen und Entwicklern,\u2026"
 title: Debug-Ausgaben drucken
+weight: 33
 ---
-
-{{< edit_this_page >}}
 
 ## Was & Warum?
 Beim Debuggen von C# Programmen ist das Ausgeben von Zwischenergebnissen und Fehlersuchinformationen essenziell. Es hilft Entwicklerinnen und Entwicklern, den Programmfluss zu verfolgen und Fehler schneller zu finden.

@@ -16,9 +16,8 @@ summary: "\uBB38\uC790\uC5F4 \uBCF4\uAC04(string interpolation)\uC740 \uBCC0\uC2
   \uC9C0 \uAD00\uB9AC\uD558\uAE30 \uC871\uD558\uAC8C \uD558\uAE30 \uC704\uD574 \uC774\
   \uB97C \uC0AC\uC6A9\uD569\uB2C8\uB2E4."
 title: "\uBB38\uC790\uC5F4 \uBCF4\uAC04\uD558\uAE30"
+weight: 8
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why? (무엇이며 왜?)
 문자열 보간(string interpolation)은 변수나 표현식의 값을 문자열 안에 바로 삽입하는 방법입니다. 프로그래머들은 코드를 더 읽기 쉽고 유지 관리하기 족하게 하기 위해 이를 사용합니다.

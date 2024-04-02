@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "JSON (JavaScript Object Notation) -tiedon k\xE4sittelyyn kuuluu JSON-tiedon\
   \ j\xE4sennys, tuottaminen ja kysely, mik\xE4 tekee siit\xE4 kriittisen taidon\u2026"
 title: "Ty\xF6skentely JSON:n kanssa"
+weight: 38
 ---
-
-{{< edit_this_page >}}
 
 ## Mikä & Miksi?
 

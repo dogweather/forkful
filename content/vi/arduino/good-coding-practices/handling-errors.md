@@ -14,9 +14,8 @@ summary: "X\u1EED l\xFD l\u1ED7i trong c\xE1c ch\u01B0\u01A1ng tr\xECnh c\u1EE7a
   c s\u1EBD c\u1ED1 g\u1EAFng l\xE0m b\u1EA1n v\u1EA5p ng\xE3. B\u1EA1n l\xE0m \u0111\
   i\u1EC1u \u0111\xF3 \u0111\u1EC3 gi\u1EEF cho Arduino c\u1EE7a b\u1EA1n kh\xF4ng\u2026"
 title: "X\u1EED l\xFD l\u1ED7i"
+weight: 16
 ---
-
-{{< edit_this_page >}}
 
 ## Cái gì & Tại sao?
 

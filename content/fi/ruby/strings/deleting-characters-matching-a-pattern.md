@@ -7,9 +7,8 @@ model: gpt-4-1106-preview
 summary: "Mik\xE4 & Miksi? Kun puhutaan merkkien poistamisesta kuvion mukaan Rubyss\xE4\
   , tarkoitamme prosessia, jossa etsit\xE4\xE4n ja poistetaan merkkej\xE4 merkkijonosta\u2026"
 title: Merkkien poistaminen hakemalla osumia kaavaan
+weight: 5
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why? 
 Mikä & Miksi?

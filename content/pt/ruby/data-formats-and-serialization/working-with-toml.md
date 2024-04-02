@@ -9,9 +9,8 @@ summary: "TOML \xE9 um formato de arquivo de configura\xE7\xE3o que \xE9 f\xE1ci
   \ de ler devido \xE0 sua clareza sem\xE2ntica. Programadores usam TOML para gerenciar\
   \ configura\xE7\xF5es de\u2026"
 title: Trabalhando com TOML
+weight: 39
 ---
-
-{{< edit_this_page >}}
 
 ## O Que & Por Que?
 

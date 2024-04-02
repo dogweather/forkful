@@ -7,9 +7,8 @@ model: gpt-4-1106-preview
 summary: "Das Ausgeben von Debug-Informationen hilft beim Verstehen, was im Code passiert.\
   \ Programmierer nutzen es, um Fehler schnell zu finden und den\u2026"
 title: Debug-Ausgaben drucken
+weight: 33
 ---
-
-{{< edit_this_page >}}
 
 ## Was & Warum?
 Das Ausgeben von Debug-Informationen hilft beim Verstehen, was im Code passiert. Programmierer nutzen es, um Fehler schnell zu finden und den Programmfluss nachzuvollziehen.

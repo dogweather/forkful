@@ -11,9 +11,8 @@ summary: "Chercher et remplacer du texte en Dart consiste \xE0 examiner des cha\
   nes de caract\xE8res pour trouver certains motifs ou s\xE9quences de caract\xE8\
   res et les\u2026"
 title: Recherche et remplacement de texte
+weight: 10
 ---
-
-{{< edit_this_page >}}
 
 ## Quoi & Pourquoi ?
 

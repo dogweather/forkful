@@ -9,9 +9,8 @@ summary: "XML on merkkauskieli, jota k\xE4ytet\xE4\xE4n datan tallentamiseen ja 
   miseen. Ohjelmoijat ty\xF6skentelev\xE4t XML:n parissa mahdollistaakseen sovellusten\
   \ ja\u2026"
 title: "XML:n k\xE4sittely"
+weight: 40
 ---
-
-{{< edit_this_page >}}
 
 ## Mikä & Miksi?
 XML on merkkauskieli, jota käytetään datan tallentamiseen ja siirtämiseen. Ohjelmoijat työskentelevät XML:n parissa mahdollistaakseen sovellusten ja järjestelmien välisen yhteentoimivuuden – ajattele datan vaihtoa ja konfiguraatioasetuksia.

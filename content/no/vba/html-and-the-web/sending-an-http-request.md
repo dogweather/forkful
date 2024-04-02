@@ -11,9 +11,8 @@ summary: "\xC5 sende en HTTP-foresp\xF8rsel i Visual Basic for Applications (VBA
   \ inneb\xE6rer programmatisk tilgang til webressurser eller webtjenester ved \xE5\
   \ gj\xF8re\u2026"
 title: "Sende en HTTP-foresp\xF8rsel"
+weight: 44
 ---
-
-{{< edit_this_page >}}
 
 ## Hva & Hvorfor?
 

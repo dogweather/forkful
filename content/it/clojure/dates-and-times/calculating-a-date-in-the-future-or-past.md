@@ -7,9 +7,8 @@ model: gpt-4-1106-preview
 summary: "Calcolare una data futura o passata significa semplicemente determinare\
   \ quale giorno sar\xE0 o \xE8 stato dopo o prima di un certo lasso di tempo. I\u2026"
 title: Calcolo di una data futura o passata
+weight: 26
 ---
-
-{{< edit_this_page >}}
 
 ## Cos'è e perché?
 Calcolare una data futura o passata significa semplicemente determinare quale giorno sarà o è stato dopo o prima di un certo lasso di tempo. I programmatori lo fanno per gestire eventi, scadenze, ricorrenze e per pianificare attività.

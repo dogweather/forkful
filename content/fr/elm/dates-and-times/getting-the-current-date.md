@@ -9,9 +9,8 @@ summary: "En programmation, obtenir la date actuelle c'est r\xE9cup\xE9rer la da
   \ et l'heure pr\xE9cises \xE0 l'instant T. Les d\xE9veloppeurs en ont besoin pour\
   \ tout : des\u2026"
 title: Obtenir la date actuelle
+weight: 29
 ---
-
-{{< edit_this_page >}}
 
 ## Quoi et Pourquoi ?
 En programmation, obtenir la date actuelle c'est récupérer la date et l'heure précises à l'instant T. Les développeurs en ont besoin pour tout : des timestamps jusqu'aux fonctionnalités basées sur la date.

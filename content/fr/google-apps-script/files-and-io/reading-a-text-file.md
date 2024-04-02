@@ -11,9 +11,8 @@ summary: "Lire un fichier texte avec Google Apps Script (GAS) implique d'acc\xE9
   \ et d'extraire des donn\xE9es textuelles \xE0 partir de fichiers stock\xE9s dans\
   \ Google Drive\u2026"
 title: Lecture d'un fichier texte
+weight: 22
 ---
-
-{{< edit_this_page >}}
 
 ## Quoi & Pourquoi ?
 

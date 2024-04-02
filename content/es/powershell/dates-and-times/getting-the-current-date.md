@@ -10,9 +10,8 @@ model: gpt-4-0125-preview
 summary: "Obtener la fecha actual en PowerShell trata sobre recuperar la fecha y hora\
   \ actuales del sistema. Esta operaci\xF3n es fundamental para tareas como el\u2026"
 title: Obteniendo la fecha actual
+weight: 29
 ---
-
-{{< edit_this_page >}}
 
 ## ¿Qué y por qué?
 

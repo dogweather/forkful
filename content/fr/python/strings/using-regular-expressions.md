@@ -11,9 +11,8 @@ summary: "Les expressions r\xE9guli\xE8res (regex) sont des motifs utilis\xE9s p
   \ rechercher des combinaisons de caract\xE8res dans des cha\xEEnes de texte. Les\
   \ programmeurs les\u2026"
 title: "Utilisation des expressions r\xE9guli\xE8res"
+weight: 11
 ---
-
-{{< edit_this_page >}}
 
 ## Quoi & Pourquoi ?
 Les expressions régulières (regex) sont des motifs utilisés pour rechercher des combinaisons de caractères dans des chaînes de texte. Les programmeurs les utilisent pour chercher, éditer ou manipuler du texte en fonction de motifs définis, ce qui les rend indispensables pour des tâches comme la validation de données, l'analyse syntaxique ou la transformation.

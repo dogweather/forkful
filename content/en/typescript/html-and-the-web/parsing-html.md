@@ -9,9 +9,8 @@ summary: "Parsing HTML means sifting through HTML code to find, extract, or mani
   \ info. Programmers do it to interact with web content\u2014maybe scraping data,\
   \ or\u2026"
 title: Parsing HTML
+weight: 43
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 

@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Complexe getallen breiden ons getallensysteem uit met imaginaire getallen,\
   \ waardoor we vergelijkingen kunnen oplossen die geen re\xEBle oplossingen hebben.\u2026"
 title: Werken met complexe getallen
+weight: 14
 ---
-
-{{< edit_this_page >}}
 
 ## Wat & Waarom?
 Complexe getallen breiden ons getallensysteem uit met imaginaire getallen, waardoor we vergelijkingen kunnen oplossen die geen reële oplossingen hebben. Programmeurs werken ermee in vakgebieden zoals engineering, natuurkunde en signaalverwerking waar deze getallen essentieel zijn voor modellering en probleemoplossing.

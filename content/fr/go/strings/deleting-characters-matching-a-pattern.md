@@ -11,9 +11,8 @@ summary: "Supprimer les caract\xE8res correspondant \xE0 un mod\xE8le sp\xE9cifi
   \ consiste \xE0 enlever certains caract\xE8res ou s\xE9quences de caract\xE8res\
   \ des cha\xEEnes de caract\xE8res,\u2026"
 title: "Supprimer des caract\xE8res correspondant \xE0 un motif"
+weight: 5
 ---
-
-{{< edit_this_page >}}
 
 ## Quoi & Pourquoi ?
 

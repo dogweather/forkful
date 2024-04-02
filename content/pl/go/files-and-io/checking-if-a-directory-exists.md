@@ -11,9 +11,8 @@ summary: "Sprawdzenie, czy katalog istnieje w Go, jest kluczowe dla aplikacji in
   \ wsp\xF3\u0142pracuj\u0105cych z systemem plik\xF3w, aby unikn\u0105\u0107 b\u0142\
   \u0119d\xF3w przy pr\xF3bie\u2026"
 title: Sprawdzanie, czy katalog istnieje
+weight: 20
 ---
-
-{{< edit_this_page >}}
 
 ## Co i dlaczego?
 

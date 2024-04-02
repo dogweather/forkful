@@ -11,9 +11,8 @@ summary: "Nykyisen p\xE4iv\xE4m\xE4\xE4r\xE4n hankkiminen TypeScriptiss\xE4, jok
   \ on JavaScript-pohjainen kieli, mahdollistaa nykyisen p\xE4iv\xE4m\xE4\xE4r\xE4\
   n ja ajan tiedon k\xE4ytt\xE4misen ja\u2026"
 title: "Nykyisen p\xE4iv\xE4m\xE4\xE4r\xE4n hankkiminen"
+weight: 29
 ---
-
-{{< edit_this_page >}}
 
 ## Mikä & Miksi?
 Nykyisen päivämäärän hankkiminen TypeScriptissä, joka on JavaScript-pohjainen kieli, mahdollistaa nykyisen päivämäärän ja ajan tiedon käyttämisen ja manipuloinnin. Ohjelmoijat tarvitsevat usein tätä toiminnallisuutta luodakseen aikaleimoja, aikataulutusta ja muita aikaan sidottuja piirteitä sovelluksiinsa.

@@ -8,9 +8,8 @@ model: gpt-4-0125-preview
 summary: "Refatora\xE7\xE3o \xE9 o processo de alterar a estrutura interna de um programa\
   \ de computador sem alterar seu comportamento externo. Os programadores fazem isso\u2026"
 title: "Refatora\xE7\xE3o"
+weight: 19
 ---
-
-{{< edit_this_page >}}
 
 ## O que & Por quê?
 

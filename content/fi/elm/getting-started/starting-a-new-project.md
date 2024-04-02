@@ -8,9 +8,8 @@ model: gpt-4-1106-preview
 summary: "Uuden projektin aloittaminen Elm:ss\xE4 tarkoittaa perustan luontia, josta\
   \ projektisi kasvaa. Koodaajat aloittavat uusia projekteja vaaliakseen uusia ideoita\u2026"
 title: Uuden projektin aloittaminen
+weight: 1
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why? - Mikä ja Miksi?
 Uuden projektin aloittaminen Elm:ssä tarkoittaa perustan luontia, josta projektisi kasvaa. Koodaajat aloittavat uusia projekteja vaaliakseen uusia ideoita ja ratkaisuja ongelmiin.

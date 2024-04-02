@@ -10,9 +10,8 @@ model: gpt-4-0125-preview
 summary: "Het verwijderen van quotes uit een string betekent het weglaten van enkele\
   \ (`'`) of dubbele (`\"`) aanhalingstekens die de tekst omgeven. Programmeurs doen\u2026"
 title: Quotes verwijderen uit een string
+weight: 9
 ---
-
-{{< edit_this_page >}}
 
 ## Wat & Waarom?
 Het verwijderen van quotes uit een string betekent het weglaten van enkele (`'`) of dubbele (`"`) aanhalingstekens die de tekst omgeven. Programmeurs doen dit vaak om invoer te saneren, strings voor te bereiden voor vergelijking, of tekstgegevens te verwerken die per ongeluk aanhalingstekens als deel van de stringinhoud kunnen bevatten.

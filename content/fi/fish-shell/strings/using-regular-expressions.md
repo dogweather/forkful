@@ -11,9 +11,8 @@ summary: "S\xE4\xE4nn\xF6lliset lausekkeet (regex) Fish Shelliss\xE4 mahdollista
   \ merkkijonojen etsimisen, vastaavuuksien l\xF6yt\xE4misen ja manipuloinnin tiettyjen\
   \ mallien\u2026"
 title: "S\xE4\xE4nn\xF6llisten lausekkeiden k\xE4ytt\xF6"
+weight: 11
 ---
-
-{{< edit_this_page >}}
 
 ## Mikä & Miksi?
 

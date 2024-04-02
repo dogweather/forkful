@@ -9,9 +9,8 @@ summary: "\xC5 dele opp koden i funksjoner betyr at du hugger koden din opp i mi
   \ gjenbrukbare deler. Vi gj\xF8r det for \xE5 unng\xE5 gjentagelser, gj\xF8re koden\
   \ v\xE5r lesbar,\u2026"
 title: Organisering av kode i funksjoner
+weight: 18
 ---
-
-{{< edit_this_page >}}
 
 ## Hva & Hvorfor?
 Å dele opp koden i funksjoner betyr at du hugger koden din opp i mindre, gjenbrukbare deler. Vi gjør det for å unngå gjentagelser, gjøre koden vår lesbar, og forenkle feilsøking og testing. Godt organiserte funksjoner kan være som å ha en boks med pent merkede verktøy, klar til bruk og deling.

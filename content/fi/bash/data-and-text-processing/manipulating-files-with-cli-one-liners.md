@@ -9,9 +9,8 @@ summary: "Tiedostojen k\xE4sittely komentorivilt\xE4 (CLI, Command Line Interfac
   \ yksirivisill\xE4 komennoilla tarkoittaa Bash-skriptien tai -komentojen k\xE4ytt\xF6\
   \xE4\u2026"
 title: "Tiedostojen k\xE4sittely komentorivin yksirivisill\xE4 komennoilla"
+weight: 31
 ---
-
-{{< edit_this_page >}}
 
 ## Mikä ja miksi?
 

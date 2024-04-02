@@ -11,9 +11,8 @@ summary: "Recuperar a data atual na programa\xE7\xE3o \xE9 uma tarefa crucial pa
   \ uma infinidade de aplica\xE7\xF5es, incluindo registro de atividades (logging),\
   \ marca\xE7\xE3o de\u2026"
 title: Obtendo a data atual
+weight: 29
 ---
-
-{{< edit_this_page >}}
 
 ## O Que & Por Que?
 

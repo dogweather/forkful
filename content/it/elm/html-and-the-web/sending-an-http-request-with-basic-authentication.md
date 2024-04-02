@@ -9,9 +9,8 @@ summary: "Inviare una richiesta HTTP con autenticazione di base significa passar
   \ username e password per accedere a risorse protette. I programmatori lo fanno\
   \ per\u2026"
 title: Inviare una richiesta http con autenticazione di base
+weight: 45
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why? - Cosa e Perché?
 Inviare una richiesta HTTP con autenticazione di base significa passare username e password per accedere a risorse protette. I programmatori lo fanno per interagire con API che richiedono queste credenziali per l'accesso.

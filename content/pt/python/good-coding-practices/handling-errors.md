@@ -9,9 +9,8 @@ summary: "Tratar erros em Python (ou em qualquer linguagem de programa\xE7\xE3o)
   \ prever o inesperado \u2013 \xE9 a arte de gerenciar com eleg\xE2ncia quando as\
   \ coisas d\xE3o errado\u2026"
 title: Tratamento de erros
+weight: 16
 ---
-
-{{< edit_this_page >}}
 
 ## O Quê e Por Quê?
 

@@ -8,9 +8,8 @@ model: gpt-4-1106-preview
 summary: "In der Programmierung bedeutet das L\xF6schen von Zeichen, die einem Muster\
   \ entsprechen, dass wir bestimmte Zeichen aus einem Text entfernen - zum Beispiel\u2026"
 title: "L\xF6schen von Zeichen, die einem Muster entsprechen"
+weight: 5
 ---
-
-{{< edit_this_page >}}
 
 ## Was & Warum?
 In der Programmierung bedeutet das Löschen von Zeichen, die einem Muster entsprechen, dass wir bestimmte Zeichen aus einem Text entfernen - zum Beispiel alle Ziffern oder Leerzeichen. Das tun Programmierer oft, um Eingaben zu säubern, unnötigen Ballast zu entfernen oder Daten zu formatieren.

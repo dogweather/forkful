@@ -9,9 +9,8 @@ summary: "Wysy\u0142anie \u017C\u0105dania HTTP to komunikowanie si\u0119 z serw
   \ \u2013 wysy\u0142asz komend\u0119, serwer odpowiada. Programi\u015Bci robi\u0105\
   \ to, by pobiera\u0107 dane, wysy\u0142a\u0107 informacje,\u2026"
 title: "Wysy\u0142anie \u017C\u0105dania HTTP"
+weight: 44
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 Wysyłanie żądania HTTP to komunikowanie się z serwerem – wysyłasz komendę, serwer odpowiada. Programiści robią to, by pobierać dane, wysyłać informacje, autentykować użytkowników – podstawa pracy sieciowej.

@@ -10,9 +10,8 @@ model: gpt-4-0125-preview
 summary: "Att skriva tester i Elixir inneb\xE4r att man skapar automatiserade skript\
   \ f\xF6r att validera beteendet hos ens kod. Programmerare g\xF6r detta f\xF6r att\u2026"
 title: Skriva tester
+weight: 36
 ---
-
-{{< edit_this_page >}}
 
 ## Vad & Varför?
 Att skriva tester i Elixir innebär att man skapar automatiserade skript för att validera beteendet hos ens kod. Programmerare gör detta för att säkerställa kvalitet, förhindra regressioner och underlätta kodrefaktorisering, vilket gör utvecklingsprocessen mer pålitlig och effektiv.

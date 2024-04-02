@@ -9,9 +9,8 @@ summary: "Ber\xE4kna ett datum i framtiden eller f\xF6rflutet inneb\xE4r att man
   ndrar ett specifikt datum med ett visst antal dagar, m\xE5nader eller \xE5r. Programmerare\
   \ g\xF6r\u2026"
 title: "Ber\xE4kna ett datum i framtiden eller f\xF6rflutenheten"
+weight: 26
 ---
-
-{{< edit_this_page >}}
 
 ## Vad & Varför?
 Beräkna ett datum i framtiden eller förflutet innebär att man ändrar ett specifikt datum med ett visst antal dagar, månader eller år. Programmerare gör det för att hantera deadlines, händelseplanering, eller att spåra tidsskillnader.

@@ -13,9 +13,8 @@ summary: "In th\xF4ng tin debug gi\u1ED1ng nh\u01B0 \u0111ang tr\xF2 chuy\u1EC7n
   nh in \u0111\u1EC3 hi\u1EC3n th\u1ECB nh\u1EEFng g\xEC \u0111ang di\u1EC5n ra b\xEA\
   n d\u01B0\u1EDBi c\xF9ng c\u1EE7a ch\u01B0\u01A1ng\u2026"
 title: "In ra th\xF4ng tin g\u1EE1 l\u1ED7i"
+weight: 33
 ---
-
-{{< edit_this_page >}}
 
 ## Cái gì & Tại sao?
 

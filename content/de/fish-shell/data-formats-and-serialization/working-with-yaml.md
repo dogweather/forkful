@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Die Arbeit mit YAML umfasst das Parsen und Manipulieren von YAML-Dateien\
   \ (YAML Ain't Markup Language), einem Daten-Serialisierungsformat, das f\xFCr\u2026"
 title: Arbeiten mit YAML
+weight: 41
 ---
-
-{{< edit_this_page >}}
 
 ## Was & Warum?
 Die Arbeit mit YAML umfasst das Parsen und Manipulieren von YAML-Dateien (YAML Ain't Markup Language), einem Daten-Serialisierungsformat, das für Konfigurationsdateien verwendet wird, in der Fish Shell. Programmierer tun dies, um Anwendungen oder Dienste effizient innerhalb des Kontexts von Shell-Umgebungen zu automatisieren und zu konfigurieren, wodurch Aufgaben wie die Verwaltung von Konfigurationen und das Bereitstellen von Ressourcen erleichtert werden.

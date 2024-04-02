@@ -9,9 +9,8 @@ summary: "Rozpocz\u0119cie nowego projektu to stawianie pierwszych krok\xF3w w t
   \ twojej aplikacji czy systemu. Programi\u015Bci robi\u0105 to, by przekszta\u0142\
   ci\u0107 pomys\u0142y w\u2026"
 title: Rozpoczynanie nowego projektu
+weight: 1
 ---
-
-{{< edit_this_page >}}
 
 ## Co i dlaczego?
 Rozpoczęcie nowego projektu to stawianie pierwszych kroków w tworzeniu twojej aplikacji czy systemu. Programiści robią to, by przekształcić pomysły w działające oprogramowanie i rozpocząć organizację swojej pracy.

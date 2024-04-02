@@ -9,9 +9,8 @@ summary: "\xC5 lese kommandolinjeargumenter betyr \xE5 fange opp data gitt direk
   \ n\xE5r du kj\xF8rer programmet ditt. Programmere gj\xF8r dette for \xE5 tillate\
   \ dynamiske\u2026"
 title: Lese kommandolinjeargumenter
+weight: 23
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why? (Hva & Hvorfor?)
 Å lese kommandolinjeargumenter betyr å fange opp data gitt direkte når du kjører programmet ditt. Programmere gjør dette for å tillate dynamiske inputverdier og skreddersy programoppførsel uten å måtte endre koden.

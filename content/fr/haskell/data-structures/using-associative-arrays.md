@@ -10,9 +10,8 @@ model: gpt-4-0125-preview
 summary: "Les tableaux associatifs, ou dictionnaires, en Haskell concernent principalement\
   \ la mise en correspondance de cl\xE9s et de valeurs pour une recherche rapide\u2026"
 title: Utilisation des tableaux associatifs
+weight: 15
 ---
-
-{{< edit_this_page >}}
 
 ## Quoi & Pourquoi ?
 

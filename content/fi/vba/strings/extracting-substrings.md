@@ -10,9 +10,8 @@ model: gpt-4-0125-preview
 summary: "Merkkijonojen alijonojen erottaminen Visual Basic for Applicationsissa (VBA)\
   \ sis\xE4lt\xE4\xE4 tiettyjen osien erist\xE4misen merkkijonosta annettujen kriteerien\u2026"
 title: Alimerkkijonojen erottaminen
+weight: 6
 ---
-
-{{< edit_this_page >}}
 
 ## Mitä & Miksi?
 

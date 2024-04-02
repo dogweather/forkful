@@ -11,9 +11,8 @@ summary: "YAML, rekurencyjny akronim od \"YAML Ain't Markup Language\" (YAML nie
   \ j\u0119zykiem znacznik\xF3w), to format serializacji danych czytelny dla cz\u0142\
   owieka,\u2026"
 title: Praca z YAML
+weight: 41
 ---
-
-{{< edit_this_page >}}
 
 ## Co i dlaczego?
 

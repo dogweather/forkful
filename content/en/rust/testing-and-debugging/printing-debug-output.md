@@ -8,9 +8,8 @@ model: gpt-4-1106-preview
 summary: "Printing debug output lets you peek at your program's state without a full-blown\
   \ debugger. It's quick, dirty, and perfect for tracing pesky bugs when you\u2026"
 title: Printing debug output
+weight: 33
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 Printing debug output lets you peek at your program's state without a full-blown debugger. It's quick, dirty, and perfect for tracing pesky bugs when you don't need the firepower of a dedicated debugging tool.

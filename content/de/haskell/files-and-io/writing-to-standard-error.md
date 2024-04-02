@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Das Schreiben auf Standard Error (stderr) in Haskell erm\xF6glicht es Programmen,\
   \ ihre Ausgabe zwischen normalen Ergebnissen und Fehlermeldungen zu\u2026"
 title: Schreiben auf Standardfehler
+weight: 25
 ---
-
-{{< edit_this_page >}}
 
 ## Was & Warum?
 Das Schreiben auf Standard Error (stderr) in Haskell ermöglicht es Programmen, ihre Ausgabe zwischen normalen Ergebnissen und Fehlermeldungen zu differenzieren. Dies ist entscheidend für die Signalisierung von Problemen und die Fehlersuche, ohne den Standardausgang (stdout) zu überladen, der oft die primären Daten oder das Ergebnis des Programms trägt.

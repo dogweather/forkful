@@ -9,9 +9,8 @@ summary: "Enviar una petici\xF3n HTTP con autenticaci\xF3n b\xE1sica es el proce
   \ de realizar una solicitud a un servicio web requiriendo usuario y contrase\xF1\
   a codificados\u2026"
 title: "Enviando una solicitud http con autenticaci\xF3n b\xE1sica"
+weight: 45
 ---
-
-{{< edit_this_page >}}
 
 ## Qué y Por Qué?
 Enviar una petición HTTP con autenticación básica es el proceso de realizar una solicitud a un servicio web requiriendo usuario y contraseña codificados en base64. Los programadores lo hacen para interactuar con APIs o servicios web que requieren seguridad mínima para acceder a recursos protegidos.

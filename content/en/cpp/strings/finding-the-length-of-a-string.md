@@ -9,9 +9,8 @@ summary: "Finding the length of a string means determining how many characters i
   \ contains. Programmers do this to validate input, set up loops, or prepare data\
   \ for\u2026"
 title: Finding the length of a string
+weight: 7
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 

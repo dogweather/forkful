@@ -9,9 +9,8 @@ summary: "Wyci\u0105ganie pod\u0142a\u0144cuch\xF3w, czyli ekstrakcja konkretnyc
   \ cz\u0119\u015Bci z tekstu, to chleb powszedni w programowaniu. Robimy to, by manipulowa\u0107\
   \ danymi, walidowa\u0107\u2026"
 title: "Wycinanie pod\u0142a\u0144cuch\xF3w"
+weight: 6
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 Wyciąganie podłańcuchów, czyli ekstrakcja konkretnych części z tekstu, to chleb powszedni w programowaniu. Robimy to, by manipulować danymi, walidować formularze, czy choćby wyświetlać skrócone informacje użytkownikom.

@@ -7,9 +7,8 @@ model: gpt-4-0125-preview
 summary: "Stellen Sie sich vor, Sie finden heraus, dass Sie mehreren Konfigurationsdateien\
   \ auf Ihrem Server eine Batch-Aktualisierung durchf\xFChren m\xFCssen. Sie\u2026"
 title: Bearbeiten von Dateien im Place mit CLI-Einzeilern
+weight: 32
 ---
-
-{{< edit_this_page >}}
 
 ## Was & Warum?
 

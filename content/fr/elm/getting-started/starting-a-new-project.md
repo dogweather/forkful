@@ -8,9 +8,8 @@ model: gpt-4-1106-preview
 summary: "Lancer un nouveau projet en Elm, c'est cr\xE9er un point de d\xE9part propre\
   \ pour coder une appli web fonctionnelle et r\xE9active. On fait \xE7a pour structurer\u2026"
 title: Lancement d'un nouveau projet
+weight: 1
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why? (Quoi & Pourquoi ?)
 Lancer un nouveau projet en Elm, c'est créer un point de départ propre pour coder une appli web fonctionnelle et réactive. On fait ça pour structurer notre code dès le début et éviter la pagaille plus tard.

@@ -10,9 +10,8 @@ model: gpt-4-0125-preview
 summary: "Das Parsen von HTML bezieht sich auf den Prozess des Aufbrechens und Interpretierens\
   \ der Struktur von HTML-Inhalten, typischerweise um spezifische Daten\u2026"
 title: HTML parsen
+weight: 43
 ---
-
-{{< edit_this_page >}}
 
 ## Was & Warum?
 Das Parsen von HTML bezieht sich auf den Prozess des Aufbrechens und Interpretierens der Struktur von HTML-Inhalten, typischerweise um spezifische Daten zu extrahieren oder diesen Inhalt programmatisch zu manipulieren. Programmierer beschäftigen sich mit HTML-Parsing für Web-Scraping, Data-Mining, automatisierte Tests und Inhaltsmigrationen, was Anwendungen ermöglicht, effizient mit Webdokumenten zu interagieren und sie zu verarbeiten.

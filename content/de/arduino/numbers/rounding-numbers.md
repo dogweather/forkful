@@ -7,9 +7,8 @@ model: gpt-4-0125-preview
 summary: "Das Runden von Zahlen ist das Trimmen einer Dezimalzahl auf den n\xE4chstgelegenen\
   \ ganzen Wert oder auf eine festgelegte Anzahl von Dezimalstellen.\u2026"
 title: Zahlen runden
+weight: 13
 ---
-
-{{< edit_this_page >}}
 
 ## Was & Warum?
 Das Runden von Zahlen ist das Trimmen einer Dezimalzahl auf den nächstgelegenen ganzen Wert oder auf eine festgelegte Anzahl von Dezimalstellen. Programmierer runden Zahlen, um sie leichter lesbar und handhabbar zu machen, besonders wenn Präzision über einen bestimmten Punkt hinaus unnötig ist oder zu Fehlern führen könnte.

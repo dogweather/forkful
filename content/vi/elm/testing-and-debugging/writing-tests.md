@@ -13,9 +13,8 @@ summary: "Vi\u1EBFt ki\u1EC3m th\u1EED ngh\u0129a l\xE0 t\u1EA1o ra m\xE3 ngu\u1
   \ mong \u0111\u1EE3i hay kh\xF4ng. L\u1EADp tr\xECnh vi\xEAn ki\u1EC3m th\u1EED\
   \ \u0111\u1EC3 b\u1EAFt l\u1ED7i s\u1EDBm, \u0111\u1EA3m b\u1EA3o\u2026"
 title: "Vi\u1EBFt ki\u1EC3m th\u1EED"
+weight: 36
 ---
-
-{{< edit_this_page >}}
 
 ## Gì và Tại sao?
 Viết kiểm thử nghĩa là tạo ra mã nguồn kiểm tra xem mã chính của bạn hoạt động như mong đợi hay không. Lập trình viên kiểm thử để bắt lỗi sớm, đảm bảo chức năng, và làm cho những thay đổi trong tương lai ít rủi ro hơn.

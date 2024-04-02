@@ -9,9 +9,8 @@ summary: "TOML, abrevia\xE7\xE3o de Tom's Obvious, Minimal Language (Linguagem M
   nima e \xD3bvia do Tom), \xE9 uma linguagem de serializa\xE7\xE3o de dados. Programadores\
   \ Elm a usam\u2026"
 title: Trabalhando com TOML
+weight: 39
 ---
-
-{{< edit_this_page >}}
 
 ## O Que & Por Quê?
 TOML, abreviação de Tom's Obvious, Minimal Language (Linguagem Mínima e Óbvia do Tom), é uma linguagem de serialização de dados. Programadores Elm a usam para gerenciar dados de configuração porque ela é legível por humanos e mapeia de maneira ordenada para pares de chave-valor necessários em aplicações.

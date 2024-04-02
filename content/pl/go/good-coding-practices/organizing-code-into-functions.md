@@ -11,9 +11,8 @@ summary: "Organizowanie kodu w funkcje w Go polega na dzieleniu kodu na ponownie
   ywalne, modularne bloki, kt\xF3re wykonuj\u0105 okre\u015Blone zadania. Podej\u015B\
   cie to poprawia\u2026"
 title: Organizowanie kodu w funkcje
+weight: 18
 ---
-
-{{< edit_this_page >}}
 
 ## Co i dlaczego?
 

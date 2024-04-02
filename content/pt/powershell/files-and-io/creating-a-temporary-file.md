@@ -9,9 +9,8 @@ summary: "Criar um arquivo tempor\xE1rio \xE9 o ato de gerar um arquivo que serv
   \ como 'rascunho' durante uma sess\xE3o de programa. Programadores utilizam isso\
   \ para guardar\u2026"
 title: "Criando um arquivo tempor\xE1rio"
+weight: 21
 ---
-
-{{< edit_this_page >}}
 
 ## O Que é & Porquê?
 Criar um arquivo temporário é o ato de gerar um arquivo que serve como 'rascunho' durante uma sessão de programa. Programadores utilizam isso para guardar dados que não precisam ser permanentes, evitando sobrecarregar o sistema de armazenamento principal com arquivos de curta duração.

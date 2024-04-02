@@ -9,9 +9,8 @@ summary: "Loggning \xE4r processen att registrera h\xE4ndelser, fel och annan vi
   \ information under ett programs utf\xF6rande till ett externt medium, ofta filer\
   \ eller\u2026"
 title: Loggning
+weight: 17
 ---
-
-{{< edit_this_page >}}
 
 ## Vad & Varför?
 

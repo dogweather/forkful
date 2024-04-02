@@ -7,9 +7,8 @@ model: gpt-4-1106-preview
 summary: "Removing quotes from a string means stripping out any instances of quote\
   \ characters, either single (' ') or double (\" \"), from the text data you're\u2026"
 title: Removing quotes from a string
+weight: 9
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 

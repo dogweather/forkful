@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "HTML parsen betekent het converteren van HTML-tekst naar een datastructuur\
   \ waarmee je programma kan werken. Programmeurs doen dit om de inhoud van\u2026"
 title: HTML Parsen
+weight: 43
 ---
-
-{{< edit_this_page >}}
 
 ## Wat & Waarom?
 HTML parsen betekent het converteren van HTML-tekst naar een datastructuur waarmee je programma kan werken. Programmeurs doen dit om de inhoud van webpagina's programmatisch te manipuleren, extraheren en ermee te interacteren.

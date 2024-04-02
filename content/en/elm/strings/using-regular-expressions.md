@@ -7,9 +7,8 @@ model: gpt-4-0125-preview
 summary: "Regular expressions (regex) in programming are patterns used for matching\
   \ character combinations in strings. In Elm, just like in other languages,\u2026"
 title: Using regular expressions
+weight: 11
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 Regular expressions (regex) in programming are patterns used for matching character combinations in strings. In Elm, just like in other languages, programmers use regex for tasks like validating input, searching, and replacing text within strings due to their flexibility and efficiency.

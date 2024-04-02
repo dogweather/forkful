@@ -9,9 +9,8 @@ summary: "Les nombres complexes ont une partie r\xE9elle et une partie imaginair
   \ (comme 3 + 4i). Les programmeurs les utilisent en Swift pour des t\xE2ches telles\
   \ que le\u2026"
 title: Manipulation des nombres complexes
+weight: 14
 ---
-
-{{< edit_this_page >}}
 
 ## Quoi & Pourquoi ?
 Les nombres complexes ont une partie réelle et une partie imaginaire (comme 3 + 4i). Les programmeurs les utilisent en Swift pour des tâches telles que le traitement du signal, la résolution de certains problèmes mathématiques et la simulation physique.

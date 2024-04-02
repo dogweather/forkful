@@ -11,9 +11,8 @@ summary: "Wysy\u0142anie \u017C\u0105dania HTTP polega na tworzeniu i wysy\u0142
   \ \u017C\u0105dania do serwera WWW w celu pobrania lub przes\u0142ania danych. Programi\u015B\
   ci robi\u0105 to w j\u0119zyku C, aby\u2026"
 title: "Wysy\u0142anie \u017C\u0105dania HTTP"
+weight: 44
 ---
-
-{{< edit_this_page >}}
 
 ## Co i dlaczego?
 

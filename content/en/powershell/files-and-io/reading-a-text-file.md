@@ -9,9 +9,8 @@ summary: "Reading a text file means pulling its content into a form your program
   \ work with. Programmers do it for data processing, configuration, logging \u2013\
   \u2026"
 title: Reading a text file
+weight: 22
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 Reading a text file means pulling its content into a form your program can work with. Programmers do it for data processing, configuration, logging – anytime a human-readable file is involved.

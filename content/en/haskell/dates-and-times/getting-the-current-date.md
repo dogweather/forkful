@@ -7,9 +7,8 @@ model: gpt-4-0125-preview
 summary: "Retrieving the current date in Haskell involves obtaining the system's current\
   \ time and transforming it into a readable date format. Programmers do this\u2026"
 title: Getting the current date
+weight: 29
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 Retrieving the current date in Haskell involves obtaining the system's current time and transforming it into a readable date format. Programmers do this to perform operations based on the date, such as logging, scheduling tasks, or timestamping events in applications.

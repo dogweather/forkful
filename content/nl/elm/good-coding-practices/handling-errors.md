@@ -11,9 +11,8 @@ summary: "Foutafhandeling betekent het schrijven van code die kan anticiperen op
   \ omgaan met dingen die misgaan. Programmeurs doen dit om crashes te voorkomen,\
   \ de\u2026"
 title: Fouten afhandelen
+weight: 16
 ---
-
-{{< edit_this_page >}}
 
 ## Wat & Waarom?
 Foutafhandeling betekent het schrijven van code die kan anticiperen op en omgaan met dingen die misgaan. Programmeurs doen dit om crashes te voorkomen, de integriteit van gegevens te beschermen en gebruikers te voorzien van gracieuze terugvalopties.

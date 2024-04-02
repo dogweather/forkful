@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Das Senden einer HTTP-Anfrage mit Basisauthentifizierung in C erfordert\
   \ das Erstellen einer HTTP-Anfrage, die einen Autorisierungsheader mit in Base64\u2026"
 title: Eine HTTP-Anfrage mit Basisauthentifizierung senden
+weight: 45
 ---
-
-{{< edit_this_page >}}
 
 ## Was & Warum?
 Das Senden einer HTTP-Anfrage mit Basisauthentifizierung in C erfordert das Erstellen einer HTTP-Anfrage, die einen Autorisierungsheader mit in Base64 kodierten Benutzerdaten enthält. Dies ist eine gängige Methode, um HTTP-Anfragen eine einfache Authentifizierungsschicht hinzuzufügen, die es ermöglicht, programmatisch auf beschränkte Ressourcen zuzugreifen.

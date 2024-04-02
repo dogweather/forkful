@@ -11,9 +11,8 @@ summary: "Att extrahera delstr\xE4ngar inneb\xE4r att h\xE4mta specifika delar a
   \ en str\xE4ng baserat p\xE5 deras positioner. Programmerare utf\xF6r ofta denna\
   \ operation f\xF6r att\u2026"
 title: "Extrahera delstr\xE4ngar"
+weight: 6
 ---
-
-{{< edit_this_page >}}
 
 ## Vad & Varför?
 

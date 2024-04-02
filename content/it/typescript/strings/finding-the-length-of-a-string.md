@@ -7,9 +7,8 @@ model: gpt-4-1106-preview
 summary: "Calcolare la lunghezza di una stringa significa contare quanti caratteri\
   \ contiene. I programmatori lo fanno per validazioni, limitazioni di input e\u2026"
 title: Trovare la lunghezza di una stringa
+weight: 7
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why? (Cosa e Perché?)
 Calcolare la lunghezza di una stringa significa contare quanti caratteri contiene. I programmatori lo fanno per validazioni, limitazioni di input e manipolazioni di testo.

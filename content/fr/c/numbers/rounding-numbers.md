@@ -11,9 +11,8 @@ summary: "Arrondir les nombres est le processus d'ajustement des chiffres d'un n
   \ pour r\xE9duire sa pr\xE9cision selon certaines r\xE8gles, soit vers le nombre\
   \ entier\u2026"
 title: Arrondissement des nombres
+weight: 13
 ---
-
-{{< edit_this_page >}}
 
 ## Quoi & Pourquoi ?
 

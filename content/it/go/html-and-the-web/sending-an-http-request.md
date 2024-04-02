@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Inviare una richiesta HTTP comporta l'inizializzazione di una chiamata dalla\
   \ tua applicazione Go a un server web, un'API o qualsiasi altro servizio basato\u2026"
 title: Inviare una richiesta HTTP
+weight: 44
 ---
-
-{{< edit_this_page >}}
 
 ## Cosa & Perché?
 

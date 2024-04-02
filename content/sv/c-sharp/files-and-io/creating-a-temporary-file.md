@@ -9,9 +9,8 @@ summary: "Skapa en tempor\xE4r fil \xE4r som att hugga ut en tillf\xE4llig hylla
   \ det digitala utrymmet att st\xE4lla saker p\xE5 medan du h\xE5ller p\xE5 med dem.\
   \ Programmerare g\xF6r\u2026"
 title: "Skapa en tempor\xE4r fil"
+weight: 21
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 Skapa en temporär fil är som att hugga ut en tillfällig hylla i det digitala utrymmet att ställa saker på medan du håller på med dem. Programmerare gör detta för att handskas med data som behövs tillfälligt utan att kladda ner den permanenta lagringen.

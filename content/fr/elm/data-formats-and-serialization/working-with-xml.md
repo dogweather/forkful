@@ -9,9 +9,8 @@ summary: "Travailler avec XML signifie analyser, transformer et g\xE9n\xE9rer de
   \ documents XML en Elm. Cela est r\xE9alis\xE9 pour interagir avec de nombreux services\
   \ web et\u2026"
 title: Travailler avec XML
+weight: 40
 ---
-
-{{< edit_this_page >}}
 
 ## Quoi & Pourquoi ?
 Travailler avec XML signifie analyser, transformer et générer des documents XML en Elm. Cela est réalisé pour interagir avec de nombreux services web et systèmes hérités qui utilisent XML comme format de données.

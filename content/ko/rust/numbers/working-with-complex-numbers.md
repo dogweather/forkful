@@ -17,9 +17,8 @@ summary: "\uBCF5\uC18C\uC218\uB294 \uC2E4\uC218\uBD80\uC640 \uD5C8\uC218\uBD80\u
   \uB294 \uD574\uACB0\uD560 \uC218 \uC5C6\uB294 \uBC29\uC815\uC2DD\uC744 \uD480\uAE30\
   \ \uC704\uD574 \uBCF5\uC18C\uC218\uB97C \uC0AC\uC6A9\uD569\uB2C8\uB2E4."
 title: "\uBCF5\uC18C\uC218 \uB2E4\uB8E8\uAE30"
+weight: 14
 ---
-
-{{< edit_this_page >}}
 
 ## 무엇이며 왜인가?
 복소수는 실수부와 허수부를 가지고 있으며, 엔지니어링, 물리학, 컴퓨터 그래픽스와 같은 다양한 분야에서 중요한 역할을 합니다. 프로그래머들은 일반 실수로는 해결할 수 없는 방정식을 풀기 위해 복소수를 사용합니다.

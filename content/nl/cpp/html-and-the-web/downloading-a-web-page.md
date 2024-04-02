@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Een webpagina downloaden betekent simpelweg de inhoud ervan ophalen, gewoonlijk\
   \ in HTML-formaat, om lokaal te bekijken of te verwerken. Programmeurs\u2026"
 title: Een webpagina downloaden
+weight: 42
 ---
-
-{{< edit_this_page >}}
 
 ## Wat & Waarom?
 Een webpagina downloaden betekent simpelweg de inhoud ervan ophalen, gewoonlijk in HTML-formaat, om lokaal te bekijken of te verwerken. Programmeurs downloaden webpagina's om gegevens te scrapen, veranderingen te monitoren, of te integreren met webservices.

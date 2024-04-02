@@ -9,9 +9,8 @@ summary: "Imprimir sa\xEDdas de depura\xE7\xE3o \xE9 como espiar dentro do seu c
   digo enquanto ele executa, para ver o valor das vari\xE1veis e o fluxo do programa.\
   \ Os\u2026"
 title: "Exibindo sa\xEDdas de depura\xE7\xE3o"
+weight: 33
 ---
-
-{{< edit_this_page >}}
 
 ## O Que é & Porquê?
 Imprimir saídas de depuração é como espiar dentro do seu código enquanto ele executa, para ver o valor das variáveis e o fluxo do programa. Os programadores fazem isso para entender e consertar comportamentos inesperados ou bugs.

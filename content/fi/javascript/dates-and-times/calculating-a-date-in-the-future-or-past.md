@@ -9,9 +9,8 @@ summary: "Laskemme tulevaisuuden tai menneisyyden p\xE4iv\xE4m\xE4\xE4ri\xE4, ko
   \ sovelluksemme tarvitsevat ajankohtaisia tietoja ajanhallintaan, muistutuksiin\
   \ tai\u2026"
 title: "Tulevan tai menneen p\xE4iv\xE4m\xE4\xE4r\xE4n laskeminen"
+weight: 26
 ---
-
-{{< edit_this_page >}}
 
 ## Mitä & Miksi?
 Laskemme tulevaisuuden tai menneisyyden päivämääriä, koska sovelluksemme tarvitsevat ajankohtaisia tietoja ajanhallintaan, muistutuksiin tai aikakatkaisuihin. Ohjelmoijat tekevät sen, jotta käyttäjät voivat suunnitella ja seurata tapahtumia suhteessa nykyhetkeen.

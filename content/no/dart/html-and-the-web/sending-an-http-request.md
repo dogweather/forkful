@@ -10,9 +10,8 @@ model: gpt-4-0125-preview
 summary: "\xC5 sende en HTTP-foresp\xF8rsel i Dart er prosessen med \xE5 starte kommunikasjon\
   \ med en webserver eller API fra en Dart-applikasjon. Programmerere gj\xF8r dette\u2026"
 title: "Sende en HTTP-foresp\xF8rsel"
+weight: 44
 ---
-
-{{< edit_this_page >}}
 
 ## Hva & Hvorfor?
 

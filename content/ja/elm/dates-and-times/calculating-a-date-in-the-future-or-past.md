@@ -7,9 +7,8 @@ model: gpt-4-1106-preview
 summary: ''
 title: "\u5C06\u6765\u307E\u305F\u306F\u904E\u53BB\u306E\u65E5\u4ED8\u3092\u8A08\u7B97\
   \u3059\u308B"
+weight: 26
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 ## なにを、どうして？

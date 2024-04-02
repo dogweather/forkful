@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Das Schreiben in eine Textdatei in C++ beinhaltet das Erstellen oder \xD6\
   ffnen einer Datei und dann das Schreiben von Daten in diese, was eine grundlegende\u2026"
 title: Eine Textdatei schreiben
+weight: 24
 ---
-
-{{< edit_this_page >}}
 
 ## Was & Warum?
 Das Schreiben in eine Textdatei in C++ beinhaltet das Erstellen oder Öffnen einer Datei und dann das Schreiben von Daten in diese, was eine grundlegende Aufgabe für Anwendungen ist, die Daten persistent speichern müssen, wie beispielsweise Protokolle, von Benutzern generierte Inhalte oder Konfigurationseinstellungen. Programmierer tun dies, um während der Ausführung eines Programms generierte Daten zu speichern oder um Daten für die Nutzung durch andere Programme oder Benutzer zu exportieren.

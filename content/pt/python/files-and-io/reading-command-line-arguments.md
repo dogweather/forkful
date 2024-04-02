@@ -7,9 +7,8 @@ model: gpt-4-1106-preview
 summary: "Ler argumentos de linha de comando significa pegar dados que o usu\xE1rio\
   \ passa diretamente ao seu script Python quando o executa. Fazemos isso para tornar\u2026"
 title: Lendo argumentos da linha de comando
+weight: 23
 ---
-
-{{< edit_this_page >}}
 
 ## O Que & Porquê?
 Ler argumentos de linha de comando significa pegar dados que o usuário passa diretamente ao seu script Python quando o executa. Fazemos isso para tornar nossos programas mais dinâmicos e interativos, permitindo diferentes comportamentos com base no que o usuário especifica.

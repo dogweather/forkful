@@ -18,9 +18,8 @@ summary: "TOML (Tom's Obvious, Minimal Language) \u0E40\u0E1B\u0E47\u0E19\u0E23\
   \u0E14\u0E40\u0E08\u0E19\u2026"
 title: "\u0E01\u0E32\u0E23\u0E17\u0E33\u0E07\u0E32\u0E19\u0E23\u0E48\u0E27\u0E21\u0E01\
   \u0E31\u0E1A TOML"
+weight: 39
 ---
-
-{{< edit_this_page >}}
 
 ## อะไร & ทำไม?
 

@@ -9,9 +9,8 @@ summary: "Changing a string to lower case means making every letter in the strin
   \ a small letter. Programmers do this to standardize text, to make comparisons,\
   \ and\u2026"
 title: Converting a string to lower case
+weight: 4
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 

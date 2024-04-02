@@ -1,14 +1,15 @@
 ---
 date: 2024-01-26 03:50:47.916716-07:00
-description: "Debugger on ty\xF6kalu, jonka avulla voit tarkastella ja ohjata ohjelman\
-  \ suoritusta, mik\xE4 tekee virheiden paikallistamisesta helppoa. Ohjelmoijat k\xE4\
-  ytt\xE4v\xE4t\u2026"
+description: "Lua ei sis\xE4ll\xE4 sis\xE4\xE4nrakennettua debuggeria, mutta voit\
+  \ k\xE4ytt\xE4\xE4 ulkoisia, kuten ZeroBrane Studio. T\xE4ss\xE4 maistiainen siit\xE4\
+  , miten sen kanssa\u2026"
 lastmod: '2024-03-13T22:44:56.701626-06:00'
 model: gpt-4-0125-preview
-summary: "Debugger on ty\xF6kalu, jonka avulla voit tarkastella ja ohjata ohjelman\
-  \ suoritusta, mik\xE4 tekee virheiden paikallistamisesta helppoa. Ohjelmoijat k\xE4\
-  ytt\xE4v\xE4t\u2026"
+summary: "Lua ei sis\xE4ll\xE4 sis\xE4\xE4nrakennettua debuggeria, mutta voit k\xE4\
+  ytt\xE4\xE4 ulkoisia, kuten ZeroBrane Studio. T\xE4ss\xE4 maistiainen siit\xE4,\
+  \ miten sen kanssa\u2026"
 title: "Debuggerin k\xE4ytt\xF6"
+weight: 35
 ---
 
 ## Kuinka:

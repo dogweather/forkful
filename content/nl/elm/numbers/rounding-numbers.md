@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Afronden van getallen is het aanpassen van een decimaal naar de dichtstbijzijnde\
   \ hele waarde of naar een gespecificeerd aantal fractionele cijfers.\u2026"
 title: Afronden van getallen
+weight: 13
 ---
-
-{{< edit_this_page >}}
 
 ## Wat & Waarom?
 

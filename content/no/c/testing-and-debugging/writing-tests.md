@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "\xC5 skrive tester i C inneb\xE6rer \xE5 lage mindre, hjelpeprogrammer eller\
   \ funksjoner som automatisk verifiserer funksjonaliteten til koden din. Programmerere\u2026"
 title: Skrive tester
+weight: 36
 ---
-
-{{< edit_this_page >}}
 
 ## Hva & Hvorfor?
 Å skrive tester i C innebærer å lage mindre, hjelpeprogrammer eller funksjoner som automatisk verifiserer funksjonaliteten til koden din. Programmerere gjør dette for å sikre at programvaren deres fungerer som forventet, for å oppdage feil tidlig, og for å lette fremtidige kodeendringer uten uønskede bivirkninger.

@@ -11,9 +11,8 @@ summary: "I programvareutvikling er det ofte n\xF8dvendig \xE5 sjekke om en mapp
   \ eksisterer for \xE5 unng\xE5 feil n\xE5r man fors\xF8ker \xE5 f\xE5 tilgang til,\
   \ lese, eller skrive filer.\u2026"
 title: Sjekker om en mappe eksisterer
+weight: 20
 ---
-
-{{< edit_this_page >}}
 
 ## Hva og hvorfor?
 I programvareutvikling er det ofte nødvendig å sjekke om en mappe eksisterer for å unngå feil når man forsøker å få tilgang til, lese, eller skrive filer. Rust, som er et systemprogrammeringsspråk, gir robuste metoder for å utføre denne oppgaven, og sikrer at programmet ditt kan håndtere filer og mapper på en trygg og effektiv måte.

@@ -11,9 +11,8 @@ summary: "Ty\xF6skentely JSON-muotoisten merkkijonojen (JavaScript Object Notati
   \ kanssa sis\xE4lt\xE4\xE4 JSON-muotoisten merkkijonojen j\xE4sent\xE4misen Python-objekteiksi\
   \ ja\u2026"
 title: "Ty\xF6skentely JSON:n kanssa"
+weight: 38
 ---
-
-{{< edit_this_page >}}
 
 ## Mikä ja miksi?
 

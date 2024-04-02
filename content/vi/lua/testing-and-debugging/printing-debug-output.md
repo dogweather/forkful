@@ -13,9 +13,8 @@ summary: "In th\xF4ng \u0111i\u1EC7p g\u1EE1 l\u1ED7i l\xE0 vi\u1EC7c n\xE9m th\
   y ra v\u1EDBi \u0111o\u1EA1n m\xE3 c\u1EE7a b\u1EA1n. L\u1EADp tr\xECnh vi\xEAn\
   \ l\xE0m \u0111i\u1EC1u n\xE0y \u0111\u1EC3 t\xECm ki\u1EBFm l\u1ED7i\u2026"
 title: "In ra th\xF4ng tin g\u1EE1 l\u1ED7i"
+weight: 33
 ---
-
-{{< edit_this_page >}}
 
 ## Cái gì và Tại sao?
 In thông điệp gỡ lỗi là việc ném thông tin lên màn hình để xem chuyện gì đang xảy ra với đoạn mã của bạn. Lập trình viên làm điều này để tìm kiếm lỗi trong máy - bugs.

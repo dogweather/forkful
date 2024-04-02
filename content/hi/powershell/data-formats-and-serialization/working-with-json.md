@@ -20,9 +20,8 @@ summary: "PowerShell \u0915\u093E JSON (JavaScript Object Notation) \u0915\u0947
   \u093F\u0928\u093F\u092E\u092F \u0915\u0947 \u0932\u093F\u090F\u2026"
 title: "JSON \u0915\u0947 \u0938\u093E\u0925 \u0915\u093E\u092E \u0915\u0930\u0928\
   \u093E"
+weight: 38
 ---
-
-{{< edit_this_page >}}
 
 ## क्या और क्यों?
 

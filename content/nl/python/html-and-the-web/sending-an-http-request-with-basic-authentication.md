@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Het verzenden van een HTTP-verzoek met basisauthenticatie houdt in dat je\
   \ een gebruikersnaam en wachtwoord in een verzoek aan een server gooit om te\u2026"
 title: Een HTTP-verzoek verzenden met basisauthenticatie
+weight: 45
 ---
-
-{{< edit_this_page >}}
 
 ## Wat & Waarom?
 

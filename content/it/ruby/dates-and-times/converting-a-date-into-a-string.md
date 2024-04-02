@@ -7,9 +7,8 @@ model: gpt-4-1106-preview
 summary: "Convertire una data in una stringa significa trasformare un oggetto `Date`\
   \ o `Time` in una sequenza di caratteri che rappresenta quella data in modo\u2026"
 title: Conversione di una data in una stringa
+weight: 28
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 Convertire una data in una stringa significa trasformare un oggetto `Date` o `Time` in una sequenza di caratteri che rappresenta quella data in modo leggibile. Lo facciamo per visualizzare date in formati diversi, per salvare la data in un database o file, o per operazioni di elaborazione dei dati.

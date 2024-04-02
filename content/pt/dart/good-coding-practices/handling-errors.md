@@ -11,9 +11,8 @@ summary: "O tratamento de erros em Dart consiste em antecipar e gerir exce\xE7\x
   es que surgem durante a execu\xE7\xE3o do programa para aumentar a confiabilidade\
   \ e\u2026"
 title: Gerenciando erros
+weight: 16
 ---
-
-{{< edit_this_page >}}
 
 ## O Que & Por Quê?
 O tratamento de erros em Dart consiste em antecipar e gerir exceções que surgem durante a execução do programa para aumentar a confiabilidade e usabilidade. Os programadores implementam o tratamento de erros para evitar falhas e fornecer feedback significativo aos usuários, garantindo uma experiência de aplicação mais suave e segura.

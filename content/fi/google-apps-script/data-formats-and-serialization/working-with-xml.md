@@ -11,9 +11,8 @@ summary: "XML:n k\xE4sittely Google Apps Scriptill\xE4 mahdollistaa ohjelmoijien
   sent\xE4\xE4, manipuloida ja luoda XML-dataa, mik\xE4 on olennaista verkkopalveluille\
   \ ja\u2026"
 title: "Ty\xF6skentely XML:n kanssa"
+weight: 40
 ---
-
-{{< edit_this_page >}}
 
 ## Mikä ja miksi?
 

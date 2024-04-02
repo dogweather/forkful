@@ -7,9 +7,8 @@ model: gpt-4-0125-preview
 summary: "Un REPL, o Bucle Leer-Evaluar-Imprimir, te permite escribir c\xF3digo C#\
   \ y ejecutarlo de manera interactiva. Los programadores lo usan para experimentos\u2026"
 title: Usando una shell interactiva (REPL)
+weight: 34
 ---
-
-{{< edit_this_page >}}
 
 ## Qué y Por Qué?
 Un REPL, o Bucle Leer-Evaluar-Imprimir, te permite escribir código C# y ejecutarlo de manera interactiva. Los programadores lo usan para experimentos rápidos, depuración o aprendizaje de C#, sin la carga de configurar proyectos completos.

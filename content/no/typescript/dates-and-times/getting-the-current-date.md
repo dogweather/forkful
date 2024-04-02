@@ -11,9 +11,8 @@ summary: "\xC5 hente den n\xE5v\xE6rende datoen i TypeScript, et spr\xE5k bygget
   \ JavaScript, lar deg f\xE5 tilgang til og manipulere informasjon om den n\xE5v\xE6\
   rende datoen og\u2026"
 title: "F\xE5 dagens dato"
+weight: 29
 ---
-
-{{< edit_this_page >}}
 
 ## Hva & Hvorfor?
 Å hente den nåværende datoen i TypeScript, et språk bygget på JavaScript, lar deg få tilgang til og manipulere informasjon om den nåværende datoen og tiden. Programmerere trenger ofte denne funksjonaliteten for å opprette tidsstempler, planlegging og andre tidsfølsomme funksjoner i applikasjonene sine.

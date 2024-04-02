@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Trovare la lunghezza di una stringa in Visual Basic for Applications (VBA)\
   \ implica determinare il numero di caratteri che contiene. I programmatori\u2026"
 title: Trovare la lunghezza di una stringa
+weight: 7
 ---
-
-{{< edit_this_page >}}
 
 ## Cosa & Perché?
 

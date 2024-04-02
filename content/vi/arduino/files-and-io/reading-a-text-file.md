@@ -13,9 +13,8 @@ summary: "Vi\u1EC7c \u0111\u1ECDc m\u1ED9t t\u1EC7p v\u0103n b\u1EA3n trong Ardu
   u tr\u1EEF tr\xEAn th\u1EBB SD ho\u1EB7c trong b\u1ED9 nh\u1EDB c\u1EE7a thi\u1EBF\
   t b\u1ECB\u2014ti\u1EC7n l\u1EE3i cho vi\u1EC7c c\xE0i \u0111\u1EB7t, d\u1EEF\u2026"
 title: "\u0110\u1ECDc m\u1ED9t t\u1EC7p v\u0103n b\u1EA3n"
+weight: 22
 ---
-
-{{< edit_this_page >}}
 
 ## Điều gì và Tại sao?
 

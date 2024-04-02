@@ -9,9 +9,8 @@ summary: "TOML ist ein Akronym f\xFCr Toms Offensichtliche, Minimale Sprache, ei
   \ Konfigurationsdateiformat, das aufgrund seiner klaren Semantik leicht zu lesen\
   \ ist.\u2026"
 title: Arbeiten mit TOML
+weight: 39
 ---
-
-{{< edit_this_page >}}
 
 ## Was & Warum?
 TOML ist ein Akronym für Toms Offensichtliche, Minimale Sprache, ein Konfigurationsdateiformat, das aufgrund seiner klaren Semantik leicht zu lesen ist. Programmierer verwenden es für Konfigurationsdateien, um den Datenaustausch zwischen Systemen zu vereinfachen, und weil es eine Balance zwischen menschlicher Lesbarkeit und maschineller Parsbarkeit findet.

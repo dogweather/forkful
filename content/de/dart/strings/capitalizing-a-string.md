@@ -11,9 +11,8 @@ summary: "Das Gro\xDFschreiben eines Strings beinhaltet das Modifizieren des ers
   \ Buchstabens eines Wortes oder eines ganzen Satzes in Gro\xDFbuchstaben, w\xE4\
   hrend der\u2026"
 title: "Einen String gro\xDFschreiben"
+weight: 2
 ---
-
-{{< edit_this_page >}}
 
 ## Was & Warum?
 

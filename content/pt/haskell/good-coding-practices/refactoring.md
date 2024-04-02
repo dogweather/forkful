@@ -9,9 +9,8 @@ summary: "Refatora\xE7\xE3o \xE9 o processo de ajustar seu c\xF3digo sem alterar
   \ comportamento externo. \xC9 tudo sobre limpar e organizar sua abordagem para tornar\
   \ o c\xF3digo\u2026"
 title: "Refatora\xE7\xE3o"
+weight: 19
 ---
-
-{{< edit_this_page >}}
 
 ## O Que & Por Que?
 Refatoração é o processo de ajustar seu código sem alterar seu comportamento externo. É tudo sobre limpar e organizar sua abordagem para tornar o código mais fácil de ler, manter e estender. Isso também pode ajudar a eliminar bugs e melhorar o desempenho.

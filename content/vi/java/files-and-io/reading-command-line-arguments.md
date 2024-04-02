@@ -13,9 +13,8 @@ summary: "\u0110\u1ECDc c\xE1c \u0111\u1ED1i s\u1ED1 d\xF2ng l\u1EC7nh trong Jav
   \ khi h\u1ECD kh\u1EDFi \u0111\u1ED9ng ch\u01B0\u01A1ng tr\xECnh c\u1EE7a b\u1EA1\
   n t\u1EEB console. L\u1EADp tr\xECnh vi\xEAn l\xE0m \u0111i\u1EC1u\u2026"
 title: "\u0110\u1ECDc c\xE1c \u0111\u1ED1i s\u1ED1 d\xF2ng l\u1EC7nh"
+weight: 23
 ---
-
-{{< edit_this_page >}}
 
 ## Điều gì và Tại sao?
 

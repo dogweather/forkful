@@ -8,9 +8,8 @@ model: gpt-4-0125-preview
 summary: '#'
 title: "\u0E01\u0E32\u0E23\u0E08\u0E31\u0E14\u0E01\u0E32\u0E23\u0E01\u0E31\u0E1A\u0E02\
   \u0E49\u0E2D\u0E1C\u0E34\u0E14\u0E1E\u0E25\u0E32\u0E14"
+weight: 16
 ---
-
-{{< edit_this_page >}}
 
 ## การจัดการข้อผิดพลาดในโปรแกรม Arduino
 

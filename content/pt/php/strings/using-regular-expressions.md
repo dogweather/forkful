@@ -11,9 +11,8 @@ summary: "Express\xF5es regulares (regex) em PHP s\xE3o padr\xF5es usados para c
   \ combina\xE7\xF5es de caracteres em strings, permitindo opera\xE7\xF5es sofisticadas\
   \ de busca e\u2026"
 title: "Usando express\xF5es regulares"
+weight: 11
 ---
-
-{{< edit_this_page >}}
 
 ## O Que & Por Quê?
 

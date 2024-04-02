@@ -8,9 +8,8 @@ model: gpt-4-1106-preview
 summary: "Cancellare caratteri seguendo un pattern \xE8 semplicemente filtrare il\
   \ testo per rimuovere caratteri indesiderati. Questo serve a pulire i dati o a\u2026"
 title: Eliminazione di caratteri che corrispondono a un pattern
+weight: 5
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 Cancellare caratteri seguendo un pattern è semplicemente filtrare il testo per rimuovere caratteri indesiderati. Questo serve a pulire i dati o a preparare stringhe per l'elaborazione o l'analisi successiva.

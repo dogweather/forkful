@@ -2,17 +2,18 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:10:19.502320-07:00
-description: "M\u1ED9t tr\xECnh g\u1EE1 l\u1ED7i l\xE0 c\xF4ng c\u1EE5 cho ph\xE9\
-  p b\u1EA1n xem x\xE9t v\xE0 thay \u0111\u1ED5i n\u1ED9i dung b\xEAn trong m\xE3\
-  \ c\u1EE7a m\xECnh khi n\xF3 \u0111ang ch\u1EA1y. L\u1EADp tr\xECnh vi\xEAn s\u1EED\
-  \ d\u1EE5ng n\xF3 \u0111\u1EC3 t\xECm v\xE0 lo\u1EA1i b\u1ECF\u2026"
+description: "\u0110\u1EC3 b\u1EAFt \u0111\u1EA7u v\u1EDBi tr\xECnh g\u1EE1 l\u1ED7\
+  i trong TypeScript, t\u1EA5t c\u1EA3 nh\u1EEFng g\xEC b\u1EA1n c\u1EA7n l\xE0 m\u1ED9\
+  t IDE \u0111\u01B0\u1EE3c h\u1ED7 tr\u1EE3 (nh\u01B0 Visual Studio Code) v\xE0 m\u1ED9\
+  t c\u1EA5u h\xECnh `launch.json`. D\u01B0\u1EDBi\u2026"
 lastmod: '2024-03-13T22:44:36.324997-06:00'
 model: gpt-4-0125-preview
-summary: "M\u1ED9t tr\xECnh g\u1EE1 l\u1ED7i l\xE0 c\xF4ng c\u1EE5 cho ph\xE9p b\u1EA1\
-  n xem x\xE9t v\xE0 thay \u0111\u1ED5i n\u1ED9i dung b\xEAn trong m\xE3 c\u1EE7a\
-  \ m\xECnh khi n\xF3 \u0111ang ch\u1EA1y. L\u1EADp tr\xECnh vi\xEAn s\u1EED d\u1EE5\
-  ng n\xF3 \u0111\u1EC3 t\xECm v\xE0 lo\u1EA1i b\u1ECF\u2026"
+summary: "\u0110\u1EC3 b\u1EAFt \u0111\u1EA7u v\u1EDBi tr\xECnh g\u1EE1 l\u1ED7i trong\
+  \ TypeScript, t\u1EA5t c\u1EA3 nh\u1EEFng g\xEC b\u1EA1n c\u1EA7n l\xE0 m\u1ED9\
+  t IDE \u0111\u01B0\u1EE3c h\u1ED7 tr\u1EE3 (nh\u01B0 Visual Studio Code) v\xE0 m\u1ED9\
+  t c\u1EA5u h\xECnh `launch.json`. D\u01B0\u1EDBi\u2026"
 title: "S\u1EED d\u1EE5ng b\u1ED9 g\u1EE1 l\u1ED7i"
+weight: 35
 ---
 
 ## Cách thực hiện:

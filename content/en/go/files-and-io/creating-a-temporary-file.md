@@ -7,9 +7,8 @@ model: gpt-4-0125-preview
 summary: "Creating a temporary file in Go allows for the generation of a non-persistent\
   \ file designed for short-term use, mainly for tasks such as storing interim\u2026"
 title: Creating a temporary file
+weight: 21
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 

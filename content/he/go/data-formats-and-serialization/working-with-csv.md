@@ -26,9 +26,8 @@ summary: "\u05E4\u05D5\u05E8\u05DE\u05D8 \u05E2\u05E8\u05DB\u05D9\u05DD \u05DE\u
   \u05D9 CSV\u2026"
 title: "\u05E2\u05D1\u05D5\u05D3\u05D4 \u05E2\u05DD \u05E7\u05D5\u05D1\u05E6\u05D9\
   \ CSV"
+weight: 37
 ---
-
-{{< edit_this_page >}}
 
 ## מה ולמה?
 

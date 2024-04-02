@@ -11,9 +11,8 @@ summary: "Crear un archivo temporal en Visual Basic para Aplicaciones (VBA) impl
   \ generar program\xE1ticamente un archivo para uso a corto plazo, t\xEDpicamente\
   \ para el\u2026"
 title: Creando un archivo temporal
+weight: 21
 ---
-
-{{< edit_this_page >}}
 
 ## ¿Qué y Por Qué?
 

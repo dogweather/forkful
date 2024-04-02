@@ -9,9 +9,8 @@ summary: "Working with XML involves parsing, extracting, and manipulating data i
   \ the Extensible Markup Language format. Programmers wrestle with XML since it's\
   \ a\u2026"
 title: Working with XML
+weight: 40
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 Working with XML involves parsing, extracting, and manipulating data in the Extensible Markup Language format. Programmers wrestle with XML since it's a widespread data interchange format for configs, APIs, and more.

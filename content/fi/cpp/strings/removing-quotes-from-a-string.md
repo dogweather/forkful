@@ -8,9 +8,8 @@ model: gpt-4-0125-preview
 summary: "Lainausmerkkien poistaminen merkkijonosta tarkoittaa \xE4rsytt\xE4vien kaksin-\
   \ tai yksinkertaisten merkkien (\u2018 tai \u201D) kuorimista tekstist\xE4mme. Ohjelmoijat\u2026"
 title: Merkkijonosta lainausmerkkien poistaminen
+weight: 9
 ---
-
-{{< edit_this_page >}}
 
 ## Mikä & Miksi?
 Lainausmerkkien poistaminen merkkijonosta tarkoittaa ärsyttävien kaksin- tai yksinkertaisten merkkien (‘ tai ”) kuorimista tekstistämme. Ohjelmoijat tekevät tätä usein syötteen puhdistamiseksi, tekstin tallentamiseksi tietokantaan tai merkkijonojen esikäsittelyksi ilman lainausmerkkien sotkua.

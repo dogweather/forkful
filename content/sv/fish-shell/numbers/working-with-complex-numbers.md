@@ -9,9 +9,8 @@ summary: "Komplexa tal utvidgar id\xE9n om en endimensionell nummerlinje till et
   \ tv\xE5dimensionellt komplext plan. Programmerare anv\xE4nder dem inom omr\xE5\
   den som\u2026"
 title: Att arbeta med komplexa tal
+weight: 14
 ---
-
-{{< edit_this_page >}}
 
 ## Vad & Varför?
 Komplexa tal utvidgar idén om en endimensionell nummerlinje till ett tvådimensionellt komplext plan. Programmerare använder dem inom områden som ingenjörsvetenskap, fysik och grafik för beräkningar som kräver två komponenter, som signaler eller rotationer.

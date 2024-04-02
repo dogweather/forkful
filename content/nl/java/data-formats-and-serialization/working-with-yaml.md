@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "YAML, \"YAML Ain't Markup Language,\" is een gegevensserialisatietaal. Programmeurs\
   \ gebruiken het vanwege de leesbaarheid en eenvoud, met name voor\u2026"
 title: Werken met YAML
+weight: 41
 ---
-
-{{< edit_this_page >}}
 
 ## Wat & Waarom?
 

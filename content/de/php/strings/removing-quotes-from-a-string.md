@@ -9,9 +9,8 @@ summary: "Das Entfernen von Anf\xFChrungszeichen aus einem PHP-String bedeutet, 
   \ l\xE4stigen doppelten (`\"`) oder einfachen (`'`) Anf\xFChrungszeichen, die Ihre\
   \ Code-\u2026"
 title: "Anf\xFChrungszeichen aus einem String entfernen"
+weight: 9
 ---
-
-{{< edit_this_page >}}
 
 ## Was & Warum?
 Das Entfernen von Anführungszeichen aus einem PHP-String bedeutet, diese lästigen doppelten (`"`) oder einfachen (`'`) Anführungszeichen, die Ihre Code-Logik oder Datenbankabfragen durcheinander bringen können, herauszufiltern. Programmierer tun dies, um Eingabedaten zu bereinigen oder zu desinfizieren, um sicherzustellen, dass Strings sicher verwendet oder gespeichert werden können.

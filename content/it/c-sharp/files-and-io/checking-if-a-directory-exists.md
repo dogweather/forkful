@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Controllare se una directory esiste in C# implica verificare la presenza\
   \ di una cartella in un percorso specificato nel file system. I programmatori lo\u2026"
 title: Verifica se una directory esiste
+weight: 20
 ---
-
-{{< edit_this_page >}}
 
 ## Cosa e Perché?
 

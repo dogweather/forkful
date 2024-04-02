@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Foutafhandeling in Go houdt in het herkennen en reageren op foutcondities\
   \ in je programma. Programmeurs doen aan foutafhandeling om ervoor te zorgen dat\u2026"
 title: Fouten afhandelen
+weight: 16
 ---
-
-{{< edit_this_page >}}
 
 ## Wat & Waarom?
 

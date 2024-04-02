@@ -6,9 +6,8 @@ model: gpt-4-1106-preview
 summary: null
 title: "\u05E8\u05D9\u05E9\u05D5\u05DD \u05E4\u05E2\u05D5\u05DC\u05D5\u05EA (\u05DC\
   \u05D5\u05D2\u05D9\u05DD)"
+weight: 17
 ---
-
-{{< edit_this_page >}}
 
 מה ולמה?
 

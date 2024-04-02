@@ -9,9 +9,8 @@ summary: "XML \xE8 un linguaggio di marcatura per codificare documenti in un mod
   \ che sia leggibile sia dall'uomo che dalla macchina. \xC8 fondamentale nei servizi\
   \ web,\u2026"
 title: Lavorare con XML
+weight: 40
 ---
-
-{{< edit_this_page >}}
 
 ## Cosa & Perché?
 XML è un linguaggio di marcatura per codificare documenti in un modo che sia leggibile sia dall'uomo che dalla macchina. È fondamentale nei servizi web, nei file di configurazione e nello scambio di dati perché trasporta i dati in un formato strutturato e gerarchico.

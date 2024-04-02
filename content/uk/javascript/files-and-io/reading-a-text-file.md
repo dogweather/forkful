@@ -8,9 +8,8 @@ summary: "Reading text files means grabbing text data from a .txt (or similar) f
   \ Programmers read files to use data like configuration settings, import user\u2026"
 title: "\u0427\u0438\u0442\u0430\u043D\u043D\u044F \u0442\u0435\u043A\u0441\u0442\u043E\
   \u0432\u043E\u0433\u043E \u0444\u0430\u0439\u043B\u0443"
+weight: 22
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why? (Що та Чому?)
 Reading text files means grabbing text data from a .txt (or similar) file. Programmers read files to use data like configuration settings, import user data, or to analyze text outside of the application itself.

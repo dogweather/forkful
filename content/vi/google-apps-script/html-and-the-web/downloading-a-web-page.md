@@ -12,9 +12,8 @@ summary: "Vi\u1EC7c t\u1EA3i m\u1ED9t trang web b\u1EB1ng Google Apps Script bao
   m vi\u1EC7c l\u1EA5y n\u1ED9i dung c\u1EE7a trang web th\xF4ng qua HTML cho c\xE1\
   c m\u1EE5c \u0111\xEDch kh\xE1c nhau, nh\u01B0 l\u1EA5y d\u1EEF li\u1EC7u web,\u2026"
 title: "T\u1EA3i v\u1EC1 m\u1ED9t trang web"
+weight: 42
 ---
-
-{{< edit_this_page >}}
 
 ## Cái gì & Tại sao?
 

@@ -9,9 +9,8 @@ summary: "Die Arbeit mit TOML beinhaltet das Parsen und Generieren von TOML-Date
   \ (Tom's Offensichtliche, Minimale Sprache) mit Haskell. Programmierer tun dies,\
   \ um\u2026"
 title: Arbeiten mit TOML
+weight: 39
 ---
-
-{{< edit_this_page >}}
 
 ## Was & Warum?
 Die Arbeit mit TOML beinhaltet das Parsen und Generieren von TOML-Daten (Tom's Offensichtliche, Minimale Sprache) mit Haskell. Programmierer tun dies, um Konfigurationsdateien leicht zu verwalten oder Datenaustausch mit starken Typgarantien und minimalen Syntaxproblemen durchzuführen.

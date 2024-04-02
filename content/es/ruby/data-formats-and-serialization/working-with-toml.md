@@ -7,9 +7,8 @@ model: gpt-4-0125-preview
 summary: "TOML es un formato de archivo de configuraci\xF3n que es f\xE1cil de leer\
   \ debido a su clara sem\xE1ntica. Los programadores usan TOML para gestionar\u2026"
 title: Trabajando con TOML
+weight: 39
 ---
-
-{{< edit_this_page >}}
 
 ## ¿Qué y por qué?
 

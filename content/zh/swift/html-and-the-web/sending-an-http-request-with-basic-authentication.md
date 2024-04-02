@@ -16,9 +16,8 @@ summary: "\u6211\u4EEC\u7ECF\u5E38\u9700\u8981\u8BA9\u5E94\u7528\u7A0B\u5E8F\u90
   \u5730\u9A8C\u8BC1\u7528\u6237\u8EAB\u4EFD\uFF0C\u786E\u4FDD\u6570\u636E\u7684\u5B89\
   \u5168\u4EA4\u6362\u3002"
 title: "\u4F7F\u7528\u57FA\u672C\u8BA4\u8BC1\u53D1\u9001 HTTP \u8BF7\u6C42"
+weight: 45
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why? (什么以及为什么?)
 我们经常需要让应用程序通过网络与服务器交互，发送HTTP请求是其中的基本方式。使用基本认证（basic authentication）可以快速简单地验证用户身份，确保数据的安全交换。

@@ -10,9 +10,8 @@ model: gpt-4-0125-preview
 summary: "Enviar uma requisi\xE7\xE3o HTTP envolve iniciar uma chamada de sua aplica\xE7\
   \xE3o Go para um servidor web, API ou qualquer outro servi\xE7o baseado em HTTP.\u2026"
 title: "Enviando uma solicita\xE7\xE3o HTTP"
+weight: 44
 ---
-
-{{< edit_this_page >}}
 
 ## O quê & Por quê?
 

@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Hakemiston olemassaolon tarkistaminen on perusoperaatio, kun kirjoitetaan\
   \ skriptej\xE4, jotka vuorovaikuttavat tiedostoj\xE4rjestelm\xE4n kanssa. Se varmistaa,\u2026"
 title: Tarkistetaan, onko hakemisto olemassa
+weight: 20
 ---
-
-{{< edit_this_page >}}
 
 ## Mikä ja miksi?
 

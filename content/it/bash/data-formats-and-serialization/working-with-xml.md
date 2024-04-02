@@ -9,9 +9,8 @@ summary: "Lavorare con XML comporta l'analisi, l'estrazione e la manipolazione d
   \ dati nel formato Extensible Markup Language. I programmatori si scontrano con\
   \ XML\u2026"
 title: Lavorare con XML
+weight: 40
 ---
-
-{{< edit_this_page >}}
 
 ## Cos'è & Perché?
 Lavorare con XML comporta l'analisi, l'estrazione e la manipolazione dei dati nel formato Extensible Markup Language. I programmatori si scontrano con XML poiché è un formato di interscambio di dati molto diffuso per configurazioni, API e altro.

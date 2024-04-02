@@ -9,9 +9,8 @@ summary: "Att skapa en tempor\xE4r fil \xE4r processen att g\xF6ra en tillf\xE4l
   \ dataf\xF6rvaring som typiskt anv\xE4nds och raderas under programmets exekvering.\
   \ Programmerare\u2026"
 title: "Skapa en tempor\xE4r fil"
+weight: 21
 ---
-
-{{< edit_this_page >}}
 
 ## Vad & Varför?
 Att skapa en temporär fil är processen att göra en tillfällig dataförvaring som typiskt används och raderas under programmets exekvering. Programmerare skapar temporära filer för att hantera data som inte behöver sparas permanent eller för att undvika att ta upp värdefullt minne under långa operationer.

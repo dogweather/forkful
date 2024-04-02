@@ -19,9 +19,8 @@ summary: "XML, \u05E9\u05D4\u05D5\u05D0 \u05E8\u05D0\u05E9\u05D9 \u05EA\u05D9\u0
   \u05D5\u05DB\u05E0\u05D5\u05EA \u05D0\u05E8\u05D2\u05D5\u05E0\u05D9\u05D5\u05EA\
   \ \u05D0\u05D5 API-\u2026"
 title: "\u05E2\u05D1\u05D5\u05D3\u05D4 \u05E2\u05DD XML"
+weight: 40
 ---
-
-{{< edit_this_page >}}
 
 ## מה ולמה?
 XML, שהוא ראשי תיבות של eXtensible Markup Language, הוא כמו הבן דוד המסורבל של JSON. תתמודד עם XML כאשר אתה מתעסק עם מערכות ישנות, תוכנות ארגוניות או API-ים שדילגו על גלגל האופנה של JSON. הוא חיוני להחלפת נתונים שם XML עומד על רגליו.

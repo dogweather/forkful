@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Nella programmazione in Rust, lavorare con YAML (YAML Ain't Markup Language)\
   \ significa effettuare il parsing e la generazione di dati in formato YAML, uno\u2026"
 title: Lavorare con YAML
+weight: 41
 ---
-
-{{< edit_this_page >}}
 
 ## Cos'è & Perché?
 

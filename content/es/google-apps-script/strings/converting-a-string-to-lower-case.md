@@ -11,9 +11,8 @@ summary: "Convertir una cadena a min\xFAsculas en Google Apps Script, un lenguaj
   \ de scripting basado en la nube para automatizar tareas a trav\xE9s de productos\
   \ de\u2026"
 title: "Convirtiendo una cadena de texto a min\xFAsculas"
+weight: 4
 ---
-
-{{< edit_this_page >}}
 
 ## ¿Qué y Por Qué?
 

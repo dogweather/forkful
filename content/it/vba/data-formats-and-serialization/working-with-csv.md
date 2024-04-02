@@ -11,9 +11,8 @@ summary: "Lavorare con i file CSV (Valori Separati da Virgola) comporta la lettu
   \ da o la scrittura su file di testo semplici in cui i campi dati sono separati\
   \ da\u2026"
 title: Lavorare con CSV
+weight: 37
 ---
-
-{{< edit_this_page >}}
 
 ## Cos'è e perché?
 

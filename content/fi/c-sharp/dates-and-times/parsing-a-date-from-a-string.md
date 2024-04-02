@@ -11,9 +11,8 @@ summary: "P\xE4iv\xE4m\xE4\xE4r\xE4n j\xE4sennys merkkijonosta C#:ssa tarkoittaa
   iv\xE4m\xE4\xE4rien ja aikojen tekstiesitysten muuntamista `DateTime`-objektiksi.\
   \ T\xE4m\xE4 on v\xE4ltt\xE4m\xE4t\xF6nt\xE4\u2026"
 title: "P\xE4iv\xE4m\xE4\xE4r\xE4n j\xE4sennys merkkijonosta"
+weight: 30
 ---
-
-{{< edit_this_page >}}
 
 ## Mikä & Miksi?
 Päivämäärän jäsennys merkkijonosta C#:ssa tarkoittaa päivämäärien ja aikojen tekstiesitysten muuntamista `DateTime`-objektiksi. Tämä on välttämätöntä sovelluksille, jotka tarvitsevat manipuloida, tallentaa tai näyttää päivämääriä ja aikoja eri muodoissa, kuten aikataulusovellukset, lokiprosessorit tai mikä tahansa järjestelmä, joka käsittelee päivämääräsyötettä käyttäjiltä tai ulkoisista lähteistä.

@@ -9,9 +9,8 @@ summary: "Refaktorering er prosessen med \xE5 omstrukturere eksisterende datapro
   \ uten \xE5 endre dens eksterne oppf\xF8rsel. Programmerere refaktorerer for \xE5\
   \u2026"
 title: Refaktorering
+weight: 19
 ---
-
-{{< edit_this_page >}}
 
 ## Hva & Hvorfor?
 Refaktorering er prosessen med å omstrukturere eksisterende dataprogramkode uten å endre dens eksterne oppførsel. Programmerere refaktorerer for å forbedre de ikke-funksjonelle attributtene til programvaren, ved å gjøre koden renere, mer effektiv og lettere å vedlikeholde.

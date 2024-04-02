@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Associatieve arrays, of zoals ze in JavaScript accurater bekend staan, objecten,\
   \ stellen je in staat om sleutels aan waarden te koppelen. Dit is bijzonder\u2026"
 title: Gebruik van associatieve arrays
+weight: 15
 ---
-
-{{< edit_this_page >}}
 
 ## Wat & Waarom?
 

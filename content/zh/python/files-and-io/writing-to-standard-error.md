@@ -17,9 +17,8 @@ summary: "\u5728 Python \u4E2D\u5199\u5165\u6807\u51C6\u9519\u8BEF\u662F\u6307\u
   \u4E86\u5C06\u6B63\u5E38\u7A0B\u5E8F\u8F93\u51FA\u4E0E\u9519\u8BEF\u6D88\u606F\u5206\
   \u5F00\uFF0C\u4FBF\u4E8E\u8C03\u8BD5\u548C\u65E5\u5FD7\u5206\u6790\u3002"
 title: "\u5199\u5165\u6807\u51C6\u9519\u8BEF"
+weight: 25
 ---
-
-{{< edit_this_page >}}
 
 ## 什么和为什么？
 在 Python 中写入标准错误是指将程序的错误消息或诊断消息导向错误流（`stderr`），与标准输出（`stdout`）分开。程序员这样做是为了将正常程序输出与错误消息分开，便于调试和日志分析。

@@ -11,9 +11,8 @@ summary: "Convertire una stringa in minuscolo \xE8 un'operazione fondamentale ch
   \ permette uniformit\xE0 e coerenza nel trattamento del testo, essenziale per compiti\
   \ come\u2026"
 title: Convertire una stringa in minuscolo
+weight: 4
 ---
-
-{{< edit_this_page >}}
 
 ## Cosa e perché?
 

@@ -7,9 +7,8 @@ model: gpt-4-0125-preview
 summary: "Att arbeta med XML i Haskell inneb\xE4r att tolka, manipulera och generera\
   \ XML-strukturer. Programmerare hanterar XML f\xF6r att interagera med m\xE5nga\u2026"
 title: Att arbeta med XML
+weight: 40
 ---
-
-{{< edit_this_page >}}
 
 ## Vad & Varför?
 

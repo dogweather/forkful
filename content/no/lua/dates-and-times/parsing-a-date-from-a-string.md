@@ -11,9 +11,8 @@ summary: "Parsing av en dato fra en streng inneb\xE6rer \xE5 konvertere tekstuel
   \ representasjoner av datoer og tider til et format som kan enkelt manipuleres,\
   \ lagres\u2026"
 title: Analysering av en dato fra en streng
+weight: 30
 ---
-
-{{< edit_this_page >}}
 
 ## Hva & Hvorfor?
 Parsing av en dato fra en streng innebærer å konvertere tekstuelle representasjoner av datoer og tider til et format som kan enkelt manipuleres, lagres eller sammenlignes innenfor et Lua-program. Programmerere utfører denne oppgaven for å lette operasjoner som planlegging, logging eller alle tidsberegninger og for å bygge bro mellom menneskelesbare datoformater og strukturerte datatyper som en datamaskin kan behandle effektivt.

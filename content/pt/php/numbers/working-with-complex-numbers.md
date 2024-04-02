@@ -9,9 +9,8 @@ summary: "N\xFAmeros complexos t\xEAm uma parte real e uma parte imagin\xE1ria, 
   \ escritos como `a + bi`. Eles s\xE3o cruciais em matem\xE1tica avan\xE7ada, f\xED\
   sica,\u2026"
 title: "Trabalhando com n\xFAmeros complexos"
+weight: 14
 ---
-
-{{< edit_this_page >}}
 
 ## O Que & Por Quê?
 Números complexos têm uma parte real e uma parte imaginária, geralmente escritos como `a + bi`. Eles são cruciais em matemática avançada, física, engenharia e certos algoritmos de computador. Programadores trabalham com eles para lidar com cálculos que envolvem raízes quadradas de números negativos e funções oscilantes.

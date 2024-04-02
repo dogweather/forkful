@@ -13,9 +13,8 @@ summary: "B\u1EAFt \u0111\u1EA7u m\u1ED9t d\u1EF1 \xE1n m\u1EDBi c\xF3 ngh\u0129
   p tin quan tr\u1ECDng m\xE0 b\u1EA1n s\u1EBD c\u1EA7n cho \u1EE9ng d\u1EE5ng c\u1EE7\
   a m\xECnh. L\u1EADp tr\xECnh vi\xEAn b\u1EAFt \u0111\u1EA7u d\u1EF1 \xE1n\u2026"
 title: "B\u1EAFt \u0111\u1EA7u m\u1ED9t d\u1EF1 \xE1n m\u1EDBi"
+weight: 1
 ---
-
-{{< edit_this_page >}}
 
 ## Cái gì và Tại sao?
 

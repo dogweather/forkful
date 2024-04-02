@@ -13,9 +13,8 @@ summary: "X\u1EED l\xFD l\u1ED7i trong PowerShell c\xF3 ngh\u0129a l\xE0 d\u1EF1
   ch m\u01B0\u1EE3t m\xE0. L\u1EADp tr\xECnh vi\xEAn l\xE0m \u0111i\u1EC1u n\xE0y\
   \ \u0111\u1EC3 ng\u0103n ch\u1EB7n s\u1EF1 c\u1ED1 v\xE0 cung c\u1EA5p\u2026"
 title: "X\u1EED l\xFD l\u1ED7i"
+weight: 16
 ---
-
-{{< edit_this_page >}}
 
 ## Cái gì & Tại sao?
 Xử lý lỗi trong PowerShell có nghĩa là dự đoán những sự cố và quản lý chúng một cách mượt mà. Lập trình viên làm điều này để ngăn chặn sự cố và cung cấp phản hồi hữu ích cho người dùng.

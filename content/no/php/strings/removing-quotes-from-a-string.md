@@ -9,9 +9,8 @@ summary: "\xC5 fjerne anf\xF8rselstegn fra en tekststreng i PHP betyr \xE5 strip
   \ bort de irriterende doble (`\"`) eller enkle (`'`) anf\xF8rselstegnene som kan\
   \ rotte til\u2026"
 title: "Fjerne anf\xF8rselstegn fra en streng"
+weight: 9
 ---
-
-{{< edit_this_page >}}
 
 ## Hva & Hvorfor?
 Å fjerne anførselstegn fra en tekststreng i PHP betyr å strippe bort de irriterende doble (`"`) eller enkle (`'`) anførselstegnene som kan rotte til logikken i koden din eller databaseforespørslene. Programmerere gjør dette for å rense eller sanere inndata, for å sikre at tekststrenger trygt kan brukes eller lagres.

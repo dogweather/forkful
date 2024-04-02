@@ -11,9 +11,8 @@ summary: "Arrays associativos, frequentemente conhecidos como dicion\xE1rios no 
   \ Basic para Aplica\xE7\xF5es (VBA), permitem que programadores criem cole\xE7\xF5\
   es de pares\u2026"
 title: Usando arrays associativos
+weight: 15
 ---
-
-{{< edit_this_page >}}
 
 ## O Que & Por Quê?
 

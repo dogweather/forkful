@@ -8,9 +8,8 @@ model: gpt-4-1106-preview
 summary: "Converting a date to a string in Elixir turns the date from a struct into\
   \ a readable series of characters for display or storage. Programmers do it to\u2026"
 title: Converting a date into a string
+weight: 28
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 

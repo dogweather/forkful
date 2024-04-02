@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "W kontek\u015Bcie programowania Arduino, sprawdzenie, czy katalog istnieje\
   \ na karcie SD lub podobnym module pami\u0119ci, pozwala na odczytywanie lub zapisywanie\u2026"
 title: Sprawdzanie, czy katalog istnieje
+weight: 20
 ---
-
-{{< edit_this_page >}}
 
 ## Co i dlaczego?
 W kontekście programowania Arduino, sprawdzenie, czy katalog istnieje na karcie SD lub podobnym module pamięci, pozwala na odczytywanie lub zapisywanie plików bez błędów. Ta operacja jest kluczowa dla logowania danych, zarządzania konfiguracją, lub każdego zadania, które wymaga strukturalnego przechowywania plików, zapewniając niezawodność i płynną wydajność w aplikacjach.

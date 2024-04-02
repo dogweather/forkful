@@ -9,9 +9,8 @@ summary: "Gerar n\xFAmeros aleat\xF3rios em JavaScript \xE9 uma t\xE9cnica usada
   \ criar imprevisibilidade em aplica\xE7\xF5es, desde jogos que precisam de comportamento\
   \ aleat\xF3rio\u2026"
 title: "Gera\xE7\xE3o de n\xFAmeros aleat\xF3rios"
+weight: 12
 ---
-
-{{< edit_this_page >}}
 
 ## O Que & Por Quê?
 

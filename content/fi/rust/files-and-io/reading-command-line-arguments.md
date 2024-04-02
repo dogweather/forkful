@@ -9,9 +9,8 @@ summary: "Komennon rivilt\xE4 argumenttien lukeminen mahdollistaa k\xE4ytt\xE4j\
   n sy\xF6tt\xE4m\xE4n tiedon hakemisen ohjelmallesi. K\xE4yt\xE4mme sit\xE4, koska\
   \ haluamme ohjelman toimivan\u2026"
 title: Komennoriviparametrien lukeminen
+weight: 23
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why? (Mitä & Miksi?)
 Komennon riviltä argumenttien lukeminen mahdollistaa käyttäjän syöttämän tiedon hakemisen ohjelmallesi. Käytämme sitä, koska haluamme ohjelman toimivan joustavasti eri tilanteissa ja käyttäjän tarpeiden mukaan.

@@ -11,9 +11,8 @@ summary: "Sprawdzanie, czy katalog istnieje w Elixirze, polega na weryfikacji ob
   ci katalogu pod okre\u015Blon\u0105 \u015Bcie\u017Ck\u0105 w systemie plik\xF3w.\
   \ Programi\u015Bci robi\u0105 to, aby\u2026"
 title: Sprawdzanie, czy katalog istnieje
+weight: 20
 ---
-
-{{< edit_this_page >}}
 
 ## Co i dlaczego?
 Sprawdzanie, czy katalog istnieje w Elixirze, polega na weryfikacji obecności katalogu pod określoną ścieżką w systemie plików. Programiści robią to, aby upewnić się, że mogą bezpiecznie czytać z katalogu, zapisywać do niego lub wykonywać na nim operacje bez napotkania błędów spowodowanych jego brakiem.

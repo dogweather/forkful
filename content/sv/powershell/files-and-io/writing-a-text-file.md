@@ -11,9 +11,8 @@ summary: "Att skriva en textfil i PowerShell inneb\xE4r att skapa och manipulera
   \ filer vilket \xE4r en grundl\xE4ggande operation f\xF6r loggning, datalagring\
   \ och\u2026"
 title: Att skriva en textfil
+weight: 24
 ---
-
-{{< edit_this_page >}}
 
 ## Vad och varför?
 Att skriva en textfil i PowerShell innebär att skapa och manipulera textbaserade filer vilket är en grundläggande operation för loggning, datalagring och konfigurationsskriptning. Programmerare utnyttjar detta för att automatisera systemuppgifter, dataanalys och integration med andra applikationer eller skript.

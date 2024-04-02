@@ -7,9 +7,8 @@ model: gpt-4-1106-preview
 summary: "Sammenligning av to datoer handler om \xE5 sjekke hvilken som er tidligst,\
   \ om de er like, eller om den ene ligger etter den andre. Programmerere trenger\u2026"
 title: Sammenlikning av to datoer
+weight: 27
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 Sammenligning av to datoer handler om å sjekke hvilken som er tidligst, om de er like, eller om den ene ligger etter den andre. Programmerere trenger dette for funksjoner som tidsstyring, gyldighetskontroller og sortering etter dato.

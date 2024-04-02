@@ -11,9 +11,8 @@ summary: "\xC5 skrive til en tekstfil i Haskell handler om programmatisk \xE5 op
   \ eller oppdatere filer med tekstinnhold. Programmerere gj\xF8r dette for \xE5 lagre\
   \ data\u2026"
 title: Skrive en tekstfil
+weight: 24
 ---
-
-{{< edit_this_page >}}
 
 ## Hva & Hvorfor?
 

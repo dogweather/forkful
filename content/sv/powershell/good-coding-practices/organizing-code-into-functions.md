@@ -9,9 +9,8 @@ summary: "Att organisera kod i funktioner handlar om att kapsla in delar av kod 
   \ utf\xF6r specifika uppgifter och ge dem ett namn. Det g\xF6rs f\xF6r att g\xF6\
   ra koden\u2026"
 title: Att organisera kod i funktioner
+weight: 18
 ---
-
-{{< edit_this_page >}}
 
 ## Vad & Varför?
 Att organisera kod i funktioner handlar om att kapsla in delar av kod som utför specifika uppgifter och ge dem ett namn. Det görs för att göra koden återanvändbar, läslig och underhållbar. Istället för att omskriva samma kod, anropa en funktion. Vill du felsöka eller uppgradera? Justera funktionen utan att behöva gräva genom högar av skript.

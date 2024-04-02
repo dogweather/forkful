@@ -7,9 +7,8 @@ model: gpt-4-1106-preview
 summary: "Starting a fresh Java project is like setting up a new canvas for your masterpiece.\
   \ Programmers kick off new projects to turn ideas into functional\u2026"
 title: Starting a new project
+weight: 1
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 

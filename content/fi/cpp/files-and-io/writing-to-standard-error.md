@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Virheilmoitusten kirjoittaminen standardivirheeseen (`stderr`) C++:ssa tarkoittaa\
   \ virheviestien tai diagnostiikkatietojen tulostamista, jotka ovat\u2026"
 title: Kirjoittaminen standardivirheeseen
+weight: 25
 ---
-
-{{< edit_this_page >}}
 
 ## Mikä & Miksi?
 

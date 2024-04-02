@@ -8,9 +8,8 @@ model: unknown
 summary: "Att parsa HTML inneb\xE4r att man omvandlar HTML-str\xE4ngar till en datastruktur\
   \ som datorn kan jobba med. Programmerare g\xF6r detta f\xF6r att enkelt kunna\u2026"
 title: Tolka HTML
+weight: 43
 ---
-
-{{< edit_this_page >}}
 
 ## Vad & Varför?
 Att parsa HTML innebär att man omvandlar HTML-strängar till en datastruktur som datorn kan jobba med. Programmerare gör detta för att enkelt kunna extrahera information, manipulera innehåll eller integrera webbinnehåll i sina applikationer.

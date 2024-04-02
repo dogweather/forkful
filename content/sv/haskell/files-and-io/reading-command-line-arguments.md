@@ -9,9 +9,8 @@ summary: "Att l\xE4sa kommandoradsargument \xE4r att f\xE5nga upp de textbitar d
   \ anger n\xE4r du k\xF6r ett program i terminalen. Programmers g\xF6r det f\xF6\
   r att l\xE5ta anv\xE4ndare\u2026"
 title: "L\xE4sa in kommandoradsargument"
+weight: 23
 ---
-
-{{< edit_this_page >}}
 
 ## Vad & Varför?
 

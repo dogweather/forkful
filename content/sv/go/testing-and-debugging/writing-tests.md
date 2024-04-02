@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Att skriva tester i Go inneb\xE4r att skapa sm\xE5, hanterbara bitar av\
   \ kod som validerar funktionaliteten och beteendet hos din applikation. Programmerare\u2026"
 title: Skriva tester
+weight: 36
 ---
-
-{{< edit_this_page >}}
 
 ## Vad & Varför?
 

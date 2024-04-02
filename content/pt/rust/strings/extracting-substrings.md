@@ -7,9 +7,8 @@ model: gpt-4-1106-preview
 summary: "Extrair substrings \xE9 o processo de pegar peda\xE7os de uma string maior.\
   \ Fazemos isso para manipular ou analisar partes espec\xEDficas de texto."
 title: Extraindo substrings
+weight: 6
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 Extrair substrings é o processo de pegar pedaços de uma string maior. Fazemos isso para manipular ou analisar partes específicas de texto.

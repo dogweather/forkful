@@ -7,9 +7,8 @@ model: gpt-4-0125-preview
 summary: "REPL est l'acronyme de Read-Eval-Print Loop (Boucle Lire-\xC9valuer-Imprimer),\
   \ un environnement de programmation informatique simple et interactif. Les\u2026"
 title: Utilisation d'une console interactive (REPL)
+weight: 34
 ---
-
-{{< edit_this_page >}}
 
 ## Quoi & Pourquoi ?
 REPL est l'acronyme de Read-Eval-Print Loop (Boucle Lire-Évaluer-Imprimer), un environnement de programmation informatique simple et interactif. Les codeurs l'utilisent pour écrire et tester rapidement du code, expérimenter avec la syntaxe et apprendre les concepts de programmation sans le fardeau de créer et d'exécuter des applications complètes.

@@ -9,9 +9,8 @@ summary: "Lainausmerkkien poistaminen merkkijonosta tarkoittaa kaikkien lainausm
   \ joko yksitt\xE4isten (' ') tai kaksois (\" \"), poistamista k\xE4sitelt\xE4v\xE4\
   st\xE4\u2026"
 title: Merkkijonosta lainausmerkkien poistaminen
+weight: 9
 ---
-
-{{< edit_this_page >}}
 
 ## Mitä & Miksi?
 

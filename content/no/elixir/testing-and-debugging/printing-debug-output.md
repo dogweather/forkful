@@ -9,9 +9,8 @@ summary: "Utskrift av feils\xF8kingsdata handler om \xE5 vise hva som foreg\xE5r
   \ panseret av koden din. Programmerere gj\xF8r dette for \xE5 forst\xE5 flyten og\
   \ oppdage bugs\u2026"
 title: "Skrive ut feils\xF8kingsdata"
+weight: 33
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 Utskrift av feilsøkingsdata handler om å vise hva som foregår under panseret av koden din. Programmerere gjør dette for å forstå flyten og oppdage bugs raskt.

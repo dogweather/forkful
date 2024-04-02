@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Praca z YAML w Go polega na parsowaniu plik\xF3w YAML (YAML Ain't Markup\
   \ Language), czyli ludzko-przyjaznego standardu serializacji danych, na struktury\u2026"
 title: Praca z YAML
+weight: 41
 ---
-
-{{< edit_this_page >}}
 
 ## Co i dlaczego?
 

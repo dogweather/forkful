@@ -11,9 +11,8 @@ summary: "Tablice asocjacyjne, znane r\xF3wnie\u017C jako tablice mieszaj\u0105c
   \ lub s\u0142owniki w PowerShellu, pozwalaj\u0105 na przechowywanie danych w parach\
   \ klucz-warto\u015B\u0107, co\u2026"
 title: Korzystanie z tablic asocjacyjnych
+weight: 15
 ---
-
-{{< edit_this_page >}}
 
 ## Co i dlaczego?
 

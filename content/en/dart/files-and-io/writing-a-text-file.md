@@ -7,9 +7,8 @@ model: gpt-4-0125-preview
 summary: "Writing a text file in Dart involves creating or modifying files on the\
   \ disk to store data in a readable format. Programmers do it to save application\u2026"
 title: Writing a text file
+weight: 24
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 Writing a text file in Dart involves creating or modifying files on the disk to store data in a readable format. Programmers do it to save application data, configurations, logs, or any information that should persist between application runs or share data with other applications or users.

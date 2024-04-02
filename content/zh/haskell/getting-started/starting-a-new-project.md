@@ -12,9 +12,8 @@ summary: "\u5F00\u59CB\u65B0\u9879\u76EE\uFF0C\u5373\u521D\u59CB\u5316\u65B0\u7A
   \u4E2A\u539F\u56E0\uFF1A\u6D4B\u8BD5\u65B0\u601D\u8DEF\uFF0C\u6216\u5F00\u53D1\u5177\
   \u4F53\u5E94\u7528\u3002"
 title: "\u5F00\u59CB\u4E00\u4E2A\u65B0\u9879\u76EE"
+weight: 1
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why? 什么与为什么？
 开始新项目，即初始化新程序结构。程序员做这个通常有两个原因：测试新思路，或开发具体应用。

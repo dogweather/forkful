@@ -11,9 +11,8 @@ summary: "Analizar una fecha a partir de una cadena implica interpretar el forma
   \ de la cadena para extraer componentes de la fecha como el d\xEDa, el mes y el\
   \ a\xF1o.\u2026"
 title: Analizando una fecha a partir de una cadena de texto
+weight: 30
 ---
-
-{{< edit_this_page >}}
 
 ## ¿Qué y por qué?
 Analizar una fecha a partir de una cadena implica interpretar el formato de la cadena para extraer componentes de la fecha como el día, el mes y el año. Los programadores hacen esto para manejar la entrada de usuario, leer archivos de datos o interactuar con APIs que comunican fechas en formatos de cadena. Es esencial para el procesamiento de datos, la validación y la realización de aritmética de fechas en aplicaciones.

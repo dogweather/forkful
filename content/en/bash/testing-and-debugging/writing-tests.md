@@ -8,9 +8,8 @@ model: gpt-4-0125-preview
 summary: "Writing tests in Bash involves scripting test cases to validate the functionality\
   \ of your Bash scripts. Programmers conduct tests to ensure their scripts\u2026"
 title: Writing tests
+weight: 36
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 Writing tests in Bash involves scripting test cases to validate the functionality of your Bash scripts. Programmers conduct tests to ensure their scripts work as expected under various conditions, catching errors and bugs before deployment.

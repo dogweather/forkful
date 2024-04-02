@@ -11,9 +11,8 @@ summary: "\xC5 analysere en dato fra en streng handler om \xE5 konvertere tekst 
   \ representerer en dato til et `Date` eller `DateTime`-objekt som Ruby forst\xE5\
   r.\u2026"
 title: Analysering av en dato fra en streng
+weight: 30
 ---
-
-{{< edit_this_page >}}
 
 ## Hva & Hvorfor?
 Å analysere en dato fra en streng handler om å konvertere tekst som representerer en dato til et `Date` eller `DateTime`-objekt som Ruby forstår. Programmerere gjør dette for å utføre operasjoner som sammenligninger, kalkulasjoner eller formatering på datoer, som er vanlige oppgaver i applikasjoner som håndterer planlegging, analytikk eller databehandling.

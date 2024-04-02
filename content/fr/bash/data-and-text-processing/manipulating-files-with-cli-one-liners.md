@@ -7,9 +7,8 @@ model: gpt-4-0125-preview
 summary: "Manipuler des fichiers avec des lignes de commande CLI (Interface de Ligne\
   \ de Commande) implique l'utilisation de scripts Bash ou de commandes pour\u2026"
 title: Manipulation de fichiers avec des commandes en une ligne en CLI
+weight: 31
 ---
-
-{{< edit_this_page >}}
 
 ## Quoi & Pourquoi ?
 

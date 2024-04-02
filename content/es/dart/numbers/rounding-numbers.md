@@ -11,9 +11,8 @@ summary: "Redondear n\xFAmeros es el proceso de ajustar un n\xFAmero a su n\xFAm
   \ entero m\xE1s cercano o a un n\xFAmero especificado de decimales. Los programadores\
   \ a menudo\u2026"
 title: "Redondeo de n\xFAmeros"
+weight: 13
 ---
-
-{{< edit_this_page >}}
 
 ## Qué y Por Qué?
 

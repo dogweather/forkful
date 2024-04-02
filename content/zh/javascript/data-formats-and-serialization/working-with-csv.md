@@ -21,9 +21,8 @@ summary: "\u5728JavaScript\u4E2D\u5904\u7406CSV\uFF08\u9017\u53F7\u5206\u9694\u5
   \u91CF\uFF0C\u5BF9\u4E8E\u50CFJSON\u8FD9\u6837\u66F4\u590D\u6742\u7684\u683C\u5F0F\
   \u53EF\u80FD\u662F\u8FC7\u5EA6\u7684\u3002"
 title: "\u5904\u7406CSV\u6587\u4EF6"
+weight: 37
 ---
-
-{{< edit_this_page >}}
 
 ## 什么和为什么？
 在JavaScript中处理CSV（逗号分隔值）涉及解析或生成CSV文件，以便从外部源摄取表格数据或为其他程序导出数据使用。程序员这样做是因为它使得应用、数据库和系统之间的数据交换既简单又轻量，对于像JSON这样更复杂的格式可能是过度的。

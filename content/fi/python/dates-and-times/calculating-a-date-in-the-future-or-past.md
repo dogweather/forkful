@@ -9,9 +9,8 @@ summary: "Ajanlaskennassa tulevaisuuden tai menneisyyden p\xE4iv\xE4m\xE4\xE4r\x
   n laskeminen tarkoittaa tietyn ajanjakson lis\xE4\xE4mist\xE4 tai poistamista nykyhetkest\xE4\
   . Ohjelmoijat\u2026"
 title: "Tulevan tai menneen p\xE4iv\xE4m\xE4\xE4r\xE4n laskeminen"
+weight: 26
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 Ajanlaskennassa tulevaisuuden tai menneisyyden päivämäärän laskeminen tarkoittaa tietyn ajanjakson lisäämistä tai poistamista nykyhetkestä. Ohjelmoijat tekevät tätä esimerkiksi vanhentumispäivien asettamisessa, muistutussovelluksissa tai aikataulujen laskennassa.

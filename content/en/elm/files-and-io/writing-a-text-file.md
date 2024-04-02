@@ -8,9 +8,8 @@ model: gpt-4-0125-preview
 summary: "Writing a text file in Elm involves creating and saving textual data to\
   \ a file from an Elm application. Programmers often need to generate reports, logs,\u2026"
 title: Writing a text file
+weight: 24
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 

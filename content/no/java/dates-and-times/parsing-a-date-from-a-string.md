@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "\xC5 analysere en dato fra en streng inneb\xE6rer \xE5 konvertere en tekstrepresentasjon\
   \ av en dato og tid til et `Date` objekt eller et mer moderne\u2026"
 title: Analysering av en dato fra en streng
+weight: 30
 ---
-
-{{< edit_this_page >}}
 
 ## Hva & Hvorfor?
 Å analysere en dato fra en streng innebærer å konvertere en tekstrepresentasjon av en dato og tid til et `Date` objekt eller et mer moderne `LocalDateTime` objekt. Programmerere gjør dette for å manipulere, formatere, sammenligne eller lagre datoer i et standardisert format, noe som er avgjørende for applikasjoner som krever datoberegninger, validering eller konsistent internasjonalisering.

@@ -11,9 +11,8 @@ summary: "Att skriva en textfil i Google Apps Script m\xF6jligg\xF6r f\xF6r utve
   \ att lagra data best\xE4ndigt, vilket g\xF6r det \xE5tkomligt f\xF6r framtida anv\xE4\
   ndning eller\u2026"
 title: Skriva en textfil
+weight: 24
 ---
-
-{{< edit_this_page >}}
 
 ## Vad & Varför?
 

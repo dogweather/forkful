@@ -11,9 +11,8 @@ summary: "Foutafhandeling gaat over het beheren van het onverwachte in programma
   \ - zoals een uitsmijter die te maken heeft met lastpakken. Programmeurs houden\
   \ van\u2026"
 title: Fouten afhandelen
+weight: 16
 ---
-
-{{< edit_this_page >}}
 
 ## Wat & Waarom?
 Foutafhandeling gaat over het beheren van het onverwachte in programma's - zoals een uitsmijter die te maken heeft met lastpakken. Programmeurs houden van een soepele afhandeling; foutafhandeling helpt om de problemen in toom te houden, zodat hun code niet struikelt en valt wanneer ze met het onverwachte worden geconfronteerd.

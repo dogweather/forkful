@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Scrivere test in Haskell consiste nell'assicurarsi che le tue funzioni funzionino\
   \ come previsto attraverso controlli automatizzati. I programmatori lo\u2026"
 title: Scrivere test
+weight: 36
 ---
-
-{{< edit_this_page >}}
 
 ## Cosa & Perché?
 

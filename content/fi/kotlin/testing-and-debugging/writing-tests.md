@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Testien kirjoittaminen Kotlinissa tarkoittaa koodinp\xE4tkien rakentamista,\
   \ jotka automaattisesti varmistavat ohjelmistomoduuliesi toiminnallisen\u2026"
 title: Testien kirjoittaminen
+weight: 36
 ---
-
-{{< edit_this_page >}}
 
 ## Mitä & Miksi?
 

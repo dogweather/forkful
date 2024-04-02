@@ -9,9 +9,8 @@ summary: "Att avrunda tal inneb\xE4r att justera ett decimaltal till dess n\xE4r
   \ hela v\xE4rde eller till ett angivet antal decimaler. Programmerare avrundar f\xF6\
   r att\u2026"
 title: Avrundning av tal
+weight: 13
 ---
-
-{{< edit_this_page >}}
 
 ## Vad & Varför?
 

@@ -7,9 +7,8 @@ model: gpt-4-0125-preview
 summary: "In the world of Arduino, associative arrays let you pair keys with values,\
   \ kinda like how you'd match socks with their pairs. They're a go-to when you\u2026"
 title: Using associative arrays
+weight: 15
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 In the world of Arduino, associative arrays let you pair keys with values, kinda like how you'd match socks with their pairs. They're a go-to when you need to store and retrieve data using descriptive names, making your code cleaner and way more understandable.

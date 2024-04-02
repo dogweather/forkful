@@ -9,9 +9,8 @@ summary: "Wysy\u0142anie \u017C\u0105dania HTTP polega na poproszeniu serwera o 
   \ lub zasoby. Programi\u015Bci robi\u0105 to, aby komunikowa\u0107 si\u0119 z aplikacjami\
   \ internetowymi, pobiera\u0107\u2026"
 title: "Wysy\u0142anie \u017C\u0105dania HTTP"
+weight: 44
 ---
-
-{{< edit_this_page >}}
 
 ## Co i Dlaczego?
 Wysyłanie żądania HTTP polega na poproszeniu serwera o dane lub zasoby. Programiści robią to, aby komunikować się z aplikacjami internetowymi, pobierać dane, wysyłać formularze, i więcej.

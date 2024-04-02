@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Schrijven naar de standaardfout (`stderr`) betekent het uitvoeren van tekst\
   \ die geen deel uitmaakt van de hoofdprogrammagegevens, maar die fouten of\u2026"
 title: Schrijven naar standaardfout
+weight: 25
 ---
-
-{{< edit_this_page >}}
 
 ## Wat & Waarom?
 

@@ -11,9 +11,8 @@ summary: "Att generera slumpm\xE4ssiga nummer i programmering handlar om att ska
   \ en sekvens av nummer som inte rimligen kan f\xF6ruts\xE4gas b\xE4ttre \xE4n genom\
   \ slumpen.\u2026"
 title: "Generera slumpm\xE4ssiga nummer"
+weight: 12
 ---
-
-{{< edit_this_page >}}
 
 ## Vad & Varför?
 

@@ -7,9 +7,8 @@ model: gpt-4-1106-preview
 summary: "Das Extrahieren von Teilzeichenketten erm\xF6glicht es, bestimmte Abschnitte\
   \ eines Strings zu isolieren und zu verwenden. Programmierer machen das, um Daten\u2026"
 title: Teilstrings extrahieren
+weight: 6
 ---
-
-{{< edit_this_page >}}
 
 ## Was & Warum?
 Das Extrahieren von Teilzeichenketten ermöglicht es, bestimmte Abschnitte eines Strings zu isolieren und zu verwenden. Programmierer machen das, um Daten zu parsen, Informationen zu filtern oder einfach nur spezifische Datenpunkte aus einem größeren Textblock zu extrahieren.

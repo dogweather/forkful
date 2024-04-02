@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Trabalhar com JSON (Nota\xE7\xE3o de Objeto JavaScript) significa manipular\
   \ esse formato leve de interc\xE2mbio de dados dentro de suas aplica\xE7\xF5es Java.\u2026"
 title: Trabalhando com JSON
+weight: 38
 ---
-
-{{< edit_this_page >}}
 
 ## O Que & Por Que?
 Trabalhar com JSON (Notação de Objeto JavaScript) significa manipular esse formato leve de intercâmbio de dados dentro de suas aplicações Java. Programadores optam pelo JSON para serializar e transmitir dados estruturados por uma rede e facilmente configurar e armazenar dados porque é legível por humanos e independente de linguagem.

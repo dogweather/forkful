@@ -11,9 +11,8 @@ summary: "Testning i Ruby handlar om att verifiera att din kod beter sig som f\x
   rv\xE4ntat under olika f\xF6rh\xE5llanden. Programerare skriver tester f\xF6r att\
   \ s\xE4kerst\xE4lla\u2026"
 title: Skriva tester
+weight: 36
 ---
-
-{{< edit_this_page >}}
 
 ## Vad & Varför?
 Testning i Ruby handlar om att verifiera att din kod beter sig som förväntat under olika förhållanden. Programerare skriver tester för att säkerställa korrekthet, förhindra regressioner och underlätta refaktorisering, med målet att skapa robusta och underhållbara applikationer.

@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Capitalizar uma string envolve modificar a primeira letra de cada palavra\
   \ na string para mai\xFAscula enquanto assegura que o restante permane\xE7a em\u2026"
 title: Capitalizando uma string
+weight: 2
 ---
-
-{{< edit_this_page >}}
 
 ## O Que & Por Que?
 Capitalizar uma string envolve modificar a primeira letra de cada palavra na string para maiúscula enquanto assegura que o restante permaneça em minúscula. Essa tarefa comum de manipulação de string é útil para formatar texto em aplicações, como preparar nomes de usuários ou títulos para exibição de acordo com a convenção ou correção gramatical.

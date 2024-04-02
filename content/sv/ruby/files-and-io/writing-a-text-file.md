@@ -11,9 +11,8 @@ summary: "Att skriva till en textfil i Ruby \xE4r en grundl\xE4ggande operation 
   \ m\xF6jligg\xF6r att spara utdata och data p\xE5 ett best\xE4ndigt s\xE4tt, vilket\
   \ g\xF6r det m\xF6jligt att\u2026"
 title: Att skriva en textfil
+weight: 24
 ---
-
-{{< edit_this_page >}}
 
 ## Vad & Varför?
 Att skriva till en textfil i Ruby är en grundläggande operation som möjliggör att spara utdata och data på ett beständigt sätt, vilket gör det möjligt att komma åt eller modifiera datan senare. Programmerare utför ofta denna uppgift av skäl som att logga, spara konfigurationer eller exportera data i ett läsbart format.

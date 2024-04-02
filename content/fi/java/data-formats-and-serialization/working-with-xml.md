@@ -9,9 +9,8 @@ summary: "XML:n kanssa ty\xF6skentely k\xE4sitt\xE4\xE4 XML-dokumenttien j\xE4se
   misen, kyselyiden tekemisen ja manipuloinnin Java-kielell\xE4. Ohjelmoijat tekev\xE4\
   t t\xE4t\xE4\u2026"
 title: "XML:n k\xE4sittely"
+weight: 40
 ---
-
-{{< edit_this_page >}}
 
 ## Mikä ja miksi?
 XML:n kanssa työskentely käsittää XML-dokumenttien jäsentämisen, kyselyiden tekemisen ja manipuloinnin Java-kielellä. Ohjelmoijat tekevät tätä tiedonvaihdon, konfiguraationhallinnan sekä siksi, että monet vanhat järjestelmät ja rajapinnat kommunikoivat XML:n avulla.

@@ -7,9 +7,8 @@ model: gpt-4-1106-preview
 summary: "Converting a date to a string means taking a date object and turning it\
   \ into readable text. Programmers do this to display dates to users or to format\u2026"
 title: Converting a date into a string
+weight: 28
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 Converting a date to a string means taking a date object and turning it into readable text. Programmers do this to display dates to users or to format them for storage or transmission.

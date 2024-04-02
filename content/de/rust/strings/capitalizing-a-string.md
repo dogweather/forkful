@@ -11,9 +11,8 @@ summary: "Das Gro\xDFschreiben eines Strings in Rust involviert das Modifizieren
   \ Strings, sodass sein erstes Zeichen ein Gro\xDFbuchstabe ist, falls es sich um\
   \ einen\u2026"
 title: "Einen String gro\xDFschreiben"
+weight: 2
 ---
-
-{{< edit_this_page >}}
 
 ## Was & Warum?
 

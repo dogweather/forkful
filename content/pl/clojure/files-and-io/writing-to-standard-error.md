@@ -11,9 +11,8 @@ summary: "Zapisywanie do standardowego b\u0142\u0119du (stderr) polega na kierow
   \ komunikat\xF3w o b\u0142\u0119dach i diagnostyki do strumienia stderr, oddzielnie\
   \ od standardowego\u2026"
 title: "Pisanie do standardowego b\u0142\u0119du"
+weight: 25
 ---
-
-{{< edit_this_page >}}
 
 ## Co i dlaczego?
 Zapisywanie do standardowego błędu (stderr) polega na kierowaniu komunikatów o błędach i diagnostyki do strumienia stderr, oddzielnie od standardowego wyjścia (stdout). Programiści robią to, aby odróżnić regularne wyjście programu od komunikatów o błędach, co pozwala na efektywniejsze debugowanie i logowanie.

@@ -17,9 +17,8 @@ summary: "HTTP \uAE30\uBCF8 \uC778\uC99D\uC73C\uB85C \uC694\uCCAD\uC744 \uBCF4\u
   \uADFC\uD560 \uB54C \uC0AC\uC6A9\uB429\uB2C8\uB2E4."
 title: "\uAE30\uBCF8 \uC778\uC99D\uC744 \uC0AC\uC6A9\uD55C HTTP \uC694\uCCAD \uBCF4\
   \uB0B4\uAE30"
+weight: 45
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why? (무엇과 왜?)
 HTTP 기본 인증으로 요청을 보내는 것은, 클라이언트가 서버에 사용자 이름과 비밀번호를 전송하여 자신을 인증하는 방식입니다. 이는 보안이 필요한 데이터에 접근할 때 사용됩니다.

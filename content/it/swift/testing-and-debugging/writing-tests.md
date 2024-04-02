@@ -10,9 +10,8 @@ model: gpt-4-0125-preview
 summary: "Scrivere test in Swift comporta la creazione e l'esecuzione di codice che\
   \ verifica la correttezza di altre unit\xE0 di codice nella tua applicazione. I\u2026"
 title: Scrivere test
+weight: 36
 ---
-
-{{< edit_this_page >}}
 
 ## Cosa e Perché?
 Scrivere test in Swift comporta la creazione e l'esecuzione di codice che verifica la correttezza di altre unità di codice nella tua applicazione. I programmatori lo fanno per garantire affidabilità, rilevare bug all'inizio del ciclo di sviluppo e facilitare il futuro refactoring del codice senza conseguenze non intenzionali.

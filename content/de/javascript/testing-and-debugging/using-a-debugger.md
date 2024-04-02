@@ -1,13 +1,15 @@
 ---
 date: 2024-01-26 03:49:55.091778-07:00
-description: "Die Verwendung eines Debuggers bedeutet, spezialisierte Werkzeuge zu\
-  \ nutzen, mit denen man unter die Haube seines Codes schauen und ihn Schritt f\xFC\
-  r\u2026"
+description: "Hier ein St\xFCck JavaScript-Code, das sich nicht wie erwartet verh\xE4\
+  lt: ```javascript function buggyMultiply(a, b) { return a + b; // Hoppla! Das sollte\
+  \ eine\u2026"
 lastmod: '2024-03-13T22:44:54.270630-06:00'
 model: gpt-4-0125-preview
-summary: "Die Verwendung eines Debuggers bedeutet, spezialisierte Werkzeuge zu nutzen,\
-  \ mit denen man unter die Haube seines Codes schauen und ihn Schritt f\xFCr\u2026"
+summary: "Hier ein St\xFCck JavaScript-Code, das sich nicht wie erwartet verh\xE4\
+  lt: ```javascript function buggyMultiply(a, b) { return a + b; // Hoppla! Das sollte\
+  \ eine\u2026"
 title: Einsatz eines Debuggers
+weight: 35
 ---
 
 ## Wie geht das:

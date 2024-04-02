@@ -7,9 +7,8 @@ model: gpt-4-0125-preview
 summary: "Writing to standard error (`stderr`) in C++ involves outputting error messages\
   \ or diagnostics that are separate from the main program output. Programmers\u2026"
 title: Writing to standard error
+weight: 25
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 

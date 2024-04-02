@@ -9,9 +9,8 @@ summary: "Dato til tekstkonvertering inneb\xE6rer \xE5 endre en dato-representas
   \ til en lesbar tekststreng. Programmerere gj\xF8r dette for \xE5 vise datoen i\
   \ et format som\u2026"
 title: Konvertere en dato til en streng
+weight: 28
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 Dato til tekstkonvertering innebærer å endre en dato-representasjon til en lesbar tekststreng. Programmerere gjør dette for å vise datoen i et format som er forståelig for brukeren eller for å formatere datoen for logging og rapporter.

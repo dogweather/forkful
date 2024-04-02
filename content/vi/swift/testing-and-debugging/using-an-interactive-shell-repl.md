@@ -13,9 +13,8 @@ summary: "S\u1EED d\u1EE5ng m\u1ED9t shell t\u01B0\u01A1ng t\xE1c, hay v\xF2ng l
   nh m\u1ED9t c\xE1ch t\u01B0\u01A1ng t\xE1c. L\u1EADp tr\xECnh vi\xEAn s\u1EED d\u1EE5\
   ng n\xF3 \u0111\u1EC3 nhanh ch\xF3ng ki\u1EC3m\u2026"
 title: "S\u1EED d\u1EE5ng v\u1ECF t\u01B0\u01A1ng t\xE1c (REPL)"
+weight: 34
 ---
-
-{{< edit_this_page >}}
 
 ## Gì và Tại sao?
 Sử dụng một shell tương tác, hay vòng lặp Đọc-Đánh giá-In (REPL), cho phép bạn lập trình một cách tương tác. Lập trình viên sử dụng nó để nhanh chóng kiểm tra đoạn mã Swift, gỡ lỗi, hoặc học ngôn ngữ.

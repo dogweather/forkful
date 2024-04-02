@@ -9,9 +9,8 @@ summary: "Virheiden k\xE4sittely tarkoittaa suunnitelmien tekemist\xE4 silloin, 
   \ asiat menev\xE4t pieleen. Se on t\xE4rke\xE4\xE4, koska se auttaa v\xE4ltt\xE4\
   m\xE4\xE4n kaatumisia ja tekee\u2026"
 title: "Virheiden k\xE4sittely"
+weight: 16
 ---
-
-{{< edit_this_page >}}
 
 ## Mikä & Miksi?
 Virheiden käsittely tarkoittaa suunnitelmien tekemistä silloin, kun asiat menevät pieleen. Se on tärkeää, koska se auttaa välttämään kaatumisia ja tekee ohjelmistostasi vakaan ja käyttäjäystävällisen.

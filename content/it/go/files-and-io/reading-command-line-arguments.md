@@ -10,9 +10,8 @@ model: gpt-4-0125-preview
 summary: "Leggere gli argomenti da linea di comando in Go implica l'estrazione degli\
   \ argomenti forniti a un programma durante la sua invocazione dal terminale o dal\u2026"
 title: Lettura degli argomenti da linea di comando
+weight: 23
 ---
-
-{{< edit_this_page >}}
 
 ## Cosa & Perché?
 

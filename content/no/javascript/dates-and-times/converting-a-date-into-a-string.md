@@ -9,9 +9,8 @@ summary: "\xC5 konvertere datoer til strenger gj\xF8r det enkelt \xE5 lese og vi
   \ datoer for brukere. Programmerere gj\xF8r dette for \xE5 formatere eller lagre\
   \ datoer som tekst\u2026"
 title: Konvertere en dato til en streng
+weight: 28
 ---
-
-{{< edit_this_page >}}
 
 ## Hva & Hvorfor?
 Å konvertere datoer til strenger gjør det enkelt å lese og vise datoer for brukere. Programmerere gjør dette for å formatere eller lagre datoer som tekst i databaser, filer eller webapper.

@@ -11,9 +11,8 @@ summary: "Escrever no erro padr\xE3o (stderr) \xE9 sobre redirecionar mensagens 
   \ erro e diagn\xF3sticos separadamente da sa\xEDda principal do programa, que vai\
   \ para a sa\xEDda\u2026"
 title: "Escrevendo para o erro padr\xE3o"
+weight: 25
 ---
-
-{{< edit_this_page >}}
 
 ## O Que & Por Quê?
 

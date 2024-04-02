@@ -13,9 +13,8 @@ summary: "Vi\u1EC7c vi\u1EBFt m\u1ED9t t\u1EC7p v\u0103n b\u1EA3n trong Go bao g
   t t\u1EC7p v\u0103n b\u1EA3n m\u1EDBi ho\u1EB7c \u0111\xE3 t\u1ED3n t\u1EA1i. C\xE1\
   c l\u1EADp tr\xECnh vi\xEAn th\u1EF1c hi\u1EC7n \u0111i\u1EC1u\u2026"
 title: "Vi\u1EBFt m\u1ED9t t\u1EC7p v\u0103n b\u1EA3n"
+weight: 24
 ---
-
-{{< edit_this_page >}}
 
 ## Gì & Tại sao?
 

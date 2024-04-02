@@ -11,9 +11,8 @@ summary: "Komennon rivin argumenttien lukeminen Google Apps Scriptiss\xE4 on hie
   \ harhaanjohtavaa, sill\xE4 toisin kuin perinteisiss\xE4 komentorivik\xE4ytt\xF6\
   liittymiss\xE4\u2026"
 title: Komentoriviparametrien lukeminen
+weight: 23
 ---
-
-{{< edit_this_page >}}
 
 ## Mikä & Miksi?
 

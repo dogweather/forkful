@@ -17,9 +17,8 @@ summary: "\u6B63\u5219\u8868\u8FBE\u5F0F\uFF0C\u6216\u79F0regex\uFF0C\u662F\u7F1
   \u6587\u672C\u6216\u64CD\u4F5C\u5B57\u7B26\u4E32\uFF0C\u56E0\u4E3A\u5B83\u65E2\u9AD8\
   \u6548\u53C8\u591A\u529F\u80FD\u3002"
 title: "\u4F7F\u7528\u6B63\u5219\u8868\u8FBE\u5F0F"
+weight: 11
 ---
-
-{{< edit_this_page >}}
 
 ## 什么和为什么？
 正则表达式，或称regex，是编程中一种强大的模式匹配和搜索工具。程序员使用正则表达式来执行任务，如验证用户输入、搜索文本或操作字符串，因为它既高效又多功能。

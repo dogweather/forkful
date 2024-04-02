@@ -11,9 +11,8 @@ summary: "YAML, joka tarkoittaa \"YAML Ain't Markup Language\" (YAML ei ole merk
   \ on ihmisen luettavissa oleva datan serialisointikieli, jota k\xE4ytet\xE4\xE4\
   n\u2026"
 title: "Ty\xF6skentely YAML:n parissa"
+weight: 41
 ---
-
-{{< edit_this_page >}}
 
 ## Mikä & Miksi?
 

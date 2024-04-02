@@ -9,9 +9,8 @@ summary: "Midlertidige filer er kortlivet dataoppbevaring p\xE5 disk. Vi lager d
   \ for sikker og flyktig datah\xE5ndtering, ofte ved h\xE5ndtering av store datamengder\
   \ eller\u2026"
 title: Opprette en midlertidig fil
+weight: 21
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why? (Hva & Hvorfor?)
 Midlertidige filer er kortlivet dataoppbevaring på disk. Vi lager dem for sikker og flyktig datahåndtering, ofte ved håndtering av store datamengder eller for å redusere minnebruk.

@@ -11,9 +11,8 @@ summary: "Wyra\u017Cenia regularne w programowaniu to sekwencje znak\xF3w defini
   ce wzorzec wyszukiwania, typowo wykorzystywane do przeszukiwania i manipulacji ci\u0105\
   gami\u2026"
 title: "Korzystanie z wyra\u017Ce\u0144 regularnych"
+weight: 11
 ---
-
-{{< edit_this_page >}}
 
 ## Co i dlaczego?
 Wyrażenia regularne w programowaniu to sekwencje znaków definiujące wzorzec wyszukiwania, typowo wykorzystywane do przeszukiwania i manipulacji ciągami znaków. Programiści Haskell wykorzystują wyrażenia regularne do zadań, począwszy od prostego dopasowywania ciągów znaków po złożone przetwarzanie tekstu, wykorzystując ich efektywność i wszechstronność w obsłudze danych tekstowych.

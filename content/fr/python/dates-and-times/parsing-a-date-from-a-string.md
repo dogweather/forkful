@@ -11,9 +11,8 @@ summary: "Analyser une date \xE0 partir d'une cha\xEEne de caract\xE8res consist
   \ \xE0 convertir des informations textuelles sur la date et l'heure en un objet\
   \ datetime ou un\u2026"
 title: "Analyser une date depuis une cha\xEEne de caract\xE8res"
+weight: 30
 ---
-
-{{< edit_this_page >}}
 
 ## Quoi & Pourquoi ?
 Analyser une date à partir d'une chaîne de caractères consiste à convertir des informations textuelles sur la date et l'heure en un objet datetime ou un format structuré équivalent. Cette opération est couramment effectuée pour permettre des opérations arithmétiques sur les dates, des comparaisons et des mises en forme d'une manière qui soit indépendante de la langue et de la région. Les programmeurs le font pour manipuler efficacement et gérer les données temporelles extraites de journaux, d'entrées utilisateur ou de sources externes.

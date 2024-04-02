@@ -9,9 +9,8 @@ summary: "Stringien yhdist\xE4minen tarkoittaa kahden tai useamman tekstinp\xE4t
   n liitt\xE4mist\xE4 yhteen. Koodarit tekev\xE4t t\xE4t\xE4 muodostaakseen k\xE4\
   ytt\xE4j\xE4lle n\xE4ytett\xE4vi\xE4\u2026"
 title: "Merkkijonojen yhdist\xE4minen"
+weight: 3
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why? - Mitä ja Miksi?
 Stringien yhdistäminen tarkoittaa kahden tai useamman tekstinpätkän liittämistä yhteen. Koodarit tekevät tätä muodostaakseen käyttäjälle näytettäviä viestejä, tehdäkseen tiedon käsittelystä dynaamista ja järjestelläkseen tietoja järkevästi.

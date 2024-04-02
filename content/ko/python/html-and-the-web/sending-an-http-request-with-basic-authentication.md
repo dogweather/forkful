@@ -17,9 +17,8 @@ summary: "HTTP \uC694\uCCAD\uC5D0 \uAE30\uBCF8 \uC778\uC99D\uC744 \uC0AC\uC6A9\u
   \uC6A9\uD569\uB2C8\uB2E4."
 title: "\uAE30\uBCF8 \uC778\uC99D\uC744 \uC0AC\uC6A9\uD55C HTTP \uC694\uCCAD \uBCF4\
   \uB0B4\uAE30"
+weight: 45
 ---
-
-{{< edit_this_page >}}
 
 ## 무엇 & 왜?
 HTTP 요청에 기본 인증을 사용하는 건 웹 서비스에 로그인 정보를 전송할 때 필요합니다. 프로그래머들은 서버에 보안된 정보 접근 권한을 요청하는데 이 방식을 사용합니다.

@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "String interpolatie in Google Apps Script maakt het mogelijk om dynamisch\
   \ expressies in te voegen binnen strings, wat helpt om meer leesbare en\u2026"
 title: Een string interpoleren
+weight: 8
 ---
-
-{{< edit_this_page >}}
 
 ## Wat & Waarom?
 

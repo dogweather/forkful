@@ -9,9 +9,8 @@ summary: "La concat\xE9nation des cha\xEEnes, c'est quand on fusionne deux texte
   \ en un seul. Les d\xE9veloppeurs la font pour construire des messages dynamiques,\
   \ g\xE9rer des\u2026"
 title: "Concat\xE9nation de cha\xEEnes de caract\xE8res"
+weight: 3
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 La concaténation des chaînes, c'est quand on fusionne deux textes en un seul. Les développeurs la font pour construire des messages dynamiques, gérer des chemins de fichiers, ou tout simplement, pour agencer des données textuelles.

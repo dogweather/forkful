@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Merkkijonointerpolointi Visual Basic for Applications (VBA) -ohjelmoinnissa\
   \ viittaa prosessiin, jossa muuttujia tai lausekkeita sijoitetaan\u2026"
 title: Merkkijonon interpolaatio
+weight: 8
 ---
-
-{{< edit_this_page >}}
 
 ## Mikä ja miksi?
 

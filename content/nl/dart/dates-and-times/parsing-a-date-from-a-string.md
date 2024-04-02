@@ -10,9 +10,8 @@ model: gpt-4-0125-preview
 summary: "Een datum parseren vanuit een string in Dart houdt in dat je tekstuele weergaven\
   \ van datums en tijden omzet naar een `DateTime` object. Deze bewerking is\u2026"
 title: Een datum ontleden uit een string
+weight: 30
 ---
-
-{{< edit_this_page >}}
 
 ## Wat & Waarom?
 Een datum parseren vanuit een string in Dart houdt in dat je tekstuele weergaven van datums en tijden omzet naar een `DateTime` object. Deze bewerking is essentieel voor applicaties die te maken hebben met planning, gegevensanalyse, of elke functie die datummanipulatie vereist, zodat ervoor zorg gedragen wordt dat de datum gerelateerde gegevens correct worden begrepen en verwerkt door het programma.

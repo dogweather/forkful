@@ -11,9 +11,8 @@ summary: "Wyra\u017Cenia regularne (regex) w programowaniu to wzorce u\u017Cywan
   \ do dopasowywania kombinacji znak\xF3w w ci\u0105gach znak\xF3w. W Elm, podobnie\
   \ jak w innych j\u0119zykach,\u2026"
 title: "Korzystanie z wyra\u017Ce\u0144 regularnych"
+weight: 11
 ---
-
-{{< edit_this_page >}}
 
 ## Co i dlaczego?
 Wyrażenia regularne (regex) w programowaniu to wzorce używane do dopasowywania kombinacji znaków w ciągach znaków. W Elm, podobnie jak w innych językach, programiści używają regexów do zadań takich jak walidacja danych wejściowych, wyszukiwanie oraz zamiana tekstu w ciągach znaków ze względu na ich elastyczność i wydajność.

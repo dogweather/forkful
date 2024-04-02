@@ -7,9 +7,8 @@ model: gpt-4-0125-preview
 summary: "Manipular archivos con one-liners de CLI (Interfaz de L\xEDnea de Comando)\
   \ implica el uso de scripts o comandos Bash para realizar acciones sobre archivos,\u2026"
 title: "Manipulando archivos con comandos de l\xEDnea de una sola l\xEDnea"
+weight: 31
 ---
-
-{{< edit_this_page >}}
 
 ## ¿Qué y Por Qué?
 

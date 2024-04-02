@@ -9,9 +9,8 @@ summary: "Deleting characters matching a pattern in Bash lets you manipulate str
   \ to fit your needs\u2014like stripping unwanted chars or sanitizing input. It's\
   \ the\u2026"
 title: Deleting characters matching a pattern
+weight: 5
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 Deleting characters matching a pattern in Bash lets you manipulate strings to fit your needs—like stripping unwanted chars or sanitizing input. It's the bread and butter for cleaning up data and prepping it for processing.

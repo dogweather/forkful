@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Parsing av HTML inneb\xE6rer \xE5 trekke ut data og informasjon fra HTML-dokumenter,\
   \ noe som er avgj\xF8rende for webskraping, dataanalyse og\u2026"
 title: Analysering av HTML
+weight: 43
 ---
-
-{{< edit_this_page >}}
 
 ## Hva & hvorfor?
 Parsing av HTML innebærer å trekke ut data og informasjon fra HTML-dokumenter, noe som er avgjørende for webskraping, dataanalyse og automatiseringsoppgaver. Programutviklere utfører dette for å samle, analysere eller manipulere webinnhold programmatisk, noe som muliggjør automatisering av det som ellers ville vært manuell uttrekking av data fra nettsider.

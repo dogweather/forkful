@@ -2,13 +2,16 @@
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 22:03:27.706751-07:00
-description: "Utilizzare un debugger in Visual Basic for Applications (VBA) comporta\
-  \ l'esecuzione del proprio codice passo dopo passo per ispezionarne il flusso di\u2026"
+description: "In VBA, il debugger \xE8 integrato nell'Editor di Visual Basic (VBE).\
+  \ Ecco come puoi sfruttarlo: 1. **Impostazione dei punti di interruzione**: Fai\
+  \ clic nel\u2026"
 lastmod: '2024-03-13T22:44:43.268075-06:00'
 model: gpt-4-0125-preview
-summary: "Utilizzare un debugger in Visual Basic for Applications (VBA) comporta l'esecuzione\
-  \ del proprio codice passo dopo passo per ispezionarne il flusso di\u2026"
+summary: "In VBA, il debugger \xE8 integrato nell'Editor di Visual Basic (VBE). Ecco\
+  \ come puoi sfruttarlo: 1. **Impostazione dei punti di interruzione**: Fai clic\
+  \ nel\u2026"
 title: Utilizzo di un debugger
+weight: 35
 ---
 
 ## Come fare:

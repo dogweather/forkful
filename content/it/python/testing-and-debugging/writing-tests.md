@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Scrivere test in Python comporta la creazione di script automatizzati per\
   \ validare la correttezza del tuo codice. I programmatori lo fanno per assicurarsi\u2026"
 title: Scrivere test
+weight: 36
 ---
-
-{{< edit_this_page >}}
 
 ## Cos'è e perché?
 Scrivere test in Python comporta la creazione di script automatizzati per validare la correttezza del tuo codice. I programmatori lo fanno per assicurarsi che le loro funzioni o classi funzionino come previsto in varie condizioni, il che aiuta a individuare gli errori precocemente e facilita la manutenzione e il rifattorizzamento più semplici.

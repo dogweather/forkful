@@ -9,9 +9,8 @@ summary: "Konwersja \u0142a\u0144cucha znak\xF3w (string) do ma\u0142ych liter t
   \ proces zmiany wszystkich liter w tek\u015Bcie na ich ma\u0142e odpowiedniki. Robimy\
   \ to, aby ujednolici\u0107 dane,\u2026"
 title: "Konwersja ci\u0105gu znak\xF3w na ma\u0142e litery"
+weight: 4
 ---
-
-{{< edit_this_page >}}
 
 ## Co i dlaczego?
 Konwersja łańcucha znaków (string) do małych liter to proces zmiany wszystkich liter w tekście na ich małe odpowiedniki. Robimy to, aby ujednolicić dane, szczególnie przy porównywaniu tekstów, gdzie wielkość liter nie ma znaczenia.

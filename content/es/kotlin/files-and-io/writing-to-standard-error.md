@@ -11,9 +11,8 @@ summary: "Escribir en el error est\xE1ndar (stderr) se trata de enviar mensajes 
   \ error y diagn\xF3sticos a un flujo separado, distinto del salida est\xE1ndar (stdout),\
   \ lo\u2026"
 title: "Escribiendo en el error est\xE1ndar"
+weight: 25
 ---
-
-{{< edit_this_page >}}
 
 ## ¿Qué y Por Qué?
 

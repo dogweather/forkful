@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Leggere un file di testo in Visual Basic for Applications (VBA) implica\
   \ l'accesso programmatico ed estrazione del contenuto di un file di testo\u2026"
 title: Leggere un file di testo
+weight: 22
 ---
-
-{{< edit_this_page >}}
 
 ## Cosa & Perché?
 

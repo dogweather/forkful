@@ -17,9 +17,8 @@ summary: "Haskell\uC5D0\uC11C JSON(JavaScript Object Notation)\uC744 \uB2E4\uB8E
   \uB85C\uADF8\uB798\uBA38\uB4E4\uC740 Haskell \uC560\uD50C\uB9AC\uCF00\uC774\uC158\
   \uC744 \uC6F9 \uC11C\uBE44\uC2A4\uB098 API\uC640\u2026"
 title: "JSON\uACFC \uD568\uAED8 \uC77C\uD558\uAE30"
+weight: 38
 ---
-
-{{< edit_this_page >}}
 
 ## 무엇 & 왜?
 Haskell에서 JSON(JavaScript Object Notation)을 다루는 일은 JSON 데이터를 Haskell 타입으로 파싱하는 것과 Haskell 타입을 다시 JSON으로 변환하는 것을 포함합니다. 프로그래머들은 Haskell 애플리케이션을 웹 서비스나 API와 원활하게 데이터를 교환할 수 있게 하기 위해 이러한 작업을 합니다. 이는 현대 소프트웨어 개발에서 플랫폼 간 데이터 교환을 위한 일반적인 관행입니다.

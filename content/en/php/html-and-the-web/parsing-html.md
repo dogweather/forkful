@@ -7,9 +7,8 @@ model: gpt-4-0125-preview
 summary: "Parsing HTML in PHP involves extracting specific information from HTML documents.\
   \ Programmers perform this task to automate data extraction, web scraping,\u2026"
 title: Parsing HTML
+weight: 43
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 Parsing HTML in PHP involves extracting specific information from HTML documents. Programmers perform this task to automate data extraction, web scraping, or to integrate content from various web pages within their applications, enhancing functionality without manual intervention.

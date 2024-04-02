@@ -12,9 +12,8 @@ summary: "\u5B57\u7B26\u4E32\u62FC\u63A5\u5C31\u662F\u5C06\u4E24\u4E2A\u6216\u59
   \u6837\u505A\u662F\u4E3A\u4E86\u521B\u5EFA\u52A8\u6001\u6587\u672C\u3001\u6784\u5EFA\
   URL\u6216\u8005\u5408\u6210\u7528\u6237\u754C\u9762\u4FE1\u606F\u3002"
 title: "\u5B57\u7B26\u4E32\u62FC\u63A5"
+weight: 3
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why? (是什么？为什么？)
 字符串拼接就是将两个或多个字符串合并成一个。程序员这样做是为了创建动态文本、构建URL或者合成用户界面信息。

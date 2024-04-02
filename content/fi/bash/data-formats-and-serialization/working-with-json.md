@@ -11,9 +11,8 @@ summary: "JSONin k\xE4sittely Bash-ohjelmoinnissa sis\xE4lt\xE4\xE4 JSON-tietoje
   \ j\xE4sent\xE4misen, poimimisen ja manipuloinnin suoraan komentorivilt\xE4. Ohjelmoijat\
   \ tekev\xE4t n\xE4in\u2026"
 title: "Ty\xF6skentely JSON:n kanssa"
+weight: 38
 ---
-
-{{< edit_this_page >}}
 
 ## Mikä ja miksi?
 JSONin käsittely Bash-ohjelmoinnissa sisältää JSON-tietojen jäsentämisen, poimimisen ja manipuloinnin suoraan komentoriviltä. Ohjelmoijat tekevät näin usein integroidakseen kuoriskriptejä saumattomasti web-API:en ja modernien tietovaihtoformaatien kanssa, tehden Bash-skriptauksesta voimakkaampaa ja relevantimpaa JSON-painotteisessa ekosysteemissä.

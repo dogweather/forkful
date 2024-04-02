@@ -13,9 +13,8 @@ summary: "Chia code th\xE0nh c\xE1c h\xE0m gi\u1ED1ng nh\u01B0 vi\u1EC7c s\u1EAF
   c t\xECm ki\u1EBFm v\xE0 s\u1EED d\u1EE5ng ch\xFAng tr\u1EDF n\xEAn d\u1EC5 d\xE0\
   ng h\u01A1n. Ch\xFAng ta l\xE0m\u2026"
 title: "S\u1EAFp x\u1EBFp m\xE3 th\xE0nh c\xE1c h\xE0m"
+weight: 18
 ---
-
-{{< edit_this_page >}}
 
 ## Cái gì & Tại sao?
 Chia code thành các hàm giống như việc sắp xếp các viên LEGO vào trong các hộp — làm cho việc tìm kiếm và sử dụng chúng trở nên dễ dàng hơn. Chúng ta làm điều này để tránh lặp lại, đơn giản hóa việc hiểu và làm cho việc bảo trì ít đau đầu hơn.

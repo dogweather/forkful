@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Het genereren van willekeurige getallen in Ruby houdt in dat er getallen\
   \ worden gecre\xEBerd die logischerwijs niet voorspeld kunnen worden. Dit is\u2026"
 title: Willekeurige getallen genereren
+weight: 12
 ---
-
-{{< edit_this_page >}}
 
 ## Wat & Waarom?
 

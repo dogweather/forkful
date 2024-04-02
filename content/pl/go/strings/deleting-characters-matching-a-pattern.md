@@ -11,9 +11,8 @@ summary: "Usuwanie znak\xF3w pasuj\u0105cych do okre\u015Blonego wzorca polega n
   \ usuni\u0119ciu pewnych znak\xF3w lub sekwencji znak\xF3w ze \u0142a\u0144cuch\xF3\
   w tekstowych, na podstawie regu\u0142\u2026"
 title: "Usuwanie znak\xF3w pasuj\u0105cych do wzorca"
+weight: 5
 ---
-
-{{< edit_this_page >}}
 
 ## Co i dlaczego?
 

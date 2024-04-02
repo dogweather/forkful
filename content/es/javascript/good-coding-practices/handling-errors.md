@@ -9,9 +9,8 @@ summary: "El manejo de errores es c\xF3mo gestionas cuando las cosas no van bien
   \ tu c\xF3digo. Es clave porque ayuda a que tus programas fallen de manera controlada\
   \ e\u2026"
 title: Manejo de errores
+weight: 16
 ---
-
-{{< edit_this_page >}}
 
 ## ¿Qué y Por Qué?
 

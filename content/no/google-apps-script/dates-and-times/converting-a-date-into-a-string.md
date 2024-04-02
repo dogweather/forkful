@@ -10,9 +10,8 @@ model: gpt-4-0125-preview
 summary: "Konvertering av datoer til strenger er en grunnleggende oppgave som gj\xF8\
   r det mulig for programmerere \xE5 manipulere og vise datoinformasjon i et\u2026"
 title: "\xC5 konvertere en dato til en streng"
+weight: 28
 ---
-
-{{< edit_this_page >}}
 
 ## Hva & Hvorfor?
 

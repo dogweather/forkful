@@ -9,9 +9,8 @@ summary: "Ber\xE4kning av datum handlar om att ta reda p\xE5 exakta framtida ell
   \ f\xF6rflutna tidpunkter baserat p\xE5 nuvarande datum. Programmerare g\xF6r detta\
   \ f\xF6r att\u2026"
 title: "Ber\xE4kna ett datum i framtiden eller f\xF6rflutenheten"
+weight: 26
 ---
-
-{{< edit_this_page >}}
 
 ## Vad & Varför?
 Beräkning av datum handlar om att ta reda på exakta framtida eller förflutna tidpunkter baserat på nuvarande datum. Programmerare gör detta för att hantera tidsbegränsade händelser, som att ställa in påminnelser, löptider för uppgifter eller att visa tidslinjer.

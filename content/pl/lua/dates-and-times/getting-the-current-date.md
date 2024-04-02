@@ -10,9 +10,8 @@ model: gpt-4-0125-preview
 summary: "Pobieranie aktualnej daty w programowaniu jest kluczowym zadaniem dla wielu\
   \ aplikacji, w tym zapisywania log\xF3w, znakowania czasu zdarze\u0144 czy planowania\u2026"
 title: Pobieranie aktualnej daty
+weight: 29
 ---
-
-{{< edit_this_page >}}
 
 ## Co i dlaczego?
 

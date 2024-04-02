@@ -11,9 +11,8 @@ summary: "Stringinterpolatie stelt je in staat om variabelen direct in te voegen
   \ strings. Dit wordt gedaan om dynamisch strings op te bouwen en de code schoon\
   \ te\u2026"
 title: Een string interpoleren
+weight: 8
 ---
-
-{{< edit_this_page >}}
 
 ## Wat & Waarom?
 Stringinterpolatie stelt je in staat om variabelen direct in te voegen in strings. Dit wordt gedaan om dynamisch strings op te bouwen en de code schoon te houden.

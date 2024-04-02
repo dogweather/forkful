@@ -9,9 +9,8 @@ summary: "Converter uma data em uma string \xE9 basicamente transformar o format
   \ de data, normalmente estruturado e reconhecido pelo computador, em texto leg\xED\
   vel por\u2026"
 title: Convertendo uma data em uma string
+weight: 28
 ---
-
-{{< edit_this_page >}}
 
 ## O Que & Porquê?
 Converter uma data em uma string é basicamente transformar o formato de data, normalmente estruturado e reconhecido pelo computador, em texto legível por humanos. Programadores fazem isso para exibir datas em um formato específico, facilitando a interação e compreensão por usuários ou para registrar em arquivos de log.

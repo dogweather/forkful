@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Das Senden einer HTTP-Anfrage umfasst das Erstellen und Versenden einer\
   \ Anfrage an einen Webserver, um Daten abzurufen oder zu \xFCbermitteln. Programmierer\u2026"
 title: Eine HTTP-Anforderung senden
+weight: 44
 ---
-
-{{< edit_this_page >}}
 
 ## Was & Warum?
 

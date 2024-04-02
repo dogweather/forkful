@@ -23,9 +23,8 @@ summary: "\u5728\u7F16\u7A0B\u4E2D\u89E3\u6790HTML\u6D89\u53CA\u5230\u5206\u6790
   \u6790\u548C\u81EA\u52A8\u5316\u6D4B\u8BD5\u573A\u666F\u4E2D\u7684\u4E00\u4E2A\u57FA\
   \u672C\u6280\u80FD\u3002"
 title: "\u89E3\u6790HTML"
+weight: 43
 ---
-
-{{< edit_this_page >}}
 
 ## 何为“解析HTML”以及为何需要？
 

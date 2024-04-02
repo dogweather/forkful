@@ -22,9 +22,8 @@ summary: "REPL\u3001\u307E\u305F\u306FRead-Eval-Print Loop\u306F\u3001Clojure\u3
   \u7528\u3057\u307E\u3059\u3002"
 title: "\u30A4\u30F3\u30BF\u30E9\u30AF\u30C6\u30A3\u30D6\u30B7\u30A7\u30EB\uFF08REPL\uFF09\
   \u306E\u4F7F\u7528"
+weight: 34
 ---
-
-{{< edit_this_page >}}
 
 ## 何となぜ？
 REPL、またはRead-Eval-Print Loopは、Clojureコードを一片ずつ動的にテストするためのプログラミング環境です。コーダーは、コンパイルや完全なプロジェクト環境の設定のオーバーヘッドなしに、即時フィードバック、反復的な開発、迅速な実験のためにこれを使用します。

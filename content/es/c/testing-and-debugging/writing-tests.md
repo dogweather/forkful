@@ -11,9 +11,8 @@ summary: "Escribir pruebas en C implica crear programas o funciones auxiliares m
   s peque\xF1os que verifiquen autom\xE1ticamente la funcionalidad de tu c\xF3digo.\
   \ Los\u2026"
 title: Escribir pruebas
+weight: 36
 ---
-
-{{< edit_this_page >}}
 
 ## ¿Qué y por qué?
 Escribir pruebas en C implica crear programas o funciones auxiliares más pequeños que verifiquen automáticamente la funcionalidad de tu código. Los programadores lo hacen para asegurarse de que su software funcione como se espera, para detectar errores temprano y para facilitar modificaciones futuras del código sin efectos secundarios no deseados.

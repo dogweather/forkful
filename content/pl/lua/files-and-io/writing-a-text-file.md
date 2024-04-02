@@ -11,9 +11,8 @@ summary: "Zapisywanie do pliku tekstowego w Lua polega na utworzeniu lub otwarci
   \ pliku w trybie do zapisu, a nast\u0119pnie u\u017Cywaniu operacji na plikach do\
   \ wstawiania\u2026"
 title: Pisanie pliku tekstowego
+weight: 24
 ---
-
-{{< edit_this_page >}}
 
 ## Co i Dlaczego?
 

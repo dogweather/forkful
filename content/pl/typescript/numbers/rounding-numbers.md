@@ -9,9 +9,8 @@ summary: "Zaokr\u0105glanie liczb to redukowanie liczby do okre\u015Blonej precy
   \ Programi\u015Bci robi\u0105 to, aby kontrolowa\u0107 numeryczne wyj\u015Bcie dla\
   \ czytelno\u015Bci, cel\xF3w\u2026"
 title: "Zaokr\u0105glanie liczb"
+weight: 13
 ---
-
-{{< edit_this_page >}}
 
 ## Co i dlaczego?
 Zaokrąglanie liczb to redukowanie liczby do określonej precyzji. Programiści robią to, aby kontrolować numeryczne wyjście dla czytelności, celów wyświetlania, lub kiedy wymagana jest określona precyzja po operacjach, które dają wyniki zmiennoprzecinkowe.

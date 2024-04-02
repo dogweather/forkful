@@ -11,9 +11,8 @@ summary: "Converter uma data em uma string no Visual Basic for Applications (VBA
   \ \xE9 um processo usado para mudar o tipo de dados de uma data para um formato\
   \ de\u2026"
 title: Convertendo uma data em uma string
+weight: 28
 ---
-
-{{< edit_this_page >}}
 
 ## O Quê & Por Que?
 

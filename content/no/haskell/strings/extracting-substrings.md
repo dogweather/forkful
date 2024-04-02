@@ -9,9 +9,8 @@ summary: "\xC5 hente ut delstrenger betyr \xE5 plukke ut spesifikke deler av en 
   \ Programmerere gj\xF8r dette for \xE5 manipulere, analysere eller transformere\
   \ data\u2026"
 title: Uthenting av delstrenger
+weight: 6
 ---
-
-{{< edit_this_page >}}
 
 ## Hva & Hvorfor?
 

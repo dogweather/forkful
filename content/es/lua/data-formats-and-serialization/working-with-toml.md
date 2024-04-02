@@ -7,9 +7,8 @@ model: gpt-4-0125-preview
 summary: "Trabajar con TOML implica analizar y generar datos TOML (Tom's Obvious,\
   \ Minimal Language) con Lua. Los programadores utilizan TOML para archivos de\u2026"
 title: Trabajando con TOML
+weight: 39
 ---
-
-{{< edit_this_page >}}
 
 ## ¿Qué y Por Qué?
 Trabajar con TOML implica analizar y generar datos TOML (Tom's Obvious, Minimal Language) con Lua. Los programadores utilizan TOML para archivos de configuración debido a su legibilidad y sintaxis simple que se traduce fácilmente en una estructura de datos.

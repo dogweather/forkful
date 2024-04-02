@@ -9,9 +9,8 @@ summary: "Calculer une date dans le futur ou le pass\xE9, c'est simplement ajout
   \ ou soustraire du temps \xE0 une date donn\xE9e. Les devs s'en servent pour des\
   \ t\xE2ches\u2026"
 title: "Calcul d'une date future ou pass\xE9e"
+weight: 26
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 Calculer une date dans le futur ou le passé, c'est simplement ajouter ou soustraire du temps à une date donnée. Les devs s'en servent pour des tâches telles que des rappels, des échéanciers ou des historiques d'événements.

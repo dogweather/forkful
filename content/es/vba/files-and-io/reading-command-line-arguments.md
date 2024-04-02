@@ -10,9 +10,8 @@ model: gpt-4-0125-preview
 summary: "Leer los argumentos de la l\xEDnea de comandos en Visual Basic para Aplicaciones\
   \ (VBA) implica acceder a los par\xE1metros pasados a tu programa al ejecutarse.\u2026"
 title: "Leyendo argumentos de la l\xEDnea de comandos"
+weight: 23
 ---
-
-{{< edit_this_page >}}
 
 ## ¿Qué y por qué?
 

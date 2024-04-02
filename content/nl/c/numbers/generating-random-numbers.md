@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Het genereren van willekeurige getallen in C houdt in dat waarden worden\
   \ gecre\xEBerd die onvoorspelbaar zijn en een specifieke verdeling volgen, zoals\u2026"
 title: Willekeurige getallen genereren
+weight: 12
 ---
-
-{{< edit_this_page >}}
 
 ## Wat & Waarom?
 

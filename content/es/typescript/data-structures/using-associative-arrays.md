@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Los arreglos asociativos, o objetos en TypeScript, te permiten usar cadenas\
   \ (o claves) para acceder a pares de valores. Los programadores los utilizan\u2026"
 title: Uso de matrices asociativas
+weight: 15
 ---
-
-{{< edit_this_page >}}
 
 ## ¿Qué y Por Qué?
 

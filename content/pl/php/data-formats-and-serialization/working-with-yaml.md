@@ -11,9 +11,8 @@ summary: "YAML, co oznacza \"YAML Ain't Markup Language\", to format serializacj
   \ danych czytelny dla cz\u0142owieka, kt\xF3ry jest powszechnie u\u017Cywany do\
   \ plik\xF3w\u2026"
 title: Praca z YAML
+weight: 41
 ---
-
-{{< edit_this_page >}}
 
 ## Co i dlaczego?
 

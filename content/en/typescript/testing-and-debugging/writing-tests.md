@@ -7,9 +7,8 @@ model: gpt-4-0125-preview
 summary: "Writing tests in TypeScript involves creating automated scripts to verify\
   \ the functionality and correctness of your code. Programmers do it to ensure\u2026"
 title: Writing tests
+weight: 36
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 Writing tests in TypeScript involves creating automated scripts to verify the functionality and correctness of your code. Programmers do it to ensure reliability, quickly catch bugs, and facilitate maintainable code growth, as TypeScript's static typing adds a level of predictability to JavaScript testing.

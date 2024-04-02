@@ -9,9 +9,8 @@ summary: "Interpola\xE7\xE3o de strings permite injetar vari\xE1veis diretamente
   \ um peda\xE7o de texto. Programadores fazem isso para construir strings de forma\
   \ din\xE2mica e\u2026"
 title: Interpolando uma string
+weight: 8
 ---
-
-{{< edit_this_page >}}
 
 ## O que é e Por quê?
 Interpolação de strings permite injetar variáveis diretamente em um pedaço de texto. Programadores fazem isso para construir strings de forma dinâmica e legível, economizando tempo e tornando o código mais limpo.

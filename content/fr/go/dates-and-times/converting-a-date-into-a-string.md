@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Convertir une date en cha\xEEne de caract\xE8res en Go implique de transformer\
   \ un objet `time.Time` en un format de cha\xEEne lisible. Les programmeurs effectuent\u2026"
 title: "Convertir une date en cha\xEEne de caract\xE8res"
+weight: 28
 ---
-
-{{< edit_this_page >}}
 
 ## Quoi et Pourquoi ?
 

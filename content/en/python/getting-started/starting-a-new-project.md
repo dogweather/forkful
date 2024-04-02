@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Starting a new project in Python is about setting up a structured, maintainable\
   \ framework from the outset. Programmers do this to ensure that their code\u2026"
 title: Starting a new project
+weight: 1
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 

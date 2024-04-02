@@ -9,9 +9,8 @@ summary: "O registro de logs \xE9 a pr\xE1tica de gravar eventos, erros e outras
   \xF5es significativas dos processos em execu\xE7\xE3o de um programa em um arquivo\
   \ ou\u2026"
 title: Registro de Logs
+weight: 17
 ---
-
-{{< edit_this_page >}}
 
 ## O Que & Porquê?
 

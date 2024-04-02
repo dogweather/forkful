@@ -11,9 +11,8 @@ summary: "Escribir en el error est\xE1ndar (stderr) en Go implica dirigir mensaj
   \ de error o diagn\xF3sticos que no est\xE1n destinados para el flujo principal\
   \ de salida.\u2026"
 title: "Escribiendo al error est\xE1ndar"
+weight: 25
 ---
-
-{{< edit_this_page >}}
 
 ## Qué y Por Qué?
 

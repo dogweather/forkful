@@ -8,9 +8,8 @@ model: gpt-4-1106-preview
 summary: "\"Working with XML\" refers to the process of reading, creating, and modifying\
   \ XML (eXtensible Markup Language) files using programming. Programmers do it\u2026"
 title: Working with XML
+weight: 40
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 "Working with XML" refers to the process of reading, creating, and modifying XML (eXtensible Markup Language) files using programming. Programmers do it because XML is widely used for data exchange due to its platform-independent nature and self-describing format.

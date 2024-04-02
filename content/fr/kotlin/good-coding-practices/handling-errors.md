@@ -9,9 +9,8 @@ summary: "La gestion des erreurs est la mani\xE8re dont votre code traite les pr
   mes qui surviennent pendant l'ex\xE9cution \u2014 comme g\xE9rer un impr\xE9vu sans\
   \ le laisser\u2026"
 title: Gestion des erreurs
+weight: 16
 ---
-
-{{< edit_this_page >}}
 
 ## Quoi & Pourquoi ?
 La gestion des erreurs est la manière dont votre code traite les problèmes qui surviennent pendant l'exécution — comme gérer un imprévu sans le laisser tomber. Les programmeurs le font pour éviter les plantages et offrir une expérience fluide aux utilisateurs.

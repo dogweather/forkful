@@ -9,9 +9,8 @@ summary: "Extrahering av substr\xE4ngar inneb\xE4r att plocka ut specifika delar
   \ en str\xE4ng. Programmerare g\xF6r detta f\xF6r att bearbeta eller analysera text\
   \ baserat p\xE5\u2026"
 title: "Extrahera delstr\xE4ngar"
+weight: 6
 ---
-
-{{< edit_this_page >}}
 
 ## Vad & Varför?
 Extrahering av substrängar innebär att plocka ut specifika delar av en sträng. Programmerare gör detta för att bearbeta eller analysera text baserat på behov - såsom att dra ut användarnamn från e-postadresser eller hämta specifika data från en sträng med logginformation.

@@ -13,9 +13,8 @@ summary: "Ch\xFAng ta l\u1EA5y ng\xE0y hi\u1EC7n t\u1EA1i \u0111\u1EC3 bi\u1EBFt
   ng cho h\xE0ng t\u1EA5n t\xEDnh n\u0103ng \u2013 ngh\u0129 \u0111\u1EBFn nh\u1EAD\
   t k\xFD, d\xF9ng th\u1EED, s\u1EF1 ki\u1EC7n. B\u1EA1n n\xF3i\u2026"
 title: "L\u1EA5y ng\xE0y hi\u1EC7n t\u1EA1i"
+weight: 29
 ---
-
-{{< edit_this_page >}}
 
 ## Cái gì & Tại sao?
 Chúng ta lấy ngày hiện tại để biết dữ liệu của ngày hôm nay. Điều này rất quan trọng cho hàng tấn tính năng – nghĩ đến nhật ký, dùng thử, sự kiện. Bạn nói đến nó, ngày thường luôn có mặt ở đó.

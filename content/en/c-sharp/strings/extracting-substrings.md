@@ -8,9 +8,8 @@ model: gpt-4-1106-preview
 summary: "Extracting substrings is the action of snagging a specific part of a string\
   \ \u2014 kinda like scooping out your favorite chunk of a cake. Programmers do this\u2026"
 title: Extracting substrings
+weight: 6
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 Extracting substrings is the action of snagging a specific part of a string — kinda like scooping out your favorite chunk of a cake. Programmers do this to manipulate, analyze, or validate smaller bits of a larger string without wrestling with the whole thing.

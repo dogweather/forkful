@@ -7,9 +7,8 @@ model: gpt-4-0125-preview
 summary: "Komplekse tall er tall med en reel og en imagin\xE6r del (som 3 + 4i). De\
   \ dukker opp i ulike programmeringsproblemer, spesielt i signalbehandling,\u2026"
 title: "\xC5 jobbe med komplekse tall"
+weight: 14
 ---
-
-{{< edit_this_page >}}
 
 ## Hva og hvorfor?
 Komplekse tall er tall med en reel og en imaginær del (som 3 + 4i). De dukker opp i ulike programmeringsproblemer, spesielt i signalbehandling, kvanteberegning og løsing av polynomligninger. Programmerere jonglerer dem for å effektivt løse denne typen oppgaver.

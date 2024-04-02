@@ -11,9 +11,8 @@ summary: "JSON, ou Nota\xE7\xE3o de Objeto JavaScript, \xE9 um formato leve de t
   \ de dados, tornando-o perfeito para armazenamento de dados ou arquivos de configura\xE7\
   \xE3o em\u2026"
 title: Trabalhando com JSON
+weight: 38
 ---
-
-{{< edit_this_page >}}
 
 ## O Que & Por Que?
 

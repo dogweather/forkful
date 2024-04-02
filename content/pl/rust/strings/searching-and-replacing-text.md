@@ -9,9 +9,8 @@ summary: "Wyszukiwanie i zamiana tekstu to standardowe akcje przetwarzaj\u0105ce
   a\u0144cuchy znak\xF3w - znajdujemy fragment tekstu i podmieniamy go na inny. Programi\u015B\
   ci robi\u0105\u2026"
 title: Wyszukiwanie i zamiana tekstu
+weight: 10
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why? (Co i Dlaczego?)
 Wyszukiwanie i zamiana tekstu to standardowe akcje przetwarzające łańcuchy znaków - znajdujemy fragment tekstu i podmieniamy go na inny. Programiści robią to, by modyfikować dane, configi czy kod - to takie cyfrowe "znajdź i zastąp" z edytora tekstu.

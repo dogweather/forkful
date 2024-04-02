@@ -7,9 +7,8 @@ model: gpt-4-1106-preview
 summary: "Comparar dos fechas significa verificar c\xF3mo se relacionan cronol\xF3\
   gicamente. Los programadores lo hacen para manejar eventos, periodos de tiempo y\u2026"
 title: "Comparaci\xF3n de dos fechas"
+weight: 27
 ---
-
-{{< edit_this_page >}}
 
 ## Qué & Por Qué?
 

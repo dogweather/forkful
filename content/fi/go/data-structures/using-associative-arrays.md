@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Assosiatiiviset taulukot, tunnetaan Go:ssa nimell\xE4 mapit, mahdollistavat\
   \ avain-arvo parien tallentamisen, miss\xE4 jokainen uniikki avain mappautuu arvoon.\u2026"
 title: "Assosiatiivisten taulukoiden k\xE4ytt\xF6"
+weight: 15
 ---
-
-{{< edit_this_page >}}
 
 ## Mitä & Miksi?
 

@@ -11,9 +11,8 @@ summary: "La suppression de caract\xE8res correspondant \xE0 un motif sp\xE9cifi
   \ dans les cha\xEEnes en C consiste \xE0 retirer toutes les instances de certains\
   \ caract\xE8res\u2026"
 title: "Supprimer des caract\xE8res correspondant \xE0 un motif"
+weight: 5
 ---
-
-{{< edit_this_page >}}
 
 ## Quoi & Pourquoi ?
 

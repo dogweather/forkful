@@ -9,9 +9,8 @@ summary: "Att starta ett nytt projekt i Swift inneb\xE4r att l\xE4gga grunden f\
   r en ny app eller funktion. Programmerare g\xF6r det f\xF6r att oms\xE4tta id\xE9\
   er till verklig kod\u2026"
 title: "Att p\xE5b\xF6rja ett nytt projekt"
+weight: 1
 ---
-
-{{< edit_this_page >}}
 
 ## Vad & Varför?
 Att starta ett nytt projekt i Swift innebär att lägga grunden för en ny app eller funktion. Programmerare gör det för att omsätta idéer till verklig kod och skapa något användbart eller nöjsamt.

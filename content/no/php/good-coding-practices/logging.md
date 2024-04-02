@@ -9,9 +9,8 @@ summary: "Logging er i bunn og grunn som \xE5 f\xF8re en dagbok for koden din; d
   \ er handlingen med \xE5 registrere hendelser, feil og andre betydningsfulle datapunkter\
   \ som\u2026"
 title: "Loggf\xF8ring"
+weight: 17
 ---
-
-{{< edit_this_page >}}
 
 ## Hva & Hvorfor?
 

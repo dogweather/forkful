@@ -11,9 +11,8 @@ summary: "Att konkatenera str\xE4ngar inneb\xE4r att kombinera tv\xE5 eller fler
   \ str\xE4ngar till en enda str\xE4ng. Programmerare g\xF6r detta f\xF6r att dynamiskt\
   \ konstruera\u2026"
 title: "Konkatenering av str\xE4ngar"
+weight: 3
 ---
-
-{{< edit_this_page >}}
 
 ## Vad & Varför?
 

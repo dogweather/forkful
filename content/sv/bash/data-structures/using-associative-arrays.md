@@ -11,9 +11,8 @@ summary: "Associativa arrayer \xE4r som superladdade arrayer som l\xE5ter dig an
   nda str\xE4ngar som index ist\xE4llet f\xF6r enbart heltal. Programmerare anv\xE4\
   nder dem f\xF6r mer\u2026"
 title: "Att anv\xE4nda associativa arrayer"
+weight: 15
 ---
-
-{{< edit_this_page >}}
 
 ## Vad & Varför?
 

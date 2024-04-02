@@ -11,9 +11,8 @@ summary: "Regul\xE6re uttrykk, eller regex, er et kraftig verkt\xF8y for m\xF8ns
   king og -matching i programmering. Programmerere bruker regex til oppgaver som \xE5\
   \u2026"
 title: "Bruke regul\xE6re uttrykk"
+weight: 11
 ---
-
-{{< edit_this_page >}}
 
 ## Hva & Hvorfor?
 Regulære uttrykk, eller regex, er et kraftig verktøy for mønstersøking og -matching i programmering. Programmerere bruker regex til oppgaver som å validere brukerinput, søke i tekst eller manipulere strenger fordi det er effektivt og allsidig.

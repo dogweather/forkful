@@ -8,9 +8,8 @@ model: gpt-4-0125-preview
 summary: "Los n\xFAmeros complejos extienden los n\xFAmeros reales con una parte adicional,\
   \ la unidad imaginaria 'i'. Los programadores los utilizan en varios dominios,\u2026"
 title: "Trabajando con n\xFAmeros complejos"
+weight: 14
 ---
-
-{{< edit_this_page >}}
 
 ## ¿Qué y por qué?
 Los números complejos extienden los números reales con una parte adicional, la unidad imaginaria 'i'. Los programadores los utilizan en varios dominios, incluyendo el procesamiento de señales, la teoría electromagnética y los fractales, donde los cálculos que involucran la raíz cuadrada de un número negativo son rutinarios.

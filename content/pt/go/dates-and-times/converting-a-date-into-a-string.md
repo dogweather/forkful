@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Converter uma data em uma string em Go envolve transformar um objeto `time.Time`\
   \ em um formato de string leg\xEDvel. Programadores frequentemente realizam\u2026"
 title: Convertendo uma data em uma string
+weight: 28
 ---
-
-{{< edit_this_page >}}
 
 ## O que & Por quê?
 

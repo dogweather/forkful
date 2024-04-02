@@ -21,9 +21,8 @@ summary: "HTTP \uC694\uCCAD\uC5D0 \uAE30\uBCF8 \uC778\uC99D\uC744 \uCD94\uAC00\u
   \uC744 \uC0AC\uC6A9\uD569\uB2C8\uB2E4."
 title: "\uAE30\uBCF8 \uC778\uC99D\uC744 \uC0AC\uC6A9\uD55C HTTP \uC694\uCCAD \uBCF4\
   \uB0B4\uAE30"
+weight: 45
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why? (무엇과 왜?)
 HTTP 요청에 기본 인증을 추가하는 것은 사용자 이름과 비밀번호로 보호된 리소스에 접근할 때 필요합니다. 프로그래머들은 보안이 필요한 데이터를 안전하게 전송하고 인증된 사용자만 정보를 받을 수 있게 하기 위해 이 기술을 사용합니다.

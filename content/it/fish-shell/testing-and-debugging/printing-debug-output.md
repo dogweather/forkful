@@ -7,9 +7,8 @@ model: gpt-4-1106-preview
 summary: "Stampare l'output di debug aiuta a tenere traccia di cosa sta succedendo\
   \ nel tuo script. Lo fanno i programmatori per capire meglio i flussi di esecuzione\u2026"
 title: Stampa dell'output di debug
+weight: 33
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why? (Cosa e Perché?)
 Stampare l'output di debug aiuta a tenere traccia di cosa sta succedendo nel tuo script. Lo fanno i programmatori per capire meglio i flussi di esecuzione ed individuare errori.

@@ -1,14 +1,13 @@
 ---
 date: 2024-01-26 03:47:54.214516-07:00
-description: "Utiliser un d\xE9bogueur signifie avoir recours \xE0 des outils sp\xE9\
-  cialis\xE9s pour tester et diagnostiquer du code. Les programmeurs le font pour\
-  \ \xE9liminer les\u2026"
+description: "Imaginez que vous avez un petit programme qui ne fonctionne pas correctement\
+  \ : ```C# static void Main() { int result = Sum(1, 2);\u2026"
 lastmod: '2024-03-13T22:44:57.792360-06:00'
 model: gpt-4-0125-preview
-summary: "Utiliser un d\xE9bogueur signifie avoir recours \xE0 des outils sp\xE9cialis\xE9\
-  s pour tester et diagnostiquer du code. Les programmeurs le font pour \xE9liminer\
-  \ les\u2026"
+summary: "Imaginez que vous avez un petit programme qui ne fonctionne pas correctement\
+  \ : ```C# static void Main() { int result = Sum(1, 2);\u2026"
 title: "Utilisation d'un d\xE9bogueur"
+weight: 35
 ---
 
 ## Comment faire:

@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Werken met CSV (Comma-Separated Values) bestanden in Google Apps Script\
   \ houdt het lezen, wijzigen en schrijven van platte tekstbestanden in, waarbij elke\u2026"
 title: Werken met CSV
+weight: 37
 ---
-
-{{< edit_this_page >}}
 
 ## Wat & Waarom?
 

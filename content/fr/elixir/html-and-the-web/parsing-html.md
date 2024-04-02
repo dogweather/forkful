@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "L'analyse de HTML en Elixir consiste \xE0 extraire des informations des\
   \ documents HTML. Les programmeurs font cela pour interagir de mani\xE8re programmatique\u2026"
 title: Analyse Syntaxique du HTML
+weight: 43
 ---
-
-{{< edit_this_page >}}
 
 ## Quoi et Pourquoi ?
 

@@ -10,9 +10,8 @@ model: gpt-4-0125-preview
 summary: "I konteksten av Arduino-programmering, er det \xE5 sjekke om en mappe eksisterer\
   \ p\xE5 et SD-kort eller lignende lagringsmodul essensielt for \xE5 kunne lese eller\u2026"
 title: Sjekker om en mappe eksisterer
+weight: 20
 ---
-
-{{< edit_this_page >}}
 
 ## Hva & Hvorfor?
 I konteksten av Arduino-programmering, er det å sjekke om en mappe eksisterer på et SD-kort eller lignende lagringsmodul essensielt for å kunne lese eller skrive filer uten feil. Denne operasjonen er viktig for datalogging, konfigurasjonsstyring, eller enhver oppgave som krever strukturert fillagring, og sikrer pålitelighet og smidig ytelse i applikasjonene dine.

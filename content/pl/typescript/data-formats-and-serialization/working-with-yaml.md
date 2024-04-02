@@ -11,9 +11,8 @@ summary: "YAML, j\u0119zyk serializacji danych zaprojektowany by by\u0107 przyja
   \ dla cz\u0142owieka, jest cz\u0119sto u\u017Cywany do plik\xF3w konfiguracyjnych,\
   \ komunikacji\u2026"
 title: Praca z YAML
+weight: 41
 ---
-
-{{< edit_this_page >}}
 
 ## Co i dlaczego?
 YAML, język serializacji danych zaprojektowany by być przyjazny dla człowieka, jest często używany do plików konfiguracyjnych, komunikacji międzyprocesowej i przechowywania danych. Programiści polegają na YAML ze względu na jego czytelność i łatwość użycia, zwłaszcza podczas pracy ze złożonymi strukturami danych, co czyni go doskonałym wyborem dla aplikacji rozwijanych w TypeScript.

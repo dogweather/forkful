@@ -8,9 +8,8 @@ model: gpt-4-0125-preview
 summary: "TOML signifie Tom's Obvious, Minimal Language (Langage Minimal et \xC9vident\
   \ de Tom). Il est utilis\xE9 pour les fichiers de configuration parce qu'il est\u2026"
 title: Travailler avec TOML
+weight: 39
 ---
-
-{{< edit_this_page >}}
 
 ## Quoi & Pourquoi ?
 TOML signifie Tom's Obvious, Minimal Language (Langage Minimal et Évident de Tom). Il est utilisé pour les fichiers de configuration parce qu'il est facile à lire et à écrire pour les humains, tout en étant facile à analyser pour les machines. Les développeurs se tournent vers TOML pour éviter l'encombrement de XML et les subtilités de JSON lors de la manipulation des configurations.

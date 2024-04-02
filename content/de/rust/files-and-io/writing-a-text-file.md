@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Das Schreiben einer Textdatei in Rust beinhaltet das Erstellen, Beschreiben\
   \ und potenziell Anh\xE4ngen von Daten an eine Datei im Dateisystem. Programmierer\u2026"
 title: Eine Textdatei schreiben
+weight: 24
 ---
-
-{{< edit_this_page >}}
 
 ## Was & Warum?
 Das Schreiben einer Textdatei in Rust beinhaltet das Erstellen, Beschreiben und potenziell Anhängen von Daten an eine Datei im Dateisystem. Programmierer führen diese Operation durch, um Daten dauerhaft zu speichern, wie zum Beispiel Anwendungslogs, Konfiguration oder vom Benutzer generierte Inhalte, um die Datenhaltbarkeit über die Ausführung des Programms hinaus zu gewährleisten.

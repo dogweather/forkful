@@ -13,9 +13,8 @@ summary: "L\xE0m vi\u1EC7c v\u1EDBi TOML c\xF3 ngh\u0129a l\xE0 b\u1EA1n \u0111a
   \ T\u1ED1i thi\u1EC3u Hi\u1EC3n nhi\xEAn c\u1EE7a Tom\" (Tom's Obvious, Minimal\
   \ Language), ph\u1ED5 bi\u1EBFn\u2026"
 title: "L\xE0m vi\u1EC7c v\u1EDBi TOML"
+weight: 39
 ---
-
-{{< edit_this_page >}}
 
 ## Cái gì và Tại sao?
 Làm việc với TOML có nghĩa là bạn đang xử lý dữ liệu theo định dạng "Ngôn ngữ Tối thiểu Hiển nhiên của Tom" (Tom's Obvious, Minimal Language), phổ biến cho các tập tin cấu hình do dễ đọc. Lập trình viên sử dụng nó cho việc quản lý cấu hình đơn giản, hoạt động ngay sau khi được cài đặt với cú pháp thân thiện với con người.

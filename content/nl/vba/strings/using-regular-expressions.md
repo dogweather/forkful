@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Reguliere expressies (regex) in Visual Basic for Applications (VBA) bieden\
   \ een krachtige manier om te zoeken, te matchen en strings te manipuleren.\u2026"
 title: Reguliere expressies gebruiken
+weight: 11
 ---
-
-{{< edit_this_page >}}
 
 ## Wat & Waarom?
 

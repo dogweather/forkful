@@ -9,9 +9,8 @@ summary: "Liczby z\u0142o\u017Cone to zbi\xF3r liczb postaci `a + bi`, gdzie `a`
   \ `b` s\u0105 liczbami rzeczywistymi, a `i` jest jednostk\u0105 urojon\u0105 (`i^2\
   \ = -1`). W programowaniu\u2026"
 title: Praca z liczbami zespolonymi
+weight: 14
 ---
-
-{{< edit_this_page >}}
 
 ## Co i Dlaczego?
 Liczby złożone to zbiór liczb postaci `a + bi`, gdzie `a` i `b` są liczbami rzeczywistymi, a `i` jest jednostką urojoną (`i^2 = -1`). W programowaniu używamy ich do rozwiązywania problemów w różnych dziedzinach, takich jak inżynieria elektryczna, przetwarzanie sygnałów i informatyka kwantowa.

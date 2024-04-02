@@ -9,9 +9,8 @@ summary: "Konvertering av datum till str\xE4ng inneb\xE4r att \xE4ndra ett datum
   \ format till en l\xE4sbar textstr\xE4ng. Programmerare g\xF6r detta f\xF6r att\
   \ enkelt visa datum\u2026"
 title: "Omvandla ett datum till en str\xE4ng"
+weight: 28
 ---
-
-{{< edit_this_page >}}
 
 ## Vad & Varför?
 

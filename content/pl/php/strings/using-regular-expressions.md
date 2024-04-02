@@ -11,9 +11,8 @@ summary: "Wyra\u017Cenia regularne (regex) w PHP to wzorce u\u017Cywane do dopas
   \ kombinacji znak\xF3w w ci\u0105gach, co pozwala na zaawansowane operacje wyszukiwania\
   \ i\u2026"
 title: "Korzystanie z wyra\u017Ce\u0144 regularnych"
+weight: 11
 ---
-
-{{< edit_this_page >}}
 
 ## Co i dlaczego?
 

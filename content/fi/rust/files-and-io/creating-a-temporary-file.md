@@ -9,9 +9,8 @@ summary: "Luodaan v\xE4liaikainen tiedosto eli temp-file - mut miksi? Se on tied
   \ jota k\xE4ytet\xE4\xE4n v\xE4liaikaisesti dataa tallentaessa, ja sit\xE4 tarvitaan,\
   \ koska se\u2026"
 title: "V\xE4liaikaistiedoston luominen"
+weight: 21
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 Luodaan väliaikainen tiedosto eli temp-file - mut miksi? Se on tiedosto, jota käytetään väliaikaisesti dataa tallentaessa, ja sitä tarvitaan, koska se minimoi riskin sotkeutua pysyviin tiedostoihin ja auttaa käsittelyssä, kun ensisijainen muisti on niukassa.

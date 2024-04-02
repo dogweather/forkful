@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Het verwijderen van tekens die overeenkomen met een patroon betekent het\
   \ uitwissen van specifieke reeksen tekens uit tekst, gebaseerd op regels\u2026"
 title: Karakters die overeenkomen met een patroon verwijderen
+weight: 5
 ---
-
-{{< edit_this_page >}}
 
 ## Wat & Waarom?
 Het verwijderen van tekens die overeenkomen met een patroon betekent het uitwissen van specifieke reeksen tekens uit tekst, gebaseerd op regels (patronen). Programmeurs doen dit voor het opschonen van tekst, gegevensverwerking, of om invoer te vereenvoudigen voor het parsen.

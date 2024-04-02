@@ -7,9 +7,8 @@ model: gpt-4-0125-preview
 summary: "Die Arbeit mit XML in Elixir bedeutet das Parsen, Erstellen und Manipulieren\
   \ von XML-Daten. Programmierer besch\xE4ftigen sich mit XML, weil es weit\u2026"
 title: Arbeiten mit XML
+weight: 40
 ---
-
-{{< edit_this_page >}}
 
 ## Was & Warum?
 Die Arbeit mit XML in Elixir bedeutet das Parsen, Erstellen und Manipulieren von XML-Daten. Programmierer beschäftigen sich mit XML, weil es weit verbreitet in Webdiensten, Konfigurationsdateien und älteren Systemen ist.

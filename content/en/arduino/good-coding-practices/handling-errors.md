@@ -8,9 +8,8 @@ model: gpt-4-1106-preview
 summary: "Error handling in your programs catches the things unforeseen that'll try\
   \ to trip you up. You do it to keep your Arduino from having a meltdown when the\u2026"
 title: Handling errors
+weight: 16
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 

@@ -10,9 +10,8 @@ model: gpt-4-0125-preview
 summary: "La interpolaci\xF3n de cadenas es un m\xE9todo para construir cadenas que\
   \ incorporan variables, permitiendo la creaci\xF3n din\xE1mica de cadenas. Los programadores\u2026"
 title: Interpolando una cadena de texto
+weight: 8
 ---
-
-{{< edit_this_page >}}
 
 ## Qué y por qué?
 

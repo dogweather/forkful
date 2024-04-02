@@ -9,9 +9,8 @@ summary: "Merkkijonon muuntaminen pieniksi kirjaimiksi tarkoittaa sen kirjainsar
   \ konvertoimista vastaaviin pieniin kirjaimiin. T\xE4m\xE4 on hy\xF6dyllist\xE4\
   , kun halutaan\u2026"
 title: Merkkijonon muuntaminen pieniksi kirjaimiksi
+weight: 4
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 Merkkijonon muuntaminen pieniksi kirjaimiksi tarkoittaa sen kirjainsarjan konvertoimista vastaaviin pieniin kirjaimiin. Tämä on hyödyllistä, kun halutaan vertailla sanoja riippumatta alkuperäisestä kirjoitusasuista tai tehdä tekstihaku herkäksi kirjainkoosta.

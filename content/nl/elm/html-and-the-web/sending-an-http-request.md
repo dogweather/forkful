@@ -10,9 +10,8 @@ model: gpt-4-0125-preview
 summary: "In Elm is het verzenden van een HTTP-verzoek de manier waarop je app communiceert\
   \ met andere webservices om gegevens uit te wisselen. Programmeurs doen\u2026"
 title: Een HTTP-verzoek verzenden
+weight: 44
 ---
-
-{{< edit_this_page >}}
 
 ## Wat & Waarom?
 

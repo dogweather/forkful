@@ -15,9 +15,8 @@ summary: "HTTP \uC694\uCCAD\uC5D0 \uAE30\uBCF8 \uC778\uC99D(Basic Authentication
   \uB2C8\uB2E4."
 title: "\uAE30\uBCF8 \uC778\uC99D\uC744 \uC0AC\uC6A9\uD55C HTTP \uC694\uCCAD \uBCF4\
   \uB0B4\uAE30"
+weight: 45
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why? (무엇인가요? 왜 사용하나요?)
 HTTP 요청에 기본 인증(Basic Authentication)을 추가하여 서버에 보냅니다. 보안이 필요한 데이터에 접근할 때 인증 정보를 전달하기 위해 사용합니다.

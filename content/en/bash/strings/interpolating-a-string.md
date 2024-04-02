@@ -7,9 +7,8 @@ model: gpt-4-1106-preview
 summary: String interpolation lets you insert values into a string. It's handy for
   creating custom messages, automating commands, and scripting like a boss.
 title: Interpolating a string
+weight: 8
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 String interpolation lets you insert values into a string. It's handy for creating custom messages, automating commands, and scripting like a boss.

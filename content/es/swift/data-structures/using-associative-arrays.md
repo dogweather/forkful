@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Los arreglos asociativos, conocidos como diccionarios en Swift, te permiten\
   \ almacenar y gestionar datos en pares clave-valor. Los programadores los usan\u2026"
 title: Uso de matrices asociativas
+weight: 15
 ---
-
-{{< edit_this_page >}}
 
 ## Qué y Por Qué?
 

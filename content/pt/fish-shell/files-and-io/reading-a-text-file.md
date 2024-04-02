@@ -9,9 +9,8 @@ summary: "Ler um arquivo de texto \xE9 acessar o conte\xFAdo de um arquivo no fo
   \ de texto simples. Programadores fazem isso para processamento, an\xE1lise de dados\
   \ e\u2026"
 title: Lendo um arquivo de texto
+weight: 22
 ---
-
-{{< edit_this_page >}}
 
 ## O Quê & Por Quê?
 Ler um arquivo de texto é acessar o conteúdo de um arquivo no formato de texto simples. Programadores fazem isso para processamento, análise de dados e automação de tarefas.

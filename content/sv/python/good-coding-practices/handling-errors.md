@@ -9,9 +9,8 @@ summary: "Att hantera fel i Python (eller i n\xE5got programmeringsspr\xE5k) han
   \ om att f\xF6rv\xE4nta sig det ov\xE4ntade \u2013 det \xE4r konsten att hantera\
   \ situationer p\xE5 ett\u2026"
 title: Hantering av fel
+weight: 16
 ---
-
-{{< edit_this_page >}}
 
 ## Vad & Varför?
 

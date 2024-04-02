@@ -9,9 +9,8 @@ summary: "I Rust ger `len()` l\xE4ngden p\xE5 en str\xE4ng, det vill s\xE4ga hur
   nga bytes den \xE4r. Vi beh\xF6ver veta storleken f\xF6r att hantera textdata effektivt\
   \ - som att\u2026"
 title: "Hitta l\xE4ngden p\xE5 en str\xE4ng"
+weight: 7
 ---
-
-{{< edit_this_page >}}
 
 ## Vad & Varför?
 I Rust ger `len()` längden på en sträng, det vill säga hur många bytes den är. Vi behöver veta storleken för att hantera textdata effektivt - som att validera inmatning eller sköta textutskärningar.

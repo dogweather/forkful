@@ -20,9 +20,8 @@ summary: "\u5728 C# \u4E2D\u5411\u6807\u51C6\u9519\u8BEF\uFF08stderr\uFF09\u5199
   \u662F\u4E3A\u4E86\u4F7F\u8C03\u8BD5\u548C\u8BB0\u5F55\u66F4\u52A0\u9AD8\u6548\uFF0C\
   \u8BA9\u5E94\u7528\u7684\u64CD\u4F5C\u548C\u7EF4\u62A4\u66F4\u52A0\u987A\u7545\u3002"
 title: "\u5199\u5165\u6807\u51C6\u9519\u8BEF"
+weight: 25
 ---
-
-{{< edit_this_page >}}
 
 ## 什么 & 为什么？
 在 C# 中向标准错误（stderr）写入内容，涉及将错误消息和诊断信息与常规输出（stdout）分开，以帮助用户和开发人员区分正常程序输出和错误通知。程序员这样做是为了使调试和记录更加高效，让应用的操作和维护更加顺畅。

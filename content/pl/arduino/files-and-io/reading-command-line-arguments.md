@@ -9,9 +9,8 @@ summary: "\"Co i Dlaczego?\" Czytanie argument\xF3w linii polece\u0144 to spos\x
   b na wprowadzanie danych do programu, gdy jest on uruchamiany. Programi\u015Bci\
   \ u\u017Cywaj\u0105 tego, by\u2026"
 title: "Odczytywanie argument\xF3w linii polece\u0144"
+weight: 23
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 "Co i Dlaczego?"

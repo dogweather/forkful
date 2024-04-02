@@ -10,9 +10,8 @@ model: gpt-4-0125-preview
 summary: "Verificar si un directorio existe en Elixir se trata de confirmar la presencia\
   \ de un directorio en una ruta especificada en el sistema de archivos. Los\u2026"
 title: Comprobando si un directorio existe
+weight: 20
 ---
-
-{{< edit_this_page >}}
 
 ## ¿Qué & Por qué?
 Verificar si un directorio existe en Elixir se trata de confirmar la presencia de un directorio en una ruta especificada en el sistema de archivos. Los programadores hacen esto para asegurarse de que pueden leer, escribir o realizar operaciones en el directorio de manera segura sin encontrar errores debido a su ausencia.

@@ -15,9 +15,8 @@ summary: "\u0110\u1ECDc m\u1ED9t t\u1EC7p v\u0103n b\u1EA3n trong Python l\xE0 v
   n \u0111\u1ECDc t\u1EC7p \u0111\u1EC3 s\u1EED d\u1EE5ng d\u1EEF li\u1EC7u l\u01B0\
   u\u2026"
 title: "\u0110\u1ECDc m\u1ED9t t\u1EC7p v\u0103n b\u1EA3n"
+weight: 22
 ---
-
-{{< edit_this_page >}}
 
 ## Gì & Tại sao?
 Đọc một tệp văn bản trong Python là việc lấy dữ liệu từ một tệp có sẵn trên đĩa của bạn hoặc qua mạng. Các lập trình viên đọc tệp để sử dụng dữ liệu lưu trữ (như cấu hình, đầu vào của người dùng, nhật ký, v.v.) trong ứng dụng của họ.

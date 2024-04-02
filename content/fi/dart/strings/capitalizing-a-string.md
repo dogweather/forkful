@@ -11,9 +11,8 @@ summary: "Merkkijonon alkukirjaimen suurentaminen tarkoittaa sanan tai kokonaise
   \ lauseen ensimm\xE4isen kirjaimen muuttamista suuraakkoseksi, samalla kun loput\
   \ merkit\u2026"
 title: Merkkijonon muuttaminen isoiksi kirjaimiksi
+weight: 2
 ---
-
-{{< edit_this_page >}}
 
 ## Mikä ja miksi?
 

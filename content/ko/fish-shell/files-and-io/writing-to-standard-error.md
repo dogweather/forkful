@@ -21,9 +21,8 @@ summary: "Fish Shell\uC5D0\uC11C \uD45C\uC900 \uC624\uB958(stderr)\uB85C \uC4F0\
   \uB85C\uC138\uC2A4\uB97C \uC6D0\uD65C\uD558\uAC8C \uD558\uAE30 \uC704\uD574 \uC774\
   \uB97C \uC218\uD589\uD569\uB2C8\uB2E4."
 title: "\uD45C\uC900 \uC5D0\uB7EC\uC5D0 \uC4F0\uAE30"
+weight: 25
 ---
-
-{{< edit_this_page >}}
 
 ## 무엇이며 왜?
 

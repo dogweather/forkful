@@ -11,9 +11,8 @@ summary: "O tratamento de erros no Google Apps Script \xE9 sobre prever, captura
   \ e responder a exce\xE7\xF5es ou erros que ocorrem durante a execu\xE7\xE3o do\
   \ script. Os\u2026"
 title: Gerenciando erros
+weight: 16
 ---
-
-{{< edit_this_page >}}
 
 ## O Quê e Por Quê?
 

@@ -15,9 +15,8 @@ summary: "Chuy\u1EC3n \u0111\u1ED5i m\u1ED9t chu\u1ED7i th\xE0nh ch\u1EEF th\u01
   a ch\xFAng. L\u1EADp tr\xECnh vi\xEAn th\u1EF1c hi\u1EC7n vi\u1EC7c n\xE0y \u0111\
   \u1EC3\u2026"
 title: "Chuy\u1EC3n \u0111\u1ED5i chu\u1ED7i th\xE0nh ch\u1EEF th\u01B0\u1EDDng"
+weight: 4
 ---
-
-{{< edit_this_page >}}
 
 ## Gì và Tại sao?
 Chuyển đổi một chuỗi thành chữ thường nghĩa là biến đổi tất cả các ký tự trong đó thành dạng chữ thường của chúng. Lập trình viên thực hiện việc này để đảm bảo tính nhất quán, đặc biệt là cho các so sánh không phân biệt chữ hoa chữ thường, như khi chuẩn hóa đầu vào của người dùng hoặc tìm kiếm trong nội dung văn bản.

@@ -10,9 +10,8 @@ model: gpt-4-0125-preview
 summary: "Een nieuw project starten is gewoon je mouwen oprollen en de initi\xEBle\
   \ omgeving en bestanden voor je codeeravontuur opzetten. Programmeurs beginnen nieuwe\u2026"
 title: Een nieuw project starten
+weight: 1
 ---
-
-{{< edit_this_page >}}
 
 ## Wat & Waarom?
 Een nieuw project starten is gewoon je mouwen oprollen en de initiële omgeving en bestanden voor je codeeravontuur opzetten. Programmeurs beginnen nieuwe projecten om ideeën om te zetten in werkende software, een beetje zoals het planten van een zaadje voor een digitale boom.

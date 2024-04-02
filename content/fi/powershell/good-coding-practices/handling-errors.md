@@ -9,9 +9,8 @@ summary: "Virheiden k\xE4sittely PowerShellissa tarkoittaa mahdollisten ongelmie
   \ ennakointia ja niiden sujuvaa hallintaa. Ohjelmoijat tekev\xE4t t\xE4m\xE4n est\xE4\
   \xE4kseen\u2026"
 title: "Virheiden k\xE4sittely"
+weight: 16
 ---
-
-{{< edit_this_page >}}
 
 ## Mikä & Miksi?
 Virheiden käsittely PowerShellissa tarkoittaa mahdollisten ongelmien ennakointia ja niiden sujuvaa hallintaa. Ohjelmoijat tekevät tämän estääkseen ohjelmien kaatumiset ja tarjoavat käyttäjille hyödyllisiä palautteita.

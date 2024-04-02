@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Das Schreiben einer Textdatei in Swift erm\xF6glicht es Ihnen, Zeichenketten-Daten\
   \ dauerhaft auf dem Dateisystem zu speichern, was f\xFCr Aufgaben wie das\u2026"
 title: Eine Textdatei schreiben
+weight: 24
 ---
-
-{{< edit_this_page >}}
 
 ## Was & Warum?
 

@@ -9,9 +9,8 @@ summary: "XML est un langage de balisage pour encoder des documents d'une mani\x
   re qui est \xE0 la fois lisible par l'homme et par la machine. Il est cl\xE9 dans\
   \ les\u2026"
 title: Travailler avec XML
+weight: 40
 ---
-
-{{< edit_this_page >}}
 
 ## Quoi & Pourquoi ?
 XML est un langage de balisage pour encoder des documents d'une manière qui est à la fois lisible par l'homme et par la machine. Il est clé dans les services web, les fichiers de configuration et l'échange de données car il transporte des données dans un format structuré et hiérarchique.

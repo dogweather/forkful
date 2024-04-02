@@ -9,9 +9,8 @@ summary: "Tekstin hakeminen ja korvaaminen on perustoiminto, jossa etsit\xE4\xE4
   \ tekstikatkelmia ja korvataan ne toisilla. Ohjelmoijat k\xE4ytt\xE4v\xE4t t\xE4\
   t\xE4 automatisoidakseen\u2026"
 title: Tekstin etsiminen ja korvaaminen
+weight: 10
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 Tekstin hakeminen ja korvaaminen on perustoiminto, jossa etsitään tekstikatkelmia ja korvataan ne toisilla. Ohjelmoijat käyttävät tätä automatisoidakseen tietojen muokkausta ja merkkijonojen käsittelyä.

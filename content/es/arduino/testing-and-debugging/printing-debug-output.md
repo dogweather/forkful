@@ -9,9 +9,8 @@ summary: "La impresi\xF3n de mensajes de depuraci\xF3n ayuda a entender qu\xE9 e
   \ pasando dentro del c\xF3digo al ejecutarlo. Los programadores usan esta t\xE9\
   cnica para\u2026"
 title: "Imprimiendo salida de depuraci\xF3n"
+weight: 33
 ---
-
-{{< edit_this_page >}}
 
 ## ¿Qué es y por qué?
 

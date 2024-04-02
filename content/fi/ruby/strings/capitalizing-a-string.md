@@ -12,6 +12,7 @@ summary: "Merkkijonon alkukirjaimen muuttaminen isoksi tarkoittaa yleens\xE4 ens
   isen merkin muuttamista isoksi kirjaimeksi ja loput pieniksi kirjaimiksi. Joskus\
   \ se\u2026"
 title: Merkkijonon alkukirjaimet isoiksi
+weight: 2
 ---
 
 ## Mikä & Miksi?

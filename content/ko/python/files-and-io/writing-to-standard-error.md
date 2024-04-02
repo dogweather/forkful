@@ -23,9 +23,8 @@ summary: "\uD30C\uC774\uC36C\uC5D0\uC11C \uD45C\uC900 \uC624\uB958\uB85C \uC4F0\
   \uBA70, \uB514\uBC84\uAE45\uACFC \uB85C\uADF8 \uBD84\uC11D\uC744 \uC6A9\uC774\uD558\
   \uAC8C\u2026"
 title: "\uD45C\uC900 \uC5D0\uB7EC\uC5D0 \uC4F0\uAE30"
+weight: 25
 ---
-
-{{< edit_this_page >}}
 
 ## 무엇 & 왜?
 파이썬에서 표준 오류로 쓰기는 프로그램의 오류 메시지나 진단을 표준 출력(`stdout`)과 별개인 오류 스트림(`stderr`)으로 리디렉션하는 것입니다. 프로그래머들은 일반 프로그램 출력과 오류 메시지를 구분하기 위해 이 작업을 수행하며, 디버깅과 로그 분석을 용이하게 합니다.

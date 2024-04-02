@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Arrays associativos, tamb\xE9m conhecidos como tabelas hash ou dicion\xE1\
   rios no PowerShell, permitem armazenar dados em pares chave-valor, tornando a\u2026"
 title: Usando arrays associativos
+weight: 15
 ---
-
-{{< edit_this_page >}}
 
 ## O Que & Por Quê?
 

@@ -7,9 +7,8 @@ model: gpt-4-0125-preview
 summary: "TOML to akronim od Tom's Obvious, Minimal Language, format pliku konfiguracyjnego,\
   \ kt\xF3ry jest \u0142atwy do odczytu dzi\u0119ki swojej przejrzystej semantyce.\u2026"
 title: Praca z TOML
+weight: 39
 ---
-
-{{< edit_this_page >}}
 
 ## Co i dlaczego?
 TOML to akronim od Tom's Obvious, Minimal Language, format pliku konfiguracyjnego, który jest łatwy do odczytu dzięki swojej przejrzystej semantyce. Programiści używają go do plików konfiguracyjnych, upraszczając wymianę danych między systemami, ponieważ łączy w sobie czytelność dla człowieka z możliwością parsowania przez maszyny.

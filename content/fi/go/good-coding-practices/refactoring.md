@@ -11,9 +11,8 @@ summary: "Ohjelmoinnissa refaktorointi tarkoittaa olemassa olevan tietokonekoodi
   \ uudelleenj\xE4rjestely\xE4\u2014faktorisoinnin muuttamista\u2014muuttamatta sen\
   \ ulkoista\u2026"
 title: Koodin uudelleenkirjoitus
+weight: 19
 ---
-
-{{< edit_this_page >}}
 
 ## Mikä & Miksi?
 

@@ -8,9 +8,8 @@ model: gpt-4-0125-preview
 summary: "Das Entfernen von Anf\xFChrungszeichen aus einem String bedeutet, alle Instanzen\
   \ von einfachen (`'`) oder doppelten (`\"`) Anf\xFChrungszeichen, die den Text\u2026"
 title: "Anf\xFChrungszeichen aus einem String entfernen"
+weight: 9
 ---
-
-{{< edit_this_page >}}
 
 ## Was & Warum?
 Das Entfernen von Anführungszeichen aus einem String bedeutet, alle Instanzen von einfachen (`'`) oder doppelten (`"`) Anführungszeichen, die den Text umgeben, zu beseitigen. Programmierer tun dies oft, um Eingaben zu bereinigen, Strings für den Vergleich vorzubereiten oder Textdaten zu verarbeiten, die versehentlich Anführungszeichen als Teil des String-Inhalts enthalten könnten.

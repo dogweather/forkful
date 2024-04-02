@@ -11,9 +11,8 @@ summary: "Att hitta l\xE4ngden p\xE5 en str\xE4ng i Dart handlar om att best\xE4
   \ antalet kodenheter (i grunden antalet tecken om man t\xE4nker p\xE5 det p\xE5\
   \ ett f\xF6renklat s\xE4tt) i\u2026"
 title: "Hitta l\xE4ngden p\xE5 en str\xE4ng"
+weight: 7
 ---
-
-{{< edit_this_page >}}
 
 ## Vad & Varför?
 Att hitta längden på en sträng i Dart handlar om att bestämma antalet kodenheter (i grunden antalet tecken om man tänker på det på ett förenklat sätt) i en given sträng. Programmerare gör detta för att mer precist kunna manipulera strängar, såsom att validera inmatning, trunkera visningstext eller bearbeta dataformat där längden spelar roll (t.ex. protokoll med längdprefixade meddelanden).

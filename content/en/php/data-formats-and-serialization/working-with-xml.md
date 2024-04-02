@@ -7,9 +7,8 @@ model: gpt-4-1106-preview
 summary: "XML is a markup language used for storing and transporting data. Programmers\
   \ work with XML to enable interoperability between applications and systems -\u2026"
 title: Working with XML
+weight: 40
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 XML is a markup language used for storing and transporting data. Programmers work with XML to enable interoperability between applications and systems - think data exchange and configuration settings.

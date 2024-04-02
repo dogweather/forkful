@@ -11,9 +11,8 @@ summary: "\xC5 jobbe med CSV (Comma-Separated Values) inneb\xE6rer \xE5 lese fra
   \ skrive til CSV-filer, et vanlig datautvekslingsformat som brukes p\xE5 grunn av\
   \ sin enkelhet\u2026"
 title: Arbeide med CSV
+weight: 37
 ---
-
-{{< edit_this_page >}}
 
 ## Hva og hvorfor?
 

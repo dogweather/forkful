@@ -9,9 +9,8 @@ summary: "Code in Funktionen zu organisieren bedeutet, Bl\xF6cke von Code zu ver
   \ die spezifische Aufgaben erf\xFCllen. Dadurch wird dein Code sauber, leichter\
   \ zu\u2026"
 title: Code in Funktionen organisieren
+weight: 18
 ---
-
-{{< edit_this_page >}}
 
 ## Was & Warum?
 

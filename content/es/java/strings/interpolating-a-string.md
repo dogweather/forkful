@@ -8,9 +8,8 @@ model: gpt-4-1106-preview
 summary: "Interpolar una cadena significa insertar valores dentro de una string de\
   \ forma din\xE1mica para construir un mensaje. Los programadores lo hacen para hacer\u2026"
 title: "Interpolaci\xF3n de cadenas de texto"
+weight: 8
 ---
-
-{{< edit_this_page >}}
 
 ## Qué y Por Qué?
 

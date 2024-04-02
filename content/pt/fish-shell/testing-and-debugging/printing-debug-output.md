@@ -9,9 +9,8 @@ summary: "A impress\xE3o de sa\xEDdas de depura\xE7\xE3o ajuda a entender o que 
   \ script est\xE1 fazendo e onde pode estar o problema. Programadores recorrem a\
   \ isso quando o\u2026"
 title: "Exibindo sa\xEDdas de depura\xE7\xE3o"
+weight: 33
 ---
-
-{{< edit_this_page >}}
 
 ## O Que é & Por Que?
 A impressão de saídas de depuração ajuda a entender o que um script está fazendo e onde pode estar o problema. Programadores recorrem a isso quando o código não funciona como esperado, para visualizar o que está acontecendo "sob o capó".

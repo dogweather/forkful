@@ -8,9 +8,8 @@ model: gpt-4-1106-preview
 summary: "N\xE5r du begynner et nytt prosjekt, starter du med en blank slate for \xE5\
   \ kode noe fra bunnen av. Programmerere gj\xF8r dette for \xE5 l\xF8se et nytt problem,\u2026"
 title: "\xC5 starte et nytt prosjekt"
+weight: 1
 ---
-
-{{< edit_this_page >}}
 
 ## Hva & Hvorfor?
 Når du begynner et nytt prosjekt, starter du med en blank slate for å kode noe fra bunnen av. Programmerere gjør dette for å løse et nytt problem, utforske en ide, eller bygge en løsning som ikke finnes enda.

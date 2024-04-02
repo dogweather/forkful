@@ -9,9 +9,8 @@ summary: "D\xE9marrer un nouveau projet, c'est comme mettre une graine dans le s
   \ num\xE9rique. Les programmeurs le font pour cr\xE9er du neuf, r\xE9soudre des\
   \ probl\xE8mes, ou\u2026"
 title: Lancement d'un nouveau projet
+weight: 1
 ---
-
-{{< edit_this_page >}}
 
 ## Quoi & Pourquoi ?
 Démarrer un nouveau projet, c'est comme mettre une graine dans le sol numérique. Les programmeurs le font pour créer du neuf, résoudre des problèmes, ou simplement pour le plaisir de coder.

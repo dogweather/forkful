@@ -9,9 +9,8 @@ summary: "Mandare una richiesta HTTP \xE8 come bussare a una porta di un servizi
   \ web per ricevere dati o inviarne. I programmatori lo fanno per interagire con\
   \ API\u2026"
 title: Inviare una richiesta http
+weight: 44
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 Mandare una richiesta HTTP è come bussare a una porta di un servizio web per ricevere dati o inviarne. I programmatori lo fanno per interagire con API web, scambiare dati e integrare funzionalità esterne nei loro programmi.

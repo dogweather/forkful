@@ -7,9 +7,8 @@ model: gpt-4-0125-preview
 summary: "Kompleksiluvuilla on reaaliosa ja imaginaariosa, ja ne ovat keskeisi\xE4\
   \ monilla aloilla, kuten insin\xF6\xF6ritieteiss\xE4, fysiikassa ja tietokonegrafiikassa.\u2026"
 title: "Kompleksilukujen k\xE4sittely"
+weight: 14
 ---
-
-{{< edit_this_page >}}
 
 ## Mitä & Miksi?
 Kompleksiluvuilla on reaaliosa ja imaginaariosa, ja ne ovat keskeisiä monilla aloilla, kuten insinööritieteissä, fysiikassa ja tietokonegrafiikassa. Ohjelmoijat käyttävät niitä ratkaistakseen yhtälöitä, joita tavalliset reaaliluvut eivät pysty käsittelemään.

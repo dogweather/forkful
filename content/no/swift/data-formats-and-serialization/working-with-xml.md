@@ -8,9 +8,8 @@ model: gpt-4-0125-preview
 summary: "\xC5 jobbe med XML betyr \xE5 analysere og generere XML-data i Swift. Programmerere\
   \ gj\xF8r dette for datamellomlagring, spesielt n\xE5r de integrerer med systemer\u2026"
 title: "\xC5 jobbe med XML"
+weight: 40
 ---
-
-{{< edit_this_page >}}
 
 ## Hva & Hvorfor?
 Å jobbe med XML betyr å analysere og generere XML-data i Swift. Programmerere gjør dette for datamellomlagring, spesielt når de integrerer med systemer der XML er standardformatet.

@@ -9,9 +9,8 @@ summary: "\"Co i dlaczego?\" Sprawdzanie istnienia katalogu pozwala potwierdzi\u
   , czy dany folder jest dost\u0119pny w systemie plik\xF3w. Programi\u015Bci robi\u0105\
   \ to, aby unikn\u0105\u0107\u2026"
 title: Sprawdzanie, czy katalog istnieje
+weight: 20
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 "Co i dlaczego?"

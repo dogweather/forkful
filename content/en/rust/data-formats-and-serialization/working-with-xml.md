@@ -7,9 +7,8 @@ model: gpt-4-1106-preview
 summary: "XML, short for eXtensible Markup Language, is like JSON's verbose cousin.\
   \ You'll wrestle with XML when dealing with legacy systems, enterprise software,\u2026"
 title: Working with XML
+weight: 40
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 XML, short for eXtensible Markup Language, is like JSON's verbose cousin. You'll wrestle with XML when dealing with legacy systems, enterprise software, or APIs that skipped the JSON bandwagon. It's essential for data exchange where XML stands its ground.

@@ -15,9 +15,8 @@ summary: "Haskell\uC5D0\uC11C\uC758 \uC778\uD130\uB799\uD2F0\uBE0C \uC178, \uB61
   \uC5B4 \uD559\uC2B5\uC744 \uC704\uD55C \uB180\uC774\uD130\uC640 \uAC19\uC2B5\uB2C8\
   \uB2E4."
 title: "\uC778\uD130\uB799\uD2F0\uBE0C \uC178 (REPL) \uC0AC\uC6A9\uD558\uAE30"
+weight: 34
 ---
-
-{{< edit_this_page >}}
 
 ## 무엇 & 왜?
 Haskell에서의 인터랙티브 셸, 또는 REPL(Read-Eval-Print Loop)은 실시간으로 코드 조각을 실행할 수 있게 해줍니다. 이는 빠른 피드백, 함수 테스팅 및 언어 학습을 위한 놀이터와 같습니다.

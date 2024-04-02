@@ -11,9 +11,8 @@ summary: "Interpolacja ci\u0105g\xF3w, w programowaniu, polega na tworzeniu ci\u
   g\xF3w przez osadzanie wyra\u017Ce\u0144 wewn\u0105trz dos\u0142ownych ci\u0105\
   g\xF3w znak\xF3w. Programi\u015Bci robi\u0105 to, aby\u2026"
 title: "Interpolacja ci\u0105gu znak\xF3w"
+weight: 8
 ---
-
-{{< edit_this_page >}}
 
 ## Co i dlaczego?
 

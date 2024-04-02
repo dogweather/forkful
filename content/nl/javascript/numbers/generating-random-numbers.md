@@ -11,9 +11,8 @@ summary: "Het genereren van willekeurige getallen in JavaScript is een techniek 
   \ wordt gebruikt om onvoorspelbaarheid te cre\xEBren in applicaties, van spellen\
   \ die\u2026"
 title: Willekeurige getallen genereren
+weight: 12
 ---
-
-{{< edit_this_page >}}
 
 ## Wat & Waarom?
 

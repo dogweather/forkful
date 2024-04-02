@@ -12,9 +12,8 @@ summary: "\u8BA1\u7B97\u5B57\u7B26\u4E32\u957F\u5EA6\u662F\u6307\u6D4B\u91CF\u5B
   \u8FD9\u4E2A\u64CD\u4F5C\u6765\u9A8C\u8BC1\u8F93\u5165\u3001\u9650\u5236\u6587\u672C\
   \u3001\u4F18\u5316UI\u663E\u793A\u7B49\u3002"
 title: "\u83B7\u53D6\u5B57\u7B26\u4E32\u7684\u957F\u5EA6"
+weight: 7
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why? (是什么？为什么？)
 计算字符串长度是指测量字符串包含多少字符。程序员需要这个操作来验证输入、限制文本、优化UI显示等。

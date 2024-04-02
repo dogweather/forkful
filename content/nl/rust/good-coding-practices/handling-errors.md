@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Foutafhandeling gaat over omgaan met dingen wanneer ze mis gaan. Programmeren\
   \ doen we om het onverwachte aan te kunnen, door ervoor te zorgen dat hun\u2026"
 title: Fouten afhandelen
+weight: 16
 ---
-
-{{< edit_this_page >}}
 
 ## Wat & Waarom?
 

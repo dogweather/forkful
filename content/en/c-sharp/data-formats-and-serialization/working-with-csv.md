@@ -7,9 +7,8 @@ model: gpt-4-0125-preview
 summary: "CSV (Comma-Separated Values) files are a common data exchange format that\
   \ represents tabular data in plain text, using commas to separate individual\u2026"
 title: Working with CSV
+weight: 37
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 CSV (Comma-Separated Values) files are a common data exchange format that represents tabular data in plain text, using commas to separate individual values. Programmers work with CSV files to import, export, and manipulate data with ease across various applications and services, as it is a simple, widely supported format compatible with spreadsheet applications, databases, and programming languages.

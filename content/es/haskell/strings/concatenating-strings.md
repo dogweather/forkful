@@ -7,9 +7,8 @@ model: gpt-4-1106-preview
 summary: "La concatenaci\xF3n de cadenas es el proceso de unir dos o m\xE1s cadenas\
   \ para formar una nueva. Los programadores concatenan cadenas para construir mensajes,\u2026"
 title: "Concatenaci\xF3n de cadenas de texto"
+weight: 3
 ---
-
-{{< edit_this_page >}}
 
 ## Qué es y por qué?
 La concatenación de cadenas es el proceso de unir dos o más cadenas para formar una nueva. Los programadores concatenan cadenas para construir mensajes, generar salida de texto dinámica o simplemente para trabajar con datos variables en sus programas.

@@ -2,13 +2,14 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 18:10:06.553876-07:00
-description: "L'uso di un debugger nella programmazione Go implica l'impiego di strumenti\
-  \ o funzionalit\xE0 per ispezionare e modificare lo stato di un programma in\u2026"
+description: "Go fornisce una struttura integrata per il debug chiamata `delve`. Si\
+  \ tratta di uno strumento di debug completo che consente di eseguire programmi Go\u2026"
 lastmod: '2024-03-13T22:44:42.913213-06:00'
 model: gpt-4-0125-preview
-summary: "L'uso di un debugger nella programmazione Go implica l'impiego di strumenti\
-  \ o funzionalit\xE0 per ispezionare e modificare lo stato di un programma in\u2026"
+summary: "Go fornisce una struttura integrata per il debug chiamata `delve`. Si tratta\
+  \ di uno strumento di debug completo che consente di eseguire programmi Go\u2026"
 title: Utilizzare un debugger
+weight: 35
 ---
 
 ## Come fare:

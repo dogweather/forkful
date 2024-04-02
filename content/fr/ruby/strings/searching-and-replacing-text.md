@@ -9,9 +9,8 @@ summary: "Chercher et remplacer du texte, c'est modifier des bouts de cha\xEEnes
   \ caract\xE8res automagiquement. Les devs le font pour corriger des erreurs, mettre\
   \ \xE0\u2026"
 title: Recherche et remplacement de texte
+weight: 10
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why? (Quoi & Pourquoi?)
 Chercher et remplacer du texte, c'est modifier des bouts de chaînes de caractères automagiquement. Les devs le font pour corriger des erreurs, mettre à jour des données, ou transformer du texte rapidement sans se casser la tête.

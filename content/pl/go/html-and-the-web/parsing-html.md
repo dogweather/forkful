@@ -11,9 +11,8 @@ summary: "Parsowanie HTML w Go polega na analizowaniu zawarto\u015Bci plik\xF3w 
   \ w celu ekstrakcji danych, manipulacji struktur\u0105 lub konwersji HTML na inne\
   \ formaty.\u2026"
 title: "Analiza sk\u0142adniowa HTML"
+weight: 43
 ---
-
-{{< edit_this_page >}}
 
 ## Co i dlaczego?
 

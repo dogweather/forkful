@@ -8,9 +8,8 @@ model: gpt-4-1106-preview
 summary: "Rounding numbers means chopping off the decimals to a simpler value that's\
   \ good enough for a given context. Programmers round numbers to simplify results,\u2026"
 title: Rounding numbers
+weight: 13
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 

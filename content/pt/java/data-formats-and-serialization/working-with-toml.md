@@ -9,9 +9,8 @@ summary: "TOML significa Tom's Obvious, Minimal Language (Linguagem M\xEDnima e 
   bvia do Tom). \xC9 um formato de serializa\xE7\xE3o de dados usado para arquivos\
   \ de\u2026"
 title: Trabalhando com TOML
+weight: 39
 ---
-
-{{< edit_this_page >}}
 
 ## O Que & Por Que?
 TOML significa Tom's Obvious, Minimal Language (Linguagem Mínima e Óbvia do Tom). É um formato de serialização de dados usado para arquivos de configuração. Os programadores o utilizam porque é fácil de ler, escrever, e mapeia bem para uma tabela de hash.

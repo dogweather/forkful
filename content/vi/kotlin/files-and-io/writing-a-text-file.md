@@ -13,9 +13,8 @@ summary: "Vi\u1EBFt m\u1ED9t t\u1EADp tin v\u0103n b\u1EA3n trong l\u1EADp tr\xE
   u v\xE0o m\u1ED9t \u0111\u1ECBnh d\u1EA1ng t\u1EADp tin c\xF3 th\u1EC3 \u0111\u1ECD\
   c \u0111\u01B0\u1EE3c, nh\u01B0 .txt. L\u1EADp tr\xECnh vi\xEAn l\xE0m\u2026"
 title: "Vi\u1EBFt m\u1ED9t t\u1EC7p v\u0103n b\u1EA3n"
+weight: 24
 ---
-
-{{< edit_this_page >}}
 
 ## Cái gì & Tại sao?
 

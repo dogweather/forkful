@@ -9,9 +9,8 @@ summary: "Aloitetaan uusi projekti tarkoittaa puhtaalta p\xF6yd\xE4lt\xE4 l\xE4h
   \xE4, uuden sovelluksen tai kirjaston kehitt\xE4mist\xE4. Ohjelmoijat tekev\xE4\
   t t\xE4m\xE4n, kun heill\xE4 on uusi\u2026"
 title: Uuden projektin aloittaminen
+weight: 1
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why? (Mikä ja Miksi?)
 Aloitetaan uusi projekti tarkoittaa puhtaalta pöydältä lähtöä, uuden sovelluksen tai kirjaston kehittämistä. Ohjelmoijat tekevät tämän, kun heillä on uusi idea tai tarve, jota ei voi tyydyttää olemassa olevilla ratkaisuilla.

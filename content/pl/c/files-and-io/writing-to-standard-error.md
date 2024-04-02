@@ -11,9 +11,8 @@ summary: "Pisanie do standardowego b\u0142\u0119du w j\u0119zyku C polega na kie
   \ komunikat\xF3w o b\u0142\u0119dach i informacji diagnostycznych do oddzielnego\
   \ strumienia, r\xF3\u017Cnego od\u2026"
 title: "Pisanie do standardowego b\u0142\u0119du"
+weight: 25
 ---
-
-{{< edit_this_page >}}
 
 ## Co i dlaczego?
 

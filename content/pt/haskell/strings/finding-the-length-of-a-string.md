@@ -9,9 +9,8 @@ summary: "Calcular o comprimento de uma string \xE9 simplesmente descobrir quant
   \ caracteres ela possui. Programadores fazem isso para validar entradas, limitar\
   \ texto\u2026"
 title: Descobrindo o comprimento de uma string
+weight: 7
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 Calcular o comprimento de uma string é simplesmente descobrir quantos caracteres ela possui. Programadores fazem isso para validar entradas, limitar texto numa interface gráfica, ou simplesmente para manipulação de dados.

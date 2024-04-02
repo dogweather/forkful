@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "De huidige datum in je code vastleggen stelt je in staat om gebeurtenissen\
   \ te markeren op het moment dat ze plaatsvinden. Het is essentieel voor logging,\u2026"
 title: Het huidige datum ophalen
+weight: 29
 ---
-
-{{< edit_this_page >}}
 
 ## Wat & Waarom?
 De huidige datum in je code vastleggen stelt je in staat om gebeurtenissen te markeren op het moment dat ze plaatsvinden. Het is essentieel voor logging, het volgen van tijdgevoelige gegevens en het aanpassen van gebruikerservaringen op basis van de datum.

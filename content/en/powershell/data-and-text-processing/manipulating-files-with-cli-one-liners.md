@@ -7,9 +7,8 @@ model: gpt-4-0125-preview
 summary: "Manipulating files with CLI one-liners in PowerShell is about swiftly altering,\
   \ moving, or obtaining file data directly from the command line. Programmers\u2026"
 title: Manipulating files with CLI one-liners
+weight: 31
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 

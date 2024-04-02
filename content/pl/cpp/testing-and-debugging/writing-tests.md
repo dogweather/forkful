@@ -10,9 +10,8 @@ model: gpt-4-0125-preview
 summary: "Pisanie test\xF3w w C++ polega na tworzeniu ma\u0142ych, samodzielnych program\xF3\
   w, kt\xF3re automatycznie weryfikuj\u0105 zachowanie fragment\xF3w twojej bazy kodu.\u2026"
 title: "Pisanie test\xF3w"
+weight: 36
 ---
-
-{{< edit_this_page >}}
 
 ## Co i dlaczego?
 

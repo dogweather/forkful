@@ -8,9 +8,8 @@ model: gpt-4-1106-preview
 summary: "Leer argumentos de la l\xEDnea de comandos permite que tu programa en C++\
   \ sea flexible y reciba datos externos al iniciarse. Los programamos as\xED para\u2026"
 title: "Lectura de argumentos de l\xEDnea de comandos"
+weight: 23
 ---
-
-{{< edit_this_page >}}
 
 ## ¿Qué y Por Qué?
 

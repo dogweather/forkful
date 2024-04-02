@@ -8,9 +8,8 @@ model: gpt-4-1106-preview
 summary: "\xC5 lese kommandolinjeargumenter betyr \xE5 hente input direkte fra terminalen\
   \ n\xE5r du starter et program. Programmerere gj\xF8r dette for \xE5 tillate\u2026"
 title: Lese kommandolinjeargumenter
+weight: 23
 ---
-
-{{< edit_this_page >}}
 
 ## Hva & Hvorfor?
 Å lese kommandolinjeargumenter betyr å hente input direkte fra terminalen når du starter et program. Programmerere gjør dette for å tillate brukerinnstillinger og dynamisk oppførsel uten å endre koden.

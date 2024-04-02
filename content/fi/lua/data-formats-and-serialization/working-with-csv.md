@@ -11,9 +11,8 @@ summary: "CSV-tiedostojen (pilkuilla erotetut arvot) k\xE4sittelyyn kuuluu tekst
   \ j\xE4sent\xE4minen ja tuottaminen riveihin ja sarakkeisiin j\xE4rjestettyn\xE4\
   , k\xE4ytt\xE4en\u2026"
 title: "Ty\xF6skentely CSV:n kanssa"
+weight: 37
 ---
-
-{{< edit_this_page >}}
 
 ## Mikä & Miksi?
 

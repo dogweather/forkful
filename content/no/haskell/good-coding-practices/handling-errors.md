@@ -9,9 +9,8 @@ summary: "H\xE5ndtering av feil i programmering handler om \xE5 styre det uvente
   ting som kan g\xE5 galt. Programmerere gj\xF8r dette for \xE5 sikre at deres programmer\
   \ kan\u2026"
 title: "Feilh\xE5ndtering"
+weight: 16
 ---
-
-{{< edit_this_page >}}
 
 ## Hva & Hvorfor?
 Håndtering av feil i programmering handler om å styre det uventede—ting som kan gå galt. Programmerere gjør dette for å sikre at deres programmer kan håndtere disse situasjonene med nåde, uten å krasje eller produsere feil resultater.

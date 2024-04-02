@@ -8,9 +8,8 @@ model: gpt-4-1106-preview
 summary: "\xC5 organisere kode i funksjoner i Haskell betyr \xE5 bryte ned koden din\
   \ i gjenbrukbare, navngitte blokker. Hvorfor? Det holder koden din DRY (Don't Repeat\u2026"
 title: Organisering av kode i funksjoner
+weight: 18
 ---
-
-{{< edit_this_page >}}
 
 ## Hva & Hvorfor?
 Å organisere kode i funksjoner i Haskell betyr å bryte ned koden din i gjenbrukbare, navngitte blokker. Hvorfor? Det holder koden din DRY (Don't Repeat Yourself), gjør den lesbar og lettere å feilsøke.

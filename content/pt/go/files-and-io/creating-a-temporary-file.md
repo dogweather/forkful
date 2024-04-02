@@ -11,9 +11,8 @@ summary: "Criar um arquivo tempor\xE1rio em Go permite a gera\xE7\xE3o de um arq
   \ n\xE3o persistente projetado para uso de curto prazo, principalmente para tarefas\
   \ como\u2026"
 title: "Criando um arquivo tempor\xE1rio"
+weight: 21
 ---
-
-{{< edit_this_page >}}
 
 ## O Que & Por Que?
 

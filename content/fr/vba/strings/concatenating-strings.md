@@ -11,9 +11,8 @@ summary: "La concat\xE9nation dans Visual Basic pour Applications (VBA) consiste
   \ joindre deux ou plusieurs cha\xEEnes de caract\xE8res en une seule entit\xE9.\
   \ Ceci est une\u2026"
 title: "Concat\xE9nation de cha\xEEnes"
+weight: 3
 ---
-
-{{< edit_this_page >}}
 
 ## Quoi & Pourquoi ?
 

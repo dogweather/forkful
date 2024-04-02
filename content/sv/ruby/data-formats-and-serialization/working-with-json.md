@@ -11,9 +11,8 @@ summary: "JSON (JavaScript Object Notation) \xE4r ett l\xE4ttviktigt datautbytes
   \ som \xE4r utbrett i webbapplikationer f\xF6r datav\xE4xling mellan klienter och\
   \ servrar.\u2026"
 title: Arbeta med JSON
+weight: 38
 ---
-
-{{< edit_this_page >}}
 
 ## Vad & Varför?
 

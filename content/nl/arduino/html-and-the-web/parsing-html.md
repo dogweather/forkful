@@ -10,9 +10,8 @@ model: gpt-4-0125-preview
 summary: "HTML parsen betekent door HTML-code heen zeven om nuttige stukjes te extraheren\
   \ - zoals het schrapen van een telefoonnummer van een contactpagina. Waarom\u2026"
 title: HTML Parsen
+weight: 43
 ---
-
-{{< edit_this_page >}}
 
 ## Wat & Waarom?
 HTML parsen betekent door HTML-code heen zeven om nuttige stukjes te extraheren - zoals het schrapen van een telefoonnummer van een contactpagina. Waarom doen we het? Om gegevensverzameling te automatiseren of om met webpagina's te interageren vanuit je Arduino-project.

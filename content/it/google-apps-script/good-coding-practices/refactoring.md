@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Il refactoring nel lessico della programmazione si riferisce al processo\
   \ di ristrutturazione del codice informatico esistente\u2014modificando la\u2026"
 title: Rifattorizzazione
+weight: 19
 ---
-
-{{< edit_this_page >}}
 
 ## Cosa & Perché?
 

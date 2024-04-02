@@ -11,9 +11,8 @@ summary: "No contexto da programa\xE7\xE3o Arduino, verificar se um diret\xF3rio
   \ em um cart\xE3o SD ou m\xF3dulo de armazenamento similar permite que voc\xEA leia\
   \ ou escreva\u2026"
 title: "Verificando se um diret\xF3rio existe"
+weight: 20
 ---
-
-{{< edit_this_page >}}
 
 ## O Quê & Porquê?
 No contexto da programação Arduino, verificar se um diretório existe em um cartão SD ou módulo de armazenamento similar permite que você leia ou escreva arquivos sem erros. Esta operação é essencial para o registro de dados, gestão de configuração ou qualquer tarefa que requeira armazenamento de arquivos estruturado, garantindo confiabilidade e desempenho fluido nas suas aplicações.

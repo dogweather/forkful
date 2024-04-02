@@ -19,9 +19,8 @@ summary: "YAML\uC740 \"YAML Ain't Markup Language\"\uC758 \uC904\uC784\uB9D0\uB8
   \uC774\uD130 \uAD50\uD658\uC5D0 \uC0AC\uC6A9\uD569\uB2C8\uB2E4. \uC774\uB294 JSON\uC774\
   \uB098 XML\uC5D0 \uBE44\uD574 \uC6B0\uC218\uD569\uB2C8\uB2E4."
 title: "YAML\uB85C \uC791\uC5C5\uD558\uAE30"
+weight: 41
 ---
-
-{{< edit_this_page >}}
 
 ## 무엇 & 왜?
 

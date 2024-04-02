@@ -9,9 +9,8 @@ summary: "Loggning \xE4r processen att spela in h\xE4ndelser i en applikation me
   \ ett program k\xF6rs, vilket ger ett sp\xE5r av \"smulor\" f\xF6r analys efter\
   \ h\xE4ndelsen och f\xF6r\u2026"
 title: Loggning
+weight: 17
 ---
-
-{{< edit_this_page >}}
 
 ## Vad & Varför?
 Loggning är processen att spela in händelser i en applikation medan ett program körs, vilket ger ett spår av "smulor" för analys efter händelsen och för realtidsövervakning. Programmerare gör detta eftersom det hjälper till med att felsöka problem, övervaka prestanda och spåra användaråtgärder för säkerhet och analys.

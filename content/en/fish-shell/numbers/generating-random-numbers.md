@@ -8,9 +8,8 @@ model: gpt-4-0125-preview
 summary: "Generating random numbers is a fundamental task in programming, used for\
   \ everything from data sampling to game development. In Fish Shell, making use of\u2026"
 title: Generating random numbers
+weight: 12
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 

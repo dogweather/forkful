@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Die Arbeit mit JSON (JavaScript Object Notation) in Clojure umfasst das\
   \ Parsen von JSON-Strings in Clojure-Datenstrukturen (Maps, Vektoren) und umgekehrt.\u2026"
 title: Arbeiten mit JSON
+weight: 38
 ---
-
-{{< edit_this_page >}}
 
 ## Was & Warum?
 Die Arbeit mit JSON (JavaScript Object Notation) in Clojure umfasst das Parsen von JSON-Strings in Clojure-Datenstrukturen (Maps, Vektoren) und umgekehrt. Diese Aufgabe ist grundlegend für Webdienste, APIs und Anwendungen, die Daten in einem strukturierten, textbasierten Format kommunizieren müssen, da JSON universell anerkannt und in verschiedenen Programmierumgebungen unterstützt wird.

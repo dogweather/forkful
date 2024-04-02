@@ -9,9 +9,8 @@ summary: "TOML (Tom's Obvious, Minimal Language) to format serializacji danych \
   atwy do odczytu dzi\u0119ki jasnej semantyce. Programi\u015Bci u\u017Cywaj\u0105\
   \ TOML do plik\xF3w\u2026"
 title: Praca z TOML
+weight: 39
 ---
-
-{{< edit_this_page >}}
 
 ## Co i Dlaczego?
 TOML (Tom's Obvious, Minimal Language) to format serializacji danych łatwy do odczytu dzięki jasnej semantyce. Programiści używają TOML do plików konfiguracyjnych, ponieważ znajduje równowagę między czytelnością dla człowieka a parsowalnością przez maszyny.

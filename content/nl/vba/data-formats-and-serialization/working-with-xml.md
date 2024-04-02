@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Werken met XML in Visual Basic for Applications (VBA) houdt in het parsen,\
   \ cre\xEBren en wijzigen van XML-documenten binnen de context van Microsoft Office-\u2026"
 title: Werken met XML
+weight: 40
 ---
-
-{{< edit_this_page >}}
 
 ## Wat & Waarom?
 

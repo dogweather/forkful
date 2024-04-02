@@ -9,9 +9,8 @@ summary: "Imprimir sa\xEDda de debug \xE9 expor o que est\xE1 acontecendo no pro
   \ durante a execu\xE7\xE3o. Programadores fazem isso para entender e resolver problemas\
   \ \u2013\u2026"
 title: "Exibindo sa\xEDdas de depura\xE7\xE3o"
+weight: 33
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why? (O Quê & Porquê?)
 Imprimir saída de debug é expor o que está acontecendo no programa durante a execução. Programadores fazem isso para entender e resolver problemas – basicamente, é como ligar o GPS para não se perder no código.

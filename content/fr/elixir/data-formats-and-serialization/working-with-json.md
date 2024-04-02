@@ -11,9 +11,8 @@ summary: "Travailler avec JSON implique l'analyse de cha\xEEnes format\xE9es JSO
   \ en structures de donn\xE9es que Elixir peut manipuler, et la s\xE9rialisation\
   \ de structures de\u2026"
 title: Travailler avec JSON
+weight: 38
 ---
-
-{{< edit_this_page >}}
 
 ## Quoi et pourquoi ?
 

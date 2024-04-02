@@ -9,9 +9,8 @@ summary: "Py\xF6rist\xE4minen on ylim\xE4\xE4r\xE4isen desimaalikohinan poistoa 
   \ tietyn pisteen j\xE4lkeen. Ohjelmoijat py\xF6rist\xE4v\xE4t hallitakseen tarkkuutta,\
   \ hallinnoidakseen\u2026"
 title: "Numerojen py\xF6rist\xE4minen"
+weight: 13
 ---
-
-{{< edit_this_page >}}
 
 ## Mikä & Miksi?
 Pyöristäminen on ylimääräisen desimaalikohinan poistoa luvusta tietyn pisteen jälkeen. Ohjelmoijat pyöristävät hallitakseen tarkkuutta, hallinnoidakseen muistia tai tehdäkseen tulosteesta käyttäjäystävällisen – esimerkiksi muuttamalla 2.998 puhtaaksi 3:ksi.

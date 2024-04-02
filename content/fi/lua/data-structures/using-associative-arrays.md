@@ -11,9 +11,8 @@ summary: "Assosiatiiviset taulukot ovat kuin salaiset k\xE4ttelytiedot Luassa\u2
   sen sijaan, ett\xE4 vain numerot j\xE4rjestyisiv\xE4t uskollisesti indeksin mukaan,\
   \ avaimiksi voi\u2026"
 title: "Assosiatiivisten taulukoiden k\xE4ytt\xF6"
+weight: 15
 ---
-
-{{< edit_this_page >}}
 
 ## Mikä & Miksi?
 

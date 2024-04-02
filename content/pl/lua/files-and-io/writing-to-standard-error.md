@@ -11,9 +11,8 @@ summary: "Pisanie do standardowego b\u0142\u0119du (stderr) polega na kierowaniu
   w o b\u0142\u0119dach oraz wyj\u015B\u0107 diagnostycznych do osobnego kana\u0142\
   u, r\xF3\u017Cnego od standardowego\u2026"
 title: "Pisanie do standardowego b\u0142\u0119du"
+weight: 25
 ---
-
-{{< edit_this_page >}}
 
 ## Co i Dlaczego?
 Pisanie do standardowego błędu (stderr) polega na kierowaniu komunikatów o błędach oraz wyjść diagnostycznych do osobnego kanału, różnego od standardowego wyjścia (stdout). Programiści robią to, aby odróżnić regularne wyniki programów od informacji o błędach, usprawniając debugowanie i procesy logowania.

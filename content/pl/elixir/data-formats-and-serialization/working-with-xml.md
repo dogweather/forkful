@@ -9,9 +9,8 @@ summary: "Praca z XML w Elixirze oznacza analizowanie, tworzenie i manipulowanie
   \ XML. Programi\u015Bci cz\u0119sto zajmuj\u0105 si\u0119 XML, poniewa\u017C jest\
   \ on powszechnie\u2026"
 title: Praca z XML
+weight: 40
 ---
-
-{{< edit_this_page >}}
 
 ## Co i dlaczego?
 Praca z XML w Elixirze oznacza analizowanie, tworzenie i manipulowanie danymi XML. Programiści często zajmują się XML, ponieważ jest on powszechnie stosowany w usługach internetowych, plikach konfiguracyjnych i systemach starszego typu.

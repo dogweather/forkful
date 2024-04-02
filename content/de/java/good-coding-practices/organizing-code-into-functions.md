@@ -9,9 +9,8 @@ summary: "Code in Funktionen zu organisieren bedeutet, das Unget\xFCm eines Prog
   \ in handliche St\xFCcke zu zerlegen, von denen jedes eine bestimmte Aufgabe erf\xFC\
   llt.\u2026"
 title: Code in Funktionen organisieren
+weight: 18
 ---
-
-{{< edit_this_page >}}
 
 ## Was & Warum?
 Code in Funktionen zu organisieren bedeutet, das Ungetüm eines Programms in handliche Stücke zu zerlegen, von denen jedes eine bestimmte Aufgabe erfüllt. Programmierer tun dies, um den Code lesbar, wiederverwendbar und wartbar zu machen.

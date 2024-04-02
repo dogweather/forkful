@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Scrivere un file di testo in JavaScript riguarda spesso la creazione e il\
   \ salvataggio di dati in un formato semplice e leggibile per registrare, esportare\u2026"
 title: Scrivere un file di testo
+weight: 24
 ---
-
-{{< edit_this_page >}}
 
 ## Cosa & Perché?
 Scrivere un file di testo in JavaScript riguarda spesso la creazione e il salvataggio di dati in un formato semplice e leggibile per registrare, esportare input dell'utente o per scopi di configurazione. Questa funzionalità è cruciale per applicazioni che necessitano di persistere dati oltre la durata del processo dell'applicazione, fornendo un modo per memorizzare e successivamente recuperare o condividere informazioni.

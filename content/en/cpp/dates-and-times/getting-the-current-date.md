@@ -7,9 +7,8 @@ model: gpt-4-0125-preview
 summary: "Retrieving the current date in C++ is a fundamental task for programs that\
   \ need to process or display dates based on the system's clock. It's essential\u2026"
 title: Getting the current date
+weight: 29
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 Retrieving the current date in C++ is a fundamental task for programs that need to process or display dates based on the system's clock. It's essential for logging, time-stamping, scheduling tasks, and any functionality that relies on dates and time.

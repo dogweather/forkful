@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Tekstitiedoston kirjoittaminen Clojuren avulla tarkoittaa tiedostojen luomista\
   \ tai muokkaamista tietojen tallentamiseksi sovelluksen ulkopuolelle,\u2026"
 title: Tekstitiedoston kirjoittaminen
+weight: 24
 ---
-
-{{< edit_this_page >}}
 
 ## Mikä & Miksi?
 

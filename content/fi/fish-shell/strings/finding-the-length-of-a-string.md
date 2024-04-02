@@ -9,9 +9,8 @@ summary: "Stringin pituuden m\xE4\xE4ritt\xE4minen tarkoittaa merkkijonon merkki
   \ lukum\xE4\xE4r\xE4n laskemista. Ohjelmoijat k\xE4ytt\xE4v\xE4t t\xE4t\xE4 saadakseen\
   \ tietoa datan muodosta,\u2026"
 title: "Merkkijonon pituuden selvitt\xE4minen"
+weight: 7
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why? (Mitä & Miksi?)
 Stringin pituuden määrittäminen tarkoittaa merkkijonon merkkien lukumäärän laskemista. Ohjelmoijat käyttävät tätä saadakseen tietoa datan muodosta, validoinnista ja tekstinkäsittelystä.

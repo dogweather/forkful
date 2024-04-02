@@ -12,9 +12,8 @@ summary: "Iniciar um novo projeto em Python \xE9 sobre configurar uma estrutura 
   \ e sustent\xE1vel desde o in\xEDcio. Os programadores fazem isso para garantir\
   \ que\u2026"
 title: Iniciando um novo projeto
+weight: 1
 ---
-
-{{< edit_this_page >}}
 
 ## O Que & Por Quê?
 

@@ -11,9 +11,8 @@ summary: "Substringen extraheren betekent specifieke delen uit strings halen \u2
   \ denk aan het knippen van een stukje draad uit een trui. Programmeurs doen dit\
   \ om data\u2026"
 title: Substrings extraheren
+weight: 6
 ---
-
-{{< edit_this_page >}}
 
 ## Wat & Waarom?
 

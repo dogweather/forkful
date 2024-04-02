@@ -11,9 +11,8 @@ summary: "Tekst zoeken en vervangen betekent het vinden van specifieke substring
   \ en deze omwisselen voor iets nieuws. Waarom zou je je hiermee bezighouden? Het\
   \ is\u2026"
 title: Tekst zoeken en vervangen
+weight: 10
 ---
-
-{{< edit_this_page >}}
 
 ## Wat & Waarom?
 Tekst zoeken en vervangen betekent het vinden van specifieke substrings en deze omwisselen voor iets nieuws. Waarom zou je je hiermee bezighouden? Het is overal: typfouten in een document corrigeren, code verfijnen of gegevens in batch bewerken.

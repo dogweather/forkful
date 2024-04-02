@@ -1,14 +1,15 @@
 ---
 date: 2024-01-26 04:08:55.992040-07:00
-description: "U\u017Cywanie debugera oznacza ustawianie punkt\xF3w przerwania, przegl\u0105\
-  danie kodu krok po kroku, obserwowanie zmiennych oraz inspekcj\u0119 stanu programu\
-  \ podczas\u2026"
+description: "W PowerShellu mo\u017Cesz debugowa\u0107 skrypty za pomoc\u0105 wbudowanego\
+  \ \u015Brodowiska PowerShell Integrated Scripting Environment (ISE) lub Visual Studio\
+  \ Code (VS Code)\u2026"
 lastmod: '2024-03-13T22:44:35.634450-06:00'
 model: gpt-4-0125-preview
-summary: "U\u017Cywanie debugera oznacza ustawianie punkt\xF3w przerwania, przegl\u0105\
-  danie kodu krok po kroku, obserwowanie zmiennych oraz inspekcj\u0119 stanu programu\
-  \ podczas\u2026"
+summary: "W PowerShellu mo\u017Cesz debugowa\u0107 skrypty za pomoc\u0105 wbudowanego\
+  \ \u015Brodowiska PowerShell Integrated Scripting Environment (ISE) lub Visual Studio\
+  \ Code (VS Code)\u2026"
 title: Korzystanie z debugera
+weight: 35
 ---
 
 ## Jak to zrobić:

@@ -9,9 +9,8 @@ summary: "Att arbeta med XML inneb\xE4r att analysera, fr\xE5ga och manipulera X
   \ med Java. Programmerare g\xF6r detta f\xF6r datautbyte, konfigurationshantering\
   \ och\u2026"
 title: Att arbeta med XML
+weight: 40
 ---
-
-{{< edit_this_page >}}
 
 ## Vad & Varför?
 Att arbeta med XML innebär att analysera, fråga och manipulera XML-dokument med Java. Programmerare gör detta för datautbyte, konfigurationshantering och eftersom många äldre system och API:er kommunicerar med XML.

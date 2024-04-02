@@ -9,9 +9,8 @@ summary: "HTTP-pyynt\xF6 on tapa hakea tai l\xE4hett\xE4\xE4 tietoja verkon yli 
   \ Ohjelmoijat k\xE4ytt\xE4v\xE4t sit\xE4 tietojen synkronointiin, API-kutsuihin\
   \ ja\u2026"
 title: "HTTP-pyynn\xF6n l\xE4hett\xE4minen"
+weight: 44
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why? (Mikä & Miksi?)
 HTTP-pyyntö on tapa hakea tai lähettää tietoja verkon yli palvelimelle. Ohjelmoijat käyttävät sitä tietojen synkronointiin, API-kutsuihin ja verkkopalveluiden integrointiin.

@@ -9,9 +9,8 @@ model: gpt-4-1106-preview
 summary: "String interpolation is the method of embedding expressions within string\
   \ literals. Programmers use it to dynamically insert values into strings, which\u2026"
 title: Interpolating a string
+weight: 8
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 String interpolation is the method of embedding expressions within string literals. Programmers use it to dynamically insert values into strings, which makes the code more readable and cleaner than traditional string concatenation.

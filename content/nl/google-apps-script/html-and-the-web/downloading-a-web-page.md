@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Het downloaden van een webpagina in Google Apps Script houdt in dat de inhoud\
   \ van een webpagina via HTML wordt opgehaald voor verschillende doeleinden,\u2026"
 title: Een webpagina downloaden
+weight: 42
 ---
-
-{{< edit_this_page >}}
 
 ## Wat & Waarom?
 

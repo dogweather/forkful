@@ -9,9 +9,8 @@ summary: "\xC5 lese en tekstfil i PHP betyr \xE5 hente data fra en fil p\xE5 ser
   \ Programmerere gj\xF8r dette for \xE5 behandle informasjon, lagre innstillinger,\
   \ eller \xE5 vise\u2026"
 title: Lese en tekstfil
+weight: 22
 ---
-
-{{< edit_this_page >}}
 
 ## Hva & Hvorfor?
 Å lese en tekstfil i PHP betyr å hente data fra en fil på serveren. Programmerere gjør dette for å behandle informasjon, lagre innstillinger, eller å vise innhold til brukere.

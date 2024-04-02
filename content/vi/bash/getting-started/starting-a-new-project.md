@@ -15,9 +15,8 @@ summary: "B\u1EAFt \u0111\u1EA7u m\u1ED9t d\u1EF1 \xE1n m\u1EDBi th\u01B0\u1EDDn
   y d\u1EF1ng n\u1EC1n m\xF3ng cho m\u1ED9t ng\xF4i nh\xE0. L\u1EADp tr\xECnh vi\xEA\
   n\u2026"
 title: "B\u1EAFt \u0111\u1EA7u m\u1ED9t d\u1EF1 \xE1n m\u1EDBi"
+weight: 1
 ---
-
-{{< edit_this_page >}}
 
 ## Cái gì & Tại sao?
 Bắt đầu một dự án mới thường có nghĩa là tạo ra một cấu trúc thư mục và các tệp ban đầu—giống như việc xây dựng nền móng cho một ngôi nhà. Lập trình viên làm điều đó để tổ chức suy nghĩ, tệp, và nhiệm vụ, biến sự hỗn loạn thành một danh sách công việc gọn gàng.

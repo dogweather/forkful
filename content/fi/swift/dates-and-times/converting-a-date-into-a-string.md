@@ -9,9 +9,8 @@ summary: "Muunnetaan p\xE4iv\xE4m\xE4\xE4r\xE4 merkkijonoksi jotta se olisi help
   \ n\xE4ytt\xE4\xE4 k\xE4ytt\xE4j\xE4lle. T\xE4m\xE4 tehd\xE4\xE4n k\xE4ytt\xE4j\xE4\
   yst\xE4v\xE4llisten muotojen ja paikallisten\u2026"
 title: "P\xE4iv\xE4m\xE4\xE4r\xE4n muuntaminen merkkijonoksi"
+weight: 28
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why? - Mikä & Miksi?
 Muunnetaan päivämäärä merkkijonoksi jotta se olisi helpompi näyttää käyttäjälle. Tämä tehdään käyttäjäystävällisten muotojen ja paikallisten aikavyöhykkeiden näyttämiseksi.

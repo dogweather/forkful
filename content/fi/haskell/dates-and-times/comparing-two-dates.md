@@ -9,9 +9,8 @@ summary: "Vertaillaan kahta p\xE4iv\xE4m\xE4\xE4r\xE4\xE4 selvitt\xE4\xE4ksemme 
   \ j\xE4rjestyksen tai aikaeron. Ohjelmoijat tekev\xE4t t\xE4t\xE4 ajanhallinnassa,\
   \ tapahtumien ajoituksessa ja\u2026"
 title: "Kahden p\xE4iv\xE4m\xE4\xE4r\xE4n vertailu"
+weight: 27
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 Vertaillaan kahta päivämäärää selvittääksemme niiden järjestyksen tai aikaeron. Ohjelmoijat tekevät tätä ajanhallinnassa, tapahtumien ajoituksessa ja vanhentumislogiikoissa.

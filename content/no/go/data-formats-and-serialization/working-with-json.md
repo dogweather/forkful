@@ -10,9 +10,8 @@ model: gpt-4-0125-preview
 summary: "\xC5 arbeide med JSON (JavaScript Object Notation) i Go inneb\xE6rer koding\
   \ og dekoding av data mellom Go-datastrukturer og JSON-format. Denne oppgaven er\u2026"
 title: Arbeide med JSON
+weight: 38
 ---
-
-{{< edit_this_page >}}
 
 ## Hva & Hvorfor?
 

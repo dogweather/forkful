@@ -23,9 +23,8 @@ summary: "Bash\uC5D0\uC11C \uBB38\uC790\uC5F4\uC758 \uCCAB \uAE00\uC790\uB97C \u
   \uD558\uB294 \uB370 \uC77C\uBC18\uC801\uC73C\uB85C \uC0AC\uC6A9\uB429\uB2C8\uB2E4\
   ."
 title: "\uBB38\uC790\uC5F4 \uB300\uBB38\uC790\uD654"
+weight: 2
 ---
-
-{{< edit_this_page >}}
 
 ## 무엇 & 왜?
 Bash에서 문자열의 첫 글자를 대문자로 변환하면서 나머지 문자열은 변경하지 않는 것을 의미합니다. 이 기술은 출력 포맷을 지정하거나, 일부 문자열이 가독성이나 스타일 취향을 위해 대문자로 시작해야 하는 코딩 관례를 준수하는 데 일반적으로 사용됩니다.

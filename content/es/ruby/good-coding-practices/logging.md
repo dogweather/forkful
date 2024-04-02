@@ -9,9 +9,8 @@ summary: "La creaci\xF3n de registros (logging) en programaci\xF3n es como mante
   \ un diario para tu aplicaci\xF3n. Es el registro sistem\xE1tico de eventos, mensajes\
   \ y puntos\u2026"
 title: Registro de Actividades
+weight: 17
 ---
-
-{{< edit_this_page >}}
 
 ## ¿Qué y Por Qué?
 La creación de registros (logging) en programación es como mantener un diario para tu aplicación. Es el registro sistemático de eventos, mensajes y puntos de datos que te ofrecen una visión de lo que tu aplicación está haciendo y cómo se está comportando. Los programadores registran porque es crucial para depurar, monitorear la salud de la aplicación y obtener pistas sobre problemas potenciales antes de que se conviertan en problemas reales.

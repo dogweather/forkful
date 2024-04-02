@@ -7,9 +7,8 @@ model: gpt-4-1106-preview
 summary: "Inviare una richiesta HTTP con autenticazione di base \xE8 uno dei metodi\
   \ per proteggere l'accesso alle risorse web. I programmatori lo utilizzano per\u2026"
 title: Inviare una richiesta http con autenticazione di base
+weight: 45
 ---
-
-{{< edit_this_page >}}
 
 ## Che Cosa & Perché?
 

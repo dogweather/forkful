@@ -9,9 +9,8 @@ summary: "Editar arquivos in-loco com linhas de comando \xFAnicas (CLI one-liner
   \ \xE9 sobre fazer mudan\xE7as diretamente nos arquivos a partir da linha de comando,\
   \ sem\u2026"
 title: Editando arquivos in loco com linhas de comando
+weight: 32
 ---
-
-{{< edit_this_page >}}
 
 ## O Que & Por Que?
 

@@ -11,9 +11,8 @@ summary: "\xC9crire des tests en JavaScript fait r\xE9f\xE9rence \xE0 la pratiqu
   \ de cr\xE9er des scripts automatis\xE9s qui ex\xE9cutent votre code pour garantir\
   \ qu'il se comporte\u2026"
 title: "R\xE9daction de tests"
+weight: 36
 ---
-
-{{< edit_this_page >}}
 
 ## Quoi & Pourquoi ?
 

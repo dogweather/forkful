@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Pisanie pliku tekstowego w Kotlinie polega na utworzeniu pliku i wprowadzeniu\
   \ do niego tre\u015Bci tekstowej, co jest powszechnym zadaniem do przechowywania\u2026"
 title: Pisanie pliku tekstowego
+weight: 24
 ---
-
-{{< edit_this_page >}}
 
 ## Co i dlaczego?
 Pisanie pliku tekstowego w Kotlinie polega na utworzeniu pliku i wprowadzeniu do niego treści tekstowej, co jest powszechnym zadaniem do przechowywania danych, logowania lub ustawień konfiguracyjnych. Programiści robią to, aby zapisać i manipulować danymi poza przestrzenią pamięci nietrwałej, zapewniając trwałość przez sesje.

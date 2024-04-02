@@ -22,9 +22,8 @@ summary: "Read-Eval-Print-Loop\uFF08REPL\uFF09\u306F\u3001\u30E6\u30FC\u30B6\u30
   \u8A00\u8A9E\u6A5F\u80FD\u3092\u5B66\u3093\u3060\u308A\u3057\u307E\u3059\u3002"
 title: "\u30A4\u30F3\u30BF\u30E9\u30AF\u30C6\u30A3\u30D6\u30B7\u30A7\u30EB\uFF08REPL\uFF09\
   \u306E\u4F7F\u7528"
+weight: 34
 ---
-
-{{< edit_this_page >}}
 
 ## 何となぜ？
 Read-Eval-Print-Loop（REPL）は、ユーザーの入力を受け取り、実行し、結果をユーザーに返すプログラミング環境です。プログラマーはREPLを使用して、コードスニペットを素早く試したり、デバッグしたり、フルアプリケーションを作成する煩雑さなしに新しい言語機能を学んだりします。

@@ -11,9 +11,8 @@ summary: "Assoziative Arrays, oder W\xF6rterb\xFCcher in C#, erm\xF6glichen es I
   \ Schl\xFCssel-Wert-Paare zu speichern und zu verwalten. Sie sind Ihre erste Wahl,\
   \ wenn Sie\u2026"
 title: Verwendung von assoziativen Arrays
+weight: 15
 ---
-
-{{< edit_this_page >}}
 
 ## Was und Warum?
 

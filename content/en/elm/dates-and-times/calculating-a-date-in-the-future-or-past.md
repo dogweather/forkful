@@ -9,9 +9,8 @@ summary: "Calculating a future or past date is just tweaking a given date by a s
   \ amount of time. Programmers do it to handle deadlines, events, reminders\u2014\
   anything\u2026"
 title: Calculating a date in the future or past
+weight: 26
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 Calculating a future or past date is just tweaking a given date by a set amount of time. Programmers do it to handle deadlines, events, reminders—anything date-related.

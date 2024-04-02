@@ -9,9 +9,8 @@ summary: "La journalisation est comme tenir un journal pour votre application ; 
   \ la pratique d'enregistrer des \xE9v\xE9nements, des erreurs et d'autres donn\xE9\
   es\u2026"
 title: Journalisation
+weight: 17
 ---
-
-{{< edit_this_page >}}
 
 ## Quoi & Pourquoi ?
 

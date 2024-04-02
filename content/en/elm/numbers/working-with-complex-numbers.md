@@ -8,9 +8,8 @@ model: gpt-4-1106-preview
 summary: "Complex numbers are a combo of real and imaginary numbers, like `a + bi`\
   \ where `i` is the square root of -1. They're key in fields like engineering and\u2026"
 title: Working with complex numbers
+weight: 14
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 Complex numbers are a combo of real and imaginary numbers, like `a + bi` where `i` is the square root of -1. They're key in fields like engineering and physics to solve problems regular numbers can't touch.

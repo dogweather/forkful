@@ -11,9 +11,8 @@ summary: "Wysy\u0142anie \u017C\u0105dania HTTP z podstawowym uwierzytelnieniem 
   \ j\u0119zyku C polega na przygotowaniu \u017C\u0105dania HTTP, kt\xF3re zawiera\
   \ nag\u0142\xF3wek Authorization z\u2026"
 title: "Wysy\u0142anie \u017C\u0105dania HTTP z podstawowym uwierzytelnianiem"
+weight: 45
 ---
-
-{{< edit_this_page >}}
 
 ## Co i dlaczego?
 Wysyłanie żądania HTTP z podstawowym uwierzytelnieniem w języku C polega na przygotowaniu żądania HTTP, które zawiera nagłówek Authorization z zakodowanymi w Base64 poświadczeniami użytkownika. Jest to powszechna metoda dodawania prostej warstwy uwierzytelniania do żądań HTTP, pozwalająca na programowe dostępowanie do zasobów ograniczonych.

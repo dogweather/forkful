@@ -11,9 +11,8 @@ summary: "Att kapitalisera en str\xE4ng i programmering inneb\xE4r att konverter
   \ det f\xF6rsta tecknet i str\xE4ngen till versal om det inte redan \xE4r det, vilket\
   \ \xE4r anv\xE4ndbart\u2026"
 title: "G\xF6r om en str\xE4ng till versaler"
+weight: 2
 ---
-
-{{< edit_this_page >}}
 
 ## Vad & Varför?
 

@@ -10,9 +10,8 @@ model: gpt-4-0125-preview
 summary: "Arrays associativos, ou mapas hash, em Clojure permitem que voc\xEA armazene\
   \ e recupere dados com pares de chave-valor. Eles s\xE3o uma escolha principal para\u2026"
 title: Usando arrays associativos
+weight: 15
 ---
-
-{{< edit_this_page >}}
 
 ## O quê & Por quê?
 

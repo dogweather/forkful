@@ -7,9 +7,8 @@ model: gpt-4-0125-preview
 summary: "Printing debug output in Dart is about displaying information to the console\
   \ during runtime, allowing developers to track the flow of execution,\u2026"
 title: Printing debug output
+weight: 33
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 

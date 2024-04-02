@@ -9,9 +9,8 @@ summary: "Komennon rivin argumentit ovat ohjelmalle sy\xF6tettyj\xE4 tietoja, jo
   \ k\xE4sitell\xE4\xE4n sen k\xE4ynnistyess\xE4. Ohjelmoijat k\xE4ytt\xE4v\xE4t niit\xE4\
   \ mukauttaakseen ohjelman\u2026"
 title: Komennoriviparametrien lukeminen
+weight: 23
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why? (Mitä & Miksi?)
 Komennon rivin argumentit ovat ohjelmalle syötettyjä tietoja, joita käsitellään sen käynnistyessä. Ohjelmoijat käyttävät niitä mukauttaakseen ohjelman käyttäytymistä ilman koodin muuttamista.

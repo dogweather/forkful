@@ -9,9 +9,8 @@ summary: "Refaktorointi on k\xE4yt\xE4nn\xF6ss\xE4 koodikannan kev\xE4tsiivous \
   \ siin\xE4 uudelleenj\xE4rjestet\xE4\xE4n olemassa olevaa koodia muuttamatta sen\
   \ ulkoista toimintaa. Ohjelmoijat\u2026"
 title: Koodin refaktorointi
+weight: 19
 ---
-
-{{< edit_this_page >}}
 
 ## Mikä & Miksi?
 Refaktorointi on käytännössä koodikannan kevätsiivous – siinä uudelleenjärjestetään olemassa olevaa koodia muuttamatta sen ulkoista toimintaa. Ohjelmoijat tekevät sitä tehdäkseen koodista luettavampaa, vähentääkseen monimutkaisuutta, parantaakseen ylläpidettävyyttä ja helpottaakseen sen laajentamista.

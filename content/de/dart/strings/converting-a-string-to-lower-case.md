@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Das Umwandeln eines Strings in Kleinbuchstaben ist eine grundlegende Operation,\
   \ die das Transformieren aller Zeichen eines gegebenen Strings in ihre\u2026"
 title: Eine Zeichenkette in Kleinbuchstaben umwandeln
+weight: 4
 ---
-
-{{< edit_this_page >}}
 
 ## Was & Warum?
 

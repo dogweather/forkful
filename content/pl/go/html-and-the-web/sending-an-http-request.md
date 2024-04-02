@@ -11,9 +11,8 @@ summary: "Wysy\u0142anie \u017C\u0105dania HTTP polega na inicjowaniu po\u0142\u
   czenia z aplikacji Go do serwera sieciowego, API lub innej us\u0142ugi opartej na\
   \ protokole HTTP. Programi\u015Bci\u2026"
 title: "Wysy\u0142anie \u017C\u0105dania HTTP"
+weight: 44
 ---
-
-{{< edit_this_page >}}
 
 ## Co i dlaczego?
 

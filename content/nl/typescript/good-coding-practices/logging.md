@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Loggen is het proces van het vastleggen van gebeurtenissen, fouten en andere\
   \ significante informatie tijdens de uitvoering van een programma naar een\u2026"
 title: Logboekregistratie
+weight: 17
 ---
-
-{{< edit_this_page >}}
 
 ## Wat & Waarom?
 

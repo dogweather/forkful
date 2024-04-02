@@ -9,9 +9,8 @@ summary: "Midlertidige filer er som engangsbestikk for data \u2013 de brukes lit
   \ og s\xE5 forsvinner de. Programmerere bruker dem for \xE5 lagre midlertidig data\
   \ som ikke\u2026"
 title: Opprette en midlertidig fil
+weight: 21
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 Midlertidige filer er som engangsbestikk for data – de brukes litt, og så forsvinner de. Programmerere bruker dem for å lagre midlertidig data som ikke trenger permanent plass, for eksempel under komplekse beregninger eller når de håndterer store databehandlingsoppgaver.

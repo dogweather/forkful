@@ -9,9 +9,8 @@ summary: "Yhdist\xE4mme merkkijonoja, jotta saamme yksitt\xE4iset sanat tai pala
   \ muodostamaan j\xE4rkevi\xE4 lauseita tai viestej\xE4. T\xE4m\xE4 on hy\xF6dyllist\xE4\
   \ dataa v\xE4litett\xE4ess\xE4\u2026"
 title: "Merkkijonojen yhdist\xE4minen"
+weight: 3
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 Yhdistämme merkkijonoja, jotta saamme yksittäiset sanat tai palaset muodostamaan järkeviä lauseita tai viestejä. Tämä on hyödyllistä dataa välitettäessä ihmiselle ymmärrettävässä muodossa tai kun rakennetaan dynaamisia komentoja laitteille.

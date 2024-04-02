@@ -11,9 +11,8 @@ summary: "Att skriva med stor bokstav i PowerShell inneb\xE4r att man omvandlar 
   \ f\xF6rsta tecknet i en given str\xE4ng till versal medan resten av str\xE4ngen\
   \ l\xE4mnas\u2026"
 title: "G\xF6r om en str\xE4ng till versaler"
+weight: 2
 ---
-
-{{< edit_this_page >}}
 
 ## Vad & Varför?
 Att skriva med stor bokstav i PowerShell innebär att man omvandlar det första tecknet i en given sträng till versal medan resten av strängen lämnas oförändrad. Programmerare utför ofta denna uppgift för formateringssyften, såsom att förbereda text för visning i användargränssnitt eller följa grammatiska regler i genererade dokument.

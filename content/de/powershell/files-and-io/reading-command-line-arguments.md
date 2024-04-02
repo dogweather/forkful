@@ -8,9 +8,8 @@ model: gpt-4-1106-preview
 summary: "Kommandozeilenargumente zu lesen hei\xDFt, Eingaben von Benutzern zu verarbeiten,\
   \ die ein Skript ausgef\xFChrt haben. Programmierer nutzen das, um Skripts\u2026"
 title: Lesen von Kommandozeilenargumenten
+weight: 23
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 Kommandozeilenargumente zu lesen heißt, Eingaben von Benutzern zu verarbeiten, die ein Skript ausgeführt haben. Programmierer nutzen das, um Skripts flexibel und interaktiv zu gestalten.

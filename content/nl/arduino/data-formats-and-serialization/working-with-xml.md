@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Werken met XML op Arduino omvat het parsen en manipuleren van XML-gegevens,\
   \ die meestal afkomstig zijn van web-API's of configuratiebestanden.\u2026"
 title: Werken met XML
+weight: 40
 ---
-
-{{< edit_this_page >}}
 
 ## Wat & Waarom?
 Werken met XML op Arduino omvat het parsen en manipuleren van XML-gegevens, die meestal afkomstig zijn van web-API's of configuratiebestanden. Programmeurs doen dit om te integreren met diensten die XML gebruiken voor gegevensuitwisseling of om gegevens op te slaan in een gestructureerd, menselijk leesbaar formaat.

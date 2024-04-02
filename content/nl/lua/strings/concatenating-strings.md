@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Het samenvoegen van strings betekent dat je ze achter elkaar plakt om een\
   \ nieuwe te maken. Programmeurs doen dit om dynamisch tekst op te bouwen, zoals\u2026"
 title: Samenvoegen van strings
+weight: 3
 ---
-
-{{< edit_this_page >}}
 
 ## Wat & Waarom?
 Het samenvoegen van strings betekent dat je ze achter elkaar plakt om een nieuwe te maken. Programmeurs doen dit om dynamisch tekst op te bouwen, zoals het creëren van berichten of het genereren van code.

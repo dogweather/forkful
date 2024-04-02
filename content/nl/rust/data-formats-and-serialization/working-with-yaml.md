@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Werken met YAML betekent omgaan met gegevens in het \"YAML Ain't Markup\
   \ Language\" formaat - een mensvriendelijke standaard voor gegevensserialisatie.\u2026"
 title: Werken met YAML
+weight: 41
 ---
-
-{{< edit_this_page >}}
 
 ## Wat & Waarom?
 

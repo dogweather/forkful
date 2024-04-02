@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Das Parsen eines Datums aus einem String beinhaltet die Umwandlung von textuellen\
   \ Darstellungen von Daten und Zeiten in ein Format, das innerhalb eines\u2026"
 title: Einen Datum aus einem String analysieren
+weight: 30
 ---
-
-{{< edit_this_page >}}
 
 ## Was & Warum?
 Das Parsen eines Datums aus einem String beinhaltet die Umwandlung von textuellen Darstellungen von Daten und Zeiten in ein Format, das innerhalb eines Lua-Programms leicht manipuliert, gespeichert oder verglichen werden kann. Programmierer führen diese Aufgabe durch, um Operationen wie Planung, Protokollierung oder jegliche zeitliche Berechnungen zu erleichtern und die Lücke zwischen für Menschen lesbaren Datumsformaten und strukturierten Datentypen, die ein Computer effizient verarbeiten kann, zu überbrücken.

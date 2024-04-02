@@ -7,9 +7,8 @@ model: gpt-4-1106-preview
 summary: "Textsuche und -ersatz ist das Auffinden und Modifizieren von Zeichenfolgen\
   \ in einem Text. Programmierer nutzen dies, um Daten zu korrigieren, zu\u2026"
 title: Suchen und Ersetzen von Text
+weight: 10
 ---
-
-{{< edit_this_page >}}
 
 ## Was & Warum?
 Textsuche und -ersatz ist das Auffinden und Modifizieren von Zeichenfolgen in einem Text. Programmierer nutzen dies, um Daten zu korrigieren, zu aktualisieren oder zu formatieren, oft in großen Dateien oder Codebasen.

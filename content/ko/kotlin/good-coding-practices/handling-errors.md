@@ -20,9 +20,8 @@ summary: "\uC624\uB958 \uCC98\uB9AC\uB294 \uC2E4\uD589 \uC911\uC5D0 \uBC1C\uC0DD
   \uACE0 \uC0AC\uC6A9\uC790\uC5D0\uAC8C \uC6D0\uD65C\uD55C \uACBD\uD5D8\uC744 \uC81C\
   \uACF5\uD558\uAE30 \uC704\uD574 \uC774\uB97C \uC218\uD589\uD569\uB2C8\uB2E4."
 title: "\uC5D0\uB7EC \uCC98\uB9AC\uD558\uAE30"
+weight: 16
 ---
-
-{{< edit_this_page >}}
 
 ## 무엇이며 왜 중요한가?
 오류 처리는 실행 중에 발생할 수 있는 문제, 즉 예기치 않은 문제를 다루는 코드의 방식입니다. 마치 갑작스러운 커브볼을 놓치지 않고 처리하는 것과 같습니다. 프로그래머들은 충돌을 방지하고 사용자에게 원활한 경험을 제공하기 위해 이를 수행합니다.

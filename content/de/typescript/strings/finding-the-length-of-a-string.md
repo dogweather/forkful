@@ -9,9 +9,8 @@ summary: "Die L\xE4nge eines Strings in TypeScript zu finden, bedeutet, zu ermit
   \ wie viele Zeichen der String enth\xE4lt. Programmierer m\xFCssen das h\xE4ufig\
   \ tun, um\u2026"
 title: "Ermittlung der Zeichenkettenl\xE4nge"
+weight: 7
 ---
-
-{{< edit_this_page >}}
 
 ## Was & Warum?
 Die Länge eines Strings in TypeScript zu finden, bedeutet, zu ermitteln, wie viele Zeichen der String enthält. Programmierer müssen das häufig tun, um Texteingaben zu validieren, Schleifen zu steuern oder Daten zu manipulieren.

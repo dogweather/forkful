@@ -13,9 +13,8 @@ summary: "Vi\u1EC7c \u0111\u1ECDc c\xE1c \u0111\u1ED1i s\u1ED1 d\xF2ng l\u1EC7nh
   c tham s\u1ED1 \u0111\u01B0\u1EE3c truy\u1EC1n \u0111\u1EBFn ch\u01B0\u01A1ng tr\xEC\
   nh c\u1EE7a b\u1EA1n khi th\u1EF1c\u2026"
 title: "\u0110\u1ECDc \u0111\u1ED1i s\u1ED1 t\u1EEB d\xF2ng l\u1EC7nh"
+weight: 23
 ---
-
-{{< edit_this_page >}}
 
 ## Cái gì & Tại sao?
 

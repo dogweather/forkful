@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Att arbeta med CSV (Comma Separated Values) involverar tolkning och generering\
   \ av filer som lagrar tabul\xE4r data i ett enkelt, klartextformat. Detta\u2026"
 title: Arbeta med CSV
+weight: 37
 ---
-
-{{< edit_this_page >}}
 
 ## Vad & Varför?
 

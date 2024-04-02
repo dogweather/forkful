@@ -11,9 +11,8 @@ summary: "\xC5 jobbe med JSON (JavaScript Object Notation) inneb\xE6rer parsing 
   \ JSON-data til og fra et brukbart format i TypeScript. Programmerere gj\xF8r dette\
   \ for\u2026"
 title: Arbeider med JSON
+weight: 38
 ---
-
-{{< edit_this_page >}}
 
 ## Hva & Hvorfor?
 

@@ -9,9 +9,8 @@ summary: "REPL oznacza Read-Eval-Print Loop (P\u0119tla Czytaj-Wykonaj-Wydrukuj)
   \ interaktywne \u015Brodowisko, gdzie mo\u017Cna szybko testowa\u0107 kod. Programi\u015B\
   ci u\u017Cywaj\u0105 go do\u2026"
 title: Korzystanie z interaktywnego shella (REPL)
+weight: 34
 ---
-
-{{< edit_this_page >}}
 
 ## Co i dlaczego?
 REPL oznacza Read-Eval-Print Loop (Pętla Czytaj-Wykonaj-Wydrukuj), interaktywne środowisko, gdzie można szybko testować kod. Programiści używają go do eksperymentowania, debugowania i poznawania osobliwości języka.

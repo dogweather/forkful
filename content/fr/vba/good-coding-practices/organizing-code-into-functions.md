@@ -11,9 +11,8 @@ summary: "L'organisation du code en fonctions dans Visual Basic pour Application
   \ (VBA) implique de d\xE9composer un programme en pi\xE8ces plus petites et g\xE9\
   rables,\u2026"
 title: Organiser le code en fonctions
+weight: 18
 ---
-
-{{< edit_this_page >}}
 
 ## Quoi et pourquoi ?
 

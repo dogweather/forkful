@@ -9,9 +9,8 @@ summary: "Mit\xE4 on p\xE4iv\xE4m\xE4\xE4r\xE4n laskeminen tulevaisuuteen tai me
   \ K\xE4yt\xE4nn\xF6ss\xE4 s\xE4\xE4d\xE4mme kelloja ja kalentereita ohjelmallisesti.\
   \ Miksi? Kalenteritoiminnot\u2026"
 title: "Tulevan tai menneen p\xE4iv\xE4m\xE4\xE4r\xE4n laskeminen"
+weight: 26
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 Mitä on päivämäärän laskeminen tulevaisuuteen tai menneisyyteen? Käytännössä säädämme kelloja ja kalentereita ohjelmallisesti. Miksi? Kalenteritoiminnot ovat kriittisiä muistutuksille, aikatauluille ja tapahtumien seurannalle.

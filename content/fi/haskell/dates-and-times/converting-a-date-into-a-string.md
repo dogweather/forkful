@@ -9,9 +9,8 @@ summary: "Muuttamalla p\xE4iv\xE4m\xE4\xE4r\xE4n merkkijonoksi voimme n\xE4ytt\x
   \xE4 sen helposti ymm\xE4rrett\xE4v\xE4ss\xE4 muodossa. Ohjelmoijat tekev\xE4t t\xE4\
   m\xE4n, jotta p\xE4iv\xE4m\xE4\xE4r\xE4t sopivat\u2026"
 title: "P\xE4iv\xE4m\xE4\xE4r\xE4n muuntaminen merkkijonoksi"
+weight: 28
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why? - Mikä ja Miksi?
 Muuttamalla päivämäärän merkkijonoksi voimme näyttää sen helposti ymmärrettävässä muodossa. Ohjelmoijat tekevät tämän, jotta päivämäärät sopivat käyttöliittymiin ja logeihin ihmisten luettaviksi.

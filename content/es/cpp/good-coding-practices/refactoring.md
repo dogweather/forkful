@@ -7,9 +7,8 @@ model: gpt-4-0125-preview
 summary: "Refactorizar es el proceso de cambiar la estructura interna de un programa\
   \ inform\xE1tico sin alterar su comportamiento externo. Los programadores lo hacen\u2026"
 title: "Refactorizaci\xF3n"
+weight: 19
 ---
-
-{{< edit_this_page >}}
 
 ## ¿Qué y por qué?
 

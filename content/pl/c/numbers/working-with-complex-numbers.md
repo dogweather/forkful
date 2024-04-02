@@ -11,9 +11,8 @@ summary: "Liczby zespolone sk\u0142adaj\u0105 si\u0119 z cz\u0119\u015Bci rzeczy
   \ i urojonej, reprezentowane jako `a + bi`, gdzie `i` jest pierwiastkiem kwadratowym\
   \ z `-1`. Programi\u015Bci\u2026"
 title: Praca z liczbami zespolonymi
+weight: 14
 ---
-
-{{< edit_this_page >}}
 
 ## Co i dlaczego?
 

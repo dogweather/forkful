@@ -7,9 +7,8 @@ model: gpt-4-0125-preview
 summary: "REPL significa Bucle de Leer-Evaluar-Imprimir, un entorno interactivo donde\
   \ puedes probar r\xE1pidamente c\xF3digo. Los programadores lo utilizan para\u2026"
 title: Usando una shell interactiva (REPL)
+weight: 34
 ---
-
-{{< edit_this_page >}}
 
 ## Qué y Por Qué
 REPL significa Bucle de Leer-Evaluar-Imprimir, un entorno interactivo donde puedes probar rápidamente código. Los programadores lo utilizan para experimentar, depurar y aprender las peculiaridades de un lenguaje.

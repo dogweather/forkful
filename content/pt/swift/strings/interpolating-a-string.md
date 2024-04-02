@@ -9,9 +9,8 @@ summary: "Interpola\xE7\xE3o de strings \xE9 o jeito de injetar valores dentro d
   \ uma cadeia de caracteres. Programadores fazem isso para construir strings din\xE2\
   micas de\u2026"
 title: Interpolando uma string
+weight: 8
 ---
-
-{{< edit_this_page >}}
 
 ## O Que é & Por Que?
 

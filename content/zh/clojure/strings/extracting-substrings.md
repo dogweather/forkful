@@ -12,9 +12,8 @@ summary: "\u63D0\u53D6\u5B50\u5B57\u7B26\u4E32\u5C31\u662F\u4ECE\u4E00\u4E2A\u66
   \u5458\u8FD9\u4E48\u505A\u662F\u4E3A\u4E86\u5904\u7406\u6216\u5206\u6790\u7279\u5B9A\
   \u7684\u6570\u636E\u7247\u6BB5\u3002"
 title: "\u63D0\u53D6\u5B50\u5B57\u7B26\u4E32"
+weight: 6
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 提取子字符串就是从一个更长的字符串中拿出一部分。程序员这么做是为了处理或分析特定的数据片段。

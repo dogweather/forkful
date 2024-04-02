@@ -9,9 +9,8 @@ summary: "Supprimer les guillemets d'une cha\xEEne consiste \xE0 retirer les mar
   \ de citation qui encadrent la cha\xEEne. Les programmeurs souhaitent souvent le\
   \ faire\u2026"
 title: "Retirer les guillemets d'une cha\xEEne"
+weight: 9
 ---
-
-{{< edit_this_page >}}
 
 ## Quoi & Pourquoi ?
 Supprimer les guillemets d'une chaîne consiste à retirer les marques de citation qui encadrent la chaîne. Les programmeurs souhaitent souvent le faire pour assainir les données d'entrée, préparer les données pour des comparaisons, ou se conformer à un format de données spécifique lors de l'interaction avec d'autres programmes ou systèmes.

@@ -10,9 +10,8 @@ model: gpt-4-0125-preview
 summary: "\xC5 lese kommandolinjeargumenter i Google Apps Script er litt av en misvisende\
   \ betegnelse fordi, i motsetning til tradisjonelle kommandolinjegrensesnitt i\u2026"
 title: Lese kommandolinje-argumenter
+weight: 23
 ---
-
-{{< edit_this_page >}}
 
 ## Hva & Hvorfor?
 

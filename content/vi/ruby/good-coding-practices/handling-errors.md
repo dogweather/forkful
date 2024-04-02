@@ -14,9 +14,8 @@ summary: "X\u1EED l\xFD l\u1ED7i ch\xEDnh l\xE0 vi\u1EC7c d\u1EF1 ph\xF2ng nh\u1
   \ l\u1ED7i m\u1ED9t c\xE1ch nh\u1EB9 nh\xE0ng m\xE0 kh\xF4ng l\xE0m s\u1EADp ch\u01B0\
   \u01A1ng tr\xECnh. L\u1EADp tr\xECnh vi\xEAn l\xE0m\u2026"
 title: "X\u1EED l\xFD l\u1ED7i"
+weight: 16
 ---
-
-{{< edit_this_page >}}
 
 ## Gì & Tại Sao?
 

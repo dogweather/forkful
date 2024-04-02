@@ -9,9 +9,8 @@ summary: "Virheiden k\xE4sittely tarkoittaa koodin kirjoittamista, joka pystyy k
   sittelem\xE4\xE4n kun asiat menev\xE4t pieleen. Ohjelmoijat tekev\xE4t sit\xE4 est\xE4\
   \xE4kseen kaatumiset\u2026"
 title: "Virheiden k\xE4sittely"
+weight: 16
 ---
-
-{{< edit_this_page >}}
 
 ## Mikä & Miksi?
 

@@ -11,9 +11,8 @@ summary: "R\xE9cup\xE9rer la date actuelle en Rust est une t\xE2che courante pou
   \ des op\xE9rations telles que la journalisation, les op\xE9rations bas\xE9es sur\
   \ le temps ou\u2026"
 title: Obtenir la date actuelle
+weight: 29
 ---
-
-{{< edit_this_page >}}
 
 ## Quoi et Pourquoi ?
 

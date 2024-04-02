@@ -7,9 +7,8 @@ model: gpt-4-0125-preview
 summary: "Interaktiivinen komentotulkki eli REPL (Read-Eval-Print Loop, Lue-Arviointi-Tulosta\
   \ Silmukka) mahdollistaa koodinp\xE4tkien kokeilemisen reaaliajassa.\u2026"
 title: "Interaktiivisen komentotulkin (REPL) k\xE4ytt\xF6"
+weight: 34
 ---
-
-{{< edit_this_page >}}
 
 ## Mikä & Miksi?
 Interaktiivinen komentotulkki eli REPL (Read-Eval-Print Loop, Lue-Arviointi-Tulosta Silmukka) mahdollistaa koodinpätkien kokeilemisen reaaliajassa. Elixir-ohjelmoijat käyttävät REPL:iä, joka tunnetaan nimellä IEx (Interactive Elixir), kokeiluun, vianetsintään ja kielen oppimiseen.

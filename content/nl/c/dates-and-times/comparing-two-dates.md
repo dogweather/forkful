@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Datums vergelijken in C houdt in dat wordt bepaald hoe de chronologische\
   \ relatie tussen twee datums is - of de ene datum voor de andere komt of dat ze\u2026"
 title: Twee datums vergelijken
+weight: 27
 ---
-
-{{< edit_this_page >}}
 
 ## Wat & Waarom?
 

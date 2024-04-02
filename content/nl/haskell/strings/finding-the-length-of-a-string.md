@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "De lengte van een string vinden in Haskell betekent bepalen hoeveel karakters\
   \ deze bevat. Programmeurs hebben dit vaak nodig om lusiteratoren te\u2026"
 title: De lengte van een string vinden
+weight: 7
 ---
-
-{{< edit_this_page >}}
 
 ## Wat & Waarom?
 

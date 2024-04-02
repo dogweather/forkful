@@ -23,9 +23,8 @@ summary: "Python\uC5D0\uC11C \uD14C\uC2A4\uD2B8\uB97C \uC791\uC131\uD558\uB294 \
   \ \uC870\uAE30\uC5D0 \uBC1C\uACAC\uD558\uACE0 \uC720\uC9C0\uBCF4\uC218 \uBC0F \uB9AC\
   \uD329\uD130\uB9C1\uC744 \uC6A9\uC774\uD558\uAC8C \uD569\uB2C8\uB2E4."
 title: "\uD14C\uC2A4\uD2B8 \uC791\uC131\uD558\uAE30"
+weight: 36
 ---
-
-{{< edit_this_page >}}
 
 ## 무엇과 왜?
 Python에서 테스트를 작성하는 것은 코드의 정확성을 검증하기 위해 자동 스크립트를 만드는 과정을 말합니다. 프로그래머들은 이러한 작업을 통해 다양한 조건에서 함수나 클래스가 예상대로 작동하는지 확인함으로써, 오류를 조기에 발견하고 유지보수 및 리팩터링을 용이하게 합니다.

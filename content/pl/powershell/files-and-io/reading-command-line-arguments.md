@@ -9,9 +9,8 @@ summary: "W PowerShellu argumenty wiersza polece\u0144 to dane przekazywane do s
   \ przy jego wywo\u0142ywaniu. Programi\u015Bci u\u017Cywaj\u0105 ich, by dostosowa\u0107\
   \ dzia\u0142anie skryptu\u2026"
 title: "Odczytywanie argument\xF3w linii polece\u0144"
+weight: 23
 ---
-
-{{< edit_this_page >}}
 
 ## Co i dlaczego?
 W PowerShellu argumenty wiersza poleceń to dane przekazywane do skryptu przy jego wywoływaniu. Programiści używają ich, by dostosować działanie skryptu bez modyfikowania jego kodu - to szybkie i elastyczne rozwiązanie.

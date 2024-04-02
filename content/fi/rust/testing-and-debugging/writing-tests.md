@@ -11,9 +11,8 @@ summary: "Testien kirjoittaminen Rustissa k\xE4sitt\xE4\xE4 automaattisten tarki
   \ luomisen varmistamaan, ett\xE4 koodisi toimii odotetulla tavalla. Ohjelmoijat\
   \ tekev\xE4t\u2026"
 title: Testien kirjoittaminen
+weight: 36
 ---
-
-{{< edit_this_page >}}
 
 ## Mikä & Miksi?
 

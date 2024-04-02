@@ -11,9 +11,8 @@ summary: "Nykyisen p\xE4iv\xE4m\xE4\xE4r\xE4n saaminen ohjelmoinnissa on ratkais
   \ t\xE4rke\xE4\xE4 monista syist\xE4, mukaan lukien lokitiedot, tapahtumien aikaleimat\
   \ ja teht\xE4vien\u2026"
 title: "Nykyisen p\xE4iv\xE4m\xE4\xE4r\xE4n hankkiminen"
+weight: 29
 ---
-
-{{< edit_this_page >}}
 
 ## Mikä & Miksi?
 Nykyisen päivämäärän saaminen ohjelmoinnissa on ratkaisevan tärkeää monista syistä, mukaan lukien lokitiedot, tapahtumien aikaleimat ja tehtävien ajoittaminen. Clojuressa, Lisp-murteessa JVM:llä, tämä tehtävä hyödyntää Javan välisten toimintojen mahdollisuuksia, mahdollistaen suoraviivaisen pääsyn rikkaaseen Java Date-Time API:in.

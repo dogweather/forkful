@@ -15,9 +15,8 @@ summary: "\u5728 PowerShell \u4E2D\u751F\u6210\u968F\u673A\u6570\u610F\u5473\u77
   \u76EE\u7684\uFF0C\u5176\u4E2D\u4E0D\u53EF\u9884\u6D4B\u6027\u6216\u6A21\u4EFF\u73B0\
   \u5B9E\u4E16\u754C\u7684\u968F\u673A\u6027\u81F3\u5173\u91CD\u8981\u3002"
 title: "\u751F\u6210\u968F\u673A\u6570"
+weight: 12
 ---
-
-{{< edit_this_page >}}
 
 ## 什么 & 为什么？
 在 PowerShell 中生成随机数意味着在指定范围内创建不可预测的数值。程序员出于众多原因利用这一能力，包括测试、模拟和安全目的，其中不可预测性或模仿现实世界的随机性至关重要。

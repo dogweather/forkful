@@ -9,9 +9,8 @@ summary: "Obs\u0142uga b\u0142\u0119d\xF3w to planowanie na wypadek, gdy co\u015
   \ p\xF3jdzie nie tak. Jest to kluczowe, poniewa\u017C pomaga unikn\u0105\u0107 awarii\
   \ i sprawia, \u017Ce oprogramowanie jest\u2026"
 title: "Obs\u0142uga b\u0142\u0119d\xF3w"
+weight: 16
 ---
-
-{{< edit_this_page >}}
 
 ## Co i dlaczego?
 Obsługa błędów to planowanie na wypadek, gdy coś pójdzie nie tak. Jest to kluczowe, ponieważ pomaga uniknąć awarii i sprawia, że oprogramowanie jest solidne i przyjazne dla użytkownika.

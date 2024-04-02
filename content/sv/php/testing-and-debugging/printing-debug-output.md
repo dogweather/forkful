@@ -9,9 +9,8 @@ summary: "Utskrift av fels\xF6kningsmeddelanden \xE4r en teknik f\xF6r att visa 
   \ stacksp\xE5rningar och annan data under k\xF6rning. Programmerare anv\xE4nder\
   \ detta\u2026"
 title: "Skriva ut fels\xF6kningsdata"
+weight: 33
 ---
-
-{{< edit_this_page >}}
 
 ## Vad & Varför?
 Utskrift av felsökningsmeddelanden är en teknik för att visa variabler, stackspårningar och annan data under körning. Programmerare använder detta förfarande för att snabbt lokalisera och åtgärda buggar.

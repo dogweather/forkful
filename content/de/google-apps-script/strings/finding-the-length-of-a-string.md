@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Die L\xE4nge eines Strings in Google Apps Script zu finden, einer JavaScript-Cloud-Scripting-Sprache,\
   \ die es Ihnen erm\xF6glicht, Aufgaben \xFCber Google-Produkte\u2026"
 title: "Die L\xE4nge eines Strings ermitteln"
+weight: 7
 ---
-
-{{< edit_this_page >}}
 
 ## Was & Warum?
 Die Länge eines Strings in Google Apps Script zu finden, einer JavaScript-Cloud-Scripting-Sprache, die es Ihnen ermöglicht, Aufgaben über Google-Produkte hinweg zu automatisieren, handelt davon, die Anzahl der Zeichen zu bestimmen, die ein String enthält. Programmierer führen diese Operation häufig durch, um Eingaben zu verifizieren, Zeichen zu durchlaufen oder Strings für verschiedene Automatisierungsaufgaben innerhalb von Google Apps zu manipulieren.

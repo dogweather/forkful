@@ -10,9 +10,8 @@ model: gpt-4-0125-preview
 summary: "De huidige datum in Java verkrijgen is een fluitje van een cent \u2013 het\
   \ draait allemaal om het gebruiken van de juiste klasse om de huidige dag uit de\u2026"
 title: Het huidige datum ophalen
+weight: 29
 ---
-
-{{< edit_this_page >}}
 
 ## Wat & Waarom?
 

@@ -9,9 +9,8 @@ summary: "HTTP-pyynt\xF6 perusautentikoinnilla tarkoittaa verkkopalvelimeen l\xE
   hetett\xE4v\xE4\xE4 pyynt\xF6\xE4, jossa k\xE4ytt\xE4j\xE4nimi ja salasana sis\xE4\
   ltyv\xE4t selkokielell\xE4 ja koodataan\u2026"
 title: "HTTP-pyynn\xF6n l\xE4hett\xE4minen perusautentikoinnilla"
+weight: 45
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why? (Mitä ja Miksi?)
 

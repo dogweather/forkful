@@ -9,9 +9,8 @@ summary: "Ein neues Projekt zu starten bedeutet, eine frische Codebasis anzulege
   \ um eine Idee zum Leben zu erwecken. Programmierer tun dies, um Probleml\xF6sungen\
   \ zu\u2026"
 title: Einen neuen Projekt starten
+weight: 1
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 Ein neues Projekt zu starten bedeutet, eine frische Codebasis anzulegen, um eine Idee zum Leben zu erwecken. Programmierer tun dies, um Problemlösungen zu entwickeln, Innovationen voranzutreiben oder einfach ihre Skills zu verbessern.

@@ -21,9 +21,8 @@ summary: "\u5728Clojure\u4E2D\u89E3\u6790\u5B57\u7B26\u4E32\u4E2D\u7684\u65E5\u6
   \uFF0C\u4F7F\u5F97\u7A0B\u5E8F\u5458\u80FD\u591F\u6709\u6548\u5730\u6267\u884C\u65E5\
   \u671F\u7684\u64CD\u4F5C\u3001\u6BD4\u8F83\u6216\u5904\u7406\u4EFB\u52A1\u3002"
 title: "\u4ECE\u5B57\u7B26\u4E32\u89E3\u6790\u65E5\u671F"
+weight: 30
 ---
-
-{{< edit_this_page >}}
 
 ## 什么 & 为什么?
 在Clojure中解析字符串中的日期是将日期和时间的文本表现形式转换成更加可用的形态（例如，Clojure的DateTime对象）。这个过程对于数据处理、日志记录或任何操作时间数据的应用程序来说是基础，使得程序员能够有效地执行日期的操作、比较或处理任务。

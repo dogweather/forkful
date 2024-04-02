@@ -9,9 +9,8 @@ summary: "Interaktywna konsola, czyli REPL (Read-Eval-Print Loop - Cykl Czytaj-W
   \ pozwala testowa\u0107 kod w czasie rzeczywistym. Programi\u015Bci u\u017Cywaj\u0105\
   \u2026"
 title: Korzystanie z interaktywnego shella (REPL)
+weight: 34
 ---
-
-{{< edit_this_page >}}
 
 ## Co i dlaczego?
 Interaktywna konsola, czyli REPL (Read-Eval-Print Loop - Cykl Czytaj-Wykonaj-Wydrukuj), pozwala testować kod w czasie rzeczywistym. Programiści używają jej do eksperymentowania, debugowania i poznawania subtelności Ruby'ego bez tworzenia pełnoprawnych skryptów.

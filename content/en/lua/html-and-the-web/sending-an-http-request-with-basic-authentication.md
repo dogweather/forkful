@@ -9,9 +9,8 @@ summary: "Sending an HTTP request with basic authentication is when you make a c
   \ to a web server, including a username and password for access. Programmers do\
   \ it\u2026"
 title: Sending an HTTP request with basic authentication
+weight: 45
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 

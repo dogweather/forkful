@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Associatiiviset taulukot, Pythonissa tunnettu nimell\xE4 sanakirjat, map-paavat\
   \ avaimet arvoihin, mik\xE4 tekee datan hakemisesta, muokkaamisesta tai\u2026"
 title: "Assosiatiivisten taulukoiden k\xE4ytt\xF6"
+weight: 15
 ---
-
-{{< edit_this_page >}}
 
 ## Mikä & Miksi?
 

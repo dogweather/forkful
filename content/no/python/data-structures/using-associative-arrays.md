@@ -11,9 +11,8 @@ summary: "Assosiative tabeller, kjent i Python som ordb\xF8ker, kartlegger n\xF8
   \ til verdier, noe som gj\xF8r det enkelt \xE5 hente, endre eller spore data via\
   \ en unik\u2026"
 title: Bruke associative tabeller
+weight: 15
 ---
-
-{{< edit_this_page >}}
 
 ## Hva & Hvorfor?
 

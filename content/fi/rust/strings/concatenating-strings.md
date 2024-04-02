@@ -9,9 +9,8 @@ summary: "Yhdist\xE4mme merkkijonoja luodaksemme uusia tekstej\xE4. T\xE4t\xE4 k
   \ konkatenoinniksi. Ohjelmoijat tekev\xE4t t\xE4m\xE4n, jotta saadaan kokoonpannut\
   \ viestit tai\u2026"
 title: "Merkkijonojen yhdist\xE4minen"
+weight: 3
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why? (Mitä & Miksi?)
 Yhdistämme merkkijonoja luodaksemme uusia tekstejä. Tätä kutsutaan konkatenoinniksi. Ohjelmoijat tekevät tämän, jotta saadaan kokoonpannut viestit tai muodostettua dynaamista sisältöä.

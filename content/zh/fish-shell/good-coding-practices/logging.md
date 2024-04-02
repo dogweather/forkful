@@ -15,9 +15,8 @@ summary: "\u65E5\u5FD7\u8BB0\u5F55\u672C\u8D28\u4E0A\u5C31\u662F\u8BB0\u5F55\u4E
   \u5316\u3001\u7CFB\u7EDF\u4E8B\u4EF6\u548C\u96BE\u7F20\u7684\u9519\u8BEF\uFF0C\u786E\
   \u4FDD\u6CA1\u6709\u6545\u969C\u6084\u7136\u9003\u8FC7\u3002"
 title: "\u65E5\u5FD7\u8BB0\u5F55"
+weight: 17
 ---
-
-{{< edit_this_page >}}
 
 ## 什么 & 为什么？
 日志记录本质上就是记录下你的应用程序在做什么——可以认为是代码的日记。程序员这样做是为了跟踪细节，比如状态变化、系统事件和难缠的错误，确保没有故障悄然逃过。

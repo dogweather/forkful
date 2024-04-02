@@ -9,9 +9,8 @@ summary: "Leer argumentos de la l\xEDnea de comandos permite a nuestros programa
   \ en Haskell recibir datos externos al ejecutarse, algo \xFAtil para tareas como\
   \ la\u2026"
 title: "Lectura de argumentos de l\xEDnea de comandos"
+weight: 23
 ---
-
-{{< edit_this_page >}}
 
 ## Qué y Por Qué?
 Leer argumentos de la línea de comandos permite a nuestros programas en Haskell recibir datos externos al ejecutarse, algo útil para tareas como la automatización y el procesado de ficheros. Los programadores lo hacen para hacer sus programas más flexibles y fáciles de integrar con otros sistemas o con el flujo de trabajo del usuario.

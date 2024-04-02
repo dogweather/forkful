@@ -7,9 +7,8 @@ model: gpt-4-1106-preview
 summary: "Encontrar la longitud de una cadena es simplemente determinar cu\xE1ntos\
   \ caracteres contiene. Lo hacemos para validar entradas, manipular texto o simplemente\u2026"
 title: Calculando la longitud de una cadena
+weight: 7
 ---
-
-{{< edit_this_page >}}
 
 ## ¿Qué & Por Qué?
 Encontrar la longitud de una cadena es simplemente determinar cuántos caracteres contiene. Lo hacemos para validar entradas, manipular texto o simplemente para saber el tamaño de la información que estamos manejando.

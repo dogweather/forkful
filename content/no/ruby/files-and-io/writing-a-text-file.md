@@ -11,9 +11,8 @@ summary: "\xC5 skrive til en tekstfil i Ruby er en grunnleggende operasjon som l
   \ deg lagre utdata og data p\xE5 en vedvarende m\xE5te, slik at data kan tilg\xE5\
   s eller endres\u2026"
 title: Skrive en tekstfil
+weight: 24
 ---
-
-{{< edit_this_page >}}
 
 ## Hva & Hvorfor?
 Å skrive til en tekstfil i Ruby er en grunnleggende operasjon som lar deg lagre utdata og data på en vedvarende måte, slik at data kan tilgås eller endres senere. Programmerere utfører ofte denne oppgaven av grunner som logging, lagring av konfigurasjoner eller eksport av data i et menneskelesbart format.

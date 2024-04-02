@@ -9,9 +9,8 @@ summary: "Retirer les guillemets d'une cha\xEEne signifie \xE9liminer toutes les
   \ de citation\u2014simples (' ') ou doubles (\" \")\u2014qui font partie des donn\xE9\
   es de la\u2026"
 title: "Retirer les guillemets d'une cha\xEEne"
+weight: 9
 ---
-
-{{< edit_this_page >}}
 
 ## Quoi & Pourquoi ?
 Retirer les guillemets d'une chaîne signifie éliminer toutes les marques de citation—simples (' ') ou doubles (" ")—qui font partie des données de la chaîne. Les programmeurs le font pour assainir les entrées, préparer le texte pour le traitement, ou se débarrasser des caractères inutiles qui pourraient interférer avec la gestion et les opérations des données.

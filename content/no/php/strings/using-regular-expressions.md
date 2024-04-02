@@ -10,9 +10,8 @@ model: gpt-4-0125-preview
 summary: "Regul\xE6re uttrykk (regex) i PHP er m\xF8nstre brukt til \xE5 matche tegnkombinasjoner\
   \ i strenger, noe som muliggj\xF8r avanserte s\xF8k-og-erstatt-operasjoner og\u2026"
 title: "Bruke regul\xE6re uttrykk"
+weight: 11
 ---
-
-{{< edit_this_page >}}
 
 ## Hva & Hvorfor?
 

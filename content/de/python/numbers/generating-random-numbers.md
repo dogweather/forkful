@@ -9,9 +9,8 @@ summary: "Das Generieren von Zufallszahlen beinhaltet das Erstellen von Zahlen, 
   \ nicht vern\xFCnftigerweise besser als durch Zufall vorhergesagt werden k\xF6nnen,\
   \ was\u2026"
 title: Generierung von Zufallszahlen
+weight: 12
 ---
-
-{{< edit_this_page >}}
 
 ## Was & Warum?
 

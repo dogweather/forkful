@@ -8,9 +8,8 @@ model: gpt-4-0125-preview
 summary: "\xC5 jobbe med XML inneb\xE6rer \xE5 manipulere og f\xE5 tilgang til data\
   \ strukturert i det utvidbare merkespr\xE5ket (eXtensible Markup Language). Programmerere\u2026"
 title: "\xC5 jobbe med XML"
+weight: 40
 ---
-
-{{< edit_this_page >}}
 
 ## Hva & Hvorfor?
 Å jobbe med XML innebærer å manipulere og få tilgang til data strukturert i det utvidbare merkespråket (eXtensible Markup Language). Programmerere arbeider med XML for å muliggjøre samspill med andre systemer eller for å lese og skrive konfigurasjonsfiler, datastrømmer og andre strukturerte dokumenter vanlige i webtjenester.

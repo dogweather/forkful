@@ -9,9 +9,8 @@ summary: "Konkatenacja ci\u0105g\xF3w polega na \u0142\u0105czeniu dw\xF3ch lub 
   cej ci\u0105g\xF3w znak\xF3w, aby utworzy\u0107 jednolity tekst. Mo\u017Cesz potrzebowa\u0107\
   \ \u0142\u0105czy\u0107 teksty, generuj\u0105c\u2026"
 title: "\u0141\u0105czenie \u0142a\u0144cuch\xF3w znak\xF3w"
+weight: 3
 ---
-
-{{< edit_this_page >}}
 
 ## Co i dlaczego?
 Konkatenacja ciągów polega na łączeniu dwóch lub więcej ciągów znaków, aby utworzyć jednolity tekst. Możesz potrzebować łączyć teksty, generując komunikaty dla użytkowników, tworząc ścieżki do plików lub w procesach serializacji danych. To podstawowa operacja w każdym języku programowania, w tym w Elixirze, umożliwiająca programistom z łatwością tworzenie dynamicznych ciągów znaków.

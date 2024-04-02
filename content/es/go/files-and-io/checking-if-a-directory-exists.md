@@ -11,9 +11,8 @@ summary: "Comprobar si un directorio existe en Go es cr\xEDtico para aplicacione
   \ que interact\xFAan con el sistema de archivos, para evitar errores al intentar\
   \ acceder o\u2026"
 title: Verificando si un directorio existe
+weight: 20
 ---
-
-{{< edit_this_page >}}
 
 ## ¿Qué y Por Qué?
 

@@ -11,9 +11,8 @@ summary: "\xC5 f\xE5 tak i dagens dato i C# inneb\xE6rer \xE5 hente dagens dato-
   \ tidsdetaljer fra systemet. Programmerere trenger ofte \xE5 f\xE5 tilgang til denne\
   \ informasjonen\u2026"
 title: "F\xE5 dagens dato"
+weight: 29
 ---
-
-{{< edit_this_page >}}
 
 ## Hva & Hvorfor?
 Å få tak i dagens dato i C# innebærer å hente dagens dato- og tidsdetaljer fra systemet. Programmerere trenger ofte å få tilgang til denne informasjonen for logging, tidsstemplingsoperasjoner, eller planlegging av oppgaver innen applikasjoner, for å sikre at handlinger er tidsbestemte nøyaktig og data er merket med presise tidsstempler.

@@ -11,9 +11,8 @@ summary: "Een string met een hoofdletter laten beginnen betekent dat je de eerst
   \ letter van elk woord omzet naar een hoofdletter. Programmeurs doen dit om tekst\
   \ te\u2026"
 title: Een string met hoofdletters maken
+weight: 2
 ---
-
-{{< edit_this_page >}}
 
 ## Wat & Waarom?
 

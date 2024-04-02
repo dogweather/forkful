@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Scrivere test nella programmazione implica la creazione di piccoli pezzi\
   \ di codice separati per verificare automaticamente che diverse parti della tua\u2026"
 title: Scrivere test
+weight: 36
 ---
-
-{{< edit_this_page >}}
 
 ## Cosa e perché?
 

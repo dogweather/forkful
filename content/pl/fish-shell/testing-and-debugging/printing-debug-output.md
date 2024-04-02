@@ -9,9 +9,8 @@ summary: "Drukowanie danych diagnostycznych to wy\u015Bwietlanie informacji, kt\
   re pomagaj\u0105 zrozumie\u0107, co si\u0119 dzieje w skrypcie. Programi\u015Bci\
   \ robi\u0105 to, \u017Ceby szybko\u2026"
 title: "Drukowanie komunikat\xF3w debugowania"
+weight: 33
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why? (Co i Dlaczego?)
 

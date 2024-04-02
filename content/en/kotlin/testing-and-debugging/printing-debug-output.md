@@ -7,9 +7,8 @@ model: gpt-4-1106-preview
 summary: "Printing debug output is basically the programmer's way of sneaking a peek\
   \ at what's going on inside their code in real-time. It's crucial for tracking\u2026"
 title: Printing debug output
+weight: 33
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 Printing debug output is basically the programmer's way of sneaking a peek at what's going on inside their code in real-time. It's crucial for tracking down bugs and understanding code flow without setting up formal debugging tools or sessions.

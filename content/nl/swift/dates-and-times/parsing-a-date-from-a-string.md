@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Een datum parseren uit een tekstreeks betekent het omzetten van de tekstuele\
   \ representatie van een datum (zoals \"2023-04-01\") naar een Date-object.\u2026"
 title: Een datum uit een string parsen
+weight: 30
 ---
-
-{{< edit_this_page >}}
 
 ## Wat & Waarom?
 

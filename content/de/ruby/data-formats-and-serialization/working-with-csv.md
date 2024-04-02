@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Das Arbeiten mit CSV-Dateien in Ruby bietet einen unkomplizierten Ansatz,\
   \ um tabellarische Daten zu handhaben. Programmierer greifen oft auf diese Praxis\u2026"
 title: Arbeiten mit CSV
+weight: 37
 ---
-
-{{< edit_this_page >}}
 
 ## Was & Warum?
 

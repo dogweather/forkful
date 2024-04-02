@@ -7,9 +7,8 @@ model: gpt-4-1106-preview
 summary: "Textsuche und -ersetzung ist das schnelle Auffinden und Austauschen von\
   \ spezifischen Zeichenketten im Code. Programmierer nutzen das, um Fehler zu\u2026"
 title: Suchen und Ersetzen von Text
+weight: 10
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why? 
 Textsuche und -ersetzung ist das schnelle Auffinden und Austauschen von spezifischen Zeichenketten im Code. Programmierer nutzen das, um Fehler zu korrigieren, Code zu aktualisieren oder Datenformate zu ändern.

@@ -9,9 +9,8 @@ summary: "Em Swift, enviar uma requisi\xE7\xE3o HTTP com autentica\xE7\xE3o b\xE
   sica significa passar um usu\xE1rio e senha para acessar um recurso protegido na\
   \ web. Programadores\u2026"
 title: "Enviando uma requisi\xE7\xE3o HTTP com autentica\xE7\xE3o b\xE1sica"
+weight: 45
 ---
-
-{{< edit_this_page >}}
 
 ## O Quê & Porquê?
 Em Swift, enviar uma requisição HTTP com autenticação básica significa passar um usuário e senha para acessar um recurso protegido na web. Programadores fazem isso para interagir com APIs que requerem identificação segura.

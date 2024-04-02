@@ -16,9 +16,8 @@ summary: "M\u1ED7i d\u1EF1 \xE1n b\u1EAFt \u0111\u1EA7u v\u1EDBi m\u1ED9t b\u01B
   \ c\u1EA5u tr\xFAc ban \u0111\u1EA7u v\xE0 vi\u1EBFt m\xE3 kh\u1EDFi \u0111\u1EA7\
   u. Ch\xFAng ta l\xE0m\u2026"
 title: "B\u1EAFt \u0111\u1EA7u m\u1ED9t d\u1EF1 \xE1n m\u1EDBi"
+weight: 1
 ---
-
-{{< edit_this_page >}}
 
 ## Gì và Tại sao?
 Mỗi dự án bắt đầu với một bước đi đầu tiên. Đối với các lập trình viên, điều đó có nghĩa là thiết lập cấu trúc ban đầu và viết mã khởi đầu. Chúng ta làm điều này để biến ý tưởng thành một nền tảng cụ thể, sẵn sàng cho sự mở rộng và đổi mới.

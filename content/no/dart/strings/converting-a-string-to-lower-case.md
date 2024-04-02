@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "\xC5 konvertere en streng til sm\xE5 bokstaver er en grunnleggende operasjon\
   \ som involverer \xE5 transformere alle tegnene i en gitt streng til deres\u2026"
 title: "Konvertere en streng til sm\xE5 bokstaver"
+weight: 4
 ---
-
-{{< edit_this_page >}}
 
 ## Hva & Hvorfor?
 

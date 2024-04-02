@@ -7,9 +7,8 @@ model: gpt-4-1106-preview
 summary: "Un nuovo progetto \xE8 una tela bianca per codificare idee. I programmatori\
   \ iniziano nuovi progetti per risolvere problemi, esplorare tecnologie o per puro\u2026"
 title: Avvio di un nuovo progetto
+weight: 1
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why? (Che Cosa & Perché?)
 Un nuovo progetto è una tela bianca per codificare idee. I programmatori iniziano nuovi progetti per risolvere problemi, esplorare tecnologie o per puro apprendimento.

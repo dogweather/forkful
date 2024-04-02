@@ -9,9 +9,8 @@ summary: "Kun puhutaan merkkijonosta ja sen tietyll\xE4 mallilla vastaavien merk
   \ poistamisesta, tarkoitamme prosessia, jolla etsimme ja h\xE4vit\xE4mme tietyn\
   \ mallin\u2026"
 title: Merkkien poistaminen hakemalla osumia kaavaan
+weight: 5
 ---
-
-{{< edit_this_page >}}
 
 ## Mitä & Miksi?
 Kun puhutaan merkkijonosta ja sen tietyllä mallilla vastaavien merkkien poistamisesta, tarkoitamme prosessia, jolla etsimme ja hävitämme tietyn mallin mukaiset merkit merkkijonosta. Ohjelmoijat tekevät tämän yleensä puhdistaakseen tietoja, erottaakseen olennaiset tiedot tai muodostaakseen uusia tietorakenteita.

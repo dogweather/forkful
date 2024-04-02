@@ -9,9 +9,8 @@ summary: "Los n\xFAmeros complejos, que constan de una parte real y una parte im
   \ son esenciales en varios campos computacionales como la ingenier\xEDa, la f\xED\
   sica\u2026"
 title: "Trabajando con n\xFAmeros complejos"
+weight: 14
 ---
-
-{{< edit_this_page >}}
 
 ## ¿Qué y por qué?
 

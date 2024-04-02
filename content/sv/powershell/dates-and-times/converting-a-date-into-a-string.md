@@ -9,9 +9,8 @@ summary: "Konvertering av datum till str\xE4ng g\xF6r ett datum l\xE4sbart, anpa
   \ f\xF6r b\xE5de m\xE4nniskor och olika system. Programmerare g\xF6r detta f\xF6\
   r att forma datumen f\xF6r\u2026"
 title: "Omvandla ett datum till en str\xE4ng"
+weight: 28
 ---
-
-{{< edit_this_page >}}
 
 ## Vad & Varför?
 Konvertering av datum till sträng gör ett datum läsbart, anpassat för både människor och olika system. Programmerare gör detta för att forma datumen för rapporter, gränssnitt, och databaslagring.

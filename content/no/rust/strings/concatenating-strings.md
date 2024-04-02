@@ -9,9 +9,8 @@ summary: "I programmering betyr strengkonkatenering \xE5 sette sammen to eller f
   \ tekststykker til ett. Vi gj\xF8r det for \xE5 bygge setninger, lage dynamiske\
   \ meldinger,\u2026"
 title: "Sammensl\xE5ing av strenger"
+weight: 3
 ---
-
-{{< edit_this_page >}}
 
 ## Hva & Hvorfor?
 I programmering betyr strengkonkatenering å sette sammen to eller flere tekststykker til ett. Vi gjør det for å bygge setninger, lage dynamiske meldinger, eller kombinere data på en meningsfull måte.

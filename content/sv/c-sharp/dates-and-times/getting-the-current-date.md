@@ -11,9 +11,8 @@ summary: "Att f\xE5 det aktuella datumet i C# inneb\xE4r att h\xE4mta aktuella d
   \ och tidsuppgifter fr\xE5n systemet. Programmerare beh\xF6ver ofta tillg\xE5ng\
   \ till denna\u2026"
 title: "F\xE5 det aktuella datumet"
+weight: 29
 ---
-
-{{< edit_this_page >}}
 
 ## Vad & Varför?
 Att få det aktuella datumet i C# innebär att hämta aktuella datum- och tidsuppgifter från systemet. Programmerare behöver ofta tillgång till denna information för loggning, tidsstämpling av operationer eller schemaläggning av uppgifter inom applikationer, för att säkerställa att handlingar är tidsmässigt korrekta och data är markerat med exakta tidsstämplar.

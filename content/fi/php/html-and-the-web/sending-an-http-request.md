@@ -9,9 +9,8 @@ summary: "PHP:ss\xE4 HTTP-pyynt\xF6 l\xE4hett\xE4\xE4 tietoja palvelimelle tai h
   \ niit\xE4 sielt\xE4. Ohjelmoijat tekev\xE4t t\xE4m\xE4n, jotta voivat siirt\xE4\
   \xE4 dataa, hakea resursseja tai\u2026"
 title: "HTTP-pyynn\xF6n l\xE4hett\xE4minen"
+weight: 44
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why? (Mitä & Miksi?)
 PHP:ssä HTTP-pyyntö lähettää tietoja palvelimelle tai hakee niitä sieltä. Ohjelmoijat tekevät tämän, jotta voivat siirtää dataa, hakea resursseja tai kommunikoida muiden palveluiden kanssa.

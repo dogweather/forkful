@@ -9,9 +9,8 @@ summary: "Lukemalla tekstitiedoston C#:ssa voit hakea dataa tiedostoista ohjelma
   \ k\xE4ytt\xF6\xF6n. T\xE4m\xE4 on v\xE4ltt\xE4m\xE4t\xF6n taito tiedon k\xE4sittely\xE4\
   , s\xE4ilytyst\xE4 ja analysointia\u2026"
 title: Tekstitiedoston lukeminen
+weight: 22
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why? (Mitä ja miksi?)
 Lukemalla tekstitiedoston C#:ssa voit hakea dataa tiedostoista ohjelmasi käyttöön. Tämä on välttämätön taito tiedon käsittelyä, säilytystä ja analysointia varten.

@@ -9,9 +9,8 @@ summary: "\xC5 organisere koden i funksjoner betyr \xE5 dele programmet ditt opp
   \ gjenbrukbare deler, hver som h\xE5ndterer en spesifikk oppgave. Vi gj\xF8r dette\
   \ for \xE5 gj\xF8re\u2026"
 title: Organisering av kode i funksjoner
+weight: 18
 ---
-
-{{< edit_this_page >}}
 
 ## Hva & Hvorfor?
 Å organisere koden i funksjoner betyr å dele programmet ditt opp i gjenbrukbare deler, hver som håndterer en spesifikk oppgave. Vi gjør dette for å gjøre koden enklere å lese, feilsøke og oppdatere. Tenk på koden din som et matkammer: du vil ha alt fra bakevarer til hermetikk gruppert, så du finner det du trenger uten styr.

@@ -8,9 +8,8 @@ model: gpt-4-0125-preview
 summary: "Das Generieren von Zufallszahlen in JavaScript ist eine Technik, die verwendet\
   \ wird, um Unvorhersehbarkeit in Anwendungen zu schaffen, von Spielen, die\u2026"
 title: Generierung von Zufallszahlen
+weight: 12
 ---
-
-{{< edit_this_page >}}
 
 ## Was & Warum?
 

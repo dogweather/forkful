@@ -9,9 +9,8 @@ summary: "Commencer un nouveau projet PHP, c'est partir sur une feuille blanche,
   \ quelque chose d'unique. Les programmeurs le font pour r\xE9soudre des probl\xE8\
   mes,\u2026"
 title: Lancement d'un nouveau projet
+weight: 1
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why? (Quoi et Pourquoi ?)
 Commencer un nouveau projet PHP, c'est partir sur une feuille blanche, coder quelque chose d'unique. Les programmeurs le font pour résoudre des problèmes, explorer des idées, ou construire des produits innovants.

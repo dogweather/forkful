@@ -8,9 +8,8 @@ model: gpt-4-1106-preview
 summary: "Sapere la lunghezza di una stringa significa contarne i caratteri. Lo facciamo\
   \ per verificare input dell'utente, per manipolare testo o semplicemente per\u2026"
 title: Trovare la lunghezza di una stringa
+weight: 7
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 Sapere la lunghezza di una stringa significa contarne i caratteri. Lo facciamo per verificare input dell'utente, per manipolare testo o semplicemente per controlli di validazione.

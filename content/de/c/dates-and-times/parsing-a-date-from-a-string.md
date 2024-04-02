@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Das Parsen eines Datums aus einem String in C involviert die Umwandlung\
   \ von textuellen Datumsdarstellungen in ein Format, mit dem Programme effektiver\u2026"
 title: Ein Datum aus einem String interpretieren
+weight: 30
 ---
-
-{{< edit_this_page >}}
 
 ## Was & Warum?
 

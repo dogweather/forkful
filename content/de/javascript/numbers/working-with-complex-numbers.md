@@ -8,9 +8,8 @@ model: gpt-4-0125-preview
 summary: "Komplexe Zahlen sind Zahlen mit einem Real- und einem Imagin\xE4rteil (wie\
   \ 3 + 4i). Sie tauchen in verschiedenen Programmierproblemen auf, insbesondere in\u2026"
 title: Umgang mit komplexen Zahlen
+weight: 14
 ---
-
-{{< edit_this_page >}}
 
 ## Was & Warum?
 Komplexe Zahlen sind Zahlen mit einem Real- und einem Imaginärteil (wie 3 + 4i). Sie tauchen in verschiedenen Programmierproblemen auf, insbesondere in der Signalverarbeitung, Quantencomputing und bei der Lösung von Polynomgleichungen. Programmierer jonglieren mit ihnen, um diese Art von Aufgaben effektiv zu bewältigen.

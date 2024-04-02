@@ -9,9 +9,8 @@ summary: "Extraire des sous-cha\xEEnes, c'est prendre des morceaux sp\xE9cifique
   \ d'une cha\xEEne de caract\xE8res. Pourquoi ? Pour analyser des donn\xE9es, valider\
   \ des entr\xE9es,\u2026"
 title: "Extraction de sous-cha\xEEnes"
+weight: 6
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why? (Quoi et Pourquoi ?)
 Extraire des sous-chaînes, c'est prendre des morceaux spécifiques d'une chaîne de caractères. Pourquoi ? Pour analyser des données, valider des entrées, ou simplement manipuler du texte.

@@ -11,9 +11,8 @@ summary: "Att g\xF6ra f\xF6rsta bokstaven i en str\xE4ng stor inneb\xE4r att kon
   \ det f\xF6rsta tecknet i str\xE4ngen till versal, samtidigt som resten av tecknen\
   \ beh\xE5lls som\u2026"
 title: "G\xF6r om en str\xE4ng till versaler"
+weight: 2
 ---
-
-{{< edit_this_page >}}
 
 ## Vad & Varför?
 Att göra första bokstaven i en sträng stor innebär att konvertera det första tecknet i strängen till versal, samtidigt som resten av tecknen behålls som de är. Denna åtgärd utförs ofta i JavaScript för att formatera användarinmatningar, visa namn eller titlar, och säkerställa konsekvens i texter i användargränssnittet.

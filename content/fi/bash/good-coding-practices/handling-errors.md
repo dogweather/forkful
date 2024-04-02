@@ -7,9 +7,8 @@ model: gpt-4-1106-preview
 summary: "Virheiden k\xE4sittely Bash-skriptauksessa tarkoittaa mahdollisten ongelmakohtien\
   \ ennakointia ja niiden arvokasta k\xE4sittely\xE4. Miksi? No, se tekee\u2026"
 title: "Virheiden k\xE4sittely"
+weight: 16
 ---
-
-{{< edit_this_page >}}
 
 ## Mikä & Miksi?
 

@@ -9,9 +9,8 @@ summary: "Calculating a future or past date means finding a date before or after
   \ specified time. Programmers do this for reminders, subscriptions, scheduling,\
   \ and\u2026"
 title: Calculating a date in the future or past
+weight: 26
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 Calculating a future or past date means finding a date before or after a specified time. Programmers do this for reminders, subscriptions, scheduling, and tons of other time-based features in apps.

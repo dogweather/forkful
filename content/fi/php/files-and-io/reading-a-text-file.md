@@ -9,9 +9,8 @@ summary: "Lukemalla tekstitiedostoja, PHP:ss\xE4 voimme k\xE4sitell\xE4 dataa su
   \ l\xE4hdemuodossaan. T\xE4m\xE4 on t\xE4rke\xE4\xE4, koska se mahdollistaa tiedon\
   \ dynaamisen hankkimisen\u2026"
 title: Tekstitiedoston lukeminen
+weight: 22
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why? - Mitä ja Miksi?
 Lukemalla tekstitiedostoja, PHP:ssä voimme käsitellä dataa suoraan lähdemuodossaan. Tämä on tärkeää, koska se mahdollistaa tiedon dynaamisen hankkimisen ilman kovakoodattuja arvoja - olipa kyse sitten konfiguraatiosta, lokitiedostoista tai ulkoisesta sisällöstä.

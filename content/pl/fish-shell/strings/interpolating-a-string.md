@@ -9,9 +9,8 @@ summary: "\"Co i dlaczego?\" Interpolacja napis\xF3w to proces wstawiania warto\
   ci zmiennych do ci\u0105g\xF3w znak\xF3w. Programi\u015Bci u\u017Cywaj\u0105 tego,\
   \ aby tworzy\u0107 dynamiczne teksty i\u2026"
 title: "Interpolacja \u0142a\u0144cuch\xF3w znak\xF3w"
+weight: 8
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 "Co i dlaczego?" Interpolacja napisów to proces wstawiania wartości zmiennych do ciągów znaków. Programiści używają tego, aby tworzyć dynamiczne teksty i komunikaty.

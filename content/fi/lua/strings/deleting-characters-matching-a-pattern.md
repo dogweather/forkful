@@ -9,9 +9,8 @@ summary: "Mit\xE4 & Miksi? Lua:ssa merkkien poistaminen kuvion mukaan on tapa si
   \ merkkijonoja \u2013 otetaan pois mit\xE4 ei tarvita. Koodarit k\xE4ytt\xE4v\xE4\
   t t\xE4t\xE4 esimerkiksi\u2026"
 title: Merkkien poistaminen hakemalla osumia kaavaan
+weight: 5
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 Mitä & Miksi?

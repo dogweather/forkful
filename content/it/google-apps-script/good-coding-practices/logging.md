@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Il logging nella programmazione comporta la registrazione di eventi, errori\
   \ o occorrenze notevoli durante l'esecuzione. I programmatori lo fanno per\u2026"
 title: Registrazione
+weight: 17
 ---
-
-{{< edit_this_page >}}
 
 ## Cosa e Perché?
 

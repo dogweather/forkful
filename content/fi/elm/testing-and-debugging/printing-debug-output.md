@@ -9,9 +9,8 @@ summary: "Mik\xE4 & Miksi? Debug-tulostus auttaa ohjelmoijia n\xE4kem\xE4\xE4n, 
   \ ohjelmassa tapahtuu. Se on v\xE4ltt\xE4m\xE4t\xF6n, koska se valottaa ohjelman\
   \ suorituksen tilaa ja\u2026"
 title: "Virheenj\xE4ljitystulosteiden tulostaminen"
+weight: 33
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 Mikä & Miksi?

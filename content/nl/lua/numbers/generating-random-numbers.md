@@ -10,9 +10,8 @@ model: gpt-4-0125-preview
 summary: "Het genereren van willekeurige getallen in programmeren gaat over het produceren\
   \ van onvoorspelbare numerieke waarden die gebruikt kunnen worden voor een\u2026"
 title: Willekeurige getallen genereren
+weight: 12
 ---
-
-{{< edit_this_page >}}
 
 ## Wat & Waarom?
 

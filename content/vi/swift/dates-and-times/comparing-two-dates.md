@@ -13,9 +13,8 @@ summary: "So s\xE1nh hai ng\xE0y gi\u1ED1ng nh\u01B0 h\u1ECFi, \"Con g\xE0 hay q
   \ tr\xEAn l\u1ECBch. L\u1EADp tr\xECnh vi\xEAn l\xE0m \u0111i\u1EC1u \u0111\xF3\
   \ \u0111\u1EC3 s\u1EAFp x\u1EBFp s\u1EF1 ki\u1EC7n, k\xEDch\u2026"
 title: "So s\xE1nh hai ng\xE0y"
+weight: 27
 ---
-
-{{< edit_this_page >}}
 
 ## Cái gì & Tại sao?
 So sánh hai ngày giống như hỏi, "Con gà hay quả trứng cái nào có trước?" nhưng với ngày trên lịch. Lập trình viên làm điều đó để sắp xếp sự kiện, kích hoạt hành động và đánh giá thời gian.

@@ -10,9 +10,8 @@ model: gpt-4-0125-preview
 summary: "Generar n\xFAmeros aleatorios en Visual Basic para Aplicaciones (VBA) permite\
   \ a los programas simular procesos con elementos de azar o variabilidad, como\u2026"
 title: "Generando n\xFAmeros aleatorios"
+weight: 12
 ---
-
-{{< edit_this_page >}}
 
 ## Qué y Por Qué
 

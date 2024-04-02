@@ -13,9 +13,8 @@ summary: "X\xF3a c\xE1c k\xFD t\u1EF1 kh\u1EDBp v\u1EDBi m\u1ED9t m\u1EABu \u011
   c chu\u1ED7i k\xFD t\u1EF1 c\u1EE5 th\u1EC3 trong m\u1ED9t chu\u1ED7i d\u1EF1a tr\xEA\
   n c\xE1c quy t\u1EAFc (m\u1EABu). C\xE1c l\u1EADp tr\xECnh vi\xEAn\u2026"
 title: "X\xF3a c\xE1c k\xFD t\u1EF1 ph\xF9 h\u1EE3p v\u1EDBi m\u1ED9t m\u1EABu"
+weight: 5
 ---
-
-{{< edit_this_page >}}
 
 ## Gì và Tại sao?
 

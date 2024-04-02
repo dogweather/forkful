@@ -14,9 +14,8 @@ summary: "Ch\xFAng ta g\u1EEDi m\u1ED9t y\xEAu c\u1EA7u HTTP v\u1EDBi x\xE1c th\
   \u0103ng nh\u1EADp c\u1EE7a ng\u01B0\u1EDDi d\xF9ng trong\u2026"
 title: "G\u1EEDi m\u1ED9t y\xEAu c\u1EA7u HTTP v\u1EDBi x\xE1c th\u1EF1c c\u01A1 b\u1EA3\
   n"
+weight: 45
 ---
-
-{{< edit_this_page >}}
 
 ## Gì và Tại sao?
 Chúng ta gửi một yêu cầu HTTP với xác thực cơ bản để truy cập vào các tài nguyên được bảo vệ bằng cách bao gồm thông tin đăng nhập của người dùng trong tiêu đề yêu cầu. Các lập trình viên sử dụng nó cho các hệ thống xác thực đơn giản, chủ yếu là nơi một giải pháp nhanh chóng và đơn giản phù hợp.

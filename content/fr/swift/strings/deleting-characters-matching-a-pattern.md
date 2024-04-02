@@ -7,9 +7,8 @@ model: gpt-4-1106-preview
 summary: "(Suppression de caract\xE8res correspondant \xE0 un motif) Dans la programmation,\
   \ lorsque nous parlons de supprimer des caract\xE8res selon un motif, on fait\u2026"
 title: "Suppression de caract\xE8res correspondant \xE0 un motif"
+weight: 5
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 (Suppression de caractères correspondant à un motif)

@@ -11,9 +11,8 @@ summary: "Iniciar um novo projeto em Dart envolve a configura\xE7\xE3o de um amb
   \ prop\xEDcio ao desenvolvimento, teste e implementa\xE7\xE3o eficientes. Programadores\
   \ iniciam\u2026"
 title: Iniciando um novo projeto
+weight: 1
 ---
-
-{{< edit_this_page >}}
 
 ## O Que e Por Quê?
 

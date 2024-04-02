@@ -11,9 +11,8 @@ summary: "\xC9crire un fichier texte en Bash vous permet d'automatiser le stocka
   \ de donn\xE9es, les logs, les param\xE8tres de configuration, et plus encore. C'est\
   \ une\u2026"
 title: "R\xE9diger un fichier texte"
+weight: 24
 ---
-
-{{< edit_this_page >}}
 
 ## Quoi & Pourquoi ?
 

@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Escribir pruebas en el entorno de Arduino se refiere al proceso de crear\
   \ pruebas automatizadas que validan la funcionalidad de tu c\xF3digo en dispositivos\u2026"
 title: Escribiendo pruebas
+weight: 36
 ---
-
-{{< edit_this_page >}}
 
 ## ¿Qué y por qué?
 

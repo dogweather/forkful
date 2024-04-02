@@ -11,9 +11,8 @@ summary: "Das Ausgeben von Debug-Informationen bedeutet, tempor\xE4re, informati
   \ Protokollnachrichten zu generieren, die Programmierern helfen k\xF6nnen, den Ablauf\
   \ und\u2026"
 title: Ausgabe von Debug-Informationen drucken
+weight: 33
 ---
-
-{{< edit_this_page >}}
 
 ## Was & Warum?
 

@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Praca z YAML polega na analizie i manipulacji plikami YAML (YAML Ain't Markup\
   \ Language), formacie serializacji danych u\u017Cywanym dla plik\xF3w\u2026"
 title: Praca z YAML
+weight: 41
 ---
-
-{{< edit_this_page >}}
 
 ## Co i dlaczego?
 Praca z YAML polega na analizie i manipulacji plikami YAML (YAML Ain't Markup Language), formacie serializacji danych używanym dla plików konfiguracyjnych, w środowisku Fish Shell. Programiści robią to w celu automatyzacji i konfiguracji aplikacji lub usług w sposób efektywny w kontekście środowisk powłoki, ułatwiając zadania takie jak zarządzanie konfiguracjami i przydzielanie zasobów.

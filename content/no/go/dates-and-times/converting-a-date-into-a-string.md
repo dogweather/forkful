@@ -11,9 +11,8 @@ summary: "\xC5 konvertere en dato til en streng i Go inneb\xE6rer \xE5 transform
   \ et `time.Time`-objekt til et leselig strengformat. Programmerere utf\xF8rer ofte\
   \ denne\u2026"
 title: "Omgj\xF8ring av en dato til en streng"
+weight: 28
 ---
-
-{{< edit_this_page >}}
 
 ## Hva & Hvorfor?
 

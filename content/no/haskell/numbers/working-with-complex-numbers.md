@@ -7,9 +7,8 @@ model: gpt-4-0125-preview
 summary: "Komplekse tall, som best\xE5r av en reell og en imagin\xE6r del, er essensielle\
   \ i ulike beregningsfelt som ingeni\xF8rvitenskap, fysikk og signalbehandling.\u2026"
 title: "\xC5 jobbe med komplekse tall"
+weight: 14
 ---
-
-{{< edit_this_page >}}
 
 ## Hva & Hvorfor?
 

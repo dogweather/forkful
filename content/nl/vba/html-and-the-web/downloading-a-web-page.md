@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Een webpagina downloaden in Visual Basic for Applications (VBA) betekent\
   \ het ophalen van de HTML-inhoud van een webpagina van het internet. Programmeurs\u2026"
 title: Een webpagina downloaden
+weight: 42
 ---
-
-{{< edit_this_page >}}
 
 ## Wat & Waarom?
 

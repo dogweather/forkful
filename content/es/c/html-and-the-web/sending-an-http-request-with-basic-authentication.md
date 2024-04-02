@@ -11,9 +11,8 @@ summary: "Enviar una solicitud HTTP con autenticaci\xF3n b\xE1sica en C implica 
   \ una solicitud HTTP que incluya un encabezado de Autorizaci\xF3n con credenciales\
   \ de\u2026"
 title: "Enviando una solicitud HTTP con autenticaci\xF3n b\xE1sica"
+weight: 45
 ---
-
-{{< edit_this_page >}}
 
 ## Qué y Por qué?
 Enviar una solicitud HTTP con autenticación básica en C implica crear una solicitud HTTP que incluya un encabezado de Autorización con credenciales de usuario codificadas en Base64. Este es un método común para añadir una capa de autenticación simple a las solicitudes HTTP, permitiendo acceder a recursos restringidos de manera programática.

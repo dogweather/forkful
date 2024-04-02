@@ -13,9 +13,8 @@ summary: "Vi\u1EBFt test trong Google Apps Script (GAS) l\xE0 v\u1EC1 vi\u1EC7c 
   a m\xE3 l\u1EC7nh c\u1EE7a b\u1EA1n, \u0111\u1EA3m b\u1EA3o ch\xFAng ho\u1EA1t \u0111\
   \u1ED9ng nh\u01B0 mong\u2026"
 title: "Vi\u1EBFt ki\u1EC3m th\u1EED"
+weight: 36
 ---
-
-{{< edit_this_page >}}
 
 ## Gì và Tại sao?
 

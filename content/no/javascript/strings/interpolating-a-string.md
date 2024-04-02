@@ -7,9 +7,8 @@ model: gpt-4-1106-preview
 summary: "Interpolering av strenger i JavaScript betyr \xE5 sette sammen bitene av\
   \ tekst og variabler til en helhetlig streng. Vi gj\xF8r det for \xE5 lage dynamiske\u2026"
 title: Interpolering av en streng
+weight: 8
 ---
-
-{{< edit_this_page >}}
 
 ## Hva & Hvorfor?
 Interpolering av strenger i JavaScript betyr å sette sammen bitene av tekst og variabler til en helhetlig streng. Vi gjør det for å lage dynamiske meldinger, bygge spørringer, og for at koden skal være mer lesbart og vedlikeholde.

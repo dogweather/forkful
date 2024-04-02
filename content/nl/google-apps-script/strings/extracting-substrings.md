@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Het extraheren van substrings houdt in dat een deel van een string wordt\
   \ genomen - in wezen het cre\xEBren van een nieuwe string uit een gedeelte van een\u2026"
 title: Substrings extraheren
+weight: 6
 ---
-
-{{< edit_this_page >}}
 
 ## Wat & Waarom?
 

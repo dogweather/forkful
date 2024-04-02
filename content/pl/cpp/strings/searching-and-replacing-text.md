@@ -9,9 +9,8 @@ summary: "Zast\u0119powanie tekstu to podmiana jednego ci\u0105gu znak\xF3w inny
   \ Programi\u015Bci robi\u0105 to, by szybko modyfikowa\u0107 dane czy kod - poprawiaj\u0105\
   \ b\u0142\u0119dy, aktualizuj\u0105\u2026"
 title: Wyszukiwanie i zamiana tekstu
+weight: 10
 ---
-
-{{< edit_this_page >}}
 
 ## Co i dlaczego?
 Zastępowanie tekstu to podmiana jednego ciągu znaków innym. Programiści robią to, by szybko modyfikować dane czy kod - poprawiają błędy, aktualizują informacje, dostosowują do nowych wymagań.

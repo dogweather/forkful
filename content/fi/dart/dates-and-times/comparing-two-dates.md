@@ -11,9 +11,8 @@ summary: "Kahden p\xE4iv\xE4m\xE4\xE4r\xE4n vertaaminen Dartissa sis\xE4lt\xE4\x
   \ niiden ajallisen eron tai j\xE4rjestyksen arvioimisen, mik\xE4 on olennainen toiminnallisuus\
   \ sovelluksissa,\u2026"
 title: "Kahden p\xE4iv\xE4m\xE4\xE4r\xE4n vertaaminen"
+weight: 27
 ---
-
-{{< edit_this_page >}}
 
 ## Mikä & Miksi?
 Kahden päivämäärän vertaaminen Dartissa sisältää niiden ajallisen eron tai järjestyksen arvioimisen, mikä on olennainen toiminnallisuus sovelluksissa, jotka hallinnoivat tapahtumia, määräaikoja tai mitä tahansa aikaan sidottua dataa. Ohjelmoijat tarvitsevat tätä usein logiikan virran hallitsemiseen, datan validointiin tai aikaolosuhteisiin perustuvaan järjestämiseen.

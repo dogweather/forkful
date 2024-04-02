@@ -15,9 +15,8 @@ summary: "T\xECm ki\u1EBFm v\xE0 thay th\u1EBF v\u0103n b\u1EA3n trong chu\u1ED7
   i\u1EC1u n\xE0y \u0111\u1EC3 x\u1EED l\xFD s\u1EEDa \u0111\u1ED5i \u0111\u1EA7u\
   \ v\xE0o\u2026"
 title: "T\xECm ki\u1EBFm v\xE0 thay th\u1EBF v\u0103n b\u1EA3n"
+weight: 10
 ---
-
-{{< edit_this_page >}}
 
 ## Cái gì & Tại sao?
 Tìm kiếm và thay thế văn bản trong chuỗi giúp bạn cập nhật dữ liệu mà không cần chỉnh sửa thủ công. Lập trình viên cần điều này để xử lý sửa đổi đầu vào của người dùng, định dạng dữ liệu, hoặc cập nhật hàng loạt một cách hiệu quả.

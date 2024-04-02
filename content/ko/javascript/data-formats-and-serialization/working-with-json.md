@@ -21,9 +21,8 @@ summary: "JSON(JavaScript Object Notation)\uC740 \uAC00\uBCBC\uC6B4 \uB370\uC774
   \uBA70, \uC774\uB294 \uD604\uB300 API \uBC0F \uC6F9 \uC11C\uBE44\uC2A4 \uD1B5\uC2E0\
   \uC758\u2026"
 title: "JSON\uACFC \uD568\uAED8 \uC77C\uD558\uAE30"
+weight: 38
 ---
-
-{{< edit_this_page >}}
 
 ## 무엇인가 & 왜인가?
 

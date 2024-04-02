@@ -9,9 +9,8 @@ summary: "Wypisywanie danych debugowania pomaga zrozumie\u0107, co si\u0119 dzie
   \ w kodzie. Programi\u015Bci u\u017Cywaj\u0105 tego, by szybko znale\u017A\u0107\
   \ b\u0142\u0119dy lub monitorowa\u0107 dzia\u0142anie\u2026"
 title: "Drukowanie komunikat\xF3w debugowania"
+weight: 33
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why? (Co i dlaczego?)
 Wypisywanie danych debugowania pomaga zrozumieć, co się dzieje w kodzie. Programiści używają tego, by szybko znaleźć błędy lub monitorować działanie aplikacji.

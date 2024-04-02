@@ -9,9 +9,8 @@ summary: "Kun tulostetaan debuggausinformaatiota, ohjelmisto kehitt\xE4j\xE4t tu
   \ v\xE4liaikaisia muuttujien arvoja tai viestej\xE4. T\xE4m\xE4 auttaa ymm\xE4rt\xE4\
   m\xE4\xE4n ohjelman\u2026"
 title: "Virheenj\xE4ljitystulosteiden tulostaminen"
+weight: 33
 ---
-
-{{< edit_this_page >}}
 
 ## Mitä & Miksi?
 Kun tulostetaan debuggausinformaatiota, ohjelmisto kehittäjät tulostavat väliaikaisia muuttujien arvoja tai viestejä. Tämä auttaa ymmärtämään ohjelman toimintaa ja selvittämään ongelmia.

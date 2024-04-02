@@ -9,9 +9,8 @@ summary: "Una shell interactiva, o REPL (Bucle Leer-Evaluar-Imprimir), te permit
   \ escribir y ejecutar c\xF3digo PHP al momento. Es ideal para experimentar, depurar,\
   \ o\u2026"
 title: Usando una shell interactiva (REPL)
+weight: 34
 ---
-
-{{< edit_this_page >}}
 
 ## Qué y Por Qué?
 Una shell interactiva, o REPL (Bucle Leer-Evaluar-Imprimir), te permite escribir y ejecutar código PHP al momento. Es ideal para experimentar, depurar, o aprender, ya que puedes probar fragmentos de código sin la necesidad de crear un guion completo.

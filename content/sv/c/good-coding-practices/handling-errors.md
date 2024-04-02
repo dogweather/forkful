@@ -11,9 +11,8 @@ summary: "Att hantera fel i C inneb\xE4r att uppt\xE4cka och bem\xF6ta onormala 
   rh\xE5llanden som uppst\xE5r under programk\xF6rning. Programmerare g\xF6r detta\
   \ f\xF6r att f\xF6rhindra\u2026"
 title: Hantera fel
+weight: 16
 ---
-
-{{< edit_this_page >}}
 
 ## Vad & Varför?
 

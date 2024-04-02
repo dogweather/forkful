@@ -9,9 +9,8 @@ summary: "Usuwanie cudzys\u0142ow\xF3w ze stringa oznacza wyeliminowanie otaczaj
   cych pojedynczych (`'`) lub podw\xF3jnych (`\"`) znak\xF3w cudzys\u0142owu, kt\xF3\
   re definiuj\u0105 litera\u0142y\u2026"
 title: "Usuwanie cudzys\u0142ow\xF3w z ci\u0105gu znak\xF3w"
+weight: 9
 ---
-
-{{< edit_this_page >}}
 
 ## Co i dlaczego?
 Usuwanie cudzysłowów ze stringa oznacza wyeliminowanie otaczających pojedynczych (`'`) lub podwójnych (`"`) znaków cudzysłowu, które definiują literały stringów w kodzie. Programiści robią to z kilku powodów, takich jak formatowanie wyników, oczyszczanie danych wejściowych użytkownika, lub przygotowanie stringów do parsowania lub przechowywania, gdzie cudzysłowy są niepotrzebne lub mogłyby spowodować błędy.

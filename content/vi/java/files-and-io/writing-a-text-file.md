@@ -13,9 +13,8 @@ summary: "Vi\u1EBFt m\u1ED9t t\u1EC7p v\u0103n b\u1EA3n trong Java c\xF3 ngh\u01
   p tr\xEAn \u0111\u0129a. C\xE1c nh\xE0 ph\xE1t tri\u1EC3n th\u1EF1c hi\u1EC7n vi\u1EC7\
   c n\xE0y cho c\xE1c t\xE1c v\u1EE5 nh\u01B0 ghi\u2026"
 title: "Vi\u1EBFt m\u1ED9t t\u1EC7p v\u0103n b\u1EA3n"
+weight: 24
 ---
-
-{{< edit_this_page >}}
 
 ## Cái gì & Tại sao?
 

@@ -11,9 +11,8 @@ summary: "HTML:n j\xE4sent\xE4minen viittaa HTML-sis\xE4ll\xF6n rakenteen purkam
   \ ja tulkitsemiseen, tyypillisesti tiettyjen tietojen poimimiseksi tai t\xE4m\xE4\
   n sis\xE4ll\xF6n\u2026"
 title: "HTML:n j\xE4sennys"
+weight: 43
 ---
-
-{{< edit_this_page >}}
 
 ## Mitä & Miksi?
 HTML:n jäsentäminen viittaa HTML-sisällön rakenteen purkamiseen ja tulkitsemiseen, tyypillisesti tiettyjen tietojen poimimiseksi tai tämän sisällön ohjelmallisesti käsittelyyn. Ohjelmoijat osallistuvat HTML:n jäsentämiseen verkon kaapimiseen, tiedon louhintaan, automatisoituun testaukseen ja sisällön migraatioon, mahdollistaen sovellusten tehokkaan vuorovaikutuksen ja prosessoinnin web-dokumenttien kanssa.

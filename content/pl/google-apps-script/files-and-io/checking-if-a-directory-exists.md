@@ -11,9 +11,8 @@ summary: "Sprawdzanie, czy katalog istnieje w Google Apps Script, polega na wery
   \ obecno\u015Bci folderu w Google Drive. Programi\u015Bci cz\u0119sto wykonuj\u0105\
   \ to\u2026"
 title: Sprawdzanie, czy katalog istnieje
+weight: 20
 ---
-
-{{< edit_this_page >}}
 
 ## Co i dlaczego?
 

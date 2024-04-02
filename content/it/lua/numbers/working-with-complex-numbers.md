@@ -7,9 +7,8 @@ model: gpt-4-0125-preview
 summary: "I numeri complessi estendono l'idea della linea numerica unidimensionale\
   \ al piano bidimensionale includendo un asse immaginario perpendicolare. I\u2026"
 title: Lavorare con i numeri complessi
+weight: 14
 ---
-
-{{< edit_this_page >}}
 
 ## Cosa & Perché?
 I numeri complessi estendono l'idea della linea numerica unidimensionale al piano bidimensionale includendo un asse immaginario perpendicolare. I programmatori lavorano con essi in campi come l'elaborazione di segnali, la dinamica dei fluidi e l'ingegneria elettrica, dove sono essenziali per rappresentare oscillazioni e altri fenomeni.

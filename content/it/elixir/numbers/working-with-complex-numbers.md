@@ -7,9 +7,8 @@ model: gpt-4-0125-preview
 summary: "I numeri complessi hanno una parte reale e una parte immaginaria (come `3\
   \ + 4i`). Sono utilizzati in ingegneria, fisica e in certi problemi di\u2026"
 title: Lavorare con i numeri complessi
+weight: 14
 ---
-
-{{< edit_this_page >}}
 
 ## Cosa e Perché?
 I numeri complessi hanno una parte reale e una parte immaginaria (come `3 + 4i`). Sono utilizzati in ingegneria, fisica e in certi problemi di informatica. I programmatori li usano per simulazioni, elaborazione di segnali e per risolvere certi tipi di problemi matematici in modo efficiente.

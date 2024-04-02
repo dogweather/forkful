@@ -11,9 +11,8 @@ summary: "Zamiana pierwszej litery ka\u017Cdego wyrazu w ci\u0105gu znak\xF3w na
   \ (capitalization) w Visual Basic for Applications (VBA) polega na przekszta\u0142\
   ceniu\u2026"
 title: "Zamiana liter w ci\u0105gu na wielkie"
+weight: 2
 ---
-
-{{< edit_this_page >}}
 
 ## Co i dlaczego?
 

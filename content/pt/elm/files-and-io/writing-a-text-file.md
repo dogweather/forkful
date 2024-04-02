@@ -7,9 +7,8 @@ model: unknown
 summary: "Escrever um arquivo de texto permite salvar dados de forma persistente.\
   \ Programadores fazem isso para manter registros, configura\xE7\xF5es ou compartilhar\u2026"
 title: Escrevendo um arquivo de texto
+weight: 24
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 Escrever um arquivo de texto permite salvar dados de forma persistente. Programadores fazem isso para manter registros, configurações ou compartilhar informações entre sistemas.

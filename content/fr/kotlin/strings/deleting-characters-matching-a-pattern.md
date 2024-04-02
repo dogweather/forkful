@@ -9,9 +9,8 @@ summary: "Supprimer des caract\xE8res correspondant \xE0 un motif, c'est filtrer
   \ cha\xEEne de texte en enlevant des \xE9l\xE9ments pr\xE9cis. Les d\xE9veloppeurs\
   \ font \xE7a pour\u2026"
 title: "Suppression de caract\xE8res correspondant \xE0 un motif"
+weight: 5
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 Supprimer des caractères correspondant à un motif, c'est filtrer une chaîne de texte en enlevant des éléments précis. Les développeurs font ça pour nettoyer des données, valider des entrées ou simplifier le traitement de texte.

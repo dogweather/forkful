@@ -9,9 +9,8 @@ summary: "Sammenkjeding av strenger i C# er det \xE5 sl\xE5 sammen tekst. Det la
   \ deg raskt sette sammen variabler, input og statisk tekst for utskrift, lagring\
   \ eller\u2026"
 title: "Sammensl\xE5ing av strenger"
+weight: 3
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why? (Hva & Hvorfor?)
 Sammenkjeding av strenger i C# er det å slå sammen tekst. Det lar deg raskt sette sammen variabler, input og statisk tekst for utskrift, lagring eller videre behandling.

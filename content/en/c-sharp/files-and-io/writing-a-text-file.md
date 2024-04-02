@@ -7,9 +7,8 @@ model: gpt-4-0125-preview
 summary: "Writing a text file in C# involves programmatically creating or modifying\
   \ text files on the file system - a fundamental task for many applications, such\u2026"
 title: Writing a text file
+weight: 24
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 Writing a text file in C# involves programmatically creating or modifying text files on the file system - a fundamental task for many applications, such as logging, data exporting, or configuration management. Programmers perform this operation to persist data between sessions, share information across systems, or store human-readable outputs.

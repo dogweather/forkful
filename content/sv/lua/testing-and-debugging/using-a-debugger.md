@@ -1,14 +1,15 @@
 ---
 date: 2024-01-26 03:50:18.449356-07:00
-description: "En debugger \xE4r ett verktyg som l\xE5ter dig inspektera och kontrollera\
-  \ utf\xF6randet av ett program, vilket g\xF6r det enkelt att identifiera var saker\
-  \ g\xE5r fel.\u2026"
+description: "Lua kommer inte med en inbyggd debugger, men du kan anv\xE4nda externa\
+  \ s\xE5dana, som ZeroBrane Studio. H\xE4r \xE4r en smakprov p\xE5 hur du skulle\
+  \ arbeta med den:\u2026"
 lastmod: '2024-03-13T22:44:38.043013-06:00'
 model: gpt-4-0125-preview
-summary: "En debugger \xE4r ett verktyg som l\xE5ter dig inspektera och kontrollera\
-  \ utf\xF6randet av ett program, vilket g\xF6r det enkelt att identifiera var saker\
-  \ g\xE5r fel.\u2026"
+summary: "Lua kommer inte med en inbyggd debugger, men du kan anv\xE4nda externa s\xE5\
+  dana, som ZeroBrane Studio. H\xE4r \xE4r en smakprov p\xE5 hur du skulle arbeta\
+  \ med den:\u2026"
 title: "Att anv\xE4nda en debugger"
+weight: 35
 ---
 
 ## Hur gör man:

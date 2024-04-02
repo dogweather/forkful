@@ -13,9 +13,8 @@ summary: "Vi\u1EBFt v\xE0o l\u1ED7i chu\u1EA9n (stderr) cho ph\xE9p ch\u01B0\u01
   m l\u1ED9n x\u1ED9n \u0111\u1EA7u ra chu\u1EA9n (stdout). \u0110\xE2y l\xE0 m\u1ED9\
   t t\xEDn hi\u1EC7u r\xF5 r\xE0ng cho ng\u01B0\u1EDDi\u2026"
 title: "Ghi v\xE0o l\u1ED7i chu\u1EA9n"
+weight: 25
 ---
-
-{{< edit_this_page >}}
 
 ## Làm gì & Tại sao?
 

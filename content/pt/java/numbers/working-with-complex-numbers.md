@@ -9,9 +9,8 @@ summary: "N\xFAmeros complexos expandem a linha dos n\xFAmeros reais atrav\xE9s 
   \ adi\xE7\xE3o de uma unidade imagin\xE1ria, `i`, onde `i^2 = -1`. Eles s\xE3o cruciais\
   \ em campos como\u2026"
 title: "Trabalhando com n\xFAmeros complexos"
+weight: 14
 ---
-
-{{< edit_this_page >}}
 
 ## O Quê & Porquê?
 

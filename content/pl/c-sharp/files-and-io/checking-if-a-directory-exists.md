@@ -11,9 +11,8 @@ summary: "Sprawdzanie, czy katalog istnieje w C#, polega na weryfikowaniu obecno
   ci folderu w okre\u015Blonej \u015Bcie\u017Cce w systemie plik\xF3w. Programi\u015B\
   ci robi\u0105 to, aby\u2026"
 title: Sprawdzanie, czy katalog istnieje
+weight: 20
 ---
-
-{{< edit_this_page >}}
 
 ## Co i dlaczego?
 

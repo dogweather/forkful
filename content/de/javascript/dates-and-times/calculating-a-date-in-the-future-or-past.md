@@ -9,9 +9,8 @@ summary: "Datum-Berechnungen sind n\xF6tig, um Vergangenheits- oder Zukunftsdate
   \ zu ermitteln. Programmierer nutzen dies f\xFCr Features wie Erinnerungen, Zeitabl\xE4\
   ufe\u2026"
 title: "Berechnung eines zuk\xFCnftigen oder vergangenen Datums"
+weight: 26
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 Datum-Berechnungen sind nötig, um Vergangenheits- oder Zukunftsdaten zu ermitteln. Programmierer nutzen dies für Features wie Erinnerungen, Zeitabläufe und Gültigkeitschecks.

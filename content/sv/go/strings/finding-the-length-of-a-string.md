@@ -11,9 +11,8 @@ summary: "Att hitta l\xE4ngden p\xE5 en str\xE4ng i Go handlar om att best\xE4mm
   \ antalet tecken den inneh\xE5ller. Programmerare utf\xF6r rutinm\xE4ssigt denna\
   \ operation f\xF6r att\u2026"
 title: "Hitta l\xE4ngden p\xE5 en str\xE4ng"
+weight: 7
 ---
-
-{{< edit_this_page >}}
 
 ## Vad & Varför?
 Att hitta längden på en sträng i Go handlar om att bestämma antalet tecken den innehåller. Programmerare utför rutinmässigt denna operation för att effektivt manipulera strängar, oavsett om det är för validering, extraktion av delsträngar eller helt enkelt för att genomdriva begränsningar i användarinmatningar.

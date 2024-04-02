@@ -11,9 +11,8 @@ summary: "Les tableaux associatifs sont comme des poign\xE9es de main secr\xE8te
   \ pour les donn\xE9es en Lua\u2014au lieu de simplement num\xE9roter les indices\
   \ de mani\xE8re ordonn\xE9e,\u2026"
 title: Utilisation des tableaux associatifs
+weight: 15
 ---
-
-{{< edit_this_page >}}
 
 ## Quoi & Pourquoi ?
 

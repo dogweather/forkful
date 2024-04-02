@@ -7,9 +7,8 @@ model: gpt-4-0125-preview
 summary: "Komplexe Zahlen bestehen aus einem Realteil und einem Imagin\xE4rteil, \xFC\
   blicherweise dargestellt als `a + bi`. Sie sind entscheidend f\xFCr einige\u2026"
 title: Umgang mit komplexen Zahlen
+weight: 14
 ---
-
-{{< edit_this_page >}}
 
 ## Was & Warum?
 Komplexe Zahlen bestehen aus einem Realteil und einem Imaginärteil, üblicherweise dargestellt als `a + bi`. Sie sind entscheidend für einige rechenintensive Arduino-Projekte, die Signalverarbeitung, Elektrotechnik oder andere Bereiche betreffen, in denen Phänomene am besten in einer Ebene modelliert werden.

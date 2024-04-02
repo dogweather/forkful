@@ -9,9 +9,8 @@ summary: "Att ladda ner en webbsida inneb\xE4r att h\xE4mta data fr\xE5n interne
   \ till din lokal dator. Programm\xF6rer g\xF6r detta f\xF6r att bearbeta information,\
   \ skrapa data,\u2026"
 title: "H\xE4mta en webbsida"
+weight: 42
 ---
-
-{{< edit_this_page >}}
 
 ## Vad & Varför?
 

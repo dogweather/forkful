@@ -10,9 +10,8 @@ model: gpt-4-0125-preview
 summary: "Att skriva tester i Kotlin inneb\xE4r att man skapar kodsnuttar som automatiskt\
   \ validerar den funktionella korrektheten i dina mjukvarumoduler, f\xF6r att\u2026"
 title: Skriva tester
+weight: 36
 ---
-
-{{< edit_this_page >}}
 
 ## Vad & Varför?
 

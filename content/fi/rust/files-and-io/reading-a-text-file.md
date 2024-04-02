@@ -8,9 +8,8 @@ model: gpt-4-1106-preview
 summary: "Rustissa tekstitiedoston lukeminen tarkoittaa tiedoston sis\xE4ll\xF6n saattamista\
   \ ohjelman k\xE4ytt\xF6\xF6n. Ohjelmoijat lukevat tiedostoja, koska niist\xE4 saadaan\u2026"
 title: Tekstitiedoston lukeminen
+weight: 22
 ---
-
-{{< edit_this_page >}}
 
 ## Mitä & Miksi?
 Rustissa tekstitiedoston lukeminen tarkoittaa tiedoston sisällön saattamista ohjelman käyttöön. Ohjelmoijat lukevat tiedostoja, koska niistä saadaan tärkeää dataa, kuten asetuksia, käyttäjätietoja tai resursseja.

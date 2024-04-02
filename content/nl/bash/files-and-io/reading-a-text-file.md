@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Een tekstbestand lezen betekent het verkrijgen van de inhoud van een bestand\
   \ in je script. Programmeurs doen dit om met gegevens, configuratie te werken\u2026"
 title: Een tekstbestand lezen
+weight: 22
 ---
-
-{{< edit_this_page >}}
 
 ## Wat & Waarom?
 Een tekstbestand lezen betekent het verkrijgen van de inhoud van een bestand in je script. Programmeurs doen dit om met gegevens, configuratie te werken of systemen te automatiseren op basis van die tekstbestandinhoud.

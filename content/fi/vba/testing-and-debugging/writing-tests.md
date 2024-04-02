@@ -11,9 +11,8 @@ summary: "Ohjelmoinnissa testien kirjoittaminen tarkoittaa tiettyjen menettelyje
   \ luomista koodin toimivuuden ja suorituskyvyn varmistamiseksi, varmistamaan, ett\xE4\
   \u2026"
 title: Testien kirjoittaminen
+weight: 36
 ---
-
-{{< edit_this_page >}}
 
 ## Mikä & Miksi?
 

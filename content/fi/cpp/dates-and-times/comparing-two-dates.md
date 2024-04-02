@@ -9,9 +9,8 @@ summary: "Vertailemme p\xE4iv\xE4m\xE4\xE4ri\xE4 ymm\xE4rt\xE4\xE4ksemme aikaj\x
   rjestyksen ja m\xE4\xE4ritt\xE4\xE4ksemme aikaeroja. Ohjelmoijat tarvitsevat t\xE4\
   t\xE4 logiikkaa aikaleimojen vertailuun,\u2026"
 title: "Kahden p\xE4iv\xE4m\xE4\xE4r\xE4n vertailu"
+weight: 27
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why? (Mitä ja Miksi?)
 Vertailemme päivämääriä ymmärtääksemme aikajärjestyksen ja määrittääksemme aikaeroja. Ohjelmoijat tarvitsevat tätä logiikkaa aikaleimojen vertailuun, määräaikojen hallintaan ja aikatauluautomaation toteuttamiseen.

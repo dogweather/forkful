@@ -7,9 +7,8 @@ model: gpt-4-1106-preview
 summary: "Come\xE7ar um novo projeto em Elm \xE9 inicializar um ambiente de desenvolvimento\
   \ do zero, configurando tudo o que voc\xEA precisa para escrever seu c\xF3digo Elm.\u2026"
 title: Iniciando um novo projeto
+weight: 1
 ---
-
-{{< edit_this_page >}}
 
 ## O Que & Porquê?
 Começar um novo projeto em Elm é inicializar um ambiente de desenvolvimento do zero, configurando tudo o que você precisa para escrever seu código Elm. Programadores fazem isso para criar aplicações web confiáveis e manuteníveis com uma linguagem que privilegia a simplicidade e a qualidade do código.

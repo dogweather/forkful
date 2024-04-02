@@ -7,9 +7,8 @@ model: gpt-4-0125-preview
 summary: "Regular expressions (regex) are patterns used to match character combinations\
   \ in strings. Programmers utilize them for searching, editing, or manipulating\u2026"
 title: Using regular expressions
+weight: 11
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 Regular expressions (regex) are patterns used to match character combinations in strings. Programmers utilize them for searching, editing, or manipulating text based on defined patterns, making them indispensable for tasks like data validation, parsing, or transformation.

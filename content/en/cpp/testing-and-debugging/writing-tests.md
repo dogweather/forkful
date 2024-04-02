@@ -8,9 +8,8 @@ model: gpt-4-0125-preview
 summary: "Writing tests in C++ involves creating small, self-contained programs that\
   \ automatically verify the behavior of sections of your codebase. Programmers do\u2026"
 title: Writing tests
+weight: 36
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 

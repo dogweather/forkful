@@ -9,9 +9,8 @@ summary: "Feilh\xE5ndtering er m\xE5ten du h\xE5ndterer ting p\xE5 n\xE5r koden 
   \ ikke fungerer som den skal. Det er n\xF8kkelen fordi det hjelper programmene dine\
   \ \xE5 feile med\u2026"
 title: "Feilh\xE5ndtering"
+weight: 16
 ---
-
-{{< edit_this_page >}}
 
 ## Hva & Hvorfor?
 

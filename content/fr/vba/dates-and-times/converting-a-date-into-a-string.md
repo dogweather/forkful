@@ -11,9 +11,8 @@ summary: "La conversion d'une date en cha\xEEne de caract\xE8res dans Visual Bas
   \ pour Applications (VBA) consiste \xE0 modifier le type de donn\xE9es d'une date\
   \ pour la\u2026"
 title: "Convertir une date en cha\xEEne de caract\xE8res"
+weight: 28
 ---
-
-{{< edit_this_page >}}
 
 ## Quoi & Pourquoi ?
 

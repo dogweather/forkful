@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Iniciar um novo projeto em C envolve configurar uma estrutura de c\xF3digo\
   \ base e ambiente para gerenciar de forma eficiente as tarefas de desenvolvimento.\u2026"
 title: Iniciando um novo projeto
+weight: 1
 ---
-
-{{< edit_this_page >}}
 
 ## O Que & Por Que?
 

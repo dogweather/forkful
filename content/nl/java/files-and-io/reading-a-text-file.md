@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Een tekstbestand lezen betekent dat je programma inhoud uit een bestand\
   \ opslokt als een string. Programmeurs doen dit om gegevens te verwerken of te\u2026"
 title: Een tekstbestand lezen
+weight: 22
 ---
-
-{{< edit_this_page >}}
 
 ## Wat & Waarom?
 

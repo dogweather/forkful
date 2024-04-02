@@ -8,9 +8,8 @@ model: unknown
 summary: "HTML-tiedostojen j\xE4sent\xE4minen eli parsing tarkoittaa HTML-koodin muuttamista\
   \ rakenteelliseksi tiedoksi, mit\xE4 ohjelma voi k\xE4ytt\xE4\xE4 hy\xF6dyksi. Koodaajat\u2026"
 title: "HTML:n j\xE4sent\xE4minen"
+weight: 43
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 HTML-tiedostojen jäsentäminen eli parsing tarkoittaa HTML-koodin muuttamista rakenteelliseksi tiedoksi, mitä ohjelma voi käyttää hyödyksi. Koodaajat tekevät tätä sisällön automaattiseen käsittelyyn ja tiedon uuttamiseen verkkosivuilta.

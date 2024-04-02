@@ -11,9 +11,8 @@ summary: "Verificar se um diret\xF3rio existe em Go \xE9 cr\xEDtico para aplica\
   \xF5es que interagem com o sistema de arquivos, para evitar erros ao tentar acessar\
   \ ou modificar\u2026"
 title: "Verificando se um diret\xF3rio existe"
+weight: 20
 ---
-
-{{< edit_this_page >}}
 
 ## O Quê & Por Quê?
 

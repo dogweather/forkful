@@ -10,9 +10,8 @@ model: gpt-4-0125-preview
 summary: "Confrontare due date in Visual Basic for Applications (VBA) coinvolge la\
   \ determinazione della loro relazione cronologica reciproca. I programmatori fanno\u2026"
 title: Confrontare due date
+weight: 27
 ---
-
-{{< edit_this_page >}}
 
 ## Cosa & Perché?
 

@@ -15,9 +15,8 @@ summary: "TOML\uFF0C\u5373Tom's Obvious, Minimal Language\uFF08\u6C64\u59C6\u768
   \u7F16\u5199\uFF0C\u5E76\u4E14\u53EF\u4EE5\u5F88\u597D\u5730\u6620\u5C04\u5230\u54C8\
   \u5E0C\u8868\uFF0C\u56E0\u6B64\u6210\u4E3A\u914D\u7F6E\u7684\u9996\u9009\u3002"
 title: "\u4F7F\u7528TOML"
+weight: 39
 ---
-
-{{< edit_this_page >}}
 
 ## 何为TOML以及为何使用？
 

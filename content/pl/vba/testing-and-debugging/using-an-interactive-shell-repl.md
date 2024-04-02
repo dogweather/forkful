@@ -11,9 +11,8 @@ summary: "Interaktywna pow\u0142oka, czyli p\u0119tla czytaj-wykonaj-drukuj (REP
   \ pozwala u\u017Cytkownikom wprowadza\u0107 komendy, wykonywa\u0107 je i widzie\u0107\
   \ wyniki w czasie\u2026"
 title: "Korzystanie z interaktywnej pow\u0142oki (REPL)"
+weight: 34
 ---
-
-{{< edit_this_page >}}
 
 ## Co i dlaczego?
 

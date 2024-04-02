@@ -7,9 +7,8 @@ model: gpt-4-1106-preview
 summary: "Searching and replacing text means swapping out specific strings in a block\
   \ of text with others. Programmers do this for tasks like fixing errors,\u2026"
 title: Searching and replacing text
+weight: 10
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 Searching and replacing text means swapping out specific strings in a block of text with others. Programmers do this for tasks like fixing errors, updating information, or formatting data.

@@ -11,9 +11,8 @@ summary: "\xC5 sjekke om en mappe eksisterer handler om \xE5 fastsl\xE5 tilstede
   relsen av en mappe p\xE5 en angitt sti f\xF8r man utf\xF8rer operasjoner som \xE5\
   \ lese fra eller skrive\u2026"
 title: Sjekker om en mappe eksisterer
+weight: 20
 ---
-
-{{< edit_this_page >}}
 
 ## Hva og hvorfor?
 Å sjekke om en mappe eksisterer handler om å fastslå tilstedeværelsen av en mappe på en angitt sti før man utfører operasjoner som å lese fra eller skrive til filer inni den. Programmerere gjør dette for å unngå feil relatert til filoperasjoner, og sørger for en jevnere og mer pålitelig utføring av oppgaver knyttet til filhåndtering i applikasjonene deres.

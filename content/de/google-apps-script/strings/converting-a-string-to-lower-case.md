@@ -10,9 +10,8 @@ model: gpt-4-0125-preview
 summary: "Die Umwandlung einer Zeichenkette in Kleinbuchstaben in Google Apps Script,\
   \ einer cloudbasierten Skriptsprache zur Automatisierung von Aufgaben in Google-\u2026"
 title: Einen String in Kleinbuchstaben umwandeln
+weight: 4
 ---
-
-{{< edit_this_page >}}
 
 ## Was & Warum?
 

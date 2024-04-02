@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "JSON (JavaScript Object Notation) is een lichtgewicht gegevensformaat voor\
   \ gegevensuitwisseling. Programmeurs gebruiken het omdat het makkelijk te\u2026"
 title: Werken met JSON
+weight: 38
 ---
-
-{{< edit_this_page >}}
 
 ## Wat & Waarom?
 JSON (JavaScript Object Notation) is een lichtgewicht gegevensformaat voor gegevensuitwisseling. Programmeurs gebruiken het omdat het makkelijk te lezen/schrijven is en taalonafhankelijk, wat het ideaal maakt voor API's en webdiensten.

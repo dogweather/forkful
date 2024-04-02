@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Scrivere su standard error (`stderr`) in C++ implica l'output di messaggi\
   \ di errore o diagnostici che sono separati dall'output principale del programma.\u2026"
 title: Scrivere sull'errore standard
+weight: 25
 ---
-
-{{< edit_this_page >}}
 
 ## Cosa e Perché?
 

@@ -10,9 +10,8 @@ model: gpt-4-0125-preview
 summary: "Das Extrahieren von Teilzeichenketten in C umfasst das Erstellen einer kleineren\
   \ Zeichenkette (Teilzeichenkette) aus einer gr\xF6\xDFeren Zeichenkette basierend\u2026"
 title: Teilstrings extrahieren
+weight: 6
 ---
-
-{{< edit_this_page >}}
 
 ## Was & Warum?
 

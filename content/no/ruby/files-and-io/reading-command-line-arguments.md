@@ -9,9 +9,8 @@ summary: "Kommandolinjeargumenter lar deg sende data direkte til et Ruby-program
   r du kj\xF8rer det. Programmere bruker dette for \xE5 gj\xF8re programmene fleksible\
   \ og\u2026"
 title: Lese kommandolinjeargumenter
+weight: 23
 ---
-
-{{< edit_this_page >}}
 
 ## Hva & Hvorfor?
 Kommandolinjeargumenter lar deg sende data direkte til et Ruby-program når du kjører det. Programmere bruker dette for å gjøre programmene fleksible og tilpasse kjøringen uten å endre koden.

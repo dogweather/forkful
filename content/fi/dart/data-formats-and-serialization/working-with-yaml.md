@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "YAML, lyhenne sanoista YAML Ain't Markup Language, on ihmisluettava tietojen\
   \ serialisointiformaatti. Ohjelmoijat k\xE4ytt\xE4v\xE4t sit\xE4 asetustiedostoihin,\u2026"
 title: "Ty\xF6skentely YAML:n kanssa"
+weight: 41
 ---
-
-{{< edit_this_page >}}
 
 ## Mikä & Miksi?
 

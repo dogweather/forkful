@@ -9,9 +9,8 @@ summary: "Envoyer une requ\xEAte HTTP permet \xE0 votre application de communiqu
   \ avec le monde ext\xE9rieur : r\xE9cup\xE9rer des donn\xE9es, interagir avec des\
   \ API, etc. Les\u2026"
 title: "Envoi d'une requ\xEAte HTTP"
+weight: 44
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why? (Quoi et Pourquoi ?)
 Envoyer une requête HTTP permet à votre application de communiquer avec le monde extérieur : récupérer des données, interagir avec des API, etc. Les programmeurs utilisent ça pour accéder à des ressources web et pour intégrer des fonctionnalités externe.

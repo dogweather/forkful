@@ -14,9 +14,8 @@ summary: "\u30D7\u30ED\u30B0\u30E9\u30DE\u30FC\u304CHTTP\u30EA\u30AF\u30A8\u30B9
   \u4FE1\u3084\u60C5\u5831\u53D6\u5F97\u306E\u305F\u3081\u306B\u3088\u304F\u4F7F\u308F\
   \u308C\u307E\u3059\u3002"
 title: "HTTP\u30EA\u30AF\u30A8\u30B9\u30C8\u306E\u9001\u4FE1"
+weight: 44
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why? (何となぜ？)
 プログラマーがHTTPリクエストを送ると、ウェブサーバーとデータを交換できます。APIとの通信や情報取得のためによく使われます。

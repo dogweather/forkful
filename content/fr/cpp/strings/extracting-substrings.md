@@ -9,9 +9,8 @@ summary: "Extraire des sous-cha\xEEnes, c'est prendre une partie sp\xE9cifique d
   \ cha\xEEne de caract\xE8res. On fait \xE7a pour analyser, manipuler, ou valider\
   \ des donn\xE9es\u2026"
 title: "Extraction de sous-cha\xEEnes"
+weight: 6
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why? (Quoi & Pourquoi ?)
 

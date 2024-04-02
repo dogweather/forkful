@@ -10,9 +10,8 @@ model: gpt-4-0125-preview
 summary: "Commencer un nouveau projet en Go implique de configurer un espace de travail\
   \ et de l'initialiser avec les modules Go n\xE9cessaires. Les programmeurs font\u2026"
 title: "D\xE9marrer un nouveau projet"
+weight: 1
 ---
-
-{{< edit_this_page >}}
 
 ## Quoi et Pourquoi ?
 

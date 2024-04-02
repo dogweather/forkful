@@ -8,9 +8,8 @@ model: gpt-4-0125-preview
 summary: "Writing tests in C involves creating smaller, auxiliary programs or functions\
   \ that automatically verify the functionality of your code. Programmers do it\u2026"
 title: Writing tests
+weight: 36
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 Writing tests in C involves creating smaller, auxiliary programs or functions that automatically verify the functionality of your code. Programmers do it to ensure their software works as expected, to catch bugs early, and to facilitate future code modifications without unintended side effects.

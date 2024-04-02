@@ -16,9 +16,8 @@ summary: "\u5728\u7F16\u7A0B\u4E2D\uFF0C\u53D1\u9001HTTP\u8BF7\u6C42\u662F\u4E0E
   \u5458\u8FD9\u4E48\u505A\u662F\u4E3A\u4E86\u8BA9\u5E94\u7528\u80FD\u4E0E\u4E92\u8054\
   \u7F51\u4E0A\u7684\u5176\u4ED6\u670D\u52A1\u96C6\u6210\u3002"
 title: "\u53D1\u51FA HTTP \u8BF7\u6C42"
+weight: 44
 ---
-
-{{< edit_this_page >}}
 
 ## 什么及为什么？
 在编程中，发送HTTP请求是与Web服务进行交互的方式。（1）这能让你的应用获取数据、发送数据，或与远程服务器通信。（2）程序员这么做是为了让应用能与互联网上的其他服务集成。

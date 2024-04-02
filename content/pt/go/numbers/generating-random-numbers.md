@@ -11,9 +11,8 @@ summary: "Gerar n\xFAmeros aleat\xF3rios na programa\xE7\xE3o trata de criar uma
   ncia de n\xFAmeros que n\xE3o possa ser prevista de maneira razo\xE1vel melhor do\
   \ que por acaso.\u2026"
 title: "Gerando n\xFAmeros aleat\xF3rios"
+weight: 12
 ---
-
-{{< edit_this_page >}}
 
 ## O Que & Por Quê?
 

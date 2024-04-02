@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Das Schreiben auf Standardfehler (stderr) in Programmiersprachen handelt\
   \ davon, Fehlermeldungen und Diagnosen auf einen separaten Datenstrom, abseits der\u2026"
 title: Ausgabe auf Standardfehler
+weight: 25
 ---
-
-{{< edit_this_page >}}
 
 ## Was & Warum?
 

@@ -9,9 +9,8 @@ summary: "\xC5 fjerne anf\xF8rselstegn fra en streng betyr \xE5 bli kvitt de irr
   \ anf\xF8rselstegnene som kan rote til koden din, spesielt n\xE5r du analyserer\
   \ data eller\u2026"
 title: "Fjerne anf\xF8rselstegn fra en streng"
+weight: 9
 ---
-
-{{< edit_this_page >}}
 
 ## Hva & Hvorfor?
 Å fjerne anførselstegn fra en streng betyr å bli kvitt de irriterende anførselstegnene som kan rote til koden din, spesielt når du analyserer data eller konstruerer JSON-objekter. Programmerere gjør det for å rense inndata, unngå syntaksfeil og få strenger til å spille fint sammen med andre deler av koden sin.

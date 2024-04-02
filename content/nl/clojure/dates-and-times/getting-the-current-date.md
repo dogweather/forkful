@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "De huidige datum in Clojure krijgen betekent het ophalen van de huidige\
   \ kalenderdatum waarop uw programma draait. Programmeurs pikken de datum op om\u2026"
 title: Het huidige datum ophalen
+weight: 29
 ---
-
-{{< edit_this_page >}}
 
 ## Wat & Waarom?
 

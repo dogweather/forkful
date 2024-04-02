@@ -9,9 +9,8 @@ summary: "Debug-Ausgaben zu drucken ist, als w\xFCrde man unter die Motorhaube d
   \ Codes schauen. Entwickler tun dies, um zu verstehen, was w\xE4hrend der Ausf\xFC\
   hrung\u2026"
 title: Debug-Ausgaben drucken
+weight: 33
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 Debug-Ausgaben zu drucken ist, als würde man unter die Motorhaube des Codes schauen. Entwickler tun dies, um zu verstehen, was während der Ausführung ihres Skripts oder Programms wirklich passiert.

@@ -9,9 +9,8 @@ summary: "Ler um arquivo de texto em C# significa entrar na dan\xE7a dos bytes p
   \ tirar informa\xE7\xF5es \xFAteis de um arquivo `.txt`. Programadores fazem isso\
   \ porque,\u2026"
 title: Lendo um arquivo de texto
+weight: 22
 ---
-
-{{< edit_this_page >}}
 
 ## O Que & Por Que?
 Ler um arquivo de texto em C# significa entrar na dança dos bytes pra tirar informações úteis de um arquivo `.txt`. Programadores fazem isso porque, muitas vezes, é lá que moram os dados que precisam ser processados, analisados ou simplesmente exibidos.

@@ -11,9 +11,8 @@ summary: "Escrever no erro padr\xE3o (stderr) em Elixir \xE9 um m\xE9todo de dir
   \ mensagens de erro e diagn\xF3sticos separadamente do output principal (stdout).\
   \ Os\u2026"
 title: "Escrevendo para o erro padr\xE3o"
+weight: 25
 ---
-
-{{< edit_this_page >}}
 
 ## O Que & Porquê?
 

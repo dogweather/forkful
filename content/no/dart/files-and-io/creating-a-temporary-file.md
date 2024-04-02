@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "\xC5 opprette en midlertidig fil i Dart inneb\xE6rer \xE5 generere en fil\
   \ som er ment for korttidsbruk, hovedsakelig for scenarioer som caching av data,\u2026"
 title: Oppretting av en midlertidig fil
+weight: 21
 ---
-
-{{< edit_this_page >}}
 
 ## Hva & Hvorfor?
 Å opprette en midlertidig fil i Dart innebærer å generere en fil som er ment for korttidsbruk, hovedsakelig for scenarioer som caching av data, midlertidig lagring for filbehandling eller oppbevaring av informasjon som er for sensitiv til å beholde lenge. Programmerere gjør dette for å håndtere data som ikke trenger permanent lagring, dermed forbedrer de ytelsen og opprettholder datahygiene.

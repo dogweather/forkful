@@ -7,9 +7,8 @@ model: gpt-4-1106-preview
 summary: "Invio di una richiesta HTTP con autenticazione di base significa inserire\
   \ username e password per accedere a risorse protette sul web. I programmatori lo\u2026"
 title: Inviare una richiesta http con autenticazione di base
+weight: 45
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 Invio di una richiesta HTTP con autenticazione di base significa inserire username e password per accedere a risorse protette sul web. I programmatori lo fanno per interagire con API sicure o per raccogliere dati da siti che richiedono l'accesso.

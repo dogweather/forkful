@@ -10,9 +10,8 @@ model: gpt-4-0125-preview
 summary: "Parsear HTML en Visual Basic for Applications (VBA) implica extraer informaci\xF3\
   n espec\xEDfica de un documento HTML. Los programadores lo hacen para\u2026"
 title: Analizando HTML
+weight: 43
 ---
-
-{{< edit_this_page >}}
 
 ## ¿Qué y Por Qué?
 

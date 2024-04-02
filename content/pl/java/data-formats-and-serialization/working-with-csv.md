@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Praca z plikami CSV obejmuje odczytywanie z nich danych oraz zapisywanie\
   \ danych do plik\xF3w o warto\u015Bciach oddzielonych przecinkami (CSV), popularnego\u2026"
 title: Praca z plikami CSV
+weight: 37
 ---
-
-{{< edit_this_page >}}
 
 ## Co i dlaczego?
 

@@ -7,9 +7,8 @@ model: gpt-4-1106-preview
 summary: "Comparing dates is about figuring out which of two dates is earlier, later,\
   \ or if they're the same. Programmers do it for organizing events, expiring\u2026"
 title: Comparing two dates
+weight: 27
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 Comparing dates is about figuring out which of two dates is earlier, later, or if they're the same. Programmers do it for organizing events, expiring promotions, scheduling, reminders—basically, anything with a time component.

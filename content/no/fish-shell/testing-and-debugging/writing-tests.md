@@ -11,9 +11,8 @@ summary: "\xC5 skrive tester i Fish Shell inneb\xE6rer \xE5 lage skript som auto
   \ kj\xF8rer koden din for \xE5 validere dens oppf\xF8rsel mot forventede resultater.\
   \ Denne\u2026"
 title: Skrive tester
+weight: 36
 ---
-
-{{< edit_this_page >}}
 
 ## Hva & Hvorfor?
 

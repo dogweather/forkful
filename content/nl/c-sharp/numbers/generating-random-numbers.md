@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Het genereren van willekeurige getallen in C# omvat de creatie van onvoorspelbare\
   \ numerieke waarden binnen een gespecificeerd bereik. Programmeurs\u2026"
 title: Willekeurige getallen genereren
+weight: 12
 ---
-
-{{< edit_this_page >}}
 
 ## Wat & Waarom?
 

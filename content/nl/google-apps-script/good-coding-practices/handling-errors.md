@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Foutafhandeling in Google Apps Script is het voorspellen, vangen en reageren\
   \ op uitzonderingen of fouten die optreden tijdens de uitvoering van een\u2026"
 title: Fouten afhandelen
+weight: 16
 ---
-
-{{< edit_this_page >}}
 
 ## Wat & Waarom?
 

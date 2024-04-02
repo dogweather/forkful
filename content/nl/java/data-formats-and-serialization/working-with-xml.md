@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Werken met XML houdt het parsen, opvragen en manipuleren van XML-documenten\
   \ met Java in. Programmeurs doen dit voor gegevensuitwisseling,\u2026"
 title: Werken met XML
+weight: 40
 ---
-
-{{< edit_this_page >}}
 
 ## Wat & Waarom?
 Werken met XML houdt het parsen, opvragen en manipuleren van XML-documenten met Java in. Programmeurs doen dit voor gegevensuitwisseling, configuratiebeheer, en omdat veel legacy systemen en API's communiceren met behulp van XML.

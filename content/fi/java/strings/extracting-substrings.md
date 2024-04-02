@@ -9,9 +9,8 @@ summary: "Substringit ovat jonoista irrotettuja osia. Ohjelmoijat k\xE4ytt\xE4v\
   t niit\xE4 tiedon k\xE4sittelyyn ja analysointiin - leikaten tarpeelliset palat\
   \ isommasta\u2026"
 title: Merkkijonojen osien poimiminen
+weight: 6
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why? (Mikä & Miksi?)
 Substringit ovat jonoista irrotettuja osia. Ohjelmoijat käyttävät niitä tiedon käsittelyyn ja analysointiin - leikaten tarpeelliset palat isommasta tekstistä.

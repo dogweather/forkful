@@ -9,9 +9,8 @@ summary: "Organizing code into functions means breaking up your code into reusab
   \ chunks, each chunk doing a specific job. Programmers do it to make code easier\
   \ to\u2026"
 title: Organizing code into functions
+weight: 18
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 Organizing code into functions means breaking up your code into reusable chunks, each chunk doing a specific job. Programmers do it to make code easier to read, debug, and reuse. It's like sorting Legos into bins - it saves you from rummaging through a chaotic pile every time you want to build something.

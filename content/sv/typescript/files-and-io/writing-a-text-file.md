@@ -11,9 +11,8 @@ summary: "Att skriva en textfil i TypeScript \xE4r en kritisk f\xE4rdighet f\xF6
   \ datalagring, konfigurationer eller loggenerering. Programmerare utf\xF6r ofta\
   \ denna uppgift\u2026"
 title: Att skriva en textfil
+weight: 24
 ---
-
-{{< edit_this_page >}}
 
 ## Vad & Varför?
 Att skriva en textfil i TypeScript är en kritisk färdighet för datalagring, konfigurationer eller loggenerering. Programmerare utför ofta denna uppgift för att lagra och manipulera data utanför applikationens minne av skäl som dataanalys, rapportering eller helt enkelt att spara användarinställningar över sessioner.

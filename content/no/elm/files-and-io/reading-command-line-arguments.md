@@ -9,9 +9,8 @@ summary: "Kommandolinjeargumenter lar brukere p\xE5virke et programs oppf\xF8rse
   \ ved oppstart. Vi bruker det for \xE5 tilpasse kj\xF8ringen av koden uten \xE5\
   \ endre selve\u2026"
 title: Lese kommandolinjeargumenter
+weight: 23
 ---
-
-{{< edit_this_page >}}
 
 ## Hva & Hvorfor?
 Kommandolinjeargumenter lar brukere påvirke et programs oppførsel ved oppstart. Vi bruker det for å tilpasse kjøringen av koden uten å endre selve programmet.

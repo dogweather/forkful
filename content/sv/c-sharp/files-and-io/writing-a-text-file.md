@@ -10,9 +10,8 @@ model: gpt-4-0125-preview
 summary: "Att skriva en textfil i C# involverar att programmatiskt skapa eller \xE4\
   ndra textfiler i filsystemet - en grundl\xE4ggande uppgift f\xF6r m\xE5nga applikationer,\u2026"
 title: Att skriva en textfil
+weight: 24
 ---
-
-{{< edit_this_page >}}
 
 ## Vad & Varför?
 Att skriva en textfil i C# involverar att programmatiskt skapa eller ändra textfiler i filsystemet - en grundläggande uppgift för många applikationer, såsom loggning, dataexportering eller konfigurationshantering. Programmerare utför denna operation för att bevara data mellan sessioner, dela information över system eller lagra läsbar utdata.

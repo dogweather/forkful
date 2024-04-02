@@ -13,9 +13,8 @@ summary: "Vi\u1EC7c t\u1EA1o m\u1ED9t t\u1EC7p t\u1EA1m th\u1EDDi trong Dart bao
   \ \u0111\xEDch ng\u1EAFn h\u1EA1n, ch\u1EE7 y\u1EBFu d\xF9ng trong c\xE1c t\xEC\
   nh hu\u1ED1ng nh\u01B0 l\u01B0u tr\u1EEF d\u1EEF li\u1EC7u t\u1EA1m\u2026"
 title: "T\u1EA1o m\u1ED9t t\u1EC7p t\u1EA1m th\u1EDDi"
+weight: 21
 ---
-
-{{< edit_this_page >}}
 
 ## Cái gì và Tại sao?
 Việc tạo một tệp tạm thời trong Dart bao gồm việc tạo một tệp được dùng cho mục đích ngắn hạn, chủ yếu dùng trong các tình huống như lưu trữ dữ liệu tạm thời, bộ nhớ tạm thời cho quá trình xử lý tệp, hoặc giữ thông tin quá nhạy cảm để giữ lâu dài. Lập trình viên thực hiện điều này để quản lý dữ liệu không cần lưu trữ vĩnh viễn, từ đó cải thiện hiệu suất và duy trì vệ sinh dữ liệu.

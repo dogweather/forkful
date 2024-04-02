@@ -11,9 +11,8 @@ summary: "HTML:n j\xE4sent\xE4minen tarkoittaa HTML-koodin l\xE4pik\xE4ymist\xE4
   yt\xE4\xE4kseen, poimiakseen tai manipuloidakseen tietoa. Ohjelmoijat tekev\xE4\
   t sit\xE4 vuorovaikuttaakseen\u2026"
 title: "HTML:n j\xE4sennys"
+weight: 43
 ---
-
-{{< edit_this_page >}}
 
 ## Mikä & Miksi?
 

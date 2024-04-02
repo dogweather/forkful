@@ -9,9 +9,8 @@ summary: "String-interpolointi tarkoittaa muuttujien ja ilmaisujen yhdist\xE4mis
   \ merkkijonoihin. Koodareiden arjessa t\xE4m\xE4 on k\xE4yt\xE4nn\xF6llist\xE4,\
   \ sill\xE4 se helpottaa\u2026"
 title: Merkkijonon interpolointi
+weight: 8
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why? - Mitä ja miksi?
 String-interpolointi tarkoittaa muuttujien ja ilmaisujen yhdistämistä merkkijonoihin. Koodareiden arjessa tämä on käytännöllistä, sillä se helpottaa dynaamisten tekstien luomista ja tekee koodista luettavampaa.

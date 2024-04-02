@@ -10,6 +10,7 @@ model: gpt-4-0125-preview
 summary: "Capitalizar una cadena generalmente significa convertir el primer car\xE1\
   cter de una cadena a may\xFAsculas y el resto a min\xFAsculas. Pero a veces puede\u2026"
 title: Capitalizando una cadena de texto
+weight: 2
 ---
 
 ## ¿Qué y Por Qué?

@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Een tekstbestand lezen met Google Apps Script (GAS) omvat het toegang krijgen\
   \ tot en het extraheren van tekstgegevens uit bestanden opgeslagen in Google\u2026"
 title: Een tekstbestand lezen
+weight: 22
 ---
-
-{{< edit_this_page >}}
 
 ## Wat & Waarom?
 

@@ -7,9 +7,8 @@ model: gpt-4-0125-preview
 summary: "Writing tests in PowerShell involves creating scripts that automatically\
   \ validate the functionality of your PowerShell code, ensuring it behaves as\u2026"
 title: Writing tests
+weight: 36
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 

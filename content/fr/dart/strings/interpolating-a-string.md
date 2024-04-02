@@ -11,9 +11,8 @@ summary: "L'interpolation de cha\xEEnes est le processus d'injecter directement 
   \ valeurs de variables dans des cha\xEEnes de caract\xE8res, souvent pour cr\xE9\
   er des\u2026"
 title: "Interpolation d'une cha\xEEne de caract\xE8res"
+weight: 8
 ---
-
-{{< edit_this_page >}}
 
 ## Quoi & Pourquoi ?
 

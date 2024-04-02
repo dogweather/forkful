@@ -8,9 +8,8 @@ model: gpt-4-1106-preview
 summary: "Logging i programmering er som \xE5 holde en dagbok for applikasjonen din.\
   \ Det er den systematiske opptegnelsen av hendelser, meldinger og datapunkter som\u2026"
 title: "Loggf\xF8ring"
+weight: 17
 ---
-
-{{< edit_this_page >}}
 
 ## Hva & Hvorfor?
 Logging i programmering er som å holde en dagbok for applikasjonen din. Det er den systematiske opptegnelsen av hendelser, meldinger og datapunkter som gir deg innsikt i hva applikasjonen din gjør og hvordan den oppfører seg. Kodeutviklere logger fordi det er avgjørende for feilsøking, overvåking av applikasjonshelse og for å få hint om potensielle problemer før de utvikler seg til virkelige utfordringer.

@@ -8,9 +8,8 @@ model: gpt-4-0125-preview
 summary: "Converting a string to lowercase involves transforming all uppercase characters\
   \ in a string to their lowercase equivalents. This process is essential for\u2026"
 title: Converting a string to lower case
+weight: 4
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 

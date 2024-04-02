@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "JSON eller JavaScript Object Notation \xE4r ett l\xE4ttviktigt datautbytesformat,\
   \ vilket g\xF6r det perfekt f\xF6r datalagring eller konfigurationsfiler i Arduino-\u2026"
 title: Arbeta med JSON
+weight: 38
 ---
-
-{{< edit_this_page >}}
 
 ## Vad och varför?
 

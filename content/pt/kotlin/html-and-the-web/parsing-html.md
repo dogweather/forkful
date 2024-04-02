@@ -9,9 +9,8 @@ summary: "Analisar (parsear) HTML \xE9 o processo de converter c\xF3digo HTML em
   \ estrutura de dados compreens\xEDvel para a sua aplica\xE7\xE3o. Programadores\
   \ fazem isso para\u2026"
 title: "An\xE1lise de HTML"
+weight: 43
 ---
-
-{{< edit_this_page >}}
 
 ## O Que & Porquê?
 Analisar (parsear) HTML é o processo de converter código HTML em uma estrutura de dados compreensível para a sua aplicação. Programadores fazem isso para manipular, extrair informações ou interagir com o conteúdo de sites.

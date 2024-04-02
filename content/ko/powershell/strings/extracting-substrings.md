@@ -16,9 +16,8 @@ summary: "\uBB38\uC790\uC5F4\uC5D0\uC11C \uBD80\uBD84 \uBB38\uC790\uC5F4\uC744 \
   \uD574\uD558\uACE0, \uD544\uC694\uD55C \uC815\uBCF4\uB9CC \uACE8\uB77C\uB0B4\uAE30\
   \ \uC704\uD574 \uC774 \uACFC\uC815\uC744 \uC0AC\uC6A9\uD569\uB2C8\uB2E4."
 title: "\uBD80\uBD84 \uBB38\uC790\uC5F4 \uCD94\uCD9C"
+weight: 6
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why? (무엇과 왜?)
 문자열에서 부분 문자열을 추출한다는 건, 큰 문자열 안에서 원하는 작은 조각을 뽑아내는 작업입니다. 코드를 통해 데이터를 분해하고, 필요한 정보만 골라내기 위해 이 과정을 사용합니다.

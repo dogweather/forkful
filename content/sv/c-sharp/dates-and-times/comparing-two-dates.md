@@ -9,9 +9,8 @@ summary: "J\xE4mf\xF6relse av tv\xE5 datum handlar om att se vilket som kommer f
   rst eller hur l\xE5ng tid det \xE4r mellan dem. Programmerare g\xF6r det f\xF6r\
   \ att hantera bokningar,\u2026"
 title: "J\xE4mf\xF6ra tv\xE5 datum"
+weight: 27
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 Jämförelse av två datum handlar om att se vilket som kommer först eller hur lång tid det är mellan dem. Programmerare gör det för att hantera bokningar, tidsfrister eller beräkna tidsintervaller, viktigt för logik som innefattar tid och datum.

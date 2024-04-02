@@ -7,9 +7,8 @@ model: gpt-4-0125-preview
 summary: "Creating a temporary file in Visual Basic for Applications (VBA) involves\
   \ programmatically generating a file for short-term use, typically for data\u2026"
 title: Creating a temporary file
+weight: 21
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 

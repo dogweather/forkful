@@ -20,9 +20,8 @@ summary: "\u0E41\u0E1A\u0E1A\u0E42\u0E15\u0E49\u0E15\u0E2D\u0E1A\u0E2B\u0E23\u0E
   \u0E19\u0E01\u0E32\u0E23\u0E17\u0E14\u0E2A\u0E2D\u0E1A snippets\u2026"
 title: "\u0E01\u0E32\u0E23\u0E43\u0E0A\u0E49 Shell \u0E41\u0E1A\u0E1A\u0E42\u0E15\u0E49\
   \u0E15\u0E2D\u0E1A (REPL)"
+weight: 34
 ---
-
-{{< edit_this_page >}}
 
 ## อะไรและทำไม?
 แบบโต้ตอบหรือ Read-Eval-Print Loop (REPL) ช่วยให้คุณพิมพ์คำสั่ง PowerShell และได้รับผลตอบรับทันที โปรแกรมเมอร์ใช้มันในการทดสอบ snippets ของโค้ดอย่างรวดเร็ว, การดีบัก, หรือเรียนรู้คำสั่งใหม่ๆ โดยไม่ต้องเขียนสคริปต์เต็มรูปแบบ

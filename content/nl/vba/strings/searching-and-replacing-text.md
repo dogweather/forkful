@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Zoeken en vervangen van tekst in Visual Basic for Applications (VBA) is\
   \ essentieel voor het programmatisch bewerken van documenten, spreadsheets en\u2026"
 title: Zoeken en vervangen van tekst
+weight: 10
 ---
-
-{{< edit_this_page >}}
 
 ## Wat & Waarom?
 

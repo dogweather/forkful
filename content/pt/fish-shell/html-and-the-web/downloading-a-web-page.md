@@ -7,9 +7,8 @@ model: gpt-4-1106-preview
 summary: "Baixar uma p\xE1gina da web \xE9, basicamente, capturar todo o conte\xFA\
   do de uma URL para que voc\xEA possa v\xEA-lo offline ou manipul\xE1-lo programaticamente.\u2026"
 title: "Baixando uma p\xE1gina da web"
+weight: 42
 ---
-
-{{< edit_this_page >}}
 
 ## O Que é & Por Que?
 Baixar uma página da web é, basicamente, capturar todo o conteúdo de uma URL para que você possa vê-lo offline ou manipulá-lo programaticamente. Programadores fazem isso para automatizar a coleta de dados, testar aplicações web ou simplesmente arquivar informações.

@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Scrivere un file di testo in Rust comporta la creazione, la scrittura e,\
   \ potenzialmente, l'aggiunta di dati a un file sul file system. I programmatori\u2026"
 title: Scrivere un file di testo
+weight: 24
 ---
-
-{{< edit_this_page >}}
 
 ## Cosa & Perché?
 Scrivere un file di testo in Rust comporta la creazione, la scrittura e, potenzialmente, l'aggiunta di dati a un file sul file system. I programmatori eseguono questa operazione per rendere persistenti i dati, come log delle applicazioni, configurazioni o contenuti generati dagli utenti, garantendo la durata dei dati oltre l'ambito dell'esecuzione del programma.

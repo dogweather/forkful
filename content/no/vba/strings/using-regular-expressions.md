@@ -11,9 +11,8 @@ summary: "Regul\xE6re uttrykk (regex) i Visual Basic for Applications (VBA) tilb
   \ en kraftfull m\xE5te \xE5 s\xF8ke, matche og manipulere strenger p\xE5. Programmerere\
   \ bruker dem\u2026"
 title: "Bruke regul\xE6re uttrykk"
+weight: 11
 ---
-
-{{< edit_this_page >}}
 
 ## Hva & Hvorfor?
 

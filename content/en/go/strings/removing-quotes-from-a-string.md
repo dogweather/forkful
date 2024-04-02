@@ -9,9 +9,8 @@ summary: "Removing quotes from a string in Go is about eliminating the leading a
   \ trailing quotation marks (`\"` or `'`) from a given string. Programmers often\
   \ need\u2026"
 title: Removing quotes from a string
+weight: 9
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 

@@ -11,9 +11,8 @@ summary: "Tekens verwijderen die overeenkomen met een specifiek patroon in Visua
   \ Basic for Applications (VBA) omvat het identificeren en vervolgens verwijderen\
   \ van\u2026"
 title: Karakters Verwijderen die Overeenkomen met een Patroon
+weight: 5
 ---
-
-{{< edit_this_page >}}
 
 ## Wat & Waarom?
 

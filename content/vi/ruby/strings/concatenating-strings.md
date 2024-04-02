@@ -13,9 +13,8 @@ summary: "N\u1ED1i chu\u1ED7i ch\u1EC9 l\xE0 c\xE1ch n\xF3i c\u1EA7u k\u1EF3 c\u
   \u1EBFn cu\u1ED1i'. C\xE1c l\u1EADp tr\xECnh vi\xEAn l\xE0m \u0111i\u1EC1u n\xE0\
   y \u0111\u1EC3 k\u1EBFt h\u1EE3p t\u1EEB v\xE0 c\xE2u, x\xE2y d\u1EF1ng th\xF4ng\u2026"
 title: "N\u1ED1i chu\u1ED7i k\xFD t\u1EF1"
+weight: 3
 ---
-
-{{< edit_this_page >}}
 
 ## Gì và Tại sao?
 Nối chuỗi chỉ là cách nói cầu kỳ của việc 'ghép chúng lại với nhau từ đầu đến cuối'. Các lập trình viên làm điều này để kết hợp từ và câu, xây dựng thông điệp, hoặc để chèn động các giá trị vào văn bản.

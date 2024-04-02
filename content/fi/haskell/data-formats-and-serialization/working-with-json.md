@@ -11,9 +11,8 @@ summary: "JSONin (JavaScript Object Notation) k\xE4sittely Haskellissa sis\xE4lt
   \xE4 JSON-datan j\xE4sent\xE4misen Haskell-tyypeiksi ja Haskell-tyyppien muuntamisen\
   \ takaisin\u2026"
 title: "Ty\xF6skentely JSON:n kanssa"
+weight: 38
 ---
-
-{{< edit_this_page >}}
 
 ## Mikä & Miksi?
 JSONin (JavaScript Object Notation) käsittely Haskellissa sisältää JSON-datan jäsentämisen Haskell-tyypeiksi ja Haskell-tyyppien muuntamisen takaisin JSONiksi. Ohjelmoijat tekevät näin, jotta heidän Haskell-sovelluksensa voivat vaihtaa tietoja verkkopalveluiden tai API:en kanssa saumattomasti, mikä on nykyaikaisessa ohjelmistokehityksessä yleinen käytäntö alustojen välisessä datan vaihdossa.

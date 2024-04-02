@@ -21,9 +21,8 @@ summary: "XML\uC744 \uB2E4\uB8E8\uB294 \uAC83\uC740 \uB370\uC774\uD130 \uC800\uC
   \ \uB808\uAC70\uC2DC \uC9C0\uC6D0 \uBC0F \uAE30\uC874 \uAE30\uC220\uACFC\uC758 \uD1B5\
   \uD569\uC744 \uC704\uD574\u2026"
 title: "XML \uB2E4\uB8E8\uAE30"
+weight: 40
 ---
-
-{{< edit_this_page >}}
 
 ## 무엇과 왜?
 XML을 다루는 것은 데이터 저장 및 전송을 위한 마크업 언어인 XML 문서를 파싱하고, 생성하고, 조작하는 것을 포함합니다. 프로그래머들이 이를 수행하는 이유는 많은 시스템들이 여전히 XML 형식으로 데이터를 교환하고 있으며, 이는 레거시 지원 및 기존 기술과의 통합을 위해 필요합니다.

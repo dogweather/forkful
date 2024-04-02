@@ -9,9 +9,8 @@ summary: "F\xF6rest\xE4ll dig att du precis har uppt\xE4ckt att du beh\xF6ver g\
   ra en massuppdatering av flera konfigurationsfiler som ligger p\xE5 din server.\
   \ Du skulle kunna\u2026"
 title: "Redigera filer p\xE5 plats med kommandoradsenradare"
+weight: 32
 ---
-
-{{< edit_this_page >}}
 
 ## Vad & Varför?
 

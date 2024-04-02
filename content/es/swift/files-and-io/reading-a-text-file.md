@@ -7,9 +7,8 @@ model: gpt-4-1106-preview
 summary: "Leer un archivo de texto en Swift es obtener su contenido para usarlo dentro\
   \ de tu app o script. Los programadores lo hacen para acceder a datos,\u2026"
 title: Lectura de un archivo de texto
+weight: 22
 ---
-
-{{< edit_this_page >}}
 
 ## Qué y Por Qué?
 Leer un archivo de texto en Swift es obtener su contenido para usarlo dentro de tu app o script. Los programadores lo hacen para acceder a datos, configuraciones, o simplemente para mostrar información al usuario.

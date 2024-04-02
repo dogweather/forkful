@@ -8,9 +8,8 @@ model: gpt-4-0125-preview
 summary: "Trabalhar com TOML significa que voc\xEA est\xE1 manipulando dados em um\
   \ formato Minimal \"Tom's Obvious, Minimal Language\", popular para arquivos de\u2026"
 title: Trabalhando com TOML
+weight: 39
 ---
-
-{{< edit_this_page >}}
 
 ## O Quê & Porquê?
 Trabalhar com TOML significa que você está manipulando dados em um formato Minimal "Tom's Obvious, Minimal Language", popular para arquivos de configuração devido à sua facilidade de leitura. Programadores o utilizam para gerenciamento de configuração direto e simples que funciona imediatamente com uma sintaxe amigável para humanos.

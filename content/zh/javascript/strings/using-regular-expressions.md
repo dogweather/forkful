@@ -17,9 +17,8 @@ summary: "\u5728JavaScript\u4E2D\uFF0C\u6B63\u5219\u8868\u8FBE\u5F0F\uFF08regex\
   \u6D01\u7684\u4EE3\u7801\u6267\u884C\u5F3A\u5927\u7684\u5B57\u7B26\u4E32\u5904\u7406\
   \u64CD\u4F5C\u3002"
 title: "\u4F7F\u7528\u6B63\u5219\u8868\u8FBE\u5F0F"
+weight: 11
 ---
-
-{{< edit_this_page >}}
 
 ## 何为正则表达式? 为什么使用它们?
 

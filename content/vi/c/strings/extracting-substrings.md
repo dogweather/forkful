@@ -13,9 +13,8 @@ summary: "Trong C, vi\u1EC7c tr\xEDch xu\u1EA5t c\xE1c chu\u1ED7i con bao g\u1ED
   \ m\u1ED9t chu\u1ED7i l\u1EDBn h\u01A1n d\u1EF1a tr\xEAn c\xE1c ti\xEAu ch\xED c\u1EE5\
   \ th\u1EC3, nh\u01B0 v\u1ECB tr\xED v\xE0 \u0111\u1ED9\u2026"
 title: "Tr\xEDch xu\u1EA5t chu\u1ED7i con"
+weight: 6
 ---
-
-{{< edit_this_page >}}
 
 ## Cái gì & Tại sao?
 

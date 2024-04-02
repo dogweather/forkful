@@ -7,9 +7,8 @@ model: gpt-4-0125-preview
 summary: "Komplexe Zahlen haben einen Realteil und einen Imagin\xE4rteil, \xFCblicherweise\
   \ geschrieben als `a + bi`. Sie sind entscheidend in fortgeschrittener\u2026"
 title: Umgang mit komplexen Zahlen
+weight: 14
 ---
-
-{{< edit_this_page >}}
 
 ## Was & Warum?
 Komplexe Zahlen haben einen Realteil und einen Imaginärteil, üblicherweise geschrieben als `a + bi`. Sie sind entscheidend in fortgeschrittener Mathematik, Physik, Ingenieurwissenschaften und bestimmten Computer-Algorithmen. Programmierer arbeiten mit ihnen, um Berechnungen zu bewältigen, die Wurzeln aus negativen Zahlen und oszillierende Funktionen beinhalten.

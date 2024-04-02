@@ -7,9 +7,8 @@ model: gpt-4-1106-preview
 summary: "Concatenating strings means sticking them together end-to-end to make a\
   \ new string. It's handy for creating custom messages, building up text for output,\u2026"
 title: Concatenating strings
+weight: 3
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 

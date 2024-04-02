@@ -8,9 +8,8 @@ model: gpt-4-1106-preview
 summary: "Fehlerbehandlung erm\xF6glicht es Ihrem Skript, sich anmutig mit dem Unerwarteten\
   \ auseinanderzusetzen. Wir tun dies, um Fehler zu verwalten, ohne das Haar\u2026"
 title: Fehlerbehandlung
+weight: 16
 ---
-
-{{< edit_this_page >}}
 
 ## Was & Warum?
 Fehlerbehandlung ermöglicht es Ihrem Skript, sich anmutig mit dem Unerwarteten auseinanderzusetzen. Wir tun dies, um Fehler zu verwalten, ohne das Haar unserer Benutzer ergrauen zu lassen.

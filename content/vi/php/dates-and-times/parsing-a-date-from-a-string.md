@@ -13,9 +13,8 @@ summary: "Ph\xE2n t\xEDch c\xFA ph\xE1p m\u1ED9t ng\xE0y t\u1EEB m\u1ED9t chu\u1
   n cho ng\xE0y v\xE0 gi\u1EDD th\xE0nh m\u1ED9t \u0111\u1ECBnh d\u1EA1ng c\xF3 th\u1EC3\
   \ l\u1EADp tr\xECnh \u0111\u01B0\u1EE3c. L\u1EADp tr\xECnh vi\xEAn l\xE0m\u2026"
 title: "Ph\xE2n t\xEDch ng\xE0y t\u1EEB chu\u1ED7i k\xED t\u1EF1"
+weight: 30
 ---
-
-{{< edit_this_page >}}
 
 ## Cái gì & Tại sao?
 Phân tích cú pháp một ngày từ một chuỗi nghĩa là chuyển đổi văn bản đại diện cho ngày và giờ thành một định dạng có thể lập trình được. Lập trình viên làm điều này để thao tác với ngày tháng, so sánh chúng, hoặc lưu trữ chúng vào cơ sở dữ liệu một cách hiệu quả.

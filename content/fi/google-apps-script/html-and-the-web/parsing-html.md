@@ -11,9 +11,8 @@ summary: "HTML:n j\xE4sent\xE4minen Google Apps Scriptiss\xE4 tarkoittaa tietoje
   \ poimimista HTML-sis\xE4ll\xF6st\xE4, mik\xE4 on erityisen hy\xF6dyllist\xE4, kun\
   \ toimitaan verkkosivujen tai\u2026"
 title: "HTML:n j\xE4sent\xE4minen"
+weight: 43
 ---
-
-{{< edit_this_page >}}
 
 ## Mikä & Miksi?
 HTML:n jäsentäminen Google Apps Scriptissä tarkoittaa tietojen poimimista HTML-sisällöstä, mikä on erityisen hyödyllistä, kun toimitaan verkkosivujen tai web-pohjaisten tietolähteiden kanssa. Ohjelmoijat tekevät tätä automatisoidakseen datan keräämistä, manipuloidakseen web-sisältöä tai integroidakseen web-toiminnallisuuksia Googlen sovellusten, kuten Sheets ja Docs, kanssa.

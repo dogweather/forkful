@@ -21,9 +21,8 @@ summary: "JSON\uFF0C\u5373JavaScript\u5BF9\u8C61\u8868\u793A\u6CD5\uFF0C\u662F\u
   \u65E0\u5173\u6027\uFF0C\u4F7F\u5F97\u5B83\u6210\u4E3A\u73B0\u4EE3Web\u5F00\u53D1\
   \u548CAPIs\u4E2D\u7684\u57FA\u77F3\u3002"
 title: "\u4F7F\u7528JSON\u8FDB\u884C\u7F16\u7A0B"
+weight: 38
 ---
-
-{{< edit_this_page >}}
 
 ## 什么 & 为什么？
 JSON，即JavaScript对象表示法，是一种轻量级的数据交换格式，它对人类来说易于读写，对机器来说易于解析和生成。程序员常常使用JSON在服务器和Web应用程序之间交换数据，因为它的简单性和语言无关性，使得它成为现代Web开发和APIs中的基石。

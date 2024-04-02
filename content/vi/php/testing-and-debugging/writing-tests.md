@@ -15,9 +15,8 @@ summary: "Ki\u1EC3m th\u1EED \u0111\u1EA3m b\u1EA3o m\xE3 c\u1EE7a b\u1EA1n ho\u
   \u1EA3m b\u1EA3o c\xE1c thay \u0111\u1ED5i m\xE3 kh\xF4ng l\xE0m h\u1ECFng m\u1ECD\
   i\u2026"
 title: "Vi\u1EBFt c\xE1c b\xE0i ki\u1EC3m tra"
+weight: 36
 ---
-
-{{< edit_this_page >}}
 
 ## Cái gì & Tại sao?
 Kiểm thử đảm bảo mã của bạn hoạt động như mong đợi. Nó giúp tiết kiệm thời gian bằng cách phát hiện lỗi sớm và đảm bảo các thay đổi mã không làm hỏng mọi thứ.

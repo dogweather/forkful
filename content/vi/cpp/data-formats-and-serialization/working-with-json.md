@@ -13,9 +13,8 @@ summary: "L\xE0m vi\u1EC7c v\u1EDBi JSON (JavaScript Object Notation) trong C++ 
   u v\u0103n b\u1EA3n \u0111\u01B0\u1EE3c \u0111\u1ECBnh d\u1EA1ng nh\u01B0 l\xE0\
   \ JSON. L\u1EADp tr\xECnh vi\xEAn\u2026"
 title: "L\xE0m vi\u1EC7c v\u1EDBi JSON"
+weight: 38
 ---
-
-{{< edit_this_page >}}
 
 ## Gì và Tại sao?
 

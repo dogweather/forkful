@@ -1,12 +1,13 @@
 ---
 date: 2024-01-26 03:48:50.858891-07:00
-description: "Das Debuggen in Elm beinhaltet das Identifizieren und Entfernen von\
-  \ Fehlern aus Ihrem Code. Programmierer machen das, um sicherzustellen, dass ihre\u2026"
+description: "Elm hat keinen eingebauten Debugger im traditionellen Sinn, wie es beispielsweise\
+  \ JavaScript mit Browser-Entwicklertools tut. Jedoch hat die Elm-Community\u2026"
 lastmod: '2024-03-13T22:44:53.809479-06:00'
 model: gpt-4-0125-preview
-summary: "Das Debuggen in Elm beinhaltet das Identifizieren und Entfernen von Fehlern\
-  \ aus Ihrem Code. Programmierer machen das, um sicherzustellen, dass ihre\u2026"
+summary: "Elm hat keinen eingebauten Debugger im traditionellen Sinn, wie es beispielsweise\
+  \ JavaScript mit Browser-Entwicklertools tut. Jedoch hat die Elm-Community\u2026"
 title: Einsatz eines Debuggers
+weight: 35
 ---
 
 ## Wie:

@@ -9,9 +9,8 @@ summary: "Felhantering handlar om att hantera det ov\xE4ntade i program - som en
   \ som hanterar br\xE5kstakar. Programmerare f\xF6redrar n\xE4r allt flyter p\xE5\
   ;\u2026"
 title: Hantering av fel
+weight: 16
 ---
-
-{{< edit_this_page >}}
 
 ## Vad & Varför?
 Felhantering handlar om att hantera det oväntade i program - som en ordningsvakt som hanterar bråkstakar. Programmerare föredrar när allt flyter på; felhantering hjälper till att hålla problemen i schack, så att deras kod inte snubblar och faller när det oväntade inträffar.

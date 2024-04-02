@@ -21,9 +21,8 @@ summary: "Bash\uC5D0\uC11C \uD604\uC7AC \uB0A0\uC9DC\uB97C \uAC80\uC0C9\uD558\uB
   \ \uCD94\uC801\uD558\uAE30 \uC704\uD574 \uC2DC\uC2A4\uD15C \uC815\uBCF4 \uC2A4\uD06C\
   \uB9BD\uD2B8\uC758 \uC77C\uBD80\uB85C \uC0AC\uC6A9\uD569\uB2C8\uB2E4."
 title: "\uD604\uC7AC \uB0A0\uC9DC \uAC00\uC838\uC624\uAE30"
+weight: 29
 ---
-
-{{< edit_this_page >}}
 
 ## 무엇 & 왜?
 Bash에서 현재 날짜를 검색하는 것은 다양한 형식으로 날짜와 시간을 표시하는 내장 명령을 사용하는 것을 포함합니다. 프로그래머들은 이 기능을 로그 타임스탬핑, 작업 예약 또는 수행된 동작을 추적하기 위해 시스템 정보 스크립트의 일부로 사용합니다.

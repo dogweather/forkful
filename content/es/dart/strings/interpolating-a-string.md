@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "La interpolaci\xF3n de cadenas es el proceso de inyectar valores de variables\
   \ directamente en cadenas de texto, a menudo para crear mensajes significativos\u2026"
 title: Interpolando una cadena de texto
+weight: 8
 ---
-
-{{< edit_this_page >}}
 
 ## ¿Qué y por qué?
 

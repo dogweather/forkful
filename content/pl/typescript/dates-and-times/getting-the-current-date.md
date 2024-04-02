@@ -11,9 +11,8 @@ summary: "Pobieranie bie\u017C\u0105cej daty w TypeScript, j\u0119zyku opartym n
   \ JavaScript, pozwala na dost\u0119p i manipulacj\u0119 bie\u017C\u0105cymi informacjami\
   \ o dacie i czasie. Programi\u015Bci\u2026"
 title: Pobieranie aktualnej daty
+weight: 29
 ---
-
-{{< edit_this_page >}}
 
 ## Co i Dlaczego?
 Pobieranie bieżącej daty w TypeScript, języku opartym na JavaScript, pozwala na dostęp i manipulację bieżącymi informacjami o dacie i czasie. Programiści często potrzebują tej funkcjonalności do tworzenia znaczników czasu, planowania i innych funkcji związanych z czasem w swoich aplikacjach.

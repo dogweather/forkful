@@ -19,9 +19,8 @@ summary: "Ruby\u4E2D\u7684\u6B63\u5219\u8868\u8FBE\u5F0F\uFF08regex\uFF09\u662F\
   \u7B26\u4E32\u64CD\u4F5C\u7B49\u4EFB\u52A1\uFF0C\u4F7F\u5176\u6210\u4E3A\u6587\u672C\
   \u5904\u7406\u4E2D\u4E0D\u53EF\u6216\u7F3A\u7684\u5DE5\u5177\u3002"
 title: "\u4F7F\u7528\u6B63\u5219\u8868\u8FBE\u5F0F"
+weight: 11
 ---
-
-{{< edit_this_page >}}
 
 ## 什么 & 为什么？
 Ruby中的正则表达式（regex）是用于匹配字符串中字符组合的模式，使得开发者能够高效地搜索、匹配和操作文本。程序员使用正则表达式完成如验证、解析和字符串操作等任务，使其成为文本处理中不可或缺的工具。

@@ -13,9 +13,8 @@ summary: "L\u1ED7i ti\xEAu chu\u1EA9n (stderr) l\xE0 m\u1ED9t lu\u1ED3ng n\u01A1
   a m\xECnh. L\u1EADp tr\xECnh vi\xEAn s\u1EED d\u1EE5ng n\xF3 \u0111\u1EC3 t\xE1\
   ch bi\u1EC7t nh\u1EADt k\xFD l\u1ED7i kh\u1ECFi \u0111\u1EA7u ra\u2026"
 title: "Ghi v\xE0o l\u1ED7i chu\u1EA9n"
+weight: 25
 ---
-
-{{< edit_this_page >}}
 
 ## Gì và Tại sao?
 Lỗi tiêu chuẩn (stderr) là một luồng nơi mà chương trình viết các thông báo lỗi của mình. Lập trình viên sử dụng nó để tách biệt nhật ký lỗi khỏi đầu ra tiêu chuẩn (stdout) nhằm gỡ lỗi hiệu quả hơn và tổ chức nhật ký một cách thuận tiện.

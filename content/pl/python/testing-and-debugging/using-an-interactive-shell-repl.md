@@ -9,9 +9,8 @@ summary: "REPL, czyli P\u0119tla Czytaj-Wykonaj-Drukuj, to \u015Brodowisko progr
   \ kt\xF3re przyjmuje pojedyncze wej\u015Bcia od u\u017Cytkownika, wykonuje je i\
   \ zwraca wynik\u2026"
 title: Korzystanie z interaktywnego shella (REPL)
+weight: 34
 ---
-
-{{< edit_this_page >}}
 
 ## Co i dlaczego?
 REPL, czyli Pętla Czytaj-Wykonaj-Drukuj, to środowisko programistyczne, które przyjmuje pojedyncze wejścia od użytkownika, wykonuje je i zwraca wynik użytkownikowi. Programiści używają go do szybkich testów, nauki, debugowania, czy wykonania obliczeń "na bieżąco".

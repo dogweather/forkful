@@ -11,9 +11,8 @@ summary: "Pisanie test\xF3w w Bashu obejmuje tworzenie skrypt\xF3w testowych w c
   \ weryfikacji funkcjonalno\u015Bci twoich skrypt\xF3w Bash. Programi\u015Bci przeprowadzaj\u0105\
   \ testy,\u2026"
 title: "Pisanie test\xF3w"
+weight: 36
 ---
-
-{{< edit_this_page >}}
 
 ## Co i dlaczego?
 Pisanie testów w Bashu obejmuje tworzenie skryptów testowych w celu weryfikacji funkcjonalności twoich skryptów Bash. Programiści przeprowadzają testy, aby upewnić się, że ich skrypty działają zgodnie z oczekiwaniami w różnych warunkach, wyławiając błędy i usterki przed wdrożeniem.

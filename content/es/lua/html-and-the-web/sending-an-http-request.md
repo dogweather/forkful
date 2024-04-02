@@ -7,9 +7,8 @@ model: gpt-4-1106-preview
 summary: "Enviar una solicitud HTTP significa pedirle a un servidor web que comparta\
   \ datos o que reciba los tuyos. Los programadores lo hacen para interactuar con\u2026"
 title: Enviando una solicitud http
+weight: 44
 ---
-
-{{< edit_this_page >}}
 
 ## ¿Qué y Por Qué?
 Enviar una solicitud HTTP significa pedirle a un servidor web que comparta datos o que reciba los tuyos. Los programadores lo hacen para interactuar con APIs, servicios web y para automatizar tareas a través de internet.

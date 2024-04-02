@@ -8,9 +8,8 @@ model: gpt-4-1106-preview
 summary: "Iniciar un nuevo proyecto es simplemente comenzar desde cero con una idea\
   \ nueva o una soluci\xF3n. Los programadores lo hacen para convertir ideas en\u2026"
 title: Iniciando un nuevo proyecto
+weight: 1
 ---
-
-{{< edit_this_page >}}
 
 ## ¿Qué y por qué?
 

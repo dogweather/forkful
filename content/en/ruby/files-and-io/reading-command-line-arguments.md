@@ -8,9 +8,8 @@ model: gpt-4-1106-preview
 summary: "Reading command-line arguments in Ruby allows scripts to take input right\
   \ when they're run, like configuring options or passing data. Programmers use them\u2026"
 title: Reading command line arguments
+weight: 23
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 Reading command-line arguments in Ruby allows scripts to take input right when they're run, like configuring options or passing data. Programmers use them to make scripts dynamic and adaptable without hardcoding values.

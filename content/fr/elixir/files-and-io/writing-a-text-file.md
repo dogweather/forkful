@@ -11,9 +11,8 @@ summary: "\xC9crire dans un fichier texte avec Elixir est une comp\xE9tence esse
   \ pour les d\xE9veloppeurs, permettant la persistance des donn\xE9es, le journalisation\
   \ ou\u2026"
 title: "R\xE9diger un fichier texte"
+weight: 24
 ---
-
-{{< edit_this_page >}}
 
 ## Quoi & Pourquoi ?
 

@@ -9,9 +9,8 @@ summary: "Manipulering av filer med CLI (kommandolinjegrensesnitt) en-linjers ko
   \ involverer bruk av Bash-skript eller kommandoer for \xE5 utf\xF8re handlinger\
   \ p\xE5\u2026"
 title: Manipulering av filer med CLI-enkeltkommandoer
+weight: 31
 ---
-
-{{< edit_this_page >}}
 
 ## Hva og hvorfor?
 

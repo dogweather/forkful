@@ -14,9 +14,8 @@ summary: "\u5F00\u59CB\u65B0\u9879\u76EE\u5C31\u662F\u521B\u5EFA\u4E00\u4E2A\u51
   \u65B0\u95EE\u9898\uFF0C\u5C1D\u8BD5\u521B\u610F\uFF0C\u6216\u8005\u54CD\u5E94\u5E02\
   \u573A\u9700\u6C42\u3002"
 title: "\u5F00\u59CB\u4E00\u4E2A\u65B0\u9879\u76EE"
+weight: 1
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why? (是什么？为什么？)
 开始新项目就是创建一个全新的编程环境，为开发软件打下基础。程序员这么做是为了解决新问题，尝试创意，或者响应市场需求。

@@ -13,9 +13,8 @@ summary: "\uCF54\uB529 \uC911 \uC624\uB958 \uCC98\uB9AC\uB294 \uC608\uAE30\uCE58
   \ \uC218 \uC788\uB3C4\uB85D \uC77C\uC774 \uC798\uBABB\uB418\uC5C8\uC744 \uB54C\uB97C\
   \ \uACC4\uD68D\uD558\uB294 \uC608\uC220\uC785\uB2C8\uB2E4."
 title: "\uC5D0\uB7EC \uCC98\uB9AC\uD558\uAE30"
+weight: 16
 ---
-
-{{< edit_this_page >}}
 
 ## 무엇 & 왜?
 코딩 중 오류 처리는 예기치 못한 상황을 예상하는 것입니다. 이는 프로그램이 원활하게 실행될 수 있도록 일이 잘못되었을 때를 계획하는 예술입니다.

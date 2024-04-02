@@ -9,9 +9,8 @@ summary: "Omforming av strenger til sm\xE5 bokstaver betyr \xE5 konvertere alle 
   \ i en streng til deres tilsvarende sm\xE5 bokstavform. Programmerere gj\xF8r dette\
   \ for data-\u2026"
 title: "Konvertere en streng til sm\xE5 bokstaver"
+weight: 4
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 Omforming av strenger til små bokstaver betyr å konvertere alle tegn i en streng til deres tilsvarende små bokstavform. Programmerere gjør dette for data-normalisering, å forenkle sammenligninger og søk, eller å oppfylle brukerkrav.

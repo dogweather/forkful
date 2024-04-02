@@ -9,9 +9,8 @@ summary: "Los n\xFAmeros complejos tienen una parte real y una parte imaginaria,
   \ son cruciales en varios campos como la ingenier\xEDa, f\xEDsica y gr\xE1ficos\
   \ por\u2026"
 title: "Trabajando con n\xFAmeros complejos"
+weight: 14
 ---
-
-{{< edit_this_page >}}
 
 ## ¿Qué y por qué?
 Los números complejos tienen una parte real y una parte imaginaria, y son cruciales en varios campos como la ingeniería, física y gráficos por computadora. Los programadores los usan para resolver ecuaciones que los números reales ordinarios no pueden manejar.

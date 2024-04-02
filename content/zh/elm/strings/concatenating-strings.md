@@ -14,9 +14,8 @@ summary: "\u5B57\u7B26\u4E32\u62FC\u63A5\u5C31\u662F\u5C06\u4E24\u4E2A\u6216\u59
   \u6761\u4FE1\u606F\uFF0C\u4F8B\u5982\u663E\u793A\u4E00\u6761\u6B22\u8FCE\u6D88\u606F\
   \u6216\u521B\u5EFA\u4E00\u4E2A\u6587\u4EF6\u8DEF\u5F84\u3002"
 title: "\u5B57\u7B26\u4E32\u62FC\u63A5"
+weight: 3
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why? (是什么以及为什么？)
 字符串拼接就是将两个或多个字符串合并成一个。程序员经常这么做，因为他们需要构建一条信息，例如显示一条欢迎消息或创建一个文件路径。

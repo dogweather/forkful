@@ -23,9 +23,8 @@ summary: "Google Apps Script\uC5D0\uC11C\uC758 \uC624\uB958 \uCC98\uB9AC\uB294 \
   \uD654\uC801\uC778 \uC560\uD50C\uB9AC\uCF00\uC774\uC158\uC744 \uBCF4\uC7A5\uD558\
   \uACE0,\u2026"
 title: "\uC624\uB958 \uCC98\uB9AC\uD558\uAE30"
+weight: 16
 ---
-
-{{< edit_this_page >}}
 
 ## 무엇이며 왜인가?
 

@@ -11,9 +11,8 @@ summary: "HTML:n j\xE4sent\xE4minen tarkoittaa merkint\xE4kielen l\xE4pik\xE4ynt
   \ tietojen, kuten tekstin, linkkien tai muiden elementtien, poimimiseksi. Teemme\
   \ sen\u2026"
 title: "HTML:n j\xE4sennys"
+weight: 43
 ---
-
-{{< edit_this_page >}}
 
 ## Mitä & Miksi?
 

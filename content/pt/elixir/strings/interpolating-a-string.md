@@ -7,9 +7,8 @@ model: gpt-4-1106-preview
 summary: "Interpolar uma string em Elixir significa inserir valores de vari\xE1veis\
   \ ou express\xF5es diretamente dentro dela. Programadores fazem isso para compor\u2026"
 title: Interpolando uma string
+weight: 8
 ---
-
-{{< edit_this_page >}}
 
 ## O Que & Porquê?
 Interpolar uma string em Elixir significa inserir valores de variáveis ou expressões diretamente dentro dela. Programadores fazem isso para compor mensagens dinâmicas ou construir strings complexas de maneira legível e eficiente.

@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Assoziative Arrays sind wie aufgeladene Arrays, die es Ihnen erlauben, Strings\
   \ als Indizes anstelle von nur Ganzzahlen zu verwenden. Programmierer nutzen\u2026"
 title: Verwendung von assoziativen Arrays
+weight: 15
 ---
-
-{{< edit_this_page >}}
 
 ## Was & Warum?
 

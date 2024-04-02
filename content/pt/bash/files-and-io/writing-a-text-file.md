@@ -11,9 +11,8 @@ summary: "Escrever um arquivo de texto em Bash permite automatizar o armazenamen
   \ de dados, registro, configura\xE7\xF5es e muito mais. \xC9 uma habilidade fundamental\
   \ para\u2026"
 title: Escrevendo um arquivo de texto
+weight: 24
 ---
-
-{{< edit_this_page >}}
 
 ## O Que & Por Quê?
 

@@ -9,9 +9,8 @@ summary: "HTTP-pyynn\xF6n l\xE4hett\xE4minen on tapa saada tai l\xE4hett\xE4\xE4
   \ verkossa toimivien palvelimien v\xE4lill\xE4. Ohjelmoijat k\xE4ytt\xE4v\xE4t sit\xE4\
   \ dataa vaihtaakseen, API:hin\u2026"
 title: "HTTP-pyynn\xF6n l\xE4hett\xE4minen"
+weight: 44
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 HTTP-pyynnön lähettäminen on tapa saada tai lähettää tietoa verkossa toimivien palvelimien välillä. Ohjelmoijat käyttävät sitä dataa vaihtaakseen, API:hin kytkeytyäkseen tai verkkopalveluja kuluttaakseen.

@@ -7,9 +7,8 @@ model: gpt-4-0125-preview
 summary: "Komplekse tall utvider ideen om en-dimensjonale tallinjer til et todimensjonalt\
   \ komplekst plan. Programmerere bruker dem innen felt som ingeni\xF8rvitenskap,\u2026"
 title: "\xC5 jobbe med komplekse tall"
+weight: 14
 ---
-
-{{< edit_this_page >}}
 
 ## Hva & Hvorfor?
 Komplekse tall utvider ideen om en-dimensjonale tallinjer til et todimensjonalt komplekst plan. Programmerere bruker dem innen felt som ingeniørvitenskap, fysikk og grafikk for beregninger som krever to komponenter, som signaler eller rotasjoner.

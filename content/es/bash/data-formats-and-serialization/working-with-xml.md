@@ -7,9 +7,8 @@ model: gpt-4-0125-preview
 summary: "Trabajar con XML implica analizar, extraer y manipular datos en el formato\
   \ de Lenguaje de Marcado Extensible. Los programadores luchan con XML ya que es\u2026"
 title: Trabajando con XML
+weight: 40
 ---
-
-{{< edit_this_page >}}
 
 ## Qué y Por Qué?
 Trabajar con XML implica analizar, extraer y manipular datos en el formato de Lenguaje de Marcado Extensible. Los programadores luchan con XML ya que es un formato de intercambio de datos muy extendido para configuraciones, APIs y más.

@@ -9,9 +9,8 @@ summary: "Wys\u0142anie \u017C\u0105dania HTTP z podstawow\u0105 autentykacj\u01
   \ to proces zdalnego zapytania serwera z logowaniem (nazwa u\u017Cytkownika i has\u0142\
   o). Programi\u015Bci robi\u0105 to, by\u2026"
 title: "Wysy\u0142anie zapytania http z podstawow\u0105 autoryzacj\u0105"
+weight: 45
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why? (Co i Dlaczego?)
 Wysłanie żądania HTTP z podstawową autentykacją to proces zdalnego zapytania serwera z logowaniem (nazwa użytkownika i hasło). Programiści robią to, by uzyskać dostęp do chronionych zasobów lub usług webowych.

@@ -10,9 +10,8 @@ model: gpt-4-0125-preview
 summary: "Rimuovere le virgolette da una stringa in Dart comporta l'eliminazione dei\
   \ segni di virgolettatura doppi (\") o singoli (') dall'inizio e dalla fine di una\u2026"
 title: Rimuovere le virgolette da una stringa
+weight: 9
 ---
-
-{{< edit_this_page >}}
 
 ## Cosa e perché?
 Rimuovere le virgolette da una stringa in Dart comporta l'eliminazione dei segni di virgolettatura doppi (") o singoli (') dall'inizio e dalla fine di una stringa, utile per la pulizia dei dati o per preparare le stringhe per un ulteriore elaborazione. I programmatori lo fanno per normalizzare gli input dei dati, garantire l'uniformità nella memorizzazione dei dati o quando si interfacciano con API che possono restituire dati in formati quotati.

@@ -13,9 +13,8 @@ summary: "Trong l\u1EADp tr\xECnh, vi\u1EC7c l\u1EA5y ng\xE0y th\xE1ng hi\u1EC7n
   u. N\xF3 r\u1EA5t h\u1EEFu \xEDch cho vi\u1EC7c \u0111\xE1nh d\u1EA5u th\u1EDDi\
   \ gian, l\u1EADp l\u1ECBch, ho\u1EB7c ch\u1EC9\u2026"
 title: "L\u1EA5y ng\xE0y hi\u1EC7n t\u1EA1i"
+weight: 29
 ---
-
-{{< edit_this_page >}}
 
 ## **Cái gì & Tại sao?**
 

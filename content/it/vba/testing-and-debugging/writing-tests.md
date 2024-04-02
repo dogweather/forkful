@@ -10,9 +10,8 @@ model: gpt-4-0125-preview
 summary: "Scrivere test nella programmazione comporta la creazione di procedure specifiche\
   \ per validare la funzionalit\xE0 e le prestazioni dei tuoi segmenti di\u2026"
 title: Scrivere test
+weight: 36
 ---
-
-{{< edit_this_page >}}
 
 ## Che Cos'è & Perché?
 

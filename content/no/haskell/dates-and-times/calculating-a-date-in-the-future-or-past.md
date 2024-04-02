@@ -9,9 +9,8 @@ summary: "\xC5 regne ut en dato i fremtiden eller fortiden handler om \xE5 finne
   \ bestemt dag f\xF8r eller etter en kjent dato. Programmerere gj\xF8r dette for\
   \ \xE5 h\xE5ndtere\u2026"
 title: Beregning av en dato i fremtiden eller fortiden
+weight: 26
 ---
-
-{{< edit_this_page >}}
 
 ## Hva & Hvorfor?
 Å regne ut en dato i fremtiden eller fortiden handler om å finne en bestemt dag før eller etter en kjent dato. Programmerere gjør dette for å håndtere frister, planlegging eller beregne tidsintervaller.

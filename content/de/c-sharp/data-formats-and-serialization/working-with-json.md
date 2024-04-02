@@ -11,9 +11,8 @@ summary: "Die Arbeit mit JSON (JavaScript Object Notation) umfasst das Parsen, G
   \ und Abfragen von JSON-Daten und ist somit eine entscheidende F\xE4higkeit f\xFC\
   r\u2026"
 title: Arbeiten mit JSON
+weight: 38
 ---
-
-{{< edit_this_page >}}
 
 ## Was & Warum?
 

@@ -13,9 +13,8 @@ summary: "M\u1EA3ng k\u1EBFt h\u1EE3p, hay c\xF2n \u0111\u01B0\u1EE3c bi\u1EBFt 
   \ Ruby, cho ph\xE9p gh\xE9p c\u1EB7p kh\xF3a duy nh\u1EA5t v\u1EDBi gi\xE1 tr\u1ECB\
   . Ch\xFAng l\xE0 th\u1EE9 kh\xF4ng th\u1EC3\u2026"
 title: "S\u1EED d\u1EE5ng m\u1EA3ng li\xEAn k\u1EBFt"
+weight: 15
 ---
-
-{{< edit_this_page >}}
 
 ## Gì và Tại sao?
 

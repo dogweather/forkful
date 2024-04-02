@@ -11,9 +11,8 @@ summary: "Att tolka ett datum fr\xE5n en str\xE4ng \xE4r en vanlig uppgift n\xE4
   \ man hanterar anv\xE4ndarinput eller l\xE4ser data fr\xE5n filer, vilket inneb\xE4\
   r att konvertera\u2026"
 title: "Analysera ett datum fr\xE5n en str\xE4ng"
+weight: 30
 ---
-
-{{< edit_this_page >}}
 
 ## Vad & Varför?
 

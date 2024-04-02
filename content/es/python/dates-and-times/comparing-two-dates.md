@@ -9,9 +9,8 @@ summary: "Comparar dos fechas en Python significa revisar la diferencia de tiemp
   \ entre ellas. Los programadores lo hacen para manejar eventos, validar periodos,\
   \ o\u2026"
 title: "Comparaci\xF3n de dos fechas"
+weight: 27
 ---
-
-{{< edit_this_page >}}
 
 ## ¿Qué & Por Qué?
 

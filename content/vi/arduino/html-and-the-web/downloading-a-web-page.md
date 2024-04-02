@@ -13,9 +13,8 @@ summary: "T\u1EA3i xu\u1ED1ng m\u1ED9t trang web ngh\u0129a l\xE0 l\u1EA5y n\u1E
   n l\xE0m \u0111i\u1EC1u n\xE0y \u0111\u1EC3 k\xE9o d\u1EEF li\u1EC7u, c\u1EADp nh\u1EAD\
   t gadget c\u1EE7a h\u1ECD, ho\u1EB7c \u0111\u01A1n\u2026"
 title: "T\u1EA3i trang web"
+weight: 42
 ---
-
-{{< edit_this_page >}}
 
 ## Cái gì và Tại sao?
 

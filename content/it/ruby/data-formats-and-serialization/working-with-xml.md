@@ -7,9 +7,8 @@ model: gpt-4-0125-preview
 summary: "Lavorare con l'XML significa analizzare, generare e manipolare documenti\
   \ XML (eXtensible Markup Language) utilizzando il codice. I programmatori lo fanno\u2026"
 title: Lavorare con XML
+weight: 40
 ---
-
-{{< edit_this_page >}}
 
 ## Cosa & Perché?
 Lavorare con l'XML significa analizzare, generare e manipolare documenti XML (eXtensible Markup Language) utilizzando il codice. I programmatori lo fanno per interagire con molti servizi web, file di configurazione e formati di scambio dati dove l'XML è la lingua franca.

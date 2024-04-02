@@ -9,9 +9,8 @@ summary: "XML:n kanssa ty\xF6skentely tarkoittaa XML-sis\xE4ll\xF6n j\xE4sent\xE
   mist\xE4, muokkaamista ja tuottamista koodin avulla. Ohjelmoijat tekev\xE4t n\xE4\
   in, koska XML:\xE4\xE4 k\xE4ytet\xE4\xE4n\u2026"
 title: "XML:n k\xE4sittely"
+weight: 40
 ---
-
-{{< edit_this_page >}}
 
 ## Mikä ja miksi?
 XML:n kanssa työskentely tarkoittaa XML-sisällön jäsentämistä, muokkaamista ja tuottamista koodin avulla. Ohjelmoijat tekevät näin, koska XML:ää käytetään laajasti konfiguraatiotiedostoissa, tiedonvaihdossa ja webservices-palveluissa sen ihmisen luettavan ja koneellisesti jäsentämän luonteen vuoksi.

@@ -8,9 +8,8 @@ model: gpt-4-1106-preview
 summary: "Textdateien lesen hei\xDFt, Daten aus einer Datei mit Textinhalt in dein\
   \ Programm zu laden. Programmierer machen das h\xE4ufig, um Konfigurationen auszulesen,\u2026"
 title: Textdatei einlesen
+weight: 22
 ---
-
-{{< edit_this_page >}}
 
 ## Was & Warum?
 Textdateien lesen heißt, Daten aus einer Datei mit Textinhalt in dein Programm zu laden. Programmierer machen das häufig, um Konfigurationen auszulesen, Benutzerdaten zu verarbeiten oder einfach Informationen zu speichern und wiederzuverwenden.

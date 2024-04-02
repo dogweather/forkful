@@ -10,9 +10,8 @@ model: gpt-4-0125-preview
 summary: "I numeri complessi, consistendo di una parte reale e una immaginaria (solitamente\
   \ indicati come a + bi), estendono il concetto dei numeri adimensionali a\u2026"
 title: Lavorare con i numeri complessi
+weight: 14
 ---
-
-{{< edit_this_page >}}
 
 ## Cosa & Perché?
 

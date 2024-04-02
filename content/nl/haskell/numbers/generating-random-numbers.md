@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Het genereren van willekeurige getallen in Haskell houdt in dat er getallen\
   \ worden gecre\xEBerd die onvoorspelbaar zijn volgens menselijke normen. Dit is\u2026"
 title: Willekeurige getallen genereren
+weight: 12
 ---
-
-{{< edit_this_page >}}
 
 ## Wat & Waarom?
 

@@ -9,9 +9,8 @@ summary: "I Elixir anv\xE4nder vi str\xE4nginterpolering f\xF6r att effektivt by
   \ en str\xE4ng med variabler eller uttryck. Programmerare g\xF6r detta f\xF6r att\
   \ spara tid, \xF6ka\u2026"
 title: "Interpolera en str\xE4ng"
+weight: 8
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why? (Vad & Varför?)
 I Elixir använder vi stränginterpolering för att effektivt bygga en sträng med variabler eller uttryck. Programmerare gör detta för att spara tid, öka läsbarheten och underlätta underhåll av koden.

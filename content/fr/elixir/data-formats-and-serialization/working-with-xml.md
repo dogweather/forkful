@@ -9,9 +9,8 @@ summary: "Travailler avec XML en Elixir implique de parser, cr\xE9er et manipule
   \ des donn\xE9es XML. Les programmeurs s'attaquent \xE0 XML car il est largement\
   \ r\xE9pandu dans\u2026"
 title: Travailler avec XML
+weight: 40
 ---
-
-{{< edit_this_page >}}
 
 ## Quoi & Pourquoi ?
 Travailler avec XML en Elixir implique de parser, créer et manipuler des données XML. Les programmeurs s'attaquent à XML car il est largement répandu dans les services web, les fichiers de configuration et les systèmes hérités.

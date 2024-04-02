@@ -7,9 +7,8 @@ model: gpt-4-1106-preview
 summary: "Logging is essentially the process of recording events and data outputs\
   \ from a piece of software as it runs, think of it as the software's diary.\u2026"
 title: Logging
+weight: 17
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 Logging is essentially the process of recording events and data outputs from a piece of software as it runs, think of it as the software's diary. Programmers use logging to keep track of what's happening under the hood - it's invaluable for debugging issues, monitoring system behavior in real-time, and analyzing past activity for performance optimizations or audits.

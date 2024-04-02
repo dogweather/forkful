@@ -9,9 +9,8 @@ summary: "TOML:n kanssa ty\xF6skentely tarkoittaa TOML-datam (Tom's Obvious, Min
   \ Language) j\xE4sent\xE4mist\xE4 ja generointia k\xE4ytt\xE4en Elixiria. Ohjelmoijat\
   \ k\xE4ytt\xE4v\xE4t\u2026"
 title: "Ty\xF6skentely TOML:n kanssa"
+weight: 39
 ---
-
-{{< edit_this_page >}}
 
 ## Mikä & Miksi?
 TOML:n kanssa työskentely tarkoittaa TOML-datam (Tom's Obvious, Minimal Language) jäsentämistä ja generointia käyttäen Elixiria. Ohjelmoijat käyttävät sitä asetustiedostojen käsittelyyn, koska TOML on luettavaa, helppo jäsentää ja kuvautuu hyvin hajautustietorakenteeseen.

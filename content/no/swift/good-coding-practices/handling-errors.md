@@ -9,9 +9,8 @@ summary: "\xC5 h\xE5ndtere feil i Swift betyr \xE5 forutse og svare p\xE5 proble
   \ som dukker opp n\xE5r koden din kj\xF8rer. Vi gj\xF8r det for \xE5 kontrollere\
   \ kaoset\u2014holde apper fra \xE5\u2026"
 title: "Feilh\xE5ndtering"
+weight: 16
 ---
-
-{{< edit_this_page >}}
 
 ## Hva og hvorfor?
 Å håndtere feil i Swift betyr å forutse og svare på problemer som dukker opp når koden din kjører. Vi gjør det for å kontrollere kaoset—holde apper fra å krasje og gi brukeren en jevn opplevelse.

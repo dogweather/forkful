@@ -8,9 +8,8 @@ model: gpt-4-1106-preview
 summary: "Eliminar caracteres que coinciden con un patr\xF3n es como hacer una limpieza\
   \ en tu texto, manteniendo solo lo que necesitas. Los programadores lo hacen para\u2026"
 title: "Eliminando caracteres que coinciden con un patr\xF3n"
+weight: 5
 ---
-
-{{< edit_this_page >}}
 
 ## ¿Qué & Por Qué?
 

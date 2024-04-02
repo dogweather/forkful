@@ -11,9 +11,8 @@ summary: "In PowerShell ist die \xDCberpr\xFCfung, ob ein Verzeichnis existiert,
   \ h\xE4ufige Aufgabe, die Skripte dabei unterst\xFCtzt, Entscheidungen basierend\
   \ auf der\u2026"
 title: "\xDCberpr\xFCfung, ob ein Verzeichnis existiert"
+weight: 20
 ---
-
-{{< edit_this_page >}}
 
 ## Was & Warum?
 In PowerShell ist die Überprüfung, ob ein Verzeichnis existiert, eine häufige Aufgabe, die Skripte dabei unterstützt, Entscheidungen basierend auf der Dateisystemstruktur zu treffen – wie zum Beispiel Fehler zu vermeiden, indem bestätigt wird, dass ein Zielverzeichnis vorhanden ist, bevor versucht wird, daraus zu lesen oder darin zu schreiben. Es ist wesentlich, um sicherzustellen, dass Ihr Skript zuverlässig in unterschiedlichen Umgebungen funktioniert.

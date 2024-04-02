@@ -7,9 +7,8 @@ model: gpt-4-1106-preview
 summary: "Date to string conversion transforms a Date object into a readable text\
   \ format, because humans like \"April 1, 2023\" more than cryptic timestamps.\u2026"
 title: Converting a date into a string
+weight: 28
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 Date to string conversion transforms a Date object into a readable text format, because humans like "April 1, 2023" more than cryptic timestamps. Programmers do it for clarity in UIs and to format dates for storage or network transfer.

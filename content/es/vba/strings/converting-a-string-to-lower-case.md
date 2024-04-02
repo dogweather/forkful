@@ -11,9 +11,8 @@ summary: "Convertir una cadena a min\xFAsculas implica transformar todos los car
   \ en may\xFAsculas de una cadena a sus equivalentes en min\xFAsculas. Este proceso\
   \ es\u2026"
 title: "Convirtiendo una cadena de texto a min\xFAsculas"
+weight: 4
 ---
-
-{{< edit_this_page >}}
 
 ## Qué y Por Qué?
 

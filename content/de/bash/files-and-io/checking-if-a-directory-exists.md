@@ -11,9 +11,8 @@ summary: "In der Bash-Programmierung ist die \xDCberpr\xFCfung, ob ein Verzeichn
   \ existiert, ein wesentlicher Kontrollmechanismus, der dazu dient, die Existenz\
   \ eines\u2026"
 title: "\xDCberpr\xFCfung, ob ein Verzeichnis existiert"
+weight: 20
 ---
-
-{{< edit_this_page >}}
 
 ## Was & Warum?
 

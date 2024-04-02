@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "\xC5 hente den aktuelle datoen i programmering er en avgj\xF8rende oppgave\
   \ for en rekke applikasjoner, inkludert logging, tidsstempelhendelser, eller\u2026"
 title: "F\xE5 dagens dato"
+weight: 29
 ---
-
-{{< edit_this_page >}}
 
 ## Hva & Hvorfor?
 

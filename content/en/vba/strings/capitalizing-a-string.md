@@ -7,9 +7,8 @@ model: gpt-4-0125-preview
 summary: "Capitalizing a string in Visual Basic for Applications (VBA) involves converting\
   \ the first character of each word in a string to uppercase while ensuring\u2026"
 title: Capitalizing a string
+weight: 2
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 

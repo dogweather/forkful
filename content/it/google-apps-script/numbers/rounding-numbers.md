@@ -10,9 +10,8 @@ model: gpt-4-0125-preview
 summary: "Arrotondare i numeri, un concetto fondamentale nella programmazione informatica,\
   \ implica l'aggiustamento di un numero al suo intero pi\xF9 vicino o a un\u2026"
 title: Arrotondamento dei numeri
+weight: 13
 ---
-
-{{< edit_this_page >}}
 
 ## Cosa e perché?
 

@@ -7,9 +7,8 @@ model: gpt-4-1106-preview
 summary: "TOML, short for Tom's Obvious, Minimal Language, defines how to structure\
   \ config files. Programmers work with TOML because it's easy to read, write, and\u2026"
 title: Working with TOML
+weight: 39
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 TOML, short for Tom's Obvious, Minimal Language, defines how to structure config files. Programmers work with TOML because it's easy to read, write, and maps nicely to a hash table, making it a go-to for configurations.

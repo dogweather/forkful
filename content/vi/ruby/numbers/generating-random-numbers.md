@@ -13,9 +13,8 @@ summary: "Vi\u1EC7c t\u1EA1o s\u1ED1 ng\u1EABu nhi\xEAn trong Ruby bao g\u1ED3m 
   t c\xE1ch logic, \u0111i\u1EC1u n\xE0y r\u1EA5t quan tr\u1ECDng cho c\xE1c k\u1ECB\
   ch b\u1EA3n nh\u01B0 m\xF4 ph\u1ECFng, m\xE3\u2026"
 title: "Sinh s\u1ED1 ng\u1EABu nhi\xEAn"
+weight: 12
 ---
-
-{{< edit_this_page >}}
 
 ## Cái gì & Tại sao?
 

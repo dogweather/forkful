@@ -9,9 +9,8 @@ summary: "Logowanie, w swojej istocie, jest praktyk\u0105 rejestrowania zdarze\u
   \ i danych z aplikacji oprogramowania do zewn\u0119trznego wyj\u015Bcia, takiego\
   \ jak plik lub\u2026"
 title: "Rejestrowanie zdarze\u0144"
+weight: 17
 ---
-
-{{< edit_this_page >}}
 
 ## Co i dlaczego?
 

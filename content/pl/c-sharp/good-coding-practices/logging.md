@@ -9,9 +9,8 @@ summary: "Logowanie to proces rejestrowania zdarze\u0144 aplikacji i danych wyj\
   ciowych podczas jej dzia\u0142ania. Programi\u015Bci loguj\u0105, aby diagnozowa\u0107\
   \ b\u0142\u0119dy, monitorowa\u0107\u2026"
 title: "Rejestrowanie zdarze\u0144"
+weight: 17
 ---
-
-{{< edit_this_page >}}
 
 ## Co i dlaczego?
 Logowanie to proces rejestrowania zdarzeń aplikacji i danych wyjściowych podczas jej działania. Programiści logują, aby diagnozować błędy, monitorować wydajność oprogramowania, śledzić działania użytkowników oraz utrzymywać zgodność z normami bezpieczeństwa i biznesowymi.

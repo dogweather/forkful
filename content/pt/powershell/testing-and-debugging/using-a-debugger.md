@@ -1,14 +1,15 @@
 ---
 date: 2024-01-26 04:08:48.394903-07:00
-description: "Usar um depurador significa definir pontos de interrup\xE7\xE3o, acompanhar\
-  \ os passos do seu c\xF3digo, observar vari\xE1veis e inspecionar o estado do seu\
-  \ programa\u2026"
+description: "No PowerShell, voc\xEA pode depurar scripts usando o Ambiente de Scripting\
+  \ Integrado do PowerShell (ISE) ou o Visual Studio Code (VS Code) com a extens\xE3\
+  o do\u2026"
 lastmod: '2024-03-13T22:44:46.801471-06:00'
 model: gpt-4-0125-preview
-summary: "Usar um depurador significa definir pontos de interrup\xE7\xE3o, acompanhar\
-  \ os passos do seu c\xF3digo, observar vari\xE1veis e inspecionar o estado do seu\
-  \ programa\u2026"
+summary: "No PowerShell, voc\xEA pode depurar scripts usando o Ambiente de Scripting\
+  \ Integrado do PowerShell (ISE) ou o Visual Studio Code (VS Code) com a extens\xE3\
+  o do\u2026"
 title: Usando um depurador
+weight: 35
 ---
 
 ## Como fazer:

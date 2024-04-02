@@ -9,9 +9,8 @@ summary: "Das Vergleichen von zwei Daten \xFCberpr\xFCft, ob sie gleich sind, od
   \ ermittelt, welches fr\xFCher oder sp\xE4ter liegt. Entwickler ben\xF6tigen dies\
   \ f\xFCr\u2026"
 title: Vergleich von zwei Daten
+weight: 27
 ---
-
-{{< edit_this_page >}}
 
 ## Was & Warum?
 Das Vergleichen von zwei Daten überprüft, ob sie gleich sind, oder ermittelt, welches früher oder später liegt. Entwickler benötigen dies für Altersüberprüfungen, Terminplanungslogik oder Gültigkeitsprüfungen von Zertifikaten.

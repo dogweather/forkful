@@ -9,9 +9,8 @@ summary: "Handling errors in Python (or any programming language) is about expec
   \ the unexpected \u2013 it\u2019s the art of gracefully managing when things go\
   \ south in\u2026"
 title: Handling errors
+weight: 16
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 

@@ -13,9 +13,8 @@ summary: "Chuy\u1EC3n m\u1ED9t chu\u1ED7i th\xE0nh ch\u1EEF th\u01B0\u1EDDng c\x
   t hoa trong v\u0103n b\u1EA3n th\xE0nh c\xE1c k\xFD t\u1EF1 t\u01B0\u01A1ng \u0111\
   \u01B0\u01A1ng \u1EDF d\u1EA1ng ch\u1EEF th\u01B0\u1EDDng. C\xE1c l\u1EADp\u2026"
 title: "Chuy\u1EC3n \u0111\u1ED5i chu\u1ED7i th\xE0nh ch\u1EEF th\u01B0\u1EDDng"
+weight: 4
 ---
-
-{{< edit_this_page >}}
 
 ## Gì & Tại sao?
 Chuyển một chuỗi thành chữ thường có nghĩa là thay đổi tất cả các ký tự viết hoa trong văn bản thành các ký tự tương đương ở dạng chữ thường. Các lập trình viên thường làm điều này vì lý do nhất quán, so sánh hoặc tìm kiếm, vì 'A' không giống như 'a' trong thế giới máy tính.

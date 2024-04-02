@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "JSON (JavaScript Object Notation) is een gegevensformaat dat wordt gebruikt\
   \ om gegevens op te slaan en te transporteren. Programmeurs gebruiken JSON\u2026"
 title: Werken met JSON
+weight: 38
 ---
-
-{{< edit_this_page >}}
 
 ## Wat en Waarom?
 JSON (JavaScript Object Notation) is een gegevensformaat dat wordt gebruikt om gegevens op te slaan en te transporteren. Programmeurs gebruiken JSON vanwege de gebruiksvriendelijkheid met web-API's en het taalonafhankelijke tekstformaat, wat het erg handig maakt voor gegevensuitwisseling.

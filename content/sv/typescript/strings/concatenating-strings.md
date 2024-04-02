@@ -9,9 +9,8 @@ summary: "Konkatenering av str\xE4ngar i programmering inneb\xE4r att du sm\xE4l
   \ samman tv\xE5 eller flera textv\xE4rden till ett enda str\xE4ngv\xE4rde. Vi g\xF6\
   r detta f\xF6r att bygga\u2026"
 title: "Sammanslagning av str\xE4ngar"
+weight: 3
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why (Vad & Varför)?
 Konkatenering av strängar i programmering innebär att du smälter samman två eller flera textvärden till ett enda strängvärde. Vi gör detta för att bygga upp dynamiska texter, som användargränssnittsmeddelanden eller unika databasfrågor.

@@ -9,9 +9,8 @@ summary: "Um shell interativo, ou REPL (Read-Eval-Print Loop), no Haskell permit
   \ executar trechos de c\xF3digo ao vivo. \xC9 um espa\xE7o de experimenta\xE7\xE3\
   o para feedback\u2026"
 title: Usando um shell interativo (REPL)
+weight: 34
 ---
-
-{{< edit_this_page >}}
 
 ## O que é & Por quê?
 Um shell interativo, ou REPL (Read-Eval-Print Loop), no Haskell permite executar trechos de código ao vivo. É um espaço de experimentação para feedback rápido, testar funções e aprender a linguagem.

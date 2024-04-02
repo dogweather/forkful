@@ -12,9 +12,8 @@ summary: "\u65E5\u671F\u8F6C\u6362\u6210\u5B57\u7B26\u4E32\u662F\u628A\u65E5\u67
   \u3002\u7F16\u7A0B\u65F6\u8FD9\u6837\u505A\u65B9\u4FBF\u663E\u793A\u548C\u5B58\u50A8\
   \u3002"
 title: "\u5C06\u65E5\u671F\u8F6C\u6362\u4E3A\u5B57\u7B26\u4E32"
+weight: 28
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why? (是什么 & 为什么?)
 日期转换成字符串是把日期数据转化为可读文本格式的过程。编程时这样做方便显示和存储。

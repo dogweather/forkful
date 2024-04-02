@@ -9,9 +9,8 @@ summary: "Debugowanie to proces \u015Bledzenia, co si\u0119 dzieje w programie. 
   ci drukuj\u0105 informacje debugowania, \u017Ceby \u0142atwiej znale\u017A\u0107\
   \ i naprawi\u0107 b\u0142\u0119dy."
 title: "Drukowanie komunikat\xF3w debugowania"
+weight: 33
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why? (Co i dlaczego?)
 Debugowanie to proces śledzenia, co się dzieje w programie. Programiści drukują informacje debugowania, żeby łatwiej znaleźć i naprawić błędy.

@@ -7,9 +7,8 @@ model: gpt-4-0125-preview
 summary: "Lavorare con XML implica manipolare e accedere a dati strutturati nel linguaggio\
   \ di markup estensibile (eXtensible Markup Language). I programmatori\u2026"
 title: Lavorare con XML
+weight: 40
 ---
-
-{{< edit_this_page >}}
 
 ## Cosa & Perché?
 Lavorare con XML implica manipolare e accedere a dati strutturati nel linguaggio di markup estensibile (eXtensible Markup Language). I programmatori lavorano con XML per abilitare l'interoperabilità con altri sistemi o per leggere e scrivere file di configurazione, flussi di dati e altri documenti strutturati comuni nei servizi web.

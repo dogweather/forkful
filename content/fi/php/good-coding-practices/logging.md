@@ -9,9 +9,8 @@ summary: "Lokittaminen on k\xE4yt\xE4nn\xF6ss\xE4 kuin p\xE4iv\xE4kirjan pit\xE4
   \ koodillesi; se on tapa tallentaa tapahtumia, virheit\xE4 ja muita merkitt\xE4\
   vi\xE4 datapisteit\xE4, jotka\u2026"
 title: Lokitus
+weight: 17
 ---
-
-{{< edit_this_page >}}
 
 ## Mikä ja miksi?
 

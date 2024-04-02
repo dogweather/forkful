@@ -11,9 +11,8 @@ summary: "Les fichiers CSV (Comma-Separated Values, ou valeurs s\xE9par\xE9es pa
   \ des virgules) sont un format d'\xE9change de donn\xE9es courant qui repr\xE9sente\
   \ des donn\xE9es\u2026"
 title: Travailler avec CSV
+weight: 37
 ---
-
-{{< edit_this_page >}}
 
 ## Quoi & Pourquoi ?
 Les fichiers CSV (Comma-Separated Values, ou valeurs séparées par des virgules) sont un format d'échange de données courant qui représente des données tabulaires en texte brut, en utilisant des virgules pour séparer les valeurs individuelles. Les programmeurs travaillent avec des fichiers CSV pour importer, exporter et manipuler des données facilement à travers diverses applications et services, car c'est un format simple, largement pris en charge, compatible avec les applications de feuilles de calcul, les bases de données et les langages de programmation.

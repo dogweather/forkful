@@ -11,9 +11,8 @@ summary: "Das \xDCberpr\xFCfen, ob ein Verzeichnis in Google Apps Script existie
   \ beinhaltet die Verifizierung der Pr\xE4senz eines Ordners innerhalb von Google\
   \ Drive.\u2026"
 title: "\xDCberpr\xFCfung, ob ein Verzeichnis existiert"
+weight: 20
 ---
-
-{{< edit_this_page >}}
 
 ## Was & Warum?
 

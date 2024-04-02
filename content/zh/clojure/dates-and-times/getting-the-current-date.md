@@ -17,9 +17,8 @@ summary: "\u5728\u7F16\u7A0B\u4E2D\u83B7\u53D6\u5F53\u524D\u65E5\u671F\u662F\u81
   \u4EFB\u52A1\u5229\u7528\u4E86 Java \u4E92\u64CD\u4F5C\u529F\u80FD\uFF0C\u5141\u8BB8\
   \u76F4\u63A5\u8BBF\u95EE\u4E30\u5BCC\u7684 Java \u65E5\u671F\u65F6\u95F4 API\u3002"
 title: "\u83B7\u53D6\u5F53\u524D\u65E5\u671F"
+weight: 29
 ---
-
-{{< edit_this_page >}}
 
 ## 什么 & 为什么？
 在编程中获取当前日期是至关重要的，原因包括记录日志、时间戳事件和安排任务。在 Clojure 中，一个基于 JVM 的 Lisp 方言，这个任务利用了 Java 互操作功能，允许直接访问丰富的 Java 日期时间 API。

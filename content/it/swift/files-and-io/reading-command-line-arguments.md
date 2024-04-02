@@ -7,9 +7,8 @@ model: gpt-4-1106-preview
 summary: "Leggere gli argomenti della riga di comando significa estrarre i dati inseriti\
   \ dagli utenti quando avviano il tuo programma da terminale. I programmatori\u2026"
 title: Lettura degli argomenti della riga di comando
+weight: 23
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 Leggere gli argomenti della riga di comando significa estrarre i dati inseriti dagli utenti quando avviano il tuo programma da terminale. I programmatori lo fanno per rendere le applicazioni interattive e per passare parametri al volo, senza hardcoding.

@@ -14,9 +14,8 @@ summary: "\u6253\u5370\u8C03\u8BD5\u8F93\u51FA\u662F\u5C06\u7A0B\u5E8F\u6267\u88
   \u67E5\u53D8\u91CF\u72B6\u6001\u3001\u76D1\u63A7\u6267\u884C\u6D41\u7A0B\uFF0C\u4EE5\
   \u53CA\u5B9A\u4F4D\u9519\u8BEF\u3002"
 title: "\u6253\u5370\u8C03\u8BD5\u8F93\u51FA"
+weight: 33
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why? (是什么以及为什么？)
 打印调试输出是将程序执行期间的信息显示在串行监视器上的过程。程序员这样做是为了检查变量状态、监控执行流程，以及定位错误。

@@ -7,9 +7,8 @@ model: gpt-4-1106-preview
 summary: "Inviare una richiesta HTTP permette ai vostri script Bash di comunicare\
   \ con il web, scambiando dati con i server. I programmatori lo fanno per interagire\u2026"
 title: Inviare una richiesta http
+weight: 44
 ---
-
-{{< edit_this_page >}}
 
 ## Cos'è e Perché?
 Inviare una richiesta HTTP permette ai vostri script Bash di comunicare con il web, scambiando dati con i server. I programmatori lo fanno per interagire con API, scaricare file o verificare la disponibilità di una risorsa web.

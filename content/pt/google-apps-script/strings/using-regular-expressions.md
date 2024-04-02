@@ -11,9 +11,8 @@ summary: "Express\xF5es Regulares (regex) s\xE3o padr\xF5es utilizados para comb
   \ sequ\xEAncias de caracteres em strings. Os programadores as utilizam para buscar,\
   \ editar ou\u2026"
 title: "Usando express\xF5es regulares"
+weight: 11
 ---
-
-{{< edit_this_page >}}
 
 ## O Quê e Por Quê?
 

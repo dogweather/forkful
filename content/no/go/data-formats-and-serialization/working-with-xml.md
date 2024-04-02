@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "\xC5 jobbe med XML i Go inneb\xE6rer parsing (lesing) og generering (skriving)\
   \ av XML-dokumenter \u2013 et standardformat for strukturert datautveksling.\u2026"
 title: Arbeider med XML
+weight: 40
 ---
-
-{{< edit_this_page >}}
 
 ## Hva & Hvorfor?
 

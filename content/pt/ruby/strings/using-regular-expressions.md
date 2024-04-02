@@ -10,9 +10,8 @@ model: gpt-4-0125-preview
 summary: "Express\xF5es regulares (regex) em Ruby s\xE3o padr\xF5es usados para combinar\
   \ sequ\xEAncias de caracteres em strings, permitindo que desenvolvedores pesquisem,\u2026"
 title: "Usando express\xF5es regulares"
+weight: 11
 ---
-
-{{< edit_this_page >}}
 
 ## O Que & Por Quê?
 Expressões regulares (regex) em Ruby são padrões usados para combinar sequências de caracteres em strings, permitindo que desenvolvedores pesquisem, correspondam e manipulem texto de maneira eficiente. Programadores utilizam regex para tarefas como validação, análise (parsing) e manipulação de strings, tornando-o uma ferramenta indispensável para o processamento de texto.

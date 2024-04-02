@@ -7,9 +7,8 @@ model: gpt-4-0125-preview
 summary: "Komplexe Zahlen erweitern die Idee der eindimensionalen Zahlengerade in\
   \ die zweidimensionale Ebene, indem eine senkrechte imagin\xE4re Achse miteinbezogen\u2026"
 title: Umgang mit komplexen Zahlen
+weight: 14
 ---
-
-{{< edit_this_page >}}
 
 ## Was & Warum?
 Komplexe Zahlen erweitern die Idee der eindimensionalen Zahlengerade in die zweidimensionale Ebene, indem eine senkrechte imaginäre Achse miteinbezogen wird. Programmierer arbeiten in Feldern wie der Signalverarbeitung, der Fluidmechanik und der Elektrotechnik mit ihnen, wo sie für die Darstellung von Schwingungen und anderen Phänomenen unerlässlich sind.

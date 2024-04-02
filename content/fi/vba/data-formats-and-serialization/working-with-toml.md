@@ -10,9 +10,8 @@ model: gpt-4-0125-preview
 summary: "TOML, joka tarkoittaa Tom's Obvious, Minimal Language (Tomin ilmeinen, minimalistinen\
   \ kieli), on datan sarjoitustapa, jota k\xE4ytet\xE4\xE4n p\xE4\xE4asiassa\u2026"
 title: "TOML:n kanssa ty\xF6skentely"
+weight: 39
 ---
-
-{{< edit_this_page >}}
 
 ## Mikä & Miksi?
 

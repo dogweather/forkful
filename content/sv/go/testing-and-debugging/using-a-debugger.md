@@ -2,15 +2,16 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 18:10:09.034247-07:00
-description: "Att anv\xE4nda en fels\xF6kare i Go-programmering inneb\xE4r att man\
-  \ anv\xE4nder verktyg eller funktioner f\xF6r att inspektera och modifiera tillst\xE5\
-  ndet hos ett k\xF6rande\u2026"
+description: "Go erbjuder en inbyggd m\xF6jlighet f\xF6r fels\xF6kning som kallas\
+  \ `delve`. Det \xE4r ett fullfj\xE4drat fels\xF6kningsverktyg som till\xE5ter dig\
+  \ att exekvera Go-program\u2026"
 lastmod: '2024-03-13T22:44:37.397025-06:00'
 model: gpt-4-0125-preview
-summary: "Att anv\xE4nda en fels\xF6kare i Go-programmering inneb\xE4r att man anv\xE4\
-  nder verktyg eller funktioner f\xF6r att inspektera och modifiera tillst\xE5ndet\
-  \ hos ett k\xF6rande\u2026"
+summary: "Go erbjuder en inbyggd m\xF6jlighet f\xF6r fels\xF6kning som kallas `delve`.\
+  \ Det \xE4r ett fullfj\xE4drat fels\xF6kningsverktyg som till\xE5ter dig att exekvera\
+  \ Go-program\u2026"
 title: "Att anv\xE4nda en debugger"
+weight: 35
 ---
 
 ## Hur man gör:

@@ -7,9 +7,8 @@ model: gpt-4-0125-preview
 summary: "Generating random numbers in Rust involves utilizing libraries to produce\
   \ unpredicted numerical values, which is indispensable for tasks ranging from\u2026"
 title: Generating random numbers
+weight: 12
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 

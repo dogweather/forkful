@@ -19,9 +19,8 @@ summary: "\uC784\uC2DC \uD30C\uC77C \uC0DD\uC131\uC740 \uBB34\uC5C7\uC77C\uAE4C\
   \ \uC54A\uC740 \uB370\uC774\uD130\uB97C \uB2E4\uB8E8\uAC70\uB098, \uCDA9\uB3CC \uBC29\
   \uC9C0\uC640 \uB370\uC774\uD130 \uBCF4\uD638\uB97C \uC704\uD574\uC11C\uC8E0."
 title: "\uC784\uC2DC \uD30C\uC77C \uC0DD\uC131\uD558\uAE30"
+weight: 21
 ---
-
-{{< edit_this_page >}}
 
 ## 무엇 & 왜?
 임시 파일 생성은 무엇일까요? 프로그램이 데이터를 임시적으로 처리하거나 저장하기 위해 사용되는 파일입니다. 왜 필요할까요? 프로그램 작동 중 남기고 싶지 않은 데이터를 다루거나, 충돌 방지와 데이터 보호를 위해서죠.

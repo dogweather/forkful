@@ -7,9 +7,8 @@ model: gpt-4-1106-preview
 summary: "Creating a temporary file means making a file that you don't need to stick\
   \ around once you're done with it. Programmers do this for data that's only\u2026"
 title: Creating a temporary file
+weight: 21
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 Creating a temporary file means making a file that you don't need to stick around once you're done with it. Programmers do this for data that's only needed during the execution of a program, like intermediate results or to avoid hogging memory.

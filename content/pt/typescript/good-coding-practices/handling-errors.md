@@ -9,9 +9,8 @@ summary: "Tratar erros \xE9 sobre esperar o inesperado; \xE9 como gerenciamos qu
   \ as coisas d\xE3o errado no nosso c\xF3digo. Fazemos isso para evitar falhas e\
   \ para dar aos\u2026"
 title: Tratamento de erros
+weight: 16
 ---
-
-{{< edit_this_page >}}
 
 ## O Que & Por Quê?
 Tratar erros é sobre esperar o inesperado; é como gerenciamos quando as coisas dão errado no nosso código. Fazemos isso para evitar falhas e para dar aos usuários uma experiência suave, mesmo quando o inesperado acontece.

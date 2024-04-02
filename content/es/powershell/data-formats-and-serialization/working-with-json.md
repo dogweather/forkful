@@ -11,9 +11,8 @@ summary: "La integraci\xF3n de PowerShell con JSON (JavaScript Object Notation) 
   \ trata de analizar (leer) y generar (escribir) datos JSON, un formato com\xFAn\
   \ para el\u2026"
 title: Trabajando con JSON
+weight: 38
 ---
-
-{{< edit_this_page >}}
 
 ## Qué y Por Qué?
 

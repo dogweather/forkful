@@ -9,9 +9,8 @@ summary: "Interaktywne pow\u0142oki, czyli REPL-y (Read-Eval-Print Loops - P\u01
   tle Czytaj-Wykonaj-Wypisz), pozwalaj\u0105 na bie\u017C\u0105co uruchamia\u0107\
   \ kod, testowa\u0107 funkcje, algorytmy\u2026"
 title: Korzystanie z interaktywnego shella (REPL)
+weight: 34
 ---
-
-{{< edit_this_page >}}
 
 ## Co i Dlaczego?
 Interaktywne powłoki, czyli REPL-y (Read-Eval-Print Loops - Pętle Czytaj-Wykonaj-Wypisz), pozwalają na bieżąco uruchamiać kod, testować funkcje, algorytmy lub bawić się pomysłami. Są jak kartki do szybkich notatek w programowaniu, szybkie i brudne, bez konieczności ustawiania pełnego środowiska deweloperskiego.

@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Complexe getallen, die een re\xEBel deel en een imaginair deel hebben (zoals\
   \ 3 + 4i), zijn essentieel in vakgebieden zoals techniek, natuurkunde en\u2026"
 title: Werken met complexe getallen
+weight: 14
 ---
-
-{{< edit_this_page >}}
 
 ## Wat & Waarom?
 Complexe getallen, die een reëel deel en een imaginair deel hebben (zoals 3 + 4i), zijn essentieel in vakgebieden zoals techniek, natuurkunde en datawetenschap. Programmeurs gebruiken ze voor simulaties, signaalverwerking en het oplossen van specifieke soorten wiskundige problemen.

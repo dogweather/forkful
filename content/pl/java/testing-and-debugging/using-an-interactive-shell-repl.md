@@ -9,9 +9,8 @@ summary: "REPL (Read-Eval-Print Loop), czyli p\u0119tla czytaj-wykonaj-drukuj, t
   \ interaktywna pow\u0142oka, kt\xF3ra przetwarza pojedyncze wej\u015Bcia u\u017C\
   ytkownika, wykonuje kod i\u2026"
 title: Korzystanie z interaktywnego shella (REPL)
+weight: 34
 ---
-
-{{< edit_this_page >}}
 
 ## Co i dlaczego?
 REPL (Read-Eval-Print Loop), czyli pętla czytaj-wykonaj-drukuj, to interaktywna powłoka, która przetwarza pojedyncze wejścia użytkownika, wykonuje kod i zwraca wynik. Programiści używają jej do szybkich eksperymentów, debugowania lub nauki, ponieważ umożliwia natychmiastową informację zwrotną i iterację.

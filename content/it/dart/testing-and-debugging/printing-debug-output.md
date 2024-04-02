@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Stampare l'output di debug in Dart riguarda la visualizzazione di informazioni\
   \ sulla console durante l'esecuzione, permettendo agli sviluppatori di\u2026"
 title: Stampa dell'output di debug
+weight: 33
 ---
-
-{{< edit_this_page >}}
 
 ## Cosa e perché?
 

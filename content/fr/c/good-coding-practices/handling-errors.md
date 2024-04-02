@@ -11,9 +11,8 @@ summary: "La gestion des erreurs en C consiste \xE0 d\xE9tecter et r\xE9pondre a
   \ conditions anomales qui surviennent pendant l'ex\xE9cution d'un programme. Les\
   \ programmeurs\u2026"
 title: Gestion des erreurs
+weight: 16
 ---
-
-{{< edit_this_page >}}
 
 ## Quoi & Pourquoi ?
 

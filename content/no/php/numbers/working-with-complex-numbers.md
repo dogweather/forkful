@@ -9,9 +9,8 @@ summary: "Komplekse tall har en reell del og en imagin\xE6r del, vanligvis skrev
   \ som `a + bi`. De er avgj\xF8rende i avansert matematikk, fysikk, ingeni\xF8rfag\
   \ og visse\u2026"
 title: "\xC5 jobbe med komplekse tall"
+weight: 14
 ---
-
-{{< edit_this_page >}}
 
 ## Hva & Hvorfor?
 Komplekse tall har en reell del og en imaginær del, vanligvis skrevet som `a + bi`. De er avgjørende i avansert matematikk, fysikk, ingeniørfag og visse datamaskinalgoritmer. Programmerere jobber med dem for å håndtere beregninger som involverer kvadratrøtter av negative tall og oscillerende funksjoner.

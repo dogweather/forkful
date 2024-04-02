@@ -8,9 +8,8 @@ model: gpt-4-0125-preview
 summary: "Generare numeri casuali in Haskell comporta la creazione di numeri che sono\
   \ imprevedibili secondo gli standard umani. Questo \xE8 critico in scenari che\u2026"
 title: Generazione di numeri casuali
+weight: 12
 ---
-
-{{< edit_this_page >}}
 
 ## Cosa e Perché?
 

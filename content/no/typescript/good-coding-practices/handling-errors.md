@@ -9,9 +9,8 @@ summary: "\xC5 h\xE5ndtere feil handler om \xE5 forvente det uforventede; det er
   \ vi tar oss av situasjoner n\xE5r ting g\xE5r galt i koden v\xE5r. Vi gj\xF8r det\
   \ for \xE5 unng\xE5\u2026"
 title: "Feilh\xE5ndtering"
+weight: 16
 ---
-
-{{< edit_this_page >}}
 
 ## Hva & Hvorfor?
 Å håndtere feil handler om å forvente det uforventede; det er hvordan vi tar oss av situasjoner når ting går galt i koden vår. Vi gjør det for å unngå krasjer og for å gi brukerne en problemfri opplevelse, selv når det uforventede inntreffer.

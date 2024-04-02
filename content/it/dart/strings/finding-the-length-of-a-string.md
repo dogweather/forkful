@@ -10,9 +10,8 @@ model: gpt-4-0125-preview
 summary: "Trovare la lunghezza di una Stringa in Dart equivale a determinare il numero\
   \ di unit\xE0 di codice (essenzialmente, il numero di caratteri se pensato in modo\u2026"
 title: Trovare la lunghezza di una stringa
+weight: 7
 ---
-
-{{< edit_this_page >}}
 
 ## Cosa & Perché?
 Trovare la lunghezza di una Stringa in Dart equivale a determinare il numero di unità di codice (essenzialmente, il numero di caratteri se pensato in modo semplificato) in una data Stringa. I programmatori fanno ciò per manipolare le stringhe più precisamente, come per validare l'input, troncare il testo visualizzato, o elaborare formati di dati dove la lunghezza è importante (ad esempio, protocolli con messaggi prefissati dalla lunghezza).

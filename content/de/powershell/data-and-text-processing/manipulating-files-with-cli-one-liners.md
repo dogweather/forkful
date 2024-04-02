@@ -9,9 +9,8 @@ summary: "Die Manipulation von Dateien mit CLI-One-Linern in PowerShell dreht si
   \ darum, schnell Dateidaten direkt \xFCber die Befehlszeile zu \xE4ndern, zu bewegen\
   \ oder\u2026"
 title: Dateimanipulation mit CLI-One-Linern
+weight: 31
 ---
-
-{{< edit_this_page >}}
 
 ## Was & Warum?
 

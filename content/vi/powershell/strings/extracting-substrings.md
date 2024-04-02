@@ -13,9 +13,8 @@ summary: "Tr\xEDch xu\u1EA5t c\xE1c chu\u1ED7i con c\xF3 ngh\u0129a l\xE0 l\u1EA
   n m\u1ED9t s\u1ED1 ti\xEAu ch\xED nh\u1EA5t \u0111\u1ECBnh. C\xE1c l\u1EADp tr\xEC\
   nh vi\xEAn tr\xEDch xu\u1EA5t chu\u1ED7i con \u0111\u1EC3\u2026"
 title: "Tr\xEDch xu\u1EA5t chu\u1ED7i con"
+weight: 6
 ---
-
-{{< edit_this_page >}}
 
 ## Gì và Tại sao?
 Trích xuất các chuỗi con có nghĩa là lấy ra các phần nhỏ hơn từ một chuỗi dựa trên một số tiêu chí nhất định. Các lập trình viên trích xuất chuỗi con để thao tác và phân tích dữ liệu văn bản, như chia nhỏ đầu vào thành các phần hữu ích hơn hoặc truy cập vào dữ liệu quan trọng ẩn bên trong một câu.

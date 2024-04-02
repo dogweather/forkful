@@ -9,9 +9,8 @@ summary: "Utdrag av strenger er \xE5 hente deler fra en tekststreng. Programmere
   \ gj\xF8r det for \xE5 jobbe med spesifikke datasegmenter, validere input, eller\
   \ manipulere\u2026"
 title: Uthenting av delstrenger
+weight: 6
 ---
-
-{{< edit_this_page >}}
 
 ## Hva & Hvorfor?
 Utdrag av strenger er å hente deler fra en tekststreng. Programmerere gjør det for å jobbe med spesifikke datasegmenter, validere input, eller manipulere tekst basert på behov.

@@ -13,9 +13,8 @@ summary: "Ki\u1EC3m tra n\u1EBFu m\u1ED9t th\u01B0 m\u1EE5c t\u1ED3n t\u1EA1i c\
   \ m\u1EE5c trong h\u1EC7 th\u1ED1ng t\u1EC7p. C\xE1c l\u1EADp tr\xECnh vi\xEAn l\xE0\
   m \u0111i\u1EC1u n\xE0y \u0111\u1EC3 tr\xE1nh c\xE1c l\u1ED7i nh\u01B0\u2026"
 title: "Ki\u1EC3m tra xem th\u01B0 m\u1EE5c c\xF3 t\u1ED3n t\u1EA1i kh\xF4ng"
+weight: 20
 ---
-
-{{< edit_this_page >}}
 
 ## Cái Gì và Tại Sao?
 

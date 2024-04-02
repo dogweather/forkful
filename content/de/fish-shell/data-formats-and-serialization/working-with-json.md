@@ -11,9 +11,8 @@ summary: "Die Arbeit mit JSON in der Fish Shell umfasst das Parsen und Generiere
   \ von JSON-Daten, eine g\xE4ngige Aufgabe f\xFCr die Konfiguration von Anwendungen,\
   \ API-\u2026"
 title: Arbeiten mit JSON
+weight: 38
 ---
-
-{{< edit_this_page >}}
 
 ## Was & Warum?
 

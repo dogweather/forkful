@@ -11,9 +11,8 @@ summary: "Konkatenering i Visual Basic for Applications (VBA) inneb\xE4r att sam
   \ tv\xE5 eller flera str\xE4ngar till en enda enhet. Detta \xE4r en grundl\xE4ggande\
   \ uppgift\u2026"
 title: "Sammanslagning av str\xE4ngar"
+weight: 3
 ---
-
-{{< edit_this_page >}}
 
 ## Vad & Varför?
 

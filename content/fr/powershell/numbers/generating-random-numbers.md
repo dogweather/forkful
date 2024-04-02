@@ -9,9 +9,8 @@ summary: "G\xE9n\xE9rer des nombres al\xE9atoires dans PowerShell consiste \xE0 
   er des valeurs num\xE9riques impr\xE9visibles dans une plage sp\xE9cifi\xE9e. Les\
   \ programmeurs utilisent\u2026"
 title: "G\xE9n\xE9ration de nombres al\xE9atoires"
+weight: 12
 ---
-
-{{< edit_this_page >}}
 
 ## Quoi et pourquoi ?
 Générer des nombres aléatoires dans PowerShell consiste à créer des valeurs numériques imprévisibles dans une plage spécifiée. Les programmeurs utilisent cette capacité pour une multitude de raisons, y compris les tests, la simulation et la sécurité, où l'imprévisibilité ou l'imitation de l'aléatoire du monde réel est cruciale.

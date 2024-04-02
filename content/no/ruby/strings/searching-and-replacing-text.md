@@ -9,9 +9,8 @@ summary: "(\"Hva & Hvorfor?\") Teksts\xF8k og -erstattning lar oss finne og bytt
   \ ut spesifikke ord eller fraser i en streng. Programmerere bruker dette til \xE5\
   \ endre\u2026"
 title: "S\xF8king og erstatting av tekst"
+weight: 10
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 ("Hva & Hvorfor?")

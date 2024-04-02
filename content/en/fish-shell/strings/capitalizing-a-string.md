@@ -7,9 +7,8 @@ model: gpt-4-0125-preview
 summary: "Capitalizing a string means modifying it so the first letter is uppercase\
   \ and the remainder of the string is lowercase. This is a common task in text\u2026"
 title: Capitalizing a string
+weight: 2
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 

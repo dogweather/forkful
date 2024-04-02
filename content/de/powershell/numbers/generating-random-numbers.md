@@ -7,9 +7,8 @@ model: gpt-4-0125-preview
 summary: "Die Erzeugung von Zufallszahlen in PowerShell besteht darin, unvorhersehbare\
   \ numerische Werte innerhalb eines festgelegten Bereichs zu erstellen.\u2026"
 title: Generierung von Zufallszahlen
+weight: 12
 ---
-
-{{< edit_this_page >}}
 
 ## Was & Warum?
 Die Erzeugung von Zufallszahlen in PowerShell besteht darin, unvorhersehbare numerische Werte innerhalb eines festgelegten Bereichs zu erstellen. Programmierer nutzen diese Fähigkeit aus einer Vielzahl von Gründen, einschließlich Testen, Simulation und Sicherheitszwecken, wo Unvorhersehbarkeit oder das Nachahmen von realer Zufälligkeit entscheidend ist.

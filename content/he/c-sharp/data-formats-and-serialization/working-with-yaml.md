@@ -21,9 +21,8 @@ summary: "YAML, \u05E9\u05E4\u05D9\u05E8\u05D5\u05E9\u05D5 \"YAML Ain't Markup L
   \u05D9\u05DD \u05D1\u05D5 \u05DC\u05E7\u05D1\u05E6\u05D9 \u05EA\u05E6\u05D5\u05E8\
   \u05D4, \u05D4\u05D5\u05D3\u05E2\u05D5\u05EA\u2026"
 title: "\u05E2\u05D1\u05D5\u05D3\u05D4 \u05E2\u05DD YAML"
+weight: 41
 ---
-
-{{< edit_this_page >}}
 
 ## מה ולמה?
 YAML, שפירושו "YAML Ain't Markup Language" (YAML אינו שפת סימון), הוא פורמט סידורי נתונים קריא לאדם. מתכנתים לעיתים קרובות משתמשים בו לקבצי תצורה, הודעות בין תהליכים, ואחסון נתונים בזכות פשטותו וקריאותו בהשוואה לפורמטים אחרים של נתונים כמו XML או JSON.

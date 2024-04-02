@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Een tijdelijk bestand aanmaken in Bash betekent het maken van een bestand\
   \ dat jouw scripts kunnen gebruiken om gegevens kortstondig op te slaan.\u2026"
 title: Een tijdelijk bestand aanmaken
+weight: 21
 ---
-
-{{< edit_this_page >}}
 
 ## Wat & Waarom?
 Een tijdelijk bestand aanmaken in Bash betekent het maken van een bestand dat jouw scripts kunnen gebruiken om gegevens kortstondig op te slaan. Programmeurs doen dit om stukjes informatie op te slaan tijdens het uitvoeren van complexe taken, om de harde schijf niet vol te laten lopen, en om conflicten tussen verschillende processen die hetzelfde bestand willen gebruiken, te minimaliseren.

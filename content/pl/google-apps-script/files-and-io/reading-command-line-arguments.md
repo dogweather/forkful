@@ -11,9 +11,8 @@ summary: "Czytanie argument\xF3w linii polece\u0144 w Google Apps Script to niec
   \ mylne okre\u015Blenie, poniewa\u017C, w przeciwie\u0144stwie do tradycyjnych interfejs\xF3\
   w linii polece\u0144 w\u2026"
 title: "Czytanie argument\xF3w z linii polece\u0144"
+weight: 23
 ---
-
-{{< edit_this_page >}}
 
 ## Co i dlaczego?
 

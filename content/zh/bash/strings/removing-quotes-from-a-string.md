@@ -15,9 +15,8 @@ summary: "\u4ECE\u5B57\u7B26\u4E32\u4E2D\u79FB\u9664\u5F15\u53F7\u6D89\u53CA\u53
   \u4ED6\u7A0B\u5E8F\u6216\u7CFB\u7EDF\u4EA4\u4E92\u65F6\u9075\u5B88\u7279\u5B9A\u7684\
   \u6570\u636E\u683C\u5F0F\u3002"
 title: "\u4ECE\u5B57\u7B26\u4E32\u4E2D\u79FB\u9664\u5F15\u53F7"
+weight: 9
 ---
-
-{{< edit_this_page >}}
 
 ## 什么 & 为什么?
 从字符串中移除引号涉及去掉包围字符串的引号。程序员经常需要这样做来清理输入数据、为比较目的准备数据，或在与其他程序或系统交互时遵守特定的数据格式。

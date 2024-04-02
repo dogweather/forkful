@@ -8,9 +8,8 @@ model: gpt-4-0125-preview
 summary: "\xC5 generere tilfeldige tall i programmering handler om \xE5 skape ikke-deterministiske\
   \ eller uforutsigbare numeriske verdier. Programmerere bruker tilfeldige\u2026"
 title: Generering av tilfeldige tall
+weight: 12
 ---
-
-{{< edit_this_page >}}
 
 ## Hva & Hvorfor?
 

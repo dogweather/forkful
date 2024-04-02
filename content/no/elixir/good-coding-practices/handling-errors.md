@@ -9,9 +9,8 @@ summary: "\xC5 h\xE5ndtere feil betyr \xE5 skrive kode som kan takle at ting ikk
   \ g\xE5r som planlagt. Programmerere gj\xF8r det for \xE5 hindre krasj og for \xE5\
   \ forsikre seg om at\u2026"
 title: "Feilh\xE5ndtering"
+weight: 16
 ---
-
-{{< edit_this_page >}}
 
 ## Hva & Hvorfor?
 

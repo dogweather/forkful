@@ -11,9 +11,8 @@ summary: "Konwersja ci\u0105gu znak\xF3w na ma\u0142e litery to podstawowa opera
   \ polegaj\u0105ca na przekszta\u0142ceniu wszystkich znak\xF3w w danym ci\u0105\
   gu na ich odpowiedniki w ma\u0142ych\u2026"
 title: "Konwersja ci\u0105gu znak\xF3w na ma\u0142e litery"
+weight: 4
 ---
-
-{{< edit_this_page >}}
 
 ## Co i dlaczego?
 

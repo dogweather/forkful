@@ -14,9 +14,8 @@ summary: "\u5728Bash\u811A\u672C\u4E2D\u8BFB\u53D6\u547D\u4EE4\u884C\u53C2\u6570
   \u6D3B\uFF0C\u53EF\u4EE5\u6839\u636E\u4E0D\u540C\u8F93\u5165\u6267\u884C\u4E0D\u540C\
   \u64CD\u4F5C\u3002"
 title: "\u8BFB\u53D6\u547D\u4EE4\u884C\u53C2\u6570"
+weight: 23
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why? 什么和为什么？
 在Bash脚本中读取命令行参数是获取用户输入数据的方法之一。程序员这样做是为了让脚本更灵活，可以根据不同输入执行不同操作。

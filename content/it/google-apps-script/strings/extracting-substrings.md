@@ -11,9 +11,8 @@ summary: "Estrarre sottosequenze di stringhe implica prendere una porzione di un
   \ stringa - creando essenzialmente una nuova stringa a partire da una esistente.\
   \ I\u2026"
 title: Estrazione di sottostringhe
+weight: 6
 ---
-
-{{< edit_this_page >}}
 
 ## Cos'è & Perché?
 

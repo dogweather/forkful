@@ -13,9 +13,8 @@ summary: "Trong ph\xE1t tri\u1EC3n ph\u1EA7n m\u1EC1m, vi\u1EC7c ghi nh\u1EADt k
   \ th\u1EF1c thi c\u1EE7a ch\u01B0\u01A1ng tr\xECnh, \u0111\u01B0\u1EE3c thi\u1EBF\
   t k\u1EBF \u0111\u1EC3 theo d\xF5i\u2026"
 title: "Ghi nh\u1EADt k\xFD"
+weight: 17
 ---
-
-{{< edit_this_page >}}
 
 ## Gì và Tại sao?
 

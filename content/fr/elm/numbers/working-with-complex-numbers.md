@@ -9,9 +9,8 @@ summary: "Les nombres complexes sont une combinaison de nombres r\xE9els et imag
   \ comme `a + bi` o\xF9 `i` est la racine carr\xE9e de -1. Ils sont cl\xE9s dans\
   \ des\u2026"
 title: Manipulation des nombres complexes
+weight: 14
 ---
-
-{{< edit_this_page >}}
 
 ## Quoi et Pourquoi ?
 Les nombres complexes sont une combinaison de nombres réels et imaginaires, comme `a + bi` où `i` est la racine carrée de -1. Ils sont clés dans des domaines tels que l'ingénierie et la physique pour résoudre des problèmes que les nombres ordinaires ne peuvent pas aborder.

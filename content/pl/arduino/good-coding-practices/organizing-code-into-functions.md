@@ -9,9 +9,8 @@ summary: "Organizacja kodu w funkcje oznacza podzielenie kodu na wielokrotnie u\
   ywalne bloki, z kt\xF3rych ka\u017Cdy wykonuje okre\u015Blone zadanie. Programi\u015B\
   ci robi\u0105 to, aby\u2026"
 title: Organizacja kodu w funkcje
+weight: 18
 ---
-
-{{< edit_this_page >}}
 
 ## Co i dlaczego?
 Organizacja kodu w funkcje oznacza podzielenie kodu na wielokrotnie używalne bloki, z których każdy wykonuje określone zadanie. Programiści robią to, aby kod był łatwiejszy do odczytania, debugowania i ponownego użycia. To jak sortowanie klocków Lego do pojemników - oszczędza to przeszukiwania chaotycznego stosu za każdym razem, gdy chcesz coś zbudować.

@@ -11,9 +11,8 @@ summary: "Obter a data atual em JavaScript \xE9 uma tarefa fundamental, envolven
   \ a recupera\xE7\xE3o e, possivelmente, a manipula\xE7\xE3o da data e hora de hoje.\
   \ Programadores\u2026"
 title: Obtendo a data atual
+weight: 29
 ---
-
-{{< edit_this_page >}}
 
 ## O Que & Por Que?
 Obter a data atual em JavaScript é uma tarefa fundamental, envolvendo a recuperação e, possivelmente, a manipulação da data e hora de hoje. Programadores realizam isso para exibir datas em websites, em aplicações, acompanhar interações do usuário, ou lidar com dados sensíveis ao tempo.

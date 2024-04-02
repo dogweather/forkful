@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Die Fehlerbehandlung in Go umfasst das Erkennen und Reagieren auf Fehlerbedingungen\
   \ in Ihrem Programm. Programmierer betreiben Fehlerbehandlung, um\u2026"
 title: Fehlerbehandlung
+weight: 16
 ---
-
-{{< edit_this_page >}}
 
 ## Was & Warum?
 

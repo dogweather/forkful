@@ -11,9 +11,8 @@ summary: "Enviar una solicitud HTTP con autenticaci\xF3n b\xE1sica implica adjun
   \ un nombre de usuario y contrase\xF1a a una solicitud para verificar la identidad\
   \ del\u2026"
 title: "Enviando una solicitud HTTP con autenticaci\xF3n b\xE1sica"
+weight: 45
 ---
-
-{{< edit_this_page >}}
 
 ## ¿Qué y por qué?
 

@@ -11,9 +11,8 @@ summary: "Att ta bort tecken som matchar ett specifikt m\xF6nster fr\xE5n str\xE
   ngar i C handlar om att eliminera alla instanser av vissa tecken som passar f\xF6\
   rdefinierade\u2026"
 title: "Radera tecken som matchar ett m\xF6nster"
+weight: 5
 ---
-
-{{< edit_this_page >}}
 
 ## Vad och varför?
 

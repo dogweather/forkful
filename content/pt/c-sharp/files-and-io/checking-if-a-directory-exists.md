@@ -11,9 +11,8 @@ summary: "Verificar se um diret\xF3rio existe em C# envolve verificar a presen\x
   a de uma pasta em um caminho especificado no sistema de arquivos. Programadores\
   \ fazem\u2026"
 title: "Verificando se um diret\xF3rio existe"
+weight: 20
 ---
-
-{{< edit_this_page >}}
 
 ## O Quê & Porquê?
 

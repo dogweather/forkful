@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Testen schrijven betekent code maken om te controleren of andere code goed\
   \ werkt. We doen dit om bugs te vangen, betrouwbaarheid te garanderen en updates\u2026"
 title: Tests Schrijven
+weight: 36
 ---
-
-{{< edit_this_page >}}
 
 ## Wat & Waarom?
 

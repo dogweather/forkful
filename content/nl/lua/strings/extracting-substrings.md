@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Het extraheren van deelreeksen betekent het uithalen van een specifiek stukje\
   \ uit een reeks tekens. Programmeurs doen dit om specifieke gegevens binnen\u2026"
 title: Substrings extraheren
+weight: 6
 ---
-
-{{< edit_this_page >}}
 
 ## Wat & Waarom?
 Het extraheren van deelreeksen betekent het uithalen van een specifiek stukje uit een reeks tekens. Programmeurs doen dit om specifieke gegevens binnen een grotere tekst te isoleren, te analyseren of te manipuleren.

@@ -7,9 +7,8 @@ model: gpt-4-1106-preview
 summary: "Convertir une cha\xEEne en minuscules, c'est transformer tous ses caract\xE8\
   res en leur \xE9quivalent minuscule. On le fait pour unifier les donn\xE9es avant\u2026"
 title: "Conversion d'une cha\xEEne de caract\xE8res en minuscules"
+weight: 4
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why? (Quoi et Pourquoi ?)
 Convertir une chaîne en minuscules, c'est transformer tous ses caractères en leur équivalent minuscule. On le fait pour unifier les données avant comparaison ou traitement, évitant les différences dues à la casse.

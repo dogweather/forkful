@@ -9,9 +9,8 @@ summary: "Interpolacja ci\u0105gu znak\xF3w umo\u017Cliwia wstawianie zmiennych 
   rednio w tekst. U\u017Cywamy jej, by u\u0142atwi\u0107 tworzenie dynamicznych wiadomo\u015B\
   ci i formatowa\u0107 je\u2026"
 title: "Interpolacja \u0142a\u0144cuch\xF3w znak\xF3w"
+weight: 8
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why? (Co i dlaczego?)
 Interpolacja ciągu znaków umożliwia wstawianie zmiennych bezpośrednio w tekst. Używamy jej, by ułatwić tworzenie dynamicznych wiadomości i formatować je czytelnie.

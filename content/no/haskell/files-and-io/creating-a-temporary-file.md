@@ -9,9 +9,8 @@ summary: "Oppretting av en midlertidig fil lar programmer lagre data som trengs 
   \ kort tid. Vi gj\xF8r dette for \xE5 h\xE5ndtere data som ikke trenger \xE5 bli\
   \ varig lagret\u2026"
 title: Opprette en midlertidig fil
+weight: 21
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 Oppretting av en midlertidig fil lar programmer lagre data som trengs for kort tid. Vi gjør dette for å håndtere data som ikke trenger å bli varig lagret eller når vi vil unngå å påvirke programmets tilstand eller ytelse.

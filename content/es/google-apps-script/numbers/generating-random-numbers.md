@@ -11,9 +11,8 @@ summary: "Generar n\xFAmeros aleatorios es una tarea fundamental en la programac
   n que se utiliza para una mir\xEDada de aplicaciones, tales como simulaciones, juegos\
   \ y\u2026"
 title: "Generando n\xFAmeros aleatorios"
+weight: 12
 ---
-
-{{< edit_this_page >}}
 
 ## ¿Qué y Por Qué?
 

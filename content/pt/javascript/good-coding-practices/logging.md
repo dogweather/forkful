@@ -9,9 +9,8 @@ summary: "O log, em resumo, \xE9 como manter um di\xE1rio para sua aplica\xE7\xE
   o \u2014 ele registra eventos, erros e outras a\xE7\xF5es significativas que ocorrem\
   \ enquanto o software\u2026"
 title: Registro de Logs
+weight: 17
 ---
-
-{{< edit_this_page >}}
 
 ## O Quê e Por Quê?
 O log, em resumo, é como manter um diário para sua aplicação — ele registra eventos, erros e outras ações significativas que ocorrem enquanto o software está em execução. Os programadores o fazem não apenas para compreender o que está acontecendo por trás dos bastidores em tempo real, mas também para ter um registro histórico que é crucial para depuração, auditoria e otimização de desempenho.

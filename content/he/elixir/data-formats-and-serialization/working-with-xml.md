@@ -19,9 +19,8 @@ summary: "\u05E2\u05D1\u05D5\u05D3\u05D4 \u05E2\u05DD XML \u05D1-Elixir \u05DE\u
   \u05E8\u05E0\u05D8, \u05E7\u05D1\u05E6\u05D9 \u05D4\u05D2\u05D3\u05E8\u05D5\u05EA\
   \ \u05D5\u05DE\u05E2\u05E8\u05DB\u05D5\u05EA \u05D9\u05E9\u05E0\u05D5\u05EA."
 title: "\u05E2\u05D1\u05D5\u05D3\u05D4 \u05E2\u05DD XML"
+weight: 40
 ---
-
-{{< edit_this_page >}}
 
 ## מה ולמה?
 עבודה עם XML ב-Elixir משמעה ניתוח, יצירה וניהול של נתוני XML. מתכנתים עוסקים ב-XML מפני שהוא נפוץ בשירותי אינטרנט, קבצי הגדרות ומערכות ישנות.

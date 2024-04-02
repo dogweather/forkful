@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Schrijven naar de standaardfout in C houdt in dat foutmeldingen en diagnostische\
   \ informatie naar een aparte stroom worden geleid dan de hoofdprogramma-\u2026"
 title: Schrijven naar standaardfout
+weight: 25
 ---
-
-{{< edit_this_page >}}
 
 ## Wat & Waarom?
 

@@ -7,9 +7,8 @@ model: gpt-4-1106-preview
 summary: "Ler argumentos de linha de comando em Lua significa pegar dados inseridos\
   \ diretamente quando voc\xEA executa seu script. Programadores fazem isso para tornar\u2026"
 title: Lendo argumentos da linha de comando
+weight: 23
 ---
-
-{{< edit_this_page >}}
 
 ## O Quê & Porquê?
 Ler argumentos de linha de comando em Lua significa pegar dados inseridos diretamente quando você executa seu script. Programadores fazem isso para tornar seus programas flexíveis, permitindo que usuários especifiquem comportamentos ou parâmetros de execução diretos do terminal.

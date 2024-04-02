@@ -9,9 +9,8 @@ summary: "Stringien yhdist\xE4minen tarkoittaa yksinkertaisesti kahden tai useam
   \ merkkijonon liitt\xE4mist\xE4 yhteen. Ohjelmoijat tekev\xE4t t\xE4t\xE4 esimerkiksi\
   \ muodostaakseen\u2026"
 title: "Merkkijonojen yhdist\xE4minen"
+weight: 3
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why? (Mitä ja Miksi?)
 Stringien yhdistäminen tarkoittaa yksinkertaisesti kahden tai useamman merkkijonon liittämistä yhteen. Ohjelmoijat tekevät tätä esimerkiksi muodostaakseen käyttäjälle näytettäviä viestejä tai käsitelläkseen dynaamisia datakokonaisuuksia.

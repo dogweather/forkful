@@ -7,9 +7,8 @@ model: gpt-4-1106-preview
 summary: "Lokitus on pohjimmiltaan prosessi, jossa tallennetaan tapahtumia ja ohjelmiston\
   \ tuottamia tietoja sen suorituksen aikana, ajattele sit\xE4 ohjelmiston\u2026"
 title: Lokitus
+weight: 17
 ---
-
-{{< edit_this_page >}}
 
 ## Mikä & Miksi?
 Lokitus on pohjimmiltaan prosessi, jossa tallennetaan tapahtumia ja ohjelmiston tuottamia tietoja sen suorituksen aikana, ajattele sitä ohjelmiston päiväkirjana. Ohjelmoijat käyttävät lokitusta seuratakseen, mitä konepellin alla tapahtuu - se on korvaamaton apuväline ongelmien selvittämisessä, järjestelmän käyttäytymisen seurannassa reaaliaikaisesti sekä menneen toiminnan analysoinnissa suorituskyvyn optimointia tai tarkastuksia varten.

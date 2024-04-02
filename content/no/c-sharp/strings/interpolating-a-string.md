@@ -11,9 +11,8 @@ summary: "Strenginterpolering i C# lar deg opprette en ny streng ved \xE5 inklud
   \ uttrykk inni en strengbokstavelig, noe som gj\xF8r det enklere \xE5 formatere\
   \ og\u2026"
 title: Interpolering av en streng
+weight: 8
 ---
-
-{{< edit_this_page >}}
 
 ## Hva og hvorfor?
 Strenginterpolering i C# lar deg opprette en ny streng ved å inkludere uttrykk inni en strengbokstavelig, noe som gjør det enklere å formatere og konkatere strenger. Programmerere bruker denne funksjonen for å forbedre kodelesbarheten og vedlikeholdbarheten, spesielt når de håndterer dynamisk strenginnhold.

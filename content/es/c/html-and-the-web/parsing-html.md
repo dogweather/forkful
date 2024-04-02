@@ -11,9 +11,8 @@ summary: "Analizar HTML en C implica examinar documentos HTML para extraer datos
   \ estructura o partes espec\xEDficas de forma eficiente, a menudo como precursor\
   \ de la\u2026"
 title: Analizando HTML
+weight: 43
 ---
-
-{{< edit_this_page >}}
 
 ## Qué y Por Qué?
 

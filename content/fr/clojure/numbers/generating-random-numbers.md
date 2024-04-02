@@ -9,9 +9,8 @@ summary: "G\xE9n\xE9rer des nombres al\xE9atoires en programmation consiste \xE0
   er des valeurs qui ne peuvent pas \xEAtre pr\xE9dites logiquement \xE0 l'avance.\
   \ Les programmeurs\u2026"
 title: "G\xE9n\xE9ration de nombres al\xE9atoires"
+weight: 12
 ---
-
-{{< edit_this_page >}}
 
 ## Quoi & Pourquoi ?
 

@@ -8,9 +8,8 @@ model: gpt-4-1106-preview
 summary: "La gestione degli errori \xE8 il modo in cui il tuo codice si occupa dei\
   \ problemi che emergono durante l'esecuzione, come se gestisse una palla curva senza\u2026"
 title: Gestione degli errori
+weight: 16
 ---
-
-{{< edit_this_page >}}
 
 ## Cosa e Perché?
 La gestione degli errori è il modo in cui il tuo codice si occupa dei problemi che emergono durante l'esecuzione, come se gestisse una palla curva senza farla cadere. I programmatori lo fanno per prevenire crash ed offrire agli utenti un'esperienza fluida.

@@ -9,9 +9,8 @@ summary: "Convertire una data in una stringa significa rappresentare la data com
   \ testo. Lo facciamo perch\xE9 \xE8 pi\xF9 facile da leggere per gli umani e perch\xE9\
   \ \xE8 un\u2026"
 title: Conversione di una data in una stringa
+weight: 28
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 Convertire una data in una stringa significa rappresentare la data come testo. Lo facciamo perché è più facile da leggere per gli umani e perché è un formato comune per memorizzare o trasmettere dati.

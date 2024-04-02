@@ -7,9 +7,8 @@ model: gpt-4-0125-preview
 summary: "Generering av tilfeldige tall i TypeScript handler om \xE5 skape uforutsigbare\
   \ numeriske verdier innenfor et spesifisert omr\xE5de. Programmerere utnytter disse\u2026"
 title: Generering av tilfeldige tall
+weight: 12
 ---
-
-{{< edit_this_page >}}
 
 ## Hva & Hvorfor?
 

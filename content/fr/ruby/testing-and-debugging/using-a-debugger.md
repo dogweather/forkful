@@ -1,12 +1,15 @@
 ---
 date: 2024-01-26 03:51:00.690249-07:00
-description: "Utiliser un d\xE9bogueur en Ruby donne aux programmeurs un super-pouvoir\
-  \ pour mettre en pause leur code, inspecter les variables, et parcourir leur code\u2026"
+description: "Ruby est livr\xE9 avec un d\xE9bogueur int\xE9gr\xE9 appel\xE9 `byebug`.\
+  \ Tout d'abord, incluez `byebug` dans votre Gemfile et ex\xE9cutez `bundle install`.\
+  \ Ensuite, placez\u2026"
 lastmod: '2024-03-13T22:44:58.424492-06:00'
 model: gpt-4-0125-preview
-summary: "Utiliser un d\xE9bogueur en Ruby donne aux programmeurs un super-pouvoir\
-  \ pour mettre en pause leur code, inspecter les variables, et parcourir leur code\u2026"
+summary: "Ruby est livr\xE9 avec un d\xE9bogueur int\xE9gr\xE9 appel\xE9 `byebug`.\
+  \ Tout d'abord, incluez `byebug` dans votre Gemfile et ex\xE9cutez `bundle install`.\
+  \ Ensuite, placez\u2026"
 title: "Utilisation d'un d\xE9bogueur"
+weight: 35
 ---
 
 ## Comment faire :

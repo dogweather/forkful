@@ -11,9 +11,8 @@ summary: "Escrever para o erro padr\xE3o em Visual Basic for Applications (VBA) 
   \ direcionar mensagens de erro ou diagn\xF3sticos \xE0 parte da sa\xEDda padr\xE3\
   o,\u2026"
 title: "Escrevendo no erro padr\xE3o"
+weight: 25
 ---
-
-{{< edit_this_page >}}
 
 ## O Que & Por Quê?
 

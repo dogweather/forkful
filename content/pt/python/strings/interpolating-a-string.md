@@ -12,9 +12,8 @@ summary: "A interpola\xE7\xE3o de strings \xE9 o m\xE9todo de embutir express\xF
   es dentro de literais de string. Programadores a utilizam para inserir valores dinamicamente\
   \ em\u2026"
 title: Interpolando uma string
+weight: 8
 ---
-
-{{< edit_this_page >}}
 
 ## O Que & Por Que?
 A interpolação de strings é o método de embutir expressões dentro de literais de string. Programadores a utilizam para inserir valores dinamicamente em strings, o que torna o código mais legível e limpo do que a tradicional concatenação de strings.

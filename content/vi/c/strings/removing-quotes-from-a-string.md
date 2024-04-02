@@ -13,9 +13,8 @@ summary: "Vi\u1EC7c lo\u1EA1i b\u1ECF d\u1EA5u ngo\u1EB7c kh\u1ECFi m\u1ED9t chu
   n m\xE0 kh\xF4ng c\u1EA7n d\u1EA5u ngo\u1EB7c \u0111\u01A1n (' ') ho\u1EB7c d\u1EA5\
   u ngo\u1EB7c k\xE9p (\" \"). Qu\xE1\u2026"
 title: "Lo\u1EA1i b\u1ECF d\u1EA5u ngo\u1EB7c k\xE9p kh\u1ECFi chu\u1ED7i"
+weight: 9
 ---
-
-{{< edit_this_page >}}
 
 ## Cái gì và Tại sao?
 

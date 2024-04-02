@@ -13,9 +13,8 @@ summary: "L\xE0m vi\u1EC7c v\u1EDBi JSON trong Swift ngh\u0129a l\xE0 \u0111\u1E
   \ d\xE0nh cho trao \u0111\u1ED5i d\u1EEF li\u1EC7u. L\u1EADp tr\xECnh vi\xEAn s\u1EED\
   \ d\u1EE5ng JSON \u0111\u1EC3 truy\u1EC1n d\u1EEF li\u1EC7u\u2026"
 title: "L\xE0m vi\u1EC7c v\u1EDBi JSON"
+weight: 38
 ---
-
-{{< edit_this_page >}}
 
 ## Gì và Tại sao?
 

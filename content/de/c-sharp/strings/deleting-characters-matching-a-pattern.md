@@ -7,9 +7,8 @@ model: gpt-4-1106-preview
 summary: "Das L\xF6schen von Zeichen, die einem Muster entsprechen, dient dazu, Strings\
   \ von nicht ben\xF6tigten oder unerw\xFCnschten Zeichen zu bereinigen. Programmierer\u2026"
 title: "L\xF6schen von Zeichen, die einem Muster entsprechen"
+weight: 5
 ---
-
-{{< edit_this_page >}}
 
 ## Was & Warum?
 Das Löschen von Zeichen, die einem Muster entsprechen, dient dazu, Strings von nicht benötigten oder unerwünschten Zeichen zu bereinigen. Programmierer verwenden diese Technik, um Eingabedaten zu validieren, Datenformate anzupassen oder einfach die Lesbarkeit zu erhöhen.

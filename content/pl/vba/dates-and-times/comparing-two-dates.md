@@ -11,9 +11,8 @@ summary: "Por\xF3wnywanie dw\xF3ch dat w Visual Basic for Applications (VBA) pol
   \ na okre\u015Bleniu ich chronologicznego zwi\u0105zku wzgl\u0119dem siebie. Programi\u015B\
   ci robi\u0105 to, aby\u2026"
 title: "Por\xF3wnywanie dw\xF3ch dat"
+weight: 27
 ---
-
-{{< edit_this_page >}}
 
 ## Co i dlaczego?
 

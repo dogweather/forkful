@@ -9,9 +9,8 @@ summary: "Logging (registro de logs) \xE9 o processo de gravar os eventos da apl
   \xE3o e a sa\xEDda de dados durante a execu\xE7\xE3o. Programadores realizam registros\
   \ de logs\u2026"
 title: Registro de Logs
+weight: 17
 ---
-
-{{< edit_this_page >}}
 
 ## O Que & Porquê?
 Logging (registro de logs) é o processo de gravar os eventos da aplicação e a saída de dados durante a execução. Programadores realizam registros de logs para diagnosticar erros, monitorar o desempenho do software, acompanhar ações dos usuários e manter a conformidade com padrões de segurança e negócios.

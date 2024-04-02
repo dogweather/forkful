@@ -7,9 +7,8 @@ model: gpt-4-1106-preview
 summary: "Iniciar un proyecto nuevo en C++ es establecer la base del c\xF3digo desde\
   \ donde todo crece. Programadores lo hacen para transformar ideas en software\u2026"
 title: Iniciando un nuevo proyecto
+weight: 1
 ---
-
-{{< edit_this_page >}}
 
 ## Qué & Por Qué?
 Iniciar un proyecto nuevo en C++ es establecer la base del código desde donde todo crece. Programadores lo hacen para transformar ideas en software funcional, solucionar problemas o explorar nuevas tecnologías.

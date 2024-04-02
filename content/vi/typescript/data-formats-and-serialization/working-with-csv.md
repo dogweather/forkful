@@ -15,9 +15,8 @@ summary: "L\xE0m vi\u1EC7c v\u1EDBi CSV (Gi\xE1 tr\u1ECB \u0110\u01B0\u1EE3c Ph\
   \ \u0111\xF3 m\u1ED7i d\xF2ng l\xE0 m\u1ED9t b\u1EA3n ghi d\u1EEF li\u1EC7u v\xE0\
   \ d\u1EA5u\u2026"
 title: "L\xE0m vi\u1EC7c v\u1EDBi CSV"
+weight: 37
 ---
-
-{{< edit_this_page >}}
 
 ## Gì và Tại sao?
 

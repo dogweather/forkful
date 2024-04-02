@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Rozpocz\u0119cie nowego projektu w C wymaga ustawienia podstawowej struktury\
   \ kodu i \u015Brodowiska, aby efektywnie zarz\u0105dza\u0107 zadaniami programistycznymi.\u2026"
 title: Rozpoczynanie nowego projektu
+weight: 1
 ---
-
-{{< edit_this_page >}}
 
 ## Co i dlaczego?
 

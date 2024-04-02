@@ -11,9 +11,8 @@ summary: "Att l\xE4sa kommandoradsargument i Visual Basic for Applications (VBA)
   r att man tillg\xE5r parametrar som passerats till ditt program vid k\xF6rning.\
   \ Denna\u2026"
 title: "L\xE4sa kommandoradsargument"
+weight: 23
 ---
-
-{{< edit_this_page >}}
 
 ## Vad & Varför?
 

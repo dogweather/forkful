@@ -7,9 +7,8 @@ model: gpt-4-1106-preview
 summary: "Datenvergleiche checken, ob ein Datum vor, gleich oder nach einem anderen\
   \ liegt. Das ist wichtig f\xFCr Reservierungen, Fristen, Logs oder\u2026"
 title: Vergleich von zwei Daten
+weight: 27
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 Datenvergleiche checken, ob ein Datum vor, gleich oder nach einem anderen liegt. Das ist wichtig für Reservierungen, Fristen, Logs oder Gültigkeitsprüfungen.

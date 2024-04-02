@@ -11,9 +11,8 @@ summary: "Pobieranie strony internetowej w Visual Basic for Applications (VBA) p
   \ na pobraniu zawarto\u015Bci HTML strony internetowej z Internetu. Programi\u015B\
   ci\u2026"
 title: Pobieranie strony internetowej
+weight: 42
 ---
-
-{{< edit_this_page >}}
 
 ## Co i dlaczego?
 

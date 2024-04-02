@@ -12,9 +12,8 @@ summary: "\u53D1\u9001HTTP\u8BF7\u6C42\u8BA9\u4F60\u4ECE\u7F51\u4E0A\u83B7\u53D6
   \u5E94\u7528\u6570\u636E\uFF0C\u6BD4\u5982\u81EA\u52A8\u5316\u4EFB\u52A1\u6216\u8005\
   \u4F7F\u7528\u7F51\u7EDCAPI\u3002"
 title: "\u53D1\u51FA HTTP \u8BF7\u6C42"
+weight: 44
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why? (是什么？为什么？)
 发送HTTP请求让你从网上获取或发送信息。程序员这么做来交互应用数据，比如自动化任务或者使用网络API。

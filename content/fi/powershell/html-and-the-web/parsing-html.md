@@ -10,9 +10,8 @@ model: gpt-4-0125-preview
 summary: "HTML:n j\xE4sent\xE4minen PowerShelliss\xE4 tarkoittaa HTML-sis\xE4ll\xF6\
   n purkamista erityisten tietojen poimimiseksi tai webiin liittyvien teht\xE4vien\u2026"
 title: "HTML:n j\xE4sennys"
+weight: 43
 ---
-
-{{< edit_this_page >}}
 
 ## Mikä & Miksi?
 HTML:n jäsentäminen PowerShellissä tarkoittaa HTML-sisällön purkamista erityisten tietojen poimimiseksi tai webiin liittyvien tehtävien automatisoimiseksi. Ohjelmoijat tekevät näin vuorovaikuttaakseen verkkosivujen kanssa, kaapiakseen web-sisältöä tai automatisoidakseen lomakkeiden lähetyksiä ja muita web-vuorovaikutuksia tarvitsematta web-selainta.

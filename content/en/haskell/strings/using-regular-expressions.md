@@ -7,9 +7,8 @@ model: gpt-4-0125-preview
 summary: "Regular expressions in programming are sequences of characters that define\
   \ a search pattern, typically employed for string searching and manipulation.\u2026"
 title: Using regular expressions
+weight: 11
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 Regular expressions in programming are sequences of characters that define a search pattern, typically employed for string searching and manipulation. Haskell programmers utilize regular expressions for tasks ranging from simple string matching to complex text processing, capitalizing on their efficiency and versatility in dealing with text data.

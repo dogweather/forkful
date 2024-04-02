@@ -11,9 +11,8 @@ summary: "Envoyer une requ\xEAte HTTP avec une authentification de base en C n\x
   cessite de cr\xE9er une requ\xEAte HTTP qui inclut un en-t\xEAte d'autorisation\
   \ avec les\u2026"
 title: "Envoyer une requ\xEAte HTTP avec une authentification de base"
+weight: 45
 ---
-
-{{< edit_this_page >}}
 
 ## Quoi et Pourquoi ?
 Envoyer une requête HTTP avec une authentification de base en C nécessite de créer une requête HTTP qui inclut un en-tête d'autorisation avec les informations d'identification de l'utilisateur encodées en Base64. C'est une méthode courante pour ajouter une couche d'authentification simple aux requêtes HTTP, permettant d'accéder de manière programmatique à des ressources restreintes.

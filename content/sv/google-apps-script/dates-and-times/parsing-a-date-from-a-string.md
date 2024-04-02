@@ -11,9 +11,8 @@ summary: "Att tolka ett datum fr\xE5n en str\xE4ng inneb\xE4r att konvertera tex
   \ som representerar ett datum till ett datumobjekt, vilket m\xF6jligg\xF6r f\xF6\
   r programmerare att\u2026"
 title: "Analysera ett datum fr\xE5n en str\xE4ng"
+weight: 30
 ---
-
-{{< edit_this_page >}}
 
 ## Vad & Varför?
 

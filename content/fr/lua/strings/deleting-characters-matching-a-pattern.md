@@ -9,9 +9,8 @@ summary: "Supprimer des caract\xE8res qui correspondent \xE0 un motif, c'est un 
   \ comme trier le bon grain de l'ivraie dans un texte. Les programmeurs font \xE7\
   a pour\u2026"
 title: "Suppression de caract\xE8res correspondant \xE0 un motif"
+weight: 5
 ---
-
-{{< edit_this_page >}}
 
 ## Quoi et Pourquoi ?
 Supprimer des caractères qui correspondent à un motif, c'est un peu comme trier le bon grain de l'ivraie dans un texte. Les programmeurs font ça pour nettoyer les données, simplifier le traitement ou sécuriser les entrées utilisateur.

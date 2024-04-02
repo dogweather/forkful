@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Inviare una richiesta HTTP con autenticazione di base comporta la codifica\
   \ di un nome utente e di una password in un'intestazione di richiesta per\u2026"
 title: Inviare una richiesta HTTP con autenticazione di base
+weight: 45
 ---
-
-{{< edit_this_page >}}
 
 ## Cosa & Perché?
 

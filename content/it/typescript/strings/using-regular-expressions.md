@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Le espressioni regolari, o regex, rappresentano uno strumento potente per\
   \ la ricerca e il confronto di pattern nella programmazione. I programmatori\u2026"
 title: Utilizzo delle espressioni regolari
+weight: 11
 ---
-
-{{< edit_this_page >}}
 
 ## Cosa & Perché?
 Le espressioni regolari, o regex, rappresentano uno strumento potente per la ricerca e il confronto di pattern nella programmazione. I programmatori utilizzano le regex per compiti come la validazione dell'input dell'utente, la ricerca nel testo o la manipolazione delle stringhe perché sono efficienti e versatili.

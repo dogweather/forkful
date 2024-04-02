@@ -9,9 +9,8 @@ summary: "HTTP-pyynt\xF6 perusautentikoinnilla l\xE4hett\xE4\xE4 tietoa palvelim
   \ suojattuna. Se on turvallinen tapa p\xE4\xE4st\xE4 k\xE4siksi API:hin tai palveluun,\
   \ joka vaatii\u2026"
 title: "HTTP-pyynn\xF6n l\xE4hett\xE4minen perusautentikoinnilla"
+weight: 45
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why? (Mikä ja Miksi?)
 HTTP-pyyntö perusautentikoinnilla lähettää tietoa palvelimelle suojattuna. Se on turvallinen tapa päästä käsiksi API:hin tai palveluun, joka vaatii käyttäjätunnistusta.

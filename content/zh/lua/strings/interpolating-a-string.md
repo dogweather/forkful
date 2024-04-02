@@ -8,9 +8,8 @@ model: gpt-4-1106-preview
 summary: "String interpolation is replacing placeholders within a string with actual\
   \ values, a common practice for crafting messages or assembling texts\u2026"
 title: "\u5B57\u7B26\u4E32\u63D2\u503C"
+weight: 8
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why? (是什么？为什么？)
 String interpolation is replacing placeholders within a string with actual values, a common practice for crafting messages or assembling texts dynamically. Programmers do it for readability and efficiency in their code.

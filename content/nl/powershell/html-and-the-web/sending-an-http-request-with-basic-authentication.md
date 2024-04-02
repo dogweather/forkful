@@ -11,9 +11,8 @@ summary: "Een HTTP-verzoek verzenden met basisauthenticatie is wanneer je progra
   \ contact maakt met een webserver en zegt: \"H\xE9, ik ben het,\" met behulp van\
   \ een\u2026"
 title: Een HTTP-verzoek verzenden met basisauthenticatie
+weight: 45
 ---
-
-{{< edit_this_page >}}
 
 ## Wat & Waarom?
 

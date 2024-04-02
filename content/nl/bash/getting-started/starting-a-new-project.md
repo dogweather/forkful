@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Een nieuw project starten betekent vaak het cre\xEBren van een mappenstructuur\
   \ en initi\xEBle bestanden - een beetje zoals het leggen van de fundering van een\u2026"
 title: Een nieuw project starten
+weight: 1
 ---
-
-{{< edit_this_page >}}
 
 ## Wat & Waarom?
 Een nieuw project starten betekent vaak het creëren van een mappenstructuur en initiële bestanden - een beetje zoals het leggen van de fundering van een huis. Programmeurs doen dit om gedachten, bestanden en taken te organiseren, chaos om te zetten in een nette to-do lijst.

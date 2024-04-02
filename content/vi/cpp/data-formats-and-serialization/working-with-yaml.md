@@ -13,9 +13,8 @@ summary: "L\xE0m vi\u1EC7c v\u1EDBi YAML \u0111\u1EC1 c\u1EADp \u0111\u1EBFn vi\
   \ Markup Language th\xE2n thi\u1EC7n v\u1EDBi con ng\u01B0\u1EDDi. L\u1EADp tr\xEC\
   nh vi\xEAn s\u1EED d\u1EE5ng n\xF3\u2026"
 title: "L\xE0m vi\u1EC7c v\u1EDBi YAML"
+weight: 41
 ---
-
-{{< edit_this_page >}}
 
 ## Làm gì & Tại sao?
 

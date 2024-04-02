@@ -19,9 +19,8 @@ summary: "TOML, \u05E8\u05D0\u05E9\u05D9 \u05EA\u05D9\u05D1\u05D5\u05EA \u05E9\u
   \u05D5\u05DF \u05E9\u05D4\u05D9\u05D0 \u05E7\u05E8\u05D9\u05D0\u05D4 \u05DC\u05D0\
   \u05D3\u05DD \u05D5\u05DE\u05DE\u05E4\u05D4\u2026"
 title: "\u05E2\u05D1\u05D5\u05D3\u05D4 \u05E2\u05DD TOML"
+weight: 39
 ---
-
-{{< edit_this_page >}}
 
 ## מה ולמה?
 TOML, ראשי תיבות של Tom's Obvious, Minimal Language, היא שפת סריאליזציה של נתונים. מתכנתי Elm משתמשים בה כדי לנהל נתוני תצורה מכיוון שהיא קריאה לאדם וממפה בצורה נקייה לזוגות מפתח-ערך הדרושים ביישומים.

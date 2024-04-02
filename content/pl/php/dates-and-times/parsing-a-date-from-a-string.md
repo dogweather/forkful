@@ -11,9 +11,8 @@ summary: "Parsowanie daty z ci\u0105gu znak\xF3w w PHP polega na konwersji tekst
   \ kt\xF3ry przedstawia dat\u0119 i/lub czas, na obiekt `DateTime` PHP lub inne formaty\
   \ daty/czasu.\u2026"
 title: "Analiza sk\u0142adniowa daty z \u0142a\u0144cucha znak\xF3w"
+weight: 30
 ---
-
-{{< edit_this_page >}}
 
 ## Co i dlaczego?
 

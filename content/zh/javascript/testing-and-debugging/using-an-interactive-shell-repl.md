@@ -15,9 +15,8 @@ summary: "\u4EA4\u4E92\u5F0Fshell\u6216\u8005REPL\uFF08\u8BFB\u53D6-\u8BC4\u4F30
   \u7B80\u964B\uFF0C\u65E0\u9700\u8BBE\u7F6E\u5B8C\u6574\u7684\u5F00\u53D1\u73AF\u5883\
   \u3002"
 title: "\u5728\u7F16\u7A0B\u4E2D\u4F7F\u7528\u4EA4\u4E92\u5F0FShell\uFF08REPL\uFF09"
+weight: 34
 ---
-
-{{< edit_this_page >}}
 
 ## 什么 & 为什么？
 交互式shell或者REPL（读取-评估-打印循环），允许你即时运行代码，测试函数、算法或者把玩想法。它们是编码的草稿纸，快速且简陋，无需设置完整的开发环境。

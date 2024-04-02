@@ -7,9 +7,8 @@ model: gpt-4-0125-preview
 summary: "Komplekse tall best\xE5r av en reell del og en imagin\xE6r del. Programmerere\
   \ bruker dem innen felter som signalbehandling, kvantemekanikk, og n\xE5r som helst\u2026"
 title: "\xC5 jobbe med komplekse tall"
+weight: 14
 ---
-
-{{< edit_this_page >}}
 
 ## Hva & Hvorfor?
 Komplekse tall består av en reell del og en imaginær del. Programmerere bruker dem innen felter som signalbehandling, kvantemekanikk, og når som helst beregningen krever det, fordi vanlige reelle tall bare ikke strekker til.

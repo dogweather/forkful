@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Die L\xE4nge eines Strings in Dart zu finden, bedeutet, die Anzahl der Codeeinheiten\
   \ (im Grunde die Anzahl der Zeichen, wenn man es vereinfacht betrachtet)\u2026"
 title: "Die L\xE4nge einer Zeichenkette finden"
+weight: 7
 ---
-
-{{< edit_this_page >}}
 
 ## Was & Warum?
 Die Länge eines Strings in Dart zu finden, bedeutet, die Anzahl der Codeeinheiten (im Grunde die Anzahl der Zeichen, wenn man es vereinfacht betrachtet) in einem gegebenen String zu bestimmen. Programmierer machen dies, um Strings präziser zu manipulieren, wie zum Beispiel die Eingabe zu validieren, den Anzeigetext zu kürzen oder Datenformate zu verarbeiten, bei denen die Länge eine Rolle spielt (z.B. Protokolle mit längevorangestellten Nachrichten).

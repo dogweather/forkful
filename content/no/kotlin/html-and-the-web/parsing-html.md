@@ -11,9 +11,8 @@ summary: "\xC5 parse HTML betyr \xE5 dissekere en nettsides oppmerking til noe e
   \ program kan forst\xE5 og manipulere. Programutviklere parser HTML for \xE5 ekstrahere\
   \ data,\u2026"
 title: Analysering av HTML
+weight: 43
 ---
-
-{{< edit_this_page >}}
 
 ## Hva & Hvorfor?
 Å parse HTML betyr å dissekere en nettsides oppmerking til noe et program kan forstå og manipulere. Programutviklere parser HTML for å ekstrahere data, automatisere webinteraksjoner eller migrere innhold mellom systemer.

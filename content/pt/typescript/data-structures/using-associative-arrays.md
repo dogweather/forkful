@@ -10,9 +10,8 @@ model: gpt-4-0125-preview
 summary: "Arrays associativos, ou objetos no TypeScript, permitem que voc\xEA utilize\
   \ strings (ou chaves) para acessar pares de valor. Programadores os usam para\u2026"
 title: Usando arrays associativos
+weight: 15
 ---
-
-{{< edit_this_page >}}
 
 ## O Que & Por Que?
 

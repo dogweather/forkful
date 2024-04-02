@@ -7,9 +7,8 @@ model: gpt-4-1106-preview
 summary: "Das Drucken von Debug-Informationen hilft beim Aufsp\xFCren von Fehlern\
   \ im Code, indem es erlaubt, Werte und den Zustand des Programms zur Laufzeit zu\u2026"
 title: Debug-Ausgaben drucken
+weight: 33
 ---
-
-{{< edit_this_page >}}
 
 ## Was & Warum?
 Das Drucken von Debug-Informationen hilft beim Aufspüren von Fehlern im Code, indem es erlaubt, Werte und den Zustand des Programms zur Laufzeit zu überwachen. Programmierer*innen machen das, um Bugs schneller zu finden und zu beheben.

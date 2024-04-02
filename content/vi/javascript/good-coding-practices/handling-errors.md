@@ -13,9 +13,8 @@ summary: "X\u1EED l\xFD l\u1ED7i l\xE0 c\xE1ch b\u1EA1n qu\u1EA3n l\xFD khi m\u1
   a b\u1EA1n. \u0110i\u1EC1u n\xE0y quan tr\u1ECDng b\u1EDFi v\xEC n\xF3 gi\xFAp ch\u01B0\
   \u01A1ng tr\xECnh c\u1EE7a b\u1EA1n th\u1EA5t b\u1EA1i\u2026"
 title: "X\u1EED l\xFD l\u1ED7i"
+weight: 16
 ---
-
-{{< edit_this_page >}}
 
 ## Gì và Tại sao?
 

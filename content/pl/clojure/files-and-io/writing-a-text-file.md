@@ -11,9 +11,8 @@ summary: "Pisanie pliku tekstowego w Clojure polega na tworzeniu lub modyfikowan
   \ plik\xF3w w celu zapisania danych poza aplikacj\u0105, umo\u017Cliwiaj\u0105c\
   \ trwa\u0142o\u015B\u0107,\u2026"
 title: Pisanie pliku tekstowego
+weight: 24
 ---
-
-{{< edit_this_page >}}
 
 ## Co i dlaczego?
 

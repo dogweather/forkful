@@ -7,9 +7,8 @@ model: gpt-4-0125-preview
 summary: "\xC5 generere tilfeldige tall er en grunnleggende oppgave i programmering,\
   \ som brukes til alt fra datautvalg til spillutvikling. I Fish Shell lar bruk av\u2026"
 title: Generering av tilfeldige tall
+weight: 12
 ---
-
-{{< edit_this_page >}}
 
 ## Hva & Hvorfor?
 

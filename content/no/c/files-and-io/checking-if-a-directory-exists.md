@@ -11,9 +11,8 @@ summary: "\xC5 sjekke om en mappe eksisterer i C inneb\xE6rer \xE5 foresp\xF8rre
   \ for \xE5 verifisere om en spesifikk bane leder til en mappe. Programmerere utf\xF8\
   rer\u2026"
 title: Sjekke om en mappe eksisterer
+weight: 20
 ---
-
-{{< edit_this_page >}}
 
 ## Hva & Hvorfor?
 

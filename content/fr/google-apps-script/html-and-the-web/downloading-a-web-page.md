@@ -11,9 +11,8 @@ summary: "T\xE9l\xE9charger une page web avec Google Apps Script implique de r\x
   cup\xE9rer le contenu d'une page web via HTML pour diverses raisons, telles que\
   \ le web\u2026"
 title: "T\xE9l\xE9charger une page web"
+weight: 42
 ---
-
-{{< edit_this_page >}}
 
 ## Quoi & Pourquoi ?
 

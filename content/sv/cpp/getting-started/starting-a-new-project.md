@@ -9,9 +9,8 @@ summary: "Starta ett nytt projekt betyder att kicka ig\xE5ng en helt fr\xE4sch k
   \ fr\xE5n nollpunkt. Programmerare g\xF6r detta f\xF6r att f\xF6rverkliga nya id\xE9\
   er, l\xF6sa unika\u2026"
 title: "Att p\xE5b\xF6rja ett nytt projekt"
+weight: 1
 ---
-
-{{< edit_this_page >}}
 
 ## Vad & Varför?
 Starta ett nytt projekt betyder att kicka igång en helt fräsch kodkodbas från nollpunkt. Programmerare gör detta för att förverkliga nya idéer, lösa unika problem eller utforska ny teknik.

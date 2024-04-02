@@ -9,9 +9,8 @@ summary: "Feilh\xE5ndtering i PHP dreier seg om \xE5 h\xE5ndtere og respondere p
   \ tilstander som forstyrrer det normale programflytet, som manglende filer eller\
   \ d\xE5rlig\u2026"
 title: "Feilh\xE5ndtering"
+weight: 16
 ---
-
-{{< edit_this_page >}}
 
 ## Hva & Hvorfor?
 Feilhåndtering i PHP dreier seg om å håndtere og respondere på tilstander som forstyrrer det normale programflytet, som manglende filer eller dårlig datainnskriving. Programmerere håndterer feil for å forhindre krasj og for å gi brukerne en jevnere opplevelse.

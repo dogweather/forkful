@@ -7,9 +7,8 @@ model: gpt-4-1106-preview
 summary: "Ein neues Projekt zu starten bedeutet, eine leere Leinwand in der Arduino-IDE\
   \ zu \xF6ffnen und mit einer originellen Idee zu f\xFCllen. Programmierer tun dies\u2026"
 title: Einen neuen Projekt starten
+weight: 1
 ---
-
-{{< edit_this_page >}}
 
 ## Was & Warum?
 

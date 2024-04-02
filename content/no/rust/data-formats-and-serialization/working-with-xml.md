@@ -7,9 +7,8 @@ model: gpt-4-0125-preview
 summary: "XML, forkortet for eXtensible Markup Language, er som en ordrik fetter av\
   \ JSON. Du vil st\xF8te p\xE5 XML n\xE5r du h\xE5ndterer eldre systemer, bedriftsprogramvare,\u2026"
 title: "\xC5 jobbe med XML"
+weight: 40
 ---
-
-{{< edit_this_page >}}
 
 ## Hva og hvorfor?
 XML, forkortet for eXtensible Markup Language, er som en ordrik fetter av JSON. Du vil støte på XML når du håndterer eldre systemer, bedriftsprogramvare, eller APIer som hoppet over JSON-toget. Det er essensielt for datautveksling der XML holder sin posisjon.

@@ -9,9 +9,8 @@ summary: "Debug-Output ist wie das Fl\xFCstern deines Codes. Es verr\xE4t dir, w
   \ im Code passiert, w\xE4hrend er l\xE4uft. Warum? Weil wir Menschen nicht in Matrix-Code\
   \ sehen\u2026"
 title: Debug-Ausgaben drucken
+weight: 33
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why? (Was & Warum?)
 Debug-Output ist wie das Flüstern deines Codes. Es verrät dir, was im Code passiert, während er läuft. Warum? Weil wir Menschen nicht in Matrix-Code sehen können. Debug hilft, Fehler zu finden und zu verstehen, wie der Code sich verhält.

@@ -7,9 +7,8 @@ model: gpt-4-1106-preview
 summary: "Fehlerbehandlung geht darum, in Codes das Unerwartete zu erwarten \u2013\
   \ Fehler und Probleme anmutig zu managen, ohne dass das Programm abst\xFCrzt. Entwickler\u2026"
 title: Fehlerbehandlung
+weight: 16
 ---
-
-{{< edit_this_page >}}
 
 ## Was & Warum?
 

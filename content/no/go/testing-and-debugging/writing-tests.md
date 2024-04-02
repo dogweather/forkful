@@ -11,9 +11,8 @@ summary: "\xC5 skrive tester i Go inneb\xE6rer \xE5 lage sm\xE5, h\xE5ndterbare 
   \ av kode som validerer funksjonaliteten og oppf\xF8rselen til din applikasjon.\
   \ Programmerere\u2026"
 title: Skrive tester
+weight: 36
 ---
-
-{{< edit_this_page >}}
 
 ## Hva & Hvorfor?
 

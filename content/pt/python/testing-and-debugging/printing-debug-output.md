@@ -9,9 +9,8 @@ summary: "A impress\xE3o de sa\xEDdas de depura\xE7\xE3o permite que programador
   \ rastreiem e entendam o que est\xE1 acontecendo dentro de seu c\xF3digo ao execut\xE1\
   -lo. Fazemos isso\u2026"
 title: "Exibindo sa\xEDdas de depura\xE7\xE3o"
+weight: 33
 ---
-
-{{< edit_this_page >}}
 
 ## O Que & Porquê?
 

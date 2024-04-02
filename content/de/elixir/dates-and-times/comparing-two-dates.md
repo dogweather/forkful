@@ -8,9 +8,8 @@ model: gpt-4-1106-preview
 summary: "Das Vergleichen zweier Daten erm\xF6glicht es uns, ihre chronologische Reihenfolge\
   \ festzustellen \u2013 herauszufinden, welches fr\xFCher oder sp\xE4ter ist.\u2026"
 title: Vergleich von zwei Daten
+weight: 27
 ---
-
-{{< edit_this_page >}}
 
 ## Was & Warum?
 Das Vergleichen zweier Daten ermöglicht es uns, ihre chronologische Reihenfolge festzustellen – herauszufinden, welches früher oder später ist. Programmierer nutzen das für Zeitpläne, Gültigkeitsprüfungen und um zeitgesteuerte Events zu handhaben.

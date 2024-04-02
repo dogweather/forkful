@@ -9,9 +9,8 @@ summary: "Ber\xE4kning av ett framtida eller f\xF6rflutet datum inneb\xE4r att m
   \ r\xE4knar ut ett datum utifr\xE5n ett givet startdatum och en tidsspann. Programmerare\
   \ g\xF6r detta\u2026"
 title: "Ber\xE4kna ett datum i framtiden eller f\xF6rflutet"
+weight: 26
 ---
-
-{{< edit_this_page >}}
 
 ## Vad & Varför?
 Beräkning av ett framtida eller förflutet datum innebär att man räknar ut ett datum utifrån ett givet startdatum och en tidsspann. Programmerare gör detta för att hantera tidsbaserade händelser, som utgångsdatum eller påminnelser.

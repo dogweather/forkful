@@ -9,9 +9,8 @@ summary: "Logging \xE9 o processo de registrar eventos, erros e outras informa\x
   \xF5es significativas durante a execu\xE7\xE3o de um programa em um meio externo,\
   \ frequentemente\u2026"
 title: Registro de Logs
+weight: 17
 ---
-
-{{< edit_this_page >}}
 
 ## O Que & Por Quê?
 

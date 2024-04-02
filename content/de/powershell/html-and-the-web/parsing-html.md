@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Das Parsen von HTML in PowerShell bedeutet, HTML-Inhalte zu untersuchen,\
   \ um spezifische Daten zu extrahieren oder webbezogene Aufgaben zu automatisieren.\u2026"
 title: HTML parsen
+weight: 43
 ---
-
-{{< edit_this_page >}}
 
 ## Was & Warum?
 Das Parsen von HTML in PowerShell bedeutet, HTML-Inhalte zu untersuchen, um spezifische Daten zu extrahieren oder webbezogene Aufgaben zu automatisieren. Programmierer tun dies, um mit Webseiten zu interagieren, Webinhalte zu scrapen oder Formulareinreichungen und andere Webinteraktionen ohne die Notwendigkeit eines Webbrowsers zu automatisieren.

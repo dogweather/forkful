@@ -12,9 +12,8 @@ summary: "\u65B0\u9879\u76EE\u5C31\u662F\u4F60\u51C6\u5907\u5F00\u53D1\u7684\u8F
   \u4E3A\u4E86\u7EC4\u7EC7\u4EE3\u7801\u3001\u6D4B\u8BD5\u548C\u6587\u6863\uFF0C\u4ECE\
   \u96F6\u5F00\u59CB\u6784\u5EFA\u60F3\u6CD5\u3002"
 title: "\u5F00\u59CB\u4E00\u4E2A\u65B0\u9879\u76EE"
+weight: 1
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why? 什么是新项目？以及为什么要创建？
 新项目就是你准备开发的软件的起点。程序员创建新项目是为了组织代码、测试和文档，从零开始构建想法。

@@ -9,9 +9,8 @@ summary: "Att konvertera en str\xE4ng till gemener inneb\xE4r att alla stora bok
   ver i texten f\xF6rvandlas till sm\xE5a bokst\xE4ver. Programmerare g\xF6r detta\
   \ f\xF6r att f\xF6renkla\u2026"
 title: "Konvertera en str\xE4ng till gemener"
+weight: 4
 ---
-
-{{< edit_this_page >}}
 
 ## Vad & Varför?
 Att konvertera en sträng till gemener innebär att alla stora bokstäver i texten förvandlas till småa bokstäver. Programmerare gör detta för att förenkla jämförelser och sökningar, eftersom skillnader i versalisering då inte spelar någon roll.

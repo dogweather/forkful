@@ -9,9 +9,8 @@ summary: "Envoyer une requ\xEAte HTTP, c'est comme envoyer une lettre num\xE9riq
   \ \xE0 un serveur web pour obtenir des donn\xE9es ou d\xE9clencher une action. Les\
   \ programmeurs le\u2026"
 title: "Envoi d'une requ\xEAte HTTP"
+weight: 44
 ---
-
-{{< edit_this_page >}}
 
 ## Quoi & Pourquoi ?
 Envoyer une requête HTTP, c'est comme envoyer une lettre numérique à un serveur web pour obtenir des données ou déclencher une action. Les programmeurs le font pour communiquer avec des API ou des services web, pour récupérer des informations ou envoyer des instructions.

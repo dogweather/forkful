@@ -9,9 +9,8 @@ summary: "Slette tegn som matcher et m\xF8nster betyr \xE5 fjerne spesifikke kar
   \ fra en streng som oppfyller gitte kriterier. Programmerere gj\xF8r dette for \xE5\
   \ rense\u2026"
 title: "Slette tegn som matcher et m\xF8nster"
+weight: 5
 ---
-
-{{< edit_this_page >}}
 
 ## Hva & Hvorfor?
 Slette tegn som matcher et mønster betyr å fjerne spesifikke karakterer fra en streng som oppfyller gitte kriterier. Programmerere gjør dette for å rense input, manipulere tekst, eller forberede data for videre behandling.

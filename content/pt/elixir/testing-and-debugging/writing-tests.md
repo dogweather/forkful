@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Escrever testes em Elixir envolve a cria\xE7\xE3o de scripts automatizados\
   \ para validar o comportamento do seu c\xF3digo. Os programadores fazem isso para\u2026"
 title: Escrevendo testes
+weight: 36
 ---
-
-{{< edit_this_page >}}
 
 ## O Que & Por Quê?
 Escrever testes em Elixir envolve a criação de scripts automatizados para validar o comportamento do seu código. Os programadores fazem isso para assegurar a qualidade, prevenir regressões e facilitar a refatoração do código, tornando o processo de desenvolvimento mais confiável e eficiente.

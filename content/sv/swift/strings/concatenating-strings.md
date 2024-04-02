@@ -9,9 +9,8 @@ summary: "Att sl\xE5 ihop str\xE4ngar, eller konkatenering, inneb\xE4r att du s\
   tter samman tv\xE5 eller flera textstr\xE4ngar till en. Vi g\xF6r det f\xF6r att\
   \ skapa dynamisk text, som\u2026"
 title: "Sammanslagning av str\xE4ngar"
+weight: 3
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 Att slå ihop strängar, eller konkatenering, innebär att du sätter samman två eller flera textsträngar till en. Vi gör det för att skapa dynamisk text, som användarnamn i en hälsning eller värden i en loggfil.

@@ -22,9 +22,8 @@ summary: "REPL \u0E2B\u0E23\u0E37\u0E2D Read-Eval-Print Loop \u0E0A\u0E48\u0E27\
   \ \u0E2B\u0E23\u0E37\u0E2D\u0E40\u0E23\u0E35\u0E22\u0E19\u0E23\u0E39\u0E49 C#\u2026"
 title: "\u0E01\u0E32\u0E23\u0E43\u0E0A\u0E49 Shell \u0E41\u0E1A\u0E1A\u0E42\u0E15\u0E49\
   \u0E15\u0E2D\u0E1A (REPL)"
+weight: 34
 ---
-
-{{< edit_this_page >}}
 
 ## อะไรและทำไม?
 REPL หรือ Read-Eval-Print Loop ช่วยให้คุณพิมพ์โค้ด C# และรันแบบโต้ตอบได้ โปรแกรมเมอร์ใช้มันสำหรับทดลองอย่างรวดเร็ว การดีบัก หรือเรียนรู้ C# โดยไม่ต้องตั้งค่าโปรเจกต์เต็มรูปแบบ

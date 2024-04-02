@@ -9,9 +9,8 @@ summary: "Wysy\u0142anie \u017C\u0105dania HTTP to proces komunikacji z serwerem
   \ by uzyska\u0107 dane lub wykona\u0107 operacj\u0119. Programi\u015Bci to robi\u0105\
   , by wsp\xF3\u0142dzia\u0142a\u0107 z API,\u2026"
 title: "Wysy\u0142anie \u017C\u0105dania HTTP"
+weight: 44
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why? | Co i Dlaczego?
 Wysyłanie żądania HTTP to proces komunikacji z serwerem internetowym, by uzyskać dane lub wykonać operację. Programiści to robią, by współdziałać z API, pobierać treści stron, przesyłać dane formularzy lub testować aplikacje webowe.

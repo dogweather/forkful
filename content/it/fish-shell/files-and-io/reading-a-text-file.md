@@ -7,9 +7,8 @@ model: gpt-4-1106-preview
 summary: "Leggere un file di testo significa semplicemente accedere al contenuto al\
   \ suo interno e visualizzarlo attraverso il terminale. I programmatori lo fanno\u2026"
 title: Lettura di un file di testo
+weight: 22
 ---
-
-{{< edit_this_page >}}
 
 ## Cosa & Perché?
 

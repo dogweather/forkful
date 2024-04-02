@@ -21,9 +21,8 @@ summary: "\uBB38\uC790\uC5F4\uC5D0\uC11C \uB530\uC634\uD45C\uB97C \uC81C\uAC70\u
   \uD45C\uAC00 \uD544\uC694\uD558\uC9C0 \uC54A\uC744 \uB54C \uC774 \uC791\uC5C5\uC744\
   \ \uC218\uD589\uD569\uB2C8\uB2E4."
 title: "\uBB38\uC790\uC5F4\uC5D0\uC11C \uB530\uC634\uD45C \uC81C\uAC70\uD558\uAE30"
+weight: 9
 ---
-
-{{< edit_this_page >}}
 
 ## 무엇 & 왜?
 문자열에서 따옴표를 제거한다는 것은 보통 겹따옴표(")나 홑따옴표(')를 없애는 것을 의미합니다. 프로그래머들이 입력값을 정화하거나, 문자열을 데이터베이스에 저장하거나 디스플레이에 준비하는 등의 추가 처리에 따옴표가 필요하지 않을 때 이 작업을 수행합니다.

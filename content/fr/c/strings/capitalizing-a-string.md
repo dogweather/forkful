@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Capitaliser une cha\xEEne en C consiste \xE0 convertir le premier caract\xE8\
   re de chaque mot dans une cha\xEEne donn\xE9e en majuscule s'il s'agit d'une lettre\u2026"
 title: "Mettre une cha\xEEne en majuscules"
+weight: 2
 ---
-
-{{< edit_this_page >}}
 
 ## Quoi et Pourquoi ?
 

@@ -11,9 +11,8 @@ summary: "Pisanie do standardowego b\u0142\u0119du (stderr) polega na przekierow
   \ komunikat\xF3w o b\u0142\u0119dach i diagnozy odseparowane od g\u0142\xF3wnego\
   \ wyj\u015Bcia programu, kt\xF3re\u2026"
 title: "Pisanie do standardowego b\u0142\u0119du"
+weight: 25
 ---
-
-{{< edit_this_page >}}
 
 ## Co i dlaczego?
 

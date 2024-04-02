@@ -9,9 +9,8 @@ summary: "HTTP-f\xF6rfr\xE5gningar med grundl\xE4ggande autentisering inneb\xE4r
   \ man skickar anv\xE4ndarnamn och l\xF6senord i klartext, kodat i Base64, f\xF6\
   r att bevisa sin\u2026"
 title: "Skicka en HTTP-f\xF6rfr\xE5gan med Basic-autentisering"
+weight: 45
 ---
-
-{{< edit_this_page >}}
 
 ## Vad & Varför?
 HTTP-förfrågningar med grundläggande autentisering innebär att man skickar användarnamn och lösenord i klartext, kodat i Base64, för att bevisa sin identitet. Programmerare använder det för att få åtkomst till skyddade resurser på ett enkelt och direkt sätt.

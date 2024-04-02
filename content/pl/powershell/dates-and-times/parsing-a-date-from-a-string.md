@@ -11,9 +11,8 @@ summary: "Parsowanie daty z ci\u0105gu tekstowego polega na rozpoznawaniu i konw
   \ zapisanych dat w formie tekstowej na typ danych daty, kt\xF3ry PowerShell mo\u017C\
   e\u2026"
 title: "Analiza sk\u0142adniowa daty z \u0142a\u0144cucha znak\xF3w"
+weight: 30
 ---
-
-{{< edit_this_page >}}
 
 ## Co i dlaczego?
 Parsowanie daty z ciągu tekstowego polega na rozpoznawaniu i konwersji zapisanych dat w formie tekstowej na typ danych daty, który PowerShell może zrozumieć i z którym może pracować. Programiści robią to, aby manipulować, formatować, porównywać lub obliczać daty, co są powszechnymi zadaniami w skryptach zajmujących się plikami dziennika, danymi wejściowymi użytkownika lub przetwarzaniem danych.

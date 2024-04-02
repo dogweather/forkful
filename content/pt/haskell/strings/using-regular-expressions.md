@@ -11,9 +11,8 @@ summary: "Express\xF5es regulares na programa\xE7\xE3o s\xE3o sequ\xEAncias de c
   \ que definem um padr\xE3o de busca, tipicamente empregadas para pesquisa e manipula\xE7\
   \xE3o de\u2026"
 title: "Usando express\xF5es regulares"
+weight: 11
 ---
-
-{{< edit_this_page >}}
 
 ## O Que & Por Que?
 Expressões regulares na programação são sequências de caracteres que definem um padrão de busca, tipicamente empregadas para pesquisa e manipulação de strings. Programadores utilizando Haskell recorrem a expressões regulares para tarefas que vão desde simples correspondências de strings até processamento de texto complexo, capitalizando em sua eficiência e versatilidade no tratamento de dados textuais.

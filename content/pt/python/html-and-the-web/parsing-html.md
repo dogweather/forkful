@@ -11,9 +11,8 @@ summary: "Analisar HTML envolve analisar o c\xF3digo HTML de uma p\xE1gina da we
   \ para extrair informa\xE7\xF5es ou elementos espec\xEDficos, uma tarefa comum para\
   \ web scraping,\u2026"
 title: Analisando HTML
+weight: 43
 ---
-
-{{< edit_this_page >}}
 
 ## O Quê e Por Quê?
 Analisar HTML envolve analisar o código HTML de uma página da web para extrair informações ou elementos específicos, uma tarefa comum para web scraping, mineração de dados ou automação de interações com sites. Os programadores fazem isso para interagir programaticamente com os sites ou extrair dados deles, automatizar tarefas ou testar aplicações web.

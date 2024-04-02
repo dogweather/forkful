@@ -7,9 +7,8 @@ model: gpt-4-1106-preview
 summary: "Verkkosivun lataaminen tarkoittaa sivun sis\xE4ll\xF6n hakemista internetist\xE4\
   \ omalle laitteelle. Koodarit lataavat sivuja data-analyysiin, sis\xE4ll\xF6n\u2026"
 title: Verkkosivun lataaminen
+weight: 42
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 Verkkosivun lataaminen tarkoittaa sivun sisällön hakemista internetistä omalle laitteelle. Koodarit lataavat sivuja data-analyysiin, sisällön varmuuskopiointiin, tai sovellusten rakentamiseen joka hyödyntää sivujen tietoja.

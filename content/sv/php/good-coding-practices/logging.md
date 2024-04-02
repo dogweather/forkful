@@ -9,9 +9,8 @@ summary: "Loggning liknar i grunden att h\xE5lla en dagbok f\xF6r din kod; det \
   r handlingen att registrera h\xE4ndelser, fel och andra betydande datapunkter som\
   \ intr\xE4ffar\u2026"
 title: Loggning
+weight: 17
 ---
-
-{{< edit_this_page >}}
 
 ## Vad & Varför?
 

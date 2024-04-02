@@ -9,9 +9,8 @@ summary: "Imprimer des sorties de d\xE9bogage, c'est afficher des donn\xE9es pen
   \ l'ex\xE9cution pour comprendre ce qui se passe. Les d\xE9veloppeurs le font pour\
   \ traquer\u2026"
 title: "Affichage des sorties de d\xE9bogage"
+weight: 33
 ---
-
-{{< edit_this_page >}}
 
 ## Quoi et Pourquoi ?
 Imprimer des sorties de débogage, c'est afficher des données pendant l'exécution pour comprendre ce qui se passe. Les développeurs le font pour traquer les bugs plus efficacement et valider le comportement du code.

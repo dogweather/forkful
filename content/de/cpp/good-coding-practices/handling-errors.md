@@ -7,9 +7,8 @@ model: gpt-4-1106-preview
 summary: "Fehlerbehandlung bedeutet, f\xFCr den Fall zu planen, dass etwas schiefgeht.\
   \ Sie ist wichtig, weil sie Abst\xFCrze verhindert und Ihre Software robust und\u2026"
 title: Fehlerbehandlung
+weight: 16
 ---
-
-{{< edit_this_page >}}
 
 ## Was & Warum?
 Fehlerbehandlung bedeutet, für den Fall zu planen, dass etwas schiefgeht. Sie ist wichtig, weil sie Abstürze verhindert und Ihre Software robust und benutzerfreundlich macht.

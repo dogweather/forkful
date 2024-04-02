@@ -9,9 +9,8 @@ summary: "Obs\u0142uga b\u0142\u0119d\xF3w pozwala skryptowi radzi\u0107 sobie z
   \ sytuacjami w elegancki spos\xF3b. Robimy to, aby zarz\u0105dza\u0107 b\u0142\u0119\
   dami bez siwienia w\u0142os\xF3w\u2026"
 title: "Obs\u0142uga b\u0142\u0119d\xF3w"
+weight: 16
 ---
-
-{{< edit_this_page >}}
 
 ## Co i dlaczego?
 Obsługa błędów pozwala skryptowi radzić sobie z niespodziewanymi sytuacjami w elegancki sposób. Robimy to, aby zarządzać błędami bez siwienia włosów naszych użytkowników.

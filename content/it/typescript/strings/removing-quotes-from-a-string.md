@@ -9,9 +9,8 @@ summary: "Rimuovere le virgolette da una stringa significa togliere i caratteri 
   \ virgoletta singola (`'`) o doppia (`\"`) che definiscono le stringhe letterali\
   \ nel\u2026"
 title: Rimuovere le virgolette da una stringa
+weight: 9
 ---
-
-{{< edit_this_page >}}
 
 ## Che cosa e perché?
 Rimuovere le virgolette da una stringa significa togliere i caratteri di virgoletta singola (`'`) o doppia (`"`) che definiscono le stringhe letterali nel codice. I programmatori lo fanno per diverse ragioni, come formattare l'output, sanificare l'input dell'utente o preparare le stringhe per l'analisi o l'archiviazione dove le virgolette sono inutili o potrebbero causare errori.

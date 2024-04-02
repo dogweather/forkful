@@ -11,9 +11,8 @@ summary: "Por\xF3wnywanie dw\xF3ch dat w Google Apps Script, pochodnej JavaScrip
   \ dostosowanej do zestawu aplikacji Google'a, jest kluczowym zadaniem dla programist\xF3\
   w\u2026"
 title: "Por\xF3wnywanie dw\xF3ch dat"
+weight: 27
 ---
-
-{{< edit_this_page >}}
 
 ## Co i dlaczego?
 Porównywanie dwóch dat w Google Apps Script, pochodnej JavaScriptu dostosowanej do zestawu aplikacji Google'a, jest kluczowym zadaniem dla programistów zajmujących się planowaniem, harmonogramami lub jakimikolwiek danymi związanymi z datami. Zrozumienie, jak dokładnie porównać daty, umożliwia programistom efektywną implementację funkcji takich jak terminy, planowanie wydarzeń czy harmonogramowanie treści.

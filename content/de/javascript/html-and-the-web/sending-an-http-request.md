@@ -8,9 +8,8 @@ model: gpt-4-1106-preview
 summary: "Ein HTTP-Request erm\xF6glicht es deinem Code, mit einem Webserver zu sprechen;\
   \ man holt oder sendet Daten. Programmierer brauchen das f\xFCr APIs, um z.B.\u2026"
 title: Einen HTTP-Request senden
+weight: 44
 ---
-
-{{< edit_this_page >}}
 
 ## Was & Warum?
 Ein HTTP-Request ermöglicht es deinem Code, mit einem Webserver zu sprechen; man holt oder sendet Daten. Programmierer brauchen das für APIs, um z.B. Wetterinfos abzurufen, oder Nutzerdaten zu speichern.

@@ -9,9 +9,8 @@ summary: "Gestire gli errori significa pianificare per quando le cose vanno stor
   \ \xC8 vitale perch\xE9 aiuta ad evitare crash e rende il tuo software robusto e\
   \ facile\u2026"
 title: Gestione degli errori
+weight: 16
 ---
-
-{{< edit_this_page >}}
 
 ## Cosa e Perché?
 Gestire gli errori significa pianificare per quando le cose vanno storte. È vitale perché aiuta ad evitare crash e rende il tuo software robusto e facile da usare.

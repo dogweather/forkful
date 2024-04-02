@@ -13,9 +13,8 @@ summary: "X\u1EED l\xFD l\u1ED7i trong C# l\xE0 v\u1EC1 vi\u1EC7c qu\u1EA3n l\xF
   p ph\u1EA3i d\xE2y gi\xE0y c\u1EE7a m\xECnh. Ch\u01B0\u01A1ng tr\xECnh c\xF3 th\u1EC3\
   \ v\u1EA5p ph\u1EA3i d\u1EEF li\u1EC7u x\u1EA5u ho\u1EB7c k\u1EBFt\u2026"
 title: "X\u1EED l\xFD l\u1ED7i"
+weight: 16
 ---
-
-{{< edit_this_page >}}
 
 ## Cái Gì & Tại Sao?
 

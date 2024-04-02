@@ -11,9 +11,8 @@ summary: "Att tolka HTML i Arduino-projekt handlar om att extrahera information 
   n webbsidor. Programmerare g\xF6r detta f\xF6r att m\xF6jligg\xF6ra f\xF6r deras\
   \ Arduino-enheter\u2026"
 title: Tolka HTML
+weight: 43
 ---
-
-{{< edit_this_page >}}
 
 ## Vad & Varför?
 

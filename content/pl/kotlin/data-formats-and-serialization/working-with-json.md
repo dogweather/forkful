@@ -11,9 +11,8 @@ summary: "Praca z JSON-em (JavaScript Object Notation) w Kotlinie obejmuje anali
   \ i generowanie danych JSON. Programi\u015Bci robi\u0105 to, aby \u0142atwo wymienia\u0107\
   \ dane\u2026"
 title: Praca z JSON
+weight: 38
 ---
-
-{{< edit_this_page >}}
 
 ## Co i dlaczego?
 Praca z JSON-em (JavaScript Object Notation) w Kotlinie obejmuje analizowanie i generowanie danych JSON. Programiści robią to, aby łatwo wymieniać dane między różnymi warstwami aplikacji lub komunikować się z usługami sieciowymi, ze względu na lekki i czytelny format JSON.

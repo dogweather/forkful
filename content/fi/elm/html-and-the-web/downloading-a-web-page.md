@@ -7,9 +7,8 @@ model: gpt-4-1106-preview
 summary: "Webbisivun lataaminen tarkoittaa sivun sis\xE4ll\xF6n hakemista netist\xE4\
   . Ohjelmoijat lataavat sivuja tiedon ker\xE4\xE4miseen, automatisointiin, tai interaktiivisten\u2026"
 title: Verkkosivun lataaminen
+weight: 42
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 Webbisivun lataaminen tarkoittaa sivun sisällön hakemista netistä. Ohjelmoijat lataavat sivuja tiedon keräämiseen, automatisointiin, tai interaktiivisten web-sovellusten rakentamiseen.

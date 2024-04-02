@@ -9,9 +9,8 @@ summary: "Obs\u0142uga b\u0142\u0119d\xF3w polega na oczekiwaniu na nieoczekiwan
   \ to, jak zarz\u0105dzamy sytuacjami, gdy co\u015B idzie nie tak w naszym kodzie.\
   \ Robimy to, aby unikn\u0105\u0107 awarii\u2026"
 title: "Obs\u0142uga b\u0142\u0119d\xF3w"
+weight: 16
 ---
-
-{{< edit_this_page >}}
 
 ## Co i Dlaczego?
 Obsługa błędów polega na oczekiwaniu na nieoczekiwane; to, jak zarządzamy sytuacjami, gdy coś idzie nie tak w naszym kodzie. Robimy to, aby uniknąć awarii i zapewnić użytkownikom płynne doświadczenie, nawet kiedy zdarzy się coś nieoczekiwanego.

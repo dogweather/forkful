@@ -24,9 +24,8 @@ summary: "\uAE30\uBCF8 \uC778\uC99D\uC744 \uC0AC\uC6A9\uD558\uC5EC HTTP \uC694\u
   \uD569\uD558\uAE30 \uC704\uD574 \uC774\u2026"
 title: "\uAE30\uBCF8 \uC778\uC99D\uC744 \uC0AC\uC6A9\uD558\uC5EC HTTP \uC694\uCCAD\
   \ \uBCF4\uB0B4\uAE30"
+weight: 45
 ---
-
-{{< edit_this_page >}}
 
 ## 무엇이며 왜 사용하는가?
 

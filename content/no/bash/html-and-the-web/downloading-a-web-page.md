@@ -9,9 +9,8 @@ summary: "Last ned en nettside betyr \xE5 hente HTML-innholdet fra en nettadress
   \ Programmerere gj\xF8r dette for \xE5 analysere innholdet, teste tilgjengelighet,\
   \ eller\u2026"
 title: Nedlasting av en nettside
+weight: 42
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 Last ned en nettside betyr å hente HTML-innholdet fra en nettadresse. Programmerere gjør dette for å analysere innholdet, teste tilgjengelighet, eller automatisere datahenting.

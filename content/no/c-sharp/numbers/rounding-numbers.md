@@ -9,9 +9,8 @@ summary: "\xC5 avrunde tall betyr \xE5 justere dem til den n\xE6rmeste spesifise
   \ plassverdien\u2014tenk \xE5 spenne dem ned til en enklere form. Programmerere\
   \ runder av for \xE5\u2026"
 title: Avrunding av tall
+weight: 13
 ---
-
-{{< edit_this_page >}}
 
 ## Hva & Hvorfor?
 Å avrunde tall betyr å justere dem til den nærmeste spesifiserte plassverdien—tenk å spenne dem ned til en enklere form. Programmerere runder av for å kontrollere presisjon, øke ytelse eller når de viser brukervennlige resultater—som priser som ikke trenger tre desimalplasser.

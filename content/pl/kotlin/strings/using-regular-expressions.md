@@ -11,9 +11,8 @@ summary: "Wyra\u017Cenia regularne (regex) s\u0105 pot\u0119\u017Cnym narz\u0119
   \ do przetwarzania tekstu, pozwalaj\u0105c programistom na wyszukiwanie, dopasowywanie\
   \ i manipulowanie ci\u0105gami\u2026"
 title: "Korzystanie z wyra\u017Ce\u0144 regularnych"
+weight: 11
 ---
-
-{{< edit_this_page >}}
 
 ## Co i dlaczego?
 

@@ -9,9 +9,8 @@ summary: "El manejo de errores trata sobre c\xF3mo gestionar lo inesperado en lo
   \ programas, como un portero que lidiar con los alborotadores. A los programadores\
   \ les\u2026"
 title: Manejo de errores
+weight: 16
 ---
-
-{{< edit_this_page >}}
 
 ## ¿Qué y Por Qué?
 El manejo de errores trata sobre cómo gestionar lo inesperado en los programas, como un portero que lidiar con los alborotadores. A los programadores les gusta que todo sea fluido; el manejo de errores ayuda a mantener los problemas en línea, asegurándose de que su código no tropiece y caiga cuando se enfrenta con lo inesperado.

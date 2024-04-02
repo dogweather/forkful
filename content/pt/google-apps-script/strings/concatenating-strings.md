@@ -11,9 +11,8 @@ summary: "Concatenar strings envolve combinar duas ou mais strings em uma \xFAni
   \ string. Programadores fazem isso para construir dinamicamente mensagens, URLs,\
   \ ou\u2026"
 title: Concatenando strings
+weight: 3
 ---
-
-{{< edit_this_page >}}
 
 ## O Quê & Porquê?
 

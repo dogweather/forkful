@@ -9,9 +9,8 @@ summary: "En interaktiv skal, eller REPL (Read-Eval-Print Loop), i Haskell l\xE5
   \ dig k\xF6ra kodsnuttar live. Det \xE4r en lekplats f\xF6r snabb feedback, testning\
   \ av\u2026"
 title: "Anv\xE4nda en interaktiv skal (REPL)"
+weight: 34
 ---
-
-{{< edit_this_page >}}
 
 ## Vad & Varför?
 En interaktiv skal, eller REPL (Read-Eval-Print Loop), i Haskell låter dig köra kodsnuttar live. Det är en lekplats för snabb feedback, testning av funktioner och inlärning av språket.

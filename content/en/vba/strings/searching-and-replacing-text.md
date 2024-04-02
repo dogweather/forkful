@@ -8,9 +8,8 @@ model: gpt-4-0125-preview
 summary: "Searching and replacing text in Visual Basic for Applications (VBA) is essential\
   \ for editing documents, spreadsheets, and databases programmatically. This\u2026"
 title: Searching and replacing text
+weight: 10
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 

@@ -8,9 +8,8 @@ model: gpt-4-0125-preview
 summary: "Working with JSON in Bash programming involves parsing, extracting, and\
   \ manipulating JSON data directly from the command line. Programmers often do this\u2026"
 title: Working with JSON
+weight: 38
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 Working with JSON in Bash programming involves parsing, extracting, and manipulating JSON data directly from the command line. Programmers often do this to seamlessly integrate shell scripts with web APIs and modern data interchange formats, making Bash scripting more powerful and relevant in a JSON-heavy ecosystem.

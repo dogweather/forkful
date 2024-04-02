@@ -9,9 +9,8 @@ summary: "\xC5 skrive en tekstfil er \xE5 lagre tekstdata til en fil p\xE5 diske
   \ Programmerere gj\xF8r dette for \xE5 lagre data som app-innstillinger, logger\
   \ eller \xE5 eksportere\u2026"
 title: Skriving av en tekstfil
+weight: 24
 ---
-
-{{< edit_this_page >}}
 
 ## Hva & Hvorfor?
 Å skrive en tekstfil er å lagre tekstdata til en fil på disken. Programmerere gjør dette for å lagre data som app-innstillinger, logger eller å eksportere brukerdata.

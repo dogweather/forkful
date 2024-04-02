@@ -11,9 +11,8 @@ summary: "YAML:n k\xE4sittely Go:ssa k\xE4sitt\xE4\xE4 YAML (YAML Ain't Markup L
   \ -tiedostojen j\xE4sent\xE4misen Go:n tietorakenteisiin ja p\xE4invastoin. Ohjelmoijat\
   \ tekev\xE4t\u2026"
 title: "Ty\xF6skentely YAML:n kanssa"
+weight: 41
 ---
-
-{{< edit_this_page >}}
 
 ## Mikä & Miksi?
 

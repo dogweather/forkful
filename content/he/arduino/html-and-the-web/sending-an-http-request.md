@@ -21,9 +21,8 @@ summary: "\u05E9\u05DC\u05D9\u05D7\u05EA \u05D1\u05E7\u05E9\u05EA HTTP \u05D4\u0
   \u05E9\u05DC\u05D5\u05D8 \u05D1\u05DE\u05DB\u05E9\u05D9\u05E8\u05D9\u05DD \u05DE\
   \u05E8\u05D7\u05D5\u05E7."
 title: "\u05E9\u05DC\u05D9\u05D7\u05EA \u05D1\u05E7\u05E9\u05EA HTTP"
+weight: 44
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why? (מה ולמה?)
 שליחת בקשת HTTP היא דרך לתקשר עם שרתים באינטרנט ישירות מה-Arduino. תכניתנים עושים זאת כדי לשלוח או לקבל נתונים, לגשת ל-APIs או לשלוט במכשירים מרחוק.

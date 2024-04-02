@@ -7,9 +7,8 @@ model: gpt-4-1106-preview
 summary: "Lesen von Kommandozeilenargumenten erm\xF6glicht es Programmen, beim Start\
   \ spezifische Optionen und Daten zu erhalten. Programmierer nutzen dies, um\u2026"
 title: Lesen von Kommandozeilenargumenten
+weight: 23
 ---
-
-{{< edit_this_page >}}
 
 ## Was & Warum?
 Lesen von Kommandozeilenargumenten ermöglicht es Programmen, beim Start spezifische Optionen und Daten zu erhalten. Programmierer nutzen dies, um Applikationen flexibel und benutzerzentriert zu gestalten.

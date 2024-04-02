@@ -11,9 +11,8 @@ summary: "Att s\xF6ka och ers\xE4tta text i C inneb\xE4r att identifiera specifi
   \ delstr\xE4ngar inom en st\xF6rre str\xE4ng och byta ut dem mot olika delstr\xE4\
   ngar. Programmerare\u2026"
 title: "S\xF6kning och ers\xE4ttning av text"
+weight: 10
 ---
-
-{{< edit_this_page >}}
 
 ## Vad & Varför?
 

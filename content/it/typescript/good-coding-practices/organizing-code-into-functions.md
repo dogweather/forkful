@@ -7,9 +7,8 @@ model: gpt-4-0125-preview
 summary: "Organizzare il codice in funzioni significa suddividere il proprio codice\
   \ in blocchi riutilizzabili e modulari. Lo facciamo per mantenere le cose DRY\u2026"
 title: Organizzare il codice in funzioni
+weight: 18
 ---
-
-{{< edit_this_page >}}
 
 ## Cosa & Perché?
 Organizzare il codice in funzioni significa suddividere il proprio codice in blocchi riutilizzabili e modulari. Lo facciamo per mantenere le cose DRY (Don't Repeat Yourself, ovvero Non Ripeterti), rendendo il codice più pulito, più facile da leggere e semplice da debuggare.

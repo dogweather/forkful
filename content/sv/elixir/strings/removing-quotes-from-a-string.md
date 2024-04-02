@@ -9,9 +9,8 @@ summary: "Att ta bort citattecken fr\xE5n en str\xE4ng inneb\xE4r att man avl\xE
   gsnar dessa extra omslag f\xF6r att f\xE5 fram den klara texten inuti. Programmerare\
   \ g\xF6r detta f\xF6r\u2026"
 title: "Ta bort citattecken fr\xE5n en str\xE4ng"
+weight: 9
 ---
-
-{{< edit_this_page >}}
 
 ## Vad & Varför?
 Att ta bort citattecken från en sträng innebär att man avlägsnar dessa extra omslag för att få fram den klara texten inuti. Programmerare gör detta för att sanera indata, undvika fel och förbereda data för behandling där citattecken är hinder, inte funktioner.

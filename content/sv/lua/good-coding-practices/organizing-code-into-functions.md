@@ -7,9 +7,8 @@ model: gpt-4-1106-preview
 summary: "Att organisera kod i funktioner handlar om att dela upp ditt skriptande\
   \ i mindre bitar\u2014t\xE4nk funktionella LEGO-block. Vi g\xF6r det f\xF6r tydlighet,\u2026"
 title: Att organisera kod i funktioner
+weight: 18
 ---
-
-{{< edit_this_page >}}
 
 ## Vad & Varför?
 Att organisera kod i funktioner handlar om att dela upp ditt skriptande i mindre bitar—tänk funktionella LEGO-block. Vi gör det för tydlighet, återanvändbarhet och förstånd. Det gör vår kod snygg, läslig och underhållbar.

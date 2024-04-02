@@ -10,9 +10,8 @@ model: gpt-4-0125-preview
 summary: "Das Schreiben einer Textdatei in Java bedeutet, die F\xE4higkeiten der Sprache\
   \ zu nutzen, um Inhalte in Dateien auf dem Dateisystem zu erstellen und zu\u2026"
 title: Eine Textdatei schreiben
+weight: 24
 ---
-
-{{< edit_this_page >}}
 
 ## Was & Warum?
 

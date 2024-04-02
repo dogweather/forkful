@@ -9,9 +9,8 @@ summary: "Das Erstellen einer tempor\xE4ren Datei bedeutet, eine Datei zu generi
   \ die f\xFCr die kurzfristige Verwendung vorgesehen ist. Programmierer nutzen sie\
   \ f\xFCr\u2026"
 title: "Erstellung einer tempor\xE4ren Datei"
+weight: 21
 ---
-
-{{< edit_this_page >}}
 
 ## Was & Warum?
 Das Erstellen einer temporären Datei bedeutet, eine Datei zu generieren, die für die kurzfristige Verwendung vorgesehen ist. Programmierer nutzen sie für alles Mögliche, von der Datensicherung während eines unerwarteten Programmausfalls bis hin zu sicheren Tests von Funktionen ohne Einfluss auf Produktivdaten.

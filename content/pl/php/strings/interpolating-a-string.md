@@ -9,9 +9,8 @@ summary: "Interpolacja string\xF3w to wstawianie zmiennych do napis\xF3w w kodzi
   \ aby dynamicznie budowa\u0107 tekst. Programi\u015Bci u\u017Cywaj\u0105 jej, by\
   \ kod by\u0142 bardziej elastyczny\u2026"
 title: "Interpolacja \u0142a\u0144cuch\xF3w znak\xF3w"
+weight: 8
 ---
-
-{{< edit_this_page >}}
 
 ## Co i dlaczego?
 Interpolacja stringów to wstawianie zmiennych do napisów w kodzie, aby dynamicznie budować tekst. Programiści używają jej, by kod był bardziej elastyczny i czytelny — zmienne mogą zmieniać treść napisu bez konieczności jego ciągłego przepisywania.

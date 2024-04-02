@@ -9,9 +9,8 @@ summary: "Vertaamme kahta p\xE4iv\xE4m\xE4\xE4r\xE4\xE4 selvitt\xE4\xE4ksemme ni
   \ j\xE4rjestyksen tai aikaeron. T\xE4m\xE4 on t\xE4rke\xE4\xE4 aikataulutuksessa,\
   \ m\xE4\xE4r\xE4aikojen seurannassa ja\u2026"
 title: "Kahden p\xE4iv\xE4m\xE4\xE4r\xE4n vertailu"
+weight: 27
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why? - Mitä & Miksi?
 Vertaamme kahta päivämäärää selvittääksemme niiden järjestyksen tai aikaeron. Tämä on tärkeää aikataulutuksessa, määräaikojen seurannassa ja historiallisten tapahtumien käsittelyssä.

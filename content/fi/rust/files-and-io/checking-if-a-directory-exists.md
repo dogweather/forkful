@@ -11,9 +11,8 @@ summary: "Ohjelmistokehityksess\xE4 on usein tarpeen tarkistaa, olemassaoko hake
   \ v\xE4ltt\xE4\xE4kseen virheit\xE4 yritt\xE4ess\xE4 p\xE4\xE4st\xE4 k\xE4siksi,\
   \ lukea tai kirjoittaa\u2026"
 title: Tarkistetaan, onko hakemisto olemassa
+weight: 20
 ---
-
-{{< edit_this_page >}}
 
 ## Mikä & Miksi?
 Ohjelmistokehityksessä on usein tarpeen tarkistaa, olemassaoko hakemisto, välttääkseen virheitä yrittäessä päästä käsiksi, lukea tai kirjoittaa tiedostoja. Rust, ollessaan järjestelmäohjelmoinnin kieli, tarjoaa vankkoja menetelmiä tämän tehtävän suorittamiseen, varmistaen ohjelmasi voivan käsitellä tiedostoja ja hakemistoja turvallisesti ja tehokkaasti.

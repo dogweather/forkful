@@ -11,9 +11,8 @@ summary: "Str\xE4nginterpolering i Visual Basic for Applications (VBA) avser pro
   \ att b\xE4dda in variabler eller uttryck inom en str\xE4ngliteral, vilket m\xF6\
   jligg\xF6r\u2026"
 title: "Interpolering av en str\xE4ng"
+weight: 8
 ---
-
-{{< edit_this_page >}}
 
 ## Vad & Varför?
 

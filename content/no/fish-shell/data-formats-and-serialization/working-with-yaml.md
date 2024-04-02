@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "\xC5 jobbe med YAML inneb\xE6rer parsing og manipulering av YAML-filer (YAML\
   \ Ain't Markup Language), et data serialiseringsformat brukt for konfigurasjonsfiler,\u2026"
 title: Arbeider med YAML
+weight: 41
 ---
-
-{{< edit_this_page >}}
 
 ## Hva & Hvorfor?
 Å jobbe med YAML innebærer parsing og manipulering av YAML-filer (YAML Ain't Markup Language), et data serialiseringsformat brukt for konfigurasjonsfiler, i Fish Shell. Programmerere gjør dette for å automatisere og konfigurere applikasjoner eller tjenester effektivt innenfor rammen av shell-miljøer, noe som letter oppgaver som konfigurasjonsstyring og tilveiebringelse av ressurser.

@@ -9,9 +9,8 @@ summary: "REPL, ou Boucle Lire-\xC9valuer-Imprimer, est un environnement de prog
   \ interactif qui prend des entr\xE9es utilisateur individuelles, les ex\xE9cute\
   \ et\u2026"
 title: Utilisation d'une console interactive (REPL)
+weight: 34
 ---
-
-{{< edit_this_page >}}
 
 ## Quoi & Pourquoi ?
 REPL, ou Boucle Lire-Évaluer-Imprimer, est un environnement de programmation interactif qui prend des entrées utilisateur individuelles, les exécute et retourne le résultat. Les programmeurs l'utilisent pour obtenir des retours instantanés, pour le débogage, et pour l'expérimentation rapide avec des concepts de codage sans la charge de compiler et exécuter un programme complet.

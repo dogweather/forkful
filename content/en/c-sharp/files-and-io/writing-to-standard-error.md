@@ -7,9 +7,8 @@ model: gpt-4-0125-preview
 summary: "Writing to standard error (stderr) in C# involves directing error messages\
   \ and diagnostics separately from regular output (stdout) to help users and\u2026"
 title: Writing to standard error
+weight: 25
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 Writing to standard error (stderr) in C# involves directing error messages and diagnostics separately from regular output (stdout) to help users and developers distinguish between normal program output and error notifications. Programmers do this to make debugging and logging more efficient, allowing smoother operation and maintenance of applications.

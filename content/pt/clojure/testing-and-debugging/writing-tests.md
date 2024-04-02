@@ -11,9 +11,8 @@ summary: "Escrever testes em Clojure, assim como em outras linguagens de program
   \xE3o, envolve a cria\xE7\xE3o de c\xF3digo dedicado para verificar se sua base\
   \ de c\xF3digo\u2026"
 title: Escrevendo testes
+weight: 36
 ---
-
-{{< edit_this_page >}}
 
 ## O Que & Por Quê?
 Escrever testes em Clojure, assim como em outras linguagens de programação, envolve a criação de código dedicado para verificar se sua base de código principal funciona conforme o esperado. Isso ajuda a garantir a corretude, facilitar o refatoramento e melhorar a estabilidade do código.

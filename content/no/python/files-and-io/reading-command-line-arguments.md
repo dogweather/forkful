@@ -9,9 +9,8 @@ summary: "Kommandolinjeargumenter lar brukere gi inndata direkte til et program 
   r de kj\xF8rer det fra en terminal. Programmerere henter disse argumentene for \xE5\
   \u2026"
 title: Lese kommandolinjeargumenter
+weight: 23
 ---
-
-{{< edit_this_page >}}
 
 ## Hva & Hvorfor?
 Kommandolinjeargumenter lar brukere gi inndata direkte til et program når de kjører det fra en terminal. Programmerere henter disse argumentene for å skape fleksible og tilpassbare skript.

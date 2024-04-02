@@ -11,9 +11,8 @@ summary: "Pobieranie bie\u017C\u0105cej daty w j\u0119zyku C wi\u0105\u017Ce si\
   \ z wykorzystaniem standardowej biblioteki C do pobrania i sformatowania bie\u017C\
   \u0105cej daty i czasu systemu.\u2026"
 title: "Pobieranie bie\u017C\u0105cej daty"
+weight: 29
 ---
-
-{{< edit_this_page >}}
 
 ## Co i dlaczego?
 

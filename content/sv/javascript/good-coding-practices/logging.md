@@ -9,9 +9,8 @@ summary: "Loggning \xE4r i ett n\xF6tskal som att h\xE5lla en dagbok f\xF6r din 
   \ \u2013 den registrerar h\xE4ndelser, fel och andra signifikanta \xE5tg\xE4rder\
   \ som sker medan\u2026"
 title: Loggning
+weight: 17
 ---
-
-{{< edit_this_page >}}
 
 ## Vad & Varför?
 Loggning är i ett nötskal som att hålla en dagbok för din applikation – den registrerar händelser, fel och andra signifikanta åtgärder som sker medan programvaran körs. Programmerare gör detta inte bara för att förstå vad som pågår under huven i realtid, men även för att ha en historisk journal som är avgörande för felsökning, revision och optimering av prestanda.

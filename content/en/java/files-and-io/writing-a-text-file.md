@@ -8,9 +8,8 @@ model: gpt-4-0125-preview
 summary: "Writing a text file in Java is about using the language's capabilities to\
   \ create and write content into files on the filesystem. Programmers do this for\u2026"
 title: Writing a text file
+weight: 24
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 

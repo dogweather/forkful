@@ -10,9 +10,8 @@ model: gpt-4-0125-preview
 summary: "Capitalizar uma string no Visual Basic for Applications (VBA) envolve converter\
   \ o primeiro caractere de cada palavra em uma string para mai\xFAscula enquanto\u2026"
 title: Capitalizando uma String
+weight: 2
 ---
-
-{{< edit_this_page >}}
 
 ## O Que & Por Quê?
 

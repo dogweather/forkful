@@ -13,9 +13,8 @@ summary: "S\u1ED1 ph\u1EE9c m\u1EDF r\u1ED9ng d\xE3y s\u1ED1 th\u1EF1c th\xF4ng 
   \ `i^2 = -1`. Ch\xFAng r\u1EA5t quan tr\u1ECDng trong c\xE1c l\u0129nh v\u1EF1c\
   \ nh\u01B0 k\u1EF9 thu\u1EADt, v\u1EADt l\xFD v\xE0\u2026"
 title: "L\xE0m vi\u1EC7c v\u1EDBi s\u1ED1 ph\u1EE9c"
+weight: 14
 ---
-
-{{< edit_this_page >}}
 
 ## Cái gì & Tại sao?
 

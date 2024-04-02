@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "\xC5 sjekke om en mappe finnes er en grunnleggende oppgave i PHP-programmering,\
   \ da det lar deg verifisere tilstedev\xE6relsen av en mappe f\xF8r du utf\xF8rer\u2026"
 title: Sjekker om en mappe eksisterer
+weight: 20
 ---
-
-{{< edit_this_page >}}
 
 ## Hva & Hvorfor?
 

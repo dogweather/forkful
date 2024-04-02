@@ -7,9 +7,8 @@ model: gpt-4-1106-preview
 summary: "Deleting characters matching a pattern is about finding specific sequences\
   \ of characters in a string and getting rid of them. Programmers do it to clean\u2026"
 title: Deleting characters matching a pattern
+weight: 5
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 Deleting characters matching a pattern is about finding specific sequences of characters in a string and getting rid of them. Programmers do it to clean up data, strip out unnecessary info, or format strings to match a required pattern.

@@ -11,9 +11,8 @@ summary: "\xC9crire sur l'erreur standard (stderr) dans les langues de programma
   \ consiste \xE0 diriger les messages d'erreur et les diagnostics vers un flux s\xE9\
   par\xE9,\u2026"
 title: "\xC9crire sur l'erreur standard"
+weight: 25
 ---
-
-{{< edit_this_page >}}
 
 ## Quoi & Pourquoi ?
 

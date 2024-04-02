@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Afronden van getallen betekent het aanpassen ervan naar de dichtstbijzijnde\
   \ gespecificeerde plaatswaarde - denk aan het terugbrengen tot een eenvoudigere\u2026"
 title: Afronden van getallen
+weight: 13
 ---
-
-{{< edit_this_page >}}
 
 ## Wat & Waarom?
 Afronden van getallen betekent het aanpassen ervan naar de dichtstbijzijnde gespecificeerde plaatswaarde - denk aan het terugbrengen tot een eenvoudigere vorm. Programmeurs ronden af om precisie te beheersen, prestaties te verbeteren of wanneer ze gebruikersvriendelijke resultaten tonen - zoals prijzen die geen drie decimalen nodig hebben.

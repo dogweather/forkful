@@ -7,9 +7,8 @@ model: gpt-4-0125-preview
 summary: "Removing quotes from a string in VBA involves stripping out instances of\
   \ single (`'`) or double (`\"`) quotation marks that may encapsulate or be embedded\u2026"
 title: Removing quotes from a string
+weight: 9
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 

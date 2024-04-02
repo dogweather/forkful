@@ -10,9 +10,8 @@ model: gpt-4-0125-preview
 summary: "Leer los argumentos de la l\xEDnea de comandos en Dart permite a los programadores\
   \ introducir datos directamente en la consola al ejecutar un programa Dart,\u2026"
 title: "Leyendo argumentos de la l\xEDnea de comandos"
+weight: 23
 ---
-
-{{< edit_this_page >}}
 
 ## ¿Qué y por qué?
 

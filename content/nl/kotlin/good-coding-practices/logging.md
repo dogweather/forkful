@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Loggen, in de kern, is de praktijk van het vastleggen van gebeurtenissen\
   \ en gegevens van een softwareapplicatie naar een externe uitvoer, zoals een\u2026"
 title: Logboekregistratie
+weight: 17
 ---
-
-{{< edit_this_page >}}
 
 ## Wat & Waarom?
 

@@ -11,9 +11,8 @@ summary: "Ohjelmistokehityksess\xE4 lokitus tarkoittaa tapahtumien, virheiden ta
   \ merkitt\xE4vien esiintymien tallentamista suoritusaikana. Ohjelmoijat tekev\xE4\
   t n\xE4in\u2026"
 title: Lokiointi
+weight: 17
 ---
-
-{{< edit_this_page >}}
 
 ## Mikä ja miksi?
 

@@ -9,9 +9,8 @@ summary: "\xC5 skrive ut debug informasjon betyr \xE5 printe ut data for \xE5 fo
   \ hva koden din gj\xF8r eller finne feil. Programmerere gj\xF8r dette for \xE5 se\
   \ programflyten\u2026"
 title: "Skrive ut feils\xF8kingsdata"
+weight: 33
 ---
-
-{{< edit_this_page >}}
 
 ## Hva & Hvorfor?
 Å skrive ut debug informasjon betyr å printe ut data for å forstå hva koden din gjør eller finne feil. Programmerere gjør dette for å se programflyten eller verdiene som brukes under kjøring.

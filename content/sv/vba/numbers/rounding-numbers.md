@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Att avrunda tal i programmering handlar om att approximera ett tal till\
   \ dess n\xE4rmaste heltal eller till ett visst antal decimalplatser. Programmerare\u2026"
 title: Avrundning av nummer
+weight: 13
 ---
-
-{{< edit_this_page >}}
 
 ## Vad & Varför?
 

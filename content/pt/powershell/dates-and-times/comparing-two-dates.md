@@ -9,9 +9,8 @@ summary: "Comparar duas datas \xE9 essencialmente medir a diferen\xE7a entre ela
   \ ou determinar qual vem antes ou depois. Programadores fazem isso para manipular\
   \ per\xEDodos\u2026"
 title: Comparando duas datas
+weight: 27
 ---
-
-{{< edit_this_page >}}
 
 ## O Que & Porquê?
 Comparar duas datas é essencialmente medir a diferença entre elas ou determinar qual vem antes ou depois. Programadores fazem isso para manipular períodos de tempo em tarefas como agendamentos, validações de campos de datas e controle de eventos cronológicos.

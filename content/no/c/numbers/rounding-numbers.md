@@ -11,9 +11,8 @@ summary: "Avrunding av tall er prosessen med \xE5 justere sifrene i et tall for 
   \ redusere presisjonen i henhold til visse regler, enten mot n\xE6rmeste hele tall\
   \ eller\u2026"
 title: Avrunding av tall
+weight: 13
 ---
-
-{{< edit_this_page >}}
 
 ## Hva & Hvorfor?
 

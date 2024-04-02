@@ -11,9 +11,8 @@ summary: "Um shell interativo, tamb\xE9m conhecido como Loop de Leitura-Avalia\x
   \xE3o-Impress\xE3o (REPL, na sigla em ingl\xEAs), permite que programadores digitem\
   \ express\xF5es ou\u2026"
 title: Usando um shell interativo (REPL)
+weight: 34
 ---
-
-{{< edit_this_page >}}
 
 ## O quê e Por quê?
 

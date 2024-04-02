@@ -9,9 +9,8 @@ summary: "Komennoriviparametrien lukeminen on tapa vastaanottaa k\xE4ytt\xE4j\xE
   lt\xE4 tietoja ohjelman suorituksen yhteydess\xE4. Ohjelmoijat k\xE4ytt\xE4v\xE4\
   t t\xE4t\xE4 toimintoa\u2026"
 title: Komennoriviparametrien lukeminen
+weight: 23
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 Komennoriviparametrien lukeminen on tapa vastaanottaa käyttäjältä tietoja ohjelman suorituksen yhteydessä. Ohjelmoijat käyttävät tätä toimintoa mukauttamaan ohjelman käytöstä ilman, että koodia tarvitsee muuttaa.

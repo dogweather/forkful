@@ -19,9 +19,8 @@ summary: "\u4F7F\u7528 TypeScript \u7F16\u5199\u6D4B\u8BD5\u6D89\u53CA\u521B\u5E
   \ TypeScript \u7684\u9759\u6001\u7C7B\u578B\u6DFB\u52A0\u4E86\u4E00\u5C42\u53EF\u9884\
   \u6D4B\u6027\u5230 JavaScript \u6D4B\u8BD5\u4E2D\u3002"
 title: "\u7F16\u5199\u6D4B\u8BD5"
+weight: 36
 ---
-
-{{< edit_this_page >}}
 
 ## 什么 & 为什么？
 使用 TypeScript 编写测试涉及创建自动化脚本来验证代码的功能性和正确性。程序员这样做是为了确保可靠性，快速捕捉到 bug，并促进代码的可维护性增长，因为 TypeScript 的静态类型添加了一层可预测性到 JavaScript 测试中。

@@ -11,9 +11,8 @@ summary: "Wyra\u017Cenia regularne (regex) w Visual Basic for Applications (VBA)
   \ pot\u0119\u017Cne narz\u0119dzie do wyszukiwania, dopasowywania i manipulowania\
   \ ci\u0105gami\u2026"
 title: "Korzystanie z wyra\u017Ce\u0144 regularnych"
+weight: 11
 ---
-
-{{< edit_this_page >}}
 
 ## Co i dlaczego?
 

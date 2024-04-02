@@ -10,9 +10,8 @@ model: gpt-4-0125-preview
 summary: "Das Parsen von HTML in Rust dient dazu, Daten aus HTML-Dokumenten zu extrahieren,\
   \ was f\xFCr das Web-Scraping, die Datengewinnung oder den Aufbau von Web-\u2026"
 title: HTML parsen
+weight: 43
 ---
-
-{{< edit_this_page >}}
 
 ## Was & Warum?
 

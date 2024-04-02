@@ -17,9 +17,8 @@ summary: "Haskell \u3067 TOML \u3092\u6271\u3046\u3053\u3068\u306F\u3001TOML\uFF
   \u30EB\u3084\u30C7\u30FC\u30BF\u4EA4\u63DB\u3092\u7C21\u5358\u306B\u7BA1\u7406\u3059\
   \u308B\u305F\u3081\u306B\u3053\u308C\u3092\u884C\u3044\u307E\u3059\u3002"
 title: "TOML\u3092\u6271\u3046\u65B9\u6CD5"
+weight: 39
 ---
-
-{{< edit_this_page >}}
 
 ## 何となく？なぜ？
 Haskell で TOML を扱うことは、TOML（Tom's Obvious, Minimal Language）データの解析と生成を意味します。プログラマーは、タイプの保証が強く、文法の手間が最小限で、設定ファイルやデータ交換を簡単に管理するためにこれを行います。

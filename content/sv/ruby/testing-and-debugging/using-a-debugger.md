@@ -1,14 +1,13 @@
 ---
 date: 2024-01-26 04:09:53.031444-07:00
-description: "Att anv\xE4nda en debugger i Ruby ger programmerare en superkraft att\
-  \ pausa sin kod, inspektera variabler och stega igenom sin kod rad f\xF6r rad. Folk\
-  \ g\xF6r det\u2026"
+description: "Ruby kommer med en inbyggd debugger som heter `byebug`. F\xF6rst, inkludera\
+  \ `byebug` i din Gemfile och k\xF6r `bundle install`. Sedan, placera `byebug` precis\u2026"
 lastmod: '2024-03-13T22:44:38.435467-06:00'
 model: gpt-4-0125-preview
-summary: "Att anv\xE4nda en debugger i Ruby ger programmerare en superkraft att pausa\
-  \ sin kod, inspektera variabler och stega igenom sin kod rad f\xF6r rad. Folk g\xF6\
-  r det\u2026"
+summary: "Ruby kommer med en inbyggd debugger som heter `byebug`. F\xF6rst, inkludera\
+  \ `byebug` i din Gemfile och k\xF6r `bundle install`. Sedan, placera `byebug` precis\u2026"
 title: "Att anv\xE4nda en debugger"
+weight: 35
 ---
 
 ## Hur man gör:

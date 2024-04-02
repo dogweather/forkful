@@ -9,9 +9,8 @@ summary: "Uudelleenj\xE4rjestely on olemassa olevan tietokonekoodin rakenteen mu
   \ prosessi muuttamatta sen ulkoista k\xE4ytt\xE4ytymist\xE4. Se on elint\xE4rke\xE4\
   \ k\xE4yt\xE4nt\xF6\u2026"
 title: Koodin refaktorointi
+weight: 19
 ---
-
-{{< edit_this_page >}}
 
 ## Mikä & Miksi?
 Uudelleenjärjestely on olemassa olevan tietokonekoodin rakenteen muuttamisen prosessi muuttamatta sen ulkoista käyttäytymistä. Se on elintärkeä käytäntö vähentämään monimutkaisuutta, parantamaan ylläpidettävyyttä ja pitämään koodikantasi terveenä ja helpommin ymmärrettävänä sekä nykyisille että tuleville kehittäjille.

@@ -7,9 +7,8 @@ model: gpt-4-1106-preview
 summary: "Ladataan nettisivu tarkoittaa sivun sis\xE4ll\xF6n tallentamista paikallisesti.\
   \ Ohjelmoijat tekev\xE4t sit\xE4 datan analysointia, skrapausta tai varmuuskopiointia\u2026"
 title: Verkkosivun lataaminen
+weight: 42
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why? - Mitä & Miksi?
 Ladataan nettisivu tarkoittaa sivun sisällön tallentamista paikallisesti. Ohjelmoijat tekevät sitä datan analysointia, skrapausta tai varmuuskopiointia varten.

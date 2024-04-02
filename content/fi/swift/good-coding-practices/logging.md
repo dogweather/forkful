@@ -8,9 +8,8 @@ model: gpt-4-1106-preview
 summary: "Lokitus on sovellusten toimintaa, virheit\xE4 ja muita t\xE4rkeit\xE4 tietoja\
   \ tallentavan prosessin kirjaamista pysyv\xE4\xE4n muotoon, kuten tiedostoon tai\u2026"
 title: Lokitus
+weight: 17
 ---
-
-{{< edit_this_page >}}
 
 ## Mikä & Miksi?
 Lokitus on sovellusten toimintaa, virheitä ja muita tärkeitä tietoja tallentavan prosessin kirjaamista pysyvään muotoon, kuten tiedostoon tai tietokantaan. Ohjelmoijat tekevät tätä tarkkaillakseen sovelluksiensa terveyttä ja suorituskykyä, selvittääkseen ongelmia ja pitääkseen silmällä, mitä tuotantoympäristön konepellin alla tapahtuu.

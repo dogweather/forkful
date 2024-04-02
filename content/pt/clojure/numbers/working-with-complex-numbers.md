@@ -9,9 +9,8 @@ summary: "N\xFAmeros complexos ampliam os n\xFAmeros reais com uma parte adicion
   \ a unidade imagin\xE1ria 'i'. Programadores os utilizam em v\xE1rias \xE1reas,\
   \ incluindo\u2026"
 title: "Trabalhando com n\xFAmeros complexos"
+weight: 14
 ---
-
-{{< edit_this_page >}}
 
 ## O Que & Por Que?
 Números complexos ampliam os números reais com uma parte adicional, a unidade imaginária 'i'. Programadores os utilizam em várias áreas, incluindo processamento de sinais, teoria eletromagnética e fractais, onde cálculos que envolvem a raiz quadrada de um número negativo são rotineiros.

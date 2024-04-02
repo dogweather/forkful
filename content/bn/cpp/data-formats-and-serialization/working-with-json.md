@@ -24,9 +24,8 @@ summary: "JSON (JavaScript Object Notation) \u09B9\u09B2\u09CB \u09A1\u09BE\u099
   \u09AF\u2026"
 title: "JSON \u098F\u09B0 \u09B8\u09BE\u09A5\u09C7 \u0995\u09BE\u099C \u0995\u09B0\
   \u09BE"
+weight: 38
 ---
-
-{{< edit_this_page >}}
 
 ## কি এবং কেন?
 

@@ -20,9 +20,8 @@ summary: "\uB0A0\uC9DC\uB97C \uBB38\uC790\uC5F4\uB85C \uBCC0\uD658\uD55C\uB2E4\u
   \uD0DC\uC758 \uB370\uC774\uD130 \uCC98\uB9AC\uB97C \uC704\uD574 \uC774 \uC791\uC5C5\
   \uC744 \uD569\uB2C8\uB2E4."
 title: "\uB0A0\uC9DC\uB97C \uBB38\uC790\uC5F4\uB85C \uBCC0\uD658\uD558\uAE30"
+weight: 28
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why? (무엇이며, 왜?)
 날짜를 문자열로 변환한다는 것은, PHP 에서 특정한 날짜 형식을 가독성이 좋은 텍스트 형태로 바꾸는 것을 말합니다. 프로그래머들은 데이터베이스에 저장, 사용자 인터페이스 표시, 또는 다른 형태의 데이터 처리를 위해 이 작업을 합니다.

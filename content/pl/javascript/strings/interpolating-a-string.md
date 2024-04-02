@@ -9,9 +9,8 @@ summary: "W interpolacji string\xF3w chodzi o wstawianie warto\u015Bci zmiennych
   \ \u015Brodek \u0142a\u0144cucha tekstowego. Robimy to, by \u0142atwiej budowa\u0107\
   \ dynamiczne wiadomo\u015Bci i\u2026"
 title: "Interpolacja \u0142a\u0144cuch\xF3w znak\xF3w"
+weight: 8
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 W interpolacji stringów chodzi o wstawianie wartości zmiennych w środek łańcucha tekstowego. Robimy to, by łatwiej budować dynamiczne wiadomości i szablony.

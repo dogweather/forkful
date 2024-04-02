@@ -11,9 +11,8 @@ summary: "Komplexe Zahlen, bestehend aus einem Real- und einem Imagin\xE4rteil (
   blicherweise als a + bi dargestellt), erweitern das Konzept der dimensionslosen\
   \ Zahlen\u2026"
 title: Arbeiten mit komplexen Zahlen
+weight: 14
 ---
-
-{{< edit_this_page >}}
 
 ## Was & Warum?
 

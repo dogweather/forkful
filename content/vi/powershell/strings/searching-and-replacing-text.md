@@ -14,9 +14,8 @@ summary: "T\xECm ki\u1EBFm v\xE0 thay th\u1EBF v\u0103n b\u1EA3n trong c\xE1c t\
   ng t\u1EEB ho\u1EB7c c\u1EE5m t\u1EEB kh\xE1c. L\u1EADp tr\xECnh vi\xEAn s\u1EED\
   \ d\u1EE5ng n\xF3 \u0111\u1EC3 c\u1EADp nh\u1EADt m\xE3, s\u1EEDa l\u1ED7i,\u2026"
 title: "T\xECm ki\u1EBFm v\xE0 thay th\u1EBF v\u0103n b\u1EA3n"
+weight: 10
 ---
-
-{{< edit_this_page >}}
 
 ## Cái gì & Tại sao?
 Tìm kiếm và thay thế văn bản trong các tệp: nó là hoán đổi từ hoặc cụm từ này bằng từ hoặc cụm từ khác. Lập trình viên sử dụng nó để cập nhật mã, sửa lỗi, hoặc thay đổi dữ liệu trên nhiều tệp một cách nhanh chóng mà không cần phải thủ công kiểm tra từng tệp.

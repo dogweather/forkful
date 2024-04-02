@@ -17,9 +17,8 @@ summary: "\uC778\uD130\uB799\uD2F0\uBE0C \uC258 \uB610\uB294 REPL(Read-Eval-Prin
   \uC131\uD558\uB294 \uBD80\uB2F4 \uC5C6\uC774 \uCF54\uB4DC \uC870\uAC01\uC744 \uD14C\
   \uC2A4\uD2B8\uD560 \uC218 \uC788\uC2B5\uB2C8\uB2E4."
 title: "\uC778\uD130\uB799\uD2F0\uBE0C \uC178 (REPL) \uC0AC\uC6A9\uD558\uAE30"
+weight: 34
 ---
-
-{{< edit_this_page >}}
 
 ## 무엇이며 왜인가?
 인터랙티브 쉘 또는 REPL(Read-Eval-Print Loop)을 사용하면 PHP 코드를 즉석에서 작성하고 실행할 수 있습니다. 실험, 디버깅 또는 학습에 이상적이며, 스크립트를 전체적으로 생성하는 부담 없이 코드 조각을 테스트할 수 있습니다.

@@ -15,9 +15,8 @@ summary: "Chuy\u1EC3n \u0111\u1ED5i m\u1ED9t ng\xE0y th\xE0nh chu\u1ED7i trong C
   \ tr\u1ECDng \u0111\u1EC3 hi\u1EC3n th\u1ECB ng\xE0y cho ng\u01B0\u1EDDi d\xF9ng\
   \ v\xE0\u2026"
 title: "Chuy\u1EC3n \u0111\u1ED5i m\u1ED9t ng\xE0y th\xE0nh chu\u1ED7i"
+weight: 28
 ---
-
-{{< edit_this_page >}}
 
 ## Lý do và Mục đích:
 Chuyển đổi một ngày thành chuỗi trong C++ biến đối tượng ngày thành định dạng văn bản dễ đọc. Điều này rất quan trọng để hiển thị ngày cho người dùng và ghi nhận các sự kiện một cách thân thiện với người dùng.

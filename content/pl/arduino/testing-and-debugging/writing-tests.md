@@ -11,9 +11,8 @@ summary: "Pisanie test\xF3w w \u015Brodowisku Arduino odnosi si\u0119 do procesu
   \ automatycznych test\xF3w, kt\xF3re weryfikuj\u0105 funkcjonalno\u015B\u0107 twojego\
   \ kodu na urz\u0105dzeniach\u2026"
 title: "Pisanie test\xF3w"
+weight: 36
 ---
-
-{{< edit_this_page >}}
 
 ## Co i dlaczego?
 

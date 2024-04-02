@@ -9,9 +9,8 @@ summary: "Convertir une date en cha\xEEne de caract\xE8res, c'est transformer la
   sentation temporelle en texte lisible. Les programmeurs font \xE7a pour afficher\
   \ les\u2026"
 title: "Conversion d'une date en cha\xEEne de caract\xE8res"
+weight: 28
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why? / Quoi & Pourquoi ?
 Convertir une date en chaîne de caractères, c'est transformer la représentation temporelle en texte lisible. Les programmeurs font ça pour afficher les dates aux utilisateurs ou les stocker dans un format standard.

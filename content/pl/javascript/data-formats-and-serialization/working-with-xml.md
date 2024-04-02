@@ -9,9 +9,8 @@ summary: "Praca z XML oznacza analizowanie, manipulowanie oraz tworzenie zawarto
   ci XML przy u\u017Cyciu kodu. Programi\u015Bci robi\u0105 to, poniewa\u017C XML\
   \ jest powszechnie\u2026"
 title: Praca z XML
+weight: 40
 ---
-
-{{< edit_this_page >}}
 
 ## Co i dlaczego?
 Praca z XML oznacza analizowanie, manipulowanie oraz tworzenie zawartości XML przy użyciu kodu. Programiści robią to, ponieważ XML jest powszechnie używany do plików konfiguracyjnych, wymiany danych oraz usług internetowych ze względu na jego czytelną dla ludzi i maszyn przetwarzalność.

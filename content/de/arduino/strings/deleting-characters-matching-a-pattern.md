@@ -7,9 +7,8 @@ model: gpt-4-1106-preview
 summary: "Charaktere nach einem Muster l\xF6schen bedeutet, bestimmte Zeichen aus\
   \ einer Zeichenkette zu entfernen, die einem vorgegebenen Schema entsprechen.\u2026"
 title: "L\xF6schen von Zeichen, die einem Muster entsprechen"
+weight: 5
 ---
-
-{{< edit_this_page >}}
 
 ## Was & Warum?
 Charaktere nach einem Muster löschen bedeutet, bestimmte Zeichen aus einer Zeichenkette zu entfernen, die einem vorgegebenen Schema entsprechen. Programmierer machen das, um Daten zu säubern oder zu formatieren, oft bei der Eingabevalidierung oder beim Parsing von Daten.

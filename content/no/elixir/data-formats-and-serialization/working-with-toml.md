@@ -9,9 +9,8 @@ summary: "\xC5 jobbe med TOML betyr \xE5 analysere og generere TOML (Toms Opplag
   \ Minimale Spr\xE5k) data ved bruk av Elixir. Programmerere bruker det til \xE5\
   \ h\xE5ndtere\u2026"
 title: Jobbe med TOML
+weight: 39
 ---
-
-{{< edit_this_page >}}
 
 ## Hva og hvorfor?
 Å jobbe med TOML betyr å analysere og generere TOML (Toms Opplagte, Minimale Språk) data ved bruk av Elixir. Programmerere bruker det til å håndtere konfigurasjonsfiler fordi TOML er lesbart, enkelt å analysere, og kartlegger godt til en hash datastruktur.

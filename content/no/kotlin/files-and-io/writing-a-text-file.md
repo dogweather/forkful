@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "\xC5 skrive en tekstfil i Kotlin inneb\xE6rer \xE5 lage en fil og legge\
   \ inn tekstinnhold i den, en vanlig oppgave for lagring av data, logging eller innstillinger\u2026"
 title: Skrive en tekstfil
+weight: 24
 ---
-
-{{< edit_this_page >}}
 
 ## Hva & Hvorfor?
 Å skrive en tekstfil i Kotlin innebærer å lage en fil og legge inn tekstinnhold i den, en vanlig oppgave for lagring av data, logging eller innstillinger for konfigurasjon. Programmerere gjør dette for å lagre og manipulere data utenfor det volatile minneområdet, noe som sikrer varighet på tvers av økter.

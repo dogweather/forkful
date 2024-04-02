@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Het verkrijgen van de huidige datum in je C++ programma kan handig zijn:\
   \ denk aan loggen, tijdstempels of planningsfuncties. Het gaat erom relevant te\u2026"
 title: Het huidige datum ophalen
+weight: 29
 ---
-
-{{< edit_this_page >}}
 
 ## Wat & Waarom?
 Het verkrijgen van de huidige datum in je C++ programma kan handig zijn: denk aan loggen, tijdstempels of planningsfuncties. Het gaat erom relevant te blijven voor het nu - jouw software weet net zo goed wat vandaag is als jij.

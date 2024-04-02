@@ -10,9 +10,8 @@ model: gpt-4-0125-preview
 summary: "Analizar una fecha de un string implica convertir texto en un objeto Date.\
   \ Esta operaci\xF3n es fundamental para aplicaciones que interact\xFAan con fechas\u2026"
 title: Analizando una fecha a partir de una cadena de texto
+weight: 30
 ---
-
-{{< edit_this_page >}}
 
 ## ¿Qué y por qué?
 Analizar una fecha de un string implica convertir texto en un objeto Date. Esta operación es fundamental para aplicaciones que interactúan con fechas ingresadas por usuarios o procedentes de conjuntos de datos externos, permitiendo una manipulación y formateo fácil según las necesidades.

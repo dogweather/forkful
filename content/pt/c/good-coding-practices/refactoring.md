@@ -11,9 +11,8 @@ summary: "Refatora\xE7\xE3o em programa\xE7\xE3o envolve reestruturar o c\xF3dig
   \ existente sem alterar seu comportamento externo, visando melhorar atributos n\xE3\
   o funcionais, como\u2026"
 title: "Refatora\xE7\xE3o"
+weight: 19
 ---
-
-{{< edit_this_page >}}
 
 ## O Que & Por Que?
 

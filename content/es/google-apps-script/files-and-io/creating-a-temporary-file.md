@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Crear un archivo temporal en Google Apps Script implica generar un archivo\
   \ destinado para uso a corto plazo, t\xEDpicamente para procesamiento de datos\u2026"
 title: Creando un archivo temporal
+weight: 21
 ---
-
-{{< edit_this_page >}}
 
 ## ¿Qué y por qué?
 

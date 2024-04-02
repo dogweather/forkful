@@ -7,9 +7,8 @@ model: gpt-4-0125-preview
 summary: "Trabajar con XML significa manipular datos en un formato estructurado y\
   \ omnipresente utilizado en configuraciones, mensajer\xEDa y m\xE1s. Los programadores\u2026"
 title: Trabajando con XML
+weight: 40
 ---
-
-{{< edit_this_page >}}
 
 ## ¿Qué y Por Qué?
 Trabajar con XML significa manipular datos en un formato estructurado y omnipresente utilizado en configuraciones, mensajería y más. Los programadores manipulan XML para leer, escribir, actualizar y consultar datos, vital para la interoperabilidad en toneladas de aplicaciones y servicios.

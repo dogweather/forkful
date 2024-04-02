@@ -7,9 +7,8 @@ model: gpt-4-1106-preview
 summary: "Iniziare un nuovo progetto \xE8 come piazzare la prima pietra di un edificio:\
   \ definisce le fondamenta. I programmatori lo fanno per organizzare idee,\u2026"
 title: Avvio di un nuovo progetto
+weight: 1
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why? (Cosa & Perché?)
 Iniziare un nuovo progetto è come piazzare la prima pietra di un edificio: definisce le fondamenta. I programmatori lo fanno per organizzare idee, impostare la struttura e prepararsi per lo sviluppo.

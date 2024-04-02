@@ -9,9 +9,8 @@ summary: "Wysy\u0142amy zapytanie HTTP z podstawowym uwierzytelnieniem, by uzysk
   \ dost\u0119p do zasob\xF3w wymagaj\u0105cych prostej autoryzacji. Programi\u015B\
   ci robi\u0105 to, aby\u2026"
 title: "Wysy\u0142anie zapytania http z podstawow\u0105 autoryzacj\u0105"
+weight: 45
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why? (Co i Dlaczego?)
 Wysyłamy zapytanie HTTP z podstawowym uwierzytelnieniem, by uzyskać dostęp do zasobów wymagających prostej autoryzacji. Programiści robią to, aby zintegrować się z zabezpieczonymi API, które akceptują tę metodę uwierzytelniania.

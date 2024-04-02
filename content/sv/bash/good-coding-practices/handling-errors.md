@@ -9,9 +9,8 @@ summary: "Att hantera fel i Bash-scripting handlar om att f\xF6rutse var saker k
   \ g\xE5 fel och hantera det p\xE5 ett smidigt s\xE4tt. Varf\xF6r? Jo, det h\xE5\
   ller ditt skript\u2026"
 title: Hantering av fel
+weight: 16
 ---
-
-{{< edit_this_page >}}
 
 ## Vad & Varför?
 

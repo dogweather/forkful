@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Het samenvoegen van strings in programmeren houdt in dat twee of meer strings\
   \ tot \xE9\xE9n worden gecombineerd. Programmeurs doen dit om tekstgegevens\u2026"
 title: Strings samenvoegen
+weight: 3
 ---
-
-{{< edit_this_page >}}
 
 ## Wat & Waarom?
 Het samenvoegen van strings in programmeren houdt in dat twee of meer strings tot één worden gecombineerd. Programmeurs doen dit om tekstgegevens gemakkelijk te manipuleren, berichten op te bouwen of onderdelen van een gebruikersinterface dynamisch samen te stellen.

@@ -9,9 +9,8 @@ summary: "Usuni\u0119cie cudzys\u0142ow\xF3w z ci\u0105gu polega na usuni\u0119c
   \ znak\xF3w cudzys\u0142owu, kt\xF3re otaczaj\u0105 ci\u0105g znak\xF3w. Programi\u015B\
   ci cz\u0119sto chc\u0105 to robi\u0107, aby oczy\u015Bci\u0107 dane\u2026"
 title: "Usuwanie cudzys\u0142ow\xF3w z ci\u0105gu znak\xF3w"
+weight: 9
 ---
-
-{{< edit_this_page >}}
 
 ## Co i dlaczego?
 Usunięcie cudzysłowów z ciągu polega na usunięciu znaków cudzysłowu, które otaczają ciąg znaków. Programiści często chcą to robić, aby oczyścić dane wejściowe, przygotować dane do celów porównawczych lub przestrzegać określonego formatu danych podczas interfejsowania z innymi programami lub systemami.

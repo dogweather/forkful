@@ -11,9 +11,8 @@ summary: "Tworzenie tymczasowego pliku w j\u0119zyku C polega na generowaniu pli
   \ kt\xF3ry ma by\u0107 u\u017Cywany przez kr\xF3tki czas, zazwyczaj jako przestrze\u0144\
   \ robocza dla\u2026"
 title: Tworzenie tymczasowego pliku
+weight: 21
 ---
-
-{{< edit_this_page >}}
 
 ## Co i dlaczego?
 Tworzenie tymczasowego pliku w języku C polega na generowaniu pliku, który ma być używany przez krótki czas, zazwyczaj jako przestrzeń robocza dla przetwarzania danych lub ich przechowywania. Programiści robią to, aby zarządzać tymczasowymi danymi bez wpływania na stałą pamięć programu lub aby zapewnić, że wrażliwe dane zostaną usunięte po użyciu.

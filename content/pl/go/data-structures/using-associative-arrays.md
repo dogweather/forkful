@@ -11,9 +11,8 @@ summary: "Tablice asocjacyjne, znane w Go jako mapy, pozwalaj\u0105 przechowywa\
   \ pary klucz-warto\u015B\u0107, gdzie ka\u017Cdy unikalny klucz odpowiada warto\u015B\
   ci. Programi\u015Bci u\u017Cywaj\u0105\u2026"
 title: "U\u017Cywanie tablic asocjacyjnych"
+weight: 15
 ---
-
-{{< edit_this_page >}}
 
 ## Co i dlaczego?
 

@@ -9,9 +9,8 @@ summary: "Generar n\xFAmeros aleatorios en Haskell implica crear n\xFAmeros que 
   \ impredecibles seg\xFAn los est\xE1ndares humanos. Esto es cr\xEDtico en escenarios\
   \ que van\u2026"
 title: "Generaci\xF3n de n\xFAmeros aleatorios"
+weight: 12
 ---
-
-{{< edit_this_page >}}
 
 ## ¿Qué y por qué?
 

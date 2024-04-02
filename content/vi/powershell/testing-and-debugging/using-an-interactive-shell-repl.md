@@ -13,9 +13,8 @@ summary: "Shell t\u01B0\u01A1ng t\xE1c, hay V\xF2ng l\u1EB7p \u0110\u1ECDc-\u011
   \ v\xE0 nh\u1EADn ph\u1EA3n h\u1ED3i t\u1EE9c th\xEC. L\u1EADp tr\xECnh vi\xEAn\
   \ s\u1EED d\u1EE5ng n\xF3 \u0111\u1EC3 nhanh\u2026"
 title: "S\u1EED d\u1EE5ng v\u1ECF t\u01B0\u01A1ng t\xE1c (REPL)"
+weight: 34
 ---
-
-{{< edit_this_page >}}
 
 ## Gì & Tại sao?
 Shell tương tác, hay Vòng lặp Đọc-Đánh giá-In (REPL), cho phép bạn nhập các lệnh PowerShell và nhận phản hồi tức thì. Lập trình viên sử dụng nó để nhanh chóng kiểm tra các đoạn mã, gỡ lỗi, hoặc học các lệnh mới mà không cần viết một script đầy đủ.

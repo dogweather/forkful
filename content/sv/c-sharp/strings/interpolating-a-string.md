@@ -11,9 +11,8 @@ summary: "Str\xE4nginterpolering i C# g\xF6r det m\xF6jligt att skapa en ny str\
   ng genom att inkludera uttryck inuti en str\xE4ngliteral, vilket underl\xE4ttar\
   \ formatering och\u2026"
 title: "Interpolering av en str\xE4ng"
+weight: 8
 ---
-
-{{< edit_this_page >}}
 
 ## Vad & Varför?
 Stränginterpolering i C# gör det möjligt att skapa en ny sträng genom att inkludera uttryck inuti en strängliteral, vilket underlättar formatering och sammanfogning av strängar. Programmerare använder denna funktion för att förbättra kodläsbarheten och underhållbarheten, särskilt när de hanterar dynamiskt stränginnehåll.

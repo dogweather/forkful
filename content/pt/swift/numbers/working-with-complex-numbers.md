@@ -8,9 +8,8 @@ model: gpt-4-0125-preview
 summary: "N\xFAmeros complexos possuem uma parte real e uma imagin\xE1ria (como 3\
   \ + 4i). Programadores os utilizam no Swift para tarefas como processamento de sinais,\u2026"
 title: "Trabalhando com n\xFAmeros complexos"
+weight: 14
 ---
-
-{{< edit_this_page >}}
 
 ## O Quê & Por Quê?
 Números complexos possuem uma parte real e uma imaginária (como 3 + 4i). Programadores os utilizam no Swift para tarefas como processamento de sinais, resolução de certos problemas matemáticos e simulação de física.

@@ -11,9 +11,8 @@ summary: "Regulj\xE4ra uttryck (regex) \xE4r sekvenser av tecken som definierar 
   km\xF6nster, fr\xE4mst anv\xE4nda f\xF6r str\xE4ngmatchning och manipulation. Programmerare\
   \ anv\xE4nder\u2026"
 title: "Att anv\xE4nda regulj\xE4ra uttryck"
+weight: 11
 ---
-
-{{< edit_this_page >}}
 
 ## Vad & Varför?
 Reguljära uttryck (regex) är sekvenser av tecken som definierar sökmönster, främst använda för strängmatchning och manipulation. Programmerare använder regex i Arduino-projekt för att tolka seriell inmatning, validera användarinmatning eller extrahera data från strängar, vilket ökar effektiviteten och flexibiliteten i databehandlingen.

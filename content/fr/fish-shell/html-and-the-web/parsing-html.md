@@ -11,9 +11,8 @@ summary: "L'analyse du HTML consiste \xE0 extraire des donn\xE9es ou des informa
   \ \xE0 partir de contenus HTML, une t\xE2che courante lorsqu'on traite des donn\xE9\
   es web. Les\u2026"
 title: Analyse Syntaxique du HTML
+weight: 43
 ---
-
-{{< edit_this_page >}}
 
 ## Quoi & Pourquoi ?
 

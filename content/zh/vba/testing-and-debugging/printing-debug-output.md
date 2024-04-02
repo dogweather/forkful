@@ -21,9 +21,8 @@ summary: "\u5728 Visual Basic for Applications\uFF08VBA\uFF09\u4E2D\u6253\u5370\
   \u4E3A\uFF0C\u5E76\u8BC6\u522B\u4EFB\u4F55\u610F\u5916\u884C\u4E3A\u6216\u9519\u8BEF\
   \u3002"
 title: "\u6253\u5370\u8C03\u8BD5\u8F93\u51FA"
+weight: 33
 ---
-
-{{< edit_this_page >}}
 
 ## 何为何故？
 在 Visual Basic for Applications（VBA）中打印调试输出涉及在代码中策略性地放置打印语句，以显示变量值、执行流程或自定义调试消息。这一技术对于调试至关重要，使程序员能够理解其代码在运行时的行为，并识别任何意外行为或错误。

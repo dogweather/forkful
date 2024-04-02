@@ -23,9 +23,8 @@ summary: "Bash\uC5D0\uC11C \uD14C\uC2A4\uD2B8\uB97C \uC791\uC131\uD558\uB294 \uA
   \uD3EC \uC804\uC5D0 \uC624\uB958\uC640 \uBC84\uADF8\uB97C \uC7A1\uC2B5\uB2C8\uB2E4\
   ."
 title: "\uD14C\uC2A4\uD2B8 \uC791\uC131\uD558\uAE30"
+weight: 36
 ---
-
-{{< edit_this_page >}}
 
 ## 무엇이며 왜인가?
 Bash에서 테스트를 작성하는 것은 Bash 스크립트의 기능을 검증하기 위해 테스트 케이스를 스크립팅하는 것을 포함합니다. 프로그래머는 다양한 조건에서 스크립트가 예상대로 작동하는지 확인하기 위해 테스트를 수행하여, 배포 전에 오류와 버그를 잡습니다.

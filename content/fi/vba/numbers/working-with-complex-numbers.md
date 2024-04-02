@@ -11,9 +11,8 @@ summary: "Kompleksilukujen k\xE4sittelyyn sis\xE4ltyy matemaattisten toimenpitei
   \ suorittaminen lukuihin, joilla on sek\xE4 reaaliosa ett\xE4 imagin\xE4\xE4riosa.\
   \ Ohjelmoijat\u2026"
 title: "Ty\xF6skentely kompleksilukujen kanssa"
+weight: 14
 ---
-
-{{< edit_this_page >}}
 
 ## Mikä ja miksi?
 

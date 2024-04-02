@@ -13,9 +13,8 @@ summary: "T\u1ED5 ch\u1EE9c m\xE3 l\u1EC7nh th\xE0nh c\xE1c h\xE0m ngh\u0129a l\
   \ th\u1EC3 t\xE1i s\u1EED d\u1EE5ng, m\u1ED7i ph\u1EA7n th\u1EF1c hi\u1EC7n m\u1ED9\
   t c\xF4ng vi\u1EC7c c\u1EE5 th\u1EC3. L\u1EADp tr\xECnh\u2026"
 title: "S\u1EAFp x\u1EBFp m\xE3 th\xE0nh c\xE1c h\xE0m"
+weight: 18
 ---
-
-{{< edit_this_page >}}
 
 ## Cái gì & Tại sao?
 Tổ chức mã lệnh thành các hàm nghĩa là phân chia mã lệnh của bạn thành các phần có thể tái sử dụng, mỗi phần thực hiện một công việc cụ thể. Lập trình viên làm điều này để làm cho mã lệnh dễ đọc, dễ gỡ lỗi, và tái sử dụng hơn. Nó giống như việc sắp xếp Lego vào các hộp - nó giúp bạn tránh phải lục lọi qua một đống hỗn loạn mỗi lần bạn muốn xây dựng thứ gì đó.

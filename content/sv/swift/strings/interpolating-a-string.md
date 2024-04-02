@@ -9,9 +9,8 @@ summary: "Interpolering av str\xE4ngar i Swift inneb\xE4r att du blandar variabl
   \ konstanter, litteraler och uttryck inuti en str\xE4ng. Det g\xF6r kod mer l\xE4\
   sbar och\u2026"
 title: "Interpolera en str\xE4ng"
+weight: 8
 ---
-
-{{< edit_this_page >}}
 
 ## Vad & Varför?
 Interpolering av strängar i Swift innebär att du blandar variabler, konstanter, litteraler och uttryck inuti en sträng. Det gör kod mer läsbar och dynamisk, perfekt för att skapa personligt anpassade meddelanden eller för att sammanfoga data på ett smidigt sätt.

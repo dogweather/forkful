@@ -7,9 +7,8 @@ model: gpt-4-1106-preview
 summary: "\"Registrar\" es mantener un registro de eventos, transacciones o actividades\
   \ que suceden con el tiempo en un sistema. Los programadores lo utilizan para\u2026"
 title: "Registro de Actividades en Programaci\xF3n"
+weight: 17
 ---
-
-{{< edit_this_page >}}
 
 ## ¿Qué y Por Qué?
 "Registrar" es mantener un registro de eventos, transacciones o actividades que suceden con el tiempo en un sistema. Los programadores lo utilizan para depurar, monitorear la salud del sistema, recopilar estadísticas o incluso auditar el uso, lo que lo convierte en una práctica indispensable para mantener y entender el comportamiento de su código bajo diversas condiciones.

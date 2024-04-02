@@ -13,9 +13,8 @@ summary: "\u0110\u1ECDc HTML l\xE0 h\xE0nh \u0111\u1ED9ng bi\u1EBFn m\u1ED9t chu
   ng tr\xECnh c\u1EE7a b\u1EA1n c\xF3 th\u1EC3 hi\u1EC3u v\xE0 thao t\xE1c. L\u1EAD\
   p tr\xECnh vi\xEAn l\xE0m vi\u1EC7c n\xE0y \u0111\u1EC3 t\u01B0\u01A1ng\u2026"
 title: "Ph\xE2n T\xEDch C\xFA Ph\xE1p HTML"
+weight: 43
 ---
-
-{{< edit_this_page >}}
 
 ## Gì & Tại Sao?
 

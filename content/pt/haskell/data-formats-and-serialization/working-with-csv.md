@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Trabalhar com CSVs (Valores Separados por V\xEDrgula) envolve analisar e\
   \ gerar arquivos que armazenam dados tabulares em um formato de texto simples.\u2026"
 title: Trabalhando com CSV
+weight: 37
 ---
-
-{{< edit_this_page >}}
 
 ## O que & Por quê?
 

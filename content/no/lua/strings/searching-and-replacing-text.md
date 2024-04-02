@@ -8,9 +8,8 @@ model: gpt-4-1106-preview
 summary: "\xC5 s\xF8ke og erstatte tekst betyr \xE5 finne spesifikke ord eller strenger\
   \ og bytte dem ut med noe annet. Programmerere bruker dette for \xE5 oppdatere kode,\u2026"
 title: "S\xF8king og erstatting av tekst"
+weight: 10
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 Å søke og erstatte tekst betyr å finne spesifikke ord eller strenger og bytte dem ut med noe annet. Programmerere bruker dette for å oppdatere kode, behandle data, eller masseendre tekstfiler.

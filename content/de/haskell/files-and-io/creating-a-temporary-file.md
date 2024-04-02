@@ -9,9 +9,8 @@ summary: "Tempor\xE4re Dateien sind kurzlebige Dateien f\xFCr Daten, die w\xE4hr
   \ der Laufzeit eines Programms ben\xF6tigt, aber nicht dauerhaft gespeichert werden\
   \ sollen.\u2026"
 title: "Erstellung einer tempor\xE4ren Datei"
+weight: 21
 ---
-
-{{< edit_this_page >}}
 
 ## Was & Warum?
 Temporäre Dateien sind kurzlebige Dateien für Daten, die während der Laufzeit eines Programms benötigt, aber nicht dauerhaft gespeichert werden sollen. Programmierer nutzen sie, um Speicherplatz zu sparen, die Sicherheit zu erhöhen und Race Conditions zu vermeiden.

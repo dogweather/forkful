@@ -11,9 +11,8 @@ summary: "Die Arbeit mit JSON (JavaScript Object Notation) beinhaltet das Parsen
   \ JSON-Daten aus Strings in Dart-Objekte und umgekehrt, eine g\xE4ngige Aufgabe\
   \ in\u2026"
 title: Arbeiten mit JSON
+weight: 38
 ---
-
-{{< edit_this_page >}}
 
 ## Was & Warum?
 

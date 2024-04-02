@@ -9,9 +9,8 @@ summary: "Come\xE7ar um novo projeto \xE9 como abrir um livro em branco, onde vo
   \ pode escrever seus c\xF3digos do jeito que bem entender. Programadores fazem isso\
   \ para\u2026"
 title: Iniciando um novo projeto
+weight: 1
 ---
-
-{{< edit_this_page >}}
 
 ## O Que & Porquê?
 Começar um novo projeto é como abrir um livro em branco, onde você pode escrever seus códigos do jeito que bem entender. Programadores fazem isso para transformar ideias em realidade, solucionar problemas ou apenas por diversão.

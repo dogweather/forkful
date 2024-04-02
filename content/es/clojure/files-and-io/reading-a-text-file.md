@@ -7,9 +7,8 @@ model: gpt-4-1106-preview
 summary: "Leer un archivo de texto es obtener su contenido para procesarlo. Los programadores\
   \ hacen esto para manipular datos, configuraciones o simplemente\u2026"
 title: Lectura de un archivo de texto
+weight: 22
 ---
-
-{{< edit_this_page >}}
 
 ## Qué y Por Qué?
 Leer un archivo de texto es obtener su contenido para procesarlo. Los programadores hacen esto para manipular datos, configuraciones o simplemente importar información.

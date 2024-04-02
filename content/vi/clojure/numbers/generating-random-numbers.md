@@ -14,9 +14,8 @@ summary: "Vi\u1EC7c t\u1EA1o s\u1ED1 ng\u1EABu nhi\xEAn trong l\u1EADp tr\xECnh 
   \u1EE3c d\u1EF1 \u0111o\xE1n m\u1ED9t c\xE1ch logic tr\u01B0\u1EDBc th\u1EDDi \u0111\
   i\u1EC3m. L\u1EADp tr\xECnh vi\xEAn th\u1EF1c hi\u1EC7n vi\u1EC7c\u2026"
 title: "Sinh s\u1ED1 ng\u1EABu nhi\xEAn"
+weight: 12
 ---
-
-{{< edit_this_page >}}
 
 ## Là gì & Tại sao?
 

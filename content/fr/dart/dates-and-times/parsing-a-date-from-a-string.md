@@ -11,9 +11,8 @@ summary: "L'analyse d'une date \xE0 partir d'une cha\xEEne de caract\xE8res en D
   \ consiste \xE0 convertir une repr\xE9sentation textuelle des dates et heures en\
   \ un objet\u2026"
 title: "Analyser une date \xE0 partir d'une cha\xEEne de caract\xE8res"
+weight: 30
 ---
-
-{{< edit_this_page >}}
 
 ## Quoi & Pourquoi ?
 L'analyse d'une date à partir d'une chaîne de caractères en Dart consiste à convertir une représentation textuelle des dates et heures en un objet `DateTime`. Cette opération est essentielle pour les applications traitant de la planification, de l'analyse de données ou de toute fonction nécessitant la manipulation de dates, garantissant que les données liées aux dates soient correctement comprises et traitées par le programme.

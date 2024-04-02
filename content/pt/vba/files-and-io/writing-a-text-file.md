@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Escrever um arquivo de texto em Visual Basic for Applications (VBA) envolve\
   \ criar, modificar ou acrescentar dados de texto a arquivos, uma tarefa\u2026"
 title: Escrevendo um arquivo de texto
+weight: 24
 ---
-
-{{< edit_this_page >}}
 
 ## O Que & Por Que?
 

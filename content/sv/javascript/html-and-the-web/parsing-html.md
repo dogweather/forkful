@@ -11,9 +11,8 @@ model: gpt-4-0125-preview
 summary: "Att tolka HTML inneb\xE4r att extrahera data fr\xE5n HTML-dokument. Programmerare\
   \ g\xF6r detta f\xF6r att interagera med eller manipulera webbinneh\xE5ll, automatisera\u2026"
 title: Analysera HTML
+weight: 43
 ---
-
-{{< edit_this_page >}}
 
 ## Vad & Varför?
 Att tolka HTML innebär att extrahera data från HTML-dokument. Programmerare gör detta för att interagera med eller manipulera webbinnehåll, automatisera dataextraktion eller för webbskrapningsändamål.

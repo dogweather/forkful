@@ -11,9 +11,8 @@ summary: "YAML, uma linguagem de serializa\xE7\xE3o de dados projetada para ser 
   vel para humanos, \xE9 frequentemente usada para arquivos de configura\xE7\xE3o,\
   \ mensagens\u2026"
 title: Trabalhando com YAML
+weight: 41
 ---
-
-{{< edit_this_page >}}
 
 ## O Que & Por Quê?
 YAML, uma linguagem de serialização de dados projetada para ser amigável para humanos, é frequentemente usada para arquivos de configuração, mensagens entre processos e armazenamento de dados. Os programadores recorrem ao YAML pela sua legibilidade e facilidade de uso, especialmente ao lidar com dados estruturados complexos, tornando-o uma excelente escolha para aplicações desenvolvidas em TypeScript.

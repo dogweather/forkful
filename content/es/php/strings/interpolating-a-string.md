@@ -8,9 +8,8 @@ model: gpt-4-1106-preview
 summary: "Interpolar una cadena es insertar variables directamente dentro de una cadena\
   \ de texto. Los programadores lo hacen para simplificar la concatenaci\xF3n,\u2026"
 title: "Interpolaci\xF3n de cadenas de texto"
+weight: 8
 ---
-
-{{< edit_this_page >}}
 
 ## ¿Qué & Por Qué?
 Interpolar una cadena es insertar variables directamente dentro de una cadena de texto. Los programadores lo hacen para simplificar la concatenación, mejorar la legibilidad del código y aumentar la eficiencia al construir cadenas dinámicas.

@@ -11,9 +11,8 @@ summary: "W PowerShellu sprawdzanie, czy katalog istnieje, jest cz\u0119stym zad
   \ kt\xF3re pomaga skryptom podejmowa\u0107 decyzje na podstawie struktury systemu\
   \ plik\xF3w -\u2026"
 title: Sprawdzanie, czy katalog istnieje
+weight: 20
 ---
-
-{{< edit_this_page >}}
 
 ## Co i dlaczego?
 W PowerShellu sprawdzanie, czy katalog istnieje, jest częstym zadaniem, które pomaga skryptom podejmować decyzje na podstawie struktury systemu plików - na przykład unikając błędów przez potwierdzenie, że docelowy katalog jest na miejscu przed próbą czytania z niego lub zapisywania do niego. Jest to niezbędne, aby zapewnić niezawodne działanie skryptu w różnorodnych środowiskach.

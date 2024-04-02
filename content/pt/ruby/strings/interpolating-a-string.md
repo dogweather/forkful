@@ -9,9 +9,8 @@ summary: "A interpola\xE7\xE3o de strings permite misturar trechos de texto com 
   digo Ruby, para criar uma string \xFAnica de forma din\xE2mica. Programadores usam\
   \ essa\u2026"
 title: Interpolando uma string
+weight: 8
 ---
-
-{{< edit_this_page >}}
 
 ## O Que & Porquê?
 A interpolação de strings permite misturar trechos de texto com código Ruby, para criar uma string única de forma dinâmica. Programadores usam essa técnica para construir mensagens personalizadas, acessar variáveis ou chamar métodos diretamente dentro de strings.

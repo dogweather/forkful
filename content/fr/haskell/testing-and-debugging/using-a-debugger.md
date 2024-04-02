@@ -1,14 +1,15 @@
 ---
 date: 2024-01-26 03:49:16.548208-07:00
-description: "Utiliser un d\xE9bogueur signifie plonger dans votre code avec des outils\
-  \ con\xE7us pour inspecter, interrompre et manipuler un programme en cours d'ex\xE9\
-  cution.\u2026"
+description: "Prenons une promenade avec GHCi, l'environnement interactif de Haskell\
+  \ qui peut agir comme un d\xE9bogueur de base. Vous le lancez avec votre code Haskell\
+  \ et\u2026"
 lastmod: '2024-03-13T22:44:57.838664-06:00'
 model: gpt-4-0125-preview
-summary: "Utiliser un d\xE9bogueur signifie plonger dans votre code avec des outils\
-  \ con\xE7us pour inspecter, interrompre et manipuler un programme en cours d'ex\xE9\
-  cution.\u2026"
+summary: "Prenons une promenade avec GHCi, l'environnement interactif de Haskell qui\
+  \ peut agir comme un d\xE9bogueur de base. Vous le lancez avec votre code Haskell\
+  \ et\u2026"
 title: "Utilisation d'un d\xE9bogueur"
+weight: 35
 ---
 
 ## Comment faire :

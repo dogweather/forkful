@@ -7,9 +7,8 @@ model: gpt-4-1106-preview
 summary: "Converting a date to a string in PowerShell means changing a `DateTime`\
   \ object into a text format. Programmers do it to format dates for display, logs,\u2026"
 title: Converting a date into a string
+weight: 28
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 

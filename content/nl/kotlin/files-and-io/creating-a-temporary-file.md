@@ -10,9 +10,8 @@ model: gpt-4-0125-preview
 summary: "Een tijdelijk bestand aanmaken is het cre\xEBren van een bestand dat bedoeld\
   \ is om op korte termijn op je bestandssysteem te leven, vaak voor dingen zoals\u2026"
 title: Een tijdelijk bestand aanmaken
+weight: 21
 ---
-
-{{< edit_this_page >}}
 
 ## Wat & Waarom?
 Een tijdelijk bestand aanmaken is het creëren van een bestand dat bedoeld is om op korte termijn op je bestandssysteem te leven, vaak voor dingen zoals tussenliggende gegevens. Programmeurs doen dit voornamelijk omdat het kan helpen bij het beheren van ruimte, het verminderen van conflicten en het verhogen van de beveiliging tijdens runtime.

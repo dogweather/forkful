@@ -18,9 +18,8 @@ summary: "\uBB38\uC790 \uD328\uD134\uC5D0 \uC77C\uCE58\uD558\uB294 \uBB38\uC790\
   \uB825\uAC12 \uD615\uC2DD\uD654 \uAC19\uC740 \uC774\uC720\uB85C \uC774 \uC791\uC5C5\
   \uC744 \uC2E4\uD589\uD569\uB2C8\uB2E4."
 title: "\uD328\uD134\uC5D0 \uC77C\uCE58\uD558\uB294 \uBB38\uC790 \uC0AD\uC81C"
+weight: 5
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why? (무엇 & 왜?)
 문자 패턴에 일치하는 문자들을 지운다는 것은, 특정 규칙을 가진 문자들을 문자열에서 제거하는 것입니다. 프로그래머들은 데이터 정제, 특수문자 제거 또는 입력값 형식화 같은 이유로 이 작업을 실행합니다.

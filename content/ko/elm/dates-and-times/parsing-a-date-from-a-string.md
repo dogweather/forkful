@@ -23,9 +23,8 @@ summary: "Elm\uC5D0\uC11C \uBB38\uC790\uC5F4\uB85C\uBD80\uD130 \uB0A0\uC9DC\uB97
   \ \uC62C\uBC14\uB974\uAC8C \uD45C\uC2DC\uD558\uBA70, \uB0A0\uC9DC \uAD00\uB828 \uACC4\
   \uC0B0\uC744\u2026"
 title: "\uBB38\uC790\uC5F4\uC5D0\uC11C \uB0A0\uC9DC \uBD84\uC11D\uD558\uAE30"
+weight: 30
 ---
-
-{{< edit_this_page >}}
 
 ## 무엇을, 왜 하나요?
 Elm에서 문자열로부터 날짜를 파싱하는 것은 날짜와 시간을 대표하는 텍스트 정보를 Elm이 이해하고 조작할 수 있는 형식, 구체적으로는 `Date` 타입으로 변환하는 과정을 말합니다. 이 과정은 사용자 입력을 처리하고, 지역화된 날짜를 올바르게 표시하며, 날짜 관련 계산을 수행함으로써, Elm 애플리케이션이 시간 데이터를 지능적으로 처리할 수 있도록 하는 데 필수적입니다.

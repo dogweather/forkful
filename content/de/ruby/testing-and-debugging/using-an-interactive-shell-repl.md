@@ -8,9 +8,8 @@ model: gpt-4-0125-preview
 summary: "Eine interaktive Shell oder REPL (Read-Eval-Print Loop) erm\xF6glicht es,\
   \ Code in Echtzeit zu testen. Programmierer nutzen sie, um zu experimentieren, Fehler\u2026"
 title: Nutzung einer interaktiven Shell (REPL)
+weight: 34
 ---
-
-{{< edit_this_page >}}
 
 ## Was & Warum?
 Eine interaktive Shell oder REPL (Read-Eval-Print Loop) ermöglicht es, Code in Echtzeit zu testen. Programmierer nutzen sie, um zu experimentieren, Fehler zu finden und die Feinheiten von Ruby zu lernen, ohne vollständige Skripte erstellen zu müssen.

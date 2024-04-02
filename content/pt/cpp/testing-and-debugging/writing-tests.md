@@ -11,9 +11,8 @@ summary: "Escrever testes em C++ envolve criar pequenos programas autossuficient
   \ que verificam automaticamente o comportamento de se\xE7\xF5es do seu c\xF3digo.\
   \ Os\u2026"
 title: Escrevendo testes
+weight: 36
 ---
-
-{{< edit_this_page >}}
 
 ## O Que & Por Quê?
 

@@ -9,9 +9,8 @@ summary: "\"Concatenating strings\" betyr \xE5 lime sammen tekster for \xE5 dann
   \ nye. Programmerere gj\xF8r dette for \xE5 manipulere tekst, vise meldinger eller\
   \ kombinere data\u2026"
 title: "Sammensl\xE5ing av strenger"
+weight: 3
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 "Concatenating strings" betyr å lime sammen tekster for å danne nye. Programmerere gjør dette for å manipulere tekst, vise meldinger eller kombinere data dynamisk.

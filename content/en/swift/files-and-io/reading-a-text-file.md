@@ -8,9 +8,8 @@ model: gpt-4-1106-preview
 summary: "Reading a text file in Swift means grabbing the content from a file stored\
   \ on disk. Programmers do this to work with saved data like configurations, logs,\u2026"
 title: Reading a text file
+weight: 22
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 Reading a text file in Swift means grabbing the content from a file stored on disk. Programmers do this to work with saved data like configurations, logs, or user-generated content.

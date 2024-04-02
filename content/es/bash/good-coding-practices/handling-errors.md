@@ -9,9 +9,8 @@ summary: "Manejar errores en scripts de Bash consiste en anticipar d\xF3nde pued
   \ surgir problemas y abordarlos de manera elegante. \xBFPor qu\xE9? Bueno, mantiene\
   \ tu\u2026"
 title: Manejo de errores
+weight: 16
 ---
-
-{{< edit_this_page >}}
 
 ## ¿Qué y Por Qué?
 

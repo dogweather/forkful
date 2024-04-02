@@ -11,9 +11,8 @@ summary: "Escribir pruebas en PowerShell implica crear scripts que validen autom
   ticamente la funcionalidad de tu c\xF3digo de PowerShell, asegur\xE1ndose de que\
   \ se\u2026"
 title: Escribiendo pruebas
+weight: 36
 ---
-
-{{< edit_this_page >}}
 
 ## ¿Qué y por qué?
 

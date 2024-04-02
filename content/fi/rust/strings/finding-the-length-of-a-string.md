@@ -9,9 +9,8 @@ summary: "Selvitet\xE4\xE4n merkkijonon pituuden Rust-kieless\xE4: se tarkoittaa
   \ merkkijonossa olevien merkkien m\xE4\xE4r\xE4n laskemista. Ohjelmoija tarvitsee\
   \ t\xE4t\xE4 tietoa\u2026"
 title: "Merkkijonon pituuden selvitt\xE4minen"
+weight: 7
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why? (Mikä ja Miksi?)
 Selvitetään merkkijonon pituuden Rust-kielessä: se tarkoittaa siis merkkijonossa olevien merkkien määrän laskemista. Ohjelmoija tarvitsee tätä tietoa esimerkiksi syötteiden validointiin, tekstin käsittelyyn tai muistinvarauksiin.

@@ -23,9 +23,8 @@ summary: "Rust\uC5D0\uC11C HTML \uD30C\uC2F1\uC740 HTML \uBB38\uC11C\uB85C\uBD80
   \uB978 \uD50C\uB7AB\uD3FC\uC73C\uB85C \uCF58\uD150\uCE20\uB97C \uC774\uC804\uD558\
   \uAE30 \uC704\uD574 \uC774\u2026"
 title: "HTML \uD30C\uC2F1"
+weight: 43
 ---
-
-{{< edit_this_page >}}
 
 ## 무엇 & 왜?
 

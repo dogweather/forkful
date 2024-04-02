@@ -19,9 +19,8 @@ summary: "\u5728TypeScript\u4E2D\u5199\u5165\u6587\u672C\u6587\u4EF6\u662F\u6570
   \u6790\u3001\u62A5\u544A\uFF0C\u6216\u4EC5\u4EC5\u662F\u5728\u4F1A\u8BDD\u4E4B\u95F4\
   \u4FDD\u5B58\u7528\u6237\u8BBE\u7F6E\u3002"
 title: "\u7F16\u5199\u6587\u672C\u6587\u4EF6"
+weight: 24
 ---
-
-{{< edit_this_page >}}
 
 ## 什么及为什么？
 在TypeScript中写入文本文件是数据持久性、配置或日志生成的关键技能。程序员经常执行此任务，以便于在应用程序内存之外存储和操作数据，原因可能是数据分析、报告，或仅仅是在会话之间保存用户设置。

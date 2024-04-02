@@ -11,9 +11,8 @@ summary: "Mettre une cha\xEEne de caract\xE8res en capitale signifie convertir l
   \ premier caract\xE8re de la cha\xEEne en majuscule tout en conservant les caract\xE8\
   res restants\u2026"
 title: "Mettre en majuscule une cha\xEEne"
+weight: 2
 ---
-
-{{< edit_this_page >}}
 
 ## Quoi et pourquoi ?
 Mettre une chaîne de caractères en capitale signifie convertir le premier caractère de la chaîne en majuscule tout en conservant les caractères restants tels quels. Cette opération est couramment effectuée en JavaScript pour formater les entrées des utilisateurs, afficher des noms ou des titres, et assurer la cohérence dans les textes de l'interface utilisateur.

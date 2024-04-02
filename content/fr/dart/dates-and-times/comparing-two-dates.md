@@ -10,9 +10,8 @@ model: gpt-4-0125-preview
 summary: "Comparer deux dates en Dart consiste \xE0 \xE9valuer la diff\xE9rence temporelle\
   \ ou l'ordre entre elles, une fonctionnalit\xE9 essentielle dans les applications\u2026"
 title: Comparer deux dates
+weight: 27
 ---
-
-{{< edit_this_page >}}
 
 ## Quoi & Pourquoi ?
 Comparer deux dates en Dart consiste à évaluer la différence temporelle ou l'ordre entre elles, une fonctionnalité essentielle dans les applications gérant des événements, des échéances ou toute donnée sensible au temps. Les programmeurs ont fréquemment besoin de cela pour contrôler le flux de logique, valider ou trier les données en fonction des conditions temporelles.

@@ -7,9 +7,8 @@ lastmod: '2024-03-13T22:44:36.964951-06:00'
 model: gpt-4-0125-preview
 summary: ''
 title: "L\xE0m vi\u1EC7c v\u1EDBi CSV"
+weight: 37
 ---
-
-{{< edit_this_page >}}
 
 ## Làm việc với CSV trong PowerShell
 

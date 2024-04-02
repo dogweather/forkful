@@ -7,9 +7,8 @@ model: gpt-4-1106-preview
 summary: "Webseiten herunterzuladen bedeutet, Anfragen an einen Server zu senden,\
   \ um eine HTML-Seite zu erhalten. Programmierer machen das, um Daten zu sammeln,\u2026"
 title: Webseite herunterladen
+weight: 42
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 Webseiten herunterzuladen bedeutet, Anfragen an einen Server zu senden, um eine HTML-Seite zu erhalten. Programmierer machen das, um Daten zu sammeln, Inhalte offline zu nutzen oder Webservices zu integrieren.

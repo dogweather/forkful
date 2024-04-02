@@ -9,9 +9,8 @@ summary: "Att l\xE4sa kommandoradsargument inneb\xE4r att man h\xE4mtar de v\xE4
   \ som anv\xE4ndaren har angett n\xE4r de startar programmet. Programmerare anv\xE4\
   nder det f\xF6r att\u2026"
 title: "L\xE4sa in kommandoradsargument"
+weight: 23
 ---
-
-{{< edit_this_page >}}
 
 ## Vad & Varför?
 Att läsa kommandoradsargument innebär att man hämtar de värden som användaren har angett när de startar programmet. Programmerare använder det för att tillåta användarinteraktion och för att göra program flexibla genom att ta emot input som styr programmets beteende direkt från start.

@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Leggere un file di testo in Dart comporta l'accesso e il recupero di dati\
   \ da file memorizzati sul file system. I programmatori effettuano questa\u2026"
 title: Lettura di un file di testo
+weight: 22
 ---
-
-{{< edit_this_page >}}
 
 ## Cosa e Perché?
 

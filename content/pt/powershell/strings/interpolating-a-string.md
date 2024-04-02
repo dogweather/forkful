@@ -8,9 +8,8 @@ model: gpt-4-1106-preview
 summary: "Interpola\xE7\xE3o de string permite injetar valores em uma cadeia de caracteres,\
   \ tornando seu c\xF3digo mais limpo e leg\xEDvel. Programadores fazem isso para\u2026"
 title: Interpolando uma string
+weight: 8
 ---
-
-{{< edit_this_page >}}
 
 ## O Que é e Por Que?
 Interpolação de string permite injetar valores em uma cadeia de caracteres, tornando seu código mais limpo e legível. Programadores fazem isso para construir strings dinamicamente e evitar a concatenação manual de dados e texto.

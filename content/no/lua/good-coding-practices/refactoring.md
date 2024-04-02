@@ -9,9 +9,8 @@ summary: "Refaktorisering er kunsten \xE5 justere eksisterende kode for \xE5 for
   \ strukturen, lesbarheten, og effektiviteten uten \xE5 endre dens eksterne oppf\xF8\
   rsel.\u2026"
 title: Refaktorering
+weight: 19
 ---
-
-{{< edit_this_page >}}
 
 ## Hva & Hvorfor?
 Refaktorisering er kunsten å justere eksisterende kode for å forbedre strukturen, lesbarheten, og effektiviteten uten å endre dens eksterne oppførsel. Programmerere gjør dette for å gjøre koden mer vedlikeholdbar, redusere kompleksitet, og ofte som et foreløpig skritt før de legger til nye funksjoner eller retter feil.

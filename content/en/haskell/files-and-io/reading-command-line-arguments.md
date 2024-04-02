@@ -7,9 +7,8 @@ model: gpt-4-1106-preview
 summary: "Reading command line arguments in Haskell lets you snatch user inputs when\
   \ they run your program. Why? To customize program behavior on the fly, without\u2026"
 title: Reading command line arguments
+weight: 23
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 

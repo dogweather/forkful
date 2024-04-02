@@ -11,9 +11,8 @@ summary: "Analyser une date \xE0 partir d'une cha\xEEne de caract\xE8res consist
   \ \xE0 convertir des repr\xE9sentations textuelles de dates et d'heures en un format\
   \ qui peut \xEAtre\u2026"
 title: "Analyser une date depuis une cha\xEEne de caract\xE8res"
+weight: 30
 ---
-
-{{< edit_this_page >}}
 
 ## Quoi et Pourquoi ?
 Analyser une date à partir d'une chaîne de caractères consiste à convertir des représentations textuelles de dates et d'heures en un format qui peut être facilement manipulé, stocké ou comparé au sein d'un programme Lua. Les programmeurs effectuent cette tâche pour faciliter des opérations telles que la planification, la journalisation ou toute calcul temporel et pour combler le fossé entre les formats de dates lisibles par l'homme et les types de données structurées qu'un ordinateur peut traiter efficacement.

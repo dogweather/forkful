@@ -7,9 +7,8 @@ model: gpt-4-1106-preview
 summary: "La interpolaci\xF3n de cadenas permite insertar valores de variables dentro\
   \ de una cadena de texto. Los programadores lo hacen para construir mensajes\u2026"
 title: "Interpolaci\xF3n de cadenas de texto"
+weight: 8
 ---
-
-{{< edit_this_page >}}
 
 ## Qué y por qué?
 La interpolación de cadenas permite insertar valores de variables dentro de una cadena de texto. Los programadores lo hacen para construir mensajes dinámicamente, facilitar la localización y mejorar la legibilidad del código.

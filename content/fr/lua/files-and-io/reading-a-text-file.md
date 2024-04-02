@@ -7,9 +7,8 @@ model: gpt-4-1106-preview
 summary: "Lire un fichier texte, c'est extraire son contenu pour que votre programme\
   \ Lua puisse l'utiliser. On fait \xE7a pour des tas de raisons \u2013 charger des\u2026"
 title: Lecture d'un fichier texte
+weight: 22
 ---
-
-{{< edit_this_page >}}
 
 ## Quoi et Pourquoi ?
 

@@ -9,9 +9,8 @@ summary: "Poistamme merkkej\xE4, jotka vastaavat tietty\xE4 kuviota, puhdistaaks
   \ sy\xF6tteen tai valmistellaksemme jatkok\xE4sittely\xE4 varten. Liikakirjaimet\
   \ voivat sotkea\u2026"
 title: Merkkien poistaminen hakemalla osumia kaavaan
+weight: 5
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why? – Mitä & Miksi?
 Poistamme merkkejä, jotka vastaavat tiettyä kuviota, puhdistaaksemme syötteen tai valmistellaksemme jatkokäsittelyä varten. Liikakirjaimet voivat sotkea tulosteita tai katkaista tiedonkäsittelyn.

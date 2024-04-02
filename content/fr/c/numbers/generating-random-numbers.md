@@ -11,9 +11,8 @@ summary: "G\xE9n\xE9rer des nombres al\xE9atoires en C implique de cr\xE9er des 
   \ impr\xE9visibles et suivant une distribution sp\xE9cifique, telle que uniforme\
   \ ou normale.\u2026"
 title: "G\xE9n\xE9ration de nombres al\xE9atoires"
+weight: 12
 ---
-
-{{< edit_this_page >}}
 
 ## Quoi et Pourquoi ?
 

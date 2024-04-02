@@ -15,9 +15,8 @@ summary: "\uC5D8\uB9AD\uC11C\uC5D0\uC11C XML\uC744 \uB2E4\uB8E8\uB294 \uAC83\uC7
   \uC2A4\uD15C\uC5D0\uC11C \uB110\uB9AC \uC0AC\uC6A9\uB418\uAE30 \uB54C\uBB38\uC5D0\
   \ XML\uC744 \uB2E4\uB8F9\uB2C8\uB2E4."
 title: "XML \uB2E4\uB8E8\uAE30"
+weight: 40
 ---
-
-{{< edit_this_page >}}
 
 ## 무엇 & 왜?
 엘릭서에서 XML을 다루는 것은 XML 데이터의 파싱, 생성, 조작을 의미합니다. 프로그래머들은 웹 서비스, 설정 파일, 그리고 레거시 시스템에서 널리 사용되기 때문에 XML을 다룹니다.

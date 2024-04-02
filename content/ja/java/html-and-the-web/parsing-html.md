@@ -18,9 +18,8 @@ summary: "HTML\u30D1\u30FC\u30B9\u306F\u3001HTML\u6587\u66F8\u3092\u89E3\u6790\u
   \u3092\u53D6\u5F97\u3057\u305F\u308A\u3001DOM(Document Object Model)\u3092\u64CD\
   \u4F5C\u3059\u308B\u305F\u3081\u306B\u884C\u3044\u307E\u3059\u3002"
 title: "HTML\u306E\u89E3\u6790"
+weight: 43
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why? (何となぜ？)
 HTMLパースは、HTML文書を解析し、その情報を操作や抽出に使える形にすることです。プログラマーはこのプロセスを使って、ウェブページから必要なデータを取得したり、DOM(Document Object Model)を操作するために行います。

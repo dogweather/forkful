@@ -10,9 +10,8 @@ model: gpt-4-0125-preview
 summary: "Assosiatiiviset taulukot, tai kuten Rustin k\xE4ytt\xE4j\xE4t niit\xE4 kutsuvat,\
   \ \"hajautustaulukot\", ovat kokoelmia, jotka tallentavat dataa avain-arvo -pareina.\u2026"
 title: "Assosiatiivisten taulukoiden k\xE4ytt\xF6"
+weight: 15
 ---
-
-{{< edit_this_page >}}
 
 ## Mikä & Miksi?
 

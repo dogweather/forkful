@@ -7,9 +7,8 @@ model: gpt-4-0125-preview
 summary: "Getting the current date in TypeScript, a language built on JavaScript,\
   \ allows you to access and manipulate the current date and time information.\u2026"
 title: Getting the current date
+weight: 29
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 Getting the current date in TypeScript, a language built on JavaScript, allows you to access and manipulate the current date and time information. Programmers often need this functionality for creating timestamps, scheduling, and other time-sensitive features in their applications.

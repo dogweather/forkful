@@ -7,9 +7,8 @@ model: gpt-4-1106-preview
 summary: "Beim Senden einer HTTP-Anfrage mit Basic Authentication werden Benutzername\
   \ und Passwort kodiert und als Teil der Anfrage \xFCbermittelt. Programmierer\u2026"
 title: HTTP-Anfragen mit Basisauthentifizierung senden
+weight: 45
 ---
-
-{{< edit_this_page >}}
 
 ## Was & Warum?
 

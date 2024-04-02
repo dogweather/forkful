@@ -9,9 +9,8 @@ summary: "Yksinkertaistettuna, merkkijonojen yhdist\xE4minen on tapa liitt\xE4\x
   \ tekstej\xE4 yhteen. Ohjelmoijat tekev\xE4t t\xE4t\xE4, koska tarvitsevat usein\
   \ luoda dynaamisia\u2026"
 title: "Merkkijonojen yhdist\xE4minen"
+weight: 3
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why? - Mitä ja miksi?
 Yksinkertaistettuna, merkkijonojen yhdistäminen on tapa liittää tekstejä yhteen. Ohjelmoijat tekevät tätä, koska tarvitsevat usein luoda dynaamisia viestejä, polkuja tai komentoja.

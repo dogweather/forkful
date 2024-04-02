@@ -10,9 +10,8 @@ model: gpt-4-0125-preview
 summary: "\xC5 skrive tester i Arduino-milj\xF8et refererer til prosessen med \xE5\
   \ lage automatiserte tester som validerer funksjonaliteten til koden din p\xE5 Arduino-enheter.\u2026"
 title: Skrive tester
+weight: 36
 ---
-
-{{< edit_this_page >}}
 
 ## Hva & Hvorfor?
 

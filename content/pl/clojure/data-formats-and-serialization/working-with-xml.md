@@ -9,9 +9,8 @@ summary: "XML to j\u0119zyk znacznik\xF3w u\u017Cywany do kodowania dokument\xF3
   \ w spos\xF3b czytelny zar\xF3wno dla cz\u0142owieka, jak i maszyny. Ma kluczowe\
   \ znaczenie w us\u0142ugach\u2026"
 title: Praca z XML
+weight: 40
 ---
-
-{{< edit_this_page >}}
 
 ## Co i Dlaczego?
 XML to język znaczników używany do kodowania dokumentów w sposób czytelny zarówno dla człowieka, jak i maszyny. Ma kluczowe znaczenie w usługach internetowych, plikach konfiguracyjnych i wymianie danych, ponieważ przekazuje dane w strukturalnym, hierarchicznym formacie.

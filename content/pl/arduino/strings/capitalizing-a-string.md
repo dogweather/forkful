@@ -11,9 +11,8 @@ summary: "Kapitalizacja ci\u0105gu polega na przekszta\u0142ceniu pierwszego zna
   \ ka\u017Cdego s\u0142owa w ci\u0105gu na wielk\u0105 liter\u0119, zapewniaj\u0105\
   c jednocze\u015Bnie, \u017Ce pozosta\u0142e litery\u2026"
 title: "Zamiana liter na wielkie w \u0142a\u0144cuchu znak\xF3w"
+weight: 2
 ---
-
-{{< edit_this_page >}}
 
 ## Co i dlaczego?
 Kapitalizacja ciągu polega na przekształceniu pierwszego znaku każdego słowa w ciągu na wielką literę, zapewniając jednocześnie, że pozostałe litery pozostaną małe. Operacja ta jest powszechna w formacie danych i normalizacji wprowadzania użytkownika, aby zachować spójność i poprawić czytelność.

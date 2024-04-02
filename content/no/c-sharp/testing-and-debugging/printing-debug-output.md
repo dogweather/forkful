@@ -9,9 +9,8 @@ summary: "Skrive ut feils\xF8kingsdata hjelper utviklere \xE5 se hva som foreg\x
   r under panseret av programmene sine. Vi gj\xF8r det for \xE5 fakke bugs og forst\xE5\
   \ flyten, uten \xE5\u2026"
 title: "Skrive ut feils\xF8kingsdata"
+weight: 33
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why? (Hva & Hvorfor?)
 Skrive ut feilsøkingsdata hjelper utviklere å se hva som foregår under panseret av programmene sine. Vi gjør det for å fakke bugs og forstå flyten, uten å granske tusenvis av kodelinjer.

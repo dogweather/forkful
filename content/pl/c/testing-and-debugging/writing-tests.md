@@ -11,9 +11,8 @@ summary: "Pisanie test\xF3w w C polega na tworzeniu mniejszych, pomocniczych pro
   w lub funkcji, kt\xF3re automatycznie weryfikuj\u0105 funkcjonalno\u015B\u0107 Twojego\
   \ kodu.\u2026"
 title: "Pisanie test\xF3w"
+weight: 36
 ---
-
-{{< edit_this_page >}}
 
 ## Co i dlaczego?
 Pisanie testów w C polega na tworzeniu mniejszych, pomocniczych programów lub funkcji, które automatycznie weryfikują funkcjonalność Twojego kodu. Programiści robią to, aby upewnić się, że ich oprogramowanie działa zgodnie z oczekiwaniami, wykrywać błędy na wczesnym etapie oraz ułatwić przyszłe modyfikacje kodu bez niezamierzonych efektów ubocznych.

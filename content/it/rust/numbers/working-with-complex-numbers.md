@@ -7,9 +7,8 @@ model: gpt-4-0125-preview
 summary: "I numeri complessi hanno una parte reale e una immaginaria e sono fondamentali\
   \ in vari campi come ingegneria, fisica e grafica computerizzata. Gli\u2026"
 title: Lavorare con i numeri complessi
+weight: 14
 ---
-
-{{< edit_this_page >}}
 
 ## Cosa & Perché?
 I numeri complessi hanno una parte reale e una immaginaria e sono fondamentali in vari campi come ingegneria, fisica e grafica computerizzata. Gli sviluppatori li usano per risolvere equazioni che i normali numeri reali non possono gestire.

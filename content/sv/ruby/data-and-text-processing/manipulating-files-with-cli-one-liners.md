@@ -9,9 +9,8 @@ summary: "Att manipulera filer med CLI-enradare i Ruby handlar om att utf\xF6ra 
   \ filoperationer direkt fr\xE5n din terminal med anv\xE4ndning av Ruby-script. Det\
   \ \xE4r\u2026"
 title: Hantera filer med CLI-engreppskommandon
+weight: 31
 ---
-
-{{< edit_this_page >}}
 
 ## Vad & Varför?
 

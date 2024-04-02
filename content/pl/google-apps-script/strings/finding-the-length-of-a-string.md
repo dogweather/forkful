@@ -11,9 +11,8 @@ summary: "Znalezienie d\u0142ugo\u015Bci \u0142a\u0144cucha znak\xF3w w Google A
   \ Script, j\u0119zyku skryptowym JavaScript dla chmury, kt\xF3ry pozwala na automatyzacj\u0119\
   \ zada\u0144 w produktach\u2026"
 title: "Znajdowanie d\u0142ugo\u015Bci \u0142a\u0144cucha znak\xF3w"
+weight: 7
 ---
-
-{{< edit_this_page >}}
 
 ## Co i dlaczego?
 Znalezienie długości łańcucha znaków w Google Apps Script, języku skryptowym JavaScript dla chmury, który pozwala na automatyzację zadań w produktach Google, dotyczy określenia liczby znaków zawartych w ciągu znaków. Programiści często wykonują tę operację, aby zweryfikować dane wejściowe, iterować przez znaki lub manipulować ciągami znaków w różnych zadaniach automatyzacji w aplikacjach Google.

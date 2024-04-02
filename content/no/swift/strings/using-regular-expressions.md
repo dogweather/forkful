@@ -10,9 +10,8 @@ model: gpt-4-0125-preview
 summary: "Regul\xE6re uttrykk, eller regex, er sekvenser av tegn som danner et s\xF8\
   kem\xF8nster, ofte brukt til oppgaver som sammenligning eller manipulasjon av\u2026"
 title: "Bruke regul\xE6re uttrykk"
+weight: 11
 ---
-
-{{< edit_this_page >}}
 
 ## Hva & Hvorfor?
 Regulære uttrykk, eller regex, er sekvenser av tegn som danner et søkemønster, ofte brukt til oppgaver som sammenligning eller manipulasjon av tekststrenger. Programmerere benytter dem til alt fra datavalidering og parsing til transformasjoner, noe som gjør dem til et uunnværlig verktøy i tekstbehandlings- og manipuleringsoppgaver på tvers av ulike programmeringsspråk, inkludert Swift.

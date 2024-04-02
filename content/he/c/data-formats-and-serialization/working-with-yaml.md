@@ -21,9 +21,8 @@ summary: "YAML, \u05E9\u05E2\u05D5\u05DE\u05D3 \u05DC-\"YAML Ain't Markup Langua
   \u05E2\u05D3 \u05D0\u05D7\u05E1\u05D5\u05DF \u05E0\u05EA\u05D5\u05E0\u05D9\u05DD\
   . \u05EA\u05D5\u05DB\u05E0\u05D9\u05EA\u05E0\u05D9\u05DD\u2026"
 title: "\u05E2\u05D1\u05D5\u05D3\u05D4 \u05E2\u05DD YAML"
+weight: 41
 ---
-
-{{< edit_this_page >}}
 
 ## מה ולמה?
 

@@ -7,9 +7,8 @@ model: gpt-4-1106-preview
 summary: "Lukemalla tekstitiedostoa koodissasi k\xE4sittelet tiedon virtoja. Ohjelmoijat\
   \ lukevat tiedostoja automatisoidakseen datan k\xE4sittely\xE4 \u2013 hae, muokkaa,\u2026"
 title: Tekstitiedoston lukeminen
+weight: 22
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why? (Mitä & Miksi?)
 Lukemalla tekstitiedostoa koodissasi käsittelet tiedon virtoja. Ohjelmoijat lukevat tiedostoja automatisoidakseen datan käsittelyä – hae, muokkaa, tallenna.

@@ -7,9 +7,8 @@ model: gpt-4-1106-preview
 summary: "H\xE5ndtering av feil i C# dreier seg om \xE5 h\xE5ndtere det uventede\u2014\
   som \xE5 snuble i skolissene. Programmer kan snuble over d\xE5rlige data eller ustabile\u2026"
 title: "Feilh\xE5ndtering"
+weight: 16
 ---
-
-{{< edit_this_page >}}
 
 ## Hva & Hvorfor?
 

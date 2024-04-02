@@ -9,9 +9,8 @@ summary: "Un REPL (Read-Eval-Print Loop, boucle de lecture, \xE9valuation et imp
   \ est un shell interactif qui traite des entr\xE9es utilisateur uniques, ex\xE9\
   cute du\u2026"
 title: Utilisation d'une console interactive (REPL)
+weight: 34
 ---
-
-{{< edit_this_page >}}
 
 ## Quoi et pourquoi ?
 Un REPL (Read-Eval-Print Loop, boucle de lecture, évaluation et impression) est un shell interactif qui traite des entrées utilisateur uniques, exécute du code et renvoie le résultat. Les programmeurs l'utilisent pour des expériences rapides, du débogage ou pour l'apprentissage, car il permet un retour immédiat et une itération.

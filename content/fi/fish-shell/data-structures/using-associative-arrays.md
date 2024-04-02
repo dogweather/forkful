@@ -10,9 +10,8 @@ model: gpt-4-0125-preview
 summary: "Assosiatiiviset taulukot eli hajautustaulut mahdollistavat tietojen tallentamisen\
   \ avain-arvo -pareina, mik\xE4 tekee tiedon j\xE4rjest\xE4misest\xE4 ja hakemisesta\u2026"
 title: "Assosiatiivisten taulukoiden k\xE4ytt\xF6"
+weight: 15
 ---
-
-{{< edit_this_page >}}
 
 ## Mikä ja Miksi?
 

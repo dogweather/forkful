@@ -1,14 +1,15 @@
 ---
 date: 2024-01-26 03:50:24.783248-07:00
-description: "Un d\xE9bogueur est un outil qui aide les programmeurs \xE0 comprendre\
-  \ ce que leur code fait r\xE9ellement lorsqu'il s'ex\xE9cute. C'est la loupe qui\
-  \ nous permet de\u2026"
+description: "PHP est fourni avec un d\xE9bogueur interactif appel\xE9 Xdebug. Voici\
+  \ comment l'utiliser. Tout d'abord, assurez-vous que vous avez Xdebug install\xE9\
+  \ et configur\xE9\u2026"
 lastmod: '2024-03-13T22:44:57.883506-06:00'
 model: gpt-4-0125-preview
-summary: "Un d\xE9bogueur est un outil qui aide les programmeurs \xE0 comprendre ce\
-  \ que leur code fait r\xE9ellement lorsqu'il s'ex\xE9cute. C'est la loupe qui nous\
-  \ permet de\u2026"
+summary: "PHP est fourni avec un d\xE9bogueur interactif appel\xE9 Xdebug. Voici comment\
+  \ l'utiliser. Tout d'abord, assurez-vous que vous avez Xdebug install\xE9 et configur\xE9\
+  \u2026"
 title: "Utilisation d'un d\xE9bogueur"
+weight: 35
 ---
 
 ## Comment faire :

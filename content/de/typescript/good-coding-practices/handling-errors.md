@@ -8,9 +8,8 @@ model: gpt-4-1106-preview
 summary: "Fehlerbehandlung bedeutet, mit dem Unerwarteten zu rechnen; es geht darum,\
   \ wie wir damit umgehen, wenn in unserem Code etwas schiefgeht. Wir tun dies, um\u2026"
 title: Fehlerbehandlung
+weight: 16
 ---
-
-{{< edit_this_page >}}
 
 ## Was & Warum?
 Fehlerbehandlung bedeutet, mit dem Unerwarteten zu rechnen; es geht darum, wie wir damit umgehen, wenn in unserem Code etwas schiefgeht. Wir tun dies, um Abstürze zu vermeiden und den Benutzern ein reibungsloses Erlebnis zu bieten, auch wenn das Unerwartete eintritt.

@@ -23,9 +23,8 @@ summary: "Haskell\uC5D0\uC11C \uD604\uC7AC \uB0A0\uC9DC\uB97C \uAC80\uC0C9\uD558
   \uC73C\uB85C \uD55C \uC791\uC5C5\uC744 \uC218\uD589\uD558\uAE30 \uC704\uD574 \uC774\
   \ \uC791\uC5C5\uC744 \uD569\uB2C8\uB2E4."
 title: "\uD604\uC7AC \uB0A0\uC9DC \uAC00\uC838\uC624\uAE30"
+weight: 29
 ---
-
-{{< edit_this_page >}}
 
 ## 무엇이며, 왜?
 Haskell에서 현재 날짜를 검색하는 것은 시스템의 현재 시간을 얻고 이를 읽을 수 있는 날짜 형식으로 변환하는 것을 포함합니다. 프로그래머들은 로깅, 작업 스케줄링 또는 애플리케이션에서 이벤트 타임스탬핑과 같은 날짜를 기반으로 한 작업을 수행하기 위해 이 작업을 합니다.

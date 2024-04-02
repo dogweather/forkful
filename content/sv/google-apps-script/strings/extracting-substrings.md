@@ -11,9 +11,8 @@ summary: "Extrahering av substr\xE4ngar inneb\xE4r att man tar en del av en str\
   ng - i princip skapar en ny str\xE4ng fr\xE5n en del av en befintlig s\xE5dan. Programmerare\
   \ g\xF6r\u2026"
 title: "Extrahera delstr\xE4ngar"
+weight: 6
 ---
-
-{{< edit_this_page >}}
 
 ## Vad & Varför?
 

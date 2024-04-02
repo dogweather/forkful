@@ -13,9 +13,8 @@ summary: "Logging l\xE0 vi\u1EC7c \u0111\u1EC3 l\u1EA1i d\u1EA5u v\u1EBFt qua co
   \ \u0111ang x\u1EA3y ra khi script c\u1EE7a b\u1EA1n \u0111\u01B0\u1EE3c th\u1EF1\
   c thi t\u1EF1 do. L\u1EADp tr\xECnh vi\xEAn log\u2026"
 title: Ghi log
+weight: 17
 ---
-
-{{< edit_this_page >}}
 
 ## Gì và Tại sao?
 Logging là việc để lại dấu vết qua code của bạn - đó là cách bạn theo dõi những gì đang xảy ra khi script của bạn được thực thi tự do. Lập trình viên log để debug, theo dõi hành vi ứng dụng, giám sát hiệu suất và để ý đến bất kỳ điều gì nghịch ngợm.

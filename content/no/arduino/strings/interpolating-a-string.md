@@ -7,9 +7,8 @@ model: gpt-4-1106-preview
 summary: "Interpolering av strenger lar deg sette verdier direkte inn i en tekststreng,\
   \ noe som er hendig for \xE5 lage dynamisk tekst, som f.eks. sensorverdier eller\u2026"
 title: Interpolering av en streng
+weight: 8
 ---
-
-{{< edit_this_page >}}
 
 ## Hva & Hvorfor?
 Interpolering av strenger lar deg sette verdier direkte inn i en tekststreng, noe som er hendig for å lage dynamisk tekst, som f.eks. sensorverdier eller brukerinput i meldinger. Programmerere bruker dette for å forenkle og gjøre kode mer lesbar og vedlikeholdbar.

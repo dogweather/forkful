@@ -9,9 +9,8 @@ summary: "Satunnaislukujen tuottaminen ohjelmoinnissa tarkoittaa ep\xE4determini
   \ tai ennustamattomien numeeristen arvojen luomista. Ohjelmoijat k\xE4ytt\xE4v\xE4\
   t\u2026"
 title: Satunnaislukujen generointi
+weight: 12
 ---
-
-{{< edit_this_page >}}
 
 ## Mikä ja miksi?
 

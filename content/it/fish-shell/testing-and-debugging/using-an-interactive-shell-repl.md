@@ -7,9 +7,8 @@ model: gpt-4-0125-preview
 summary: "REPL, o Ciclo Leggi-Valuta-Stampa, \xE8 un ambiente di programmazione interattivo\
   \ che prende singoli input dell'utente, li esegue e restituisce il risultato.\u2026"
 title: Utilizzo di un interprete interattivo (REPL)
+weight: 34
 ---
-
-{{< edit_this_page >}}
 
 ## Cosa e Perché?
 REPL, o Ciclo Leggi-Valuta-Stampa, è un ambiente di programmazione interattivo che prende singoli input dell'utente, li esegue e restituisce il risultato. I programmatori lo usano per avere un feedback immediato, per il debugging e per l'esplorazione veloce dei concetti di codifica senza il peso di compilare ed eseguire un programma completo.

@@ -11,9 +11,8 @@ summary: "Associativa arrayer, eller vad Rustanv\xE4ndare kallar \"hash maps\", 
   r samlingar som lagrar data i nyckel-v\xE4rde-par. Programmerare anv\xE4nder dem\
   \ f\xF6r snabb\u2026"
 title: "Att anv\xE4nda associativa arrayer"
+weight: 15
 ---
-
-{{< edit_this_page >}}
 
 ## Vad & Varför?
 

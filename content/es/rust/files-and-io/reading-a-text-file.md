@@ -7,9 +7,8 @@ model: gpt-4-1106-preview
 summary: "Leer un archivo de texto es b\xE1sicamente obtener el contenido de un archivo\
   \ almacenado en tu disco para trabajar con \xE9l en tu programa. Los programadores\u2026"
 title: Lectura de un archivo de texto
+weight: 22
 ---
-
-{{< edit_this_page >}}
 
 ## ¿Qué & Por Qué?
 Leer un archivo de texto es básicamente obtener el contenido de un archivo almacenado en tu disco para trabajar con él en tu programa. Los programadores lo hacen para acceder y procesar datos, configuraciones o cualquier tipo de información que se necesite para la ejecución de sus aplicaciones.

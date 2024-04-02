@@ -9,9 +9,8 @@ summary: "W PHP konwersja daty do postaci \u0142a\u0144cucha znak\xF3w pozwala n
   \ \u0142atwe wy\u015Bwietlanie i zapisywanie w r\xF3\u017Cnych formatach. Robimy\
   \ to cz\u0119sto, by dostosowa\u0107 dat\u0119 do\u2026"
 title: "Konwersja daty na \u0142a\u0144cuch znak\xF3w"
+weight: 28
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 W PHP konwersja daty do postaci łańcucha znaków pozwala na łatwe wyświetlanie i zapisywanie w różnych formatach. Robimy to często, by dostosować datę do preferencji użytkowników lub wymogów systemu.

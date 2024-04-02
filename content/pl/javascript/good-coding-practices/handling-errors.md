@@ -9,9 +9,8 @@ summary: "Obs\u0142uga b\u0142\u0119d\xF3w to spos\xF3b zarz\u0105dzania sytuacj
   \ gdy w kodzie pojawiaj\u0105 si\u0119 problemy. Jest kluczowa, poniewa\u017C pozwala\
   \ programom na \u0142agodne awarie i\u2026"
 title: "Obs\u0142uga b\u0142\u0119d\xF3w"
+weight: 16
 ---
-
-{{< edit_this_page >}}
 
 ## Co i dlaczego?
 

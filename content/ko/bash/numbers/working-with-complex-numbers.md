@@ -17,9 +17,8 @@ summary: "\uBCF5\uC18C\uC218\uB294 \uC2E4\uC218\uBD80\uC640 \uD5C8\uC218\uBD80\u
   \uBC18 \uC2E4\uC218\uB9CC\uC73C\uB85C\uB294 \uBD80\uC871\uD558\uAE30 \uB54C\uBB38\
   \uC785\uB2C8\uB2E4."
 title: "\uBCF5\uC18C\uC218 \uB2E4\uB8E8\uAE30"
+weight: 14
 ---
-
-{{< edit_this_page >}}
 
 ## 무엇이며 왜인가?
 복소수는 실수부와 허수부로 구성됩니다. 신호 처리, 양자역학 등의 분야에서, 그리고 계산이 이를 요구할 때 프로그래머들은 복소수를 사용합니다. 왜냐하면 일반 실수만으로는 부족하기 때문입니다.

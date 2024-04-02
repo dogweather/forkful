@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Strings samenvoegen betekent ze aan elkaar plakken om een nieuwe string\
   \ te maken. Het is zoals Lego met strings. We doen dit om tekst op te bouwen; denk\u2026"
 title: Samenvoegen van strings
+weight: 3
 ---
-
-{{< edit_this_page >}}
 
 ## Wat & Waarom?
 Strings samenvoegen betekent ze aan elkaar plakken om een nieuwe string te maken. Het is zoals Lego met strings. We doen dit om tekst op te bouwen; denk aan gebruikersnamen, foutmeldingen en dynamische inhoud.

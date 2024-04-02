@@ -9,9 +9,8 @@ summary: "Crear un fichero temporal es como hacer una nota adhesiva digital, alg
   \ temporal para guardar datos que no necesitas a largo plazo. Los programadores\
   \ lo\u2026"
 title: Creando un archivo temporal
+weight: 21
 ---
-
-{{< edit_this_page >}}
 
 ## Qué y Por Qué?
 Crear un fichero temporal es como hacer una nota adhesiva digital, algo temporal para guardar datos que no necesitas a largo plazo. Los programadores lo hacen para manejar datos transitorios, como almacenamiento intermedio al procesar información o para evitar bloqueos de recursos.

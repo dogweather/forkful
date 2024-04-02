@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "\xC9crire sur la sortie d'erreur standard (stderr) consiste \xE0 afficher\
   \ des messages d'erreur et des diagnostics sur la console ou le terminal. Les\u2026"
 title: "\xC9crire sur l'erreur standard"
+weight: 25
 ---
-
-{{< edit_this_page >}}
 
 ## Quoi & Pourquoi ?
 Écrire sur la sortie d'erreur standard (stderr) consiste à afficher des messages d'erreur et des diagnostics sur la console ou le terminal. Les programmeurs le font pour séparer les informations d'erreur de la sortie standard (stdout), facilitant ainsi le débogage et l'analyse des logs.

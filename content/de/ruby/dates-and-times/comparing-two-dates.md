@@ -9,9 +9,8 @@ summary: "Das Vergleichen von zwei Daten zeigt uns, welches Datum fr\xFCher oder
   ter ist. Programmierer nutzen dies f\xFCr Funktionalit\xE4ten wie G\xFCltigkeitspr\xFC\
   fungen,\u2026"
 title: Vergleich von zwei Daten
+weight: 27
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why? (Was & Warum?)
 Das Vergleichen von zwei Daten zeigt uns, welches Datum früher oder später ist. Programmierer nutzen dies für Funktionalitäten wie Gültigkeitsprüfungen, Zeitachsenberechnungen und Erinnerungsfeatures.

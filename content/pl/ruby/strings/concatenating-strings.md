@@ -9,9 +9,8 @@ summary: "Konkatenacja string\xF3w to po prostu \u0142\u0105czenie tekst\xF3w w 
   \ ci\u0105g. Programi\u015Bci robi\u0105 to, by sk\u0142ada\u0107 wiadomo\u015B\
   ci, generowa\u0107 unikatowe identyfikatory, czy te\u017C\u2026"
 title: "\u0141\u0105czenie \u0142a\u0144cuch\xF3w znak\xF3w"
+weight: 3
 ---
-
-{{< edit_this_page >}}
 
 ## Co i dlaczego?
 Konkatenacja stringów to po prostu łączenie tekstów w jeden ciąg. Programiści robią to, by składać wiadomości, generować unikatowe identyfikatory, czy też po prostu łączyć wartości z różnych źródeł.

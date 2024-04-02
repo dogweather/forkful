@@ -19,9 +19,8 @@ summary: "HTML \uD30C\uC2F1\uC740 HTML \uD30C\uC77C\uC758 \uAD6C\uC870\uC640 \uB
   \uD558\uAE30 \uC704\uD574 \uC774 \uC791\uC5C5\uC744 \uC218\uD589\uD569\uB2C8\uB2E4\
   ."
 title: "HTML \uD30C\uC2F1"
+weight: 43
 ---
-
-{{< edit_this_page >}}
 
 ## 무엇인가 & 왜?
 

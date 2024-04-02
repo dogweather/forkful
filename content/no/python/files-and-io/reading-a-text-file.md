@@ -9,9 +9,8 @@ summary: "\xC5 lese en tekstfil i Python betyr \xE5 hente tekstdata fra en fil p
   \ disken din. Programmerere gj\xF8r dette for \xE5 manipulere data, hente innstillinger,\
   \ eller\u2026"
 title: Lese en tekstfil
+weight: 22
 ---
-
-{{< edit_this_page >}}
 
 ## Hva & Hvorfor?
 Å lese en tekstfil i Python betyr å hente tekstdata fra en fil på disken din. Programmerere gjør dette for å manipulere data, hente innstillinger, eller behandle lagret informasjon.

@@ -11,9 +11,8 @@ summary: "La journalisation en C consiste \xE0 enregistrer le flux et les \xE9v\
   nements notables d'un programme pendant son ex\xE9cution, fournissant un examen\
   \ tangible de\u2026"
 title: Journalisation
+weight: 17
 ---
-
-{{< edit_this_page >}}
 
 ## Quoi & Pourquoi ?
 

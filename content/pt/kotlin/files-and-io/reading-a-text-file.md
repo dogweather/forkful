@@ -9,9 +9,8 @@ summary: "Ler um arquivo de texto significa extrair a informa\xE7\xE3o dele para
   \ processada. Programadores fazem isso para manipular dados, configurar programas\
   \ ou\u2026"
 title: Lendo um arquivo de texto
+weight: 22
 ---
-
-{{< edit_this_page >}}
 
 ## O Que & Porquê?
 Ler um arquivo de texto significa extrair a informação dele para ser processada. Programadores fazem isso para manipular dados, configurar programas ou simplesmente exibir o conteúdo na tela.

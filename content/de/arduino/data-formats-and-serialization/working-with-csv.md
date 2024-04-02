@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Arbeiten mit CSV (Comma-Separated Values)-Dateien in Arduino umfasst das\
   \ Lesen von und Schreiben in CSV-Dateien, die \xFCblicherweise auf einer SD-Karte\u2026"
 title: Arbeiten mit CSV
+weight: 37
 ---
-
-{{< edit_this_page >}}
 
 ## Was & Warum?
 Arbeiten mit CSV (Comma-Separated Values)-Dateien in Arduino umfasst das Lesen von und Schreiben in CSV-Dateien, die üblicherweise auf einer SD-Karte gespeichert sind. Dies ermöglicht Datenaufzeichnung, Konfigurationseinstellungen und mehr. Programmierer bearbeiten oft CSV-Dateien für die Sammlung von Sensordaten, Speicherung von Konfigurationsparametern oder das Interface mit anderen Systemen, aufgrund ihrer Einfachheit und weiten Verbreitung über Plattformen hinweg.

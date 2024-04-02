@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Verificare se una directory esiste in C implica interrogare il file system\
   \ per verificare se un determinato percorso conduce a una directory. I\u2026"
 title: Verificare se una directory esiste
+weight: 20
 ---
-
-{{< edit_this_page >}}
 
 ## Cosa & Perché?
 

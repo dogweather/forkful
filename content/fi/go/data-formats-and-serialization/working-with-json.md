@@ -11,9 +11,8 @@ summary: "JSON:n (JavaScript Object Notation) k\xE4sittely Go:ssa sis\xE4lt\xE4\
   \ datan koodaamisen ja purkamisen Go:n tietorakenteiden ja JSON-muodon v\xE4lill\xE4\
   . T\xE4m\xE4 teht\xE4v\xE4\u2026"
 title: "Ty\xF6skentely JSONin kanssa"
+weight: 38
 ---
-
-{{< edit_this_page >}}
 
 ## Mikä ja miksi?
 

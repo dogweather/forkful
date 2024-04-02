@@ -9,9 +9,8 @@ summary: "G\xE9n\xE9rer des nombres al\xE9atoires en Bash offre un moyen d\u2019
   \ de l\u2019impr\xE9visibilit\xE9 dans les scripts, ce qui est essentiel pour des\
   \ t\xE2ches telles que\u2026"
 title: "G\xE9n\xE9ration de nombres al\xE9atoires"
+weight: 12
 ---
-
-{{< edit_this_page >}}
 
 ## Quoi et Pourquoi ?
 Générer des nombres aléatoires en Bash offre un moyen d’introduire de l’imprévisibilité dans les scripts, ce qui est essentiel pour des tâches telles que générer des mots de passe sécurisés, simuler des données ou pour la programmation de jeux. Les programmeurs tirent parti de cette capacité pour ajouter de la variabilité à leurs scripts ou pour tester leurs programmes sous une variété de conditions générées aléatoirement.

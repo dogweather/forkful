@@ -10,9 +10,8 @@ model: gpt-4-0125-preview
 summary: "Lavorare con i CSV (Valori Separati da Virgola) implica l'analisi e la generazione\
   \ di file che memorizzano dati tabellari in un formato semplice e basato\u2026"
 title: Lavorare con i CSV
+weight: 37
 ---
-
-{{< edit_this_page >}}
 
 ## Cosa & Perché?
 

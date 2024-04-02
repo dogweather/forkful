@@ -11,9 +11,8 @@ summary: "Nykyisen p\xE4iv\xE4m\xE4\xE4r\xE4n hakeminen Go-kieless\xE4 on ohjelm
   \ perusteht\xE4v\xE4, joka on moninaisuudessaan verrattavissa \"Hello, World!\"\
   \ -esimerkkiin. Se on\u2026"
 title: "Nykyisen p\xE4iv\xE4m\xE4\xE4r\xE4n hankkiminen"
+weight: 29
 ---
-
-{{< edit_this_page >}}
 
 ## Mikä & Miksi?
 

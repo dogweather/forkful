@@ -11,9 +11,8 @@ summary: "Pisanie test\xF3w w PowerShellu polega na tworzeniu skrypt\xF3w, kt\xF
   re automatycznie weryfikuj\u0105 funkcjonalno\u015B\u0107 Twojego kodu PowerShell,\
   \ zapewniaj\u0105c, \u017Ce\u2026"
 title: "Pisanie test\xF3w"
+weight: 36
 ---
-
-{{< edit_this_page >}}
 
 ## Co i dlaczego?
 

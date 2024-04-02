@@ -13,9 +13,8 @@ summary: "Vi\u1EC7c t\xEDnh to\xE1n m\u1ED9t ng\xE0y trong t\u01B0\u01A1ng lai h
   \ c\u1EE5 th\u1EC3 b\u1EB1ng c\xE1ch c\u1ED9ng ho\u1EB7c tr\u1EEB m\u1ED9t s\u1ED1\
   \ l\u01B0\u1EE3ng nh\u1EA5t \u0111\u1ECBnh c\xE1c ng\xE0y, th\xE1ng,\u2026"
 title: "T\xEDnh to\xE1n ng\xE0y trong t\u01B0\u01A1ng lai ho\u1EB7c qu\xE1 kh\u1EE9"
+weight: 26
 ---
-
-{{< edit_this_page >}}
 
 ## Cái gì & Tại sao?
 Việc tính toán một ngày trong tương lai hoặc quá khứ bao gồm việc xác định một ngày cụ thể bằng cách cộng hoặc trừ một số lượng nhất định các ngày, tháng, hoặc năm từ một ngày đã cho. Các lập trình viên thực hiện điều này cho các nhiệm vụ như lên lịch cho sự kiện, tạo nhắc nhở, hoặc xử lý các ngày hết hạn, làm cho đó trở thành một chức năng thiết yếu trong các ứng dụng khác nhau, từ hệ thống lịch đến phần mềm tài chính.

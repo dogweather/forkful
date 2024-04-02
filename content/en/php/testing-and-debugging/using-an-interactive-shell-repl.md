@@ -7,9 +7,8 @@ model: gpt-4-1106-preview
 summary: "An interactive shell, or REPL (Read-Eval-Print Loop), lets you write and\
   \ run PHP code on-the-fly. It's ideal for experimentation, debugging, or learning,\u2026"
 title: Using an interactive shell (REPL)
+weight: 34
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 An interactive shell, or REPL (Read-Eval-Print Loop), lets you write and run PHP code on-the-fly. It's ideal for experimentation, debugging, or learning, as you can test snippets without the overhead of creating a full script.

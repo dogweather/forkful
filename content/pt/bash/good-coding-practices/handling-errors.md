@@ -8,9 +8,8 @@ model: gpt-4-1106-preview
 summary: "Tratar erros em scripts Bash \xE9 antecipar onde as coisas podem dar errado\
   \ e lidar com isso de maneira elegante. Por qu\xEA? Bom, isso mant\xE9m seu script\u2026"
 title: Tratamento de erros
+weight: 16
 ---
-
-{{< edit_this_page >}}
 
 ## O Que & Por Quê?
 

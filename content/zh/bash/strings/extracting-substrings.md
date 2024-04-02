@@ -14,9 +14,8 @@ summary: "\u63D0\u53D6\u5B50\u5B57\u7B26\u4E32\u662F\u4ECE\u4E00\u4E32\u6587\u5B
   \u5316\u5904\u7406\u6D41\u7A0B\uFF0C\u6216\u8005\u8C03\u6574\u6587\u672C\u683C\u5F0F\
   \u3002"
 title: "\u63D0\u53D6\u5B50\u5B57\u7B26\u4E32"
+weight: 6
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 提取子字符串是从一串文字中取出部分内容的过程。程序员经常这么做以获取关键数据，简化处理流程，或者调整文本格式。

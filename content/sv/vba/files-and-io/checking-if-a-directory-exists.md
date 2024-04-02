@@ -10,9 +10,8 @@ model: gpt-4-0125-preview
 summary: "Att kontrollera om en mapp finns i Visual Basic for Applications (VBA) handlar\
   \ om att verifiera n\xE4rvaron av en mapp i filsystemet innan man utf\xF6r\u2026"
 title: Kontroll om en katalog existerar
+weight: 20
 ---
-
-{{< edit_this_page >}}
 
 ## Vad och varför?
 

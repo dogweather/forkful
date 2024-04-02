@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "L'interpolazione di stringhe, nella programmazione, comporta la costruzione\
   \ di stringhe inserendo espressioni all'interno di stringhe letterali. I\u2026"
 title: Interpolazione di una stringa
+weight: 8
 ---
-
-{{< edit_this_page >}}
 
 ## Cosa e perché?
 

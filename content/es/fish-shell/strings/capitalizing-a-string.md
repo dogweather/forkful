@@ -11,9 +11,8 @@ summary: "Capitalizar una cadena significa modificarla de modo que la primera le
   \ est\xE9 en may\xFAscula y el resto de la cadena en min\xFAscula. Esta es una tarea\
   \ com\xFAn\u2026"
 title: Capitalizando una cadena de texto
+weight: 2
 ---
-
-{{< edit_this_page >}}
 
 ## ¿Qué y por qué?
 

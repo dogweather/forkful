@@ -9,9 +9,8 @@ summary: "Lancer un nouveau projet Java, c'est cr\xE9er un espace o\xF9 votre co
   \ va prendre vie. On le fait pour transformer une id\xE9e en une application qui\
   \ peut\u2026"
 title: Lancement d'un nouveau projet
+weight: 1
 ---
-
-{{< edit_this_page >}}
 
 ## Quoi et Pourquoi ?
 Lancer un nouveau projet Java, c'est créer un espace où votre code va prendre vie. On le fait pour transformer une idée en une application qui peut tourner sur des millions de machines.

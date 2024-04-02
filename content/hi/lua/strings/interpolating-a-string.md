@@ -9,9 +9,8 @@ summary: "Interpolating a string means inserting dynamic values into a static st
   \ Programmers do it to make code flexible and to dynamically create strings that\u2026"
 title: "\u0938\u094D\u091F\u094D\u0930\u093F\u0902\u0917 \u0907\u0902\u091F\u0930\u092A\
   \u094B\u0932\u0947\u0936\u0928"
+weight: 8
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why? (क्या और क्यों?)
 Interpolating a string means inserting dynamic values into a static string. Programmers do it to make code flexible and to dynamically create strings that include variable content.

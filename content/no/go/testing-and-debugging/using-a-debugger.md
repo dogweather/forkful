@@ -2,15 +2,16 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 18:10:28.864624-07:00
-description: "\xC5 bruke en debugger i Go-programmering involverer \xE5 benytte verkt\xF8\
-  y eller funksjoner for \xE5 inspisere og endre tilstanden til et kj\xF8rende program\
-  \ for \xE5\u2026"
+description: "Go tilbyr en innebygd fasilitet for feils\xF8king kalt `delve`. Det\
+  \ er et fullverdig feils\xF8kingsverkt\xF8y som lar deg utf\xF8re Go-programmer\
+  \ steg for steg,\u2026"
 lastmod: '2024-03-13T22:44:40.271837-06:00'
 model: gpt-4-0125-preview
-summary: "\xC5 bruke en debugger i Go-programmering involverer \xE5 benytte verkt\xF8\
-  y eller funksjoner for \xE5 inspisere og endre tilstanden til et kj\xF8rende program\
-  \ for \xE5\u2026"
+summary: "Go tilbyr en innebygd fasilitet for feils\xF8king kalt `delve`. Det er et\
+  \ fullverdig feils\xF8kingsverkt\xF8y som lar deg utf\xF8re Go-programmer steg for\
+  \ steg,\u2026"
 title: "Bruke en feils\xF8ker"
+weight: 35
 ---
 
 ## Hvordan:

@@ -9,9 +9,8 @@ summary: "Tilap\xE4iset tiedostot ovat ohjelmoinnissa k\xE4ytett\xE4vi\xE4 v\xE4
   \ tiedostoja, jotka yleens\xE4 poistetaan ohjelman suorituksen lopussa. Niit\xE4\
   \ k\xE4ytet\xE4\xE4n datan\u2026"
 title: "V\xE4liaikaistiedoston luominen"
+weight: 21
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why? - Mitä ja Miksi?
 Tilapäiset tiedostot ovat ohjelmoinnissa käytettäviä väliaikaisia tiedostoja, jotka yleensä poistetaan ohjelman suorituksen lopussa. Niitä käytetään datan väliaikaiseen säilytykseen, esimerkiksi kun pysyvien tiedostojen kirjoittaminen olisi liian hidasta tai kun halutaan välttää levyn käyttöä.

@@ -9,9 +9,8 @@ summary: "Comparer deux dates, c'est d\xE9cider si une date est plus t\xF4t, plu
   \ tard ou la m\xEAme qu'une autre. Les programmeurs le font pour g\xE9rer les \xE9\
   v\xE9nements, les\u2026"
 title: Comparer deux dates
+weight: 27
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why? (Quoi et Pourquoi?)
 

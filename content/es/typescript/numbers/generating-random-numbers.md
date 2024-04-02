@@ -8,9 +8,8 @@ model: gpt-4-0125-preview
 summary: "Generar n\xFAmeros aleatorios en TypeScript es acerca de crear valores num\xE9\
   ricos impredecibles dentro de un rango especificado. Los programadores aprovechan\u2026"
 title: "Generaci\xF3n de n\xFAmeros aleatorios"
+weight: 12
 ---
-
-{{< edit_this_page >}}
 
 ## ¿Qué y Por Qué?
 

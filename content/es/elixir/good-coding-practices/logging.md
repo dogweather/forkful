@@ -5,9 +5,8 @@ lastmod: '2024-03-13T22:44:58.708920-06:00'
 model: gpt-4-1106-preview
 summary: null
 title: "Registro de Actividades en Programaci\xF3n"
+weight: 17
 ---
-
-{{< edit_this_page >}}
 
 # Qué y Por Qué?
 El registro en el desarrollo de software es la técnica de grabar eventos que ocurren mientras un programa está en ejecución, típicamente a un archivo o sistema externo. Los programadores lo hacen para obtener insights sobre el comportamiento del software, solucionar problemas y mantener un registro de historia operacional, que es crucial para depurar y monitorizar la salud de las aplicaciones.

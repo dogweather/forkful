@@ -11,9 +11,8 @@ summary: "Wysy\u0142anie zapytania HTTP w Visual Basic for Applications (VBA) po
   \ na programistycznym dost\u0119pie do zasob\xF3w sieciowych lub us\u0142ug sieciowych\
   \ poprzez\u2026"
 title: "Wysy\u0142anie \u017C\u0105dania HTTP"
+weight: 44
 ---
-
-{{< edit_this_page >}}
 
 ## Co i dlaczego?
 

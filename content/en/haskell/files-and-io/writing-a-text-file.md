@@ -9,9 +9,8 @@ summary: "Writing to a text file in Haskell is about programmatically creating o
   \ updating files with textual content. Programmers do this to persist data such\
   \ as\u2026"
 title: Writing a text file
+weight: 24
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 

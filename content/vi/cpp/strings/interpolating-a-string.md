@@ -13,9 +13,8 @@ summary: "N\u1ED9i suy chu\u1ED7i l\xE0 vi\u1EC7c ch\xE8n c\xE1c bi\u1EBFn v\xE0
   y d\u1EF1ng th\xF4ng \u0111i\u1EC7p m\u1ED9t c\xE1ch linh ho\u1EA1t, c\xE1 nh\xE2\
   n h\xF3a \u0111\u1EA7u ra, ho\u1EB7c t\u1EA1o l\u1EADp truy\u2026"
 title: "N\u1ED9i suy chu\u1ED7i k\xFD t\u1EF1"
+weight: 8
 ---
-
-{{< edit_this_page >}}
 
 ## Là gì & Tại sao?
 Nội suy chuỗi là việc chèn các biến vào trong chuỗi. Chúng ta làm điều đó để xây dựng thông điệp một cách linh hoạt, cá nhân hóa đầu ra, hoặc tạo lập truy vấn động.

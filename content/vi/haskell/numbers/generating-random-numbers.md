@@ -13,9 +13,8 @@ summary: "Vi\u1EC7c sinh s\u1ED1 ng\u1EABu nhi\xEAn trong Haskell bao g\u1ED3m v
   \ ti\xEAu chu\u1EA9n con ng\u01B0\u1EDDi. \u0110i\u1EC1u n\xE0y c\u1EF1c k\u1EF3\
   \ quan tr\u1ECDng trong c\xE1c\u2026"
 title: "Sinh s\u1ED1 ng\u1EABu nhi\xEAn"
+weight: 12
 ---
-
-{{< edit_this_page >}}
 
 ## Cái gì & Tại sao?
 

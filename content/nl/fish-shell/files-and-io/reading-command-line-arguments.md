@@ -10,9 +10,8 @@ model: gpt-4-0125-preview
 summary: "Command line argumenten lezen is het oppakken van de extra bits die je typt\
   \ na de naam van je script, zoals geheime handdrukken om het gedrag van een\u2026"
 title: Commandoregelargumenten lezen
+weight: 23
 ---
-
-{{< edit_this_page >}}
 
 ## Wat & Waarom?
 Command line argumenten lezen is het oppakken van de extra bits die je typt na de naam van je script, zoals geheime handdrukken om het gedrag van een script aan te passen. Programmeurs doen dit om scripts flexibel en interactief te maken zonder gedoe.

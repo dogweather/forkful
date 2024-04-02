@@ -11,9 +11,8 @@ summary: "L\u2019int\xE9gration de PowerShell avec le JSON (JavaScript Object No
   \ concerne le parsing (lecture) et la g\xE9n\xE9ration (\xE9criture) de donn\xE9\
   es JSON, un format\u2026"
 title: Travailler avec JSON
+weight: 38
 ---
-
-{{< edit_this_page >}}
 
 ## Quoi & Pourquoi ?
 

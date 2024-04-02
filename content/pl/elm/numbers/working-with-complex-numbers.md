@@ -9,9 +9,8 @@ summary: "Liczby zespolone to po\u0142\u0105czenie liczb rzeczywistych i urojony
   \ jak `a + bi`, gdzie `i` jest pierwiastkiem kwadratowym z -1. S\u0105 kluczowe\
   \ w dziedzinach\u2026"
 title: Praca z liczbami zespolonymi
+weight: 14
 ---
-
-{{< edit_this_page >}}
 
 ## Co i dlaczego?
 Liczby zespolone to połączenie liczb rzeczywistych i urojonych, jak `a + bi`, gdzie `i` jest pierwiastkiem kwadratowym z -1. Są kluczowe w dziedzinach takich jak inżynieria czy fizyka, aby rozwiązywać problemy, z którymi zwykłe liczby sobie nie radzą.

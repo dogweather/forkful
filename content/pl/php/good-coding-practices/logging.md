@@ -9,9 +9,8 @@ summary: "Logowanie jest w zasadzie jak prowadzenie dziennika dla twojego kodu; 
   \ czynno\u015B\u0107 polegaj\u0105ca na rejestrowaniu zdarze\u0144, b\u0142\u0119\
   d\xF3w i innych istotnych punkt\xF3w\u2026"
 title: "Rejestrowanie zdarze\u0144"
+weight: 17
 ---
-
-{{< edit_this_page >}}
 
 ## Co i dlaczego?
 

@@ -8,9 +8,8 @@ model: unknown
 summary: "Ottenere la data attuale significa catturare il momento presente in termini\
   \ di giorno, mese e anno. I programmatori lo fanno per tracciare eventi, gestire\u2026"
 title: Ottenere la data corrente
+weight: 29
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 Ottenere la data attuale significa catturare il momento presente in termini di giorno, mese e anno. I programmatori lo fanno per tracciare eventi, gestire le funzionalità legate al tempo e per tenere traccia di quando le cose accadono.

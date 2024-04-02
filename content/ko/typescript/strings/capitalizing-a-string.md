@@ -24,9 +24,8 @@ summary: "\uBB38\uC790\uC5F4\uC744 \uB300\uBB38\uC790\uD654\uD558\uB294 \uAC83\u
   \ \uD558\uC5EC \uD14D\uC2A4\uD2B8 \uCC98\uB9AC \uC2DC \uACB0\uACFC\uBB3C\uC774 \uC804\
   \uBB38\uC801\uC774\uACE0 \uC77D\uAE30 \uC27D\uAC8C \uB9CC\uB4DC\uB294 \uB370\u2026"
 title: "\uBB38\uC790\uC5F4 \uB300\uBB38\uC790\uD654"
+weight: 2
 ---
-
-{{< edit_this_page >}}
 
 ## 무엇인가 & 왜인가?
 문자열을 대문자화하는 것은 주어진 문자열의 첫 번째 문자를 소문자인 경우 대문자로 변경하는 작업을 말하며, 대부분 문자열의 나머지 부분은 변경하지 않습니다. 이 작업은 대명사나 문장의 시작이 문법 규칙을 준수하도록 하여 텍스트 처리 시 결과물이 전문적이고 읽기 쉽게 만드는 데 주로 사용됩니다.

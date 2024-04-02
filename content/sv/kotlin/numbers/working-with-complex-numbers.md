@@ -9,9 +9,8 @@ summary: "Komplexa tal ut\xF6kar v\xE5rt talsystem f\xF6r att inkludera kvadratr
   tter av negativa tal, d\xE4r den 'imagin\xE4ra' enheten i motsvarar kvadratroten\
   \ av -1.\u2026"
 title: Att arbeta med komplexa tal
+weight: 14
 ---
-
-{{< edit_this_page >}}
 
 ## Vad & Varför?
 Komplexa tal utökar vårt talsystem för att inkludera kvadratrötter av negativa tal, där den 'imaginära' enheten i motsvarar kvadratroten av -1. Programmerare använder dem inom områden som teknik, fysik och signalbehandling, eftersom de är utmärkta för att modellera vågor, oscillationer och allt som roterar.

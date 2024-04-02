@@ -9,9 +9,8 @@ summary: "Stringinterpolering \xE4r n\xE4r du plockar in variabler eller uttryck
   \ i en textstr\xE4ng. Det g\xF6r din kod mer l\xE4sbar och effektiv eftersom du\
   \ slipper\u2026"
 title: "Interpolera en str\xE4ng"
+weight: 8
 ---
-
-{{< edit_this_page >}}
 
 ## Vad & Varför?
 Stringinterpolering är när du plockar in variabler eller uttryck direkt i en textsträng. Det gör din kod mer läsbar och effektiv eftersom du slipper klumpiga plusoperatorer för att bygga dina strängar.

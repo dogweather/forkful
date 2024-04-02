@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Strenginterpolasjon er prosessen med \xE5 injisere variabelverdier direkte\
   \ inn i strenger, ofte for \xE5 skape meningsfulle meldinger uten tungvinte\u2026"
 title: Interpolering av en streng
+weight: 8
 ---
-
-{{< edit_this_page >}}
 
 ## Hva og hvorfor?
 

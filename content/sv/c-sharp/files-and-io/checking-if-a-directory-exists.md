@@ -11,9 +11,8 @@ summary: "Att kontrollera om en katalog finns i C# inneb\xE4r att man verifierar
   rvaron av en mapp p\xE5 en angiven s\xF6kv\xE4g i filsystemet. Programmerare g\xF6\
   r detta f\xF6r\u2026"
 title: Kontrollera om en katalog existerar
+weight: 20
 ---
-
-{{< edit_this_page >}}
 
 ## Vad & Varför?
 

@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Scaricare una pagina web consiste nel recuperare il contenuto di una pagina\
   \ web tramite il suo URL per elaborarlo o memorizzarlo. I programmatori fanno\u2026"
 title: Scaricare una pagina web
+weight: 42
 ---
-
-{{< edit_this_page >}}
 
 ## Cos'è & Perché?
 

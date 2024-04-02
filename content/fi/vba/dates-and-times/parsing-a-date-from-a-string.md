@@ -11,9 +11,8 @@ summary: "P\xE4iv\xE4m\xE4\xE4r\xE4n j\xE4sennys merkkijonosta Visual Basic for 
   \ (VBA) -ohjelmistossa tarkoittaa tekstin, joka esitt\xE4\xE4 p\xE4iv\xE4m\xE4\xE4\
   r\xE4\xE4, muuntamista\u2026"
 title: "P\xE4iv\xE4m\xE4\xE4r\xE4n j\xE4sent\xE4minen merkkijonosta"
+weight: 30
 ---
-
-{{< edit_this_page >}}
 
 ## Mitä & Miksi?
 

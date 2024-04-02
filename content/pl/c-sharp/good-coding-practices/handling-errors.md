@@ -9,9 +9,8 @@ summary: "Obs\u0142uga b\u0142\u0119d\xF3w w C# polega na zarz\u0105dzaniu tym, 
   \ si\u0119 nie spodziewamy \u2014 jak potkni\u0119cie si\u0119 o sznur\xF3wki. Programy\
   \ mog\u0105 potyka\u0107 si\u0119 o z\u0142e dane lub\u2026"
 title: "Obs\u0142uga b\u0142\u0119d\xF3w"
+weight: 16
 ---
-
-{{< edit_this_page >}}
 
 ## Co i dlaczego?
 

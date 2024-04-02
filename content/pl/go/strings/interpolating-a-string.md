@@ -11,9 +11,8 @@ summary: "Interpolacja \u0142a\u0144cuch\xF3w to metoda konstruowania \u0142a\u0
   cuch\xF3w, kt\xF3re w\u0142\u0105czaj\u0105 zmienne, umo\u017Cliwiaj\u0105c dynamiczne\
   \ tworzenie \u0142a\u0144cuch\xF3w. Programi\u015Bci robi\u0105 to, aby\u2026"
 title: "Interpolacja ci\u0105gu znak\xF3w"
+weight: 8
 ---
-
-{{< edit_this_page >}}
 
 ## Co i dlaczego?
 

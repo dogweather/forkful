@@ -11,9 +11,8 @@ summary: "Pobieranie aktualnej daty w Bashu polega na u\u017Cywaniu wbudowanych 
   \ do wy\u015Bwietlania daty i czasu w r\xF3\u017Cnych formatach. Programi\u015B\
   ci u\u017Cywaj\u0105 tej\u2026"
 title: Pobieranie aktualnej daty
+weight: 29
 ---
-
-{{< edit_this_page >}}
 
 ## Co i dlaczego?
 Pobieranie aktualnej daty w Bashu polega na używaniu wbudowanych poleceń do wyświetlania daty i czasu w różnych formatach. Programiści używają tej funkcjonalności do zadań takich jak dodawanie znaczników czasowych do logów, planowanie zadań lub po prostu jako część swoich skryptów informacji systemowych, aby śledzić, kiedy wykonano akcje.

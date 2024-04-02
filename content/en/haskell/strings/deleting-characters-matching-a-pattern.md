@@ -7,9 +7,8 @@ model: gpt-4-1106-preview
 summary: "Deleting characters that match a specific pattern is about sifting through\
   \ text and removing bits you don't need. Programmers do this to cleanse data,\u2026"
 title: Deleting characters matching a pattern
+weight: 5
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 

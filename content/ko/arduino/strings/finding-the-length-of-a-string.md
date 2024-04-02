@@ -20,9 +20,8 @@ summary: "\uBB38\uC790\uC5F4 \uAE38\uC774 \uCC3E\uAE30\uB294 \uBB34\uC5C7\uC774\
   \uC5F4\uC758 \uD06C\uAE30\uB97C \uC54C\uC544\uC57C \uD560 \uB54C \uC774\uB97C \uC0AC\
   \uC6A9\uD569\uB2C8\uB2E4."
 title: "\uBB38\uC790\uC5F4\uC758 \uAE38\uC774 \uCC3E\uAE30"
+weight: 7
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 문자열 길이 찾기는 무엇이고, 왜 프로그래머들이 이것을 할까?

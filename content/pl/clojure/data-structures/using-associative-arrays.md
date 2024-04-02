@@ -11,9 +11,8 @@ summary: "Tablice asocjacyjne, znane tak\u017Ce jako mapy haszuj\u0105ce, w Cloj
   \ pozwalaj\u0105 przechowywa\u0107 i pobiera\u0107 dane za pomoc\u0105 par klucz-warto\u015B\
   \u0107. S\u0105 one ch\u0119tnie\u2026"
 title: Korzystanie z tablic asocjacyjnych
+weight: 15
 ---
-
-{{< edit_this_page >}}
 
 ## Co i dlaczego?
 

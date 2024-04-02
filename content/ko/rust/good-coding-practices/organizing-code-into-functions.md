@@ -21,9 +21,8 @@ summary: "\uCF54\uB4DC\uB97C \uD568\uC218\uB85C \uAD6C\uC131\uD558\uB294 \uAC83\
   \uD558\uC9C0 \uC54A\uACE0 \uC5C5\uB370\uC774\uD2B8\uB97C \uAC04\uC18C\uD654\uD558\
   \uB294 \uAC83\uC5D0 \uAD00\uD55C \uAC83\uC785\uB2C8\uB2E4."
 title: "\uCF54\uB4DC\uB97C \uD568\uC218\uB85C \uAD6C\uC131\uD558\uAE30"
+weight: 18
 ---
-
-{{< edit_this_page >}}
 
 ## 무엇을 왜?
 코드를 함수로 구성하는 것은 프로그램을 이름으로 식별되는 재사용 가능하고 모듈식의 청크로 나누는 것입니다. 우리는 코드를 더 깨끗하고, 읽기 쉽고, 디버깅하기 쉽게 만들기 위해 이를 수행합니다. 이것은 우리 자신을 반복하지 않고 업데이트를 간소화하는 것에 관한 것입니다.

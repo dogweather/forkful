@@ -10,9 +10,8 @@ model: gpt-4-0125-preview
 summary: "Het berekenen van een datum in de toekomst of het verleden omvat het bepalen\
   \ van een specifieke datum door een bepaald aantal dagen, maanden of jaren bij\u2026"
 title: Een datum in de toekomst of verleden berekenen
+weight: 26
 ---
-
-{{< edit_this_page >}}
 
 ## Wat & Waarom?
 Het berekenen van een datum in de toekomst of het verleden omvat het bepalen van een specifieke datum door een bepaald aantal dagen, maanden of jaren bij een gegeven datum op te tellen of af te trekken. Programmeurs doen dit voor taken zoals het plannen van evenementen, het genereren van herinneringen of het afhandelen van vervaldata, waardoor het een essentiële functionaliteit is in verschillende toepassingen, van kalendersystemen tot financiële software.

@@ -10,9 +10,8 @@ model: gpt-4-0125-preview
 summary: "Express\xF5es regulares (regex) na programa\xE7\xE3o s\xE3o padr\xF5es utilizados\
   \ para combinar sequ\xEAncias de caracteres em strings. No Elm, assim como em outras\u2026"
 title: "Usando express\xF5es regulares"
+weight: 11
 ---
-
-{{< edit_this_page >}}
 
 ## O que & Por quê?
 Expressões regulares (regex) na programação são padrões utilizados para combinar sequências de caracteres em strings. No Elm, assim como em outras linguagens, os programadores usam regex para tarefas como validar entrada, buscar e substituir texto dentro de strings devido à sua flexibilidade e eficiência.

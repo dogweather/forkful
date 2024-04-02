@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "HTML in Haskell zu parsen, erm\xF6glicht es Ihnen, Daten zu extrahieren,\
   \ HTML-Inhalte zu manipulieren oder programmgesteuert mit Webseiten zu interagieren.\u2026"
 title: HTML parsen
+weight: 43
 ---
-
-{{< edit_this_page >}}
 
 ## Was & Warum?
 

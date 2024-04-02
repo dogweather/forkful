@@ -9,9 +9,8 @@ summary: "Ladataan verkkosivu tarkoittaa sivun sis\xE4ll\xF6n noutamista interne
   \ ohjelmoimalla. Ohjelmoijat tekev\xE4t t\xE4m\xE4n esimerkiksi tiedonkeruuta, sis\xE4\
   ll\xF6n\u2026"
 title: Verkkosivun lataaminen
+weight: 42
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why? - Mitä & Miksi?
 Ladataan verkkosivu tarkoittaa sivun sisällön noutamista internetistä ohjelmoimalla. Ohjelmoijat tekevät tämän esimerkiksi tiedonkeruuta, sisällön analysointia tai automatisoitua testausta varten.

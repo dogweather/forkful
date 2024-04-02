@@ -7,9 +7,8 @@ model: gpt-4-1106-preview
 summary: "Stripping quotes from a string means getting rid of those pesky quotation\
   \ marks that can mess with your code, especially when you're parsing data or\u2026"
 title: Removing quotes from a string
+weight: 9
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 Stripping quotes from a string means getting rid of those pesky quotation marks that can mess with your code, especially when you're parsing data or constructing JSON objects. Programmers do it to sanitize inputs, avoid syntax errors, and make strings play nice with other parts of their code.

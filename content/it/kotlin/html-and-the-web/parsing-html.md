@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Parsare l'HTML significa sezionare il markup di una pagina web in qualcosa\
   \ che un programma pu\xF2 capire e manipolare. I programmatori eseguono il parsing\u2026"
 title: Analisi del HTML
+weight: 43
 ---
-
-{{< edit_this_page >}}
 
 ## Cosa & Perché?
 Parsare l'HTML significa sezionare il markup di una pagina web in qualcosa che un programma può capire e manipolare. I programmatori eseguono il parsing dell'HTML per estrarre dati, automatizzare interazioni web o migrare contenuti tra sistemi.

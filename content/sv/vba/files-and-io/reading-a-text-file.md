@@ -11,9 +11,8 @@ summary: "Att l\xE4sa en textfil i Visual Basic for Applications (VBA) involvera
   \ att programm\xE4ssigt komma \xE5t och extrahera inneh\xE5llet i en textfil fr\xE5\
   n inom en\u2026"
 title: "L\xE4sa en textfil"
+weight: 22
 ---
-
-{{< edit_this_page >}}
 
 ## Vad & Varför?
 

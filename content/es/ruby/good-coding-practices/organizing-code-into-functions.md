@@ -7,9 +7,8 @@ model: gpt-4-1106-preview
 summary: "Organizar el c\xF3digo en funciones divide tu script en bloques reutilizables.\
   \ Se trata de hacer que tu c\xF3digo sea limpio, manejable y menos propenso a\u2026"
 title: "Organizando c\xF3digo en funciones"
+weight: 18
 ---
-
-{{< edit_this_page >}}
 
 ## ¿Qué y Por Qué?
 Organizar el código en funciones divide tu script en bloques reutilizables. Se trata de hacer que tu código sea limpio, manejable y menos propenso a errores. El código modular es genial porque te ahorra tiempo, mantiene tu cordura y simplifica la depuración y las pruebas unitarias.

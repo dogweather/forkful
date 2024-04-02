@@ -9,9 +9,8 @@ summary: "Lire un fichier texte, c'est extraire son contenu pour l'utiliser dans
   \ code. C'est crucial pour g\xE9rer les donn\xE9es configurables, les sauvegardes\
   \ ou\u2026"
 title: Lecture d'un fichier texte
+weight: 22
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why? (Quoi et Pourquoi ?)
 Lire un fichier texte, c'est extraire son contenu pour l'utiliser dans notre code. C'est crucial pour gérer les données configurables, les sauvegardes ou même pour traiter des logs.

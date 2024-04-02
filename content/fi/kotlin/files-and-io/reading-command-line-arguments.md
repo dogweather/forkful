@@ -9,9 +9,8 @@ summary: "Komennon riviargumentit ovat komentorivilt\xE4 ohjelmiin sy\xF6tett\xE
   vi\xE4 tiedonpaloja. Niit\xE4 k\xE4ytet\xE4\xE4n, koska ne mahdollistavat k\xE4\
   ytt\xE4j\xE4n tarpeisiin mukautuvat\u2026"
 title: Komennoriviparametrien lukeminen
+weight: 23
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 Komennon riviargumentit ovat komentoriviltä ohjelmiin syötettäviä tiedonpaloja. Niitä käytetään, koska ne mahdollistavat käyttäjän tarpeisiin mukautuvat ohjelmat, antavat vaihtoehtoja ja ohjaavat ohjelman suoritusta.

@@ -10,9 +10,8 @@ model: gpt-4-0125-preview
 summary: "Comparer deux dates en Visual Basic pour Applications (VBA) consiste \xE0\
   \ d\xE9terminer leur relation chronologique l'une par rapport \xE0 l'autre. Les\u2026"
 title: Comparer deux dates
+weight: 27
 ---
-
-{{< edit_this_page >}}
 
 ## Quoi & Pourquoi ?
 

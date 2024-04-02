@@ -7,9 +7,8 @@ model: gpt-4-0125-preview
 summary: "TOML, en forkortelse for Toms Obvious, Minimal Language, er et data serialiseringsformat\
   \ som er lett \xE5 lese p\xE5 grunn av sine klare semantikker.\u2026"
 title: Jobbe med TOML
+weight: 39
 ---
-
-{{< edit_this_page >}}
 
 ## Hva & Hvorfor?
 

@@ -7,9 +7,8 @@ model: gpt-4-1106-preview
 summary: "Cercare e sostituire testo significa scansionare delle stringhe e cambiarne\
   \ parti specifiche con altre. I programmatori lo fanno per correggere errori,\u2026"
 title: Ricerca e sostituzione del testo
+weight: 10
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why? (Cosa e Perché?)
 Cercare e sostituire testo significa scansionare delle stringhe e cambiarne parti specifiche con altre. I programmatori lo fanno per correggere errori, aggiornare dati, o manipolare testi senza impazzire.

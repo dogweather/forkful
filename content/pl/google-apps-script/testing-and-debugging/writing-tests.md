@@ -11,9 +11,8 @@ summary: "Pisanie test\xF3w w Google Apps Script (GAS) polega na tworzeniu autom
   \ skrypt\xF3w, kt\xF3re weryfikuj\u0105 zachowanie Twoich kod\xF3w, zapewniaj\u0105\
   c ich\u2026"
 title: "Pisanie test\xF3w"
+weight: 36
 ---
-
-{{< edit_this_page >}}
 
 ## Co i dlaczego?
 

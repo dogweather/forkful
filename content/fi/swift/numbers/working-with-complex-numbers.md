@@ -9,9 +9,8 @@ summary: "Kompleksiluvuilla on sek\xE4 reaaliosa ett\xE4 imaginaariosa (kuten 3 
   \ 4i). Ohjelmoijat k\xE4ytt\xE4v\xE4t niit\xE4 Swiftiss\xE4 teht\xE4viin, kuten\
   \ signaalink\xE4sittely,\u2026"
 title: "Kompleksilukujen k\xE4sittely"
+weight: 14
 ---
-
-{{< edit_this_page >}}
 
 ## Mitä ja miksi?
 Kompleksiluvuilla on sekä reaaliosa että imaginaariosa (kuten 3 + 4i). Ohjelmoijat käyttävät niitä Swiftissä tehtäviin, kuten signaalinkäsittely, tiettyjen matemaattisten ongelmien ratkaiseminen ja fysiikan simuloiminen.

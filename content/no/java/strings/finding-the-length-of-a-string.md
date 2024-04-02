@@ -7,9 +7,8 @@ model: gpt-4-1106-preview
 summary: "Finne lengden p\xE5 en streng betyr \xE5 telle antall tegn den inneholder.\
   \ Programmerere trenger dette for validering, looping og manipulering av tekstdata."
 title: "Finn lengden p\xE5 en streng"
+weight: 7
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 Finne lengden på en streng betyr å telle antall tegn den inneholder. Programmerere trenger dette for validering, looping og manipulering av tekstdata.

@@ -13,9 +13,8 @@ summary: "Haskell\u4E2D\u7684\u4EA4\u4E92\u5F0Fshell\uFF0C\u6216\u8005\u79F0\u4E
   \u4E2A\u7528\u4E8E\u5FEB\u901F\u53CD\u9988\u3001\u6D4B\u8BD5\u51FD\u6570\u548C\u5B66\
   \u4E60\u8BED\u8A00\u7684\u6E38\u4E50\u573A\u3002"
 title: "\u5728\u7F16\u7A0B\u4E2D\u4F7F\u7528\u4EA4\u4E92\u5F0FShell\uFF08REPL\uFF09"
+weight: 34
 ---
-
-{{< edit_this_page >}}
 
 ## 什么以及为什么？
 Haskell中的交互式shell，或者称为REPL（读取-求值-打印循环），让你能够实时运行代码片段。它是一个用于快速反馈、测试函数和学习语言的游乐场。

@@ -14,9 +14,8 @@ summary: "\u5728Python\u4E2D\uFF0C\u5C06\u5B57\u7B26\u4E32\u8F6C\u6362\u4E3A\u5C
   \u636E\u683C\u5F0F\uFF0C\u4FBF\u4E8E\u6BD4\u8F83\u548C\u641C\u7D22\uFF0C\u5C24\u5176\
   \u662F\u5728\u4E0D\u533A\u5206\u5927\u5C0F\u5199\u7684\u60C5\u51B5\u4E0B\u3002"
 title: "\u5C06\u5B57\u7B26\u4E32\u8F6C\u6362\u4E3A\u5C0F\u5199"
+weight: 4
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why? (什么和为什么？)
 在Python中，将字符串转换为小写意味着把所有字符变成小写形式。程序员这么做是为了统一数据格式，便于比较和搜索，尤其是在不区分大小写的情况下。

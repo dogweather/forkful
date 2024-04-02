@@ -7,9 +7,8 @@ model: gpt-4-1106-preview
 summary: "Ler um arquivo de texto significa acessar e interpretar o conte\xFAdo de\
   \ um arquivo armazenado em disco. Programadores fazem isso para extrair dados,\u2026"
 title: Lendo um arquivo de texto
+weight: 22
 ---
-
-{{< edit_this_page >}}
 
 ## O Que & Por Quê?
 Ler um arquivo de texto significa acessar e interpretar o conteúdo de um arquivo armazenado em disco. Programadores fazem isso para extrair dados, configurar aplicações ou manipular informações armazenadas em formatos de texto simples.

@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Testien kirjoittaminen TypeScriptill\xE4 sis\xE4lt\xE4\xE4 automatisoitujen\
   \ skriptien luomisen koodisi toimivuuden ja oikeellisuuden varmentamiseksi. Ohjelmoijat\u2026"
 title: Testien kirjoittaminen
+weight: 36
 ---
-
-{{< edit_this_page >}}
 
 ## Mikä & Miksi?
 Testien kirjoittaminen TypeScriptillä sisältää automatisoitujen skriptien luomisen koodisi toimivuuden ja oikeellisuuden varmentamiseksi. Ohjelmoijat tekevät sen varmistaakseen luotettavuuden, löytääkseen virheet nopeasti ja helpottaakseen ylläpidettävän koodin kasvua, sillä TypeScriptin staattinen tyypitys lisää ennakoitavuutta JavaScript-testaukseen.

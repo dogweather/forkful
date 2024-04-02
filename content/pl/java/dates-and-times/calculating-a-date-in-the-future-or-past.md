@@ -9,9 +9,8 @@ summary: "Manipulacja datami to og\xF3lnie zmiana warto\u015Bci daty na wcze\u01
   niejsz\u0105 lub p\xF3\u017Aniejsz\u0105. Programi\u015Bci robi\u0105 to, by obs\u0142\
   ugiwa\u0107 rezerwacje, terminy, przypomnienia\u2026"
 title: "Obliczanie daty w przysz\u0142o\u015Bci lub przesz\u0142o\u015Bci"
+weight: 26
 ---
-
-{{< edit_this_page >}}
 
 ## Co i dlaczego?
 Manipulacja datami to ogólnie zmiana wartości daty na wcześniejszą lub późniejszą. Programiści robią to, by obsługiwać rezerwacje, terminy, przypomnienia czy okresy ważności.

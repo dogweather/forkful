@@ -8,9 +8,8 @@ model: gpt-4-1106-preview
 summary: "Calculer une date dans le futur ou dans le pass\xE9, c'est juste des maths\
   \ avec des jours, des mois, des ann\xE9es. Les devs manipulent des dates pour planifier\u2026"
 title: "Calcul d'une date future ou pass\xE9e"
+weight: 26
 ---
-
-{{< edit_this_page >}}
 
 ## Quoi & Pourquoi ?
 Calculer une date dans le futur ou dans le passé, c'est juste des maths avec des jours, des mois, des années. Les devs manipulent des dates pour planifier des événements, des rappels, ou juste pour voir combien de temps s'est écoulé.

@@ -9,9 +9,8 @@ summary: "Webseiten herunterladen bedeutet, den Inhalt einer Webseite \xFCber da
   \ Internet auf deinen Computer zu \xFCbertragen. Programmierer tun dies, um Daten\
   \ zu\u2026"
 title: Webseite herunterladen
+weight: 42
 ---
-
-{{< edit_this_page >}}
 
 ## Was & Warum?
 Webseiten herunterladen bedeutet, den Inhalt einer Webseite über das Internet auf deinen Computer zu übertragen. Programmierer tun dies, um Daten zu extrahieren, automatisch zu verarbeiten oder Software-Tests durchzuführen.

@@ -9,9 +9,8 @@ summary: "XML, abrevia\xE7\xE3o para eXtensible Markup Language, \xE9 como o pri
   \ verborr\xE1gico do JSON. Voc\xEA ter\xE1 que lidar com XML ao trabalhar com sistemas\
   \ legados,\u2026"
 title: Trabalhando com XML
+weight: 40
 ---
-
-{{< edit_this_page >}}
 
 ## O Que & Por Quê?
 XML, abreviação para eXtensible Markup Language, é como o primo verborrágico do JSON. Você terá que lidar com XML ao trabalhar com sistemas legados, softwares empresariais, ou APIs que não aderiram à onda do JSON. É essencial para a troca de dados onde o XML mantém sua fortaleza.

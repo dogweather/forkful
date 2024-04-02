@@ -8,9 +8,8 @@ model: gpt-4-1106-preview
 summary: "Rechercher et remplacer du texte, c'est comme jouer \xE0 cache-cache avec\
   \ des mots pour les troquer contre d'autres. Les programmeurs le font pour corriger\u2026"
 title: Recherche et remplacement de texte
+weight: 10
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 Rechercher et remplacer du texte, c'est comme jouer à cache-cache avec des mots pour les troquer contre d'autres. Les programmeurs le font pour corriger des erreurs, mettre à jour des données ou transformer du code.

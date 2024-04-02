@@ -7,9 +7,8 @@ model: gpt-4-0125-preview
 summary: "Kompleksiluvuilla on reaaliosa ja imaginaariosa, jotka yleens\xE4 kirjoitetaan\
   \ muodossa `a + bi`. Ne ovat keskeisi\xE4 edistyneess\xE4 matematiikassa, fysiikassa,\u2026"
 title: "Kompleksilukujen k\xE4sittely"
+weight: 14
 ---
-
-{{< edit_this_page >}}
 
 ## Mikä & Miksi?
 Kompleksiluvuilla on reaaliosa ja imaginaariosa, jotka yleensä kirjoitetaan muodossa `a + bi`. Ne ovat keskeisiä edistyneessä matematiikassa, fysiikassa, insinööritieteissä ja tietyissä tietokonealgoritmeissa. Ohjelmoijat käsittelevät niitä suoriakseen laskelmia, jotka sisältävät negatiivisten lukujen neliöjuuria ja oskilloivia funktioita.

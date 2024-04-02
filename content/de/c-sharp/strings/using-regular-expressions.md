@@ -11,9 +11,8 @@ summary: "Regul\xE4re Ausdr\xFCcke (regex) in C# sind ein m\xE4chtiges Werkzeug 
   r das Musterabgleichen innerhalb von Zeichenketten, das es Programmierern erm\xF6\
   glicht,\u2026"
 title: "Regul\xE4re Ausdr\xFCcke verwenden"
+weight: 11
 ---
-
-{{< edit_this_page >}}
 
 ## Was & Warum?
 Reguläre Ausdrücke (regex) in C# sind ein mächtiges Werkzeug für das Musterabgleichen innerhalb von Zeichenketten, das es Programmierern ermöglicht, effizient nach Daten zu suchen, diese zu ersetzen, aufzuteilen oder zu extrahieren. Programmierer nutzen regex für Aufgaben, die von einfachen Validierungen, wie der Überprüfung des E-Mail-Formats, bis zu komplexen Textverarbeitungsaufgaben reichen, aufgrund seiner Flexibilität und Leistung.

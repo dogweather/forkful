@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Refactoring is in wezen het grote schoonmaak houden van je codebasis - het\
   \ gaat over het herstructureren van bestaande code zonder het externe gedrag\u2026"
 title: Refactoring
+weight: 19
 ---
-
-{{< edit_this_page >}}
 
 ## Wat & Waarom?
 Refactoring is in wezen het grote schoonmaak houden van je codebasis - het gaat over het herstructureren van bestaande code zonder het externe gedrag ervan te veranderen. Programmeurs doen dit om de code leesbaarder te maken, complexiteit te verminderen, onderhoudbaarheid te verbeteren en het gemakkelijker te maken om uit te breiden.

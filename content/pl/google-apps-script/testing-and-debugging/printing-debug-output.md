@@ -11,9 +11,8 @@ summary: "Drukowanie wyj\u015Bcia debugowania polega na strategicznym umieszczan
   \ w kodzie instrukcji logowania w celu wy\u015Bwietlenia warto\u015Bci zmiennych,\
   \ przep\u0142ywu\u2026"
 title: "Drukowanie informacji wyj\u015Bciowych debugowania"
+weight: 33
 ---
-
-{{< edit_this_page >}}
 
 ## Co i dlaczego?
 

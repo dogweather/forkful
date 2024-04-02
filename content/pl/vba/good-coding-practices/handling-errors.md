@@ -11,9 +11,8 @@ summary: "Obs\u0142uga b\u0142\u0119d\xF3w w Visual Basic dla Aplikacji (VBA) od
   \ si\u0119 do procesu przewidywania, wykrywania i rozwi\u0105zywania b\u0142\u0119\
   d\xF3w programowania, aplikacji lub\u2026"
 title: "Obs\u0142uga b\u0142\u0119d\xF3w"
+weight: 16
 ---
-
-{{< edit_this_page >}}
 
 ## Co i dlaczego?
 

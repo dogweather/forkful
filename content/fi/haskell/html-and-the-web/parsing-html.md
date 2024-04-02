@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "HTML:n j\xE4sent\xE4minen Haskellissa mahdollistaa datan poiminnan, HTML-sis\xE4\
   ll\xF6n manipuloinnin tai ohjelmallisesti verkkosivujen kanssa vuorovaikuttamisen.\u2026"
 title: "HTML:n j\xE4sennys"
+weight: 43
 ---
-
-{{< edit_this_page >}}
 
 ## Mitä & Miksi?
 

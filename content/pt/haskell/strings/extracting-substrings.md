@@ -9,9 +9,8 @@ summary: "Extrair substrings significa pegar partes espec\xEDficas de uma string
   \ Programadores fazem isso para manipular, analisar ou transformar dados baseados\
   \ em\u2026"
 title: Extraindo substrings
+weight: 6
 ---
-
-{{< edit_this_page >}}
 
 ## O Quê & Porquê?
 Extrair substrings significa pegar partes específicas de uma string. Programadores fazem isso para manipular, analisar ou transformar dados baseados em texto de maneira eficiente.

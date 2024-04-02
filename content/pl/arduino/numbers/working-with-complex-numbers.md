@@ -9,9 +9,8 @@ summary: "Liczby zespolone maj\u0105 cz\u0119\u015B\u0107 rzeczywist\u0105 i cz\
   \u015B\u0107 urojon\u0105, zwykle zapisywane jako `a + bi`. S\u0105 one niezb\u0119\
   dne w niekt\xF3rych projektach Arduino, kt\xF3re wymagaj\u0105\u2026"
 title: Praca z liczbami zespolonymi
+weight: 14
 ---
-
-{{< edit_this_page >}}
 
 ## Co i dlaczego?
 Liczby zespolone mają część rzeczywistą i część urojoną, zwykle zapisywane jako `a + bi`. Są one niezbędne w niektórych projektach Arduino, które wymagają zaawansowanych obliczeń matematycznych, takich jak przetwarzanie sygnałów, inżynieria elektryczna czy jakakolwiek inna dziedzina, gdzie zjawiska najlepiej jest modelować na płaszczyźnie.

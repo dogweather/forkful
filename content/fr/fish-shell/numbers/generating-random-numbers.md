@@ -9,9 +9,8 @@ summary: "La g\xE9n\xE9ration de nombres al\xE9atoires est une t\xE2che fondamen
   \ en programmation, utilis\xE9e pour tout, de l'\xE9chantillonnage de donn\xE9es\
   \ au d\xE9veloppement de\u2026"
 title: "G\xE9n\xE9ration de nombres al\xE9atoires"
+weight: 12
 ---
-
-{{< edit_this_page >}}
 
 ## Quoi & Pourquoi ?
 

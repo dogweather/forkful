@@ -9,9 +9,8 @@ summary: "Mik\xE4 ja miksi? HTTP-pyynt\xF6 perusautentikaatiolla tarkoittaa palv
   \ l\xE4hetett\xE4v\xE4\xE4 pyynt\xF6\xE4, jossa k\xE4ytt\xE4j\xE4nimi ja salasana\
   \ ovat mukana. Ohjelmoijat\u2026"
 title: "HTTP-pyynn\xF6n l\xE4hett\xE4minen perusautentikoinnilla"
+weight: 45
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 Mikä ja miksi? HTTP-pyyntö perusautentikaatiolla tarkoittaa palvelimelle lähetettävää pyyntöä, jossa käyttäjänimi ja salasana ovat mukana. Ohjelmoijat käyttävät tätä metodia päästäkseen käsiksi suojattuihin resursseihin ja API-palveluihin.

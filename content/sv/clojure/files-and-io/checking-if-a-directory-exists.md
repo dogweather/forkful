@@ -11,9 +11,8 @@ summary: "Att kontrollera om en katalog finns i Clojure involverar verifiering a
   \ n\xE4rvaron av en filsystemskatalog fr\xE5n inom din Clojure-applikation. Denna\
   \ uppgift\u2026"
 title: Kontrollera om en katalog existerar
+weight: 20
 ---
-
-{{< edit_this_page >}}
 
 ## Vad & Varför?
 Att kontrollera om en katalog finns i Clojure involverar verifiering av närvaron av en filsystemskatalog från inom din Clojure-applikation. Denna uppgift är avgörande för filoperationer, för att förhindra fel när man läser från eller skriver till kataloger som kanske inte finns där, vilket säkerställer robust och felfri kodexekvering.

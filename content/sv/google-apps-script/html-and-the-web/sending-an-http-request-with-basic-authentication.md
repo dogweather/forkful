@@ -11,9 +11,8 @@ summary: "Att skicka en HTTP-f\xF6rfr\xE5gan med grundl\xE4ggande autentisering 
   r att koda ett anv\xE4ndarnamn och l\xF6senord i en f\xF6rfr\xE5gningsheader f\xF6\
   r att f\xE5 tillg\xE5ng\u2026"
 title: "Skicka en HTTP-beg\xE4ran med grundl\xE4ggande autentisering"
+weight: 45
 ---
-
-{{< edit_this_page >}}
 
 ## Vad och Varför?
 

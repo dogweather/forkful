@@ -11,9 +11,8 @@ summary: "Merkkijonosta p\xE4iv\xE4m\xE4\xE4r\xE4n j\xE4sent\xE4minen tarkoittaa
   iv\xE4m\xE4\xE4rien ja aikojen tekstiesitysten muuntamista muotoon, jota ohjelma\
   \ voi k\xE4sitell\xE4 ja analysoida.\u2026"
 title: "P\xE4iv\xE4m\xE4\xE4r\xE4n j\xE4sennys merkkijonosta"
+weight: 30
 ---
-
-{{< edit_this_page >}}
 
 ## Mikä & Miksi?
 Merkkijonosta päivämäärän jäsentäminen tarkoittaa päivämäärien ja aikojen tekstiesitysten muuntamista muotoon, jota ohjelma voi käsitellä ja analysoida. Tämä on yleinen tehtävä ohjelmoinnissa, koska se mahdollistaa käyttäjän syötteen käsittelyn, aikaleimattujen tietojen tallennuksen ja API-rajapintojen kanssa toimimisen, mikä tuottaa toiminnallisempia ja käyttäjäystävällisempiä sovelluksia.

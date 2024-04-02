@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Das Schreiben auf Standardfehler in C beinhaltet die Weiterleitung von Fehlermeldungen\
   \ und diagnostischen Informationen an einen separaten Stream vom\u2026"
 title: Schreiben auf Standardfehler
+weight: 25
 ---
-
-{{< edit_this_page >}}
 
 ## Was & Warum?
 

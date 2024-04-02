@@ -11,9 +11,8 @@ summary: "Tests in C zu schreiben, bedeutet, kleinere Hilfsprogramme oder Funkti
   \ zu erstellen, die automatisch die Funktionalit\xE4t Ihres Codes \xFCberpr\xFC\
   fen.\u2026"
 title: Tests schreiben
+weight: 36
 ---
-
-{{< edit_this_page >}}
 
 ## Was & Warum?
 Tests in C zu schreiben, bedeutet, kleinere Hilfsprogramme oder Funktionen zu erstellen, die automatisch die Funktionalität Ihres Codes überprüfen. Programmierer tun dies, um sicherzustellen, dass ihre Software wie erwartet funktioniert, um Fehler frühzeitig zu erkennen und um zukünftige Code-Modifikationen ohne unerwünschte Nebenwirkungen zu erleichtern.

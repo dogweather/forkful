@@ -20,9 +20,8 @@ summary: "Date comparison \u0915\u093E \u092E\u0924\u0932\u092C \u0939\u0948 \u0
   \u0930\u0924\u0947 \u0939\u0948\u0902\u2026"
 title: "\u0926\u094B \u0924\u093E\u0930\u0940\u0916\u094B\u0902 \u0915\u0940 \u0924\
   \u0941\u0932\u0928\u093E"
+weight: 27
 ---
-
-{{< edit_this_page >}}
 
 ## क्या और क्यों? (What & Why?)
 

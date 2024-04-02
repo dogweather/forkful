@@ -15,9 +15,8 @@ summary: "Chuy\u1EC3n \u0111\u1ED5i m\u1ED9t ng\xE0y th\xE0nh chu\u1ED7i l\xE0 v
   \ t\xEDnh \u0111\u1ECDc \u0111\u01B0\u1EE3c, \u0111\u1ECBa ph\u01B0\u01A1ng h\xF3\
   a, ho\u1EB7c s\u1EF1\u2026"
 title: "Chuy\u1EC3n \u0111\u1ED5i m\u1ED9t ng\xE0y th\xE0nh chu\u1ED7i"
+weight: 28
 ---
-
-{{< edit_this_page >}}
 
 ## Gì và Tại sao?
 Chuyển đổi một ngày thành chuỗi là về thay đổi cách hiển thị dữ liệu ngày/giờ. Lập trình viên làm điều này để tăng tính đọc được, địa phương hóa, hoặc sự nhất quán định dạng xuyên suốt các ứng dụng.

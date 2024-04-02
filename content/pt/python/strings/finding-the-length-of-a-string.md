@@ -7,9 +7,8 @@ model: gpt-4-1106-preview
 summary: "Descobrir o comprimento de uma string significa contar o n\xFAmero de caracteres\
   \ que ela possui. Programadores fazem isso para validar entradas, delimitar\u2026"
 title: Descobrindo o comprimento de uma string
+weight: 7
 ---
-
-{{< edit_this_page >}}
 
 ## O Que é & Porquê?
 Descobrir o comprimento de uma string significa contar o número de caracteres que ela possui. Programadores fazem isso para validar entradas, delimitar processamentos de texto e para facilitar a manipulação de dados.

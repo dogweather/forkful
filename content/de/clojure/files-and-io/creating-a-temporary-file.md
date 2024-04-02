@@ -8,9 +8,8 @@ model: gpt-4-1106-preview
 summary: "Tempor\xE4re Dateien dienen dazu, Daten zwischenzuspeichern, die w\xE4hrend\
   \ der Laufzeit eines Programms ben\xF6tigt, aber nicht dauerhaft gespeichert werden\u2026"
 title: "Erstellung einer tempor\xE4ren Datei"
+weight: 21
 ---
-
-{{< edit_this_page >}}
 
 ## Was & Warum?
 Temporäre Dateien dienen dazu, Daten zwischenzuspeichern, die während der Laufzeit eines Programms benötigt, aber nicht dauerhaft gespeichert werden sollen. Sie sind hilfreich, um Speicherplatz zu schonen und die Sicherheit zu erhöhen, da sie nach Gebrauch gelöscht werden können.

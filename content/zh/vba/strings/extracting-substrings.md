@@ -19,9 +19,8 @@ summary: "\u5728Visual Basic for Applications\uFF08VBA\uFF09\u4E2D\u63D0\u53D6\u
   \uFF0C\u64CD\u7EB5\u548C\u63D0\u53D6\u6587\u672C\u6570\u636E\u7684\u4FE1\u606F\u81F3\
   \u5173\u91CD\u8981\u3002"
 title: "\u63D0\u53D6\u5B50\u5B57\u7B26\u4E32"
+weight: 6
 ---
-
-{{< edit_this_page >}}
 
 ## 什么和为什么？
 

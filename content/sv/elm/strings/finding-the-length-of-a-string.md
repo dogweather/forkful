@@ -9,9 +9,8 @@ summary: "Att hitta l\xE4ngden av en str\xE4ng inneb\xE4r att r\xE4kna antalet t
   \ i str\xE4ngen. Programutvecklare beh\xF6ver veta detta f\xF6r att validera input,\
   \ hantera\u2026"
 title: "Hitta l\xE4ngden p\xE5 en str\xE4ng"
+weight: 7
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 Att hitta längden av en sträng innebär att räkna antalet tecken i strängen. Programutvecklare behöver veta detta för att validera input, hantera textutdata eller bearbeta datastrukturer.

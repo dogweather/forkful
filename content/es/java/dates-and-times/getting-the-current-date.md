@@ -10,9 +10,8 @@ model: gpt-4-0125-preview
 summary: "Obtener la fecha actual en Java es una operaci\xF3n fundamental que permite\
   \ a los programadores manipular objetos de fecha para operaciones tales como\u2026"
 title: Obteniendo la fecha actual
+weight: 29
 ---
-
-{{< edit_this_page >}}
 
 ## Qué y por qué?
 Obtener la fecha actual en Java es una operación fundamental que permite a los programadores manipular objetos de fecha para operaciones tales como registro (logging), cálculos de fechas y condiciones basadas en tiempo. Es vital en aplicaciones donde el seguimiento, la programación y el análisis de datos temporales son cruciales.

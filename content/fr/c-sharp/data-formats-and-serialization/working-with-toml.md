@@ -9,9 +9,8 @@ summary: "TOML est un acronyme pour Tom's Obvious, Minimal Language, un format d
   \ fichier de configuration qui est facile \xE0 lire gr\xE2ce \xE0 sa s\xE9mantique\
   \ claire. Les\u2026"
 title: Travailler avec TOML
+weight: 39
 ---
-
-{{< edit_this_page >}}
 
 ## Quoi & Pourquoi ?
 TOML est un acronyme pour Tom's Obvious, Minimal Language, un format de fichier de configuration qui est facile à lire grâce à sa sémantique claire. Les programmeurs l'utilisent pour les fichiers de configuration, simplifiant l'échange de données entre les systèmes, et parce qu'il trouve un équilibre entre la lisibilité humaine et la possibilité d'analyse par machine.

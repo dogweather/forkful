@@ -11,9 +11,8 @@ summary: "Convertir una cadena a min\xFAsculas en C implica transformar todas la
   \ letras may\xFAsculas de una cadena dada en sus equivalentes en min\xFAsculas.\
   \ Los\u2026"
 title: "Convirtiendo una cadena de texto a min\xFAsculas"
+weight: 4
 ---
-
-{{< edit_this_page >}}
 
 ## ¿Qué y por qué?
 

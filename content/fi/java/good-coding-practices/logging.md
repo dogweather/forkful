@@ -9,9 +9,8 @@ summary: "Lokitus on periaatteessa tapahtumien tallentamisen prosessi, jotka tap
   \ ohjelmiston sis\xE4ll\xE4. Ohjelmoijat lokittavat n\xE4it\xE4 tapahtumia ker\xE4\
   t\xE4kseen\u2026"
 title: Lokitus
+weight: 17
 ---
-
-{{< edit_this_page >}}
 
 ## Mikä & Miksi?
 Lokitus on periaatteessa tapahtumien tallentamisen prosessi, jotka tapahtuvat ohjelmiston sisällä. Ohjelmoijat lokittavat näitä tapahtumia kerätäkseen suoritusaikaista tietoa, vianetsintää, järjestelmän käyttäytymisen seurantaa varten, ja luodakseen tarkastuspolun turvallisuuden ja vaatimustenmukaisuuden tarkoituksessa.

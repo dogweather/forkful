@@ -8,9 +8,8 @@ model: gpt-4-1106-preview
 summary: "\xC5 konvertere en dato til en streng betyr \xE5 endre datoen fra et format\
   \ Java forst\xE5r til tekst vi mennesker lett leser. Vi gj\xF8r dette for \xE5 vise\u2026"
 title: Konvertere en dato til en streng
+weight: 28
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why? (Hva & Hvorfor?)
 Å konvertere en dato til en streng betyr å endre datoen fra et format Java forstår til tekst vi mennesker lett leser. Vi gjør dette for å vise datoelementer på skjermen eller for å formatere dem før lagring og deling.

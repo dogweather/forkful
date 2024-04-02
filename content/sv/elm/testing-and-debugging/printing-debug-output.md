@@ -9,9 +9,8 @@ summary: "Skriva ut fels\xF6kningsdata g\xF6r det l\xE4ttare att se vad ditt pro
   \ egentligen g\xF6r. Programmerare anv\xE4nder det f\xF6r att hitta buggar och f\xF6\
   rst\xE5 programfl\xF6det."
 title: "Skriva ut fels\xF6kningsdata"
+weight: 33
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why? - Vad & Varför?
 Skriva ut felsökningsdata gör det lättare att se vad ditt program egentligen gör. Programmerare använder det för att hitta buggar och förstå programflödet.

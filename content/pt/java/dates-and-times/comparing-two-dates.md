@@ -7,9 +7,8 @@ model: gpt-4-1106-preview
 summary: "Comparar duas datas significa verificar se s\xE3o iguais, ou determinar\
   \ qual vem antes ou depois no tempo. Programadores fazem isso frequentemente para\u2026"
 title: Comparando duas datas
+weight: 27
 ---
-
-{{< edit_this_page >}}
 
 ## O Que & Porquê?
 

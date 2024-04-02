@@ -8,9 +8,8 @@ model: gpt-4-1106-preview
 summary: "El registro (logging) es el proceso de grabar eventos, errores y otra informaci\xF3\
   n significativa durante la ejecuci\xF3n de un programa en un medio externo, a\u2026"
 title: Registro de Actividades
+weight: 17
 ---
-
-{{< edit_this_page >}}
 
 ## ¿Qué y Por Qué?
 

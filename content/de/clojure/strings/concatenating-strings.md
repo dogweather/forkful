@@ -8,9 +8,8 @@ model: gpt-4-1106-preview
 summary: "In Clojure und anderen Sprachen bedeutet das Verketten von Strings, dass\
   \ wir sie aneinanderreihen, um einen neuen, l\xE4ngeren String zu bilden. Das ist\u2026"
 title: "Zeichenketten verkn\xFCpfen"
+weight: 3
 ---
-
-{{< edit_this_page >}}
 
 ## Was & Warum?
 In Clojure und anderen Sprachen bedeutet das Verketten von Strings, dass wir sie aneinanderreihen, um einen neuen, längeren String zu bilden. Das ist nützlich, um Texte dynamisch zu generieren oder Daten zu formatieren.

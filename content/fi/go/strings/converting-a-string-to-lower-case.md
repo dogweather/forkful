@@ -10,9 +10,8 @@ model: gpt-4-0125-preview
 summary: "Merkkijonon muuntaminen pieniksi kirjaimiksi on perustoiminto, joka mahdollistaa\
   \ yhten\xE4isyyden ja johdonmukaisuuden tekstink\xE4sittelyss\xE4, mik\xE4 on\u2026"
 title: Merkkijonon muuntaminen pieniksi kirjaimiksi
+weight: 4
 ---
-
-{{< edit_this_page >}}
 
 ## Mitä & Miksi?
 

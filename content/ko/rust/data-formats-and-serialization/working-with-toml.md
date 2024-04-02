@@ -15,9 +15,8 @@ summary: "TOML\uC740 \uC885\uC885 \uC124\uC815 \uD30C\uC77C\uC5D0 \uC0AC\uC6A9\u
   \ \uADF8\uAC83\uC744 \uC0AC\uC6A9\uD558\uBA70, \uB7EC\uC2A4\uD2B8\uC5D0\uC11C \uD574\
   \uC2DC \uB9F5\uC73C\uB85C \uC27D\uAC8C \uBCC0\uD658\uB429\uB2C8\uB2E4."
 title: "\uD504\uB85C\uADF8\uB798\uBA38\uB97C \uC704\uD55C TOML \uB2E4\uB8E8\uAE30"
+weight: 39
 ---
-
-{{< edit_this_page >}}
 
 ## 무엇 & 왜?
 TOML은 종종 설정 파일에 사용되는 인간이 읽을 수 있는 데이터 직렬화 언어입니다. 프로그래머들은 TOML의 단순성과 명확성 때문에 그것을 사용하며, 러스트에서 해시 맵으로 쉽게 변환됩니다.

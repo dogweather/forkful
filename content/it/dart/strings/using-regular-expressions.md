@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Le espressioni regolari (regex) in Dart offrono un modo potente per cercare\
   \ e manipolare le stringhe, consentendo ai programmatori di eseguire operazioni\u2026"
 title: Utilizzo di espressioni regolari
+weight: 11
 ---
-
-{{< edit_this_page >}}
 
 ## Cos'è & Perché?
 Le espressioni regolari (regex) in Dart offrono un modo potente per cercare e manipolare le stringhe, consentendo ai programmatori di eseguire operazioni complesse di elaborazione del testo in modo efficiente. Capendo le regex, gli sviluppatori possono eseguire validazioni del testo, cercare modelli e trasformare il testo rapidamente, il che è essenziale per l'elaborazione di moduli, l'analisi dei dati e le manipolazioni generali delle stringhe nelle applicazioni moderne.

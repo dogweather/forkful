@@ -9,9 +9,8 @@ summary: "Wyodr\u0119bnianie podci\u0105g\xF3w to proces wycinania fragment\xF3w
   \ wi\u0119kszego ci\u0105gu znak\xF3w. Programi\u015Bci robi\u0105 to, aby manipulowa\u0107\
   \ i analizowa\u0107 tekst, weryfikowa\u0107\u2026"
 title: "Wycinanie pod\u0142a\u0144cuch\xF3w"
+weight: 6
 ---
-
-{{< edit_this_page >}}
 
 ## Co i dlaczego?
 

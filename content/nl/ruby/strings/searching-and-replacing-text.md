@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Zoeken en vervangen van tekst is het verwisselen van specifieke woorden\
   \ of zinnen met alternatieven in een string. Programmeurs doen dit om gegevens bij\u2026"
 title: Tekst zoeken en vervangen
+weight: 10
 ---
-
-{{< edit_this_page >}}
 
 ## Wat & Waarom?
 Zoeken en vervangen van tekst is het verwisselen van specifieke woorden of zinnen met alternatieven in een string. Programmeurs doen dit om gegevens bij te werken, fouten te corrigeren of de opmaak te wijzigen - het houdt de zaken accuraat en opgeruimd.

@@ -9,9 +9,8 @@ summary: "Loggning \xE4r i grund och botten processen att spela in h\xE4ndelser 
   \ datautg\xE5ngar fr\xE5n en mjukvara n\xE4r den k\xF6rs, t\xE4nk p\xE5 det som\
   \ mjukvarans dagbok.\u2026"
 title: Loggning
+weight: 17
 ---
-
-{{< edit_this_page >}}
 
 ## Vad & Varför?
 Loggning är i grund och botten processen att spela in händelser och datautgångar från en mjukvara när den körs, tänk på det som mjukvarans dagbok. Programmerare använder loggning för att hålla koll på vad som händer under huven - det är ovärderligt för att felsöka problem, övervaka systembeteende i realtid och analysera tidigare aktivitet för prestandaoptimeringar eller revisioner.

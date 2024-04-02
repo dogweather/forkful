@@ -9,9 +9,8 @@ summary: "Generar n\xFAmeros aleatorios en programaci\xF3n se trata de producir 
   \ num\xE9ricos impredecibles que se pueden usar para una variedad de prop\xF3sitos,\
   \ como\u2026"
 title: "Generaci\xF3n de n\xFAmeros aleatorios"
+weight: 12
 ---
-
-{{< edit_this_page >}}
 
 ## ¿Qué y Por Qué?
 

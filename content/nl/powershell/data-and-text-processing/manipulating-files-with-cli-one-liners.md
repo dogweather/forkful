@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Bestanden manipuleren met CLI one-liners in PowerShell gaat over het snel\
   \ wijzigen, verplaatsen of verkrijgen van bestandsgegevens direct vanaf de\u2026"
 title: Bestanden manipuleren met CLI one-liners
+weight: 31
 ---
-
-{{< edit_this_page >}}
 
 ## Wat & Waarom?
 

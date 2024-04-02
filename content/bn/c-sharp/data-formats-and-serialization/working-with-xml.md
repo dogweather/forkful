@@ -23,9 +23,8 @@ summary: "XML (eXtensible Markup Language) \u09B9\u09B2\u09CB \u09A1\u09C7\u099F
   \u09AF\u09BE\u09AA\u09C7\u09B0 \u09AE\u09A7\u09CD\u09AF\u09C7 \u09A1\u09C7\u099F\
   \u09BE\u2026"
 title: "XML \u09A8\u09BF\u09AF\u09BC\u09C7 \u0995\u09BE\u099C \u0995\u09B0\u09BE"
+weight: 40
 ---
-
-{{< edit_this_page >}}
 
 ## কি এবং কেন?
 

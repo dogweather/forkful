@@ -9,9 +9,8 @@ summary: "Manipular arquivos com one-liners CLI em Ruby trata de realizar opera\
   \xF5es comuns com arquivos diretamente do seu terminal usando scripts Ruby. \xC9\
   \ um m\xE9todo\u2026"
 title: Manipulando arquivos com one-liners de CLI
+weight: 31
 ---
-
-{{< edit_this_page >}}
 
 ## O Que & Por Que?
 

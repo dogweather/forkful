@@ -11,9 +11,8 @@ summary: "Escribir en el error est\xE1ndar en Python trata sobre dirigir los men
   \ de error o diagn\xF3sticos de tu programa al flujo de error (`stderr`), separado\
   \ de\u2026"
 title: "Escribiendo en el error est\xE1ndar"
+weight: 25
 ---
-
-{{< edit_this_page >}}
 
 ## Qué y Por Qué?
 Escribir en el error estándar en Python trata sobre dirigir los mensajes de error o diagnósticos de tu programa al flujo de error (`stderr`), separado de la salida estándar (`stdout`). Los programadores hacen esto para diferenciar las salidas normales del programa de los mensajes de error, facilitando la depuración y el análisis de registros.

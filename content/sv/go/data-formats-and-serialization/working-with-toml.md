@@ -11,9 +11,8 @@ summary: "TOML (Toms Uppenbara, Minimala Spr\xE5k) \xE4r ett filformat f\xF6r ko
   \ som \xE4r l\xE4tt att l\xE4sa tack vare sin enkla syntax. Programmerare anv\xE4\
   nder TOML f\xF6r\u2026"
 title: Att Arbeta med TOML
+weight: 39
 ---
-
-{{< edit_this_page >}}
 
 ## Vad & Varför?
 

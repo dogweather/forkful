@@ -10,9 +10,8 @@ model: gpt-4-0125-preview
 summary: "Buscar y reemplazar texto en Google Apps Script implica identificar program\xE1\
   ticamente cadenas espec\xEDficas en un documento, hoja de c\xE1lculo o cualquier\u2026"
 title: Buscando y reemplazando texto
+weight: 10
 ---
-
-{{< edit_this_page >}}
 
 ## ¿Qué y Por Qué?
 

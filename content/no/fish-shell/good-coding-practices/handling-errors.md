@@ -9,9 +9,8 @@ summary: "Feilh\xE5ndtering lar skriptet ditt takle det uventede p\xE5 en n\xE5d
   \ m\xE5te. Vi gj\xF8r det for \xE5 h\xE5ndtere feil uten \xE5 gj\xF8re brukernes\
   \ h\xE5r gr\xE5tt."
 title: "Feilh\xE5ndtering"
+weight: 16
 ---
-
-{{< edit_this_page >}}
 
 ## Hva & Hvorfor?
 Feilhåndtering lar skriptet ditt takle det uventede på en nådig måte. Vi gjør det for å håndtere feil uten å gjøre brukernes hår grått.

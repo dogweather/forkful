@@ -9,9 +9,8 @@ summary: "Midlertidige filer lar oss lagre data midlertidig under kj\xF8ring av 
   \ program. Programmerere bruker dem for \xE5 h\xE5ndtere store datastr\xF8mmer,\
   \ redusere\u2026"
 title: Opprette en midlertidig fil
+weight: 21
 ---
-
-{{< edit_this_page >}}
 
 ## Hva & Hvorfor?
 Midlertidige filer lar oss lagre data midlertidig under kjøring av et program. Programmerere bruker dem for å håndtere store datastrømmer, redusere minnebruk eller lagre tilstand under lengre prosesser.

@@ -9,9 +9,8 @@ summary: "Partir el c\xF3digo en funciones se trata de empaquetar bloques de c\x
   digo que cumplen tareas espec\xEDficas. Hacer esto vuelve tu c\xF3digo limpio, m\xE1\
   s f\xE1cil de\u2026"
 title: "Organizando c\xF3digo en funciones"
+weight: 18
 ---
-
-{{< edit_this_page >}}
 
 ## ¿Qué y Por Qué?
 

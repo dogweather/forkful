@@ -9,9 +9,8 @@ summary: "Usuwanie cudzys\u0142ow\xF3w z ci\u0105gu znak\xF3w oznacza pozbycie s
   \ tych irytuj\u0105cych znak\xF3w cudzys\u0142owu, kt\xF3re mog\u0105 namiesza\u0107\
   \ w twoim kodzie, szczeg\xF3lnie kiedy\u2026"
 title: "Usuwanie cudzys\u0142ow\xF3w z ci\u0105gu znak\xF3w"
+weight: 9
 ---
-
-{{< edit_this_page >}}
 
 ## Co i dlaczego?
 Usuwanie cudzysłowów z ciągu znaków oznacza pozbycie się tych irytujących znaków cudzysłowu, które mogą namieszać w twoim kodzie, szczególnie kiedy dokonujesz analizy danych lub konstruujesz obiekty JSON. Programiści robią to w celu oczyszczenia danych wejściowych, uniknięcia błędów składniowych oraz sprawienia, by ciągi znaków dobrze współgrały z innymi częściami ich kodu.

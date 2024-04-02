@@ -11,9 +11,8 @@ summary: "Merkkijonojen yhdist\xE4minen tarkoittaa kahden tai useamman merkkijon
   \ liitt\xE4mist\xE4 per\xE4kk\xE4in uuden merkkijonon muodostamiseksi. Ohjelmoijat\
   \ tekev\xE4t t\xE4m\xE4n\u2026"
 title: "Merkkijonojen yhdist\xE4minen"
+weight: 3
 ---
-
-{{< edit_this_page >}}
 
 ## Mikä & Miksi?
 

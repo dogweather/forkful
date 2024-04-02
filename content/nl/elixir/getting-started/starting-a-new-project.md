@@ -10,9 +10,8 @@ model: gpt-4-0125-preview
 summary: "Een nieuw Elixir-project starten betekent het opzetten van een frisse Mix-projectstructuur.\
   \ Programmeurs doen dit om te beginnen met georganiseerde code\u2026"
 title: Een nieuw project starten
+weight: 1
 ---
-
-{{< edit_this_page >}}
 
 ## Wat & Waarom?
 Een nieuw Elixir-project starten betekent het opzetten van een frisse Mix-projectstructuur. Programmeurs doen dit om te beginnen met georganiseerde code en geautomatiseerde hulpmiddelen, die helpen bij het efficiënt bouwen en testen van hun Elixir-applicaties.

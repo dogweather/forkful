@@ -9,9 +9,8 @@ summary: "Tekstin etsiminen ja korvaaminen auttaa muuttamaan koodia nopeasti. Se
   \ t\xE4rke\xE4\xE4, kun halutaan p\xE4ivitt\xE4\xE4 muuttujien nimi\xE4 tai korjata\
   \ virheit\xE4 useissa\u2026"
 title: Tekstin etsiminen ja korvaaminen
+weight: 10
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why? - Mikä ja Miksi?
 Tekstin etsiminen ja korvaaminen auttaa muuttamaan koodia nopeasti. Se on tärkeää, kun halutaan päivittää muuttujien nimiä tai korjata virheitä useissa tiedostoissa kerralla.

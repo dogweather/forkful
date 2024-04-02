@@ -9,9 +9,8 @@ summary: "Travailler avec TOML signifie que vous manipulez des donn\xE9es dans u
   \ format minimaliste \"Tom's Obvious, Minimal Language\", populaire pour les fichiers\
   \ de\u2026"
 title: Travailler avec TOML
+weight: 39
 ---
-
-{{< edit_this_page >}}
 
 ## Quoi et Pourquoi ?
 Travailler avec TOML signifie que vous manipulez des données dans un format minimaliste "Tom's Obvious, Minimal Language", populaire pour les fichiers de configuration en raison de sa facilité de lecture. Les programmeurs l'utilisent pour une gestion de configuration simple qui fonctionne directement avec une syntaxe conviviale pour l'homme.

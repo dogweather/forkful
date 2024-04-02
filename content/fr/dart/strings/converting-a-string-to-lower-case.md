@@ -11,9 +11,8 @@ summary: "Convertir une cha\xEEne de caract\xE8res en minuscules est une op\xE9r
   \ fondamentale qui consiste \xE0 transformer tous les caract\xE8res d'une cha\xEE\
   ne donn\xE9e en\u2026"
 title: "Convertir une cha\xEEne en minuscules"
+weight: 4
 ---
-
-{{< edit_this_page >}}
 
 ## Quoi & Pourquoi ?
 

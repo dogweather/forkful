@@ -9,9 +9,8 @@ summary: "Extrair substrings \xE9 uma maneira de pegar peda\xE7os de uma string 
   \ como pegar s\xF3 o nome de algu\xE9m numa frase de boas-vindas. Programadores\
   \ fazem isso\u2026"
 title: Extraindo substrings
+weight: 6
 ---
-
-{{< edit_this_page >}}
 
 ## O Que É & Porquê?
 Extrair substrings é uma maneira de pegar pedaços de uma string — como pegar só o nome de alguém numa frase de boas-vindas. Programadores fazem isso quando querem manipular ou analisar apenas uma parte específica de um texto.

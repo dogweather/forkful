@@ -11,9 +11,8 @@ summary: "\xC5 organisere kode i funksjoner handler om \xE5 strukturere Google A
   \ Script-koden din ved \xE5 separere logiske segmenter i distinkte blokker, hver\
   \ med ansvar\u2026"
 title: Organisering av kode i funksjoner
+weight: 18
 ---
-
-{{< edit_this_page >}}
 
 ## Hva og hvorfor?
 

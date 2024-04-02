@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Leggere gli argomenti della riga di comando in Visual Basic for Applications\
   \ (VBA) comporta l'accesso ai parametri passati al tuo programma\u2026"
 title: Leggere gli argomenti della riga di comando
+weight: 23
 ---
-
-{{< edit_this_page >}}
 
 ## Cosa & Perché?
 

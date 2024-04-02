@@ -11,9 +11,8 @@ summary: "Standardivirheeseen (stderr) kirjoittaminen tarkoittaa virheviestien j
   \ diagnostiikkatietojen ohjaamista erilleen p\xE4\xE4ohjelman tulosteesta, joka\
   \ menee\u2026"
 title: Kirjoittaminen standardivirheeseen
+weight: 25
 ---
-
-{{< edit_this_page >}}
 
 ## Mitä & Miksi?
 

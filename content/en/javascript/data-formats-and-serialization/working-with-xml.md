@@ -7,9 +7,8 @@ model: gpt-4-1106-preview
 summary: "Working with XML means parsing, manipulating, and producing XML content\
   \ using code. Programmers do it because XML is widely used for configuration files,\u2026"
 title: Working with XML
+weight: 40
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 Working with XML means parsing, manipulating, and producing XML content using code. Programmers do it because XML is widely used for configuration files, data exchange, and web services due to its human-readable and machine-parsable nature.

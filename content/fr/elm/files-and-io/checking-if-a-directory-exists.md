@@ -9,9 +9,8 @@ summary: "\"Quoi et Pourquoi ?\": V\xE9rifier si un dossier existe c'est s'assur
   \ que le chemin d'acc\xE8s pointe vers quelque chose de r\xE9el. Les d\xE9veloppeurs\
   \ font \xE7a pour\u2026"
 title: "V\xE9rification de l'existence d'un r\xE9pertoire"
+weight: 20
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 "Quoi et Pourquoi ?": Vérifier si un dossier existe c'est s'assurer que le chemin d'accès pointe vers quelque chose de réel. Les développeurs font ça pour éviter des erreurs en tentant d'accéder ou de modifier un dossier inexistant.

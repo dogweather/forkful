@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Att skapa en tillf\xE4llig fil i Google Apps Script inneb\xE4r att generera\
   \ en fil avsedd f\xF6r kortvarigt bruk, vanligtvis f\xF6r mellanliggande databehandling,\u2026"
 title: "Skapa en tillf\xE4llig fil"
+weight: 21
 ---
-
-{{< edit_this_page >}}
 
 ## Vad & varför?
 

@@ -11,9 +11,8 @@ summary: "W programowaniu komputerowym \"Drukowanie wyj\u015Bcia debugowania\" p
   \ na produkowaniu szczeg\xF3\u0142owych komunikat\xF3w informacyjnych, kt\xF3re\
   \ pomagaj\u0105 programistom\u2026"
 title: "Drukowanie komunikat\xF3w debugowania"
+weight: 33
 ---
-
-{{< edit_this_page >}}
 
 ## Co i dlaczego?
 

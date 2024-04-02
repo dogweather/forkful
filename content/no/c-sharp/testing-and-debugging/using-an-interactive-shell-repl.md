@@ -9,9 +9,8 @@ summary: "En REPL, eller Read-Eval-Print Loop, lar deg skrive C#-kode og kj\xF8r
   \ den interaktivt. Programmerere bruker det for raske eksperimenter, feils\xF8king,\
   \ eller\u2026"
 title: Bruke et interaktivt skall (REPL)
+weight: 34
 ---
-
-{{< edit_this_page >}}
 
 ## Hva & Hvorfor?
 En REPL, eller Read-Eval-Print Loop, lar deg skrive C#-kode og kjøre den interaktivt. Programmerere bruker det for raske eksperimenter, feilsøking, eller læring av C#, uten overheadet av å sette opp hele prosjekter.

@@ -7,9 +7,8 @@ model: gpt-4-1106-preview
 summary: "Rimuovere i caratteri che corrispondono a un pattern significa selezionare\
   \ e cancellare specifiche sequenze di caratteri da una stringa. I programmatori\u2026"
 title: Eliminazione di caratteri che corrispondono a un pattern
+weight: 5
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why? (Cosa e Perché?)
 Rimuovere i caratteri che corrispondono a un pattern significa selezionare e cancellare specifiche sequenze di caratteri da una stringa. I programmatori lo fanno per pulire i dati, per estrarre informazioni importanti o per rispettare un certo formato.

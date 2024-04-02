@@ -11,9 +11,8 @@ summary: "Het verkrijgen van de huidige datum in C houdt in dat je toegang krijg
   \ tot de standaard C-bibliotheek om de huidige datum en tijd van het systeem op\
   \ te\u2026"
 title: De huidige datum krijgen
+weight: 29
 ---
-
-{{< edit_this_page >}}
 
 ## Wat & Waarom?
 

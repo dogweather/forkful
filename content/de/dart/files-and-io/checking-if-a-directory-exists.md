@@ -11,9 +11,8 @@ summary: "Das \xDCberpr\xFCfen, ob ein Verzeichnis in Dart existiert, dreht sich
   \ die Anwesenheit eines Verzeichnisses auf einem angegebenen Pfad im Dateisystem\
   \ zu\u2026"
 title: "\xDCberpr\xFCfung, ob ein Verzeichnis existiert"
+weight: 20
 ---
-
-{{< edit_this_page >}}
 
 ## Was & Warum?
 

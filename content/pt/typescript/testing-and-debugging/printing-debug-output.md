@@ -9,9 +9,8 @@ summary: "Imprimir sa\xEDdas de depura\xE7\xE3o \xE9 soltar info \xFAtil no cons
   \ que ajuda a entender o que seu c\xF3digo est\xE1 aprontando. Programadores fazem\
   \ isso pra desenrolar\u2026"
 title: "Exibindo sa\xEDdas de depura\xE7\xE3o"
+weight: 33
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why? (O Quê e Por Quê?)
 Imprimir saídas de depuração é soltar info útil no console que ajuda a entender o que seu código está aprontando. Programadores fazem isso pra desenrolar bugs ou entender o fluxo do programa.

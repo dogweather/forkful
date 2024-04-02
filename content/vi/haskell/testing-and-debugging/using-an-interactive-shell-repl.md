@@ -13,9 +13,8 @@ summary: "M\u1ED9t shell t\u01B0\u01A1ng t\xE1c, hay REPL (Read-Eval-Print Loop)
   c ti\u1EBFp. \u0110\xF3 l\xE0 s\xE2n ch\u01A1i cho ph\u1EA3n h\u1ED3i nhanh ch\xF3\
   ng, ki\u1EC3m\u2026"
 title: "S\u1EED d\u1EE5ng v\u1ECF t\u01B0\u01A1ng t\xE1c (REPL)"
+weight: 34
 ---
-
-{{< edit_this_page >}}
 
 ## Cái gì & Tại sao?
 Một shell tương tác, hay REPL (Read-Eval-Print Loop), trong Haskell cho phép bạn chạy các đoạn mã trực tiếp. Đó là sân chơi cho phản hồi nhanh chóng, kiểm thử các hàm, và học ngôn ngữ.

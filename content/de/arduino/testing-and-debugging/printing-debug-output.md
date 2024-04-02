@@ -7,9 +7,8 @@ model: gpt-4-1106-preview
 summary: "Debug-Ausgaben drucken hei\xDFt, Informationen w\xE4hrend der Laufzeit eines\
   \ Programms zur Problemdiagnose auszugeben. Entwickler nutzen es, um den\u2026"
 title: Debug-Ausgaben drucken
+weight: 33
 ---
-
-{{< edit_this_page >}}
 
 ## Was & Warum?
 Debug-Ausgaben drucken heißt, Informationen während der Laufzeit eines Programms zur Problemdiagnose auszugeben. Entwickler nutzen es, um den Programmfluss zu verstehen und Fehler schnell zu finden.

@@ -9,9 +9,8 @@ summary: "G\xE9rer les erreurs signifie \xE9crire du code qui peut anticiper et 
   \ les probl\xE8mes qui surviennent. Les programmeurs le font pour \xE9viter les\
   \ plantages,\u2026"
 title: Gestion des erreurs
+weight: 16
 ---
-
-{{< edit_this_page >}}
 
 ## Quoi et pourquoi ?
 Gérer les erreurs signifie écrire du code qui peut anticiper et traiter les problèmes qui surviennent. Les programmeurs le font pour éviter les plantages, protéger l'intégrité des données et fournir aux utilisateurs des solutions de repli élégantes.

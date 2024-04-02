@@ -9,9 +9,8 @@ summary: "Str\xE4nginterpolering inneb\xE4r att man blandar variabler med vanlig
   \ Programmerare g\xF6r detta f\xF6r att skapa dynamiska meddelanden, d\xE4r inneh\xE5\
   llet kan\u2026"
 title: "Interpolera en str\xE4ng"
+weight: 8
 ---
-
-{{< edit_this_page >}}
 
 ## Vad & Varför?
 Stränginterpolering innebär att man blandar variabler med vanlig text. Programmerare gör detta för att skapa dynamiska meddelanden, där innehållet kan ändras vid körning.

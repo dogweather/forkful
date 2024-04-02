@@ -11,9 +11,8 @@ summary: "Envoyer une requ\xEAte HTTP en Visual Basic pour Applications (VBA) im
   \ un acc\xE8s programmatique aux ressources Web ou aux services Web en effectuant\
   \ des\u2026"
 title: "Envoi d'une requ\xEAte HTTP"
+weight: 44
 ---
-
-{{< edit_this_page >}}
 
 ## Quoi & Pourquoi ?
 

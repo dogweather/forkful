@@ -9,9 +9,8 @@ summary: "Iniciar um projeto novo \xE9 como montar o quebra-cabe\xE7a do zero \u
   \ voc\xEA tem um monte de pe\xE7as (ideias) e precisa junt\xE1-las. Programadores\
   \ fazem isso para\u2026"
 title: Iniciando um novo projeto
+weight: 1
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why? (O Que & Por Que?)
 Iniciar um projeto novo é como montar o quebra-cabeça do zero – você tem um monte de peças (ideias) e precisa juntá-las. Programadores fazem isso para transformar conceitos em software funcional, resolver problemas ou explorar tecnologias novas.

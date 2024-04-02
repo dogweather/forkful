@@ -18,9 +18,8 @@ summary: "\uD14D\uC2A4\uD2B8 \uD30C\uC77C \uC77D\uAE30\uB294 \uB514\uC2A4\uD06C\
   \ \uB54C \uD504\uB85C\uADF8\uB798\uBA38\uB4E4\uC774 \uC0AC\uC6A9\uD569\uB2C8\uB2E4\
   ."
 title: "\uD14D\uC2A4\uD2B8 \uD30C\uC77C \uC77D\uAE30"
+weight: 22
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why? (무엇과 왜?)
 텍스트 파일 읽기는 디스크에 저장된 텍스트 데이터를 읽고 Swift 프로그램에서 사용하는 것입니다. 파일에서 설정, 사용자 데이터, 또는 대량의 텍스트를 읽어야 할 때 프로그래머들이 사용합니다.

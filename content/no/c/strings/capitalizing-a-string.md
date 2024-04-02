@@ -10,9 +10,8 @@ model: gpt-4-0125-preview
 summary: "\xC5 gj\xF8re om en streng til store bokstaver i C inneb\xE6rer \xE5 konvertere\
   \ f\xF8rste tegn i hvert ord i en gitt streng til stor bokstav hvis det er en liten\u2026"
 title: Sette stor bokstav i en streng
+weight: 2
 ---
-
-{{< edit_this_page >}}
 
 ## Hva & Hvorfor?
 

@@ -7,9 +7,8 @@ model: gpt-4-1106-preview
 summary: "Substringit ovat jonoista poimittuja osia. K\xE4ytt\xE4m\xE4ll\xE4 niit\xE4\
   , voidaan prosessoida, analysoida tai muokata tekstidataa tarpeen mukaan."
 title: Merkkijonojen osien poimiminen
+weight: 6
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why? (Mikä ja Miksi?)
 Substringit ovat jonoista poimittuja osia. Käyttämällä niitä, voidaan prosessoida, analysoida tai muokata tekstidataa tarpeen mukaan.

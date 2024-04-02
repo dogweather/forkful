@@ -9,9 +9,8 @@ summary: "Att ta bort citationstecken fr\xE5n en str\xE4ng inneb\xE4r att stripp
   \ bort alla citattecken\u2014enkla (' '), dubbla (\" \") eller b\xE5da\u2014fr\xE5\
   n textdata. Programmerare g\xF6r\u2026"
 title: "Ta bort citattecken fr\xE5n en str\xE4ng"
+weight: 9
 ---
-
-{{< edit_this_page >}}
 
 ## Vad & Varför?
 Att ta bort citationstecken från en sträng innebär att strippa bort alla citattecken—enkla (' '), dubbla (" ") eller båda—från textdata. Programmerare gör det för att sanera inmatningar, förbereda data för lagring eller förenkla tolkningsuppgifter där citattecken är onödiga och potentiellt problematiska.

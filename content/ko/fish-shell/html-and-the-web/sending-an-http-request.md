@@ -14,9 +14,8 @@ summary: "HTTP \uC694\uCCAD\uC740 \uC11C\uBC84\uC5D0 \uC815\uBCF4\uB97C \uC694\u
   , \uC6F9 \uCF58\uD150\uCE20 \uAC80\uC0C9 \uB4F1\uC744 \uC704\uD574 \uC0AC\uC6A9\uD569\
   \uB2C8\uB2E4."
 title: "HTTP \uC694\uCCAD \uBCF4\uB0B4\uAE30"
+weight: 44
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why? (무엇이며 왜?)
 HTTP 요청은 서버에 정보를 요청하거나 보내는 방법입니다. 프로그래머들은 데이터 교환, API 통신, 웹 콘텐츠 검색 등을 위해 사용합니다.

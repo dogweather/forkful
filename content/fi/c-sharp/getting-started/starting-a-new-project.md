@@ -7,9 +7,8 @@ model: gpt-4-1106-preview
 summary: "Uuden projektin aloittaminen tarkoittaa uuden sovelluksen tai ohjelmiston\
   \ kehitysvaiheen aloittamista. Ohjelmoijat tekev\xE4t sen, jotta voivat ratkaista\u2026"
 title: Uuden projektin aloittaminen
+weight: 1
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why? / Mitä & Miksi?
 Uuden projektin aloittaminen tarkoittaa uuden sovelluksen tai ohjelmiston kehitysvaiheen aloittamista. Ohjelmoijat tekevät sen, jotta voivat ratkaista ongelmia, toteuttaa ideoita tai vastata kysyntään.

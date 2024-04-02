@@ -11,9 +11,8 @@ summary: "Strenginterpolering i Google Apps Script gj\xF8r det mulig for dynamis
   \ innlemming av uttrykk innenfor strenger, noe som letter skapelsen av mer lesbare\
   \ og\u2026"
 title: Interpolering av en streng
+weight: 8
 ---
-
-{{< edit_this_page >}}
 
 ## Hva & Hvorfor?
 

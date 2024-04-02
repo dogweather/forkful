@@ -13,9 +13,8 @@ summary: "M\u1ED9t b\u1EA3ng \u0111i\u1EC1u khi\u1EC3n t\u01B0\u01A1ng t\xE1c, h
   -In), cho ph\xE9p b\u1EA1n th\u1EED nghi\u1EC7m \u0111o\u1EA1n m\xE3 m\u1ED9t c\xE1\
   ch th\u1EF1c t\u1EBF. C\xE1c l\u1EADp tr\xECnh\u2026"
 title: "S\u1EED d\u1EE5ng v\u1ECF t\u01B0\u01A1ng t\xE1c (REPL)"
+weight: 34
 ---
-
-{{< edit_this_page >}}
 
 ## Cái gì và Tại sao?
 Một bảng điều khiển tương tác, hay REPL (Read-Eval-Print Loop - Vòng Lặp Đọc-Đánh Giá-In), cho phép bạn thử nghiệm đoạn mã một cách thực tế. Các lập trình viên Elixir sử dụng REPL, gọi là IEx (Interactive Elixir), để thí nghiệm, gỡ lỗi và học ngôn ngữ.

@@ -9,9 +9,8 @@ summary: "Att hitta l\xE4ngden p\xE5 en str\xE4ng i Python betyder att ta reda p
   \ hur m\xE5nga tecken den inneh\xE5ller. Programm\xF6rer g\xF6r detta f\xF6r att\
   \ hantera textdata effektivt\u2026"
 title: "Hitta l\xE4ngden p\xE5 en str\xE4ng"
+weight: 7
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why? (Vad & Varför?)
 

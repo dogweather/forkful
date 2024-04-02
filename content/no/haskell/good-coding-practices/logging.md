@@ -9,9 +9,8 @@ summary: "Logging i programmering inneb\xE6rer i bunn og grunn \xE5 etterlate se
   \ et spor av \"smuler\" i form av registrerte hendelser eller meldinger, som kan\
   \ brukes til\u2026"
 title: "Loggf\xF8ring"
+weight: 17
 ---
-
-{{< edit_this_page >}}
 
 ## Hva & Hvorfor?
 Logging i programmering innebærer i bunn og grunn å etterlate seg et spor av "smuler" i form av registrerte hendelser eller meldinger, som kan brukes til å spore hva applikasjonen din gjør i et gitt øyeblikk. Programmerere gjør dette for å feilsøke problemer, overvåke systemets ytelse, og revidere oppførsel for sikkerhets- og overholdelsesgrunner.

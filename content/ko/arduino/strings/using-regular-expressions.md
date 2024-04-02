@@ -23,9 +23,8 @@ summary: "\uC815\uADDC \uD45C\uD604\uC2DD(regex)\uC740 \uC8FC\uB85C \uBB38\uC790
   \ \uCD94\uCD9C\uD558\uB294 \uB4F1\uC758 \uC791\uC5C5\uC744 \uC704\uD574 \uC815\uADDC\
   \ \uD45C\uD604\uC2DD\uC744 \uD65C\uC6A9\uD558\uC5EC\u2026"
 title: "\uC815\uADDC \uD45C\uD604\uC2DD \uC0AC\uC6A9\uD558\uAE30"
+weight: 11
 ---
-
-{{< edit_this_page >}}
 
 ## 무엇 & 왜?
 정규 표현식(regex)은 주로 문자열의 일치 및 조작을 위해 사용되는 검색 패턴을 정의하는 문자의 시퀀스입니다. 프로그래머들은 아두이노 프로젝트에서 직렬 입력을 파싱하거나, 사용자 입력을 검증하거나, 문자열에서 데이터를 추출하는 등의 작업을 위해 정규 표현식을 활용하여 데이터 처리의 효율성과 유연성을 향상시킵니다.

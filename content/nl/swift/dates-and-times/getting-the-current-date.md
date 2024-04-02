@@ -10,9 +10,8 @@ model: gpt-4-0125-preview
 summary: "In Swift houdt het verkrijgen van de huidige datum in dat je toegang krijgt\
   \ tot de huidige tijd- en datuminstellingen van het systeem. Programmeurs doen\u2026"
 title: Het huidige datum ophalen
+weight: 29
 ---
-
-{{< edit_this_page >}}
 
 ## Wat & Waarom?
 

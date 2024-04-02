@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Commandoregelargumenten lezen stelt een C# programma in staat om gebruikersinvoer\
   \ te verwerken die bij het starten wordt gegeven. Programmeurs gebruiken\u2026"
 title: Commandoregelargumenten lezen
+weight: 23
 ---
-
-{{< edit_this_page >}}
 
 ## Wat & Waarom?
 Commandoregelargumenten lezen stelt een C# programma in staat om gebruikersinvoer te verwerken die bij het starten wordt gegeven. Programmeurs gebruiken dit om app-gedrag aan te passen zonder de code te wijzigen.

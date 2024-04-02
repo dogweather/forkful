@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Das L\xF6schen von Zeichen, die einem spezifischen Muster entsprechen, bezieht\
   \ sich auf das Entfernen bestimmter Zeichen oder Zeichenfolgen aus\u2026"
 title: "Zeichen l\xF6schen, die einem Muster entsprechen"
+weight: 5
 ---
-
-{{< edit_this_page >}}
 
 ## Was & Warum?
 

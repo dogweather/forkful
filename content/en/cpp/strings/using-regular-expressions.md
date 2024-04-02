@@ -8,9 +8,8 @@ model: gpt-4-0125-preview
 summary: "Regular expressions in C++ are sequences of characters that define a search\
   \ pattern, used for string matching or manipulation. Programmers use them for\u2026"
 title: Using regular expressions
+weight: 11
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 Regular expressions in C++ are sequences of characters that define a search pattern, used for string matching or manipulation. Programmers use them for tasks such as validating input, searching for occurrences within strings, or breaking strings into tokens, making them an indispensable tool for efficient and effective text processing.

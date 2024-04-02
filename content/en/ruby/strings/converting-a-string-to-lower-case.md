@@ -7,9 +7,8 @@ model: gpt-4-1106-preview
 summary: "In Ruby, converting a string to lower case means changing all the uppercase\
   \ letters in the string to their lowercase counterparts. Programmers do this for\u2026"
 title: Converting a string to lower case
+weight: 4
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 

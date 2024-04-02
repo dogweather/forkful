@@ -9,9 +9,8 @@ summary: "Debug-utskrift er \xE5 kaste ut data til konsollen for \xE5 spore hva 
   \ ditt gj\xF8r. Programmerere gj\xF8r dette for \xE5 forst\xE5 feil og forbedre\
   \ kodeflyten."
 title: "Skrive ut feils\xF8kingsdata"
+weight: 33
 ---
-
-{{< edit_this_page >}}
 
 ## Hva & Hvorfor?
 Debug-utskrift er å kaste ut data til konsollen for å spore hva programmet ditt gjør. Programmerere gjør dette for å forstå feil og forbedre kodeflyten.

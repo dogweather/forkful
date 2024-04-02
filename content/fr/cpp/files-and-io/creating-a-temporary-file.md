@@ -9,9 +9,8 @@ summary: "Cr\xE9er un fichier temporaire permet de stocker des donn\xE9es de fa\
   on \xE9ph\xE9m\xE8re pendant l'ex\xE9cution d'un programme. On le fait pour manipuler\
   \ des donn\xE9es sans\u2026"
 title: "Cr\xE9ation d'un fichier temporaire"
+weight: 21
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 

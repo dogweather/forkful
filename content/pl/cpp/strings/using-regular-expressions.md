@@ -11,9 +11,8 @@ summary: "Wyra\u017Cenia regularne w C++ to sekwencje znak\xF3w definiuj\u0105ce
   \ wyszukiwania, u\u017Cywane do dopasowywania lub manipulacji ci\u0105gami znak\xF3\
   w. Programi\u015Bci\u2026"
 title: "Korzystanie z wyra\u017Ce\u0144 regularnych"
+weight: 11
 ---
-
-{{< edit_this_page >}}
 
 ## Co i dlaczego?
 Wyrażenia regularne w C++ to sekwencje znaków definiujące wzorzec wyszukiwania, używane do dopasowywania lub manipulacji ciągami znaków. Programiści używają ich do zadań takich jak walidacja danych wejściowych, wyszukiwanie wystąpień w ciągach znaków czy dzielenie ciągów na tokeny, co czyni je niezbędnym narzędziem dla efektywnej i skutecznej obróbki tekstu.

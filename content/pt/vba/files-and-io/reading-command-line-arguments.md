@@ -11,9 +11,8 @@ summary: "Ler argumentos da linha de comando em Visual Basic para Aplica\xE7\xF5
   \ (VBA) envolve acessar par\xE2metros passados ao seu programa durante a execu\xE7\
   \xE3o. Esta\u2026"
 title: Lendo argumentos da linha de comando
+weight: 23
 ---
-
-{{< edit_this_page >}}
 
 ## O Quê e Por Quê?
 

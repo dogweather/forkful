@@ -9,9 +9,8 @@ summary: "Comparar dos fechas es ver si son iguales, cu\xE1l viene antes o despu
   s. Programadores lo hacen para eventos, estad\xEDsticas, funciones de recordatorio\
   \ y todo\u2026"
 title: "Comparaci\xF3n de dos fechas"
+weight: 27
 ---
-
-{{< edit_this_page >}}
 
 ## ¿Qué y Por Qué?
 Comparar dos fechas es ver si son iguales, cuál viene antes o después. Programadores lo hacen para eventos, estadísticas, funciones de recordatorio y todo lo que necesita un orden temporal.

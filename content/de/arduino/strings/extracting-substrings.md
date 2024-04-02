@@ -8,9 +8,8 @@ model: gpt-4-1106-preview
 summary: "Das Herausfiltern von Teilstrings, also Substrings, ist der Prozess des\
   \ Isolierens eines bestimmten Teils eines Strings. Programmierer nutzen das, um\u2026"
 title: Teilstrings extrahieren
+weight: 6
 ---
-
-{{< edit_this_page >}}
 
 ## Was & Warum?
 Das Herausfiltern von Teilstrings, also Substrings, ist der Prozess des Isolierens eines bestimmten Teils eines Strings. Programmierer nutzen das, um spezifische Daten aus größeren Textmengen zu extrahieren oder um Datenformate anzupassen.

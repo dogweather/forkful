@@ -11,9 +11,8 @@ summary: "CSV (Valores Separados por V\xEDrgula) s\xE3o arquivos de um formato c
   \ de troca de dados que representam dados tabulares em texto simples, usando v\xED\
   rgulas\u2026"
 title: Trabalhando com CSV
+weight: 37
 ---
-
-{{< edit_this_page >}}
 
 ## O que é & Por quê?
 CSV (Valores Separados por Vírgula) são arquivos de um formato comum de troca de dados que representam dados tabulares em texto simples, usando vírgulas para separar os valores individuais. Programadores trabalham com arquivos CSV para importar, exportar e manipular dados com facilidade entre várias aplicações e serviços, já que é um formato simples, amplamente suportado e compatível com aplicações de planilhas, bancos de dados e linguagens de programação.

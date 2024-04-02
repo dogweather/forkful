@@ -7,9 +7,8 @@ lastmod: '2024-03-13T22:44:42.822315-06:00'
 model: gpt-4-0125-preview
 summary: "YAML\u306F\u3001\u300CYAML Ain't Markup\u2026"
 title: "YAML\u3068\u306E\u4F5C\u696D"
+weight: 41
 ---
-
-{{< edit_this_page >}}
 
 ## 何となく？
 

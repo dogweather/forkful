@@ -11,9 +11,8 @@ summary: "Arredondar n\xFAmeros \xE9 o processo de ajustar os d\xEDgitos de um n
   mero para reduzir sua precis\xE3o de acordo com certas regras, seja em dire\xE7\xE3\
   o ao n\xFAmero\u2026"
 title: "Arredondamento de n\xFAmeros"
+weight: 13
 ---
-
-{{< edit_this_page >}}
 
 ## O Que e Por Quê?
 

@@ -2,15 +2,16 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 18:10:03.394298-07:00
-description: "Utiliser un d\xE9bogueur en programmation Go implique l'utilisation\
-  \ d'outils ou de fonctionnalit\xE9s pour inspecter et modifier l'\xE9tat d'un programme\
-  \ en cours\u2026"
+description: "Go fournit une facilit\xE9 int\xE9gr\xE9e pour le d\xE9bogage appel\xE9\
+  e `delve`. C'est un outil de d\xE9bogage complet qui vous permet d'ex\xE9cuter des\
+  \ programmes Go pas \xE0\u2026"
 lastmod: '2024-03-13T22:44:57.138866-06:00'
 model: gpt-4-0125-preview
-summary: "Utiliser un d\xE9bogueur en programmation Go implique l'utilisation d'outils\
-  \ ou de fonctionnalit\xE9s pour inspecter et modifier l'\xE9tat d'un programme en\
-  \ cours\u2026"
+summary: "Go fournit une facilit\xE9 int\xE9gr\xE9e pour le d\xE9bogage appel\xE9\
+  e `delve`. C'est un outil de d\xE9bogage complet qui vous permet d'ex\xE9cuter des\
+  \ programmes Go pas \xE0\u2026"
 title: "Utiliser un d\xE9bogueur"
+weight: 35
 ---
 
 ## Comment faire :

@@ -11,9 +11,8 @@ summary: "HTML:n j\xE4sent\xE4minen on tietojen tai datan poimimista HTML-sis\xE
   ll\xF6st\xE4, yleinen teht\xE4v\xE4 ty\xF6skennelt\xE4ess\xE4 web-datan kanssa.\
   \ Ohjelmoijat tekev\xE4t t\xE4m\xE4n\u2026"
 title: "HTML:n j\xE4sennys"
+weight: 43
 ---
-
-{{< edit_this_page >}}
 
 ## Mikä & Miksi?
 

@@ -22,9 +22,8 @@ summary: "\u05DE\u05D7\u05D9\u05E7\u05EA \u05EA\u05D5\u05D5\u05D9\u05DD \u05D4\u
   \ \u05DC\u05E4\u05E9\u05D8 \u05E0\u05EA\u05D5\u05E0\u05D9\u05DD."
 title: "\u05DE\u05D7\u05D9\u05E7\u05EA \u05EA\u05D5\u05D5\u05D9\u05DD \u05D4\u05EA\
   \u05D5\u05D0\u05DE\u05D9\u05DD \u05DC\u05EA\u05D1\u05E0\u05D9\u05EA"
+weight: 5
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why? (מה ולמה?)
 מחיקת תווים התואמים לתבנית היא כאשר אתה סורק מחרוזת ומסיר תווים כדי לעצב את הטקסט לפורמט ספציפי. תכנתים עושים זאת לטהר, לאמת, או לפשט נתונים.

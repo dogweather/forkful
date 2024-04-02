@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Das L\xF6schen von Zeichen, die einem bestimmten Muster in Strings entsprechen,\
   \ ist entscheidend f\xFCr die Datenvalidierung, -bereinigung oder die Vorbereitung\u2026"
 title: "Zeichen, die einem Muster entsprechen, l\xF6schen"
+weight: 5
 ---
-
-{{< edit_this_page >}}
 
 ## Was & Warum?
 

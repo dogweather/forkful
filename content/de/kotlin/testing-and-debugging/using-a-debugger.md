@@ -1,13 +1,13 @@
 ---
 date: 2024-01-26 03:49:54.318756-07:00
-description: "Sich in einen Debugger einzuarbeiten bedeutet, Schritt f\xFCr Schritt\
-  \ durch den Code zu gehen, die Abl\xE4ufe zu beobachten und diese l\xE4stigen Fehler\
-  \ auf\u2026"
+description: "Hier ist ein kleiner Vorgeschmack darauf, wie man in Kotlin mit IntelliJ\
+  \ IDEA debuggt - dem Sherlock Holmes der IDEs: ```kotlin fun main() { val\u2026"
 lastmod: '2024-03-13T22:44:53.850863-06:00'
 model: gpt-4-0125-preview
-summary: "Sich in einen Debugger einzuarbeiten bedeutet, Schritt f\xFCr Schritt durch\
-  \ den Code zu gehen, die Abl\xE4ufe zu beobachten und diese l\xE4stigen Fehler auf\u2026"
+summary: "Hier ist ein kleiner Vorgeschmack darauf, wie man in Kotlin mit IntelliJ\
+  \ IDEA debuggt - dem Sherlock Holmes der IDEs: ```kotlin fun main() { val\u2026"
 title: Einsatz eines Debuggers
+weight: 35
 ---
 
 ## Wie:

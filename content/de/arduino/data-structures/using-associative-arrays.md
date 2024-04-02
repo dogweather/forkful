@@ -11,9 +11,8 @@ summary: "In der Welt von Arduino erm\xF6glichen assoziative Arrays, Schl\xFCsse
   \ mit Werten zu verkn\xFCpfen, \xE4hnlich wie man Socken ihren Paaren zuordnet.\
   \ Sie sind eine\u2026"
 title: Verwendung von assoziativen Arrays
+weight: 15
 ---
-
-{{< edit_this_page >}}
 
 ## Was & Warum?
 In der Welt von Arduino ermöglichen assoziative Arrays, Schlüssel mit Werten zu verknüpfen, ähnlich wie man Socken ihren Paaren zuordnet. Sie sind eine bevorzugte Wahl, wenn man Daten unter Verwendung beschreibender Namen speichern und abrufen möchte, was den Code sauberer und verständlicher macht.

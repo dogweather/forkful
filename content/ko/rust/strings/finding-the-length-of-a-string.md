@@ -14,9 +14,8 @@ summary: "\uBB38\uC790\uC5F4 \uAE38\uC774 \uCC3E\uAE30\uB294 \uBB38\uC790\uC758 
   \ \uC785\uB825\uC744 \uD544\uC694\uB85C \uD560 \uB54C \uC720\uC6A9\uD569\uB2C8\uB2E4\
   ."
 title: "\uBB38\uC790\uC5F4\uC758 \uAE38\uC774 \uCC3E\uAE30"
+weight: 7
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why? (무엇이며 왜?)
 문자열 길이 찾기는 문자의 총 개수를 세는 것입니다. 메모리 사용을 최적화하거나, 특정 길이의 입력을 필요로 할 때 유용합니다.

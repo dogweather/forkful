@@ -11,9 +11,8 @@ summary: "Att arbeta med CSV-filer (Comma-Separated Values eller komma-separerad
   \ v\xE4rden) inneb\xE4r att tolka och generera filer som lagrar tabul\xE4r data\
   \ i ett enkelt,\u2026"
 title: Arbeta med CSV
+weight: 37
 ---
-
-{{< edit_this_page >}}
 
 ## Vad & Varför?
 

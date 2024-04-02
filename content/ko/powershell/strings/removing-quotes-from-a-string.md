@@ -19,9 +19,8 @@ summary: "PowerShell\uC5D0\uC11C \uBB38\uC790\uC5F4\uC5D0\uC11C \uB530\uC634\uD4
   \uB85C \uBB38\uC790\uC5F4\uC744 \uC815\uB9AC\uD560 \uD544\uC694\uAC00 \uC790\uC8FC\
   \ \uC788\uC2B5\uB2C8\uB2E4."
 title: "\uBB38\uC790\uC5F4\uC5D0\uC11C \uB530\uC634\uD45C \uC81C\uAC70\uD558\uAE30"
+weight: 9
 ---
-
-{{< edit_this_page >}}
 
 ## 무엇 & 왜?
 PowerShell에서 문자열에서 따옴표를 제거하면 텍스트 주위에 있는 단일(`'`) 또는 이중(`"`) 따옴표를 제거합니다. 프로그래머들은 특히 사용자 입력이나 파일 파싱을 다룰 때 처리, 비교 또는 출력 목적으로 문자열을 정리할 필요가 자주 있습니다.

@@ -8,9 +8,8 @@ model: gpt-4-1106-preview
 summary: "Mit\xE4 ja Miksi? K\xE4\xE4nt\xE4minen merkkijono pieniksi kirjaimiksi tarkoittaa\
   \ kaikkien kirjainten muuttamista niiden pienikokoisiksi vastineiksi. Ohjelmoijat\u2026"
 title: Merkkijonon muuntaminen pieniksi kirjaimiksi
+weight: 4
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 Mitä ja Miksi? Kääntäminen merkkijono pieniksi kirjaimiksi tarkoittaa kaikkien kirjainten muuttamista niiden pienikokoisiksi vastineiksi. Ohjelmoijat käyttävät tätä esimerkiksi syötteiden yhdenmukaistamiseen, helpottamaan vertailua ja vähentämään isot ja pienet kirjaimet huomioivat virheet.

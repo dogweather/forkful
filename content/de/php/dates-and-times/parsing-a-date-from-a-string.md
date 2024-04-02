@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Das Parsen eines Datums aus einem String in PHP beinhaltet das Umwandeln\
   \ von Text, der ein Datum und/oder eine Zeit repr\xE4sentiert, in ein PHP `DateTime`\u2026"
 title: Einen Datum aus einem String analysieren
+weight: 30
 ---
-
-{{< edit_this_page >}}
 
 ## Was & Warum?
 

@@ -11,9 +11,8 @@ summary: "Przetwarzanie daty z ci\u0105gu znak\xF3w polega na konwersji tekstowe
   \ informacji o dacie i czasie na obiekt datetime lub r\xF3wnowa\u017Cny, uporz\u0105\
   dkowany format.\u2026"
 title: "Analiza sk\u0142adniowa daty z \u0142a\u0144cucha znak\xF3w"
+weight: 30
 ---
-
-{{< edit_this_page >}}
 
 ## Co i dlaczego?
 Przetwarzanie daty z ciągu znaków polega na konwersji tekstowej informacji o dacie i czasie na obiekt datetime lub równoważny, uporządkowany format. Czynność ta jest powszechnie wykonywana, aby umożliwić operacje na datach, takie jak arytmetyka, porównania i formatowanie, w sposób niezależny od języka i regionu. Programiści robią to, aby efektywnie obsługiwać i manipulować danymi czasowymi pozyskanymi z logów, danych wprowadzonych przez użytkowników lub źródeł zewnętrznych.

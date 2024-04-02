@@ -16,9 +16,8 @@ summary: "\uB0A0\uC9DC \uACC4\uC0B0\uC740 \uBBF8\uB798\uB098 \uACFC\uAC70\uC758 
   \ \uB2EC\uB77C\uC9C0\uB294 \uAE30\uB2A5\uC744 \uAD6C\uD604\uD560 \uB54C \uC0AC\uC6A9\
   \uD569\uB2C8\uB2E4."
 title: "\uBBF8\uB798\uB098 \uACFC\uAC70\uC758 \uB0A0\uC9DC \uACC4\uC0B0\uD558\uAE30"
+weight: 26
 ---
-
-{{< edit_this_page >}}
 
 ## 무엇이며 왜?
 날짜 계산은 미래나 과거의 특정 날짜를 찾는 것입니다. 예약 시스템, 할인 쿠폰 만료일 확인, 또는 경과 시간 추적처럼, 시간에 따라 달라지는 기능을 구현할 때 사용합니다.

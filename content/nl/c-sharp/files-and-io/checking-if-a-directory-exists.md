@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Het controleren van het bestaan van een map in C# stelt je in staat om te\
   \ bevestigen of een specifieke map beschikbaar is in het bestandssysteem.\u2026"
 title: Controleren of een directory bestaat
+weight: 20
 ---
-
-{{< edit_this_page >}}
 
 ## Wat & Waarom?
 Het controleren van het bestaan van een map in C# stelt je in staat om te bevestigen of een specifieke map beschikbaar is in het bestandssysteem. Programmeurs doen dit om fouten te voorkomen, zoals proberen te lezen van of schrijven naar een niet-bestaande map, wat hun programma's zou doen crashen of onvoorspelbaar zou laten gedragen.

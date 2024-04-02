@@ -8,9 +8,8 @@ model: gpt-4-0125-preview
 summary: "Parsing HTML in C involves analyzing HTML documents to extract data, structure,\
   \ or specific parts efficiently, often as a precursor to data mining or web\u2026"
 title: Parsing HTML
+weight: 43
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 

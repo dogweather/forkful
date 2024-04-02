@@ -9,9 +9,8 @@ summary: "Debug-Ausgaben zu drucken ist das Anzeigen von Informationen zur Laufz
   \ um den Zustand einer Anwendung zu \xFCberpr\xFCfen. Programmierer nutzen dies,\
   \ um\u2026"
 title: Debug-Ausgaben drucken
+weight: 33
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 Debug-Ausgaben zu drucken ist das Anzeigen von Informationen zur Laufzeit, um den Zustand einer Anwendung zu überprüfen. Programmierer nutzen dies, um Fehler schneller zu finden und zu verstehen, was im Code vor sich geht.

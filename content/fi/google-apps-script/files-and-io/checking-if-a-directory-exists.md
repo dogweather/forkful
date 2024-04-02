@@ -11,9 +11,8 @@ summary: "Hakemiston olemassaolon tarkistaminen Google Apps Scriptill\xE4 tarkoi
   \ kansion olemassaolon varmistamista Google Drivess\xE4. Ohjelmoijat suorittavat\
   \ usein\u2026"
 title: Tarkistetaan, onko hakemisto olemassa
+weight: 20
 ---
-
-{{< edit_this_page >}}
 
 ## Mikä ja miksi?
 

@@ -11,9 +11,8 @@ summary: "Escrever para o erro padr\xE3o em C envolve direcionar mensagens de er
   \ e informa\xE7\xF5es de diagn\xF3stico para um fluxo separado da sa\xEDda principal\
   \ do programa.\u2026"
 title: "Escrevendo no erro padr\xE3o"
+weight: 25
 ---
-
-{{< edit_this_page >}}
 
 ## O Quê & Por Quê?
 

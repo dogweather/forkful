@@ -11,9 +11,8 @@ summary: "Sprawdzanie, czy katalog istnieje w JavaScript, jest kluczowe dla zada
   \ manipulacji plikami. Pozwala skryptom zweryfikowa\u0107 obecno\u015B\u0107 katalogu\
   \ przed\u2026"
 title: Sprawdzanie, czy katalog istnieje
+weight: 20
 ---
-
-{{< edit_this_page >}}
 
 ## Co i dlaczego?
 Sprawdzanie, czy katalog istnieje w JavaScript, jest kluczowe dla zadań manipulacji plikami. Pozwala skryptom zweryfikować obecność katalogu przed odczytem z niego lub zapisem do niego. Operacja ta zapobiega błędom i zapewnia płynniejsze wykonanie programu, szczególnie w aplikacjach, które dynamicznie obsługują pliki lub katalogi na podstawie wprowadzonych danych użytkownika lub zewnętrznych źródeł danych.

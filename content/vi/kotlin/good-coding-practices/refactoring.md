@@ -13,9 +13,8 @@ summary: "T\xE1i c\u1EA5u tr\xFAc l\xE0 quy tr\xECnh ch\u1EC9nh s\u1EEDa m\xE3 n
   \ \u0111\u1ECDc, v\xE0 hi\u1EC7u su\u1EA5t c\u1EE7a n\xF3 m\xE0 kh\xF4ng thay \u0111\
   \u1ED5i h\xE0nh vi b\xEAn ngo\xE0i c\u1EE7a\u2026"
 title: "T\xE1i c\u1EA5u tr\xFAc m\xE3"
+weight: 19
 ---
-
-{{< edit_this_page >}}
 
 ## Cái gì & Tại sao?
 Tái cấu trúc là quy trình chỉnh sửa mã nguồn hiện có nhằm cải thiện cấu trúc, độ dễ đọc, và hiệu suất của nó mà không thay đổi hành vi bên ngoài của chương trình. Các lập trình viên tiến hành tái cấu trúc để làm cho mã nguồn dễ bảo dưỡng hơn, đơn giản hóa việc thêm các tính năng mới, và dễ dàng phát hiện và sửa lỗi hơn.

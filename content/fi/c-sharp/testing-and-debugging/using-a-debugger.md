@@ -1,14 +1,15 @@
 ---
 date: 2024-01-26 03:47:59.489645-07:00
-description: "Debuggerin k\xE4ytt\xE4minen tarkoittaa erikoisty\xF6kalujen k\xE4ytt\xF6\
-  \xE4 koodin testaamiseen ja diagnostiikkaan. Ohjelmoijat tekev\xE4t niin virheiden\
-  \ l\xF6yt\xE4miseksi,\u2026"
+description: "Kuvittele, ett\xE4 sinulla on pieni ohjelma, joka ei toimi oikein: ```C#\
+  \ static void Main() { int tulos = Summa(1, 2); Console.WriteLine(tulos); } static\
+  \ int\u2026"
 lastmod: '2024-03-13T22:44:56.577537-06:00'
 model: gpt-4-0125-preview
-summary: "Debuggerin k\xE4ytt\xE4minen tarkoittaa erikoisty\xF6kalujen k\xE4ytt\xF6\
-  \xE4 koodin testaamiseen ja diagnostiikkaan. Ohjelmoijat tekev\xE4t niin virheiden\
-  \ l\xF6yt\xE4miseksi,\u2026"
+summary: "Kuvittele, ett\xE4 sinulla on pieni ohjelma, joka ei toimi oikein: ```C#\
+  \ static void Main() { int tulos = Summa(1, 2); Console.WriteLine(tulos); } static\
+  \ int\u2026"
 title: "Debuggerin k\xE4ytt\xF6"
+weight: 35
 ---
 
 ## Kuinka:

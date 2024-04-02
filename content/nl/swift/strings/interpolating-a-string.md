@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Het interpoleren van een string houdt in dat je variabelen in een letterlijke\
   \ string invoegt. Programmeurs doen dit om dynamisch strings te construeren,\u2026"
 title: Een string interpoleren
+weight: 8
 ---
-
-{{< edit_this_page >}}
 
 ## Wat & Waarom?
 Het interpoleren van een string houdt in dat je variabelen in een letterlijke string invoegt. Programmeurs doen dit om dynamisch strings te construeren, waardoor het gemakkelijker wordt om variabele gegevens in de output op te nemen.

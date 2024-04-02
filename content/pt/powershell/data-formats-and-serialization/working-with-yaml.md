@@ -11,9 +11,8 @@ summary: "YAML, ou YAML Ain't Markup Language, \xE9 uma linguagem de serializa\x
   \xE3o de dados leg\xEDvel por humanos. Programadores frequentemente a utilizam para\
   \ arquivos\u2026"
 title: Trabalhando com YAML
+weight: 41
 ---
-
-{{< edit_this_page >}}
 
 ## O Que & Por Quê?
 YAML, ou YAML Ain't Markup Language, é uma linguagem de serialização de dados legível por humanos. Programadores frequentemente a utilizam para arquivos de configuração e transmissão de dados entre linguagens. Sua simplicidade e legibilidade a tornam particularmente popular para tarefas que envolvem a configuração de ambientes, aplicações ou serviços onde as configurações são cruciais e devem ser facilmente compreendidas e editadas.

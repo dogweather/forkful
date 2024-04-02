@@ -19,9 +19,8 @@ summary: "\u05E2\u05D1\u05D5\u05D3\u05D4 \u05E2\u05DD JSON (JavaScript Object No
   \u05D9\u05DE\u05D4 \u05D6\u05D5 \u05D4\u05D9\u05D0 \u05D9\u05E1\u05D5\u05D3\u05D9\
   \u05EA \u05E2\u05D1\u05D5\u05E8\u2026"
 title: "\u05E2\u05D1\u05D5\u05D3\u05D4 \u05E2\u05DD JSON"
+weight: 38
 ---
-
-{{< edit_this_page >}}
 
 ## מה ולמה?
 עבודה עם JSON (JavaScript Object Notation) ב-Clojure כוללת ניתוח מחרוזות JSON למבני נתונים של Clojure (מפות, וקטורים) ולהיפך. משימה זו היא יסודית עבור שירותי רשת, API-ים, ויישומים שצריכים לתקשר נתונים בפורמט טקסטואלי מובנה, מכיוון ש-JSON מוכר ונתמך באופן כללי בסביבות תכנות שונות.

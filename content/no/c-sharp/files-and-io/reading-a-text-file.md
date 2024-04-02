@@ -9,9 +9,8 @@ summary: "\xC5 lese en tekstfil i C# betyr at du henter og behandler tekstdata f
   \ en fil. Det er en grunnleggende kompetanse fordi filer ofte inneholder viktige\
   \ data\u2026"
 title: Lese en tekstfil
+weight: 22
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why? (Hva & Hvorfor?)
 

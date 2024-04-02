@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Scrivere su standard error (stderr) consiste nell'inviare messaggi di errore\
   \ e diagnostica su un flusso separato, distinto dall'output standard (stdout),\u2026"
 title: Scrivere sull'errore standard
+weight: 25
 ---
-
-{{< edit_this_page >}}
 
 ## Cosa e Perché?
 

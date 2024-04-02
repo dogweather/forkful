@@ -13,9 +13,8 @@ summary: "\u0110\u1ECDc m\u1ED9t t\u1EC7p v\u0103n b\u1EA3n trong PHP c\xF3 ngh\
   n. L\u1EADp tr\xECnh vi\xEAn l\xE0m \u0111i\u1EC1u n\xE0y \u0111\u1EC3 x\u1EED l\xFD\
   \ vi\u1EC7c l\u01B0u tr\u1EEF d\u1EEF li\u1EC7u, c\u1EA5u h\xECnh,\u2026"
 title: "\u0110\u1ECDc m\u1ED9t t\u1EC7p v\u0103n b\u1EA3n"
+weight: 22
 ---
-
-{{< edit_this_page >}}
 
 ## Gì & Tại sao?
 Đọc một tệp văn bản trong PHP có nghĩa là kéo nội dung từ một tệp vào script của bạn. Lập trình viên làm điều này để xử lý việc lưu trữ dữ liệu, cấu hình, hoặc để xử lý các bộ dữ liệu lớn mà không làm rối code của họ.

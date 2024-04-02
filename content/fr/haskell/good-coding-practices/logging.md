@@ -9,9 +9,8 @@ summary: "La journalisation en programmation consiste essentiellement \xE0 laiss
   \ une trace de miettes de pain sous forme d'\xE9v\xE9nements ou de messages enregistr\xE9\
   s, qui\u2026"
 title: Journalisation
+weight: 17
 ---
-
-{{< edit_this_page >}}
 
 ## Quoi & Pourquoi ?
 La journalisation en programmation consiste essentiellement à laisser une trace de miettes de pain sous forme d'événements ou de messages enregistrés, qui peuvent être utilisés pour suivre ce que fait votre application à tout moment. Les programmeurs le font pour déboguer des problèmes, surveiller la performance du système, et auditer le comportement pour des raisons de sécurité et de conformité.

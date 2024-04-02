@@ -7,9 +7,8 @@ model: gpt-4-1106-preview
 summary: "Concatenare le stringhe significa unire due o pi\xF9 sequenze di testo in\
   \ una sola. Lo facciamo perch\xE9 spesso dobbiamo combinare vari pezzi di informazioni\u2026"
 title: Concatenazione di stringhe
+weight: 3
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 Concatenare le stringhe significa unire due o più sequenze di testo in una sola. Lo facciamo perché spesso dobbiamo combinare vari pezzi di informazioni testuali in un formato specifico o costruire messaggi dinamici.

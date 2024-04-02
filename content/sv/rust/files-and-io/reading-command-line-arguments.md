@@ -9,9 +9,8 @@ summary: "L\xE4sning av kommandoradsargument l\xE5ter programmet hantera indata 
   \ f\xE5r vid start. Programmerare g\xF6r detta f\xF6r att till\xE5ta flexibilitet\
   \ och\u2026"
 title: "L\xE4sa in kommandoradsargument"
+weight: 23
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 Läsning av kommandoradsargument låter programmet hantera indata den får vid start. Programmerare gör detta för att tillåta flexibilitet och användarspecifika inställningar utan att ändra koden.

@@ -9,9 +9,8 @@ summary: "Att starta ett nytt projekt i Java \xE4r som att \xF6ppna en ny, blank
   \ potentialen \xE4r o\xE4ndlig. Programmerare startar nya projekt f\xF6r att omvandla\
   \ id\xE9er\u2026"
 title: "Att p\xE5b\xF6rja ett nytt projekt"
+weight: 1
 ---
-
-{{< edit_this_page >}}
 
 ## Vad & Varför?
 Att starta ett nytt projekt i Java är som att öppna en ny, blank dagbok; potentialen är oändlig. Programmerare startar nya projekt för att omvandla idéer till kod, lösa problem eller testa ny funktionalitet.

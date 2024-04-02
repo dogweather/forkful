@@ -7,9 +7,8 @@ model: gpt-4-0125-preview
 summary: "Merkkijonosta lainausmerkkien poistaminen PHP:ss\xE4 tarkoittaa niiden kiusallisten\
   \ kaksinkertaisten (`\"`) tai yksinkertaisten (`'`) lainausmerkkien\u2026"
 title: Merkkijonosta lainausmerkkien poistaminen
+weight: 9
 ---
-
-{{< edit_this_page >}}
 
 ## Mikä & Miksi?
 Merkkijonosta lainausmerkkien poistaminen PHP:ssä tarkoittaa niiden kiusallisten kaksinkertaisten (`"`) tai yksinkertaisten (`'`) lainausmerkkien poistamista, jotka voivat sotkea koodilogiikkasi tai tietokantakyselyt. Ohjelmoijat tekevät sen puhdistaakseen tai desinfioidakseen syötetietoja, varmistaen että merkkijonot ovat turvallisesti käytettävissä tai tallennettu.

@@ -1,13 +1,13 @@
 ---
 date: 2024-01-26 03:50:03.184815-07:00
-description: "Immergersi in un debugger consiste nel passare attraverso il proprio\
-  \ codice, osservare gli ingranaggi in azione e catturare quei fastidiosi bug con\
-  \ le\u2026"
+description: "Ecco un assaggio del debugging in Kotlin con IntelliJ IDEA - lo Sherlock\
+  \ Holmes degli IDE: ```kotlin fun main() { val mysteryNumber = 42 var guess = 0\u2026"
 lastmod: '2024-03-13T22:44:43.395356-06:00'
 model: gpt-4-0125-preview
-summary: "Immergersi in un debugger consiste nel passare attraverso il proprio codice,\
-  \ osservare gli ingranaggi in azione e catturare quei fastidiosi bug con le\u2026"
+summary: "Ecco un assaggio del debugging in Kotlin con IntelliJ IDEA - lo Sherlock\
+  \ Holmes degli IDE: ```kotlin fun main() { val mysteryNumber = 42 var guess = 0\u2026"
 title: Utilizzo di un debugger
+weight: 35
 ---
 
 ## Come fare:

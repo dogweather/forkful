@@ -7,9 +7,8 @@ model: gpt-4-1106-preview
 summary: "Complex numbers are numbers with a real and an imaginary part (like 3 +\
   \ 4i). They crop up in various programming problems, especially in signal\u2026"
 title: Working with complex numbers
+weight: 14
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 Complex numbers are numbers with a real and an imaginary part (like 3 + 4i). They crop up in various programming problems, especially in signal processing, quantum computing, and solving polynomial equations. Programmers juggle them to crunch these kind of tasks effectively.

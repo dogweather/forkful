@@ -9,9 +9,8 @@ summary: "Praca z XML oznacza manipulowanie danymi w powszechnym, strukturyzowan
   \ formacie, u\u017Cywanym w konfiguracjach, komunikacji i wielu innych. Programi\u015B\
   ci\u2026"
 title: Praca z XML
+weight: 40
 ---
-
-{{< edit_this_page >}}
 
 ## Co i dlaczego?
 Praca z XML oznacza manipulowanie danymi w powszechnym, strukturyzowanym formacie, używanym w konfiguracjach, komunikacji i wielu innych. Programiści manipulują XML-em, aby odczytywać, zapisywać, aktualizować i wyszukiwać dane — co jest kluczowe dla interoperacyjności w wielu aplikacjach i usługach.

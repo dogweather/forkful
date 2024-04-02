@@ -9,9 +9,8 @@ summary: "Supprimer des caract\xE8res correspondant \xE0 un motif consiste \xE0 
   \ de notre texte des s\xE9quences sp\xE9cifiques de caract\xE8res. On le fait souvent\
   \ pour\u2026"
 title: "Suppression de caract\xE8res correspondant \xE0 un motif"
+weight: 5
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why? (Quoi et Pourquoi ?)
 

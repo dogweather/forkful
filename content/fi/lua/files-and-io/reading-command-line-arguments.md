@@ -9,9 +9,8 @@ summary: "Mit\xE4 & Miksi? Komentoriviparametrien lukeminen mahdollistaa argumen
   \ vastaanottamisen suoraan ohjelmallesi. K\xE4yt\xE4mme sit\xE4, jotta k\xE4ytt\xE4\
   j\xE4t voivat\u2026"
 title: Komennoriviparametrien lukeminen
+weight: 23
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 Mitä & Miksi?  

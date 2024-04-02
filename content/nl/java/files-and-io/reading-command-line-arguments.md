@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Command line argumenten lezen in Java is het binnenhalen van input die door\
   \ gebruikers wordt gegeven wanneer ze jouw programma vanaf een console starten.\u2026"
 title: Commandoregelargumenten lezen
+weight: 23
 ---
-
-{{< edit_this_page >}}
 
 ## Wat & Waarom?
 

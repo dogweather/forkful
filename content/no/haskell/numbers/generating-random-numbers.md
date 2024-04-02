@@ -9,9 +9,8 @@ summary: "\xC5 generere tilfeldige tall i Haskell inneb\xE6rer \xE5 skape tall s
   \ er uforutsigbare etter menneskelige standarder. Dette er avgj\xF8rende i scenarier\
   \ som\u2026"
 title: Generering av tilfeldige tall
+weight: 12
 ---
-
-{{< edit_this_page >}}
 
 ## Hva & Hvorfor?
 

@@ -7,9 +7,8 @@ model: gpt-4-1106-preview
 summary: "Iniciar um novo projeto \xE9 como abrir um livro em branco, pronto para\
   \ ser preenchido com c\xF3digo. Programadores embarcam nessa jornada para resolver\u2026"
 title: Iniciando um novo projeto
+weight: 1
 ---
-
-{{< edit_this_page >}}
 
 ## O Quê & Por Quê?
 Iniciar um novo projeto é como abrir um livro em branco, pronto para ser preenchido com código. Programadores embarcam nessa jornada para resolver problemas, expressar ideias ou aprender algo novo. Vamos começar um projeto Lua?

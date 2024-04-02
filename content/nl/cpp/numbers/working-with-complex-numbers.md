@@ -10,9 +10,8 @@ model: gpt-4-0125-preview
 summary: "Complexe getallen breiden de re\xEBle getallen uit door een imaginair eenheid\
   \ toe te voegen, voorgesteld als 'i', waarbij i^2 = -1. Programmeurs gebruiken ze\u2026"
 title: Werken met complexe getallen
+weight: 14
 ---
-
-{{< edit_this_page >}}
 
 ## Wat & Waarom?
 Complexe getallen breiden de reële getallen uit door een imaginair eenheid toe te voegen, voorgesteld als 'i', waarbij i^2 = -1. Programmeurs gebruiken ze voor simulaties, signaalverwerking en het oplossen van wiskundige problemen die werken in twee dimensies vereisen.

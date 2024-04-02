@@ -12,9 +12,8 @@ summary: "Att tolka ett datum fr\xE5n en str\xE4ng handlar om att ta text, som \
   2023-04-05\", och omvandla den till ett datumformat som ditt program kan f\xF6rst\xE5\
   \ och arbeta\u2026"
 title: "Att tolka ett datum fr\xE5n en str\xE4ng"
+weight: 30
 ---
-
-{{< edit_this_page >}}
 
 ## Vad & Varför?
 

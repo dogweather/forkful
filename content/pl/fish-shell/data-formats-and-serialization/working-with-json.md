@@ -10,9 +10,8 @@ model: gpt-4-0125-preview
 summary: "Praca z JSON w Fish Shell polega na analizowaniu i generowaniu danych JSON,\
   \ co jest powszechnym zadaniem podczas konfiguracji aplikacji, interakcji z API\u2026"
 title: Praca z JSON
+weight: 38
 ---
-
-{{< edit_this_page >}}
 
 ## Co i dlaczego?
 

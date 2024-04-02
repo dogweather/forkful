@@ -11,9 +11,8 @@ summary: "Los arreglos asociativos, o mapas hash, te permiten almacenar datos co
   \ pares clave-valor, facilitando la organizaci\xF3n y recuperaci\xF3n de informaci\xF3\
   n por\u2026"
 title: Uso de matrices asociativas
+weight: 15
 ---
-
-{{< edit_this_page >}}
 
 ## ¿Qué y Por Qué?
 

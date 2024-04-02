@@ -19,9 +19,8 @@ summary: "\u5728 Haskell \u4E2D\u5199\u5165\u6807\u51C6\u9519\u8BEF\uFF08stderr\
   \u4E71\u65E0\u7AE0\uFF0Cstdout \u5F80\u5F80\u643A\u5E26\u7A0B\u5E8F\u7684\u4E3B\u8981\
   \u6570\u636E\u6216\u7ED3\u679C\u3002"
 title: "\u5199\u5165\u6807\u51C6\u9519\u8BEF"
+weight: 25
 ---
-
-{{< edit_this_page >}}
 
 ## 什么 & 为什么？
 在 Haskell 中写入标准错误（stderr）允许程序区分它们的输出，把正常结果和错误消息分开。这对于指示问题和调试来说至关重要，而不会让标凊输出（stdout）变得杂乱无章，stdout 往往携带程序的主要数据或结果。

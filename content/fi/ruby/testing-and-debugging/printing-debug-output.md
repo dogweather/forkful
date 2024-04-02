@@ -9,9 +9,8 @@ summary: "Debug-tulostus on koodissa olevien `puts` tai `p` -komentojen k\xE4ytt
   \xE4 v\xE4liaikaisten viestien n\xE4ytt\xE4miseen, jotta n\xE4hd\xE4\xE4n mit\xE4\
   \ ohjelmassa tapahtuu. Se\u2026"
 title: "Virheenj\xE4ljitystulosteiden tulostaminen"
+weight: 33
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why? - Mitä & Miksi?
 Debug-tulostus on koodissa olevien `puts` tai `p` -komentojen käyttöä väliaikaisten viestien näyttämiseen, jotta nähdään mitä ohjelmassa tapahtuu. Se auttaa koodareita ymmärtämään ohjelman käyttäytymistä ja löytämään bugeja nopeasti.

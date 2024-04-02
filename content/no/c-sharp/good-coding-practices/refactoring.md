@@ -9,9 +9,8 @@ summary: "Refaktorisering er prosessen med \xE5 restrukturere eksisterende datap
   \ uten \xE5 endre dens eksterne oppf\xF8rsel. Programmerere gj\xF8r dette for \xE5\
   \ rydde\u2026"
 title: Refaktorering
+weight: 19
 ---
-
-{{< edit_this_page >}}
 
 ## Hva & Hvorfor?
 

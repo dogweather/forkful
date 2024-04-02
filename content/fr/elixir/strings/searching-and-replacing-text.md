@@ -9,9 +9,8 @@ summary: "Chercher et remplacer du texte, c'est update un morceau de texte par u
   \ autre. Les devs font \xE7a pour corriger des erreurs, mettre \xE0 jour des donn\xE9\
   es ou\u2026"
 title: Recherche et remplacement de texte
+weight: 10
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why? (Quoi et Pourquoi ?)
 Chercher et remplacer du texte, c'est update un morceau de texte par un autre. Les devs font ça pour corriger des erreurs, mettre à jour des données ou automatiser des modifications.

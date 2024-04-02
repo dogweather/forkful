@@ -9,9 +9,8 @@ summary: "HTTP-pyynn\xF6n l\xE4hett\xE4minen on tapa siirt\xE4\xE4 tietoa verkon
   \ palvelimelle. Koodarit tekev\xE4t t\xE4t\xE4 hakiakseen tai l\xE4hett\xE4\xE4\
   kseen dataa, p\xE4ivitt\xE4\xE4kseen tilaa\u2026"
 title: "HTTP-pyynn\xF6n l\xE4hett\xE4minen"
+weight: 44
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why? (Mitä & Miksi?)
 HTTP-pyynnön lähettäminen on tapa siirtää tietoa verkon yli palvelimelle. Koodarit tekevät tätä hakiakseen tai lähettääkseen dataa, päivittääkseen tilaa tai pyytääkseen toimintoja etäpalvelimelta.

@@ -19,9 +19,8 @@ summary: "\u0E01\u0E32\u0E23\u0E15\u0E48\u0E2D\u0E40\u0E0A\u0E37\u0E2D\u0E01\u0E
   \u0E1B\u0E25\u0E32\u0E22 - \"hello\" + \"world\" \u0E01\u0E25\u0E32\u0E22\u0E40\u0E1B\
   \u0E47\u0E19 \"helloworld\"\u2026"
 title: "\u0E01\u0E32\u0E23\u0E15\u0E48\u0E2D\u0E2A\u0E15\u0E23\u0E34\u0E07"
+weight: 3
 ---
-
-{{< edit_this_page >}}
 
 ## อะไร และ ทำไม?
 

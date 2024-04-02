@@ -7,9 +7,8 @@ model: gpt-4-0125-preview
 summary: "Removing quotes from a string in Google Apps Script is about eliminating\
   \ unnecessary quotation marks that may surround your string data, usually stemming\u2026"
 title: Removing quotes from a string
+weight: 9
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 

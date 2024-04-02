@@ -13,9 +13,8 @@ summary: "N\u1ED1i chu\u1ED7i \u0111\u01A1n gi\u1EA3n ch\u1EC9 l\xE0 vi\u1EC7c g
   \ n\xF3 gi\u1ED1ng nh\u01B0 vi\u1EC7c t\u1EA1o ra m\u1ED9t \u0111o\xE0n t\xE0u t\u1EEB\
   \ c\xE1c t\u1EEB ch\u1EE9 kh\xF4ng ph\u1EA3i c\xE1c toa t\xE0u. C\xE1c\u2026"
 title: "N\u1ED1i chu\u1ED7i k\xFD t\u1EF1"
+weight: 3
 ---
-
-{{< edit_this_page >}}
 
 ## Gì & Tại Sao?
 

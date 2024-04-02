@@ -9,9 +9,8 @@ summary: "En JavaScript, supprimer des caract\xE8res qui correspondent \xE0 un m
   \ c'est comme filtrer les grains de sable d'un d\xE9sert - on ne garde que ce qu'on\
   \ veut.\u2026"
 title: "Suppression de caract\xE8res correspondant \xE0 un motif"
+weight: 5
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 En JavaScript, supprimer des caractères qui correspondent à un motif, c'est comme filtrer les grains de sable d'un désert - on ne garde que ce qu'on veut. On le fait pour nettoyer des données, valider des entrées ou transformer du texte.

@@ -15,9 +15,8 @@ summary: "L\u1ED7i chu\u1EA9n, th\u01B0\u1EDDng \u0111\u01B0\u1EE3c g\u1ECDi l\x
   o l\u1ED7i. L\u1EADp tr\xECnh vi\xEAn s\u1EED d\u1EE5ng n\xF3 \u0111\u1EC3 ph\xE2\
   n bi\u1EC7t\u2026"
 title: "Ghi v\xE0o l\u1ED7i chu\u1EA9n"
+weight: 25
 ---
-
-{{< edit_this_page >}}
 
 ## Gì và Tại sao?
 Lỗi chuẩn, thường được gọi là stderr, là một luồng tập tin được định nghĩa trước để ghi nhật ký các thông báo lỗi. Lập trình viên sử dụng nó để phân biệt đầu ra chương trình thường xuyên với các thông báo lỗi, giúp việc gỡ lỗi trở nên dễ dàng hơn.

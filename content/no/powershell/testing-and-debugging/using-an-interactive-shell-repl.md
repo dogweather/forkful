@@ -9,9 +9,8 @@ summary: "Det interaktive skallet, eller Read-Eval-Print Loop (REPL), lar deg sk
   \ PowerShell-kommandoer og f\xE5 umiddelbar tilbakemelding. Programmerere bruker\
   \ det\u2026"
 title: Bruke et interaktivt skall (REPL)
+weight: 34
 ---
-
-{{< edit_this_page >}}
 
 ## Hva & Hvorfor?
 Det interaktive skallet, eller Read-Eval-Print Loop (REPL), lar deg skrive PowerShell-kommandoer og få umiddelbar tilbakemelding. Programmerere bruker det for å raskt teste kodebiter, feilsøke eller lære nye kommandoer uten å skrive et komplett skript.

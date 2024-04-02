@@ -11,9 +11,8 @@ summary: "Elm st\xF6der inte YAML inbyggt, ett data serialiseringsformat som oft
   \ anv\xE4nds f\xF6r konfigurationsfiler eller datadelning, p\xE5 grund av dess starka\
   \ betoning\u2026"
 title: Att Arbeta med YAML
+weight: 41
 ---
-
-{{< edit_this_page >}}
 
 ## Vad & Varför?
 Elm stöder inte YAML inbyggt, ett data serialiseringsformat som ofta används för konfigurationsfiler eller datadelning, på grund av dess starka betoning på typsäkerhet och förutsägbara resultat. Programmerare stöter dock ofta på YAML när de hanterar API:er eller konfigurationer inom webbutveckling, vilket kräver tillförlitliga metoder för att tolka YAML-data till Elms strikt typade ekosystem för sömlös integration och manipulation.

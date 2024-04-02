@@ -8,9 +8,8 @@ model: gpt-4-0125-preview
 summary: "TOML es un formato de archivo de configuraci\xF3n, f\xE1cil de leer y escribir\
   \ para los humanos, y f\xE1cil de analizar y generar para las m\xE1quinas. Los\u2026"
 title: Trabajando con TOML
+weight: 39
 ---
-
-{{< edit_this_page >}}
 
 ## ¿Qué y Por Qué?
 TOML es un formato de archivo de configuración, fácil de leer y escribir para los humanos, y fácil de analizar y generar para las máquinas. Los programadores trabajan con TOML para archivos de configuración claros y jerárquicos en proyectos donde la legibilidad es clave.

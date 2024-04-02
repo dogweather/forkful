@@ -11,9 +11,8 @@ summary: "\xC5 analysere en dato fra en streng i Arduino involverer \xE5 trekke 
   \ og konvertere datokomponentene (\xE5r, m\xE5ned, dag) fra en tekstlig representasjon\
   \ til et\u2026"
 title: Analysering av en dato fra en streng
+weight: 30
 ---
-
-{{< edit_this_page >}}
 
 ## Hva & Hvorfor?
 

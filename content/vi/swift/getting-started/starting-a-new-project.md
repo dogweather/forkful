@@ -13,9 +13,8 @@ summary: "B\u1EAFt \u0111\u1EA7u m\u1ED9t d\u1EF1 \xE1n m\u1EDBi \u0111\u1ED3ng 
   \ tr\u01B0\u1EDDng ban \u0111\u1EA7u v\xE0 c\xE1c file cho cu\u1ED9c phi\xEAu l\u01B0\
   u code c\u1EE7a b\u1EA1n. C\xE1c l\u1EADp tr\xECnh vi\xEAn\u2026"
 title: "B\u1EAFt \u0111\u1EA7u m\u1ED9t d\u1EF1 \xE1n m\u1EDBi"
+weight: 1
 ---
-
-{{< edit_this_page >}}
 
 ## Cái gì & Tại sao?
 Bắt đầu một dự án mới đồng nghĩa với việc lăn xã vào việc thiết lập môi trường ban đầu và các file cho cuộc phiêu lưu code của bạn. Các lập trình viên khởi động dự án mới để biến ý tưởng thành phần mềm hoạt động, giống như việc trồng một hạt giống cho một cây số hóa.

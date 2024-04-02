@@ -10,9 +10,8 @@ model: gpt-4-0125-preview
 summary: "Een nieuw project starten betekent het opzetten van de basis voor je codebase.\
   \ Programmeurs doen dit om het ontwikkelingsproces op gang te brengen, de\u2026"
 title: Een nieuw project starten
+weight: 1
 ---
-
-{{< edit_this_page >}}
 
 ## Wat & Waarom?
 Een nieuw project starten betekent het opzetten van de basis voor je codebase. Programmeurs doen dit om het ontwikkelingsproces op gang te brengen, de structuur van het project te leiden en de basis te leggen voor toekomstige code.

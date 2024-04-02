@@ -9,9 +9,8 @@ summary: "Concat\xE9ner des cha\xEEnes, c'est coller ensemble des bouts de texte
   \ en faire un seul morceau. En programmation, \xE7a sert souvent \xE0 assembler\
   \ des donn\xE9es\u2026"
 title: "Concat\xE9nation de cha\xEEnes de caract\xE8res"
+weight: 3
 ---
-
-{{< edit_this_page >}}
 
 ## Quoi & Pourquoi ?
 Concaténer des chaînes, c'est coller ensemble des bouts de texte pour en faire un seul morceau. En programmation, ça sert souvent à assembler des données pour les afficher ou les enregistrer.

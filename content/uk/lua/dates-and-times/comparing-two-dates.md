@@ -8,9 +8,8 @@ summary: Comparing two dates helps you figure out which is earlier or later. Pro
   do it to track time-sensitive events or calculate periods.
 title: "\u041F\u043E\u0440\u0456\u0432\u043D\u044F\u043D\u043D\u044F \u0434\u0432\u043E\
   \u0445 \u0434\u0430\u0442"
+weight: 27
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why? (Що та Чому?)
 Comparing two dates helps you figure out which is earlier or later. Programmers do it to track time-sensitive events or calculate periods.

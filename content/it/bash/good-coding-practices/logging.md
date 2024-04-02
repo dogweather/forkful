@@ -7,9 +7,8 @@ model: gpt-4-1106-preview
 summary: "Il logging \xE8 la pratica di registrare eventi, errori e altre informazioni\
   \ significative dai processi in esecuzione di un programma su un file o uno stream\u2026"
 title: Registrazione Eventi (Logging)
+weight: 17
 ---
-
-{{< edit_this_page >}}
 
 ## Cosa e perché?
 

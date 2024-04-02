@@ -9,9 +9,8 @@ summary: "Wysy\u0142amy zapytanie HTTP, by porozumie\u0107 si\u0119 z serwisami 
   \ Programi\u015Bci robi\u0105 to, aby pobiera\u0107 dane, wysy\u0142a\u0107 informacje,\
   \ autoryzowa\u0107\u2026"
 title: "Wysy\u0142anie \u017C\u0105dania HTTP"
+weight: 44
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why? (Co i dlaczego?)
 Wysyłamy zapytanie HTTP, by porozumieć się z serwisami internetowymi. Programiści robią to, aby pobierać dane, wysyłać informacje, autoryzować użytkowników, i więcej.

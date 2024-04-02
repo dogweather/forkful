@@ -9,9 +9,8 @@ summary: "Konvertering av datum till str\xE4ng inneb\xE4r att omforma ett datumo
   \ till en textrepresentation. Programmerare g\xF6r detta f\xF6r att datumen ska\
   \ vara\u2026"
 title: "Omvandla ett datum till en str\xE4ng"
+weight: 28
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why? (Vad & Varför?)
 Konvertering av datum till sträng innebär att omforma ett datumobjekt till en textrepresentation. Programmerare gör detta för att datumen ska vara lättlästa för användare eller kompatibla med textbaserade format som JSON.

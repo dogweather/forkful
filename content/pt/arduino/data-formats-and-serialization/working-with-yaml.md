@@ -11,9 +11,8 @@ summary: "YAML (YAML N\xE3o \xE9 Uma Linguagem de Marca\xE7\xE3o) \xE9 um padr\x
   o de serializa\xE7\xE3o de dados leg\xEDvel por humanos, que pode ser usado para\
   \ arquivos de configura\xE7\xE3o,\u2026"
 title: Trabalhando com YAML
+weight: 41
 ---
-
-{{< edit_this_page >}}
 
 ## O Que & Por Quê?
 

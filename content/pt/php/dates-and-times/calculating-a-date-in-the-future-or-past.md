@@ -7,9 +7,8 @@ model: gpt-4-1106-preview
 summary: "Calcular uma data no futuro ou no passado \xE9 simplesmente identificar\
   \ uma data al\xE9m ou antes da atual. Programadores fazem isso para lidar com\u2026"
 title: Calculando uma data no futuro ou passado
+weight: 26
 ---
-
-{{< edit_this_page >}}
 
 ## O Quê e Porquê?
 

@@ -11,9 +11,8 @@ summary: "N\xFAmeros complexos, consistindo de uma parte real e uma imagin\xE1ri
   \ (normalmente denotados como a + bi), estendem o conceito dos n\xFAmeros sem dimens\xE3\
   o para\u2026"
 title: "Trabalhando com N\xFAmeros Complexos"
+weight: 14
 ---
-
-{{< edit_this_page >}}
 
 ## O que & Por quê?
 

@@ -10,9 +10,8 @@ model: gpt-4-0125-preview
 summary: "Zoeken en vervangen van tekst gaat over het vinden van tekenreeksen in een\
   \ tekstblok en deze veranderen in iets anders. Programmeurs doen dit voor het\u2026"
 title: Tekst zoeken en vervangen
+weight: 10
 ---
-
-{{< edit_this_page >}}
 
 ## Wat & Waarom?
 Zoeken en vervangen van tekst gaat over het vinden van tekenreeksen in een tekstblok en deze veranderen in iets anders. Programmeurs doen dit voor het bewerken van code, het verwerken van gegevens of het automatiseren van refactor-taken.

@@ -8,9 +8,8 @@ model: gpt-4-0125-preview
 summary: "Getting the current date in C# involves fetching the current date and time\
   \ details from the system. Programmers often need to access this information for\u2026"
 title: Getting the current date
+weight: 29
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 Getting the current date in C# involves fetching the current date and time details from the system. Programmers often need to access this information for logging, timestamping operations, or scheduling tasks within applications, ensuring that actions are timed accurately and data is marked with precise timestamps.

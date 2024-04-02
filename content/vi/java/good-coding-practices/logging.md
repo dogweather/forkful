@@ -13,9 +13,8 @@ summary: "Ghi nh\u1EADt k\xFD l\xE0 qu\xE1 tr\xECnh ghi l\u1EA1i c\xE1c s\u1EF1 
   p tr\xECnh vi\xEAn ghi l\u1EA1i nh\u1EEFng s\u1EF1 ki\u1EC7n n\xE0y \u0111\u1EC3\
   \ n\u1EAFm b\u1EAFt th\xF4ng tin th\u1EDDi\u2026"
 title: Ghi log
+weight: 17
 ---
-
-{{< edit_this_page >}}
 
 ## Gì & Tại Sao?
 Ghi nhật ký là quá trình ghi lại các sự kiện xảy ra bên trong ứng dụng phần mềm. Các lập trình viên ghi lại những sự kiện này để nắm bắt thông tin thời gian chạy, gỡ lỗi, theo dõi hành vi hệ thống, và tạo ra một bản ghi kiểm toán cho mục đích bảo mật và tuân thủ.

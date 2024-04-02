@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Das Schreiben einer Textdatei in C beinhaltet das Erstellen oder \xD6ffnen\
   \ einer Datei im Schreibmodus und dann die Verwendung von Cs Datei-I/O-Funktionen,\u2026"
 title: Eine Textdatei schreiben
+weight: 24
 ---
-
-{{< edit_this_page >}}
 
 ## Was & Warum?
 

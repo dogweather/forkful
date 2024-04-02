@@ -9,9 +9,8 @@ summary: "La impresi\xF3n de mensajes de depuraci\xF3n es simplemente mostrar in
   n en la consola para entender qu\xE9 est\xE1 pasando en tu c\xF3digo. Los programadores\
   \ lo\u2026"
 title: "Imprimiendo salida de depuraci\xF3n"
+weight: 33
 ---
-
-{{< edit_this_page >}}
 
 ## Qué & Por Qué?
 

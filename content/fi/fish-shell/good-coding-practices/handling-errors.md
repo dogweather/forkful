@@ -8,9 +8,8 @@ model: gpt-4-1106-preview
 summary: "Virheenk\xE4sittely antaa skriptillesi mahdollisuuden k\xE4sitell\xE4 odottamattomia\
   \ tilanteita sulavasti. Teemme sen hallitaksemme ep\xE4onnistumisia aiheuttamatta\u2026"
 title: "Virheiden k\xE4sittely"
+weight: 16
 ---
-
-{{< edit_this_page >}}
 
 ## Mikä & Miksi?
 Virheenkäsittely antaa skriptillesi mahdollisuuden käsitellä odottamattomia tilanteita sulavasti. Teemme sen hallitaksemme epäonnistumisia aiheuttamatta käyttäjillemme harmaita hiuksia.

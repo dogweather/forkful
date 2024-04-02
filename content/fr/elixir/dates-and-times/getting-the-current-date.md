@@ -12,9 +12,8 @@ summary: "Obtenir la date actuelle en Elixir implique d'acc\xE9der aux informati
   \ de date et d'heure du syst\xE8me, une t\xE2che courante pour la journalisation,\
   \ le\u2026"
 title: Obtenir la date actuelle
+weight: 29
 ---
-
-{{< edit_this_page >}}
 
 ## Quoi & Pourquoi ?
 Obtenir la date actuelle en Elixir implique d'accéder aux informations de date et d'heure du système, une tâche courante pour la journalisation, le marquage de données, ou toute fonctionnalité nécessitant la connaissance de la date courante. Cette opération est essentielle pour créer des applications sensibles au temps et pour des tâches comme la génération de rapports ou de horodatages dans une application web.

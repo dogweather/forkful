@@ -17,9 +17,8 @@ summary: "\uB0A0\uC9DC\uB97C \uBB38\uC790\uC5F4\uB85C \uBCC0\uD658\uD558\uB294 \
   \uB984, \uB85C\uADF8 \uBA54\uC2DC\uC9C0, \uC0AC\uC6A9\uC790 \uC778\uD130\uD398\uC774\
   \uC2A4 \uB4F1\uC5D0 \uD45C\uC2DC\uD560 \uB54C \uC720\uC6A9\uD569\uB2C8\uB2E4."
 title: "\uB0A0\uC9DC\uB97C \uBB38\uC790\uC5F4\uB85C \uBCC0\uD658\uD558\uAE30"
+weight: 28
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why? (무엇과 왜?)
 날짜를 문자열로 변환하는 것은 'YYYY-MM-DD'와 같은 형식으로 날짜 데이터를 문자형 데이터로 바꾸는 과정입니다. 이는 날짜를 파일 이름, 로그 메시지, 사용자 인터페이스 등에 표시할 때 유용합니다.

@@ -13,9 +13,8 @@ summary: "Ghi log l\xE0 qu\xE1 tr\xECnh ghi l\u1EA1i h\xE0nh vi, l\u1ED7i v\xE0 
   t ph\u01B0\u01A1ng ti\u1EC7n l\u01B0u tr\u1EEF l\xE2u d\xE0i, nh\u01B0 t\u1EC7p\
   \ tin ho\u1EB7c c\u01A1 s\u1EDF d\u1EEF\u2026"
 title: Ghi log
+weight: 17
 ---
-
-{{< edit_this_page >}}
 
 ## Gì & Tại Sao?
 Ghi log là quá trình ghi lại hành vi, lỗi và các thông tin quan trọng khác của ứng dụng vào một phương tiện lưu trữ lâu dài, như tệp tin hoặc cơ sở dữ liệu. Lập trình viên thực hiện điều này để theo dõi tình hình và hiệu suất của ứng dụng, để gỡ lỗi và để giữ mắt trên những gì đang diễn ra bên dưới hạ tầng trong môi trường sản xuất.

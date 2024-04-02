@@ -13,9 +13,8 @@ summary: "JSON (JavaScript Object Notation) l\xE0 m\u1ED9t \u0111\u1ECBnh d\u1EA
   u. L\u1EADp tr\xECnh vi\xEAn s\u1EED d\u1EE5ng n\xF3 v\xEC d\u1EC5 \u0111\u1ECD\
   c/vi\u1EBFt v\xE0 \u0111\u1ED9c l\u1EADp v\u1EDBi ng\xF4n ng\u1EEF,\u2026"
 title: "L\xE0m vi\u1EC7c v\u1EDBi JSON"
+weight: 38
 ---
-
-{{< edit_this_page >}}
 
 ## Gì và Tại sao?
 JSON (JavaScript Object Notation) là một định dạng dữ liệu nhẹ dùng để trao đổi dữ liệu. Lập trình viên sử dụng nó vì dễ đọc/viết và độc lập với ngôn ngữ, làm cho nó trở thành lựa chọn lý tưởng cho APIs và dịch vụ web.

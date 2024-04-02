@@ -8,9 +8,8 @@ model: gpt-4-0125-preview
 summary: "Concatenare le stringhe significa unire due o pi\xF9 stringhe insieme per\
   \ formare un unico pezzo di testo. Potresti aver bisogno di unire testo per generare\u2026"
 title: Concatenazione di stringhe
+weight: 3
 ---
-
-{{< edit_this_page >}}
 
 ## Cosa & Perché?
 Concatenare le stringhe significa unire due o più stringhe insieme per formare un unico pezzo di testo. Potresti aver bisogno di unire testo per generare messaggi utente, creare percorsi di file o per processi di serializzazione dati. È un'operazione fondamentale in qualsiasi linguaggio di programmazione, inclusa Elixir, che consente agli sviluppatori di costruire stringhe dinamiche con facilità.

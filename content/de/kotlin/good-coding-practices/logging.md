@@ -7,9 +7,8 @@ model: gpt-4-1106-preview
 summary: "Das Protokollieren ist im Grunde die Praxis, Ereignisse und Daten aus einer\
   \ Softwareanwendung in eine externe Ausgabe, wie eine Datei oder Konsole,\u2026"
 title: Protokollierung
+weight: 17
 ---
-
-{{< edit_this_page >}}
 
 ## Was & Warum?
 

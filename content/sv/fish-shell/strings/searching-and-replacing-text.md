@@ -9,9 +9,8 @@ summary: "Att s\xF6ka och ers\xE4tta text \xE4r grundprocessen att hitta specifi
   \ str\xE4ngar i data och byta ut dem mot andra str\xE4ngar. Programmerare g\xF6\
   r det f\xF6r att\u2026"
 title: "S\xF6kning och ers\xE4ttning av text"
+weight: 10
 ---
-
-{{< edit_this_page >}}
 
 ## Vad & Varför?
 

@@ -8,9 +8,8 @@ model: gpt-4-1106-preview
 summary: "Comparar duas datas \xE9 um jeito de verificar qual delas vem antes, depois\
   \ ou se s\xE3o iguais. Programadores fazem isso para lidar com prazos, eventos e\u2026"
 title: Comparando duas datas
+weight: 27
 ---
-
-{{< edit_this_page >}}
 
 ## O Que & Porquê?
 

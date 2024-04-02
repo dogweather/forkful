@@ -8,9 +8,8 @@ model: gpt-4-0125-preview
 summary: "JSON, or JavaScript Object Notation, is a lightweight data-interchange format\
   \ that's easy for humans to read and write, and easy for machines to parse and\u2026"
 title: Working with JSON
+weight: 38
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 JSON, or JavaScript Object Notation, is a lightweight data-interchange format that's easy for humans to read and write, and easy for machines to parse and generate. Programmers often work with JSON to exchange data between servers and web applications because of its simplicity and language-independence, making it a cornerstone in modern web development and APIs.

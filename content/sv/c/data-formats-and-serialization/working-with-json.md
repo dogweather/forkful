@@ -10,9 +10,8 @@ model: gpt-4-0125-preview
 summary: "Att arbeta med JSON (JavaScript Object Notation) i C inneb\xE4r att tolka,\
   \ generera och hantera JSON-datatstrukturer. Programmerare g\xF6r detta f\xF6r att\u2026"
 title: Att Arbeta med JSON
+weight: 38
 ---
-
-{{< edit_this_page >}}
 
 ## Vad & Varför?
 

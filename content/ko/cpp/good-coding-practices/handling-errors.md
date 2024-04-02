@@ -13,9 +13,8 @@ summary: "\uC624\uB958 \uCC98\uB9AC\uB780 \uBB38\uC81C\uAC00 \uBC1C\uC0DD\uD588\
   \ \uC0AC\uC6A9\uC790 \uCE5C\uD654\uC801\uC774 \uB418\uB3C4\uB85D \uB3C4\uC640\uC8FC\
   \uAE30 \uB54C\uBB38\uC5D0 \uB9E4\uC6B0 \uC911\uC694\uD569\uB2C8\uB2E4."
 title: "\uC5D0\uB7EC \uCC98\uB9AC\uD558\uAE30"
+weight: 16
 ---
-
-{{< edit_this_page >}}
 
 ## 오류 처리란 무엇이며 왜 중요한가?
 오류 처리란 문제가 발생했을 때를 대비하는 것입니다. 소프트웨어가 충돌을 피하고 견고하며 사용자 친화적이 되도록 도와주기 때문에 매우 중요합니다.

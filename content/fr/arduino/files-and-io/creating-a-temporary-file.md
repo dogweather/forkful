@@ -9,9 +9,8 @@ summary: "Cr\xE9er un fichier temporaire sur Arduino implique de stocker des don
   es de mani\xE8re transitoire pendant l'ex\xE9cution d'un sketch. On le fait souvent\
   \ pour\u2026"
 title: "Cr\xE9ation d'un fichier temporaire"
+weight: 21
 ---
-
-{{< edit_this_page >}}
 
 ## Quoi & Pourquoi ?
 Créer un fichier temporaire sur Arduino implique de stocker des données de manière transitoire pendant l'exécution d'un sketch. On le fait souvent pour gérer des données volatiles sans user de la mémoire interne du micro-contrôleur plus que nécessaire.

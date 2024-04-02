@@ -13,9 +13,8 @@ summary: "L\u1EA5y ng\xE0y hi\u1EC7n t\u1EA1i trong m\xE3 l\u1EC7nh c\u1EE7a b\u
   i \u0111\u1EBFn t\u1EEBng ng\xE0y. L\u1EADp tr\xECnh vi\xEAn l\xE0m \u0111i\u1EC1\
   u n\xE0y \u0111\u1EC3 \u0111\xE1nh d\u1EA5u th\u1EDDi gian cho c\xE1c\u2026"
 title: "L\u1EA5y ng\xE0y hi\u1EC7n t\u1EA1i"
+weight: 29
 ---
-
-{{< edit_this_page >}}
 
 ## Cái gì và Tại sao?
 Lấy ngày hiện tại trong mã lệnh của bạn có nghĩa là nắm bắt khoảnh khắc hiện tại đến từng ngày. Lập trình viên làm điều này để đánh dấu thời gian cho các sự kiện, xử lý lịch trình, và theo dõi thời lượng hoặc các khoảng thời gian.

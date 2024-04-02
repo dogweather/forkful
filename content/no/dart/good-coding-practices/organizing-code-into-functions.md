@@ -11,9 +11,8 @@ summary: "\xC5 organisere kode i funksjoner i Dart handler om \xE5 definere gjen
   \ kodeblokker som utf\xF8rer spesifikke oppgaver, typisk ved \xE5 motta inndata,\
   \ behandle\u2026"
 title: Organisering av kode i funksjoner
+weight: 18
 ---
-
-{{< edit_this_page >}}
 
 ## Hva & hvorfor?
 Å organisere kode i funksjoner i Dart handler om å definere gjenbrukbare kodeblokker som utfører spesifikke oppgaver, typisk ved å motta inndata, behandle data og muligens returnere utdata. Programmerere gjør dette for å forbedre kodelesbarheten, redusere duplisering og lette vedlikehold, noe som til slutt fører til mer modulære og håndterbare kodebaser.

@@ -9,9 +9,8 @@ summary: "L'interpolation de cha\xEEnes c'est quand on ins\xE8re des valeurs var
   \ dans une cha\xEEne de caract\xE8res. Les programmeurs le font pour simplifier\
   \ la cr\xE9ation\u2026"
 title: "Interpolation de cha\xEEnes de caract\xE8res"
+weight: 8
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 L'interpolation de chaînes c'est quand on insère des valeurs variables dans une chaîne de caractères. Les programmeurs le font pour simplifier la création de texte dynamique.

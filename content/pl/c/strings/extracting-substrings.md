@@ -11,9 +11,8 @@ summary: "Wyodr\u0119bnianie podci\u0105g\xF3w w C polega na tworzeniu mniejszeg
   \ \u0142a\u0144cucha znak\xF3w (podci\u0105gu) z wi\u0119kszego \u0142a\u0144cucha\
   \ na podstawie okre\u015Blonych kryteri\xF3w, takich jak\u2026"
 title: "Wydobywanie podci\u0105g\xF3w"
+weight: 6
 ---
-
-{{< edit_this_page >}}
 
 ## Co i dlaczego?
 

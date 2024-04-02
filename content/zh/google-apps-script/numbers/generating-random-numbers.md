@@ -21,9 +21,8 @@ summary: "\u5728\u7F16\u7A0B\u4E2D\u751F\u6210\u968F\u673A\u6570\u5B57\u662F\u4E
   \uFF08\u5305\u62EC Sheets\u3001Docs \u548C Forms\uFF09\u6DFB\u52A0\u4E0D\u53EF\u9884\
   \u6D4B\u6027\u3002"
 title: "\u751F\u6210\u968F\u673A\u6570"
+weight: 12
 ---
-
-{{< edit_this_page >}}
 
 ## 什么 & 为什么？
 

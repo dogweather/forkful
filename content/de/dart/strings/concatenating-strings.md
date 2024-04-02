@@ -10,9 +10,8 @@ model: gpt-4-0125-preview
 summary: "Das Verketten von Zeichenfolgen in der Programmierung beinhaltet das Kombinieren\
   \ von zwei oder mehreren Strings zu einem. Programmierer machen dies, um\u2026"
 title: "Zeichenketten zusammenf\xFCgen"
+weight: 3
 ---
-
-{{< edit_this_page >}}
 
 ## Was & Warum?
 Das Verketten von Zeichenfolgen in der Programmierung beinhaltet das Kombinieren von zwei oder mehreren Strings zu einem. Programmierer machen dies, um Textdaten einfach zu manipulieren, Nachrichten zu konstruieren oder Teile einer Benutzeroberfläche dynamisch zusammenzusetzen.

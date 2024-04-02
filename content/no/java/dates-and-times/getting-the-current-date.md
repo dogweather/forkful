@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "\xC5 skaffe den n\xE5v\xE6rende datoen i Java er en fundamental operasjon\
   \ som lar programmerere manipulere datoobjekter for operasjoner som logging,\u2026"
 title: "F\xE5 dagens dato"
+weight: 29
 ---
-
-{{< edit_this_page >}}
 
 ## Hva & Hvorfor?
 Å skaffe den nåværende datoen i Java er en fundamental operasjon som lar programmerere manipulere datoobjekter for operasjoner som logging, datoberegninger og tidsbaserte vilkår. Det er avgjørende i applikasjoner hvor sporing, planlegging og analyse av tidsdata er essensielt.

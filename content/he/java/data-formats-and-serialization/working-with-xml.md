@@ -21,9 +21,8 @@ summary: "\u05E2\u05D1\u05D5\u05D3\u05D4 \u05E2\u05DD XML \u05DB\u05D5\u05DC\u05
   \u05DE\u05DB\u05D9\u05D5\u05D5\u05DF \u05E9\u05DE\u05E2\u05E8\u05DB\u05D5\u05EA\
   \ \u05D9\u05E9\u05E0\u05D5\u05EA \u05E8\u05D1\u05D5\u05EA \u05D5-APIs\u2026"
 title: "\u05E2\u05D1\u05D5\u05D3\u05D4 \u05E2\u05DD XML"
+weight: 40
 ---
-
-{{< edit_this_page >}}
 
 ## מה ולמה?
 עבודה עם XML כוללת פענוח, שאילתות והתעסקות במסמכי XML באמצעות Java. מתכנתים עושים זאת לשם חליפין של נתונים, ניהול תצורה, ומכיוון שמערכות ישנות רבות ו-APIs מתקשרות באמצעות XML.

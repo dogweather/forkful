@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "CSV-tiedostojen (pilkuin erotetut arvot) k\xE4sittely tarkoittaa tabulaarisen\
   \ datan tallentavien yksinkertaistettujen tekstitiedostojen lukemista ja\u2026"
 title: "Ty\xF6skentely CSV:n kanssa"
+weight: 37
 ---
-
-{{< edit_this_page >}}
 
 ## Mitä & Miksi?
 CSV-tiedostojen (pilkuin erotetut arvot) käsittely tarkoittaa tabulaarisen datan tallentavien yksinkertaistettujen tekstitiedostojen lukemista ja kirjoittamista. Ohjelmoijat tekevät tämän mahdollistaakseen datan jakamisen eri ohjelmien, järjestelmien välillä tai käsitelläkseen suuria datajoukkoja tehokkaassa, ihmisen luettavassa muodossa.

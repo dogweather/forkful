@@ -7,9 +7,8 @@ model: gpt-4-1106-preview
 summary: Error handling lets your script deal with the unexpected gracefully. We do
   it to manage failure without turning our user's hair gray.
 title: Handling errors
+weight: 16
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 Error handling lets your script deal with the unexpected gracefully. We do it to manage failure without turning our user's hair gray.

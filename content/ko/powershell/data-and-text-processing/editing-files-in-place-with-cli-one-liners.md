@@ -22,9 +22,8 @@ summary: "PowerShell\uC5D0\uC11C CLI \uC6D0 \uB77C\uC774\uB108\uB85C \uD604\uC7A
   ."
 title: "CLI \uD55C \uC904 \uBA85\uB839\uC5B4\uB85C \uD30C\uC77C\uC744 \uC81C\uC790\
   \uB9AC\uC5D0\uC11C \uD3B8\uC9D1\uD558\uAE30"
+weight: 32
 ---
-
-{{< edit_this_page >}}
 
 ## 무엇 & 왜?
 

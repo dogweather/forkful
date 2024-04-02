@@ -11,9 +11,8 @@ model: gpt-4-0125-preview
 summary: "Arrays associativos, ou dicion\xE1rios, em Haskell s\xE3o todos sobre mapear\
   \ chaves a valores para uma busca r\xE1pida e um gerenciamento eficiente de dados.\u2026"
 title: Usando arrays associativos
+weight: 15
 ---
-
-{{< edit_this_page >}}
 
 ## O Quê & Por Quê?
 

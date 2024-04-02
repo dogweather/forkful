@@ -13,9 +13,8 @@ summary: "M\u1EA3ng li\xEAn k\u1EBFt, \u0111\u01B0\u1EE3c bi\u1EBFt \u0111\u1EBF
   t bi\u1EBFn th\u1EC3 c\u1EE7a JavaScript), cho ph\xE9p c\xE1c l\u1EADp tr\xECnh\
   \ vi\xEAn t\u1EA1o ra c\xE1c b\u1ED9 s\u01B0u t\u1EADp\u2026"
 title: "S\u1EED d\u1EE5ng m\u1EA3ng li\xEAn k\u1EBFt"
+weight: 15
 ---
-
-{{< edit_this_page >}}
 
 ## Gì và Tại sao?
 

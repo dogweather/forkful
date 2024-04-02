@@ -12,9 +12,8 @@ summary: "\u5F00\u65B0\u9879\u76EE\uFF0C\u5C31\u662F\u521B\u5EFA\u4ECE\u96F6\u5F
   \u4E3A\u4E86\u89E3\u51B3\u65B0\u95EE\u9898\uFF0C\u5F00\u53D1\u65B0\u529F\u80FD\uFF0C\
   \u6216\u8005\u5C1D\u8BD5\u65B0\u60F3\u6CD5\u3002"
 title: "\u5F00\u59CB\u4E00\u4E2A\u65B0\u9879\u76EE"
+weight: 1
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why? (是什么 & 为什么?)
 开新项目，就是创建从零开始的代码集合。程序员这么做是为了解决新问题，开发新功能，或者尝试新想法。

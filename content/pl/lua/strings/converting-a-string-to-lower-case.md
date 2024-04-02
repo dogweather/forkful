@@ -9,9 +9,8 @@ summary: "Zamiana \u0142a\u0144cucha na ma\u0142e litery oznacza, \u017Ce ka\u01
   da du\u017Ca litera w tek\u015Bcie zostaje przekszta\u0142cona na swoj\u0105 ma\u0142\
   \u0105 wersj\u0119. Programi\u015Bci robi\u0105 to, aby u\u0142atwi\u0107\u2026"
 title: "Konwersja ci\u0105gu znak\xF3w na ma\u0142e litery"
+weight: 4
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why? (Co i dlaczego?)
 Zamiana łańcucha na małe litery oznacza, że każda duża litera w tekście zostaje przekształcona na swoją małą wersję. Programiści robią to, aby ułatwić porównywanie tekstu, gdzie wielkość liter nie ma znaczenia, jak podczas logowania czy wyszukiwania.

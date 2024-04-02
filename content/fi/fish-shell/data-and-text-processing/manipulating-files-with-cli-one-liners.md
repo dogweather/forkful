@@ -9,9 +9,8 @@ summary: "Ohjelmoinnin maailmassa, erityisesti Linux- tai Unix-ymp\xE4rist\xF6is
   , tiedostojen suora manipulointi komentorivilt\xE4 (CLI) ei ole pelk\xE4st\xE4\xE4\
   n mukavuuskysymys\u2026"
 title: "Tiedostojen k\xE4sittely yhden rivin komentorivikomennoilla"
+weight: 31
 ---
-
-{{< edit_this_page >}}
 
 ## Mitä & Miksi?
 

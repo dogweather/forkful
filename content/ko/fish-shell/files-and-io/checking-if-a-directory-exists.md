@@ -24,9 +24,8 @@ summary: "Fish Shell\uC5D0\uC11C \uB514\uB809\uD1A0\uB9AC\uC758 \uC874\uC7AC \uC
   \uC6A9\uD558\uB294\u2026"
 title: "\uB514\uB809\uD1A0\uB9AC\uAC00 \uC874\uC7AC\uD558\uB294\uC9C0 \uD655\uC778\
   \uD558\uAE30"
+weight: 20
 ---
-
-{{< edit_this_page >}}
 
 ## 무엇을, 왜?
 Fish Shell에서 디렉토리의 존재 여부를 확인하는 것은, 스크립트가 디렉토리 구조의 존재 또는 부재에 기반한 결정을 내릴 수 있게 하여, 조건부 파일 작업, 로깅, 또는 환경 설정과 같은 작업을 가능하게 합니다. 이 기법은 파일시스템과 예측 가능한 방식으로 상호 작용하는 견고한 스크립트를 작성하기 위해 필수적입니다.

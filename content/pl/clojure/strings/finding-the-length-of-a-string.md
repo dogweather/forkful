@@ -11,9 +11,8 @@ summary: "D\u0142ugo\u015B\u0107 \u0142a\u0144cucha to liczba znak\xF3w w tek\u0
   \ \u2013 np. sprawdzi\u0107, czy has\u0142o ma odpowiedni\u0105 d\u0142ugo\u015B\
   \u0107 lub\u2026"
 title: "Znalezienie d\u0142ugo\u015Bci ci\u0105gu znak\xF3w"
+weight: 7
 ---
-
-{{< edit_this_page >}}
 
 ## Co i dlaczego?
 Długość łańcucha to liczba znaków w tekście. Programiści liczą ją, by zarządzać danymi tekstowymi – np. sprawdzić, czy hasło ma odpowiednią długość lub wyświetlić fragment większego tekstu.

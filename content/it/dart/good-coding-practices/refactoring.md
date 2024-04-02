@@ -10,9 +10,8 @@ model: gpt-4-0125-preview
 summary: "Il refactoring in Dart \xE8 il processo di ristrutturazione del codice esistente\
   \ senza cambiare il suo comportamento esterno, mirato a migliorare la sua\u2026"
 title: Refactoring
+weight: 19
 ---
-
-{{< edit_this_page >}}
 
 ## Cos'è & Perché?
 

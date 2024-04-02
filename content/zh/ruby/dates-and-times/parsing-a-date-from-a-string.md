@@ -19,9 +19,8 @@ summary: "\u4ECE\u5B57\u7B26\u4E32\u4E2D\u89E3\u6790\u65E5\u671F\uFF0C\u662F\u63
   \u5206\u6790\u6216\u6570\u636E\u5904\u7406\u7684\u5E94\u7528\u7A0B\u5E8F\u4E2D\u662F\
   \u5E38\u89C1\u4EFB\u52A1\u3002"
 title: "\u4ECE\u5B57\u7B26\u4E32\u89E3\u6790\u65E5\u671F"
+weight: 30
 ---
-
-{{< edit_this_page >}}
 
 ## 什么 & 为什么?
 从字符串中解析日期，是指将代表日期的文本转换为Ruby能理解的`Date`或`DateTime`对象。程序员这样做是为了执行比较、计算或格式化日期等操作，这在处理调度、分析或数据处理的应用程序中是常见任务。

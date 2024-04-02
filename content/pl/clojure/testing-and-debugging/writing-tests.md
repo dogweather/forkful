@@ -11,9 +11,8 @@ summary: "Pisanie test\xF3w w Clojure, podobnie jak w innych j\u0119zykach progr
   \ polega na tworzeniu dedykowanego kodu, kt\xF3ry weryfikuje, czy g\u0142\xF3wna\
   \ baza kodu\u2026"
 title: "Pisanie test\xF3w"
+weight: 36
 ---
-
-{{< edit_this_page >}}
 
 ## Co i dlaczego?
 Pisanie testów w Clojure, podobnie jak w innych językach programowania, polega na tworzeniu dedykowanego kodu, który weryfikuje, czy główna baza kodu działa zgodnie z oczekiwaniami. Pomaga to w zapewnieniu poprawności, ułatwia refaktoryzację oraz podnosi stabilność kodu.

@@ -13,9 +13,8 @@ summary: "T\u1EA3i m\u1ED9t trang web c\xF3 ngh\u0129a l\xE0 l\u1EA5y n\u1ED9i d
   nh duy\u1EC7t c\u1EE7a b\u1EA1n l\xE0m. C\xE1c l\u1EADp tr\xECnh vi\xEAn th\u1EF1\
   c hi\u1EC7n vi\u1EC7c n\xE0y \u0111\u1EC3 t\u1EF1\u2026"
 title: "T\u1EA3i trang web"
+weight: 42
 ---
-
-{{< edit_this_page >}}
 
 ## Cái gì & Tại sao?
 Tải một trang web có nghĩa là lấy nội dung của nó qua internet—cơ bản là những gì trình duyệt của bạn làm. Các lập trình viên thực hiện việc này để tự động hóa việc trích xuất dữ liệu, kiểm thử, hoặc để tương tác với các dịch vụ web mà không cần giao diện người dùng đồ họa (GUI).

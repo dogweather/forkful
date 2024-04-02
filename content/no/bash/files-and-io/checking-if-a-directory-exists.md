@@ -11,9 +11,8 @@ summary: "I Bash-programmering er det \xE5 sjekke om en mappe eksisterer en esse
   \ kontrollmekanisme som brukes for \xE5 verifisere tilstedev\xE6relsen av en mappe\
   \ f\xF8r\u2026"
 title: Sjekker om en mappe eksisterer
+weight: 20
 ---
-
-{{< edit_this_page >}}
 
 ## Hva og hvorfor?
 

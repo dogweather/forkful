@@ -23,9 +23,8 @@ summary: "Bash\uC5D0\uC11C CSV(\uC27C\uD45C\uB85C \uAD6C\uBD84\uB41C \uAC12) \uD
   \uC744 \uC790\uB3D9\uD654\uD560 \uC218 \uC788\uAE30 \uB54C\uBB38\uC5D0 \uD504\uB85C\
   \uADF8\uB798\uBA38\uC5D0\uAC8C\u2026"
 title: "CSV\uC640 \uD568\uAED8 \uC791\uC5C5\uD558\uAE30"
+weight: 37
 ---
-
-{{< edit_this_page >}}
 
 ## 무엇 & 왜?
 Bash에서 CSV(쉼표로 구분된 값) 파일을 다루는 것은 평문 형식으로 저장된 표 형식 데이터를 처리하고 조작하는 것과 관련이 있습니다. 이는 데이터 변환, 분석, 그리고 명령 줄에서 직접 더 무거운 도구나 프로그래밍 환경 없이 작업을 자동화할 수 있기 때문에 프로그래머에게 필수적입니다.

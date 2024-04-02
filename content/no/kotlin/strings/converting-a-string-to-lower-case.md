@@ -8,9 +8,8 @@ model: gpt-4-1106-preview
 summary: "Omgj\xF8ring av tekst til sm\xE5 bokstaver betyr \xE5 konvertere alle bokstavene\
   \ i en streng til deres sm\xE5 bokstaver. Programmerere gj\xF8r dette for \xE5 standardisere\u2026"
 title: "Konvertere en streng til sm\xE5 bokstaver"
+weight: 4
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 Omgjøring av tekst til små bokstaver betyr å konvertere alle bokstavene i en streng til deres små bokstaver. Programmerere gjør dette for å standardisere data, for eksempel når man sammenligner brukerinput selv om det er skrevet med stor eller liten bokstav.

@@ -10,9 +10,8 @@ summary: "\u0421\u0443\u0442\u044C \u0442\u0430 \u041F\u0440\u0438\u0447\u0438\u
   \ asking a question and awaiting the answer. Programmers do this\u2026"
 title: "\u041D\u0430\u0434\u0441\u0438\u043B\u0430\u043D\u043D\u044F HTTP-\u0437\u0430\
   \u043F\u0438\u0442\u0443"
+weight: 44
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 

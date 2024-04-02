@@ -7,9 +7,8 @@ model: gpt-4-0125-preview
 summary: "Reading command line arguments in Google Apps Script is a bit of a misnomer\
   \ because, unlike traditional command-line interfaces in programming languages\u2026"
 title: Reading command line arguments
+weight: 23
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 

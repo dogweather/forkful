@@ -11,9 +11,8 @@ summary: "La recherche et le remplacement de texte en C consiste \xE0 identifier
   \ sous-cha\xEEnes sp\xE9cifiques au sein d'une cha\xEEne plus grande et \xE0 les\
   \ substituer par\u2026"
 title: Rechercher et remplacer du texte
+weight: 10
 ---
-
-{{< edit_this_page >}}
 
 ## Quoi et Pourquoi ?
 

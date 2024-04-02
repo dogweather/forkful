@@ -13,9 +13,8 @@ summary: "S\u1ED1 ph\u1EE9c m\u1EDF r\u1ED9ng h\u1EC7 th\u1ED1ng s\u1ED1 c\u1EE7
   \ gi\u1EA3i c\xE1c ph\u01B0\u01A1ng tr\xECnh kh\xF4ng c\xF3 nghi\u1EC7m th\u1EF1\
   c. C\xE1c l\u1EADp tr\xECnh vi\xEAn l\xE0m vi\u1EC7c v\u1EDBi\u2026"
 title: "L\xE0m vi\u1EC7c v\u1EDBi s\u1ED1 ph\u1EE9c"
+weight: 14
 ---
-
-{{< edit_this_page >}}
 
 ## Lý do và Mục đích?
 Số phức mở rộng hệ thống số của chúng ta để bao gồm số ảo, cho phép chúng ta giải các phương trình không có nghiệm thực. Các lập trình viên làm việc với chúng trong các lĩnh vực như kỹ thuật, vật lý và xử lý tín hiệu nơi những số này là cần thiết cho việc mô hình hóa và giải quyết vấn đề.

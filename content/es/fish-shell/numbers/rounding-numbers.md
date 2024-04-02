@@ -7,9 +7,8 @@ model: gpt-4-0125-preview
 summary: "Redondear n\xFAmeros consiste en eliminar los decimales para simplificar\
   \ tus datos o ajustarlos a formatos espec\xEDficos. Los programadores lo hacen para\u2026"
 title: "Redondeo de n\xFAmeros"
+weight: 13
 ---
-
-{{< edit_this_page >}}
 
 ## Qué y Por Qué?
 Redondear números consiste en eliminar los decimales para simplificar tus datos o ajustarlos a formatos específicos. Los programadores lo hacen para mostrar datos de manera amigable al usuario, para un almacenamiento eficiente, o cuando la precisión decimal no es relevante.

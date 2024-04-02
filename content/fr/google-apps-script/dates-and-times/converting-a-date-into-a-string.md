@@ -11,9 +11,8 @@ summary: "Convertir des dates en cha\xEEnes de caract\xE8res est une t\xE2che fo
   \ qui permet aux programmeurs de manipuler et d\u2019afficher des informations de\
   \ date\u2026"
 title: "Convertir une date en cha\xEEne de caract\xE8res"
+weight: 28
 ---
-
-{{< edit_this_page >}}
 
 ## C'est quoi & pourquoi ?
 

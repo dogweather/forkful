@@ -9,9 +9,8 @@ summary: "XML:n k\xE4sittely tarkoittaa tietojen k\xE4sittely\xE4 laajalti k\xE4
   , rakenteellisessa muodossa, jota k\xE4ytet\xE4\xE4n konfiguraatioissa, viestinn\xE4\
   ss\xE4 ja muussa.\u2026"
 title: "XML:n k\xE4sittely"
+weight: 40
 ---
-
-{{< edit_this_page >}}
 
 ## Mikä & Miksi?
 XML:n käsittely tarkoittaa tietojen käsittelyä laajalti käytetyssä, rakenteellisessa muodossa, jota käytetään konfiguraatioissa, viestinnässä ja muussa. Ohjelmoijat manipuloivat XML:ää lukeakseen, kirjoittaakseen, päivittääkseen ja kyselläkseen tietoja - elintärkeää interoperabiliteetille lukemattomissa appeissa ja palveluissa.

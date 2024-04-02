@@ -19,9 +19,8 @@ summary: "Fish Shell \u4E2D\u7684\u6B63\u5219\u8868\u8FBE\u5F0F\uFF08regex\uFF09
   \u5927\u7684\u65B9\u6CD5\u6765\u6307\u5B9A\u590D\u6742\u7684\u6587\u672C\u6A21\u5F0F\
   \u3002"
 title: "\u4F7F\u7528\u6B63\u5219\u8868\u8FBE\u5F0F"
+weight: 11
 ---
-
-{{< edit_this_page >}}
 
 ## 什么及为什么？
 

@@ -8,9 +8,8 @@ model: gpt-4-0125-preview
 summary: "XML, die Abk\xFCrzung f\xFCr eXtensible Markup Language, ist wie der geschw\xE4\
   tzige Cousin von JSON. Mit XML setzen Sie sich auseinander, wenn es um\u2026"
 title: Arbeiten mit XML
+weight: 40
 ---
-
-{{< edit_this_page >}}
 
 ## Was & Warum?
 XML, die Abkürzung für eXtensible Markup Language, ist wie der geschwätzige Cousin von JSON. Mit XML setzen Sie sich auseinander, wenn es um Altlastensysteme, Unternehmenssoftware oder APIs geht, die auf den JSON-Zug verzichtet haben. Es ist wesentlich für den Datenaustausch, wo XML seine Stärke beweist.

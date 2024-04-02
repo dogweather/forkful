@@ -9,9 +9,8 @@ summary: "Att l\xE4sa en textfil inneb\xE4r att man h\xE4mtar data fr\xE5n en fi
   \ som \xE4r lagrad p\xE5 disk i textformat. Programmerare g\xF6r detta f\xF6r att\
   \ till exempel ladda\u2026"
 title: "L\xE4sa en textfil"
+weight: 22
 ---
-
-{{< edit_this_page >}}
 
 ## Vad & Varför?
 Att läsa en textfil innebär att man hämtar data från en fil som är lagrad på disk i textformat. Programmerare gör detta för att till exempel ladda konfigurationer, bearbeta användardata eller läsa innehållet för att visa det.

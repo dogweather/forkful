@@ -11,9 +11,8 @@ summary: "YAML, kurz f\xFCr \"YAML Ain't Markup Language\", ist ein f\xFCr Mensc
   \ lesbarer Daten-Serialisierungsstandard, den Programmierer f\xFCr Konfigurationsdateien,\
   \ das\u2026"
 title: Arbeiten mit YAML
+weight: 41
 ---
-
-{{< edit_this_page >}}
 
 ## Was & Warum?
 YAML, kurz für "YAML Ain't Markup Language", ist ein für Menschen lesbarer Daten-Serialisierungsstandard, den Programmierer für Konfigurationsdateien, das Dumpen von Daten und den Datenaustausch zwischen Sprachen verwenden. Es ist aufgrund seiner Lesbarkeit und Benutzerfreundlichkeit beliebt, was es zu einer gängigen Wahl für die Konfiguration von Anwendungen und Diensten macht.

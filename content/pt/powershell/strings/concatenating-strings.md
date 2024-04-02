@@ -7,9 +7,8 @@ model: gpt-4-1106-preview
 summary: "Concatenar strings \xE9 o processo de juntar duas ou mais strings, formando\
   \ uma \xFAnica. Programadores fazem isso para construir mensagens, caminhos de\u2026"
 title: Concatenando strings
+weight: 3
 ---
-
-{{< edit_this_page >}}
 
 ## O Que & Porquê?
 Concatenar strings é o processo de juntar duas ou mais strings, formando uma única. Programadores fazem isso para construir mensagens, caminhos de arquivos, e manipular texto de forma dinâmica e eficiente.

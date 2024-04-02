@@ -7,9 +7,8 @@ model: gpt-4-0125-preview
 summary: "\xC5 avrunde tall handler om \xE5 kutte av desimalplasser for \xE5 forenkle\
   \ dataene dine eller passe spesifikke formater. Programmerere gj\xF8r det for brukervennlig\u2026"
 title: Avrunding av tall
+weight: 13
 ---
-
-{{< edit_this_page >}}
 
 ## Hva & Hvorfor?
 Å avrunde tall handler om å kutte av desimalplasser for å forenkle dataene dine eller passe spesifikke formater. Programmerere gjør det for brukervennlig visning, effektiv lagring, eller når desimalpresisjon ikke er et tema.

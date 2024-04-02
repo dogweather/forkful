@@ -13,9 +13,8 @@ summary: "Vi\u1EC7c l\u1EA5y ng\xE0y hi\u1EC7n t\u1EA1i trong Go l\xE0 m\u1ED9t 
   ng t\u1EF1 nh\u01B0 \"Hello, World!\" v\u1EC1 m\u1EE9c \u0111\u1ED9 ph\u1ED5 bi\u1EBF\
   n. N\xF3 c\u1EA7n thi\u1EBFt cho c\xE1c\u2026"
 title: "L\u1EA5y ng\xE0y hi\u1EC7n t\u1EA1i"
+weight: 29
 ---
-
-{{< edit_this_page >}}
 
 ## Cái gì và Tại sao?
 

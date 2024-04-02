@@ -10,9 +10,8 @@ summary: "\"\u0429\u043E \u0456 \u0427\u043E\u043C\u0443?\" Comparing two dates 
   \ events, reminders, or anything\u2026"
 title: "\u041F\u043E\u0440\u0456\u0432\u043D\u044F\u043D\u043D\u044F \u0434\u0432\u043E\
   \u0445 \u0434\u0430\u0442"
+weight: 27
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 "Що і Чому?"

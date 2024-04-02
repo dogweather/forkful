@@ -9,9 +9,8 @@ summary: "\xC5 avrunde tall betyr \xE5 justere dem til en n\xE6rliggende verdi f
   \ enkelhets skyld eller for \xE5 matche en viss presisjon. Det er nyttig for \xE5\
   \ forbedre\u2026"
 title: Avrunding av tall
+weight: 13
 ---
-
-{{< edit_this_page >}}
 
 ## Hva & Hvorfor?
 Å avrunde tall betyr å justere dem til en nærliggende verdi for enkelhets skyld eller for å matche en viss presisjon. Det er nyttig for å forbedre lesbarheten, redusere lagringsplass eller møte domenespesifikke behov, som pengekalkulasjoner hvor du vil avrunde til nærmeste øre.

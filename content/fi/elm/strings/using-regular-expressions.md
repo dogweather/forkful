@@ -11,9 +11,8 @@ summary: "S\xE4\xE4nn\xF6lliset lausekkeet (regex) ohjelmoinnissa ovat malleja, 
   \ k\xE4ytet\xE4\xE4n merkkiyhdistelmien vastaavuuden tarkistamiseen merkkijonoissa.\
   \ Elm:ss\xE4, kuten\u2026"
 title: "S\xE4\xE4nn\xF6llisten lausekkeiden k\xE4ytt\xF6"
+weight: 11
 ---
-
-{{< edit_this_page >}}
 
 ## Mikä & Miksi?
 Säännölliset lausekkeet (regex) ohjelmoinnissa ovat malleja, joita käytetään merkkiyhdistelmien vastaavuuden tarkistamiseen merkkijonoissa. Elm:ssä, kuten muissakin ohjelmointikielissä, ohjelmoijat käyttävät regexiä tehtäviin kuten syötteen validointi, etsintä ja tekstin korvaaminen merkkijonoissa niiden joustavuuden ja tehokkuuden vuoksi.

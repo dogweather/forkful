@@ -7,9 +7,8 @@ model: gpt-4-1106-preview
 summary: "Die L\xE4nge eines Strings herauszufinden bedeutet, die Anzahl der enthaltenen\
   \ Zeichen zu z\xE4hlen. Programmierer tun dies, um Eingaben zu validieren,\u2026"
 title: "Ermittlung der Zeichenkettenl\xE4nge"
+weight: 7
 ---
-
-{{< edit_this_page >}}
 
 ## Was & Warum?
 Die Länge eines Strings herauszufinden bedeutet, die Anzahl der enthaltenen Zeichen zu zählen. Programmierer tun dies, um Eingaben zu validieren, Schleifenbedingungen zu setzen oder einfach um Daten zu manipulieren.

@@ -11,9 +11,8 @@ summary: "\xC5 konvertere en streng til sm\xE5 bokstaver inneb\xE6rer \xE5 trans
   \ alle store bokstaver i en streng til deres sm\xE5 bokstav-ekvivalenter. Denne\
   \ prosessen er\u2026"
 title: "Konvertere en streng til sm\xE5 bokstaver"
+weight: 4
 ---
-
-{{< edit_this_page >}}
 
 ## Hva & Hvorfor?
 

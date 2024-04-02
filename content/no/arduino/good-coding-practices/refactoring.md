@@ -7,9 +7,8 @@ model: gpt-4-0125-preview
 summary: "*Refactoring* er prosessen med \xE5 omarbeide koden din for \xE5 forbedre\
   \ strukturen og lesbarheten uten \xE5 endre den eksterne oppf\xF8rselen eller\u2026"
 title: Refaktorering
+weight: 19
 ---
-
-{{< edit_this_page >}}
 
 ## Hva og hvorfor?
 *Refactoring* er prosessen med å omarbeide koden din for å forbedre strukturen og lesbarheten uten å endre den eksterne oppførselen eller funksjonaliteten. Programmerere refaktorerer for å gjøre koden sin renere, lettere å forstå og mer vedlikeholdbar, noe som på lang sikt gjør feilsøking og legging til nye funksjoner langt mindre hodepine.

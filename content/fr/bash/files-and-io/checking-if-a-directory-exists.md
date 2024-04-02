@@ -11,9 +11,8 @@ summary: "En programmation Bash, v\xE9rifier si un r\xE9pertoire existe est un m
   canisme de contr\xF4le essentiel utilis\xE9 pour v\xE9rifier la pr\xE9sence d'un\
   \ r\xE9pertoire avant\u2026"
 title: "V\xE9rifier si un r\xE9pertoire existe"
+weight: 20
 ---
-
-{{< edit_this_page >}}
 
 ## Quoi & Pourquoi ?
 

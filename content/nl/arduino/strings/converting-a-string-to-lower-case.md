@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Het omzetten van een string naar kleine letters verandert alle hoofdletters\
   \ in de tekst in hun kleine tegenhangers. Programmeurs doen dit voor\u2026"
 title: Een string omzetten naar kleine letters
+weight: 4
 ---
-
-{{< edit_this_page >}}
 
 ## Wat & Waarom?
 Het omzetten van een string naar kleine letters verandert alle hoofdletters in de tekst in hun kleine tegenhangers. Programmeurs doen dit voor consistentie, vooral bij het vergelijken van strings of het standaardiseren van invoergegevens.

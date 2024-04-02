@@ -11,9 +11,8 @@ summary: "\xC5 kapitalisere en streng betyr \xE5 konvertere den f\xF8rste boksta
   \ i strengen til stor bokstav mens de gjenv\xE6rende bokstavene forblir som de er.\
   \ Denne\u2026"
 title: Sette stor bokstav i en streng
+weight: 2
 ---
-
-{{< edit_this_page >}}
 
 ## Hva & Hvorfor?
 Å kapitalisere en streng betyr å konvertere den første bokstaven i strengen til stor bokstav mens de gjenværende bokstavene forblir som de er. Denne operasjonen utføres ofte i JavaScript for formatering av brukerinndata, visning av navn eller titler, og for å sikre konsistens i brukergrensesnittets tekster.

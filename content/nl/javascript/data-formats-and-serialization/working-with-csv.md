@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Werken met CSV (Comma-Separated Values of komma-gescheiden waarden) in JavaScript\
   \ betekent meestal het parseren en genereren van tekstgegevens voor\u2026"
 title: Werken met CSV
+weight: 37
 ---
-
-{{< edit_this_page >}}
 
 ## Wat & Waarom?
 Werken met CSV (Comma-Separated Values of komma-gescheiden waarden) in JavaScript betekent meestal het parseren en genereren van tekstgegevens voor spreadsheets of gegevensoverdracht. Programmeurs doen dit omdat CSV supergemeenschappelijk, lichtgewicht en gemakkelijk te lezen of te maken is.

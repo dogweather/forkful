@@ -10,9 +10,8 @@ model: gpt-4-0125-preview
 summary: "Het verwijderen van tekens die overeenkomen met een bepaald patroon gaat\
   \ over het wegstrippen van ongewenste delen van je strings \u2014 denk aan het opschonen\u2026"
 title: Karakters verwijderen die overeenkomen met een patroon
+weight: 5
 ---
-
-{{< edit_this_page >}}
 
 ## Wat & Waarom?
 Het verwijderen van tekens die overeenkomen met een bepaald patroon gaat over het wegstrippen van ongewenste delen van je strings — denk aan het opschonen van gegevens of het parseren van tekstbestanden. Programmeurs doen dit om betekenisvolle informatie te extraheren, gegevensconsistentie te waarborgen, of gegevens voor te bereiden voor verwerking.

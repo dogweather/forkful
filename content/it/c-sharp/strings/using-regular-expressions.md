@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Le espressioni regolari (regex) in C# sono uno strumento potente per il\
   \ riconoscimento di pattern all'interno delle stringhe, che permette ai\u2026"
 title: Utilizzo delle espressioni regolari
+weight: 11
 ---
-
-{{< edit_this_page >}}
 
 ## Cosa e Perché?
 Le espressioni regolari (regex) in C# sono uno strumento potente per il riconoscimento di pattern all'interno delle stringhe, che permette ai programmatori di cercare, sostituire, dividere o estrarre dati in modo efficiente. I programmatori utilizzano le regex per compiti che vanno da semplici validazioni, come il controllo del formato dell'email, fino a complesse attività di elaborazione del testo, grazie alla loro flessibilità e prestazioni.

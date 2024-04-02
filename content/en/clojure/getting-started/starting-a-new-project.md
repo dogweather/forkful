@@ -7,9 +7,8 @@ model: gpt-4-1106-preview
 summary: "Starting a new project means setting up a fresh programming environment\
   \ for your code. Programmers do it to kick off development with a clean slate and\u2026"
 title: Starting a new project
+weight: 1
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 

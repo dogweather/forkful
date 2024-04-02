@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Arrays associativos, conhecidos como `std::map` ou `std::unordered_map`\
   \ em C++, preenchem a lacuna entre \xEDndices de arrays e dados do mundo real,\u2026"
 title: Usando arrays associativos
+weight: 15
 ---
-
-{{< edit_this_page >}}
 
 ## O Que & Por Quê?
 

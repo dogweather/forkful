@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Foutafhandeling in Bash-scripting gaat over het anticiperen op momenten\
   \ waarop dingen mis kunnen gaan en hier sierlijk mee omgaan. Waarom? Nou, het houdt\u2026"
 title: Fouten afhandelen
+weight: 16
 ---
-
-{{< edit_this_page >}}
 
 ## Wat & Waarom?
 

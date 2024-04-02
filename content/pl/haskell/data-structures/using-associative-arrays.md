@@ -12,9 +12,8 @@ summary: "Tablice asocjacyjne, czyli s\u0142owniki, w Haskellu s\u0142u\u017C\u0
   \ do mapowania kluczy na warto\u015Bci w celu szybkiego wyszukiwania i efektywnego\
   \ zarz\u0105dzania danymi.\u2026"
 title: Korzystanie z tablic asocjacyjnych
+weight: 15
 ---
-
-{{< edit_this_page >}}
 
 ## Co i dlaczego?
 

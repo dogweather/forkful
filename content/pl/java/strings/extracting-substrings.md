@@ -9,9 +9,8 @@ summary: "Wycinanie podci\u0105g\xF3w to pobieranie fragment\xF3w z wi\u0119ksze
   \ ci\u0105gu znak\xF3w. Programi\u015Bci robi\u0105 to, by manipulowa\u0107 danymi,\
   \ wyci\u0105ga\u0107 informacje lub sprawdza\u0107\u2026"
 title: "Wycinanie pod\u0142a\u0144cuch\xF3w"
+weight: 6
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why? (Co i Dlaczego?)
 

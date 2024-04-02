@@ -11,9 +11,8 @@ summary: "Tekstitiedoston lukeminen Dartilla tarkoittaa tiedostojen tietojen k\x
   ytt\xE4mist\xE4 ja hakemista tiedostoj\xE4rjestelm\xE4st\xE4. Ohjelmoijat tekev\xE4\
   t t\xE4m\xE4n\u2026"
 title: Tekstitiedoston lukeminen
+weight: 22
 ---
-
-{{< edit_this_page >}}
 
 ## Mitä & Miksi?
 

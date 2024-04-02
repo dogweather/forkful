@@ -9,9 +9,8 @@ summary: "Agrupar c\xF3digo em fun\xE7\xF5es \xE9 decompor tarefas em peda\xE7os
   veis. Isso torna o c\xF3digo limpo, menos propenso a erros e mais f\xE1cil de depurar\
   \ ou\u2026"
 title: "Organizando o c\xF3digo em fun\xE7\xF5es"
+weight: 18
 ---
-
-{{< edit_this_page >}}
 
 ## O Que & Por Que?
 Agrupar código em funções é decompor tarefas em pedaços reutilizáveis. Isso torna o código limpo, menos propenso a erros e mais fácil de depurar ou refatorar.

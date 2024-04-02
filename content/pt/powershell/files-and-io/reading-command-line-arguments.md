@@ -9,9 +9,8 @@ summary: "Argumentos de linha de comando s\xE3o informa\xE7\xF5es que voc\xEA pa
   \ para o seu script quando o executa. Programadores usam isso para tornar os scripts\
   \ mais\u2026"
 title: Lendo argumentos da linha de comando
+weight: 23
 ---
-
-{{< edit_this_page >}}
 
 ## O Que & Porquê?
 Argumentos de linha de comando são informações que você passa para o seu script quando o executa. Programadores usam isso para tornar os scripts mais flexíveis e adaptáveis dependendo da entrada do usuário ou de outros programas.

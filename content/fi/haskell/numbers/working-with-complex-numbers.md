@@ -9,9 +9,8 @@ summary: "Kompleksiluvut, jotka koostuvat reaali- ja imagin\xE4\xE4riosasta, ova
   \ olennaisia monilla laskennallisilla aloilla kuten insin\xF6\xF6ritieteess\xE4\
   , fysiikassa ja\u2026"
 title: "Kompleksilukujen k\xE4sittely"
+weight: 14
 ---
-
-{{< edit_this_page >}}
 
 ## Mikä ja miksi?
 

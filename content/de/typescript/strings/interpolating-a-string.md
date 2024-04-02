@@ -7,9 +7,8 @@ model: gpt-4-1106-preview
 summary: "String-Interpolation erm\xF6glicht das Einf\xFCgen von Variablenwerten in\
   \ einen String. Das macht den Code lesbarer und die String-Manipulation effizienter."
 title: Zeichenketten interpolieren
+weight: 8
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 String-Interpolation ermöglicht das Einfügen von Variablenwerten in einen String. Das macht den Code lesbarer und die String-Manipulation effizienter.

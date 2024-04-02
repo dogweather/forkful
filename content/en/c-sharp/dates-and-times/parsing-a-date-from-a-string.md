@@ -7,9 +7,8 @@ model: gpt-4-0125-preview
 summary: "Parsing a date from a string in C# involves converting textual representations\
   \ of dates and times into a `DateTime` object. This is essential for\u2026"
 title: Parsing a date from a string
+weight: 30
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 Parsing a date from a string in C# involves converting textual representations of dates and times into a `DateTime` object. This is essential for applications that need to manipulate, store, or display dates and times in different formats, such as scheduling apps, log processors, or any system handling date input from users or external sources.

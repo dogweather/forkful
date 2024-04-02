@@ -9,9 +9,8 @@ summary: "En programmation, cr\xE9er un fichier temporaire, c'est un peu comme p
   \ des notes sur un bout de papier effa\xE7able. On fait \xE7a pour stocker des donn\xE9\
   es\u2026"
 title: "Cr\xE9ation d'un fichier temporaire"
+weight: 21
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 En programmation, créer un fichier temporaire, c'est un peu comme prendre des notes sur un bout de papier effaçable. On fait ça pour stocker des données qui nous intéressent seulement de manière éphémère, souvent pendant l'exécution d'un programme, sans encombrer le système de fichiers permanent.

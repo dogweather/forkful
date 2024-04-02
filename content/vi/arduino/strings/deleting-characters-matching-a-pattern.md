@@ -13,9 +13,8 @@ summary: "X\xF3a k\xFD t\u1EF1 kh\u1EDBp v\u1EDBi m\u1ED9t m\u1EABu ngh\u0129a l
   i - h\xE3y ngh\u0129 v\u1EC1 vi\u1EC7c l\xE0m s\u1EA1ch d\u1EEF li\u1EC7u ho\u1EB7\
   c \u0111\u1EA7u v\xE0o. C\xE1c l\u1EADp tr\xECnh vi\xEAn l\xE0m\u2026"
 title: "X\xF3a c\xE1c k\xFD t\u1EF1 ph\xF9 h\u1EE3p v\u1EDBi m\u1ED9t m\u1EABu"
+weight: 5
 ---
-
-{{< edit_this_page >}}
 
 ## Cái gì và Tại sao?
 

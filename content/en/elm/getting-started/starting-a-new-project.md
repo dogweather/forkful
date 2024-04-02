@@ -8,9 +8,8 @@ model: gpt-4-1106-preview
 summary: "Starting a new project in Elm is about setting up a clean slate for building\
   \ reliable web apps. Programmers do it to capitalize on Elm's simplicity and\u2026"
 title: Starting a new project
+weight: 1
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 

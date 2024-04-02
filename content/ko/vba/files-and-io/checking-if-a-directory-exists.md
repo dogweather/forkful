@@ -22,9 +22,8 @@ summary: "Visual Basic for Applications(VBA)\uC5D0\uC11C \uB514\uB809\uD130\uB9A
   \uC77C \uC2DC\uC2A4\uD15C\uACFC\u2026"
 title: "\uB514\uB809\uD1A0\uB9AC\uAC00 \uC874\uC7AC\uD558\uB294\uC9C0 \uD655\uC778\
   \uD558\uAE30"
+weight: 20
 ---
-
-{{< edit_this_page >}}
 
 ## 무엇 & 왜?
 

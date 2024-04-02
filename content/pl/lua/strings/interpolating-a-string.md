@@ -9,9 +9,8 @@ summary: "Interpolacja \u0142a\u0144cuch\xF3w pozwala wple\u015B\u0107 warto\u01
   ci zmiennych do tekstu. Programi\u015Bci u\u017Cywaj\u0105 jej dla czytelno\u015B\
   ci i wygody, eliminuj\u0105c potrzeb\u0119 ci\u0105g\u0142ego\u2026"
 title: "Interpolacja \u0142a\u0144cuch\xF3w znak\xF3w"
+weight: 8
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why? (Co i Dlaczego?)
 Interpolacja łańcuchów pozwala wpleść wartości zmiennych do tekstu. Programiści używają jej dla czytelności i wygody, eliminując potrzebę ciągłego łączenia ciągów za pomocą konkatenacji.

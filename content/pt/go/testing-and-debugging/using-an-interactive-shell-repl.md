@@ -11,9 +11,8 @@ summary: "Um shell interativo, ou Loop de Leitura-Avalia\xE7\xE3o-Impress\xE3o (
   \ permite que voc\xEA experimente c\xF3digo Go em tempo real, executando comandos\
   \ e obtendo\u2026"
 title: Usando um shell interativo (REPL)
+weight: 34
 ---
-
-{{< edit_this_page >}}
 
 ## O Que & Por Que?
 

@@ -14,9 +14,8 @@ summary: "G\u1EEDi m\u1ED9t y\xEAu c\u1EA7u HTTP v\u1EDBi x\xE1c th\u1EF1c c\u01
   ng minh b\u1EA1n \u0111\u01B0\u1EE3c ph\xE9p truy c\u1EADp. Ch\xFAng ta\u2026"
 title: "G\u1EEDi m\u1ED9t y\xEAu c\u1EA7u HTTP v\u1EDBi x\xE1c th\u1EF1c c\u01A1 b\u1EA3\
   n"
+weight: 45
 ---
-
-{{< edit_this_page >}}
 
 ## Gì và Tại sao?
 Gửi một yêu cầu HTTP với xác thực cơ bản có nghĩa là nhúng một người dùng và mật khẩu vào tiêu đề yêu cầu để chứng minh bạn được phép truy cập. Chúng ta làm điều này khi các dịch vụ cần chắc chắn đó là bạn, không phải một ai đó không quan trọng, đang cố gắng truy cập vào đồ đạc.

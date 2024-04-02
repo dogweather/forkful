@@ -7,9 +7,8 @@ model: gpt-4-0125-preview
 summary: "Das Generieren von Zufallszahlen ist eine grundlegende Aufgabe beim Programmieren,\
   \ die f\xFCr alles von der Datenstichprobe bis zur Spielentwicklung\u2026"
 title: Generierung von Zufallszahlen
+weight: 12
 ---
-
-{{< edit_this_page >}}
 
 ## Was & Warum?
 

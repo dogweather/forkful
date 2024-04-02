@@ -10,9 +10,8 @@ model: gpt-4-0125-preview
 summary: "Werken met JSON in Bash houdt in dat er JSON-geformatteerde gegevens direct\
   \ vanaf de opdrachtregel worden geparseerd en gegenereerd. Programmeurs doen dit\u2026"
 title: Werken met JSON
+weight: 38
 ---
-
-{{< edit_this_page >}}
 
 ## Wat & Waarom?
 

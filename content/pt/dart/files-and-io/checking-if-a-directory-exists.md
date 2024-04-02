@@ -11,9 +11,8 @@ summary: "Checar se um diret\xF3rio existe em Dart \xE9 sobre verificar a presen
   a de um diret\xF3rio em um caminho especificado no sistema de arquivos antes de\
   \ realizar\u2026"
 title: "Verificando se um diret\xF3rio existe"
+weight: 20
 ---
-
-{{< edit_this_page >}}
 
 ## O que & Por quê?
 

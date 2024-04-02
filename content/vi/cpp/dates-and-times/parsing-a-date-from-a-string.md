@@ -13,9 +13,8 @@ summary: "Ph\xE2n t\xEDch ng\xE0y t\u1EEB m\u1ED9t chu\u1ED7i ngh\u0129a l\xE0 c
   \ L\u1EADp tr\xECnh vi\xEAn l\xE0m \u0111i\u1EC1u n\xE0y \u0111\u1EC3 x\u1EED l\xFD\
   \ logic li\xEAn quan \u0111\u1EBFn ng\xE0y m\u1ED9t c\xE1ch\u2026"
 title: "Ph\xE2n t\xEDch ng\xE0y t\u1EEB chu\u1ED7i k\xED t\u1EF1"
+weight: 30
 ---
-
-{{< edit_this_page >}}
 
 ## Gì và Tại sao?
 Phân tích ngày từ một chuỗi nghĩa là chuyển đổi văn bản thành kiểu dữ liệu ngày. Lập trình viên làm điều này để xử lý logic liên quan đến ngày một cách tiêu chuẩn, không phụ thuộc vào địa phương, thường dùng cho các nhiệm vụ như xác thực đầu vào, sắp xếp và lưu trữ.

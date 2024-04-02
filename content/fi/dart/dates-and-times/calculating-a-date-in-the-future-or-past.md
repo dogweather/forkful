@@ -11,9 +11,8 @@ summary: "Tulevaisuuden tai menneisyyden p\xE4iv\xE4m\xE4\xE4r\xE4n laskeminen o
   \ yleinen teht\xE4v\xE4 ohjelmoijille, jotka ty\xF6skentelev\xE4t aikataulutusten,\
   \ muistutusten tai mink\xE4\u2026"
 title: "Tulevaisuuden tai menneisyyden p\xE4iv\xE4m\xE4\xE4r\xE4n laskeminen"
+weight: 26
 ---
-
-{{< edit_this_page >}}
 
 ## Mikä & Miksi?
 Tulevaisuuden tai menneisyyden päivämäärän laskeminen on yleinen tehtävä ohjelmoijille, jotka työskentelevät aikataulutusten, muistutusten tai minkä tahansa päivämäärälaskuihin perustuvan ominaisuuden parissa. Päivämäärien käsittelyn ymmärtäminen on ratkaisevan tärkeää taustajärjestelmille, käyttöliittymille ja tiedon analysoinnille, erityisesti niille, jotka siirtyvät käyttämään Dartia ja haluavat toteuttaa ajallista logiikkaa tehokkaasti.

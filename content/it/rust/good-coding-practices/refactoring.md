@@ -7,9 +7,8 @@ model: gpt-4-0125-preview
 summary: "Il **Refactoring** \xE8 il processo di ristrutturazione del codice informatico\
   \ esistente\u2014modificando la fattorizzazione\u2014senza alterarne il comportamento\u2026"
 title: Rifattorizzazione
+weight: 19
 ---
-
-{{< edit_this_page >}}
 
 ## Cosa & Perché?
 

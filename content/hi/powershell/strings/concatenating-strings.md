@@ -20,9 +20,8 @@ summary: "String concatenation \u0915\u093E \u092E\u0924\u0932\u092C \u0939\u094
   \u093E \u0915\u094B\u2026"
 title: "\u0938\u094D\u091F\u094D\u0930\u093F\u0902\u0917 \u0915\u094B \u091C\u094B\
   \u0921\u093C\u0928\u093E"
+weight: 3
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why? (क्या और क्यों?)
 

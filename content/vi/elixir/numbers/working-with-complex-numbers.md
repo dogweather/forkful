@@ -13,9 +13,8 @@ summary: "S\u1ED1 ph\u1EE9c c\xF3 m\u1ED9t ph\u1EA7n th\u1EF1c v\xE0 m\u1ED9t ph
   \ k\u1EF9 thu\u1EADt, v\u1EADt l\xFD, v\xE0 m\u1ED9t s\u1ED1 v\u1EA5n \u0111\u1EC1\
   \ t\xEDnh to\xE1n nh\u1EA5t \u0111\u1ECBnh. L\u1EADp tr\xECnh vi\xEAn\u2026"
 title: "L\xE0m vi\u1EC7c v\u1EDBi s\u1ED1 ph\u1EE9c"
+weight: 14
 ---
-
-{{< edit_this_page >}}
 
 ## Cái gì & Tại sao?
 Số phức có một phần thực và một phần ảo (như `3 + 4i`). Chúng được sử dụng trong kỹ thuật, vật lý, và một số vấn đề tính toán nhất định. Lập trình viên làm việc với chúng cho các mô phỏng, xử lý tín hiệu và giải quyết một số loại bài toán toán học một cách hiệu quả.

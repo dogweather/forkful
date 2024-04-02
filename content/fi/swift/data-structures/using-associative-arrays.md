@@ -11,9 +11,8 @@ summary: "Assosiatiiviset taulukot, tunnetaan Swiftiss\xE4 sanakirjoina, antavat
   \ tallentaa ja hallita tietoja avain-arvo -pareina. Ohjelmoijat k\xE4ytt\xE4v\xE4\
   t niit\xE4\u2026"
 title: "Assosiatiivisten taulukoiden k\xE4ytt\xF6"
+weight: 15
 ---
-
-{{< edit_this_page >}}
 
 ## Mikä & Miksi?
 

@@ -17,9 +17,8 @@ summary: "XML\uC744 \uB2E4\uB8EC\uB2E4\uB294 \uAC83\uC740 Extensible Markup Lang
   \uB85C \uC0AC\uC6A9\uB418\uAE30 \uB54C\uBB38\uC5D0 XML\uACFC \uC528\uB984\uD569\uB2C8\
   \uB2E4."
 title: "XML \uB2E4\uB8E8\uAE30"
+weight: 40
 ---
-
-{{< edit_this_page >}}
 
 ## 무엇과 왜?
 XML을 다룬다는 것은 Extensible Markup Language 형식의 데이터를 파싱하고, 추출하며, 조작하는 것을 의미합니다. 프로그래머들은 설정, API 등을 위한 광범위한 데이터 교환 형식으로 사용되기 때문에 XML과 씨름합니다.

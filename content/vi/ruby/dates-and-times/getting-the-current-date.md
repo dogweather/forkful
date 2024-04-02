@@ -13,9 +13,8 @@ summary: "Vi\u1EC7c l\u1EA5y ng\xE0y hi\u1EC7n t\u1EA1i trong Ruby c\u1EF1c k\u1
   p tr\xECnh vi\xEAn c\u1EA7n n\xF3 cho nhi\u1EC1u t\xE1c v\u1EE5 kh\xE1c nhau t\u1EEB\
   \ ghi log v\xE0 \u0111\xE1nh d\u1EA5u th\u1EDDi\u2026"
 title: "L\u1EA5y ng\xE0y hi\u1EC7n t\u1EA1i"
+weight: 29
 ---
-
-{{< edit_this_page >}}
 
 ## Cái gì & Tại sao?
 Việc lấy ngày hiện tại trong Ruby cực kỳ đơn giản: lấy ngày của hôm nay. Các lập trình viên cần nó cho nhiều tác vụ khác nhau từ ghi log và đánh dấu thời gian cho tới lập lịch và kiểm tra tính hợp lệ.

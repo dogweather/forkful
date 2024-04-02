@@ -9,9 +9,8 @@ summary: "Mik\xE4 ja miksi? Substringien eli alimerkkijonojen poimiminen on pros
   \ jossa otetaan osia kiinteist\xE4 merkkijonoista. Ohjelmoijat tekev\xE4t t\xE4\
   t\xE4 tietojen\u2026"
 title: Merkkijonojen osien poimiminen
+weight: 6
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why? 
 Mikä ja miksi? Substringien eli alimerkkijonojen poimiminen on prosessi, jossa otetaan osia kiinteistä merkkijonoista. Ohjelmoijat tekevät tätä tietojen eristämiseen, tietojen muotoiluun tai tekstin pohjalta tehtävään päätöksentekoon.

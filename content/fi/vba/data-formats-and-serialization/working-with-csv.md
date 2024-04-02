@@ -11,9 +11,8 @@ summary: "CSV-tiedostojen (pilkulla erotetut arvot) k\xE4sittely k\xE4sitt\xE4\x
   \ lukemista tai kirjoittamista yksinkertaisiin tekstitiedostoihin, joissa tietokent\xE4\
   t ovat\u2026"
 title: "Ty\xF6skentely CSV:n kanssa"
+weight: 37
 ---
-
-{{< edit_this_page >}}
 
 ## Mikä & Miksi?
 

@@ -10,9 +10,8 @@ model: gpt-4-0125-preview
 summary: "Express\xF5es regulares (regex) s\xE3o padr\xF5es usados para combinar sequ\xEA\
   ncias de caracteres em strings. Programadores as utilizam para buscar, editar ou\u2026"
 title: "Usando express\xF5es regulares"
+weight: 11
 ---
-
-{{< edit_this_page >}}
 
 ## O Que & Por Quê?
 Expressões regulares (regex) são padrões usados para combinar sequências de caracteres em strings. Programadores as utilizam para buscar, editar ou manipular texto baseado em padrões definidos, tornando-as indispensáveis para tarefas como validação de dados, análise sintática ou transformação.

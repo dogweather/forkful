@@ -11,9 +11,8 @@ summary: "Avviare un nuovo progetto in C comporta la configurazione di una strut
   \ di codice di base e un ambiente per gestire in modo efficiente le attivit\xE0\
   \ di\u2026"
 title: Iniziare un nuovo progetto
+weight: 1
 ---
-
-{{< edit_this_page >}}
 
 ## Cosa & Perché?
 

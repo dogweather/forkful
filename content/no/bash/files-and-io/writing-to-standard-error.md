@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "\xC5 skrive til standard feil (stderr) i Bash handler om \xE5 dirigere feilmeldinger\
   \ eller viktig diagnostisk utdata separat fra standard utdata (stdout).\u2026"
 title: Skriving til standardfeil
+weight: 25
 ---
-
-{{< edit_this_page >}}
 
 ## Hva & Hvorfor?
 Å skrive til standard feil (stderr) i Bash handler om å dirigere feilmeldinger eller viktig diagnostisk utdata separat fra standard utdata (stdout). Programmerere gjør dette for å sikre at feilmeldinger lett kan identifiseres, loggføres, eller til og med ignoreres, noe som bistår i feilsøkings- og loggføringsprosesser.

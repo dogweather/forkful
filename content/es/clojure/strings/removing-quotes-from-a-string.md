@@ -7,9 +7,8 @@ model: gpt-4-0125-preview
 summary: "Eliminar las comillas de una cadena significa deshacerse de esos molestos\
   \ caracteres de comillas dobles o simples que envuelven tu texto. Los\u2026"
 title: Eliminando comillas de una cadena
+weight: 9
 ---
-
-{{< edit_this_page >}}
 
 ## ¿Qué y Por qué?
 Eliminar las comillas de una cadena significa deshacerse de esos molestos caracteres de comillas dobles o simples que envuelven tu texto. Los programadores hacen esto para limpiar datos, asegurar uniformidad o preparar cadenas para ser procesadas donde las comillas son indeseadas o pueden causar errores.

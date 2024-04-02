@@ -9,9 +9,8 @@ summary: "Logowanie w programowaniu polega zasadniczo na pozostawianiu \u015Blad
   \ w postaci zarejestrowanych zdarze\u0144 lub wiadomo\u015Bci, kt\xF3re mog\u0105\
   \ by\u0107 wykorzystane do\u2026"
 title: "Rejestrowanie zdarze\u0144"
+weight: 17
 ---
-
-{{< edit_this_page >}}
 
 ## Co i dlaczego?
 Logowanie w programowaniu polega zasadniczo na pozostawianiu śladu w postaci zarejestrowanych zdarzeń lub wiadomości, które mogą być wykorzystane do śledzenia, co aplikacja robi w danym momencie. Programiści robią to, aby debugować problemy, monitorować wydajność systemu i audytować zachowanie ze względów bezpieczeństwa i zgodności.

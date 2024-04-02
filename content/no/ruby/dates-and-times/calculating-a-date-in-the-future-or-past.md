@@ -7,9 +7,8 @@ model: gpt-4-1106-preview
 summary: "Dato-operasjoner lar oss beregne fremtidige eller fortidige datoer. Programmerere\
   \ trenger dette for funksjoner som utl\xF8psfrister, planlegging og\u2026"
 title: Beregning av en dato i fremtiden eller fortiden
+weight: 26
 ---
-
-{{< edit_this_page >}}
 
 ## Hva & Hvorfor?
 Dato-operasjoner lar oss beregne fremtidige eller fortidige datoer. Programmerere trenger dette for funksjoner som utløpsfrister, planlegging og tidsstyring.

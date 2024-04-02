@@ -7,9 +7,8 @@ model: gpt-4-1106-preview
 summary: "HTTP-Anfragen mit Basisauthentifizierung erlauben es einem Client, sich\
   \ mit Benutzername und Passwort gegen\xFCber einem Server zu authentifizieren.\u2026"
 title: HTTP-Anfragen mit Basisauthentifizierung senden
+weight: 45
 ---
-
-{{< edit_this_page >}}
 
 ## Was & Warum?
 HTTP-Anfragen mit Basisauthentifizierung erlauben es einem Client, sich mit Benutzername und Passwort gegenüber einem Server zu authentifizieren. Programmierer nutzen dies, um sicheren Zugang zu Webressourcen zu gewährleisten.

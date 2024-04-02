@@ -13,9 +13,8 @@ summary: "\u4EA4\u4E92\u5F0Fshell\uFF0C\u6216\u79F0REPL (\u8BFB\u53D6-\u6C42\u50
   \u4EA4\u4E92\u5F0FElixir\uFF09\u7684REPL\u8FDB\u884C\u5B9E\u9A8C\u3001\u8C03\u8BD5\
   \u4EE5\u53CA\u5B66\u4E60\u8BE5\u8BED\u8A00\u3002"
 title: "\u5728\u7F16\u7A0B\u4E2D\u4F7F\u7528\u4EA4\u4E92\u5F0FShell\uFF08REPL\uFF09"
+weight: 34
 ---
-
-{{< edit_this_page >}}
 
 ## 什么以及为什么？
 交互式shell，或称REPL (读取-求值-输出 循环)，允许你实时尝试代码片段。Elixir程序员使用名为IEx（交互式Elixir）的REPL进行实验、调试以及学习该语言。

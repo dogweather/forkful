@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Capitalizzare una stringa comporta la modifica dell'input in modo che il\
   \ primo carattere sia maiuscolo mentre il resto rimanga in minuscolo, comunemente\u2026"
 title: Mettere in Maiuscolo una Stringa
+weight: 2
 ---
-
-{{< edit_this_page >}}
 
 ## Cosa & Perché?
 

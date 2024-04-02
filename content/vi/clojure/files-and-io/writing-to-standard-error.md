@@ -13,9 +13,8 @@ summary: "Vi\u1EBFt v\xE0o l\u1ED7i chu\u1EA9n (`stderr`) l\xE0 m\u1ED9t c\xE1ch
   p tr\xECnh vi\xEAn l\xE0m v\u1EADy \u0111\u1EC3 ph\xE2n bi\u1EC7t ch\xFAng v\u1EDB\
   i \u0111\u1EA7u ra th\xF4ng th\u01B0\u1EDDng\u2026"
 title: "Ghi v\xE0o l\u1ED7i chu\u1EA9n"
+weight: 25
 ---
-
-{{< edit_this_page >}}
 
 ## Gì & Tại sao?
 Viết vào lỗi chuẩn (`stderr`) là một cách để xuất thông báo lỗi và chẩn đoán. Lập trình viên làm vậy để phân biệt chúng với đầu ra thông thường (`stdout`), điều này làm cho việc gỡ lỗi và ghi log trở nên dễ dàng hơn.

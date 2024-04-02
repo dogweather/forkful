@@ -9,9 +9,8 @@ summary: "Satunnaislukujen tuottaminen ohjelmoinnissa tarkoittaa arvojen luomist
   \ joita ei voi ennustaa loogisesti etuk\xE4teen. Ohjelmoijat tekev\xE4t t\xE4m\xE4\
   n monista\u2026"
 title: Satunnaislukujen generointi
+weight: 12
 ---
-
-{{< edit_this_page >}}
 
 ## Mikä & Miksi?
 

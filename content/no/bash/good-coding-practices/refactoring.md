@@ -7,9 +7,8 @@ model: gpt-4-0125-preview
 summary: "Omstrukturering er prosessen med \xE5 restrukturere eksisterende datamaskinkode\
   \ uten \xE5 endre dens eksterne oppf\xF8rsel. Det er en vital praksis for \xE5 redusere\u2026"
 title: Refaktorering
+weight: 19
 ---
-
-{{< edit_this_page >}}
 
 ## Hva & Hvorfor?
 Omstrukturering er prosessen med å restrukturere eksisterende datamaskinkode uten å endre dens eksterne oppførsel. Det er en vital praksis for å redusere kompleksitet, forbedre vedlikeholdbarhet, og holde kodebasen sunn og lettere å forstå for både nåværende og fremtidige utviklere.

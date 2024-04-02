@@ -11,9 +11,8 @@ summary: "Extrair substrings trata-se de recuperar por\xE7\xF5es espec\xEDficas 
   \ uma string baseadas em suas posi\xE7\xF5es ou padr\xF5es. Programadores fazem\
   \ isso para tarefas\u2026"
 title: Extraindo substrings
+weight: 6
 ---
-
-{{< edit_this_page >}}
 
 ## O Que & Por Que?
 Extrair substrings trata-se de recuperar porções específicas de uma string baseadas em suas posições ou padrões. Programadores fazem isso para tarefas como a análise de entradas de usuários, manipulação de dados, ou extração de informações relevantes de fontes de texto maiores.

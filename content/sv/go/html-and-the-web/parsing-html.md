@@ -11,9 +11,8 @@ summary: "Att parsa HTML i Go inneb\xE4r att analysera inneh\xE5llet i HTML-file
   \ f\xF6r att extrahera data, manipulera strukturen eller konvertera HTML till andra\
   \ format.\u2026"
 title: Tolka HTML
+weight: 43
 ---
-
-{{< edit_this_page >}}
 
 ## Vad & Varför?
 

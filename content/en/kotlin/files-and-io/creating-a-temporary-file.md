@@ -7,9 +7,8 @@ model: gpt-4-1106-preview
 summary: "Creating a temporary file is crafting a file that's meant to live short-term\
   \ on your filesystem, often for stuff like intermediary data. Programmers do it\u2026"
 title: Creating a temporary file
+weight: 21
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 Creating a temporary file is crafting a file that's meant to live short-term on your filesystem, often for stuff like intermediary data. Programmers do it mainly because it can help manage space, reduce conflicts, and boost security during runtime.

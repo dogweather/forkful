@@ -9,9 +9,8 @@ summary: "G\xE9rer les erreurs en C# consiste \xE0 prendre en charge l'inattendu
   \ comme tr\xE9bucher sur ses lacets. Les programmes peuvent buter sur des donn\xE9\
   es incorrectes\u2026"
 title: Gestion des erreurs
+weight: 16
 ---
-
-{{< edit_this_page >}}
 
 ## Quoi & Pourquoi ?
 

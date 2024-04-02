@@ -11,9 +11,8 @@ summary: "\xC5 starte et nytt prosjekt i Dart inneb\xE6rer \xE5 sette opp et mil
   \ som fremmer effektiv utvikling, testing og utrulling. Programmerere initierer\
   \ nye Dart-\u2026"
 title: "\xC5 starte et nytt prosjekt"
+weight: 1
 ---
-
-{{< edit_this_page >}}
 
 ## Hva & Hvorfor?
 

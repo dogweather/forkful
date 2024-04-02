@@ -16,9 +16,8 @@ summary: "\uB370\uC774\uD130\uB97C \uBE44\uAD50\uD558\uB294 \uAC83\uC740 \uB450 
   \uB97C \uCE21\uC815\uD558\uAE30 \uC704\uD574 \uC885\uC885 \uC774 \uC791\uC5C5\uC744\
   \ \uC218\uD589\uD569\uB2C8\uB2E4."
 title: "\uB450 \uB0A0\uC9DC \uBE44\uAD50\uD558\uAE30"
+weight: 27
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why? (무엇과 왜?)
 데이터를 비교하는 것은 두 날짜의 차이를 계산하는 것입니다. 프로그래머들은 이벤트가 일어난 순서를 확인하거나 시간 경과를 측정하기 위해 종종 이 작업을 수행합니다.

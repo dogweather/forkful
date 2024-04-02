@@ -9,9 +9,8 @@ summary: "Wypisywanie danych debugowych to jak rozmowa z komputerem \u2013 wysy\
   asz mu pytanie i czekasz na odpowied\u017A. Programi\u015Bci to robi\u0105, aby\
   \ zrozumie\u0107, co dzieje si\u0119\u2026"
 title: "Drukowanie komunikat\xF3w debugowania"
+weight: 33
 ---
-
-{{< edit_this_page >}}
 
 ## Co i dlaczego?
 Wypisywanie danych debugowych to jak rozmowa z komputerem – wysyłasz mu pytanie i czekasz na odpowiedź. Programiści to robią, aby zrozumieć, co dzieje się w aplikacji podczas działania i znaleźć błędy.

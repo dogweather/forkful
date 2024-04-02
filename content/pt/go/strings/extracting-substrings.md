@@ -11,9 +11,8 @@ summary: "Extrair substrings envolve recuperar por\xE7\xF5es espec\xEDficas de u
   \ string com base em suas posi\xE7\xF5es. Programadores frequentemente realizam\
   \ essa opera\xE7\xE3o para\u2026"
 title: Extraindo substrings
+weight: 6
 ---
-
-{{< edit_this_page >}}
 
 ## O que & Por quê?
 

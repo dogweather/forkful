@@ -9,9 +9,8 @@ summary: "\xC5 trekke ut understrenger inneb\xE6rer \xE5 hente en del av en teks
   \ Dette brukes for \xE5 bearbeide eller analysere spesifikke datasegmenter fra en\
   \ st\xF8rre\u2026"
 title: Uthenting av delstrenger
+weight: 6
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why? (Hva og Hvorfor?)
 Å trekke ut understrenger innebærer å hente en del av en tekststreng. Dette brukes for å bearbeide eller analysere spesifikke datasegmenter fra en større tekstmasse.

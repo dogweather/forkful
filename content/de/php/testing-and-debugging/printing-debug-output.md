@@ -7,9 +7,8 @@ model: gpt-4-1106-preview
 summary: "Druckausgabe zum Debuggen ist das Anzeigen von Variablenwerten und Programmstatus\
   \ auf einer Konsole oder Logdatei w\xE4hrend der Entwicklung. Programmierer\u2026"
 title: Debug-Ausgaben drucken
+weight: 33
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 Druckausgabe zum Debuggen ist das Anzeigen von Variablenwerten und Programmstatus auf einer Konsole oder Logdatei während der Entwicklung. Programmierer machen das, um Fehler zu finden und die Programmausführung zu verstehen.

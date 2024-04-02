@@ -7,9 +7,8 @@ model: gpt-4-1106-preview
 summary: "Comparare due date in JavaScript significa verificare se sono uguali, quale\
   \ precede o segue l'altra. I programmatori lo fanno per gestire eventi,\u2026"
 title: Confronto tra due date
+weight: 27
 ---
-
-{{< edit_this_page >}}
 
 ## Cos'è & Perché?
 Comparare due date in JavaScript significa verificare se sono uguali, quale precede o segue l'altra. I programmatori lo fanno per gestire eventi, scadenze, o per la logica di funzionamento delle applicazioni, come prenotazioni o promemoria.

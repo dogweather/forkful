@@ -9,9 +9,8 @@ summary: "Numeroiden py\xF6rist\xE4minen on desimaalin leikkaamista l\xE4himp\xE
   n kokonaislukuun tai asetettuun m\xE4\xE4r\xE4\xE4n desimaalipaikkoja. Ohjelmoijat\
   \ py\xF6rist\xE4v\xE4t numeroita,\u2026"
 title: "Numerojen py\xF6rist\xE4minen"
+weight: 13
 ---
-
-{{< edit_this_page >}}
 
 ## Mikä & Miksi?
 Numeroiden pyöristäminen on desimaalin leikkaamista lähimpään kokonaislukuun tai asetettuun määrään desimaalipaikkoja. Ohjelmoijat pyöristävät numeroita, jotta niitä olisi helpompi lukea ja käsitellä, erityisesti kun tarkkuus tietyn pisteen jälkeen on tarpeetonta tai voi johtaa virheisiin.

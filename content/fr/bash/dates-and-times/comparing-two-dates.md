@@ -9,9 +9,8 @@ summary: "Comparer deux dates, c'est v\xE9rifier si elles sont \xE9gales, savoir
   \ est ant\xE9rieure ou post\xE9rieure. On le fait souvent pour g\xE9rer des \xE9\
   ch\xE9ances,\u2026"
 title: Comparer deux dates
+weight: 27
 ---
-
-{{< edit_this_page >}}
 
 ## Quoi & Pourquoi ?
 Comparer deux dates, c'est vérifier si elles sont égales, savoir laquelle est antérieure ou postérieure. On le fait souvent pour gérer des échéances, trier des événements ou valider des durées.

@@ -12,9 +12,8 @@ model: gpt-4-0125-preview
 summary: "String-Interpolation ist die Methode, Ausdr\xFCcke in String-Literale einzubetten.\
   \ Programmierer verwenden sie, um dynamisch Werte in Strings einzuf\xFCgen, was\u2026"
 title: Interpolation eines Strings
+weight: 8
 ---
-
-{{< edit_this_page >}}
 
 ## Was & Warum?
 String-Interpolation ist die Methode, Ausdrücke in String-Literale einzubetten. Programmierer verwenden sie, um dynamisch Werte in Strings einzufügen, was den Code lesbarer und sauberer macht als die traditionelle String-Konkatenation.

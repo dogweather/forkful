@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "JSON, eli JavaScript Object Notation, on kevyt muoto datan tallentamiseen\
   \ ja siirt\xE4miseen, ihanteellinen palvelimen ja asiakkaan v\xE4liseen kommunikointiin\u2026"
 title: "Ty\xF6skentely JSON:n kanssa"
+weight: 38
 ---
-
-{{< edit_this_page >}}
 
 ## Mikä & Miksi?
 

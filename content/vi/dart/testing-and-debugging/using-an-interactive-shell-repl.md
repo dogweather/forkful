@@ -14,9 +14,8 @@ summary: "M\u1ED9t shell t\u01B0\u01A1ng t\xE1c (REPL - V\xF2ng l\u1EB7p \u0110\
   ng c\u1EA7n ph\u1EA3i bi\xEAn\u2026"
 title: "S\u1EED d\u1EE5ng giao di\u1EC7n d\xF2ng l\u1EC7nh t\u01B0\u01A1ng t\xE1c\
   \ (REPL)"
+weight: 34
 ---
-
-{{< edit_this_page >}}
 
 ## Gì và Tại sao?
 

@@ -21,9 +21,8 @@ summary: "\uC22B\uC790\uB97C \uBC18\uC62C\uB9BC\uD55C\uB2E4\uB294 \uAC83\uC740 \
   \uC694 \uC5C6\uB294 \uAC00\uACA9\uACFC \uAC19\uC774 \uC0AC\uC6A9\uC790 \uCE5C\uD654\
   \uC801\uC778 \uACB0\uACFC\uB97C \uBCF4\uC5EC\uC904 \uB54C\u2026"
 title: "\uC22B\uC790 \uBC18\uC62C\uB9BC\uD558\uAE30"
+weight: 13
 ---
-
-{{< edit_this_page >}}
 
 ## 무엇이며 왜인가?
 숫자를 반올림한다는 것은 그것들을 가장 가까운 지정된 자릿수로 조정하는 것을 의미합니다—더 간단한 형태로 꽉 조이는 것을 생각해보세요. 프로그래머들은 정밀도를 제어하고, 성능을 향상시키거나, 세 개의 소수점이 필요 없는 가격과 같이 사용자 친화적인 결과를 보여줄 때 반올림합니다.

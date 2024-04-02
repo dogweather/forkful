@@ -10,9 +10,8 @@ summary: "JavaScript scripts often need input\u2014the kind you pass along when 
 title: "\u0427\u0438\u0442\u0430\u043D\u043D\u044F \u0430\u0440\u0433\u0443\u043C\u0435\
   \u043D\u0442\u0456\u0432 \u043A\u043E\u043C\u0430\u043D\u0434\u043D\u043E\u0433\u043E\
   \ \u0440\u044F\u0434\u043A\u0430"
+weight: 23
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why? (Що і Чому?)
 JavaScript scripts often need input—the kind you pass along when you run them. Reading command line arguments lets a program act on that input, tailoring behavior without changing the code.

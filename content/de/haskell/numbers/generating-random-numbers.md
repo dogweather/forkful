@@ -8,9 +8,8 @@ model: gpt-4-0125-preview
 summary: "Das Generieren von Zufallszahlen in Haskell umfasst das Erstellen von Zahlen,\
   \ die nach menschlichen Ma\xDFst\xE4ben unvorhersehbar sind. Dies ist kritisch in\u2026"
 title: Generierung von Zufallszahlen
+weight: 12
 ---
-
-{{< edit_this_page >}}
 
 ## Was & Warum?
 

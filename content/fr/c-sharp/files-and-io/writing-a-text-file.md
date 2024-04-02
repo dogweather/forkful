@@ -10,9 +10,8 @@ model: gpt-4-0125-preview
 summary: "\xC9crire un fichier texte en C# implique de cr\xE9er ou de modifier programmiquement\
   \ des fichiers textes sur le syst\xE8me de fichiers - une t\xE2che fondamentale\u2026"
 title: "R\xE9diger un fichier texte"
+weight: 24
 ---
-
-{{< edit_this_page >}}
 
 ## Quoi et pourquoi ?
 Écrire un fichier texte en C# implique de créer ou de modifier programmiquement des fichiers textes sur le système de fichiers - une tâche fondamentale pour de nombreuses applications, telles que la journalisation, l'exportation de données, ou la gestion de configuration. Les programmeurs réalisent cette opération pour persister les données entre les sessions, partager des informations à travers les systèmes, ou stocker des sorties lisibles par l'homme.

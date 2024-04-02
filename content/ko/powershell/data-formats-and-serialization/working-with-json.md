@@ -19,9 +19,8 @@ summary: "PowerShell\uC774 JSON(JavaScript Object Notation)\uACFC \uD1B5\uD569\u
   \uB85C\uADF8\uB798\uBA38\uB4E4\uC740 \uAC00\uBCBC\uC6B4 \uD2B9\uC131\uACFC \uC5B8\
   \uC5B4 \uB3C5\uB9BD\uC801\uC778 \uC131\uACA9\u2026"
 title: "JSON\uACFC \uD568\uAED8 \uC77C\uD558\uAE30"
+weight: 38
 ---
-
-{{< edit_this_page >}}
 
 ## 무엇인가 & 왜인가?
 

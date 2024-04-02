@@ -9,9 +9,8 @@ summary: "Co i dlaczego? Znalezienie d\u0142ugo\u015Bci \u0142a\u0144cucha znak\
   w to nic innego, jak ustalenie, ile znak\xF3w zawiera dana fraza lub zdanie. Programi\u015B\
   ci robi\u0105 to, by\u2026"
 title: "Znalezienie d\u0142ugo\u015Bci ci\u0105gu znak\xF3w"
+weight: 7
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 Co i dlaczego? Znalezienie długości łańcucha znaków to nic innego, jak ustalenie, ile znaków zawiera dana fraza lub zdanie. Programiści robią to, by weryfikować wpisy użytkowników, dostosować wyświetlanie tekstu, bądź po prostu operować danymi tekstowymi efektywnie.

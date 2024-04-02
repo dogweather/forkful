@@ -8,9 +8,8 @@ model: gpt-4-1106-preview
 summary: "In Lua, concatenare le stringhe significa unirle per formare un testo continuo.\
   \ Questo \xE8 utile per comporre messaggi, costruire query, o semplicemente per\u2026"
 title: Concatenazione di stringhe
+weight: 3
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 In Lua, concatenare le stringhe significa unirle per formare un testo continuo. Questo è utile per comporre messaggi, costruire query, o semplicemente per organizzare dati in formato leggibile.

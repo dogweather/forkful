@@ -7,9 +7,8 @@ model: gpt-4-1106-preview
 summary: "Pourquoi convertir des cha\xEEnes en minuscules ? Simple : pour uniformiser\
   \ les donn\xE9es. \xC7a aide \xE0 comparer, trier ou rechercher sans souci de casse."
 title: "Conversion d'une cha\xEEne de caract\xE8res en minuscules"
+weight: 4
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 Pourquoi convertir des chaînes en minuscules ? Simple : pour uniformiser les données. Ça aide à comparer, trier ou rechercher sans souci de casse.

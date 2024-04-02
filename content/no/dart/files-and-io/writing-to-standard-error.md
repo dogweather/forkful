@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "\xC5 skrive til standardfeil (stderr) i Dart handler om \xE5 sende feilmeldinger\
   \ og diagnostikk til en separat str\xF8m, som er forskjellig fra standardutdata\u2026"
 title: Skriving til standard feil
+weight: 25
 ---
-
-{{< edit_this_page >}}
 
 ## Hva & Hvorfor?
 

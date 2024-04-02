@@ -9,9 +9,8 @@ summary: "La longueur d'une cha\xEEne, c'est combien de caract\xE8res elle conti
   \ Les programmeurs la mesurent pour valider des saisies, pour trancher des trucs,\
   \ ou\u2026"
 title: "Trouver la longueur d'une cha\xEEne de caract\xE8res"
+weight: 7
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 La longueur d'une chaîne, c'est combien de caractères elle contient. Les programmeurs la mesurent pour valider des saisies, pour trancher des trucs, ou pour savoir où ils en sont.

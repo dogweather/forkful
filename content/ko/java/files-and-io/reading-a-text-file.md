@@ -14,9 +14,8 @@ summary: "\uD30C\uC77C\uC5D0\uC11C \uD14D\uC2A4\uD2B8 \uC77D\uAE30\uB294 \uC800\
   \uBA38\uAC00 \uB370\uC774\uD130 \uCC98\uB9AC, \uC124\uC815 \uB85C\uB4DC, \uB85C\uADF8\
   \ \uBD84\uC11D \uB4F1\uC744 \uC704\uD574 \uD544\uC694\uD569\uB2C8\uB2E4."
 title: "\uD14D\uC2A4\uD2B8 \uD30C\uC77C \uC77D\uAE30"
+weight: 22
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why? (무엇과 왜?)
 파일에서 텍스트 읽기는 저장된 데이터를 읽어서 프로그램에서 사용하는 것입니다. 프로그래머가 데이터 처리, 설정 로드, 로그 분석 등을 위해 필요합니다.

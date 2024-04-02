@@ -7,9 +7,8 @@ model: gpt-4-1106-preview
 summary: "Ein neues Projekt zu starten bedeutet, eine frische Code-Basis anzulegen,\
   \ die als Grundlage f\xFCr eine Softwareanwendung dient. Programmierer starten\u2026"
 title: Einen neuen Projekt starten
+weight: 1
 ---
-
-{{< edit_this_page >}}
 
 ## Was & Warum?
 Ein neues Projekt zu starten bedeutet, eine frische Code-Basis anzulegen, die als Grundlage für eine Softwareanwendung dient. Programmierer starten Projekte, um neue Ideen umzusetzen, Probleme zu lösen oder einfach, um mit neuen Technologien zu experimentieren.

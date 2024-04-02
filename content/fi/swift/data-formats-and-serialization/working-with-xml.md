@@ -9,9 +9,8 @@ summary: "XML:n k\xE4sittely tarkoittaa XML-tietojen j\xE4sent\xE4mist\xE4 ja tu
   \ Swiftiss\xE4. Ohjelmoijat tekev\xE4t t\xE4t\xE4 tiedonvaihtoa varten, erityisesti\
   \ silloin, kun\u2026"
 title: "XML:n k\xE4sittely"
+weight: 40
 ---
-
-{{< edit_this_page >}}
 
 ## Mitä & Miksi?
 XML:n käsittely tarkoittaa XML-tietojen jäsentämistä ja tuottamista Swiftissä. Ohjelmoijat tekevät tätä tiedonvaihtoa varten, erityisesti silloin, kun integroituminen järjestelmiin, joissa XML on standardimuoto, on tarpeen.

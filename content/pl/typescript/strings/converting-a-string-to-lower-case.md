@@ -9,9 +9,8 @@ summary: "Zmiana ci\u0105gu znak\xF3w na ma\u0142e litery to przekszta\u0142ceni
   \ wszystkich liter w ci\u0105gu na ich odpowiedniki w dolnym rejestrze. Robimy to,\
   \ by ujednolici\u0107 dane\u2026"
 title: "Konwersja ci\u0105gu znak\xF3w na ma\u0142e litery"
+weight: 4
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why? (Co i dlaczego?)
 Zmiana ciągu znaków na małe litery to przekształcenie wszystkich liter w ciągu na ich odpowiedniki w dolnym rejestrze. Robimy to, by ujednolicić dane przed ich przetworzeniem, co ułatwia porównywanie i wyszukiwanie.

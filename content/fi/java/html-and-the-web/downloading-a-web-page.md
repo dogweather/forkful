@@ -9,9 +9,8 @@ summary: "Lataamme verkkosivun sis\xE4lt\xF6\xE4 tutkiaksemme sen rakennetta tai
   dynt\xE4\xE4ksemme tietoja. Ohjelmoijat tekev\xE4t t\xE4t\xE4 esimerkiksi datankeruuseen,\
   \ palveluiden\u2026"
 title: Verkkosivun lataaminen
+weight: 42
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why? - Mitä & Miksi?
 Lataamme verkkosivun sisältöä tutkiaksemme sen rakennetta tai hyödyntääksemme tietoja. Ohjelmoijat tekevät tätä esimerkiksi datankeruuseen, palveluiden integraatioon tai sisällön seurantaan.

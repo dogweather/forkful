@@ -7,9 +7,8 @@ model: gpt-4-1106-preview
 summary: "\"Concatenation\" betyr \xE5 sette sammen tekster. Programmerere bruker\
   \ det for \xE5 bygge komplekse strenger fra mindre biter, som kan endre seg dynamisk."
 title: "Sammensl\xE5ing av strenger"
+weight: 3
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 "Concatenation" betyr å sette sammen tekster. Programmerere bruker det for å bygge komplekse strenger fra mindre biter, som kan endre seg dynamisk.

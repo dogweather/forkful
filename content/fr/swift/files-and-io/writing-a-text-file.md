@@ -11,9 +11,8 @@ summary: "\xC9crire un fichier texte en Swift vous permet de stocker de mani\xE8
   \ persistante des donn\xE9es de cha\xEEne de caract\xE8res dans le syst\xE8me de\
   \ fichiers, ce qui est\u2026"
 title: "R\xE9diger un fichier texte"
+weight: 24
 ---
-
-{{< edit_this_page >}}
 
 ## Quoi & Pourquoi ?
 

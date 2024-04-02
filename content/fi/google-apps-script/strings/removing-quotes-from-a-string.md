@@ -11,9 +11,8 @@ summary: "Google Apps Scriptill\xE4 lainausmerkkien poistaminen merkkijonosta li
   \ tarpeettomien lainausmerkkien eliminointiin, jotka saattavat ymp\xE4r\xF6id\xE4\
   \u2026"
 title: Merkkijonosta lainausmerkkien poistaminen
+weight: 9
 ---
-
-{{< edit_this_page >}}
 
 ## Mitä & Miksi?
 

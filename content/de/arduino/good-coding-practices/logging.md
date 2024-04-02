@@ -7,9 +7,8 @@ model: gpt-4-1106-preview
 summary: "\"Logging\" bezeichnet das Aufzeichnen von Ereignissen, Transaktionen oder\
   \ Aktivit\xE4ten, die im Laufe der Zeit in einem System stattfinden. Programmierer\u2026"
 title: Protokollierung
+weight: 17
 ---
-
-{{< edit_this_page >}}
 
 ## Was & Warum?
 "Logging" bezeichnet das Aufzeichnen von Ereignissen, Transaktionen oder Aktivitäten, die im Laufe der Zeit in einem System stattfinden. Programmierer nutzen es, um Fehler zu suchen, die Systemgesundheit zu überwachen, Statistiken zu sammeln oder sogar die Nutzung zu prüfen, wodurch es eine unerlässliche Praxis zur Wartung und zum Verständnis des Verhaltens ihres Codes unter verschiedenen Bedingungen wird.

@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "\xC5 organisere kode i funksjoner i C inneb\xE6rer \xE5 bryte ned komplekse\
   \ oppgaver i mindre, gjenbrukbare blokker med kode. Denne praksisen forbedrer\u2026"
 title: Organisering av kode i funksjoner
+weight: 18
 ---
-
-{{< edit_this_page >}}
 
 ## Hva & Hvorfor?
 

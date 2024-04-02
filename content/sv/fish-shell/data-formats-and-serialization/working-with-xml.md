@@ -7,9 +7,8 @@ model: gpt-4-0125-preview
 summary: "Att arbeta med XML inneb\xE4r att hantera data i ett utbrett, strukturerat\
   \ format som anv\xE4nds i konfigurationer, meddelanden och mer. Programmerare\u2026"
 title: Att arbeta med XML
+weight: 40
 ---
-
-{{< edit_this_page >}}
 
 ## Vad & Varför?
 Att arbeta med XML innebär att hantera data i ett utbrett, strukturerat format som används i konfigurationer, meddelanden och mer. Programmerare manipulerar XML för att läsa, skriva, uppdatera och fråga data – avgörande för interoperabilitet i massor av appar och tjänster.

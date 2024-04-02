@@ -9,9 +9,8 @@ summary: "Arredondar n\xFAmeros significa ajust\xE1-los ao inteiro mais pr\xF3xi
   \ ou \xE0 casa decimal especificada. Programadores arredondam n\xFAmeros para controlar\
   \ precis\xE3o,\u2026"
 title: "Arredondamento de n\xFAmeros"
+weight: 13
 ---
-
-{{< edit_this_page >}}
 
 ## O Que & Por Quê?
 

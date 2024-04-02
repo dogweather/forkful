@@ -7,9 +7,8 @@ model: gpt-4-0125-preview
 summary: "XML (eXtensible Markup Language) concerne la structuration des donn\xE9\
   es dans un format lisible. Les programmeurs manipulent du XML pour la configuration,\u2026"
 title: Travailler avec XML
+weight: 40
 ---
-
-{{< edit_this_page >}}
 
 ## Quoi & Pourquoi ?
 XML (eXtensible Markup Language) concerne la structuration des données dans un format lisible. Les programmeurs manipulent du XML pour la configuration, l'échange de données entre applications, et là où les spécifications le demandent - pensez à SOAP ou aux API web.

@@ -9,9 +9,8 @@ summary: "Koodin j\xE4rjest\xE4minen funktioihin tarkoittaa k\xE4sikirjoituksesi
   \ pieniin palasiin\u2014ajattele funktionaalisia LEGO-palikoita. Teemme n\xE4in\
   \ selkeyden,\u2026"
 title: "Koodin j\xE4rjest\xE4minen funktioihin"
+weight: 18
 ---
-
-{{< edit_this_page >}}
 
 ## Mitä & Miksi?
 Koodin järjestäminen funktioihin tarkoittaa käsikirjoituksesi jakamista pieniin palasiin—ajattele funktionaalisia LEGO-palikoita. Teemme näin selkeyden, uudelleenkäytettävyyden ja järkevyyden vuoksi. Se tekee koodistamme siistiä, luettavaa ja ylläpidettävää.

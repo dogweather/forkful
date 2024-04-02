@@ -10,9 +10,8 @@ model: gpt-4-0125-preview
 summary: "\xC5 sende en HTTP-foresp\xF8rsel inneb\xE6rer \xE5 initiere et kall fra\
   \ din Go-applikasjon til en webserver, API eller en hvilken som helst annen HTTP-basert\u2026"
 title: "Sende en HTTP-foresp\xF8rsel"
+weight: 44
 ---
-
-{{< edit_this_page >}}
 
 ## Hva & Hvorfor?
 

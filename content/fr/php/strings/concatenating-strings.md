@@ -9,9 +9,8 @@ summary: "Concat\xE9ner des cha\xEEnes de caract\xE8res, c'est comme assembler d
   \ LEGO : on les joint bout \xE0 bout pour former un tout. Les programmeurs font\
   \ \xE7a pour cr\xE9er\u2026"
 title: "Concat\xE9nation de cha\xEEnes de caract\xE8res"
+weight: 3
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why? (Quoi & Pourquoi ?)
 Concaténer des chaînes de caractères, c'est comme assembler des LEGO : on les joint bout à bout pour former un tout. Les programmeurs font ça pour créer des phrases, des messages personnalisés, ou n'importe quelle donnée textuelle dynamique.

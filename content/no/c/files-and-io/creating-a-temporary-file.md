@@ -10,9 +10,8 @@ model: gpt-4-0125-preview
 summary: "\xC5 opprette en midlertidig fil i C inneb\xE6rer \xE5 generere en fil som\
   \ er ment \xE5 bli brukt over en kort varighet, vanligvis som rableplass for databehandling\u2026"
 title: Oppretting av en midlertidig fil
+weight: 21
 ---
-
-{{< edit_this_page >}}
 
 ## Hva & Hvorfor?
 Å opprette en midlertidig fil i C innebærer å generere en fil som er ment å bli brukt over en kort varighet, vanligvis som rableplass for databehandling eller lagring. Programmerere gjør dette for å håndtere midlertidige data uten å påvirke programmets permanente lagring eller for å sikre at sensitiv informasjon slettes etter bruk.

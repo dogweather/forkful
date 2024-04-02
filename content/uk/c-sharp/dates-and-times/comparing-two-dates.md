@@ -8,9 +8,8 @@ summary: "Comparing dates lets you determine the relationship between two points
   \ time. It's essential for checking expirations, scheduling tasks, or measuring\u2026"
 title: "\u041F\u043E\u0440\u0456\u0432\u043D\u044F\u043D\u043D\u044F \u0434\u0432\u043E\
   \u0445 \u0434\u0430\u0442"
+weight: 27
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why? (Що і Чому?)
 Comparing dates lets you determine the relationship between two points in time. It's essential for checking expirations, scheduling tasks, or measuring time intervals.

@@ -9,9 +9,8 @@ summary: "Obliczanie daty w przysz\u0142o\u015Bci czy przesz\u0142o\u015Bci to u
   \ daty, kt\xF3ra pojawi si\u0119 lub wyst\u0105pi\u0142a po okre\u015Blonej liczbie\
   \ dni, miesi\u0119cy, czy lat od konkretnej\u2026"
 title: "Obliczanie daty w przysz\u0142o\u015Bci lub przesz\u0142o\u015Bci"
+weight: 26
 ---
-
-{{< edit_this_page >}}
 
 ## Co i dlaczego?
 Obliczanie daty w przyszłości czy przeszłości to ustalenie daty, która pojawi się lub wystąpiła po określonej liczbie dni, miesięcy, czy lat od konkretnej daty wyjściowej. Programiści robią to, by przewidywać terminy, zarządzać wydarzeniami czy określać terminy ważności.

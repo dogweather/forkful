@@ -12,9 +12,8 @@ summary: "\u53D1\u9001\u5E26\u57FA\u672C\u8BA4\u8BC1\u7684HTTP\u8BF7\u6C42\uFF0C
   \u3002\u7A0B\u5E8F\u5458\u8FD9\u6837\u505A\u662F\u4E3A\u4E86\u5B89\u5168\u8BBF\u95EE\
   \u9650\u5236\u533A\u57DF\u3002"
 title: "\u4F7F\u7528\u57FA\u672C\u8BA4\u8BC1\u53D1\u9001 HTTP \u8BF7\u6C42"
+weight: 45
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why? (什么 & 为什么?)
 发送带基本认证的HTTP请求，指使用用户名和密码获取网络资源。程序员这样做是为了安全访问限制区域。

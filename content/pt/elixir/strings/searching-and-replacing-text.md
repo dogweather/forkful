@@ -8,9 +8,8 @@ model: gpt-4-1106-preview
 summary: "Buscar e substituir texto \xE9 o processo de localizar sequ\xEAncias espec\xED\
   ficas num texto e substitu\xED-las por outras. Programadores fazem isso constantemente\u2026"
 title: Pesquisando e substituindo texto
+weight: 10
 ---
-
-{{< edit_this_page >}}
 
 ## O Que & Porquê?
 

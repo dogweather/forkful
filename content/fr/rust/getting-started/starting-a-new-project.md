@@ -9,9 +9,8 @@ summary: "D\xE9marrer un nouveau projet, c'est comme ouvrir un livre vierge : vo
   \ avez une toile in\xE9dite pour \xE9crire votre code. Les programmeurs lancent\
   \ de nouveaux\u2026"
 title: Lancement d'un nouveau projet
+weight: 1
 ---
-
-{{< edit_this_page >}}
 
 ## Quoi & Pourquoi ?
 

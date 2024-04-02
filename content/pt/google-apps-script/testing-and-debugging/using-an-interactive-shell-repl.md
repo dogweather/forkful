@@ -11,9 +11,8 @@ summary: "Um shell interativo, ou Loop de Leitura-Avalia\xE7\xE3o-Impress\xE3o (
   \ do ingl\xEAs), \xE9 um ambiente de programa\xE7\xE3o simples e interativo que\
   \ recebe entradas\u2026"
 title: Usando uma shell interativa (REPL)
+weight: 34
 ---
-
-{{< edit_this_page >}}
 
 ## O Que & Por Que?
 

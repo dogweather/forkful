@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Het versturen van een HTTP-verzoek met basisauthenticatie betekent dat er\
   \ een gebruikersnaam en wachtwoord in de aanvraagheader worden gestopt om te\u2026"
 title: Een HTTP-verzoek verzenden met basisauthenticatie
+weight: 45
 ---
-
-{{< edit_this_page >}}
 
 ## Wat & Waarom?
 Het versturen van een HTTP-verzoek met basisauthenticatie betekent dat er een gebruikersnaam en wachtwoord in de aanvraagheader worden gestopt om te bewijzen dat je toegang moet krijgen. We doen dit wanneer diensten er zeker van willen zijn dat jij het bent, en niet zomaar een Jan Modaal, die probeert toegang te krijgen tot spullen.

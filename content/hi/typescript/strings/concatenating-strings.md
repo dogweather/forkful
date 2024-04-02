@@ -20,9 +20,8 @@ summary: "String concatenation \u0926\u094B \u092F\u093E \u0926\u094B \u0938\u09
   \u093F\u090F \u0915\u0930\u0924\u0947 \u0939\u0948\u0902\u0964"
 title: "\u0938\u094D\u091F\u094D\u0930\u093F\u0902\u0917 \u0915\u094B \u091C\u094B\
   \u0921\u093C\u0928\u093E"
+weight: 3
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why? (क्या और क्यों?)
 String concatenation दो या दो से अधिक strings को जोड़ने का काम है। इस काम को प्रोग्रामर्स अक्सर डेटा को format करने या मेसेजेस क्रिएट करने के लिए करते हैं।

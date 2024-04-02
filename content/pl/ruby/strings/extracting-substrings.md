@@ -9,9 +9,8 @@ summary: "Wyci\u0105ganie podci\u0105g\xF3w (substring extraction) polega na wyo
   bnieniu okre\u015Blonej cz\u0119\u015Bci tekstu ze stringa. Programi\u015Bci robi\u0105\
   \ to, by manipulowa\u0107 i analizowa\u0107\u2026"
 title: "Wycinanie pod\u0142a\u0144cuch\xF3w"
+weight: 6
 ---
-
-{{< edit_this_page >}}
 
 ## Co i dlaczego?
 Wyciąganie podciągów (substring extraction) polega na wyodrębnieniu określonej części tekstu ze stringa. Programiści robią to, by manipulować i analizować dane tekstowe, co jest niezbędne przy obróbce tekstów, walidacji danych czy feature extraction.

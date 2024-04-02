@@ -9,9 +9,8 @@ summary: "Les nombres complexes, compos\xE9s d'une partie r\xE9elle et d'une par
   \ imaginaire, sont essentiels dans divers domaines de calcul comme le g\xE9nie,\
   \ la physique\u2026"
 title: Manipulation des nombres complexes
+weight: 14
 ---
-
-{{< edit_this_page >}}
 
 ## Quoi & Pourquoi ?
 

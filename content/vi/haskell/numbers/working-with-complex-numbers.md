@@ -13,9 +13,8 @@ summary: "S\u1ED1 ph\u1EE9c, bao g\u1ED3m m\u1ED9t ph\u1EA7n th\u1EF1c v\xE0 m\u
   nh to\xE1n kh\xE1c nhau nh\u01B0 k\u1EF9 thu\u1EADt, v\u1EADt l\xFD, v\xE0 x\u1EED\
   \ l\xFD t\xEDn hi\u1EC7u. L\u1EADp tr\xECnh vi\xEAn\u2026"
 title: "L\xE0m vi\u1EC7c v\u1EDBi s\u1ED1 ph\u1EE9c"
+weight: 14
 ---
-
-{{< edit_this_page >}}
 
 ## Cái gì & Tại sao?
 

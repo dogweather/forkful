@@ -10,9 +10,8 @@ model: gpt-4-0125-preview
 summary: "Express\xF5es regulares (regex) em JavaScript s\xE3o padr\xF5es usados para\
   \ combinar sequ\xEAncias de caracteres em strings. Programadores as usam para buscar,\u2026"
 title: "Usando express\xF5es regulares"
+weight: 11
 ---
-
-{{< edit_this_page >}}
 
 ## O Que & Por Que?
 

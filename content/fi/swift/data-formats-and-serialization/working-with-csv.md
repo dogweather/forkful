@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "CSV-tiedostoilla (Comma-Separated Values, pilkulla erotetut arvot) ty\xF6\
   skentely sis\xE4lt\xE4\xE4 rakenteellisen datan j\xE4sennyksen ja tuottamisen teksti-\u2026"
 title: "Ty\xF6skentely CSV:n kanssa"
+weight: 37
 ---
-
-{{< edit_this_page >}}
 
 ## Mikä & Miksi?
 

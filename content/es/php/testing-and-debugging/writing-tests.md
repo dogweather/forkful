@@ -11,9 +11,8 @@ summary: "Escribir pruebas en programaci\xF3n implica crear y ejecutar scripts q
   \ verifican que el c\xF3digo se comporte como se espera bajo diversas condiciones.\
   \ Los\u2026"
 title: Escribiendo pruebas
+weight: 36
 ---
-
-{{< edit_this_page >}}
 
 ## Qué y Por Qué?
 Escribir pruebas en programación implica crear y ejecutar scripts que verifican que el código se comporte como se espera bajo diversas condiciones. Los programadores lo hacen para asegurar la calidad, prevenir regresiones y facilitar la refactorización segura, lo cual es crucial para mantener una base de código saludable, escalable y libre de errores.

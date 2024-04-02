@@ -9,9 +9,8 @@ summary: "Kommandoradsargument l\xE5ter anv\xE4ndare ge instruktioner till ett p
   \ n\xE4r de startar det. Programmerare anv\xE4nder detta f\xF6r att g\xF6ra program\
   \ flexibla och\u2026"
 title: "L\xE4sa in kommandoradsargument"
+weight: 23
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 Kommandoradsargument låter användare ge instruktioner till ett program när de startar det. Programmerare använder detta för att göra program flexibla och anpassningsbara till olika situationer.

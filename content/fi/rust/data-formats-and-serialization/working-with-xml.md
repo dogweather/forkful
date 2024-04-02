@@ -7,9 +7,8 @@ model: gpt-4-0125-preview
 summary: "XML, lyhenne sanoista eXtensible Markup Language, on kuin JSONin sanavalmis\
   \ serkku. Joudut painimaan XML:n kanssa, kun ty\xF6skentelet perint\xF6j\xE4rjestelmien,\u2026"
 title: "XML:n k\xE4sittely"
+weight: 40
 ---
-
-{{< edit_this_page >}}
 
 ## Mikä & Miksi?
 XML, lyhenne sanoista eXtensible Markup Language, on kuin JSONin sanavalmis serkku. Joudut painimaan XML:n kanssa, kun työskentelet perintöjärjestelmien, yritysohjelmistojen tai APIen parissa, jotka ohittivat JSON-buumin. Se on olennainen tiedonvaihdossa, jossa XML pitää pintansa.

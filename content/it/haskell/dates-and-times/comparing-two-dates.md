@@ -7,9 +7,8 @@ model: gpt-4-1106-preview
 summary: "In Haskell, confrontare due date significa verificare se una \xE8 prima,\
   \ dopo o allo stesso momento dell'altra. Questo \xE8 utile per ordinare eventi\u2026"
 title: Confronto tra due date
+weight: 27
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 In Haskell, confrontare due date significa verificare se una è prima, dopo o allo stesso momento dell'altra. Questo è utile per ordinare eventi cronologicamente, scadenze, o per calcolare intervalli di tempo.

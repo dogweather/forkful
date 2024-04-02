@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Das Abrufen des aktuellen Datums in Haskell umfasst das Erlangen der aktuellen\
   \ Systemzeit und deren Umwandlung in ein lesbares Datumsformat. Programmierer\u2026"
 title: Den aktuellen Datum abrufen
+weight: 29
 ---
-
-{{< edit_this_page >}}
 
 ## Was & Warum?
 Das Abrufen des aktuellen Datums in Haskell umfasst das Erlangen der aktuellen Systemzeit und deren Umwandlung in ein lesbares Datumsformat. Programmierer tun dies, um Operationen basierend auf dem Datum durchzuführen, wie zum Beispiel das Protokollieren, das Planen von Aufgaben oder das Zeitstempeln von Ereignissen in Anwendungen.

@@ -13,9 +13,8 @@ summary: "Bi\u1EC3u th\u1EE9c ch\xEDnh quy (regex) l\xE0 nh\u1EEFng m\u1EABu \u0
   p tr\xECnh vi\xEAn s\u1EED d\u1EE5ng ch\xFAng \u0111\u1EC3 t\xECm ki\u1EBFm, thay\
   \ th\u1EBF, ho\u1EB7c tr\xEDch xu\u1EA5t c\xE1c\u2026"
 title: "S\u1EED d\u1EE5ng bi\u1EC3u th\u1EE9c ch\xEDnh quy"
+weight: 11
 ---
-
-{{< edit_this_page >}}
 
 ## Cái gì và Tại sao?
 Biểu thức chính quy (regex) là những mẫu định nghĩa tiêu chí tìm kiếm cho văn bản. Lập trình viên sử dụng chúng để tìm kiếm, thay thế, hoặc trích xuất các phần từ chuỗi dựa trên những mẫu này—nghĩ đến việc tìm và thay thế phức tạp được nâng cấp.

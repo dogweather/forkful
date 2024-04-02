@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Een HTTP-verzoek met basisauthenticatie verzenden in C omvat het opstellen\
   \ van een HTTP-verzoek dat een Authorization-header bevat met gebruikersgegevens\u2026"
 title: Een HTTP-verzoek verzenden met basisauthenticatie
+weight: 45
 ---
-
-{{< edit_this_page >}}
 
 ## Wat & Waarom?
 Een HTTP-verzoek met basisauthenticatie verzenden in C omvat het opstellen van een HTTP-verzoek dat een Authorization-header bevat met gebruikersgegevens gecodeerd in Base64. Dit is een gangbare methode om een eenvoudige authenticatielaag toe te voegen aan HTTP-verzoeken, waardoor beperkte bronnen programmatisch toegankelijk worden.

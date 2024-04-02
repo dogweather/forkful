@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Rimuovere le virgolette da una stringa in C comporta l'estrazione del contenuto\
   \ testuale senza le virgolette singole (' ') o doppie (\" \") che la\u2026"
 title: Rimuovere le virgolette da una stringa
+weight: 9
 ---
-
-{{< edit_this_page >}}
 
 ## Cosa & Perché?
 

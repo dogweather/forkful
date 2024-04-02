@@ -23,9 +23,8 @@ summary: "Dart\uC5D0\uC11C \uC815\uADDC \uD45C\uD604\uC2DD(regex)\uC740 \uBB38\u
   , \uD14D\uC2A4\uD2B8 \uBCC0\uD658\uC744 \uBE60\uB974\uAC8C \uC2E4\uD589\uD560 \uC218\
   \u2026"
 title: "\uC815\uADDC \uD45C\uD604\uC2DD \uC0AC\uC6A9\uD558\uAE30"
+weight: 11
 ---
-
-{{< edit_this_page >}}
 
 ## 무엇인가 & 왜인가?
 Dart에서 정규 표현식(regex)은 문자열 검색 및 조작을 위한 강력한 방법을 제공하여, 프로그래머가 복잡한 텍스트 처리 작업을 효율적으로 수행할 수 있게 합니다. 정규 표현식을 이해함으로써 개발자는 텍스트 유효성 검사, 검색 패턴, 텍스트 변환을 빠르게 실행할 수 있으며, 이는 현대 애플리케이션에서 폼 처리, 데이터 파싱, 일반 문자열 조작에 필수적입니다.

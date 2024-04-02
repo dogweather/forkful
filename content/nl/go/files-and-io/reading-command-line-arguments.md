@@ -11,9 +11,8 @@ summary: "Het lezen van commandoregelargumenten in Go houdt in dat je de argumen
   \ die aan een programma zijn verstrekt tijdens de aanroeping vanuit de terminal\
   \ of\u2026"
 title: Commandoregelargumenten lezen
+weight: 23
 ---
-
-{{< edit_this_page >}}
 
 ## Wat & Waarom?
 

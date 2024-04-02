@@ -8,9 +8,8 @@ model: gpt-4-0125-preview
 summary: "Printing debug output is about generating temporary, informative log messages\
   \ that can help programmers understand the flow and state of a program during\u2026"
 title: Printing debug output
+weight: 33
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 

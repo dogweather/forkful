@@ -8,9 +8,8 @@ model: gpt-4-1106-preview
 summary: "Koodin jakaminen funktioihin tarkoittaa sen pilkkomista pienemmiksi, uudelleenk\xE4\
   ytett\xE4viksi osiksi. Sen tavoitteena on toiston v\xE4ltt\xE4minen, koodin\u2026"
 title: "Koodin j\xE4rjest\xE4minen funktioihin"
+weight: 18
 ---
-
-{{< edit_this_page >}}
 
 ## Mitä & Miksi?
 Koodin jakaminen funktioihin tarkoittaa sen pilkkomista pienemmiksi, uudelleenkäytettäviksi osiksi. Sen tavoitteena on toiston välttäminen, koodin luettavuuden parantaminen sekä vianetsinnän ja testauksen yksinkertaistaminen. Hyvin järjestellyt funktiot voivat olla kuin laatikollinen siististi merkittyjä työkaluja, valmiina käytettäväksi ja jaettavaksi.

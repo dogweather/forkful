@@ -9,9 +9,8 @@ summary: "K\xE4ytt\xE4m\xE4ll\xE4 interaktiivista kuorta eli Read-Eval-Print-Loo
   \ (REPL) voit koodata vuorovaikutteisesti. Ohjelmoijat k\xE4ytt\xE4v\xE4t sit\xE4\
   \ Swift-koodinp\xE4tkien\u2026"
 title: "Interaktiivisen komentotulkin (REPL) k\xE4ytt\xF6"
+weight: 34
 ---
-
-{{< edit_this_page >}}
 
 ## Mikä & Miksi?
 Käyttämällä interaktiivista kuorta eli Read-Eval-Print-Loopia (REPL) voit koodata vuorovaikutteisesti. Ohjelmoijat käyttävät sitä Swift-koodinpätkien nopeaan testaamiseen, vianetsintään tai kielen opiskeluun.

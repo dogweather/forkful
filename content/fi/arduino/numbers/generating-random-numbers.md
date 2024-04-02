@@ -7,9 +7,8 @@ model: gpt-4-0125-preview
 summary: "Satunnaislukujen tuottaminen Arduino-projekteissa tarkoittaa arvojen tuottamista,\
   \ jotka on suunniteltu ennakoimattomiksi, mik\xE4 on olennaista sovelluksissa\u2026"
 title: Satunnaislukujen generointi
+weight: 12
 ---
-
-{{< edit_this_page >}}
 
 ## Mitä & Miksi?
 Satunnaislukujen tuottaminen Arduino-projekteissa tarkoittaa arvojen tuottamista, jotka on suunniteltu ennakoimattomiksi, mikä on olennaista sovelluksissa kuten pelit, simulaatiot ja turvajärjestelmät. Ohjelmoijat käyttävät tätä tekniikkaa tuomaan vaihtelua tai tekemään päätöksiä, jotka eivät saisi olla deterministisiä.

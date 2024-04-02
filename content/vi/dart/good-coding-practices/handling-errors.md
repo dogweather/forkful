@@ -13,9 +13,8 @@ summary: "X\u1EED l\xFD l\u1ED7i trong Dart l\xE0 vi\u1EC7c d\u1EF1 \u0111o\xE1n
   \ ch\u01B0\u01A1ng tr\xECnh \u0111\u1EC3 c\u1EA3i thi\u1EC7n \u0111\u1ED9 tin c\u1EAD\
   y v\xE0 kh\u1EA3 n\u0103ng s\u1EED d\u1EE5ng. C\xE1c\u2026"
 title: "X\u1EED l\xFD l\u1ED7i"
+weight: 16
 ---
-
-{{< edit_this_page >}}
 
 ## Làm thế nào & Tại sao?
 Xử lý lỗi trong Dart là việc dự đoán và quản lý các ngoại lệ phát sinh trong khi thực thi chương trình để cải thiện độ tin cậy và khả năng sử dụng. Các lập trình viên thực hiện xử lý lỗi nhằm ngăn chặn sự cố và cung cấp phản hồi có ý nghĩa cho người dùng, đảm bảo trải nghiệm ứng dụng mượt mà, an toàn hơn.

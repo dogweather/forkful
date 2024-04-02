@@ -11,9 +11,8 @@ summary: "Pisanie test\xF3w w Kotlinie polega na tworzeniu fragment\xF3w kodu, k
   re automatycznie weryfikuj\u0105 poprawno\u015B\u0107 funkcjonaln\u0105 modu\u0142\
   \xF3w oprogramowania, upewniaj\u0105c\u2026"
 title: "Pisanie test\xF3w"
+weight: 36
 ---
-
-{{< edit_this_page >}}
 
 ## Co i Dlaczego?
 

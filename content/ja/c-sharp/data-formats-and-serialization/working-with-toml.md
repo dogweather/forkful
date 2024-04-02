@@ -21,9 +21,8 @@ summary: "TOML\u306FTom's Obvious, Minimal Language\u306E\u7565\u3067\u3001\u305
   \u306E\u30D0\u30E9\u30F3\u30B9\u3092\u53D6\u308B\u305F\u3081\u306B\u5229\u7528\u3057\
   \u3066\u3044\u307E\u3059\u3002"
 title: "TOML\u3092\u6271\u3046\u65B9\u6CD5"
+weight: 39
 ---
-
-{{< edit_this_page >}}
 
 ## 何となぜ？
 TOMLはTom's Obvious, Minimal Languageの略で、その明快なセマンティクスのおかげで読みやすい設定ファイル形式です。プログラマーは設定ファイルに使用し、システム間のデータ交換を簡素化し、人間の可読性とマシンの解析可能性の間のバランスを取るために利用しています。

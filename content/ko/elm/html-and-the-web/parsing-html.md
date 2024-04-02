@@ -20,9 +20,8 @@ summary: "Elm\uC5D0\uC11C HTML \uD30C\uC2F1\uC740 HTML \uBB38\uC11C\uB85C\uBD80\
   \uD638\uC791\uC6A9\uC801\uC774\uACE0 \uB3D9\uC801\uC778 \uC6F9 \uC560\uD50C\uB9AC\
   \uCF00\uC774\uC158\uC744 \uB9CC\uB4E4 \uC218 \uC788\uC2B5\uB2C8\uB2E4."
 title: "HTML \uD30C\uC2F1"
+weight: 43
 ---
-
-{{< edit_this_page >}}
 
 ## 무엇 & 왜?
 Elm에서 HTML 파싱은 HTML 문서로부터 정보를 추출하는 것을 의미합니다. 웹 콘텐츠나 HTML을 반환하는 API와 인터페이스하기 위해 프로그래머들이 이 작업을 수행하면, 더 상호작용적이고 동적인 웹 애플리케이션을 만들 수 있습니다.

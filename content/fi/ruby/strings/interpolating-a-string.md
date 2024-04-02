@@ -9,9 +9,8 @@ summary: "Stringin interpolointi tarkoittaa muuttujien tai lausekkeiden arvojen 
   tt\xE4mist\xE4 suoraan merkkijonoon. Koodaajat tekev\xE4t t\xE4t\xE4, koska se tekee\
   \ koodista\u2026"
 title: Merkkijonon interpolointi
+weight: 8
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why? (Mitä & Miksi?)
 Stringin interpolointi tarkoittaa muuttujien tai lausekkeiden arvojen syöttämistä suoraan merkkijonoon. Koodaajat tekevät tätä, koska se tekee koodista selkeämpää ja dynaamisempaa – ei enää yhteenkasattuja merkkijonoja.

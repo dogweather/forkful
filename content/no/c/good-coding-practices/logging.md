@@ -11,9 +11,8 @@ summary: "Logging i C inneb\xE6rer \xE5 registrere flyten og merkbare hendelser 
   \ et program under kj\xF8retiden, som gir en konkret gjennomgang av dets oppf\xF8\
   rsel og\u2026"
 title: Logging
+weight: 17
 ---
-
-{{< edit_this_page >}}
 
 ## Hva & Hvorfor?
 

@@ -8,9 +8,8 @@ model: gpt-4-1106-preview
 summary: "Opprette en midlertidig fil betyr \xE5 skape en fil som er ment for kortvarig\
   \ bruk og ofte slettet etter bruk. Programmerere gj\xF8r dette for \xE5 lagre data\u2026"
 title: Opprette en midlertidig fil
+weight: 21
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 Opprette en midlertidig fil betyr å skape en fil som er ment for kortvarig bruk og ofte slettet etter bruk. Programmerere gjør dette for å lagre data midlertidig uten å påvirke det permanente lagringssystemet.

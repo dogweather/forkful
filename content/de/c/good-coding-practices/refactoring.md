@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Refactoring in der Programmierung beinhaltet die Umstrukturierung bestehenden\
   \ Codes, ohne dessen externes Verhalten zu \xE4ndern, mit dem Ziel, nicht-\u2026"
 title: Refaktorisierung
+weight: 19
 ---
-
-{{< edit_this_page >}}
 
 ## Was & Warum?
 

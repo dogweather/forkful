@@ -7,9 +7,8 @@ model: gpt-4-1106-preview
 summary: "Interactive shells, or REPLs (Read-Eval-Print Loops), let you run code on\
   \ the fly, testing functions, algorithms, or fiddling with ideas. They're the\u2026"
 title: Using an interactive shell (REPL)
+weight: 34
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 Interactive shells, or REPLs (Read-Eval-Print Loops), let you run code on the fly, testing functions, algorithms, or fiddling with ideas. They're the scratch pads of coding, quick and dirty, without setting up a full dev environment.

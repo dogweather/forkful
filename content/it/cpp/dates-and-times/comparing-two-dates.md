@@ -7,9 +7,8 @@ model: gpt-4-1106-preview
 summary: "Comparare due date permette di stabilire quale avviene prima o dopo. \xC8\
   \ essenziale in applicazioni come prenotazioni, scadenze e timeline di eventi."
 title: Confronto tra due date
+weight: 27
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 Comparare due date permette di stabilire quale avviene prima o dopo. È essenziale in applicazioni come prenotazioni, scadenze e timeline di eventi.

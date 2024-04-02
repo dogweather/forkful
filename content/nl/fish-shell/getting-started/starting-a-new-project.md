@@ -10,9 +10,8 @@ model: gpt-4-0125-preview
 summary: "Een nieuw project starten betekent het initialiseren van een verse map met\
   \ alles wat je nodig hebt om te beginnen met coderen. Programmeurs doen dit om de\u2026"
 title: Een nieuw project starten
+weight: 1
 ---
-
-{{< edit_this_page >}}
 
 ## Wat & Waarom?
 Een nieuw project starten betekent het initialiseren van een verse map met alles wat je nodig hebt om te beginnen met coderen. Programmeurs doen dit om de ontwikkeling op een schone, georganiseerde manier te starten.

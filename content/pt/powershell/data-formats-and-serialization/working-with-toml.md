@@ -9,9 +9,8 @@ summary: "TOML, abrevia\xE7\xE3o de Tom's Obvious, Minimal Language (Linguagem M
   nima e \xD3bvia do Tom), \xE9 um formato de serializa\xE7\xE3o de dados que \xE9\
   \ f\xE1cil de ler devido \xE0\u2026"
 title: Trabalhando com TOML
+weight: 39
 ---
-
-{{< edit_this_page >}}
 
 ## O Que & Por Quê?
 

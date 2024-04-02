@@ -20,9 +20,8 @@ summary: "\uBB38\uC790\uC5F4 \uBCF4\uAC04\uBC95\uC740 \uD45C\uD604\uC2DD\uC744 \
   \ \uACB0\uD569 \uBC29\uC2DD\uBCF4\uB2E4 \uCF54\uB4DC\uAC00 \uB354 \uC77D\uAE30 \uC27D\
   \uACE0 \uAE54\uB054\uD574\uC9D1\uB2C8\uB2E4."
 title: "\uBB38\uC790\uC5F4 \uBCF4\uAC04\uD558\uAE30"
+weight: 8
 ---
-
-{{< edit_this_page >}}
 
 ## 무엇 & 왜?
 문자열 보간법은 표현식을 문자열 리터럴 안에 내장하는 방법입니다. 프로그래머는 이를 통해 동적으로 문자열에 값을 삽입할 수 있으며, 이는 기존의 문자열 결합 방식보다 코드가 더 읽기 쉽고 깔끔해집니다.

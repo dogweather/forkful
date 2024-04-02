@@ -11,9 +11,8 @@ summary: "Mettre en majuscule une cha\xEEne de caract\xE8res signifie la modifie
   \ pour que la premi\xE8re lettre soit en majuscule et que le reste de la cha\xEE\
   ne soit en\u2026"
 title: "Mettre en majuscule une cha\xEEne"
+weight: 2
 ---
-
-{{< edit_this_page >}}
 
 ## Quoi & Pourquoi ?
 

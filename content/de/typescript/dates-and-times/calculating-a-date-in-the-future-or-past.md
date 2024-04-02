@@ -7,9 +7,8 @@ model: gpt-4-1106-preview
 summary: "Das Berechnen eines Datums in der Zukunft oder Vergangenheit bedeutet, von\
   \ einem bestimmten Datum ausgehend Zeit hinzuzuf\xFCgen oder abzuziehen.\u2026"
 title: "Berechnung eines zuk\xFCnftigen oder vergangenen Datums"
+weight: 26
 ---
-
-{{< edit_this_page >}}
 
 ## Was & Warum?
 Das Berechnen eines Datums in der Zukunft oder Vergangenheit bedeutet, von einem bestimmten Datum ausgehend Zeit hinzuzufügen oder abzuziehen. Programmierer brauchen diese Berechnungen für Features wie Fristen, Erinnerungen oder Zeitstempel-Logs.

@@ -7,9 +7,8 @@ model: gpt-4-1106-preview
 summary: "\xC5 trekke ut delstrenger betyr \xE5 hente en spesifikk del av en tekststreng.\
   \ Programmerere gj\xF8r dette for \xE5 manipulere eller analysere data mer effektivt."
 title: Uthenting av delstrenger
+weight: 6
 ---
-
-{{< edit_this_page >}}
 
 ## Hva & Hvorfor?
 Å trekke ut delstrenger betyr å hente en spesifikk del av en tekststreng. Programmerere gjør dette for å manipulere eller analysere data mer effektivt.

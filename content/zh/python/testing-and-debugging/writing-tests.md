@@ -17,9 +17,8 @@ summary: "\u5728 Python \u4E2D\u7F16\u5199\u6D4B\u8BD5\u6D89\u53CA\u521B\u5EFA\u
   \u4F5C\uFF0C\u8FD9\u6709\u52A9\u4E8E\u65E9\u671F\u53D1\u73B0\u9519\u8BEF\u5E76\u4FC3\
   \u8FDB\u66F4\u5BB9\u6613\u7684\u7EF4\u62A4\u548C\u91CD\u6784\u3002"
 title: "\u7F16\u5199\u6D4B\u8BD5"
+weight: 36
 ---
-
-{{< edit_this_page >}}
 
 ## 什么 & 为什么？
 在 Python 中编写测试涉及创建自动化脚本来验证代码的正确性。程序员这样做是为了确保他们的函数或类在各种条件下按预期工作，这有助于早期发现错误并促进更容易的维护和重构。

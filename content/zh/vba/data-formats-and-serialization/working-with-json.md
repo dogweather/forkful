@@ -21,9 +21,8 @@ summary: "JSON\uFF08JavaScript \u5BF9\u8C61\u8868\u793A\u6CD5\uFF09\u662F\u4E00\
   VBA\uFF09\uFF09\u4EE5\u7ED3\u6784\u5316\u3001\u53EF\u8BBF\u95EE\u7684\u65B9\u5F0F\
   \u5B58\u50A8\u4FE1\u606F\u3002"
 title: "\u4F7F\u7528JSON\u5DE5\u4F5C"
+weight: 38
 ---
-
-{{< edit_this_page >}}
 
 ## 什么 & 为什么？
 

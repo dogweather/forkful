@@ -9,9 +9,8 @@ summary: "Pobieranie strony internetowej to proces zapisywania jej zawarto\u015B
   \ na dysku twardym. Programi\u015Bci robi\u0105 to, aby przetworzy\u0107 dane, przeprowadzi\u0107\
   \ analiz\u0119\u2026"
 title: Pobieranie strony internetowej
+weight: 42
 ---
-
-{{< edit_this_page >}}
 
 ## Co i Dlaczego?
 Pobieranie strony internetowej to proces zapisywania jej zawartości na dysku twardym. Programiści robią to, aby przetworzyć dane, przeprowadzić analizę treści lub utworzyć kopię zapasową.

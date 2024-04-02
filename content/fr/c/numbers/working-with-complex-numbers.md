@@ -11,9 +11,8 @@ summary: "Les nombres complexes se composent d'une partie r\xE9elle et d'une par
   \ imaginaire, repr\xE9sent\xE9es comme `a + bi` o\xF9 `i` est la racine carr\xE9\
   e de `-1`. Les\u2026"
 title: Travailler avec des nombres complexes
+weight: 14
 ---
-
-{{< edit_this_page >}}
 
 ## Quoi et Pourquoi ?
 

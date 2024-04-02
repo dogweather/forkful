@@ -11,9 +11,8 @@ summary: "Standardivirheeseen (stderr) kirjoittaminen tarkoittaa virheviestien j
   \ diagnostiikkatietojen tulostamista konsoliin tai terminaaliin. Ohjelmoijat tekev\xE4\
   t\u2026"
 title: Kirjoittaminen standardivirheeseen
+weight: 25
 ---
-
-{{< edit_this_page >}}
 
 ## Mikä & Miksi?
 Standardivirheeseen (stderr) kirjoittaminen tarkoittaa virheviestien ja diagnostiikkatietojen tulostamista konsoliin tai terminaaliin. Ohjelmoijat tekevät sen erotellakseen virhetiedot tavallisesta tulosteesta (stdout), mikä helpottaa debuggausta ja lokianalyysia.

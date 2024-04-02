@@ -9,9 +9,8 @@ summary: "Das Herunterladen einer Webseite bedeutet, ihren Inhalt \xFCber das In
   \ abzurufen. Programmierer tun dies, um Daten zu sammeln, automatisiert Inhalte\
   \ zu\u2026"
 title: Webseite herunterladen
+weight: 42
 ---
-
-{{< edit_this_page >}}
 
 ## Was & Warum?
 Das Herunterladen einer Webseite bedeutet, ihren Inhalt über das Internet abzurufen. Programmierer tun dies, um Daten zu sammeln, automatisiert Inhalte zu prüfen oder Webservices zu nutzen.

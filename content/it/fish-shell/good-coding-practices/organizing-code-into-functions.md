@@ -12,9 +12,8 @@ summary: "Organizzare il codice in funzioni significa raggruppare pezzi di scrip
   \ per eseguire compiti specifici. Lo facciamo perch\xE9 rende il codice pi\xF9 facile\
   \ da\u2026"
 title: Organizzare il codice in funzioni
+weight: 18
 ---
-
-{{< edit_this_page >}}
 
 ## Cosa & Perché?
 Organizzare il codice in funzioni significa raggruppare pezzi di script per eseguire compiti specifici. Lo facciamo perché rende il codice più facile da leggere, testare e riutilizzare — nessuno vuole districarsi in un pantano di spaghetti di codice.

@@ -11,9 +11,8 @@ summary: "Het verkrijgen van de huidige datum in Go is een fundamentele taak voo
   \ programmeurs, vergelijkbaar met \"Hallo, wereld!\" in zijn alomtegenwoordigheid.\
   \ Het\u2026"
 title: De huidige datum krijgen
+weight: 29
 ---
-
-{{< edit_this_page >}}
 
 ## Wat & Waarom?
 

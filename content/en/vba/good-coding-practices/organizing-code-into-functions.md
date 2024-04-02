@@ -7,9 +7,8 @@ model: gpt-4-0125-preview
 summary: "Organizing code into functions in Visual Basic for Applications (VBA) involves\
   \ breaking down a program into smaller, manageable pieces known as functions.\u2026"
 title: Organizing code into functions
+weight: 18
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 

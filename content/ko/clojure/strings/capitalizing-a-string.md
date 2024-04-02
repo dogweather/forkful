@@ -23,9 +23,8 @@ summary: "\uBB38\uC790\uC5F4\uC744 \uB300\uBB38\uC790\uB85C \uB9CC\uB4E0\uB2E4\u
   \uAD00\uC131\uC744 \uBCF4\uC7A5\uD558\uAE30 \uC704\uD574 \uBB38\uC790\uC5F4 \uB300\
   \uBB38\uC790\uD654\uB97C \uC790\uC8FC \uC218\uD589\uD569\uB2C8\uB2E4."
 title: "\uBB38\uC790\uC5F4 \uB300\uBB38\uC790\uD654"
+weight: 2
 ---
-
-{{< edit_this_page >}}
 
 ## 무엇 & 왜?
 문자열을 대문자로 만든다는 것은 문자열의 첫 글자를 대문자로 변경하면서 나머지 문자열은 변경하지 않는 것을 의미합니다. 프로그래머들은 특히 이름과 장소나 사용자 인터페이스의 문법 규칙을 준수하기 위해 데이터 일관성을 보장하기 위해 문자열 대문자화를 자주 수행합니다.

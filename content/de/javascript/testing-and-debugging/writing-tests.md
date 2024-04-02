@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Das Schreiben von Tests in JavaScript bezieht sich auf die Praxis, automatisierte\
   \ Skripte zu erstellen, die Ihren Code ausf\xFChren, um sicherzustellen, dass\u2026"
 title: Tests Schreiben
+weight: 36
 ---
-
-{{< edit_this_page >}}
 
 ## Was & Warum?
 

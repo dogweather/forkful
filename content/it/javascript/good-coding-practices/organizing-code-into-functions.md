@@ -9,9 +9,8 @@ summary: "Organizzare il codice in funzioni permette di suddividere le attivit\x
   \ in parti riutilizzabili, rendendo il codice pi\xF9 ordinato e pi\xF9 facile da\
   \ mantenere.\u2026"
 title: Organizzazione del codice in funzioni
+weight: 18
 ---
-
-{{< edit_this_page >}}
 
 ## Cosa & Perché?
 Organizzare il codice in funzioni permette di suddividere le attività in parti riutilizzabili, rendendo il codice più ordinato e più facile da mantenere. Lo facciamo per ridurre la ridondanza, semplificare i test e migliorare la leggibilità.

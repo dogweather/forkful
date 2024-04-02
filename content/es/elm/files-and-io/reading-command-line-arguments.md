@@ -7,9 +7,8 @@ model: gpt-4-1106-preview
 summary: "Leer argumentos de l\xEDnea de comandos significa obtener datos directamente\
   \ cuando ejecutas un programa. Los programadores hacen esto para personalizar la\u2026"
 title: "Lectura de argumentos de l\xEDnea de comandos"
+weight: 23
 ---
-
-{{< edit_this_page >}}
 
 ## Qué y Por Qué?
 Leer argumentos de línea de comandos significa obtener datos directamente cuando ejecutas un programa. Los programadores hacen esto para personalizar la ejecución del programa sin cambiar el código.

@@ -8,9 +8,8 @@ model: gpt-4-1106-preview
 summary: "Das Berechnen eines zuk\xFCnftigen oder vergangenen Datums in Python bedeutet,\
   \ ein Datum um eine bestimmte Zeitspanne zu verschieben. Programmierer nutzen\u2026"
 title: "Berechnung eines zuk\xFCnftigen oder vergangenen Datums"
+weight: 26
 ---
-
-{{< edit_this_page >}}
 
 ## Was & Warum?
 Das Berechnen eines zukünftigen oder vergangenen Datums in Python bedeutet, ein Datum um eine bestimmte Zeitspanne zu verschieben. Programmierer nutzen das, um Abgelaufenes zu datieren oder bevorstehende Ereignisse zu planen.

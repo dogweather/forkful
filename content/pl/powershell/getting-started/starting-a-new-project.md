@@ -9,9 +9,8 @@ summary: "Rozpoczynanie nowego projektu to tworzenie fundamentu pod przysz\u0142
   \ zadania programistyczne. Programi\u015Bci robi\u0105 to, \u017Ceby zorganizowa\u0107\
   \ kod, \u015Brodowisko pracy\u2026"
 title: Rozpoczynanie nowego projektu
+weight: 1
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why? (Co i Dlaczego?)
 Rozpoczynanie nowego projektu to tworzenie fundamentu pod przyszłe zadania programistyczne. Programiści robią to, żeby zorganizować kod, środowisko pracy i ustawić scenę dla rozwoju aplikacji.

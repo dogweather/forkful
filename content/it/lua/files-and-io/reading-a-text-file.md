@@ -7,9 +7,8 @@ model: gpt-4-1106-preview
 summary: "Leggere un file di testo in Lua significa estrarre dati da un documento\
   \ salvato sul disco. I programmatori lo fanno per manipolare, analizzare o\u2026"
 title: Lettura di un file di testo
+weight: 22
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why? (Cosa e Perché?)
 Leggere un file di testo in Lua significa estrarre dati da un documento salvato sul disco. I programmatori lo fanno per manipolare, analizzare o visualizzare il contenuto del file, cruciale in molti script e applicazioni.

@@ -7,9 +7,8 @@ model: gpt-4-0125-preview
 summary: "Manipuler des fichiers avec des lignes de commande (CLI) one-liners en Ruby\
   \ consiste \xE0 effectuer des op\xE9rations courantes sur des fichiers directement\u2026"
 title: Manipulation de fichiers avec des commandes en une ligne en CLI
+weight: 31
 ---
-
-{{< edit_this_page >}}
 
 ## Quoi & Pourquoi ?
 

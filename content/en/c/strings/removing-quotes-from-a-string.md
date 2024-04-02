@@ -9,9 +9,8 @@ summary: "Removing quotes from a string in C involves extracting the textual con
   \ without the encapsulating single (' ') or double (\" \") quotes. This process\
   \ is\u2026"
 title: Removing quotes from a string
+weight: 9
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 

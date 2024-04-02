@@ -7,9 +7,8 @@ model: unknown
 summary: "Skriving til standard error (stderr) er hvordan programmer rapporterer feil\
   \ og advarsler uten \xE5 blande dette med hoveddatautstr\xF8mmen (stdout).\u2026"
 title: Skrive til standardfeil
+weight: 25
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 Skriving til standard error (stderr) er hvordan programmer rapporterer feil og advarsler uten å blande dette med hoveddatautstrømmen (stdout). Programmører gjør dette for å skille normal output fra feilmeldinger, noe som gjør det enklere å logge og diagnostisere problemer.

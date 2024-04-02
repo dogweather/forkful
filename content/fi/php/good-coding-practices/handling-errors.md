@@ -8,9 +8,8 @@ model: gpt-4-1106-preview
 summary: "Virheiden k\xE4sittely PHP:ss\xE4 tarkoittaa olosuhteiden hallintaa ja niihin\
   \ reagointia, jotka h\xE4iritsev\xE4t ohjelman normaalia toimintaa, kuten puuttuvia\u2026"
 title: "Virheiden k\xE4sittely"
+weight: 16
 ---
-
-{{< edit_this_page >}}
 
 ## Mikä & Miksi?
 Virheiden käsittely PHP:ssä tarkoittaa olosuhteiden hallintaa ja niihin reagointia, jotka häiritsevät ohjelman normaalia toimintaa, kuten puuttuvia tiedostoja tai virheellistä datan syöttöä. Ohjelmoijat käsittelevät virheitä välttääkseen kaatumisia ja tarjotakseen käyttäjille sujuvamman kokemuksen.

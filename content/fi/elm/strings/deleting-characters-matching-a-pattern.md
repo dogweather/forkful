@@ -9,9 +9,8 @@ summary: "Poistamme merkkijonoista merkkej\xE4, jotka vastaavat tietty\xE4 malli
   \ siivotaan data tai muokataan teksti\xE4. T\xE4m\xE4 on hy\xF6dyllist\xE4, kun\
   \ halutaan puhdistaa\u2026"
 title: Merkkien poistaminen hakemalla osumia kaavaan
+weight: 5
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why? - Mikä ja Miksi?
 Poistamme merkkijonoista merkkejä, jotka vastaavat tiettyä mallia, siivotaan data tai muokataan tekstiä. Tämä on hyödyllistä, kun halutaan puhdistaa syötteitä, kuten käyttäjän syöttämiä tietoja tai tiedostojen sisältöä.

@@ -11,9 +11,8 @@ summary: "\xC5 skrive til en tekstfil i Lua inneb\xE6rer \xE5 opprette eller \xE
   pne en fil i skrivemodus, og deretter bruke filoperasjoner til \xE5 sette inn tekst.\
   \ Dette er en\u2026"
 title: Skrive en tekstfil
+weight: 24
 ---
-
-{{< edit_this_page >}}
 
 ## Hva & Hvorfor?
 

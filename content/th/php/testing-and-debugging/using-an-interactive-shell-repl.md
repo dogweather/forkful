@@ -22,9 +22,8 @@ summary: "Shell \u0E41\u0E1A\u0E1A\u0E42\u0E15\u0E49\u0E15\u0E2D\u0E1A, \u0E2B\u
   \u0E19\u0E23\u0E39\u0E49\u2026"
 title: "\u0E01\u0E32\u0E23\u0E43\u0E0A\u0E49 Shell \u0E41\u0E1A\u0E1A\u0E42\u0E15\u0E49\
   \u0E15\u0E2D\u0E1A (REPL)"
+weight: 34
 ---
-
-{{< edit_this_page >}}
 
 ## อะไร & ทำไม?
 Shell แบบโต้ตอบ, หรือ REPL (Read-Eval-Print Loop), ช่วยให้คุณเขียนและรันโค้ด PHP ได้ทันที มันเหมาะสำหรับการทดลอง, การดีบัก, หรือการเรียนรู้ เนื่องจากคุณสามารถทดสอบส่วนของโค้ดโดยไม่ต้องสร้างสคริปต์เต็มรูปแบบ

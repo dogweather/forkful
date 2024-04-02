@@ -9,9 +9,8 @@ summary: "Envoyer une requ\xEAte HTTP avec une authentification de base consiste
   \ fournir un nom d'utilisateur et un mot de passe pour acc\xE9der \xE0 une ressource\
   \ web.\u2026"
 title: "Envoi d'une requ\xEAte HTTP avec authentification de base"
+weight: 45
 ---
-
-{{< edit_this_page >}}
 
 ## Qu'est-ce que c'est & Pourquoi ?
 

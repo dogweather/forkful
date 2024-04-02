@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Trabalhar com CSV (Valores Separados por V\xEDrgula) envolve ler e escrever\
   \ dados em arquivos CSV, um formato comum para armazenamento de dados tabulares.\u2026"
 title: Trabalhando com CSV
+weight: 37
 ---
-
-{{< edit_this_page >}}
 
 ## O Quê & Por Quê?
 Trabalhar com CSV (Valores Separados por Vírgula) envolve ler e escrever dados em arquivos CSV, um formato comum para armazenamento de dados tabulares. Programadores fazem isso para trocar e armazenar dados de maneira fácil num formato baseado em texto simples, amplamente suportado em diferentes plataformas e linguagens.

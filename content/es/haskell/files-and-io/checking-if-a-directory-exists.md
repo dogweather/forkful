@@ -11,9 +11,8 @@ summary: "Comprobar si un directorio existe es una operaci\xF3n fundamental en m
   \ tareas de programaci\xF3n, lo que permite realizar acciones condicionales basadas\
   \ en\u2026"
 title: Comprobando si un directorio existe
+weight: 20
 ---
-
-{{< edit_this_page >}}
 
 ## ¿Qué y por qué?
 Comprobar si un directorio existe es una operación fundamental en muchas tareas de programación, lo que permite realizar acciones condicionales basadas en la presencia o ausencia de estructuras de directorios. Es crucial para la manipulación de archivos, scripts automatizados, y durante la configuración inicial de software para asegurar que los directorios necesarios estén en su lugar, o para evitar duplicar directorios.

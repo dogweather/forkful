@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Los n\xFAmeros complejos constan de una parte real y una parte imaginaria,\
   \ representados como `a + bi` donde `i` es la ra\xEDz cuadrada de `-1`. Los\u2026"
 title: "Trabajando con n\xFAmeros complejos"
+weight: 14
 ---
-
-{{< edit_this_page >}}
 
 ## ¿Qué y Por Qué?
 

@@ -7,9 +7,8 @@ model: gpt-4-1106-preview
 summary: "Concatenating strings is just a fancy way of saying 'sticking them together\
   \ end-to-end'. Programmers do it to combine words and sentences, to build\u2026"
 title: Concatenating strings
+weight: 3
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 Concatenating strings is just a fancy way of saying 'sticking them together end-to-end'. Programmers do it to combine words and sentences, to build messages, or to dynamically insert values into text.

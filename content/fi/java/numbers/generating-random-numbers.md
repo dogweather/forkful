@@ -9,9 +9,8 @@ summary: "Satunnaislukujen generointi liittyy ennustamattomien sekvenssien tai y
   isten arvojen tuottamiseen m\xE4\xE4ritellyll\xE4 v\xE4lill\xE4. Ohjelmoijat k\xE4\
   ytt\xE4v\xE4t t\xE4t\xE4\u2026"
 title: Satunnaislukujen generointi
+weight: 12
 ---
-
-{{< edit_this_page >}}
 
 ## Mikä & Miksi?
 

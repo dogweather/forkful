@@ -7,9 +7,8 @@ model: gpt-4-1106-preview
 summary: "Concatenar cadenas significa juntar dos o m\xE1s textos en uno solo. Los\
   \ programadores lo hacen para construir mensajes, combinar datos y presentar\u2026"
 title: "Concatenaci\xF3n de cadenas de texto"
+weight: 3
 ---
-
-{{< edit_this_page >}}
 
 ## ¿Qué & Por Qué?
 Concatenar cadenas significa juntar dos o más textos en uno solo. Los programadores lo hacen para construir mensajes, combinar datos y presentar información de forma dinámica.

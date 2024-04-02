@@ -7,9 +7,8 @@ model: gpt-4-1106-preview
 summary: "Logging er i bunn og grunn prosessen med \xE5 ta opp hendelser som inntreffer\
   \ i en programvareapplikasjon. Programmerere logger disse hendelsene for \xE5 fange\u2026"
 title: "Loggf\xF8ring"
+weight: 17
 ---
-
-{{< edit_this_page >}}
 
 ## Hva & Hvorfor?
 Logging er i bunn og grunn prosessen med å ta opp hendelser som inntreffer i en programvareapplikasjon. Programmerere logger disse hendelsene for å fange opp kjøretidsinformasjon, feilsøke problemer, overvåke systemoppførsel og skape en sporingslogg for sikkerhet og etterlevelse av regler.

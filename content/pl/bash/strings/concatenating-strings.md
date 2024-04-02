@@ -9,9 +9,8 @@ summary: "Konkatenacja to fancy s\u0142owo na \u0142\u0105czenie string\xF3w. Ro
   \ to, \u017Ceby zbudowa\u0107 wi\u0119ksze ci\u0105gi znak\xF3w, zarz\u0105dza\u0107\
   \ tekstami, \u015Bcie\u017Ckami plik\xF3w czy tworzy\u0107\u2026"
 title: "\u0141\u0105czenie \u0142a\u0144cuch\xF3w znak\xF3w"
+weight: 3
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why? (Co i Dlaczego?)
 Konkatenacja to fancy słowo na łączenie stringów. Robimy to, żeby zbudować większe ciągi znaków, zarządzać tekstami, ścieżkami plików czy tworzyć komunikaty.

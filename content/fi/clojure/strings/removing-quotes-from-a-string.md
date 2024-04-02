@@ -9,9 +9,8 @@ summary: "Lainausmerkkien poistaminen merkkijonosta tarkoittaa kiusallisten kaks
   \ tai yksinkertaisten lainausmerkkien h\xE4vitt\xE4mist\xE4 tekstin ymp\xE4rilt\xE4\
   . Ohjelmoijat\u2026"
 title: Merkkijonosta lainausmerkkien poistaminen
+weight: 9
 ---
-
-{{< edit_this_page >}}
 
 ## Mikä & Miksi?
 Lainausmerkkien poistaminen merkkijonosta tarkoittaa kiusallisten kaksin- tai yksinkertaisten lainausmerkkien hävittämistä tekstin ympäriltä. Ohjelmoijat tekevät tämän puhdistaakseen dataa, varmistaakseen yhtenäisyyden tai valmistaakseen merkkijonot käsittelyyn, jossa lainausmerkit ovat ei-toivottuja tai voivat aiheuttaa virheitä.

@@ -10,9 +10,8 @@ model: gpt-4-0125-preview
 summary: "Att arbeta med CSV-filer (Comma-Separated Values) i Google Apps Script inneb\xE4\
   r att l\xE4sa, modifiera och skriva textfiler d\xE4r varje rad representerar en\u2026"
 title: Att Arbeta med CSV
+weight: 37
 ---
-
-{{< edit_this_page >}}
 
 ## Vad och Varför?
 

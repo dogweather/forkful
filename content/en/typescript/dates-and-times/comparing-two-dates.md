@@ -7,9 +7,8 @@ model: gpt-4-1106-preview
 summary: "Comparing two dates involves figuring out their chronological relationship\u2014\
   are they the same, is one earlier, or maybe later? Programmers do this to\u2026"
 title: Comparing two dates
+weight: 27
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 

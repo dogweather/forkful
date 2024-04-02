@@ -9,9 +9,8 @@ summary: "Liczby zespolone rozszerzaj\u0105 liczby rzeczywiste przez dodanie jed
   \ urojonej, reprezentowanej jako 'i', gdzie i^2 = -1. Programi\u015Bci u\u017Cywaj\u0105\
   \ ich do\u2026"
 title: Praca z liczbami zespolonymi
+weight: 14
 ---
-
-{{< edit_this_page >}}
 
 ## Co i dlaczego?
 Liczby zespolone rozszerzają liczby rzeczywiste przez dodanie jednostki urojonej, reprezentowanej jako 'i', gdzie i^2 = -1. Programiści używają ich do symulacji, przetwarzania sygnałów i rozwiązywania problemów matematycznych wymagających pracy w dwóch wymiarach.

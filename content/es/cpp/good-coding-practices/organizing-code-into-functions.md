@@ -9,9 +9,8 @@ summary: "Dividir el c\xF3digo en funciones significa trocear tu c\xF3digo en fr
   \ m\xE1s peque\xF1os y reutilizables. Lo hacemos para evitar la repetici\xF3n, hacer\
   \ nuestro\u2026"
 title: "Organizando c\xF3digo en funciones"
+weight: 18
 ---
-
-{{< edit_this_page >}}
 
 ## ¿Qué y Por Qué?
 Dividir el código en funciones significa trocear tu código en fragmentos más pequeños y reutilizables. Lo hacemos para evitar la repetición, hacer nuestro código legible y simplificar el depurado y las pruebas. Las funciones bien organizadas pueden ser como tener una caja de herramientas cuidadosamente etiquetadas, listas para usar y compartir.

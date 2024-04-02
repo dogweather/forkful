@@ -11,9 +11,8 @@ summary: "HTML:n j\xE4sent\xE4minen tarkoittaa HTML-tiedoston rakenteen ja sis\x
   ll\xF6n seulomista tiedon poimimiseksi. Ohjelmoijat tekev\xE4t sit\xE4 p\xE4\xE4\
   st\xE4kseen k\xE4siksi\u2026"
 title: "HTML:n j\xE4sennys"
+weight: 43
 ---
-
-{{< edit_this_page >}}
 
 ## Mikä ja miksi?
 

@@ -11,9 +11,8 @@ summary: "I Arduino-v\xE4rlden l\xE5ter associativa arrayer dig koppla nycklar t
   \ v\xE4rden, lite som att du skulle matcha sockor med deras par. De \xE4r ett givet\
   \ val n\xE4r du\u2026"
 title: "Att anv\xE4nda associativa arrayer"
+weight: 15
 ---
-
-{{< edit_this_page >}}
 
 ## Vad & Varför?
 I Arduino-världen låter associativa arrayer dig koppla nycklar till värden, lite som att du skulle matcha sockor med deras par. De är ett givet val när du behöver lagra och hämta data med beskrivande namn, vilket gör din kod renare och mycket mer förståelig.

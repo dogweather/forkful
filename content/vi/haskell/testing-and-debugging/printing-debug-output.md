@@ -13,9 +13,8 @@ summary: "In th\xF4ng tin g\u1EE1 r\u1ED1i l\xE0 vi\u1EC7c phun ra d\u1EEF li\u1
   n g\xEC \u0111ang x\u1EA3y ra ph\xEDa sau. C\xE1c l\u1EADp tr\xECnh vi\xEAn th\u1EF1\
   c hi\u1EC7n \u0111i\u1EC1u n\xE0y \u0111\u1EC3 theo\u2026"
 title: "In ra th\xF4ng tin g\u1EE1 l\u1ED7i"
+weight: 33
 ---
-
-{{< edit_this_page >}}
 
 ## Gì và Tại Sao?
 

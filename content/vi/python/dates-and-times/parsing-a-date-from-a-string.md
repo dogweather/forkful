@@ -13,9 +13,8 @@ summary: "Ph\xE2n t\xEDch c\xFA ph\xE1p ng\xE0y t\u1EEB m\u1ED9t chu\u1ED7i ngh\
   i t\u01B0\u1EE3ng ng\xE0y th\xE1ng. Ch\xFAng ta l\xE0m \u0111i\u1EC1u n\xE0y v\xEC\
   \ vi\u1EC7c thao t\xE1c, t\xEDnh to\xE1n s\u1EF1 kh\xE1c\u2026"
 title: "Ph\xE2n t\xEDch ng\xE0y t\u1EEB chu\u1ED7i k\xED t\u1EF1"
+weight: 30
 ---
-
-{{< edit_this_page >}}
 
 ## Gì & Tại sao?
 Phân tích cú pháp ngày từ một chuỗi nghĩa là chuyển đổi văn bản thành một đối tượng ngày tháng. Chúng ta làm điều này vì việc thao tác, tính toán sự khác biệt, hoặc định dạng ngày tháng sẽ dễ dàng hơn khi chúng không còn bị giữ dưới dạng văn bản thuần.

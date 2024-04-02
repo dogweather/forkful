@@ -15,9 +15,8 @@ summary: "Vi\u1EC7c vi\u1EBFt m\u1ED9t t\u1EC7p v\u0103n b\u1EA3n c\xF3 ngh\u012
   u n\xE0y \u0111\u1EC3 log, c\u1EA5u h\xECnh, ho\u1EB7c l\u01B0u tr\u1EEF d\u1EEF\
   \u2026"
 title: "Vi\u1EBFt m\u1ED9t t\u1EC7p v\u0103n b\u1EA3n"
+weight: 24
 ---
-
-{{< edit_this_page >}}
 
 ## Gì & Tại sao?
 

@@ -11,9 +11,8 @@ summary: "\xC5 beregne en dato i fremtiden eller fortiden inneb\xE6rer \xE5 best
   \ en spesifikk dato ved \xE5 legge til eller trekke fra et visst antall dager, m\xE5\
   neder eller\u2026"
 title: Beregning av en dato i fremtiden eller fortiden
+weight: 26
 ---
-
-{{< edit_this_page >}}
 
 ## Hva & Hvorfor?
 Å beregne en dato i fremtiden eller fortiden innebærer å bestemme en spesifikk dato ved å legge til eller trekke fra et visst antall dager, måneder eller år fra en gitt dato. Programmerere gjør dette for oppgaver som å planlegge arrangementer, generere påminnelser eller håndtere utløpsdatoer, noe som gjør det til en essensiell funksjonalitet i ulike applikasjoner, fra kalendersystemer til finansiell programvare.

@@ -9,9 +9,8 @@ summary: "Chercher et remplacer du texte, c'est un peu comme chasser les fautes 
   \ frappe et les corriger. Programmers le font pour nettoyer des donn\xE9es, mettre\
   \ \xE0\u2026"
 title: Recherche et remplacement de texte
+weight: 10
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 Chercher et remplacer du texte, c'est un peu comme chasser les fautes de frappe et les corriger. Programmers le font pour nettoyer des données, mettre à jour des infos ou modifier du code plus vite que Flash sous caféine.

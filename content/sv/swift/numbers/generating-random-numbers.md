@@ -8,9 +8,8 @@ model: gpt-4-0125-preview
 summary: "Att generera slumpm\xE4ssiga tal i programmering handlar om att skapa icke-deterministiska\
   \ eller of\xF6ruts\xE4gbara numeriska v\xE4rden. Programmerare anv\xE4nder\u2026"
 title: Generera slumptal
+weight: 12
 ---
-
-{{< edit_this_page >}}
 
 ## Vad & Varför?
 

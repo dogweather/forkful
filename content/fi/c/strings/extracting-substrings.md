@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Merkkijonojen osien erottaminen C:ss\xE4 tarkoittaa pienen merkkijono-osan\
   \ (substring) luomista suuremmasta merkkijonosta tietyin kriteerein, kuten sijainnin\u2026"
 title: Alimerkkijonojen erottaminen
+weight: 6
 ---
-
-{{< edit_this_page >}}
 
 ## Mikä ja miksi?
 

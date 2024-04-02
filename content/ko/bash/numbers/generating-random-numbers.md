@@ -21,9 +21,8 @@ summary: "Bash\uC5D0\uC11C \uB79C\uB364 \uC22B\uC790\uB97C \uC0DD\uC131\uD558\uB
   \uB9BD\uD2B8\uC5D0 \uB2E4\uC591\uC131\uC744 \uCD94\uAC00\uD558\uAC70\uB098 \uB2E4\
   \uC591\uD55C \uBB34\uC791\uC704 \uC0DD\uC131 \uC870\uAC74\uC5D0\uC11C\u2026"
 title: "\uB09C\uC218 \uC0DD\uC131"
+weight: 12
 ---
-
-{{< edit_this_page >}}
 
 ## 무엇과 왜?
 Bash에서 랜덤 숫자를 생성하는 것은 스크립트에 예측할 수 없는 요소를 도입하는 방법으로, 안전한 비밀번호 생성, 데이터 시뮬레이션 또는 프로그래밍 게임과 같은 작업에 필수적입니다. 프로그래머는 이 기능을 활용하여 스크립트에 다양성을 추가하거나 다양한 무작위 생성 조건에서 프로그램을 테스트합니다.

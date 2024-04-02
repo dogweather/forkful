@@ -7,9 +7,8 @@ model: gpt-4-1106-preview
 summary: "Organizing code into functions means breaking down the beast of a program\
   \ into manageable chunks, each doing a distinct task. Programmers do this to make\u2026"
 title: Organizing code into functions
+weight: 18
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 Organizing code into functions means breaking down the beast of a program into manageable chunks, each doing a distinct task. Programmers do this to make code readable, reusable, and maintainable.

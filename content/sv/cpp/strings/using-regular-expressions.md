@@ -11,9 +11,8 @@ summary: "Regulj\xE4ra uttryck i C++ \xE4r teckenf\xF6ljder som definierar ett s
   km\xF6nster, anv\xE4nt f\xF6r att matcha eller manipulera str\xE4ngar. Programmerare\
   \ anv\xE4nder dem f\xF6r\u2026"
 title: "Att anv\xE4nda regulj\xE4ra uttryck"
+weight: 11
 ---
-
-{{< edit_this_page >}}
 
 ## Vad & Varför?
 Reguljära uttryck i C++ är teckenföljder som definierar ett sökmönster, använt för att matcha eller manipulera strängar. Programmerare använder dem för uppgifter som att validera inmatning, söka efter förekomster i strängar eller bryta sönder strängar till tokens, vilket gör dem till ett oumbärligt verktyg för effektiv och effektiv textbearbetning.

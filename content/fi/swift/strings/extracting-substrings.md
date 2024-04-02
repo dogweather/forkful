@@ -9,9 +9,8 @@ summary: "Substringin poimiminen on perusoperaatio, joka irrottaa osan merkkijon
   \ K\xE4yt\xE4mme sit\xE4, kun haluamme k\xE4sitell\xE4 tai n\xE4ytt\xE4\xE4 vain\
   \ tietyn osan\u2026"
 title: Merkkijonojen osien poimiminen
+weight: 6
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why? (Mitä & Miksi?)
 Substringin poimiminen on perusoperaatio, joka irrottaa osan merkkijonosta. Käytämme sitä, kun haluamme käsitellä tai näyttää vain tietyn osan merkkijonosta.

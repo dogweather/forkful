@@ -22,9 +22,8 @@ summary: "TOML, \u09AC\u09BE Tom's Obvious, Minimal Language, \u098F\u0995\u099F
   \u09BC\u09CD\u09AF\u09BE\u09B0\u2026"
 title: "\u099F\u09AE\u09B2 \u09A8\u09BF\u09AF\u09BC\u09C7 \u0995\u09BE\u099C \u0995\
   \u09B0\u09BE"
+weight: 39
 ---
-
-{{< edit_this_page >}}
 
 ## কি ও কেন?
 

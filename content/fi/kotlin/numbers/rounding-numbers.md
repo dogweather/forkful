@@ -9,9 +9,8 @@ summary: "Numeroiden py\xF6rist\xE4minen tarkoittaa niiden s\xE4\xE4t\xE4mist\xE
   \ l\xE4himp\xE4\xE4n kokonaislukuun tai tiettyyn tarkkuuteen. Ohjelmoijat tekev\xE4\
   t niin parantaakseen\u2026"
 title: "Numerojen py\xF6rist\xE4minen"
+weight: 13
 ---
-
-{{< edit_this_page >}}
 
 ## Mikä & Miksi?
 

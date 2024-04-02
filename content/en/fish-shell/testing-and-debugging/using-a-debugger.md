@@ -1,12 +1,14 @@
 ---
 date: 2024-01-25 20:50:19.217679-07:00
-description: "Using a debugger is all about squashing bugs\u2014the nasty, time-sucking\
-  \ errors in your code. Programmers debug because they want to find and fix issues\u2026"
+description: "Fish doesn't have a built-in debugger like some other shells, but you\
+  \ can use external tools like `gdb` for debugging compiled programs or `fish -d`\
+  \ for\u2026"
 lastmod: '2024-03-13T22:45:00.478501-06:00'
 model: gpt-4-1106-preview
-summary: "Using a debugger is all about squashing bugs\u2014the nasty, time-sucking\
-  \ errors in your code. Programmers debug because they want to find and fix issues\u2026"
+summary: "Fish doesn't have a built-in debugger like some other shells, but you can\
+  \ use external tools like `gdb` for debugging compiled programs or `fish -d` for\u2026"
 title: Using a debugger
+weight: 35
 ---
 
 ## How to:

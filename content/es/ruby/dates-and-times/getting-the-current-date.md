@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Obtener la fecha actual es una tarea esencial en casi cualquier esfuerzo\
   \ de programaci\xF3n, desde registrar actividades en una aplicaci\xF3n hasta generar\u2026"
 title: Obteniendo la fecha actual
+weight: 29
 ---
-
-{{< edit_this_page >}}
 
 ## ¿Qué y por qué?
 Obtener la fecha actual es una tarea esencial en casi cualquier esfuerzo de programación, desde registrar actividades en una aplicación hasta generar informes con sellos de fecha. En Ruby, esto se puede lograr fácilmente utilizando la biblioteca estándar, simplificando operaciones que involucran fechas.

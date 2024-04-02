@@ -18,9 +18,8 @@ summary: "\uB0A0\uC9DC\uB97C \uBB38\uC790\uC5F4\uB85C \uBCC0\uD658\uD558\uB294 \
   \ \uC704\uD574 \uD504\uB85C\uADF8\uB798\uBA38\uB4E4\uC740 \uC774 \uBCC0\uD658\uC744\
   \ \uC790\uC8FC \uC0AC\uC6A9\uD569\uB2C8\uB2E4."
 title: "\uB0A0\uC9DC\uB97C \uBB38\uC790\uC5F4\uB85C \uBCC0\uD658\uD558\uAE30"
+weight: 28
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why? (무엇인가? 왜 사용하나?)
 날짜를 문자열로 변환하는 것은 DateTime 객체를 텍스트 형식으로 바꾸는 과정입니다. 사용자가 이해하기 쉬운 형태로 날짜를 표시하거나 데이터의 형식을 통일하기 위해 프로그래머들은 이 변환을 자주 사용합니다.

@@ -11,9 +11,8 @@ summary: "Das Gro\xDFschreiben eines Strings in der Programmierung beinhaltet da
   \ Umwandeln des ersten Zeichens des Strings in Gro\xDFbuchstaben, sofern dies noch\
   \ nicht\u2026"
 title: "Einen String gro\xDFschreiben"
+weight: 2
 ---
-
-{{< edit_this_page >}}
 
 ## Was & Warum?
 

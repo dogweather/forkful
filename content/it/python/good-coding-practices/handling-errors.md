@@ -9,9 +9,8 @@ summary: "Gestire gli errori in Python (o in qualsiasi linguaggio di programmazi
   \ significa aspettarsi l'inaspettato \u2013 \xE8 l'arte di gestire con eleganza\
   \ quando le\u2026"
 title: Gestione degli errori
+weight: 16
 ---
-
-{{< edit_this_page >}}
 
 ## Cosa e perché?
 

@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Scrivere test in Fish Shell comporta la creazione di script che eseguono\
   \ automaticamente il tuo codice per validarne il comportamento rispetto ai\u2026"
 title: Scrivere test
+weight: 36
 ---
-
-{{< edit_this_page >}}
 
 ## Cosa & Perché?
 

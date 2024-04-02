@@ -19,9 +19,8 @@ summary: "C++\uC5D0\uC11C `std::map` \uB610\uB294 `std::unordered_map`\uC73C\uB8
   \uB97C \uC0AC\uC6A9\uD558\uC5EC \uBE60\uB978 \uC870\uD68C, \uC0BD\uC785, \uC0AD\uC81C\
   \uAC00 \uD544\uC694\uD560 \uB54C \uC8FC\uB85C \uC0AC\uC6A9\uD569\uB2C8\uB2E4."
 title: "\uC5F0\uAD00 \uBC30\uC5F4 \uC0AC\uC6A9\uD558\uAE30"
+weight: 15
 ---
-
-{{< edit_this_page >}}
 
 ## 무엇이며 왜 사용하나요?
 

@@ -8,9 +8,8 @@ model: gpt-4-1106-preview
 summary: "Code in Funktionen zu organisieren ist, wie LEGO-Steine in Beh\xE4lter zu\
   \ sortieren \u2013 es macht das Finden und Verwenden einfacher. Wir tun dies, um\u2026"
 title: Code in Funktionen organisieren
+weight: 18
 ---
-
-{{< edit_this_page >}}
 
 ## Was & Warum?
 Code in Funktionen zu organisieren ist, wie LEGO-Steine in Behälter zu sortieren – es macht das Finden und Verwenden einfacher. Wir tun dies, um Wiederholungen zu vermeiden, das Verständnis zu vereinfachen und die Wartung weniger kopfschmerzhaft zu machen.

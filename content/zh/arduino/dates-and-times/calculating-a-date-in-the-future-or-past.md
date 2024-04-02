@@ -14,9 +14,8 @@ summary: "\u8BA1\u7B97\u672A\u6765\u6216\u8FC7\u53BB\u7684\u65E5\u671F\u5C31\u66
   \u8FFD\u8E2A\u4E8B\u4EF6\u3001\u8BBE\u5B9A\u63D0\u9192\u6216\u8BA1\u7B97\u65F6\u95F4\
   \u5DEE\u3002"
 title: "\u8BA1\u7B97\u672A\u6765\u6216\u8FC7\u53BB\u7684\u65E5\u671F"
+weight: 26
 ---
-
-{{< edit_this_page >}}
 
 ## 什么和为什么？
 计算未来或过去的日期就是推算出在指定日期之前或之后的确切日期。程序员这样做是为了追踪事件、设定提醒或计算时间差。

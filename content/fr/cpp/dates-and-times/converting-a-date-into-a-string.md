@@ -7,9 +7,8 @@ model: gpt-4-1106-preview
 summary: "Convertir une date en cha\xEEne de caract\xE8res permet de l'afficher ou\
   \ la stocker facilement. Les programmeurs utilisent cette conversion pour l'interface\u2026"
 title: "Conversion d'une date en cha\xEEne de caract\xE8res"
+weight: 28
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why? (Quoi et Pourquoi ?)
 Convertir une date en chaîne de caractères permet de l'afficher ou la stocker facilement. Les programmeurs utilisent cette conversion pour l'interface utilisateur, les fichiers logs, ou encore pour la persistance de données.

@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Een tekstbestand lezen in programmeren stelt je code in staat gegevens te\
   \ absorberen, zoals het gieten van koffie in je hersenen in de ochtend. We doen\u2026"
 title: Een tekstbestand lezen
+weight: 22
 ---
-
-{{< edit_this_page >}}
 
 ## Wat & Waarom?
 Een tekstbestand lezen in programmeren stelt je code in staat gegevens te absorberen, zoals het gieten van koffie in je hersenen in de ochtend. We doen dit om programma's informatie te geven die ze anders niet zouden hebben, zoals instellingen, te verwerken gegevens, of instructies om op te handelen.

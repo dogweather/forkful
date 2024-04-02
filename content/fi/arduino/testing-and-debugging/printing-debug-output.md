@@ -9,9 +9,8 @@ summary: "Debug-tulostus auttaa n\xE4kem\xE4\xE4n mit\xE4 ohjelmassasi tapahtuu.
   \ k\xE4ytet\xE4\xE4n virheiden etsint\xE4\xE4n ja ohjelman toiminnan ymm\xE4rt\xE4\
   miseen."
 title: "Virheenj\xE4ljitystulosteiden tulostaminen"
+weight: 33
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why? - Mikä ja Miksi?
 Debug-tulostus auttaa näkemään mitä ohjelmassasi tapahtuu. Sitä käytetään virheiden etsintään ja ohjelman toiminnan ymmärtämiseen.

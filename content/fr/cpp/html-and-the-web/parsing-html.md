@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Analyser du HTML signifie d\xE9composer le contenu HTML en quelque chose\
   \ qu'un programme peut comprendre et manipuler. Les programmeurs font cela pour\u2026"
 title: Analyse Syntaxique du HTML
+weight: 43
 ---
-
-{{< edit_this_page >}}
 
 ## Quoi & Pourquoi ?
 Analyser du HTML signifie décomposer le contenu HTML en quelque chose qu'un programme peut comprendre et manipuler. Les programmeurs font cela pour extraire des données, manipuler du contenu ou intégrer de l'extraction web dans leurs applications.

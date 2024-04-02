@@ -11,9 +11,8 @@ summary: "Regul\xE6re uttrykk (regex) i programmering er m\xF8nstre brukt for \x
   \ matche kombinasjoner av tegn i strenger. I Elm, akkurat som i andre spr\xE5k,\
   \ bruker\u2026"
 title: "Bruke regul\xE6re uttrykk"
+weight: 11
 ---
-
-{{< edit_this_page >}}
 
 ## Hva & Hvorfor?
 Regulære uttrykk (regex) i programmering er mønstre brukt for å matche kombinasjoner av tegn i strenger. I Elm, akkurat som i andre språk, bruker programmerere regex for oppgaver som å validere inndata, søke etter og erstatte tekst i strenger på grunn av deres fleksibilitet og effektivitet.

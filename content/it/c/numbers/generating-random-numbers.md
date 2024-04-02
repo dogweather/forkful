@@ -10,9 +10,8 @@ model: gpt-4-0125-preview
 summary: "Generare numeri casuali in C comporta la creazione di valori che sono imprevedibili\
   \ e seguono una specifica distribuzione, come uniforme o normale. Questa\u2026"
 title: Generazione di numeri casuali
+weight: 12
 ---
-
-{{< edit_this_page >}}
 
 ## Cosa e perché?
 

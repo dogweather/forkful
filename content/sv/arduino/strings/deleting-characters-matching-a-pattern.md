@@ -7,9 +7,8 @@ model: gpt-4-1106-preview
 summary: "Att radera tecken som matchar ett m\xF6nster inneb\xE4r att vi aktivt letar\
   \ efter specifika sekvenser av tecken i en str\xE4ng och tar bort dessa. Programmerare\u2026"
 title: "Ta bort tecken som matchar ett m\xF6nster"
+weight: 5
 ---
-
-{{< edit_this_page >}}
 
 ## Vad & Varför?
 

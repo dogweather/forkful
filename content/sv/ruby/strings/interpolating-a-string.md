@@ -9,9 +9,8 @@ summary: "Stringinterpolering l\xE5ter dig s\xE4tta in variabler eller Ruby-kod 
   \ i en str\xE4ng. Det \xE4r ett snabbt och l\xE4sarv\xE4nligt s\xE4tt att bygga\
   \ dynamiska str\xE4ngar."
 title: "Interpolera en str\xE4ng"
+weight: 8
 ---
-
-{{< edit_this_page >}}
 
 ## Vad & Varför?
 Stringinterpolering låter dig sätta in variabler eller Ruby-kod inne i en sträng. Det är ett snabbt och läsarvänligt sätt att bygga dynamiska strängar.

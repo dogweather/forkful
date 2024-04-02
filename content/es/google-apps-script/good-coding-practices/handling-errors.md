@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "El manejo de errores en Google Apps Script trata sobre prever, capturar\
   \ y responder a excepciones o errores que ocurren durante la ejecuci\xF3n del script.\u2026"
 title: Manejo de errores
+weight: 16
 ---
-
-{{< edit_this_page >}}
 
 ## Qué y Por Qué?
 

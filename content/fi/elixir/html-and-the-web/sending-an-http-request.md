@@ -9,9 +9,8 @@ summary: "HTTP-pyynt\xF6 on tapa siirt\xE4\xE4 tietoa verkossa palvelimien ja as
   \ v\xE4lill\xE4. Ohjelmoijat k\xE4ytt\xE4v\xE4t t\xE4t\xE4 toimintoa hakeakseen\
   \ dataa, l\xE4hett\xE4\xE4kseen dataa\u2026"
 title: "HTTP-pyynn\xF6n l\xE4hett\xE4minen"
+weight: 44
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 HTTP-pyyntö on tapa siirtää tietoa verkossa palvelimien ja asiakkaiden välillä. Ohjelmoijat käyttävät tätä toimintoa hakeakseen dataa, lähettääkseen dataa tai kommunikoidakseen etäpäätepisteiden kanssa.

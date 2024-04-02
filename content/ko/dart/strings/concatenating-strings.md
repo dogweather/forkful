@@ -23,9 +23,8 @@ summary: "\uD504\uB85C\uADF8\uB798\uBC0D\uC5D0\uC11C \uBB38\uC790\uC5F4\uC744 \u
   \ \uC870\uB9BD\uD558\uAE30 \uC704\uD574 \uC774 \uAE30\uB2A5\uC744 \uC0AC\uC6A9\uD569\
   \uB2C8\uB2E4."
 title: "\uBB38\uC790\uC5F4 \uC5F0\uACB0\uD558\uAE30"
+weight: 3
 ---
-
-{{< edit_this_page >}}
 
 ## 무엇 & 왜?
 프로그래밍에서 문자열을 연결한다는 것은 두 개 이상의 문자열을 하나로 결합하는 것을 말합니다. 프로그래머들은 이를 통해 텍스트 데이터를 쉽게 조작하거나, 메시지를 구성하거나, 사용자 인터페이스의 일부를 동적으로 조립하기 위해 이 기능을 사용합니다.

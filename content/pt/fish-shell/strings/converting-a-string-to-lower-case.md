@@ -7,9 +7,8 @@ model: gpt-4-1106-preview
 summary: "Converter uma string para min\xFAsculas \xE9 o processo de transformar todos\
   \ os caracteres alfab\xE9ticos em um texto para sua variante em caixa baixa.\u2026"
 title: "Convertendo uma string para min\xFAsculas"
+weight: 4
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 Converter uma string para minúsculas é o processo de transformar todos os caracteres alfabéticos em um texto para sua variante em caixa baixa. Programadores fazem isso para padronizar dados, facilitar comparações de strings, ou atender requisitos específicos de sistemas que diferenciam maiúsculas e minúsculas.

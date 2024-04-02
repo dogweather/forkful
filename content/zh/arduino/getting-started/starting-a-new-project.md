@@ -12,9 +12,8 @@ summary: "\u5F00\u59CB\u4E00\u4E2A\u65B0\u9879\u76EE\u610F\u5473\u7740\u5F00\u54
   \u89E3\u51B3\u95EE\u9898\uFF0C\u5B66\u4E60\uFF0C\u6216\u662F\u4E3A\u4E86\u4E50\u8DA3\
   \u3002"
 title: "\u5F00\u59CB\u4E00\u4E2A\u65B0\u9879\u76EE"
+weight: 1
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why? (是什么？为什么？)
 开始一个新项目意味着开启创作旅程。程序员这么做是为了解决问题，学习，或是为了乐趣。

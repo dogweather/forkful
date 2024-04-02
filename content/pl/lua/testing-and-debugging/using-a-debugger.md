@@ -1,14 +1,15 @@
 ---
 date: 2024-01-26 03:50:31.284215-07:00
-description: "Debugger to narz\u0119dzie, kt\xF3re pozwala inspekcjonowa\u0107 i kontrolowa\u0107\
-  \ wykonanie programu, u\u0142atwiaj\u0105c wskazanie momentu, kiedy co\u015B idzie\
-  \ nie tak. Programi\u015Bci\u2026"
+description: "Lua nie posiada wbudowanego debuggera, ale mo\u017Cna u\u017Cywa\u0107\
+  \ zewn\u0119trznych, na przyk\u0142ad ZeroBrane Studio. Oto ma\u0142a pr\xF3bka\
+  \ pracy z nim: ```Lua -- To jest prosty\u2026"
 lastmod: '2024-03-13T22:44:35.544501-06:00'
 model: gpt-4-0125-preview
-summary: "Debugger to narz\u0119dzie, kt\xF3re pozwala inspekcjonowa\u0107 i kontrolowa\u0107\
-  \ wykonanie programu, u\u0142atwiaj\u0105c wskazanie momentu, kiedy co\u015B idzie\
-  \ nie tak. Programi\u015Bci\u2026"
+summary: "Lua nie posiada wbudowanego debuggera, ale mo\u017Cna u\u017Cywa\u0107 zewn\u0119\
+  trznych, na przyk\u0142ad ZeroBrane Studio. Oto ma\u0142a pr\xF3bka pracy z nim:\
+  \ ```Lua -- To jest prosty\u2026"
 title: Korzystanie z debugera
+weight: 35
 ---
 
 ## Jak to zrobić:

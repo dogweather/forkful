@@ -7,9 +7,8 @@ model: gpt-4-1106-preview
 summary: "Complex numbers expand our number system to include the square roots of\
   \ negative numbers, where the 'imaginary' unit i equals the square root of -1.\u2026"
 title: Working with complex numbers
+weight: 14
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 Complex numbers expand our number system to include the square roots of negative numbers, where the 'imaginary' unit i equals the square root of -1. Programmers use them in fields like engineering, physics, and signal processing, because they're great at modelling waves, oscillations, and anything that rotates.

@@ -9,9 +9,8 @@ summary: "Supprimer des caract\xE8res correspondant \xE0 un motif, c'est filtrer
   \ texte pour ne garder que ce qui est utile. Les programmeurs le font pour nettoyer\
   \ des\u2026"
 title: "Suppression de caract\xE8res correspondant \xE0 un motif"
+weight: 5
 ---
-
-{{< edit_this_page >}}
 
 ## Ce qu'on fait et pourquoi ?
 

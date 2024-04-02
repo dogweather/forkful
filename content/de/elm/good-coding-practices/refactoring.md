@@ -9,9 +9,8 @@ summary: "Refactoring ist im Grunde genommen wie ein Fr\xFChjahrsputz f\xFCr Ihr
   \ Codebasis \u2013 es geht darum, bestehenden Code umzustrukturieren, ohne sein\
   \ externes\u2026"
 title: Refactoring
+weight: 19
 ---
-
-{{< edit_this_page >}}
 
 ## Was & Warum?
 Refactoring ist im Grunde genommen wie ein Frühjahrsputz für Ihre Codebasis – es geht darum, bestehenden Code umzustrukturieren, ohne sein externes Verhalten zu ändern. Programmierer tun dies, um den Code lesbarer zu machen, Komplexität zu reduzieren, die Wartbarkeit zu verbessern und ihn einfacher erweiterbar zu machen.

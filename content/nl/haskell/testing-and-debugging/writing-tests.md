@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Tests schrijven controleert of code doet wat het moet doen. Testen vangt\
   \ bugs op, helpt bij het onderhouden van code en zorgt ervoor dat wijzigingen niets\u2026"
 title: Tests Schrijven
+weight: 36
 ---
-
-{{< edit_this_page >}}
 
 ## Wat & Waarom?
 

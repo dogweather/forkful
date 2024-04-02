@@ -11,9 +11,8 @@ summary: "Convertire le date in stringhe \xE8 un compito fondamentale che consen
   \ ai programmatori di manipolare e visualizzare le informazioni relative alle date\
   \ in\u2026"
 title: Convertire una data in una stringa
+weight: 28
 ---
-
-{{< edit_this_page >}}
 
 ## Cosa e Perché?
 

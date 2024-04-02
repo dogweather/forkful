@@ -9,9 +9,8 @@ summary: "Komplexa tal har en reell del och en imagin\xE4r del (som `3 + 4i`). D
   \ anv\xE4nds inom ingenj\xF6rsarbete, fysik och vissa dataproblem. Programmerare\
   \ arbetar med\u2026"
 title: Att arbeta med komplexa tal
+weight: 14
 ---
-
-{{< edit_this_page >}}
 
 ## Vad & Varför?
 Komplexa tal har en reell del och en imaginär del (som `3 + 4i`). De används inom ingenjörsarbete, fysik och vissa dataproblem. Programmerare arbetar med dem för simuleringar, signalbehandling och för att lösa vissa typer av matematiska problem effektivt.

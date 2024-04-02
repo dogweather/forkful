@@ -10,9 +10,8 @@ model: gpt-4-0125-preview
 summary: "Criar um arquivo tempor\xE1rio em Visual Basic for Applications (VBA) envolve\
   \ gerar programaticamente um arquivo para uso de curto prazo, tipicamente para\u2026"
 title: "Criando um arquivo tempor\xE1rio"
+weight: 21
 ---
-
-{{< edit_this_page >}}
 
 ## O Que & Por Que?
 

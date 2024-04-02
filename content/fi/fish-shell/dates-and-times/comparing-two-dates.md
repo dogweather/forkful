@@ -9,9 +9,8 @@ summary: "(Mit\xE4 & Miksi?) Vertaamme kahta p\xE4iv\xE4m\xE4\xE4r\xE4\xE4 tunni
   \ niiden eron. Ohjelmoijat tekev\xE4t t\xE4m\xE4n aikataulujen hallintaan, aikaleimojen\
   \ tarkkailuun tai\u2026"
 title: "Kahden p\xE4iv\xE4m\xE4\xE4r\xE4n vertailu"
+weight: 27
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 (Mitä & Miksi?)

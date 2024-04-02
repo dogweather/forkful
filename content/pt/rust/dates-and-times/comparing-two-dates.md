@@ -9,9 +9,8 @@ summary: "Comparar duas datas \xE9 o ato de verificar se s\xE3o iguais, se uma \
   \ anterior \xE0 outra ou se \xE9 mais recente. Programadores fazem isso para manipular\
   \ e validar\u2026"
 title: Comparando duas datas
+weight: 27
 ---
-
-{{< edit_this_page >}}
 
 ## O Que & Porquê?
 

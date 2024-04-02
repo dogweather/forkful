@@ -9,9 +9,8 @@ summary: "\xC5 fjerne anf\xF8rselstegn fra en streng i PowerShell fjerner enkle 
   \ eller doble (`\"`) anf\xF8rselstegn som er lagt rundt teksten din. Programmerere\
   \ trenger\u2026"
 title: "Fjerne anf\xF8rselstegn fra en streng"
+weight: 9
 ---
-
-{{< edit_this_page >}}
 
 ## Hva & Hvorfor?
 Å fjerne anførselstegn fra en streng i PowerShell fjerner enkle (`'`) eller doble (`"`) anførselstegn som er lagt rundt teksten din. Programmerere trenger ofte å rense strenger for behandling, sammenligning eller utskriftsformål, spesielt når de håndterer brukerinndata eller filparsing.

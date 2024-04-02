@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Debug output printen is alsof je een gesprek hebt met je code om uit te\
   \ vinden wat het denkt. Programmeurs doen dit om de gremlins op te sporen die\u2026"
 title: Debug-output afdrukken
+weight: 33
 ---
-
-{{< edit_this_page >}}
 
 ## Wat & Waarom?
 Debug output printen is alsof je een gesprek hebt met je code om uit te vinden wat het denkt. Programmeurs doen dit om de gremlins op te sporen die kattenkwaad uithalen in hun programma's.

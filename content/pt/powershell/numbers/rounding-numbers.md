@@ -9,9 +9,8 @@ summary: "Arredondar n\xFAmeros consiste em ajustar um valor para o inteiro mais
   ximo ou para um ponto decimal especificado. Programadores arredondam n\xFAmeros\
   \ para\u2026"
 title: "Arredondamento de n\xFAmeros"
+weight: 13
 ---
-
-{{< edit_this_page >}}
 
 ## O Que & Por Que?
 Arredondar números consiste em ajustar um valor para o inteiro mais próximo ou para um ponto decimal especificado. Programadores arredondam números para simplificar dados, melhorar a legibilidade ou atender determinados requisitos matemáticos durante cálculos.

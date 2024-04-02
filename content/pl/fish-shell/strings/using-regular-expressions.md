@@ -9,9 +9,8 @@ summary: "Wyra\u017Cenia regularne to wzorce u\u017Cywane do wyszukiwania i mani
   \ tekstami. Programi\u015Bci u\u017Cywaj\u0105 ich, bo pozwalaj\u0105 na zaawansowane\
   \ przetwarzanie tekstu\u2026"
 title: "Wykorzystanie wyra\u017Ce\u0144 regularnych"
+weight: 11
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why? - Co i dlaczego?
 Wyrażenia regularne to wzorce używane do wyszukiwania i manipulowania tekstami. Programiści używają ich, bo pozwalają na zaawansowane przetwarzanie tekstu niewielkim kosztem.

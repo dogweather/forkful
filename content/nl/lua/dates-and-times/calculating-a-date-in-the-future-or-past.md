@@ -10,9 +10,8 @@ model: gpt-4-0125-preview
 summary: "Het berekenen van toekomstige of verleden data betekent uitzoeken wat de\
   \ datum zal zijn na of voor een bepaalde hoeveelheid tijd. Programmeurs doen dit\u2026"
 title: Een datum in de toekomst of het verleden berekenen
+weight: 26
 ---
-
-{{< edit_this_page >}}
 
 ## Wat & Waarom?
 Het berekenen van toekomstige of verleden data betekent uitzoeken wat de datum zal zijn na of voor een bepaalde hoeveelheid tijd. Programmeurs doen dit voor functies zoals herinneringen, abonnementen, of om voorbije gebeurtenissen bij te houden.

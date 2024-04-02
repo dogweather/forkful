@@ -7,9 +7,8 @@ model: gpt-4-0125-preview
 summary: "Arrotondare i numeri significa aggiustarli a un valore vicino per semplicit\xE0\
   \ o per corrispondere a una certa precisione. \xC8 utile per migliorare la\u2026"
 title: Arrotondamento dei numeri
+weight: 13
 ---
-
-{{< edit_this_page >}}
 
 ## Cosa e Perché?
 Arrotondare i numeri significa aggiustarli a un valore vicino per semplicità o per corrispondere a una certa precisione. È utile per migliorare la leggibilità, ridurre lo spazio di archiviazione o soddisfare esigenze specifiche del dominio, come i calcoli monetari in cui si desidera arrotondare al centesimo più vicino.

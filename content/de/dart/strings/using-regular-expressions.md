@@ -10,9 +10,8 @@ model: gpt-4-0125-preview
 summary: "Regul\xE4re Ausdr\xFCcke (regex) in Dart bieten eine leistungsf\xE4hige\
   \ M\xF6glichkeit, Strings zu suchen und zu manipulieren, wodurch Programmierer komplexe\u2026"
 title: "Regul\xE4re Ausdr\xFCcke verwenden"
+weight: 11
 ---
-
-{{< edit_this_page >}}
 
 ## Was & Warum?
 Reguläre Ausdrücke (regex) in Dart bieten eine leistungsfähige Möglichkeit, Strings zu suchen und zu manipulieren, wodurch Programmierer komplexe Textverarbeitungsaufgaben effizient durchführen können. Durch das Verständnis von regex können Entwickler Textvalidierungen, Suchmuster und Texttransformationen schnell ausführen, was für die Verarbeitung von Formularen, Daten-Parsing und allgemeine String-Manipulationen in modernen Anwendungen wesentlich ist.

@@ -9,9 +9,8 @@ summary: "Komennon rivin argumentit ovat ohjelmallesi sy\xF6tettyj\xE4 tietoja. 
   \ mahdollistavat joustavuuden ja mukautettavuuden, jolloin ohjelmasi voi k\xE4ytt\xE4\
   yty\xE4 eri\u2026"
 title: Komennoriviparametrien lukeminen
+weight: 23
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why? (Mitä ja Miksi?)
 

@@ -10,9 +10,8 @@ model: gpt-4-0125-preview
 summary: "YAML, som st\xE5r f\xF6r YAML Ain't Markup Language, \xE4r ett l\xE4sbarhetsv\xE4\
   nligt data-serialiseringsformat. Programmerare anv\xE4nder ofta detta f\xF6r\u2026"
 title: Att Arbeta med YAML
+weight: 41
 ---
-
-{{< edit_this_page >}}
 
 ## Vad & Varför?
 

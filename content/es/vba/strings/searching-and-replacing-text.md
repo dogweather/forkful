@@ -10,9 +10,8 @@ model: gpt-4-0125-preview
 summary: "Buscar y reemplazar texto en Visual Basic para Aplicaciones (VBA) es esencial\
   \ para editar documentos, hojas de c\xE1lculo y bases de datos program\xE1ticamente.\u2026"
 title: Buscando y reemplazando texto
+weight: 10
 ---
-
-{{< edit_this_page >}}
 
 ## ¿Qué y Por Qué?
 

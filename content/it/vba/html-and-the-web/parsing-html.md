@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Il parsing di HTML in Visual Basic for Applications (VBA) implica l'estrazione\
   \ di informazioni specifiche da un documento HTML. I programmatori lo fanno\u2026"
 title: Analisi del HTML
+weight: 43
 ---
-
-{{< edit_this_page >}}
 
 ## Cosa e Perché?
 

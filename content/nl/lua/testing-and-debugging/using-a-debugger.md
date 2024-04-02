@@ -2,13 +2,14 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:09:10.456921-07:00
-description: "Een debugger is een hulpmiddel waarmee je de uitvoering van een programma\
-  \ kunt inspecteren en controleren, wat het makkelijk maakt om te ontdekken waar\u2026"
+description: "Lua komt niet met een ingebouwde debugger, maar je kunt externe debuggers\
+  \ gebruiken, zoals ZeroBrane Studio. Hier is een voorproefje van hoe je ermee zou\u2026"
 lastmod: '2024-03-13T22:44:50.941948-06:00'
 model: gpt-4-0125-preview
-summary: "Een debugger is een hulpmiddel waarmee je de uitvoering van een programma\
-  \ kunt inspecteren en controleren, wat het makkelijk maakt om te ontdekken waar\u2026"
+summary: "Lua komt niet met een ingebouwde debugger, maar je kunt externe debuggers\
+  \ gebruiken, zoals ZeroBrane Studio. Hier is een voorproefje van hoe je ermee zou\u2026"
 title: Een debugger gebruiken
+weight: 35
 ---
 
 ## Hoe:

@@ -13,9 +13,8 @@ summary: "Ghi l\u1EA1i (Logging) c\u01A1 b\u1EA3n l\xE0 qu\xE1 tr\xECnh ghi l\u1
   t ph\u1EA7n m\u1EC1m khi n\xF3 \u0111ang ch\u1EA1y, coi n\xF3 nh\u01B0 nh\u1EAD\
   t k\xFD c\u1EE7a ph\u1EA7n m\u1EC1m. L\u1EADp tr\xECnh\u2026"
 title: Ghi log
+weight: 17
 ---
-
-{{< edit_this_page >}}
 
 ## Gì & Tại Sao?
 Ghi lại (Logging) cơ bản là quá trình ghi lại các sự kiện và dữ liệu đầu ra từ một phần mềm khi nó đang chạy, coi nó như nhật ký của phần mềm. Lập trình viên sử dụng ghi lại để theo dõi những gì đang xảy ra bên dưới lớp vỏ - nó cực kỳ quý giá cho việc gỡ lỗi, theo dõi hành vi hệ thống theo thời gian thực và phân tích hoạt động trong quá khứ để tối ưu hóa hiệu suất hoặc kiểm toán.

@@ -9,9 +9,8 @@ summary: "L'affichage de sorties de d\xE9bogage, c'est exposer les entrailles de
   \ code \u2013 voir ce qu'il se passe en temps r\xE9el. Les d\xE9veloppeurs le font\
   \ pour\u2026"
 title: "Affichage des sorties de d\xE9bogage"
+weight: 33
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 L'affichage de sorties de débogage, c'est exposer les entrailles de votre code – voir ce qu'il se passe en temps réel. Les développeurs le font pour traquer les bugs plus efficacement.

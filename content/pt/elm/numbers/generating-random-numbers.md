@@ -12,9 +12,8 @@ summary: "Gerar n\xFAmeros aleat\xF3rios em Elm envolve o uso do m\xF3dulo `Rand
   \ para produzir n\xFAmeros pseudoaleat\xF3rios, que s\xE3o \xFAteis para uma variedade\
   \ de tarefas, como\u2026"
 title: "Gerando n\xFAmeros aleat\xF3rios"
+weight: 12
 ---
-
-{{< edit_this_page >}}
 
 ## O Que & Porquê?
 Gerar números aleatórios em Elm envolve o uso do módulo `Random` para produzir números pseudoaleatórios, que são úteis para uma variedade de tarefas, como jogos, simulações e até como parte de algoritmos que exigem processos estocásticos. Essa capacidade permite que os desenvolvedores adicionem imprevisibilidade e variedade às suas aplicações, melhorando a experiência do usuário e a funcionalidade.

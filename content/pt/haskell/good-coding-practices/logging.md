@@ -9,9 +9,8 @@ summary: "Log em programa\xE7\xE3o \xE9 basicamente deixar um rastro de migalhas
   \ forma de eventos ou mensagens gravadas, que podem ser usadas para acompanhar o\
   \ que sua\u2026"
 title: Registro de Logs
+weight: 17
 ---
-
-{{< edit_this_page >}}
 
 ## O Quê & Por Quê?
 Log em programação é basicamente deixar um rastro de migalhas na forma de eventos ou mensagens gravadas, que podem ser usadas para acompanhar o que sua aplicação está fazendo em qualquer momento. Programadores fazem isso para depurar problemas, monitorar o desempenho do sistema e auditar o comportamento por motivos de segurança e conformidade.

@@ -11,9 +11,8 @@ summary: "Att sammanfoga str\xE4ngar i programmering inneb\xE4r att kombinera tv
   \ eller flera str\xE4ngar till en. Programmerare g\xF6r detta f\xF6r att enkelt\
   \ manipulera\u2026"
 title: "Sammans\xE4ttning av str\xE4ngar"
+weight: 3
 ---
-
-{{< edit_this_page >}}
 
 ## Vad & Varför?
 Att sammanfoga strängar i programmering innebär att kombinera två eller flera strängar till en. Programmerare gör detta för att enkelt manipulera textdata, konstruera meddelanden eller sammanställa delar av ett användargränssnitt dynamiskt.

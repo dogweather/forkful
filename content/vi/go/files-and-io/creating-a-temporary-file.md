@@ -13,9 +13,8 @@ summary: "Vi\u1EC7c t\u1EA1o m\u1ED9t t\u1EC7p t\u1EA1m th\u1EDDi trong Go cho p
   \u01B0\u1EE3c thi\u1EBFt k\u1EBF \u0111\u1EC3 s\u1EED d\u1EE5ng trong th\u1EDDi\
   \ gian ng\u1EAFn, ch\u1EE7 y\u1EBFu l\xE0 cho c\xE1c nhi\u1EC7m\u2026"
 title: "T\u1EA1o m\u1ED9t t\u1EC7p t\u1EA1m th\u1EDDi"
+weight: 21
 ---
-
-{{< edit_this_page >}}
 
 ## Cái gì & Tại sao?
 

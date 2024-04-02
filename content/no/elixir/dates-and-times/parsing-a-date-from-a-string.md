@@ -11,9 +11,8 @@ model: gpt-4-0125-preview
 summary: "\xC5 analysere en dato fra en streng handler om \xE5 ta tekst, som \"2023-04-05\"\
   , og konvertere det til et datoformat programmet ditt kan forst\xE5 og jobbe med.\u2026"
 title: Analysering av en dato fra en streng
+weight: 30
 ---
-
-{{< edit_this_page >}}
 
 ## Hva & Hvorfor?
 

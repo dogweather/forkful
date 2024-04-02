@@ -10,9 +10,8 @@ model: gpt-4-0125-preview
 summary: "Associatieve arrays, ook bekend als hash-tabellen of woordenboeken in PowerShell,\
   \ stellen je in staat om gegevens op te slaan in sleutel-waardeparen, wat\u2026"
 title: Gebruik van associatieve arrays
+weight: 15
 ---
-
-{{< edit_this_page >}}
 
 ## Wat & Waarom?
 

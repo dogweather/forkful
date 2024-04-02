@@ -10,9 +10,8 @@ model: gpt-4-0125-preview
 summary: "Att arbeta med YAML inneb\xE4r att tolka och hantera YAML-filer (YAML Ain't\
   \ Markup Language), ett serialiseringsformat f\xF6r data som anv\xE4nds f\xF6r\u2026"
 title: Att Arbeta med YAML
+weight: 41
 ---
-
-{{< edit_this_page >}}
 
 ## Vad & Varför?
 Att arbeta med YAML innebär att tolka och hantera YAML-filer (YAML Ain't Markup Language), ett serialiseringsformat för data som används för konfigurationsfiler, i Fish Shell. Programmerare gör detta för att automatisera och konfigurera applikationer eller tjänster effektivt inom ramen för skal-miljöer, vilket underlättar uppgifter som konfigurationshantering och tillhandahållande av resurser.

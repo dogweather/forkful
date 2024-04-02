@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Een string omzetten naar kleine letters is een fundamentele bewerking waarbij\
   \ alle tekens in een gegeven string worden getransformeerd naar hun\u2026"
 title: Een string converteren naar onderkast
+weight: 4
 ---
-
-{{< edit_this_page >}}
 
 ## Wat & Waarom?
 

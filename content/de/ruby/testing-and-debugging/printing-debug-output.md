@@ -7,9 +7,8 @@ model: gpt-4-1106-preview
 summary: "Drucken von Debug-Output ist, wenn wir programminterne Daten zur Laufzeit\
   \ ausgeben, um Fehler zu finden und den Programmfluss zu verstehen. Wir machen\u2026"
 title: Debug-Ausgaben drucken
+weight: 33
 ---
-
-{{< edit_this_page >}}
 
 ## Was & Warum?
 Drucken von Debug-Output ist, wenn wir programminterne Daten zur Laufzeit ausgeben, um Fehler zu finden und den Programmfluss zu verstehen. Wir machen das, weil es einfach und schnell ist, uns einen Überblick über die inneren Vorgänge eines Programms zu verschaffen.

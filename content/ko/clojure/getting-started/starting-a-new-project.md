@@ -16,9 +16,8 @@ summary: "\uD504\uB85C\uC81D\uD2B8\uB97C \uC2DC\uC791\uD55C\uB2E4\uB294 \uAC74 \
   \uD558\uAC70\uB098 \uBB38\uC81C\uB97C \uD574\uACB0\uD558\uAE30 \uC704\uD574 \uD504\
   \uB85C\uC81D\uD2B8\uB97C \uC2DC\uC791\uD569\uB2C8\uB2E4."
 title: "\uC0C8 \uD504\uB85C\uC81D\uD2B8 \uC2DC\uC791\uD558\uAE30"
+weight: 1
 ---
-
-{{< edit_this_page >}}
 
 ## 시작은 무엇이며, 왜 하는가?
 프로젝트를 시작한다는 건 새로운 소프트웨어 작업을 만들어나가는 출발점입니다. 프로그래머들은 새로운 아이디어를 실현하거나 문제를 해결하기 위해 프로젝트를 시작합니다.

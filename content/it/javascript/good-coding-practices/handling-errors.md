@@ -9,9 +9,8 @@ summary: "La gestione degli errori \xE8 il modo in cui si gestiscono le situazio
   \ impreviste nel codice. \xC8 fondamentale perch\xE9 permette ai tuoi programmi\
   \ di fallire\u2026"
 title: Gestione degli errori
+weight: 16
 ---
-
-{{< edit_this_page >}}
 
 ## Cosa & Perché?
 

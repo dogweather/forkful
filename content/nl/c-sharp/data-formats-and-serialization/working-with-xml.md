@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "XML (eXtensible Markup Language) gaat over het structureren van data in\
   \ een leesbaar formaat. Programmeurs werken met XML voor configuratie,\u2026"
 title: Werken met XML
+weight: 40
 ---
-
-{{< edit_this_page >}}
 
 ## Wat & Waarom?
 XML (eXtensible Markup Language) gaat over het structureren van data in een leesbaar formaat. Programmeurs werken met XML voor configuratie, gegevensuitwisseling tussen apps, en waar specificaties erom vragen—denk aan SOAP of web-API's.

@@ -9,9 +9,8 @@ summary: "Debug-utskrifter hj\xE4lper programmerare att f\xF6rst\xE5 vad deras k
   \ g\xF6r genom att visa mellanliggande v\xE4rden och processfl\xF6den. De anv\xE4\
   nds f\xF6r att snabbt\u2026"
 title: "Skriva ut fels\xF6kningsdata"
+weight: 33
 ---
-
-{{< edit_this_page >}}
 
 ## Vad & Varför?
 Debug-utskrifter hjälper programmerare att förstå vad deras kod gör genom att visa mellanliggande värden och processflöden. De används för att snabbt lokalisera och rätta till fel i koden.

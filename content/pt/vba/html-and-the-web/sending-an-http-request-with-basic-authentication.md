@@ -11,9 +11,8 @@ summary: "Enviar uma solicita\xE7\xE3o HTTP com autentica\xE7\xE3o b\xE1sica em 
   \ Basic for Applications (VBA) trata de acessar recursos da web que s\xE3o protegidos\
   \ por\u2026"
 title: "Enviando uma solicita\xE7\xE3o HTTP com autentica\xE7\xE3o b\xE1sica"
+weight: 45
 ---
-
-{{< edit_this_page >}}
 
 ## O Que & Por Quê?
 

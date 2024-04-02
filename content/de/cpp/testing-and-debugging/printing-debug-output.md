@@ -7,9 +7,8 @@ model: gpt-4-1106-preview
 summary: "Debug-Ausgaben zu drucken, hei\xDFt, Informationen zur Laufzeit auszugeben,\
   \ um Fehler zu finden oder Programmabl\xE4ufe zu verstehen. Es ist wie das Schummeln\u2026"
 title: Debug-Ausgaben drucken
+weight: 33
 ---
-
-{{< edit_this_page >}}
 
 ## Was & Warum?
 Debug-Ausgaben zu drucken, heißt, Informationen zur Laufzeit auszugeben, um Fehler zu finden oder Programmabläufe zu verstehen. Es ist wie das Schummeln bei einer Puzzlesuche: Man bekommt Hinweise, wo die Teile hingehören.

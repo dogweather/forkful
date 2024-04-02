@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Organiser le code en fonctions consiste \xE0 structurer votre code Google\
   \ Apps Script en s\xE9parant les segments logiques en blocs distincts, chacun effectuant\u2026"
 title: Organiser le code en fonctions
+weight: 18
 ---
-
-{{< edit_this_page >}}
 
 ## Quoi et Pourquoi ?
 

@@ -10,9 +10,8 @@ model: gpt-4-0125-preview
 summary: "Het schrijven van tests controleert of je code doet wat het moet doen, en\
   \ vangt bugs vroeg op. Programmeurs testen om tijd, hoofdpijn te besparen en om\u2026"
 title: Tests Schrijven
+weight: 36
 ---
-
-{{< edit_this_page >}}
 
 ## Wat & Waarom?
 Het schrijven van tests controleert of je code doet wat het moet doen, en vangt bugs vroeg op. Programmeurs testen om tijd, hoofdpijn te besparen en om betrouwbaarheid te garanderen.

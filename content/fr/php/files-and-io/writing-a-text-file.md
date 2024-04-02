@@ -11,9 +11,8 @@ summary: "\xC9crire un fichier texte en PHP implique de cr\xE9er ou d'ouvrir un 
   \ et d'y ins\xE9rer du contenu. Les programmeurs font cela pour persister des donn\xE9\
   es,\u2026"
 title: "R\xE9diger un fichier texte"
+weight: 24
 ---
-
-{{< edit_this_page >}}
 
 ## Quoi et pourquoi ?
 Écrire un fichier texte en PHP implique de créer ou d'ouvrir un fichier et d'y insérer du contenu. Les programmeurs font cela pour persister des données, comme du contenu généré par l'utilisateur ou des logs, au-delà du cycle de vie du programme.

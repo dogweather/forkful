@@ -11,9 +11,8 @@ summary: "Att hitta l\xE4ngden p\xE5 en str\xE4ng i C inneb\xE4r att best\xE4mma
   \ tecken f\xF6re det nollterminerande tecknet `\\0`. Programmerare g\xF6r detta\
   \ f\xF6r att korrekt\u2026"
 title: "Hitta l\xE4ngden p\xE5 en str\xE4ng"
+weight: 7
 ---
-
-{{< edit_this_page >}}
 
 ## Vad & Varför?
 Att hitta längden på en sträng i C innebär att bestämma antalet tecken före det nollterminerande tecknet `\0`. Programmerare gör detta för att korrekt kunna manipulera strängar utan att stöta på fel som buffertöverskridningar, vilket kan leda till säkerhetsbrister eller programkrascher.

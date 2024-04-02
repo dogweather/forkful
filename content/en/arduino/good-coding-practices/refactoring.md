@@ -7,9 +7,8 @@ model: gpt-4-1106-preview
 summary: "Refactoring is the process of reworking your code to improve its structure\
   \ and readability without altering the external behavior or functionality.\u2026"
 title: Refactoring
+weight: 19
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 Refactoring is the process of reworking your code to improve its structure and readability without altering the external behavior or functionality. Programmers refactor to make their code cleaner, easier to understand, and more maintainable, which in the long run makes debugging and adding new features far less of a headache.

@@ -11,9 +11,8 @@ summary: "Att g\xF6ra f\xF6rsta bokstaven i en str\xE4ng stor inneb\xE4r att mod
   \ den f\xF6rsta karakt\xE4ren av en given str\xE4ng till versal om den \xE4r i gemen,\
   \ ofta medan resten\u2026"
 title: "G\xF6r om en str\xE4ng till versaler"
+weight: 2
 ---
-
-{{< edit_this_page >}}
 
 ## Vad & Varför?
 Att göra första bokstaven i en sträng stor innebär att modifiera den första karaktären av en given sträng till versal om den är i gemen, ofta medan resten av strängen lämnas oförändrad. Denna åtgärd används vanligtvis för att säkerställa att egna namn eller inledningar av meningar följer grammatiska regler i textbearbetning, vilket gör att utdata ser professionella och läsbara ut.

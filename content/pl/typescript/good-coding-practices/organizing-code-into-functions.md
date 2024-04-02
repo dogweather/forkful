@@ -9,9 +9,8 @@ summary: "Organizowanie kodu w funkcje oznacza dzielenie kodu na wielokrotnie u\
   ywalne, modu\u0142owe bloki. Robimy to, aby utrzyma\u0107 zasad\u0119 DRY (Don't\
   \ Repeat Yourself -\u2026"
 title: Organizowanie kodu w funkcje
+weight: 18
 ---
-
-{{< edit_this_page >}}
 
 ## Co i dlaczego?
 Organizowanie kodu w funkcje oznacza dzielenie kodu na wielokrotnie używalne, modułowe bloki. Robimy to, aby utrzymać zasadę DRY (Don't Repeat Yourself - Nie Powtarzaj Się), co sprawia, że kod jest czystszy, łatwiejszy do czytania i łatwiejszy do debugowania.

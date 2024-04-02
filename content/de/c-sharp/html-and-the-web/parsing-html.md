@@ -10,9 +10,8 @@ model: gpt-4-0125-preview
 summary: "Das Parsen von HTML in der Programmierung beinhaltet die Analyse der Struktur\
   \ eines HTML-Dokuments, was Ihnen erlaubt, dessen Inhalt programmatisch zu\u2026"
 title: HTML parsen
+weight: 43
 ---
-
-{{< edit_this_page >}}
 
 ## Was & Warum?
 

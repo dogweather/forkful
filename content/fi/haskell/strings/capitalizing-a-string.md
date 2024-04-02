@@ -10,9 +10,8 @@ model: gpt-4-0125-preview
 summary: "Merkkijonon alkukirjaimen muuttaminen isoksi kirjaimeksi samalla kun varmistetaan,\
   \ ett\xE4 loput kirjaimet pysyv\xE4t pienin\xE4, on merkkijonon p\xE4\xE4omanlisointia.\u2026"
 title: Merkkijonon muuttaminen isoiksi kirjaimiksi
+weight: 2
 ---
-
-{{< edit_this_page >}}
 
 ## Mikä ja Miksi?
 Merkkijonon alkukirjaimen muuttaminen isoksi kirjaimeksi samalla kun varmistetaan, että loput kirjaimet pysyvät pieninä, on merkkijonon pääomanlisointia. Ohjelmoijat tekevät tämän muotoilun tulosteiden, kieliopillisen oikeellisuuden tekstissä tai tuotetun datan luettavuuden parantamiseksi.

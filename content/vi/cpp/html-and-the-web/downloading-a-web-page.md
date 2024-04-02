@@ -13,9 +13,8 @@ summary: "T\u1EA3i xu\u1ED1ng m\u1ED9t trang web \u0111\u01A1n gi\u1EA3n ch\u1EC
   \ l\xE0 \u1EDF \u0111\u1ECBnh d\u1EA1ng HTML, \u0111\u1EC3 xem ho\u1EB7c x\u1EED\
   \ l\xFD c\u1EE5c b\u1ED9. L\u1EADp tr\xECnh vi\xEAn t\u1EA3i xu\u1ED1ng c\xE1c\u2026"
 title: "T\u1EA3i trang web"
+weight: 42
 ---
-
-{{< edit_this_page >}}
 
 ## Cái gì & Tại sao?
 Tải xuống một trang web đơn giản chỉ có nghĩa là lấy nội dung của nó, thường là ở định dạng HTML, để xem hoặc xử lý cục bộ. Lập trình viên tải xuống các trang web để gỡ lỗi dữ liệu, theo dõi các thay đổi hoặc tích hợp với các dịch vụ web.

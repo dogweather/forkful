@@ -11,9 +11,8 @@ summary: "Att j\xE4mf\xF6ra tv\xE5 datum i Google Apps Script, en derivat av Jav
   \ anpassad f\xF6r Googles svit av appar, \xE4r en grundl\xE4ggande uppgift f\xF6\
   r utvecklare som\u2026"
 title: "J\xE4mf\xF6ra tv\xE5 datum"
+weight: 27
 ---
-
-{{< edit_this_page >}}
 
 ## Vad & Varför?
 Att jämföra två datum i Google Apps Script, en derivat av JavaScript anpassad för Googles svit av appar, är en grundläggande uppgift för utvecklare som hanterar schemaläggning, tidslinjer eller alla typer av datumrelaterade data. Att förstå hur man korrekt jämför datum möjliggör för programmerare att effektivt implementera funktioner som deadlines, planering av evenemang eller schemaläggning av innehåll.

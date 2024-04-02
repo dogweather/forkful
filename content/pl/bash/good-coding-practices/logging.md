@@ -9,9 +9,8 @@ summary: "Logowanie to praktyka rejestrowania zdarze\u0144, b\u0142\u0119d\xF3w 
   \ innych istotnych informacji z dzia\u0142aj\u0105cych proces\xF3w programu do pliku\
   \ lub strumienia wyj\u015Bciowego.\u2026"
 title: "Rejestrowanie zdarze\u0144"
+weight: 17
 ---
-
-{{< edit_this_page >}}
 
 ## Co i dlaczego?
 

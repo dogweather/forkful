@@ -14,9 +14,8 @@ summary: "T\u1ED5 ch\u1EE9c m\xE3 th\xE0nh c\xE1c h\xE0m l\xE0 v\u1EC1 vi\u1EC7c
   i s\u1EED d\u1EE5ng v\u1EDBi c\xE1c m\u1EE5c \u0111\xEDch c\u1EE5 th\u1EC3. Ch\xFA\
   ng ta l\xE0m \u0111i\u1EC1u \u0111\xF3 \u0111\u1EC3 l\xE0m cho m\xE3 s\u1EA1ch\u2026"
 title: "S\u1EAFp x\u1EBFp m\xE3 th\xE0nh c\xE1c h\xE0m"
+weight: 18
 ---
-
-{{< edit_this_page >}}
 
 ## Cái gì & Tại sao?
 Tổ chức mã thành các hàm là về việc chia nhỏ mã của bạn thành các khối có thể tái sử dụng với các mục đích cụ thể. Chúng ta làm điều đó để làm cho mã sạch sẽ hơn, dễ đọc, dễ gỡ lỗi và cập nhật hơn.

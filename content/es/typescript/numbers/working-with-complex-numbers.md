@@ -8,9 +8,8 @@ model: gpt-4-0125-preview
 summary: "Los n\xFAmeros complejos, que constan de una parte real y una parte imaginaria\
   \ (generalmente escritos como a + bi), abren la puerta a c\xE1lculos que son\u2026"
 title: "Trabajando con n\xFAmeros complejos"
+weight: 14
 ---
-
-{{< edit_this_page >}}
 
 ## ¿Qué y Por Qué?
 Los números complejos, que constan de una parte real y una parte imaginaria (generalmente escritos como a + bi), abren la puerta a cálculos que son prácticamente difíciles o imposibles solo con números reales. Los programadores los utilizan en campos como el procesamiento de señales, la computación cuántica y las matemáticas aplicadas, donde las representaciones numéricas bidimensionales son esenciales.

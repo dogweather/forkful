@@ -11,9 +11,8 @@ summary: "\xC5 jobbe med XML i C involverer parsing, sp\xF8rring og manipulering
   \ XML-dokumenter ved bruk av ulike biblioteker. Programmerere arbeider med XML p\xE5\
   \ grunn\u2026"
 title: Arbeider med XML
+weight: 40
 ---
-
-{{< edit_this_page >}}
 
 ## Hva & Hvorfor?
 

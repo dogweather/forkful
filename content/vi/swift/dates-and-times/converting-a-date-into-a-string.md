@@ -13,9 +13,8 @@ summary: "Vi\u1EC7c chuy\u1EC3n \u0111\u1ED5i ng\xE0y th\xE1ng th\xE0nh chu\u1ED
   \ ng\u01B0\u1EDDi. \u0110\xE2y l\xE0 ch\xECa kh\xF3a cho vi\u1EC7c hi\u1EC3n th\u1ECB\
   \ giao di\u1EC7n ng\u01B0\u1EDDi d\xF9ng,\u2026"
 title: "Chuy\u1EC3n \u0111\u1ED5i m\u1ED9t ng\xE0y th\xE0nh chu\u1ED7i"
+weight: 28
 ---
-
-{{< edit_this_page >}}
 
 ## Gì và Tại sao?
 Việc chuyển đổi ngày tháng thành chuỗi trong Swift giúp bạn định dạng ngày tháng cho con người. Đây là chìa khóa cho việc hiển thị giao diện người dùng, ghi nhật ký, hoặc bất cứ khi nào bạn cần ngày tháng trở nên có ý nghĩa với mọi người, chứ không chỉ với code.

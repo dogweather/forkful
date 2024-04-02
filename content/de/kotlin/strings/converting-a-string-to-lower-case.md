@@ -8,9 +8,8 @@ model: gpt-4-1106-preview
 summary: "Umwandlung einer Zeichenkette in Kleinbuchstaben bedeutet, dass alle Gro\xDF\
   buchstaben in ihrer kleingeschriebenen Form dargestellt werden. Das ist n\xFCtzlich\u2026"
 title: Umformung eines Strings in Kleinbuchstaben
+weight: 4
 ---
-
-{{< edit_this_page >}}
 
 ## Was & Warum?
 Umwandlung einer Zeichenkette in Kleinbuchstaben bedeutet, dass alle Großbuchstaben in ihrer kleingeschriebenen Form dargestellt werden. Das ist nützlich für Konsistenz bei Vergleichen oder wenn man Eingaben normalisieren will.

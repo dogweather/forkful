@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Debugoutput is je zaklamp in een donker code steegje; het helpt je fouten\
   \ te spotten door je een kijkje te geven in wat je code doet tijdens de\u2026"
 title: Debug-output afdrukken
+weight: 33
 ---
-
-{{< edit_this_page >}}
 
 ## Wat & Waarom?
 Debugoutput is je zaklamp in een donker code steegje; het helpt je fouten te spotten door je een kijkje te geven in wat je code doet tijdens de uitvoering. Programmeurs doen het omdat we, nou ja, menselijk zijn en onze code is niet altijd perfect bij de eerste poging.

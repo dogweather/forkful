@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Tiedostoon kirjoittaminen Elixirilla on olennainen taito kehitt\xE4jille,\
   \ sill\xE4 se mahdollistaa datan pysyvyyden, lokitiedon kirjaamisen tai ihmisluettavan\u2026"
 title: Tekstitiedoston kirjoittaminen
+weight: 24
 ---
-
-{{< edit_this_page >}}
 
 ## Mikä & Miksi?
 

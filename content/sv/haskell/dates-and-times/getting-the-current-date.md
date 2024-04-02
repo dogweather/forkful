@@ -11,9 +11,8 @@ summary: "Att h\xE4mta det aktuella datumet i Haskell inneb\xE4r att f\xE5 syste
   \ nuvarande tid och omvandla den till ett l\xE4sbart datumformat. Programmerare\
   \ g\xF6r detta f\xF6r\u2026"
 title: "F\xE5 det aktuella datumet"
+weight: 29
 ---
-
-{{< edit_this_page >}}
 
 ## Vad & Varför?
 Att hämta det aktuella datumet i Haskell innebär att få systemets nuvarande tid och omvandla den till ett läsbart datumformat. Programmerare gör detta för att utföra operationer baserade på datumet, såsom loggning, schemaläggning av uppgifter eller tidstämpling av händelser i applikationer.

@@ -11,9 +11,8 @@ summary: "Supprimer les guillemets d'une cha\xEEne dans Google Apps Script consi
   \ \xE0 \xE9liminer les guillemets inutiles qui peuvent entourer vos donn\xE9es de\
   \ cha\xEEne,\u2026"
 title: "Supprimer les guillemets d'une cha\xEEne"
+weight: 9
 ---
-
-{{< edit_this_page >}}
 
 ## Quoi & Pourquoi ?
 

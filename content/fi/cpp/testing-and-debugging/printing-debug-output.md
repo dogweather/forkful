@@ -9,9 +9,8 @@ summary: "Kun koodaat, joskus haluat kurkata ohjelman toimintaan \u2013 se on de
   \ Se auttaa sinua n\xE4kem\xE4\xE4n, miss\xE4 pisteess\xE4 ohjelma m\xE4tt\xE4\xE4\
   \ tai miten data\u2026"
 title: "Virheenj\xE4ljitystulosteiden tulostaminen"
+weight: 33
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why? (Mitä & Miksi?)
 Kun koodaat, joskus haluat kurkata ohjelman toimintaan – se on debug-tulostus. Se auttaa sinua näkemään, missä pisteessä ohjelma mättää tai miten data liikkuu.

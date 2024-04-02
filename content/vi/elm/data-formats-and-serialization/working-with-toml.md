@@ -13,9 +13,8 @@ summary: "TOML, vi\u1EBFt t\u1EAFt c\u1EE7a Tom's Obvious, Minimal Language, l\x
   p tr\xECnh vi\xEAn Elm s\u1EED d\u1EE5ng n\xF3 \u0111\u1EC3 qu\u1EA3n l\xFD d\u1EEF\
   \ li\u1EC7u c\u1EA5u h\xECnh b\u1EDFi v\xEC\u2026"
 title: "L\xE0m vi\u1EC7c v\u1EDBi TOML"
+weight: 39
 ---
-
-{{< edit_this_page >}}
 
 ## Cái gì & Tại sao?
 TOML, viết tắt của Tom's Obvious, Minimal Language, là một ngôn ngữ tuần tự hóa dữ liệu. Lập trình viên Elm sử dụng nó để quản lý dữ liệu cấu hình bởi vì nó dễ đọc cho con người và ánh xạ gọn gàng với các cặp khóa-giá trị cần thiết trong ứng dụng.

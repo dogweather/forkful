@@ -9,9 +9,8 @@ summary: "El an\xE1lisis de HTML (parsing HTML) significa examinar el contenido 
   \ una p\xE1gina web para extraer datos o informaci\xF3n estructurada. Los programadores\
   \ lo\u2026"
 title: "An\xE1lisis de HTML"
+weight: 43
 ---
-
-{{< edit_this_page >}}
 
 ## Qué es y por qué?
 

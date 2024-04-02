@@ -9,9 +9,8 @@ summary: "Webbisivun lataaminen tarkoittaa sivun sis\xE4ll\xF6n noutamista inter
   . Ohjelmoijat lataavat sivuja datan ker\xE4\xE4miseen, API-vasteiden tarkistamiseen\
   \ ja\u2026"
 title: Verkkosivun lataaminen
+weight: 42
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why? (Mitä & Miksi?)
 Webbisivun lataaminen tarkoittaa sivun sisällön noutamista internetistä. Ohjelmoijat lataavat sivuja datan keräämiseen, API-vasteiden tarkistamiseen ja automaation toteuttamiseen.

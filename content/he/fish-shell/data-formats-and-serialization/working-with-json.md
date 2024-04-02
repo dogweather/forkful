@@ -23,9 +23,8 @@ summary: "\u05E2\u05D1\u05D5\u05D3\u05D4 \u05E2\u05DD JSON \u05D1-Fish Shell \u0
   \u05D5\u05E8\u05EA \u05D4\u05E4\u05E7\u05D5\u05D3\u05D4. \u05D1\u05D4\u05EA\u05D7\
   \u05E9\u05D1\u2026"
 title: "\u05E2\u05D1\u05D5\u05D3\u05D4 \u05E2\u05DD JSON"
+weight: 38
 ---
-
-{{< edit_this_page >}}
 
 ## מה ולמה?
 

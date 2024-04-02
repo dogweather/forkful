@@ -11,9 +11,8 @@ summary: "Pisanie test\xF3w w Elm polega na tworzeniu przypadk\xF3w testowych w 
   \ zweryfikowania poprawno\u015Bci kodu Elm, zapewniaj\u0105c, \u017Ce dzia\u0142\
   a on zgodnie z\u2026"
 title: "Pisanie test\xF3w"
+weight: 36
 ---
-
-{{< edit_this_page >}}
 
 ## Co i dlaczego?
 

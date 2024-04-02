@@ -11,9 +11,8 @@ summary: "Parsowanie daty z ci\u0105gu znak\xF3w w Dart polega na konwertowaniu 
   \ przedstawienia dat i czas\xF3w na obiekt `DateTime`. Operacja ta jest niezb\u0119\
   dna dla\u2026"
 title: "Analiza sk\u0142adniowa daty z ci\u0105gu znak\xF3w"
+weight: 30
 ---
-
-{{< edit_this_page >}}
 
 ## Co i dlaczego?
 Parsowanie daty z ciągu znaków w Dart polega na konwertowaniu tekstowego przedstawienia dat i czasów na obiekt `DateTime`. Operacja ta jest niezbędna dla aplikacji zajmujących się planowaniem, analizą danych lub jakąkolwiek funkcją wymagającą manipulacji datami, zapewniając, że dane związane z datami są poprawnie rozumiane i przetwarzane przez program.

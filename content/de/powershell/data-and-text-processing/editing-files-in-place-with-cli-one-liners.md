@@ -7,9 +7,8 @@ model: gpt-4-0125-preview
 summary: "Dateien direkt \xFCber die CLI (Command Line Interface) mit Einzeilern in\
   \ PowerShell zu bearbeiten, bedeutet, direkte \xC4nderungen an Dateien von der\u2026"
 title: Bearbeiten von Dateien im Place mit CLI-Einzeilern
+weight: 32
 ---
-
-{{< edit_this_page >}}
 
 ## Was & Warum?
 

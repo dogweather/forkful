@@ -15,9 +15,8 @@ summary: "\u5728Elm\u4E2D\u89E3\u6790HTML\u6D89\u53CA\u4ECEHTML\u6587\u6863\u4E2
   \u53E3\u8FDB\u884C\u4EA4\u4E92\uFF0C\u4ECE\u800C\u521B\u9020\u51FA\u66F4\u52A0\u4E92\
   \u52A8\u548C\u52A8\u6001\u7684\u7F51\u7EDC\u5E94\u7528\u7A0B\u5E8F\u3002"
 title: "\u89E3\u6790HTML"
+weight: 43
 ---
-
-{{< edit_this_page >}}
 
 ## 什么 & 为什么？
 在Elm中解析HTML涉及从HTML文档中提取信息。程序员之所以这么做，是为了与返回HTML的网络内容或API接口进行交互，从而创造出更加互动和动态的网络应用程序。

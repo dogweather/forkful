@@ -11,9 +11,8 @@ summary: "P\xE4iv\xE4m\xE4\xE4r\xE4n j\xE4sent\xE4minen merkkijonosta Dartissa t
   \ p\xE4iv\xE4m\xE4\xE4rien ja kellonaikojen tekstiesitysten muuntamista `DateTime`-objektiksi.\
   \ T\xE4m\xE4 toiminto\u2026"
 title: "P\xE4iv\xE4m\xE4\xE4r\xE4n j\xE4sennys merkkijonosta"
+weight: 30
 ---
-
-{{< edit_this_page >}}
 
 ## Mikä & Miksi?
 Päivämäärän jäsentäminen merkkijonosta Dartissa tarkoittaa päivämäärien ja kellonaikojen tekstiesitysten muuntamista `DateTime`-objektiksi. Tämä toiminto on olennainen sovelluksille, jotka käsittelevät aikataulutusta, data-analyysiä tai mitä tahansa ominaisuutta, joka vaatii päivämäärän käsittelyä, varmistaen, että päivämäärään liittyvät tiedot ymmärretään oikein ja käsitellään ohjelmassa kunnolla.

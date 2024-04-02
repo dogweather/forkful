@@ -10,9 +10,8 @@ model: gpt-4-0125-preview
 summary: "Tekstin etsiminen ja korvaaminen C-kieless\xE4 tarkoittaa tiettyjen alimerkkijonojen\
   \ tunnistamista suuremmasta merkkijonosta ja niiden korvaamista eri\u2026"
 title: Tekstin etsiminen ja korvaaminen
+weight: 10
 ---
-
-{{< edit_this_page >}}
 
 ## Mitä & Miksi?
 

@@ -8,9 +8,8 @@ model: gpt-4-1106-preview
 summary: "\xC5 sende en HTTP-foresp\xF8rsel er prosessen der du ber en server om data\
   \ eller utf\xF8rer en handling. Programmerere gj\xF8r dette for \xE5 integrere med\u2026"
 title: "\xC5 sende en HTTP-foresp\xF8rsel"
+weight: 44
 ---
-
-{{< edit_this_page >}}
 
 ## Hva & Hvorfor?
 Å sende en HTTP-forespørsel er prosessen der du ber en server om data eller utfører en handling. Programmerere gjør dette for å integrere med webtjenester, hente innhold, eller snakke med REST APIer.

@@ -21,9 +21,8 @@ summary: "TypeScript\uC5D0\uC11C \uB09C\uC218\uB97C \uC0DD\uC131\uD558\uB294 \uA
   \ \uBD88\uAC00\uB2A5\uC131 \uCD94\uAC00\uC640 \uAC19\uC740 \uB2E4\uC591\uD55C \uBAA9\
   \uC801\uC73C\uB85C\u2026"
 title: "\uB09C\uC218 \uC0DD\uC131"
+weight: 12
 ---
-
-{{< edit_this_page >}}
 
 ## 무엇과 왜?
 

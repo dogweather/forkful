@@ -11,9 +11,8 @@ summary: "Trabajar con JSON (Notaci\xF3n de Objetos de JavaScript) implica parse
   \ cadenas formateadas en JSON a objetos de Python y viceversa. Esto es crucial para\
   \ el\u2026"
 title: Trabajando con JSON
+weight: 38
 ---
-
-{{< edit_this_page >}}
 
 ## ¿Qué y Por Qué?
 

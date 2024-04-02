@@ -13,9 +13,8 @@ summary: "B\u1EAFt \u0111\u1EA7u m\u1ED9t d\u1EF1 \xE1n Java m\u1EDBi gi\u1ED1ng
   c c\u1EE7a b\u1EA1n. L\u1EADp tr\xECnh vi\xEAn kh\u1EDFi \u0111\u1EA7u c\xE1c d\u1EF1\
   \ \xE1n m\u1EDBi \u0111\u1EC3 bi\u1EBFn \xFD t\u01B0\u1EDFng th\xE0nh\u2026"
 title: "B\u1EAFt \u0111\u1EA7u m\u1ED9t d\u1EF1 \xE1n m\u1EDBi"
+weight: 1
 ---
-
-{{< edit_this_page >}}
 
 ## Gì và Tại sao?
 

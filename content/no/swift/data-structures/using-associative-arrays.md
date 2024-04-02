@@ -11,9 +11,8 @@ summary: "Assosiative tabeller, kjent som ordb\xF8ker i Swift, lar deg lagre og 
   ndtere data som n\xF8kkel-verdi-par. Programmerere bruker dem til \xE5 organisere\
   \ data\u2026"
 title: Bruke associative tabeller
+weight: 15
 ---
-
-{{< edit_this_page >}}
 
 ## Hva & Hvorfor?
 

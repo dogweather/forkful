@@ -21,9 +21,8 @@ summary: "Dart\uC5D0\uC11C HTTP \uC694\uCCAD\uC744 \uBCF4\uB0B4\uB294 \uAC83\uC7
   \uD574 \uC774 \uC791\uC5C5\uC744 \uC218\uD589\uD569\uB2C8\uB2E4. \uC774\uB294 Dart\uC758\
   \ \uC6F9, \uC11C\uBC84 \uCE21,\u2026"
 title: "HTTP \uC694\uCCAD \uBCF4\uB0B4\uAE30"
+weight: 44
 ---
-
-{{< edit_this_page >}}
 
 ## 무엇 & 왜?
 

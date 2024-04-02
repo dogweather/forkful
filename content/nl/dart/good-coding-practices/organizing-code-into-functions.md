@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Het organiseren van code in functies in Dart gaat over het defini\xEBren\
   \ van herbruikbare blokken code die specifieke taken uitvoeren, typisch input\u2026"
 title: Code organiseren in functies
+weight: 18
 ---
-
-{{< edit_this_page >}}
 
 ## Wat & Waarom?
 Het organiseren van code in functies in Dart gaat over het definiëren van herbruikbare blokken code die specifieke taken uitvoeren, typisch input ontvangen, gegevens verwerken en mogelijk outputs teruggeven. Programmeurs doen dit om de leesbaarheid van de code te verbeteren, duplicatie te verminderen en onderhoud te vergemakkelijken, wat uiteindelijk leidt tot meer modulaire en beheersbare codebases.

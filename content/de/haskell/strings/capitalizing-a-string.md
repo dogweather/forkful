@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Das Gro\xDFschreiben eines Strings beinhaltet die Umwandlung des ersten\
   \ Buchstabens eines gegebenen Strings in einen Gro\xDFbuchstaben, w\xE4hrend sichergestellt\u2026"
 title: "Einen String gro\xDFschreiben"
+weight: 2
 ---
-
-{{< edit_this_page >}}
 
 ## Was & Warum?
 Das Großschreiben eines Strings beinhaltet die Umwandlung des ersten Buchstabens eines gegebenen Strings in einen Großbuchstaben, während sichergestellt wird, dass die restlichen Buchstaben klein bleiben. Programmierer tun dies, um Ausgaben zu formatieren, die Grammatik in Texten einzuhalten oder die Lesbarkeit generierter Daten zu verbessern.

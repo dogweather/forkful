@@ -21,9 +21,8 @@ summary: "TypeScript\uC5D0\uC11C, JavaScript \uC704\uC5D0 \uAD6C\uCD95\uB41C \uC
   , \uADF8 \uBC16\uC758 \uC2DC\uAC04\uC5D0 \uBBFC\uAC10\uD55C \uAE30\uB2A5\uC744 \uB9CC\
   \uB4E4\uAE30 \uC704\uD574 \uC774 \uAE30\uB2A5\uC744\u2026"
 title: "\uD604\uC7AC \uB0A0\uC9DC \uAC00\uC838\uC624\uAE30"
+weight: 29
 ---
-
-{{< edit_this_page >}}
 
 ## 무엇 & 왜?
 TypeScript에서, JavaScript 위에 구축된 언어에서, 현재 날짜를 가져오는 것은 현재 날짜와 시간 정보에 접근하여 조작할 수 있게 합니다. 프로그래머들은 종종 애플리케이션에서 타임스탬프 생성, 스케줄링, 그 밖의 시간에 민감한 기능을 만들기 위해 이 기능을 필요로 합니다.

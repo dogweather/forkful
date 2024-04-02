@@ -9,9 +9,8 @@ summary: "Debug print \xE9 a pr\xE1tica de exibir informa\xE7\xF5es no console p
   \ entender o que est\xE1 acontecendo no c\xF3digo. Programadores usam isso para\
   \ rastrear bugs ou\u2026"
 title: "Exibindo sa\xEDdas de depura\xE7\xE3o"
+weight: 33
 ---
-
-{{< edit_this_page >}}
 
 ## O Que é & Por Que?
 Debug print é a prática de exibir informações no console para entender o que está acontecendo no código. Programadores usam isso para rastrear bugs ou verificar o estado das variáveis em diferentes pontos da execução do programa.

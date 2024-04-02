@@ -9,9 +9,8 @@ summary: "Czytanie pliku tekstowego to proces wydobywania danych z pliku zapisan
   \ w formacie tekstowym. Programi\u015Bci to robi\u0105, aby obs\u0142ugiwa\u0107\
   \ konfiguracje,\u2026"
 title: Odczytywanie pliku tekstowego
+weight: 22
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 Czytanie pliku tekstowego to proces wydobywania danych z pliku zapisanego w formacie tekstowym. Programiści to robią, aby obsługiwać konfiguracje, wczytywać dane wejściowe, przetwarzać logi czy też po prostu odczytywać treść.

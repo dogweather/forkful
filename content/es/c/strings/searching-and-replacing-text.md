@@ -11,9 +11,8 @@ summary: "Buscar y reemplazar texto en C implica identificar subcadenas espec\xE
   ficas dentro de una cadena m\xE1s grande y sustituirlas con diferentes subcadenas.\
   \ Los\u2026"
 title: Buscando y reemplazando texto
+weight: 10
 ---
-
-{{< edit_this_page >}}
 
 ## Qué y Por Qué?
 

@@ -13,9 +13,8 @@ summary: "N\u1ED1i chu\u1ED7i gi\u1ED1ng nh\u01B0 l\xE0m m\u1ED9t chi\u1EBFc san
   p ch\u1ED3ng c\xE1c t\u1EEB l\u1EA1i v\u1EDBi nhau \u0111\u1EC3 t\u1EA1o th\xE0\
   nh m\u1ED9t c\xE2u ho\u1EB7c m\u1ED9t c\u1EE5m t\u1EEB.\u2026"
 title: "N\u1ED1i chu\u1ED7i k\xFD t\u1EF1"
+weight: 3
 ---
-
-{{< edit_this_page >}}
 
 ## Gì và Tại sao?
 

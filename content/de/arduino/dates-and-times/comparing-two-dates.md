@@ -7,9 +7,8 @@ model: gpt-4-1106-preview
 summary: "Daten zu vergleichen bedeutet, zwei Zeitpunkte miteinander in Relation zu\
   \ setzen, um herauszufinden, welches Datum fr\xFCher oder sp\xE4ter ist. Programmierer\u2026"
 title: Vergleich von zwei Daten
+weight: 27
 ---
-
-{{< edit_this_page >}}
 
 ## Was & Warum?
 Daten zu vergleichen bedeutet, zwei Zeitpunkte miteinander in Relation zu setzen, um herauszufinden, welches Datum früher oder später ist. Programmierer nutzen das, um Zeitabläufe zu steuern, Gültigkeiten zu prüfen oder Ereignisse zu zeitlich zu ordnen.

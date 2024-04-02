@@ -1,14 +1,15 @@
 ---
 date: 2024-01-26 04:10:50.973196-07:00
-description: "U\u017Cycie debugera oznacza wykorzystanie specjalistycznych narz\u0119\
-  dzi do testowania i inspekcji twojego kodu podczas jego wykonania. To wa\u017Cne,\
-  \ poniewa\u017C pozwala\u2026"
+description: "Aby u\u017Cy\u0107 debugera w Xcode (IDE dla Swift), mo\u017Cesz ustawi\u0107\
+  \ punkty przerwania, inspektowa\u0107 zmienne i obserwowa\u0107 wyra\u017Cenia.\
+  \ Oto przyk\u0142ad: ```Swift func\u2026"
 lastmod: '2024-03-13T22:44:35.759517-06:00'
 model: gpt-4-0125-preview
-summary: "U\u017Cycie debugera oznacza wykorzystanie specjalistycznych narz\u0119\
-  dzi do testowania i inspekcji twojego kodu podczas jego wykonania. To wa\u017Cne,\
-  \ poniewa\u017C pozwala\u2026"
+summary: "Aby u\u017Cy\u0107 debugera w Xcode (IDE dla Swift), mo\u017Cesz ustawi\u0107\
+  \ punkty przerwania, inspektowa\u0107 zmienne i obserwowa\u0107 wyra\u017Cenia.\
+  \ Oto przyk\u0142ad: ```Swift func\u2026"
 title: Korzystanie z debugera
+weight: 35
 ---
 
 ## Jak używać:

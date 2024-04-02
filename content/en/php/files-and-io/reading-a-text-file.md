@@ -7,9 +7,8 @@ model: gpt-4-1106-preview
 summary: "Reading a text file in PHP means pulling content from a file into your script.\
   \ Programmers do this to handle data storage, configuration, or to process\u2026"
 title: Reading a text file
+weight: 22
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 Reading a text file in PHP means pulling content from a file into your script. Programmers do this to handle data storage, configuration, or to process large datasets without cluttering their code.

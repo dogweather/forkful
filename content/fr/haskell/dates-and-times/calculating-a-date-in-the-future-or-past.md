@@ -9,9 +9,8 @@ summary: "Calculer une date dans le futur ou le pass\xE9 permet de d\xE9terminer
   \ jour sp\xE9cifique \xE0 partir d'une date donn\xE9e. Les programmeurs le font\
   \ souvent pour des\u2026"
 title: "Calcul d'une date future ou pass\xE9e"
+weight: 26
 ---
-
-{{< edit_this_page >}}
 
 ## Quoi & Pourquoi ?
 Calculer une date dans le futur ou le passé permet de déterminer un jour spécifique à partir d'une date donnée. Les programmeurs le font souvent pour des tâches de planification, d'archivage, ou quand les applications dépendent de la logique temporelle.

@@ -7,9 +7,8 @@ model: gpt-4-1106-preview
 summary: "HTTP-foresp\xF8rsler med grunnleggende autentisering lar klienter bevise\
   \ sin identitet til serveren ved hjelp av brukernavn og passord. Programmerere bruker\u2026"
 title: "\xC5 sende en HTTP-foresp\xF8rsel med grunnleggende autentisering"
+weight: 45
 ---
-
-{{< edit_this_page >}}
 
 ## Hva & Hvorfor?
 HTTP-forespørsler med grunnleggende autentisering lar klienter bevise sin identitet til serveren ved hjelp av brukernavn og passord. Programmerere bruker dette for å sikre trygg kommunikasjon når de aksesserer beskyttede ressurser.

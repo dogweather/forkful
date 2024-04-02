@@ -10,9 +10,8 @@ model: gpt-4-0125-preview
 summary: "Generating random numbers in Elm involves using the `Random` module to produce\
   \ pseudo-random numbers, which come in handy for a variety of tasks such as\u2026"
 title: Generating random numbers
+weight: 12
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 Generating random numbers in Elm involves using the `Random` module to produce pseudo-random numbers, which come in handy for a variety of tasks such as games, simulations, and even as part of algorithms that require stochastic processes. This capability allows developers to add unpredictability and variety to their applications, enhancing user experience and functionality.

@@ -9,9 +9,8 @@ summary: "Procurar e substituir texto \xE9 como uma opera\xE7\xE3o de busca e tr
   \ onde um trecho de texto \xE9 localizado e trocado por outro. Programadores fazem\
   \ isso para\u2026"
 title: Pesquisando e substituindo texto
+weight: 10
 ---
-
-{{< edit_this_page >}}
 
 ## O Que é e Por Que?
 

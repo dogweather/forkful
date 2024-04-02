@@ -11,9 +11,8 @@ summary: "V\xE9rifier si un r\xE9pertoire existe dans Elixir consiste \xE0 confi
   \ la pr\xE9sence d'un r\xE9pertoire \xE0 un chemin sp\xE9cifi\xE9 dans le syst\xE8\
   me de fichiers. Les\u2026"
 title: "V\xE9rifier si un r\xE9pertoire existe"
+weight: 20
 ---
-
-{{< edit_this_page >}}
 
 ## Quoi et Pourquoi ?
 Vérifier si un répertoire existe dans Elixir consiste à confirmer la présence d'un répertoire à un chemin spécifié dans le système de fichiers. Les programmeurs font cela pour s'assurer qu'ils peuvent lire, écrire ou effectuer des opérations sur le répertoire en toute sécurité sans rencontrer d'erreurs dues à son absence.

@@ -19,9 +19,8 @@ summary: "XML (eXtensible Markup Language) \u05E2\u05D5\u05E1\u05E7 \u05D1\u05DE
   \u05EA \u05D5\u05D1\u05DE\u05E7\u05D5\u05DE\u05D5\u05EA \u05E9\u05D1\u05D4\u05DD\
   \ \u05D4\u05DE\u05E4\u05E8\u05D8 \u05DE\u05D7\u05D9\u05D9\u05D1\u2026"
 title: "\u05E2\u05D1\u05D5\u05D3\u05D4 \u05E2\u05DD XML"
+weight: 40
 ---
-
-{{< edit_this_page >}}
 
 ## מה ולמה?
 XML (eXtensible Markup Language) עוסק במבנה נתונים בפורמט קריא. מתכנתים מתעסקים ב-XML לצורך תצורה, החלפת נתונים בין אפליקציות ובמקומות שבהם המפרט מחייב זאת—חשבו על SOAP או Web APIs.

@@ -10,9 +10,8 @@ model: gpt-4-0125-preview
 summary: "Das Lesen einer Textdatei in Dart beinhaltet den Zugriff auf und das Abrufen\
   \ von Daten aus auf dem Dateisystem gespeicherten Dateien. Programmierer tun\u2026"
 title: Eine Textdatei lesen
+weight: 22
 ---
-
-{{< edit_this_page >}}
 
 ## Was & Warum?
 

@@ -11,9 +11,8 @@ summary: "Il refactoring nella programmazione comporta la ristrutturazione di co
   \ informatico esistente\u2014cambiando la sua strutturazione\u2014senza alterarne\
   \ il\u2026"
 title: Rifattorizzazione
+weight: 19
 ---
-
-{{< edit_this_page >}}
 
 ## Cosa e Perché?
 

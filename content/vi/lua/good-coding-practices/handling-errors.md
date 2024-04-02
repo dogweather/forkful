@@ -15,9 +15,8 @@ summary: "X\u1EED l\xFD l\u1ED7i trong l\u1EADp tr\xECnh l\xE0 mong \u0111\u1EE3
   \ \u0111i ch\u1EC7ch h\u01B0\u1EDBng \u0111\u1EC3 b\u1EA1n c\xF3 th\u1EC3 gi\u1EEF\
   \ cho\u2026"
 title: "X\u1EED l\xFD l\u1ED7i"
+weight: 16
 ---
-
-{{< edit_this_page >}}
 
 ## Điều Gì và Tại Sao?
 Xử lý lỗi trong lập trình là mong đợi những điều không mong đợi. Đó là nghệ thuật lập kế hoạch cho những lúc mọi thứ đi chệch hướng để bạn có thể giữ cho chương trình của mình chạy mượt mà.

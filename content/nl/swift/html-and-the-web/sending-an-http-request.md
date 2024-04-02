@@ -10,9 +10,8 @@ model: gpt-4-0125-preview
 summary: "Een HTTP-verzoek verzenden gaat over het aankloppen bij de deur van een\
   \ webserver, om gegevens te vragen of aan te bieden. Programmeurs doen dit om te\u2026"
 title: Een HTTP-verzoek verzenden
+weight: 44
 ---
-
-{{< edit_this_page >}}
 
 ## Wat & Waarom?
 Een HTTP-verzoek verzenden gaat over het aankloppen bij de deur van een webserver, om gegevens te vragen of aan te bieden. Programmeurs doen dit om te interageren met API's, inhoud te downloaden of te communiceren met andere diensten.

@@ -11,9 +11,8 @@ summary: "Organizar el c\xF3digo en funciones en Go implica desglosar el c\xF3di
   \ en bloques modulares reutilizables que realizan tareas espec\xEDficas. Este enfoque\
   \ mejora\u2026"
 title: "Organizando c\xF3digo en funciones"
+weight: 18
 ---
-
-{{< edit_this_page >}}
 
 ## ¿Qué y Por Qué?
 

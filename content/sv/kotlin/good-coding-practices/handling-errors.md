@@ -9,9 +9,8 @@ summary: "Att hantera fel \xE4r hur din kod tar itu med problem som uppst\xE5r u
   \ exekvering\u2014som att hantera en ov\xE4ntad boll utan att tappa den. Programmerare\
   \ g\xF6r\u2026"
 title: Hantering av fel
+weight: 16
 ---
-
-{{< edit_this_page >}}
 
 ## Vad & Varför?
 Att hantera fel är hur din kod tar itu med problem som uppstår under exekvering—som att hantera en oväntad boll utan att tappa den. Programmerare gör detta för att förhindra krascher och ge användare en smidig upplevelse.

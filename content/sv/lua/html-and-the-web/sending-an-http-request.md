@@ -9,9 +9,8 @@ summary: "Att skicka en HTTP-beg\xE4ran \xE4r hur din kod pratar med andra servr
   \ \xF6ver internet. Programmerare g\xF6r detta f\xF6r att h\xE4mta data, skicka\
   \ information eller\u2026"
 title: "Skicka en http-f\xF6rfr\xE5gan"
+weight: 44
 ---
-
-{{< edit_this_page >}}
 
 ## Vad & Varför?
 Att skicka en HTTP-begäran är hur din kod pratar med andra servrar över internet. Programmerare gör detta för att hämta data, skicka information eller interagera med webbtjänster.

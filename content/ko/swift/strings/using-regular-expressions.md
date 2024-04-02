@@ -23,9 +23,8 @@ summary: "\uC815\uADDC \uD45C\uD604\uC2DD, \uB610\uB294 regex\uB294 \uAC80\uC0C9
   \ \uC5B8\uC5B4\uC5D0\uC11C \uD14D\uC2A4\uD2B8 \uCC98\uB9AC \uBC0F \uC870\uC791 \uC791\
   \uC5C5\uC5D0 \uC788\uC5B4 \uD544\uC218\u2026"
 title: "\uC815\uADDC \uD45C\uD604\uC2DD \uC0AC\uC6A9\uD558\uAE30"
+weight: 11
 ---
-
-{{< edit_this_page >}}
 
 ## 무엇인가 & 왜인가?
 정규 표현식, 또는 regex는 검색 패턴을 형성하는 문자의 연속이며, 종종 문자열 일치 또는 조작 작업에 사용됩니다. 프로그래머들은 데이터 유효성 검사 및 파싱부터 변환에 이르기까지 모든 것에 이를 활용하여, 다양한 프로그래밍 언어에서 텍스트 처리 및 조작 작업에 있어 필수 도구로 만듭니다. 이에는 Swift도 포함됩니다.

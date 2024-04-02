@@ -11,9 +11,8 @@ summary: "Interactieve shells, of REPLs (Read-Eval-Print Loops), laten je on-the
   \ code uitvoeren, functies en algoritmen testen of spelen met idee\xEBn. Ze zijn\
   \ de\u2026"
 title: Het gebruik van een interactieve shell (REPL)
+weight: 34
 ---
-
-{{< edit_this_page >}}
 
 ## Wat & Waarom?
 Interactieve shells, of REPLs (Read-Eval-Print Loops), laten je on-the-fly code uitvoeren, functies en algoritmen testen of spelen met ideeën. Ze zijn de kladblokken van het programmeren, snel en vuil, zonder een volledige ontwikkelomgeving op te zetten.

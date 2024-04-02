@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Teksten zoeken en vervangen in Dart omvat het onderzoeken van strings om\
   \ bepaalde patronen of opeenvolgingen van karakters te vinden en deze te vervangen\u2026"
 title: Tekst zoeken en vervangen
+weight: 10
 ---
-
-{{< edit_this_page >}}
 
 ## Wat & Waarom?
 

@@ -7,9 +7,8 @@ model: gpt-4-0125-preview
 summary: "Parsing a date from a string in Clojure is about converting textual representations\
   \ of dates and times into a more usable form (e.g., Clojure's DateTime\u2026"
 title: Parsing a date from a string
+weight: 30
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 Parsing a date from a string in Clojure is about converting textual representations of dates and times into a more usable form (e.g., Clojure's DateTime object). This process is fundamental for data processing, logging, or any application manipulating temporal data, allowing programmers to perform operation, comparison, or manipulation tasks on dates efficiently.

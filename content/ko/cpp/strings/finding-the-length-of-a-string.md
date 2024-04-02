@@ -12,9 +12,8 @@ summary: "\uBB38\uC790\uC5F4\uC758 \uAE38\uC774\uB97C \uCC3E\uB294 \uAC83\uC740 
   \uC774\uD130 \uCC98\uB9AC\uB098 \uC720\uD6A8\uC131 \uAC80\uC0AC\uD560 \uB54C \uC774\
   \ \uC815\uBCF4\uAC00 \uD544\uC694\uD569\uB2C8\uB2E4."
 title: "\uBB38\uC790\uC5F4\uC758 \uAE38\uC774 \uCC3E\uAE30"
+weight: 7
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why? (무엇과 왜?)
 문자열의 길이를 찾는 것은 개수를 셉니다. 프로그래머들은 데이터 처리나 유효성 검사할 때 이 정보가 필요합니다.

@@ -7,9 +7,8 @@ model: gpt-4-1106-preview
 summary: "Tekstitiedoston lukeminen tarkoittaa tiedoston sis\xE4ll\xF6n hakemista\
   \ ohjelmallisesti. Ohjelmoijat tekev\xE4t sit\xE4 datan prosessoimiseen, konfiguraatioiden\u2026"
 title: Tekstitiedoston lukeminen
+weight: 22
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why? - Mitä ja Miksi?
 

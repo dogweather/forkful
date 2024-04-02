@@ -11,9 +11,8 @@ summary: "Scaricare una pagina web consiste nel recuperare il contenuto HTML di 
   \ pagina web tramite il protocollo HTTP/HTTPS. I programmatori spesso fanno ci\xF2\
   \u2026"
 title: Scaricare una pagina web
+weight: 42
 ---
-
-{{< edit_this_page >}}
 
 ## Cosa & Perché?
 

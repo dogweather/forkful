@@ -11,9 +11,8 @@ summary: "Refactoring is het proces van het herwerken van je code om zijn struct
   \ en leesbaarheid te verbeteren zonder het externe gedrag of de functionaliteit\
   \ te\u2026"
 title: Refactoring
+weight: 19
 ---
-
-{{< edit_this_page >}}
 
 ## Wat & Waarom?
 Refactoring is het proces van het herwerken van je code om zijn structuur en leesbaarheid te verbeteren zonder het externe gedrag of de functionaliteit te wijzigen. Programmeurs refactoren om hun code schoner, makkelijker te begrijpen en onderhoudbaarder te maken, wat op de lange termijn het debuggen en toevoegen van nieuwe functies veel minder hoofdpijn oplevert.

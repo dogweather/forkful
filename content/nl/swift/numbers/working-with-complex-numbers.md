@@ -11,9 +11,8 @@ summary: "Complexe getallen hebben een re\xEBel deel en een imaginair deel (zoal
   \ 3 + 4i). Programmeurs gebruiken ze in Swift voor taken zoals signaalverwerking,\
   \ het\u2026"
 title: Werken met complexe getallen
+weight: 14
 ---
-
-{{< edit_this_page >}}
 
 ## Wat & Waarom?
 Complexe getallen hebben een reëel deel en een imaginair deel (zoals 3 + 4i). Programmeurs gebruiken ze in Swift voor taken zoals signaalverwerking, het oplossen van bepaalde wiskundige problemen en het simuleren van natuurkunde.

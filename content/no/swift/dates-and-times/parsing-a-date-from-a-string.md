@@ -11,9 +11,8 @@ summary: "\xC5 analysere en dato fra en streng inneb\xE6rer \xE5 konvertere teks
   \ dato- og tidsrepresentasjoner til et `Date`-objekt. Denne prosessen er essensiell\
   \ i\u2026"
 title: Analysering av en dato fra en streng
+weight: 30
 ---
-
-{{< edit_this_page >}}
 
 ## Hva og hvorfor?
 Å analysere en dato fra en streng innebærer å konvertere tekstuelle dato- og tidsrepresentasjoner til et `Date`-objekt. Denne prosessen er essensiell i applikasjoner der datoer kommuniseres som strenger, som i API-responser eller brukerinndata, noe som tillater enklere manipulering og formatering av datoer.

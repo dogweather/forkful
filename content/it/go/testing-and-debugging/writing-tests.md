@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Scrivere test in Go comporta la creazione di piccoli frammenti di codice\
   \ gestibili che validano la funzionalit\xE0 e il comportamento della tua applicazione.\u2026"
 title: Scrivere test
+weight: 36
 ---
-
-{{< edit_this_page >}}
 
 ## Cosa & Perché?
 

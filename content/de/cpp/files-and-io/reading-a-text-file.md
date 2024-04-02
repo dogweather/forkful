@@ -8,9 +8,8 @@ model: gpt-4-1106-preview
 summary: "Das Lesen einer Textdatei in C++ bedeutet, dass wir den Inhalt einer Datei\
   \ in unserem Programm verwenden. Wir machen das, um Daten zu verarbeiten, die in\u2026"
 title: Textdatei einlesen
+weight: 22
 ---
-
-{{< edit_this_page >}}
 
 ## Was & Warum?
 Das Lesen einer Textdatei in C++ bedeutet, dass wir den Inhalt einer Datei in unserem Programm verwenden. Wir machen das, um Daten zu verarbeiten, die in Dateien gespeichert sind, sei es Konfiguration, Benutzereingaben oder Log-Daten.

@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Scrivere su standard error (stderr) in Fish Shell riguarda il reindirizzare\
   \ messaggi di errore o diagnostica separatamente dall'output standard (stdout).\u2026"
 title: Scrivere sull'errore standard
+weight: 25
 ---
-
-{{< edit_this_page >}}
 
 ## Cosa e Perché?
 

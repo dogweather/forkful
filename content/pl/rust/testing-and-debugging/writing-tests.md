@@ -11,9 +11,8 @@ summary: "Pisanie test\xF3w w Rust polega na tworzeniu automatycznych kontroli, 
   \ zapewni\u0107, \u017Ce kod dzia\u0142a zgodnie z oczekiwaniami. Programi\u015B\
   ci robi\u0105 to, aby wcze\u015Bnie\u2026"
 title: "Pisanie test\xF3w"
+weight: 36
 ---
-
-{{< edit_this_page >}}
 
 ## Co i dlaczego?
 

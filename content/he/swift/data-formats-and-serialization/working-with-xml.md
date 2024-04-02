@@ -21,9 +21,8 @@ summary: "\u05E2\u05D1\u05D5\u05D3\u05D4 \u05E2\u05DD XML \u05E4\u05D9\u05E8\u05
   \u05DF XML \u05D4\u05D5\u05D0 \u05D4\u05E4\u05D5\u05E8\u05DE\u05D8 \u05D4\u05EA\u05E7\
   \u05E0\u05D9."
 title: "\u05E2\u05D1\u05D5\u05D3\u05D4 \u05E2\u05DD XML"
+weight: 40
 ---
-
-{{< edit_this_page >}}
 
 ## מה ולמה?
 עבודה עם XML פירושה לנתח ולייצר נתוני XML ב-Swift. מתכנתים עושים זאת לצורך החלפת נתונים, במיוחד כאשר משתלבים עם מערכות שבהן XML הוא הפורמט התקני.

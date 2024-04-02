@@ -11,9 +11,8 @@ summary: "Les expressions r\xE9guli\xE8res en programmation permettent de recher
   \ et de manipuler des cha\xEEnes de caract\xE8res bas\xE9es sur des motifs sp\xE9\
   cifiques. Les\u2026"
 title: "Utilisation des expressions r\xE9guli\xE8res"
+weight: 11
 ---
-
-{{< edit_this_page >}}
 
 ## Quoi et pourquoi ?
 

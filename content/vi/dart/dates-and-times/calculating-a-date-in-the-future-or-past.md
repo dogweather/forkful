@@ -14,9 +14,8 @@ summary: "Vi\u1EC7c t\xEDnh to\xE1n m\u1ED9t ng\xE0y trong t\u01B0\u01A1ng lai h
   i v\u1EDBi c\xE1c l\u1EADp tr\xECnh vi\xEAn, \u0111\u1ED1i ph\xF3 v\u1EDBi vi\u1EC7\
   c l\u1EADp l\u1ECBch, nh\u1EAFc nh\u1EDF, ho\u1EB7c b\u1EA5t k\u1EF3\u2026"
 title: "T\xEDnh to\xE1n ng\xE0y trong t\u01B0\u01A1ng lai ho\u1EB7c qu\xE1 kh\u1EE9"
+weight: 26
 ---
-
-{{< edit_this_page >}}
 
 ## Cái gì & Tại sao?
 Việc tính toán một ngày trong tương lai hoặc quá khứ là một nhiệm vụ phổ biến đối với các lập trình viên, đối phó với việc lập lịch, nhắc nhở, hoặc bất kỳ tính năng nào phụ thuộc vào việc tính toán ngày tháng. Hiểu cách thao tác với ngày tháng là điều quan trọng đối với hệ thống backend, giao diện người dùng và phân tích dữ liệu, đặc biệt là đối với những người chuyển sang Dart và muốn thực hiện logic thời gian một cách hiệu quả.

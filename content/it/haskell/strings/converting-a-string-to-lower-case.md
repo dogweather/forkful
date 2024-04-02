@@ -9,9 +9,8 @@ summary: "Convertire una stringa in minuscolo significa trasformare tutti i cara
   \ alfabetici in lettere minuscole. Questo \xE8 utile per uniformare i dati prima\
   \ di\u2026"
 title: Conversione di una stringa in minuscolo
+weight: 4
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 Convertire una stringa in minuscolo significa trasformare tutti i caratteri alfabetici in lettere minuscole. Questo è utile per uniformare i dati prima di confrontarli o memorizzarli, eliminando discrepanze dovute a differenze di maiuscole e minuscole.

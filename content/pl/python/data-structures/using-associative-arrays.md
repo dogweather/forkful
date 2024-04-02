@@ -11,9 +11,8 @@ summary: "Tablice asocjacyjne, znane w Pythonie jako s\u0142owniki, mapuj\u0105 
   \ na warto\u015Bci, co u\u0142atwia pobieranie, modyfikowanie lub \u015Bledzenie\
   \ danych za pomoc\u0105\u2026"
 title: Korzystanie z tablic asocjacyjnych
+weight: 15
 ---
-
-{{< edit_this_page >}}
 
 ## Co i dlaczego?
 

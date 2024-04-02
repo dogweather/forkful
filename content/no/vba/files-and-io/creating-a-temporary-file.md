@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "\xC5 opprette en midlertidig fil i Visual Basic for Applications (VBA) inneb\xE6\
   rer \xE5 programmert generere en fil for korttidsbruk, typisk for databehandling\u2026"
 title: Opprette en midlertidig fil
+weight: 21
 ---
-
-{{< edit_this_page >}}
 
 ## Hva & Hvorfor?
 

@@ -9,9 +9,8 @@ summary: "J\xE4mf\xF6r tv\xE5 datum inneb\xE4r att avg\xF6ra tidsordningen mella
   \ dem - vilket \xE4r tidigare, senare eller om de \xE4r identiska. Programmerare\
   \ g\xF6r detta f\xF6r att\u2026"
 title: "J\xE4mf\xF6ra tv\xE5 datum"
+weight: 27
 ---
-
-{{< edit_this_page >}}
 
 ## Vad & Varför?
 Jämför två datum innebär att avgöra tidsordningen mellan dem - vilket är tidigare, senare eller om de är identiska. Programmerare gör detta för att hantera händelser, logga, giltighetsperioder, och tidsbaserade funktioner.

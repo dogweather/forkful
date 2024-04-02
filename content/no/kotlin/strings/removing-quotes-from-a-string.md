@@ -7,9 +7,8 @@ model: gpt-4-0125-preview
 summary: "\xC5 fjerne anf\xF8rselstegn fra en streng betyr \xE5 strippe bort eventuelle\
   \ forekomster av anf\xF8rselstegn, enten enkle (' ') eller doble (\" \"), fra tekstdataene\u2026"
 title: "Fjerne anf\xF8rselstegn fra en streng"
+weight: 9
 ---
-
-{{< edit_this_page >}}
 
 ## Hva & Hvorfor?
 

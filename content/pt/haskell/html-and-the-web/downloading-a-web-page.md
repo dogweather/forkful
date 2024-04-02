@@ -8,9 +8,8 @@ model: gpt-4-1106-preview
 summary: "Fazer download de uma p\xE1gina web \xE9 o processo de puxar os dados brutos\
   \ de um site para ver ou processar localmente. Programadores fazem isso para coletar\u2026"
 title: "Baixando uma p\xE1gina da web"
+weight: 42
 ---
-
-{{< edit_this_page >}}
 
 ## O Quê & Porquê?
 Fazer download de uma página web é o processo de puxar os dados brutos de um site para ver ou processar localmente. Programadores fazem isso para coletar dados, testar aplicativos ou automatizar tarefas.

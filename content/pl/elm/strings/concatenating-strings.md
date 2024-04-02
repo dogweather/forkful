@@ -9,9 +9,8 @@ summary: "\u0141\u0105czenie ci\u0105g\xF3w znak\xF3w (string concatenation) to 
   \ \u0142\u0105czenia dw\xF3ch lub wi\u0119cej tekst\xF3w w jeden ci\u0105g. Programi\u015B\
   ci robi\u0105 to, aby tworzy\u0107 wiadomo\u015Bci,\u2026"
 title: "\u0141\u0105czenie \u0142a\u0144cuch\xF3w znak\xF3w"
+weight: 3
 ---
-
-{{< edit_this_page >}}
 
 ## Co i dlaczego?
 Łączenie ciągów znaków (string concatenation) to proces łączenia dwóch lub więcej tekstów w jeden ciąg. Programiści robią to, aby tworzyć wiadomości, generować kod lub po prostu łączyć dane w sposób czytelny.

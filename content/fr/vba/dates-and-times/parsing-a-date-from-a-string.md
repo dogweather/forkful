@@ -10,9 +10,8 @@ model: gpt-4-0125-preview
 summary: "L'analyse d'une date \xE0 partir d'une cha\xEEne en Visual Basic pour Applications\
   \ (VBA) consiste \xE0 convertir un texte qui repr\xE9sente une date en un type de\u2026"
 title: "Analyser une date \xE0 partir d'une cha\xEEne de caract\xE8res"
+weight: 30
 ---
-
-{{< edit_this_page >}}
 
 ## Quoi & Pourquoi ?
 

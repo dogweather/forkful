@@ -9,9 +9,8 @@ summary: "(\"Co i dlaczego?\") Tworzenie pliku tymczasowego daje ci miejsce do p
   \ danych, kt\xF3re s\u0105 wa\u017Cne w trakcie wykonywania programu, ale nie po\
   \ jego\u2026"
 title: Tworzenie pliku tymczasowego
+weight: 21
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 ("Co i dlaczego?")

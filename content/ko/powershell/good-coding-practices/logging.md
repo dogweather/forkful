@@ -21,9 +21,8 @@ summary: "\uB85C\uADF8(Logging)\uB294 \uCF54\uB4DC\uB97C \uD1B5\uD574 \uBE44\uD5
   \uB2A5\uC744 \uBAA8\uB2C8\uD130\uB9C1\uD558\uACE0, \uC7A0\uC7AC\uC801\uC778 \uBB38\
   \uC81C\uB97C \uAC10\uC2DC\uD558\uAE30 \uC704\uD574\u2026"
 title: "\uB85C\uAE45"
+weight: 17
 ---
-
-{{< edit_this_page >}}
 
 ## 무엇 & 왜?
 로그(Logging)는 코드를 통해 비행기의 궤적을 남기는 것과 같습니다 - 스크립트가 실제 환경에서 실행될 때 무슨 일이 발생하는지를 파악하기 위한 방법입니다. 프로그래머들은 디버깅을 하고, 애플리케이션의 동작을 추적하고, 성능을 모니터링하고, 잠재적인 문제를 감시하기 위해 로그를 사용합니다.

@@ -9,9 +9,8 @@ summary: "TOML oznacza Tom's Obvious, Minimal Language (Oczywisty, Minimalistycz
   \ J\u0119zyk Toma). Jest u\u017Cywany dla plik\xF3w konfiguracyjnych, poniewa\u017C\
   \ jest \u0142atwy do\u2026"
 title: Praca z TOML
+weight: 39
 ---
-
-{{< edit_this_page >}}
 
 ## Co i dlaczego?
 TOML oznacza Tom's Obvious, Minimal Language (Oczywisty, Minimalistyczny Język Toma). Jest używany dla plików konfiguracyjnych, ponieważ jest łatwy do odczytu i zapisu dla ludzi, jednocześnie pozostając łatwym do analizy dla maszyn. Programiści sięgają po TOML, aby uniknąć bałaganu XML i zawiłości JSON, kiedy mają do czynienia z konfiguracjami.

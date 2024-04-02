@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Analizzare una data da una stringa comporta la conversione di rappresentazioni\
   \ testuali di data e ora in un oggetto `Date`. Questo processo \xE8 essenziale\u2026"
 title: Analisi di una data da una stringa
+weight: 30
 ---
-
-{{< edit_this_page >}}
 
 ## Cosa & Perché?
 Analizzare una data da una stringa comporta la conversione di rappresentazioni testuali di data e ora in un oggetto `Date`. Questo processo è essenziale nelle applicazioni in cui le date vengono comunicate come stringhe, ad esempio nelle risposte delle API o negli input degli utenti, consentendo una più semplice manipolazione e formattazione delle date.

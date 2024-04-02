@@ -9,9 +9,8 @@ summary: "Loggning inom mjukvaruutveckling \xE4r tekniken att registrera h\xE4nd
   \ som intr\xE4ffar n\xE4r ett program k\xF6rs, vanligtvis till en fil eller externt\
   \ system.\u2026"
 title: Loggning
+weight: 17
 ---
-
-{{< edit_this_page >}}
 
 ## Vad & Varför?
 Loggning inom mjukvaruutveckling är tekniken att registrera händelser som inträffar när ett program körs, vanligtvis till en fil eller externt system. Programmerare gör detta för att få insikter i mjukvarans beteende, felsöka problem och bibehålla en historik av operativ historik som är avgörande för felsökning och övervakning av applikationernas hälsa.

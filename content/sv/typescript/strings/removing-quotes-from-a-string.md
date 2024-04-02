@@ -9,9 +9,8 @@ summary: "Att ta bort citattecken fr\xE5n en str\xE4ng inneb\xE4r att man tar bo
   \ de omgivande enkla (`'`) eller dubbla (`\"`) citattecknen som definierar str\xE4\
   nglitteraler i\u2026"
 title: "Ta bort citattecken fr\xE5n en str\xE4ng"
+weight: 9
 ---
-
-{{< edit_this_page >}}
 
 ## Vad & Varför?
 Att ta bort citattecken från en sträng innebär att man tar bort de omgivande enkla (`'`) eller dubbla (`"`) citattecknen som definierar stränglitteraler i kod. Programmerare gör detta av flera anledningar, såsom att formatera utdata, sanera användarinmatning, eller förbereda strängar för tolkning eller lagring där citaten är onödiga eller kan orsaka fel.

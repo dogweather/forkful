@@ -11,9 +11,8 @@ summary: "\xC5 hente gjeldende dato i Haskell inneb\xE6rer \xE5 f\xE5 tak i syst
   \ n\xE5v\xE6rende tid og omdanne den til et lesbart datoformat. Programmerere gj\xF8\
   r dette for \xE5\u2026"
 title: "F\xE5 dagens dato"
+weight: 29
 ---
-
-{{< edit_this_page >}}
 
 ## Hva & Hvorfor?
 Å hente gjeldende dato i Haskell innebærer å få tak i systemets nåværende tid og omdanne den til et lesbart datoformat. Programmerere gjør dette for å utføre operasjoner basert på datoen, som logging, planlegging av oppgaver, eller tidsstempling av hendelser i applikasjoner.

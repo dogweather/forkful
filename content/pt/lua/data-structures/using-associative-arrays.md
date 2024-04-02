@@ -11,9 +11,8 @@ summary: "Arrays associativos s\xE3o como apertos de m\xE3o secretos para dados 
   \ Lua\u2014em vez de apenas n\xFAmeros se alinhando obedientemente por \xEDndice,\
   \ suas chaves podem\u2026"
 title: Usando arrays associativos
+weight: 15
 ---
-
-{{< edit_this_page >}}
 
 ## O Que & Por Que?
 

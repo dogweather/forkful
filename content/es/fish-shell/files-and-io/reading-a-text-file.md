@@ -7,9 +7,8 @@ model: gpt-4-1106-preview
 summary: "Leer un archivo de texto es el proceso de obtener y procesar informaci\xF3\
   n almacenada en un archivo de texto simple. Los programadores lo hacen para\u2026"
 title: Lectura de un archivo de texto
+weight: 22
 ---
-
-{{< edit_this_page >}}
 
 ## Qué & Por Qué?
 Leer un archivo de texto es el proceso de obtener y procesar información almacenada en un archivo de texto simple. Los programadores lo hacen para manipular datos, configuraciones o simplemente para importar información a sus programas.

@@ -7,9 +7,8 @@ model: gpt-4-0125-preview
 summary: "Refactoring ist die Kunst, bestehenden Code so zu \xFCberarbeiten, dass\
   \ seine Struktur, Lesbarkeit und Effizienz verbessert werden, ohne dass sich sein\u2026"
 title: Refactoring
+weight: 19
 ---
-
-{{< edit_this_page >}}
 
 ## Was & Warum?
 Refactoring ist die Kunst, bestehenden Code so zu überarbeiten, dass seine Struktur, Lesbarkeit und Effizienz verbessert werden, ohne dass sich sein äußeres Verhalten ändert. Programmierer tun dies, um ihren Code wartbarer zu machen, Komplexität zu reduzieren und oft als vorbereitenden Schritt, bevor neue Funktionen hinzugefügt oder Fehler behoben werden.

@@ -9,9 +9,8 @@ summary: "Handling errors in C# is about managing the unexpected\u2014like tripp
   \ over your shoelaces. Programs can trip over bad data or wonky connections. We\
   \ handle\u2026"
 title: Handling errors
+weight: 16
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 

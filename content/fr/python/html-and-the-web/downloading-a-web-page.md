@@ -9,9 +9,8 @@ summary: "T\xE9l\xE9charger une page Web, c'est r\xE9cup\xE9rer son contenu via 
   \ r\xE9seau. Les programmeurs font \xE7a pour analyser des donn\xE9es, tester des\
   \ sites, ou automatiser\u2026"
 title: "T\xE9l\xE9chargement d'une page web"
+weight: 42
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why? (Quoi et Pourquoi ?)
 Télécharger une page Web, c'est récupérer son contenu via le réseau. Les programmeurs font ça pour analyser des données, tester des sites, ou automatiser des tâches Web.

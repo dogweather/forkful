@@ -11,9 +11,8 @@ summary: "Mettre en majuscule une cha\xEEne de caract\xE8res en C# consiste \xE0
   \ le premier caract\xE8re d'une cha\xEEne en majuscule s'il ne l'est pas d\xE9j\xE0\
   . Cette\u2026"
 title: "Mettre en majuscule une cha\xEEne"
+weight: 2
 ---
-
-{{< edit_this_page >}}
 
 ## Quoi & Pourquoi ?
 Mettre en majuscule une chaîne de caractères en C# consiste à convertir le premier caractère d'une chaîne en majuscule s'il ne l'est pas déjà. Cette modification peut être cruciale pour formater les sorties, appliquer des normes de codage ou rendre les textes de l'interface utilisateur plus lisibles.

@@ -25,9 +25,8 @@ summary: "\u05E4\u05D9\u05E2\u05E0\u05D5\u05D7 HTML \u05D1-C \u05DB\u05D5\u05DC\
   \u05DB\u05E0\u05EA\u05D9\u05DD \u05E2\u05D5\u05E9\u05D9\u05DD \u05D6\u05D0\u05EA\
   \u2026"
 title: "\u05E4\u05D9\u05E2\u05E0\u05D5\u05D7 HTML"
+weight: 43
 ---
-
-{{< edit_this_page >}}
 
 ## מה ולמה?
 

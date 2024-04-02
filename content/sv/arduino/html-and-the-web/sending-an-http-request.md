@@ -9,9 +9,8 @@ summary: "HTTP-beg\xE4ran skickar data till server f\xF6r att h\xE4mta eller \xE
   ndra resurser. Programmerare skickar dessa f\xF6r att interagera med webbtj\xE4\
   nster och API:er."
 title: "Skicka en http-f\xF6rfr\xE5gan"
+weight: 44
 ---
-
-{{< edit_this_page >}}
 
 ## Vad & Varför?
 HTTP-begäran skickar data till server för att hämta eller ändra resurser. Programmerare skickar dessa för att interagera med webbtjänster och API:er.

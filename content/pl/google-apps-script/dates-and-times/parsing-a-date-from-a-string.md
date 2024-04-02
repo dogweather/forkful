@@ -11,9 +11,8 @@ summary: "Parsowanie daty ze \u0142a\u0144cucha znak\xF3w polega na przekszta\u0
   ceniu tekstu reprezentuj\u0105cego dat\u0119 na obiekt daty, co umo\u017Cliwia programistom\
   \ wykonywanie operacji\u2026"
 title: "Analiza sk\u0142adniowa daty z ci\u0105gu znak\xF3w"
+weight: 30
 ---
-
-{{< edit_this_page >}}
 
 ## Co i dlaczego?
 

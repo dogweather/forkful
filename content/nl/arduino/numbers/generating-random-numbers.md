@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Het genereren van willekeurige getallen in Arduino-projecten houdt in dat\
   \ waarden worden geproduceerd die ontworpen zijn om onvoorspelbaar te zijn,\u2026"
 title: Willekeurige getallen genereren
+weight: 12
 ---
-
-{{< edit_this_page >}}
 
 ## Wat & Waarom?
 Het genereren van willekeurige getallen in Arduino-projecten houdt in dat waarden worden geproduceerd die ontworpen zijn om onvoorspelbaar te zijn, cruciaal voor toepassingen zoals games, simulaties en beveiligingssystemen. Programmeurs gebruiken deze techniek om variabiliteit te introduceren of beslissingen te nemen die niet deterministisch mogen zijn.

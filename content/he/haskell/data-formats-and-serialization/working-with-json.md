@@ -19,9 +19,8 @@ summary: "\u05E2\u05D1\u05D5\u05D3\u05D4 \u05E2\u05DD JSON (JavaScript Object No
   \u05D9\u05DD \u05E2\u05D5\u05E9\u05D9\u05DD \u05D6\u05D0\u05EA \u05DB\u05D3\u05D9\
   \u2026"
 title: "\u05E2\u05D1\u05D5\u05D3\u05D4 \u05E2\u05DD JSON"
+weight: 38
 ---
-
-{{< edit_this_page >}}
 
 ## מה ולמה?
 עבודה עם JSON (JavaScript Object Notation) ב-Haskell כוללת ניתוח נתוני JSON לסוגים של Haskell והמרת סוגים של Haskell בחזרה ל-JSON. מתכנתים עושים זאת כדי לאפשר ליישומי ה-Haskell שלהם להחליף נתונים עם שירותי אינטרנט או API-ים בצורה חלקה, פרקטיקה נפוצה בפיתוח תוכנה מודרני להחלפת נתונים בין פלטפורמות.

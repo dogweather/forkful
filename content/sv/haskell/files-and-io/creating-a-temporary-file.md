@@ -9,9 +9,8 @@ summary: "Att skapa en tempor\xE4r fil inneb\xE4r att vi tillf\xE4lligt lagrar d
   \ under programmets k\xF6rning. Programmerare g\xF6r detta f\xF6r att hantera data\
   \ som inte beh\xF6ver\u2026"
 title: "Skapa en tempor\xE4r fil"
+weight: 21
 ---
-
-{{< edit_this_page >}}
 
 ## Vad & Varför?
 Att skapa en temporär fil innebär att vi tillfälligt lagrar data under programmets körning. Programmerare gör detta för att hantera data som inte behöver vara permanent eller när de vill undvika att kladda ner användarens filsystem.

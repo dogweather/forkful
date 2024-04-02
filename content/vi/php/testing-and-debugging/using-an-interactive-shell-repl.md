@@ -13,9 +13,8 @@ summary: "M\u1ED9t shell t\u01B0\u01A1ng t\xE1c, hay REPL (Read-Eval-Print Loop 
   t v\xE0 ch\u1EA1y m\xE3 PHP ngay l\u1EADp t\u1EE9c. N\xF3 l\xFD t\u01B0\u1EDFng\
   \ cho vi\u1EC7c th\u1EED\u2026"
 title: "S\u1EED d\u1EE5ng v\u1ECF t\u01B0\u01A1ng t\xE1c (REPL)"
+weight: 34
 ---
-
-{{< edit_this_page >}}
 
 ## Cái gì & Tại sao?
 Một shell tương tác, hay REPL (Read-Eval-Print Loop - Vòng lặp Đọc-Đánh giá-In), cho phép bạn viết và chạy mã PHP ngay lập tức. Nó lý tưởng cho việc thử nghiệm, gỡ lỗi, hoặc học hỏi, vì bạn có thể thử nghiệm các đoạn mã mà không cần tới việc tạo một script đầy đủ.

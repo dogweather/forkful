@@ -9,9 +9,8 @@ summary: "Wyszukiwanie i zamiana tekstu to podstawowe operacje umo\u017Cliwiaj\u
   ce zmian\u0119 jednego ci\u0105gu znak\xF3w na inny w obr\u0119bie wi\u0119kszego\
   \ tekstu. Programi\u015Bci robi\u0105 to\u2026"
 title: Wyszukiwanie i zamiana tekstu
+weight: 10
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why? ("Co i Dlaczego?")
 Wyszukiwanie i zamiana tekstu to podstawowe operacje umożliwiające zmianę jednego ciągu znaków na inny w obrębie większego tekstu. Programiści robią to często: aby poprawić błędy, zmieniać nazwy czy dostosowywać dane.

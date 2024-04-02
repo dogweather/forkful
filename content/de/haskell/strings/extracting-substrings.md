@@ -7,9 +7,8 @@ model: gpt-4-1106-preview
 summary: "Das Extrahieren von Teilstrings bezieht sich darauf, spezifische Segmente\
   \ eines Strings in Haskell herauszuschneiden. Programmierer nutzen es, um\u2026"
 title: Teilstrings extrahieren
+weight: 6
 ---
-
-{{< edit_this_page >}}
 
 ## Was & Warum?
 Das Extrahieren von Teilstrings bezieht sich darauf, spezifische Segmente eines Strings in Haskell herauszuschneiden. Programmierer nutzen es, um relevante Daten zu manipulieren, Text zu analysieren oder Benutzereingaben zu verarbeiten.

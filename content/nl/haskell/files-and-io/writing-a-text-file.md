@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "In Haskell is het schrijven naar een tekstbestand alles over het opslaan\
   \ van data in een bestand. Programmeurs doen dit om data tussen sessies te bewaren,\u2026"
 title: Een tekstbestand schrijven
+weight: 24
 ---
-
-{{< edit_this_page >}}
 
 ## Wat & Waarom?
 In Haskell is het schrijven naar een tekstbestand alles over het opslaan van data in een bestand. Programmeurs doen dit om data tussen sessies te bewaren, informatie te delen, of de uitvoer van het programma te loggen.

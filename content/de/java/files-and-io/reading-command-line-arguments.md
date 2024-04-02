@@ -7,9 +7,8 @@ model: gpt-4-1106-preview
 summary: "Kommandozeilenargumente erm\xF6glichen es Benutzern, Werte oder Verhaltensweisen\
   \ einer Java-Anwendung beim Start zu steuern. Programmierer nutzen sie, um\u2026"
 title: Lesen von Kommandozeilenargumenten
+weight: 23
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 Kommandozeilenargumente ermöglichen es Benutzern, Werte oder Verhaltensweisen einer Java-Anwendung beim Start zu steuern. Programmierer nutzen sie, um flexible und interaktive Anwendungen zu schaffen.

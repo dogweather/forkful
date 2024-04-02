@@ -9,9 +9,8 @@ summary: "Obs\u0142uga b\u0142\u0119d\xF3w dotyczy zarz\u0105dzania nieoczekiwan
   \ sytuacjami w programach \u2013 jak ochroniarz radz\u0105cy sobie z awanturnikami.\
   \ Programi\u015Bci lubi\u0105 gdy wszystko\u2026"
 title: "Obs\u0142uga b\u0142\u0119d\xF3w"
+weight: 16
 ---
-
-{{< edit_this_page >}}
 
 ## Co i dlaczego?
 Obsługa błędów dotyczy zarządzania nieoczekiwanymi sytuacjami w programach – jak ochroniarz radzący sobie z awanturnikami. Programiści lubią gdy wszystko idzie gładko; obsługa błędów pomaga utrzymać problemy w ryzach, zapewniając, że ich kod nie potknie się i nie upadnie, kiedy napotka niespodziewane przeszkody.

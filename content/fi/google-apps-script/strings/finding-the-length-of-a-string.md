@@ -11,9 +11,8 @@ summary: "Merkkijonon pituuden selvitt\xE4minen Google Apps Scriptill\xE4, joka 
   \ JavaScript-pohjainen pilviskriptikieli, jonka avulla voit automatisoida teht\xE4\
   vi\xE4\u2026"
 title: "Merkkijonon pituuden selvitt\xE4minen"
+weight: 7
 ---
-
-{{< edit_this_page >}}
 
 ## Mikä ja miksi?
 Merkkijonon pituuden selvittäminen Google Apps Scriptillä, joka on JavaScript-pohjainen pilviskriptikieli, jonka avulla voit automatisoida tehtäviä Googlen tuotteiden parissa, tarkoittaa merkkijonon sisältämien merkkien määrän määrittämistä. Ohjelmoijat suorittavat tätä operaatiota usein syötteen tarkistamiseksi, merkkien läpikäymiseksi tai merkkijonojen manipuloimiseksi erilaisissa automaatiotehtävissä Google-sovelluksissa.

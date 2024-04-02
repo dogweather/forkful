@@ -9,9 +9,8 @@ summary: "Encontrar o comprimento de uma string significa descobrir quantos cara
   \ ela cont\xE9m. Programadores fazem isso para validar entradas, limitar texto,\
   \ ou\u2026"
 title: Descobrindo o comprimento de uma string
+weight: 7
 ---
-
-{{< edit_this_page >}}
 
 ## O Que & Porquê?
 Encontrar o comprimento de uma string significa descobrir quantos caracteres ela contém. Programadores fazem isso para validar entradas, limitar texto, ou simplesmente para manipulação geral de dados.

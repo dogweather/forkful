@@ -9,9 +9,8 @@ summary: "Redondear n\xFAmeros significa ajustarlos para que est\xE9n m\xE1s cer
   \ de un valor m\xE1s simple o m\xE1s significativo. Los programadores redondean\
   \ los n\xFAmeros para\u2026"
 title: "Redondeo de n\xFAmeros"
+weight: 13
 ---
-
-{{< edit_this_page >}}
 
 ## Qué y Por Qué?
 Redondear números significa ajustarlos para que estén más cerca de un valor más simple o más significativo. Los programadores redondean los números para simplificar resultados, limitar lugares decimales para la visualización o para ciertos fines matemáticos.

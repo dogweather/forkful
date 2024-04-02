@@ -11,9 +11,8 @@ summary: "Concatenare le stringhe significa combinare due o pi\xF9 stringhe in u
   \ singola stringa. I programmatori lo fanno per costruire dinamicamente messaggi,\
   \ URL\u2026"
 title: Concatenazione di stringhe
+weight: 3
 ---
-
-{{< edit_this_page >}}
 
 ## Cosa & Perché?
 

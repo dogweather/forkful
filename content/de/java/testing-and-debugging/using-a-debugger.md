@@ -1,12 +1,14 @@
 ---
 date: 2024-01-26 03:49:30.157433-07:00
-description: "Ein Debugger wird verwendet, um ein Werkzeug zum Testen und Beheben\
-  \ von Fehlern im Code einzusetzen. Programmierer tun dies, um den Ablauf ihrer\u2026"
+description: "Angenommen, Sie haben ein einfaches Java-Programm, das Probleme macht,\
+  \ und Sie k\xF6nnen nicht herausfinden, warum. So w\xFCrden Sie einen Debugger mit\
+  \ Eclipse\u2026"
 lastmod: '2024-03-13T22:44:53.767349-06:00'
 model: gpt-4-0125-preview
-summary: "Ein Debugger wird verwendet, um ein Werkzeug zum Testen und Beheben von\
-  \ Fehlern im Code einzusetzen. Programmierer tun dies, um den Ablauf ihrer\u2026"
+summary: "Angenommen, Sie haben ein einfaches Java-Programm, das Probleme macht, und\
+  \ Sie k\xF6nnen nicht herausfinden, warum. So w\xFCrden Sie einen Debugger mit Eclipse\u2026"
 title: Einsatz eines Debuggers
+weight: 35
 ---
 
 ## Wie geht das:

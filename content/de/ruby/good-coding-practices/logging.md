@@ -7,9 +7,8 @@ model: gpt-4-1106-preview
 summary: "Das Protokollieren in der Programmierung gleicht dem F\xFChren eines Tagebuchs\
   \ f\xFCr Ihre Anwendung. Es ist die systematische Aufzeichnung von Ereignissen,\u2026"
 title: Protokollierung
+weight: 17
 ---
-
-{{< edit_this_page >}}
 
 ## Was & Warum?
 Das Protokollieren in der Programmierung gleicht dem Führen eines Tagebuchs für Ihre Anwendung. Es ist die systematische Aufzeichnung von Ereignissen, Nachrichten und Datenpunkten, die Ihnen Einblick geben in das, was Ihre Anwendung tut und wie sie sich verhält. Entwickler protokollieren, weil es entscheidend für das Debugging ist, die Überwachung der Anwendungsgesundheit und das Erhalten von Hinweisen über potenzielle Probleme, bevor diese zu echten Schwierigkeiten werden.

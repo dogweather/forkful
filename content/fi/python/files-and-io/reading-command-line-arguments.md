@@ -9,9 +9,8 @@ summary: "Mit\xE4 ja miksi? Komentoriviparametrien lukeminen mahdollistaa k\xE4y
   j\xE4n antamien arvojen vastaanottamisen suoraan ohjelmaasi. T\xE4t\xE4 tehd\xE4\
   \xE4n, koska se\u2026"
 title: Komennoriviparametrien lukeminen
+weight: 23
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 Mitä ja miksi? Komentoriviparametrien lukeminen mahdollistaa käyttäjän antamien arvojen vastaanottamisen suoraan ohjelmaasi. Tätä tehdään, koska se mahdollistaa ohjelman toiminnan mukauttamisen lennossa ilman koodin muuttamista.

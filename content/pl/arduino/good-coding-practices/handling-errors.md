@@ -9,9 +9,8 @@ summary: "Obs\u0142uga b\u0142\u0119d\xF3w w twoich programach wy\u0142awia te n
   \ sytuacje, kt\xF3re pr\xF3buj\u0105 ci\u0119 podstawi\u0107. Robisz to, aby zapobiec\
   \ \"stopieniu si\u0119\" twojego\u2026"
 title: "Obs\u0142uga b\u0142\u0119d\xF3w"
+weight: 16
 ---
-
-{{< edit_this_page >}}
 
 ## Co i dlaczego?
 

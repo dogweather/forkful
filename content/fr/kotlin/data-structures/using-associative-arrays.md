@@ -11,9 +11,8 @@ summary: "Les tableaux associatifs, ou maps, dans Kotlin sont des collections qu
   \ stockent des paires cl\xE9-valeur. Les programmeurs les utilisent pour organiser\
   \ et\u2026"
 title: Utilisation des tableaux associatifs
+weight: 15
 ---
-
-{{< edit_this_page >}}
 
 ## Quoi & Pourquoi ?
 

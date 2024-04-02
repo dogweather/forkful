@@ -9,9 +9,8 @@ summary: "I programmering betyr \xE5 \"konkatenere\" strenger \xE5 sette dem sam
   \ til \xE9n. Programutviklere konkatenere strenger for \xE5 bygge setninger, lage\
   \ meldinger,\u2026"
 title: "Sammensl\xE5ing av strenger"
+weight: 3
 ---
-
-{{< edit_this_page >}}
 
 ## Hva & Hvorfor?
 I programmering betyr å "konkatenere" strenger å sette dem sammen til én. Programutviklere konkatenere strenger for å bygge setninger, lage meldinger, eller sammenslå brukerinput - kjekt og ofte nødvendig.

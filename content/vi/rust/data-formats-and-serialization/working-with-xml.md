@@ -13,9 +13,8 @@ summary: "XML, vi\u1EBFt t\u1EAFt c\u1EE7a eXtensible Markup Language, gi\u1ED1n
   i \u0111\u1ED1i m\u1EB7t v\u1EDBi XML khi l\xE0m vi\u1EC7c v\u1EDBi c\xE1c h\u1EC7\
   \ th\u1ED1ng c\u0169, ph\u1EA7n\u2026"
 title: "L\xE0m vi\u1EC7c v\u1EDBi XML"
+weight: 40
 ---
-
-{{< edit_this_page >}}
 
 ## Cái gì & Tại sao?
 XML, viết tắt của eXtensible Markup Language, giống như anh em họ dài dòng của JSON. Bạn sẽ phải đối mặt với XML khi làm việc với các hệ thống cũ, phần mềm doanh nghiệp, hoặc các API đã bỏ lỡ "chuyến tàu" JSON. XML vô cùng quan trọng trong việc trao đổi dữ liệu, nơi mà XML vẫn giữ vững vị thế của mình.

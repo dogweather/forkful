@@ -8,9 +8,8 @@ model: gpt-4-0125-preview
 summary: "Working with JSON involves parsing JSON-formatted strings into data structures\
   \ that Elixir can manipulate, and serializing Elixir data structures back\u2026"
 title: Working with JSON
+weight: 38
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 

@@ -10,6 +10,7 @@ model: gpt-4-0125-preview
 summary: "Het kapitaliseren van een string betekent meestal het omzetten van het eerste\
   \ karakter van een string naar een hoofdletter en de rest naar kleine letters.\u2026"
 title: Een string met hoofdletters maken
+weight: 2
 ---
 
 ## Wat & Waarom?

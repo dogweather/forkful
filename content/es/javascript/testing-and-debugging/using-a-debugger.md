@@ -1,13 +1,15 @@
 ---
 date: 2024-01-26 03:50:04.836379-07:00
-description: "Usar un depurador significa aprovechar herramientas especializadas que\
-  \ te permiten echar un vistazo bajo el cap\xF3 de tu c\xF3digo, observ\xE1ndolo\
-  \ ejecutarse\u2026"
+description: "Aqu\xED tienes un fragmento de c\xF3digo en JavaScript que no se est\xE1\
+  \ comportando como se esperaba: ```javascript function buggyMultiply(a, b) { return\
+  \ a + b;\u2026"
 lastmod: '2024-03-13T22:44:59.463271-06:00'
 model: gpt-4-0125-preview
-summary: "Usar un depurador significa aprovechar herramientas especializadas que te\
-  \ permiten echar un vistazo bajo el cap\xF3 de tu c\xF3digo, observ\xE1ndolo ejecutarse\u2026"
+summary: "Aqu\xED tienes un fragmento de c\xF3digo en JavaScript que no se est\xE1\
+  \ comportando como se esperaba: ```javascript function buggyMultiply(a, b) { return\
+  \ a + b;\u2026"
 title: Usando un depurador
+weight: 35
 ---
 
 ## Cómo hacerlo:

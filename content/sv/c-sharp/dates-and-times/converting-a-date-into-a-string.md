@@ -9,9 +9,8 @@ summary: "Att konvertera ett datum till en str\xE4ng inneb\xE4r att man byter fo
   \ fr\xE5n ett `DateTime` objekt till en textrepresentation. Programmerare g\xF6\
   r detta f\xF6r\u2026"
 title: "Omvandla ett datum till en str\xE4ng"
+weight: 28
 ---
-
-{{< edit_this_page >}}
 
 ## Vad & Varför?
 Att konvertera ett datum till en sträng innebär att man byter formatet från ett `DateTime` objekt till en textrepresentation. Programmerare gör detta för att visa datum i gränssnitt eller för att lagra dem i textformat i databaser. 

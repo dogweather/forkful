@@ -7,9 +7,8 @@ model: gpt-4-1106-preview
 summary: "Das Lesen von Kommandozeilenargumenten erm\xF6glicht es deinen Swift-Programmen,\
   \ beim Start Input zu erhalten \u2013 praktisch f\xFCr flexible Tools und\u2026"
 title: Lesen von Kommandozeilenargumenten
+weight: 23
 ---
-
-{{< edit_this_page >}}
 
 ## Was & Warum?
 Das Lesen von Kommandozeilenargumenten ermöglicht es deinen Swift-Programmen, beim Start Input zu erhalten – praktisch für flexible Tools und Automatisierung. Programmierer nutzen das, um ihre Anwendungen an verschiedene Szenarien anzupassen, ohne den Code zu ändern.

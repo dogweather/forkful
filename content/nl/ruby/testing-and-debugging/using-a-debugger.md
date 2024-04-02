@@ -2,14 +2,14 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:08:45.932461-07:00
-description: "Een debugger gebruiken in Ruby geeft programmeurs een superkracht om\
-  \ hun code te pauzeren, variabelen te inspecteren en stap voor stap door hun code\
-  \ te\u2026"
+description: "Ruby wordt geleverd met een ingebouwde debugger genaamd `byebug`. Voeg\
+  \ eerst `byebug` toe aan je Gemfile en voer `bundle install` uit. Plaats vervolgens\u2026"
 lastmod: '2024-03-13T22:44:51.342965-06:00'
 model: gpt-4-0125-preview
-summary: "Een debugger gebruiken in Ruby geeft programmeurs een superkracht om hun\
-  \ code te pauzeren, variabelen te inspecteren en stap voor stap door hun code te\u2026"
+summary: "Ruby wordt geleverd met een ingebouwde debugger genaamd `byebug`. Voeg eerst\
+  \ `byebug` toe aan je Gemfile en voer `bundle install` uit. Plaats vervolgens\u2026"
 title: Een debugger gebruiken
+weight: 35
 ---
 
 ## Hoe:

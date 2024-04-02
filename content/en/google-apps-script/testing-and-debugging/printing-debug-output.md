@@ -7,9 +7,8 @@ model: gpt-4-0125-preview
 summary: "Printing debug output involves strategically placing log statements in your\
   \ code to display variable values, execution flow, or message errors during\u2026"
 title: Printing debug output
+weight: 33
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 

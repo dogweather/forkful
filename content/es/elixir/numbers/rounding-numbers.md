@@ -7,9 +7,8 @@ model: gpt-4-0125-preview
 summary: "Redondear n\xFAmeros significa ajustarlos a un valor cercano por simplicidad\
   \ o para coincidir con cierta precisi\xF3n. Es \xFAtil para mejorar la legibilidad,\u2026"
 title: "Redondeo de n\xFAmeros"
+weight: 13
 ---
-
-{{< edit_this_page >}}
 
 ## Qué y por qué?
 Redondear números significa ajustarlos a un valor cercano por simplicidad o para coincidir con cierta precisión. Es útil para mejorar la legibilidad, reducir el espacio de almacenamiento o satisfacer necesidades específicas del dominio, como cálculos monetarios donde quieres redondear al centavo más cercano.

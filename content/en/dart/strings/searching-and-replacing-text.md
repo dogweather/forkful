@@ -7,9 +7,8 @@ model: gpt-4-0125-preview
 summary: "Searching and replacing text in Dart involves examining strings to find\
   \ certain patterns or sequences of characters and substituting them with new\u2026"
 title: Searching and replacing text
+weight: 10
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 

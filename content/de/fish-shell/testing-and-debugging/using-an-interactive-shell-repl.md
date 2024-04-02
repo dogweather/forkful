@@ -7,9 +7,8 @@ model: gpt-4-0125-preview
 summary: "REPL, oder Read-Eval-Print Loop (Lese-Auswerte-Drucke Schleife), ist eine\
   \ interaktive Programmierumgebung, die einzelne Benutzereingaben entgegennimmt,\u2026"
 title: Nutzung einer interaktiven Shell (REPL)
+weight: 34
 ---
-
-{{< edit_this_page >}}
 
 ## Was & Warum?
 REPL, oder Read-Eval-Print Loop (Lese-Auswerte-Drucke Schleife), ist eine interaktive Programmierumgebung, die einzelne Benutzereingaben entgegennimmt, ausführt und das Ergebnis zurückgibt. Programmierer nutzen sie für sofortiges Feedback, Fehlersuche und schnelles Experimentieren mit Programmierkonzepten, ohne das Overhead des Kompilierens und Ausführens eines vollständigen Programms.

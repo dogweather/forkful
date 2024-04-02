@@ -7,9 +7,8 @@ model: gpt-4-0125-preview
 summary: "Zahlen zu runden bedeutet, sie auf die n\xE4chste ganze Zahl oder einen\
   \ bestimmten Genauigkeitsgrad anzupassen. Programmierer machen das, um die Lesbarkeit\u2026"
 title: Zahlen runden
+weight: 13
 ---
-
-{{< edit_this_page >}}
 
 ## Was & Warum?
 

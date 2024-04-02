@@ -9,9 +9,8 @@ summary: "Czytanie plik\xF3w tekstowych polega na za\u0142adowaniu ich zawarto\u
   ci do programu. Programi\u015Bci robi\u0105 to, \u017Ceby przetwarza\u0107 dane,\
   \ konfigurowa\u0107 aplikacje lub\u2026"
 title: Odczytywanie pliku tekstowego
+weight: 22
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 

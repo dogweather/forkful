@@ -18,9 +18,8 @@ summary: "\u5728Google Apps\u811A\u672C\u4E2D\u89E3\u6790HTML\u6D89\u53CA\u4ECEH
   \u636E\u6536\u96C6\u3001\u64CD\u4F5C\u7F51\u9875\u5185\u5BB9\u6216\u5C06\u7F51\u9875\
   \u529F\u80FD\u4E0EGoogle Apps\uFF08\u5982Sheets\u548CDocs\uFF09\u6574\u5408\u3002"
 title: "\u89E3\u6790HTML"
+weight: 43
 ---
-
-{{< edit_this_page >}}
 
 ## 什么 & 为什么？
 在Google Apps脚本中解析HTML涉及从HTML内容中提取数据，这在与网页或基于web的数据来源交互时尤其有用。程序员这样做是为了自动化数据收集、操作网页内容或将网页功能与Google Apps（如Sheets和Docs）整合。

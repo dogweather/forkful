@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Strenginterpolasjon er en metode for \xE5 konstruere strenger som inkorporerer\
   \ variabler, noe som muliggj\xF8r dynamisk oppretting av strenger. Programmerere\u2026"
 title: Interpolering av en streng
+weight: 8
 ---
-
-{{< edit_this_page >}}
 
 ## Hva & hvorfor?
 

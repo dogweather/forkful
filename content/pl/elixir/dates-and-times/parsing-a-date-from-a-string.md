@@ -12,9 +12,8 @@ summary: "Parsowanie daty z ci\u0105gu znak\xF3w polega na przekszta\u0142ceniu 
   \ takiego jak \"2023-04-05\", na format daty, kt\xF3ry Tw\xF3j program mo\u017C\
   e zrozumie\u0107 i z kt\xF3rym\u2026"
 title: "Analiza sk\u0142adniowa daty z ci\u0105gu znak\xF3w"
+weight: 30
 ---
-
-{{< edit_this_page >}}
 
 ## Co i dlaczego?
 

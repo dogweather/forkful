@@ -9,9 +9,8 @@ summary: "D\xE9marrer un nouveau projet en C++, c'est cr\xE9er un monde de possi
   s. Les programmeurs se lancent dans cette aventure pour r\xE9soudre des probl\xE8\
   mes,\u2026"
 title: Lancement d'un nouveau projet
+weight: 1
 ---
-
-{{< edit_this_page >}}
 
 ## Quoi & Pourquoi ?
 Démarrer un nouveau projet en C++, c'est créer un monde de possibilités. Les programmeurs se lancent dans cette aventure pour résoudre des problèmes, apprendre ou innover.

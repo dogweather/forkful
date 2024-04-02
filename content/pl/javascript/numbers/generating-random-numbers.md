@@ -9,9 +9,8 @@ summary: "Generowanie losowych liczb w JavaScript to technika u\u017Cywana do tw
   \ nieprzewidywalno\u015Bci w aplikacjach, pocz\u0105wszy od gier, kt\xF3re wymagaj\u0105\
   \ losowego\u2026"
 title: Generowanie liczb losowych
+weight: 12
 ---
-
-{{< edit_this_page >}}
 
 ## Co i dlaczego?
 

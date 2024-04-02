@@ -9,9 +9,8 @@ summary: "Lokitus on olennaisesti sit\xE4, ett\xE4 kirjaat yl\xF6s, mit\xE4 sove
   \ tekee \u2013 voisi sanoa, ett\xE4 se on p\xE4iv\xE4kirja, mutta koodille. Ohjelmoijat\
   \ tekev\xE4t niin\u2026"
 title: Lokitus
+weight: 17
 ---
-
-{{< edit_this_page >}}
 
 ## Mikä ja miksi?
 Lokitus on olennaisesti sitä, että kirjaat ylös, mitä sovelluksesi tekee – voisi sanoa, että se on päiväkirja, mutta koodille. Ohjelmoijat tekevät niin seuratakseen yksityiskohtia, kuten tilan muutoksia, järjestelmätapahtumia ja ärsyttäviä vikoja, varmistaakseen, ettei mikään ongelma jää huomaamatta.

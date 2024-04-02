@@ -11,9 +11,8 @@ summary: "Wielk\u0105 liter\u0105 nazywamy zmodyfikowanie pierwszej litery ka\u0
   dego s\u0142owa w ci\u0105gu na wielk\u0105 liter\u0119, zapewniaj\u0105c jednocze\u015B\
   nie, \u017Ce reszta liter pozostaje ma\u0142a.\u2026"
 title: "Zamiana liter na wielkie w \u0142a\u0144cuchu znak\xF3w"
+weight: 2
 ---
-
-{{< edit_this_page >}}
 
 ## Co i dlaczego?
 Wielką literą nazywamy zmodyfikowanie pierwszej litery każdego słowa w ciągu na wielką literę, zapewniając jednocześnie, że reszta liter pozostaje mała. To powszechne zadanie manipulacji ciągiem jest przydatne do formatowania tekstu w aplikacjach, takich jak przygotowywanie nazw użytkowników czy tytułów do wyświetlenia zgodnie z konwencją lub poprawnością gramatyczną.

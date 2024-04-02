@@ -13,9 +13,8 @@ summary: "Trong b\u1ED1i c\u1EA3nh l\u1EADp tr\xECnh, vi\u1EC7c ghi log l\xE0 qu
   ng tin v\xE0o m\u1ED9t t\u1EADp tin ho\u1EB7c m\u1ED9t ph\u01B0\u01A1ng ti\u1EC7\
   n xu\u1EA5t kh\xE1c. L\u1EADp tr\xECnh\u2026"
 title: Ghi log
+weight: 17
 ---
-
-{{< edit_this_page >}}
 
 ## Gì và Tại Sao?
 Trong bối cảnh lập trình, việc ghi log là quá trình ghi lại các sự kiện, trạng thái và thông tin vào một tập tin hoặc một phương tiện xuất khác. Lập trình viên ghi log để theo dõi những gì đang xảy ra trong ứng dụng của họ, để gỡ lỗi và để theo dõi hiệu năng cho phân tích và tối ưu hóa trong tương lai.

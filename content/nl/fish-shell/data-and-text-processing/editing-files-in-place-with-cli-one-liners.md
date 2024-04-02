@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Bestanden in-place bewerken met CLI one-liners gaat over het direct aanbrengen\
   \ van wijzigingen in bestanden vanaf de opdrachtregel, zonder ze in een\u2026"
 title: Bestanden ter plekke bewerken met CLI one-liners
+weight: 32
 ---
-
-{{< edit_this_page >}}
 
 ## Wat & Waarom?
 

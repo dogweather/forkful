@@ -7,9 +7,8 @@ model: gpt-4-1106-preview
 summary: "Invio di una richiesta HTTP con autenticazione di base permette di accedere\
   \ a risorse protette online. I programmatori lo utilizzano per interagire con\u2026"
 title: Inviare una richiesta http con autenticazione di base
+weight: 45
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 Invio di una richiesta HTTP con autenticazione di base permette di accedere a risorse protette online. I programmatori lo utilizzano per interagire con API che richiedono credenziali per garantire sicurezza e restrizione degli accessi.

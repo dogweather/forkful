@@ -13,9 +13,8 @@ summary: "Vi\u1EC7c in th\xF4ng tin g\u1EE1 l\u1ED7i trong JavaScript li\xEAn qu
   c b\u1EA5t k\u1EF3 th\xF4ng tin n\xE0o kh\xE1c gi\xFAp hi\u1EC3u r\xF5 nh\u1EEF\
   ng g\xEC m\xE3 c\u1EE7a b\u1EA1n \u0111ang\u2026"
 title: "In ra th\xF4ng tin g\u1EE1 l\u1ED7i"
+weight: 33
 ---
-
-{{< edit_this_page >}}
 
 ## Gì và Tại sao?
 

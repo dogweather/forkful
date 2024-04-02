@@ -9,9 +9,8 @@ summary: "\"Co to jest i po co?\" Pobieranie strony internetowej to zapisanie je
   \ zawarto\u015Bci na dysk. Programi\u015Bci robi\u0105 to, aby przetworzy\u0107\
   \ dane, pobra\u0107 wa\u017Cne\u2026"
 title: Pobieranie strony internetowej
+weight: 42
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 "Co to jest i po co?"

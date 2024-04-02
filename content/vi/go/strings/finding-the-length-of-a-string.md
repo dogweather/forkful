@@ -13,9 +13,8 @@ summary: "Vi\u1EC7c t\xECm chi\u1EC1u d\xE0i c\u1EE7a m\u1ED9t chu\u1ED7i trong 
   \ n\xF3 ch\u1EE9a. C\xE1c l\u1EADp tr\xECnh vi\xEAn th\u01B0\u1EDDng xuy\xEAn th\u1EF1\
   c hi\u1EC7n thao t\xE1c n\xE0y \u0111\u1EC3 c\xF3 th\u1EC3 x\u1EED\u2026"
 title: "T\xECm ki\u1EBFm \u0111\u1ED9 d\xE0i c\u1EE7a m\u1ED9t chu\u1ED7i"
+weight: 7
 ---
-
-{{< edit_this_page >}}
 
 ## Gì và Tại sao?
 Việc tìm chiều dài của một chuỗi trong Go là việc xác định số lượng ký tự mà nó chứa. Các lập trình viên thường xuyên thực hiện thao tác này để có thể xử lý chuỗi một cách hiệu quả, cho dù đó là để kiểm tra tính hợp lệ, trích xuất chuỗi con, hay chỉ đơn giản là để áp đặt các ràng buộc trong đầu vào của người dùng.

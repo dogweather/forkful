@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "\xC5 skrive en tekstfil i Swift gj\xF8r at du kan lagre strengdata permanent\
   \ p\xE5 filsystemet, noe som er avgj\xF8rende for oppgaver som \xE5 lagre\u2026"
 title: Skrive en tekstfil
+weight: 24
 ---
-
-{{< edit_this_page >}}
 
 ## Hva & Hvorfor?
 

@@ -15,9 +15,8 @@ summary: "Vi\u1EBFt m\u1ED9t t\u1EC7p v\u0103n b\u1EA3n li\xEAn quan \u0111\u1EB
   t m\xE3 h\xF3a k\xFD t\u1EF1 nh\u01B0 UTF-8. L\u1EADp tr\xECnh vi\xEAn l\xE0m \u0111\
   i\u1EC1u n\xE0y\u2026"
 title: "Vi\u1EBFt m\u1ED9t t\u1EC7p v\u0103n b\u1EA3n"
+weight: 24
 ---
-
-{{< edit_this_page >}}
 
 ## Gì & Tại Sao?
 Viết một tệp văn bản liên quan đến việc lưu trữ dữ liệu dưới dạng văn bản có thể đọc được, sử dụng một mã hóa ký tự như UTF-8. Lập trình viên làm điều này để ghi nhật ký, bảo quản dữ liệu, hoặc cấu hình.

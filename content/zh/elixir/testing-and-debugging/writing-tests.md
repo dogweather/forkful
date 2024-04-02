@@ -15,9 +15,8 @@ summary: "\u5728Elixir\u4E2D\u7F16\u5199\u6D4B\u8BD5\u6D89\u53CA\u521B\u5EFA\u81
   \uFF0C\u9632\u6B62\u56DE\u5F52\uFF0C\u5E76\u4FC3\u8FDB\u4EE3\u7801\u91CD\u6784\uFF0C\
   \u4F7F\u5F00\u53D1\u8FC7\u7A0B\u66F4\u52A0\u53EF\u9760\u548C\u9AD8\u6548\u3002"
 title: "\u7F16\u5199\u6D4B\u8BD5"
+weight: 36
 ---
-
-{{< edit_this_page >}}
 
 ## 什么 & 为什么?
 在Elixir中编写测试涉及创建自动化脚本来验证您的代码的行为。程序员这样做是为了保证质量，防止回归，并促进代码重构，使开发过程更加可靠和高效。

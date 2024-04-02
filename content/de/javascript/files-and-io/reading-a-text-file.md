@@ -9,9 +9,8 @@ summary: "Das Einlesen einer Textdatei bedeutet, ihren Inhalt in deine Anwendung
   \ importieren. Programmierer machen das, um Daten zu verarbeiten, Einstellungen\
   \ zu\u2026"
 title: Textdatei einlesen
+weight: 22
 ---
-
-{{< edit_this_page >}}
 
 # Javascript: So liest du eine Textdatei ein
 

@@ -7,9 +7,8 @@ model: gpt-4-1106-preview
 summary: "Das Lesen von Kommandozeilenargumenten erlaubt deinen PHP-Skripten, Eingaben\
   \ direkt aus der Befehlszeile zu erhalten. Wir nutzen es, um Skripte flexibler\u2026"
 title: Lesen von Kommandozeilenargumenten
+weight: 23
 ---
-
-{{< edit_this_page >}}
 
 ## Was & Warum?
 Das Lesen von Kommandozeilenargumenten erlaubt deinen PHP-Skripten, Eingaben direkt aus der Befehlszeile zu erhalten. Wir nutzen es, um Skripte flexibler zu gestalten und ermöglichen dem Nutzer, Variablen bei der Ausführung zu übergeben.

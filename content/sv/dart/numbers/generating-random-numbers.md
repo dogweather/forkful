@@ -10,9 +10,8 @@ model: gpt-4-0125-preview
 summary: "Att generera slumpm\xE4ssiga tal i Dart involverar att skapa numeriska v\xE4\
   rden som \xE4r of\xF6ruts\xE4gbara och skiljer sig \xE5t vid varje k\xF6rning. Programmerare\u2026"
 title: "Generera slumpm\xE4ssiga nummer"
+weight: 12
 ---
-
-{{< edit_this_page >}}
 
 ## Vad & Varför?
 Att generera slumpmässiga tal i Dart involverar att skapa numeriska värden som är oförutsägbara och skiljer sig åt vid varje körning. Programmerare utnyttjar denna funktionalitet av olika anledningar, från att simulera verkliga scenarier i testmiljöer till att möjliggöra spelmekanik och säkerställa säkerhet genom slumpmässighet i kryptografiska operationer.

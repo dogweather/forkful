@@ -13,9 +13,8 @@ summary: "S\u1ED1 ph\u1EE9c c\xF3 m\u1ED9t ph\u1EA7n th\u1EF1c v\xE0 m\u1ED9t ph
   ng trong Swift cho c\xE1c nhi\u1EC7m v\u1EE5 nh\u01B0 x\u1EED l\xFD t\xEDn hi\u1EC7\
   u, gi\u1EA3i quy\u1EBFt m\u1ED9t s\u1ED1 v\u1EA5n\u2026"
 title: "L\xE0m vi\u1EC7c v\u1EDBi s\u1ED1 ph\u1EE9c"
+weight: 14
 ---
-
-{{< edit_this_page >}}
 
 ## Cái gì & Tại sao?
 Số phức có một phần thực và một phần ảo (như 3 + 4i). Lập trình viên sử dụng chúng trong Swift cho các nhiệm vụ như xử lý tín hiệu, giải quyết một số vấn đề toán học, và mô phỏng vật lý.

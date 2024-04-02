@@ -9,9 +9,8 @@ summary: "La impresi\xF3n de informaci\xF3n de depuraci\xF3n en Swift te permite
   \ valores y mensajes directamente en la consola, lo cual es vital para entender\
   \ qu\xE9 est\xE1\u2026"
 title: "Imprimiendo salida de depuraci\xF3n"
+weight: 33
 ---
-
-{{< edit_this_page >}}
 
 ## ¿Qué y Por Qué?
 La impresión de información de depuración en Swift te permite ver valores y mensajes directamente en la consola, lo cual es vital para entender qué está pasando en tu código. Programadores lo hacen para diagnosticar y arreglar fallos más rápidamente.

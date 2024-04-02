@@ -9,9 +9,8 @@ summary: "Aloitamme uuden projektin luomisen, koska meill\xE4 on visio tai ongel
   \ johon etsimme ratkaisua. Haskellissa projekti tarkoittaa yleens\xE4 uuden paketin\
   \ tai\u2026"
 title: Uuden projektin aloittaminen
+weight: 1
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why? – Mikä ja miksi?
 Aloitamme uuden projektin luomisen, koska meillä on visio tai ongelma, johon etsimme ratkaisua. Haskellissa projekti tarkoittaa yleensä uuden paketin tai kirjaston kalustamista, missä koodataan järjestelmällisesti ja puhtaasti.

@@ -10,9 +10,8 @@ model: gpt-4-0125-preview
 summary: "Los arreglos asociativos, conocidos en otros lenguajes como mapas o diccionarios,\
   \ son pares clave-valor utilizados para la b\xFAsqueda y manipulaci\xF3n\u2026"
 title: Usando arrays asociativos
+weight: 15
 ---
-
-{{< edit_this_page >}}
 
 ## Qué y Por Qué?
 

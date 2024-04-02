@@ -23,9 +23,8 @@ summary: "\uBB38\uC790\uC5F4\uC758 \uCCAB \uAE00\uC790\uB97C \uB300\uBB38\uC790\
   \uC9C0\uD558\uACE0 \uAC00\uB3C5\uC131\uC744 \uD5A5\uC0C1\uC2DC\uD0B5\uB2C8\uB2E4\
   ."
 title: "\uBB38\uC790\uC5F4 \uB300\uBB38\uC790\uD654"
+weight: 2
 ---
-
-{{< edit_this_page >}}
 
 ## 무엇 & 왜?
 문자열의 첫 글자를 대문자로 변환하는 것은 문자열의 각 단어의 첫 문자를 대문자로 변환하면서 나머지는 소문자로 유지하는 작업을 말합니다. 이 작업은 데이터 포맷팅 및 사용자 입력의 정규화에 흔히 사용되어 일관성을 유지하고 가독성을 향상시킵니다.

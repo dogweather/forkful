@@ -9,9 +9,8 @@ summary: "Satunnaislukujen tuottaminen C#-kielell\xE4 k\xE4sitt\xE4\xE4 ennalta-
   \ numeeristen arvojen luomisen m\xE4\xE4ritellyll\xE4 v\xE4lill\xE4. Ohjelmoijat\
   \ k\xE4ytt\xE4v\xE4t n\xE4it\xE4\u2026"
 title: Satunnaislukujen generointi
+weight: 12
 ---
-
-{{< edit_this_page >}}
 
 ## Mikä & Miksi?
 

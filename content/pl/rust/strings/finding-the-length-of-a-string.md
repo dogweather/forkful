@@ -9,9 +9,8 @@ summary: "Co i dlaczego? Sprawdzanie d\u0142ugo\u015Bci \u0142a\u0144cucha znak\
   w, to po prostu spos\xF3b, by wiedzie\u0107 ile znak\xF3w zawiera. Programi\u015B\
   ci robi\u0105 to, by np. walidowa\u0107 dane\u2026"
 title: "Znalezienie d\u0142ugo\u015Bci ci\u0105gu znak\xF3w"
+weight: 7
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 Co i dlaczego? Sprawdzanie długości łańcucha znaków, to po prostu sposób, by wiedzieć ile znaków zawiera. Programiści robią to, by np. walidować dane wejściowe, ustawiać format wyświetlania, czy zarządzać pamięcią.

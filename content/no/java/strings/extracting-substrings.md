@@ -9,9 +9,8 @@ summary: "\xC5 trekke ut substrings betyr simpelthen \xE5 hente deler av en stre
   \ Programmerere gj\xF8r dette for \xE5 manipulere og behandle spesifikke data fra\
   \ st\xF8rre\u2026"
 title: Uthenting av delstrenger
+weight: 6
 ---
-
-{{< edit_this_page >}}
 
 ## Hva & Hvorfor?
 Å trekke ut substrings betyr simpelthen å hente deler av en streng. Programmerere gjør dette for å manipulere og behandle spesifikke data fra større tekstblokker.

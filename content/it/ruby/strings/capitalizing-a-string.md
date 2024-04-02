@@ -10,6 +10,7 @@ model: gpt-4-0125-preview
 summary: "Capitalizzare una stringa di solito significa convertire il primo carattere\
   \ di una stringa in maiuscolo e il resto in minuscolo. Ma a volte pu\xF2\u2026"
 title: Capitalizzare una stringa
+weight: 2
 ---
 
 ## Cosa e Perché?

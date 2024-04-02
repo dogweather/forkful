@@ -15,9 +15,8 @@ summary: "\uCF54\uB4DC\uB97C \uD568\uC218\uB85C \uADF8\uB8F9\uD654\uD558\uB294 \
   \ \uC904\uC774\uBA70, \uB514\uBC84\uADF8\uB098 \uB9AC\uD329\uD1A0\uB9C1\uC744 \uC6A9\
   \uC774\uD558\uAC8C \uD569\uB2C8\uB2E4."
 title: "\uCF54\uB4DC\uB97C \uD568\uC218\uB85C \uAD6C\uC131\uD558\uAE30"
+weight: 18
 ---
-
-{{< edit_this_page >}}
 
 ## 무엇 & 왜?
 코드를 함수로 그룹화하는 것은 작업을 재사용 가능한 조각으로 나누는 것입니다. 이것은 코드를 깔끔하게 하고 오류 가능성을 줄이며, 디버그나 리팩토링을 용이하게 합니다.

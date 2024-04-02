@@ -10,9 +10,8 @@ model: gpt-4-0125-preview
 summary: "L'analyse du HTML en Go consiste \xE0 examiner le contenu des fichiers HTML\
   \ pour extraire des donn\xE9es, manipuler la structure, ou convertir le HTML dans\u2026"
 title: Analyse Syntaxique de HTML
+weight: 43
 ---
-
-{{< edit_this_page >}}
 
 ## Quoi et pourquoi ?
 

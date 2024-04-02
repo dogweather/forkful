@@ -7,9 +7,8 @@ model: gpt-4-0125-preview
 summary: "Getting the current date in programming is crucial for a myriad of reasons,\
   \ including logging, timestamping events, and scheduling tasks. In Clojure, a\u2026"
 title: Getting the current date
+weight: 29
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 Getting the current date in programming is crucial for a myriad of reasons, including logging, timestamping events, and scheduling tasks. In Clojure, a Lisp dialect on the JVM, this task leverages Java interop capabilities, allowing for straightforward access to the rich Java Date-Time API.

@@ -11,9 +11,8 @@ summary: "Att g\xF6ra f\xF6rsta bokstaven i en str\xE4ng stor handlar om att omv
   \ str\xE4ngens f\xF6rsta bokstav till versal samtidigt som man s\xE4kerst\xE4ller\
   \ att resten av\u2026"
 title: "G\xF6r om en str\xE4ng till versaler"
+weight: 2
 ---
-
-{{< edit_this_page >}}
 
 ## Vad & Varför?
 

@@ -10,9 +10,8 @@ model: gpt-4-0125-preview
 summary: "Regul\xE4re Ausdr\xFCcke (regex) in der Fish Shell erm\xF6glichen es Ihnen,\
   \ Zeichenketten basierend auf bestimmten Mustern zu suchen, zu vergleichen und zu\u2026"
 title: "Regul\xE4re Ausdr\xFCcke verwenden"
+weight: 11
 ---
-
-{{< edit_this_page >}}
 
 ## Was & Warum?
 

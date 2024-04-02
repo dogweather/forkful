@@ -23,9 +23,8 @@ summary: "Dart\uC5D0\uC11C \uB450 \uB0A0\uC9DC\uB97C \uBE44\uAD50\uD55C\uB2E4\uB
   \uAC04 \uC870\uAC74\uC744 \uAE30\uBC18\uC73C\uB85C \uB17C\uB9AC \uD750\uB984\uC744\
   \ \uC81C\uC5B4\uD558\uAC70\uB098, \uB370\uC774\uD130\uB97C\u2026"
 title: "\uB450 \uB0A0\uC9DC \uBE44\uAD50\uD558\uAE30"
+weight: 27
 ---
-
-{{< edit_this_page >}}
 
 ## 무엇을, 왜?
 Dart에서 두 날짜를 비교한다는 것은 그들 사이의 시간적 차이나 순서를 평가하는 것을 의미하며, 이벤트 관리, 마감일, 또는 시간에 민감한 데이터를 처리하는 응용 프로그램에서 필수적인 기능입니다. 프로그래머들은 자주 시간 조건을 기반으로 논리 흐름을 제어하거나, 데이터를 검증하거나 정렬하는 데 이를 요구합니다.

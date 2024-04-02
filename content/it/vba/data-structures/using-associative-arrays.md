@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Gli array associativi, spesso noti come dizionari in Visual Basic for Applications\
   \ (VBA), consentono ai programmatori di creare collezioni di coppie\u2026"
 title: Utilizzo di array associativi
+weight: 15
 ---
-
-{{< edit_this_page >}}
 
 ## Cos'è e perché?
 

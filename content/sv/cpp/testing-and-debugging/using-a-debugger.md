@@ -1,14 +1,15 @@
 ---
 date: 2024-01-26 03:47:42.990278-07:00
-description: "Att anv\xE4nda en debugger inneb\xE4r att starta ett verktyg som l\xE5\
-  ter dig titta in i ditt k\xF6rande program f\xF6r att f\xF6rst\xE5 vad som verkligen\
-  \ h\xE4nder.\u2026"
+description: "C++ integreras med debuggers som GDB eller Visual Studio-debuggern.\
+  \ H\xE4r \xE4r ett litet exempel med GDB: ```C++ #include <iostream> int main()\
+  \ { int a = 5;\u2026"
 lastmod: '2024-03-13T22:44:38.213588-06:00'
 model: gpt-4-0125-preview
-summary: "Att anv\xE4nda en debugger inneb\xE4r att starta ett verktyg som l\xE5ter\
-  \ dig titta in i ditt k\xF6rande program f\xF6r att f\xF6rst\xE5 vad som verkligen\
-  \ h\xE4nder.\u2026"
+summary: "C++ integreras med debuggers som GDB eller Visual Studio-debuggern. H\xE4\
+  r \xE4r ett litet exempel med GDB: ```C++ #include <iostream> int main() { int a\
+  \ = 5;\u2026"
 title: "Att anv\xE4nda en debugger"
+weight: 35
 ---
 
 ## Hur gör man:

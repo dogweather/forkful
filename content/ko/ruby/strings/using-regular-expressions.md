@@ -23,9 +23,8 @@ summary: "\uB8E8\uBE44\uC5D0\uC11C\uC758 \uC815\uADDC\uC2DD(regex)\uC740 \uBB38\
   \ \uC704\uD574 regex\uB97C \uD65C\uC6A9\uD558\uB294\uB370, \uC774\uB294 \uD14D\uC2A4\
   \uD2B8\u2026"
 title: "\uC815\uADDC \uD45C\uD604\uC2DD \uC0AC\uC6A9\uD558\uAE30"
+weight: 11
 ---
-
-{{< edit_this_page >}}
 
 ## 무엇이며 왜 사용할까?
 루비에서의 정규식(regex)은 문자열 내에서 문자 조합을 매치하기 위해 사용되는 패턴으로, 개발자들이 텍스트를 효율적으로 검색, 매치, 및 조작할 수 있도록 합니다. 프로그래머들은 유효성 검사, 파싱, 문자열 조작과 같은 작업을 위해 regex를 활용하는데, 이는 텍스트 처리에 있어 필수적인 도구입니다.

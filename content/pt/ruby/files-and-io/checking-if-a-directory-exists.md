@@ -11,9 +11,8 @@ summary: "Verificar se um diret\xF3rio existe em Ruby permite que programadores 
   \ a presen\xE7a de um diret\xF3rio antes de realizar opera\xE7\xF5es como ler arquivos\
   \ ou\u2026"
 title: "Verificando se um diret\xF3rio existe"
+weight: 20
 ---
-
-{{< edit_this_page >}}
 
 ## O Que & Por Que?
 Verificar se um diretório existe em Ruby permite que programadores verifiquem a presença de um diretório antes de realizar operações como ler arquivos ou criar novos diretórios. Isso é crucial para evitar erros no manuseio de arquivos e garantir a confiabilidade das manipulações do sistema de arquivos.

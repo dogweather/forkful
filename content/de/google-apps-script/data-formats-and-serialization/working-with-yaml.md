@@ -11,9 +11,8 @@ summary: "YAML, das f\xFCr \"YAML Ain't Markup Language\" steht, ist ein f\xFCr 
   \ lesbarer Daten-Serialisierungsstandard, der h\xE4ufig f\xFCr Konfigurationsdateien\
   \ und\u2026"
 title: Arbeiten mit YAML
+weight: 41
 ---
-
-{{< edit_this_page >}}
 
 ## Was & Warum?
 

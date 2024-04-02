@@ -7,9 +7,8 @@ model: gpt-4-0125-preview
 summary: "Regular expressions (regex) in Visual Basic for Applications (VBA) provide\
   \ a powerful way to search, match, and manipulate strings. Programmers use them\u2026"
 title: Using regular expressions
+weight: 11
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 

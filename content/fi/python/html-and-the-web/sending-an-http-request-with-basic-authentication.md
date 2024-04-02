@@ -9,9 +9,8 @@ summary: "HTTP-pyynn\xF6n l\xE4hett\xE4minen perusautentikoinnilla tarkoittaa k\
   ytt\xE4j\xE4tilin tunnistetietojen (yleens\xE4 k\xE4ytt\xE4j\xE4nimi ja salasana)\
   \ l\xE4hett\xE4mist\xE4\u2026"
 title: "HTTP-pyynn\xF6n l\xE4hett\xE4minen perusautentikoinnilla"
+weight: 45
 ---
-
-{{< edit_this_page >}}
 
 ## Mitä & Miksi?
 HTTP-pyynnön lähettäminen perusautentikoinnilla tarkoittaa käyttäjätilin tunnistetietojen (yleensä käyttäjänimi ja salasana) lähettämistä verkkopalvelimelle pääsyn saamiseksi. Ohjelmoijat käyttävät tätä menetelmää turvatakseen resurssit ja päästäkseen käsiksi suojausta vaativiin web-resursseihin.

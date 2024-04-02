@@ -9,9 +9,8 @@ summary: "Ohjelmoinnissa lokitus tarkoittaa k\xE4yt\xE4nn\xF6ss\xE4 murusten j\x
   tt\xE4mist\xE4 j\xE4lkeensa tapahtumien tai viestien muodossa, jotka auttavat seuraamaan,\
   \ mit\xE4\u2026"
 title: Lokitus
+weight: 17
 ---
-
-{{< edit_this_page >}}
 
 ## Mikä & Miksi?
 Ohjelmoinnissa lokitus tarkoittaa käytännössä murusten jättämistä jälkeensa tapahtumien tai viestien muodossa, jotka auttavat seuraamaan, mitä sovelluksessasi tapahtuu milloinkin. Ohjelmoijat tekevät sitä vikojen jäljitykseen, järjestelmän suorituskyvyn valvontaan sekä turvallisuuden ja vaatimustenmukaisuuden seurantaan.

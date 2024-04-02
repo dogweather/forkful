@@ -7,9 +7,8 @@ model: gpt-4-0125-preview
 summary: "Remover aspas de uma string significa eliminar os caracteres de aspas simples\
   \ (`'`) ou duplas (`\"`) que delimitam os literais de strings no c\xF3digo.\u2026"
 title: Removendo aspas de uma string
+weight: 9
 ---
-
-{{< edit_this_page >}}
 
 ## O Que & Por Que?
 Remover aspas de uma string significa eliminar os caracteres de aspas simples (`'`) ou duplas (`"`) que delimitam os literais de strings no código. Programadores fazem isso por várias razões, como formatar saídas, higienizar entradas de usuários ou preparar strings para análise ou armazenamento onde as aspas são desnecessárias ou podem causar erros.

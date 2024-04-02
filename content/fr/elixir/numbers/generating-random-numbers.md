@@ -9,9 +9,8 @@ summary: "La g\xE9n\xE9ration de nombres al\xE9atoires en Elixir est une t\xE2ch
   \ de programmation fondamentale, essentielle pour les applications n\xE9cessitant\
   \ des r\xE9sultats\u2026"
 title: "G\xE9n\xE9ration de nombres al\xE9atoires"
+weight: 12
 ---
-
-{{< edit_this_page >}}
 
 ## Quoi et Pourquoi ?
 

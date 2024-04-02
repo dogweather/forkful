@@ -11,9 +11,8 @@ summary: "\xC5 skrive tester i Swift inneb\xE6rer \xE5 lage og utf\xF8re kode so
   \ verifiserer korrektheten av andre kodeenheter i applikasjonen din. Programmerere\
   \ gj\xF8r dette\u2026"
 title: Skrive tester
+weight: 36
 ---
-
-{{< edit_this_page >}}
 
 ## Hva & Hvorfor?
 Å skrive tester i Swift innebærer å lage og utføre kode som verifiserer korrektheten av andre kodeenheter i applikasjonen din. Programmerere gjør dette for å sikre pålitelighet, oppdage feil tidlig i utviklingssyklusen og lette fremtidig kodeomstrukturering uten utilsiktede konsekvenser.

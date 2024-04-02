@@ -13,9 +13,8 @@ summary: "XML\uFF08\u53EF\u6269\u5C55\u6807\u8BB0\u8BED\u8A00\uFF09\u662F\u5173\
   \u6570\u636E\u4EA4\u6362\u4EE5\u53CA\u89C4\u8303\u8981\u6C42\u65F6\u4F1A\u4F7F\u7528\
   XML\u2014\u2014\u60F3\u60F3SOAP\u6216\u8005Web API\u3002"
 title: "\u5904\u7406XML"
+weight: 40
 ---
-
-{{< edit_this_page >}}
 
 ## 什么 & 为什么？
 XML（可扩展标记语言）是关于以可读格式结构化数据的技术。程序员在配置、应用程序之间的数据交换以及规范要求时会使用XML——想想SOAP或者Web API。

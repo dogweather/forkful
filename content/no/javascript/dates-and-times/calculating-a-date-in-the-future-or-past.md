@@ -7,9 +7,8 @@ model: gpt-4-1106-preview
 summary: "I JavaScript kan vi beregne en dato i fremtiden eller fortiden; det er nyttig\
   \ for funksjoner som p\xE5minnelser eller historiske dataanalyser. Programmerere\u2026"
 title: Beregning av en dato i fremtiden eller fortiden
+weight: 26
 ---
-
-{{< edit_this_page >}}
 
 ## Hva & Hvorfor?
 I JavaScript kan vi beregne en dato i fremtiden eller fortiden; det er nyttig for funksjoner som påminnelser eller historiske dataanalyser. Programmerere støter ofte på behovet for å håndtere datoer når de bygger applikasjoner som involverer planlegging, aldersverifisering, eller tidsstyring.

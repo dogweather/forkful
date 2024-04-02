@@ -7,9 +7,8 @@ model: gpt-4-1106-preview
 summary: "Scaricare una pagina web significa raccogliere dati da Internet direttamente\
   \ nel tuo programma. I programmatori lo fanno per analizzare contenuti,\u2026"
 title: Scaricare una pagina web
+weight: 42
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why? (Cosa e Perché?)
 Scaricare una pagina web significa raccogliere dati da Internet direttamente nel tuo programma. I programmatori lo fanno per analizzare contenuti, raccogliere dati o interagire con servizi online.

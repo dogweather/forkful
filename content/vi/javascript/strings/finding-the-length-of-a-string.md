@@ -13,9 +13,8 @@ summary: "T\xECm chi\u1EC1u d\xE0i c\u1EE7a m\u1ED9t chu\u1ED7i c\xF3 ngh\u0129a
   \ th\u1EF1c hi\u1EC7n vi\u1EC7c n\xE0y \u0111\u1EC3 x\xE1c th\u1EF1c \u0111\u1EA7\
   u v\xE0o, l\u1EB7p qua c\xE1c chu\u1ED7i v\xE0 thao t\xE1c d\u1EEF li\u1EC7u\u2026"
 title: "T\xECm chi\u1EC1u d\xE0i c\u1EE7a m\u1ED9t chu\u1ED7i k\xFD t\u1EF1"
+weight: 7
 ---
-
-{{< edit_this_page >}}
 
 ## Gì và Tại sao?
 Tìm chiều dài của một chuỗi có nghĩa là đếm số ký tự của nó. Lập trình viên thực hiện việc này để xác thực đầu vào, lặp qua các chuỗi và thao tác dữ liệu văn bản một cách hiệu quả.

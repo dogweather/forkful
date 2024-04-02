@@ -9,9 +9,8 @@ summary: "Att r\xE4kna ut ett framtida eller f\xF6rflutet datum inneb\xE4r att l
   gga till eller dra ifr\xE5n dagar till en given dag. Programmerare g\xF6r detta\
   \ f\xF6r att hantera\u2026"
 title: "Ber\xE4kna ett datum i framtiden eller f\xF6rflutenheten"
+weight: 26
 ---
-
-{{< edit_this_page >}}
 
 ## Vad & Varför?
 Att räkna ut ett framtida eller förflutet datum innebär att lägga till eller dra ifrån dagar till en given dag. Programmerare gör detta för att hantera bokningar, påminnelser eller tidsbaserade funktioner i sina applikationer.

@@ -7,9 +7,8 @@ model: gpt-4-1106-preview
 summary: "Iniciar un nuevo proyecto en Elixir es como abrir un lienzo en blanco para\
   \ pintar tu obra maestra con c\xF3digo. Los programadores lo hacen para resolver\u2026"
 title: Iniciando un nuevo proyecto
+weight: 1
 ---
-
-{{< edit_this_page >}}
 
 ## ¿Qué y Por Qué?
 Iniciar un nuevo proyecto en Elixir es como abrir un lienzo en blanco para pintar tu obra maestra con código. Los programadores lo hacen para resolver problemas, experimentar con ideas nuevas o simplemente para mejorar sus habilidades en la creación de software estructurado y mantenible.

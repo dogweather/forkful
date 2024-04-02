@@ -7,9 +7,8 @@ model: gpt-4-1106-preview
 summary: "La concatenazione di stringhe \xE8 l'atto di unire due o pi\xF9 sequenze\
   \ di caratteri. I programmatori la utilizzano per costruire frasi, generare output\u2026"
 title: Concatenazione di stringhe
+weight: 3
 ---
-
-{{< edit_this_page >}}
 
 ## Cos'è e Perché?
 

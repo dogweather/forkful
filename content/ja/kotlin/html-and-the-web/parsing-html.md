@@ -14,9 +14,8 @@ summary: "HTML\u306E\u30D1\u30FC\u30B9\uFF08\u89E3\u6790\uFF09\u306F\u3001HTML\u
   \u30B9\u30AF\u30EC\u30A4\u30D4\u30F3\u30B0\u3084\u30C7\u30FC\u30BF\u306E\u5909\u63DB\
   \u306E\u305F\u3081\u306B\u3053\u308C\u3092\u884C\u3044\u307E\u3059\u3002"
 title: "HTML\u306E\u89E3\u6790"
+weight: 43
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why? (何となぜ？)
 HTMLのパース（解析）は、HTML文書を分析してデータを取り出すことです。プログラマはウェブスクレイピングやデータの変換のためにこれを行います。

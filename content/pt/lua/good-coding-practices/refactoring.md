@@ -8,9 +8,8 @@ model: gpt-4-0125-preview
 summary: "Refatora\xE7\xE3o \xE9 a arte de ajustar o c\xF3digo existente para melhorar\
   \ sua estrutura, legibilidade e efici\xEAncia sem alterar seu comportamento externo.\u2026"
 title: "Refatora\xE7\xE3o"
+weight: 19
 ---
-
-{{< edit_this_page >}}
 
 ## O Quê & Por Que?
 Refatoração é a arte de ajustar o código existente para melhorar sua estrutura, legibilidade e eficiência sem alterar seu comportamento externo. Programadores fazem isso para tornar seu código mais fácil de manter, reduzir complexidade e, muitas vezes, como um passo preliminar antes de adicionar novas funcionalidades ou corrigir bugs.

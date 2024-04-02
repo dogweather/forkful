@@ -13,9 +13,8 @@ summary: "T\u1ED5 ch\u1EE9c code th\xE0nh c\xE1c h\xE0m ngh\u0129a l\xE0 ph\xE2n
   n nh\u1ECF qu\u1EA3n l\xFD \u0111\u01B0\u1EE3c, m\u1ED7i ph\u1EA7n th\u1EF1c hi\u1EC7\
   n m\u1ED9t t\xE1c v\u1EE5 r\xF5 r\xE0ng. L\u1EADp tr\xECnh\u2026"
 title: "S\u1EAFp x\u1EBFp m\xE3 th\xE0nh c\xE1c h\xE0m"
+weight: 18
 ---
-
-{{< edit_this_page >}}
 
 ## Cái gì & Tại sao?
 Tổ chức code thành các hàm nghĩa là phân rã một chương trình khổng lồ thành các phần nhỏ quản lý được, mỗi phần thực hiện một tác vụ rõ ràng. Lập trình viên làm điều này để code dễ đọc, dễ tái sử dụng và dễ bảo trì.

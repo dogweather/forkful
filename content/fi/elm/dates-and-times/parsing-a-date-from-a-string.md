@@ -11,9 +11,8 @@ summary: "P\xE4iv\xE4m\xE4\xE4r\xE4n j\xE4sent\xE4minen merkkijonosta Elm:ss\xE4
   \ tekstuaalisen tiedon, joka edustaa p\xE4iv\xE4m\xE4\xE4ri\xE4 ja aikoja, muuntamista\
   \ muotoon, jonka Elm voi\u2026"
 title: "P\xE4iv\xE4m\xE4\xE4r\xE4n j\xE4sennys merkkijonosta"
+weight: 30
 ---
-
-{{< edit_this_page >}}
 
 ## Mikä & Miksi?
 Päivämäärän jäsentäminen merkkijonosta Elm:ssä tarkoittaa tekstuaalisen tiedon, joka edustaa päivämääriä ja aikoja, muuntamista muotoon, jonka Elm voi ymmärtää ja käsitellä, erityisesti `Date` tyyppiin. Tämä prosessi on ratkaisevan tärkeä käyttäjän syötteen käsittelyssä, päivämäärien oikeaoppisessa lokalisoimisessa näyttämiseksi, sekä päivämäärään liittyvien laskelmien suorittamisessa, varmistaen että Elm-sovelluksesi voivat älykkäästi käsitellä ajallista dataa.

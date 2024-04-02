@@ -9,9 +9,8 @@ summary: "Refaktorointi on olemassa olevan tietokonekoodin uudelleenrakentamisen
   \ muuttamatta sen ulkoista k\xE4ytt\xE4ytymist\xE4. Ohjelmoijat tekev\xE4t sit\xE4\
   \u2026"
 title: "Koodin uudelleenj\xE4rjestely"
+weight: 19
 ---
-
-{{< edit_this_page >}}
 
 ## Mikä ja Miksi?
 Refaktorointi on olemassa olevan tietokonekoodin uudelleenrakentamisen prosessi muuttamatta sen ulkoista käyttäytymistä. Ohjelmoijat tekevät sitä parantaakseen ohjelmiston ei-toiminnallisia ominaisuuksia, tehden koodista siistimpää ja tehokkaampaa, mikä puolestaan yksinkertaistaa ylläpitoa ja helpottaa tulevien toimintojen lisäyksiä.

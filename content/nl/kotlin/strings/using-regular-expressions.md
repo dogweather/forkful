@@ -11,9 +11,8 @@ summary: "Reguliere expressies (regex) zijn hulpmiddelen voor het matchen van pa
   \ in tekst. Programmeurs gebruiken ze om data effici\xEBnt te zoeken, valideren\
   \ of\u2026"
 title: Reguliere expressies gebruiken
+weight: 11
 ---
-
-{{< edit_this_page >}}
 
 ## Wat & Waarom?
 Reguliere expressies (regex) zijn hulpmiddelen voor het matchen van patronen in tekst. Programmeurs gebruiken ze om data efficiënt te zoeken, valideren of manipuleren.

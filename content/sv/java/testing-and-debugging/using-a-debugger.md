@@ -1,14 +1,15 @@
 ---
 date: 2024-01-26 03:50:11.716359-07:00
-description: "Att anv\xE4nda en debugger inneb\xE4r att man anv\xE4nder ett verktyg\
-  \ f\xF6r att testa och r\xE4tta till buggar i koden. Programmerare g\xF6r det f\xF6\
-  r att f\xF6rst\xE5 fl\xF6det i\u2026"
+description: "L\xE5t s\xE4ga att du har ett enkelt Java-program som strular, och du\
+  \ kan inte lista ut varf\xF6r. H\xE4r \xE4r hur du skulle starta en debugger med\
+  \ Eclipse, en av de\u2026"
 lastmod: '2024-03-13T22:44:37.791853-06:00'
 model: gpt-4-0125-preview
-summary: "Att anv\xE4nda en debugger inneb\xE4r att man anv\xE4nder ett verktyg f\xF6\
-  r att testa och r\xE4tta till buggar i koden. Programmerare g\xF6r det f\xF6r att\
-  \ f\xF6rst\xE5 fl\xF6det i\u2026"
+summary: "L\xE5t s\xE4ga att du har ett enkelt Java-program som strular, och du kan\
+  \ inte lista ut varf\xF6r. H\xE4r \xE4r hur du skulle starta en debugger med Eclipse,\
+  \ en av de\u2026"
 title: "Att anv\xE4nda en debugger"
+weight: 35
 ---
 
 ## Hur man gör:

@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Das Kapitalisieren eines Strings (Zeichenkette) beinhaltet, den ersten Buchstaben\
   \ eines gegebenen Strings in Gro\xDFbuchstaben umzuwandeln, falls dieser\u2026"
 title: "Einen String gro\xDFschreiben"
+weight: 2
 ---
-
-{{< edit_this_page >}}
 
 ## Was & Warum?
 

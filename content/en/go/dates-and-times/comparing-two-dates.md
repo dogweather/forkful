@@ -7,9 +7,8 @@ model: gpt-4-0125-preview
 summary: "Comparing two dates in programming is a fundamental task allowing developers\
   \ to evaluate the chronological relationship between dates. Such comparisons\u2026"
 title: Comparing two dates
+weight: 27
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 

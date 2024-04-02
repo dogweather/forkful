@@ -7,9 +7,8 @@ model: gpt-4-1106-preview
 summary: "Starting a new project means initializing a fresh directory with everything\
   \ you need to get coding. Programmers do this to kick-off development in a\u2026"
 title: Starting a new project
+weight: 1
 ---
-
-{{< edit_this_page >}}
 
 ## What & Why?
 Starting a new project means initializing a fresh directory with everything you need to get coding. Programmers do this to kick-off development in a clean, organized way.

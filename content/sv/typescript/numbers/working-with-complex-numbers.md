@@ -9,9 +9,8 @@ summary: "Komplexa tal, best\xE5ende av en reell del och en imagin\xE4r del (van
   \ skrivna som a + bi), m\xF6jligg\xF6r ber\xE4kningar som \xE4r opraktiska eller\
   \ om\xF6jliga med\u2026"
 title: Att arbeta med komplexa tal
+weight: 14
 ---
-
-{{< edit_this_page >}}
 
 ## Vad & Varför?
 Komplexa tal, bestående av en reell del och en imaginär del (vanligtvis skrivna som a + bi), möjliggör beräkningar som är opraktiska eller omöjliga med bara reella tal. Programmerare använder dem inom områden som signalbehandling, kvantdatorer och tillämpad matematik, där tvådimensionella talrepresentationer är nödvändiga.

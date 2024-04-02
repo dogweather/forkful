@@ -9,9 +9,8 @@ model: gpt-4-0125-preview
 summary: "Een datum omzetten naar een string in Go houdt in dat je een `time.Time`\
   \ object transformeert naar een leesbaar stringformaat. Programmeurs voeren deze\u2026"
 title: Een datum converteren naar een string
+weight: 28
 ---
-
-{{< edit_this_page >}}
 
 ## Wat & Waarom?
 
