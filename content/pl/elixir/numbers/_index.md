@@ -1,4 +1,4 @@
 ---
 type: page_chapter
-weight: 2
+weight: 3
 ---
